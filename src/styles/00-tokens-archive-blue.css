@@ -57,9 +57,9 @@
     --border-accent: color-mix(in oklch, var(--primary-bright) 40%, transparent);
     
     /* Glow Effects */
-    --glow-primary: color-mix(in oklch, var(--primary-bright) 45%, transparent);
-    --glow-secondary: color-mix(in oklch, var(--secondary-bright) 35%, transparent);
-    --glow-tertiary: color-mix(in oklch, var(--tertiary-bright) 32%, transparent);
+    --glow-primary: color-mix(in oklch, var(--primary-bright) 15%, transparent);
+    --glow-secondary: color-mix(in oklch, var(--secondary-bright) 10%, transparent);
+    --glow-tertiary: color-mix(in oklch, var(--tertiary-bright) 8%, transparent);
     
     /* Glass Morphism */
     --bg-glass: color-mix(in oklch, var(--bg-panel) 72%, transparent);
@@ -258,19 +258,9 @@
     
     --gradient-sheen: 
       radial-gradient(
-        circle at 20% 20%,
-        var(--glow-primary),
-        transparent 55%
-      ),
-      radial-gradient(
-        circle at 80% 30%,
-        color-mix(in oklch, var(--glow-secondary) 80%, transparent),
-        transparent 60%
-      ),
-      radial-gradient(
-        circle at 50% 80%,
-        color-mix(in oklch, var(--glow-tertiary) 70%, transparent),
-        transparent 65%
+        ellipse 50% 20% at 50% 0%,
+        color-mix(in oklch, var(--primary-bright) 4%, transparent),
+        transparent 50%
       );
     
     --gradient-primary: linear-gradient(
