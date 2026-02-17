@@ -1,0 +1,85 @@
+---
+/**
+ * Grid Layout Component
+ * 
+ * Responsive grid system with column/row spanning support.
+ * Based on the recommendations from the grid-based content layout doc.
+ */
+
+interface Props {
+  columns?: 1 | 2 | 3 | 4 | 'auto-fit' | 'auto-fill';
+  gap?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+  minItemWidth?: string; // For auto-fit/auto-fill
+  class?: string;
+}
+
+const {
+  columns = 3,
+  gap = 'md',
+  minItemWidth = '280px',
+  class: className
+} = Astro.props;
+
+// Generate grid-template-columns value
+let gridColumns: string;
+if (columns === 'auto-fit') {
+  gridColumns = `repeat(auto-fit, minmax(${minItemWidth}, 1fr))`;
+} else if (columns === 'auto-fill') {
+  gridColumns = `repeat(auto-fill, minmax(${minItemWidth}, 1fr))`;
+} else {
+  gridColumns = `repeat(${columns}, 1fr)`;
+}
+---
+
+<div
+  class:list={['grid', `grid--gap-${gap}`, className]}
+  style={`--grid-columns: ${gridColumns}`}
+>
+  <slot />
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+  }
+  
+  /* Gap sizes */
+  .grid--gap-none {
+    gap: 0;
+  }
+  
+  .grid--gap-sm {
+    gap: var(--space-2, 0.5rem);
+  }
+  
+  .grid--gap-md {
+    gap: var(--space-4, 1rem);
+  }
+  
+  .grid--gap-lg {
+    gap: var(--space-6, 1.5rem);
+  }
+  
+  .grid--gap-xl {
+    gap: var(--space-8, 2rem);
+  }
+  
+  /* Responsive - collapse to 2 columns on tablet */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Responsive - collapse to 1 column on mobile */
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .grid--gap-xl {
+      gap: var(--space-4, 1rem);
+    }
+  }
+</style>

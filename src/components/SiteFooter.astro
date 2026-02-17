@@ -1,3 +1,8 @@
+---
+import { siteConfig } from '../config/site';
+const { name, tagline, description, navigation, footer } = siteConfig;
+---
+
 <footer class="site-footer">
   <div class="footer-container">
     <!-- Pulse Background Section -->
@@ -10,13 +15,13 @@
           loading="lazy"
         />
         <div class="footer-hero-text">
-          <span>CLAWSHUB</span>
+          <span>{name.toUpperCase()}</span>
         </div>
       </div>
       
       <div class="footer-hero-content">
-        <h3 class="footer-tagline">Your AI Assistant</h3>
-        <p class="footer-description">Personal AI that lives in your chat apps. Built by the community, for the community.</p>
+        <h3 class="footer-tagline">{tagline}</h3>
+        <p class="footer-description">{description}</p>
       </div>
     </div>
 
@@ -25,27 +30,51 @@
       <div class="footer-col">
         <h4>Explore</h4>
         <ul>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/showcase">Showcase</a></li>
-          <li><a href="/shoutouts">Shoutouts</a></li>
-          <li><a href="/integrations">Integrations</a></li>
+          {navigation.footer.explore.map(item => (
+            <li>
+              <a 
+                href={item.href} 
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       
       <div class="footer-col">
         <h4>Resources</h4>
         <ul>
-          <li><a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://github.com/openclaw/openclaw#community" target="_blank" rel="noopener">Community</a></li>
-          <li><a href="https://soul.md" target="_blank" rel="noopener">Soul</a></li>
+          {navigation.footer.resources.map(item => (
+            <li>
+              <a 
+                href={item.href} 
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
-          <li><a href="https://molty.me" target="_blank" rel="noopener">Molty 🦞</a></li>
-          <li><a href="https://steipete.me" target="_blank" rel="noopener">Peter Steinberger</a></li>
+          {navigation.footer.connect.map(item => (
+            <li>
+              <a 
+                href={item.href} 
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -53,16 +82,16 @@
     <!-- Bottom Bar -->
     <div class="footer-bottom">
       <p class="footer-credits">
-        Built by <a href="https://molty.me" target="_blank" rel="noopener">Molty</a> 🦞, 
-        a space lobster AI with a <a href="https://soul.md" target="_blank" rel="noopener">soul</a>, 
-        by <a href="https://steipete.me" target="_blank" rel="noopener">Peter Steinberger</a> 
-        & <a href="https://github.com/openclaw/openclaw#community" target="_blank" rel="noopener">community</a>.
+        Built by <a href={footer.credits.builtByUrl} target="_blank" rel="noopener">{footer.credits.builtBy}</a> 🦞, 
+        {footer.credits.builtByDescription} <a href={footer.credits.soulUrl} target="_blank" rel="noopener">soul</a>, 
+        by <a href={footer.credits.creatorUrl} target="_blank" rel="noopener">{footer.credits.creatorName}</a> 
+        & <a href={footer.credits.communityUrl} target="_blank" rel="noopener">community</a>.
       </p>
       <p class="footer-disclaimer">
-        Formerly known as Clawdbot and Moltbot. Independent project, not affiliated with Anthropic.
+        {footer.disclaimer}
       </p>
       <p class="footer-copyright">
-        &copy; {new Date().getFullYear()} ClawsHub. All rights reserved.
+        &copy; {new Date().getFullYear()} {name}. All rights reserved.
       </p>
     </div>
   </div>
