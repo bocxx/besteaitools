@@ -2,12 +2,8 @@
  * Design Tokens
  * Core design values - colors, spacing, typography, effects
  * 
- * THEME: Nebula (Cosmic AI News Platform)
- * Inspired by deep space nebulae with warm rust and cool teal
- * 
- * Archived themes:
- * - 00-tokens-archive-purple.css (Original purple/coral)
- * - 00-tokens-archive-blue.css (Editorial blue/amber)
+ * THEME: Editorial (Professional AI News Platform)
+ * Archived themes: 00-tokens-archive-purple.css
  * 
  * Using modern CSS with oklch colors for better gradients
  * and perceptually uniform color manipulation
@@ -16,32 +12,32 @@
 @layer tokens {
   :root {
     /* ============================================
-       COLOR SYSTEM - Nebula Palette
-       Deep space blacks, rust planet, teal nebula clouds
+       COLOR SYSTEM - Editorial Palette
+       Professional, trustworthy, modern tech aesthetic
        ============================================ */
     
-    /* Background Palette - Deep Space */
-    --bg-deep: oklch(8% 0.015 20);
-    --bg-surface: oklch(11% 0.018 20);
-    --bg-elevated: oklch(14% 0.02 20);
-    --bg-panel: oklch(17% 0.022 20);
+    /* Background Palette - Warm Slate */
+    --bg-deep: oklch(12% 0.01 250);
+    --bg-surface: oklch(15% 0.012 250);
+    --bg-elevated: oklch(18% 0.014 250);
+    --bg-panel: oklch(21% 0.016 250);
     
-    /* Brand Colors - Rust Planet (Warm, Bold) */
-    --primary-h: 20;
-    --primary-bright: oklch(62% 0.18 var(--primary-h));
-    --primary-mid: oklch(52% 0.20 var(--primary-h));
-    --primary-dark: oklch(40% 0.16 var(--primary-h));
+    /* Brand Colors - Electric Blue (Trust, Technology) */
+    --primary-h: 230;
+    --primary-bright: oklch(68% 0.18 var(--primary-h));
+    --primary-mid: oklch(58% 0.20 var(--primary-h));
+    --primary-dark: oklch(45% 0.16 var(--primary-h));
     
-    /* Brand Colors - Nebula Teal (Cool, Ethereal) */
-    --secondary-h: 185;
-    --secondary-bright: oklch(72% 0.14 var(--secondary-h));
-    --secondary-mid: oklch(60% 0.12 var(--secondary-h));
-    --secondary-dark: oklch(48% 0.10 var(--secondary-h));
+    /* Brand Colors - Warm Amber (Highlights, Breaking News) */
+    --secondary-h: 45;
+    --secondary-bright: oklch(82% 0.16 var(--secondary-h));
+    --secondary-mid: oklch(72% 0.14 var(--secondary-h));
+    --secondary-dark: oklch(58% 0.12 var(--secondary-h));
     
-    /* Support Colors - Cosmic Amber (Warm Glow) */
-    --tertiary-h: 40;
-    --tertiary-bright: oklch(78% 0.15 var(--tertiary-h));
-    --tertiary-dark: oklch(58% 0.12 var(--tertiary-h));
+    /* Support Colors - Subtle Violet (Legacy nod) */
+    --tertiary-h: 280;
+    --tertiary-bright: oklch(65% 0.14 var(--tertiary-h));
+    --tertiary-dark: oklch(48% 0.12 var(--tertiary-h));
     
     /* Semantic Colors */
     --color-success: oklch(75% 0.14 165);
@@ -252,15 +248,6 @@
       135deg,
       var(--primary-bright) 0%,
       var(--secondary-bright) 100%
-    );
-    
-    /* Nebula-inspired cosmic gradient */
-    --gradient-nebula: linear-gradient(
-      135deg,
-      var(--primary-dark) 0%,
-      var(--bg-deep) 40%,
-      color-mix(in oklch, var(--secondary-dark) 60%, var(--bg-deep)) 70%,
-      var(--secondary-mid) 100%
     );
     
     --gradient-midnight: linear-gradient(

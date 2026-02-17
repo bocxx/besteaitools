@@ -1,5 +1,33 @@
 import { defineCollection, z } from 'astro:content';
 
+/**
+ * Dutch AI News Collection
+ * Simplified schema for fast content creation
+ */
+const nieuws = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publishedAt: z.date(),
+    updatedAt: z.date().optional(),
+    author: z.string().default('Redactie'),
+    category: z.enum([
+      'ai-nieuws',
+      'ai-tools', 
+      'ai-innovatie',
+      'ai-ethiek',
+      'ai-tutorials',
+      'ai-deep-dives',
+    ]),
+    tags: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
+    heroImage: z.string().optional(),
+    readingTime: z.number().optional(),
+  }),
+});
+
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
@@ -56,15 +84,16 @@ const articles = defineCollection({
     // CATEGORIZATION & TAXONOMY
     // ============================================
     category: z.enum([
-      'tutorials',
-      'guides', 
-      'news',
-      'reviews',
-      'case-studies',
-      'comparisons',
-      'opinion',
-      'announcements',
-      'deep-dives',
+      'news',           // Breaking AI news and industry updates
+      'tutorials',      // Step-by-step learning content
+      'guides',         // Comprehensive how-to guides
+      'reviews',        // Tool and product reviews
+      'case-studies',   // Real-world implementations
+      'comparisons',    // Head-to-head comparisons
+      'opinion',        // Analysis and editorials
+      'announcements',  // Product releases and updates
+      'deep-dives',     // Research and technical deep dives
+      'interviews',     // Industry interviews
     ]),
     tags: z.array(z.string()).default([]),
     series: z.object({                       // For multi-part content
@@ -192,4 +221,4 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { blog, articles };
+export const collections = { blog, articles, nieuws };

@@ -1,0 +1,150 @@
+---
+/**
+ * NewsCard - Article card for news listings
+ * Clean design using existing Nebula theme styles
+ */
+import CategoryBadge from './CategoryBadge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  category: string;
+  publishedAt: Date;
+  author?: string;
+  readingTime?: number;
+  featured?: boolean;
+}
+
+const { 
+  title, 
+  description, 
+  href, 
+  category, 
+  publishedAt, 
+  author = 'Redactie',
+  readingTime,
+  featured = false 
+} = Astro.props;
+
+// Format date in Dutch
+const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+});
+---
+
+<article class:list={['news-card', { 'news-card--featured': featured }]}>
+  <a href={href} class="news-card__link">
+    <header class="news-card__header">
+      <CategoryBadge category={category} link={false} />
+      <time class="news-card__date" datetime={publishedAt.toISOString()}>
+        {formattedDate}
+      </time>
+    </header>
+
+    <h3 class="news-card__title">{title}</h3>
+    
+    <p class="news-card__description">{description}</p>
+
+    <footer class="news-card__footer">
+      <span class="news-card__author">{author}</span>
+      {readingTime && (
+        <span class="news-card__reading-time">
+          {readingTime} min lezen
+        </span>
+      )}
+    </footer>
+  </a>
+</article>
+
+<style>
+  .news-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .news-card:hover {
+    border-color: color-mix(in oklch, var(--text-primary) 15%, transparent);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .news-card--featured {
+    border-color: color-mix(in oklch, var(--primary-mid) 20%, transparent);
+  }
+
+  .news-card--featured:hover {
+    border-color: color-mix(in oklch, var(--primary-mid) 35%, transparent);
+  }
+
+  .news-card__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-5);
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+  }
+
+  .news-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .news-card__date {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .news-card__title {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-snug);
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+  }
+
+  .news-card:hover .news-card__title {
+    color: var(--secondary-bright);
+  }
+
+  .news-card__description {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: var(--leading-relaxed);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-top: auto;
+    padding-top: var(--space-3);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .news-card__author {
+    font-weight: var(--font-regular);
+  }
+
+  .news-card__reading-time {
+    opacity: 0.7;
+  }
+</style>

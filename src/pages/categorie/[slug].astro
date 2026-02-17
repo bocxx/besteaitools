@@ -1,0 +1,195 @@
+---
+/**
+ * Category Page
+ * Lists all articles in a specific category
+ */
+import Layout from '../../layouts/Layout.astro';
+import NewsCard from '../../components/nieuws/NewsCard.astro';
+import CategoryBadge from '../../components/nieuws/CategoryBadge.astro';
+import { getCollection } from 'astro:content';
+import { getAllCategories, getCategory } from '../../lib/categories';
+
+export async function getStaticPaths() {
+  const categories = getAllCategories();
+  return categories.map(cat => ({
+    params: { slug: cat.slug },
+    props: { category: cat },
+  }));
+}
+
+const { category } = Astro.props;
+
+// Get articles in this category
+const allNieuws = await getCollection('nieuws', ({ data }) => !data.draft);
+const categoryArticles = allNieuws
+  .filter(article => article.data.category === category.slug)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+// Get all categories for navigation
+const allCategories = getAllCategories();
+---
+
+<Layout 
+  title={`${category.name} — AI Nieuws`} 
+  description={category.description}
+>
+  <div class="stars"></div>
+  <div class="nebula"></div>
+
+  <main class="container container-wide">
+    <!-- Back link -->
+    <nav class="page-nav">
+      <a href="/nieuws" class="back-link">
+        <span class="back-link__arrow">←</span>
+        Alle nieuws
+      </a>
+    </nav>
+
+    <!-- Category Header -->
+    <header class="category-header">
+      <h1 class="category-header__title">{category.name}</h1>
+      <p class="category-header__description">{category.description}</p>
+      <span class="category-header__count">
+        {categoryArticles.length} {categoryArticles.length === 1 ? 'artikel' : 'artikelen'}
+      </span>
+    </header>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav" aria-label="Andere categorieën">
+      {allCategories.map(cat => (
+        <CategoryBadge 
+          category={cat.slug} 
+          size="md"
+        />
+      ))}
+    </nav>
+
+    <!-- Articles Grid -->
+    {categoryArticles.length > 0 ? (
+      <section class="section">
+        <div class="news-grid">
+          {categoryArticles.map(article => (
+            <NewsCard
+              title={article.data.title}
+              description={article.data.description}
+              href={`/nieuws/${article.id}`}
+              category={article.data.category}
+              publishedAt={article.data.publishedAt}
+              author={article.data.author}
+              readingTime={article.data.readingTime}
+              featured={article.data.featured}
+            />
+          ))}
+        </div>
+      </section>
+    ) : (
+      <div class="empty-state">
+        <p>Nog geen artikelen in deze categorie.</p>
+        <a href="/nieuws" class="btn">Bekijk alle nieuws</a>
+      </div>
+    )}
+  </main>
+</Layout>
+
+<style>
+  .page-nav {
+    padding-top: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--primary-bright);
+  }
+
+  .back-link__arrow {
+    transition: transform var(--transition-fast);
+  }
+
+  .back-link:hover .back-link__arrow {
+    transform: translateX(-3px);
+  }
+
+  .category-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .category-header__title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .category-header__description {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .category-header__count {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+  }
+
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+    margin-bottom: var(--space-10);
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-5);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--space-12);
+    color: var(--text-muted);
+  }
+
+  .empty-state p {
+    margin-bottom: var(--space-4);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: var(--primary-bright);
+    color: var(--text-inverse);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .btn:hover {
+    background: var(--primary-mid);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .category-header__title {
+      font-size: var(--text-3xl);
+    }
+
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

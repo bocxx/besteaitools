@@ -13,6 +13,8 @@ import SiteFooter from "../components/SiteFooter.astro";
       <h1>Design System</h1>
       <p class="text-secondary">Component reference for ClawsHub</p>
       <div class="theme-links">
+        <a href="/magazine" class="theme-link theme-link-primary">Magazine Layout →</a>
+        <a href="/bento" class="theme-link theme-link-secondary">Bento Grid →</a>
         <a href="/grid" class="theme-link">Grid System →</a>
         <a href="/articles" class="theme-link">3-Column Layout →</a>
       </div>
@@ -478,6 +480,28 @@ import SiteFooter from "../components/SiteFooter.astro";
   .theme-link:hover {
     border-color: var(--secondary-bright);
     background: color-mix(in oklch, var(--secondary-bright) 10%, transparent);
+  }
+
+  .theme-link-primary {
+    background: var(--primary-bright);
+    color: var(--text-inverse);
+    border-color: var(--primary-bright);
+  }
+
+  .theme-link-primary:hover {
+    background: var(--primary-mid);
+    border-color: var(--primary-mid);
+  }
+
+  .theme-link-secondary {
+    background: var(--secondary-bright);
+    color: var(--bg-deep);
+    border-color: var(--secondary-bright);
+  }
+
+  .theme-link-secondary:hover {
+    background: var(--secondary-mid);
+    border-color: var(--secondary-mid);
   }
 
   .theme-section {

@@ -30,17 +30,17 @@ const topTags = Object.entries(tagCounts)
   .sort((a, b) => b[1] - a[1])
   .slice(0, 12);
 
-// Category display names and icons
-const categoryMeta: Record<string, { label: string; icon: string }> = {
-  tutorials: { label: "Tutorials", icon: "📚" },
-  guides: { label: "Guides", icon: "🗺️" },
-  news: { label: "News", icon: "📰" },
-  reviews: { label: "Reviews", icon: "⭐" },
-  "case-studies": { label: "Case Studies", icon: "📊" },
-  comparisons: { label: "Comparisons", icon: "⚖️" },
-  opinion: { label: "Opinion", icon: "💭" },
-  announcements: { label: "Announcements", icon: "📢" },
-  "deep-dives": { label: "Deep Dives", icon: "🔬" },
+// Category display names (no icons - minimal design)
+const categoryMeta: Record<string, { label: string }> = {
+  tutorials: { label: "Tutorials" },
+  guides: { label: "Guides" },
+  news: { label: "News" },
+  reviews: { label: "Reviews" },
+  "case-studies": { label: "Case Studies" },
+  comparisons: { label: "Comparisons" },
+  opinion: { label: "Opinion" },
+  announcements: { label: "Announcements" },
+  "deep-dives": { label: "Deep Dives" },
 };
 
 // Difficulty colors
@@ -81,13 +81,11 @@ function formatDate(date: Date): string {
           <h3 class="sidebar-title">Categories</h3>
           <nav class="category-nav">
             <a href="#" class="category-link is-active">
-              <span class="category-icon">📑</span>
               <span>All Articles</span>
               <span class="category-count">{articles.length}</span>
             </a>
             {categories.map((cat) => (
               <a href={`#${cat}`} class="category-link">
-                <span class="category-icon">{categoryMeta[cat]?.icon || "📄"}</span>
                 <span>{categoryMeta[cat]?.label || cat}</span>
                 <span class="category-count">
                   {articles.filter((a) => a.data.category === cat).length}
@@ -118,12 +116,16 @@ function formatDate(date: Date): string {
         <div class="sidebar-section">
           <h3 class="sidebar-title">Popular Tags</h3>
           <div class="tag-cloud">
-            {topTags.map(([tag, count]) => (
-              <a href={`#tag-${tag}`} class="tag-pill">
-                {tag}
-                <span class="tag-count">{count}</span>
-              </a>
-            ))}
+            {topTags.length > 0 ? (
+              topTags.map(([tag, count]) => (
+                <a href={`#tag-${tag}`} class="tag-pill">
+                  {tag}
+                  <span class="tag-count">{count}</span>
+                </a>
+              ))
+            ) : (
+              <span class="no-tags">No tags yet</span>
+            )}
           </div>
         </div>
       </aside>
@@ -133,10 +135,7 @@ function formatDate(date: Date): string {
         <!-- Spotlight Article -->
         {spotlightArticle && (
           <article class="spotlight-card">
-            <div class="spotlight-badge">
-              <span class="spotlight-icon">✨</span>
-              Spotlight
-            </div>
+            <div class="spotlight-badge">Spotlight</div>
             {spotlightArticle.data.heroImage && (
               <div class="spotlight-image">
                 <div class="image-placeholder" style="background: var(--gradient-claw);"></div>
@@ -145,7 +144,6 @@ function formatDate(date: Date): string {
             <div class="spotlight-content">
               <div class="article-meta">
                 <span class="category-badge">
-                  {categoryMeta[spotlightArticle.data.category]?.icon}
                   {categoryMeta[spotlightArticle.data.category]?.label}
                 </span>
                 <span class="difficulty-badge" style={`--difficulty-color: ${difficultyColors[spotlightArticle.data.difficulty]}`}>
@@ -176,7 +174,7 @@ function formatDate(date: Date): string {
           {sortedArticles.filter(a => !a.data.spotlight).map((article) => (
             <article class={`article-card ${article.data.featured ? "is-featured" : ""}`}>
               {article.data.featured && (
-                <div class="featured-badge">⭐ Featured</div>
+                <div class="featured-badge">Featured</div>
               )}
               {article.data.heroImage && (
                 <div class="article-image">
@@ -186,7 +184,6 @@ function formatDate(date: Date): string {
               <div class="article-body">
                 <div class="article-meta">
                   <span class="category-badge">
-                    {categoryMeta[article.data.category]?.icon}
                     {categoryMeta[article.data.category]?.label}
                   </span>
                   <span class="difficulty-badge" style={`--difficulty-color: ${difficultyColors[article.data.difficulty]}`}>
@@ -218,7 +215,7 @@ function formatDate(date: Date): string {
       <!-- RIGHT SIDEBAR: Featured & Widgets -->
       <aside class="sidebar sidebar-right">
         <div class="sidebar-section">
-          <h3 class="sidebar-title">🔥 Trending</h3>
+          <h3 class="sidebar-title">Trending</h3>
           <div class="trending-list">
             {sortedArticles
               .filter((a) => a.data.engagement?.trending)
@@ -236,7 +233,7 @@ function formatDate(date: Date): string {
         </div>
 
         <div class="sidebar-section">
-          <h3 class="sidebar-title">📚 Series: AI Fundamentals</h3>
+          <h3 class="sidebar-title">Series</h3>
           <div class="series-list">
             {sortedArticles
               .filter((a) => a.data.series?.name === "AI Fundamentals")
@@ -251,7 +248,7 @@ function formatDate(date: Date): string {
         </div>
 
         <div class="sidebar-section widget-newsletter">
-          <h3 class="sidebar-title">📬 Newsletter</h3>
+          <h3 class="sidebar-title">Newsletter</h3>
           <p class="widget-text">Get the latest AI insights delivered to your inbox weekly.</p>
           <form class="newsletter-form">
             <input type="email" class="input" placeholder="your@email.com" />
@@ -260,7 +257,7 @@ function formatDate(date: Date): string {
         </div>
 
         <div class="sidebar-section">
-          <h3 class="sidebar-title">🏷️ Content Stats</h3>
+          <h3 class="sidebar-title">Stats</h3>
           <div class="stats-grid">
             <div class="stat-item">
               <span class="stat-value">{articles.length}</span>
@@ -282,7 +279,7 @@ function formatDate(date: Date): string {
         </div>
 
         <div class="sidebar-section">
-          <h3 class="sidebar-title">💡 Quick Links</h3>
+          <h3 class="sidebar-title">Quick Links</h3>
           <nav class="quick-links">
             <a href="/theme" class="quick-link">Design System</a>
             <a href="/grid" class="quick-link">Grid Reference</a>
@@ -388,6 +385,12 @@ function formatDate(date: Date): string {
       height: fit-content;
       max-height: calc(100vh - var(--space-12));
       overflow-y: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+    
+    .sidebar-left::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
     }
   }
 
@@ -397,6 +400,12 @@ function formatDate(date: Date): string {
     height: fit-content;
     max-height: calc(100vh - var(--space-12));
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .sidebar-right::-webkit-scrollbar {
+    display: none;
   }
 
   .sidebar-section {
@@ -518,6 +527,12 @@ function formatDate(date: Date): string {
   .tag-count {
     font-size: 10px;
     color: var(--text-muted);
+  }
+
+  .no-tags {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-style: italic;
   }
 
   /* Main Content */

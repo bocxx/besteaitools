@@ -72,19 +72,34 @@
     pointer-events: none;
     
     background:
+      /* Rust glow - top right */
       radial-gradient(
-        ellipse 80% 50% at 20% 20%,
-        var(--glow-primary),
+        ellipse 70% 50% at 75% 15%,
+        color-mix(in oklch, var(--primary-dark) 40%, transparent),
         transparent 50%
       ),
+      /* Teal nebula cloud - bottom left */
       radial-gradient(
-        ellipse 60% 60% at 80% 30%,
-        color-mix(in oklch, var(--glow-secondary) 80%, transparent),
+        ellipse 80% 70% at 25% 75%,
+        color-mix(in oklch, var(--secondary-dark) 50%, transparent),
+        transparent 55%
+      ),
+      /* Central subtle glow */
+      radial-gradient(
+        ellipse 50% 50% at 50% 40%,
+        color-mix(in oklch, var(--primary-mid) 20%, transparent),
+        transparent 60%
+      ),
+      /* Distant teal wisps - top */
+      radial-gradient(
+        ellipse 60% 40% at 30% 20%,
+        color-mix(in oklch, var(--secondary-mid) 25%, transparent),
         transparent 50%
       ),
+      /* Warm accent - bottom right */
       radial-gradient(
-        ellipse 90% 70% at 50% 90%,
-        var(--glow-primary),
+        ellipse 50% 60% at 85% 80%,
+        color-mix(in oklch, var(--tertiary-dark) 30%, transparent),
         transparent 50%
       );
   }
@@ -563,5 +578,227 @@
   .link-separator {
     color: var(--text-muted);
     font-size: var(--text-sm);
+  }
+  
+  /* ============================================
+     RESPONSIVE GRID SYSTEM
+     ============================================ */
+  
+  /* Base grid container */
+  .grid-container {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  /* ============================================
+     BENTO GRID SYSTEM
+     Asymmetric, varied-size card layouts
+     ============================================ */
+  
+  /* Base bento container */
+  .bento {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+  }
+  
+  /* Bento card base */
+  .bento-item {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    overflow: hidden;
+    position: relative;
+    transition: all var(--transition-base);
+  }
+  
+  .bento-item:hover {
+    border-color: var(--primary-bright);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Bento size variants */
+  .bento-sm {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .bento-md {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .bento-lg {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .bento-wide {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+  
+  .bento-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+  .bento-xl {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+  
+  .bento-hero {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  
+  .bento-full {
+    grid-column: 1 / -1;
+  }
+  
+  /* Bento color variants */
+  .bento-primary {
+    background: linear-gradient(135deg, var(--primary-dark), var(--bg-panel));
+    border-color: color-mix(in oklch, var(--primary-bright) 30%, transparent);
+  }
+  
+  .bento-secondary {
+    background: linear-gradient(135deg, var(--secondary-dark), var(--bg-panel));
+    border-color: color-mix(in oklch, var(--secondary-bright) 30%, transparent);
+  }
+  
+  .bento-tertiary {
+    background: linear-gradient(135deg, var(--tertiary-dark), var(--bg-panel));
+    border-color: color-mix(in oklch, var(--tertiary-bright) 30%, transparent);
+  }
+  
+  .bento-glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+  }
+  
+  .bento-gradient {
+    background: var(--gradient-nebula);
+  }
+  
+  /* Bento featured (glowing) */
+  .bento-featured {
+    border-color: var(--primary-bright);
+    box-shadow: var(--shadow-glow-primary);
+  }
+  
+  .bento-featured:hover {
+    box-shadow: var(--shadow-lg), var(--shadow-glow-primary);
+  }
+  
+  /* Responsive bento */
+  @media (max-width: 1024px) {
+    .bento {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .bento-hero {
+      grid-column: span 3;
+    }
+    
+    .bento-xl {
+      grid-column: span 3;
+    }
+    
+    .bento-wide {
+      grid-column: span 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+    }
+    
+    .bento-hero,
+    .bento-xl,
+    .bento-wide {
+      grid-column: span 2;
+    }
+    
+    .bento-lg {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bento {
+      grid-template-columns: 1fr;
+    }
+    
+    .bento-hero,
+    .bento-xl,
+    .bento-wide,
+    .bento-lg,
+    .bento-md {
+      grid-column: span 1;
+    }
+    
+    .bento-tall {
+      grid-row: span 1;
+    }
+  }
+  
+  /* Responsive column layouts - mobile first */
+  .grid-cols-2-responsive,
+  .grid-cols-3-responsive,
+  .grid-cols-4-responsive {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Tablet (768px+) */
+  @media (min-width: 768px) {
+    .grid-cols-2-responsive { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3-responsive { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-4-responsive { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  /* Desktop (1024px+) */
+  @media (min-width: 1024px) {
+    .grid-cols-2-responsive { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3-responsive { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4-responsive { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  /* Sidebar layouts */
+  .grid-layout-sidebar-right {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-layout-sidebar-left {
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-layout-sidebar-right {
+      grid-template-columns: 1fr 340px;
+      gap: var(--space-8);
+    }
+    
+    .grid-layout-sidebar-left {
+      grid-template-columns: 340px 1fr;
+      gap: var(--space-8);
+    }
+  }
+  
+  /* Column & row spanning (tablet+) */
+  @media (min-width: 768px) {
+    .col-span-2 { grid-column: span 2; }
+    .col-span-3 { grid-column: span 3; }
+    .col-span-full { grid-column: 1 / -1; }
+    
+    .row-span-2 { grid-row: span 2; }
+    .row-span-3 { grid-row: span 3; }
   }
 }
