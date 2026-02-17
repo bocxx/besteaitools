@@ -1,0 +1,584 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
+// Sample articles for bento grid - with size variants
+const articles = [
+  {
+    title: "The Future of Personal AI: Why Local-First Matters",
+    excerpt: "As AI assistants become more capable, the question of where your data lives becomes increasingly important. We explore why running AI locally isn't just a privacy choice.",
+    category: "Deep Dive",
+    date: "Feb 17, 2026",
+    href: "#",
+    size: "lg", // 2x2
+    featured: true,
+  },
+  {
+    title: "Building Custom Integrations",
+    excerpt: "Extend your AI assistant's capabilities.",
+    category: "Tutorial",
+    date: "Feb 16, 2026",
+    href: "#",
+    size: "sm", // 1x1
+  },
+  {
+    title: "Community Spotlight",
+    excerpt: "Creative automation workflows from users.",
+    category: "Community",
+    date: "Feb 15, 2026",
+    href: "#",
+    size: "tall", // 1x2
+  },
+  {
+    title: "Understanding Context Windows in Practice",
+    excerpt: "How memory management affects your AI assistant's performance and what you can do about it.",
+    category: "Technical",
+    date: "Feb 14, 2026",
+    href: "#",
+    size: "md", // 2x1
+  },
+  {
+    title: "Privacy-First Design",
+    excerpt: "Our architecture explained.",
+    category: "Engineering",
+    date: "Feb 13, 2026",
+    href: "#",
+    size: "sm", // 1x1
+  },
+  {
+    title: "New WhatsApp Integration",
+    excerpt: "Connect with your AI via WhatsApp.",
+    category: "Features",
+    date: "Feb 12, 2026",
+    href: "#",
+    size: "sm", // 1x1
+  },
+  {
+    title: "Voice Commands: A Complete Guide to Hands-Free AI",
+    excerpt: "Master voice interactions with your personal AI assistant.",
+    category: "Guide",
+    date: "Feb 11, 2026",
+    href: "#",
+    size: "wide", // 3x1
+  },
+  {
+    title: "macOS App Beta",
+    excerpt: "Menubar companion is here.",
+    category: "Release",
+    date: "Feb 10, 2026",
+    href: "#",
+    size: "sm", // 1x1
+  },
+];
+
+// Sample top stories for sidebar
+const topStories = [
+  {
+    title: "ClawsHub 2.0 launching with enhanced memory",
+    category: "Announcement",
+    comments: 127,
+    href: "#",
+  },
+  {
+    title: "New WhatsApp integration now in beta",
+    category: "Features",
+    comments: 84,
+    href: "#",
+  },
+  {
+    title: "Community hits 50,000 active users",
+    category: "Milestone",
+    comments: 256,
+    href: "#",
+  },
+  {
+    title: "Claude 3.5 Opus support is here",
+    category: "Update",
+    comments: 93,
+    href: "#",
+  },
+  {
+    title: "Mobile companion app enters public beta",
+    category: "Release",
+    comments: 178,
+    href: "#",
+  },
+];
+
+// Popular section
+const popularArticles = [
+  {
+    title: "Getting started with voice commands",
+    href: "#",
+    views: "12.4k",
+  },
+  {
+    title: "The complete integration guide",
+    href: "#",
+    views: "8.7k",
+  },
+  {
+    title: "Tips for better AI conversations",
+    href: "#",
+    views: "6.2k",
+  },
+];
+---
+
+<Layout title="News — ClawsHub">
+  <SiteHeader />
+  
+  <main class="news-layout">
+    <div class="news-container">
+      <!-- Main Content Column -->
+      <div class="main-column">
+        <!-- Section Label -->
+        <div class="section-header">
+          <h2 class="section-label">
+            <span class="claw-accent">⟩</span> Latest Stories
+          </h2>
+        </div>
+
+        <!-- Bento Article Grid -->
+        <div class="bento bento-compact">
+          {articles.map((article) => (
+            <article class:list={[
+              "bento-item",
+              `bento-${article.size}`,
+              { "bento-featured": article.featured }
+            ]}>
+              <a href={article.href} class="bento-link">
+                <span class="bento-category">{article.category}</span>
+                <h3 class="bento-title">{article.title}</h3>
+                <p class="bento-excerpt">{article.excerpt}</p>
+                <span class="bento-date">{article.date}</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="sidebar-column">
+        <!-- Top Stories -->
+        <div class="sidebar-section top-stories">
+          <h3 class="sidebar-title">
+            <span class="title-accent"></span>
+            Top Stories
+          </h3>
+          <ol class="top-stories-list">
+            {topStories.map((story, index) => (
+              <li class="top-story-item">
+                <a href={story.href} class="top-story-link">
+                  <span class="story-number">{String(index + 1).padStart(2, '0')}</span>
+                  <div class="story-content">
+                    <span class="story-category">{story.category}</span>
+                    <h4 class="story-title">{story.title}</h4>
+                    <span class="story-comments">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      {story.comments}
+                    </span>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Popular This Week -->
+        <div class="sidebar-section popular-section">
+          <h3 class="sidebar-title">
+            <span class="title-accent"></span>
+            Popular This Week
+          </h3>
+          <ul class="popular-list">
+            {popularArticles.map((article) => (
+              <li class="popular-item">
+                <a href={article.href} class="popular-link">
+                  <span class="popular-title">{article.title}</span>
+                  <span class="popular-views">{article.views} views</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Newsletter CTA -->
+        <div class="sidebar-section newsletter-cta">
+          <h3 class="newsletter-title">Stay in the loop</h3>
+          <p class="newsletter-desc">Get the latest updates delivered to your inbox.</p>
+          <a href="/newsletter" class="newsletter-btn">Subscribe</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <SiteFooter />
+</Layout>
+
+<style>
+  /* News Layout - Verge-inspired 2-column */
+  .news-layout {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--bg-deep);
+  }
+
+  .news-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-6);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-4);
+  }
+
+  /* Main Column */
+  .main-column {
+    min-width: 0;
+  }
+
+  /* Section Header */
+  .section-header {
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .section-label {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .claw-accent {
+    color: var(--primary-bright);
+    font-weight: var(--font-bold);
+  }
+
+  /* Compact Bento Grid for sidebar layout */
+  .bento-compact {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: var(--space-3);
+  }
+
+  /* Bento item link styling */
+  .bento-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .bento-category {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--secondary-bright);
+    margin-bottom: var(--space-2);
+  }
+
+  .bento-featured .bento-category {
+    color: var(--primary-bright);
+  }
+
+  .bento-title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    line-height: var(--leading-snug);
+    margin-bottom: var(--space-2);
+    transition: color var(--transition-fast);
+  }
+
+  .bento-item:hover .bento-title {
+    color: var(--primary-bright);
+  }
+
+  /* Larger title for featured/large items */
+  .bento-lg .bento-title,
+  .bento-wide .bento-title {
+    font-size: var(--text-xl);
+  }
+
+  .bento-excerpt {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+    flex-grow: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  /* Hide excerpt on small items */
+  .bento-sm .bento-excerpt {
+    display: none;
+  }
+
+  .bento-date {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: auto;
+  }
+
+  /* Sidebar Column */
+  .sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .sidebar-section {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+  }
+
+  .sidebar-title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--primary-bright);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .title-accent {
+    width: 3px;
+    height: 14px;
+    background: var(--primary-bright);
+    border-radius: 2px;
+  }
+
+  /* Top Stories List */
+  .top-stories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .top-story-item {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .top-story-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .top-story-item:first-child {
+    padding-top: 0;
+  }
+
+  .top-story-link {
+    display: flex;
+    gap: var(--space-2);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-fast);
+  }
+
+  .top-story-link:hover {
+    opacity: 0.85;
+  }
+
+  .top-story-link:hover .story-title {
+    color: var(--primary-bright);
+  }
+
+  .story-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--primary-bright);
+    opacity: 0.6;
+    min-width: 24px;
+  }
+
+  .story-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .story-category {
+    font-size: 0.65rem;
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .story-title {
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    line-height: var(--leading-snug);
+    margin-bottom: 2px;
+    transition: color var(--transition-fast);
+  }
+
+  .story-comments {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+  }
+
+  .story-comments svg {
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+  }
+
+  /* Popular Section */
+  .popular-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .popular-item {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .popular-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .popular-item:first-child {
+    padding-top: 0;
+  }
+
+  .popular-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .popular-link:hover .popular-title {
+    color: var(--secondary-bright);
+  }
+
+  .popular-title {
+    font-size: var(--text-xs);
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+  }
+
+  .popular-views {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* Newsletter CTA */
+  .newsletter-cta {
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+    text-align: center;
+  }
+
+  .newsletter-title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .newsletter-desc {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .newsletter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2) var(--space-5);
+    background: var(--gradient-primary);
+    color: var(--text-inverse);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .newsletter-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .news-container {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .bento-compact {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sidebar-column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    .newsletter-cta {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .news-container {
+      padding: var(--space-4);
+    }
+
+    .bento-compact {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar-column {
+      grid-template-columns: 1fr;
+    }
+
+    .newsletter-cta {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bento-compact {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

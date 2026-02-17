@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import Hero from "../components/Hero.astro";
 import LatestPost from "../components/LatestPost.astro";
 import Testimonials from "../components/Testimonials.astro";
@@ -73,10 +74,11 @@ const duration2 = ((row2.length / 2) * pixelsPerItem) / pixelsPerSecond;
 ---
 
 <Layout title="ClawsHub — Personal AI Assistant">
+  <SiteHeader />
   <div class="stars"></div>
   <div class="nebula"></div>
 
-  <main class="container">
+  <main class="container" style="padding-top: 80px;">
     <Hero />
 
     {latestPost && <LatestPost latestPost={latestPost} />}
