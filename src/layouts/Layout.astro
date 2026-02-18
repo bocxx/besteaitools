@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/space-grotesk';
+import SiteHeader from '../components/SiteHeader.astro';
 
 interface Props {
   title: string;
@@ -51,6 +52,9 @@ const { title, description = "ClawsHub — In a world gripped by AI's claws." } 
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
+    <SiteHeader />
     <slot />
   </body>
 </html>
+
+

@@ -1,421 +1,154 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import Hero from "../components/Hero.astro";
-import LatestPost from "../components/LatestPost.astro";
-import Testimonials from "../components/Testimonials.astro";
-import Features from "../components/Features.astro";
-import IntegrationsPreview from "../components/IntegrationsPreview.astro";
-import PressSection from "../components/PressSection.astro";
-import CTAGrid from "../components/CTAGrid.astro";
 import Newsletter from "../components/Newsletter.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import Icon from "../components/Icon.astro";
-import testimonials from "../data/testimonials.json";
 import { getCollection } from "astro:content";
 
-// Get latest blog post
-const posts = await getCollection("blog", ({ data }) => !data.draft);
-const latestPost = posts.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-)[0];
-import {
-  siWhatsapp,
-  siTelegram,
-  siDiscord,
-  siSignal,
-  siApple,
-  siAnthropic,
-  siSpotify,
-  siObsidian,
-  siGithub,
-  siGooglechrome,
-  siGmail,
-  siX,
-  siPhilipshue,
-} from "simple-icons";
-
-const siIcon = (icon: any) => icon.path;
-
-// Integration pills with icons
-const integrationPills = [
-  { name: "WhatsApp", icon: siIcon(siWhatsapp), color: "#25D366" },
-  { name: "Telegram", icon: siIcon(siTelegram), color: "#26A5E4" },
-  { name: "Discord", icon: siIcon(siDiscord), color: "#5865F2" },
-  { name: "Slack", icon: "lucide:hash", color: "#E01E5A" },
-  { name: "Signal", icon: siIcon(siSignal), color: "#3A76F0" },
-  { name: "iMessage", icon: siIcon(siApple), color: "#007AFF" },
-  { name: "Claude", icon: siIcon(siAnthropic), color: "#D4A574" },
-  { name: "GPT", icon: "lucide:bot", color: "#00A67E" },
-  { name: "Spotify", icon: siIcon(siSpotify), color: "#1DB954" },
-  { name: "Hue", icon: siIcon(siPhilipshue), color: "#0065D3" },
-  { name: "Obsidian", icon: siIcon(siObsidian), color: "#7C3AED" },
-  { name: "Twitter", icon: siIcon(siX), color: "#FFFFFF" },
-  { name: "Browser", icon: siIcon(siGooglechrome), color: "#4285F4" },
-  { name: "Gmail", icon: siIcon(siGmail), color: "#EA4335" },
-  { name: "GitHub", icon: siIcon(siGithub), color: "#FFFFFF" },
-];
-
-// Split top 30 into two rows for carousel
-const half = Math.ceil(testimonials.length / 2);
-const topRow = testimonials.slice(0, half);
-const bottomRow = testimonials.slice(half);
-
-// Duplicate for seamless loop
-const row1 = [...topRow, ...topRow];
-const row2 = [...bottomRow, ...bottomRow];
-
-// Calculate animation duration based on content length for constant speed
-// Each card is ~336px (320px min-width + 16px gap), speed = 50px/s
-const pixelsPerItem = 336;
-const pixelsPerSecond = 50;
-const duration1 = ((row1.length / 2) * pixelsPerItem) / pixelsPerSecond;
-const duration2 = ((row2.length / 2) * pixelsPerItem) / pixelsPerSecond;
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
 ---
 
 <Layout title="ClawsHub — Personal AI Assistant">
-  <SiteHeader />
   <div class="stars"></div>
   <div class="nebula"></div>
 
-  <main class="container" style="padding-top: 80px;">
-    <Hero />
+  <main class="container container-wide" style="padding-top: 80px;">
 
-    {latestPost && <LatestPost latestPost={latestPost} />}
-
-    <Testimonials
-      topRow={row1}
-      bottomRow={row2}
-      duration1={duration1}
-      duration2={duration2}
-    />
-
-    <!-- Quick Start -->
-    <section class="quickstart">
-      <h2 class="section-title">
-        <span class="claw-accent">⟩</span> Quick Start
-      </h2>
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-dot"></span>
-          <span class="code-dot"></span>
-          <span class="code-dot"></span>
-          <div class="mode-switch">
-            <button class="mode-btn active" data-mode="oneliner"
-              >One-liner</button
-            >
-            <button class="mode-btn" data-mode="quick">npm</button>
-            <button class="mode-btn" data-mode="hackable">Hackable</button>
-            <button class="mode-btn" data-mode="macos">macOS</button>
-          </div>
-          <div class="pm-switch" id="pm-switch" style="display: none;">
-            <button class="pm-btn active" data-pm="npm">npm</button>
-            <button class="pm-btn" data-pm="pnpm">pnpm</button>
-          </div>
-          <div
-            class="hackable-switch"
-            id="hackable-switch"
-            style="display: none;"
-          >
-            <button class="hackable-btn active" data-hackable="installer"
-              >installer</button
-            >
-            <button class="hackable-btn" data-hackable="pnpm">pnpm</button>
-          </div>
-          <div class="os-indicator" id="os-indicator">
-            <span class="os-detected" id="os-detected">macOS/Linux</span>
-            <button class="os-change-btn" id="os-change-btn">change</button>
-          </div>
-          <div class="os-switch" id="os-switch" style="display: none;">
-            <button class="os-btn active" data-os="unix">macOS/Linux</button>
-            <button class="os-btn" data-os="windows">Windows</button>
-          </div>
-          <div
-            class="win-shell-switch"
-            id="win-shell-switch"
-            style="display: none;"
-          >
-            <button class="win-shell-btn active" data-shell="powershell"
-              >PowerShell</button
-            >
-            <button class="win-shell-btn" data-shell="cmd">CMD</button>
-          </div>
-          <div class="beta-switch" id="beta-switch">
-            <button class="beta-btn" id="beta-btn" data-beta="false">
-              <span class="beta-label">β</span>
-              <span class="beta-text">Beta</span>
-            </button>
-          </div>
-          <div
-            class="switch-placeholder"
-            id="switch-placeholder"
-            aria-hidden="true"
-          >
-          </div>
+    <!-- Size Reference Bento Grid -->
+    <section class="demo-section">
+      <h2 class="section-title"><span class="claw-accent">⟩</span> Size Variants</h2>
+      <p class="text-secondary mb-4">Mix and match these sizes to create dynamic layouts.</p>
+      
+      <div class="bento">
+        <div class="bento-item bento-sm">
+          <span class="size-label">.bento-sm</span>
+          <span class="size-desc">1×1</span>
         </div>
-        <div id="code-oneliner" class="code-content">
-          <div class="code-line comment" id="oneliner-comment">
-            # Works everywhere. Installs everything. You're welcome. 🦞
-          </div>
-          <div class="code-line cmd">
-            <span class="code-prompt">$</span>
-            <span class="os-cmd"
-              >curl -fsSL https://clawshub.com/install.sh | bash</span
-            >
-            <button class="copy-line-btn" data-cmd="oneliner" title="Copy">
-              <svg
-                class="copy-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                ></path></svg
-              >
-              <svg
-                class="check-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                style="display:none"
-                ><polyline points="20 6 9 17 4 12"></polyline></svg
-              >
-            </button>
-          </div>
+        <div class="bento-item bento-sm">
+          <span class="size-label">.bento-sm</span>
+          <span class="size-desc">1×1</span>
         </div>
-        <div id="code-quick" class="code-content" style="display: none;">
-          <div class="code-line comment" id="quick-comment-install">
-            # Install ClawsHub
-          </div>
-          <div class="code-line cmd">
-            <span class="code-prompt">$</span>
-            <span class="pm-install">npm i -g clawshub</span>
-            <button class="copy-line-btn" data-cmd="install" title="Copy">
-              <svg
-                class="copy-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                ></path></svg
-              >
-              <svg
-                class="check-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                style="display:none"
-                ><polyline points="20 6 9 17 4 12"></polyline></svg
-              >
-            </button>
-          </div>
-          <div class="code-line comment" id="quick-comment-onboard">
-            # Meet your lobster
-          </div>
-          <div class="code-line cmd">
-            <span class="code-prompt">$</span>
-            <span>clawshub onboard</span>
-            <button class="copy-line-btn" data-cmd="onboard" title="Copy">
-              <svg
-                class="copy-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                ></path></svg
-              >
-              <svg
-                class="check-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                style="display:none"
-                ><polyline points="20 6 9 17 4 12"></polyline></svg
-              >
-            </button>
-          </div>
+        <div class="bento-item bento-md">
+          <span class="size-label">.bento-md</span>
+          <span class="size-desc">2×1</span>
         </div>
-        <div id="code-hackable" class="code-content" style="display: none;">
-          <div id="hackable-installer-content">
-            <div class="code-line comment">
-              # For those who read source code for fun
-            </div>
-            <div class="code-line cmd">
-              <span class="code-prompt">$</span>
-              <span class="os-cmd-hackable"
-                >curl -fsSL https://clawshub.com/install.sh | bash -s --
-                --install-method git</span
-              >
-              <button
-                class="copy-line-btn"
-                data-cmd="hackable-installer"
-                title="Copy"
-              >
-                <svg
-                  class="copy-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                  ></path></svg
-                >
-                <svg
-                  class="check-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  style="display:none"
-                  ><polyline points="20 6 9 17 4 12"></polyline></svg
-                >
-              </button>
-            </div>
-          </div>
-          <div id="hackable-pnpm-content" style="display: none;">
-            <div class="code-line comment">
-              # You clearly know what you're doing
-            </div>
-            <div class="code-line cmd">
-              <span class="code-prompt">$</span>
-              <span>git clone https://github.com/clawshub/clawshub.git</span>
-              <button class="copy-line-btn" data-cmd="clone" title="Copy">
-                <svg
-                  class="copy-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                  ></path></svg
-                >
-                <svg
-                  class="check-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  style="display:none"
-                  ><polyline points="20 6 9 17 4 12"></polyline></svg
-                >
-              </button>
-            </div>
-            <div class="code-line cmd">
-              <span class="code-prompt">$</span>
-              <span>cd clawshub && pnpm install && pnpm run build</span>
-              <button class="copy-line-btn" data-cmd="build" title="Copy">
-                <svg
-                  class="copy-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                  ></path></svg
-                >
-                <svg
-                  class="check-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  style="display:none"
-                  ><polyline points="20 6 9 17 4 12"></polyline></svg
-                >
-              </button>
-            </div>
-            <div class="code-line comment"># You built it, now meet it</div>
-            <div class="code-line cmd">
-              <span class="code-prompt">$</span>
-              <span>pnpm run clawshub onboard</span>
-              <button
-                class="copy-line-btn"
-                data-cmd="hackable-onboard"
-                title="Copy"
-              >
-                <svg
-                  class="copy-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
-                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                  ></path></svg
-                >
-                <svg
-                  class="check-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  style="display:none"
-                  ><polyline points="20 6 9 17 4 12"></polyline></svg
-                >
-              </button>
-            </div>
-          </div>
+        <div class="bento-item bento-tall">
+          <span class="size-label">.bento-tall</span>
+          <span class="size-desc">1×2</span>
         </div>
-        <div id="code-macos" class="code-content" style="display: none;">
-          <div class="macos-app-content">
-            <div class="macos-description">
-              <span class="macos-tagline">Companion App (Beta)</span>
-              <span class="macos-subtitle"
-                >Menubar access to your lobster. Works great alongside the CLI.</span
-              >
-            </div>
-            <a
-              href="https://github.com/clawshub/clawshub/releases/latest"
-              class="macos-download-btn"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download for macOS
-            </a>
-            <span class="macos-meta">Requires macOS 14+ · Universal Binary</span
-            >
-          </div>
+        <div class="bento-item bento-lg">
+          <span class="size-label">.bento-lg</span>
+          <span class="size-desc">2×2</span>
+        </div>
+        <div class="bento-item bento-sm">
+          <span class="size-label">.bento-sm</span>
+          <span class="size-desc">1×1</span>
+        </div>
+        <div class="bento-item bento-wide">
+          <span class="size-label">.bento-wide</span>
+          <span class="size-desc">3×1</span>
+        </div>
+        <div class="bento-item bento-sm">
+          <span class="size-label">.bento-sm</span>
+          <span class="size-desc">1×1</span>
         </div>
       </div>
-      <p class="quickstart-note">
-        Works on macOS, Windows & Linux. The one-liner installs Node.js and
-        everything else for you.
-      </p>
     </section>
 
-    <Features />
-
-    <IntegrationsPreview pills={integrationPills} />
-
-    <PressSection />
-
-    <CTAGrid />
-
     <Newsletter />
-
     <SiteFooter />
   </main>
 </Layout>
+
+<style>
+  .demo-section {
+    margin-bottom: var(--space-16);
+  }
+
+  .mb-4 {
+    margin-bottom: var(--space-4);
+  }
+
+  /* Size Labels */
+  .size-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--primary-bright);
+    margin-bottom: var(--space-1);
+  }
+
+  .size-desc {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  /* News Cards */
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .news-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .news-card.bento-lg {
+    padding: 0;
+  }
+
+  .news-image {
+    height: 50%;
+    min-height: 120px;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    background: var(--gradient-nebula);
+  }
+
+  .news-content {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    flex: 1;
+  }
+
+  .news-tag {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--secondary-bright);
+  }
+
+  .news-card h3 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+  }
+
+  .news-card h4 {
+    font-size: var(--text-base);
+    line-height: var(--leading-snug);
+    margin-bottom: auto;
+  }
+
+  .news-card p {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  .news-meta {
+    display: flex;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: auto;
+  }
+
+  .news-card-sm {
+    gap: var(--space-2);
+  }
+</style>
