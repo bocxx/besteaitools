@@ -1,30 +1,15 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { z } from 'astro/zod';
+import { toolContentSchema } from './lib/tools-schema';
 
+/**
+ * Tools Collection
+ * JSON files in src/content/tools/ — validated by the shared toolContentSchema.
+ * Schema lives in src/lib/tools-schema.ts (single source of truth).
+ */
 const tools = defineCollection({
   loader: glob({ base: './src/content/tools', pattern: '**/*.json' }),
-  schema: z.object({
-    name: z.string(),
-    slug: z.string(),
-    category: z.enum([
-      'chatbots',
-      'coding',
-      'image',
-      'video',
-      'automation',
-      'search',
-      'audio',
-      'productivity',
-      'infrastructure',
-    ]),
-    shortDescription: z.string(),
-    websiteUrl: z.string().url(),
-    pricingModel: z.enum(['free', 'freemium', 'paid', 'enterprise']).default('freemium'),
-    difficulty: z.enum(['beginner', 'intermediate', 'advanced']).default('beginner'),
-    tags: z.array(z.string()).default([]),
-    draft: z.boolean().default(false),
-  }),
+  schema: toolContentSchema,
 });
 
 export const collections = { tools };
