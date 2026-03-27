@@ -5,206 +5,87 @@ const { name, tagline, description, navigation, footer } = siteConfig;
 
 <footer class="site-footer">
   <div class="footer-container">
-    <div class="footer-hero">
-      <div class="footer-hero-text">
-        <span>{name.toUpperCase()}</span>
-      </div>
-      <div class="footer-hero-content">
-        <h3 class="footer-tagline">{tagline}</h3>
-        <p class="footer-description">{description}</p>
-      </div>
-    </div>
-
-    <div class="footer-grid">
-      {Object.entries(navigation.footer).map(([section, items]) => (
-        <div class="footer-col">
-          <h4>{section}</h4>
-          <ul>
-            {items.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener" : undefined}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-
-    <div class="footer-bottom">
-      <p class="footer-credits">
-        Gemaakt door <a href={footer.madeBy.url} target="_blank" rel="noopener">{footer.madeBy.name}</a>.
-      </p>
-      <p class="footer-disclaimer">{footer.disclaimer}</p>
-      <p class="footer-copyright">
-        &copy; {new Date().getFullYear()} {name}. All rights reserved.
-      </p>
+    <div class="footer-row">
+      <span class="footer-brand">{name}</span>
+      <nav class="footer-links">
+        {Object.values(navigation.footer).flat().map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+        <a href="/weekradar">Weekradar</a>
+      </nav>
+      <span class="footer-meta">
+        &copy; {new Date().getFullYear()} · <a href={footer.madeBy.url} target="_blank" rel="noopener">{footer.madeBy.name}</a>
+      </span>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    margin-top: var(--space-8, 4rem);
-    padding: var(--space-8, 4rem) 0 var(--space-6, 2rem);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: var(--space-8);
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--border-subtle);
   }
 
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-4, 1rem);
+    padding: 0 var(--space-4);
   }
 
-  .footer-hero {
-    position: relative;
-    padding: var(--space-10, 2.5rem) 0;
-    margin-bottom: var(--space-8, 4rem);
-  }
-
-  .footer-hero-text {
-    margin-bottom: var(--space-4, 1rem);
-  }
-
-  .footer-hero-text span {
-    font-size: clamp(2.5rem, 10vw, 6rem);
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    opacity: 0.06;
-    color: var(--coral-bright, #ff6b6b);
-  }
-
-  .footer-hero-content {
-    max-width: 500px;
-  }
-
-  .footer-tagline {
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--coral-bright, #ff6b6b);
-    margin-bottom: var(--space-2, 0.5rem);
-    text-transform: capitalize;
-  }
-
-  .footer-description {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    line-height: 1.6;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--space-6, 2rem);
-    margin-bottom: var(--space-8, 4rem);
-  }
-
-  .footer-col h4 {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: var(--space-3, 1rem);
-    color: var(--coral-bright, #ff6b6b);
-  }
-
-  .footer-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-col li {
-    margin-bottom: var(--space-2, 0.5rem);
-  }
-
-  .footer-col a {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .footer-col a:hover {
-    color: var(--cyan-bright, #4ecdc4);
-  }
-
-  /* Footer Bottom */
-  .footer-bottom {
-    padding-top: var(--space-6, 2rem);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-  }
-
-  .footer-logo {
+  .footer-row {
     display: flex;
-    justify-content: center;
-    margin-bottom: var(--space-4, 1rem);
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
   }
 
-  .footer-logo svg {
-    width: 48px;
-    height: 48px;
-    color: var(--cyan-bright, #4ecdc4);
-    opacity: 0.6;
-    transition: opacity 0.2s ease, color 0.2s ease;
+  .footer-brand {
+    font-family: var(--font-logo);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-muted);
   }
 
-  .footer-logo svg:hover {
-    opacity: 1;
-    color: var(--coral-bright, #ff6b6b);
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
   }
 
-  .footer-credits {
-    font-size: 0.9rem;
-    margin-bottom: var(--space-2, 0.5rem);
-  }
-
-  .footer-credits a {
-    color: var(--cyan-bright, #4ecdc4);
+  .footer-links a {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
     text-decoration: none;
+    transition: color var(--transition-fast);
   }
 
-  .footer-credits a:hover {
-    text-decoration: underline;
+  .footer-links a:hover {
+    color: var(--text-primary);
   }
 
-  .footer-disclaimer {
-    font-size: 0.8rem;
-    opacity: 0.5;
-    margin-bottom: var(--space-2, 0.5rem);
+  .footer-meta {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
   }
 
-  .footer-copyright {
-    font-size: 0.75rem;
-    opacity: 0.4;
+  .footer-meta a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .footer-hero {
-      padding: var(--space-8, 4rem) 0;
-    }
+  .footer-meta a:hover {
+    color: var(--primary-bright);
+  }
 
-    .pulse-image {
-      opacity: 0.15;
-      width: 70%;
-      max-width: 350px;
-    }
-
-    .footer-hero-text span {
-      font-size: clamp(2rem, 12vw, 3.5rem);
-    }
-
-    .footer-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4, 1rem);
+  @media (max-width: 640px) {
+    .footer-row {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-2);
     }
   }
 </style>

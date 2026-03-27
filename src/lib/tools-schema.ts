@@ -110,7 +110,6 @@ export function buzzScoreLabel(score: number): string {
 /** Zod schema for tool JSON files in src/content/tools/ */
 export const toolContentSchema = z.object({
   name: z.string(),
-  slug: z.string(),
   category: toolCategorySchema,
   websiteUrl: z.string().url(),
   shortDescription: z.string(),

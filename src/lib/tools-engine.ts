@@ -67,6 +67,14 @@ export async function getRadarData(): Promise<ToolsRadarData | null> {
 // CONTENT + STATS MERGE
 // ============================================
 
+/**
+ * Normalize a hyphenated slug to the space-separated format
+ * used by newsflux stats (e.g. "claude-code" → "claude code").
+ */
+function toStatsSlug(slug: string): string {
+  return slug.replace(/-/g, ' ');
+}
+
 /** Get all tools with stats merged in */
 export async function getAllTools(): Promise<Tool[]> {
   const [contentEntries, statsMap] = await Promise.all([
@@ -76,7 +84,8 @@ export async function getAllTools(): Promise<Tool[]> {
 
   return contentEntries.map((entry) => ({
     ...entry.data,
-    stats: statsMap.get(entry.data.slug),
+    slug: entry.id,
+    stats: statsMap.get(entry.id) ?? statsMap.get(toStatsSlug(entry.id)),
   }));
 }
 
@@ -118,6 +127,167 @@ export async function getRisingTools(limit?: number): Promise<Tool[]> {
 export async function getToolsByPricing(model: string): Promise<Tool[]> {
   const tools = await getAllTools();
   return tools.filter((t) => t.pricingModel === model);
+}
+
+/** Get tools filtered by trend phase */
+export async function getToolsByPhase(phase: string): Promise<Tool[]> {
+  const tools = await getAllTools();
+  return tools.filter((t) => t.stats?.phase === phase);
+}
+
+// ============================================
+// SECTIONED QUERIES (based on radar sections)
+// ============================================
+
+export interface RadarSections {
+  meestBesproken: Tool[];
+  stijgers: Tool[];
+  nieuw: Tool[];
+  githubHot: Tool[];
+  productHuntHot: Tool[];
+}
+
+/** Get pre-computed radar sections resolved to full Tool objects */
+export async function getSectionedTools(): Promise<RadarSections> {
+  const [tools, radar] = await Promise.all([getAllTools(), getRadarData()]);
+  const sections = radar?.sections;
+
+  // Stats slugs may use spaces; tool slugs use hyphens — normalize both sides
+  const resolve = (slugs: string[] = []): Tool[] =>
+    slugs
+      .map((s) => tools.find((t) => t.slug === s || t.slug === s.replace(/\s+/g, '-')))
+      .filter((t): t is Tool => !!t);
+
+  return {
+    meestBesproken: resolve(sections?.meest_besproken),
+    stijgers: resolve(sections?.stijgers).sort(
+      (a, b) => (b.stats?.velocity ?? 0) - (a.stats?.velocity ?? 0),
+    ),
+    nieuw: resolve(sections?.nieuw),
+    githubHot: resolve(sections?.github_hot),
+    productHuntHot: resolve(sections?.product_hunt_hot),
+  };
+}
+
+// ============================================
+// COMPARISON PAIRS
+// ============================================
+
+export interface ComparisonPair {
+  slugA: string;
+  slugB: string;
+  /** URL-safe slug: "claude-vs-chatgpt" */
+  comparisonSlug: string;
+  toolA: Tool;
+  toolB: Tool;
+}
+
+/** Generate comparison pairs for the most relevant tool matchups */
+export async function getComparisonPairs(): Promise<ComparisonPair[]> {
+  const tools = await getAllTools();
+  const withStats = tools
+    .filter((t) => t.stats)
+    .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+
+  const top20 = withStats.slice(0, 20);
+  const pairs = new Map<string, ComparisonPair>();
+
+  function addPair(a: Tool, b: Tool) {
+    // Alphabetical order for consistent slugs
+    const [first, second] = a.slug < b.slug ? [a, b] : [b, a];
+    const key = `${first.slug}-vs-${second.slug}`;
+    if (!pairs.has(key)) {
+      pairs.set(key, {
+        slugA: first.slug,
+        slugB: second.slug,
+        comparisonSlug: key,
+        toolA: first,
+        toolB: second,
+      });
+    }
+  }
+
+  // Same-category pairs within top 20
+  for (let i = 0; i < top20.length; i++) {
+    for (let j = i + 1; j < top20.length; j++) {
+      if (top20[i].category === top20[j].category) {
+        addPair(top20[i], top20[j]);
+      }
+    }
+  }
+
+  // Cross-category pairs for top 10
+  const top10 = top20.slice(0, 10);
+  for (let i = 0; i < top10.length; i++) {
+    for (let j = i + 1; j < top10.length; j++) {
+      addPair(top10[i], top10[j]);
+    }
+  }
+
+  return Array.from(pairs.values());
+}
+
+// ============================================
+// WEEKLY HIGHLIGHTS
+// ============================================
+
+export interface WeeklyHighlights {
+  weekLabel: string;
+  generatedAt: string;
+  toolVanDeWeek: Tool | null;
+  stijgers: Tool[];
+  dalers: Tool[];
+  nieuwkomers: Tool[];
+  totalTools: number;
+}
+
+/** Compute weekly highlights from current radar data */
+export async function getWeeklyHighlights(): Promise<WeeklyHighlights> {
+  const [tools, radar, sections] = await Promise.all([
+    getAllTools(),
+    getRadarData(),
+    getSectionedTools(),
+  ]);
+
+  const genDate = radar?.generated_at ? new Date(radar.generated_at) : new Date();
+  // ISO week number
+  const oneJan = new Date(genDate.getFullYear(), 0, 1);
+  const weekNum = Math.ceil(((genDate.getTime() - oneJan.getTime()) / 86400000 + oneJan.getDay() + 1) / 7);
+  const weekLabel = `${genDate.getFullYear()}-w${String(weekNum).padStart(2, '0')}`;
+
+  const withStats = tools.filter((t) => t.stats);
+
+  // Stijgers: top 5 by velocity
+  const stijgers = [...withStats]
+    .filter((t) => t.stats!.velocity > 0)
+    .sort((a, b) => (b.stats?.velocity ?? 0) - (a.stats?.velocity ?? 0))
+    .slice(0, 5);
+
+  // Dalers: bottom 5 by velocity (negative)
+  const dalers = [...withStats]
+    .filter((t) => t.stats!.velocity < -0.1)
+    .sort((a, b) => (a.stats?.velocity ?? 0) - (b.stats?.velocity ?? 0))
+    .slice(0, 5);
+
+  // Tool van de week: highest buzz × positive velocity
+  const candidates = withStats.filter((t) => t.stats!.velocity > 0);
+  const toolVanDeWeek = candidates.length > 0
+    ? candidates.sort((a, b) => {
+        const scoreA = (a.stats?.buzz_score ?? 0) * Math.log2(2 + (a.stats?.velocity ?? 0));
+        const scoreB = (b.stats?.buzz_score ?? 0) * Math.log2(2 + (b.stats?.velocity ?? 0));
+        return scoreB - scoreA;
+      })[0]
+    : null;
+
+  return {
+    weekLabel,
+    generatedAt: radar?.generated_at ?? new Date().toISOString(),
+    toolVanDeWeek,
+    stijgers,
+    dalers,
+    nieuwkomers: sections.nieuw.slice(0, 5),
+    totalTools: tools.length,
+  };
 }
 
 // ============================================

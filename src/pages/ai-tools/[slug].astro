@@ -8,19 +8,22 @@ import Layout from '../../layouts/Layout.astro';
 import Badge from '../../components/atoms/Badge.astro';
 import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
-import { getAllTools } from '../../lib/tools-engine';
+import { getAllTools, getComparisonPairs } from '../../lib/tools-engine';
 import { toolCategories, trendDirections, pricingModels, difficultyLevels } from '../../lib/tools-schema';
-import { ExternalLink, ArrowLeft, Globe, Tag } from '@lucide/astro';
+import { ExternalLink, ArrowLeft, Globe, Tag, Star } from '@lucide/astro';
 
 export async function getStaticPaths() {
-  const tools = await getAllTools();
-  return tools.map((tool) => ({
-    params: { slug: tool.slug },
-    props: { tool },
-  }));
+  const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
+  return tools.map((tool) => {
+    const toolPairs = pairs.filter(p => p.slugA === tool.slug || p.slugB === tool.slug);
+    return {
+      params: { slug: tool.slug },
+      props: { tool, comparisons: toolPairs },
+    };
+  });
 }
 
-const { tool } = Astro.props;
+const { tool, comparisons } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
@@ -52,13 +55,13 @@ function sourceLabel(s: string): string {
 }
 ---
 
-<Layout title={`${tool.name} — AI Tools Radar`} description={tool.shortDescription}>
+<Layout title={`${tool.name} — besteaitools.nl`} description={tool.shortDescription}>
   <main class="container" style="padding-top: 80px; max-width: 860px;">
 
     <!-- Back link -->
-    <a href="/ai-tools" class="back-link">
+    <a href="/" class="back-link">
       <ArrowLeft size={16} strokeWidth={1.5} />
-      Terug naar AI Tools
+      Terug naar overzicht
     </a>
 
     <!-- Tool header -->
@@ -82,66 +85,32 @@ function sourceLabel(s: string): string {
       </div>
     </header>
 
-    <!-- Stats panel (if available) -->
+    <!-- Stats strip -->
     {stats && (
-      <section class="stats-panel">
-        <div class="stats-panel__header">
-          <h2>Live Stats</h2>
+      <section class="stats-strip">
+        <div class="stats-strip__row">
+          <div class="stats-strip__item">
+            <ScoreMeter score={stats.buzz_score} />
+          </div>
+          <PhaseBadge phase={stats.phase} size="md" />
           {dir && (
             <span class="trend-dir" style={`color: ${dir.color}`}>
               {dir.label} {stats.velocity > 0 ? '+' : ''}{stats.velocity.toFixed(1)}/dag
             </span>
           )}
-        </div>
-
-        <div class="stats-grid">
-          <div class="stats-grid__item">
-            <span class="stats-grid__label">Buzz Score</span>
-            <ScoreMeter score={stats.buzz_score} />
-          </div>
-          <div class="stats-grid__item">
-            <span class="stats-grid__label">Fase</span>
-            <PhaseBadge phase={stats.phase} size="md" />
-          </div>
-          <div class="stats-grid__item">
-            <span class="stats-grid__label">Mentions</span>
-            <span class="stats-grid__value">{stats.mentions.toLocaleString('nl-NL')}</span>
-          </div>
-          <div class="stats-grid__item">
-            <span class="stats-grid__label">Bronnen</span>
-            <span class="stats-grid__value">{stats.source_count}</span>
-          </div>
           {stats.github_stars > 0 && (
-            <div class="stats-grid__item">
-              <span class="stats-grid__label">GitHub Stars</span>
-              <span class="stats-grid__value">{stats.github_stars.toLocaleString('nl-NL')}</span>
-            </div>
-          )}
-          {stats.reddit_posts > 0 && (
-            <div class="stats-grid__item">
-              <span class="stats-grid__label">Reddit Posts</span>
-              <span class="stats-grid__value">{stats.reddit_posts}</span>
-            </div>
+            <span class="github-stars">
+              <Star size={14} strokeWidth={1.5} />
+              {stats.github_stars.toLocaleString('nl-NL')}
+            </span>
           )}
         </div>
 
-        <!-- Sparkline -->
+        {/* Sparkline */}
         {sparkline && (
           <div class="sparkline-container">
             <span class="sparkline-label">Mentions (14 dagen)</span>
             <Fragment set:html={sparkline} />
-          </div>
-        )}
-
-        <!-- Source breakdown -->
-        {stats.sources.length > 0 && (
-          <div class="source-breakdown">
-            <span class="source-breakdown__label">Gevonden in:</span>
-            <div class="source-tags">
-              {stats.sources.map(s => (
-                <span class="source-tag">{sourceLabel(s)}</span>
-              ))}
-            </div>
           </div>
         )}
       </section>
@@ -203,6 +172,24 @@ function sourceLabel(s: string): string {
       </div>
     )}
 
+    <!-- Vergelijk met -->
+    {comparisons && comparisons.length > 0 && (
+      <section class="compare-links">
+        <h3>Vergelijk {tool.name} met</h3>
+        <div class="compare-links__grid">
+          {comparisons.map(pair => {
+            const other = pair.slugA === tool.slug ? pair.toolB : pair.toolA;
+            return (
+              <a href={`/vergelijk/${pair.comparisonSlug}`} class="compare-link">
+                <Badge variant="category" color={toolCategories[other.category].color} size="sm">{toolCategories[other.category].name}</Badge>
+                {other.name}
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
     <!-- Source articles -->
     {stats?.source_articles && stats.source_articles.length > 0 && (
       <section class="articles-panel">
@@ -211,7 +198,8 @@ function sourceLabel(s: string): string {
           {stats.source_articles.map(a => (
             <li>
               <a href={a.url} target="_blank" rel="noopener">
-                {a.title}
+                <span class="article-title">{a.title_nl || a.title}</span>
+                {a.summary_nl && <span class="article-summary">{a.summary_nl}</span>}
                 <span class="article-source">{a.source}</span>
               </a>
             </li>
@@ -238,30 +226,30 @@ function sourceLabel(s: string): string {
 
   /* Header */
   .tool-header {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
   }
 
   .tool-header__badges {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
   }
 
   .tool-name {
     font-family: var(--font-display);
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
     font-weight: var(--font-bold);
     letter-spacing: var(--tracking-tight);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
   }
 
   .tool-desc {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
     max-width: 640px;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
   }
 
   .tool-link {
@@ -281,26 +269,26 @@ function sourceLabel(s: string): string {
     border-color: var(--primary-bright);
   }
 
-  /* Stats panel */
-  .stats-panel {
+  /* Stats strip */
+  .stats-strip {
     background: var(--bg-glass);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    padding: var(--space-6);
-    margin-bottom: var(--space-6);
-  }
-
-  .stats-panel__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-5);
     margin-bottom: var(--space-5);
   }
 
-  .stats-panel__header h2 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
+  .stats-strip__row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .stats-strip__item {
+    flex: 1;
+    min-width: 120px;
   }
 
   .trend-dir {
@@ -309,44 +297,29 @@ function sourceLabel(s: string): string {
     font-variant-numeric: tabular-nums;
   }
 
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: var(--space-4);
-    margin-bottom: var(--space-5);
-  }
-
-  .stats-grid__item {
-    display: flex;
-    flex-direction: column;
+  .github-stars {
+    display: inline-flex;
+    align-items: center;
     gap: var(--space-1);
-  }
-
-  .stats-grid__label {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
-  }
-
-  .stats-grid__value {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-bold);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--primary-bright);
     font-variant-numeric: tabular-nums;
+    margin-left: auto;
   }
 
   /* Sparkline */
   .sparkline-container {
-    padding-top: var(--space-4);
+    padding-top: var(--space-3);
     border-top: 1px solid var(--border-subtle);
-    margin-bottom: var(--space-4);
+    margin-top: var(--space-3);
   }
 
   .sparkline-label {
     display: block;
     font-size: var(--text-xs);
     color: var(--text-muted);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
   }
 
   :global(.sparkline) {
@@ -361,45 +334,18 @@ function sourceLabel(s: string): string {
     stroke-linejoin: round;
   }
 
-  /* Source breakdown */
-  .source-breakdown {
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .source-breakdown__label {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    display: block;
-    margin-bottom: var(--space-2);
-  }
-
-  .source-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-1);
-  }
-
-  .source-tag {
-    padding: var(--space-0-5) var(--space-2);
-    border-radius: var(--radius-sm);
-    background: color-mix(in oklch, var(--text-primary) 6%, transparent);
-    font-size: var(--text-xs);
-    color: var(--text-secondary);
-  }
-
   /* Enrichment */
   .enrichment-panel {
     background: var(--bg-glass);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    padding: var(--space-6);
-    margin-bottom: var(--space-6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
   }
 
   .enrichment-block {
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
   }
   .enrichment-block:last-child { margin-bottom: 0; }
 
@@ -437,6 +383,40 @@ function sourceLabel(s: string): string {
   .pros li::before { content: '✓'; color: var(--color-success); }
   .cons li::before { content: '✕'; color: var(--color-error); }
 
+  /* Compare links */
+  .compare-links {
+    margin-bottom: var(--space-5);
+  }
+
+  .compare-links h3 {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .compare-links__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .compare-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1-5) var(--space-3);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    transition: all var(--transition-fast);
+  }
+  .compare-link:hover {
+    border-color: var(--primary-bright);
+    color: var(--text-primary);
+  }
+
   /* Tags */
   .tag-row {
     display: flex;
@@ -468,8 +448,8 @@ function sourceLabel(s: string): string {
 
   .articles-list a {
     display: flex;
-    align-items: baseline;
-    gap: var(--space-2);
+    flex-direction: column;
+    gap: var(--space-0-5);
     color: var(--text-secondary);
     text-decoration: none;
     font-size: var(--text-sm);
@@ -480,13 +460,24 @@ function sourceLabel(s: string): string {
 
   .articles-list a:hover {
     background: color-mix(in oklch, var(--text-primary) 4%, transparent);
+  }
+
+  .articles-list a:hover .article-title {
     color: var(--text-primary);
+  }
+
+  .article-title {
+    line-height: var(--leading-snug);
+  }
+
+  .article-summary {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    line-height: var(--leading-relaxed);
   }
 
   .article-source {
     font-size: var(--text-xs);
     color: var(--text-muted);
-    margin-left: auto;
-    white-space: nowrap;
   }
 </style>

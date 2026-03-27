@@ -13,7 +13,7 @@ export async function GET(context: APIContext) {
     items: tools.map((tool) => ({
       title: tool.data.name,
       description: tool.data.shortDescription,
-      link: `/ai-tools/${tool.data.slug}`,
+      link: `/ai-tools/${tool.id}`,
       categories: [getCategoryName(tool.data.category)],
     })),
     customData: '<language>nl</language>',

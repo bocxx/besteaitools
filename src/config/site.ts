@@ -9,16 +9,16 @@ export const siteConfig = {
   // ============================================
   // SITE IDENTITY
   // ============================================
-  name: "nuchter.ai",
-  tagline: "Nuchter over AI",
-  description: "De nuchtere gids voor AI-tools, trends en routes. Geen hype, wel duidelijke keuzes.",
-  url: "https://nuchter.ai",
+  name: "besteaitools.nl",
+  tagline: "De beste AI-tools op een rij",
+  description: "Ontdek de beste AI-tools — realtime gerankt op buzz, groei en mentions. Van ChatGPT tot niche coding assistants.",
+  url: "https://besteaitools.nl",
   
   // ============================================
   // BRANDING
   // ============================================
   logo: {
-    text: "nuchter.ai",
+    text: "besteaitools.nl",
   },
   
   // ============================================
@@ -26,7 +26,7 @@ export const siteConfig = {
   // ============================================
   navigation: {
     main: [
-      { label: "AI Tools", href: "/ai-tools" },
+      { label: "Weekradar", href: "/weekradar" },
     ],
     footer: {
       platform: [

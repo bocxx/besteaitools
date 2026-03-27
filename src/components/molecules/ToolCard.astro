@@ -4,27 +4,39 @@
  * Designed for the /ai-tools grid. Links to detail page.
  */
 import Badge from '../atoms/Badge.astro';
-import PhaseBadge from '../atoms/PhaseBadge.astro';
 import ScoreMeter from '../atoms/ScoreMeter.astro';
 import { toolCategories, trendDirections } from '../../lib/tools-schema';
 import type { Tool } from '../../types/tools-domain';
-import { ExternalLink } from '@lucide/astro';
+import { ExternalLink, Flame, TrendingUp, Zap, ShieldCheck } from '@lucide/astro';
 
 interface Props {
   tool: Tool;
+  isTopTool?: boolean;
+  isStijger?: boolean;
 }
 
-const { tool } = Astro.props;
+const { tool, isTopTool = false, isStijger = false } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
+
+// Phase accent: hype (accelerating/peaking) or blijver (sustained)
+const hypePhases = new Set(['accelerating', 'peaking']);
+const isHype = stats ? hypePhases.has(stats.phase) : false;
+const isBlijver = stats?.phase === 'sustained';
 ---
 
-<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category}>
+<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-phase={stats?.phase ?? ''} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()}>
   <div class="tool-card__inner">
     <!-- Header row: category + trend direction -->
     <header class="tool-card__header">
-      <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
+      <div class="tool-card__badges">
+        <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
+        {isTopTool && <span class="tool-card__signal tool-card__signal--top" title="Meest besproken"><Flame size={12} strokeWidth={2} /></span>}
+        {isStijger && <span class="tool-card__signal tool-card__signal--stijger" title="Snelle stijger"><TrendingUp size={12} strokeWidth={2} /></span>}
+        {isHype && <span class="tool-card__signal tool-card__signal--hype" title="Hype / Piek"><Zap size={12} strokeWidth={2} /></span>}
+        {isBlijver && <span class="tool-card__signal tool-card__signal--blijver" title="Bewezen blijver"><ShieldCheck size={12} strokeWidth={2} /></span>}
+      </div>
       {stats && dir && (
         <span class="trend-arrow" style={`color: ${dir.color}`} aria-label={dir.ariaLabel}>
           {dir.label} {stats.velocity > 0 ? `+${stats.velocity.toFixed(1)}` : stats.velocity.toFixed(1)}/d
@@ -36,11 +48,10 @@ const dir = stats ? trendDirections[stats.trend_direction] : null;
     <h3 class="tool-card__name">{tool.name}</h3>
     <p class="tool-card__desc">{tool.shortDescription}</p>
 
-    <!-- Stats row -->
+    <!-- Buzz score -->
     {stats && (
       <div class="tool-card__stats">
         <ScoreMeter score={stats.buzz_score} showLabel={false} />
-        <PhaseBadge phase={stats.phase} />
       </div>
     )}
 
@@ -84,11 +95,10 @@ const dir = stats ? trendDirections[stats.trend_direction] : null;
   }
 
   .tool-card__inner {
-    padding: var(--space-5);
+    padding: var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    min-height: 200px;
+    gap: var(--space-2);
   }
 
   .tool-card__header {
@@ -98,6 +108,24 @@ const dir = stats ? trendDirections[stats.trend_direction] : null;
     gap: var(--space-2);
   }
 
+  .tool-card__badges {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .tool-card__signal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tool-card__signal--top { color: var(--color-error); }
+  .tool-card__signal--stijger { color: var(--color-info); }
+  .tool-card__signal--hype { color: var(--color-warning); }
+  .tool-card__signal--blijver { color: var(--color-success); }
+
   .trend-arrow {
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
@@ -106,7 +134,7 @@ const dir = stats ? trendDirections[stats.trend_direction] : null;
   }
 
   .tool-card__name {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: var(--font-bold);
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tight);
@@ -136,8 +164,9 @@ const dir = stats ? trendDirections[stats.trend_direction] : null;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: var(--space-2);
+    padding-top: var(--space-1-5);
     border-top: 1px solid var(--border-subtle);
+    margin-top: auto;
   }
 
   .tool-card__meta {
