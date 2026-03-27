@@ -1,0 +1,76 @@
+---
+/**
+ * ScoreMeter — visual buzz score indicator (0–100).
+ * Shows a filled bar + numeric value with hot/warm/cool coloring.
+ */
+import { buzzScoreClass, buzzScoreLabel } from '../../lib/tools-schema';
+
+interface Props {
+  score: number;
+  showLabel?: boolean;
+}
+
+const { score, showLabel = true } = Astro.props;
+const tier = buzzScoreClass(score);
+const label = buzzScoreLabel(score);
+---
+
+<div class:list={['score-meter', `score-meter--${tier}`]} title={`Buzz Score: ${score}/100 (${label})`}>
+  <div class="score-bar">
+    <div class="score-fill" style={`width: ${Math.min(score, 100)}%`}></div>
+  </div>
+  <span class="score-value">{score}</span>
+  {showLabel && <span class="score-label">{label}</span>}
+</div>
+
+<style>
+  .score-meter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .score-bar {
+    flex: 1;
+    height: 4px;
+    min-width: 48px;
+    background: var(--border-subtle);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  .score-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+  }
+
+  .score-value {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    font-variant-numeric: tabular-nums;
+    min-width: 1.8em;
+    text-align: right;
+  }
+
+  .score-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* Hot (70+) */
+  .score-meter--hot .score-fill { background: var(--color-error); }
+  .score-meter--hot .score-value { color: var(--color-error); }
+  .score-meter--hot .score-label { color: var(--color-error); }
+
+  /* Warm (40–69) */
+  .score-meter--warm .score-fill { background: var(--color-warning); }
+  .score-meter--warm .score-value { color: var(--color-warning); }
+  .score-meter--warm .score-label { color: var(--color-warning); }
+
+  /* Cool (1–39) */
+  .score-meter--cool .score-fill { background: var(--text-muted); }
+  .score-meter--cool .score-value { color: var(--text-secondary); }
+  .score-meter--cool .score-label { color: var(--text-muted); }
+</style>

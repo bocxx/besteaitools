@@ -1,0 +1,45 @@
+---
+/**
+ * PhaseBadge — displays a trend lifecycle phase as a colored badge.
+ * Uses tools-schema.ts as single source of truth for labels and colors.
+ */
+import { trendPhases } from '../../lib/tools-schema';
+import type { TrendPhase } from '../../types/tools-domain';
+
+interface Props {
+  phase: TrendPhase;
+  size?: 'sm' | 'md';
+}
+
+const { phase, size = 'sm' } = Astro.props;
+const meta = trendPhases[phase] ?? trendPhases.emerging;
+---
+
+<span
+  class:list={['phase-badge', `phase-badge--${size}`]}
+  style={`--phase-color: ${meta.color}`}
+>
+  {meta.label}
+</span>
+
+<style>
+  .phase-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-0-5) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--phase-color);
+    background: color-mix(in oklch, var(--phase-color) 12%, transparent);
+    border: 1px solid color-mix(in oklch, var(--phase-color) 25%, transparent);
+    white-space: nowrap;
+  }
+
+  .phase-badge--md {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-sm);
+  }
+</style>
