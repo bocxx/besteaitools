@@ -4,80 +4,42 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-OpenClaw landing page — a static Astro 5 site for showcasing the OpenClaw AI assistant product. Features a dark theme with coral/cyan accent colors, testimonial carousels, showcase grid, and blog.
+`nuchter.ai` is a lightweight Astro site that is being transformed into a reusable foundation for AI tool directories, AI landing pages, and future “nuchter AI kompas” products. The current repo should stay generic and reusable, with the existing dark design system preserved.
 
 ## Commands
 
 ```bash
-npm run dev       # Start dev server (localhost:4321)
-npm run build     # Build static site to dist/
-npm run preview   # Preview production build
+npm run dev
+npm run build
+npm run preview
 ```
 
 ## Architecture
 
-### Core Structure
+### Core structure
 
-- `src/layouts/Layout.astro` — Base HTML template with meta tags, fonts (Clash Display + Satoshi from Fontshare), and CSS imports
-- `src/pages/` — Astro pages (index, blog, showcase, shoutouts, integrations)
-- `src/components/Icon.astro` — Wrapper for lucide icons and simple-icons SVG paths
-- `src/content/blog/` — Markdown blog posts using Astro content collections
-- `src/content/config.ts` — Blog collection schema (title, description, date, author, authorHandle, draft, tags, image)
+- `src/layouts/Layout.astro` — base HTML shell, metadata, fonts, shared header/footer
+- `src/pages/index.astro` — current generic landing page
+- `src/components/atoms/`, `molecules/`, `layout/` — reusable component layers
+- `src/config/site.ts` — central identity, navigation, social, and footer config
+- `src/config/categories.ts` — tool category definitions
+- `src/content.config.ts` — Astro collection config for future tool content
 
-### Design System (`src/styles/`)
+### Design system
 
-- `theme.css` — Design tokens: colors, typography, spacing, shadows, transitions. Colors use `--color-primary-*` (violet) and `--color-secondary-*` (lime) naming, with legacy aliases `--coral-*` and `--cyan-*` in Layout.astro
-- `components.css` — Reusable component classes (`.btn`, `.card`, `.grid`, etc.)
-- `openclaw-components.css` — Project-specific component overrides
+Keep the current visual system intact:
+- existing dark palette
+- current token names and gradients
+- current spacing, typography, border radius, and glassmorphism patterns
 
-### Data Files (`src/data/`)
+Do not “refresh” the colors unless explicitly requested.
 
-**Important**: JSON order is rendered directly — the code does NOT re-sort. Maintain ordering in the files.
+### Current direction
 
-#### `showcase.json`
-- "What People Are Building" page content
-- **Pre-sorted into uniform row groups** for consistent CSS grid heights:
-  - SHORT rows (<200 chars)
-  - MED rows (200-400 chars)  
-  - LONG rows (>400 chars)
-- Fields: `id`, `author`, `quote`, `category`, `likes`, `images?` (array of URLs)
+This repo is being prepared for:
+- AI tools landing pages
+- tool/category overviews
+- future stats integration from external pipelines
+- reusable white-label or multi-brand AI landing structures
 
-#### `testimonials.json`
-- Short praise quotes for homepage carousel and shoutouts page
-- Sorted by quote length (longest/most detailed first)
-- Deduplicated by author (keep longest quote)
-- Backup: `testimonials-backup.json` contains removed entries
-
-#### `testimonials-extra.json`
-- Additional testimonials shown only on `/shoutouts` page
-
-### Adding New Testimonials/Showcase Items
-
-1. Use `bird read <tweet_id>` to fetch tweet content and like count
-2. "Building" tweets with projects/workflows → `showcase.json`
-3. "Praise" tweets (short reactions) → `testimonials.json`
-4. Re-sort after batch additions following the grouping rules above
-
-### Showcase sorting pattern
-
-```js
-// Group by size for uniform row heights
-const longs = sorted.filter(t => t.quote.length > 400);
-const meds = sorted.filter(t => t.quote.length > 200 && t.quote.length <= 400);
-const shorts = sorted.filter(t => t.quote.length <= 200);
-// Alternate: 3 shorts, 3 meds, 3 longs, repeat
-// Keep high-engagement items near top within each category
-```
-
-### Icons
-
-Uses two icon systems:
-- `simple-icons` — Brand icons (siWhatsapp, siTelegram, etc.) accessed via `.path` property
-- `@lucide/astro` — UI icons via `<Icon icon="lucide:icon-name" />`
-
-### Site Configuration
-
-`astro.config.mjs`:
-- Static output mode
-- Site URL: `https://clawd.bot`
-- Assets output to `assets/` directory
+Prefer generic naming and reusable abstractions over brand-locked page structures.

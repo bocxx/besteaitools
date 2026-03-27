@@ -1,5 +1,5 @@
 /**
- * ClawsHub Design System
+ * nuchter.ai Design System
  * Main entry point for all CSS
  * 
  * Architecture:
@@ -7,11 +7,8 @@
  * - Animations: Keyframes and animation utilities
  * - Base: Resets, global styles, and defaults
  * - Components: Reusable UI components
- * - Specialized: ClawsHub-specific components
+ * - Specialized: Platform-specific components
  * - Utilities: Helper classes and atmospherics
- * 
- * @version 2.0.0
- * @author ClawsHub Team
  */
 
 /* ============================================
@@ -38,8 +35,8 @@
 /* 4. Component Library */
 @import url('./03-components.css');
 
-/* 5. Specialized Components */
-@import url('./04-claws-specialized.css');
+/* 5. Platform Components */
+@import url('./04-platform.css');
 
 /* 6. Utilities & Atmospherics */
 @import url('./05-utilities.css');

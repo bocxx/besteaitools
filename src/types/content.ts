@@ -1,79 +1,9 @@
 /**
- * Content type definitions and validation schemas
+ * Shared UI and content types
  * 
- * This file provides type-safe interfaces for all content types
- * and runtime validation using Zod.
+ * These types are intentionally generic so the same Astro base can power
+ * multiple landing pages, tool directories, and editorial views.
  */
-
-import { z } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-
-// ============================================
-// SHOWCASE TYPES
-// ============================================
-
-/**
- * Showcase item schema
- * Represents user-submitted examples of what they've built with OpenClaw
- */
-export const showcaseItemSchema = z.object({
-  id: z.string(),
-  author: z.string(),
-  quote: z.string(),
-  category: z.string(), // References categories.ts
-  likes: z.number().int().nonnegative(),
-  images: z.array(z.string().url()).optional(),
-  url: z.string().url().optional(),
-});
-
-export type ShowcaseItem = z.infer<typeof showcaseItemSchema>;
-
-// ============================================
-// TESTIMONIAL TYPES
-// ============================================
-
-/**
- * Testimonial schema
- * User praise and feedback about OpenClaw
- */
-export const testimonialSchema = z.object({
-  id: z.string().optional(),
-  quote: z.string(),
-  author: z.string(),
-  handle: z.string().optional(),
-  url: z.string().url(),
-  likes: z.number().int().nonnegative().optional(),
-  avatar: z.string().url().optional(),
-  featured: z.boolean().default(false),
-});
-
-export type Testimonial = z.infer<typeof testimonialSchema>;
-
-// ============================================
-// CONTENT COLLECTION TYPES
-// ============================================
-
-/**
- * Article type from content collection
- */
-export type Article = CollectionEntry<'articles'>;
-export type ArticleData = Article['data'];
-
-/**
- * Blog post type from content collection
- */
-export type BlogPost = CollectionEntry<'blog'>;
-export type BlogPostData = BlogPost['data'];
-
-/**
- * Nieuws (Dutch news) type from content collection
- */
-export type NieuwsItem = CollectionEntry<'nieuws'>;
-export type NieuwsItemData = NieuwsItem['data'];
-
-// ============================================
-// COMMON CONTENT TYPES
-// ============================================
 
 /**
  * Author information

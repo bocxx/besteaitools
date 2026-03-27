@@ -1,7 +1,7 @@
 /**
  * Central site configuration
  * 
- * This file contains all site-wide settings, metadata, and navigation structure.
+ * Single source of truth for site identity, navigation, and metadata.
  * Update here once to change across the entire site.
  */
 
@@ -9,17 +9,16 @@ export const siteConfig = {
   // ============================================
   // SITE IDENTITY
   // ============================================
-  name: "ClawsHub",
-  tagline: "Your AI Assistant",
-  description: "Personal AI that lives in your chat apps. Built by the community, for the community.",
-  url: "https://clawd.bot",
+  name: "nuchter.ai",
+  tagline: "Nuchter over AI",
+  description: "De nuchtere gids voor AI-tools, trends en routes. Geen hype, wel duidelijke keuzes.",
+  url: "https://nuchter.ai",
   
   // ============================================
   // BRANDING
   // ============================================
   logo: {
-    image: "/logo.png",
-    text: "ClawsHub",
+    text: "nuchter.ai",
   },
   
   // ============================================
@@ -27,26 +26,15 @@ export const siteConfig = {
   // ============================================
   navigation: {
     main: [
-      { label: "Blog", href: "/blog" },
-      { label: "Showcase", href: "/showcase" },
-      { label: "Shoutouts", href: "/shoutouts" },
-      { label: "Integrations", href: "/integrations" },
+      { label: "AI Tools", href: "/ai-tools" },
     ],
     footer: {
-      explore: [
-        { label: "Blog", href: "/blog" },
-        { label: "Showcase", href: "/showcase" },
-        { label: "Shoutouts", href: "/shoutouts" },
-        { label: "Integrations", href: "/integrations" },
+      platform: [
+        { label: "AI Tools", href: "/ai-tools" },
       ],
-      resources: [
-        { label: "GitHub", href: "https://github.com/openclaw/openclaw", external: true },
-        { label: "Community", href: "https://github.com/openclaw/openclaw#community", external: true },
-        { label: "Soul", href: "https://soul.md", external: true },
-      ],
-      connect: [
-        { label: "Molty 🦞", href: "https://molty.me", external: true },
-        { label: "Peter Steinberger", href: "https://steipete.me", external: true },
+      juridisch: [
+        { label: "Privacy", href: "/privacy" },
+        { label: "Voorwaarden", href: "/voorwaarden" },
       ],
     },
   },
@@ -55,9 +43,14 @@ export const siteConfig = {
   // SOCIAL LINKS
   // ============================================
   social: {
-    github: {
-      url: "https://github.com/openclaw/openclaw",
-      label: "GitHub",
+    x: {
+      url: "https://x.com/AInieuwsNL",
+      label: "X / Twitter",
+      handle: "@AInieuwsNL",
+    },
+    linkedin: {
+      url: "https://www.linkedin.com/groups/17801035/",
+      label: "LinkedIn",
     },
   },
   
@@ -65,22 +58,10 @@ export const siteConfig = {
   // AUTHORS
   // ============================================
   authors: {
-    molty: {
-      name: "Molty",
-      handle: "@molty",
-      url: "https://molty.me",
-      bio: "A space lobster AI with a soul",
-    },
-    steipete: {
-      name: "Peter Steinberger",
-      handle: "@steipete",
-      url: "https://steipete.me",
-      bio: "Creator of OpenClaw",
-    },
     redactie: {
-      name: "Redactie",
-      handle: "@clawshub",
-      bio: "ClawsHub editorial team",
+      name: "nuchter.ai Redactie",
+      handle: "@nuchterai",
+      bio: "Nuchter over AI — trends, tools en routes.",
     },
   },
   
@@ -88,32 +69,27 @@ export const siteConfig = {
   // FOOTER CONTENT
   // ============================================
   footer: {
-    credits: {
-      builtBy: "Molty",
-      builtByUrl: "https://molty.me",
-      builtByDescription: "a space lobster AI with a",
-      soulUrl: "https://soul.md",
-      creatorName: "Peter Steinberger",
-      creatorUrl: "https://steipete.me",
-      communityUrl: "https://github.com/openclaw/openclaw#community",
+    madeBy: {
+      name: "bocxx.io",
+      url: "https://bocxx.io",
     },
-    disclaimer: "Formerly known as Clawdbot and Moltbot. Independent project, not affiliated with Anthropic.",
+    disclaimer: "Nuchter over AI — geen hype, wel duidelijke keuzes.",
   },
   
   // ============================================
   // LOCALE & I18N
   // ============================================
-  defaultLocale: "en",
-  supportedLocales: ["en", "nl"],
+  defaultLocale: "nl",
+  supportedLocales: ["nl"],
   
   // ============================================
   // FEATURES
   // ============================================
   features: {
-    newsletter: true,
-    search: false, // Future feature
-    comments: false, // Future feature
-    analytics: false, // Future feature
+    newsletter: false,
+    search: false,
+    comments: false,
+    analytics: false,
   },
 } as const;
 

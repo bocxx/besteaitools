@@ -1,68 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Newsletter from "../components/Newsletter.astro";
-import SiteFooter from "../components/SiteFooter.astro";
-import { getCollection } from "astro:content";
+import Badge from "../components/atoms/Badge.astro";
+import Card from "../components/molecules/Card.astro";
+import Grid from "../components/layout/Grid.astro";
+import { getAllCategories } from "../config/categories";
 
-const allPosts = await getCollection("blog", ({ data }) => !data.draft);
-const latestPosts = allPosts
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 4);
+const categories = getAllCategories().slice(0, 6);
 ---
 
-<Layout title="ClawsHub — Personal AI Assistant">
+<Layout title="nuchter.ai — Nuchter over AI">
   <div class="stars"></div>
   <div class="nebula"></div>
 
   <main class="container container-wide" style="padding-top: 80px;">
-
-    <!-- Size Reference Bento Grid -->
-    <section class="demo-section">
-      <h2 class="section-title"><span class="claw-accent">⟩</span> Size Variants</h2>
-      <p class="text-secondary mb-4">Mix and match these sizes to create dynamic layouts.</p>
-      
-      <div class="bento">
-        <div class="bento-item bento-sm">
-          <span class="size-label">.bento-sm</span>
-          <span class="size-desc">1×1</span>
-        </div>
-        <div class="bento-item bento-sm">
-          <span class="size-label">.bento-sm</span>
-          <span class="size-desc">1×1</span>
-        </div>
-        <div class="bento-item bento-md">
-          <span class="size-label">.bento-md</span>
-          <span class="size-desc">2×1</span>
-        </div>
-        <div class="bento-item bento-tall">
-          <span class="size-label">.bento-tall</span>
-          <span class="size-desc">1×2</span>
-        </div>
-        <div class="bento-item bento-lg">
-          <span class="size-label">.bento-lg</span>
-          <span class="size-desc">2×2</span>
-        </div>
-        <div class="bento-item bento-sm">
-          <span class="size-label">.bento-sm</span>
-          <span class="size-desc">1×1</span>
-        </div>
-        <div class="bento-item bento-wide">
-          <span class="size-label">.bento-wide</span>
-          <span class="size-desc">3×1</span>
-        </div>
-        <div class="bento-item bento-sm">
-          <span class="size-label">.bento-sm</span>
-          <span class="size-desc">1×1</span>
-        </div>
-      </div>
+    <section class="hero">
+      <Badge variant="outline" size="md">Generieke AI-basis</Badge>
+      <h1 class="title">
+        <span class="title-main">nuchter.ai</span>
+      </h1>
+      <p class="description">
+        Een herbruikbare Astro-basis voor AI-tools, routes en nuchtere landingspagina’s.
+        Geen hype, wel duidelijke keuzes, filters en componenten.
+      </p>
     </section>
 
-    <Newsletter />
-    <SiteFooter />
+    <section class="demo-section">
+      <div class="section-copy">
+        <h2 class="section-title">Basis voor AI Tools</h2>
+        <p class="text-secondary mb-4">
+          Deze repo wordt de generieke fundering voor tool-overzichten, categoriepagina’s
+          en later routes, sectoren en premium lagen.
+        </p>
+      </div>
+
+      <Grid columns={3} gap="lg">
+        <Card>
+          <h3>Generieke architectuur</h3>
+          <p>Één basis die inzetbaar is voor meerdere AI-merken en landingspagina’s.</p>
+        </Card>
+        <Card>
+          <h3>Nuchtere positionering</h3>
+          <p>Niet nog een tool-directory, maar een plek die duidt, ordent en selecteert.</p>
+        </Card>
+        <Card>
+          <h3>Data-first uitbreidbaar</h3>
+          <p>Klaar om stats uit newsflux te koppelen zonder de contentlaag telkens te overschrijven.</p>
+        </Card>
+      </Grid>
+    </section>
+
+    <section class="demo-section">
+      <div class="section-copy">
+        <h2 class="section-title">Startcategorieën</h2>
+      </div>
+      <Grid columns={3} gap="md">
+        {categories.map((category) => (
+          <Card>
+            <div class="category-card">
+              <Badge variant="category" color={category.color}>{category.name}</Badge>
+              <p>{category.description}</p>
+            </div>
+          </Card>
+        ))}
+      </Grid>
+    </section>
   </main>
 </Layout>
 
 <style>
+  .hero {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-16);
+    max-width: 56rem;
+  }
   .demo-section {
     margin-bottom: var(--space-16);
   }
@@ -71,84 +82,21 @@ const latestPosts = allPosts
     margin-bottom: var(--space-4);
   }
 
-  /* Size Labels */
-  .size-label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--primary-bright);
-    margin-bottom: var(--space-1);
+  .section-copy {
+    margin-bottom: var(--space-6);
   }
 
-  .size-desc {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-  }
-
-  /* News Cards */
-  .news-card {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-  }
-
-  .news-card:hover {
-    transform: translateY(-2px);
-  }
-
-  .news-card.bento-lg {
-    padding: 0;
-  }
-
-  .news-image {
-    height: 50%;
-    min-height: 120px;
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    background: var(--gradient-nebula);
-  }
-
-  .news-content {
-    padding: var(--space-4);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    flex: 1;
-  }
-
-  .news-tag {
-    font-size: var(--text-xs);
-    font-weight: var(--font-semibold);
-    color: var(--secondary-bright);
-  }
-
-  .news-card h3 {
+  h3 {
     font-size: var(--text-xl);
     line-height: var(--leading-snug);
   }
-
-  .news-card h4 {
-    font-size: var(--text-base);
-    line-height: var(--leading-snug);
-    margin-bottom: auto;
-  }
-
-  .news-card p {
+  p {
     font-size: var(--text-sm);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
   }
-
-  .news-meta {
-    display: flex;
-    gap: var(--space-2);
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    margin-top: auto;
-  }
-
-  .news-card-sm {
-    gap: var(--space-2);
+  .category-card {
+    display: grid;
+    gap: var(--space-3);
   }
 </style>
