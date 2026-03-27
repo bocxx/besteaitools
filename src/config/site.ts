@@ -9,16 +9,16 @@ export const siteConfig = {
   // ============================================
   // SITE IDENTITY
   // ============================================
-  name: "besteaitools.nl",
+  name: "debesteaitools.nl",
   tagline: "De beste AI-tools op een rij",
   description: "Ontdek de beste AI-tools — realtime gerankt op buzz, groei en mentions. Van ChatGPT tot niche coding assistants.",
-  url: "https://besteaitools.nl",
+  url: "https://debesteaitools.nl",
   
   // ============================================
   // BRANDING
   // ============================================
   logo: {
-    text: "besteaitools.nl",
+    text: "debesteaitools.nl",
   },
   
   // ============================================

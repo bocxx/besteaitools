@@ -1,8 +1,13 @@
-name = "besteaitools"
+name = "debesteaitools"
 compatibility_date = "2026-03-27"
 compatibility_flags = [ "nodejs_compat" ]
 workers_dev = true
 preview_urls = true
+
+# Uncomment once debesteaitools.nl is added as a zone in Cloudflare dashboard:
+# routes = [
+#   { pattern = "debesteaitools.nl", custom_domain = true }
+# ]
 
 [assets]
 directory = "./dist"

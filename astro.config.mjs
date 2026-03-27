@@ -7,7 +7,7 @@ import keystatic from '@keystatic/astro';
 import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
-  site: 'https://besteaitools.nl',
+  site: 'https://debesteaitools.nl',
   output: 'static',
   adapter: cloudflare(),
   integrations: [

@@ -2,6 +2,7 @@
 import '@fontsource-variable/inter';
 import '@fontsource-variable/space-grotesk';
 import '@fontsource/jetbrains-mono';
+import '../styles/main.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { siteConfig } from '../config/site';
@@ -44,8 +45,6 @@ const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
 
     <title>{title}</title>
 
-    <!-- Design System -->
-    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
     <SiteHeader />
