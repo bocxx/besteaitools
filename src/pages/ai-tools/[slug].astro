@@ -9,8 +9,11 @@ import Badge from '../../components/atoms/Badge.astro';
 import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
 import { getAllTools, getComparisonPairs } from '../../lib/tools-engine';
-import { toolCategories, trendDirections, pricingModels, difficultyLevels } from '../../lib/tools-schema';
-import { ExternalLink, ArrowLeft, Globe, Tag, Star } from '@lucide/astro';
+import {
+  toolCategories, trendDirections, pricingModels, difficultyLevels,
+  deploymentTypes, dataResidencyOptions, targetAudienceOptions, businessFunctions,
+} from '../../lib/tools-schema';
+import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Users, Puzzle } from '@lucide/astro';
 
 export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
@@ -29,6 +32,13 @@ const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
 const pricing = pricingModels[tool.pricingModel];
 const difficulty = difficultyLevels[tool.difficulty];
+
+// Zakelijke metadata
+const dt = tool.deploymentType ? deploymentTypes[tool.deploymentType] : null;
+const dr = tool.dataResidency ? dataResidencyOptions[tool.dataResidency] : null;
+const audience = tool.targetAudience ?? [];
+const hasZakelijkMeta = dt || dr || audience.length > 0 || tool.nlSupport || (tool.integrations?.length ?? 0) > 0;
+const toolFunctions = (tool.businessFunctions ?? []).map(fn => businessFunctions[fn]);
 
 // Build sparkline SVG from history
 function buildSparkline(history: {date: string; mentions: number}[], width = 120, height = 32): string {
@@ -113,6 +123,73 @@ function sourceLabel(s: string): string {
             <Fragment set:html={sparkline} />
           </div>
         )}
+      </section>
+    )}
+
+    <!-- Zakelijke info -->
+    {hasZakelijkMeta && (
+      <section class="business-panel">
+        <h3><Building2 size={16} strokeWidth={1.5} /> Zakelijke info</h3>
+        <div class="business-panel__grid">
+          {dt && (
+            <div class="business-panel__item">
+              <span class="business-panel__label">Deployment</span>
+              <span class="business-panel__value" style={`color: ${dt.color}`}>
+                {tool.deploymentType === 'saas' && <Cloud size={14} strokeWidth={1.5} />}
+                {tool.deploymentType === 'self-hosted' && <Server size={14} strokeWidth={1.5} />}
+                {tool.deploymentType === 'both' && <Layers size={14} strokeWidth={1.5} />}
+                {dt.label}
+              </span>
+            </div>
+          )}
+          {dr && (
+            <div class="business-panel__item">
+              <span class="business-panel__label">Data locatie</span>
+              <span class="business-panel__value" style={`color: ${dr.color}`}>
+                <Shield size={14} strokeWidth={1.5} />
+                {dr.label}
+              </span>
+            </div>
+          )}
+          {audience.length > 0 && (
+            <div class="business-panel__item">
+              <span class="business-panel__label">Doelgroep</span>
+              <div class="business-panel__tags">
+                {audience.map(a => (
+                  <Badge variant="outline" size="sm" color={targetAudienceOptions[a].color}>
+                    {targetAudienceOptions[a].label}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+          {tool.nlSupport && (
+            <div class="business-panel__item">
+              <span class="business-panel__label">Nederlands</span>
+              <span class="business-panel__value" style="color: var(--color-success)">Ja — NL-ondersteuning</span>
+            </div>
+          )}
+          {toolFunctions.length > 0 && (
+            <div class="business-panel__item business-panel__item--wide">
+              <span class="business-panel__label">Bedrijfsfuncties</span>
+              <div class="business-panel__tags">
+                {toolFunctions.map(fn => (
+                  <Badge variant="outline" size="sm" color={fn.color}>{fn.name}</Badge>
+                ))}
+              </div>
+            </div>
+          )}
+          {tool.integrations && tool.integrations.length > 0 && (
+            <div class="business-panel__item business-panel__item--wide">
+              <span class="business-panel__label"><Puzzle size={12} strokeWidth={1.5} /> Integraties</span>
+              <div class="business-panel__tags">
+                {tool.integrations.map(i => (
+                  <Badge variant="outline" size="sm">{i}</Badge>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </section>
     )}
 
@@ -332,6 +409,73 @@ function sourceLabel(s: string): string {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+
+  /* Business panel */
+  .business-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
+  .business-panel h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .business-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .business-panel__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .business-panel__item--wide {
+    grid-column: 1 / -1;
+  }
+
+  .business-panel__label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .business-panel__value {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+  }
+
+  .business-panel__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1-5);
+  }
+
+  @media (max-width: 640px) {
+    .business-panel__grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Enrichment */

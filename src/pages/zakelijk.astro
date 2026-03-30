@@ -85,6 +85,25 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
         ))}
       </div>
       <div class="filter-bar__row filter-bar__row--secondary">
+        <select id="audience-select" class="filter-select">
+          <option value="all">Alle doelgroepen</option>
+          <option value="mkb">MKB</option>
+          <option value="enterprise">Enterprise</option>
+          <option value="solo">Solo</option>
+          <option value="freelancer">Freelancer</option>
+        </select>
+        <select id="deployment-select" class="filter-select">
+          <option value="all">Alle types</option>
+          <option value="saas">SaaS</option>
+          <option value="self-hosted">Self-hosted</option>
+          <option value="both">SaaS + Self-hosted</option>
+        </select>
+        <select id="difficulty-select" class="filter-select">
+          <option value="all">Alle niveaus</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Gemiddeld</option>
+          <option value="advanced">Gevorderd</option>
+        </select>
         <select id="sort-select" class="filter-select">
           <option value="buzz">Buzz Score</option>
           <option value="velocity">Stijgers eerst</option>
@@ -122,6 +141,9 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
 <!-- Client-side filtering, sorting -->
 <script>
   let activeFn = 'all';
+  let activeAudience = 'all';
+  let activeDeployment = 'all';
+  let activeDifficulty = 'all';
 
   const grid = document.getElementById('tool-grid')!;
   const wraps = Array.from(grid.querySelectorAll<HTMLElement>('.tool-card-wrap'));
@@ -137,15 +159,36 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
     });
   });
 
-  // ── Sort select ───────────────────────────────────
+  // ── Select filters ────────────────────────────────
+  const audienceSelect = document.getElementById('audience-select') as HTMLSelectElement;
+  const deploymentSelect = document.getElementById('deployment-select') as HTMLSelectElement;
+  const difficultySelect = document.getElementById('difficulty-select') as HTMLSelectElement;
   const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+
+  audienceSelect.addEventListener('change', () => { activeAudience = audienceSelect.value; applyFilters(); });
+  deploymentSelect.addEventListener('change', () => { activeDeployment = deploymentSelect.value; applyFilters(); });
+  difficultySelect.addEventListener('change', () => { activeDifficulty = difficultySelect.value; applyFilters(); });
   sortSelect.addEventListener('change', () => applySort(sortSelect.value));
 
   function applyFilters() {
     let visible = 0;
     wraps.forEach(wrap => {
+      const card = wrap.querySelector<HTMLElement>('.tool-card');
       const fns = (wrap.dataset.functions ?? '').split(' ');
-      const show = activeFn === 'all' || fns.includes(activeFn);
+      const matchFn = activeFn === 'all' || fns.includes(activeFn);
+
+      const audience = (card?.dataset.audience ?? '').split(' ');
+      const matchAudience = activeAudience === 'all' || audience.includes(activeAudience);
+
+      const deployment = card?.dataset.deployment ?? '';
+      const matchDeployment = activeDeployment === 'all' || deployment === activeDeployment
+        || (activeDeployment === 'saas' && deployment === 'both')
+        || (activeDeployment === 'self-hosted' && deployment === 'both');
+
+      const difficulty = card?.dataset.difficulty ?? '';
+      const matchDifficulty = activeDifficulty === 'all' || difficulty === activeDifficulty;
+
+      const show = matchFn && matchAudience && matchDeployment && matchDifficulty;
       wrap.style.display = show ? '' : 'none';
       if (show) visible++;
     });

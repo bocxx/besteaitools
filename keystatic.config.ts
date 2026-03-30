@@ -1,5 +1,8 @@
 import { config, fields, collection } from '@keystatic/core';
-import { toolCategories, pricingModels, difficultyLevels, businessFunctions } from './src/lib/tools-schema';
+import {
+  toolCategories, pricingModels, difficultyLevels, businessFunctions,
+  deploymentTypes, dataResidencyOptions, targetAudienceOptions,
+} from './src/lib/tools-schema';
 
 const categoryOptions = Object.entries(toolCategories).map(([value, category]) => ({
   label: category.name,
@@ -18,6 +21,21 @@ const difficultyOptions = Object.entries(difficultyLevels).map(([value, level]) 
 
 const businessFunctionOptions = Object.entries(businessFunctions).map(([value, fn]) => ({
   label: fn.name,
+  value,
+}));
+
+const deploymentTypeOptions = Object.entries(deploymentTypes).map(([value, dt]) => ({
+  label: dt.label,
+  value,
+}));
+
+const dataResidencyOpts = Object.entries(dataResidencyOptions).map(([value, dr]) => ({
+  label: dr.label,
+  value,
+}));
+
+const targetAudienceOpts = Object.entries(targetAudienceOptions).map(([value, ta]) => ({
+  label: ta.label,
   value,
 }));
 
@@ -118,6 +136,43 @@ export default config({
           description: 'Draft tools worden niet op de site getoond.',
           defaultValue: false,
         }),
+        // Zakelijke metadata
+        deploymentType: fields.select({
+          label: 'Deployment type',
+          description: 'Hoe wordt de tool aangeboden?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...deploymentTypeOptions,
+          ],
+          defaultValue: '',
+        }),
+        dataResidency: fields.select({
+          label: 'Data residency',
+          description: 'Waar staat de data?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...dataResidencyOpts,
+          ],
+          defaultValue: '',
+        }),
+        targetAudience: fields.multiselect({
+          label: 'Doelgroep',
+          description: 'Voor welk type organisatie is deze tool geschikt?',
+          options: targetAudienceOpts,
+        }),
+        nlSupport: fields.checkbox({
+          label: 'Nederlandse ondersteuning',
+          description: 'Ondersteunt de tool Nederlands (UI, chat of spraak)?',
+          defaultValue: false,
+        }),
+        integrations: fields.array(
+          fields.text({ label: 'Integratie' }),
+          {
+            label: 'Integraties',
+            description: 'Bekende koppelingen (Microsoft 365, Slack, HubSpot, etc.)',
+            itemLabel: (props) => props.value || 'Integratie',
+          },
+        ),
       },
     }),
   },

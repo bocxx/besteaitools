@@ -61,7 +61,48 @@ export type TrendDirectionKey = keyof typeof trendDirections;
 export const trendDirectionSchema = z.enum(['rising', 'stable', 'declining']);
 
 // ============================================
-// 4. PRICING MODELS
+// 4. DEPLOYMENT TYPES
+// ============================================
+
+export const deploymentTypes = {
+  saas:        { label: 'SaaS',          icon: 'cloud',  color: 'var(--color-info)' },
+  'self-hosted': { label: 'Self-hosted', icon: 'server', color: 'var(--color-warning)' },
+  both:        { label: 'SaaS + Self-hosted', icon: 'layers', color: 'var(--color-success)' },
+} as const;
+
+export const deploymentTypeKeys = Object.keys(deploymentTypes) as ['saas', 'self-hosted', 'both'];
+export const deploymentTypeSchema = z.enum(deploymentTypeKeys);
+
+// ============================================
+// 5. DATA RESIDENCY
+// ============================================
+
+export const dataResidencyOptions = {
+  eu:      { label: 'EU',       color: 'var(--color-success)' },
+  us:      { label: 'VS',       color: 'var(--color-info)' },
+  global:  { label: 'Globaal',  color: 'var(--text-secondary)' },
+  unknown: { label: 'Onbekend', color: 'var(--text-muted)' },
+} as const;
+
+export const dataResidencyKeys = Object.keys(dataResidencyOptions) as ['eu', 'us', 'global', 'unknown'];
+export const dataResidencySchema = z.enum(dataResidencyKeys);
+
+// ============================================
+// 6. TARGET AUDIENCE
+// ============================================
+
+export const targetAudienceOptions = {
+  mkb:        { label: 'MKB',        color: 'var(--color-info)' },
+  enterprise: { label: 'Enterprise', color: 'var(--color-warning)' },
+  solo:       { label: 'Solo',       color: 'var(--color-success)' },
+  freelancer: { label: 'Freelancer', color: 'var(--text-secondary)' },
+} as const;
+
+export const targetAudienceKeys = Object.keys(targetAudienceOptions) as ['mkb', 'enterprise', 'solo', 'freelancer'];
+export const targetAudienceSchema = z.enum(targetAudienceKeys);
+
+// ============================================
+// 7. PRICING MODELS
 // ============================================
 
 export const pricingModels = {
@@ -75,7 +116,7 @@ export const pricingModelKeys = Object.keys(pricingModels) as ['free', 'freemium
 export const pricingModelSchema = z.enum(pricingModelKeys);
 
 // ============================================
-// 5. DIFFICULTY LEVELS
+// 8. DIFFICULTY LEVELS
 // ============================================
 
 export const difficultyLevels = {
@@ -88,7 +129,7 @@ export const difficultyLevelKeys = Object.keys(difficultyLevels) as ['beginner',
 export const difficultyLevelSchema = z.enum(difficultyLevelKeys);
 
 // ============================================
-// 6. BUSINESS FUNCTIONS (zakelijke pagina)
+// 9. BUSINESS FUNCTIONS (zakelijke pagina)
 // ============================================
 
 export const businessFunctions = {
@@ -100,6 +141,7 @@ export const businessFunctions = {
   operations:     { name: 'Operations & Automatisering', icon: 'settings',       color: 'var(--color-success)',    description: 'Workflow-automatisering en procesoptimalisatie.' },
   hr:             { name: 'HR & Recruitment',           icon: 'users',           color: '#c084fc',                description: 'AI voor werving, onboarding en HR-processen.' },
   finance:        { name: 'Financiën',                  icon: 'calculator',      color: '#fb923c',                description: 'AI voor boekhouding, forecasting en financiële analyse.' },
+  legal:          { name: 'Legal & Compliance',          icon: 'scale',           color: '#94a3b8',                description: 'AI voor contractanalyse, compliance en juridisch werk.' },
 } as const;
 
 export type BusinessFunctionKey = keyof typeof businessFunctions;
@@ -107,7 +149,7 @@ export const businessFunctionKeys = Object.keys(businessFunctions) as [BusinessF
 export const businessFunctionSchema = z.enum(businessFunctionKeys);
 
 // ============================================
-// 7. BUZZ SCORE HELPERS
+// 10. BUZZ SCORE HELPERS
 // ============================================
 
 export function buzzScoreClass(score: number): 'hot' | 'warm' | 'cool' {
@@ -123,7 +165,7 @@ export function buzzScoreLabel(score: number): string {
 }
 
 // ============================================
-// 8. CONTENT COLLECTION SCHEMA (for content.config.ts)
+// 11. CONTENT COLLECTION SCHEMA (for content.config.ts)
 // ============================================
 
 /** Zod schema for tool JSON files in src/content/tools/ */
@@ -144,4 +186,10 @@ export const toolContentSchema = z.object({
   tags: z.array(z.string()).default([]),
   businessFunctions: z.array(businessFunctionSchema).default([]),
   draft: z.boolean().default(false),
+  // Zakelijke metadata
+  deploymentType: deploymentTypeSchema.optional(),
+  dataResidency: dataResidencySchema.optional(),
+  targetAudience: z.array(targetAudienceSchema).default([]),
+  nlSupport: z.boolean().default(false),
+  integrations: z.array(z.string()).default([]),
 });

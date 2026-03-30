@@ -66,13 +66,23 @@ export type BusinessFunctionKey =
   | 'data'
   | 'operations'
   | 'hr'
-  | 'finance';
+  | 'finance'
+  | 'legal';
 
 /** Pricing model */
 export type PricingModel = 'free' | 'freemium' | 'paid' | 'enterprise';
 
 /** Difficulty level for end users */
 export type DifficultyLevel = 'beginner' | 'intermediate' | 'advanced';
+
+/** Deployment type */
+export type DeploymentType = 'saas' | 'self-hosted' | 'both';
+
+/** Data residency */
+export type DataResidency = 'eu' | 'us' | 'global' | 'unknown';
+
+/** Target audience */
+export type TargetAudience = 'mkb' | 'enterprise' | 'solo' | 'freelancer';
 
 // ============================================
 // CONTENT LAYER (editorial — never overwritten by ETL)
@@ -112,6 +122,17 @@ export interface ToolContent {
   businessFunctions: BusinessFunctionKey[];
   /** Draft flag */
   draft: boolean;
+  // Zakelijke metadata
+  /** Deployment type: SaaS, self-hosted, or both */
+  deploymentType?: DeploymentType;
+  /** Where data is stored/processed */
+  dataResidency?: DataResidency;
+  /** Target audience segments */
+  targetAudience: TargetAudience[];
+  /** Supports Dutch language (UI/chat/speech) */
+  nlSupport: boolean;
+  /** Known integrations (Microsoft 365, Slack, HubSpot, etc.) */
+  integrations: string[];
 }
 
 // ============================================
