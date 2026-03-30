@@ -36,6 +36,15 @@ export type SourceType =
   | 'arxiv'
   | 'bluesky';
 
+/** Tool lifecycle status (from status_classifier.py) */
+export type ToolStatus =
+  | 'active'
+  | 'discontinued'
+  | 'acquired'
+  | 'open_sourced'
+  | 'relaunched'
+  | 'funding';
+
 /** Tool categories — matches both newsflux ai_tool_taxonomy.py and our categories.ts */
 export type ToolCategory =
   | 'chatbots'
@@ -139,6 +148,39 @@ export interface ToolStats {
   product_hunt_mentions: number;
   newsletter_mentions: number;
   source_articles: SourceArticle[];
+
+  // --- v3: already computed in newsflux, not yet exported ---
+
+  /** 2nd derivative of velocity — early signal for accelerating tools */
+  acceleration?: number;
+  /** 0.0–1.0 ratio of expert (HN/ArXiv) vs total mentions */
+  expert_ratio?: number;
+  /** Historical peak mention count */
+  peak_mentions?: number;
+  /** ISO date of first mention (for "Nieuw" badge accuracy) */
+  first_seen?: string;
+  /** ISO date of most recent mention (for staleness detection) */
+  last_seen?: string;
+  /** Related search terms from trendsnapshots */
+  related_terms?: string[];
+  /** Per-source mention breakdown (e.g. { twitter: 120, reddit: 45 }) */
+  source_breakdown?: Record<string, number>;
+
+  // --- v3: new data sources (future pipelines) ---
+
+  /** Weekly npm download count (from npm_pypi_fetcher.py) */
+  npm_downloads?: number;
+  /** Weekly PyPI download count (from npm_pypi_fetcher.py) */
+  pypi_downloads?: number;
+
+  // --- v3: status classification (from status_classifier.py) ---
+
+  /** Lifecycle status beyond phase — discontinued, acquired, etc. */
+  status?: ToolStatus;
+  /** Confidence of the status classification (0.0–1.0) */
+  status_confidence?: number;
+  /** ISO date when status change was detected */
+  status_changed_at?: string;
 }
 
 /** Top-level radar JSON shape (from newsflux generate_ai_tools_radar.py) */
@@ -160,9 +202,25 @@ export interface ToolsRadarData {
     nieuw: string[];
     github_hot: string[];
     product_hunt_hot: string[];
+    /** v3: expert-curated top picks (high expert_ratio + buzz) */
+    expert_picks?: string[];
   };
   github_trending_repos: GitHubTrendingRepo[];
   product_hunt_discoveries: ProductHuntDiscovery[];
+  /** v3: recent tool status events (from status_classifier.py) */
+  status_events?: ToolStatusEvent[];
+}
+
+/** A detected tool status change event */
+export interface ToolStatusEvent {
+  tool_slug: string;
+  event_type: ToolStatus;
+  detected_date: string;
+  confidence: number;
+  severity: 'low' | 'medium' | 'high';
+  source_count: number;
+  confirmed?: boolean;
+  evidence?: { title: string; url?: string }[];
 }
 
 /** Enrichment data cached per tool (from enrich_tools_radar.py) */

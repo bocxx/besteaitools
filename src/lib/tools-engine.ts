@@ -45,6 +45,19 @@ async function loadStats(): Promise<Map<string, ToolStats>> {
         product_hunt_mentions: tool.product_hunt_mentions,
         newsletter_mentions: tool.newsletter_mentions,
         source_articles: tool.source_articles,
+        // v3 fields (optional — populated once newsflux radar generator exports them)
+        acceleration: tool.acceleration,
+        expert_ratio: tool.expert_ratio,
+        peak_mentions: tool.peak_mentions,
+        first_seen: tool.first_seen,
+        last_seen: tool.last_seen,
+        related_terms: tool.related_terms,
+        source_breakdown: tool.source_breakdown,
+        npm_downloads: tool.npm_downloads,
+        pypi_downloads: tool.pypi_downloads,
+        status: tool.status,
+        status_confidence: tool.status_confidence,
+        status_changed_at: tool.status_changed_at,
       });
     }
 
