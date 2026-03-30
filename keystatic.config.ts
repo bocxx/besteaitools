@@ -1,5 +1,5 @@
 import { config, fields, collection } from '@keystatic/core';
-import { toolCategories, pricingModels, difficultyLevels } from './src/lib/tools-schema';
+import { toolCategories, pricingModels, difficultyLevels, businessFunctions } from './src/lib/tools-schema';
 
 const categoryOptions = Object.entries(toolCategories).map(([value, category]) => ({
   label: category.name,
@@ -13,6 +13,11 @@ const pricingOptions = Object.entries(pricingModels).map(([value, model]) => ({
 
 const difficultyOptions = Object.entries(difficultyLevels).map(([value, level]) => ({
   label: level.label,
+  value,
+}));
+
+const businessFunctionOptions = Object.entries(businessFunctions).map(([value, fn]) => ({
+  label: fn.name,
   value,
 }));
 
@@ -103,6 +108,11 @@ export default config({
             itemLabel: (props) => props.value || 'Tag',
           },
         ),
+        businessFunctions: fields.multiselect({
+          label: 'Zakelijke functies',
+          description: 'Voor welke bedrijfsfuncties is deze tool relevant?',
+          options: businessFunctionOptions,
+        }),
         draft: fields.checkbox({
           label: 'Draft',
           description: 'Draft tools worden niet op de site getoond.',

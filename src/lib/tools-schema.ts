@@ -88,7 +88,26 @@ export const difficultyLevelKeys = Object.keys(difficultyLevels) as ['beginner',
 export const difficultyLevelSchema = z.enum(difficultyLevelKeys);
 
 // ============================================
-// 6. BUZZ SCORE HELPERS
+// 6. BUSINESS FUNCTIONS (zakelijke pagina)
+// ============================================
+
+export const businessFunctions = {
+  marketing:      { name: 'Marketing & Content',       icon: 'megaphone',       color: 'var(--color-warning)',    description: 'AI voor campagnes, content en advertenties.' },
+  sales:          { name: 'Sales & CRM',               icon: 'handshake',       color: 'var(--primary-bright)',   description: 'AI voor leadgeneratie, outreach en CRM.' },
+  klantenservice: { name: 'Klantenservice',             icon: 'headset',         color: 'var(--color-info)',       description: 'AI-chatbots en support-automatisering.' },
+  development:    { name: 'Development',                icon: 'code',            color: 'var(--secondary-bright)', description: 'AI-tools voor developers en engineering teams.' },
+  data:           { name: 'Data & Analyse',             icon: 'bar-chart-2',     color: 'var(--tertiary-bright)',  description: 'AI voor data-analyse, BI en inzichten.' },
+  operations:     { name: 'Operations & Automatisering', icon: 'settings',       color: 'var(--color-success)',    description: 'Workflow-automatisering en procesoptimalisatie.' },
+  hr:             { name: 'HR & Recruitment',           icon: 'users',           color: '#c084fc',                description: 'AI voor werving, onboarding en HR-processen.' },
+  finance:        { name: 'Financiën',                  icon: 'calculator',      color: '#fb923c',                description: 'AI voor boekhouding, forecasting en financiële analyse.' },
+} as const;
+
+export type BusinessFunctionKey = keyof typeof businessFunctions;
+export const businessFunctionKeys = Object.keys(businessFunctions) as [BusinessFunctionKey, ...BusinessFunctionKey[]];
+export const businessFunctionSchema = z.enum(businessFunctionKeys);
+
+// ============================================
+// 7. BUZZ SCORE HELPERS
 // ============================================
 
 export function buzzScoreClass(score: number): 'hot' | 'warm' | 'cool' {
@@ -104,7 +123,7 @@ export function buzzScoreLabel(score: number): string {
 }
 
 // ============================================
-// 7. CONTENT COLLECTION SCHEMA (for content.config.ts)
+// 8. CONTENT COLLECTION SCHEMA (for content.config.ts)
 // ============================================
 
 /** Zod schema for tool JSON files in src/content/tools/ */
@@ -123,5 +142,6 @@ export const toolContentSchema = z.object({
   pricingModel: pricingModelSchema.default('freemium'),
   difficulty: difficultyLevelSchema.default('beginner'),
   tags: z.array(z.string()).default([]),
+  businessFunctions: z.array(businessFunctionSchema).default([]),
   draft: z.boolean().default(false),
 });

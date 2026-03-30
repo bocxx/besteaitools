@@ -27,6 +27,7 @@ export const siteConfig = {
   navigation: {
     main: [
       { label: "Weekradar", href: "/weekradar" },
+      { label: "Zakelijk", href: "/zakelijk" },
     ],
     footer: {
       platform: [

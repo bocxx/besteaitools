@@ -7,7 +7,8 @@
 
 import { getCollection } from 'astro:content';
 import type { Tool, ToolStats, ToolsRadarData } from '../types/tools-domain';
-import type { ToolCategoryKey } from './tools-schema';
+import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
+import { businessFunctions } from './tools-schema';
 
 // ============================================
 // STATS LOADER
@@ -180,6 +181,53 @@ export async function getSectionedTools(): Promise<RadarSections> {
     githubHot: resolve(sections?.github_hot),
     productHuntHot: resolve(sections?.product_hunt_hot),
   };
+}
+
+// ============================================
+// BUSINESS FUNCTION QUERIES (zakelijke pagina)
+// ============================================
+
+/** Get tools that match a specific business function */
+export async function getToolsByBusinessFunction(fn: BusinessFunctionKey): Promise<Tool[]> {
+  const tools = await getAllTools();
+  return tools
+    .filter((t) => t.businessFunctions?.includes(fn))
+    .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+}
+
+export interface BusinessFunctionSection {
+  key: BusinessFunctionKey;
+  name: string;
+  icon: string;
+  color: string;
+  description: string;
+  tools: Tool[];
+}
+
+/** Get all business function sections with their tools (only non-empty) */
+export async function getBusinessFunctionSections(): Promise<BusinessFunctionSection[]> {
+  const tools = await getAllTools();
+  const sections: BusinessFunctionSection[] = [];
+
+  for (const [key, fn] of Object.entries(businessFunctions)) {
+    const fnKey = key as BusinessFunctionKey;
+    const matched = tools
+      .filter((t) => t.businessFunctions?.includes(fnKey))
+      .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+
+    if (matched.length > 0) {
+      sections.push({
+        key: fnKey,
+        name: fn.name,
+        icon: fn.icon,
+        color: fn.color,
+        description: fn.description,
+        tools: matched,
+      });
+    }
+  }
+
+  return sections;
 }
 
 // ============================================

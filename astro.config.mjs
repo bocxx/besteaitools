@@ -6,10 +6,12 @@ import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
 import rehypeExternalLinks from 'rehype-external-links';
 
+const isDev = process.argv.includes('dev');
+
 export default defineConfig({
   site: 'https://debesteaitools.nl',
   output: 'static',
-  adapter: cloudflare(),
+  adapter: isDev ? undefined : cloudflare(),
   integrations: [
     react(),
     markdoc(),
@@ -30,8 +32,12 @@ export default defineConfig({
   },
   vite: {
     optimizeDeps: {
-      exclude: ['astro']
-    }
+      exclude: ['astro', '@keystatic/core', '@keystatic/astro'],
+    },
+    ssr: {
+      // set-cookie-parser uses `module.exports` which breaks in workerd
+      noExternal: ['set-cookie-parser'],
+    },
   },
   experimental: {
     svgo: true

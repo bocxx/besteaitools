@@ -57,6 +57,17 @@ export type ToolCategory =
   | 'productivity'
   | 'infrastructure';
 
+/** Business functions for the /zakelijk niche page */
+export type BusinessFunctionKey =
+  | 'marketing'
+  | 'sales'
+  | 'klantenservice'
+  | 'development'
+  | 'data'
+  | 'operations'
+  | 'hr'
+  | 'finance';
+
 /** Pricing model */
 export type PricingModel = 'free' | 'freemium' | 'paid' | 'enterprise';
 
@@ -97,6 +108,8 @@ export interface ToolContent {
   difficulty: DifficultyLevel;
   /** Tags for filtering */
   tags: string[];
+  /** Business functions for /zakelijk page */
+  businessFunctions: BusinessFunctionKey[];
   /** Draft flag */
   draft: boolean;
 }

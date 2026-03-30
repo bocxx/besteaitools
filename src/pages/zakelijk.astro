@@ -1,0 +1,347 @@
+---
+/**
+ * /zakelijk — AI Tools voor bedrijven
+ * Curated niche pagina die tools groepeert op bedrijfsfunctie.
+ * Dezelfde filter-in-place UX als de index, maar geframed voor zakelijke beslissers.
+ */
+import Layout from '../layouts/Layout.astro';
+import ToolCard from '../components/molecules/ToolCard.astro';
+import Badge from '../components/atoms/Badge.astro';
+import {
+  getBusinessFunctionSections,
+  getAllTools,
+  getRadarTimestamp,
+} from '../lib/tools-engine';
+import { businessFunctions } from '../lib/tools-schema';
+import type { BusinessFunctionKey } from '../lib/tools-schema';
+import type { Tool } from '../types/tools-domain';
+import { Building2, Briefcase } from '@lucide/astro';
+
+// ── Data ──────────────────────────────────────────────
+const sections = await getBusinessFunctionSections();
+const allTools = await getAllTools();
+const generatedAt = await getRadarTimestamp();
+const formattedDate = generatedAt
+  ? new Date(generatedAt).toLocaleDateString('nl-NL', {
+      day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
+    })
+  : null;
+
+// Deduplicate tools across functions, sorted by buzz
+const seen = new Set<string>();
+const zakelijkTools: Tool[] = [];
+for (const section of sections) {
+  for (const tool of section.tools) {
+    if (!seen.has(tool.slug)) {
+      seen.add(tool.slug);
+      zakelijkTools.push(tool);
+    }
+  }
+}
+zakelijkTools.sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+
+// Count per function
+const fnCounts = new Map<string, number>();
+for (const s of sections) fnCounts.set(s.key, s.tools.length);
+---
+
+<Layout
+  title="AI Tools voor bedrijven — debesteaitools.nl"
+  description="Ontdek de beste AI-tools voor jouw bedrijf. Gerankt op buzz, groei en geschiktheid per afdeling — van marketing tot development."
+>
+  <main class="container container-wide" style="padding-top: 80px;">
+
+    <!-- Hero -->
+    <header class="zakelijk-hero">
+      <div class="zakelijk-hero__meta">
+        <Badge variant="outline" size="sm">
+          <Building2 size={12} strokeWidth={1.5} />
+          Zakelijk
+        </Badge>
+        {formattedDate && <span class="zakelijk-timestamp">Bijgewerkt {formattedDate}</span>}
+      </div>
+      <h1 class="zakelijk-title">
+        <span class="zakelijk-title__gradient">AI Tools voor bedrijven</span>
+      </h1>
+      <p class="zakelijk-subtitle">
+        Welke AI-tools passen bij jouw team? <strong>{zakelijkTools.length} tools</strong> gegroepeerd
+        op bedrijfsfunctie — van marketing en sales tot development en data-analyse.
+      </p>
+    </header>
+
+    <!-- Filter bar (same pattern as index) -->
+    <nav class="filter-bar" aria-label="Filter op bedrijfsfunctie">
+      <div class="filter-bar__row">
+        <button class="cat-chip cat-chip--active" data-fn-nav="all">Alles</button>
+        {sections.map(section => (
+          <button
+            class="cat-chip"
+            data-fn-nav={section.key}
+            style={`--chip-color: ${section.color}`}
+          >
+            {section.name}
+            <span class="cat-chip__count">{section.tools.length}</span>
+          </button>
+        ))}
+      </div>
+      <div class="filter-bar__row filter-bar__row--secondary">
+        <select id="sort-select" class="filter-select">
+          <option value="buzz">Buzz Score</option>
+          <option value="velocity">Stijgers eerst</option>
+          <option value="alpha">A → Z</option>
+        </select>
+      </div>
+    </nav>
+
+    <!-- Tool Grid -->
+    <div id="alle-tools">
+      <div class="tool-grid" id="tool-grid">
+        {zakelijkTools.map(tool => (
+          <div class="tool-card-wrap" data-functions={tool.businessFunctions?.join(' ') ?? ''}>
+            <ToolCard tool={tool} />
+          </div>
+        ))}
+      </div>
+      <p class="grid-empty" id="grid-empty" style="display:none;">
+        Geen tools gevonden voor deze bedrijfsfunctie.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <section class="zakelijk-cta">
+      <Briefcase size={24} strokeWidth={1.5} />
+      <p>
+        Mist jouw favoriete zakelijke AI-tool?
+        <a href="/">Bekijk alle {allTools.length}+ tools</a> op de radar.
+      </p>
+    </section>
+
+  </main>
+</Layout>
+
+<!-- Client-side filtering, sorting -->
+<script>
+  let activeFn = 'all';
+
+  const grid = document.getElementById('tool-grid')!;
+  const wraps = Array.from(grid.querySelectorAll<HTMLElement>('.tool-card-wrap'));
+  const emptyMsg = document.getElementById('grid-empty')!;
+  const fnChips = document.querySelectorAll<HTMLButtonElement>('.cat-chip');
+
+  // ── Function chips ────────────────────────────────
+  fnChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      activeFn = chip.dataset.fnNav!;
+      fnChips.forEach(c => c.classList.toggle('cat-chip--active', c.dataset.fnNav === activeFn));
+      applyFilters();
+    });
+  });
+
+  // ── Sort select ───────────────────────────────────
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+  sortSelect.addEventListener('change', () => applySort(sortSelect.value));
+
+  function applyFilters() {
+    let visible = 0;
+    wraps.forEach(wrap => {
+      const fns = (wrap.dataset.functions ?? '').split(' ');
+      const show = activeFn === 'all' || fns.includes(activeFn);
+      wrap.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    emptyMsg.style.display = visible === 0 ? '' : 'none';
+  }
+
+  function applySort(mode: string) {
+    const sorted = [...wraps].sort((a, b) => {
+      const cardA = a.querySelector<HTMLElement>('.tool-card')!;
+      const cardB = b.querySelector<HTMLElement>('.tool-card')!;
+      if (mode === 'velocity') {
+        return parseFloat(cardB.dataset.velocity ?? '0') - parseFloat(cardA.dataset.velocity ?? '0');
+      }
+      if (mode === 'alpha') {
+        return (cardA.dataset.name ?? '').localeCompare(cardB.dataset.name ?? '');
+      }
+      return parseFloat(cardB.dataset.buzz ?? '0') - parseFloat(cardA.dataset.buzz ?? '0');
+    });
+    sorted.forEach(wrap => grid.appendChild(wrap));
+  }
+</script>
+
+<style>
+  /* ── Hero ────────────────────────────────────── */
+  .zakelijk-hero {
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+
+  .zakelijk-hero__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+
+  .zakelijk-timestamp {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .zakelijk-title {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-3);
+    line-height: var(--leading-tight);
+  }
+
+  .zakelijk-title__gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .zakelijk-subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    max-width: 660px;
+    margin-inline: auto;
+    line-height: var(--leading-relaxed);
+  }
+
+  .zakelijk-subtitle strong {
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  /* ── Filter bar (matching index.astro) ──────────── */
+  .filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .filter-bar__row {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-bar__row--secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .cat-chip:hover {
+    border-color: var(--chip-color, var(--primary-bright));
+    color: var(--chip-color, var(--primary-bright));
+    background: color-mix(in oklch, var(--chip-color, var(--primary-bright)) 10%, transparent);
+  }
+
+  .cat-chip--active {
+    background: var(--chip-color, var(--primary-bright));
+    border-color: var(--chip-color, var(--primary-bright));
+    color: var(--bg-deep);
+    font-weight: var(--font-semibold);
+  }
+
+  .cat-chip__count {
+    font-size: var(--text-xs);
+    opacity: 0.7;
+  }
+
+  .filter-select {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    cursor: pointer;
+  }
+
+  /* ── Tool grid ─────────────────────────────────── */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    padding: var(--space-8) 0;
+  }
+
+  @media (max-width: 1024px) {
+    .tool-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .tool-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-bar__row--secondary {
+      flex-direction: column;
+    }
+  }
+
+  /* ── CTA ────────────────────────────────────────── */
+  .zakelijk-cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-5) var(--space-6);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-10);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  .zakelijk-cta a {
+    color: var(--primary-bright);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .zakelijk-cta a:hover {
+    color: var(--text-primary);
+  }
+</style>
