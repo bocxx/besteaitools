@@ -12,8 +12,10 @@ import { getAllTools, getComparisonPairs } from '../../lib/tools-engine';
 import {
   toolCategories, trendDirections, pricingModels, difficultyLevels,
   deploymentTypes, dataResidencyOptions, targetAudienceOptions, businessFunctions,
+  timeToFirstValueOptions, setupComplexityLevels, learningCurveLevels, qualityLevels,
+  companySizeFitOptions, useCaseStages, fundingStages,
 } from '../../lib/tools-schema';
-import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Users, Puzzle } from '@lucide/astro';
+import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Youtube, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp } from '@lucide/astro';
 
 export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
@@ -40,8 +42,36 @@ const audience = tool.targetAudience ?? [];
 const hasZakelijkMeta = dt || dr || audience.length > 0 || tool.nlSupport || (tool.integrations?.length ?? 0) > 0;
 const toolFunctions = (tool.businessFunctions ?? []).map(fn => businessFunctions[fn]);
 
-// Build sparkline SVG from history
-function buildSparkline(history: {date: string; mentions: number}[], width = 120, height = 32): string {
+// Nieuwe datalagen
+const hasGovernance = tool.gdprReady != null || tool.soc2 != null || tool.sso != null || tool.euHostingAvailable != null || tool.dpaAvailable != null || tool.auditLogs != null;
+const hasFit = tool.primaryJobsToBeDone?.length > 0 || tool.companySizeFit?.length > 0 || tool.bestUseCaseStage || tool.antiUseCases?.length > 0 || tool.replacementFor?.length > 0;
+const hasImplementation = tool.timeToFirstValue || tool.setupComplexity || tool.requiresDeveloper != null || tool.freeTrialAvailable != null || tool.pilotFriendly != null;
+const hasUx = tool.easeOfUseScore || tool.learningCurve || tool.documentationQuality || tool.supportQuality;
+const hasMarketProof = tool.yearsActive != null || tool.notableCustomers?.length > 0 || tool.g2Rating != null || tool.fundingStage;
+const hasEditorial = tool.testedByEditor || tool.verdict || tool.whyListed;
+
+// Human-readable quick-fact labels (more meaningful than raw enum values)
+const qfLabels = {
+  timeToFirstValue: {
+    minutes: 'Direct aan de slag',
+    hours: 'In een dag up & running',
+    days: 'Setup neemt enkele dagen',
+    weeks: 'Langere implementatie',
+  } as Record<string, string>,
+  difficulty: {
+    beginner: 'Beginnersvriendelijk',
+    intermediate: 'Enige ervaring vereist',
+    advanced: 'Technisch vereist',
+  } as Record<string, string>,
+  deploymentType: {
+    saas: 'Geen installatie nodig',
+    'self-hosted': 'Zelf te hosten',
+    both: 'Cloud of zelf hosten',
+  } as Record<string, string>,
+};
+
+// Responsive sparkline (viewBox only — CSS controls actual width)
+function buildSparkline(history: {date: string; mentions: number}[], width = 240, height = 36): string {
   if (!history || history.length < 2) return '';
   const pts = history.slice(-14);
   const maxVal = Math.max(...pts.map(p => p.mentions), 1);
@@ -51,7 +81,7 @@ function buildSparkline(history: {date: string; mentions: number}[], width = 120
     const y = Math.round(height - (p.mentions / maxVal) * height);
     return `${x},${y}`;
   }).join(' ');
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" class="sparkline" aria-hidden="true"><polyline points="${points}" /></svg>`;
+  return `<svg viewBox="0 0 ${width} ${height}" class="sparkline" preserveAspectRatio="none" aria-hidden="true"><polyline points="${points}" /></svg>`;
 }
 
 const sparkline = stats?.history ? buildSparkline(stats.history) : '';
@@ -66,229 +96,557 @@ function sourceLabel(s: string): string {
 ---
 
 <Layout title={`${tool.name} — debesteaitools.nl`} description={tool.shortDescription}>
-  <main class="container" style="padding-top: 80px; max-width: 860px;">
+  <main class="container page-container">
 
     <!-- Back link -->
-    <a href="/" class="back-link">
+    <a href="/ai-tools" class="back-link">
       <ArrowLeft size={16} strokeWidth={1.5} />
-      Terug naar overzicht
+      AI Tools
     </a>
 
     <!-- Tool header -->
     <header class="tool-header">
-      <div class="tool-header__badges">
-        <Badge variant="category" color={cat.color}>{cat.name}</Badge>
-        <Badge variant="outline" color={pricing.color}>{pricing.label}</Badge>
-        <Badge variant="outline" color={difficulty.color}>{difficulty.label}</Badge>
-        {tool.openSource && <Badge variant="secondary">Open Source</Badge>}
+      <div class="tool-header__top">
+        <div class="tool-header__badges">
+          <Badge variant="category" color={cat.color}>{cat.name}</Badge>
+          <Badge variant="outline" color={pricing.color}>{pricing.label}</Badge>
+          {tool.openSource && <Badge variant="secondary">Open Source</Badge>}
+        </div>
       </div>
 
       <h1 class="tool-name">{tool.name}</h1>
       <p class="tool-desc">{tool.longDescription || tool.shortDescription}</p>
 
-      <div class="tool-header__actions">
-        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="tool-link">
-          <Globe size={14} strokeWidth={1.5} />
-          {tool.websiteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
-          <ExternalLink size={12} strokeWidth={1.5} />
-        </a>
-      </div>
+      <a href={tool.websiteUrl} target="_blank" rel="noopener" class="cta-btn">
+        <Globe size={15} strokeWidth={1.5} />
+        Bezoek {tool.name}
+        <ExternalLink size={13} strokeWidth={1.5} />
+      </a>
     </header>
 
-    <!-- Stats strip -->
-    {stats && (
-      <section class="stats-strip">
-        <div class="stats-strip__row">
-          <div class="stats-strip__item">
-            <ScoreMeter score={stats.buzz_score} />
-          </div>
-          <PhaseBadge phase={stats.phase} size="md" />
-          {dir && (
-            <span class="trend-dir" style={`color: ${dir.color}`}>
-              {dir.label} {stats.velocity > 0 ? '+' : ''}{stats.velocity.toFixed(1)}/dag
-            </span>
-          )}
-          {stats.github_stars > 0 && (
-            <span class="github-stars">
-              <Star size={14} strokeWidth={1.5} />
-              {stats.github_stars.toLocaleString('nl-NL')}
-            </span>
-          )}
-        </div>
-
-        {/* Sparkline */}
-        {sparkline && (
-          <div class="sparkline-container">
-            <span class="sparkline-label">Mentions (14 dagen)</span>
-            <Fragment set:html={sparkline} />
-          </div>
+    <!-- Quick Facts strip -->
+    {(tool.timeToFirstValue || tool.difficulty || tool.deploymentType || tool.nlSupport || tool.freeTrialAvailable != null) && (
+      <div class="quick-facts">
+        {tool.timeToFirstValue && (
+          <span class="qf-pill" style={`color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}; border-color: color-mix(in oklch, ${timeToFirstValueOptions[tool.timeToFirstValue].color} 30%, transparent)`}>
+            <Zap size={13} strokeWidth={2} />
+            {qfLabels.timeToFirstValue[tool.timeToFirstValue]}
+          </span>
         )}
-      </section>
+        {tool.difficulty && (
+          <span class="qf-pill" style={`color: ${difficultyLevels[tool.difficulty].color}; border-color: color-mix(in oklch, ${difficultyLevels[tool.difficulty].color} 30%, transparent)`}>
+            {qfLabels.difficulty[tool.difficulty]}
+          </span>
+        )}
+        {tool.deploymentType && (
+          <span class="qf-pill">
+            {tool.deploymentType === 'saas' && <Cloud size={13} strokeWidth={1.5} />}
+            {tool.deploymentType === 'self-hosted' && <Server size={13} strokeWidth={1.5} />}
+            {tool.deploymentType === 'both' && <Layers size={13} strokeWidth={1.5} />}
+            {qfLabels.deploymentType[tool.deploymentType]}
+          </span>
+        )}
+        {tool.nlSupport && (
+          <span class="qf-pill qf-pill--nl">
+            🇳🇱 NL
+          </span>
+        )}
+        {tool.freeTrialAvailable && (
+          <span class="qf-pill qf-pill--free">
+            <CheckCircle2 size={13} strokeWidth={1.5} />
+            Gratis proberen
+          </span>
+        )}
+        {tool.requiresDeveloper === false && (
+          <span class="qf-pill qf-pill--nodev">
+            Geen developer nodig
+          </span>
+        )}
+      </div>
     )}
 
-    <!-- Zakelijke info -->
-    {hasZakelijkMeta && (
-      <section class="business-panel">
-        <h3><Building2 size={16} strokeWidth={1.5} /> Zakelijke info</h3>
-        <div class="business-panel__grid">
-          {dt && (
-            <div class="business-panel__item">
-              <span class="business-panel__label">Deployment</span>
-              <span class="business-panel__value" style={`color: ${dt.color}`}>
-                {tool.deploymentType === 'saas' && <Cloud size={14} strokeWidth={1.5} />}
-                {tool.deploymentType === 'self-hosted' && <Server size={14} strokeWidth={1.5} />}
-                {tool.deploymentType === 'both' && <Layers size={14} strokeWidth={1.5} />}
-                {dt.label}
-              </span>
-            </div>
-          )}
-          {dr && (
-            <div class="business-panel__item">
-              <span class="business-panel__label">Data locatie</span>
-              <span class="business-panel__value" style={`color: ${dr.color}`}>
-                <Shield size={14} strokeWidth={1.5} />
-                {dr.label}
-              </span>
-            </div>
-          )}
-          {audience.length > 0 && (
-            <div class="business-panel__item">
-              <span class="business-panel__label">Doelgroep</span>
-              <div class="business-panel__tags">
-                {audience.map(a => (
-                  <Badge variant="outline" size="sm" color={targetAudienceOptions[a].color}>
-                    {targetAudienceOptions[a].label}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          )}
-          {tool.nlSupport && (
-            <div class="business-panel__item">
-              <span class="business-panel__label">Nederlands</span>
-              <span class="business-panel__value" style="color: var(--color-success)">Ja — NL-ondersteuning</span>
-            </div>
-          )}
-          {toolFunctions.length > 0 && (
-            <div class="business-panel__item business-panel__item--wide">
-              <span class="business-panel__label">Bedrijfsfuncties</span>
-              <div class="business-panel__tags">
-                {toolFunctions.map(fn => (
-                  <Badge variant="outline" size="sm" color={fn.color}>{fn.name}</Badge>
-                ))}
-              </div>
-            </div>
-          )}
-          {tool.integrations && tool.integrations.length > 0 && (
-            <div class="business-panel__item business-panel__item--wide">
-              <span class="business-panel__label"><Puzzle size={12} strokeWidth={1.5} /> Integraties</span>
-              <div class="business-panel__tags">
-                {tool.integrations.map(i => (
-                  <Badge variant="outline" size="sm">{i}</Badge>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-    )}
+    <!-- Two-column body -->
+    <div class="page-body">
 
-    <!-- Enrichment content -->
-    {(tool.bestFor || tool.useCases?.length || tool.strengths?.length) && (
-      <section class="enrichment-panel">
+      <!-- ── MAIN COLUMN ── -->
+      <div class="content-col">
+
+        <!-- Editorial verdict -->
+        {hasEditorial && (
+          <section class="verdict-panel">
+            {tool.testedByEditor && (
+              <div class="verdict-panel__badge">
+                <BadgeCheck size={16} strokeWidth={1.5} />
+                <span>Getest door redactie</span>
+              </div>
+            )}
+            {tool.verdict && (
+              <blockquote class="verdict-panel__quote">{tool.verdict}</blockquote>
+            )}
+            {tool.whyListed && (
+              <p class="verdict-panel__why"><strong>Waarom op de site:</strong> {tool.whyListed}</p>
+            )}
+            {tool.bestAlternative && (
+              <p class="verdict-panel__alt">
+                <ArrowRightLeft size={12} strokeWidth={1.5} />
+                Beste alternatief: <a href={`/ai-tools/${tool.bestAlternative}`}>{tool.bestAlternative}</a>
+              </p>
+            )}
+          </section>
+        )}
+
+        <!-- bestFor callout -->
         {tool.bestFor && (
-          <div class="enrichment-block">
-            <h3>Ideaal voor</h3>
+          <div class="best-for">
+            <span class="best-for__label">Ideaal voor</span>
             <p>{tool.bestFor}</p>
           </div>
         )}
 
+        <!-- Use cases -->
         {tool.useCases && tool.useCases.length > 0 && (
-          <div class="enrichment-block">
-            <h3>Use Cases</h3>
-            <ul>
+          <section class="content-section">
+            <h2 class="section-heading">Use cases</h2>
+            <ul class="usecase-list">
               {tool.useCases.map(uc => <li>{uc}</li>)}
             </ul>
-          </div>
+          </section>
         )}
 
-        {tool.strengths && tool.strengths.length > 0 && (
-          <div class="enrichment-block">
-            <h3>Sterke punten</h3>
-            <ul class="pros">
-              {tool.strengths.map(s => <li>{s}</li>)}
-            </ul>
-          </div>
+        <!-- Pros / Cons side by side -->
+        {(tool.strengths?.length || tool.limitations?.length) && (
+          <section class="content-section">
+            <div class="pros-cons">
+              {tool.strengths && tool.strengths.length > 0 && (
+                <div class="pros-cons__col">
+                  <h3 class="pros-cons__heading pros-cons__heading--pros">
+                    <CheckCircle2 size={15} strokeWidth={1.5} /> Sterk
+                  </h3>
+                  <ul class="pros">
+                    {tool.strengths.map(s => <li>{s}</li>)}
+                  </ul>
+                </div>
+              )}
+              {tool.limitations && tool.limitations.length > 0 && (
+                <div class="pros-cons__col">
+                  <h3 class="pros-cons__heading pros-cons__heading--cons">
+                    <XCircle size={15} strokeWidth={1.5} /> Beperkingen
+                  </h3>
+                  <ul class="cons">
+                    {tool.limitations.map(l => <li>{l}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
         )}
 
-        {tool.limitations && tool.limitations.length > 0 && (
-          <div class="enrichment-block">
-            <h3>Beperkingen</h3>
-            <ul class="cons">
-              {tool.limitations.map(l => <li>{l}</li>)}
-            </ul>
-          </div>
-        )}
-
+        <!-- Pricing -->
         {tool.pricing && (
-          <div class="enrichment-block">
-            <h3>Pricing</h3>
-            <p>{tool.pricing}</p>
+          <section class="content-section">
+            <h2 class="section-heading">Prijzen</h2>
+            <p class="pricing-text">{tool.pricing}</p>
+          </section>
+        )}
+
+        <!-- Zakelijke info -->
+        {hasZakelijkMeta && (
+          <section class="meta-panel">
+            <h2 class="section-heading"><Building2 size={15} strokeWidth={1.5} /> Zakelijke info</h2>
+            <div class="meta-grid">
+              {dt && (
+                <div class="meta-item">
+                  <span class="meta-label">Deployment</span>
+                  <span class="meta-value" style={`color: ${dt.color}`}>
+                    {tool.deploymentType === 'saas' && <Cloud size={13} strokeWidth={1.5} />}
+                    {tool.deploymentType === 'self-hosted' && <Server size={13} strokeWidth={1.5} />}
+                    {tool.deploymentType === 'both' && <Layers size={13} strokeWidth={1.5} />}
+                    {dt.label}
+                  </span>
+                </div>
+              )}
+              {dr && (
+                <div class="meta-item">
+                  <span class="meta-label">Data locatie</span>
+                  <span class="meta-value" style={`color: ${dr.color}`}>
+                    <Shield size={13} strokeWidth={1.5} />{dr.label}
+                  </span>
+                </div>
+              )}
+              {audience.length > 0 && (
+                <div class="meta-item">
+                  <span class="meta-label">Doelgroep</span>
+                  <div class="meta-tags">
+                    {audience.map(a => (
+                      <Badge variant="outline" size="sm" color={targetAudienceOptions[a].color}>
+                        {targetAudienceOptions[a].label}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {tool.nlSupport && (
+                <div class="meta-item">
+                  <span class="meta-label">Nederlands</span>
+                  <span class="meta-value" style="color: var(--color-success)">Ja</span>
+                </div>
+              )}
+              {toolFunctions.length > 0 && (
+                <div class="meta-item meta-item--wide">
+                  <span class="meta-label">Bedrijfsfuncties</span>
+                  <div class="meta-tags">
+                    {toolFunctions.map(fn => (
+                      <Badge variant="outline" size="sm" color={fn.color}>{fn.name}</Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {tool.integrations && tool.integrations.length > 0 && (
+                <div class="meta-item meta-item--wide">
+                  <span class="meta-label"><Puzzle size={11} strokeWidth={1.5} /> Integraties</span>
+                  <div class="meta-tags">
+                    {tool.integrations.map(i => <Badge variant="outline" size="sm">{i}</Badge>)}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        <!-- Inzetbaarheid & UX -->
+        {(hasImplementation || hasUx || hasMarketProof) && (
+          <section class="meta-panel">
+            <h2 class="section-heading"><Clock size={15} strokeWidth={1.5} /> Inzetbaarheid & UX</h2>
+            <div class="meta-grid">
+              {tool.timeToFirstValue && (
+                <div class="meta-item">
+                  <span class="meta-label">Tijd tot eerste waarde</span>
+                  <span class="meta-value" style={`color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}`}>
+                    {timeToFirstValueOptions[tool.timeToFirstValue].label}
+                  </span>
+                </div>
+              )}
+              {tool.setupComplexity && (
+                <div class="meta-item">
+                  <span class="meta-label">Setup</span>
+                  <span class="meta-value" style={`color: ${setupComplexityLevels[tool.setupComplexity].color}`}>
+                    {setupComplexityLevels[tool.setupComplexity].label}
+                  </span>
+                </div>
+              )}
+              {tool.requiresDeveloper != null && (
+                <div class="meta-item">
+                  <span class="meta-label">Developer vereist</span>
+                  <span class="meta-value" style={`color: ${tool.requiresDeveloper ? 'var(--color-warning)' : 'var(--color-success)'}`}>
+                    {tool.requiresDeveloper ? 'Ja' : 'Nee'}
+                  </span>
+                </div>
+              )}
+              {tool.freeTrialAvailable != null && (
+                <div class="meta-item">
+                  <span class="meta-label">Gratis proberen</span>
+                  <span class="meta-value" style={`color: ${tool.freeTrialAvailable ? 'var(--color-success)' : 'var(--text-muted)'}`}>
+                    {tool.freeTrialAvailable ? 'Ja' : 'Nee'}
+                  </span>
+                </div>
+              )}
+              {tool.learningCurve && (
+                <div class="meta-item">
+                  <span class="meta-label">Leercurve</span>
+                  <span class="meta-value" style={`color: ${learningCurveLevels[tool.learningCurve].color}`}>
+                    {learningCurveLevels[tool.learningCurve].label}
+                  </span>
+                </div>
+              )}
+              {tool.documentationQuality && (
+                <div class="meta-item">
+                  <span class="meta-label">Documentatie</span>
+                  <span class="meta-value" style={`color: ${qualityLevels[tool.documentationQuality].color}`}>
+                    {qualityLevels[tool.documentationQuality].label}
+                  </span>
+                </div>
+              )}
+              {tool.supportQuality && (
+                <div class="meta-item">
+                  <span class="meta-label">Support</span>
+                  <span class="meta-value" style={`color: ${qualityLevels[tool.supportQuality].color}`}>
+                    {qualityLevels[tool.supportQuality].label}
+                  </span>
+                </div>
+              )}
+              {tool.easeOfUseScore && (
+                <div class="meta-item">
+                  <span class="meta-label">Gebruiksgemak</span>
+                  <span class="meta-value" style="color: var(--color-success)">{tool.easeOfUseScore}/10</span>
+                </div>
+              )}
+              {tool.fundingStage && (
+                <div class="meta-item">
+                  <span class="meta-label">Financiering</span>
+                  <span class="meta-value" style={`color: ${fundingStages[tool.fundingStage].color}`}>
+                    {fundingStages[tool.fundingStage].label}
+                  </span>
+                </div>
+              )}
+              {tool.yearsActive != null && (
+                <div class="meta-item">
+                  <span class="meta-label">Jaren actief</span>
+                  <span class="meta-value">{tool.yearsActive} jaar</span>
+                </div>
+              )}
+              {tool.g2Rating != null && (
+                <div class="meta-item">
+                  <span class="meta-label">G2 Rating</span>
+                  <span class="meta-value" style="color: var(--color-success)">
+                    ★ {tool.g2Rating}{tool.g2ReviewCount ? ` (${tool.g2ReviewCount})` : ''}
+                  </span>
+                </div>
+              )}
+              {tool.notableCustomers?.length > 0 && (
+                <div class="meta-item meta-item--wide">
+                  <span class="meta-label">Bekende klanten</span>
+                  <div class="meta-tags">
+                    {tool.notableCustomers.map(c => <Badge variant="outline" size="sm">{c}</Badge>)}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        <!-- Governance -->
+        {hasGovernance && (
+          <section class="meta-panel">
+            <h2 class="section-heading"><ShieldCheck size={15} strokeWidth={1.5} /> Governance & Compliance</h2>
+            <div class="governance-grid">
+              <span class={`gov-item ${tool.gdprReady ? 'gov-item--yes' : 'gov-item--no'}`}>GDPR</span>
+              <span class={`gov-item ${tool.euHostingAvailable ? 'gov-item--yes' : 'gov-item--no'}`}>EU Hosting</span>
+              <span class={`gov-item ${tool.dpaAvailable ? 'gov-item--yes' : 'gov-item--no'}`}>DPA</span>
+              <span class={`gov-item ${tool.soc2 ? 'gov-item--yes' : 'gov-item--no'}`}>SOC 2</span>
+              <span class={`gov-item ${tool.sso ? 'gov-item--yes' : 'gov-item--no'}`}>SSO</span>
+              <span class={`gov-item ${tool.auditLogs ? 'gov-item--yes' : 'gov-item--no'}`}>Audit Logs</span>
+            </div>
+          </section>
+        )}
+
+        <!-- Concrete fit -->
+        {hasFit && (
+          <section class="meta-panel">
+            <h2 class="section-heading"><Target size={15} strokeWidth={1.5} /> Geschiktheid</h2>
+            {tool.primaryJobsToBeDone?.length > 0 && (
+              <div class="fit-block">
+                <h4>Primaire taken</h4>
+                <ul class="usecase-list">{tool.primaryJobsToBeDone.map(j => <li>{j}</li>)}</ul>
+              </div>
+            )}
+            {tool.antiUseCases?.length > 0 && (
+              <div class="fit-block">
+                <h4><AlertTriangle size={13} strokeWidth={1.5} /> Wanneer NIET gebruiken</h4>
+                <ul class="cons">{tool.antiUseCases.map(a => <li>{a}</li>)}</ul>
+              </div>
+            )}
+            {tool.replacementFor?.length > 0 && (
+              <div class="fit-block">
+                <h4>Vervangt</h4>
+                <div class="meta-tags">
+                  {tool.replacementFor.map(r => <Badge variant="outline" size="sm">{r}</Badge>)}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
+
+        <!-- YouTube -->
+        {stats?.youtube_videos && stats.youtube_videos.length > 0 && (
+          <section class="media-panel">
+            <h2 class="section-heading"><Youtube size={15} strokeWidth={1.5} /> YouTube</h2>
+            <ul class="media-list">
+              {stats.youtube_videos.map(v => (
+                <li>
+                  <a href={v.url} target="_blank" rel="noopener" class="media-card media-card--yt">
+                    <span class="media-card__icon"><Youtube size={16} strokeWidth={1.5} /></span>
+                    <span class="media-card__body">
+                      <span class="media-card__title">{v.title}</span>
+                      <span class="media-card__meta">{v.channel}</span>
+                    </span>
+                    <ExternalLink size={12} strokeWidth={1.5} class="media-card__ext" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <!-- Articles -->
+        {stats?.source_articles && stats.source_articles.length > 0 && (
+          <section class="media-panel">
+            <h2 class="section-heading"><Newspaper size={15} strokeWidth={1.5} /> In het nieuws</h2>
+            <div class="article-grid">
+              {stats.source_articles.map(a => (
+                <a href={a.url} target="_blank" rel="noopener" class="article-card">
+                  <div class="article-card__header">
+                    <span class="article-card__source">
+                      {a.lang === 'nl' && <span class="article-card__lang">NL</span>}
+                      {a.source}
+                    </span>
+                    <ExternalLink size={11} strokeWidth={1.5} class="article-card__ext" />
+                  </div>
+                  <p class="article-card__title">{a.title_nl || a.title}</p>
+                  {a.snippet && <p class="article-card__snippet">{a.snippet}</p>}
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Social -->
+        {stats?.social_posts && stats.social_posts.length > 0 && (
+          <section class="media-panel">
+            <h2 class="section-heading">💬 Wat mensen zeggen</h2>
+            <div class="social-grid">
+              {stats.social_posts.map(p => {
+                const initials = (p.author_name || p.author_handle)
+                  .split(/\s+/).slice(0, 2).map((w: string) => w[0]?.toUpperCase()).join('');
+                return (
+                  <a href={p.url} target="_blank" rel="noopener" class="social-card">
+                    <div class="social-card__header">
+                      <span class="social-card__avatar" aria-hidden="true">{initials}</span>
+                      <div class="social-card__author-info">
+                        <span class="social-card__name">{p.author_name || p.author_handle}</span>
+                        <span class="social-card__handle">@{p.author_handle}</span>
+                      </div>
+                      <span class="social-card__platform" title="Bluesky">🦸</span>
+                    </div>
+                    <p class="social-card__text">{p.text}</p>
+                    <div class="social-card__engagement">
+                      <span class="social-card__stat"><Heart size={12} strokeWidth={1.5} />{p.likes}</span>
+                      <span class="social-card__stat"><Repeat2 size={12} strokeWidth={1.5} />{p.reposts}</span>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+      </div>{/* end content-col */}
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="sidebar">
+
+        <!-- Stats -->
+        {stats && (
+          <div class="sidebar-card sidebar-card--stats">
+            <div class="sidebar-stats">
+              <ScoreMeter score={stats.buzz_score} />
+              <PhaseBadge phase={stats.phase} size="sm" />
+            </div>
+            {dir && (
+              <div class="sidebar-trend" style={`color: ${dir.color}`}>
+                <TrendingUp size={13} strokeWidth={1.5} />
+                {dir.label} {stats.velocity > 0 ? '+' : ''}{stats.velocity.toFixed(1)}/dag
+              </div>
+            )}
+            {stats.github_stars > 0 && (
+              <div class="sidebar-stars">
+                <Star size={13} strokeWidth={1.5} />
+                {stats.github_stars.toLocaleString('nl-NL')} GitHub stars
+              </div>
+            )}
+            {sparkline && (
+              <div class="sidebar-sparkline">
+                <span class="sidebar-sparkline__label">Mentions (14 dagen)</span>
+                <Fragment set:html={sparkline} />
+              </div>
+            )}
           </div>
         )}
-      </section>
-    )}
 
-    <!-- Tags -->
-    {tool.tags.length > 0 && (
-      <div class="tag-row">
-        <Tag size={14} strokeWidth={1.5} />
-        {tool.tags.map(tag => (
-          <Badge variant="outline" size="sm">{tag}</Badge>
-        ))}
-      </div>
-    )}
+        <!-- Size & stage fit -->
+        {(tool.companySizeFit?.length || tool.bestUseCaseStage) && (
+          <div class="sidebar-card">
+            {tool.companySizeFit && tool.companySizeFit.length > 0 && (
+              <div class="sidebar-block">
+                <span class="sidebar-label">Bedrijfsgrootte</span>
+                <div class="meta-tags">
+                  {tool.companySizeFit.map(s => (
+                    <Badge variant="outline" size="sm" color={companySizeFitOptions[s].color}>
+                      {companySizeFitOptions[s].label}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+            {tool.bestUseCaseStage && (
+              <div class="sidebar-block">
+                <span class="sidebar-label">Beste inzetfase</span>
+                <Badge variant="outline" color={useCaseStages[tool.bestUseCaseStage].color}>
+                  {useCaseStages[tool.bestUseCaseStage].label}
+                </Badge>
+              </div>
+            )}
+          </div>
+        )}
 
-    <!-- Vergelijk met -->
-    {comparisons && comparisons.length > 0 && (
-      <section class="compare-links">
-        <h3>Vergelijk {tool.name} met</h3>
-        <div class="compare-links__grid">
-          {comparisons.map(pair => {
-            const other = pair.slugA === tool.slug ? pair.toolB : pair.toolA;
-            return (
-              <a href={`/vergelijk/${pair.comparisonSlug}`} class="compare-link">
-                <Badge variant="category" color={toolCategories[other.category].color} size="sm">{toolCategories[other.category].name}</Badge>
-                {other.name}
-              </a>
-            );
-          })}
-        </div>
-      </section>
-    )}
+        <!-- Compare -->
+        {comparisons && comparisons.length > 0 && (
+          <div class="sidebar-card">
+            <span class="sidebar-label">Vergelijk met</span>
+            <div class="compare-list">
+              {comparisons.slice(0, 8).map(pair => {
+                const other = pair.slugA === tool.slug ? pair.toolB : pair.toolA;
+                return (
+                  <a href={`/vergelijk/${pair.comparisonSlug}`} class="compare-link">
+                    <Badge variant="category" color={toolCategories[other.category].color} size="sm">
+                      {toolCategories[other.category].name}
+                    </Badge>
+                    {other.name}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
-    <!-- Source articles -->
-    {stats?.source_articles && stats.source_articles.length > 0 && (
-      <section class="articles-panel">
-        <h3>Recente artikelen</h3>
-        <ul class="articles-list">
-          {stats.source_articles.map(a => (
-            <li>
-              <a href={a.url} target="_blank" rel="noopener">
-                <span class="article-title">{a.title_nl || a.title}</span>
-                {a.summary_nl && <span class="article-summary">{a.summary_nl}</span>}
-                <span class="article-source">{a.source}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
+        <!-- Tags -->
+        {tool.tags.length > 0 && (
+          <div class="sidebar-card">
+            <span class="sidebar-label"><Tag size={12} strokeWidth={1.5} /> Tags</span>
+            <div class="meta-tags">
+              {tool.tags.map(tag => <Badge variant="outline" size="sm">{tag}</Badge>)}
+            </div>
+          </div>
+        )}
+
+      </aside>{/* end sidebar */}
+
+    </div>{/* end page-body */}
 
   </main>
 </Layout>
 
 <style>
+  /* ── Layout ───────────────────────────────────────────────── */
+  .page-container {
+    padding-top: 80px;
+    max-width: 1100px;
+  }
+
+  .page-body {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  @media (max-width: 820px) {
+    .page-body {
+      grid-template-columns: 1fr;
+    }
+    .sidebar { order: -1; }
+  }
+
+  /* ── Back link ────────────────────────────────────────────── */
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -301,9 +659,9 @@ function sourceLabel(s: string): string {
   }
   .back-link:hover { color: var(--primary-bright); }
 
-  /* Header */
+  /* ── Header ────────────────────────────────────────────── */
   .tool-header {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-5);
   }
 
   .tool-header__badges {
@@ -315,7 +673,7 @@ function sourceLabel(s: string): string {
 
   .tool-name {
     font-family: var(--font-display);
-    font-size: var(--text-3xl);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
     font-weight: var(--font-bold);
     letter-spacing: var(--tracking-tight);
     margin-bottom: var(--space-2);
@@ -326,102 +684,55 @@ function sourceLabel(s: string): string {
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
     max-width: 640px;
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
   }
 
-  .tool-link {
+  /* Primary CTA button */
+  .cta-btn {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    color: var(--primary-bright);
+    color: var(--bg-base);
+    background: var(--primary-bright);
     text-decoration: none;
     font-size: var(--text-sm);
-    padding: var(--space-2) var(--space-4);
-    border: 1px solid color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    font-weight: var(--font-semibold);
+    padding: var(--space-2-5) var(--space-5);
     border-radius: var(--radius-lg);
     transition: all var(--transition-fast);
   }
-  .tool-link:hover {
-    background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
-    border-color: var(--primary-bright);
+  .cta-btn:hover {
+    background: color-mix(in oklch, var(--primary-bright) 85%, white);
+    transform: translateY(-1px);
   }
 
-  /* Stats strip */
-  .stats-strip {
-    background: var(--bg-glass);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4) var(--space-5);
-    margin-bottom: var(--space-5);
-  }
-
-  .stats-strip__row {
+  /* ── Quick Facts ────────────────────────────────────────── */
+  .quick-facts {
     display: flex;
-    align-items: center;
-    gap: var(--space-4);
     flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
   }
 
-  .stats-strip__item {
-    flex: 1;
-    min-width: 120px;
-  }
-
-  .trend-dir {
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .github-stars {
+  .qf-pill {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-1);
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    color: var(--primary-bright);
-    font-variant-numeric: tabular-nums;
-    margin-left: auto;
-  }
-
-  /* Sparkline */
-  .sparkline-container {
-    padding-top: var(--space-3);
-    border-top: 1px solid var(--border-subtle);
-    margin-top: var(--space-3);
-  }
-
-  .sparkline-label {
-    display: block;
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    margin-bottom: var(--space-1);
-  }
-
-  :global(.sparkline) {
-    display: block;
-  }
-
-  :global(.sparkline polyline) {
-    fill: none;
-    stroke: var(--primary-bright);
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  /* Business panel */
-  .business-panel {
-    background: var(--bg-glass);
-    backdrop-filter: blur(12px);
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-3);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: var(--space-5);
-    margin-bottom: var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    background: var(--bg-glass);
+    backdrop-filter: blur(8px);
   }
+  .qf-pill--nl { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); }
+  .qf-pill--free { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); }
+  .qf-pill--nodev { color: var(--color-info); border-color: color-mix(in oklch, var(--color-info) 30%, transparent); }
 
-  .business-panel h3 {
+  /* ── Shared section elements ───────────────────────────── */
+  .section-heading {
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -429,25 +740,127 @@ function sourceLabel(s: string): string {
     font-weight: var(--font-semibold);
     color: var(--text-primary);
     margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-subtle);
   }
 
-  .business-panel__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
+  .meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1-5);
   }
 
-  .business-panel__item {
+  /* Shared list style for use cases / fit items */
+  .usecase-list {
+    list-style: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-1-5);
+  }
+  .usecase-list li {
+    color: var(--text-secondary);
+    padding-left: var(--space-5);
+    position: relative;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+  .usecase-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
   }
 
-  .business-panel__item--wide {
-    grid-column: 1 / -1;
+  .pros li, .cons li {
+    color: var(--text-secondary);
+    padding-left: var(--space-5);
+    position: relative;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+  .pros li::before { content: '✓'; position: absolute; left: 0; color: var(--color-success); font-weight: bold; }
+  .cons li::before { content: '✕'; position: absolute; left: 0; color: var(--color-error); }
+
+  /* ── Content sections ─────────────────────────────────── */
+  .content-section {
+    margin-bottom: var(--space-7);
   }
 
-  .business-panel__label {
+  /* bestFor callout */
+  .best-for {
+    background: color-mix(in oklch, var(--primary-bright) 6%, var(--bg-glass));
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-left: 3px solid var(--primary-bright);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  .best-for__label {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary-bright);
+    margin-bottom: var(--space-1-5);
+  }
+  .best-for p {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  /* Pros / Cons side by side */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  @media (max-width: 560px) {
+    .pros-cons { grid-template-columns: 1fr; }
+  }
+  .pros-cons__col {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+  }
+  .pros-cons__heading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+  }
+  .pros-cons__heading--pros { color: var(--color-success); }
+  .pros-cons__heading--cons { color: var(--color-error); }
+  .pros-cons__col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-1-5); }
+
+  .pricing-text {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* ── Meta panels (zakelijke info, inzetbaarheid, governance) ─ */
+  .meta-panel {
+    margin-bottom: var(--space-7);
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3) var(--space-5);
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-0-5);
+  }
+  .meta-item--wide { grid-column: 1 / -1; }
+  .meta-label {
     display: flex;
     align-items: center;
     gap: var(--space-1);
@@ -457,132 +870,224 @@ function sourceLabel(s: string): string {
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
-
-  .business-panel__value {
+  .meta-value {
     display: flex;
     align-items: center;
     gap: var(--space-1-5);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
+    color: var(--text-primary);
   }
-
-  .business-panel__tags {
+  .fit-block {
+    margin-bottom: var(--space-4);
+  }
+  .fit-block h4 {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-1-5);
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
   }
 
-  @media (max-width: 640px) {
-    .business-panel__grid {
-      grid-template-columns: 1fr;
-    }
+  /* ── Sidebar ────────────────────────────────────────────── */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    position: sticky;
+    top: 88px;
   }
 
-  /* Enrichment */
-  .enrichment-panel {
+  .sidebar-card {
     background: var(--bg-glass);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
-    padding: var(--space-5);
-    margin-bottom: var(--space-5);
-  }
-
-  .enrichment-block {
-    margin-bottom: var(--space-4);
-  }
-  .enrichment-block:last-child { margin-bottom: 0; }
-
-  .enrichment-block h3 {
-    font-size: var(--text-base);
-    font-weight: var(--font-semibold);
-    color: var(--primary-bright);
-    margin-bottom: var(--space-2);
-  }
-
-  .enrichment-block p {
-    color: var(--text-secondary);
-    line-height: var(--leading-relaxed);
-  }
-
-  .enrichment-block ul {
-    list-style: none;
-    padding: 0;
+    padding: var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-3);
   }
 
-  .enrichment-block li {
-    color: var(--text-secondary);
-    padding-left: var(--space-4);
-    position: relative;
+  .sidebar-card--stats {
+    border-color: color-mix(in oklch, var(--primary-bright) 20%, var(--border-subtle));
   }
-  .enrichment-block li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
+
+  .sidebar-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-trend, .sidebar-stars {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    font-variant-numeric: tabular-nums;
+  }
+  .sidebar-stars { color: var(--primary-bright); }
+
+  .sidebar-sparkline {
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--space-3);
+  }
+  .sidebar-sparkline__label {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-bottom: var(--space-1);
+  }
+  :global(.sparkline) { display: block; width: 100%; height: 36px; }
+  :global(.sparkline polyline) {
+    fill: none;
+    stroke: var(--primary-bright);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .sidebar-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--text-muted);
   }
-  .pros li::before { content: '✓'; color: var(--color-success); }
-  .cons li::before { content: '✕'; color: var(--color-error); }
 
-  /* Compare links */
-  .compare-links {
-    margin-bottom: var(--space-5);
-  }
-
-  .compare-links h3 {
-    font-size: var(--text-base);
-    font-weight: var(--font-semibold);
-    margin-bottom: var(--space-3);
-  }
-
-  .compare-links__grid {
+  .sidebar-block {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--space-2);
+  }
+
+  .compare-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1-5);
+    margin-top: var(--space-1);
   }
 
   .compare-link {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    padding: var(--space-1-5) var(--space-3);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-full);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
     text-decoration: none;
     color: var(--text-secondary);
     font-size: var(--text-sm);
     transition: all var(--transition-fast);
   }
   .compare-link:hover {
-    border-color: var(--primary-bright);
+    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
     color: var(--text-primary);
   }
 
-  /* Tags */
-  .tag-row {
-    display: flex;
-    flex-wrap: wrap;
+  /* ── Editorial verdict ───────────────────────────────── */
+  .verdict-panel {
+    background: color-mix(in oklch, var(--primary-bright) 5%, var(--bg-glass));
+    backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
+  .verdict-panel__badge {
+    display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    margin-bottom: var(--space-6);
-    color: var(--text-muted);
-  }
-
-  /* Articles */
-  .articles-panel {
-    margin-bottom: var(--space-8);
-  }
-
-  .articles-panel h3 {
-    font-size: var(--text-base);
+    color: var(--primary-bright);
+    font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     margin-bottom: var(--space-3);
   }
 
-  .articles-list {
+  .verdict-panel__quote {
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    line-height: var(--leading-relaxed);
+    border-left: 3px solid var(--primary-bright);
+    padding-left: var(--space-4);
+    margin: 0 0 var(--space-3);
+    font-style: italic;
+  }
+
+  .verdict-panel__why {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-2);
+  }
+
+  .verdict-panel__alt {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .verdict-panel__alt a {
+    color: var(--primary-bright);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .governance-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .gov-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .gov-item--yes {
+    color: var(--color-success);
+    border-color: color-mix(in oklch, var(--color-success) 30%, transparent);
+  }
+  .gov-item--yes::before { content: '✓ '; }
+
+  .gov-item--no {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  .gov-item--no::before { content: '✕ '; }
+
+  /* ── YouTube media cards (list style, full-width) ────────────── */
+  .media-panel {
+    margin-bottom: var(--space-6);
+  }
+
+  .media-panel h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+  }
+
+  .media-list {
     list-style: none;
     padding: 0;
     display: flex;
@@ -590,37 +1095,268 @@ function sourceLabel(s: string): string {
     gap: var(--space-2);
   }
 
-  .articles-list a {
+  .media-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .media-card:hover {
+    border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    background: color-mix(in oklch, var(--primary-bright) 4%, transparent);
+  }
+
+  .media-card--yt {
+    border-color: color-mix(in oklch, #ff0000 25%, var(--border-subtle));
+  }
+  .media-card--yt:hover {
+    border-color: color-mix(in oklch, #ff0000 50%, transparent);
+    background: color-mix(in oklch, #ff0000 4%, transparent);
+  }
+  .media-card--yt .media-card__icon { color: #ff4444; }
+
+  .media-card__icon {
+    flex-shrink: 0;
+    padding-top: 2px;
+    color: var(--text-muted);
+  }
+
+  .media-card__body {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: var(--space-0-5);
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: var(--text-sm);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-md);
-    transition: background var(--transition-fast);
+    min-width: 0;
   }
 
-  .articles-list a:hover {
-    background: color-mix(in oklch, var(--text-primary) 4%, transparent);
-  }
-
-  .articles-list a:hover .article-title {
+  .media-card__title {
     color: var(--text-primary);
-  }
-
-  .article-title {
     line-height: var(--leading-snug);
+    font-weight: var(--font-medium);
   }
 
-  .article-summary {
+  .media-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
     font-size: var(--text-xs);
     color: var(--text-muted);
-    line-height: var(--leading-relaxed);
   }
 
-  .article-source {
+  .media-card__snippet {
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  :global(.media-card__ext) {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+  .media-card:hover :global(.media-card__ext) { opacity: 1; }
+
+  /* ── Article grid cards ────────────────────────────────── */
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .article-card:hover {
+    border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px oklch(0% 0 0 / 20%);
+  }
+
+  .article-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .article-card__source {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-weight: var(--font-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .article-card__lang {
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    font-weight: var(--font-semibold);
+    background: color-mix(in oklch, var(--color-success) 15%, transparent);
+    color: var(--color-success);
+    border: 1px solid color-mix(in oklch, var(--color-success) 30%, transparent);
+    flex-shrink: 0;
+  }
+
+  :global(.article-card__ext) {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+  .article-card:hover :global(.article-card__ext) { opacity: 1; }
+
+  .article-card__title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    line-height: var(--leading-snug);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color var(--transition-fast);
+  }
+  .article-card:hover .article-card__title { color: var(--primary-bright); }
+
+  .article-card__snippet {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    line-height: var(--leading-snug);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: auto;
+    padding-top: var(--space-2);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+  }
+
+  /* ── Social grid cards ────────────────────────────────── */
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .social-card:hover {
+    border-color: oklch(65% 0.15 240 / 50%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px oklch(0% 0 0 / 20%);
+  }
+
+  .social-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .social-card__avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: color-mix(in oklch, var(--primary-bright) 20%, var(--bg-elevated));
+    color: var(--primary-bright);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+  }
+
+  .social-card__author-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .social-card__name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .social-card__handle {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .social-card__platform {
+    flex-shrink: 0;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .social-card__text {
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+    color: var(--text-secondary);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .social-card__engagement {
+    display: flex;
+    gap: var(--space-4);
+    padding-top: var(--space-2);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+    margin-top: auto;
+  }
+
+  .social-card__stat {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
     font-size: var(--text-xs);
     color: var(--text-muted);
   }

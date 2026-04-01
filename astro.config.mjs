@@ -32,11 +32,10 @@ export default defineConfig({
   },
   vite: {
     optimizeDeps: {
-      exclude: ['astro', '@keystatic/core', '@keystatic/astro'],
+      exclude: ['astro'],
     },
     ssr: {
-      // set-cookie-parser uses `module.exports` which breaks in workerd
-      noExternal: ['set-cookie-parser'],
+      external: ['set-cookie-parser'],
     },
   },
   experimental: {

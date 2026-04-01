@@ -4,10 +4,9 @@
  * Designed for the /ai-tools grid. Links to detail page.
  */
 import Badge from '../atoms/Badge.astro';
-import ScoreMeter from '../atoms/ScoreMeter.astro';
-import { toolCategories, trendDirections, deploymentTypes, dataResidencyOptions } from '../../lib/tools-schema';
+import { toolCategories, pricingModels, deploymentTypes } from '../../lib/tools-schema';
 import type { Tool } from '../../types/tools-domain';
-import { ExternalLink, Flame, TrendingUp, Zap, ShieldCheck, Cloud, Server, Layers } from '@lucide/astro';
+import { ExternalLink, Flame, TrendingUp, Zap, ShieldCheck, Cloud, Server, Layers, Shield, BadgeCheck } from '@lucide/astro';
 
 interface Props {
   tool: Tool;
@@ -18,9 +17,9 @@ interface Props {
 const { tool, isTopTool = false, isStijger = false } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
-const dir = stats ? trendDirections[stats.trend_direction] : null;
+const pricing = pricingModels[tool.pricingModel];
 
-// Phase accent: hype (accelerating/peaking) or blijver (sustained)
+// Phase signals — shown as readable Dutch text chips
 const hypePhases = new Set(['accelerating', 'peaking']);
 const isHype = stats ? hypePhases.has(stats.phase) : false;
 const isBlijver = stats?.phase === 'sustained';
@@ -29,58 +28,49 @@ const isBlijver = stats?.phase === 'sustained';
 const dt = tool.deploymentType ? deploymentTypes[tool.deploymentType] : null;
 const hasNl = tool.nlSupport;
 const audience = tool.targetAudience ?? [];
+const hasGdpr = tool.gdprReady;
+const isEditorTested = tool.testedByEditor;
+const isBeginner = tool.difficulty === 'beginner';
+const scores = tool.scores;
 ---
 
-<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-phase={stats?.phase ?? ''} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-nl={hasNl ? '1' : '0'}>
+<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-phase={stats?.phase ?? ''} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
   <div class="tool-card__inner">
-    <!-- Header row: category + trend direction -->
+
+    <!-- Header: category + signal chips -->
     <header class="tool-card__header">
-      <div class="tool-card__badges">
-        <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
-        {isTopTool && <span class="tool-card__signal tool-card__signal--top" title="Meest besproken"><Flame size={12} strokeWidth={2} /></span>}
-        {isStijger && <span class="tool-card__signal tool-card__signal--stijger" title="Snelle stijger"><TrendingUp size={12} strokeWidth={2} /></span>}
-        {isHype && <span class="tool-card__signal tool-card__signal--hype" title="Hype / Piek"><Zap size={12} strokeWidth={2} /></span>}
-        {isBlijver && <span class="tool-card__signal tool-card__signal--blijver" title="Bewezen blijver"><ShieldCheck size={12} strokeWidth={2} /></span>}
+      <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
+      <div class="tool-card__signals">
+        {isTopTool && <span class="signal-chip signal-chip--top"><Flame size={10} strokeWidth={2} /> Trending</span>}
+        {isStijger && <span class="signal-chip signal-chip--stijger"><TrendingUp size={10} strokeWidth={2} /> Stijger</span>}
+        {isHype && <span class="signal-chip signal-chip--hype"><Zap size={10} strokeWidth={2} /> Hype</span>}
+        {isBlijver && <span class="signal-chip signal-chip--blijver"><ShieldCheck size={10} strokeWidth={2} /> Bewezen</span>}
       </div>
-      {stats && dir && (
-        <span class="trend-arrow" style={`color: ${dir.color}`} aria-label={dir.ariaLabel}>
-          {dir.label} {stats.velocity > 0 ? `+${stats.velocity.toFixed(1)}` : stats.velocity.toFixed(1)}/d
-        </span>
-      )}
     </header>
 
     <!-- Tool name + description -->
     <h3 class="tool-card__name">{tool.name}</h3>
     <p class="tool-card__desc">{tool.shortDescription}</p>
 
-    <!-- Buzz score -->
-    {stats && (
-      <div class="tool-card__stats">
-        <ScoreMeter score={stats.buzz_score} showLabel={false} />
-      </div>
-    )}
-
-    <!-- Meta row: sources + pricing -->
+    <!-- Footer: pricing + key facts -->
     <footer class="tool-card__footer">
-      {stats && (
-        <span class="tool-card__meta">
-          {stats.source_count} bronnen · {stats.mentions} mentions
+      <div class="tool-card__facts">
+        <!-- Pricing -->
+        <span class="fact-pill" style={`color: ${pricing.color}; border-color: color-mix(in oklch, ${pricing.color} 30%, transparent)`}>
+          {pricing.label}
         </span>
-      )}
-      <div class="tool-card__indicators">
-        {dt && (
-          <span class="tool-card__indicator" title={dt.label} style={`color: ${dt.color}`}>
-            {tool.deploymentType === 'saas' && <Cloud size={11} strokeWidth={1.5} />}
-            {tool.deploymentType === 'self-hosted' && <Server size={11} strokeWidth={1.5} />}
-            {tool.deploymentType === 'both' && <Layers size={11} strokeWidth={1.5} />}
-          </span>
-        )}
-        {hasNl && (
-          <span class="tool-card__indicator tool-card__indicator--nl" title="Ondersteunt Nederlands">NL</span>
-        )}
-        <span class="tool-card__link">
-          <ExternalLink size={12} strokeWidth={1.5} />
-        </span>
+        <!-- NL support -->
+        {hasNl && <span class="fact-pill fact-pill--nl">🇳🇱 Nederlands</span>}
+        <!-- Beginner friendly -->
+        {isBeginner && <span class="fact-pill fact-pill--beginner">Beginnersvriendelijk</span>}
+        <!-- Free trial -->
+        {tool.freeTrialAvailable && <span class="fact-pill fact-pill--trial">Gratis proberen</span>}
+      </div>
+      <div class="tool-card__icons">
+        {isEditorTested && <BadgeCheck size={13} strokeWidth={1.5} class="icon--editor" title="Getest door redactie" />}
+        {hasGdpr && <Shield size={13} strokeWidth={1.5} class="icon--gdpr" title="GDPR-ready" />}
+        {dt && tool.deploymentType === 'self-hosted' && <Server size={13} strokeWidth={1.5} class="icon--deploy" title="Zelf te hosten" />}
+        <ExternalLink size={12} strokeWidth={1.5} class="icon--link" />
       </div>
     </footer>
   </div>
@@ -99,13 +89,11 @@ const audience = tool.targetAudience ?? [];
     transition: all var(--transition-base);
     overflow: hidden;
   }
-
   .tool-card:hover {
     transform: translateY(-2px);
     border-color: color-mix(in oklch, var(--text-primary) 15%, transparent);
     box-shadow: var(--shadow-lg);
   }
-
   .tool-card:focus-visible {
     outline: 2px solid var(--primary-bright);
     outline-offset: 2px;
@@ -115,41 +103,42 @@ const audience = tool.targetAudience ?? [];
     padding: var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-2-5);
   }
 
+  /* Header: category badge + signal chips */
   .tool-card__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-2);
-  }
-
-  .tool-card__badges {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
     flex-wrap: wrap;
   }
 
-  .tool-card__signal {
+  .tool-card__signals {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    flex-wrap: wrap;
+  }
+
+  /* Signal chips — readable Dutch text */
+  .signal-chip {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-  }
-
-  .tool-card__signal--top { color: var(--color-error); }
-  .tool-card__signal--stijger { color: var(--color-info); }
-  .tool-card__signal--hype { color: var(--color-warning); }
-  .tool-card__signal--blijver { color: var(--color-success); }
-
-  .trend-arrow {
-    font-size: var(--text-xs);
+    gap: 3px;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: 10px;
     font-weight: var(--font-semibold);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
+    border: 1px solid;
   }
+  .signal-chip--top    { color: var(--color-error);   border-color: color-mix(in oklch, var(--color-error)   30%, transparent); background: color-mix(in oklch, var(--color-error)   8%, transparent); }
+  .signal-chip--stijger { color: var(--color-info);   border-color: color-mix(in oklch, var(--color-info)    30%, transparent); background: color-mix(in oklch, var(--color-info)    8%, transparent); }
+  .signal-chip--hype    { color: var(--color-warning); border-color: color-mix(in oklch, var(--color-warning) 30%, transparent); background: color-mix(in oklch, var(--color-warning) 8%, transparent); }
+  .signal-chip--blijver { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); background: color-mix(in oklch, var(--color-success) 8%, transparent); }
 
+  /* Name + description */
   .tool-card__name {
     font-size: var(--text-lg);
     font-weight: var(--font-bold);
@@ -157,66 +146,61 @@ const audience = tool.targetAudience ?? [];
     letter-spacing: var(--tracking-tight);
     margin: 0;
   }
-
   .tool-card__desc {
     font-size: var(--text-sm);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
     margin: 0;
-    /* Clamp to 2 lines */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .tool-card__stats {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    margin-top: auto;
-  }
-
+  /* Footer */
   .tool-card__footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    padding-top: var(--space-1-5);
+    gap: var(--space-2);
+    padding-top: var(--space-2);
     border-top: 1px solid var(--border-subtle);
     margin-top: auto;
   }
 
-  .tool-card__meta {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-  }
-
-  .tool-card__indicators {
+  /* Fact pills: pricing, NL, difficulty, trial */
+  .tool-card__facts {
     display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1-5);
     align-items: center;
-    gap: var(--space-2);
   }
-
-  .tool-card__indicator {
+  .fact-pill {
     display: inline-flex;
     align-items: center;
-    font-size: var(--text-xs);
-    opacity: 0.7;
+    gap: 3px;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    white-space: nowrap;
   }
+  .fact-pill--nl      { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); }
+  .fact-pill--beginner { color: var(--color-info);    border-color: color-mix(in oklch, var(--color-info)    30%, transparent); }
+  .fact-pill--trial   { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); }
 
-  .tool-card__indicator--nl {
-    font-size: 9px;
-    font-weight: var(--font-bold);
-    color: var(--color-info);
-    letter-spacing: 0.03em;
+  /* Utility icons (editor tested, GDPR, deploy, link) */
+  .tool-card__icons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    flex-shrink: 0;
   }
-
-  .tool-card__link {
-    color: var(--text-muted);
-    transition: color var(--transition-fast);
-  }
-
-  .tool-card:hover .tool-card__link {
-    color: var(--primary-bright);
-  }
+  :global(.icon--editor) { color: var(--primary-bright); opacity: 0.8; }
+  :global(.icon--gdpr)   { color: var(--color-success);  opacity: 0.8; }
+  :global(.icon--deploy) { color: var(--text-muted);     opacity: 0.7; }
+  :global(.icon--link)   { color: var(--text-muted); transition: color var(--transition-fast); }
+  .tool-card:hover :global(.icon--link) { color: var(--primary-bright); }
 </style>

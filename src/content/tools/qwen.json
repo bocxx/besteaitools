@@ -25,18 +25,29 @@
   "openSource": false,
   "businessFunctions": [
     "development",
-    "data"
+    "data",
+    "marketing"
   ],
   "deploymentType": "both",
   "dataResidency": "global",
   "targetAudience": [
     "mkb",
-    "enterprise"
+    "enterprise",
+    "solo"
   ],
   "nlSupport": false,
   "integrations": [
     "Ollama",
     "vLLM",
     "HuggingFace"
-  ]
+  ],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "high",
+  "learningCurve": "high",
+  "companySizeFit": [
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "team-rollout"
 }

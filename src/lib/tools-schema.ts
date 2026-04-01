@@ -34,7 +34,7 @@ export const toolCategorySchema = z.enum(toolCategoryKeys);
 // ============================================
 
 export const trendPhases = {
-  weak_signal:  { label: 'Weak Signal',  color: 'var(--text-muted)',       badge: 'outline'  },
+  weak_signal:  { label: 'Niche',        color: 'var(--text-muted)',       badge: 'outline'  },
   emerging:     { label: 'Opkomend',     color: 'var(--color-info)',       badge: 'secondary' },
   accelerating: { label: 'Versnelling',  color: 'var(--color-warning)',    badge: 'primary'  },
   peaking:      { label: 'Piek',         color: 'var(--color-error)',      badge: 'primary'  },
@@ -129,6 +129,112 @@ export const difficultyLevelKeys = Object.keys(difficultyLevels) as ['beginner',
 export const difficultyLevelSchema = z.enum(difficultyLevelKeys);
 
 // ============================================
+// 8a. FUNDING STAGES (marktrijpheid)
+// ============================================
+
+export const fundingStages = {
+  bootstrapped: { label: 'Bootstrapped', color: 'var(--text-secondary)' },
+  seed:         { label: 'Seed',         color: 'var(--text-muted)' },
+  'series-a':   { label: 'Series A',     color: 'var(--color-info)' },
+  'series-b':   { label: 'Series B',     color: 'var(--color-info)' },
+  'series-c':   { label: 'Series C',     color: 'var(--color-warning)' },
+  growth:       { label: 'Growth',       color: 'var(--color-success)' },
+  public:       { label: 'Beursgenoteerd', color: 'var(--primary-bright)' },
+} as const;
+
+export type FundingStageKey = keyof typeof fundingStages;
+export const fundingStageKeys = Object.keys(fundingStages) as [FundingStageKey, ...FundingStageKey[]];
+export const fundingStageSchema = z.enum(fundingStageKeys);
+
+// ============================================
+// 8b. TIME TO FIRST VALUE (inzetbaarheid)
+// ============================================
+
+export const timeToFirstValueOptions = {
+  minutes: { label: 'Minuten',  icon: 'zap',   color: 'var(--color-success)' },
+  hours:   { label: 'Uren',     icon: 'clock', color: 'var(--color-info)' },
+  days:    { label: 'Dagen',    icon: 'clock', color: 'var(--color-warning)' },
+  weeks:   { label: 'Weken',    icon: 'clock', color: 'var(--color-error)' },
+} as const;
+
+export type TimeToFirstValueKey = keyof typeof timeToFirstValueOptions;
+export const timeToFirstValueKeys = Object.keys(timeToFirstValueOptions) as [TimeToFirstValueKey, ...TimeToFirstValueKey[]];
+export const timeToFirstValueSchema = z.enum(timeToFirstValueKeys);
+
+// ============================================
+// 8c. SETUP COMPLEXITY (inzetbaarheid)
+// ============================================
+
+export const setupComplexityLevels = {
+  low:    { label: 'Eenvoudig',   color: 'var(--color-success)' },
+  medium: { label: 'Gemiddeld',   color: 'var(--color-warning)' },
+  high:   { label: 'Complex',     color: 'var(--color-error)' },
+} as const;
+
+export type SetupComplexityKey = keyof typeof setupComplexityLevels;
+export const setupComplexityKeys = Object.keys(setupComplexityLevels) as [SetupComplexityKey, ...SetupComplexityKey[]];
+export const setupComplexitySchema = z.enum(setupComplexityKeys);
+
+// ============================================
+// 8d. LEARNING CURVE (UX & adoptie)
+// ============================================
+
+export const learningCurveLevels = {
+  low:    { label: 'Laag',      color: 'var(--color-success)' },
+  medium: { label: 'Gemiddeld', color: 'var(--color-warning)' },
+  high:   { label: 'Hoog',      color: 'var(--color-error)' },
+} as const;
+
+export type LearningCurveKey = keyof typeof learningCurveLevels;
+export const learningCurveKeys = Object.keys(learningCurveLevels) as [LearningCurveKey, ...LearningCurveKey[]];
+export const learningCurveSchema = z.enum(learningCurveKeys);
+
+// ============================================
+// 8e. QUALITY LEVEL (documentatie, support)
+// ============================================
+
+export const qualityLevels = {
+  poor:      { label: 'Slecht',    color: 'var(--color-error)' },
+  adequate:  { label: 'Voldoende', color: 'var(--color-warning)' },
+  good:      { label: 'Goed',      color: 'var(--color-info)' },
+  excellent: { label: 'Uitstekend', color: 'var(--color-success)' },
+} as const;
+
+export type QualityLevelKey = keyof typeof qualityLevels;
+export const qualityLevelKeys = Object.keys(qualityLevels) as [QualityLevelKey, ...QualityLevelKey[]];
+export const qualityLevelSchema = z.enum(qualityLevelKeys);
+
+// ============================================
+// 8f. COMPANY SIZE FIT (concrete fit)
+// ============================================
+
+export const companySizeFitOptions = {
+  solo:       { label: 'Solo',             color: 'var(--text-secondary)' },
+  small:      { label: 'Klein (2-10)',     color: 'var(--color-info)' },
+  medium:     { label: 'Midden (11-250)',  color: 'var(--color-warning)' },
+  large:      { label: 'Groot (250+)',     color: 'var(--color-success)' },
+  enterprise: { label: 'Enterprise',       color: 'var(--primary-bright)' },
+} as const;
+
+export type CompanySizeFitKey = keyof typeof companySizeFitOptions;
+export const companySizeFitKeys = Object.keys(companySizeFitOptions) as [CompanySizeFitKey, ...CompanySizeFitKey[]];
+export const companySizeFitSchema = z.enum(companySizeFitKeys);
+
+// ============================================
+// 8g. USE CASE STAGE (concrete fit)
+// ============================================
+
+export const useCaseStages = {
+  experiment:       { label: 'Experiment',       color: 'var(--color-info)' },
+  'team-rollout':   { label: 'Team rollout',     color: 'var(--color-warning)' },
+  'mission-critical': { label: 'Mission critical', color: 'var(--color-success)' },
+} as const;
+
+export type UseCaseStageKey = keyof typeof useCaseStages;
+export const useCaseStageKeys = Object.keys(useCaseStages) as [UseCaseStageKey, ...UseCaseStageKey[]];
+export const useCaseStageSchema = z.enum(useCaseStageKeys);
+
+// ============================================
 // 9. BUSINESS FUNCTIONS (zakelijke pagina)
 // ============================================
 
@@ -192,4 +298,45 @@ export const toolContentSchema = z.object({
   targetAudience: z.array(targetAudienceSchema).default([]),
   nlSupport: z.boolean().default(false),
   integrations: z.array(z.string()).default([]),
+
+  // ── Laag 1: Marktrijpheid ─────────────────────
+  yearsActive: z.number().int().min(0).optional(),
+  notableCustomers: z.array(z.string()).default([]),
+  g2Rating: z.number().min(0).max(5).optional(),
+  g2ReviewCount: z.number().int().min(0).optional(),
+  fundingStage: fundingStageSchema.optional(),
+
+  // ── Laag 2: Inzetbaarheid ─────────────────────
+  timeToFirstValue: timeToFirstValueSchema.optional(),
+  setupComplexity: setupComplexitySchema.optional(),
+  requiresDeveloper: z.boolean().optional(),
+  freeTrialAvailable: z.boolean().optional(),
+  pilotFriendly: z.boolean().optional(),
+
+  // ── Laag 3: Governance & risico ───────────────
+  gdprReady: z.boolean().optional(),
+  euHostingAvailable: z.boolean().optional(),
+  dpaAvailable: z.boolean().optional(),
+  soc2: z.boolean().optional(),
+  sso: z.boolean().optional(),
+  auditLogs: z.boolean().optional(),
+
+  // ── Laag 4: UX & adoptie ──────────────────────
+  easeOfUseScore: z.number().int().min(1).max(10).optional(),
+  learningCurve: learningCurveSchema.optional(),
+  documentationQuality: qualityLevelSchema.optional(),
+  supportQuality: qualityLevelSchema.optional(),
+
+  // ── Laag 5: Concrete fit ──────────────────────
+  primaryJobsToBeDone: z.array(z.string()).default([]),
+  companySizeFit: z.array(companySizeFitSchema).default([]),
+  bestUseCaseStage: useCaseStageSchema.optional(),
+  antiUseCases: z.array(z.string()).default([]),
+  replacementFor: z.array(z.string()).default([]),
+
+  // ── Redactionele laag ─────────────────────────
+  testedByEditor: z.boolean().default(false),
+  verdict: z.string().optional(),
+  bestAlternative: z.string().optional(),
+  whyListed: z.string().optional(),
 });

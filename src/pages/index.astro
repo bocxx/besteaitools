@@ -15,9 +15,7 @@ import {
 } from '../lib/tools-engine';
 import { toolCategories, trendPhases } from '../lib/tools-schema';
 import type { TrendPhaseKey } from '../lib/tools-schema';
-import {
-  Activity, BarChart2, TrendingUp, Zap, Flame, ShieldCheck,
-} from '@lucide/astro';
+import { TrendingUp, Zap, Flame, ShieldCheck } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
@@ -68,36 +66,21 @@ for (const t of tools) {
       </p>
     </header>
 
-    <!-- Legends -->
+    <!-- Signalen legenda -->
     <div class="legend-bar">
-      <div class="legend-group">
-        <span class="legend-group__label">Buzz:</span>
-        <span class="legend-item">
-          <span class="buzz-dot buzz--hot"></span>70+ Hot
-        </span>
-        <span class="legend-item">
-          <span class="buzz-dot buzz--warm"></span>40–69 Warm
-        </span>
-        <span class="legend-item">
-          <span class="buzz-dot buzz--cool"></span>1–39 Niche
-        </span>
-      </div>
-      <span class="legend-divider"></span>
-      <div class="legend-group">
-        <span class="legend-group__label">Signalen:</span>
-        <span class="legend-item legend-item--signal">
-          <Flame size={11} strokeWidth={2} style="color: var(--color-error)" /> Top
-        </span>
-        <span class="legend-item legend-item--signal">
-          <TrendingUp size={11} strokeWidth={2} style="color: var(--color-info)" /> Stijger
-        </span>
-        <span class="legend-item legend-item--signal">
-          <Zap size={11} strokeWidth={2} style="color: var(--color-warning)" /> Hype
-        </span>
-        <span class="legend-item legend-item--signal">
-          <ShieldCheck size={11} strokeWidth={2} style="color: var(--color-success)" /> Blijver
-        </span>
-      </div>
+      <span class="legend-group__label">Signalen:</span>
+      <span class="legend-item legend-item--signal">
+        <Flame size={11} strokeWidth={2} style="color: var(--color-error)" /> Trending
+      </span>
+      <span class="legend-item legend-item--signal">
+        <TrendingUp size={11} strokeWidth={2} style="color: var(--color-info)" /> Stijger
+      </span>
+      <span class="legend-item legend-item--signal">
+        <Zap size={11} strokeWidth={2} style="color: var(--color-warning)" /> Hype
+      </span>
+      <span class="legend-item legend-item--signal">
+        <ShieldCheck size={11} strokeWidth={2} style="color: var(--color-success)" /> Bewezen
+      </span>
     </div>
 
     <!-- Filter bar: unified -->
@@ -128,8 +111,8 @@ for (const t of tools) {
           })}
         </div>
         <select id="sort-select" class="filter-select">
-          <option value="buzz">Buzz Score</option>
-          <option value="velocity">Stijgers eerst</option>
+          <option value="buzz">Meest populair</option>
+          <option value="velocity">Snelst groeiend</option>
           <option value="alpha">A → Z</option>
         </select>
       </div>

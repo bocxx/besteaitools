@@ -2,6 +2,8 @@ import { config, fields, collection } from '@keystatic/core';
 import {
   toolCategories, pricingModels, difficultyLevels, businessFunctions,
   deploymentTypes, dataResidencyOptions, targetAudienceOptions,
+  fundingStages, timeToFirstValueOptions, setupComplexityLevels,
+  learningCurveLevels, qualityLevels, companySizeFitOptions, useCaseStages,
 } from './src/lib/tools-schema';
 
 const categoryOptions = Object.entries(toolCategories).map(([value, category]) => ({
@@ -36,6 +38,41 @@ const dataResidencyOpts = Object.entries(dataResidencyOptions).map(([value, dr])
 
 const targetAudienceOpts = Object.entries(targetAudienceOptions).map(([value, ta]) => ({
   label: ta.label,
+  value,
+}));
+
+const fundingStageOpts = Object.entries(fundingStages).map(([value, fs]) => ({
+  label: fs.label,
+  value,
+}));
+
+const timeToFirstValueOpts = Object.entries(timeToFirstValueOptions).map(([value, t]) => ({
+  label: t.label,
+  value,
+}));
+
+const setupComplexityOpts = Object.entries(setupComplexityLevels).map(([value, s]) => ({
+  label: s.label,
+  value,
+}));
+
+const learningCurveOpts = Object.entries(learningCurveLevels).map(([value, l]) => ({
+  label: l.label,
+  value,
+}));
+
+const qualityLevelOpts = Object.entries(qualityLevels).map(([value, q]) => ({
+  label: q.label,
+  value,
+}));
+
+const companySizeFitOpts = Object.entries(companySizeFitOptions).map(([value, c]) => ({
+  label: c.label,
+  value,
+}));
+
+const useCaseStageOpts = Object.entries(useCaseStages).map(([value, u]) => ({
+  label: u.label,
   value,
 }));
 
@@ -173,6 +210,202 @@ export default config({
             itemLabel: (props) => props.value || 'Integratie',
           },
         ),
+
+        // ── Laag 1: Marktrijpheid ─────────────────────
+        yearsActive: fields.integer({
+          label: 'Jaren actief',
+          description: 'Hoe lang is deze tool al op de markt?',
+          validation: { min: 0 },
+        }),
+        notableCustomers: fields.array(
+          fields.text({ label: 'Klant' }),
+          {
+            label: 'Bekende klanten',
+            description: 'Herkenbare bedrijven die deze tool gebruiken.',
+            itemLabel: (props) => props.value || 'Klant',
+          },
+        ),
+        g2Rating: fields.number({
+          label: 'G2 Rating',
+          description: 'Score op G2 (0-5, bv. 4.6).',
+          validation: { min: 0, max: 5 },
+        }),
+        g2ReviewCount: fields.integer({
+          label: 'G2 Reviews',
+          description: 'Aantal reviews op G2.',
+          validation: { min: 0 },
+        }),
+        fundingStage: fields.select({
+          label: 'Financieringsfase',
+          description: 'In welke fase zit het bedrijf achter de tool?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...fundingStageOpts,
+          ],
+          defaultValue: '',
+        }),
+
+        // ── Laag 2: Inzetbaarheid ─────────────────────
+        timeToFirstValue: fields.select({
+          label: 'Tijd tot eerste waarde',
+          description: 'Hoe snel kan een team beginnen met deze tool?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...timeToFirstValueOpts,
+          ],
+          defaultValue: '',
+        }),
+        setupComplexity: fields.select({
+          label: 'Setup complexiteit',
+          description: 'Hoe complex is de initiële setup?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...setupComplexityOpts,
+          ],
+          defaultValue: '',
+        }),
+        requiresDeveloper: fields.checkbox({
+          label: 'Developer vereist',
+          description: 'Is een developer nodig voor setup of dagelijks gebruik?',
+          defaultValue: false,
+        }),
+        freeTrialAvailable: fields.checkbox({
+          label: 'Gratis proefperiode',
+          description: 'Is er een gratis trial beschikbaar?',
+          defaultValue: false,
+        }),
+        pilotFriendly: fields.checkbox({
+          label: 'Pilot-vriendelijk',
+          description: 'Kan de tool makkelijk als pilot worden ingezet?',
+          defaultValue: false,
+        }),
+
+        // ── Laag 3: Governance & risico ───────────────
+        gdprReady: fields.checkbox({
+          label: 'GDPR-ready',
+          description: 'Voldoet de tool aan GDPR/AVG?',
+          defaultValue: false,
+        }),
+        euHostingAvailable: fields.checkbox({
+          label: 'EU hosting beschikbaar',
+          description: 'Kan data in de EU worden gehost?',
+          defaultValue: false,
+        }),
+        dpaAvailable: fields.checkbox({
+          label: 'DPA beschikbaar',
+          description: 'Is er een Data Processing Agreement (verwerkersovereenkomst)?',
+          defaultValue: false,
+        }),
+        soc2: fields.checkbox({
+          label: 'SOC 2',
+          description: 'Is de tool SOC 2 gecertificeerd?',
+          defaultValue: false,
+        }),
+        sso: fields.checkbox({
+          label: 'SSO',
+          description: 'Ondersteunt de tool Single Sign-On?',
+          defaultValue: false,
+        }),
+        auditLogs: fields.checkbox({
+          label: 'Audit logs',
+          description: 'Heeft de tool audit logging?',
+          defaultValue: false,
+        }),
+
+        // ── Laag 4: UX & adoptie ──────────────────────
+        easeOfUseScore: fields.integer({
+          label: 'Gebruiksgemak (1-10)',
+          description: 'Redactiescore voor gebruiksgemak.',
+          validation: { min: 1, max: 10 },
+        }),
+        learningCurve: fields.select({
+          label: 'Leercurve',
+          description: 'Hoe steil is de leercurve voor nieuwe gebruikers?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...learningCurveOpts,
+          ],
+          defaultValue: '',
+        }),
+        documentationQuality: fields.select({
+          label: 'Documentatiekwaliteit',
+          description: 'Hoe goed is de documentatie?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...qualityLevelOpts,
+          ],
+          defaultValue: '',
+        }),
+        supportQuality: fields.select({
+          label: 'Supportkwaliteit',
+          description: 'Hoe goed is de klantenservice?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...qualityLevelOpts,
+          ],
+          defaultValue: '',
+        }),
+
+        // ── Laag 5: Concrete fit ──────────────────────
+        primaryJobsToBeDone: fields.array(
+          fields.text({ label: 'Taak' }),
+          {
+            label: 'Primaire taken (Jobs to be Done)',
+            description: 'Welke concrete taken lost deze tool op?',
+            itemLabel: (props) => props.value || 'Taak',
+          },
+        ),
+        companySizeFit: fields.multiselect({
+          label: 'Bedrijfsgrootte',
+          description: 'Voor welke bedrijfsgroottes past deze tool?',
+          options: companySizeFitOpts,
+        }),
+        bestUseCaseStage: fields.select({
+          label: 'Beste inzetfase',
+          description: 'In welke fase van adoptie werkt deze tool het best?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...useCaseStageOpts,
+          ],
+          defaultValue: '',
+        }),
+        antiUseCases: fields.array(
+          fields.text({ label: 'Anti-use case' }),
+          {
+            label: 'Wanneer NIET gebruiken',
+            description: 'Situaties waarin je deze tool juist níet moet kiezen.',
+            itemLabel: (props) => props.value || 'Anti-use case',
+          },
+        ),
+        replacementFor: fields.array(
+          fields.text({ label: 'Vervangt' }),
+          {
+            label: 'Vervangt',
+            description: 'Welke tools of processen kan deze tool vervangen?',
+            itemLabel: (props) => props.value || 'Tool',
+          },
+        ),
+
+        // ── Redactionele laag ─────────────────────────
+        testedByEditor: fields.checkbox({
+          label: 'Getest door redactie',
+          description: 'Heeft een redacteur deze tool persoonlijk getest?',
+          defaultValue: false,
+        }),
+        verdict: fields.text({
+          label: 'Redactioneel oordeel',
+          description: 'Kort oordeel in het Nederlands.',
+          multiline: true,
+        }),
+        bestAlternative: fields.text({
+          label: 'Beste alternatief',
+          description: 'Slug van de beste alternatieve tool (bv. "chatgpt").',
+        }),
+        whyListed: fields.text({
+          label: 'Waarom op de site',
+          description: 'Waarom staat deze tool op debesteaitools.nl ondanks alternatieven?',
+          multiline: true,
+        }),
       },
     }),
   },

@@ -84,6 +84,14 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
           </button>
         ))}
       </div>
+      <!-- Quick-filter chips -->
+      <div class="filter-bar__row filter-bar__row--quick">
+        <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools">🇪🇺 GDPR-klaar</button>
+        <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren">⚡ Snel inzetbaar</button>
+        <button class="quick-chip" data-quick="nodev" title="Geen developer nodig">🙅 Geen developer</button>
+        <button class="quick-chip" data-quick="trial" title="Gratis proefperiode beschikbaar">🆓 Gratis proberen</button>
+        <button class="quick-chip" data-quick="tested" title="Getest door redactie">✅ Redactie-getest</button>
+      </div>
       <div class="filter-bar__row filter-bar__row--secondary">
         <select id="audience-select" class="filter-select">
           <option value="all">Alle doelgroepen</option>
@@ -107,6 +115,11 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
         <select id="sort-select" class="filter-select">
           <option value="buzz">Buzz Score</option>
           <option value="velocity">Stijgers eerst</option>
+          <option value="proven">Meest bewezen</option>
+          <option value="ttv">Snelst inzetbaar</option>
+          <option value="enterprise">Enterprise-ready</option>
+          <option value="ease">Gebruiksgemak</option>
+          <option value="brs">Business Readiness</option>
           <option value="alpha">A → Z</option>
         </select>
       </div>
@@ -144,17 +157,34 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
   let activeAudience = 'all';
   let activeDeployment = 'all';
   let activeDifficulty = 'all';
+  const activeQuickFilters = new Set<string>();
 
   const grid = document.getElementById('tool-grid')!;
   const wraps = Array.from(grid.querySelectorAll<HTMLElement>('.tool-card-wrap'));
   const emptyMsg = document.getElementById('grid-empty')!;
   const fnChips = document.querySelectorAll<HTMLButtonElement>('.cat-chip');
+  const quickChips = document.querySelectorAll<HTMLButtonElement>('.quick-chip');
 
   // ── Function chips ────────────────────────────────
   fnChips.forEach(chip => {
     chip.addEventListener('click', () => {
       activeFn = chip.dataset.fnNav!;
       fnChips.forEach(c => c.classList.toggle('cat-chip--active', c.dataset.fnNav === activeFn));
+      applyFilters();
+    });
+  });
+
+  // ── Quick-filter chips ────────────────────────────
+  quickChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.quick!;
+      if (activeQuickFilters.has(key)) {
+        activeQuickFilters.delete(key);
+        chip.classList.remove('quick-chip--active');
+      } else {
+        activeQuickFilters.add(key);
+        chip.classList.add('quick-chip--active');
+      }
       applyFilters();
     });
   });
@@ -170,25 +200,39 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
   difficultySelect.addEventListener('change', () => { activeDifficulty = difficultySelect.value; applyFilters(); });
   sortSelect.addEventListener('change', () => applySort(sortSelect.value));
 
+  function matchQuickFilters(card: HTMLElement): boolean {
+    for (const qf of activeQuickFilters) {
+      if (qf === 'gdpr' && card.dataset.gdpr !== '1') return false;
+      if (qf === 'fast' && !['minutes', 'hours'].includes(card.dataset.ttfv ?? '')) return false;
+      if (qf === 'nodev' && card.dataset.requiresDev === '1') return false;
+      if (qf === 'trial' && card.dataset.freeTrial !== '1') return false;
+      if (qf === 'tested' && card.dataset.editorTested !== '1') return false;
+    }
+    return true;
+  }
+
   function applyFilters() {
     let visible = 0;
     wraps.forEach(wrap => {
       const card = wrap.querySelector<HTMLElement>('.tool-card');
+      if (!card) return;
       const fns = (wrap.dataset.functions ?? '').split(' ');
       const matchFn = activeFn === 'all' || fns.includes(activeFn);
 
-      const audience = (card?.dataset.audience ?? '').split(' ');
+      const audience = (card.dataset.audience ?? '').split(' ');
       const matchAudience = activeAudience === 'all' || audience.includes(activeAudience);
 
-      const deployment = card?.dataset.deployment ?? '';
+      const deployment = card.dataset.deployment ?? '';
       const matchDeployment = activeDeployment === 'all' || deployment === activeDeployment
         || (activeDeployment === 'saas' && deployment === 'both')
         || (activeDeployment === 'self-hosted' && deployment === 'both');
 
-      const difficulty = card?.dataset.difficulty ?? '';
+      const difficulty = card.dataset.difficulty ?? '';
       const matchDifficulty = activeDifficulty === 'all' || difficulty === activeDifficulty;
 
-      const show = matchFn && matchAudience && matchDeployment && matchDifficulty;
+      const matchQuick = matchQuickFilters(card);
+
+      const show = matchFn && matchAudience && matchDeployment && matchDifficulty && matchQuick;
       wrap.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -204,6 +248,21 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
       }
       if (mode === 'alpha') {
         return (cardA.dataset.name ?? '').localeCompare(cardB.dataset.name ?? '');
+      }
+      if (mode === 'proven') {
+        return parseFloat(cardB.dataset.proven ?? '0') - parseFloat(cardA.dataset.proven ?? '0');
+      }
+      if (mode === 'ttv') {
+        return parseFloat(cardB.dataset.ttvScore ?? '0') - parseFloat(cardA.dataset.ttvScore ?? '0');
+      }
+      if (mode === 'enterprise') {
+        return parseFloat(cardB.dataset.govScore ?? '0') - parseFloat(cardA.dataset.govScore ?? '0');
+      }
+      if (mode === 'ease') {
+        return parseFloat(cardB.dataset.ease ?? '0') - parseFloat(cardA.dataset.ease ?? '0');
+      }
+      if (mode === 'brs') {
+        return parseFloat(cardB.dataset.brs ?? '0') - parseFloat(cardA.dataset.brs ?? '0');
       }
       return parseFloat(cardB.dataset.buzz ?? '0') - parseFloat(cardA.dataset.buzz ?? '0');
     });
@@ -278,6 +337,42 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
     gap: var(--space-2);
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .filter-bar__row--quick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .quick-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2-5);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .quick-chip:hover {
+    border-color: var(--primary-bright);
+    color: var(--primary-bright);
+  }
+
+  .quick-chip--active {
+    background: var(--primary-bright);
+    border-color: var(--primary-bright);
+    color: var(--bg-deep);
+    font-weight: var(--font-semibold);
   }
 
   .filter-bar__row--secondary {

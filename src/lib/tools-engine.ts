@@ -6,7 +6,7 @@
  */
 
 import { getCollection } from 'astro:content';
-import type { Tool, ToolStats, ToolsRadarData } from '../types/tools-domain';
+import type { Tool, ToolStats, ToolsRadarData, ComputedScores } from '../types/tools-domain';
 import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
 import { businessFunctions } from './tools-schema';
 
@@ -46,6 +46,8 @@ async function loadStats(): Promise<Map<string, ToolStats>> {
         product_hunt_mentions: tool.product_hunt_mentions,
         newsletter_mentions: tool.newsletter_mentions,
         source_articles: tool.source_articles,
+        youtube_videos: tool.youtube_videos ?? [],
+        social_posts: tool.social_posts ?? [],
         // v3 fields (optional — populated once newsflux radar generator exports them)
         acceleration: tool.acceleration,
         expert_ratio: tool.expert_ratio,
@@ -78,6 +80,83 @@ export async function getRadarData(): Promise<ToolsRadarData | null> {
 }
 
 // ============================================
+// COMPUTED SCORES
+// ============================================
+
+/** Weight map for funding stage maturity (higher = more mature) */
+const fundingStageWeight: Record<string, number> = {
+  bootstrapped: 20, seed: 25, 'series-a': 40, 'series-b': 55,
+  'series-c': 70, growth: 85, public: 100,
+};
+
+/** Weight map for time-to-first-value (higher = faster) */
+const ttfvWeight: Record<string, number> = {
+  minutes: 100, hours: 75, days: 45, weeks: 15,
+};
+
+/** Weight map for setup complexity (higher = easier) */
+const setupWeight: Record<string, number> = {
+  low: 100, medium: 55, high: 15,
+};
+
+/** Compute all business readiness scores for a tool */
+function computeScores(tool: Omit<Tool, 'scores'>): ComputedScores | undefined {
+  // provenScore: yearsActive (30%) + g2 (40%) + customers (15%) + funding (15%)
+  const customers = tool.notableCustomers ?? [];
+  const hasProvenData = tool.yearsActive != null || tool.g2Rating != null
+    || customers.length > 0 || tool.fundingStage != null;
+
+  const yearsNorm = tool.yearsActive != null ? Math.min(tool.yearsActive / 10, 1) * 100 : 0;
+  const g2Norm = tool.g2Rating != null ? (tool.g2Rating / 5) * 100 : 0;
+  const reviewBonus = tool.g2ReviewCount != null ? Math.min(tool.g2ReviewCount / 500, 1) * 100 : 0;
+  const g2Combined = tool.g2Rating != null ? (g2Norm * 0.6 + reviewBonus * 0.4) : 0;
+  const customersNorm = Math.min(customers.length / 5, 1) * 100;
+  const fundingNorm = tool.fundingStage ? (fundingStageWeight[tool.fundingStage] ?? 0) : 0;
+
+  const provenScore = hasProvenData
+    ? Math.round(yearsNorm * 0.3 + g2Combined * 0.4 + customersNorm * 0.15 + fundingNorm * 0.15)
+    : 0;
+
+  // timeToValueScore: ttfv (40%) + setup (30%) + !developer (15%) + trial (15%)
+  const hasTtvData = tool.timeToFirstValue != null || tool.setupComplexity != null
+    || tool.requiresDeveloper != null || tool.freeTrialAvailable != null;
+
+  const ttfvNorm = tool.timeToFirstValue ? (ttfvWeight[tool.timeToFirstValue] ?? 0) : 0;
+  const setupNorm = tool.setupComplexity ? (setupWeight[tool.setupComplexity] ?? 0) : 0;
+  const devNorm = tool.requiresDeveloper != null ? (tool.requiresDeveloper ? 0 : 100) : 0;
+  const trialNorm = tool.freeTrialAvailable ? 100 : 0;
+
+  const timeToValueScore = hasTtvData
+    ? Math.round(ttfvNorm * 0.4 + setupNorm * 0.3 + devNorm * 0.15 + trialNorm * 0.15)
+    : 0;
+
+  // governanceScore: sum of 6 boolean flags, normalized to 0-100
+  const govFlags = [tool.gdprReady, tool.euHostingAvailable, tool.dpaAvailable,
+    tool.soc2, tool.sso, tool.auditLogs];
+  const hasGovData = govFlags.some((f) => f != null);
+  const govSum = govFlags.filter(Boolean).length;
+  const governanceScore = hasGovData ? Math.round((govSum / 6) * 100) : 0;
+
+  // businessReadinessScore: weighted average of available scores
+  const components: { score: number; weight: number }[] = [];
+  if (hasProvenData) components.push({ score: provenScore, weight: 0.3 });
+  if (hasTtvData) components.push({ score: timeToValueScore, weight: 0.25 });
+  if (hasGovData) components.push({ score: governanceScore, weight: 0.2 });
+  if (tool.easeOfUseScore != null) components.push({ score: (tool.easeOfUseScore / 10) * 100, weight: 0.25 });
+
+  // If no data at all, don't produce scores
+  if (components.length === 0) return undefined;
+
+  // Re-normalize weights if not all components present
+  const totalWeight = components.reduce((sum, c) => sum + c.weight, 0);
+  const businessReadinessScore = Math.round(
+    components.reduce((sum, c) => sum + c.score * (c.weight / totalWeight), 0),
+  );
+
+  return { provenScore, timeToValueScore, governanceScore, businessReadinessScore };
+}
+
+// ============================================
 // CONTENT + STATS MERGE
 // ============================================
 
@@ -96,11 +175,14 @@ export async function getAllTools(): Promise<Tool[]> {
     loadStats(),
   ]);
 
-  return contentEntries.map((entry) => ({
-    ...entry.data,
-    slug: entry.id,
-    stats: statsMap.get(entry.id) ?? statsMap.get(toStatsSlug(entry.id)),
-  }));
+  return contentEntries.map((entry) => {
+    const base = {
+      ...entry.data,
+      slug: entry.id,
+      stats: statsMap.get(entry.id) ?? statsMap.get(toStatsSlug(entry.id)),
+    };
+    return { ...base, scores: computeScores(base) };
+  });
 }
 
 /** Get a single tool by slug */
