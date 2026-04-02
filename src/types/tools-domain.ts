@@ -55,7 +55,8 @@ export type ToolCategory =
   | 'audio'
   | 'search'
   | 'productivity'
-  | 'infrastructure';
+  | 'infrastructure'
+  | 'design';
 
 /** Business functions for the /zakelijk niche page */
 export type BusinessFunctionKey =

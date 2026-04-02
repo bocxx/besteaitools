@@ -69,6 +69,13 @@ export const CATEGORIES = {
     icon: "server",
     description: "Modellen, infra, deployment en AI-platforms."
   },
+  design: {
+    name: "Design",
+    slug: "design",
+    color: "#f0abfc",
+    icon: "palette",
+    description: "AI-tools voor grafisch ontwerp en visuele content."
+  },
 } as const;
 
 export function getCategoryBySlug(slug: string) {

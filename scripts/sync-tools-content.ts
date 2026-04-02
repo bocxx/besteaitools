@@ -119,6 +119,8 @@ function mapCategory(newsfluxCategory: string): string {
     automatisering: 'automation',
     zoeken:         'search',
     infra:          'infrastructure',
+    productiviteit: 'productivity',
+    design:         'design',
   };
   return map[newsfluxCategory] ?? newsfluxCategory;
 }

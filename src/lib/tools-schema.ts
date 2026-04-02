@@ -23,6 +23,7 @@ export const toolCategories = {
   search:         { name: 'Zoeken',          icon: 'search',         color: 'var(--color-info)',        description: 'Zoeken, research en kennisverrijking.' },
   productivity:   { name: 'Productiviteit',  icon: 'sparkles',       color: 'var(--primary-mid)',       description: 'Dagelijkse AI-tools voor kenniswerk en output.' },
   infrastructure: { name: 'Infrastructuur',  icon: 'server',         color: 'var(--secondary-mid)',     description: 'Modellen, infra, deployment en AI-platforms.' },
+  design:         { name: 'Design',          icon: 'palette',        color: '#f0abfc',                 description: 'AI-tools voor grafisch ontwerp en visuele content.' },
 } as const;
 
 export type ToolCategoryKey = keyof typeof toolCategories;
