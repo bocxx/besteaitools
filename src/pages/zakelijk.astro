@@ -15,7 +15,7 @@ import {
 import { businessFunctions } from '../lib/tools-schema';
 import type { BusinessFunctionKey } from '../lib/tools-schema';
 import type { Tool } from '../types/tools-domain';
-import { Building2, Briefcase } from '@lucide/astro';
+import { Building2, Briefcase, ShieldCheck, Zap, UserX, Gift, BadgeCheck } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const sections = await getBusinessFunctionSections();
@@ -86,11 +86,11 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
       </div>
       <!-- Quick-filter chips -->
       <div class="filter-bar__row filter-bar__row--quick">
-        <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools">🇪🇺 GDPR-klaar</button>
-        <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren">⚡ Snel inzetbaar</button>
-        <button class="quick-chip" data-quick="nodev" title="Geen developer nodig">🙅 Geen developer</button>
-        <button class="quick-chip" data-quick="trial" title="Gratis proefperiode beschikbaar">🆓 Gratis proberen</button>
-        <button class="quick-chip" data-quick="tested" title="Getest door redactie">✅ Redactie-getest</button>
+        <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools"><ShieldCheck size={13} strokeWidth={1.5} /> GDPR-klaar</button>
+        <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren"><Zap size={13} strokeWidth={1.5} /> Snel inzetbaar</button>
+        <button class="quick-chip" data-quick="nodev" title="Geen developer nodig"><UserX size={13} strokeWidth={1.5} /> Geen developer</button>
+        <button class="quick-chip" data-quick="trial" title="Gratis proefperiode beschikbaar"><Gift size={13} strokeWidth={1.5} /> Gratis proberen</button>
+        <button class="quick-chip" data-quick="tested" title="Getest door redactie"><BadgeCheck size={13} strokeWidth={1.5} /> Redactie-getest</button>
       </div>
       <div class="filter-bar__row filter-bar__row--secondary">
         <select id="audience-select" class="filter-select">
@@ -356,7 +356,7 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
     border-radius: var(--radius-full);
     border: 1px solid var(--border-subtle);
     background: transparent;
-    color: var(--text-muted);
+    color: var(--text-primary);
     font-size: var(--text-xs);
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -365,13 +365,14 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
 
   .quick-chip:hover {
     border-color: var(--primary-bright);
-    color: var(--primary-bright);
+    color: var(--text-primary);
+    background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
   }
 
   .quick-chip--active {
-    background: var(--primary-bright);
+    background: color-mix(in oklch, var(--primary-bright) 20%, transparent);
     border-color: var(--primary-bright);
-    color: var(--bg-deep);
+    color: var(--text-primary);
     font-weight: var(--font-semibold);
   }
 
