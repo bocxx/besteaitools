@@ -643,7 +643,10 @@ function sourceLabel(s: string): string {
     .page-body {
       grid-template-columns: 1fr;
     }
-    .sidebar { order: -1; }
+    .sidebar {
+      order: -1;
+      position: static;
+    }
   }
 
   /* ── Back link ────────────────────────────────────────────── */
