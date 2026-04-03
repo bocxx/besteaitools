@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import type { Tool, ToolStats, ToolsRadarData, ComputedScores } from '../types/tools-domain';
 import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
 import { businessFunctions } from './tools-schema';
+import { isExcludedTool } from '../config/excluded-tools';
 
 // ============================================
 // STATS LOADER
@@ -175,14 +176,16 @@ export async function getAllTools(): Promise<Tool[]> {
     loadStats(),
   ]);
 
-  return contentEntries.map((entry) => {
-    const base = {
-      ...entry.data,
-      slug: entry.id,
-      stats: statsMap.get(entry.id) ?? statsMap.get(toStatsSlug(entry.id)),
-    };
-    return { ...base, scores: computeScores(base) };
-  });
+  return contentEntries
+    .filter((entry) => !isExcludedTool(entry.id))
+    .map((entry) => {
+      const base = {
+        ...entry.data,
+        slug: entry.id,
+        stats: statsMap.get(entry.id) ?? statsMap.get(toStatsSlug(entry.id)),
+      };
+      return { ...base, scores: computeScores(base) };
+    });
 }
 
 /** Get a single tool by slug */
@@ -436,6 +439,44 @@ export async function getWeeklyHighlights(): Promise<WeeklyHighlights> {
 // ============================================
 // RADAR METADATA
 // ============================================
+
+// ============================================
+// LAUNCH RADAR
+// ============================================
+
+export interface LaunchItem {
+  name: string;
+  description: string;
+  url: string;
+  favicon: string;
+  date: string;
+  source: 'product_hunt' | 'github' | 'hackernews' | 'twitter' | 'bluesky';
+  source_label: string;
+  risk_flags?: { category: string; label_nl: string; hits: number; matched: string[] }[];
+  stars?: number;
+  total_stars?: number;
+  repo?: string;
+  points?: number;
+  hn_url?: string;
+}
+
+export interface LaunchRadarData {
+  generated_at: string;
+  window_days: number;
+  total_launches: number;
+  by_source: Record<string, number>;
+  launches: LaunchItem[];
+}
+
+/** Load launch_radar.json */
+export async function getLaunchRadar(): Promise<LaunchRadarData | null> {
+  try {
+    const raw = await import('../data/reports/launch_radar.json');
+    return (raw.default ?? raw) as LaunchRadarData;
+  } catch {
+    return null;
+  }
+}
 
 /** Get radar generation timestamp */
 export async function getRadarTimestamp(): Promise<string | null> {

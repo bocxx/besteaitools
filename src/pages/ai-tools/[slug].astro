@@ -15,7 +15,7 @@ import {
   timeToFirstValueOptions, setupComplexityLevels, learningCurveLevels, qualityLevels,
   companySizeFitOptions, useCaseStages, fundingStages,
 } from '../../lib/tools-schema';
-import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Youtube, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp } from '@lucide/astro';
+import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Youtube, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp, MessageSquare } from '@lucide/astro';
 
 export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
@@ -502,11 +502,14 @@ function sourceLabel(s: string): string {
         <!-- Social -->
         {stats?.social_posts && stats.social_posts.length > 0 && (
           <section class="media-panel">
-            <h2 class="section-heading">💬 Wat mensen zeggen</h2>
+            <h2 class="section-heading"><MessageSquare size={15} strokeWidth={1.5} /> Wat mensen zeggen</h2>
             <div class="social-grid">
               {stats.social_posts.map(p => {
                 const initials = (p.author_name || p.author_handle)
                   .split(/\s+/).slice(0, 2).map((w: string) => w[0]?.toUpperCase()).join('');
+                const platformLabel = p.platform === 'reddit' ? 'Reddit'
+                  : p.platform === 'twitter' ? 'X / Twitter'
+                  : 'Bluesky';
                 return (
                   <a href={p.url} target="_blank" rel="noopener" class="social-card">
                     <div class="social-card__header">
@@ -515,13 +518,23 @@ function sourceLabel(s: string): string {
                         <span class="social-card__name">{p.author_name || p.author_handle}</span>
                         <span class="social-card__handle">@{p.author_handle}</span>
                       </div>
-                      <span class="social-card__platform" title="Bluesky">🦸</span>
+                      <span class={`social-card__platform social-card__platform--${p.platform || 'bluesky'}`} title={platformLabel}>
+                        {p.platform === 'reddit' && <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" alt="" width="14" height="14" />}
+                        {p.platform === 'twitter' && <img src="https://www.google.com/s2/favicons?domain=x.com&sz=32" alt="" width="14" height="14" />}
+                        {(!p.platform || p.platform === 'bluesky') && <img src="https://www.google.com/s2/favicons?domain=bsky.app&sz=32" alt="" width="14" height="14" />}
+                      </span>
                     </div>
                     <p class="social-card__text">{p.text}</p>
-                    <div class="social-card__engagement">
-                      <span class="social-card__stat"><Heart size={12} strokeWidth={1.5} />{p.likes}</span>
-                      <span class="social-card__stat"><Repeat2 size={12} strokeWidth={1.5} />{p.reposts}</span>
-                    </div>
+                    {(p.likes > 0 || p.reposts > 0) && (
+                      <div class="social-card__engagement">
+                        {p.likes > 0 && <span class="social-card__stat">
+                          <Heart size={12} strokeWidth={1.5} />{p.likes}
+                        </span>}
+                        {p.reposts > 0 && <span class="social-card__stat">
+                          <Repeat2 size={12} strokeWidth={1.5} />{p.platform === 'reddit' ? `${p.reposts} comments` : p.reposts}
+                        </span>}
+                      </div>
+                    )}
                   </a>
                 );
               })}

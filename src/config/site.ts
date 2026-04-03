@@ -27,6 +27,7 @@ export const siteConfig = {
   navigation: {
     main: [
       { label: "Weekradar", href: "/weekradar" },
+      { label: "Nieuw", href: "/launch-radar" },
       { label: "Zakelijk", href: "/zakelijk" },
     ],
     footer: {
@@ -44,6 +45,10 @@ export const siteConfig = {
   // SOCIAL LINKS
   // ============================================
   social: {
+    github: {
+      url: "https://github.com/bocxx",
+      label: "GitHub",
+    },
     x: {
       url: "https://x.com/AInieuwsNL",
       label: "X / Twitter",

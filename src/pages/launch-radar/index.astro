@@ -1,0 +1,239 @@
+---
+/**
+ * /launch-radar — Newly Launched AI Tools
+ * Shows tools discovered from Product Hunt, GitHub, HN, and social media.
+ */
+import Layout from '../../layouts/Layout.astro';
+import Badge from '../../components/atoms/Badge.astro';
+import RiskBadges from '../../components/atoms/RiskBadges.astro';
+import { getLaunchRadar } from '../../lib/tools-engine';
+import { Rocket, ArrowLeft, ExternalLink, Github, MessageSquare } from '@lucide/astro';
+
+const data = await getLaunchRadar();
+const launches = data?.launches ?? [];
+const genDate = data?.generated_at ? new Date(data.generated_at) : new Date();
+const formattedDate = genDate.toLocaleDateString('nl-NL', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+
+// Source config for badges
+const sourceConfig: Record<string, { label: string; color: string; favicon: string }> = {
+  product_hunt: { label: 'Product Hunt', color: '#da552f', favicon: 'https://www.google.com/s2/favicons?domain=producthunt.com&sz=32' },
+  github:       { label: 'GitHub', color: '#238636', favicon: 'https://www.google.com/s2/favicons?domain=github.com&sz=32' },
+  hackernews:   { label: 'Hacker News', color: '#ff6600', favicon: 'https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=32' },
+  twitter:      { label: 'X / Twitter', color: '#1d9bf0', favicon: 'https://www.google.com/s2/favicons?domain=x.com&sz=32' },
+  bluesky:      { label: 'Bluesky', color: '#0085ff', favicon: 'https://www.google.com/s2/favicons?domain=bsky.app&sz=32' },
+};
+---
+
+<Layout title="Launch Radar — Net gelanceerde AI-tools | debesteaitools.nl" description={`${launches.length} net gelanceerde AI-tools die we volgen — ontdekt via Product Hunt, GitHub, Hacker News en social media.`}>
+  <main class="container" style="padding-top: 80px; max-width: 960px;">
+
+    <a href="/" class="back-link">
+      <ArrowLeft size={16} strokeWidth={1.5} />
+      Terug naar overzicht
+    </a>
+
+    <header class="lr-header">
+      <div class="lr-header__icon"><Rocket size={28} strokeWidth={1.5} /></div>
+      <h1 class="lr-title">Launch Radar</h1>
+      <p class="lr-subtitle">
+        Elke week scannen we Product Hunt, GitHub, Hacker News en social media op <strong>net gelanceerde AI-tools</strong>.
+        Hier zie je wat er deze week is verschenen — nog voordat het mainstream wordt.
+      </p>
+      <p class="lr-meta">
+        <strong>{launches.length} tools</strong> gevonden · bijgewerkt {formattedDate}
+        {data?.by_source && (
+          <span class="lr-sources">
+             · {data.by_source.product_hunt > 0 && `${data.by_source.product_hunt} via Product Hunt`}
+            {data.by_source.github > 0 && ` · ${data.by_source.github} via GitHub`}
+            {data.by_source.hackernews > 0 && ` · ${data.by_source.hackernews} via Hacker News`}
+          </span>
+        )}
+      </p>
+    </header>
+
+    <div class="lr-grid">
+      {launches.map(launch => {
+        const src = sourceConfig[launch.source] || sourceConfig.product_hunt;
+        const risks = (launch.risk_flags ?? []) as any[];
+        return (
+          <a href={launch.url} target="_blank" rel="noopener" class="lr-card">
+            <div class="lr-card__header">
+              {launch.favicon && (
+                <img src={launch.favicon} alt="" class="lr-card__logo" width="28" height="28" loading="lazy" />
+              )}
+              <div class="lr-card__title-group">
+                <h3 class="lr-card__name">{launch.name}</h3>
+                <span class="lr-card__date">{launch.date}</span>
+              </div>
+              <ExternalLink size={13} strokeWidth={1.5} class="lr-card__ext" />
+            </div>
+
+            <p class="lr-card__desc">{launch.description}</p>
+
+            <footer class="lr-card__footer">
+              <span class="lr-card__source" style={`color: ${src.color}; border-color: color-mix(in oklch, ${src.color} 35%, transparent)`}>
+                <img src={src.favicon} alt="" width="12" height="12" />
+                {launch.source_label}
+              </span>
+              {risks.length > 0 && <RiskBadges flags={risks} max={2} />}
+            </footer>
+          </a>
+        );
+      })}
+    </div>
+
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .lr-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+  .lr-header__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright);
+    margin-bottom: var(--space-3);
+  }
+  .lr-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .lr-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin: 0;
+  }
+  .lr-subtitle strong { color: var(--text-primary); }
+  .lr-meta {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: var(--space-2) 0 0;
+  }
+  .lr-meta strong { color: var(--text-secondary); }
+  .lr-sources { opacity: 0.7; }
+
+  /* Grid */
+  .lr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+
+  /* Card */
+  .lr-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+  }
+  .lr-card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklch, var(--text-primary) 15%, transparent);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .lr-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2-5);
+  }
+  .lr-card__logo {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+  .lr-card__title-group {
+    flex: 1;
+    min-width: 0;
+  }
+  .lr-card__name {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .lr-card__date {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  :global(.lr-card__ext) {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: color var(--transition-fast);
+  }
+  .lr-card:hover :global(.lr-card__ext) { color: var(--primary-bright); }
+
+  .lr-card__desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .lr-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: auto;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .lr-card__source {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .lr-card__source img {
+    border-radius: 2px;
+  }
+</style>

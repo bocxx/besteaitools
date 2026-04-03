@@ -1,0 +1,72 @@
+---
+/**
+ * RiskBadges — shows risk signal icons for an AI tool.
+ * Each icon has a tooltip with the Dutch risk label.
+ * Only the top 3 risk categories are shown (sorted by hits).
+ */
+import type { RiskFlag } from '../../types/tools-domain';
+import {
+  TriangleAlert, ShieldAlert, Eye, Bot, Globe, CircleAlert,
+  Coins, Scale,
+} from '@lucide/astro';
+
+interface Props {
+  flags: RiskFlag[];
+  /** Max icons to show (default: 3) */
+  max?: number;
+}
+
+const { flags, max = 3 } = Astro.props;
+
+const topFlags = flags
+  .sort((a, b) => b.hits - a.hits)
+  .slice(0, max);
+
+if (topFlags.length === 0) return;
+
+/** Map risk category to a Lucide icon component */
+const iconMap: Record<string, any> = {
+  security:   ShieldAlert,
+  privacy:    Eye,
+  autonomy:   Bot,
+  china_data: Globe,
+  accuracy:   CircleAlert,
+  cost:       Coins,
+  legal:      Scale,
+};
+---
+
+<span class="risk-badges" title={topFlags.map(f => f.label_nl).join(' · ')}>
+  <TriangleAlert size={10} strokeWidth={2.5} class="risk-warn-icon" />
+  {topFlags.map(f => {
+    const Icon = iconMap[f.category] || CircleAlert;
+    return (
+      <span class="risk-badge" title={`${f.label_nl} (${f.hits}x)`}>
+        <Icon size={11} strokeWidth={2} />
+      </span>
+    );
+  })}
+</span>
+
+<style>
+  .risk-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px var(--space-1-5);
+    border-radius: var(--radius-full);
+    border: 1px solid color-mix(in oklch, var(--color-warning) 40%, transparent);
+    background: color-mix(in oklch, var(--color-warning) 8%, transparent);
+    cursor: help;
+  }
+  :global(.risk-warn-icon) {
+    color: var(--color-warning);
+    flex-shrink: 0;
+  }
+  .risk-badge {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-warning);
+    opacity: 0.85;
+  }
+</style>

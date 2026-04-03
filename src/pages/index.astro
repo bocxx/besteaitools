@@ -37,6 +37,16 @@ const formattedDate = generatedAt
     })
   : null;
 
+// Phases to show publicly (exclude faded)
+const publicPhaseKeys: TrendPhaseKey[] = [
+  'weak_signal',
+  'emerging',
+  'accelerating',
+  'peaking',
+  'sustained',
+  'declining',
+];
+
 // Phase counts for pills
 const phaseCounts = new Map<string, number>();
 for (const t of tools) {
@@ -76,7 +86,8 @@ for (const t of tools) {
         <TrendingUp size={11} strokeWidth={2} style="color: var(--color-info)" /> Stijger
       </span>
       <span class="legend-item legend-item--signal">
-        <Zap size={11} strokeWidth={2} style="color: var(--color-warning)" /> Hype
+        <span class="legend-phase-dot"></span>
+        Fase
       </span>
       <span class="legend-item legend-item--signal">
         <ShieldCheck size={11} strokeWidth={2} style="color: var(--color-success)" /> Bewezen
@@ -100,7 +111,8 @@ for (const t of tools) {
       <div class="filter-bar__row filter-bar__row--secondary">
         <div class="filter-pills" id="phase-pills">
           <button class="filter-pill filter-pill--active" data-filter="phase" data-value="all">Alle fases</button>
-          {Object.entries(trendPhases).map(([key, ph]) => {
+          {publicPhaseKeys.map((key) => {
+            const ph = trendPhases[key];
             const count = phaseCounts.get(key) ?? 0;
             return count > 0 && (
               <button class="filter-pill" data-filter="phase" data-value={key}>
@@ -288,6 +300,13 @@ for (const t of tools) {
   .buzz--hot { background: var(--color-error); }
   .buzz--warm { background: var(--color-warning); }
   .buzz--cool { background: var(--text-muted); }
+
+  .legend-phase-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-warning);
+  }
 
   /* ── Unified filter bar ─────────────────────── */
   .filter-bar {

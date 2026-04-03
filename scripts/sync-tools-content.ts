@@ -1,5 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { isExcludedTool } from '../src/config/excluded-tools';
 
 type RadarEnrichment = {
   description_long_nl?: string;
@@ -223,6 +224,11 @@ async function main() {
 
   for (const tool of radar.tools) {
     const fileSlug = toFileSlug(tool.slug);
+
+    if (isExcludedTool(fileSlug)) {
+      continue;
+    }
+
     const existingPath = existingBySlug.get(fileSlug);
     const enrichment = tool.enrichment;
 

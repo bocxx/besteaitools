@@ -4,9 +4,10 @@
  * Designed for the /ai-tools grid. Links to detail page.
  */
 import Badge from '../atoms/Badge.astro';
-import { toolCategories, pricingModels, deploymentTypes } from '../../lib/tools-schema';
+import RiskBadges from '../atoms/RiskBadges.astro';
+import { toolCategories, pricingModels, deploymentTypes, trendPhases } from '../../lib/tools-schema';
 import type { Tool } from '../../types/tools-domain';
-import { ExternalLink, Flame, TrendingUp, Zap, ShieldCheck, Cloud, Server, Layers, Shield, BadgeCheck } from '@lucide/astro';
+import { ExternalLink, Flame, TrendingUp, Shield, BadgeCheck } from '@lucide/astro';
 
 interface Props {
   tool: Tool;
@@ -19,57 +20,61 @@ const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const pricing = pricingModels[tool.pricingModel];
 
-// Phase signals — shown as readable Dutch text chips
-const hypePhases = new Set(['accelerating', 'peaking']);
-const isHype = stats ? hypePhases.has(stats.phase) : false;
-const isBlijver = stats?.phase === 'sustained';
+// Lifecycle phase — neutral label from trendPhases
+const phaseMeta = stats?.phase ? trendPhases[stats.phase] : null;
+const showPhaseBadge = !!phaseMeta && !['faded', 'sustained', 'weak_signal'].includes(stats!.phase);
+
+// Pick ONE signal chip: Trending > Stijger > Phase (avoid clutter)
+const signalChip = isTopTool ? 'top'
+  : isStijger ? 'stijger'
+  : showPhaseBadge ? 'phase'
+  : null;
 
 // Zakelijke metadata
 const dt = tool.deploymentType ? deploymentTypes[tool.deploymentType] : null;
-const hasNl = tool.nlSupport;
 const audience = tool.targetAudience ?? [];
 const hasGdpr = tool.gdprReady;
+const hasNl = tool.languageSupport?.includes('nl');
 const isEditorTested = tool.testedByEditor;
-const isBeginner = tool.difficulty === 'beginner';
 const scores = tool.scores;
+const riskFlags = stats?.risk_flags ?? [];
+
+// Favicon URL from Google's service
+const domain = new URL(tool.websiteUrl).hostname;
+const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
 <a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-phase={stats?.phase ?? ''} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
   <div class="tool-card__inner">
 
-    <!-- Header: category + signal chips -->
+    <!-- Header: category + single signal chip -->
     <header class="tool-card__header">
       <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
       <div class="tool-card__signals">
-        {isTopTool && <span class="signal-chip signal-chip--top"><Flame size={10} strokeWidth={2} /> Trending</span>}
-        {isStijger && <span class="signal-chip signal-chip--stijger"><TrendingUp size={10} strokeWidth={2} /> Stijger</span>}
-        {isHype && <span class="signal-chip signal-chip--hype"><Zap size={10} strokeWidth={2} /> Hype</span>}
-        {isBlijver && <span class="signal-chip signal-chip--blijver"><ShieldCheck size={10} strokeWidth={2} /> Bewezen</span>}
+        {signalChip === 'top' && <span class="signal-chip signal-chip--top"><Flame size={10} strokeWidth={2} /> Trending</span>}
+        {signalChip === 'stijger' && <span class="signal-chip signal-chip--stijger"><TrendingUp size={10} strokeWidth={2} /> Stijger</span>}
+        {signalChip === 'phase' && (
+          <span class={`signal-chip signal-chip--phase signal-chip--phase-${stats!.phase}`}>
+            {phaseMeta!.label}
+          </span>
+        )}
       </div>
+      <img src={faviconUrl} alt="" class="tool-card__logo" width="24" height="24" loading="lazy" />
     </header>
 
     <!-- Tool name + description -->
     <h3 class="tool-card__name">{tool.name}</h3>
     <p class="tool-card__desc">{tool.shortDescription}</p>
 
-    <!-- Footer: pricing + key facts -->
+    <!-- Footer: pricing + icons -->
     <footer class="tool-card__footer">
-      <div class="tool-card__facts">
-        <!-- Pricing -->
-        <span class="fact-pill" style={`color: ${pricing.color}; border-color: color-mix(in oklch, ${pricing.color} 30%, transparent)`}>
-          {pricing.label}
-        </span>
-        <!-- NL support -->
-        {hasNl && <span class="fact-pill fact-pill--nl">🇳🇱 Nederlands</span>}
-        <!-- Beginner friendly -->
-        {isBeginner && <span class="fact-pill fact-pill--beginner">Beginnersvriendelijk</span>}
-        <!-- Free trial -->
-        {tool.freeTrialAvailable && <span class="fact-pill fact-pill--trial">Gratis proberen</span>}
-      </div>
+      <span class="fact-pill" style={`color: ${pricing.color}; border-color: color-mix(in oklch, ${pricing.color} 30%, transparent)`}>
+        {pricing.label}
+      </span>
       <div class="tool-card__icons">
+        {riskFlags.length > 0 && <RiskBadges flags={riskFlags} />}
         {isEditorTested && <BadgeCheck size={13} strokeWidth={1.5} class="icon--editor" title="Getest door redactie" />}
         {hasGdpr && <Shield size={13} strokeWidth={1.5} class="icon--gdpr" title="GDPR-ready" />}
-        {dt && tool.deploymentType === 'self-hosted' && <Server size={13} strokeWidth={1.5} class="icon--deploy" title="Zelf te hosten" />}
         <ExternalLink size={12} strokeWidth={1.5} class="icon--link" />
       </div>
     </footer>
@@ -106,20 +111,32 @@ const scores = tool.scores;
     gap: var(--space-2-5);
   }
 
-  /* Header: category badge + signal chips */
+  /* Header: category badge + signal chips + logo */
   .tool-card__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: var(--space-2);
-    flex-wrap: wrap;
   }
 
   .tool-card__signals {
     display: flex;
     align-items: center;
     gap: var(--space-1-5);
-    flex-wrap: wrap;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  /* Favicon logo */
+  .tool-card__logo {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+  }
+  .tool-card:hover .tool-card__logo {
+    opacity: 1;
   }
 
   /* Signal chips — readable Dutch text */
@@ -133,10 +150,17 @@ const scores = tool.scores;
     font-weight: var(--font-semibold);
     border: 1px solid;
   }
-  .signal-chip--top    { color: var(--color-error);   border-color: color-mix(in oklch, var(--color-error)   30%, transparent); background: color-mix(in oklch, var(--color-error)   8%, transparent); }
-  .signal-chip--stijger { color: var(--color-info);   border-color: color-mix(in oklch, var(--color-info)    30%, transparent); background: color-mix(in oklch, var(--color-info)    8%, transparent); }
-  .signal-chip--hype    { color: var(--color-warning); border-color: color-mix(in oklch, var(--color-warning) 30%, transparent); background: color-mix(in oklch, var(--color-warning) 8%, transparent); }
-  .signal-chip--blijver { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); background: color-mix(in oklch, var(--color-success) 8%, transparent); }
+  .signal-chip--top     { color: var(--color-error);   border-color: color-mix(in oklch, var(--color-error)   30%, transparent); background: color-mix(in oklch, var(--color-error)   8%, transparent); }
+  .signal-chip--stijger  { color: var(--color-info);    border-color: color-mix(in oklch, var(--color-info)    30%, transparent); background: color-mix(in oklch, var(--color-info)    8%, transparent); }
+
+  /* Lifecycle phase chips — neutral, data-driven */
+  .signal-chip--phase { font-weight: var(--font-medium); }
+  .signal-chip--phase-weak_signal  { color: var(--text-muted);       border-color: color-mix(in oklch, var(--text-muted)       30%, transparent); background: color-mix(in oklch, var(--text-muted)       10%, transparent); }
+  .signal-chip--phase-emerging     { color: var(--color-info);       border-color: color-mix(in oklch, var(--color-info)       30%, transparent); background: color-mix(in oklch, var(--color-info)        8%, transparent); }
+  .signal-chip--phase-accelerating { color: var(--color-warning);    border-color: color-mix(in oklch, var(--color-warning)    30%, transparent); background: color-mix(in oklch, var(--color-warning)     8%, transparent); }
+  .signal-chip--phase-peaking      { color: var(--color-error);      border-color: color-mix(in oklch, var(--color-error)      30%, transparent); background: color-mix(in oklch, var(--color-error)       8%, transparent); }
+  .signal-chip--phase-sustained    { color: var(--color-success);    border-color: color-mix(in oklch, var(--color-success)    30%, transparent); background: color-mix(in oklch, var(--color-success)     8%, transparent); }
+  .signal-chip--phase-declining    { color: var(--text-secondary);   border-color: color-mix(in oklch, var(--text-secondary)   30%, transparent); background: color-mix(in oklch, var(--text-secondary)    8%, transparent); }
 
   /* Name + description */
   .tool-card__name {
@@ -168,13 +192,7 @@ const scores = tool.scores;
     margin-top: auto;
   }
 
-  /* Fact pills: pricing, NL, difficulty, trial */
-  .tool-card__facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-1-5);
-    align-items: center;
-  }
+  /* Fact pill: pricing */
   .fact-pill {
     display: inline-flex;
     align-items: center;
@@ -187,9 +205,6 @@ const scores = tool.scores;
     color: var(--text-secondary);
     white-space: nowrap;
   }
-  .fact-pill--nl      { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); }
-  .fact-pill--beginner { color: var(--color-info);    border-color: color-mix(in oklch, var(--color-info)    30%, transparent); }
-  .fact-pill--trial   { color: var(--color-success); border-color: color-mix(in oklch, var(--color-success) 30%, transparent); }
 
   /* Utility icons (editor tested, GDPR, deploy, link) */
   .tool-card__icons {

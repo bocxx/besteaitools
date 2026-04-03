@@ -259,7 +259,7 @@ export interface YoutubeVideo {
   channel: string;
 }
 
-/** A Bluesky social post mentioning this tool */
+/** A social post mentioning this tool (Bluesky, Reddit, or Twitter) */
 export interface SocialPost {
   text: string;
   author_handle: string;
@@ -267,6 +267,20 @@ export interface SocialPost {
   likes: number;
   reposts: number;
   url: string;
+  /** Source platform for icon rendering */
+  platform?: 'bluesky' | 'reddit' | 'twitter';
+}
+
+/** Risk signal detected from news/social data */
+export interface RiskFlag {
+  /** Risk category identifier */
+  category: 'security' | 'privacy' | 'autonomy' | 'china_data' | 'accuracy' | 'cost' | 'legal';
+  /** Dutch label for the risk */
+  label_nl: string;
+  /** Number of source texts mentioning this risk */
+  hits: number;
+  /** Matched risk keywords (max 3) */
+  matched: string[];
 }
 
 /** GitHub trending repo linked to a tool */
@@ -297,6 +311,9 @@ export interface ToolStats {
   source_articles: SourceArticle[];
   youtube_videos: YoutubeVideo[];
   social_posts: SocialPost[];
+
+  /** Risk signals detected from articles/reddit/social data */
+  risk_flags?: RiskFlag[];
 
   // --- v3: already computed in newsflux, not yet exported ---
 
