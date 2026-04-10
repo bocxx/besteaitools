@@ -16,7 +16,12 @@ export default defineConfig({
     react(),
     markdoc(),
     keystatic(),
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
   ],
   markdown: {
     rehypePlugins: [
