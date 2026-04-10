@@ -7,7 +7,7 @@ import Layout from '../../layouts/Layout.astro';
 import Badge from '../../components/atoms/Badge.astro';
 import RiskBadges from '../../components/atoms/RiskBadges.astro';
 import { getLaunchRadar } from '../../lib/tools-engine';
-import { Rocket, ArrowLeft, ExternalLink, Github, MessageSquare } from '@lucide/astro';
+import { Rocket, ArrowLeft, ExternalLink, Github, MessageSquare, ArrowUp, Star, MessageCircle } from '@lucide/astro';
 
 const data = await getLaunchRadar();
 const launches = data?.launches ?? [];
@@ -60,9 +60,11 @@ const sourceConfig: Record<string, { label: string; color: string; favicon: stri
         return (
           <a href={launch.url} target="_blank" rel="noopener" class="lr-card">
             <div class="lr-card__header">
-              {launch.favicon && (
+              {launch.ph?.thumbnailUrl ? (
+                <img src={launch.ph.thumbnailUrl} alt="" class="lr-card__logo" width="28" height="28" loading="lazy" />
+              ) : launch.favicon ? (
                 <img src={launch.favicon} alt="" class="lr-card__logo" width="28" height="28" loading="lazy" />
-              )}
+              ) : null}
               <div class="lr-card__title-group">
                 <h3 class="lr-card__name">{launch.name}</h3>
                 <span class="lr-card__date">{launch.date}</span>
@@ -71,6 +73,29 @@ const sourceConfig: Record<string, { label: string; color: string; favicon: stri
             </div>
 
             <p class="lr-card__desc">{launch.description}</p>
+
+            {launch.ph && (
+              <div class="lr-card__ph-stats">
+                <span class="lr-card__stat lr-card__stat--votes">
+                  <ArrowUp size={12} strokeWidth={2} />
+                  {launch.ph.votesCount}
+                </span>
+                <span class="lr-card__stat">
+                  <MessageCircle size={11} strokeWidth={1.5} />
+                  {launch.ph.commentsCount}
+                </span>
+                {launch.ph.reviewsCount > 0 && (
+                  <span class="lr-card__stat lr-card__stat--rating">
+                    <Star size={11} strokeWidth={1.5} />
+                    {launch.ph.reviewsRating.toFixed(1)}
+                    <span class="lr-card__stat-dim">({launch.ph.reviewsCount})</span>
+                  </span>
+                )}
+                {launch.ph.dailyRank != null && launch.ph.dailyRank <= 5 && (
+                  <span class="lr-card__rank">#{launch.ph.dailyRank}</span>
+                )}
+              </div>
+            )}
 
             <footer class="lr-card__footer">
               <span class="lr-card__source" style={`color: ${src.color}; border-color: color-mix(in oklch, ${src.color} 35%, transparent)`}>
@@ -211,6 +236,43 @@ const sourceConfig: Record<string, { label: string; color: string; favicon: stri
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  /* PH Stats row */
+  .lr-card__ph-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .lr-card__stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+  }
+  .lr-card__stat--votes {
+    color: var(--color-success);
+    font-weight: var(--font-semibold);
+  }
+  .lr-card__stat--rating {
+    color: #f5a623;
+  }
+  .lr-card__stat-dim {
+    opacity: 0.6;
+    font-size: 10px;
+  }
+  .lr-card__rank {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-bold);
+    background: color-mix(in oklch, var(--primary-bright) 15%, transparent);
+    color: var(--primary-bright);
   }
 
   .lr-card__footer {

@@ -422,6 +422,24 @@ export interface ProductHuntDiscovery {
   date: string;
 }
 
+/** Product Hunt post stats (from PH GraphQL API, fetched at build time) */
+export interface ProductHuntStats {
+  /** Upvote count */
+  votesCount: number;
+  /** Number of comments */
+  commentsCount: number;
+  /** Aggregate review rating (0-5) */
+  reviewsRating: number;
+  /** Number of reviews */
+  reviewsCount: number;
+  /** Thumbnail/logo URL from PH */
+  thumbnailUrl?: string;
+  /** PH post URL (e.g. /posts/rudel) */
+  phPostUrl: string;
+  /** Daily rank on PH (1 = Product of the Day) */
+  dailyRank?: number;
+}
+
 // ============================================
 // MERGED DTO (content + stats combined for rendering)
 // ============================================

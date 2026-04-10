@@ -6,7 +6,7 @@
  */
 
 import { getCollection } from 'astro:content';
-import type { Tool, ToolStats, ToolsRadarData, ComputedScores } from '../types/tools-domain';
+import type { Tool, ToolStats, ToolsRadarData, ComputedScores, ProductHuntStats } from '../types/tools-domain';
 import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
 import { businessFunctions } from './tools-schema';
 import { isExcludedTool } from '../config/excluded-tools';
@@ -458,6 +458,8 @@ export interface LaunchItem {
   repo?: string;
   points?: number;
   hn_url?: string;
+  /** Product Hunt stats (merged from ph_launch_stats.json at build time) */
+  ph?: ProductHuntStats;
 }
 
 export interface LaunchRadarData {
@@ -468,11 +470,44 @@ export interface LaunchRadarData {
   launches: LaunchItem[];
 }
 
-/** Load launch_radar.json */
+/** Extract product slug from a PH product URL */
+function extractPhProductSlug(url: string): string | null {
+  const match = url.match(/producthunt\.com\/products\/([^/?#]+)/);
+  return match ? match[1] : null;
+}
+
+/** Load ph_launch_stats.json sidecar */
+async function loadPhLaunchStats(): Promise<Record<string, ProductHuntStats>> {
+  try {
+    const raw = await import('../data/reports/ph_launch_stats.json');
+    return (raw.default ?? raw) as Record<string, ProductHuntStats>;
+  } catch {
+    return {};
+  }
+}
+
+/** Load launch_radar.json and merge PH stats */
 export async function getLaunchRadar(): Promise<LaunchRadarData | null> {
   try {
-    const raw = await import('../data/reports/launch_radar.json');
-    return (raw.default ?? raw) as LaunchRadarData;
+    const [raw, phStats] = await Promise.all([
+      import('../data/reports/launch_radar.json'),
+      loadPhLaunchStats(),
+    ]);
+    const data = (raw.default ?? raw) as LaunchRadarData;
+
+    // Merge PH stats into launch items
+    if (Object.keys(phStats).length > 0) {
+      data.launches = data.launches.map((launch) => {
+        if (launch.source !== 'product_hunt') return launch;
+        const slug = extractPhProductSlug(launch.url);
+        if (slug && phStats[slug]) {
+          return { ...launch, ph: phStats[slug] };
+        }
+        return launch;
+      });
+    }
+
+    return data;
   } catch {
     return null;
   }
