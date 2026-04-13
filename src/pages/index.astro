@@ -6,6 +6,7 @@
  * Data comes from tools-engine.ts (content + stats merged).
  */
 import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
 import Badge from '../components/atoms/Badge.astro';
 import {
@@ -53,10 +54,26 @@ for (const t of tools) {
   const p = t.stats?.phase;
   if (p) phaseCounts.set(p, (phaseCounts.get(p) ?? 0) + 1);
 }
+
+// WebSite structured data
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  inLanguage: 'nl',
+};
 ---
 
-<Layout title="Beste AI Tools — debesteaitools.nl">
-  <main class="container container-wide" style="padding-top: 80px;">
+<Layout
+  title={`${tools.length}+ Beste AI Tools ${new Date().getFullYear()} | debesteaitools.nl`}
+  description={`Ontdek en vergelijk ${tools.length}+ AI-tools op buzz, groei en mentions. Realtime gerankt voor Nederland — van ChatGPT tot Midjourney.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  </Fragment>
+  <main class="container container-wide"
 
     <!-- Header -->
     <header class="tools-header">

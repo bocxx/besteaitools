@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-13T07:35:04.688566",
+  "generated_at": "2026-04-13T15:34:22.455264",
   "window_days": 7,
   "week": "2026-w16",
-  "total_candidates_scanned": 971,
-  "total_after_dedup": 932,
+  "total_candidates_scanned": 942,
+  "total_after_dedup": 901,
   "total_feature_updates": 10,
   "llm_curated": true,
   "features": [
@@ -132,7 +132,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Mythos Preview",
-      "summary_nl": "Anthropic heeft een nieuwe, krachtige AI-model genaamd Claude Mythos Preview gelanceerd. Het model is echter niet beschikbaar voor het grote publiek.",
+      "summary_nl": "Anthropic heeft een nieuwe krachtige AI-model genaamd Claude Mythos Preview ontwikkeld, maar zal het niet openbaar beschikbaar maken.",
       "impact": "high",
       "sources": [
         {
@@ -161,8 +161,8 @@
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Managed Agents",
-      "summary_nl": "Anthropic introduceert Claude Managed Agents, een oplossing om agents op schaal te bouwen en implementeren.",
+      "feature_title": "Cybersecurity Capabilities",
+      "summary_nl": "De Claude Mythos Preview-model heeft de mogelijkheid om duizenden zero-day kwetsbaarheden te identificeren in besturingssystemen en webbrowsers.",
       "impact": "high",
       "sources": [
         {
@@ -188,11 +188,22 @@
       "week": "2026-w16"
     },
     {
+      "tool_slug": "claude-code",
+      "tool_name": "Claude-Code",
+      "tool_category": "tekst",
+      "feature_title": "Ultraplan",
+      "summary_nl": "Claude Code v2.1.92 introduceert Ultraplan, waarmee je bouwplannen in de cloud kunt opstellen, bekijken in je browser en overal uitvoeren.",
+      "impact": "medium",
+      "sources": [],
+      "detected_at": "2026-04-13",
+      "week": "2026-w16"
+    },
+    {
       "tool_slug": "flux",
       "tool_name": "Flux",
       "tool_category": "beeld",
       "feature_title": "FLUX.2 Small Decoder",
-      "summary_nl": "Black Forest Labs heeft een snellere en efficiëntere versie van hun standaard decoder voor FLUX.2 gelanceerd.",
+      "summary_nl": "Black Forest Labs heeft een snellere en minder VRAM-intensieve versie van hun standaard FLUX.2-decoder uitgebracht.",
       "impact": "medium",
       "sources": [
         {
@@ -222,7 +233,7 @@
       "tool_name": "Hailuo AI",
       "tool_category": "video",
       "feature_title": "Minimax M2.7 Release",
-      "summary_nl": "Hailuo AI heeft de Minimax M2.7 model gelanceerd, een nieuwe versie van hun lokale LLAMA-model.",
+      "summary_nl": "Hailuo AI heeft de Minimax M2.7-model uitgebracht, een nieuwe versie van hun lokale LLaMA-model.",
       "impact": "medium",
       "sources": [
         {
@@ -252,7 +263,7 @@
       "tool_name": "Hailuo AI",
       "tool_category": "video",
       "feature_title": "Minimax M2.7 Open Source",
-      "summary_nl": "Hailuo AI heeft de Minimax M2.7 model open source gemaakt.",
+      "summary_nl": "Hailuo AI heeft de Minimax M2.7-model open source gemaakt.",
       "impact": "high",
       "sources": [
         {
@@ -272,36 +283,6 @@
           "title": "Minimax M2.7 Release Confirmed!",
           "platform": "reddit",
           "source": "r/LocalLLaMA"
-        }
-      ],
-      "detected_at": "2026-04-13",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "huggingface",
-      "tool_name": "Hugging Face",
-      "tool_category": "infra",
-      "feature_title": "Kernels Repo Type",
-      "summary_nl": "Hugging Face heeft een nieuw type repository gelanceerd genaamd Kernels.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sgq6h9/hugging_face_launches_a_new_repo_type_kernels/",
-          "title": "Hugging Face launches a new repo type: Kernels",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/robotics/comments/1sfnve9/lerobot_hugging_face_just_released_unfolding/",
-          "title": "LeRobot (Hugging Face) just released \"Unfolding Robotics\", an open-source recipe for teaching a robot to fold your clothes",
-          "platform": "reddit",
-          "source": "r/robotics"
-        },
-        {
-          "url": "https://reddit.com/r/StableDiffusion/comments/1sh04s4/flowinone_a_new_multimodal_image_model_released/",
-          "title": "FlowInOne - A new Multimodal image model . Released on Huggingface",
-          "platform": "reddit",
-          "source": "r/StableDiffusion"
         }
       ],
       "detected_at": "2026-04-13",

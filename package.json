@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "generate-og": "tsx scripts/generate-og-images.ts",
+    "build": "npm run generate-og && astro build",
     "preview": "astro preview",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
     "fetch-ph-stats": "tsx scripts/fetch-ph-stats.ts"
@@ -21,10 +22,12 @@
     "@keystatic/astro": "^5.0.6",
     "@keystatic/core": "^0.5.50",
     "@lucide/astro": "^0.563.0",
+    "@resvg/resvg-js": "^2.6.2",
     "astro": "^6.1.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "rehype-external-links": "^3.0.0",
+    "satori": "^0.26.0",
     "simple-icons": "^16.14.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"

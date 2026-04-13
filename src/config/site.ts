@@ -11,7 +11,7 @@ export const siteConfig = {
   // ============================================
   name: "debesteaitools.nl",
   tagline: "De beste AI-tools op een rij",
-  description: "Ontdek de beste AI-tools — realtime gerankt op buzz, groei en mentions. Van ChatGPT tot niche coding assistants.",
+  description: "Ontdek en vergelijk 80+ AI-tools op buzz, groei en mentions — objectief gerankt. Van ChatGPT tot Midjourney, altijd up-to-date.",
   url: "https://debesteaitools.nl",
   
   // ============================================

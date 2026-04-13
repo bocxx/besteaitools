@@ -5,6 +5,7 @@
  * source breakdown, and sparkline history.
  */
 import Layout from '../../layouts/Layout.astro';
+import { siteConfig } from '../../config/site';
 import Badge from '../../components/atoms/Badge.astro';
 import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
@@ -86,6 +87,46 @@ function buildSparkline(history: {date: string; mentions: number}[], width = 240
 
 const sparkline = stats?.history ? buildSparkline(stats.history) : '';
 
+// ── JSON-LD ──────────────────────────────────────────────────────────────
+const jsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: tool.name,
+  description: tool.shortDescription,
+  url: tool.websiteUrl,
+  applicationCategory: 'AIApplication',
+  operatingSystem: 'Web',
+  inLanguage: 'nl',
+};
+
+// Offers — only set price for free/freemium tools
+if (tool.pricingModel === 'free') {
+  jsonLd.offers = { '@type': 'Offer', price: '0', priceCurrency: 'EUR' };
+} else if (tool.pricingModel === 'freemium') {
+  jsonLd.offers = { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Gratis basisplan beschikbaar' };
+}
+
+// Aggregate rating from G2 data if available
+if (tool.g2Rating != null) {
+  jsonLd.aggregateRating = {
+    '@type': 'AggregateRating',
+    ratingValue: tool.g2Rating,
+    bestRating: 5,
+    worstRating: 1,
+    ...(tool.g2ReviewCount ? { reviewCount: tool.g2ReviewCount } : {}),
+  };
+}
+
+// Breadcrumb structured data
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'AI Tools Radar', item: `${siteConfig.url}/` },
+    { '@type': 'ListItem', position: 2, name: tool.name, item: `${siteConfig.url}/ai-tools/${tool.slug}/` },
+  ],
+};
+
 function sourceLabel(s: string): string {
   const labels: Record<string, string> = {
     arxiv: 'ArXiv', articles: 'Nieuws', twitter: 'X', reddit: 'Reddit',
@@ -95,7 +136,15 @@ function sourceLabel(s: string): string {
 }
 ---
 
-<Layout title={`${tool.name} — debesteaitools.nl`} description={tool.shortDescription}>
+<Layout
+  title={`${tool.name} — ${cat.name} AI Tool | debesteaitools.nl`}
+  description={tool.shortDescription}
+  ogImage={`${siteConfig.url}/og/${tool.slug}.png`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
   <main class="container page-container">
 
     <!-- Back link -->

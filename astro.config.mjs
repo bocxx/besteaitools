@@ -17,6 +17,7 @@ export default defineConfig({
     markdoc(),
     keystatic(),
     sitemap({
+      filter: (page) => !page.includes('/og/'),
       serialize(item) {
         item.lastmod = new Date().toISOString();
         return item;

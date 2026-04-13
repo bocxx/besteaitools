@@ -93,6 +93,9 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     border: 1px solid var(--border-subtle);
     transition: all var(--transition-base);
     overflow: hidden;
+    /* Skip rendering for off-screen cards (CWV: reduces INP + paint cost) */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 190px;
   }
   .tool-card:hover {
     transform: translateY(-2px);
