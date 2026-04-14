@@ -440,6 +440,23 @@ export interface ProductHuntStats {
   dailyRank?: number;
 }
 
+export interface LaunchRadarSection {
+  key: 'product_hunt' | 'github' | 'hackernews' | 'twitter' | 'bluesky';
+  label: string;
+  count: number;
+  launches: LaunchItem[];
+}
+
+export interface LaunchRadarViewData {
+  generatedAt: string;
+  windowDays: number;
+  totalLaunches: number;
+  bySource: Record<string, number>;
+  featured: LaunchItem[];
+  sections: LaunchRadarSection[];
+  latest: LaunchItem[];
+}
+
 // ============================================
 // MERGED DTO (content + stats combined for rendering)
 // ============================================

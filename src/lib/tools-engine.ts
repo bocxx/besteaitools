@@ -6,7 +6,14 @@
  */
 
 import { getCollection } from 'astro:content';
-import type { Tool, ToolStats, ToolsRadarData, ComputedScores, ProductHuntStats } from '../types/tools-domain';
+import type {
+  Tool,
+  ToolStats,
+  ToolsRadarData,
+  ComputedScores,
+  ProductHuntStats,
+  LaunchRadarViewData,
+} from '../types/tools-domain';
 import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
 import { businessFunctions } from './tools-schema';
 import { isExcludedTool } from '../config/excluded-tools';
@@ -511,6 +518,72 @@ export async function getLaunchRadar(): Promise<LaunchRadarData | null> {
   } catch {
     return null;
   }
+}
+
+
+export async function getLaunchRadarViewData(): Promise<LaunchRadarViewData | null> {
+  const data = await getLaunchRadar();
+  if (!data) return null;
+
+  const sourceOrder = ['product_hunt', 'github', 'hackernews', 'twitter', 'bluesky'] as const;
+
+  const sourceLabels: Record<string, string> = {
+    product_hunt: 'Product Hunt',
+    github: 'GitHub',
+    hackernews: 'Hacker News',
+    twitter: 'X / Twitter',
+    bluesky: 'Bluesky',
+  };
+
+  const launches = [...(data.launches ?? [])];
+
+  const scoreLaunch = (launch: LaunchItem) => {
+    const stats = launch.stats ?? {};
+    const points = stats.points ?? launch.points ?? 0;
+    const followers = stats.followers ?? 0;
+    const stars = stats.stars ?? launch.stars ?? 0;
+    const totalStars = stats.totalstars ?? launch.totalstars ?? 0;
+    const dayRank = stats.dayrank ?? launch.dayrank ?? 0;
+    const riskBonus = (launch.riskflags?.length ?? 0) * 3;
+
+    return (
+      points * 3 +
+      followers * 1.5 +
+      stars * 2 +
+      totalStars * 0.15 +
+      (dayRank > 0 ? Math.max(0, 20 - dayRank * 2) : 0) +
+      riskBonus
+    );
+  };
+
+  launches.sort((a, b) => scoreLaunch(b) - scoreLaunch(a));
+
+  const featured = launches.slice(0, 3);
+  const latest = [...launches]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 12);
+
+  const sections = sourceOrder
+    .map((key) => {
+      const sectionLaunches = launches.filter((launch) => launch.source === key);
+      return {
+        key,
+        label: sourceLabels[key],
+        count: sectionLaunches.length,
+        launches: sectionLaunches,
+      };
+    })
+    .filter((section) => section.count > 0);
+
+  return {
+    generatedAt: data.generated_at,
+    windowDays: data.window_days,
+    totalLaunches: data.total_launches,
+    bySource: data.by_source ?? {},
+    featured,
+    sections,
+    latest,
+  };
 }
 
 /** Get radar generation timestamp */
