@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-13T15:34:22.455264",
+  "generated_at": "2026-04-14T07:28:25.780855",
   "window_days": 7,
   "week": "2026-w16",
-  "total_candidates_scanned": 942,
-  "total_after_dedup": 901,
-  "total_feature_updates": 10,
+  "total_candidates_scanned": 1124,
+  "total_after_dedup": 1091,
+  "total_feature_updates": 6,
   "llm_curated": true,
   "features": [
     {
@@ -132,7 +132,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Mythos Preview",
-      "summary_nl": "Anthropic heeft een nieuwe krachtige AI-model genaamd Claude Mythos Preview ontwikkeld, maar zal het niet openbaar beschikbaar maken.",
+      "summary_nl": "Anthropic heeft een nieuwe, zeer krachtige AI-model genaamd Claude Mythos Preview ontwikkeld. Het model is echter niet beschikbaar voor het publiek vanwege de geavanceerde mogelijkheden.",
       "impact": "high",
       "sources": [
         {
@@ -154,15 +154,15 @@
           "source": "r/ClaudeAI"
         }
       ],
-      "detected_at": "2026-04-13",
+      "detected_at": "2026-04-14",
       "week": "2026-w16"
     },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Cybersecurity Capabilities",
-      "summary_nl": "De Claude Mythos Preview-model heeft de mogelijkheid om duizenden zero-day kwetsbaarheden te identificeren in besturingssystemen en webbrowsers.",
+      "feature_title": "Managed Agents",
+      "summary_nl": "Anthropic introduceert Claude Managed Agents, waarmee je eenvoudig agents kunt bouwen en implementeren op schaal.",
       "impact": "high",
       "sources": [
         {
@@ -184,108 +184,7 @@
           "source": "r/ClaudeAI"
         }
       ],
-      "detected_at": "2026-04-13",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "claude-code",
-      "tool_name": "Claude-Code",
-      "tool_category": "tekst",
-      "feature_title": "Ultraplan",
-      "summary_nl": "Claude Code v2.1.92 introduceert Ultraplan, waarmee je bouwplannen in de cloud kunt opstellen, bekijken in je browser en overal uitvoeren.",
-      "impact": "medium",
-      "sources": [],
-      "detected_at": "2026-04-13",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX.2 Small Decoder",
-      "summary_nl": "Black Forest Labs heeft een snellere en minder VRAM-intensieve versie van hun standaard FLUX.2-decoder uitgebracht.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/StableDiffusion/comments/1sfolzd/black_forest_labs_just_released_flux2_small/",
-          "title": "Black Forest Labs just released FLUX.2 Small Decoder: a faster, drop-in replacement for their standard decoder. ~1.4x faster, Lower peak VRAM - Compatible with all open FLUX.2 models",
-          "platform": "reddit",
-          "source": "r/StableDiffusion"
-        },
-        {
-          "url": "https://www.reddit.com/r/GirlDinnerDiaries/comments/1siq71p/chocolate_chip_muffin_mountain_dew_baja_blast/",
-          "title": "Chocolate chip muffin + mountain dew baja blast along with some thoughts about this subreddit",
-          "platform": "article",
-          "source": "reddit.com: search results - artificial"
-        },
-        {
-          "url": "https://dev.to/tumf/conflux-release-a-spec-driven-orchestrator-for-parallel-ai-development-2gbc",
-          "title": "Conflux Release: A Spec-Driven Orchestrator for Parallel AI Development",
-          "platform": "article",
-          "source": "The Practical Developer"
-        }
-      ],
-      "detected_at": "2026-04-13",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "hailuo",
-      "tool_name": "Hailuo AI",
-      "tool_category": "video",
-      "feature_title": "Minimax M2.7 Release",
-      "summary_nl": "Hailuo AI heeft de Minimax M2.7-model uitgebracht, een nieuwe versie van hun lokale LLaMA-model.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sj0dm3/minimax_m27_released/",
-          "title": "Minimax M2.7 Released",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sj2oqz/minimax_m27_is_not_open_source_doa_license/",
-          "title": "MiniMax M2.7 is NOT open source - DOA License :(",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sixhwq/minimax_m27_release_confirmed/",
-          "title": "Minimax M2.7 Release Confirmed!",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        }
-      ],
-      "detected_at": "2026-04-13",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "hailuo",
-      "tool_name": "Hailuo AI",
-      "tool_category": "video",
-      "feature_title": "Minimax M2.7 Open Source",
-      "summary_nl": "Hailuo AI heeft de Minimax M2.7-model open source gemaakt.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sj0dm3/minimax_m27_released/",
-          "title": "Minimax M2.7 Released",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sj2oqz/minimax_m27_is_not_open_source_doa_license/",
-          "title": "MiniMax M2.7 is NOT open source - DOA License :(",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sixhwq/minimax_m27_release_confirmed/",
-          "title": "Minimax M2.7 Release Confirmed!",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        }
-      ],
-      "detected_at": "2026-04-13",
+      "detected_at": "2026-04-14",
       "week": "2026-w16"
     }
   ],
