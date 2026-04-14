@@ -64,7 +64,6 @@ const sourceConfig: Record<
   description={`${launches.length} recent gelanceerde AI-tools — ontdekt via Product Hunt, GitHub, Hacker News en social media. Wees als eerste op de hoogte van nieuwe tools in Nederland.`}
 >
   <main class="container" style="padding-top: 80px; max-width: 960px;">
-
     <a href="/" class="back-link">
       <ArrowLeft size={16} strokeWidth={1.5} />
       Terug naar overzicht
@@ -82,9 +81,14 @@ const sourceConfig: Record<
       </p>
       <p class="lr-meta">
         <strong>{launches.length} tools</strong> gevonden · bijgewerkt {formattedDate}
+        {data?.window_days && (
+          <span class="lr-window">
+            {' '}· laatste {data.window_days} dagen
+          </span>
+        )}
         {data?.by_source && (
           <span class="lr-sources">
-             · {data.by_source.product_hunt > 0 && `${data.by_source.product_hunt} via Product Hunt`}
+            · {data.by_source.product_hunt > 0 && `${data.by_source.product_hunt} via Product Hunt`}
             {data.by_source.github > 0 && ` · ${data.by_source.github} via GitHub`}
             {data.by_source.hackernews > 0 && ` · ${data.by_source.hackernews} via Hacker News`}
             {data.by_source.twitter > 0 && ` · ${data.by_source.twitter} via X/Twitter`}
@@ -100,9 +104,21 @@ const sourceConfig: Record<
         const risks = (launch.risk_flags ?? []) as any[];
         const stats = launch.stats ?? {};
         const description =
-          launch.display_description || launch.description_nl || launch.description || '';
-        const sourceLabel = launch.display_source_label || launch.source_label_nl || launch.source_label || src.label;
+          launch.display_description ||
+          launch.description_nl ||
+          launch.description ||
+          '';
+        const sourceLabel =
+          launch.display_source_label ||
+          launch.source_label_nl ||
+          launch.source_label ||
+          src.label;
         const logo = launch.favicon || src.favicon;
+
+        const categoryNl = launch.category_nl || launch.category || '';
+        const hasPrevLaunches =
+          Array.isArray(launch.previous_launches) &&
+          launch.previous_launches.length > 0;
 
         return (
           <a href={launch.url} target="_blank" rel="noopener" class="lr-card">
@@ -119,12 +135,49 @@ const sourceConfig: Record<
               )}
               <div class="lr-card__title-group">
                 <h3 class="lr-card__name">{launch.name}</h3>
-                <span class="lr-card__date">{launch.date}</span>
+                <span class="lr-card__date">
+                  {launch.date || 'onbekende datum'}
+                </span>
               </div>
               <ExternalLink size={13} strokeWidth={1.5} class="lr-card__ext" />
             </div>
 
             <p class="lr-card__desc">{description}</p>
+
+            {/* Extra meta: categorie + bron + reacties/sterren */}
+            <div class="lr-card__meta">
+              {categoryNl && (
+                <span class="lr-card__pill lr-card__pill--category">
+                  {categoryNl}
+                </span>
+              )}
+
+              {launch.source === 'hackernews' && launch.points != null && (
+                <span class="lr-card__pill lr-card__pill--hn">
+                  <ArrowUp size={11} strokeWidth={2} />
+                  {launch.points} punten
+                  {launch.num_comments != null && (
+                    <>
+                      <span class="lr-card__pill-sep">·</span>
+                      <MessageCircle size={11} strokeWidth={1.7} />
+                      {launch.num_comments} reacties
+                    </>
+                  )}
+                </span>
+              )}
+
+              {launch.source === 'github' && stats.stars != null && (
+                <span class="lr-card__pill lr-card__pill--gh">
+                  <Star size={11} strokeWidth={1.5} />
+                  {stats.stars}★ vandaag
+                  {stats.total_stars != null && stats.total_stars > stats.stars && (
+                    <span class="lr-card__pill-dim">
+                      {' '}· totaal {stats.total_stars}★
+                    </span>
+                  )}
+                </span>
+              )}
+            </div>
 
             {launch.source === 'product_hunt' && (
               <div class="lr-card__ph-stats">
@@ -141,9 +194,31 @@ const sourceConfig: Record<
                     <span class="lr-card__stat-dim">volgers</span>
                   </span>
                 )}
-                {stats.day_rank != null && stats.day_rank > 0 && stats.day_rank <= 10 && (
-                  <span class="lr-card__rank">#{stats.day_rank}</span>
+                {stats.day_rank != null &&
+                  stats.day_rank > 0 &&
+                  stats.day_rank <= 10 && (
+                    <span class="lr-card__rank">#{stats.day_rank}</span>
+                  )}
+                {stats.launch_count != null && stats.launch_count > 1 && (
+                  <span class="lr-card__stat lr-card__stat--history">
+                    {stats.launch_count}e launch op Product Hunt
+                  </span>
                 )}
+              </div>
+            )}
+
+            {hasPrevLaunches && (
+              <div class="lr-card__history">
+                <span class="lr-card__history-label">
+                  Eerdere launches:
+                </span>
+                <span class="lr-card__history-list">
+                  {launch.previous_launches
+                    .slice(0, 2)
+                    .map((prev: any) => `${prev.date} · ${prev.points} punten`)
+                    .join(' · ')}
+                  {launch.previous_launches.length > 2 && ' · …'}
+                </span>
               </div>
             )}
 
@@ -161,7 +236,6 @@ const sourceConfig: Record<
         );
       })}
     </div>
-
   </main>
 </Layout>
 
@@ -217,6 +291,7 @@ const sourceConfig: Record<
   }
   .lr-meta strong { color: var(--text-secondary); }
   .lr-sources { opacity: 0.7; }
+  .lr-window { opacity: 0.8; }
 
   /* Grid */
   .lr-grid {
@@ -291,6 +366,43 @@ const sourceConfig: Record<
     overflow: hidden;
   }
 
+  .lr-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    align-items: center;
+    margin-top: var(--space-1);
+  }
+  .lr-card__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+  }
+  .lr-card__pill--category {
+    background: color-mix(in oklch, var(--primary-soft) 18%, transparent);
+    color: var(--primary-strong);
+  }
+  .lr-card__pill--hn {
+    background: color-mix(in oklch, #ff6600 18%, transparent);
+    color: #ff6600;
+  }
+  .lr-card__pill--gh {
+    background: color-mix(in oklch, #238636 18%, transparent);
+    color: #238636;
+  }
+  .lr-card__pill-sep {
+    opacity: 0.5;
+  }
+  .lr-card__pill-dim {
+    opacity: 0.7;
+  }
+
   /* PH Stats row */
   .lr-card__ph-stats {
     display: flex;
@@ -310,6 +422,9 @@ const sourceConfig: Record<
     color: var(--color-success);
     font-weight: var(--font-semibold);
   }
+  .lr-card__stat--history {
+    font-size: 10px;
+  }
   .lr-card__stat-dim {
     opacity: 0.6;
     font-size: 10px;
@@ -323,6 +438,18 @@ const sourceConfig: Record<
     font-weight: var(--font-bold);
     background: color-mix(in oklch, var(--primary-bright) 15%, transparent);
     color: var(--primary-bright);
+  }
+
+  .lr-card__history {
+    margin-top: var(--space-1);
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+  .lr-card__history-label {
+    font-weight: var(--font-medium);
+  }
+  .lr-card__history-list {
+    opacity: 0.8;
   }
 
   .lr-card__footer {
