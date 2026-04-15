@@ -30,6 +30,25 @@ type RadarEnrichment = {
   bestUseCaseStage?: 'experiment' | 'team-rollout' | 'mission-critical';
   integrations?: string[];
   tags?: string[];
+  // v3 fields (visitor-focused)
+  startingPriceMonthly?: number;
+  pricingCurrency?: 'eur' | 'usd';
+  hasFreePlan?: boolean;
+  hasDemo?: boolean;
+  bookDemoRequired?: boolean;
+  supportsDutchLanguage?: boolean;
+  hasDutchUI?: boolean;
+  offersDutchSupport?: boolean;
+  mainCompetitors?: string[];
+  whenToChoose?: string;
+  headlineValueProp?: string;
+  implementationTimeEstimate?: string;
+  screenshotUrls?: string[];
+  demoUrl?: string;
+  exampleOutput?: string;
+  exampleWorkflow?: string;
+  reviewMethod?: 'desk_research' | 'vendor_claims' | 'hands_on' | 'customer_feedback';
+  lastReviewedAt?: string;
 };
 
 type RadarTool = {
@@ -78,6 +97,25 @@ type ToolContent = {
   companySizeFit?: string[];
   bestUseCaseStage?: 'experiment' | 'team-rollout' | 'mission-critical';
   integrations?: string[];
+  // v3 fields (visitor-focused)
+  startingPriceMonthly?: number;
+  pricingCurrency?: 'eur' | 'usd';
+  hasFreePlan?: boolean;
+  hasDemo?: boolean;
+  bookDemoRequired?: boolean;
+  supportsDutchLanguage?: boolean;
+  hasDutchUI?: boolean;
+  offersDutchSupport?: boolean;
+  mainCompetitors?: string[];
+  whenToChoose?: string;
+  headlineValueProp?: string;
+  implementationTimeEstimate?: string;
+  screenshotUrls?: string[];
+  demoUrl?: string;
+  exampleOutput?: string;
+  exampleWorkflow?: string;
+  reviewMethod?: 'desk_research' | 'vendor_claims' | 'hands_on' | 'customer_feedback';
+  lastReviewedAt?: string;
 };
 
 type EnrichmentDiff = {
@@ -88,6 +126,10 @@ type EnrichmentDiff = {
     | 'deploymentType' | 'dataResidency' | 'targetAudience' | 'businessFunctions'
     | 'timeToFirstValue' | 'setupComplexity' | 'learningCurve'
     | 'companySizeFit' | 'bestUseCaseStage'
+    | 'startingPriceMonthly' | 'hasFreePlan' | 'hasDemo'
+    | 'supportsDutchLanguage' | 'hasDutchUI' | 'offersDutchSupport'
+    | 'mainCompetitors' | 'whenToChoose'
+    | 'headlineValueProp' | 'implementationTimeEstimate'
   >;
   current: unknown;
   suggested: unknown;
@@ -166,6 +208,25 @@ function createDraftTool(tool: RadarTool): ToolContent {
     companySizeFit: enrichment?.companySizeFit ?? [],
     bestUseCaseStage: enrichment?.bestUseCaseStage,
     integrations: enrichment?.integrations ?? [],
+    // v3 fields from enrichment
+    startingPriceMonthly: enrichment?.startingPriceMonthly,
+    pricingCurrency: enrichment?.pricingCurrency,
+    hasFreePlan: enrichment?.hasFreePlan,
+    hasDemo: enrichment?.hasDemo,
+    bookDemoRequired: enrichment?.bookDemoRequired,
+    supportsDutchLanguage: enrichment?.supportsDutchLanguage,
+    hasDutchUI: enrichment?.hasDutchUI,
+    offersDutchSupport: enrichment?.offersDutchSupport,
+    mainCompetitors: enrichment?.mainCompetitors ?? [],
+    whenToChoose: enrichment?.whenToChoose,
+    headlineValueProp: enrichment?.headlineValueProp,
+    implementationTimeEstimate: enrichment?.implementationTimeEstimate,
+    screenshotUrls: enrichment?.screenshotUrls ?? [],
+    demoUrl: enrichment?.demoUrl,
+    exampleOutput: enrichment?.exampleOutput,
+    exampleWorkflow: enrichment?.exampleWorkflow,
+    reviewMethod: enrichment?.reviewMethod,
+    lastReviewedAt: enrichment?.lastReviewedAt,
   };
 }
 
@@ -258,6 +319,17 @@ async function main() {
     pushDiff(diffs, fileSlug, 'learningCurve', current.learningCurve, enrichment?.learningCurve, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'companySizeFit', current.companySizeFit ?? [], enrichment?.companySizeFit ?? [], enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'bestUseCaseStage', current.bestUseCaseStage, enrichment?.bestUseCaseStage, enrichment?.enriched_at);
+    // v3 diffs
+    pushDiff(diffs, fileSlug, 'startingPriceMonthly', current.startingPriceMonthly, enrichment?.startingPriceMonthly, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'hasFreePlan', current.hasFreePlan, enrichment?.hasFreePlan, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'hasDemo', current.hasDemo, enrichment?.hasDemo, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'supportsDutchLanguage', current.supportsDutchLanguage, enrichment?.supportsDutchLanguage, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'hasDutchUI', current.hasDutchUI, enrichment?.hasDutchUI, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'offersDutchSupport', current.offersDutchSupport, enrichment?.offersDutchSupport, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'mainCompetitors', current.mainCompetitors ?? [], enrichment?.mainCompetitors ?? [], enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'whenToChoose', current.whenToChoose, enrichment?.whenToChoose, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'headlineValueProp', current.headlineValueProp, enrichment?.headlineValueProp, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'implementationTimeEstimate', current.implementationTimeEstimate, enrichment?.implementationTimeEstimate, enrichment?.enriched_at);
   }
 
   await fs.writeFile(DIFF_PATH, `${JSON.stringify(diffs, null, 2)}\n`, 'utf8');

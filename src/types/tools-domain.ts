@@ -106,6 +106,12 @@ export type CompanySizeFit = 'solo' | 'small' | 'medium' | 'large' | 'enterprise
 /** Use case deployment stage */
 export type UseCaseStage = 'experiment' | 'team-rollout' | 'mission-critical';
 
+/** Review method (editorial credibility) */
+export type ReviewMethod = 'desk_research' | 'vendor_claims' | 'hands_on' | 'customer_feedback';
+
+/** Pricing currency */
+export type PricingCurrency = 'eur' | 'usd';
+
 // ============================================
 // CONTENT LAYER (editorial — never overwritten by ETL)
 // ============================================
@@ -151,7 +157,7 @@ export interface ToolContent {
   dataResidency?: DataResidency;
   /** Target audience segments */
   targetAudience: TargetAudience[];
-  /** Supports Dutch language (UI/chat/speech) */
+  /** @deprecated Use supportsDutchLanguage, hasDutchUI, offersDutchSupport instead */
   nlSupport: boolean;
   /** Known integrations (Microsoft 365, Slack, HubSpot, etc.) */
   integrations: string[];
@@ -216,9 +222,53 @@ export interface ToolContent {
   /** Tools this can replace */
   replacementFor: string[];
 
+  // ── Laag 6: Prijsvergelijking ───────────────────
+  /** Lowest monthly price in numeric form for filtering/comparison */
+  startingPriceMonthly?: number;
+  /** Currency for startingPriceMonthly */
+  pricingCurrency: PricingCurrency;
+  /** Whether there is a completely free plan (distinct from freemium) */
+  hasFreePlan?: boolean;
+  /** Whether a product demo is available */
+  hasDemo?: boolean;
+  /** Whether booking a demo is required to try the tool */
+  bookDemoRequired?: boolean;
+
+  // ── Laag 7: Nederlandse ondersteuning (granulair) ─
+  /** Tool produces Dutch-language output */
+  supportsDutchLanguage: boolean;
+  /** Interface is available in Dutch */
+  hasDutchUI: boolean;
+  /** Customer support available in Dutch */
+  offersDutchSupport: boolean;
+
+  // ── Laag 8: Concurrenten & positionering ──────
+  /** Slugs of competing/alternative tools */
+  mainCompetitors: string[];
+  /** When to choose this tool over alternatives */
+  whenToChoose?: string;
+
+  // ── Laag 9: Praktische evaluatie ──────────────
+  /** One ultra-clear value proposition sentence for the top of the page */
+  headlineValueProp?: string;
+  /** Human-readable implementation time estimate, e.g. "1–2 weken" */
+  implementationTimeEstimate?: string;
+  /** URLs to product screenshots */
+  screenshotUrls: string[];
+  /** URL to demo or trial page */
+  demoUrl?: string;
+  /** Description of example output the tool produces */
+  exampleOutput?: string;
+  /** Description of an example workflow using the tool */
+  exampleWorkflow?: string;
+
   // ── Redactionele laag ─────────────────────────
   /** Whether an editor has personally tested this tool */
   testedByEditor: boolean;
+  /** How was this tool reviewed */
+  reviewMethod?: ReviewMethod;
+  /** ISO date of last editorial review */
+  lastReviewedAt?: string;
   /** Short editorial verdict in Dutch */
   verdict?: string;
   /** Slug of the best alternative tool */

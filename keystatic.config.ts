@@ -4,6 +4,7 @@ import {
   deploymentTypes, dataResidencyOptions, targetAudienceOptions,
   fundingStages, timeToFirstValueOptions, setupComplexityLevels,
   learningCurveLevels, qualityLevels, companySizeFitOptions, useCaseStages,
+  reviewMethods, pricingCurrencies,
 } from './src/lib/tools-schema';
 
 const categoryOptions = Object.entries(toolCategories).map(([value, category]) => ({
@@ -73,6 +74,16 @@ const companySizeFitOpts = Object.entries(companySizeFitOptions).map(([value, c]
 
 const useCaseStageOpts = Object.entries(useCaseStages).map(([value, u]) => ({
   label: u.label,
+  value,
+}));
+
+const reviewMethodOpts = Object.entries(reviewMethods).map(([value, r]) => ({
+  label: r.label,
+  value,
+}));
+
+const pricingCurrencyOpts = Object.entries(pricingCurrencies).map(([value, c]) => ({
+  label: c.label,
   value,
 }));
 
@@ -198,8 +209,8 @@ export default config({
           options: targetAudienceOpts,
         }),
         nlSupport: fields.checkbox({
-          label: 'Nederlandse ondersteuning',
-          description: 'Ondersteunt de tool Nederlands (UI, chat of spraak)?',
+          label: 'Nederlandse ondersteuning (legacy)',
+          description: 'Legacy veld — gebruik de granulaire NL-velden hieronder.',
           defaultValue: false,
         }),
         integrations: fields.array(
@@ -386,11 +397,118 @@ export default config({
           },
         ),
 
+        // ── Laag 6: Prijsvergelijking ───────────────────
+        startingPriceMonthly: fields.number({
+          label: 'Startprijs per maand',
+          description: 'Laagste maandprijs (numeriek, voor vergelijking en filtering).',
+          validation: { min: 0 },
+        }),
+        pricingCurrency: fields.select({
+          label: 'Valuta',
+          options: pricingCurrencyOpts,
+          defaultValue: 'eur',
+        }),
+        hasFreePlan: fields.checkbox({
+          label: 'Gratis plan beschikbaar',
+          description: 'Is er een volledig gratis plan (niet alleen freemium)?',
+          defaultValue: false,
+        }),
+        hasDemo: fields.checkbox({
+          label: 'Demo beschikbaar',
+          description: 'Is er een productdemo beschikbaar?',
+          defaultValue: false,
+        }),
+        bookDemoRequired: fields.checkbox({
+          label: 'Demo boeken verplicht',
+          description: 'Moet je een demo boeken om de tool te proberen?',
+          defaultValue: false,
+        }),
+
+        // ── Laag 7: Nederlandse ondersteuning (granulair) ─
+        supportsDutchLanguage: fields.checkbox({
+          label: 'Ondersteunt Nederlands (taal)',
+          description: 'Produceert de tool Nederlandstalige output (chat, tekst, spraak)?',
+          defaultValue: false,
+        }),
+        hasDutchUI: fields.checkbox({
+          label: 'Nederlandse interface',
+          description: 'Is de gebruikersinterface beschikbaar in het Nederlands?',
+          defaultValue: false,
+        }),
+        offersDutchSupport: fields.checkbox({
+          label: 'Nederlandstalige support',
+          description: 'Biedt de tool klantenservice in het Nederlands?',
+          defaultValue: false,
+        }),
+
+        // ── Laag 8: Concurrenten & positionering ──────
+        mainCompetitors: fields.array(
+          fields.text({ label: 'Concurrent (slug)' }),
+          {
+            label: 'Belangrijkste concurrenten',
+            description: 'Slugs van concurrerende tools (bv. "chatgpt", "claude").',
+            itemLabel: (props) => props.value || 'Concurrent',
+          },
+        ),
+        whenToChoose: fields.text({
+          label: 'Wanneer kiezen',
+          description: 'Wanneer kies je déze tool boven de alternatieven?',
+          multiline: true,
+        }),
+
+        // ── Laag 9: Praktische evaluatie ──────────────
+        headlineValueProp: fields.text({
+          label: 'Waardepropositie (1 zin)',
+          description: 'Eén ultraheldere zin voor bovenaan de pagina, bv. "AI-klantenserviceplatform voor enterprise teams".',
+          multiline: false,
+        }),
+        implementationTimeEstimate: fields.text({
+          label: 'Implementatietijd',
+          description: 'Geschatte implementatieduur, bv. "1–2 weken" of "Dezelfde dag".',
+          multiline: false,
+        }),
+        screenshotUrls: fields.array(
+          fields.text({ label: 'Screenshot URL' }),
+          {
+            label: 'Screenshots',
+            description: 'URLs naar productscreenshots.',
+            itemLabel: (props) => props.value || 'Screenshot',
+          },
+        ),
+        demoUrl: fields.url({
+          label: 'Demo URL',
+          description: 'Link naar demo of trial-pagina.',
+        }),
+        exampleOutput: fields.text({
+          label: 'Voorbeeld output',
+          description: 'Beschrijving van typische output die de tool produceert.',
+          multiline: true,
+        }),
+        exampleWorkflow: fields.text({
+          label: 'Voorbeeld workflow',
+          description: 'Beschrijving van een typische workflow met de tool.',
+          multiline: true,
+        }),
+
         // ── Redactionele laag ─────────────────────────
         testedByEditor: fields.checkbox({
           label: 'Getest door redactie',
           description: 'Heeft een redacteur deze tool persoonlijk getest?',
           defaultValue: false,
+        }),
+        reviewMethod: fields.select({
+          label: 'Beoordelingsmethode',
+          description: 'Hoe is deze tool beoordeeld?',
+          options: [
+            { label: '— Niet ingevuld', value: '' },
+            ...reviewMethodOpts,
+          ],
+          defaultValue: '',
+        }),
+        lastReviewedAt: fields.text({
+          label: 'Laatst beoordeeld op',
+          description: 'ISO-datum van de laatste redactionele beoordeling (bv. 2026-04-15).',
+          multiline: false,
         }),
         verdict: fields.text({
           label: 'Redactioneel oordeel',
@@ -398,8 +516,8 @@ export default config({
           multiline: true,
         }),
         bestAlternative: fields.text({
-          label: 'Beste alternatief',
-          description: 'Slug van de beste alternatieve tool (bv. "chatgpt").',
+          label: 'Beste alternatief (legacy)',
+          description: 'Slug van de beste alternatieve tool — gebruik "Belangrijkste concurrenten" hierboven.',
         }),
         whyListed: fields.text({
           label: 'Waarom op de site',

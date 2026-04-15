@@ -14,9 +14,14 @@ import {
   toolCategories, trendDirections, pricingModels, difficultyLevels,
   deploymentTypes, dataResidencyOptions, targetAudienceOptions, businessFunctions,
   timeToFirstValueOptions, setupComplexityLevels, learningCurveLevels, qualityLevels,
-  companySizeFitOptions, useCaseStages, fundingStages,
+  companySizeFitOptions, useCaseStages, fundingStages, reviewMethods,
 } from '../../lib/tools-schema';
-import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Youtube, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp, MessageSquare } from '@lucide/astro';
+import {
+  toolMetaTitle, toolMetaDescription, generateToolFaqs,
+  buildSoftwareApplicationLd, buildFaqPageLd, buildBreadcrumbLd,
+  reviewFreshnessLabel,
+} from '../../lib/seo-helpers';
+import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Youtube, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp, MessageSquare, CalendarCheck } from '@lucide/astro';
 
 export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
@@ -49,7 +54,7 @@ const hasFit = tool.primaryJobsToBeDone?.length > 0 || tool.companySizeFit?.leng
 const hasImplementation = tool.timeToFirstValue || tool.setupComplexity || tool.requiresDeveloper != null || tool.freeTrialAvailable != null || tool.pilotFriendly != null;
 const hasUx = tool.easeOfUseScore || tool.learningCurve || tool.documentationQuality || tool.supportQuality;
 const hasMarketProof = tool.yearsActive != null || tool.notableCustomers?.length > 0 || tool.g2Rating != null || tool.fundingStage;
-const hasEditorial = tool.testedByEditor || tool.verdict || tool.whyListed;
+const hasEditorial = tool.testedByEditor || tool.verdict || tool.whyListed || tool.reviewMethod || tool.lastReviewedAt;
 
 // Human-readable quick-fact labels (more meaningful than raw enum values)
 const qfLabels = {
@@ -87,45 +92,14 @@ function buildSparkline(history: {date: string; mentions: number}[], width = 240
 
 const sparkline = stats?.history ? buildSparkline(stats.history) : '';
 
-// ── JSON-LD ──────────────────────────────────────────────────────────────
-const jsonLd: Record<string, unknown> = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: tool.name,
-  description: tool.shortDescription,
-  url: tool.websiteUrl,
-  applicationCategory: 'AIApplication',
-  operatingSystem: 'Web',
-  inLanguage: 'nl',
-};
-
-// Offers — only set price for free/freemium tools
-if (tool.pricingModel === 'free') {
-  jsonLd.offers = { '@type': 'Offer', price: '0', priceCurrency: 'EUR' };
-} else if (tool.pricingModel === 'freemium') {
-  jsonLd.offers = { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Gratis basisplan beschikbaar' };
-}
-
-// Aggregate rating from G2 data if available
-if (tool.g2Rating != null) {
-  jsonLd.aggregateRating = {
-    '@type': 'AggregateRating',
-    ratingValue: tool.g2Rating,
-    bestRating: 5,
-    worstRating: 1,
-    ...(tool.g2ReviewCount ? { reviewCount: tool.g2ReviewCount } : {}),
-  };
-}
-
-// Breadcrumb structured data
-const breadcrumbLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'AI Tools Radar', item: `${siteConfig.url}/` },
-    { '@type': 'ListItem', position: 2, name: tool.name, item: `${siteConfig.url}/ai-tools/${tool.slug}/` },
-  ],
-};
+// ── JSON-LD (via seo-helpers) ────────────────────────────────────────────
+const jsonLd = buildSoftwareApplicationLd(tool, siteConfig.url);
+const breadcrumbLd = buildBreadcrumbLd(tool, siteConfig.url);
+const faqs = generateToolFaqs(tool);
+const faqLd = buildFaqPageLd(faqs);
+const freshness = reviewFreshnessLabel(tool);
+const metaTitle = toolMetaTitle(tool);
+const metaDescription = toolMetaDescription(tool);
 
 function sourceLabel(s: string): string {
   const labels: Record<string, string> = {
@@ -137,13 +111,14 @@ function sourceLabel(s: string): string {
 ---
 
 <Layout
-  title={`${tool.name} — ${cat.name} AI Tool | debesteaitools.nl`}
-  description={tool.shortDescription}
+  title={metaTitle}
+  description={metaDescription}
   ogImage={`${siteConfig.url}/og/${tool.slug}.png`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+    {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
   </Fragment>
   <main class="container page-container">
 
@@ -163,6 +138,9 @@ function sourceLabel(s: string): string {
         </div>
       </div>
 
+      {tool.headlineValueProp && (
+        <p class="tool-value-prop">{tool.headlineValueProp}</p>
+      )}
       <h1 class="tool-name">{tool.name}</h1>
       <p class="tool-desc">{tool.longDescription || tool.shortDescription}</p>
 
@@ -223,12 +201,25 @@ function sourceLabel(s: string): string {
         <!-- Editorial verdict -->
         {hasEditorial && (
           <section class="verdict-panel">
-            {tool.testedByEditor && (
-              <div class="verdict-panel__badge">
-                <BadgeCheck size={16} strokeWidth={1.5} />
-                <span>Getest door redactie</span>
-              </div>
-            )}
+            <div class="verdict-panel__meta">
+              {tool.testedByEditor && (
+                <div class="verdict-panel__badge">
+                  <BadgeCheck size={16} strokeWidth={1.5} />
+                  <span>Getest door redactie</span>
+                </div>
+              )}
+              {tool.reviewMethod && (
+                <span class="verdict-panel__method">
+                  {reviewMethods[tool.reviewMethod].label}
+                </span>
+              )}
+              {freshness && (
+                <span class="verdict-panel__freshness">
+                  <CalendarCheck size={12} strokeWidth={1.5} />
+                  {freshness}
+                </span>
+              )}
+            </div>
             {tool.verdict && (
               <blockquote class="verdict-panel__quote">{tool.verdict}</blockquote>
             )}
@@ -684,6 +675,21 @@ function sourceLabel(s: string): string {
 
     </div>{/* end page-body */}
 
+    <!-- FAQ section (visible + schema) -->
+    {faqs.length > 0 && (
+      <section class="faq-section">
+        <h2 class="section-heading">Veelgestelde vragen over {tool.name}</h2>
+        <dl class="faq-list">
+          {faqs.map(faq => (
+            <div class="faq-item">
+              <dt class="faq-q">{faq.question}</dt>
+              <dd class="faq-a">{faq.answer}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
+
   </main>
 </Layout>
 
@@ -733,6 +739,14 @@ function sourceLabel(s: string): string {
     flex-wrap: wrap;
     gap: var(--space-2);
     margin-bottom: var(--space-3);
+  }
+
+  .tool-value-prop {
+    font-size: var(--text-sm);
+    color: var(--primary-bright);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.01em;
+    margin-bottom: var(--space-1);
   }
 
   .tool-name {
@@ -1065,6 +1079,14 @@ function sourceLabel(s: string): string {
     margin-bottom: var(--space-5);
   }
 
+  .verdict-panel__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
   .verdict-panel__badge {
     display: inline-flex;
     align-items: center;
@@ -1072,7 +1094,22 @@ function sourceLabel(s: string): string {
     color: var(--primary-bright);
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    margin-bottom: var(--space-3);
+  }
+
+  .verdict-panel__method {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    padding: var(--space-0-5) var(--space-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+  }
+
+  .verdict-panel__freshness {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
   }
 
   .verdict-panel__quote {
@@ -1423,5 +1460,37 @@ function sourceLabel(s: string): string {
     gap: var(--space-1);
     font-size: var(--text-xs);
     color: var(--text-muted);
+  }
+
+  /* ── FAQ section ─────────────────────────────────────── */
+  .faq-section {
+    max-width: 760px;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: var(--space-4);
+  }
+
+  .faq-q {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .faq-a {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
   }
 </style>

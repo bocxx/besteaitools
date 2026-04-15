@@ -236,6 +236,34 @@ export const useCaseStageKeys = Object.keys(useCaseStages) as [UseCaseStageKey, 
 export const useCaseStageSchema = z.enum(useCaseStageKeys);
 
 // ============================================
+// 8h. REVIEW METHODS (redactionele betrouwbaarheid)
+// ============================================
+
+export const reviewMethods = {
+  desk_research:     { label: 'Desk research',      color: 'var(--text-secondary)' },
+  vendor_claims:     { label: 'Leveranciersinfo',   color: 'var(--text-muted)' },
+  hands_on:          { label: 'Hands-on getest',    color: 'var(--color-success)' },
+  customer_feedback: { label: 'Gebruikersfeedback', color: 'var(--color-info)' },
+} as const;
+
+export type ReviewMethodKey = keyof typeof reviewMethods;
+export const reviewMethodKeys = Object.keys(reviewMethods) as [ReviewMethodKey, ...ReviewMethodKey[]];
+export const reviewMethodSchema = z.enum(reviewMethodKeys);
+
+// ============================================
+// 8i. PRICING CURRENCY
+// ============================================
+
+export const pricingCurrencies = {
+  eur: { label: '€', symbol: '€' },
+  usd: { label: '$', symbol: '$' },
+} as const;
+
+export type PricingCurrencyKey = keyof typeof pricingCurrencies;
+export const pricingCurrencyKeys = Object.keys(pricingCurrencies) as [PricingCurrencyKey, ...PricingCurrencyKey[]];
+export const pricingCurrencySchema = z.enum(pricingCurrencyKeys);
+
+// ============================================
 // 9. BUSINESS FUNCTIONS (zakelijke pagina)
 // ============================================
 
@@ -297,6 +325,7 @@ export const toolContentSchema = z.object({
   deploymentType: deploymentTypeSchema.optional(),
   dataResidency: dataResidencySchema.optional(),
   targetAudience: z.array(targetAudienceSchema).default([]),
+  /** @deprecated Use supportsDutchLanguage, hasDutchUI, offersDutchSupport instead */
   nlSupport: z.boolean().default(false),
   integrations: z.array(z.string()).default([]),
 
@@ -335,8 +364,34 @@ export const toolContentSchema = z.object({
   antiUseCases: z.array(z.string()).default([]),
   replacementFor: z.array(z.string()).default([]),
 
+  // ── Laag 6: Prijsvergelijking ───────────────────
+  startingPriceMonthly: z.number().min(0).optional(),
+  pricingCurrency: pricingCurrencySchema.default('eur'),
+  hasFreePlan: z.boolean().optional(),
+  hasDemo: z.boolean().optional(),
+  bookDemoRequired: z.boolean().optional(),
+
+  // ── Laag 7: Nederlandse ondersteuning (granulair) ─
+  supportsDutchLanguage: z.boolean().default(false),
+  hasDutchUI: z.boolean().default(false),
+  offersDutchSupport: z.boolean().default(false),
+
+  // ── Laag 8: Concurrenten & positionering ──────
+  mainCompetitors: z.array(z.string()).default([]),
+  whenToChoose: z.string().optional(),
+
+  // ── Laag 9: Praktische evaluatie ──────────────
+  headlineValueProp: z.string().optional(),
+  implementationTimeEstimate: z.string().optional(),
+  screenshotUrls: z.array(z.string()).default([]),
+  demoUrl: z.string().url().optional(),
+  exampleOutput: z.string().optional(),
+  exampleWorkflow: z.string().optional(),
+
   // ── Redactionele laag ─────────────────────────
   testedByEditor: z.boolean().default(false),
+  reviewMethod: reviewMethodSchema.optional(),
+  lastReviewedAt: z.string().optional(),
   verdict: z.string().optional(),
   bestAlternative: z.string().optional(),
   whyListed: z.string().optional(),
