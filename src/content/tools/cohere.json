@@ -1,13 +1,32 @@
 {
   "name": "Cohere",
-  "category": "chatbots",
+  "category": "infrastructure",
   "websiteUrl": "https://cohere.com",
   "shortDescription": "Enterprise-AI met sterke RAG en meertalige embeddings",
-  "useCases": [],
-  "strengths": [],
-  "limitations": [],
-  "pricingModel": "freemium",
-  "difficulty": "beginner",
+  "longDescription": "Cohere biedt enterprise-klare NLP-modellen via API: Command (chat en tekstgeneratie), Embed (semantische zoekvectoren) en Rerank (herordening voor RAG-pijplijnen). Beschikbaar als cloud-API én zelf te hosten voor datasoevereiniteit. Sterk in meertalige toepassingen en privacygevoelige omgevingen.",
+  "bestFor": "Bedrijven die RAG-systemen, semantische zoekmachines of meertalige documentverwerking bouwen zonder afhankelijk te willen zijn van één Amerikaanse cloudprovider.",
+  "useCases": [
+    "RAG-pijplijnen en semantisch zoeken over bedrijfsdocumenten",
+    "Meertalige documentclassificatie en -extractie",
+    "Enterprise-chatbots op privédata",
+    "Reranking voor verbeterde zoekresultaten"
+  ],
+  "strengths": [
+    "Beste embeddings voor meertalige RAG",
+    "Self-hosted optie voor volledige datasoevereiniteit",
+    "Enterprise SLA, DPA en compliance-ondersteuning",
+    "Rerank-model verbetert RAG-precisie significant"
+  ],
+  "limitations": [
+    "Geen beeld-, audio- of videomogelijkheden",
+    "Minder naamsbekendheid dan OpenAI",
+    "Duurder dan zelf-draaiende open-source modellen",
+    "Kleinere developer-community"
+  ],
+  "pricing": "Pay-as-you-go API per token; enterprise contracten op maat met dedicated deployment",
+  "openSource": false,
+  "pricingModel": "paid",
+  "difficulty": "intermediate",
   "tags": [
     "nlp",
     "embeddings",
@@ -16,13 +35,48 @@
     "meertalig"
   ],
   "draft": false,
-  "targetAudience": [],
-  "businessFunctions": [],
+  "deploymentType": "both",
+  "dataResidency": "global",
+  "targetAudience": [
+    "mkb",
+    "enterprise"
+  ],
+  "businessFunctions": [
+    "development",
+    "data",
+    "operations"
+  ],
   "companySizeFit": [
     "medium",
     "large",
     "enterprise"
   ],
-  "integrations": [],
-  "bestUseCaseStage": "team-rollout"
+  "integrations": [
+    "LangChain",
+    "LlamaIndex",
+    "AWS",
+    "Azure",
+    "Google Cloud"
+  ],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "medium",
+  "learningCurve": "medium",
+  "bestUseCaseStage": "team-rollout",
+  "requiresDeveloper": true,
+  "gdprReady": true,
+  "euHostingAvailable": true,
+  "dpaAvailable": true,
+  "fundingStage": "series-c",
+  "testedByEditor": false,
+  "verdict": "Cohere is de voorkeurskeuze voor enterprises die RAG en meertalige NLP bouwen met controle over hun data. Minder veelzijdig dan OpenAI, maar sterker in enterprise-compliance en embedding-kwaliteit.",
+  "bestAlternative": "mistral",
+  "whyListed": "Cohere is de leading enterprise-AI provider buiten OpenAI/Google, met unieke kracht in RAG-architecturen en meertalige embeddings. Breed gebruikt in Europese enterprise-deployments.",
+  "primaryJobsToBeDone": [
+    "Semantisch zoeken bouwen over bedrijfsdocumenten",
+    "Meertalige NLP-pijplijnen opzetten"
+  ],
+  "antiUseCases": [
+    "Consumentengerichte chatbots",
+    "Beeld- of audioverwerking"
+  ]
 }

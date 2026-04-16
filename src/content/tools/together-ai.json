@@ -3,11 +3,30 @@
   "category": "infrastructure",
   "websiteUrl": "https://www.together.ai",
   "shortDescription": "Snelle en betaalbare API voor open-source LLM's",
-  "useCases": [],
-  "strengths": [],
-  "limitations": [],
-  "pricingModel": "freemium",
-  "difficulty": "beginner",
+  "longDescription": "Together AI biedt hosted inference voor meer dan 100 open-source modellen — van Llama en Mistral tot DeepSeek en Qwen. Het platform onderscheidt zich door lage prijzen, fine-tuning mogelijkheden en een brede modelcatalogus. De API is OpenAI-compatibel en ondersteunt zowel streaming als function calling.",
+  "bestFor": "Teams en developers die betaalbare, schaalbare inference nodig hebben voor open-source LLM's, inclusief fine-tuning op eigen datasets, zonder eigen GPU-clusters.",
+  "useCases": [
+    "Productie-inference voor open-source LLM's",
+    "Fine-tuning van Llama en andere modellen op eigen data",
+    "Kostenoptimalisatie als alternatief voor OpenAI API",
+    "Rapid prototyping met de nieuwste open-source modellen"
+  ],
+  "strengths": [
+    "Een van de breedste open-source modelcatalogi",
+    "Competitieve prijzen per token",
+    "Fine-tuning ingebouwd",
+    "OpenAI-compatibele API"
+  ],
+  "limitations": [
+    "Geen eigen frontier-modellen",
+    "Latency varieert bij populaire modellen",
+    "Minder focust op snelheid dan Fireworks AI",
+    "Self-hosting niet beschikbaar"
+  ],
+  "pricing": "Pay-as-you-go per token; prijzen per model variëren. Fine-tuning kost extra per run.",
+  "openSource": false,
+  "pricingModel": "paid",
+  "difficulty": "intermediate",
   "tags": [
     "inference",
     "api",
@@ -15,13 +34,44 @@
     "fine-tuning"
   ],
   "draft": false,
-  "targetAudience": [],
-  "businessFunctions": [],
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": [
+    "mkb",
+    "enterprise",
+    "freelancer"
+  ],
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
   "companySizeFit": [
     "small",
     "medium",
     "large"
   ],
-  "integrations": [],
-  "bestUseCaseStage": "team-rollout"
+  "integrations": [
+    "OpenAI SDK",
+    "LangChain",
+    "LlamaIndex",
+    "Hugging Face"
+  ],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "learningCurve": "low",
+  "bestUseCaseStage": "team-rollout",
+  "requiresDeveloper": true,
+  "fundingStage": "series-b",
+  "testedByEditor": false,
+  "verdict": "Together AI is de go-to keuze voor teams die open-source modellen in productie willen draaien met fine-tuning opties. Breder aanbod dan Fireworks AI, iets minder gefocust op pure snelheid.",
+  "bestAlternative": "fireworks-ai",
+  "whyListed": "Together AI groeide snel als betaalbaar en breed alternatief voor de OpenAI API en werd populair als inference-laag voor open-source model-experimenten en fine-tuning.",
+  "primaryJobsToBeDone": [
+    "Open-source LLM's goedkoop in productie draaien",
+    "LLM's fine-tunen op eigen data"
+  ],
+  "antiUseCases": [
+    "Gebruik van closed-source frontier modellen",
+    "Niet-technische eindgebruikers"
+  ]
 }

@@ -32,8 +32,7 @@ const sourceConfig: Record<
   product_hunt: {
     label: 'Product Hunt',
     color: '#da552f',
-    favicon:
-      'https://www.google.com/s2/favicons?domain=producthunt.com&sz=32',
+    favicon: 'https://www.google.com/s2/favicons?domain=producthunt.com&sz=32',
   },
   github: {
     label: 'GitHub',
@@ -43,8 +42,7 @@ const sourceConfig: Record<
   hackernews: {
     label: 'Hacker News',
     color: '#ff6600',
-    favicon:
-      'https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=32',
+    favicon: 'https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=32',
   },
   twitter: {
     label: 'X / Twitter',
@@ -56,7 +54,26 @@ const sourceConfig: Record<
     color: '#0085ff',
     favicon: 'https://www.google.com/s2/favicons?domain=bsky.app&sz=32',
   },
+  reddit: {
+    label: 'Reddit',
+    color: '#ff4500',
+    favicon: 'https://www.google.com/s2/favicons?domain=reddit.com&sz=32',
+  },
 };
+
+// Derive available sources + categories from actual data
+const activeSources = [...new Set(launches.map(l => l.source))].filter(s => s in sourceConfig);
+
+// Only show categories with ≥ 3 items — single-item buckets add no filter value
+const categoryCounts = new Map<string, number>();
+for (const l of launches) {
+  const cat = l.category_nl || l.category || '';
+  if (cat) categoryCounts.set(cat, (categoryCounts.get(cat) ?? 0) + 1);
+}
+const activeCategories = [...categoryCounts.entries()]
+  .filter(([, count]) => count >= 3)
+  .map(([cat]) => cat)
+  .sort();
 ---
 
 <Layout
@@ -98,7 +115,53 @@ const sourceConfig: Record<
       </p>
     </header>
 
-    <div class="lr-grid">
+    <!-- Filter bar -->
+    <div class="lr-filters">
+      <div class="lr-filter-row">
+        <button class="lr-chip lr-chip--active" data-filter="source" data-value="all">
+          Alle bronnen
+          <span class="lr-chip__count">{launches.length}</span>
+        </button>
+        {activeSources.map(src => {
+          const cfg = sourceConfig[src];
+          const count = launches.filter(l => l.source === src).length;
+          return (
+            <button
+              class="lr-chip"
+              data-filter="source"
+              data-value={src}
+              style={`--chip-color: ${cfg.color}`}
+            >
+              <img src={cfg.favicon} alt="" width="12" height="12" loading="lazy" />
+              {cfg.label}
+              <span class="lr-chip__count">{count}</span>
+            </button>
+          );
+        })}
+      </div>
+      {activeCategories.length > 1 && (
+        <div class="lr-filter-row lr-filter-row--cats">
+          <button class="lr-chip lr-chip--sm lr-chip--active" data-filter="cat" data-value="all">
+            Alle categorieën
+          </button>
+          {activeCategories.map(cat => {
+            const count = launches.filter(l => (l.category_nl || l.category || '') === cat).length;
+            return (
+              <button class="lr-chip lr-chip--sm" data-filter="cat" data-value={cat}>
+                {cat}
+                <span class="lr-chip__count">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+
+    <p class="lr-count" id="lr-count">
+      <strong id="lr-count-num">{launches.length}</strong> tools
+    </p>
+
+    <div class="lr-grid" id="lr-grid">
       {launches.map((launch) => {
         const src = sourceConfig[launch.source] || sourceConfig.product_hunt;
         const risks = (launch.risk_flags ?? []) as any[];
@@ -121,7 +184,14 @@ const sourceConfig: Record<
           launch.previous_launches.length > 0;
 
         return (
-          <a href={launch.url} target="_blank" rel="noopener" class="lr-card">
+          <a
+            href={launch.url}
+            target="_blank"
+            rel="noopener"
+            class="lr-card"
+            data-source={launch.source}
+            data-category={launch.category_nl || launch.category || ''}
+          >
             <div class="lr-card__header">
               {logo && (
                 <img
@@ -236,10 +306,144 @@ const sourceConfig: Record<
         );
       })}
     </div>
+    <p class="lr-empty" id="lr-empty" style="display:none;">
+      Geen tools gevonden voor deze combinatie van filters.
+    </p>
   </main>
 </Layout>
 
+<script>
+  let activeSource = 'all';
+  let activeCat = 'all';
+
+  const grid = document.getElementById('lr-grid')!;
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.lr-card'));
+  const countNum = document.getElementById('lr-count-num')!;
+  const empty = document.getElementById('lr-empty')!;
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(card => {
+      const matchSource = activeSource === 'all' || card.dataset.source === activeSource;
+      const matchCat = activeCat === 'all' || card.dataset.category === activeCat;
+      const show = matchSource && matchCat;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    countNum.textContent = String(visible);
+    empty.style.display = visible === 0 ? '' : 'none';
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-filter="source"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeSource = btn.dataset.value!;
+      document.querySelectorAll('[data-filter="source"]').forEach(b => b.classList.remove('lr-chip--active'));
+      btn.classList.add('lr-chip--active');
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-filter="cat"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCat = btn.dataset.value!;
+      document.querySelectorAll('[data-filter="cat"]').forEach(b => b.classList.remove('lr-chip--active'));
+      btn.classList.add('lr-chip--active');
+      applyFilters();
+    });
+  });
+</script>
+
 <style>
+  /* ── Filter bar ─────────────────────────────────── */
+  .lr-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+  }
+
+  .lr-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .lr-filter-row--cats {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .lr-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: var(--space-1-5) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .lr-chip--sm {
+    font-size: var(--text-xs);
+    padding: 3px var(--space-2-5);
+  }
+
+  .lr-chip:hover {
+    border-color: var(--chip-color, var(--primary-bright));
+    color: var(--chip-color, var(--primary-bright));
+    background: color-mix(in oklch, var(--chip-color, var(--primary-bright)) 10%, transparent);
+  }
+
+  .lr-chip--active {
+    background: var(--chip-color, var(--primary-bright));
+    border-color: var(--chip-color, var(--primary-bright));
+    color: #fff;
+    font-weight: var(--font-semibold);
+  }
+
+  /* Active "all" chip uses primary color, not white text on white */
+  .lr-chip--active:not([style]) {
+    background: var(--primary-bright);
+    border-color: var(--primary-bright);
+    color: var(--bg-deep);
+  }
+
+  .lr-chip__count {
+    font-size: var(--text-xs);
+    opacity: 0.75;
+  }
+
+  .lr-chip img {
+    border-radius: 2px;
+  }
+
+  .lr-count {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .lr-count strong { color: var(--text-secondary); }
+
+  .lr-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    padding: var(--space-8) 0;
+  }
+
+  /* ── Back link ──────────────────────────────────── */
   .back-link {
     display: inline-flex;
     align-items: center;

@@ -15,7 +15,9 @@ export default defineConfig({
   integrations: [
     react(),
     markdoc(),
-    keystatic(),
+    // Keystatic only active in dev — local CMS for editing tool profiles
+    // Access at: http://localhost:4321/keystatic
+    ...(isDev ? [keystatic()] : []),
     sitemap({
       filter: (page) => !page.includes('/og/'),
       serialize(item) {

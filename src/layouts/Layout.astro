@@ -5,6 +5,7 @@ import '@fontsource/jetbrains-mono';
 import '../styles/main.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import SearchModal from '../components/SearchModal.astro';
 import { siteConfig } from '../config/site';
 
 interface Props {
@@ -78,6 +79,7 @@ const resolvedOgImageType = resolvedOgImage.endsWith('.png') ? 'image/png' : 'im
     <SiteHeader />
     <slot />
     <SiteFooter />
+    <SearchModal />
   </body>
 </html>
 

@@ -1,8 +1,7 @@
 ---
 /**
- * /ai-tools — AI Tools Radar
- * Sectioned overview with highlight blocks, combined category + phase
- * filters, sort, and a full card grid. Dutch labels throughout.
+ * / — Homepage + AI Tools Radar
+ * Hero with value prop and quick-access blocks, then full tool grid.
  * Data comes from tools-engine.ts (content + stats merged).
  */
 import Layout from '../layouts/Layout.astro';
@@ -13,14 +12,16 @@ import {
   getAllTools,
   getSectionedTools,
   getRadarTimestamp,
+  getWeeklyHighlights,
 } from '../lib/tools-engine';
 import { toolCategories, trendPhases } from '../lib/tools-schema';
 import type { TrendPhaseKey } from '../lib/tools-schema';
-import { TrendingUp, Zap, Flame, ShieldCheck } from '@lucide/astro';
+import { TrendingUp, Zap, Flame, ShieldCheck, Trophy, Newspaper, Scale, ArrowRight } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
 const sections = await getSectionedTools();
+const highlights = await getWeeklyHighlights();
 
 const toolsSorted = [...tools]
   .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
@@ -37,6 +38,16 @@ const formattedDate = generatedAt
       day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
     })
   : null;
+
+const weekNum = highlights.weekLabel.split('-w')[1];
+
+// Load latest feature news count
+let newsCount = 0;
+try {
+  const raw = await import('../data/reports/tool_feature_news.json');
+  const data: any = raw.default ?? raw;
+  newsCount = (data.features ?? []).length;
+} catch { }
 
 // Phases to show publicly (exclude faded)
 const publicPhaseKeys: TrendPhaseKey[] = [
@@ -75,23 +86,69 @@ const websiteJsonLd = {
   </Fragment>
   <main class="container container-wide" style="padding-top: 80px;">
 
-    <!-- Header -->
-    <header class="tools-header">
-      <div class="tools-header__meta">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero__meta">
         <Badge variant="outline" size="sm">
           <Zap size={12} strokeWidth={1.5} />
           Live radar
         </Badge>
         {formattedDate && <span class="tools-timestamp">Bijgewerkt {formattedDate}</span>}
       </div>
-      <h1 class="tools-title">
-        <span class="tools-title__gradient">Beste AI Tools</span>
+      <h1 class="hero__title">
+        <span class="hero__gradient">De beste AI-tools</span>
+        <br />objectief gerankt
       </h1>
-      <p class="tools-subtitle">
-        Ontdek welke AI-tools nu de meeste aandacht krijgen.
-        <strong>{tools.length}+ tools</strong> — realtime gerankt op buzz, groei en mentions.
+      <p class="hero__sub">
+        Welke AI-tools groeien nú? Wij volgen <strong>{tools.length}+ tools</strong> op buzz,
+        groei en mentions — elke week bijgewerkt, zonder hype.
       </p>
+      <div class="hero__stats">
+        <span class="hero__stat"><strong>{tools.length}</strong> tools gevolgd</span>
+        <span class="hero__divider">·</span>
+        <span class="hero__stat"><strong>{risingCount}</strong> stijgers</span>
+        <span class="hero__divider">·</span>
+        <span class="hero__stat">Week <strong>{weekNum}</strong></span>
+      </div>
     </header>
+
+    <!-- Quick access blocks -->
+    <div class="qa-row">
+      <a href="/weekradar" class="qa-card">
+        <span class="qa-card__icon"><Trophy size={20} strokeWidth={1.5} /></span>
+        <span class="qa-card__body">
+          <span class="qa-card__label">Weekradar</span>
+          <span class="qa-card__desc">
+            {highlights.toolVanDeWeek
+              ? <>Tool van de week: <strong>{highlights.toolVanDeWeek.name}</strong></>
+              : <>Stijgers, dalers en nieuwkomers</>
+            }
+          </span>
+        </span>
+        <ArrowRight size={16} strokeWidth={1.5} class="qa-card__arrow" />
+      </a>
+      <a href="/nieuws" class="qa-card">
+        <span class="qa-card__icon"><Newspaper size={20} strokeWidth={1.5} /></span>
+        <span class="qa-card__body">
+          <span class="qa-card__label">Nieuws</span>
+          <span class="qa-card__desc">
+            {newsCount > 0
+              ? <><strong>{newsCount}</strong> nieuwe features &amp; updates</>
+              : <>Nieuwe features en tool-updates</>
+            }
+          </span>
+        </span>
+        <ArrowRight size={16} strokeWidth={1.5} class="qa-card__arrow" />
+      </a>
+      <a href="/vergelijk" class="qa-card">
+        <span class="qa-card__icon"><Scale size={20} strokeWidth={1.5} /></span>
+        <span class="qa-card__body">
+          <span class="qa-card__label">Vergelijk</span>
+          <span class="qa-card__desc">Side-by-side buzz, groei en functies</span>
+        </span>
+        <ArrowRight size={16} strokeWidth={1.5} class="qa-card__arrow" />
+      </a>
+    </div>
 
     <!-- Signalen legenda -->
     <div class="legend-bar">
@@ -222,6 +279,136 @@ const websiteJsonLd = {
 </script>
 
 <style>
+  /* ── Hero ───────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .hero__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero__sub {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin-inline: auto;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero__sub strong { color: var(--text-primary); font-weight: var(--font-semibold); }
+
+  .hero__stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+
+  .hero__stat strong { color: var(--text-secondary); }
+  .hero__divider { opacity: 0.4; }
+
+  /* ── Quick-access row ───────────────────────────── */
+  .qa-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  .qa-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+  }
+
+  .qa-card:hover {
+    border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .qa-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright);
+  }
+
+  .qa-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .qa-card__label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+  }
+
+  .qa-card__desc {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .qa-card__desc strong { color: var(--text-secondary); }
+
+  .qa-card__arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: color var(--transition-fast);
+  }
+
+  .qa-card:hover .qa-card__arrow { color: var(--primary-bright); }
+
+  @media (max-width: 640px) {
+    .qa-row { grid-template-columns: 1fr; }
+    .hero__title { font-size: var(--text-4xl); }
+  }
+
+  /* ── Grid section header ────────────────────────── */
   .tools-header {
     margin-bottom: var(--space-8);
     text-align: center;
@@ -240,34 +427,6 @@ const websiteJsonLd = {
     color: var(--text-muted);
   }
 
-  .tools-title {
-    font-family: var(--font-display);
-    font-size: var(--text-5xl);
-    font-weight: var(--font-bold);
-    letter-spacing: var(--tracking-tight);
-    margin-bottom: var(--space-3);
-    line-height: var(--leading-tight);
-  }
-
-  .tools-title__gradient {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .tools-subtitle {
-    font-size: var(--text-xl);
-    color: var(--text-secondary);
-    max-width: 640px;
-    margin-inline: auto;
-    line-height: var(--leading-relaxed);
-  }
-
-  .tools-subtitle strong {
-    color: var(--text-primary);
-    font-weight: var(--font-semibold);
-  }
 
   /* Legends */
   .legend-bar {

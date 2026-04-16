@@ -1,3 +1,15 @@
+/**
+ * Keystatic CMS — local-only mode
+ *
+ * Workflow:
+ *   1. npm run dev
+ *   2. Open http://localhost:4321/keystatic
+ *   3. Edit tool profiles via the UI
+ *   4. Save → JSON files in src/content/tools/ are updated
+ *   5. Commit + push → auto-deploys to Cloudflare
+ *
+ * Not active in production builds (output: static).
+ */
 import { config, fields, collection } from '@keystatic/core';
 import {
   toolCategories, pricingModels, difficultyLevels, businessFunctions,

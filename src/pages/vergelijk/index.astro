@@ -1,0 +1,258 @@
+---
+/**
+ * /vergelijk — Comparison Index
+ * Browseable overview of all generated tool comparison pages.
+ * Grouped by category (same-category pairs first), then cross-category.
+ */
+import Layout from '../../layouts/Layout.astro';
+import Badge from '../../components/atoms/Badge.astro';
+import { getComparisonPairs } from '../../lib/tools-engine';
+import { toolCategories } from '../../lib/tools-schema';
+import { ArrowLeft, Scale } from '@lucide/astro';
+
+const pairs = await getComparisonPairs();
+const year = new Date().getFullYear();
+
+// Split same-category vs cross-category
+const sameCat = pairs.filter(p => p.toolA.category === p.toolB.category);
+const crossCat = pairs.filter(p => p.toolA.category !== p.toolB.category);
+
+// Group same-cat pairs per category, ordered by combined buzz
+const byCategoryMap = new Map<string, typeof sameCat>();
+for (const pair of sameCat) {
+  const cat = pair.toolA.category;
+  if (!byCategoryMap.has(cat)) byCategoryMap.set(cat, []);
+  byCategoryMap.get(cat)!.push(pair);
+}
+// Sort categories by total buzz of their pairs
+const byCategory = Array.from(byCategoryMap.entries()).sort((a, b) => {
+  const scoreA = a[1].reduce((s, p) => s + (p.toolA.stats?.buzz_score ?? 0) + (p.toolB.stats?.buzz_score ?? 0), 0);
+  const scoreB = b[1].reduce((s, p) => s + (p.toolA.stats?.buzz_score ?? 0) + (p.toolB.stats?.buzz_score ?? 0), 0);
+  return scoreB - scoreA;
+});
+---
+
+<Layout
+  title={`AI Tools Vergelijken ${year} — Welke past bij jou? | debesteaitools.nl`}
+  description={`Vergelijk ${pairs.length} AI-tool combinaties side-by-side: buzz score, groei, prijs en functies. Objectief gebaseerd op live data.`}
+>
+  <main class="container" style="padding-top: 80px; max-width: 960px;">
+
+    <a href="/ai-tools" class="back-link">
+      <ArrowLeft size={16} strokeWidth={1.5} />
+      Terug naar overzicht
+    </a>
+
+    <header class="vi-header">
+      <div class="vi-header__icon"><Scale size={28} strokeWidth={1.5} /></div>
+      <h1 class="vi-title">AI Tools Vergelijken</h1>
+      <p class="vi-subtitle">
+        Welke AI-tool past het beste bij jou? Kies een vergelijking om buzz score, groei en functies
+        <strong>side-by-side</strong> te zien.
+      </p>
+      <p class="vi-meta"><strong>{pairs.length} vergelijkingen</strong> beschikbaar</p>
+    </header>
+
+    <!-- Same-category comparisons grouped by category -->
+    {byCategory.map(([cat, catPairs]) => {
+      const catConfig = toolCategories[cat as keyof typeof toolCategories];
+      if (!catConfig) return null;
+      return (
+        <section class="vi-section">
+          <h2 class="vi-section__title">
+            <Badge variant="category" color={catConfig.color} size="sm">{catConfig.name}</Badge>
+            <span class="vi-section__count">{catPairs.length} vergelijkingen</span>
+          </h2>
+          <div class="vi-grid">
+            {catPairs.map(pair => (
+              <a href={`/vergelijk/${pair.comparisonSlug}`} class="vi-card">
+                <span class="vi-card__name">{pair.toolA.name}</span>
+                <span class="vi-card__vs">vs</span>
+                <span class="vi-card__name">{pair.toolB.name}</span>
+                {pair.toolA.stats && pair.toolB.stats && (
+                  <span class="vi-card__scores">
+                    {pair.toolA.stats.buzz_score} — {pair.toolB.stats.buzz_score}
+                  </span>
+                )}
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+
+    <!-- Cross-category comparisons -->
+    {crossCat.length > 0 && (
+      <section class="vi-section">
+        <h2 class="vi-section__title">
+          <span class="vi-section__label">Categorie-overschrijdend</span>
+          <span class="vi-section__count">{crossCat.length} vergelijkingen</span>
+        </h2>
+        <div class="vi-grid">
+          {crossCat.map(pair => {
+            const catA = toolCategories[pair.toolA.category as keyof typeof toolCategories];
+            const catB = toolCategories[pair.toolB.category as keyof typeof toolCategories];
+            return (
+              <a href={`/vergelijk/${pair.comparisonSlug}`} class="vi-card vi-card--cross">
+                <span class="vi-card__top">
+                  <span class="vi-card__name">{pair.toolA.name}</span>
+                  {catA && <Badge variant="category" color={catA.color} size="sm">{catA.name}</Badge>}
+                </span>
+                <span class="vi-card__vs">vs</span>
+                <span class="vi-card__top">
+                  <span class="vi-card__name">{pair.toolB.name}</span>
+                  {catB && <Badge variant="category" color={catB.color} size="sm">{catB.name}</Badge>}
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .vi-header {
+    text-align: center;
+    margin-bottom: var(--space-10);
+  }
+  .vi-header__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright);
+    margin-bottom: var(--space-3);
+  }
+  .vi-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .vi-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin: 0;
+  }
+  .vi-subtitle strong { color: var(--text-primary); }
+  .vi-meta {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: var(--space-2) 0 0;
+  }
+  .vi-meta strong { color: var(--text-secondary); }
+
+  /* Section */
+  .vi-section {
+    margin-bottom: var(--space-8);
+  }
+  .vi-section__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-base);
+  }
+  .vi-section__label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+  }
+  .vi-section__count {
+    font-size: var(--text-sm);
+    font-weight: var(--font-normal);
+    color: var(--text-muted);
+  }
+
+  /* Grid */
+  .vi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-3);
+  }
+
+  /* Card */
+  .vi-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    transition: all var(--transition-fast);
+    min-height: 48px;
+  }
+  .vi-card:hover {
+    border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .vi-card--cross {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .vi-card__top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .vi-card__name {
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .vi-card__vs {
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    flex-shrink: 0;
+  }
+
+  .vi-card__scores {
+    margin-left: auto;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .vi-grid { grid-template-columns: 1fr; }
+  }
+</style>

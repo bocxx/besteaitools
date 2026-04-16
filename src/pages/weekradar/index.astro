@@ -8,9 +8,19 @@ import Badge from '../../components/atoms/Badge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
 import { getWeeklyHighlights } from '../../lib/tools-engine';
 import { toolCategories, trendDirections } from '../../lib/tools-schema';
-import { Trophy, TrendingUp, TrendingDown, Sparkles, ArrowLeft, Star } from '@lucide/astro';
+import { Trophy, TrendingUp, TrendingDown, Sparkles, ArrowLeft, Star, Newspaper, Zap, Minus } from '@lucide/astro';
 
 const highlights = await getWeeklyHighlights();
+
+// Load feature news for "Nieuws deze week" block
+let featureNews: any[] = [];
+try {
+  const raw = await import('../../data/reports/tool_feature_news.json');
+  const data: any = raw.default ?? raw;
+  featureNews = (data.features ?? []).slice(0, 4);
+} catch {
+  // No news data yet
+}
 const { weekLabel, generatedAt, toolVanDeWeek, stijgers, dalers, nieuwkomers, totalTools } = highlights;
 
 const genDate = new Date(generatedAt);
@@ -151,6 +161,31 @@ const weekNum = weekLabel.split('-w')[1];
             </a>
           ))}
         </div>
+      </section>
+    )}
+
+    <!-- Nieuws deze week -->
+    {featureNews.length > 0 && (
+      <section class="wr-news">
+        <h2 class="wr-column__title">
+          <Newspaper size={16} strokeWidth={2} />
+          Nieuws deze week
+        </h2>
+        <div class="wr-news__list">
+          {featureNews.map((item: any) => (
+            <a href={`/ai-tools/${item.tool_slug}`} class="wr-news__item">
+              <span class="wr-news__impact">
+                {item.impact === 'high'
+                  ? <Zap size={12} strokeWidth={2} />
+                  : <Minus size={12} strokeWidth={2} />
+                }
+              </span>
+              <span class="wr-news__tool">{item.tool_name}</span>
+              <span class="wr-news__feature">{item.feature_title}</span>
+            </a>
+          ))}
+        </div>
+        <a href="/nieuws" class="wr-news__more">Alle tool-updates →</a>
       </section>
     )}
 
@@ -366,6 +401,64 @@ const weekNum = weekLabel.split('-w')[1];
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Nieuws deze week */
+  .wr-news {
+    margin-bottom: var(--space-8);
+  }
+
+  .wr-news__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .wr-news__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color var(--transition-fast);
+  }
+  .wr-news__item:hover {
+    border-color: color-mix(in oklch, var(--text-primary) 15%, transparent);
+  }
+
+  .wr-news__impact {
+    color: var(--primary-bright);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .wr-news__tool {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--primary-bright);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .wr-news__feature {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .wr-news__more {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .wr-news__more:hover { color: var(--primary-bright); }
 
   @media (max-width: 640px) {
     .wr-columns { grid-template-columns: 1fr; }
