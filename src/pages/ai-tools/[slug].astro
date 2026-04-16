@@ -600,10 +600,10 @@ function sourceLabel(s: string): string {
                 {dir.label} {stats.velocity > 0 ? '+' : ''}{stats.velocity.toFixed(1)}/dag
               </div>
             )}
-            {stats.github_stars > 0 && (
-              <div class="sidebar-stars">
+            {tool.openSource && stats.github_stars > 0 && (
+              <div class="sidebar-stars" title="Nieuwe GitHub trending-sterren op gerelateerde repos (14 dagen)">
                 <Star size={13} strokeWidth={1.5} />
-                {stats.github_stars.toLocaleString('nl-NL')} GitHub stars
+                {stats.github_stars.toLocaleString('nl-NL')} GitHub ⭐ (14d)
               </div>
             )}
             {sparkline && (

@@ -128,15 +128,21 @@ const year = new Date().getFullYear();
         )}
       </div>
 
-      <!-- GitHub Stars -->
-      {(toolA.stats?.github_stars || toolB.stats?.github_stars) && (
+      <!-- GitHub Stars — only for open-source tools -->
+      {(toolA.openSource || toolB.openSource) && (toolA.stats?.github_stars || toolB.stats?.github_stars) && (
         <>
           <div class:list={['vs-col', { 'vs-col--win': starsWinner === 'a' }]}>
-            <span class="vs-stars"><Star size={14} strokeWidth={1.5} /> {(toolA.stats?.github_stars ?? 0).toLocaleString('nl-NL')}</span>
+            {toolA.openSource && toolA.stats?.github_stars
+              ? <span class="vs-stars" title="Nieuwe GitHub trending-sterren (14 dagen)"><Star size={14} strokeWidth={1.5} /> {toolA.stats.github_stars.toLocaleString('nl-NL')}</span>
+              : <span class="vs-stars vs-stars--na">—</span>
+            }
           </div>
-          <div class="vs-col vs-col--label">GitHub Stars</div>
+          <div class="vs-col vs-col--label">GitHub ⭐ (14d)</div>
           <div class:list={['vs-col', { 'vs-col--win': starsWinner === 'b' }]}>
-            <span class="vs-stars"><Star size={14} strokeWidth={1.5} /> {(toolB.stats?.github_stars ?? 0).toLocaleString('nl-NL')}</span>
+            {toolB.openSource && toolB.stats?.github_stars
+              ? <span class="vs-stars" title="Nieuwe GitHub trending-sterren (14 dagen)"><Star size={14} strokeWidth={1.5} /> {toolB.stats.github_stars.toLocaleString('nl-NL')}</span>
+              : <span class="vs-stars vs-stars--na">—</span>
+            }
           </div>
         </>
       )}
@@ -319,6 +325,11 @@ const year = new Date().getFullYear();
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     font-variant-numeric: tabular-nums;
+  }
+
+  .vs-stars--na {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
   }
 
   .vs-stars {

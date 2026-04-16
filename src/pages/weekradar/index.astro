@@ -73,10 +73,10 @@ const weekNum = weekLabel.split('-w')[1];
                   {trendDirections[toolVanDeWeek.stats.trend_direction].label}
                   {toolVanDeWeek.stats.velocity > 0 ? '+' : ''}{toolVanDeWeek.stats.velocity.toFixed(1)}/d
                 </span>
-                {toolVanDeWeek.stats.github_stars > 0 && (
-                  <span class="wr-stars">
+                {toolVanDeWeek.openSource && toolVanDeWeek.stats.github_stars > 0 && (
+                  <span class="wr-stars" title="Nieuwe GitHub trending-sterren (14 dagen)">
                     <Star size={12} strokeWidth={1.5} />
-                    {toolVanDeWeek.stats.github_stars.toLocaleString('nl-NL')}
+                    {toolVanDeWeek.stats.github_stars.toLocaleString('nl-NL')} (14d)
                   </span>
                 )}
               </>
