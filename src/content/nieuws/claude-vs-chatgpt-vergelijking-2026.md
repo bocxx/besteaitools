@@ -23,6 +23,7 @@ faq:
     a: "Ja, zowel Claude als ChatGPT-4o ondersteunen vision: je kunt afbeeldingen, screenshots en documenten uploaden."
   - q: "Welke heeft een beter geheugen?"
     a: "ChatGPT heeft een explicieter geheugen dat je zelf kunt beheren. Claude's geheugen is meer impliciet via lange context."
+heroImage: "/images/nieuws/claude-vs-chatgpt-vergelijking-2026.webp"
 ---
 
 ## Twee koplopers, verschillende sterktes

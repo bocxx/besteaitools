@@ -12,6 +12,7 @@ interface Props {
   author?: string;
   readingTime?: number;
   featured?: boolean;
+  heroImage?: string;
   size?: 'hero' | 'large' | 'medium' | 'small';
 }
 
@@ -24,8 +25,11 @@ const {
   author = 'Redactie',
   readingTime,
   featured = false,
+  heroImage,
   size = 'medium',
 } = Astro.props;
+
+const showImage = heroImage && (size === 'hero' || size === 'large');
 
 const cat = nieuwsCategoryConfig[category] ?? nieuwsCategoryConfig.nieuws;
 
@@ -45,10 +49,17 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
 
 <a
   href={href}
-  class:list={['news-card', 'bento-item', bentoClass, { 'news-card--featured': featured }]}
+  class:list={['news-card', 'bento-item', bentoClass, { 'news-card--featured': featured, 'news-card--has-image': showImage }]}
   style={`--card-accent: ${cat.color}`}
 >
-  <div class="news-card__inner">
+  {showImage && (
+    <div class="news-card__image-wrap">
+      <img src={heroImage} alt={title} class="news-card__image" loading="lazy" />
+      <div class="news-card__image-overlay" />
+    </div>
+  )}
+
+  <div class:list={['news-card__inner', { 'news-card__inner--over-image': showImage }]}>
     <header class="news-card__header">
       <Badge variant="category" color={cat.color} size="sm">{cat.label}</Badge>
       <time class="news-card__date" datetime={publishedAt.toISOString()}>
@@ -89,6 +100,47 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
     position: relative;
     overflow: hidden;
     transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  /* Image layout */
+  .news-card--has-image {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+  }
+
+  .news-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .news-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+  }
+
+  .news-card:hover .news-card__image {
+    transform: scale(1.04);
+  }
+
+  .news-card__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 40%,
+      color-mix(in oklch, var(--bg-panel) 80%, transparent) 100%
+    );
+  }
+
+  .news-card__inner--over-image {
+    padding: var(--space-4) var(--space-5) var(--space-5);
+    flex: 1;
   }
 
   .news-card::before {

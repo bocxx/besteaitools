@@ -25,6 +25,7 @@ faq:
     a: "Er is een gratis tier met beperkte AI-verzoeken. De Pro-versie kost $20 per maand en geeft onbeperkte snelle verzoeken."
   - q: "Werkt Cursor ook in bestaande projecten?"
     a: "Ja, Cursor is gebouwd op VS Code en opent elk bestaand project direct. Je bestaande extensies blijven werken."
+heroImage: "/images/nieuws/cursor-1-0-lancering.webp"
 ---
 
 ## Wat is er nieuw in Cursor 1.0?
