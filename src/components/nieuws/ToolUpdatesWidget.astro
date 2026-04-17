@@ -1,0 +1,213 @@
+---
+import Badge from '../atoms/Badge.astro';
+import { toolCategories } from '../../lib/tools-schema';
+import { Zap, Minus, ExternalLink, RefreshCw } from '@lucide/astro';
+
+let featureNews: any = { features: [], generated_at: null };
+try {
+  const raw = await import('../../data/reports/tool_feature_news.json');
+  featureNews = raw.default ?? raw;
+} catch {
+  // no data yet
+}
+
+// Sort by detected_at descending so newest updates are always at top
+const features = [...(featureNews.features ?? [])]
+  .sort((a: any, b: any) => {
+    const ta = a.detected_at ? new Date(a.detected_at).getTime() : 0;
+    const tb = b.detected_at ? new Date(b.detected_at).getTime() : 0;
+    return tb - ta;
+  })
+  .slice(0, 30);
+
+const genDate = featureNews.generated_at ? new Date(featureNews.generated_at) : null;
+const formattedDate = genDate?.toLocaleDateString('nl-NL', {
+  day: 'numeric', month: 'short',
+}) ?? '—';
+
+const impactConfig: Record<string, { label: string; color: string }> = {
+  high:   { label: 'Hoog',   color: 'var(--color-error)' },
+  medium: { label: 'Mid',    color: 'var(--color-warning)' },
+  low:    { label: 'Laag',   color: 'var(--text-muted)' },
+};
+---
+
+<aside class="tool-widget">
+  <header class="tool-widget__header">
+    <div class="tool-widget__title-row">
+      <RefreshCw size={15} strokeWidth={1.5} />
+      <span class="tool-widget__title">Tool updates</span>
+    </div>
+    <span class="tool-widget__meta">bijgewerkt {formattedDate}</span>
+  </header>
+
+  {features.length === 0 ? (
+    <p class="tool-widget__empty">Geen updates beschikbaar.</p>
+  ) : (
+    <ul class="tool-widget__list">
+      {features.map((item: any) => {
+        const impact = impactConfig[item.impact] ?? impactConfig.medium;
+        const catKey = item.tool_category as keyof typeof toolCategories;
+        const cat = toolCategories[catKey];
+        const firstSource = item.sources?.[0];
+
+        return (
+          <li class="tool-widget__item">
+            <div class="tool-widget__item-header">
+              <a href={`/ai-tools/${item.tool_slug}`} class="tool-widget__tool-name">
+                {item.tool_name}
+              </a>
+              {cat && (
+                <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
+              )}
+              <span class="tool-widget__impact" style={`color: ${impact.color}`}>
+                {item.impact === 'high'
+                  ? <Zap size={10} strokeWidth={2} />
+                  : <Minus size={10} strokeWidth={2} />
+                }
+              </span>
+            </div>
+            <p class="tool-widget__feature">{item.feature_title}</p>
+            {firstSource && (
+              <a href={firstSource.url} target="_blank" rel="noopener" class="tool-widget__source">
+                <ExternalLink size={10} strokeWidth={1.5} />
+                {firstSource.title?.slice(0, 55)}{firstSource.title?.length > 55 ? '…' : ''}
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  )}
+
+  <a href="/nieuws" class="tool-widget__all-link">
+    Alle tool updates →
+  </a>
+</aside>
+
+<style>
+  .tool-widget {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    position: sticky;
+    top: calc(80px + var(--space-4));
+  }
+
+  .tool-widget__header {
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+  }
+
+  .tool-widget__title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--primary-bright);
+    margin-bottom: var(--space-1);
+  }
+
+  .tool-widget__title {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+  }
+
+  .tool-widget__meta {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .tool-widget__empty {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-align: center;
+    padding: var(--space-4) 0;
+  }
+
+  .tool-widget__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .tool-widget__item {
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 5%, transparent);
+  }
+
+  .tool-widget__item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .tool-widget__item-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-1);
+    flex-wrap: wrap;
+  }
+
+  .tool-widget__tool-name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--primary-bright);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .tool-widget__tool-name:hover { color: var(--text-primary); }
+
+  .tool-widget__impact {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .tool-widget__feature {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-1);
+    line-height: var(--leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tool-widget__source {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    line-height: var(--leading-snug);
+  }
+  .tool-widget__source:hover { color: var(--text-secondary); }
+
+  .tool-widget__all-link {
+    display: block;
+    text-align: center;
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--primary-bright);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .tool-widget__all-link:hover { color: var(--secondary-bright); }
+</style>

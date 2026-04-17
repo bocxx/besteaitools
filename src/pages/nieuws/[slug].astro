@@ -1,0 +1,463 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Badge from '../../components/atoms/Badge.astro';
+import NewsCard from '../../components/nieuws/NewsCard.astro';
+import ToolUpdatesWidget from '../../components/nieuws/ToolUpdatesWidget.astro';
+import { getCollection, render } from 'astro:content';
+import { nieuwsCategoryConfig } from '../../lib/nieuws-schema';
+import { ArrowLeft, Clock, Calendar, User, Lightbulb, ChevronRight } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('nieuws', ({ data }) => !data.draft);
+  return articles.map(article => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const cat = nieuwsCategoryConfig[article.data.category] ?? nieuwsCategoryConfig.nieuws;
+
+const formattedDate = article.data.publishedAt.toLocaleDateString('nl-NL', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+
+// Related articles: same category, different slug, newest first
+const allNieuws = await getCollection('nieuws', ({ data }) => !data.draft);
+const related = allNieuws
+  .filter(a => a.data.category === article.data.category && a.id !== article.id)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 3);
+---
+
+<Layout
+  title={`${article.data.title} | debesteaitools.nl`}
+  description={article.data.description}
+  ogImage={article.data.heroImage}
+>
+  <main class="container container-wide" style="padding-top: 80px;">
+
+    <a href="/nieuws" class="back-link">
+      <ArrowLeft size={16} strokeWidth={1.5} />
+      Nieuws & Analyses
+    </a>
+
+    <div class="grid-container grid-layout-sidebar-right">
+
+      <article class="article">
+        <!-- Article header -->
+        <header class="article__header">
+          <div class="article__meta-top">
+            <Badge variant="category" color={cat.color} size="sm">{cat.label}</Badge>
+            {article.data.toolSlug && (
+              <a href={`/ai-tools/${article.data.toolSlug}`} class="article__tool-link">
+                <ChevronRight size={12} strokeWidth={2} />
+                {article.data.toolSlug}
+              </a>
+            )}
+          </div>
+
+          <h1 class="article__title">{article.data.title}</h1>
+          <p class="article__description">{article.data.description}</p>
+
+          <div class="article__meta">
+            <span class="article__meta-item">
+              <User size={13} strokeWidth={1.5} />
+              {article.data.author}
+            </span>
+            <span class="article__meta-item">
+              <Calendar size={13} strokeWidth={1.5} />
+              {formattedDate}
+            </span>
+            {article.data.readingTime && (
+              <span class="article__meta-item">
+                <Clock size={13} strokeWidth={1.5} />
+                {article.data.readingTime} min lezen
+              </span>
+            )}
+          </div>
+        </header>
+
+        {article.data.heroImage && (
+          <img
+            src={article.data.heroImage}
+            alt={article.data.title}
+            class="article__hero"
+            loading="eager"
+          />
+        )}
+
+        <!-- Key takeaways -->
+        {article.data.keyTakeaways && article.data.keyTakeaways.length > 0 && (
+          <aside class="article__takeaways">
+            <div class="takeaways__header">
+              <Lightbulb size={16} strokeWidth={1.5} />
+              <span>Belangrijkste punten</span>
+            </div>
+            <ul class="takeaways__list">
+              {article.data.keyTakeaways.map(point => (
+                <li class="takeaways__item">{point}</li>
+              ))}
+            </ul>
+          </aside>
+        )}
+
+        <!-- Article content -->
+        <div class="article__content prose">
+          <Content />
+        </div>
+
+        <!-- Tags -->
+        {article.data.tags.length > 0 && (
+          <footer class="article__tags">
+            {article.data.tags.map(tag => (
+              <Badge variant="outline" size="sm">#{tag}</Badge>
+            ))}
+          </footer>
+        )}
+
+        <!-- FAQ -->
+        {article.data.faq && article.data.faq.length > 0 && (
+          <section class="article__faq">
+            <h2 class="faq__title">Veelgestelde vragen</h2>
+            <dl class="faq__list">
+              {article.data.faq.map(item => (
+                <div class="faq__item">
+                  <dt class="faq__question">{item.q}</dt>
+                  <dd class="faq__answer">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+
+        <!-- Related articles -->
+        {related.length > 0 && (
+          <section class="article__related">
+            <h2 class="related__title">Meer over {cat.label}</h2>
+            <div class="related__grid">
+              {related.map(rel => (
+                <NewsCard
+                  title={rel.data.title}
+                  description={rel.data.description}
+                  href={`/nieuws/${rel.id}`}
+                  category={rel.data.category}
+                  publishedAt={rel.data.publishedAt}
+                  author={rel.data.author}
+                  readingTime={rel.data.readingTime}
+                  size="medium"
+                />
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <ToolUpdatesWidget />
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  /* Article header */
+  .article__header {
+    margin-bottom: var(--space-6);
+  }
+
+  .article__meta-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .article__tool-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    text-transform: capitalize;
+  }
+  .article__tool-link:hover { color: var(--primary-bright); }
+
+  .article__title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-3);
+    color: var(--text-primary);
+  }
+
+  .article__description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-4);
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  .article__meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+
+  .article__hero {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-6);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* Key takeaways */
+  .article__takeaways {
+    background: color-mix(in oklch, var(--primary-bright) 6%, var(--bg-glass));
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    margin-bottom: var(--space-6);
+    backdrop-filter: blur(12px);
+  }
+
+  .takeaways__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--primary-bright);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    margin-bottom: var(--space-3);
+  }
+
+  .takeaways__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .takeaways__item {
+    display: flex;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  .takeaways__item::before {
+    content: '→';
+    color: var(--primary-bright);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Prose content */
+  .prose {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+  }
+
+  .prose :global(h2) {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: var(--space-8) 0 var(--space-4);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .prose :global(h3) {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: var(--space-6) 0 var(--space-3);
+  }
+
+  .prose :global(p) {
+    margin: 0 0 var(--space-4);
+  }
+
+  .prose :global(strong) {
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .prose :global(a) {
+    color: var(--primary-bright);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    transition: text-decoration-color var(--transition-fast);
+  }
+  .prose :global(a:hover) {
+    text-decoration-color: var(--primary-bright);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: var(--space-6);
+    margin: 0 0 var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .prose :global(li) {
+    line-height: var(--leading-relaxed);
+  }
+
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 10%, transparent);
+    margin: var(--space-8) 0;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--primary-bright);
+    padding-left: var(--space-4);
+    margin: var(--space-6) 0;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .prose :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: color-mix(in oklch, var(--text-primary) 8%, transparent);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-sm);
+    color: var(--secondary-bright);
+  }
+
+  .prose :global(pre) {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    overflow-x: auto;
+    margin: 0 0 var(--space-4);
+  }
+
+  .prose :global(pre code) {
+    background: none;
+    padding: 0;
+    color: var(--text-primary);
+  }
+
+  /* Tags */
+  .article__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+  }
+
+  /* FAQ */
+  .article__faq {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    backdrop-filter: blur(12px);
+  }
+
+  .faq__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-5);
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .faq__item {
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+  }
+  .faq__item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .faq__question {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .faq__answer {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  /* Related articles */
+  .article__related {
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+  }
+
+  .related__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-5);
+  }
+
+  .related__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 640px) {
+    .article__title { font-size: var(--text-2xl); }
+    .article__description { font-size: var(--text-base); }
+    .article__hero { height: 200px; }
+    .related__grid { grid-template-columns: 1fr; }
+  }
+</style>
