@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-17T16:59:25.650444",
+  "generated_at": "2026-04-19T07:29:57.184370",
   "window_days": 7,
   "week": "2026-w16",
-  "total_candidates_scanned": 980,
-  "total_after_dedup": 938,
-  "total_feature_updates": 5,
+  "total_candidates_scanned": 959,
+  "total_after_dedup": 907,
+  "total_feature_updates": 8,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Introducing Claude Opus 4.7",
-      "summary_nl": "Anthropic heeft de nieuwste versie van hun Claude AI-model gelanceerd, Claude Opus 4.7, met verbeterde mogelijkheden.",
+      "summary_nl": "Anthropic heeft de nieuwste versie van hun Claude AI-model uitgebracht, Claude Opus 4.7. Deze update bevat verbeteringen in de algehele capaciteit en prestaties van het model.",
       "impact": "high",
       "sources": [
         {
@@ -40,7 +40,115 @@
           "source": "r/ClaudeAI"
         }
       ],
-      "detected_at": "2026-04-17",
+      "detected_at": "2026-04-19",
+      "week": "2026-w16"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Design Tool",
+      "summary_nl": "Anthropic heeft een nieuwe AI-gebaseerde ontwerptools gelanceerd, genaamd Claude Design. Deze tool stelt gebruikers in staat om snel en efficiënt ontwerpen te creëren met behulp van AI-technologie.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://reddit.com/r/ClaudeAI/comments/1so3k1y/introducing_claude_design_by_anthropic_labs/",
+          "title": "Introducing Claude Design by Anthropic Labs",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        },
+        {
+          "url": "https://reddit.com/r/singularity/comments/1slh72j/anthropic_is_set_to_release_claude_opus_47_and_a/",
+          "title": "Anthropic is set to release Claude Opus 4.7 and a new AI design tool as early as this week",
+          "platform": "reddit",
+          "source": "r/singularity"
+        }
+      ],
+      "detected_at": "2026-04-19",
+      "week": "2026-w16"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.6-35B-A3B Release",
+      "summary_nl": "Het Qwen AI-model is bijgewerkt naar versie 3.6-35B-A3B. Deze release bevat verbeteringen in de algehele prestaties en capaciteiten van het model.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://reddit.com/r/LocalLLaMA/comments/1sn3izh/qwen3635ba3b_released/",
+          "title": "Qwen3.6-35B-A3B released!",
+          "platform": "reddit",
+          "source": "r/LocalLLaMA"
+        },
+        {
+          "url": "https://reddit.com/r/LocalLLaMA/comments/1sne4gh/psa_qwen36_ships_with_preserve_thinking_make_sure/",
+          "title": "PSA: Qwen3.6 ships with preserve_thinking. Make sure you have it on.",
+          "platform": "reddit",
+          "source": "r/LocalLLaMA"
+        }
+      ],
+      "detected_at": "2026-04-19",
+      "week": "2026-w16"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Preserve Thinking Mode",
+      "summary_nl": "Qwen3.6 is uitgebracht met een nieuwe 'preserve_thinking' functie. Deze functie zorgt ervoor dat het model zijn denkproces beter vasthoudt tijdens interacties.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://reddit.com/r/LocalLLaMA/comments/1sne4gh/psa_qwen36_ships_with_preserve_thinking_make_sure/",
+          "title": "PSA: Qwen3.6 ships with preserve_thinking. Make sure you have it on.",
+          "platform": "reddit",
+          "source": "r/LocalLLaMA"
+        }
+      ],
+      "detected_at": "2026-04-19",
+      "week": "2026-w16"
+    },
+    {
+      "tool_slug": "hailuo",
+      "tool_name": "Hailuo AI",
+      "tool_category": "video",
+      "feature_title": "MiniMax M2.7 Release",
+      "summary_nl": "De Hailuo AI-tool heeft een nieuwe versie M2.7 uitgebracht. Deze update bevat verbeteringen en nieuwe functies voor de MiniMax model-familie.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://reddit.com/r/LocalLLaMA/comments/1sj0dm3/minimax_m27_released/",
+          "title": "Minimax M2.7 Released",
+          "platform": "reddit",
+          "source": "r/LocalLLaMA"
+        },
+        {
+          "url": "https://reddit.com/r/LocalLLaMA/comments/1sixhwq/minimax_m27_release_confirmed/",
+          "title": "Minimax M2.7 Release Confirmed!",
+          "platform": "reddit",
+          "source": "r/LocalLLaMA"
+        }
+      ],
+      "detected_at": "2026-04-19",
+      "week": "2026-w16"
+    },
+    {
+      "tool_slug": "hailuo",
+      "tool_name": "Hailuo AI",
+      "tool_category": "video",
+      "feature_title": "MiniMax M2.7 Open Source",
+      "summary_nl": "De nieuwste versie MiniMax M2.7 is nu open source beschikbaar gesteld, waardoor ontwikkelaars de code kunnen inzien en aanpassen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/item?id=47737928",
+          "title": "MiniMax M2.7 Is Now Open Source",
+          "platform": "hackernews",
+          "source": "HN (84↑, 36 comments)"
+        }
+      ],
+      "detected_at": "2026-04-19",
       "week": "2026-w16"
     },
     {
@@ -62,66 +170,6 @@
           "title": "Anthropic just released Claude Managed Agents. The bot wrapper graveyard is about to get a second floor.",
           "platform": "reddit",
           "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-04-17",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "hailuo",
-      "tool_name": "Hailuo AI",
-      "tool_category": "video",
-      "feature_title": "Minimax M2.7 Release",
-      "summary_nl": "Hailuo AI heeft de nieuwste versie van hun Minimax model, M2.7, uitgebracht.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1skabyf/ryan_lee_from_minimax_posts_article_on_the/",
-          "title": "Ryan Lee from MiniMax posts article on the license stating it's mostly for API providers that did a poor job serving M2.1/M2.5 and may update the license for regular users!",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sj0dm3/minimax_m27_released/",
-          "title": "Minimax M2.7 Released",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sixhwq/minimax_m27_release_confirmed/",
-          "title": "Minimax M2.7 Release Confirmed!",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://news.ycombinator.com/item?id=47737928",
-          "title": "MiniMax M2.7 Is Now Open Source",
-          "platform": "hackernews",
-          "source": "HN (84↑, 36 comments)"
-        }
-      ],
-      "detected_at": "2026-04-17",
-      "week": "2026-w16"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.6-35B-A3B Release",
-      "summary_nl": "Qwen heeft versie 3.6-35B-A3B van hun AI-model uitgebracht.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sn3izh/qwen3635ba3b_released/",
-          "title": "Qwen3.6-35B-A3B released!",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
-        },
-        {
-          "url": "https://reddit.com/r/LocalLLaMA/comments/1sne4gh/psa_qwen36_ships_with_preserve_thinking_make_sure/",
-          "title": "PSA: Qwen3.6 ships with preserve_thinking. Make sure you have it on.",
-          "platform": "reddit",
-          "source": "r/LocalLLaMA"
         }
       ],
       "detected_at": "2026-04-17",
