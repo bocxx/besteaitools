@@ -9,6 +9,7 @@ import { siteConfig } from '../../config/site';
 import Badge from '../../components/atoms/Badge.astro';
 import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
+import RelatedNewsForTool from '../../components/nieuws/RelatedNewsForTool.astro';
 import { getAllTools, getComparisonPairs } from '../../lib/tools-engine';
 import {
   toolCategories, trendDirections, pricingModels, difficultyLevels,
@@ -664,6 +665,9 @@ function sourceLabel(s: string): string {
             </div>
           </section>
         )}
+
+        <!-- Cross-site related news (from hetlaatsteainieuws.nl + own nieuws) -->
+        <RelatedNewsForTool toolSlug={tool.slug} />
 
       </div>{/* end content-col */}
 
