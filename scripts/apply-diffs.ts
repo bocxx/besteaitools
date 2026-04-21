@@ -11,7 +11,8 @@
  *   dataResidency, deploymentType, openSource, businessFunctions, targetAudience
  *
  * TIER 3 — Skipped (editorial copy, review manually in Keystatic):
- *   longDescription, bestFor, useCases, strengths, limitations, pricing
+ *   longDescription, bestFor, useCases, strengths, limitations, pricing,
+ *   keyFeatures (LLM-generated capability list — always editorial review)
  *
  * Usage:
  *   npx tsx scripts/apply-diffs.ts              # dry-run (preview changes)

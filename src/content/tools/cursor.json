@@ -52,5 +52,18 @@
   "bestUseCaseStage": "team-rollout",
   "verdict": "Cursor is de standaard geworden voor AI-aangedreven codering. De Tab-autocomplete en agent zijn excellent. Duurder dan Copilot bij intensief gebruik, maar de productiviteitswinst rechtvaardigt dat voor de meeste developers.",
   "whyListed": "Cursor groeide in 2024 explosief naar de top van de coding-AI markt en is het referentiepunt geworden waaraan alle andere AI-IDE's worden gemeten.",
-  "bestAlternative": "copilot"
+  "bestAlternative": "copilot",
+  "keyFeatures": [
+    { "title": "Tab Autocomplete",            "description": "Multi-line AI-completions die je intenties herkennen, niet slechts \u00e9\u00e9n regel.", "group": "core" },
+    { "title": "Composer (Agent)",            "description": "Beschrijf een wijziging en Cursor bewerkt meerdere bestanden zelfstandig.", "group": "core", "badge": "nieuw" },
+    { "title": "Inline Edit (\u2318K)",              "description": "Selecteer code en laat Cursor ter plekke refactoren, documenteren of herschrijven.", "group": "core" },
+    { "title": "Chat met codebase-context",   "description": "De chat leest automatisch relevante delen van je project voor accurate antwoorden.", "group": "core" },
+    { "title": "@-mentions",                  "description": "Verwijs direct naar bestanden, symbolen, documentatie of het web in je prompt.", "group": "input" },
+    { "title": "Docs indexing",               "description": "Indexeer je project-docs en externe bibliotheken zodat de AI ze kent.", "group": "input" },
+    { "title": "Modelkeuze",                  "description": "Wissel tussen GPT-4, Claude Sonnet/Opus en Gemini afhankelijk van de taak.", "group": "integration" },
+    { "title": "VS Code compatibel",          "description": "Fork van VS Code \u2014 al je extensions, thema's en keybindings werken out-of-the-box.", "group": "integration" },
+    { "title": "BYOK",                        "description": "Gebruik je eigen OpenAI/Anthropic API-keys om kosten volledig zelf te beheren.", "group": "integration" },
+    { "title": "Privacy mode",                "description": "Code wordt niet opgeslagen of gebruikt voor training \u2014 verplicht voor veel teams.", "group": "enterprise" },
+    { "title": "Team plan",                   "description": "Gedeelde rules, SSO en usage-dashboards voor engineering-teams.", "group": "enterprise" }
+  ]
 }

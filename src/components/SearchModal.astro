@@ -13,7 +13,7 @@ import { Search, X } from '@lucide/astro';
   <div class="search-modal__panel">
     <!-- Input -->
     <div class="search-modal__input-wrap">
-      <Search size={18} strokeWidth={1.5} class="search-modal__input-icon" />
+      <Search size={18} stroke-width={1.5} class="search-modal__input-icon" />
       <input
         type="search"
         id="search-input"
@@ -23,14 +23,14 @@ import { Search, X } from '@lucide/astro';
         spellcheck="false"
       />
       <button class="search-modal__close" data-search-close aria-label="Sluiten">
-        <X size={16} strokeWidth={2} />
+        <X size={16} stroke-width={2} />
       </button>
     </div>
 
     <!-- Results -->
     <div class="search-modal__results" id="search-results">
       <div class="search-modal__empty" id="search-empty">
-        <Search size={28} strokeWidth={1} class="search-modal__empty-icon" />
+        <Search size={28} stroke-width={1} class="search-modal__empty-icon" />
         <p>Typ een toolnaam, categorie of use case</p>
       </div>
       <div class="search-modal__loading" id="search-loading" hidden>

@@ -82,13 +82,13 @@ const activeCategories = [...categoryCounts.entries()]
 >
   <main class="container" style="padding-top: 80px; max-width: 960px;">
     <a href="/" class="back-link">
-      <ArrowLeft size={16} strokeWidth={1.5} />
+      <ArrowLeft size={16} stroke-width={1.5} />
       Terug naar overzicht
     </a>
 
     <header class="lr-header">
       <div class="lr-header__icon">
-        <Rocket size={28} strokeWidth={1.5} />
+        <Rocket size={28} stroke-width={1.5} />
       </div>
       <h1 class="lr-title">Launch Radar</h1>
       <p class="lr-subtitle">
@@ -209,7 +209,7 @@ const activeCategories = [...categoryCounts.entries()]
                   {launch.date || 'onbekende datum'}
                 </span>
               </div>
-              <ExternalLink size={13} strokeWidth={1.5} class="lr-card__ext" />
+              <ExternalLink size={13} stroke-width={1.5} class="lr-card__ext" />
             </div>
 
             <p class="lr-card__desc">{description}</p>
@@ -224,12 +224,12 @@ const activeCategories = [...categoryCounts.entries()]
 
               {launch.source === 'hackernews' && launch.points != null && (
                 <span class="lr-card__pill lr-card__pill--hn">
-                  <ArrowUp size={11} strokeWidth={2} />
+                  <ArrowUp size={11} stroke-width={2} />
                   {launch.points} punten
                   {launch.num_comments != null && (
                     <>
                       <span class="lr-card__pill-sep">·</span>
-                      <MessageCircle size={11} strokeWidth={1.7} />
+                      <MessageCircle size={11} stroke-width={1.7} />
                       {launch.num_comments} reacties
                     </>
                   )}
@@ -238,7 +238,7 @@ const activeCategories = [...categoryCounts.entries()]
 
               {launch.source === 'github' && stats.stars != null && (
                 <span class="lr-card__pill lr-card__pill--gh">
-                  <Star size={11} strokeWidth={1.5} />
+                  <Star size={11} stroke-width={1.5} />
                   {stats.stars}★ vandaag
                   {stats.total_stars != null && stats.total_stars > stats.stars && (
                     <span class="lr-card__pill-dim">
@@ -253,13 +253,13 @@ const activeCategories = [...categoryCounts.entries()]
               <div class="lr-card__ph-stats">
                 {stats.points != null && stats.points > 0 && (
                   <span class="lr-card__stat lr-card__stat--votes">
-                    <ArrowUp size={12} strokeWidth={2} />
+                    <ArrowUp size={12} stroke-width={2} />
                     {stats.points}
                   </span>
                 )}
                 {stats.followers != null && stats.followers > 0 && (
                   <span class="lr-card__stat">
-                    <Star size={11} strokeWidth={1.5} />
+                    <Star size={11} stroke-width={1.5} />
                     {stats.followers}
                     <span class="lr-card__stat-dim">volgers</span>
                   </span>

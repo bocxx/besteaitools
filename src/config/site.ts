@@ -28,6 +28,7 @@ export const siteConfig = {
     main: [
       { label: "Weekradar", href: "/weekradar" },
       { label: "Launch Radar", href: "/launch-radar" },
+      { label: "Digest", href: "/digest" },
       { label: "Nieuws", href: "/nieuws" },
       { label: "Vergelijk", href: "/vergelijk" },
       { label: "Zakelijk", href: "/zakelijk" },
@@ -35,6 +36,7 @@ export const siteConfig = {
     footer: {
       platform: [
         { label: "AI Tools", href: "/ai-tools" },
+        { label: "Over deze site", href: "/over" },
       ],
       juridisch: [
         { label: "Privacy", href: "/privacy" },

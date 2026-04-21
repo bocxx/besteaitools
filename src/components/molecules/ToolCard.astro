@@ -51,8 +51,8 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     <header class="tool-card__header">
       <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
       <div class="tool-card__signals">
-        {signalChip === 'top' && <span class="signal-chip signal-chip--top"><Flame size={10} strokeWidth={2} /> Trending</span>}
-        {signalChip === 'stijger' && <span class="signal-chip signal-chip--stijger"><TrendingUp size={10} strokeWidth={2} /> Stijger</span>}
+        {signalChip === 'top' && <span class="signal-chip signal-chip--top"><Flame size={10} stroke-width={2} /> Trending</span>}
+        {signalChip === 'stijger' && <span class="signal-chip signal-chip--stijger"><TrendingUp size={10} stroke-width={2} /> Stijger</span>}
         {signalChip === 'phase' && (
           <span class={`signal-chip signal-chip--phase signal-chip--phase-${stats!.phase}`}>
             {phaseMeta!.label}
@@ -73,9 +73,9 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
       </span>
       <div class="tool-card__icons">
         {riskFlags.length > 0 && <RiskBadges flags={riskFlags} />}
-        {isEditorTested && <BadgeCheck size={13} strokeWidth={1.5} class="icon--editor" title="Getest door redactie" />}
-        {hasGdpr && <Shield size={13} strokeWidth={1.5} class="icon--gdpr" title="GDPR-ready" />}
-        <ExternalLink size={12} strokeWidth={1.5} class="icon--link" />
+        {isEditorTested && <BadgeCheck size={13} stroke-width={1.5} class="icon--editor" title="Getest door redactie" />}
+        {hasGdpr && <Shield size={13} stroke-width={1.5} class="icon--gdpr" title="GDPR-ready" />}
+        <ExternalLink size={12} stroke-width={1.5} class="icon--link" />
       </div>
     </footer>
   </div>

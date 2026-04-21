@@ -37,7 +37,7 @@ const weekNum = weekLabel.split('-w')[1];
   <main class="container" style="padding-top: 80px; max-width: 900px;">
 
     <a href="/" class="back-link">
-      <ArrowLeft size={16} strokeWidth={1.5} />
+      <ArrowLeft size={16} stroke-width={1.5} />
       Terug naar overzicht
     </a>
 
@@ -54,7 +54,7 @@ const weekNum = weekLabel.split('-w')[1];
     {toolVanDeWeek && (
       <section class="wr-highlight">
         <div class="wr-highlight__icon">
-          <Trophy size={24} strokeWidth={1.5} />
+          <Trophy size={24} stroke-width={1.5} />
         </div>
         <div class="wr-highlight__body">
           <span class="wr-highlight__label">Tool van de week</span>
@@ -75,7 +75,7 @@ const weekNum = weekLabel.split('-w')[1];
                 </span>
                 {toolVanDeWeek.openSource && toolVanDeWeek.stats.github_stars > 0 && (
                   <span class="wr-stars" title="Nieuwe GitHub trending-sterren (14 dagen)">
-                    <Star size={12} strokeWidth={1.5} />
+                    <Star size={12} stroke-width={1.5} />
                     {toolVanDeWeek.stats.github_stars.toLocaleString('nl-NL')} (14d)
                   </span>
                 )}
@@ -91,7 +91,7 @@ const weekNum = weekLabel.split('-w')[1];
       {stijgers.length > 0 && (
         <section class="wr-column">
           <h2 class="wr-column__title wr-column__title--up">
-            <TrendingUp size={16} strokeWidth={2} />
+            <TrendingUp size={16} stroke-width={2} />
             Stijgers
           </h2>
           <ol class="wr-list">
@@ -118,7 +118,7 @@ const weekNum = weekLabel.split('-w')[1];
       {dalers.length > 0 && (
         <section class="wr-column">
           <h2 class="wr-column__title wr-column__title--down">
-            <TrendingDown size={16} strokeWidth={2} />
+            <TrendingDown size={16} stroke-width={2} />
             Dalers
           </h2>
           <ol class="wr-list">
@@ -147,7 +147,7 @@ const weekNum = weekLabel.split('-w')[1];
     {nieuwkomers.length > 0 && (
       <section class="wr-new">
         <h2 class="wr-column__title">
-          <Sparkles size={16} strokeWidth={2} />
+          <Sparkles size={16} stroke-width={2} />
           Nieuwkomers
         </h2>
         <div class="wr-new__grid">
@@ -168,7 +168,7 @@ const weekNum = weekLabel.split('-w')[1];
     {featureNews.length > 0 && (
       <section class="wr-news">
         <h2 class="wr-column__title">
-          <Newspaper size={16} strokeWidth={2} />
+          <Newspaper size={16} stroke-width={2} />
           Nieuws deze week
         </h2>
         <div class="wr-news__list">
@@ -176,8 +176,8 @@ const weekNum = weekLabel.split('-w')[1];
             <a href={`/ai-tools/${item.tool_slug}`} class="wr-news__item">
               <span class="wr-news__impact">
                 {item.impact === 'high'
-                  ? <Zap size={12} strokeWidth={2} />
-                  : <Minus size={12} strokeWidth={2} />
+                  ? <Zap size={12} stroke-width={2} />
+                  : <Minus size={12} stroke-width={2} />
                 }
               </span>
               <span class="wr-news__tool">{item.tool_name}</span>

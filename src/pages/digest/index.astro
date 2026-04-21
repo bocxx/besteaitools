@@ -1,0 +1,281 @@
+---
+/**
+ * /digest — AI Tools Digest hub
+ *
+ * Lists all daily digests (newest first). Always indexable — this is
+ * the canonical landing page for digest content and should carry
+ * link-equity back to individual digest URLs.
+ */
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { ArrowLeft, Rss, Calendar } from '@lucide/astro';
+
+const all = await getCollection('digest', ({ data }) => !data.draft);
+
+const sorted = all.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const latest = sorted[0];
+const archive = sorted.slice(1);
+const total = sorted.length;
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('nl-NL', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+---
+
+<Layout
+  title="AI Tools Digest — Dagelijks overzicht van launches & updates | debesteaitools.nl"
+  description={`${total} dagelijkse AI-tools digests: nieuwe launches, feature-updates en deep-dive kandidaten. Automatisch samengesteld uit Product Hunt, Hacker News, Reddit en meer.`}
+>
+  <main class="container container-wide" style="padding-top: 80px;">
+
+    <a href="/" class="back-link">
+      <ArrowLeft size={16} stroke-width={1.5} />
+      Terug naar overzicht
+    </a>
+
+    <header class="page-header">
+      <h1 class="page-header__title">AI Tools Digest</h1>
+      <p class="page-header__subtitle">
+        Dagelijkse radar van <strong>launches</strong>, <strong>feature-updates</strong> en <strong>deep-dive kandidaten</strong> in AI-tools-land. Automatisch samengesteld uit Product Hunt, Hacker News, Reddit, X en Bluesky.
+      </p>
+      <p class="page-header__meta">
+        <strong>{total} digests</strong>
+        <a href="/digest.xml" class="rss-link" title="RSS-feed">
+          <Rss size={13} stroke-width={1.5} />
+          RSS
+        </a>
+      </p>
+    </header>
+
+    {latest && (
+      <section class="latest-card" aria-label="Meest recente digest">
+        <div class="latest-card__label">
+          <Calendar size={14} stroke-width={1.5} />
+          Meest recent — {fmtDate(latest.data.date)}
+        </div>
+        <a href={`/digest/${latest.id}`} class="latest-card__link">
+          <h2 class="latest-card__title">{latest.data.title}</h2>
+          <p class="latest-card__desc">{latest.data.description}</p>
+          {latest.data.topics && latest.data.topics.length > 0 && (
+            <div class="latest-card__topics">
+              {latest.data.topics.slice(0, 6).map(t => (
+                <span class="topic-chip">{t}</span>
+              ))}
+            </div>
+          )}
+        </a>
+      </section>
+    )}
+
+    {archive.length > 0 && (
+      <section class="archive" aria-label="Archief">
+        <h2 class="archive__title">Archief</h2>
+        <ul class="archive__list">
+          {archive.map(entry => (
+            <li class="archive__item">
+              <a href={`/digest/${entry.id}`} class="archive__link">
+                <span class="archive__date">{fmtDate(entry.data.date)}</span>
+                <span class="archive__heading">{entry.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {total === 0 && (
+      <p class="empty">Nog geen digests gepubliceerd. De eerste komt automatisch zodra de pipeline draait.</p>
+    )}
+
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .page-header__title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-3);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-header__subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin: 0;
+    line-height: var(--leading-relaxed);
+  }
+  .page-header__subtitle strong { color: var(--text-primary); }
+
+  .page-header__meta {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: var(--space-3) 0 0;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .page-header__meta strong { color: var(--text-secondary); }
+
+  .rss-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-warning);
+    text-decoration: none;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    border: 1px solid color-mix(in oklch, var(--color-warning) 30%, transparent);
+    font-size: var(--text-xs);
+  }
+  .rss-link:hover {
+    background: color-mix(in oklch, var(--color-warning) 10%, transparent);
+  }
+
+  /* Latest card */
+  .latest-card {
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 25%, transparent);
+    background: color-mix(in oklch, var(--primary-bright) 6%, var(--bg-glass));
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    backdrop-filter: blur(12px);
+  }
+
+  .latest-card__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--primary-bright);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .latest-card__link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .latest-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-2);
+  }
+  .latest-card__link:hover .latest-card__title { color: var(--primary-bright); }
+
+  .latest-card__desc {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-3);
+  }
+
+  .latest-card__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .topic-chip {
+    font-size: var(--text-xs);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
+    color: var(--primary-bright);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+  }
+
+  /* Archive */
+  .archive__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-4);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .archive__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .archive__item {
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+  }
+  .archive__item:last-child { border-bottom: none; }
+
+  .archive__link {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .archive__link:hover { color: var(--primary-bright); }
+
+  .archive__date {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .archive__link:hover .archive__date { color: var(--primary-bright); }
+
+  .archive__heading {
+    font-size: var(--text-base);
+    color: var(--text-primary);
+  }
+  .archive__link:hover .archive__heading { color: var(--primary-bright); }
+
+  .empty {
+    color: var(--text-muted);
+    text-align: center;
+    padding: var(--space-8) 0;
+  }
+
+  @media (max-width: 640px) {
+    .page-header__title { font-size: var(--text-3xl); }
+    .archive__link { grid-template-columns: 1fr; gap: var(--space-1); }
+  }
+</style>
