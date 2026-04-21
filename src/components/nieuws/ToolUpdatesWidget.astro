@@ -18,7 +18,9 @@ const features = [...(featureNews.features ?? [])]
     const tb = b.detected_at ? new Date(b.detected_at).getTime() : 0;
     return tb - ta;
   })
-  .slice(0, 30);
+  .slice(0, 50);
+
+const INITIAL_SHOW = 8;
 
 const genDate = featureNews.generated_at ? new Date(featureNews.generated_at) : null;
 const formattedDate = genDate?.toLocaleDateString('nl-NL', {
@@ -44,15 +46,18 @@ const impactConfig: Record<string, { label: string; color: string }> = {
   {features.length === 0 ? (
     <p class="tool-widget__empty">Geen updates beschikbaar.</p>
   ) : (
-    <ul class="tool-widget__list">
-      {features.map((item: any) => {
+    <ul class="tool-widget__list" id="updates-list">
+      {features.map((item: any, i: number) => {
         const impact = impactConfig[item.impact] ?? impactConfig.medium;
         const catKey = item.tool_category as keyof typeof toolCategories;
         const cat = toolCategories[catKey];
         const firstSource = item.sources?.[0];
 
         return (
-          <li class="tool-widget__item">
+          <li
+            class:list={['tool-widget__item', { 'tool-widget__item--hidden': i >= INITIAL_SHOW }]}
+            data-update-idx={i}
+          >
             <div class="tool-widget__item-header">
               <a href={`/ai-tools/${item.tool_slug}`} class="tool-widget__tool-name">
                 {item.tool_name}
@@ -78,6 +83,13 @@ const impactConfig: Record<string, { label: string; color: string }> = {
         );
       })}
     </ul>
+  )}
+
+  {features.length > INITIAL_SHOW && (
+    <button id="updates-more" class="tool-widget__more-btn" aria-expanded="false">
+      Toon meer
+      <span class="tool-widget__more-count">({features.length - INITIAL_SHOW} meer)</span>
+    </button>
   )}
 
   <a href="/nieuws" class="tool-widget__all-link">
@@ -210,4 +222,62 @@ const impactConfig: Record<string, { label: string; color: string }> = {
     transition: color var(--transition-fast);
   }
   .tool-widget__all-link:hover { color: var(--secondary-bright); }
+
+  /* Progressive disclosure */
+  .tool-widget__item--hidden {
+    display: none;
+  }
+
+  /* When expanded, cap the list height and add a subtle scroll */
+  .tool-widget__list--expanded {
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, var(--text-primary) 15%, transparent) transparent;
+    padding-right: var(--space-1);
+  }
+
+  .tool-widget__more-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    margin-top: var(--space-4);
+    padding: var(--space-2) var(--space-3);
+    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-radius: var(--radius-md);
+    color: var(--primary-bright);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    justify-content: center;
+  }
+
+  .tool-widget__more-btn:hover {
+    background: color-mix(in oklch, var(--primary-bright) 15%, transparent);
+    border-color: color-mix(in oklch, var(--primary-bright) 35%, transparent);
+  }
+
+  .tool-widget__more-count {
+    color: var(--text-muted);
+    font-weight: var(--font-normal);
+  }
 </style>
+
+<script>
+  const btn = document.getElementById('updates-more');
+  const list = document.getElementById('updates-list');
+
+  btn?.addEventListener('click', () => {
+    // Reveal all hidden items
+    list?.querySelectorAll('.tool-widget__item--hidden').forEach(item => {
+      item.classList.remove('tool-widget__item--hidden');
+    });
+    // Cap the list height so the sidebar doesn't become endless
+    list?.classList.add('tool-widget__list--expanded');
+    // Hide the button
+    btn.style.display = 'none';
+  });
+</script>
