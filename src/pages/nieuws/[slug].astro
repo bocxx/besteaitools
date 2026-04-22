@@ -40,7 +40,7 @@ const related = allNieuws
   <main class="container container-wide" style="padding-top: 80px;">
 
     <a href="/nieuws" class="back-link">
-      <ArrowLeft size={16} strokeWidth={1.5} />
+      <ArrowLeft size={16} stroke-width={1.5} />
       Nieuws & Analyses
     </a>
 
@@ -53,7 +53,7 @@ const related = allNieuws
             <Badge variant="category" color={cat.color} size="sm">{cat.label}</Badge>
             {article.data.toolSlug && (
               <a href={`/ai-tools/${article.data.toolSlug}`} class="article__tool-link">
-                <ChevronRight size={12} strokeWidth={2} />
+                <ChevronRight size={12} stroke-width={2} />
                 {article.data.toolSlug}
               </a>
             )}
@@ -64,16 +64,16 @@ const related = allNieuws
 
           <div class="article__meta">
             <span class="article__meta-item">
-              <User size={13} strokeWidth={1.5} />
+              <User size={13} stroke-width={1.5} />
               {article.data.author}
             </span>
             <span class="article__meta-item">
-              <Calendar size={13} strokeWidth={1.5} />
+              <Calendar size={13} stroke-width={1.5} />
               {formattedDate}
             </span>
             {article.data.readingTime && (
               <span class="article__meta-item">
-                <Clock size={13} strokeWidth={1.5} />
+                <Clock size={13} stroke-width={1.5} />
                 {article.data.readingTime} min lezen
               </span>
             )}
@@ -93,7 +93,7 @@ const related = allNieuws
         {article.data.keyTakeaways && article.data.keyTakeaways.length > 0 && (
           <aside class="article__takeaways">
             <div class="takeaways__header">
-              <Lightbulb size={16} strokeWidth={1.5} />
+              <Lightbulb size={16} stroke-width={1.5} />
               <span>Belangrijkste punten</span>
             </div>
             <ul class="takeaways__list">

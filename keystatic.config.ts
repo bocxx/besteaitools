@@ -536,6 +536,51 @@ export default config({
           description: 'Waarom staat deze tool op debesteaitools.nl ondanks alternatieven?',
           multiline: true,
         }),
+
+        // ── Laag 10: Functies (capabilities) ────────────────
+        keyFeatures: fields.array(
+          fields.object({
+            title: fields.text({
+              label: 'Functienaam',
+              description: 'Korte naam van de functie (bv. "200k contextvenster").',
+            }),
+            description: fields.text({
+              label: 'Beschrijving',
+              description: 'Een één-zins uitleg van wat de functie doet.',
+              multiline: true,
+            }),
+            group: fields.select({
+              label: 'Groep',
+              description: 'Optionele groepering op de detailpagina.',
+              options: [
+                { label: '— Niet ingevuld', value: '' },
+                { label: 'Kern',         value: 'core' },
+                { label: 'Invoer',       value: 'input' },
+                { label: 'Uitvoer',      value: 'output' },
+                { label: 'Integraties',  value: 'integration' },
+                { label: 'Enterprise',   value: 'enterprise' },
+                { label: 'Experimenteel', value: 'beta' },
+              ],
+              defaultValue: '',
+            }),
+            badge: fields.select({
+              label: 'Badge',
+              description: 'Optionele badge zoals "nieuw" of "beta".',
+              options: [
+                { label: '— Geen badge', value: '' },
+                { label: 'Nieuw', value: 'nieuw' },
+                { label: 'Beta',  value: 'beta' },
+                { label: 'Pro',   value: 'pro' },
+              ],
+              defaultValue: '',
+            }),
+          }),
+          {
+            label: 'Functies',
+            description: 'Concrete capabilities van de tool (wat kan het?).',
+            itemLabel: (props) => props.fields.title.value || 'Functie',
+          },
+        ),
       },
     }),
   },

@@ -264,6 +264,33 @@ export const pricingCurrencyKeys = Object.keys(pricingCurrencies) as [PricingCur
 export const pricingCurrencySchema = z.enum(pricingCurrencyKeys);
 
 // ============================================
+// 8j. FEATURE GROUPS & BADGES (capabilities)
+// ============================================
+
+export const featureGroups = {
+  core:        { label: 'Kern',         color: 'var(--primary-bright)' },
+  input:       { label: 'Invoer',       color: 'var(--color-info)' },
+  output:      { label: 'Uitvoer',      color: 'var(--secondary-bright)' },
+  integration: { label: 'Integraties',  color: 'var(--tertiary-bright)' },
+  enterprise:  { label: 'Enterprise',   color: 'var(--color-success)' },
+  beta:        { label: 'Experimenteel', color: 'var(--color-warning)' },
+} as const;
+
+export type FeatureGroupKey = keyof typeof featureGroups;
+export const featureGroupKeys = Object.keys(featureGroups) as [FeatureGroupKey, ...FeatureGroupKey[]];
+export const featureGroupSchema = z.enum(featureGroupKeys);
+
+export const featureBadges = {
+  nieuw: { label: 'Nieuw', color: 'var(--color-success)' },
+  beta:  { label: 'Beta',  color: 'var(--color-warning)' },
+  pro:   { label: 'Pro',   color: 'var(--primary-bright)' },
+} as const;
+
+export type FeatureBadgeKey = keyof typeof featureBadges;
+export const featureBadgeKeys = Object.keys(featureBadges) as [FeatureBadgeKey, ...FeatureBadgeKey[]];
+export const featureBadgeSchema = z.enum(featureBadgeKeys);
+
+// ============================================
 // 9. BUSINESS FUNCTIONS (zakelijke pagina)
 // ============================================
 
@@ -388,7 +415,15 @@ export const toolContentSchema = z.object({
   exampleOutput: z.string().optional(),
   exampleWorkflow: z.string().optional(),
 
-  // ── Redactionele laag ─────────────────────────
+  // ── Laag 10: Functies (capabilities) ────────────────
+  keyFeatures: z.array(z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    group: featureGroupSchema.optional(),
+    badge: featureBadgeSchema.optional(),
+  })).default([]),
+
+  // ── Redactionele laag ───────────────────────────
   testedByEditor: z.boolean().default(false),
   reviewMethod: reviewMethodSchema.optional(),
   lastReviewedAt: z.string().optional(),

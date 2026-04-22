@@ -47,5 +47,17 @@
   "bestUseCaseStage": "experiment",
   "verdict": "Model Context Protocol (MCP) van Anthropic wordt snel de industriestandaard voor tool-integraties in AI-applicaties. Essentieel voor developers die agents en externe tools willen verbinden.",
   "whyListed": "MCP van Anthropic groeit uit tot de industriestandaard voor AI-tool-integraties en is omarmd door vrijwel alle grote AI-toolmakers als de gemeenschappelijke taal voor agent-tools.",
-  "bestAlternative": "langchain"
+  "bestAlternative": "langchain",
+  "keyFeatures": [
+    { "title": "Open protocol",               "description": "Gestandaardiseerde manier om LLM's aan externe tools en data te koppelen.", "group": "core" },
+    { "title": "Resources",                   "description": "Expose read-only context (databases, bestanden, API's) aan het model.", "group": "input" },
+    { "title": "Tools",                       "description": "Definieer callable functies die het model zelfstandig kan aanroepen.", "group": "output" },
+    { "title": "Prompts",                     "description": "Herbruikbare prompt-templates die servers aan clients aanbieden.", "group": "core" },
+    { "title": "Sampling",                    "description": "Servers kunnen zelf LLM-aanroepen initi\u00ebren voor agentic workflows.", "group": "beta", "badge": "beta" },
+    { "title": "stdio & SSE transports",      "description": "Draai lokale servers via stdio of remote via Server-Sent Events.", "group": "integration" },
+    { "title": "Multi-language SDK's",        "description": "Offici\u00eble SDK's voor TypeScript, Python, Kotlin, Java en Rust.", "group": "integration" },
+    { "title": "Lokale & remote servers",     "description": "Zelf-hostbaar op je machine of draaiend in cloud-infrastructuur.", "group": "core" },
+    { "title": "Brede client-support",        "description": "Ondersteund door Claude, Cursor, Cline, Goose, Windsurf en meer.", "group": "integration" },
+    { "title": "Open-source (MIT)",           "description": "Volledig open specificatie en referentie-implementaties onder MIT-licentie.", "group": "enterprise" }
+  ]
 }

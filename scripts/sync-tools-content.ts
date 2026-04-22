@@ -49,6 +49,13 @@ type RadarEnrichment = {
   exampleWorkflow?: string;
   reviewMethod?: 'desk_research' | 'vendor_claims' | 'hands_on' | 'customer_feedback';
   lastReviewedAt?: string;
+  // v4 fields
+  key_features?: Array<{
+    title: string;
+    description?: string;
+    group?: 'core' | 'input' | 'output' | 'integration' | 'enterprise' | 'beta';
+    badge?: 'nieuw' | 'beta' | 'pro';
+  }>;
 };
 
 type RadarTool = {
@@ -116,6 +123,13 @@ type ToolContent = {
   exampleWorkflow?: string;
   reviewMethod?: 'desk_research' | 'vendor_claims' | 'hands_on' | 'customer_feedback';
   lastReviewedAt?: string;
+  // v4 fields
+  keyFeatures?: Array<{
+    title: string;
+    description?: string;
+    group?: 'core' | 'input' | 'output' | 'integration' | 'enterprise' | 'beta';
+    badge?: 'nieuw' | 'beta' | 'pro';
+  }>;
 };
 
 type EnrichmentDiff = {
@@ -130,6 +144,7 @@ type EnrichmentDiff = {
     | 'supportsDutchLanguage' | 'hasDutchUI' | 'offersDutchSupport'
     | 'mainCompetitors' | 'whenToChoose'
     | 'headlineValueProp' | 'implementationTimeEstimate'
+    | 'keyFeatures'
   >;
   current: unknown;
   suggested: unknown;
@@ -164,8 +179,19 @@ function mapCategory(newsfluxCategory: string): string {
     infra:          'infrastructure',
     productiviteit: 'productivity',
     design:         'design',
+    // Newer newsflux categories that don't have a site equivalent — map to closest fit
+    marketing:      'productivity',
+    website:        'design',
+    social:         'productivity',
   };
-  return map[newsfluxCategory] ?? newsfluxCategory;
+  const mapped = map[newsfluxCategory] ?? newsfluxCategory;
+  // Site-valid categories only; anything else falls back to 'productivity' so
+  // the build never breaks due to a new upstream category.
+  const validSiteCategories = new Set([
+    'chatbots','coding','automation','image','video','audio',
+    'search','productivity','infrastructure','design',
+  ]);
+  return validSiteCategories.has(mapped) ? mapped : 'productivity';
 }
 
 /** Convert a newsflux slug (may contain spaces) to a filename-safe hyphenated slug */
@@ -227,6 +253,8 @@ function createDraftTool(tool: RadarTool): ToolContent {
     exampleWorkflow: enrichment?.exampleWorkflow,
     reviewMethod: enrichment?.reviewMethod,
     lastReviewedAt: enrichment?.lastReviewedAt,
+    // v4 fields
+    keyFeatures: enrichment?.key_features ?? [],
   };
 }
 
@@ -330,6 +358,8 @@ async function main() {
     pushDiff(diffs, fileSlug, 'whenToChoose', current.whenToChoose, enrichment?.whenToChoose, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'headlineValueProp', current.headlineValueProp, enrichment?.headlineValueProp, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'implementationTimeEstimate', current.implementationTimeEstimate, enrichment?.implementationTimeEstimate, enrichment?.enriched_at);
+    // v4 diffs — keyFeatures is always editorial review (TIER 3 in apply-diffs.ts)
+    pushDiff(diffs, fileSlug, 'keyFeatures', current.keyFeatures ?? [], enrichment?.key_features ?? [], enrichment?.enriched_at);
   }
 
   await fs.writeFile(DIFF_PATH, `${JSON.stringify(diffs, null, 2)}\n`, 'utf8');

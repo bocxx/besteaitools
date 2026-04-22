@@ -112,6 +112,24 @@ export type ReviewMethod = 'desk_research' | 'vendor_claims' | 'hands_on' | 'cus
 /** Pricing currency */
 export type PricingCurrency = 'eur' | 'usd';
 
+/** Feature group for capabilities (see tools-schema.featureGroups) */
+export type FeatureGroupKey = 'core' | 'input' | 'output' | 'integration' | 'enterprise' | 'beta';
+
+/** Feature badge for capabilities (see tools-schema.featureBadges) */
+export type FeatureBadgeKey = 'nieuw' | 'beta' | 'pro';
+
+/** A concrete capability of a tool */
+export interface ToolKeyFeature {
+  /** Short name of the feature (e.g. "200k contextvenster") */
+  title: string;
+  /** One-sentence explanation */
+  description?: string;
+  /** Optional grouping for sub-sections on the detail page */
+  group?: FeatureGroupKey;
+  /** Optional badge like "nieuw" or "beta" */
+  badge?: FeatureBadgeKey;
+}
+
 // ============================================
 // CONTENT LAYER (editorial — never overwritten by ETL)
 // ============================================
@@ -275,6 +293,10 @@ export interface ToolContent {
   bestAlternative?: string;
   /** Why this tool is listed despite many alternatives */
   whyListed?: string;
+
+  // ── Laag 10: Functies (capabilities) ────────────────
+  /** Concrete capabilities of the tool ("what can it do?") */
+  keyFeatures: ToolKeyFeature[];
 }
 
 // ============================================

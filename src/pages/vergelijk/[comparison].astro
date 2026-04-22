@@ -60,7 +60,7 @@ const year = new Date().getFullYear();
   <main class="container" style="padding-top: 80px; max-width: 900px;">
 
     <a href="/" class="back-link">
-      <ArrowLeft size={16} strokeWidth={1.5} />
+      <ArrowLeft size={16} stroke-width={1.5} />
       Terug naar overzicht
     </a>
 
@@ -81,7 +81,7 @@ const year = new Date().getFullYear();
         <a href={`/ai-tools/${toolA.slug}`} class="vs-tool-link">
           <Badge variant="category" color={catA.color}>{catA.name}</Badge>
           <strong>{toolA.name}</strong>
-          <ExternalLink size={12} strokeWidth={1.5} />
+          <ExternalLink size={12} stroke-width={1.5} />
         </a>
       </div>
       <div class="vs-col vs-col--label"></div>
@@ -89,7 +89,7 @@ const year = new Date().getFullYear();
         <a href={`/ai-tools/${toolB.slug}`} class="vs-tool-link">
           <Badge variant="category" color={catB.color}>{catB.name}</Badge>
           <strong>{toolB.name}</strong>
-          <ExternalLink size={12} strokeWidth={1.5} />
+          <ExternalLink size={12} stroke-width={1.5} />
         </a>
       </div>
 
@@ -133,14 +133,14 @@ const year = new Date().getFullYear();
         <>
           <div class:list={['vs-col', { 'vs-col--win': starsWinner === 'a' }]}>
             {toolA.openSource && toolA.stats?.github_stars
-              ? <span class="vs-stars" title="Nieuwe GitHub trending-sterren (14 dagen)"><Star size={14} strokeWidth={1.5} /> {toolA.stats.github_stars.toLocaleString('nl-NL')}</span>
+              ? <span class="vs-stars" title="Nieuwe GitHub trending-sterren (14 dagen)"><Star size={14} stroke-width={1.5} /> {toolA.stats.github_stars.toLocaleString('nl-NL')}</span>
               : <span class="vs-stars vs-stars--na">—</span>
             }
           </div>
           <div class="vs-col vs-col--label">GitHub ⭐ (14d)</div>
           <div class:list={['vs-col', { 'vs-col--win': starsWinner === 'b' }]}>
             {toolB.openSource && toolB.stats?.github_stars
-              ? <span class="vs-stars" title="Nieuwe GitHub trending-sterren (14 dagen)"><Star size={14} strokeWidth={1.5} /> {toolB.stats.github_stars.toLocaleString('nl-NL')}</span>
+              ? <span class="vs-stars" title="Nieuwe GitHub trending-sterren (14 dagen)"><Star size={14} stroke-width={1.5} /> {toolB.stats.github_stars.toLocaleString('nl-NL')}</span>
               : <span class="vs-stars vs-stars--na">—</span>
             }
           </div>

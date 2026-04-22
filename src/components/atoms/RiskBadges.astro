@@ -37,12 +37,12 @@ const iconMap: Record<string, any> = {
 ---
 
 <span class="risk-badges" title={topFlags.map(f => f.label_nl).join(' · ')}>
-  <TriangleAlert size={10} strokeWidth={2.5} class="risk-warn-icon" />
+  <TriangleAlert size={10} stroke-width={2.5} class="risk-warn-icon" />
   {topFlags.map(f => {
     const Icon = iconMap[f.category] || CircleAlert;
     return (
       <span class="risk-badge" title={`${f.label_nl} (${f.hits}x)`}>
-        <Icon size={11} strokeWidth={2} />
+        <Icon size={11} stroke-width={2} />
       </span>
     );
   })}

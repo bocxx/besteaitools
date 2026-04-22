@@ -12,12 +12,36 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string; // full URL — overrides the default og-image.webp
+  /**
+   * Override the default robots directive ("index, follow, max-image-preview:large").
+   * Use e.g. "noindex, follow" for stale time-sensitive pages you still want crawled
+   * for link-equity but not kept in the index.
+   */
+  robots?: string;
+  /** OG article type metadata — only emitted when `ogType==='article'`. */
+  ogType?: 'website' | 'article';
+  publishedTime?: Date | string;
+  modifiedTime?: Date | string;
 }
 
-const { title, description = siteConfig.description, ogImage } = Astro.props;
+const {
+  title,
+  description = siteConfig.description,
+  ogImage,
+  robots = 'index, follow, max-image-preview:large',
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
 const resolvedOgImage = ogImage ?? `${siteConfig.url}/og-image.webp`;
 const resolvedOgImageType = resolvedOgImage.endsWith('.png') ? 'image/png' : 'image/webp';
+const toIsoString = (d?: Date | string) => {
+  if (!d) return undefined;
+  return d instanceof Date ? d.toISOString() : new Date(d).toISOString();
+};
+const publishedIso = toIsoString(publishedTime);
+const modifiedIso = toIsoString(modifiedTime);
 ---
 
 <!doctype html>
@@ -27,7 +51,7 @@ const resolvedOgImageType = resolvedOgImage.endsWith('.png') ? 'image/png' : 'im
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="color-scheme" content="dark" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={robots} />
     <meta name="theme-color" content="#0f0e0d" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -45,8 +69,14 @@ const resolvedOgImageType = resolvedOgImage.endsWith('.png') ? 'image/png' : 'im
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL.href} />
+    {ogType === 'article' && publishedIso && (
+      <meta property="article:published_time" content={publishedIso} />
+    )}
+    {ogType === 'article' && modifiedIso && (
+      <meta property="article:modified_time" content={modifiedIso} />
+    )}
     <meta property="og:image" content={resolvedOgImage} />
     <meta property="og:image:type" content={resolvedOgImageType} />
     <meta property="og:image:width" content="1200" />

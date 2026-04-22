@@ -55,7 +55,7 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
     <header class="zakelijk-hero">
       <div class="zakelijk-hero__meta">
         <Badge variant="outline" size="sm">
-          <Building2 size={12} strokeWidth={1.5} />
+          <Building2 size={12} stroke-width={1.5} />
           Zakelijk
         </Badge>
         {formattedDate && <span class="zakelijk-timestamp">Bijgewerkt {formattedDate}</span>}
@@ -86,11 +86,11 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
       </div>
       <!-- Quick-filter chips -->
       <div class="filter-bar__row filter-bar__row--quick">
-        <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools"><ShieldCheck size={13} strokeWidth={1.5} /> GDPR-klaar</button>
-        <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren"><Zap size={13} strokeWidth={1.5} /> Snel inzetbaar</button>
-        <button class="quick-chip" data-quick="nodev" title="Geen developer nodig"><UserX size={13} strokeWidth={1.5} /> Geen developer</button>
-        <button class="quick-chip" data-quick="trial" title="Gratis proefperiode beschikbaar"><Gift size={13} strokeWidth={1.5} /> Gratis proberen</button>
-        <button class="quick-chip" data-quick="tested" title="Getest door redactie"><BadgeCheck size={13} strokeWidth={1.5} /> Redactie-getest</button>
+        <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools"><ShieldCheck size={13} stroke-width={1.5} /> GDPR-klaar</button>
+        <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren"><Zap size={13} stroke-width={1.5} /> Snel inzetbaar</button>
+        <button class="quick-chip" data-quick="nodev" title="Geen developer nodig"><UserX size={13} stroke-width={1.5} /> Geen developer</button>
+        <button class="quick-chip" data-quick="trial" title="Gratis proefperiode beschikbaar"><Gift size={13} stroke-width={1.5} /> Gratis proberen</button>
+        <button class="quick-chip" data-quick="tested" title="Getest door redactie"><BadgeCheck size={13} stroke-width={1.5} /> Redactie-getest</button>
       </div>
       <div class="filter-bar__row filter-bar__row--secondary">
         <select id="audience-select" class="filter-select">
@@ -141,7 +141,7 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
 
     <!-- CTA -->
     <section class="zakelijk-cta">
-      <Briefcase size={24} strokeWidth={1.5} />
+      <Briefcase size={24} stroke-width={1.5} />
       <p>
         Mist jouw favoriete zakelijke AI-tool?
         <a href="/">Bekijk alle {allTools.length}+ tools</a> op de radar.
