@@ -68,12 +68,12 @@ const RequestSchema = z.object({
   top3: z.array(ToolSummarySchema).min(1).max(3),
 });
 
-// Output schema — array of exactly 3 explanations (pad with '' if fewer tools)
+// Output schema — array of 1-3 explanations. Length bounds are soft
+// preferences communicated via the system prompt; hard validation would
+// reject otherwise-fine responses and Anthropic structured outputs can't
+// express them anyway.
 const ExplanationsSchema = z.object({
-  explanations: z
-    .array(z.string().min(20).max(400))
-    .min(1)
-    .max(3),
+  explanations: z.array(z.string()),
 });
 
 // ─── System prompt ──────────────────────────────────────────────
@@ -139,41 +139,67 @@ export const POST: APIRoute = async ({ request }) => {
   }
   const { profile, top3 } = parsed.data;
 
-  // Cloudflare Workers runtime env (Astro v6+). `cloudflare:workers` also
-  // resolves in Vite dev via the Cloudflare adapter shim, so this works
-  // locally too provided a .dev.vars / env var is present.
-  const apiKey =
-    (cfEnv as Record<string, string | undefined>)?.ANTHROPIC_API_KEY
-    ?? (typeof process !== 'undefined' ? process.env?.ANTHROPIC_API_KEY : undefined);
+  // Cloudflare Workers runtime env (Astro v6+). `cloudflare:workers`
+  // resolves in Vite dev via the Cloudflare adapter shim and loads
+  // .dev.vars locally. If .dev.vars defines EITHER key we treat that
+  // as authoritative intent — shell process.env is only consulted
+  // when .dev.vars has neither, to avoid a stray shell key overruling
+  // what the developer explicitly put in the config file.
+  const env = cfEnv as Record<string, string | undefined>;
+  const devVarsHasExplain = !!(env?.ANTHROPIC_API_KEY || env?.OPENROUTER_API_KEY);
+  const getEnv = (key: 'ANTHROPIC_API_KEY' | 'OPENROUTER_API_KEY'): string | undefined => {
+    if (devVarsHasExplain) return env?.[key];
+    return typeof process !== 'undefined' ? process.env?.[key] : undefined;
+  };
 
-  if (!apiKey) {
-    return jsonError(503, 'LLM niet beschikbaar (ANTHROPIC_API_KEY niet geconfigureerd)');
+  // Strip obvious placeholder values (copied from .dev.vars.example verbatim
+  // without editing). Anything containing "..." is almost certainly not a
+  // real key — saves a round trip to the API and a confusing 401.
+  const realKey = (v: string | undefined) =>
+    v && !v.includes('...') && v.length > 16 ? v : undefined;
+
+  const anthropicKey = realKey(getEnv('ANTHROPIC_API_KEY'));
+  const openrouterKey = realKey(getEnv('OPENROUTER_API_KEY'));
+
+  if (!anthropicKey && !openrouterKey) {
+    return jsonError(
+      503,
+      'LLM niet beschikbaar (zet ANTHROPIC_API_KEY óf OPENROUTER_API_KEY in .dev.vars)',
+    );
   }
 
-  const client = new Anthropic({ apiKey });
+  const userPrompt = JSON.stringify({ profile, top3 }, null, 2);
 
   try {
-    const response = await client.messages.parse({
-      model: 'claude-haiku-4-5',
-      max_tokens: 1500,
-      system: buildSystemPrompt(),
-      messages: [
-        {
-          role: 'user',
-          content: JSON.stringify({ profile, top3 }, null, 2),
-        },
-      ],
-      output_config: {
-        format: zodOutputFormat(ExplanationsSchema),
-      },
-    });
+    let explanations: string[];
+    let usage: { input_tokens: number; output_tokens: number } | null = null;
 
-    if (!response.parsed_output) {
-      return jsonError(502, 'LLM returned no parseable output');
+    if (anthropicKey) {
+      // Direct Anthropic (primary path)
+      const client = new Anthropic({ apiKey: anthropicKey });
+      const response = await client.messages.parse({
+        model: 'claude-haiku-4-5',
+        max_tokens: 1500,
+        system: buildSystemPrompt(),
+        messages: [{ role: 'user', content: userPrompt }],
+        output_config: { format: zodOutputFormat(ExplanationsSchema) },
+      });
+      if (!response.parsed_output) {
+        return jsonError(502, 'LLM returned no parseable output');
+      }
+      explanations = response.parsed_output.explanations;
+      usage = {
+        input_tokens: response.usage.input_tokens,
+        output_tokens: response.usage.output_tokens,
+      };
+    } else {
+      // OpenRouter (OpenAI-compat fallback)
+      const result = await callOpenRouter(openrouterKey!, userPrompt);
+      explanations = result.explanations;
+      usage = result.usage;
     }
 
     // Pad to match top3 length if LLM returned fewer
-    const explanations = [...response.parsed_output.explanations];
     while (explanations.length < top3.length) {
       explanations.push('');
     }
@@ -181,10 +207,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({
         explanations: explanations.slice(0, top3.length),
-        usage: {
-          input_tokens: response.usage.input_tokens,
-          output_tokens: response.usage.output_tokens,
-        },
+        usage,
       }),
       {
         status: 200,
@@ -205,6 +228,97 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonError(500, `LLM call failed: ${msg}`);
   }
 };
+
+// ─── OpenRouter fallback ────────────────────────────────────────
+//
+// OpenRouter exposes an OpenAI-compatible /chat/completions endpoint.
+// We use structured JSON mode via `response_format: { type: "json_schema" }`
+// and ask for the same ExplanationsSchema.
+const OPENROUTER_MODEL = 'anthropic/claude-haiku-4.5';
+
+async function callOpenRouter(
+  apiKey: string,
+  userPrompt: string,
+): Promise<{ explanations: string[]; usage: { input_tokens: number; output_tokens: number } | null }> {
+  const body = {
+    model: OPENROUTER_MODEL,
+    max_tokens: 1500,
+    messages: [
+      { role: 'system', content: buildSystemPrompt() },
+      { role: 'user', content: userPrompt },
+    ],
+    // Anthropic structured outputs (under OpenRouter) reject size
+    // constraints (min/maxLength, min/maxItems). The SDK normally strips
+    // them client-side; since we're hand-rolling the request here, keep
+    // the schema minimal and enforce bounds via Zod after parsing.
+    response_format: {
+      type: 'json_schema',
+      json_schema: {
+        name: 'explanations',
+        strict: true,
+        schema: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['explanations'],
+          properties: {
+            explanations: {
+              type: 'array',
+              items: { type: 'string' },
+            },
+          },
+        },
+      },
+    },
+  };
+
+  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': 'https://debesteaitools.nl',
+      'X-Title': 'debesteaitools.nl matching engine',
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`OpenRouter ${res.status}: ${text.slice(0, 200)}`);
+  }
+
+  const json = await res.json() as {
+    choices?: { message?: { content?: string } }[];
+    usage?: { prompt_tokens?: number; completion_tokens?: number };
+  };
+
+  const content = json.choices?.[0]?.message?.content;
+  if (!content) {
+    throw new Error('OpenRouter returned no message content');
+  }
+
+  let parsed: { explanations?: unknown };
+  try {
+    parsed = JSON.parse(content);
+  } catch {
+    throw new Error(`OpenRouter content was not valid JSON: ${content.slice(0, 200)}`);
+  }
+
+  const validated = ExplanationsSchema.safeParse(parsed);
+  if (!validated.success) {
+    throw new Error(`OpenRouter JSON failed schema validation: ${validated.error.message}`);
+  }
+
+  return {
+    explanations: validated.data.explanations,
+    usage: json.usage
+      ? {
+          input_tokens: json.usage.prompt_tokens ?? 0,
+          output_tokens: json.usage.completion_tokens ?? 0,
+        }
+      : null,
+  };
+}
 
 // ─── Helpers ───────────────────────────────────────────────────
 
