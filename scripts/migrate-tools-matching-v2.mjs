@@ -19,8 +19,17 @@
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-const TOOLS_DIR = join(import.meta.dirname, '..', 'src', 'content', 'tools');
+const ROOT = join(import.meta.dirname, '..');
+const TOOLS_DIR = join(ROOT, 'src', 'content', 'tools');
+const ALIAS_FILE = join(ROOT, 'src', 'lib', 'taxonomies', 'integration-aliases.json');
 const DRY = process.argv.includes('--dry-run');
+const FORCE = process.argv.includes('--force'); // overwrite existing derived fields
+
+// Shared alias map — single source of truth with integrations.ts
+const integrationAliasMap = Object.fromEntries(
+  Object.entries(JSON.parse(readFileSync(ALIAS_FILE, 'utf8')))
+    .filter(([k]) => !k.startsWith('_')),
+);
 
 // ─── Rule tables ───────────────────────────────────────────────
 
@@ -74,72 +83,10 @@ const companySizeBounds = {
   enterprise: { min: 1000, max: 100000 },
 };
 
-/** Free-text integration → controlled integration key */
-const integrationAliasMap = {
-  'exact': 'exact', 'exact online': 'exact',
-  'afas': 'afas',
-  'twinfield': 'twinfield',
-  'moneybird': 'moneybird',
-  'snelstart': 'snelstart',
-  'visma': 'visma',
-  'yuki': 'yuki',
-  'microsoft 365': 'microsoft_365', 'm365': 'microsoft_365', 'office 365': 'microsoft_365',
-  'google workspace': 'google_workspace', 'gsuite': 'google_workspace',
-  'outlook': 'outlook',
-  'gmail': 'gmail',
-  'microsoft teams': 'teams', 'teams': 'teams', 'ms teams': 'teams',
-  'slack': 'slack',
-  'notion': 'notion',
-  'confluence': 'confluence',
-  'sharepoint': 'sharepoint',
-  'dropbox': 'dropbox',
-  'onedrive': 'onedrive',
-  'google drive': 'google_drive', 'gdrive': 'google_drive',
-  'box': 'box',
-  'hubspot': 'hubspot',
-  'salesforce': 'salesforce',
-  'pipedrive': 'pipedrive',
-  'teamleader': 'teamleader',
-  'mailchimp': 'mailchimp',
-  'convertkit': 'convertkit', 'kit': 'convertkit',
-  'mailerlite': 'mailerlite',
-  'laposta': 'laposta',
-  'spotler': 'spotler',
-  'klaviyo': 'klaviyo',
-  'zapier': 'zapier',
-  'make': 'make', 'integromat': 'make',
-  'n8n': 'n8n',
-  'google calendar': 'google_calendar',
-  'outlook calendar': 'outlook_calendar',
-  'calendly': 'calendly',
-  'linkedin': 'linkedin',
-  'facebook': 'meta_business', 'instagram': 'meta_business', 'meta business': 'meta_business',
-  'buffer': 'buffer',
-  'hootsuite': 'hootsuite',
-  'github': 'github',
-  'gitlab': 'gitlab',
-  'vs code': 'vscode', 'vscode': 'vscode', 'visual studio code': 'vscode',
-  'jetbrains': 'jetbrains',
-  'conscribo': 'conscribo',
-  'e-captain': 'e_captain',
-  'sportlink': 'sportlink',
-  'allunited': 'allunited',
-  'zoom': 'zoom',
-  'google meet': 'google_meet',
-  'zendesk': 'zendesk',
-  'intercom': 'intercom',
-  'freshdesk': 'freshdesk',
-  'api': 'rest_api', 'rest api': 'rest_api',
-  'webhook': 'webhook', 'webhooks': 'webhook',
-  'android': 'google_workspace', // rough mapping
-  'google cloud': 'google_workspace',
-  'x / twitter': 'meta_business', // rough mapping
-};
-
 // ─── Helpers ────────────────────────────────────────────────────
 
 function deriveSetupTime(tool) {
-  if (tool.setupTime) return tool.setupTime; // already set
+  if (!FORCE && tool.setupTime) return tool.setupTime; // already set
   const ttfv = tool.timeToFirstValue;
   const setup = tool.setupComplexity;
   if (!ttfv || !setup) {
@@ -154,7 +101,7 @@ function deriveSetupTime(tool) {
 }
 
 function deriveSegments(tool) {
-  if (Array.isArray(tool.matchSegments) && tool.matchSegments.length > 0) {
+  if (!FORCE && Array.isArray(tool.matchSegments) && tool.matchSegments.length > 0) {
     return tool.matchSegments; // already set
   }
   const set = new Set();
@@ -168,7 +115,7 @@ function deriveSegments(tool) {
 }
 
 function deriveTeamSize(tool) {
-  if (tool.idealTeamSize && typeof tool.idealTeamSize === 'object') {
+  if (!FORCE && tool.idealTeamSize && typeof tool.idealTeamSize === 'object') {
     return tool.idealTeamSize;
   }
   const sizes = tool.companySizeFit ?? [];
@@ -186,7 +133,7 @@ function deriveTeamSize(tool) {
 }
 
 function deriveControlledIntegrations(tool) {
-  if (Array.isArray(tool.controlledIntegrations) && tool.controlledIntegrations.length > 0) {
+  if (!FORCE && Array.isArray(tool.controlledIntegrations) && tool.controlledIntegrations.length > 0) {
     return tool.controlledIntegrations;
   }
   const raw = tool.integrations ?? [];
@@ -212,20 +159,20 @@ for (const file of files) {
 
   const before = JSON.stringify(tool);
 
-  // Derive fields (only set if empty / undefined)
+  // Derive fields. With --force, overwrite existing derived values.
   const setupTime = deriveSetupTime(tool);
-  if (setupTime && !tool.setupTime) tool.setupTime = setupTime;
+  if (setupTime && (FORCE || !tool.setupTime)) tool.setupTime = setupTime;
 
   const segments = deriveSegments(tool);
-  if (segments.length > 0 && (!tool.matchSegments || tool.matchSegments.length === 0)) {
+  if (segments.length > 0 && (FORCE || !tool.matchSegments || tool.matchSegments.length === 0)) {
     tool.matchSegments = segments;
   }
 
   const teamSize = deriveTeamSize(tool);
-  if (teamSize && !tool.idealTeamSize) tool.idealTeamSize = teamSize;
+  if (teamSize && (FORCE || !tool.idealTeamSize)) tool.idealTeamSize = teamSize;
 
   const controlledInts = deriveControlledIntegrations(tool);
-  if (controlledInts.length > 0 && (!tool.controlledIntegrations || tool.controlledIntegrations.length === 0)) {
+  if (FORCE || !tool.controlledIntegrations || tool.controlledIntegrations.length === 0) {
     tool.controlledIntegrations = controlledInts;
   }
 

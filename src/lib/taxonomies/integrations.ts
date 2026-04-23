@@ -9,6 +9,7 @@
  */
 
 import { z } from 'astro/zod';
+import aliasMapJson from './integration-aliases.json';
 
 export const integrations = {
   // Dutch accounting / ERP
@@ -115,68 +116,17 @@ export const integrationCategories = {
 
 export type IntegrationCategoryKey = keyof typeof integrationCategories;
 
+/** Alias map (free-text → controlled key). Source: integration-aliases.json. */
+const aliasMap = aliasMapJson as Record<string, IntegrationKey | string>;
+
 /**
  * Map a free-text integration string to a controlled key, if possible.
- * Used by migration scripts; returns undefined for unrecognised strings.
+ * Returns undefined for unrecognised strings.
  */
 export function normaliseIntegration(raw: string): IntegrationKey | undefined {
   const s = raw.trim().toLowerCase();
-  const map: Record<string, IntegrationKey> = {
-    'exact': 'exact', 'exact online': 'exact',
-    'afas': 'afas',
-    'twinfield': 'twinfield',
-    'moneybird': 'moneybird',
-    'snelstart': 'snelstart',
-    'visma': 'visma',
-    'yuki': 'yuki',
-    'microsoft 365': 'microsoft_365', 'm365': 'microsoft_365', 'office 365': 'microsoft_365',
-    'google workspace': 'google_workspace', 'gsuite': 'google_workspace', 'g suite': 'google_workspace',
-    'outlook': 'outlook',
-    'gmail': 'gmail',
-    'microsoft teams': 'teams', 'teams': 'teams', 'ms teams': 'teams',
-    'slack': 'slack',
-    'notion': 'notion',
-    'confluence': 'confluence',
-    'sharepoint': 'sharepoint',
-    'dropbox': 'dropbox',
-    'onedrive': 'onedrive',
-    'google drive': 'google_drive', 'gdrive': 'google_drive',
-    'box': 'box',
-    'hubspot': 'hubspot',
-    'salesforce': 'salesforce',
-    'pipedrive': 'pipedrive',
-    'teamleader': 'teamleader',
-    'mailchimp': 'mailchimp',
-    'convertkit': 'convertkit', 'kit': 'convertkit',
-    'mailerlite': 'mailerlite',
-    'laposta': 'laposta',
-    'spotler': 'spotler',
-    'klaviyo': 'klaviyo',
-    'zapier': 'zapier',
-    'make': 'make', 'integromat': 'make', 'make.com': 'make',
-    'n8n': 'n8n',
-    'google calendar': 'google_calendar',
-    'outlook calendar': 'outlook_calendar',
-    'calendly': 'calendly',
-    'linkedin': 'linkedin',
-    'meta business': 'meta_business', 'facebook': 'meta_business', 'instagram': 'meta_business',
-    'buffer': 'buffer',
-    'hootsuite': 'hootsuite',
-    'github': 'github',
-    'gitlab': 'gitlab',
-    'vs code': 'vscode', 'vscode': 'vscode', 'visual studio code': 'vscode',
-    'jetbrains': 'jetbrains',
-    'conscribo': 'conscribo',
-    'e-captain': 'e_captain', 'ecaptain': 'e_captain',
-    'sportlink': 'sportlink',
-    'allunited': 'allunited',
-    'zoom': 'zoom',
-    'google meet': 'google_meet', 'meet': 'google_meet',
-    'zendesk': 'zendesk',
-    'intercom': 'intercom',
-    'freshdesk': 'freshdesk',
-    'rest api': 'rest_api', 'api': 'rest_api',
-    'webhook': 'webhook', 'webhooks': 'webhook',
-  };
-  return map[s];
+  const mapped = aliasMap[s];
+  if (typeof mapped !== 'string') return undefined;
+  if (mapped.startsWith('_')) return undefined; // skip comment keys
+  return mapped as IntegrationKey;
 }

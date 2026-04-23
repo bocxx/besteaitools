@@ -368,6 +368,9 @@ export const toolContentSchema = z.object({
   pricing: z.string().optional(),
   openSource: z.boolean().optional(),
   pricingModel: pricingModelSchema.default('freemium'),
+  // TODO(fase 1): collapse `difficulty` + `easeOfUseScore` + `beginnerFriendlyScore`
+  // into two distinct scores (beginner vs power-user). Three overlapping ease
+  // fields is a foot-gun for editors and the scoring pipeline.
   difficulty: difficultyLevelSchema.default('beginner'),
   tags: z.array(z.string()).default([]),
   businessFunctions: z.array(businessFunctionSchema).default([]),
@@ -498,8 +501,8 @@ export const toolContentSchema = z.object({
     perSeat: z.boolean().optional(),
   })).default([]),
   /** Free-tier limits as a JSON string (e.g. `'{"convs_per_day": 10}'`).
-   *  Stored as string because Keystatic can't edit arbitrary record keys;
-   *  parse at read-time via `parseFreeTierLimits()`. */
+   *  Stored as a string so free-form keys (per-tool limits) can be added
+   *  without schema changes; parse at read-time via `parseFreeTierLimits()`. */
   freeTierLimits: z.string().optional(),
 
   // ── Matching UX & adoptie ──────────────────────
@@ -525,7 +528,7 @@ export const toolContentSchema = z.object({
 });
 
 // ============================================
-// 12. JSON-BLOB PARSERS (Keystatic interop)
+// 12. JSON-BLOB PARSERS (free-form record fields)
 // ============================================
 
 /** Parse `freeTierLimits` string into a typed record. Returns {} on empty/invalid. */
