@@ -639,6 +639,23 @@ export const prerender = true;
       border-left: 2px solid var(--primary-bright);
       padding-left: 14px;
     }
+    .result-card__whynot {
+      margin-top: 10px; padding: 8px 12px;
+      font-size: 0.85rem; color: var(--text-secondary);
+      background: color-mix(in oklch, var(--text-muted) 8%, transparent);
+      border-left: 2px solid var(--text-muted);
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .result-card__whynot.is-loading { opacity: 0.6; }
+    .result-card__whynot.is-loading::after {
+      content: ' ⌛'; animation: pulse 1.2s ease-in-out infinite;
+    }
+    .result-card__whynot.llm-enhanced {
+      color: var(--text-primary);
+      background: color-mix(in oklch, var(--color-warning) 8%, transparent);
+      border-left-color: var(--color-warning);
+    }
     @keyframes pulse { 50% { opacity: 0.4; } }
     .result-card__bars {
       display: flex; flex-direction: column; gap: 6px;
@@ -976,7 +993,7 @@ export const prerender = true;
       // Fire LLM explanation enrichment in the background (optional; template reason
       // stays put until the LLM response arrives, and survives if it never does).
       if (output.top3.length > 0) {
-        enrichWithLlmExplanations(output.top3, toolMap, profile).catch((err) => {
+        enrichWithLlmExplanations(output.top3, output.alternatives, toolMap, profile).catch((err) => {
           console.warn('[match] LLM explain unavailable:', err);
         });
       }
@@ -995,39 +1012,43 @@ export const prerender = true;
     // ─── LLM explanation enrichment (Fase 2) ─────────────────
     async function enrichWithLlmExplanations(
       top3: MatchResult[],
+      alternatives: MatchResult[],
       toolMap: Map<string, Tool>,
       profile: UserProfile,
     ): Promise<void> {
-      // Show a subtle "enriching…" state on each card
-      document.querySelectorAll<HTMLElement>('.result-card.top .result-card__reason')
+      // Show a subtle "enriching…" state on top-3 reasons + alt whyNot
+      document.querySelectorAll<HTMLElement>('.result-card.top .result-card__reason, .result-card.alt .result-card__whynot')
         .forEach((el) => el.classList.add('is-loading'));
+
+      const toPayload = (r: MatchResult) => {
+        const t = toolMap.get(r.slug);
+        return {
+          slug: r.slug,
+          name: t?.name ?? r.slug,
+          score: r.score,
+          rank: r.rank,
+          shortDescription: t?.shortDescription ?? '',
+          topFactors: Object.entries(r.breakdown)
+            .filter(([, b]: any) => b.weight > 0 && b.raw >= 60)
+            .sort((a: any, b: any) => b[1].weighted - a[1].weighted)
+            .slice(0, 3)
+            .map(([f]) => FACTOR_LABELS[f] ?? f),
+          setupTime: t?.setupTime,
+          outputLanguageQualityNl: t?.outputLanguageQualityNl,
+          beginnerFriendlyScore: t?.beginnerFriendlyScore,
+          hasFreePlan: t?.hasFreePlan,
+          startingPriceMonthly: t?.startingPriceMonthly,
+          dataUsedForTraining: t?.dataUsedForTraining,
+          euHostingAvailable: t?.euHostingAvailable,
+          typicalWeeklyTimeSaved: t?.typicalWeeklyTimeSaved,
+          verenigingSuitable: t?.verenigingSuitable,
+        };
+      };
 
       const payload = {
         profile,
-        top3: top3.map((r) => {
-          const t = toolMap.get(r.slug);
-          return {
-            slug: r.slug,
-            name: t?.name ?? r.slug,
-            score: r.score,
-            rank: r.rank,
-            shortDescription: t?.shortDescription ?? '',
-            topFactors: Object.entries(r.breakdown)
-              .filter(([, b]: any) => b.weight > 0 && b.raw >= 60)
-              .sort((a: any, b: any) => b[1].weighted - a[1].weighted)
-              .slice(0, 3)
-              .map(([f]) => FACTOR_LABELS[f] ?? f),
-            setupTime: t?.setupTime,
-            outputLanguageQualityNl: t?.outputLanguageQualityNl,
-            beginnerFriendlyScore: t?.beginnerFriendlyScore,
-            hasFreePlan: t?.hasFreePlan,
-            startingPriceMonthly: t?.startingPriceMonthly,
-            dataUsedForTraining: t?.dataUsedForTraining,
-            euHostingAvailable: t?.euHostingAvailable,
-            typicalWeeklyTimeSaved: t?.typicalWeeklyTimeSaved,
-            verenigingSuitable: t?.verenigingSuitable,
-          };
-        }),
+        top3: top3.map(toPayload),
+        alternatives: alternatives.slice(0, 3).map(toPayload),
       };
 
       let response: Response;
@@ -1047,9 +1068,11 @@ export const prerender = true;
         throw new Error(`/api/match-explain ${response.status}`);
       }
 
-      const data = await response.json() as { explanations: string[] };
-      const cards = document.querySelectorAll<HTMLElement>('.result-card.top');
-      cards.forEach((cardEl, i) => {
+      const data = await response.json() as { explanations: string[]; whyNot: string[] };
+
+      // Top-3 reasons
+      const topCards = document.querySelectorAll<HTMLElement>('.result-card.top');
+      topCards.forEach((cardEl, i) => {
         const reasonEl = cardEl.querySelector<HTMLElement>('.result-card__reason');
         if (!reasonEl) return;
         reasonEl.classList.remove('is-loading');
@@ -1059,10 +1082,23 @@ export const prerender = true;
           reasonEl.classList.add('llm-enhanced');
         }
       });
+
+      // Alternative whyNot
+      const altCards = document.querySelectorAll<HTMLElement>('.result-card.alt');
+      altCards.forEach((cardEl, i) => {
+        const whynotEl = cardEl.querySelector<HTMLElement>('.result-card__whynot');
+        if (!whynotEl) return;
+        whynotEl.classList.remove('is-loading');
+        const text = data.whyNot?.[i];
+        if (text && text.trim()) {
+          whynotEl.textContent = text;
+          whynotEl.classList.add('llm-enhanced');
+        }
+      });
     }
 
     function clearEnrichState() {
-      document.querySelectorAll<HTMLElement>('.result-card__reason.is-loading')
+      document.querySelectorAll<HTMLElement>('.result-card__reason.is-loading, .result-card__whynot.is-loading')
         .forEach((el) => el.classList.remove('is-loading'));
     }
 
@@ -1078,8 +1114,15 @@ export const prerender = true;
           </div>
         `).join('');
 
+      const whyNotBlock = !isTop
+        ? `<div class="result-card__whynot">${escapeHtml(r.whyNotTop3 ?? '')}</div>`
+        : '';
+      const reasonBlock = isTop
+        ? `<div class="result-card__reason">${escapeHtml(r.reason ?? '')}</div>`
+        : '';
+
       return `
-        <article class="result-card ${isTop ? 'top' : ''} rank-${r.rank}">
+        <article class="result-card ${isTop ? 'top' : 'alt'} rank-${r.rank}">
           <div class="result-card__head">
             <div>
               <div class="result-card__rank">#${r.rank}</div>
@@ -1088,8 +1131,8 @@ export const prerender = true;
             <div class="result-card__score">${r.score}<span style="font-size:0.8em;opacity:0.6">/100</span></div>
           </div>
           <p class="result-card__desc">${escapeHtml(tool.shortDescription)}</p>
-          <div class="result-card__reason">${escapeHtml(r.reason ?? '')}</div>
-          ${r.whyNotTop3 ? `<p class="muted small" style="margin-top:8px">${escapeHtml(r.whyNotTop3)}</p>` : ''}
+          ${reasonBlock}
+          ${whyNotBlock}
           <div class="result-card__bars">${bars}</div>
         </article>
       `;

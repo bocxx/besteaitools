@@ -62,10 +62,13 @@ const ToolSummarySchema = z.object({
 const RequestSchema = z.object({
   profile: ProfileSchema,
   top3: z.array(ToolSummarySchema).min(1).max(3),
+  /** Optional alternatives (rank 4-6) to also get "waarom niet"-reasons for. */
+  alternatives: z.array(ToolSummarySchema).max(3).optional(),
 });
 
 const ExplanationsSchema = z.object({
   explanations: z.array(z.string()),
+  whyNot: z.array(z.string()),
 });
 
 // ─── System prompt ──────────────────────────────────────────────
@@ -86,19 +89,28 @@ voor MKB, ZZP, verenigingen, stichtingen en kleine overheid. Schrijf nuchter, ee
 geen marketing-taal. Schrijf Nederlands.
 
 ## Taak
-Gegeven een gebruikersprofiel + top-3 AI-tools die ons matching-algoritme heeft gekozen:
-schrijf per tool **één korte uitleg** (2-3 zinnen, max 300 tekens) waarom deze tool
-past bij dit specifieke profiel. Spreek de gebruiker aan met "jij"/"jullie".
+Gegeven een gebruikersprofiel + top-3 AI-tools + optioneel 1-3 alternatieven (rank 4-6):
+1. Schrijf per top-3 tool **één korte uitleg** (2-3 zinnen, max 300 tekens) waarom die
+   tool past bij dit specifieke profiel.
+2. Schrijf per alternatief **één korte "waarom niet top-3"-reden** (1-2 zinnen,
+   max 180 tekens): wat deze tool tekortkomt tegenover de top-3 voor dit profiel.
 
-## Regels
+Spreek de gebruiker aan met "jij"/"jullie".
+
+## Regels voor top-3 uitleg
 - **Benoem de concrete match.** Koppel expliciet aan het segment, de use-case(s) en
   AI-niveau uit het profiel. Geen generieke praatjes.
-- **Wees eerlijk.** Noem één zwak punt of kanttekening per tool als relevant
-  ("maar je hebt wel een M365-abonnement nodig", "setup duurt een paar uur").
+- **Wees eerlijk.** Noem één zwak punt of kanttekening per tool als relevant.
 - **Geen sterren-opsommingen, geen bullets, geen markdown.** Lopende zinnen.
 - **Geen verkooppraat.** Geen "uitstekend", "revolutionair", "game-changer". Wel
   concrete verdienste ("schrijft native Nederlands", "werkt meteen zonder setup").
-- **Verwijs naar "jij" als zzp'er, "jullie" als vereniging/MKB.**
+
+## Regels voor "waarom niet top-3"
+- **Een concreet tekort.** "Geen gratis plan", "setup te complex voor beginners",
+  "mist native NL-output", "te breed georiënteerd voor jouw niche".
+- **Niet negatief over de tool zelf.** De tool is prima; alleen niet optimaal voor
+  dít profiel.
+- **Eén zin, max 180 tekens.**
 
 ## Segment-context
 ${segmentList}
@@ -110,9 +122,12 @@ ${bucketList}
 ${comfortList}
 
 ## Output-formaat
-Return exact 1-3 explanations (één per tool in top-3 volgorde). Geen headers,
-geen inleidende zinnen — alleen de 2-3-zins uitleg per tool, als elementen in
-de array \`explanations\`.`;
+Return:
+- \`explanations\`: array van 1-3 strings (één per top-3 tool in volgorde).
+- \`whyNot\`: array van 0-3 strings (één per alternatief in volgorde; leeg als er
+  geen alternatieven zijn meegegeven).
+
+Geen headers, geen inleidende zinnen — alleen de korte teksten.`;
 }
 
 // ─── POST handler ──────────────────────────────────────────────
@@ -129,7 +144,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (!parsed.success) {
     return jsonError(400, 'Invalid request shape', parsed.error.format());
   }
-  const { profile, top3 } = parsed.data;
+  const { profile, top3, alternatives = [] } = parsed.data;
 
   const availability = resolveLlmKeys();
   if (!availability.available) {
@@ -139,34 +154,31 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const result = await callLlmWithJson({
       system: buildSystemPrompt(),
-      user: JSON.stringify({ profile, top3 }, null, 2),
+      user: JSON.stringify({ profile, top3, alternatives }, null, 2),
       schema: ExplanationsSchema,
       openrouterJsonSchema: {
         name: 'explanations',
         schema: {
           type: 'object',
           additionalProperties: false,
-          required: ['explanations'],
+          required: ['explanations', 'whyNot'],
           properties: {
-            explanations: {
-              type: 'array',
-              items: { type: 'string' },
-            },
+            explanations: { type: 'array', items: { type: 'string' } },
+            whyNot: { type: 'array', items: { type: 'string' } },
           },
         },
       },
-      maxTokens: 1500,
+      // Headroom for 3 explanations (~300 chars each) + 3 whyNot (~180 each).
+      maxTokens: 2000,
     });
 
-    // Pad to match top3 length if LLM returned fewer
-    const explanations = [...result.parsed.explanations];
-    while (explanations.length < top3.length) {
-      explanations.push('');
-    }
+    const explanations = padTo([...result.parsed.explanations], top3.length);
+    const whyNot = padTo([...result.parsed.whyNot], alternatives.length);
 
     return new Response(
       JSON.stringify({
-        explanations: explanations.slice(0, top3.length),
+        explanations,
+        whyNot,
         usage: result.usage,
         provider: result.provider,
       }),
@@ -182,3 +194,8 @@ export const POST: APIRoute = async ({ request }) => {
     return llmErrorToResponse(err);
   }
 };
+
+function padTo(arr: string[], len: number): string[] {
+  while (arr.length < len) arr.push('');
+  return arr.slice(0, len);
+}
