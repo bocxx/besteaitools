@@ -42,8 +42,11 @@ export function filterTool(tool: Tool, profile: UserProfile): string[] {
     const startingPrice = tool.startingPriceMonthly;
 
     if (profile.budget === 'free') {
-      // Free bucket: need hasFreePlan OR startingPriceMonthly === 0
-      if (!tool.hasFreePlan && (startingPrice == null || startingPrice > 0)) {
+      // Free bucket: need hasFreePlan explicitly, OR startingPriceMonthly === 0,
+      // OR a free-ish pricingModel (free/freemium) as a sensible fallback.
+      const hasFreeModel = tool.pricingModel === 'free' || tool.pricingModel === 'freemium';
+      const freeTierOk = tool.hasFreePlan || startingPrice === 0 || hasFreeModel;
+      if (!freeTierOk) {
         reasons.push('geen gratis plan beschikbaar');
       }
     } else if (startingPrice != null && startingPrice > maxEur) {

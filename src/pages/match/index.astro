@@ -680,7 +680,10 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
     async function ensureTools(): Promise<Tool[]> {
       if (toolData) return toolData;
-      const res = await fetch('/match/tools.json');
+      // `no-store` ensures a fresh dataset after editorial re-seeds; the
+      // browser would otherwise hang onto a stale version for up to the
+      // server cache-control window.
+      const res = await fetch('/match/tools.json', { cache: 'no-store' });
       toolData = await res.json() as Tool[];
       if (toolCountEl) toolCountEl.textContent = String(toolData.length);
       return toolData;

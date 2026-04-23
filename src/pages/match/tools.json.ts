@@ -19,7 +19,9 @@ export async function GET(_context: APIContext) {
     status: 200,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600',
+      // Short cache — the dataset changes whenever redactioneel data is
+      // re-seeded, so don't let stale copies linger too long.
+      'Cache-Control': 'public, max-age=300, must-revalidate',
     },
   });
 }
