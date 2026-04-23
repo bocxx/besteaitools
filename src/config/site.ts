@@ -26,6 +26,7 @@ export const siteConfig = {
   // ============================================
   navigation: {
     main: [
+      { label: "Match", href: "/match" },
       { label: "Weekradar", href: "/weekradar" },
       { label: "Launch Radar", href: "/launch-radar" },
       { label: "Digest", href: "/digest" },
