@@ -13,7 +13,6 @@ debesteaitools.nl is een open AI-tools directory voor de Nederlandse markt. De s
 - **Weekradar** — wekelijkse highlights: tool van de week, stijgers, dalers, nieuwkomers
 - **Vergelijkingen** — automatisch gegenereerde "X vs Y" vergelijkingspagina's voor top tools
 - **RSS-feed** — voor abonnees die updates willen volgen
-- **Keystatic CMS** — admin UI op `/keystatic` voor redactioneel beheer van tool-content
 
 ### Hoe werkt het?
 
@@ -39,7 +38,7 @@ Scant 8+ bronnen  ──→  ai_tools_radar.json  ──→  Merged Tool
 
 - **Framework**: [Astro](https://astro.build/) v6 (SSG + Cloudflare adapter)
 - **Taal**: TypeScript
-- **CMS**: [Keystatic](https://keystatic.com/) (lokale JSON bestanden)
+- **Content**: redactioneel beheerd via JSON bestanden in `src/content/tools/`
 - **Hosting**: Cloudflare Pages
 - **Styling**: Custom CSS met design tokens (Ember thema), geen CSS framework
 - **Iconen**: Lucide

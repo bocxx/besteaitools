@@ -10,7 +10,7 @@
  * TIER 2 — Apply factual fields (overwrite scalars if null, union-merge arrays):
  *   dataResidency, deploymentType, openSource, businessFunctions, targetAudience
  *
- * TIER 3 — Skipped (editorial copy, review manually in Keystatic):
+ * TIER 3 — Skipped (editorial copy, review manually in the JSON file):
  *   longDescription, bestFor, useCases, strengths, limitations, pricing,
  *   keyFeatures (LLM-generated capability list — always editorial review)
  *
@@ -166,7 +166,7 @@ async function main() {
   }
 
   console.log(`\n${ DRY_RUN ? '🔍 Would apply' : '✅ Applied'} ${appliedTotal} changes across ${fileCount} files`);
-  console.log(`   ⏭️  Skipped ${skippedEditorial} editorial diffs (Tier 3 — review in Keystatic)`);
+  console.log(`   ⏭️  Skipped ${skippedEditorial} editorial diffs (Tier 3 — review manually)`);
   if (skippedHasValue > 0) {
     console.log(`   🔒 Skipped ${skippedHasValue} scalar fields that already have a manual value`);
   }

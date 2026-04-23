@@ -3,7 +3,6 @@ import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
-import keystatic from '@keystatic/astro';
 import rehypeExternalLinks from 'rehype-external-links';
 
 const isDev = process.argv.includes('dev');
@@ -15,9 +14,6 @@ export default defineConfig({
   integrations: [
     react(),
     markdoc(),
-    // Keystatic only active in dev — local CMS for editing tool profiles
-    // Access at: http://localhost:4321/keystatic
-    ...(isDev ? [keystatic()] : []),
     sitemap({
       filter: (page) => !page.includes('/og/'),
       serialize(item) {
