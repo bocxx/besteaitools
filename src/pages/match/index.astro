@@ -293,6 +293,7 @@ export const prerender = true;
       </header>
       <div id="result-followup" class="followup-box" hidden></div>
       <div id="result-top3"></div>
+      <div id="result-90day" hidden></div>
       <div id="result-alternatives"></div>
       <details class="rejected-block">
         <summary><span id="rejected-count">0</span> tools uitgefilterd — bekijk waarom</summary>
@@ -657,6 +658,102 @@ export const prerender = true;
       border-left-color: var(--color-warning);
     }
     @keyframes pulse { 50% { opacity: 0.4; } }
+
+    /* Tool badges */
+    .result-card__badges {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin: 0 0 12px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 500;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .badge--vereniging {
+      background: color-mix(in oklch, var(--color-success) 15%, var(--bg-surface));
+      color: var(--color-success);
+      border-color: color-mix(in oklch, var(--color-success) 40%, transparent);
+    }
+    .badge--eu {
+      background: color-mix(in oklch, var(--primary-bright) 12%, var(--bg-surface));
+      color: var(--primary-bright);
+      border-color: color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    }
+    .badge--privacy {
+      background: color-mix(in oklch, var(--color-success) 12%, var(--bg-surface));
+      color: var(--color-success);
+      border-color: color-mix(in oklch, var(--color-success) 30%, transparent);
+    }
+    .badge--privacy-soft {
+      background: color-mix(in oklch, var(--color-warning) 10%, var(--bg-surface));
+      color: var(--color-warning);
+      border-color: color-mix(in oklch, var(--color-warning) 30%, transparent);
+    }
+    .badge--free {
+      background: color-mix(in oklch, var(--color-info) 12%, var(--bg-surface));
+      color: var(--color-info);
+      border-color: color-mix(in oklch, var(--color-info) 30%, transparent);
+    }
+
+    /* 90-dagen plan */
+    .plan-block {
+      margin: 28px 0;
+      padding: 20px 24px;
+      border-radius: 12px;
+      background: color-mix(in oklch, var(--tertiary-bright) 8%, var(--bg-surface));
+      border: 1px solid color-mix(in oklch, var(--tertiary-bright) 30%, var(--border-subtle));
+    }
+    .plan-block__title {
+      margin: 0 0 8px;
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: 1.15rem;
+    }
+    .plan-block__intro {
+      margin: 0 0 18px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .plan-steps {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 14px;
+    }
+    .plan-step {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      padding: 14px 16px;
+      background: var(--bg-surface);
+      border-radius: 10px;
+      border-left: 3px solid var(--tertiary-bright);
+    }
+    .plan-step__month {
+      font-weight: 600;
+      color: var(--tertiary-bright);
+      font-size: 0.9rem;
+    }
+    .plan-step__body { display: flex; flex-direction: column; gap: 4px; }
+    .plan-step__tool {
+      display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap;
+    }
+    .plan-step__tool strong { font-size: 1rem; }
+    .plan-step__setup {
+      font-size: 0.8rem; color: var(--text-muted);
+      padding: 2px 8px; background: var(--bg-elevated);
+      border-radius: 999px;
+    }
+    .plan-step__hint {
+      margin: 0; color: var(--text-secondary); font-size: 0.9rem;
+    }
+    .plan-step__saved {
+      margin: 0; color: var(--text-muted); font-size: 0.85rem;
+    }
+    @media (max-width: 560px) {
+      .plan-step { grid-template-columns: 1fr; gap: 6px; }
+    }
     .result-card__bars {
       display: flex; flex-direction: column; gap: 6px;
       margin-top: 14px; font-size: 0.8rem;
@@ -914,6 +1011,7 @@ export const prerender = true;
     function renderResult(output: MatchOutput, tools: Tool[], profile: UserProfile) {
       form.hidden = true;
       resultView.hidden = false;
+      currentProfile = profile;
       // Hide wizard chrome (hero + progress) while showing results
       document.querySelector<HTMLElement>('.match-hero')?.style.setProperty('display', 'none');
       document.querySelector<HTMLElement>('.match-progress')?.style.setProperty('display', 'none');
@@ -984,6 +1082,9 @@ export const prerender = true;
       resultTop3.innerHTML = output.top3.length === 0
         ? `<p class="muted" style="margin-top: 8px">Geen tools passen bij dit profiel. Zie uitgefilterde lijst hieronder.</p>`
         : output.top3.map((r) => card(r, toolMap.get(r.slug)!, true)).join('');
+
+      // 90-dagen plan for beginners / vereniging / stichting
+      render90DayPlan(output.top3, toolMap, profile);
 
       // Alternatives
       resultAlt.innerHTML = output.alternatives.length === 0 ? '' :
@@ -1120,6 +1221,7 @@ export const prerender = true;
       const reasonBlock = isTop
         ? `<div class="result-card__reason">${escapeHtml(r.reason ?? '')}</div>`
         : '';
+      const badges = renderBadges(tool, currentProfile).join('');
 
       return `
         <article class="result-card ${isTop ? 'top' : 'alt'} rank-${r.rank}">
@@ -1131,12 +1233,112 @@ export const prerender = true;
             <div class="result-card__score">${r.score}<span style="font-size:0.8em;opacity:0.6">/100</span></div>
           </div>
           <p class="result-card__desc">${escapeHtml(tool.shortDescription)}</p>
+          ${badges ? `<div class="result-card__badges">${badges}</div>` : ''}
           ${reasonBlock}
           ${whyNotBlock}
           <div class="result-card__bars">${bars}</div>
         </article>
       `;
     }
+
+    // ─── 90-dagen plan (Fase 3) ──────────────────────────────
+    function render90DayPlan(
+      top3: MatchResult[],
+      toolMap: Map<string, Tool>,
+      profile: UserProfile,
+    ): void {
+      const planEl = document.getElementById('result-90day')!;
+      const isBeginner = profile.aiComfort === 'never' || profile.aiComfort === 'tried_chatgpt';
+      const isVerenigingish = profile.segment === 'vereniging' || profile.segment === 'stichting';
+      const shouldShow = top3.length >= 2 && (isBeginner || isVerenigingish);
+
+      if (!shouldShow) {
+        planEl.hidden = true;
+        planEl.innerHTML = '';
+        return;
+      }
+
+      const months = [
+        { n: 1, label: 'Maand 1', hint: 'Begin hier. Geef jezelf ruimte om te wennen.' },
+        { n: 2, label: 'Maand 2', hint: 'Voeg toe zodra de eerste routine zit.' },
+        { n: 3, label: 'Maand 3', hint: 'Optioneel — alleen als er ritme in zit.' },
+      ];
+
+      const steps = top3.slice(0, 3).map((r, i) => {
+        const t = toolMap.get(r.slug);
+        const m = months[i];
+        const usecase = pickUseCaseLabel(profile.useCaseBuckets[0]);
+        const hint = i === 0
+          ? `${m.hint} Focus: ${usecase}.`
+          : m.hint;
+        return `
+          <li class="plan-step">
+            <div class="plan-step__month">${m.label}</div>
+            <div class="plan-step__body">
+              <div class="plan-step__tool">
+                <strong>${escapeHtml(t?.name ?? r.slug)}</strong>
+                ${t?.setupTime ? `<span class="plan-step__setup">setup ${escapeHtml(setupLabel(t.setupTime))}</span>` : ''}
+              </div>
+              <p class="plan-step__hint">${escapeHtml(hint)}</p>
+              ${t?.typicalWeeklyTimeSaved ? `<p class="plan-step__saved">📅 ${escapeHtml(t.typicalWeeklyTimeSaved)}</p>` : ''}
+            </div>
+          </li>
+        `;
+      }).join('');
+
+      const intro = isVerenigingish
+        ? 'Voor een vrijwilligersorganisatie werkt het het best om niet alles tegelijk te adopteren. Begin klein, voeg pas toe als mensen comfortabel zijn.'
+        : 'Als beginner is het slim om niet alles tegelijk te proberen. Start met één tool, bouw rust op, breid daarna uit.';
+
+      planEl.hidden = false;
+      planEl.innerHTML = `
+        <section class="plan-block">
+          <h3 class="plan-block__title">📅 90-dagen introductieplan</h3>
+          <p class="plan-block__intro">${escapeHtml(intro)}</p>
+          <ol class="plan-steps">${steps}</ol>
+        </section>
+      `;
+    }
+
+    function pickUseCaseLabel(key: string | undefined): string {
+      return key ? (BUCKET_LABELS[key] ?? key).toLowerCase() : 'jouw belangrijkste taak';
+    }
+
+    function setupLabel(s: string): string {
+      const map: Record<string, string> = {
+        under_15min: 'onder 15 min',
+        under_1h: 'onder 1 uur',
+        under_4h: 'onder 4 uur',
+        days: 'meerdere dagen',
+      };
+      return map[s] ?? s;
+    }
+
+    // ─── Badge rendering ─────────────────────────────────────
+    function renderBadges(tool: Tool, profile: UserProfile | null): string[] {
+      const badges: string[] = [];
+      const isVerenigingSegment = profile?.segment === 'vereniging' || profile?.segment === 'stichting';
+
+      if (isVerenigingSegment && tool.verenigingSuitable) {
+        badges.push(`<span class="badge badge--vereniging" title="Redactie-geverifieerd voor vrijwilligersorganisaties">💚 Vrijwilligers-vriendelijk</span>`);
+      }
+      if (tool.euHostingAvailable) {
+        badges.push(`<span class="badge badge--eu" title="Data kan in EU worden gehost">🇪🇺 EU-hosting</span>`);
+      }
+      if (tool.dataUsedForTraining === 'no') {
+        badges.push(`<span class="badge badge--privacy" title="Jouw data wordt nooit gebruikt om het model te trainen">🔒 Geen training</span>`);
+      } else if (tool.dataUsedForTraining === 'opt-out') {
+        badges.push(`<span class="badge badge--privacy-soft" title="Standaard wel, maar uit te zetten">🔓 Training: opt-out</span>`);
+      }
+      const freeish = tool.hasFreePlan || tool.pricingModel === 'free' || tool.pricingModel === 'freemium';
+      if (freeish) {
+        badges.push(`<span class="badge badge--free" title="Gratis plan beschikbaar">🎁 Gratis plan</span>`);
+      }
+      return badges;
+    }
+
+    // Profile is stashed on renderResult; card() runs per-invocation.
+    let currentProfile: UserProfile | null = null;
 
     const FACTOR_LABELS: Record<string, string> = {
       jobFit: 'Taak-fit',
