@@ -9,8 +9,11 @@ const isDev = process.argv.includes('dev');
 
 export default defineConfig({
   site: 'https://debesteaitools.nl',
-  output: 'static',
-  adapter: isDev ? undefined : cloudflare(),
+  // 'server' mode so /api/* routes run at request time. Every existing
+  // page opts back into prerendering via `export const prerender = true`
+  // so static build output is unchanged.
+  output: 'server',
+  adapter: cloudflare(),
   integrations: [
     react(),
     markdoc(),

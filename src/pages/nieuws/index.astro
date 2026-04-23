@@ -30,6 +30,8 @@ const categoryCounts = Object.fromEntries(
     sorted.filter(a => a.data.category === cat).length,
   ])
 ) as Record<NieuwsCategory, number>;
+
+export const prerender = true;
 ---
 
 <Layout

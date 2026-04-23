@@ -3,6 +3,9 @@ import type { APIContext } from 'astro';
 import { getCollection } from 'astro:content';
 import { getCategoryName } from '../lib/categories';
 
+
+export const prerender = true;
+
 export async function GET(context: APIContext) {
   const tools = await getCollection('tools', ({ data }) => !data.draft);
 

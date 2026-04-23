@@ -43,6 +43,8 @@ zakelijkTools.sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?
 // Count per function
 const fnCounts = new Map<string, number>();
 for (const s of sections) fnCounts.set(s.key, s.tools.length);
+
+export const prerender = true;
 ---
 
 <Layout

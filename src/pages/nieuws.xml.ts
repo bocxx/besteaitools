@@ -1,6 +1,9 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
 
+
+export const prerender = true;
+
 export async function GET(context: APIContext) {
   let features: any[] = [];
 

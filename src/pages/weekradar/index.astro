@@ -28,6 +28,8 @@ const formattedDate = genDate.toLocaleDateString('nl-NL', {
   day: 'numeric', month: 'long', year: 'numeric',
 });
 const weekNum = weekLabel.split('-w')[1];
+
+export const prerender = true;
 ---
 
 <Layout

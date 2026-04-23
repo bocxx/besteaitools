@@ -32,6 +32,8 @@ for (const [key, int] of Object.entries(integrationsTax)) {
 const integrationCategoryEntries = Object.entries(integrationCategories)
   .filter(([k]) => integrationsByCategory[k]?.length)
   .map(([k, c]) => ({ key: k, label: c.label, items: integrationsByCategory[k] }));
+
+export const prerender = true;
 ---
 
 <Layout
@@ -548,7 +550,22 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
       padding: 10px 12px;
       background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
       border-radius: 6px;
+      transition: background 0.3s ease;
     }
+    .result-card__reason.is-loading {
+      position: relative; opacity: 0.7;
+    }
+    .result-card__reason.is-loading::after {
+      content: ' ⌛';
+      animation: pulse 1.2s ease-in-out infinite;
+      display: inline-block;
+    }
+    .result-card__reason.llm-enhanced {
+      background: color-mix(in oklch, var(--primary-bright) 14%, transparent);
+      border-left: 2px solid var(--primary-bright);
+      padding-left: 14px;
+    }
+    @keyframes pulse { 50% { opacity: 0.4; } }
     .result-card__bars {
       display: flex; flex-direction: column; gap: 6px;
       margin-top: 14px; font-size: 0.8rem;
@@ -882,6 +899,14 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
         `<h3 class="result-section-heading">Alternatieven</h3>` +
         output.alternatives.map((r) => card(r, toolMap.get(r.slug)!, false)).join('');
 
+      // Fire LLM explanation enrichment in the background (optional; template reason
+      // stays put until the LLM response arrives, and survives if it never does).
+      if (output.top3.length > 0) {
+        enrichWithLlmExplanations(output.top3, toolMap, profile).catch((err) => {
+          console.warn('[match] LLM explain unavailable:', err);
+        });
+      }
+
       // Rejected
       rejectedCount.textContent = String(output.rejected.length);
       resultReject.innerHTML = output.rejected.map((r) => {
@@ -891,6 +916,80 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
       // Scroll to top
       window.scrollTo({ top: resultView.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    // ─── LLM explanation enrichment (Fase 2) ─────────────────
+    async function enrichWithLlmExplanations(
+      top3: MatchResult[],
+      toolMap: Map<string, Tool>,
+      profile: UserProfile,
+    ): Promise<void> {
+      // Show a subtle "enriching…" state on each card
+      document.querySelectorAll<HTMLElement>('.result-card.top .result-card__reason')
+        .forEach((el) => el.classList.add('is-loading'));
+
+      const payload = {
+        profile,
+        top3: top3.map((r) => {
+          const t = toolMap.get(r.slug);
+          return {
+            slug: r.slug,
+            name: t?.name ?? r.slug,
+            score: r.score,
+            rank: r.rank,
+            shortDescription: t?.shortDescription ?? '',
+            topFactors: Object.entries(r.breakdown)
+              .filter(([, b]: any) => b.weight > 0 && b.raw >= 60)
+              .sort((a: any, b: any) => b[1].weighted - a[1].weighted)
+              .slice(0, 3)
+              .map(([f]) => FACTOR_LABELS[f] ?? f),
+            setupTime: t?.setupTime,
+            outputLanguageQualityNl: t?.outputLanguageQualityNl,
+            beginnerFriendlyScore: t?.beginnerFriendlyScore,
+            hasFreePlan: t?.hasFreePlan,
+            startingPriceMonthly: t?.startingPriceMonthly,
+            dataUsedForTraining: t?.dataUsedForTraining,
+            euHostingAvailable: t?.euHostingAvailable,
+            typicalWeeklyTimeSaved: t?.typicalWeeklyTimeSaved,
+            verenigingSuitable: t?.verenigingSuitable,
+          };
+        }),
+      };
+
+      let response: Response;
+      try {
+        response = await fetch('/api/match-explain', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      } catch (err) {
+        clearEnrichState();
+        throw err;
+      }
+
+      if (!response.ok) {
+        clearEnrichState();
+        throw new Error(`/api/match-explain ${response.status}`);
+      }
+
+      const data = await response.json() as { explanations: string[] };
+      const cards = document.querySelectorAll<HTMLElement>('.result-card.top');
+      cards.forEach((cardEl, i) => {
+        const reasonEl = cardEl.querySelector<HTMLElement>('.result-card__reason');
+        if (!reasonEl) return;
+        reasonEl.classList.remove('is-loading');
+        const text = data.explanations[i];
+        if (text && text.trim()) {
+          reasonEl.textContent = text;
+          reasonEl.classList.add('llm-enhanced');
+        }
+      });
+    }
+
+    function clearEnrichState() {
+      document.querySelectorAll<HTMLElement>('.result-card__reason.is-loading')
+        .forEach((el) => el.classList.remove('is-loading'));
     }
 
     function card(r: any, tool: Tool, isTop: boolean): string {

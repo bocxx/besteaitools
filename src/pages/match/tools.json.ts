@@ -1,3 +1,6 @@
+
+export const prerender = true;
+
 /**
  * /match/tools.json — client-side tool dataset for the matching wizard.
  *
