@@ -59,6 +59,30 @@ export const prerender = true;
       <li data-step="5">Voorkeuren <span class="opt">(optioneel)</span></li>
     </ol>
 
+    <!-- Free-text shortcut (optioneel, gebruikt /api/match-parse) -->
+    <details class="freetext-block">
+      <summary>
+        <span class="freetext-icon">✨</span>
+        Geen zin in vragenlijst? Vertel het in één zin
+      </summary>
+      <div class="freetext-body">
+        <p class="step-hint">
+          Beschrijf jezelf in een paar zinnen. Wij vullen de vragenlijst alvast in — jij controleert.
+          <span class="muted small">(Voorbeeld: "Ik ben zzp-tekstschrijver, veel social posts, nooit AI gebruikt, max €20/mnd.")</span>
+        </p>
+        <textarea
+          id="freetext-input"
+          placeholder="Vertel over je werk, team, budget, taal-eisen..."
+          rows="3"
+          maxlength="2000"
+        ></textarea>
+        <div class="freetext-cta">
+          <button type="button" id="freetext-parse">Profiel voor mij invullen →</button>
+          <span class="freetext-status" id="freetext-status"></span>
+        </div>
+      </div>
+    </details>
+
     <form id="match-form" class="match-form" novalidate>
 
       <!-- ═════════════════════════ STEP 1 ═════════════════════════ -->
@@ -295,6 +319,56 @@ export const prerender = true;
     .match-subtitle {
       color: var(--text-secondary); font-size: 1.125rem; margin: 0 0 40px;
     }
+
+    .freetext-block {
+      margin: 0 0 32px;
+      padding: 14px 18px;
+      border: 1px dashed color-mix(in oklch, var(--primary-bright) 40%, var(--border-subtle));
+      border-radius: 10px;
+      background: color-mix(in oklch, var(--primary-bright) 3%, transparent);
+    }
+    .freetext-block > summary {
+      cursor: pointer; font-weight: 500; color: var(--text-primary);
+      list-style: none; display: flex; align-items: center; gap: 8px;
+    }
+    .freetext-block > summary::-webkit-details-marker { display: none; }
+    .freetext-block > summary::after {
+      content: '▸'; margin-left: auto; transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+    .freetext-block[open] > summary::after { transform: rotate(90deg); }
+    .freetext-icon { font-size: 1.1em; }
+    .freetext-body { margin-top: 14px; }
+    .freetext-body textarea {
+      width: 100%; padding: 12px 14px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      background: var(--bg-surface); color: var(--text-primary);
+      font-family: inherit; font-size: 0.95rem;
+      resize: vertical; min-height: 80px;
+    }
+    .freetext-body textarea:focus {
+      outline: 2px solid var(--primary-bright); outline-offset: 2px;
+    }
+    .freetext-cta {
+      display: flex; align-items: center; gap: 14px; margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .freetext-cta button {
+      padding: 10px 16px; border-radius: 8px;
+      background: var(--primary-bright); color: #000;
+      border: 1px solid var(--primary-bright);
+      font-weight: 500; cursor: pointer;
+      transition: transform 0.1s, opacity 0.15s;
+    }
+    .freetext-cta button:hover { transform: translateY(-1px); }
+    .freetext-cta button:disabled { opacity: 0.5; cursor: wait; transform: none; }
+    .freetext-status {
+      color: var(--text-secondary); font-size: 0.9rem;
+      flex: 1; min-width: 200px;
+    }
+    .freetext-status.is-error { color: var(--color-error); }
+    .freetext-status.is-success { color: var(--color-success); }
 
     .match-progress {
       list-style: none; padding: 0;
@@ -1090,6 +1164,71 @@ export const prerender = true;
     form.addEventListener('change', () => {
       updateConditionals();
       saveDraft(collectProfile());
+    });
+
+    // ─── Free-text parse (Fase 2) ─────────────────────────────
+    const freetextInput = document.getElementById('freetext-input') as HTMLTextAreaElement | null;
+    const freetextBtn = document.getElementById('freetext-parse') as HTMLButtonElement | null;
+    const freetextStatus = document.getElementById('freetext-status');
+
+    freetextBtn?.addEventListener('click', async () => {
+      if (!freetextInput || !freetextStatus) return;
+      const text = freetextInput.value.trim();
+      if (text.length < 10) {
+        freetextStatus.textContent = 'Schrijf minstens een volledige zin.';
+        freetextStatus.className = 'freetext-status is-error';
+        return;
+      }
+      freetextBtn.disabled = true;
+      freetextStatus.textContent = 'Bezig met lezen…';
+      freetextStatus.className = 'freetext-status';
+
+      try {
+        const res = await fetch('/api/match-parse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error ?? `Parse failed (${res.status})`);
+        }
+        const data = await res.json() as {
+          profile: Partial<UserProfile>;
+          interpretation: string;
+          confidence: number;
+        };
+
+        // Apply the parsed profile to the form
+        applyDraft(data.profile);
+        updateConditionals();
+        saveDraft(collectProfile());
+
+        // Show interpretation + advance to the first unanswered step
+        const fieldCount = Object.keys(data.profile).length;
+        if (fieldCount === 0) {
+          freetextStatus.textContent = `Niets kunnen afleiden — ${data.interpretation}`;
+          freetextStatus.className = 'freetext-status is-error';
+        } else {
+          const pct = Math.round(data.confidence * 100);
+          freetextStatus.textContent = `${data.interpretation} (zekerheid ${pct}%). Controleer + klik Verder.`;
+          freetextStatus.className = 'freetext-status is-success';
+          // Auto-advance to first step with a missing required field
+          const err1 = isStepValid(1);
+          const err2 = isStepValid(2);
+          const err3 = isStepValid(3);
+          if (!err1 && !err2 && !err3) showStep(3);
+          else if (!err1 && !err2) showStep(3);
+          else if (!err1) showStep(2);
+          else showStep(1);
+        }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Onbekende fout';
+        freetextStatus.textContent = `Kon niet lezen: ${msg}`;
+        freetextStatus.className = 'freetext-status is-error';
+      } finally {
+        freetextBtn.disabled = false;
+      }
     });
 
     function restoreChrome() {
