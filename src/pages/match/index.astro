@@ -259,6 +259,12 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
     <!-- ═════════════════════════ RESULT VIEW ═════════════════════════ -->
     <section id="match-result" hidden aria-live="polite">
+      <header class="result-hero">
+        <p class="result-hero__eyebrow">Top 3 voor jouw profiel</p>
+        <h2 class="result-hero__title" id="result-hero-title">Aanbevelingen</h2>
+        <p class="result-hero__profile" id="result-hero-profile"></p>
+        <div class="result-hero__conf" id="result-hero-confidence" hidden></div>
+      </header>
       <div id="result-followup" class="followup-box" hidden></div>
       <div id="result-top3"></div>
       <div id="result-alternatives"></div>
@@ -303,7 +309,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
     .match-progress li::before {
       content: counter(step);
       display: inline-flex; width: 22px; height: 22px;
-      border-radius: 50%; background: var(--surface);
+      border-radius: 50%; background: var(--bg-surface);
       border: 1px solid var(--border);
       align-items: center; justify-content: center;
       font-size: 0.75rem; font-weight: 600;
@@ -347,7 +353,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
       display: flex; align-items: flex-start; gap: 12px;
       padding: 14px; border: 1px solid var(--border);
       border-radius: 10px; cursor: pointer;
-      background: var(--surface);
+      background: var(--bg-surface);
       transition: border-color 0.15s, background 0.15s;
     }
     .radio-card:hover, .check-card:hover { border-color: var(--primary-bright); }
@@ -356,7 +362,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
     }
     .radio-card:has(input:checked), .check-card:has(input:checked) {
       border-color: var(--primary-bright);
-      background: color-mix(in oklch, var(--primary-bright) 10%, var(--surface));
+      background: color-mix(in oklch, var(--primary-bright) 10%, var(--bg-surface));
     }
     .radio-card div, .check-card span { display: flex; flex-direction: column; gap: 2px; }
     .radio-card .muted, .check-card .muted {
@@ -373,7 +379,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
     input[type="number"], select {
       padding: 10px 14px; border: 1px solid var(--border);
-      background: var(--surface); color: var(--text-primary);
+      background: var(--bg-surface); color: var(--text-primary);
       border-radius: 8px; font-size: 1rem; min-width: 240px;
     }
     input[type="number"]:focus, select:focus {
@@ -398,7 +404,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
     .ready-note {
       margin-top: 24px; padding: 12px 16px;
-      background: color-mix(in oklch, var(--color-success) 10%, var(--surface));
+      background: color-mix(in oklch, var(--color-success) 10%, var(--bg-surface));
       border-left: 3px solid var(--color-success);
       color: var(--text-secondary); font-size: 0.9rem;
       border-radius: 4px;
@@ -411,7 +417,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
     }
     .match-cta button {
       padding: 12px 20px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--surface);
+      border: 1px solid var(--border); background: var(--bg-surface);
       color: var(--text-primary); font-size: 1rem; font-weight: 500;
       cursor: pointer; transition: background 0.15s, border-color 0.15s;
     }
@@ -433,29 +439,78 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
     /* Result view */
     #match-result { animation: fadein 0.2s ease; }
+
+    .result-hero {
+      margin: 0 0 28px;
+      padding: 20px 0 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-hero__eyebrow {
+      margin: 0 0 8px; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .result-hero__title {
+      margin: 0 0 10px;
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.15;
+    }
+    .result-hero__profile {
+      margin: 0; color: var(--text-secondary); font-size: 1rem;
+    }
+    .result-hero__profile .chip {
+      display: inline-block; padding: 2px 10px; margin: 2px 4px 2px 0;
+      border-radius: 999px; font-size: 0.85rem;
+      background: color-mix(in oklch, var(--primary-bright) 14%, transparent);
+      color: var(--text-primary);
+      border: 1px solid color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    }
+    .result-hero__conf {
+      margin: 14px 0 0; padding: 10px 14px;
+      border-radius: 8px; font-size: 0.9rem;
+      background: color-mix(in oklch, var(--color-warning) 12%, var(--bg-surface));
+      border-left: 3px solid var(--color-warning);
+      color: var(--text-secondary);
+    }
+
     .followup-box {
       padding: 20px 24px; border-radius: 12px;
-      background: color-mix(in oklch, var(--color-warning) 15%, var(--surface));
+      background: color-mix(in oklch, var(--color-warning) 15%, var(--bg-surface));
       border-left: 4px solid var(--color-warning);
       margin-bottom: 24px;
     }
     .followup-box h3 { margin: 0 0 12px; font-family: 'Space Grotesk Variable', sans-serif; }
+    .followup-box p { margin: 0 0 4px; color: var(--text-secondary); }
     .followup-options { display: flex; gap: 12px; margin-top: 16px; }
     .followup-options button {
-      flex: 1; padding: 14px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--surface);
+      flex: 1; padding: 14px 18px; border-radius: 8px;
+      border: 1px solid color-mix(in oklch, var(--color-warning) 40%, var(--border));
+      background: var(--bg-surface);
       color: var(--text-primary); cursor: pointer;
-      text-align: left; font-size: 0.95rem;
+      text-align: left; font-size: 0.95rem; font-weight: 500;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
     }
-    .followup-options button:hover { border-color: var(--primary-bright); }
+    .followup-options button:first-child {
+      background: color-mix(in oklch, var(--color-warning) 18%, var(--bg-surface));
+      border-color: var(--color-warning);
+    }
+    .followup-options button:hover {
+      border-color: var(--primary-bright);
+      transform: translateY(-1px);
+    }
+    .followup-options button:active { transform: none; }
+    @media (max-width: 560px) {
+      .followup-options { flex-direction: column; }
+    }
 
     .result-card {
       padding: 20px 24px; border: 1px solid var(--border);
-      border-radius: 12px; margin-bottom: 16px; background: var(--surface);
+      border-radius: 12px; margin-bottom: 16px; background: var(--bg-surface);
     }
     .result-card.top { border-color: var(--primary-bright); }
     .result-card.top.rank-1 {
-      background: color-mix(in oklch, var(--primary-bright) 12%, var(--surface));
+      background: color-mix(in oklch, var(--primary-bright) 12%, var(--bg-surface));
     }
     .result-card__head {
       display: flex; justify-content: space-between; align-items: baseline;
@@ -464,8 +519,19 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
     .result-card__head h3 {
       margin: 0; font-family: 'Space Grotesk Variable', sans-serif;
     }
-    .result-card__head h3 a { color: inherit; text-decoration: none; }
-    .result-card__head h3 a:hover { text-decoration: underline; }
+    .result-card__head h3 a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px dashed transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .result-card__head h3 a:hover {
+      color: var(--primary-bright);
+      border-bottom-color: var(--primary-bright);
+    }
+    .result-card__head h3 a:focus-visible {
+      outline: 2px solid var(--primary-bright); outline-offset: 4px;
+      border-radius: 2px;
+    }
     .result-card__score {
       font-size: 1.5rem; font-weight: 700;
       color: var(--primary-bright); font-family: 'JetBrains Mono', monospace;
@@ -484,17 +550,44 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
       border-radius: 6px;
     }
     .result-card__bars {
-      display: grid; grid-template-columns: 130px 1fr auto;
-      gap: 6px 10px; margin-top: 14px; font-size: 0.8rem;
+      display: flex; flex-direction: column; gap: 6px;
+      margin-top: 14px; font-size: 0.8rem;
+    }
+    .result-card__bar-row {
+      display: grid; grid-template-columns: 130px 1fr 2.5em;
+      gap: 10px; align-items: center;
+    }
+    .result-card__bar-label { color: var(--text-secondary); }
+    .result-card__bar-value {
+      color: var(--text-muted); text-align: right;
+      font-family: 'JetBrains Mono', monospace;
     }
     .result-card__bar {
       height: 6px; border-radius: 3px;
-      background: var(--border); overflow: hidden;
-      align-self: center;
+      background: var(--border-subtle); overflow: hidden;
     }
     .result-card__bar > div {
       height: 100%; background: var(--primary-bright);
       transition: width 0.3s ease;
+    }
+    /* Mobile: stack as "label ... value / bar fullwidth" */
+    @media (max-width: 560px) {
+      .result-card__bar-row {
+        grid-template-columns: 1fr auto;
+        row-gap: 2px;
+      }
+      .result-card__bar-row .result-card__bar {
+        grid-column: 1 / -1;
+        order: 2;
+        margin-bottom: 4px;
+      }
+    }
+
+    .result-section-heading {
+      margin: 40px 0 16px;
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: 1.25rem; color: var(--text-secondary);
+      padding-top: 16px; border-top: 1px solid var(--border);
     }
 
     .rejected-block { margin-top: 40px; }
@@ -511,7 +604,7 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
     }
     .match-actions button {
       padding: 10px 16px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--surface);
+      border: 1px solid var(--border); background: var(--bg-surface);
       color: var(--text-primary); cursor: pointer;
     }
 
@@ -719,6 +812,38 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
 
       const toolMap = new Map(tools.map((t) => [t.slug, t]));
 
+      // ── Result hero: profile summary + confidence note ──
+      const heroTitle = document.getElementById('result-hero-title')!;
+      const heroProfile = document.getElementById('result-hero-profile')!;
+      const heroConf = document.getElementById('result-hero-confidence')!;
+
+      heroTitle.textContent = output.top3.length > 0
+        ? `Top ${Math.min(3, output.top3.length)} voor jouw profiel`
+        : 'Geen match op dit profiel';
+
+      const chips: string[] = [];
+      chips.push(`<span class="chip">${escapeHtml(SEGMENT_LABELS[profile.segment] ?? profile.segment)}</span>`);
+      for (const b of (profile.useCaseBuckets ?? []).slice(0, 3)) {
+        chips.push(`<span class="chip">${escapeHtml(BUCKET_LABELS[b] ?? b)}</span>`);
+      }
+      if (profile.aiComfort) {
+        chips.push(`<span class="chip">${escapeHtml(COMFORT_LABELS[profile.aiComfort] ?? profile.aiComfort)}</span>`);
+      }
+      if (profile.budget) {
+        chips.push(`<span class="chip">${escapeHtml(BUDGET_LABELS[profile.budget] ?? profile.budget)}</span>`);
+      }
+      if (profile.requireEuHosting) chips.push(`<span class="chip">EU-hosting</span>`);
+      heroProfile.innerHTML = chips.join(' ');
+
+      // Confidence banner (only for low-confidence with results showing)
+      if (output.suppressed && output.top3.length > 0) {
+        heroConf.innerHTML = `⚠️ <strong>Beperkte data</strong> — de top-3 ligt dicht bij elkaar en we weten weinig van jouw context. Beantwoord de vraag hieronder of verfijn je profiel (stap 4 & 5) voor een scherper advies.`;
+        heroConf.hidden = false;
+      } else {
+        heroConf.hidden = true;
+        heroConf.innerHTML = '';
+      }
+
       // Follow-up (one-shot — if user already answered once, skip)
       if (output.followUp && !followUpAsked) {
         const f = output.followUp;
@@ -747,14 +872,14 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
         resultFollowup.hidden = true;
       }
 
-      // Top 3
+      // Top 3 (heading lives in hero, just render cards)
       resultTop3.innerHTML = output.top3.length === 0
-        ? `<p class="muted">Geen tools passen bij dit profiel. Zie uitgefilterde lijst hieronder.</p>`
-        : `<h2>Top 3 voor jou</h2>` + output.top3.map((r) => card(r, toolMap.get(r.slug)!, true)).join('');
+        ? `<p class="muted" style="margin-top: 8px">Geen tools passen bij dit profiel. Zie uitgefilterde lijst hieronder.</p>`
+        : output.top3.map((r) => card(r, toolMap.get(r.slug)!, true)).join('');
 
       // Alternatives
       resultAlt.innerHTML = output.alternatives.length === 0 ? '' :
-        `<h3 style="margin-top:40px">Alternatieven</h3>` +
+        `<h3 class="result-section-heading">Alternatieven</h3>` +
         output.alternatives.map((r) => card(r, toolMap.get(r.slug)!, false)).join('');
 
       // Rejected
@@ -773,9 +898,11 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
         .filter(([, b]: any) => b.weight > 0)
         .sort((a: any, b: any) => b[1].weight - a[1].weight)
         .map(([factor, b]: any) => `
-          <span>${FACTOR_LABELS[factor] ?? factor}</span>
-          <span class="result-card__bar"><div style="width:${b.raw}%"></div></span>
-          <span class="muted">${b.raw}</span>
+          <div class="result-card__bar-row">
+            <span class="result-card__bar-label">${FACTOR_LABELS[factor] ?? factor}</span>
+            <span class="result-card__bar"><div style="width:${b.raw}%"></div></span>
+            <span class="result-card__bar-value">${b.raw}</span>
+          </div>
         `).join('');
 
       return `
@@ -803,6 +930,45 @@ const integrationCategoryEntries = Object.entries(integrationCategories)
       integrations: 'Integraties',
       security: 'Beveiliging',
       teamFit: 'Team-fit',
+    };
+
+    const SEGMENT_LABELS: Record<string, string> = {
+      zzp: 'ZZP',
+      mkb_klein: 'MKB klein (1-10)',
+      mkb_middel: 'MKB middel (10-50)',
+      vereniging: 'Vereniging',
+      stichting: 'Stichting',
+      overheid_klein: 'Kleine overheid',
+      onderwijs: 'Onderwijs',
+      enterprise: 'Enterprise',
+    };
+
+    const BUCKET_LABELS: Record<string, string> = {
+      social_content: 'Social content',
+      customer_mail: 'Klant-mails',
+      writing: 'Teksten schrijven',
+      images: 'Afbeeldingen',
+      scheduling: 'Agenda',
+      admin_finance: 'Administratie',
+      meetings: 'Vergaderingen',
+      data_analysis: 'Data',
+      customer_info: 'Klant-info',
+      code_web: 'Code / web',
+    };
+
+    const COMFORT_LABELS: Record<string, string> = {
+      never: 'Nieuw met AI',
+      tried_chatgpt: 'ChatGPT geprobeerd',
+      regular_1_2: '1-2 tools in gebruik',
+      power_user: 'Power-user',
+    };
+
+    const BUDGET_LABELS: Record<string, string> = {
+      free: 'Gratis',
+      under_20: '< €20/mnd',
+      under_50: '< €50/mnd',
+      under_200: '< €200/mnd',
+      any: 'Budget flexibel',
     };
 
     function escapeHtml(s: string): string {
