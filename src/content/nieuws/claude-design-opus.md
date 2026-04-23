@@ -64,6 +64,8 @@ De échte verschuiving zit niet in “nog een AI die slides kan maken”, maar i
 
 Met Claude Design worden die capabilities voor het eerst gebundeld rond één duidelijke use case: end‑to‑end ontwerpen. Van eerste user story tot klikbare demo en pitchdeck kan één en dezelfde AI-agent de lijn vasthouden, varianten testen en de gekozen richting uitwerken in meerdere form factors (site, deck, one-pager). Dit is een andere filosofie dan de huidige “prompt → afbeelding” tools: je bouwt een relatie met een AI die je product, merk en constraints over tijd leert kennen.
 
+Dezelfde agent-filosofie zit achter [Claude Cowork](/nieuws/claude-cowork-lancering), Anthropic's desktop-modus voor kenniswerkers — Claude Design richt zich op visuele output, Cowork op bestanden en workflows. Samen schetsen ze hoe Anthropic de schil rond het model per doelgroep verschillend invult.
+
 ## Wat betekent dit voor teams, bureaus en solo-makers?
 
 Voor productteams is het meest tastbare effect dat de “0 → 1”-fase in design veel sneller wordt. PM’s en founders kunnen binnen Claude Design functionele prototypes, storyboards en decks laten genereren die dicht tegen hun bestaande merk en componenten aanliggen, in plaats van generieke AI-mockups die designers later helemaal moeten heropbouwen.
