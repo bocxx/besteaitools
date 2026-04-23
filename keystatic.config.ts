@@ -17,6 +17,10 @@ import {
   fundingStages, timeToFirstValueOptions, setupComplexityLevels,
   learningCurveLevels, qualityLevels, companySizeFitOptions, useCaseStages,
   reviewMethods, pricingCurrencies,
+  // Matching-plan taxonomies
+  segments, useCaseBuckets, jtbds, integrations as integrationsTax,
+  dutchOutputQualityLevels, dataTrainingUseOptions, aiActRiskClasses,
+  vendorLockInRisks, setupTimeBuckets,
 } from './src/lib/tools-schema';
 
 const categoryOptions = Object.entries(toolCategories).map(([value, category]) => ({
@@ -96,6 +100,52 @@ const reviewMethodOpts = Object.entries(reviewMethods).map(([value, r]) => ({
 
 const pricingCurrencyOpts = Object.entries(pricingCurrencies).map(([value, c]) => ({
   label: c.label,
+  value,
+}));
+
+// ── Matching-plan option arrays ────────────────────────
+const segmentOpts = Object.entries(segments).map(([value, s]) => ({
+  label: s.label,
+  value,
+}));
+
+const useCaseBucketOpts = Object.entries(useCaseBuckets).map(([value, u]) => ({
+  label: u.label,
+  value,
+}));
+
+const jtbdOpts = Object.entries(jtbds).map(([value, j]) => ({
+  label: `${j.label} · ${j.bucket}`,
+  value,
+}));
+
+const integrationTaxOpts = Object.entries(integrationsTax).map(([value, i]) => ({
+  label: `${i.label} · ${i.category}`,
+  value,
+}));
+
+const dutchOutputQualityOpts = Object.entries(dutchOutputQualityLevels).map(([value, d]) => ({
+  label: d.label,
+  value,
+}));
+
+const dataTrainingUseOpts = Object.entries(dataTrainingUseOptions).map(([value, d]) => ({
+  label: d.label,
+  value,
+}));
+
+const aiActRiskOpts = Object.entries(aiActRiskClasses).map(([value, a]) => ({
+  label: a.label,
+  value,
+}));
+
+const vendorLockInOpts = Object.entries(vendorLockInRisks).map(([value, v]) => ({
+  label: v.label,
+  value,
+}));
+
+const setupTimeOpts = Object.entries(setupTimeBuckets).map(([value, s]) => ({
+  label: s.label,
   value,
 }));
 
@@ -538,6 +588,146 @@ export default config({
         }),
 
         // ── Laag 10: Functies (capabilities) ────────────────
+        // ============================================
+        // MATCHING-PLAN v2 VELDEN (§5b)
+        // ============================================
+
+        // ── Matching Laag 1: segment-fit ─────────────
+        matchSegments: fields.multiselect({
+          label: '[Match] Segmenten',
+          description: 'Voor welke segmenten is deze tool geschikt? (intake Laag 1)',
+          options: segmentOpts,
+        }),
+        idealTeamSize: fields.conditional(
+          fields.checkbox({ label: '[Match] Ideale teamgrootte instellen', defaultValue: false }),
+          {
+            false: fields.empty(),
+            true: fields.object({
+              min: fields.integer({ label: 'Minimum teamgrootte', validation: { min: 1 } }),
+              max: fields.integer({ label: 'Maximum teamgrootte', validation: { min: 1 } }),
+            }),
+          },
+        ),
+
+        // ── Matching Laag 2: use-cases & JTBDs ───────
+        useCaseBuckets: fields.multiselect({
+          label: '[Match] Use-case buckets',
+          description: 'Top-level use-case categorieën (Laag 2 intake).',
+          options: useCaseBucketOpts,
+        }),
+        matchJtbds: fields.multiselect({
+          label: '[Match] Jobs-to-be-done (controlled)',
+          description: 'Granulaire JTBDs; gekoppeld aan use-case buckets.',
+          options: jtbdOpts,
+        }),
+
+        // ── Matching Laag 4: constraints ─────────────
+        setupTime: fields.select({
+          label: '[Match] Setup-tijd',
+          description: 'Preferred over tijdToFirstValue + setupComplexity.',
+          options: [{ label: '— Niet ingevuld', value: '' }, ...setupTimeOpts],
+          defaultValue: '',
+        }),
+        outputLanguageQualityNl: fields.select({
+          label: '[Match] Kwaliteit Nederlandse output',
+          description: 'Hoe goed schrijft/spreekt de tool écht Nederlands?',
+          options: [{ label: '— Niet beoordeeld', value: '' }, ...dutchOutputQualityOpts],
+          defaultValue: '',
+        }),
+        dataUsedForTraining: fields.select({
+          label: '[Match] Data gebruikt voor training?',
+          description: 'AVG-kritisch: wordt klantdata gebruikt om het model te trainen?',
+          options: [{ label: '— Onbekend', value: '' }, ...dataTrainingUseOpts],
+          defaultValue: '',
+        }),
+        aiActRiskClass: fields.select({
+          label: '[Match] AI Act risico-klasse',
+          description: 'EU AI Act classificatie (voor overheid/HR).',
+          options: [{ label: '— Niet ingevuld', value: '' }, ...aiActRiskOpts],
+          defaultValue: '',
+        }),
+        vendorLockInRisk: fields.select({
+          label: '[Match] Vendor lock-in risico',
+          description: 'Hoe moeilijk is het om weg te migreren?',
+          options: [{ label: '— Niet ingevuld', value: '' }, ...vendorLockInOpts],
+          defaultValue: '',
+        }),
+        controlledIntegrations: fields.multiselect({
+          label: '[Match] Integraties (controlled)',
+          description: 'Controlled lijst; vrije-tekst "Integraties" blijft voor display.',
+          options: integrationTaxOpts,
+        }),
+
+        // ── Matching Laag 5: pricing structure ───────
+        priceTiers: fields.array(
+          fields.object({
+            name: fields.text({ label: 'Tier naam', description: 'Bv. "Starter", "Pro", "Business".' }),
+            eurPerMonth: fields.number({ label: '€ per maand', validation: { min: 0 } }),
+            perSeat: fields.checkbox({ label: 'Per gebruiker', defaultValue: false }),
+            features: fields.array(
+              fields.text({ label: 'Feature' }),
+              { label: 'Features', itemLabel: (p) => p.value || 'Feature' },
+            ),
+          }),
+          {
+            label: '[Match] Prijs-tiers',
+            description: 'Gestructureerd; vult gat tussen vrije-tekst "pricing" en numeriek "startingPriceMonthly".',
+            itemLabel: (p) => p.fields.name.value || 'Tier',
+          },
+        ),
+        freeTierLimits: fields.text({
+          label: '[Match] Gratis-tier limieten (JSON)',
+          description: 'Free-form JSON, bv. {"convs_per_day": 10, "export": false}. Laat leeg als n.v.t.',
+          multiline: true,
+        }),
+
+        // ── Matching UX & adoptie ────────────────────
+        beginnerFriendlyScore: fields.integer({
+          label: '[Match] Beginner-vriendelijkheid (1-10)',
+          description: 'Aparte score; gevorderden vinden Zapier easy, beginners niet.',
+          validation: { min: 1, max: 10 },
+        }),
+        typicalWeeklyTimeSaved: fields.text({
+          label: '[Match] Typische tijdwinst per week',
+          description: 'Bv. "2-4 uur/week voor tekst-taken".',
+          multiline: false,
+        }),
+        complementaryTools: fields.array(
+          fields.text({ label: 'Slug' }),
+          {
+            label: '[Match] Aanvullende tools',
+            description: 'Slugs van tools die goed samenwerken met deze.',
+            itemLabel: (p) => p.value || 'Slug',
+          },
+        ),
+        replacesTools: fields.array(
+          fields.text({ label: 'Slug of naam' }),
+          {
+            label: '[Match] Vervangt tools',
+            description: 'Tools die deze vervangt (sterke match-boost).',
+            itemLabel: (p) => p.value || 'Tool',
+          },
+        ),
+
+        // ── Vereniging-specifiek ─────────────────────
+        verenigingSuitable: fields.checkbox({
+          label: '[Match] Geschikt voor vereniging',
+          description: 'Expliciet goedgekeurd voor vrijwilligersorganisaties.',
+          defaultValue: false,
+        }),
+        verenigingNotes: fields.text({
+          label: '[Match] Notities vereniging',
+          description: 'Nuance bij de vereniging-flag.',
+          multiline: true,
+        }),
+
+        // ── Introductievolgorde ──────────────────────
+        toolIntroductionOrder: fields.text({
+          label: '[Match] Introductievolgorde (JSON)',
+          description: 'Per use-case bucket: volgorde (1 = start), bv. {"writing": 1, "images": 2}.',
+          multiline: true,
+        }),
+
         keyFeatures: fields.array(
           fields.object({
             title: fields.text({

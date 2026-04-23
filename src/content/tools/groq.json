@@ -55,5 +55,19 @@
   "bestUseCaseStage": "team-rollout",
   "verdict": "Groq levert ongeëvenaarde inferentiesnelheid via LPU-hardware — ideaal voor applicaties waar latency kritiek is. Beperkt modelaanbod, maar onverslagen op tokenssnelheid.",
   "whyListed": "Groq introduceert LPU-technologie als revolutionair alternatief voor GPU-inference en levert aantoonbaar de laagste latency beschikbaar voor tekst-LLM's.",
-  "bestAlternative": "fireworks-ai"
+  "bestAlternative": "fireworks-ai",
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "rest_api"
+  ]
 }

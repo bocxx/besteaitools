@@ -97,17 +97,84 @@
   "bestAlternative": "claude",
   "whyListed": "ChatGPT is de absolute marktleider en referentiepunt voor AI-assistenten. Met miljoenen gebruikers wereldwijd en continue updates blijft het de standaard waaraan andere tools worden gemeten.",
   "keyFeatures": [
-    { "title": "GPT-4o & GPT-5 modellen",     "description": "Modelkeuze met multimodale input en reasoning-varianten voor diepere taken.", "group": "core" },
-    { "title": "Custom GPTs",                 "description": "Bouw aangepaste assistenten met eigen instructies, kennis en acties \u2014 deelbaar in je org.", "group": "core" },
-    { "title": "Memory",                       "description": "ChatGPT onthoudt voorkeuren en context tussen gesprekken door.", "group": "core" },
-    { "title": "Tasks & Scheduled prompts",   "description": "Plan terugkerende prompts en reminders die automatisch worden uitgevoerd.", "group": "core", "badge": "nieuw" },
-    { "title": "Vision",                       "description": "Interpreteer afbeeldingen, schermafdrukken en documenten als onderdeel van het gesprek.", "group": "input" },
-    { "title": "Bestandsuploads",              "description": "Upload PDF's, spreadsheets, code en afbeeldingen voor analyse.", "group": "input" },
-    { "title": "Advanced Voice",               "description": "Real-time gesproken conversatie met natuurlijke intonatie en onderbrekingen.", "group": "input" },
-    { "title": "Canvas",                       "description": "Inline editor om teksten en code zij-aan-zij met de AI te bewerken.", "group": "output", "badge": "nieuw" },
-    { "title": "DALL\u00b7E 3 beeldgeneratie",          "description": "Genereer afbeeldingen direct vanuit het gesprek zonder aparte tool.", "group": "output" },
-    { "title": "Code interpreter",             "description": "Python-sandbox voor data-analyses, grafieken en bestandstransformaties.", "group": "output" },
-    { "title": "Web browsing",                 "description": "Zoekt live op het web met bronvermelding voor actuele informatie.", "group": "input" },
-    { "title": "Team & Enterprise",            "description": "SSO, audit logs, SCIM, GDPR-afspraken en zero-data-training voor organisaties.", "group": "enterprise" }
+    {
+      "title": "GPT-4o & GPT-5 modellen",
+      "description": "Modelkeuze met multimodale input en reasoning-varianten voor diepere taken.",
+      "group": "core"
+    },
+    {
+      "title": "Custom GPTs",
+      "description": "Bouw aangepaste assistenten met eigen instructies, kennis en acties — deelbaar in je org.",
+      "group": "core"
+    },
+    {
+      "title": "Memory",
+      "description": "ChatGPT onthoudt voorkeuren en context tussen gesprekken door.",
+      "group": "core"
+    },
+    {
+      "title": "Tasks & Scheduled prompts",
+      "description": "Plan terugkerende prompts en reminders die automatisch worden uitgevoerd.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Vision",
+      "description": "Interpreteer afbeeldingen, schermafdrukken en documenten als onderdeel van het gesprek.",
+      "group": "input"
+    },
+    {
+      "title": "Bestandsuploads",
+      "description": "Upload PDF's, spreadsheets, code en afbeeldingen voor analyse.",
+      "group": "input"
+    },
+    {
+      "title": "Advanced Voice",
+      "description": "Real-time gesproken conversatie met natuurlijke intonatie en onderbrekingen.",
+      "group": "input"
+    },
+    {
+      "title": "Canvas",
+      "description": "Inline editor om teksten en code zij-aan-zij met de AI te bewerken.",
+      "group": "output",
+      "badge": "nieuw"
+    },
+    {
+      "title": "DALL·E 3 beeldgeneratie",
+      "description": "Genereer afbeeldingen direct vanuit het gesprek zonder aparte tool.",
+      "group": "output"
+    },
+    {
+      "title": "Code interpreter",
+      "description": "Python-sandbox voor data-analyses, grafieken en bestandstransformaties.",
+      "group": "output"
+    },
+    {
+      "title": "Web browsing",
+      "description": "Zoekt live op het web met bronvermelding voor actuele informatie.",
+      "group": "input"
+    },
+    {
+      "title": "Team & Enterprise",
+      "description": "SSO, audit logs, SCIM, GDPR-afspraken en zero-data-training voor organisaties.",
+      "group": "enterprise"
+    }
+  ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "microsoft_365",
+    "slack",
+    "zapier",
+    "google_workspace"
   ]
 }

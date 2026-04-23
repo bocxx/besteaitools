@@ -56,5 +56,20 @@
   "bestUseCaseStage": "team-rollout",
   "verdict": "Intercom Fin lost klantenservice-tickets effectief op met hoge resolutiepercentages. Sterke integratie met de Intercom-suite, maar vereist een Intercom-abonnement.",
   "whyListed": "Intercom Fin is de meest succesvolle AI-klantenservice-agent voor bedrijven die Intercom al gebruiken, met bewezen hoge automatische resolutiepercentages.",
-  "bestAlternative": "zendesk-ai"
+  "bestAlternative": "zendesk-ai",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise"
+  ],
+  "idealTeamSize": {
+    "min": 2,
+    "max": 1000
+  },
+  "controlledIntegrations": [
+    "intercom",
+    "slack",
+    "salesforce",
+    "hubspot"
+  ]
 }

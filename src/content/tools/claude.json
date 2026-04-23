@@ -96,17 +96,84 @@
   "bestAlternative": "chatgpt",
   "whyListed": "Claude is de veiligheidsgerichte tegenhanger van ChatGPT, gebouwd voor enterprise-gebruik. Met zijn grote contextvenster en Constitutional AI is het de beste keuze voor gereguleerde sectoren.",
   "keyFeatures": [
-    { "title": "200k token contextvenster",  "description": "Verwerkt complete codebases, boekdelen of lange dossiers in \u00e9\u00e9n gesprek.", "group": "core" },
-    { "title": "Extended Thinking",           "description": "Claude denkt langer na v\u00f3\u00f3r een antwoord \u2014 betere redenering op complexe taken.", "group": "core", "badge": "nieuw" },
-    { "title": "Projects",                    "description": "Aangepaste werkruimtes met eigen instructies, kennisbestanden en gespreksgeschiedenis.", "group": "core" },
-    { "title": "Claude Apps",                 "description": "Desktop- en mobiele apps met lokale shortcuts en systeembrede toegang.", "group": "core" },
-    { "title": "Vision",                      "description": "Analyseert afbeeldingen, schermafdrukken, diagrammen en handgeschreven notities.", "group": "input" },
-    { "title": "Bestandsuploads",             "description": "PDF's, spreadsheets, Word-documenten en code-bestanden direct als context.", "group": "input" },
-    { "title": "Artifacts",                   "description": "Live preview van code, documenten en interactieve componenten naast het gesprek.", "group": "output", "badge": "nieuw" },
-    { "title": "Code execution",              "description": "Voert Python uit in een sandbox om analyses, grafieken en berekeningen te maken.", "group": "output" },
-    { "title": "Computer Use",                "description": "Claude bedient zelfstandig een computer: muis, toetsenbord en scherm (developer preview).", "group": "beta", "badge": "beta" },
-    { "title": "MCP-support",                 "description": "Model Context Protocol koppelt externe tools en databronnen aan Claude.", "group": "integration" },
-    { "title": "API & SDK",                   "description": "Anthropic API met TypeScript, Python en streaming voor productie-integraties.", "group": "integration" },
-    { "title": "Enterprise-beveiliging",      "description": "SOC 2 Type II, SSO, audit logs, DPA en zero-data-retention opties.", "group": "enterprise" }
+    {
+      "title": "200k token contextvenster",
+      "description": "Verwerkt complete codebases, boekdelen of lange dossiers in één gesprek.",
+      "group": "core"
+    },
+    {
+      "title": "Extended Thinking",
+      "description": "Claude denkt langer na vóór een antwoord — betere redenering op complexe taken.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Projects",
+      "description": "Aangepaste werkruimtes met eigen instructies, kennisbestanden en gespreksgeschiedenis.",
+      "group": "core"
+    },
+    {
+      "title": "Claude Apps",
+      "description": "Desktop- en mobiele apps met lokale shortcuts en systeembrede toegang.",
+      "group": "core"
+    },
+    {
+      "title": "Vision",
+      "description": "Analyseert afbeeldingen, schermafdrukken, diagrammen en handgeschreven notities.",
+      "group": "input"
+    },
+    {
+      "title": "Bestandsuploads",
+      "description": "PDF's, spreadsheets, Word-documenten en code-bestanden direct als context.",
+      "group": "input"
+    },
+    {
+      "title": "Artifacts",
+      "description": "Live preview van code, documenten en interactieve componenten naast het gesprek.",
+      "group": "output",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Code execution",
+      "description": "Voert Python uit in een sandbox om analyses, grafieken en berekeningen te maken.",
+      "group": "output"
+    },
+    {
+      "title": "Computer Use",
+      "description": "Claude bedient zelfstandig een computer: muis, toetsenbord en scherm (developer preview).",
+      "group": "beta",
+      "badge": "beta"
+    },
+    {
+      "title": "MCP-support",
+      "description": "Model Context Protocol koppelt externe tools en databronnen aan Claude.",
+      "group": "integration"
+    },
+    {
+      "title": "API & SDK",
+      "description": "Anthropic API met TypeScript, Python en streaming voor productie-integraties.",
+      "group": "integration"
+    },
+    {
+      "title": "Enterprise-beveiliging",
+      "description": "SOC 2 Type II, SSO, audit logs, DPA en zero-data-retention opties.",
+      "group": "enterprise"
+    }
+  ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "slack",
+    "zapier",
+    "google_workspace"
   ]
 }
