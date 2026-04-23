@@ -21,6 +21,34 @@ export const integrations = {
   visma: { label: 'Visma', category: 'accounting_nl' },
   yuki: { label: 'Yuki', category: 'accounting_nl' },
 
+  // Dutch payroll / HR
+  nmbrs: { label: 'Nmbrs', category: 'payroll_nl' },
+  employes: { label: 'Employes', category: 'payroll_nl' },
+  loket: { label: 'Loket.nl', category: 'payroll_nl' },
+
+  // Payments
+  ideal: { label: 'iDEAL', category: 'payments' },
+  mollie: { label: 'Mollie', category: 'payments' },
+  stripe: { label: 'Stripe', category: 'payments' },
+  paypal: { label: 'PayPal', category: 'payments' },
+
+  // E-commerce / website
+  wordpress: { label: 'WordPress', category: 'ecommerce' },
+  woocommerce: { label: 'WooCommerce', category: 'ecommerce' },
+  shopify: { label: 'Shopify', category: 'ecommerce' },
+  magento: { label: 'Magento', category: 'ecommerce' },
+
+  // Project management
+  asana: { label: 'Asana', category: 'project_mgmt' },
+  trello: { label: 'Trello', category: 'project_mgmt' },
+  clickup: { label: 'ClickUp', category: 'project_mgmt' },
+  jira: { label: 'Jira', category: 'project_mgmt' },
+  monday: { label: 'Monday.com', category: 'project_mgmt' },
+
+  // Messaging (NL klantcontact)
+  whatsapp_business: { label: 'WhatsApp Business', category: 'messaging' },
+  telegram: { label: 'Telegram', category: 'messaging' },
+
   // Office suites
   microsoft_365: { label: 'Microsoft 365', category: 'office' },
   google_workspace: { label: 'Google Workspace', category: 'office' },
@@ -100,18 +128,23 @@ export const integrationSchema = z.enum(integrationKeys);
 
 export const integrationCategories = {
   accounting_nl: { label: 'NL boekhouding / ERP' },
-  office: { label: 'Office suites' },
-  collab: { label: 'Samenwerking' },
-  crm: { label: 'CRM / Sales' },
-  marketing: { label: 'Marketing / E-mail' },
-  automation: { label: 'Automatisering' },
-  scheduling: { label: 'Agenda & planning' },
-  social: { label: 'Social media' },
-  dev: { label: 'Development' },
+  payroll_nl:    { label: 'NL payroll / HR' },
+  payments:      { label: 'Betaling' },
+  ecommerce:     { label: 'E-commerce / website' },
+  project_mgmt:  { label: 'Project management' },
+  messaging:     { label: 'Messaging / klantcontact' },
+  office:        { label: 'Office suites' },
+  collab:        { label: 'Samenwerking' },
+  crm:           { label: 'CRM / Sales' },
+  marketing:     { label: 'Marketing / E-mail' },
+  automation:    { label: 'Automatisering' },
+  scheduling:    { label: 'Agenda & planning' },
+  social:        { label: 'Social media' },
+  dev:           { label: 'Development' },
   membership_nl: { label: 'NL ledenadmin' },
-  video: { label: 'Video-bellen' },
-  support: { label: 'Support / ticketing' },
-  api: { label: 'Generieke API' },
+  video:         { label: 'Video-bellen' },
+  support:       { label: 'Support / ticketing' },
+  api:           { label: 'Generieke API' },
 } as const;
 
 export type IntegrationCategoryKey = keyof typeof integrationCategories;

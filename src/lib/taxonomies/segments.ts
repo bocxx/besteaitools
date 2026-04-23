@@ -149,3 +149,22 @@ export const scoringFactors = [
   'integrations', 'security', 'teamFit',
 ] as const;
 export type ScoringFactor = typeof scoringFactors[number];
+
+/**
+ * Verify every segment's defaultWeights sum to 1.0 (within FP tolerance).
+ * Runs at module load time. A typo in any segment → throws loudly instead
+ * of silently skewing scoring later.
+ */
+const WEIGHT_SUM_EPSILON = 0.0001;
+for (const [key, seg] of Object.entries(segments)) {
+  const sum = scoringFactors.reduce(
+    (acc, f) => acc + (seg.defaultWeights[f] ?? 0),
+    0,
+  );
+  if (Math.abs(sum - 1) > WEIGHT_SUM_EPSILON) {
+    throw new Error(
+      `Segment "${key}" defaultWeights sum to ${sum.toFixed(4)} — expected 1.0. ` +
+        `Fix src/lib/taxonomies/segments.ts.`,
+    );
+  }
+}
