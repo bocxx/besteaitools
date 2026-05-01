@@ -1,70 +1,15 @@
 {
-  "generated_at": "2026-05-01T05:38:09.868008",
+  "generated_at": "2026-05-01T13:59:13.289387",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 6,
     "for_news": 17,
-    "rejected_lang": 213,
+    "rejected_lang": 215,
     "already_covered": 0,
-    "total_scanned": 5627
+    "total_scanned": 5626
   },
   "for_tools": [
-    {
-      "source": "tweets:@rubenhassid",
-      "platform": "tweet",
-      "title": "The Anatomy of a Claude 4.6 Prompt:\n\n1. Task\n\nDefine what you want & what success looks like:\n\"I want to [TASK] so that [SUCCESS CRITERIA].\"\nNo roles, \"act as a",
-      "text": "The Anatomy of a Claude 4.6 Prompt:\n\n1. Task\n\nDefine what you want & what success looks like:\n\"I want to [TASK] so that [SUCCESS CRITERIA].\"\nNo roles, \"act as a senior expert.\" That era is over.\n\n2. Context Files\n\nUpload context files with your expertise and rules:\n\"First, read these files completely before responding: [filename .md] - [what it contains].\"\nAI went from reading a sticky note to an entire book. \nStop explaining yourself in the prompt. Put it in files.\n\n3. Reference\n\nShow AI exactly what you want. Upload an example.\nThen give patterns, tone & structure as rules. No \"give me somet",
-      "url": "https://twitter.com/rubenhassid/status/2027991271252320693",
-      "date": "2026-03-02",
-      "engagement": 7700.0,
-      "source_weight": 0.5,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "step by step",
-        "anatomy of",
-        "from scratch"
-      ],
-      "matched_tools": [
-        "claude",
-        "together ai",
-        "you.com"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "_author_bonus": 1.0,
-      "author": "rubenhassid",
-      "followers": 76218,
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "tweet"
-      ],
-      "score": 22.42,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 13.42,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 1.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "claude: een praktische gids voor de Nederlandse markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e227239cdff67de1"
-    },
     {
       "source": "tweets:@ihtesham2005",
       "platform": "tweet",
@@ -76,9 +21,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
+        "hands-on",
         "how to",
-        "build a",
-        "hands-on"
+        "build a"
       ],
       "matched_tools": [
         "together ai",
@@ -143,9 +88,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "guide",
         "build your",
-        "guide"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -163,7 +108,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "rubenhassid",
-      "followers": 76218,
+      "followers": 76512,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -200,9 +145,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
+        "guide",
         "build an",
-        "hands on",
-        "guide"
+        "hands on"
       ],
       "matched_tools": [
         "you.com"
@@ -253,8 +198,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "guide",
+        "how to",
         "build a"
       ],
       "matched_tools": [
@@ -297,6 +242,59 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "4b0208f97efbec87"
+    },
+    {
+      "source": "tweets:@NieceOfAnton",
+      "platform": "tweet",
+      "title": "The 26 prompts running inside 𝗖𝗹𝗮𝘂𝗱𝗲 𝗖𝗼𝗱𝗲 just got open-sourced. This is literally the entire brain of a $200/month AI coding tool. \n\nSomeone reverse-engineered",
+      "text": "The 26 prompts running inside 𝗖𝗹𝗮𝘂𝗱𝗲 𝗖𝗼𝗱𝗲 just got open-sourced. This is literally the entire brain of a $200/month AI coding tool. \n\nSomeone reverse-engineered every prompt from the accidentally published npm source and you can now study all of them for free.\nClaude Code uses 26 distinct prompts to function:\n\n1 system prompt (identity, safety, tool routing)\n11 tool prompts (shell, file ops, search, planning)\n5 agent prompts (explorer, architect, verifier, docs)\n4 memory prompts (summarization, session notes)\n1 coordinator prompt (multi-agent orchestration)\n4 utility prompts (titles, recaps, s",
+      "url": "https://twitter.com/NieceOfAnton/status/2039277883127103501",
+      "date": "2026-04-03",
+      "engagement": 1432.0,
+      "source_weight": 0.5,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "build an",
+        "from scratch",
+        "masterclass"
+      ],
+      "matched_tools": [
+        "you.com"
+      ],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "_author_bonus": 1.0,
+      "author": "NieceOfAnton",
+      "followers": 11554,
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "tweet"
+      ],
+      "score": 20.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 10.9,
+        "source_weight": 0.5,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 1.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Nieuw in you.com: wat het voor jou betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e44cc742e95f1d20"
     },
     {
       "source": "bluesky:@ompu.co",
@@ -498,7 +496,7 @@
       "text": "Jesus Christ, this is more dystopic than anything Philip K Dick ever wrote but it’s what the Russo Brothers want for your AI Slop future",
       "url": "https://bsky.app/profile/did:plc:cbhnuflsctq2s7mu4iqcuauq/post/3mkndnt7zg22z",
       "date": "2026-04-29",
-      "engagement": 6542.0,
+      "engagement": 6554.0,
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -609,7 +607,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "SoSoValueCrypto",
-      "followers": 1011865,
+      "followers": 1011883,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1002,7 +1000,7 @@
       "text": "Copy Fail",
       "url": "https://copy.fail/",
       "date": "2026-04-29",
-      "engagement": 1860.0,
+      "engagement": 1897.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1019,10 +1017,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.79,
+      "score": 16.82,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.29,
+        "engagement_log": 11.32,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1046,7 +1044,7 @@
       "text": "HERMES.md in commit messages causes requests to route to extra usage billing",
       "url": "https://github.com/anthropics/claude-code/issues/53262",
       "date": "2026-04-29",
-      "engagement": 1746.0,
+      "engagement": 1753.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1090,7 +1088,7 @@
       "text": "Ex-OpenAI board member Helen Toner says AI companies are \"deadly serious\" about building machines that outperform humans at everything and they don’t know if they’ll be able to control them.\n \nSo why hasn’t Congress taken meaningful action to regulate AI?",
       "url": "https://bsky.app/profile/did:plc:upw5n2uwhzubjajdtqaufsek/post/3mknvzi4z2c2v",
       "date": "2026-04-29",
-      "engagement": 2184.0,
+      "engagement": 2209.0,
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1109,10 +1107,10 @@
       "consensus_sources": [
         "bluesky"
       ],
-      "score": 16.53,
+      "score": 16.55,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.53,
+        "engagement_log": 11.55,
         "source_weight": 2.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
