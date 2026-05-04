@@ -92,6 +92,28 @@ const modifiedIso = toIsoString(modifiedTime);
 
     <title>{title}</title>
 
+    <!-- Theme persistence (inline to prevent flash) -->
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'light') {
+          var cs = document.querySelector('meta[name="color-scheme"]');
+          if (cs) cs.setAttribute('content', 'light');
+          var tc = document.querySelector('meta[name="theme-color"]');
+          if (tc) tc.setAttribute('content', '#fbf7f1');
+        }
+      })();
+      document.addEventListener('astro:after-swap', function () {
+        var stored = localStorage.getItem('theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        var tc = document.querySelector('meta[name="theme-color"]');
+        if (tc) tc.setAttribute('content', theme === 'light' ? '#fbf7f1' : '#0f0e0d');
+      });
+    </script>
+
     <!-- Umami Analytics -->
     <link rel="preconnect" href="https://cloud.umami.is" crossorigin />
     <link rel="dns-prefetch" href="https://cloud.umami.is" />
