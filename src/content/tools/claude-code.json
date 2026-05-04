@@ -57,15 +57,66 @@
   "whyListed": "Claude Code zet de standaard voor agentic coding — een agent die zelfstandig door een codebase navigeert, plannen maakt en wijzigingen doorvoert.",
   "bestAlternative": "cursor",
   "keyFeatures": [
-    { "title": "Terminal-native agent",       "description": "Draait direct in je terminal \u2014 geen IDE-plugin, geen nieuwe editor nodig.", "group": "core" },
-    { "title": "Multi-step planning",         "description": "Bouwt een plan, voert stappen uit en past aan op basis van tussenresultaten.", "group": "core" },
-    { "title": "Codebase-navigatie",          "description": "Leest en doorzoekt bestaande projecten zelfstandig om context op te bouwen.", "group": "core" },
-    { "title": "Sessies",                     "description": "Blijvende conversatiegeschiedenis per project, zodat het werk voortzet waar je stopte.", "group": "core" },
-    { "title": "Vision (screenshots)",        "description": "Plak schermafdrukken of ontwerpen in en laat Claude ze in code vertalen.", "group": "input" },
-    { "title": "Bash-uitvoering",             "description": "Voert tests, builds en scripts uit in je lokale omgeving met expliciete goedkeuring.", "group": "output" },
-    { "title": "File edits",                  "description": "Maakt, wijzigt en verwijdert bestanden met duidelijke diffs ter review.", "group": "output" },
-    { "title": "Git-integratie",              "description": "Stelt commits, branches en pull-request-beschrijvingen automatisch op.", "group": "integration" },
-    { "title": "MCP-support",                 "description": "Koppel externe tools en databronnen via het Model Context Protocol.", "group": "integration" },
-    { "title": "Modelkeuze Sonnet/Opus",      "description": "Wissel tussen snel (Sonnet) en grondig (Opus) afhankelijk van de taakcomplexiteit.", "group": "core" }
+    {
+      "title": "Terminal-native agent",
+      "description": "Draait direct in je terminal — geen IDE-plugin, geen nieuwe editor nodig.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-step planning",
+      "description": "Bouwt een plan, voert stappen uit en past aan op basis van tussenresultaten.",
+      "group": "core"
+    },
+    {
+      "title": "Codebase-navigatie",
+      "description": "Leest en doorzoekt bestaande projecten zelfstandig om context op te bouwen.",
+      "group": "core"
+    },
+    {
+      "title": "Sessies",
+      "description": "Blijvende conversatiegeschiedenis per project, zodat het werk voortzet waar je stopte.",
+      "group": "core"
+    },
+    {
+      "title": "Vision (screenshots)",
+      "description": "Plak schermafdrukken of ontwerpen in en laat Claude ze in code vertalen.",
+      "group": "input"
+    },
+    {
+      "title": "Bash-uitvoering",
+      "description": "Voert tests, builds en scripts uit in je lokale omgeving met expliciete goedkeuring.",
+      "group": "output"
+    },
+    {
+      "title": "File edits",
+      "description": "Maakt, wijzigt en verwijdert bestanden met duidelijke diffs ter review.",
+      "group": "output"
+    },
+    {
+      "title": "Git-integratie",
+      "description": "Stelt commits, branches en pull-request-beschrijvingen automatisch op.",
+      "group": "integration"
+    },
+    {
+      "title": "MCP-support",
+      "description": "Koppel externe tools en databronnen via het Model Context Protocol.",
+      "group": "integration"
+    },
+    {
+      "title": "Modelkeuze Sonnet/Opus",
+      "description": "Wissel tussen snel (Sonnet) en grondig (Opus) afhankelijk van de taakcomplexiteit.",
+      "group": "core"
+    }
+  ],
+  "headlineValueProp": "Anthropic's terminal-first coding agent — Claude die zelfstandig code leest, schrijft en draait",
+  "primaryJobsToBeDone": [
+    "Een feature volledig implementeren door Claude in je terminal taken te laten uitvoeren",
+    "Bestaande codebases doorgronden door Claude rond te laten lezen",
+    "Refactors of migraties uitvoeren over veel bestanden tegelijk"
+  ],
+  "antiUseCases": [
+    "Pure inline autocomplete in een editor — Cursor of Copilot zijn daar voor",
+    "Teams die geen CLI-affiniteit hebben",
+    "Workflows met strikte sandbox-eisen waar terminal-toegang geen optie is"
   ]
 }

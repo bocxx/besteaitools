@@ -17,6 +17,7 @@ import type {
 import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
 import { businessFunctions } from './tools-schema';
 import { isExcludedTool } from '../config/excluded-tools';
+import { scrubStatsForRelevance } from './stats-relevance';
 
 // ============================================
 // STATS LOADER
@@ -186,10 +187,22 @@ export async function getAllTools(): Promise<Tool[]> {
   return contentEntries
     .filter((entry) => !isExcludedTool(entry.id))
     .map((entry) => {
+      const aliasSlugs = (entry.data.mentionAliases ?? []).flatMap((a) => [a, toStatsSlug(a)]);
+      const rawStats = statsMap.get(entry.id)
+        ?? statsMap.get(toStatsSlug(entry.id))
+        ?? aliasSlugs.map((s) => statsMap.get(s)).find(Boolean);
+      const stats = rawStats
+        ? scrubStatsForRelevance(rawStats, [
+            entry.data.name,
+            entry.id,
+            toStatsSlug(entry.id),
+            ...(entry.data.mentionAliases ?? []),
+          ])
+        : undefined;
       const base = {
         ...entry.data,
         slug: entry.id,
-        stats: statsMap.get(entry.id) ?? statsMap.get(toStatsSlug(entry.id)),
+        stats,
       };
       return { ...base, scores: computeScores(base) };
     });

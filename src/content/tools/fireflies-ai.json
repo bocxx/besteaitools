@@ -3,17 +3,19 @@
   "category": "productivity",
   "websiteUrl": "https://fireflies.ai",
   "shortDescription": "AI-notulist die vergaderingen transcribeert, samenvat en taken koppelt aan je tools",
+  "headlineValueProp": "AI-notulist die meedraait in elke meeting en automatisch taken naar je CRM of projecttool stuurt",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [
-    "meetings",
-    "notulen",
-    "transcriptie",
-    "taakbeheer"
-  ],
+  "tags": ["meetings", "notulen", "transcriptie", "taakbeheer"],
+  "mentionAliases": ["fireflies", "fireflies ai"],
   "draft": false,
-  "longDescription": "Fireflies.ai neemt automatisch deel aan je vergaderingen, maakt transcripties, genereert samenvattingen en extraheert taken die je kunt koppelen aan Asana, ClickUp, Jira of andere projecttools. Ondersteunt 60+ talen.",
-  "bestFor": "Teams die meeting-output automatisch willen omzetten in taken en opvolging in hun bestaande projecttools.",
+  "longDescription": "Fireflies.ai neemt automatisch deel aan je vergaderingen op Zoom, Teams of Google Meet, maakt transcripties, genereert samenvattingen en extraheert actiepunten die je direct kunt koppelen aan Asana, ClickUp, Jira, HubSpot of Salesforce. Ondersteunt 60+ talen waaronder Nederlands. De bot is opt-in per meeting.",
+  "bestFor": "Sales- en klantteams die meeting-output automatisch willen omzetten in CRM-updates en taken in hun bestaande projecttools.",
+  "primaryJobsToBeDone": [
+    "Een AI-notulist laten meedraaien in Zoom, Teams of Meet zonder handmatig op record te drukken",
+    "Actiepunten uit een gesprek automatisch in CRM of projecttool zetten",
+    "Een doorzoekbaar archief opbouwen van alle klantgesprekken"
+  ],
   "useCases": [
     "Automatische meeting transcriptie (60+ talen)",
     "Samenvattingen en kernpunten genereren",
@@ -29,40 +31,54 @@
     "Bot moet toegelaten worden tot vergadering",
     "Premium features vereisen betaald plan"
   ],
+  "antiUseCases": [
+    "Vertrouwelijke gesprekken waar een externe bot niet welkom is",
+    "Solo-gebruik zonder CRM/project-integratie — Otter.ai is daar lichter",
+    "Strikte EU data-residency vereisten — primair US-infra"
+  ],
   "pricing": "Gratis basistier, Pro vanaf $18/gebruiker/maand",
   "openSource": false,
-  "businessFunctions": [
-    "operations",
-    "sales",
-    "marketing"
-  ],
+  "businessFunctions": ["operations", "sales", "marketing"],
   "deploymentType": "saas",
   "dataResidency": "us",
-  "targetAudience": [
-    "mkb",
-    "enterprise",
-    "solo",
-    "freelancer"
-  ],
+  "targetAudience": ["mkb", "enterprise", "solo", "freelancer"],
   "nlSupport": true,
-  "integrations": [
-    "Zoom",
-    "Teams",
-    "Google Meet",
-    "Slack",
-    "Asana",
-    "ClickUp",
-    "Jira",
-    "HubSpot",
-    "Salesforce"
-  ],
-  "companySizeFit": [
-    "solo",
-    "small",
-    "medium"
-  ],
+  "integrations": ["Zoom", "Teams", "Google Meet", "Slack", "Asana", "ClickUp", "Jira", "HubSpot", "Salesforce"],
+  "companySizeFit": ["solo", "small", "medium"],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Fireflies.ai automatiseert meeting-notities en actiepunten effectief. Goede integraties met CRM en projectmanagement-tools. Solide keuze voor remote en hybride teams.",
-  "whyListed": "Fireflies.ai is een van de meest gebruikte AI-meeting-assistenten, populair bij sales- en klantteams voor automatische CRM-updates na meetings.",
+  "keyFeatures": [
+    {
+      "title": "Automatische transcriptie",
+      "description": "Transcribeert audio-opnames naar tekst met hoge nauwkeurigheid",
+      "group": "core"
+    },
+    {
+      "title": "Samenvatting",
+      "description": "Genereert automatisch samenvattingen van gesprekken",
+      "group": "core"
+    },
+    {
+      "title": "Actiepunten",
+      "description": "Identificeert en genereert actiepunten uit gesprekken",
+      "group": "core"
+    },
+    {
+      "title": "Integraties",
+      "description": "Integreert met populaire vergaderapps zoals Teams, Zoom en Google Calendar",
+      "group": "integration"
+    },
+    {
+      "title": "Mobiele app",
+      "description": "Biedt een mobiele app voor opnemen en bekijken van transcripties onderweg",
+      "group": "input"
+    },
+    {
+      "title": "Enterprise-functies",
+      "description": "Biedt enterprise-functies zoals SSO, audit logging en data residency",
+      "group": "enterprise"
+    }
+  ],
+  "verdict": "Fireflies.ai sluit aan bij vrijwel elk meeting-platform, transcribeert en koppelt de samenvatting aan je CRM. Sterk voor sales-teams; Otter heeft een schonere ervaring voor solo-gebruik.",
+  "whyListed": "Fireflies werd een van de meest gebruikte meeting-AIs door de combinatie van brede platform-coverage en CRM-integraties.",
   "bestAlternative": "otter-ai"
 }
