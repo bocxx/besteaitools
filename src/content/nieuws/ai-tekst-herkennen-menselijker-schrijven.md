@@ -33,7 +33,7 @@ faq:
     a: "Het idee — een referentiebestand met anti-patronen en een korte instructie-prompt — werkt bij elke assistent die file-uploads ondersteunt. ChatGPT (Custom Instructions of Project files), Gemini (Gems) en Copilot (systeemprompts) kunnen vergelijkbare gedragingen vasthouden. Claude blinkt vooral uit doordat de file-context structureel beschikbaar blijft binnen Cowork of Projects, zonder dat je per sessie opnieuw moet uploaden."
   - q: "Is alle AI-tekst slecht? Wanneer is de standaard-stem juist OK?"
     a: "Voor neutrale samenvattingen, productbeschrijvingen, juridische standaardteksten en SEO-geoptimaliseerde listicles werkt de standaard-stem prima — en valt hij vaak minder op dan in opiniestukken of persoonlijke posts. De vraag is niet of je AI gebruikt, maar of de tekst de toon heeft die jij voor dit specifieke stuk wilt. Bewust kiezen scheelt — soms zet je het anti-AI-bestand uit omdat de neutrale toon nu juist past."
-heroImage: "/images/nieuws/ai-tekst-herkennen-menselijker-schrijven.webp"
+heroImage: ""
 ---
 
 Lezers spotten AI-tekst tegenwoordig binnen drie zinnen. Niet omdat ze tools draaien, maar omdat ze de patronen herkennen: dezelfde overdrachtelijke woorden, dezelfde holle bijzinnen, hetzelfde ritme. Wikipedia bundelde de bekendste tells in een artikel 'Signs of AI writing', en AI-schrijver Ruben Hassid bouwde er een prompt-workflow omheen die Claude weer laat klinken zoals jij. Zo werkt het — en zo bouw je hem zelf in een paar minuten.
