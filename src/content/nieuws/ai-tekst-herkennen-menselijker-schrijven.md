@@ -4,7 +4,7 @@ description: "Wikipedia publiceerde een lijst van AI-schrijftells, en Ruben Hass
 publishedAt: 2026-05-04
 updatedAt: 2026-05-04
 author: "Redactie"
-category: "tutorial"
+category: "gids"
 tags:
   - "ai-tekst"
   - "anti-ai-writing"

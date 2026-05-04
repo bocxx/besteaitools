@@ -46,7 +46,4 @@ export default defineConfig({
       external: ['set-cookie-parser'],
     },
   },
-  experimental: {
-    svgo: true
-  }
 });

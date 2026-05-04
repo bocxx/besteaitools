@@ -4,7 +4,7 @@ description: "Claude instellen voelt overweldigend tot je weet hoe je het stap v
 publishedAt: 2026-05-04
 updatedAt: 2026-05-04
 author: "Redactie"
-category: "tutorial"
+category: "gids"
 tags:
   - "claude"
   - "cowork"
