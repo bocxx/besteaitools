@@ -1,6 +1,6 @@
 ---
 /**
- * /digest — AI Tools Digest hub
+ * /digest — AI Tools Radar hub
  *
  * Lists all daily digests (newest first). Always indexable — this is
  * the canonical landing page for digest content and should carry
@@ -29,8 +29,8 @@ const fmtDate = (d: Date) =>
 ---
 
 <Layout
-  title="AI Tools Digest — Dagelijks overzicht van launches & updates | debesteaitools.nl"
-  description={`${total} dagelijkse AI-tools digests: nieuwe launches, feature-updates en deep-dive kandidaten. Automatisch samengesteld uit Product Hunt, Hacker News, Reddit en meer.`}
+  title="AI Tools Radar — Dagelijks overzicht van launches & updates | debesteaitools.nl"
+  description={`${total} edities van de AI Tools Radar: nieuwe launches, feature-updates en deep-dive kandidaten. Automatisch samengesteld uit Product Hunt, Hacker News, Reddit en meer.`}
 >
   <main class="container container-wide" style="padding-top: 80px;">
 
@@ -40,7 +40,7 @@ const fmtDate = (d: Date) =>
     </a>
 
     <header class="page-header">
-      <h1 class="page-header__title">AI Tools Digest</h1>
+      <h1 class="page-header__title">AI Tools Radar</h1>
       <p class="page-header__subtitle">
         Dagelijkse radar van <strong>launches</strong>, <strong>feature-updates</strong> en <strong>deep-dive kandidaten</strong> in AI-tools-land. Automatisch samengesteld uit Product Hunt, Hacker News, Reddit, X en Bluesky.
       </p>
@@ -54,7 +54,7 @@ const fmtDate = (d: Date) =>
     </header>
 
     {latest && (
-      <section class="latest-card" aria-label="Meest recente digest">
+      <section class="latest-card" aria-label="Meest recente Tools Radar">
         <div class="latest-card__label">
           <Calendar size={14} stroke-width={1.5} />
           Meest recent — {fmtDate(latest.data.date)}

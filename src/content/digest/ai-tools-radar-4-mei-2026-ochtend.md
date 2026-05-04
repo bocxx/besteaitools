@@ -1,6 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Claude · Grok (Ochtend 4 mei)
-description: 'AI Tools Digest 4 mei: 115 launches, 122 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 4 mei: 115 launches, 122 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-04'
 timeSlot: tools-digest
 featured: []

@@ -1,6 +1,6 @@
 ---
 title: AI Tools Radar – DeepSeek · You.com · ChatGPT (Middag 28 april)
-description: 'AI Tools Digest 28 april: 139 launches, 86 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 28 april: 139 launches, 86 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-28'
 timeSlot: tools-digest
 featured: []

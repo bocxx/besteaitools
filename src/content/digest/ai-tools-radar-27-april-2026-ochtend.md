@@ -1,6 +1,6 @@
 ---
 title: AI Tools Radar – Claude · ChatGPT · Grok (Ochtend 27 april)
-description: 'AI Tools Digest 27 april: 137 launches, 78 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 27 april: 137 launches, 78 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-27'
 timeSlot: tools-digest
 featured: []

@@ -1,6 +1,6 @@
 ---
 /**
- * /digest/[slug] — Individual AI Tools Digest
+ * /digest/[slug] — Individual AI Tools Radar
  *
  * Layout: editorial dashboard for fast scanning.
  *  - Hero: one title, one subtitle, one metadata row, 3 counters.
@@ -157,7 +157,7 @@ const breadcrumbJsonLd = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'AI Tools Digest',
+      name: 'AI Tools Radar',
       item: `${siteConfig.url}/digest`,
     },
     { '@type': 'ListItem', position: 3, name: entry.data.title, item: canonicalUrl },
@@ -408,7 +408,7 @@ const breadcrumbJsonLd = {
       )}
 
       {(prev || next) && (
-        <nav class="digest__pager" aria-label="Digest navigatie">
+        <nav class="digest__pager" aria-label="Tools Radar navigatie">
           {prev ? (
             <a href={`/digest/${prev.id}`} class="pager__link pager__link--prev" rel="prev">
               <ChevronLeft size={14} stroke-width={1.5} />

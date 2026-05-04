@@ -1,6 +1,6 @@
 ---
 title: AI Tools Radar – DeepSeek · You.com · Grok (Ochtend 3 mei)
-description: 'AI Tools Digest 3 mei: 123 launches, 117 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 3 mei: 123 launches, 117 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-03'
 timeSlot: tools-digest
 featured: []

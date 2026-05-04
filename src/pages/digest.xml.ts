@@ -10,7 +10,7 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: 'AI Tools Digest — debesteaitools.nl',
+    title: 'AI Tools Radar — debesteaitools.nl',
     description:
       'Dagelijks AI-tools overzicht: nieuwe launches, feature-updates en deep-dive kandidaten uit Product Hunt, Hacker News, Reddit, X en Bluesky.',
     site: context.site ?? 'https://debesteaitools.nl',

@@ -1,7 +1,7 @@
 ---
 
 title: AI Tools Radar – Claude · ChatGPT · MCP (Middag 23 april)
-description: 'AI Tools Digest 23 april: 134 launches, 63 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 23 april: 134 launches, 63 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-23'
 timeSlot: tools-digest
 featured: []

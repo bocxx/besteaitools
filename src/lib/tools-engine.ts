@@ -451,6 +451,16 @@ export async function getWeeklyHighlights(): Promise<WeeklyHighlights> {
 // LAUNCH RADAR
 // ============================================
 
+/** Stats sub-object on a launch item (aggregated at pipeline time) */
+export interface LaunchItemStats {
+  points?: number;
+  followers?: number;
+  stars?: number;
+  total_stars?: number;
+  day_rank?: number;
+  launch_count?: number;
+}
+
 export interface LaunchItem {
   name: string;
   description: string;
@@ -467,6 +477,38 @@ export interface LaunchItem {
   hn_url?: string;
   /** Product Hunt stats (merged from ph_launch_stats.json at build time) */
   ph?: ProductHuntStats;
+  /** Aggregated stats from pipeline */
+  stats?: LaunchItemStats;
+  /** Dutch description (from enrichment) */
+  description_nl?: string;
+  /** Pre-formatted display description */
+  display_description?: string;
+  /** Dutch source label */
+  source_label_nl?: string;
+  /** Pre-formatted display source label */
+  display_source_label?: string;
+  /** Category slug */
+  category?: string;
+  /** Dutch category label */
+  category_nl?: string;
+  /** Number of comments (HN) */
+  num_comments?: number;
+  /** Previous launches on PH */
+  previous_launches?: { date: string; points: number }[];
+  /** Website URL (distinct from the launch/source URL) */
+  website_url?: string;
+  /** PH tagline */
+  tagline?: string;
+  /** PH direct post URL */
+  product_hunt_url?: string;
+  /** Whether PH enrichment was applied */
+  product_hunt_enriched?: boolean;
+  /** PH day rank (top-level, also in stats) */
+  day_rank?: number;
+  /** PH followers (top-level, also in stats) */
+  followers?: number;
+  /** PH launch count (top-level, also in stats) */
+  launch_count?: number;
 }
 
 export interface LaunchRadarData {
@@ -542,9 +584,9 @@ export async function getLaunchRadarViewData(): Promise<LaunchRadarViewData | nu
     const points = stats.points ?? launch.points ?? 0;
     const followers = stats.followers ?? 0;
     const stars = stats.stars ?? launch.stars ?? 0;
-    const totalStars = stats.totalstars ?? launch.totalstars ?? 0;
-    const dayRank = stats.dayrank ?? launch.dayrank ?? 0;
-    const riskBonus = (launch.riskflags?.length ?? 0) * 3;
+    const totalStars = stats.total_stars ?? launch.total_stars ?? 0;
+    const dayRank = stats.day_rank ?? launch.day_rank ?? 0;
+    const riskBonus = (launch.risk_flags?.length ?? 0) * 3;
 
     return (
       points * 3 +

@@ -28,7 +28,7 @@ export const siteConfig = {
     main: [
       { label: "Weekradar", href: "/weekradar" },
       { label: "Launch Radar", href: "/launch-radar" },
-      { label: "Digest", href: "/digest" },
+      { label: "Tools Radar", href: "/digest" },
       { label: "Nieuws", href: "/nieuws" },
       { label: "Vergelijk", href: "/vergelijk" },
       { label: "Zakelijk", href: "/zakelijk" },

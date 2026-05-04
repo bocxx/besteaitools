@@ -1,6 +1,6 @@
 ---
 title: AI Tools Radar – DeepSeek · ChatGPT · Grok (Middag 25 april)
-description: 'AI Tools Digest 25 april: 140 launches, 78 feature-updates, 6 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 25 april: 140 launches, 78 feature-updates, 6 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-25'
 timeSlot: tools-digest
 featured: []
