@@ -1,7 +1,18 @@
 ---
 import Badge from '../atoms/Badge.astro';
 import { toolCategories } from '../../lib/tools-schema';
-import { Zap, Minus, ExternalLink, RefreshCw, TrendingUp, Rocket } from '@lucide/astro';
+import { Zap, Minus, ExternalLink, RefreshCw, TrendingUp, Rocket, Star } from '@lucide/astro';
+
+// ─── 0. Radar-wide stats (mini sentiment bar) ────────────────────────
+let radarStats = { tracked: 0, rising: 0, launches: 0 };
+let radarTools: any[] = [];
+try {
+  const raw = await import('../../data/reports/ai_tools_radar.json');
+  const radar: any = raw.default ?? raw;
+  radarTools = radar.tools ?? [];
+  radarStats.tracked = radarTools.length;
+  radarStats.rising = radarTools.filter((t: any) => t.trend_direction === 'rising').length;
+} catch {}
 
 // ─── 1. Feature updates (tool_feature_news.json) ─────────────────────
 let featureNews: any = { features: [], generated_at: null };
@@ -22,7 +33,7 @@ const features = [...(featureNews.features ?? [])]
 
 const FEATURES_INITIAL = 5;
 
-// ─── 2. Rising tools (ai_tools_radar.json) ───────────────────────────
+// ─── 2. Rising tools (re-uses radarTools loaded above) ───────────────
 type RadarTool = {
   slug: string;
   name?: string;
@@ -31,19 +42,35 @@ type RadarTool = {
   velocity?: number;
   buzz_score?: number;
   mentions?: number;
+  github_top_repos?: { repo: string; stars_today: number; description?: string }[];
 };
 
-let risingTools: RadarTool[] = [];
-try {
-  const raw = await import('../../data/reports/ai_tools_radar.json');
-  const radar: any = raw.default ?? raw;
-  risingTools = (radar.tools ?? [])
-    .filter((t: RadarTool) => t.trend_direction === 'rising' && (t.velocity ?? 0) > 0)
-    .sort((a: RadarTool, b: RadarTool) => (b.velocity ?? 0) - (a.velocity ?? 0))
-    .slice(0, 3);
-} catch {
-  // no data yet
+const risingTools: RadarTool[] = radarTools
+  .filter((t: RadarTool) => t.trend_direction === 'rising' && (t.velocity ?? 0) > 0)
+  .sort((a: RadarTool, b: RadarTool) => (b.velocity ?? 0) - (a.velocity ?? 0))
+  .slice(0, 3);
+
+// ─── 2b. GitHub trending repos (deduped, top by stars_today) ─────────
+type TrendingRepo = { repo: string; stars_today: number; description?: string; toolSlug: string };
+const repoMap = new Map<string, TrendingRepo>();
+for (const t of radarTools) {
+  for (const r of (t.github_top_repos as any[]) ?? []) {
+    const existing = repoMap.get(r.repo);
+    const stars = r.stars_today ?? 0;
+    if (!existing || stars > existing.stars_today) {
+      repoMap.set(r.repo, {
+        repo: r.repo,
+        stars_today: stars,
+        description: r.description,
+        toolSlug: t.slug,
+      });
+    }
+  }
 }
+const trendingRepos = [...repoMap.values()]
+  .filter((r) => r.stars_today > 0)
+  .sort((a, b) => b.stars_today - a.stars_today)
+  .slice(0, 3);
 
 // ─── 3. Recent launches (launchradar.json) ───────────────────────────
 type Launch = {
@@ -70,6 +97,7 @@ try {
       return db - da;
     })
     .slice(0, 3);
+  radarStats.launches = list.length;
 } catch {
   // no data yet
 }
@@ -99,6 +127,23 @@ function displayName(t: RadarTool): string {
     </div>
     <span class="tool-widget__meta">bijgewerkt {formattedDate}</span>
   </header>
+
+  {(radarStats.tracked > 0 || radarStats.launches > 0) && (
+    <div class="tw-stats" aria-label="Radar samenvatting">
+      <span class="tw-stat">
+        <strong>{radarStats.tracked}</strong>
+        <span class="tw-stat__label">tools</span>
+      </span>
+      <span class="tw-stat tw-stat--rising">
+        <strong>{radarStats.rising}</strong>
+        <span class="tw-stat__label">stijgend</span>
+      </span>
+      <span class="tw-stat tw-stat--launch">
+        <strong>{radarStats.launches}</strong>
+        <span class="tw-stat__label">launches</span>
+      </span>
+    </div>
+  )}
 
   <!-- ─── Section 1: Tool updates ──────────────────────────────────── -->
   {features.length > 0 && (
@@ -210,7 +255,33 @@ function displayName(t: RadarTool): string {
     </section>
   )}
 
-  {features.length === 0 && risingTools.length === 0 && recentLaunches.length === 0 && (
+  <!-- ─── Section 4: GitHub trending ──────────────────────────────── -->
+  {trendingRepos.length > 0 && (
+    <section class="tw-section">
+      <h3 class="tw-section__title tw-section__title--github">
+        <Star size={11} stroke-width={1.5} />
+        GitHub trending
+      </h3>
+      <ul class="tw-list tw-list--compact">
+        {trendingRepos.map((r) => (
+          <li class="tw-item tw-item--repo">
+            <a href={`https://github.com/${r.repo}`} target="_blank" rel="noopener" class="tw-repo">
+              <span class="tw-repo__name">{r.repo}</span>
+              <span class="tw-repo__stars">
+                <Star size={10} stroke-width={1.5} />
+                {r.stars_today.toLocaleString('nl-NL')}
+              </span>
+              {r.description && (
+                <span class="tw-repo__desc">{r.description.slice(0, 70)}{r.description.length > 70 ? '…' : ''}</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {features.length === 0 && risingTools.length === 0 && recentLaunches.length === 0 && trendingRepos.length === 0 && (
     <p class="tw-empty">Geen updates beschikbaar.</p>
   )}
 </aside>
@@ -264,6 +335,40 @@ function displayName(t: RadarTool): string {
     margin: 0;
   }
 
+  /* ─── Mini-stats sentiment bar ─────────────────────────── */
+  .tw-stats {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-2-5) 0;
+    margin-bottom: var(--space-1);
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+  }
+  .tw-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    flex: 1;
+    text-align: center;
+  }
+  .tw-stat strong {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .tw-stat__label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    line-height: 1;
+  }
+  .tw-stat--rising strong { color: var(--color-success); }
+  .tw-stat--launch strong { color: var(--secondary-bright); }
+
   /* ─── Section heads ─────────────────────────────────────── */
   .tw-section {
     padding: var(--space-3) 0;
@@ -288,6 +393,7 @@ function displayName(t: RadarTool): string {
   }
   .tw-section__title--rising { color: var(--color-success); }
   .tw-section__title--launch { color: var(--secondary-bright); }
+  .tw-section__title--github { color: var(--tertiary-bright); }
 
   /* ─── Item list ─────────────────────────────────────────── */
   .tw-list {
@@ -407,6 +513,45 @@ function displayName(t: RadarTool): string {
     font-variant-numeric: tabular-nums;
   }
   .tw-launch__tagline {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ─── GitHub repo item ──────────────────────────────────── */
+  .tw-repo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-1) var(--space-2);
+    text-decoration: none;
+    padding: var(--space-1) 0;
+  }
+  .tw-repo__name {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    transition: color var(--transition-fast);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tw-repo:hover .tw-repo__name { color: var(--tertiary-bright); }
+  .tw-repo__stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    color: var(--color-warning);
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--font-medium);
+  }
+  .tw-repo__desc {
     grid-column: 1 / -1;
     font-size: 11px;
     color: var(--text-secondary);
