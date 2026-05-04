@@ -3,7 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import Badge from '../../components/atoms/Badge.astro';
 import NewsCard from '../../components/nieuws/NewsCard.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
-import ToolUpdatesWidget from '../../components/nieuws/ToolUpdatesWidget.astro';
 import { getCollection, render } from 'astro:content';
 import { nieuwsCategoryConfig } from '../../lib/nieuws-schema';
 import { ArrowLeft, Clock, Calendar, User, Lightbulb, ChevronRight } from '@lucide/astro';
@@ -45,7 +44,7 @@ const related = allNieuws
       Nieuws & Analyses
     </a>
 
-    <div class="grid-container grid-layout-sidebar-right">
+    <div class="article-wrap">
 
       <article class="article">
         <!-- Article header -->
@@ -165,13 +164,17 @@ const related = allNieuws
         )}
       </article>
 
-      <ToolUpdatesWidget />
-
     </div>
   </main>
 </Layout>
 
 <style>
+  /* Single-column article wrapper (no sidebar — Tool Updates moved to /nieuws index) */
+  .article-wrap {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
   .back-link {
     display: inline-flex;
     align-items: center;

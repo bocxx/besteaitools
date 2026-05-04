@@ -20,7 +20,7 @@ const features = [...(featureNews.features ?? [])]
   })
   .slice(0, 50);
 
-const INITIAL_SHOW = 8;
+const INITIAL_SHOW = 5;
 
 const genDate = featureNews.generated_at ? new Date(featureNews.generated_at) : null;
 const formattedDate = genDate?.toLocaleDateString('nl-NL', {
@@ -99,29 +99,32 @@ const impactConfig: Record<string, { label: string; color: string }> = {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
     position: sticky;
     top: calc(80px + var(--space-4));
   }
 
   .tool-widget__header {
-    margin-bottom: var(--space-4);
-    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
     border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
   }
 
   .tool-widget__title-row {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1-5);
     color: var(--primary-bright);
-    margin-bottom: var(--space-1);
   }
 
   .tool-widget__title {
     font-family: var(--font-display);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--font-bold);
     color: var(--text-primary);
     text-transform: uppercase;
@@ -131,13 +134,14 @@ const impactConfig: Record<string, { label: string; color: string }> = {
   .tool-widget__meta {
     font-size: var(--text-xs);
     color: var(--text-muted);
+    white-space: nowrap;
   }
 
   .tool-widget__empty {
     font-size: var(--text-sm);
     color: var(--text-muted);
     text-align: center;
-    padding: var(--space-4) 0;
+    padding: var(--space-3) 0;
   }
 
   .tool-widget__list {
@@ -146,11 +150,11 @@ const impactConfig: Record<string, { label: string; color: string }> = {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-2-5);
   }
 
   .tool-widget__item {
-    padding-bottom: var(--space-4);
+    padding-bottom: var(--space-2-5);
     border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 5%, transparent);
   }
 
@@ -162,13 +166,13 @@ const impactConfig: Record<string, { label: string; color: string }> = {
   .tool-widget__item-header {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-1);
+    gap: var(--space-1-5);
+    margin-bottom: var(--space-0-5);
     flex-wrap: wrap;
   }
 
   .tool-widget__tool-name {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--font-bold);
     color: var(--primary-bright);
     text-decoration: none;
@@ -183,9 +187,9 @@ const impactConfig: Record<string, { label: string; color: string }> = {
   }
 
   .tool-widget__feature {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     color: var(--text-secondary);
-    margin: 0 0 var(--space-1);
+    margin: 0;
     line-height: var(--leading-snug);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -193,15 +197,22 @@ const impactConfig: Record<string, { label: string; color: string }> = {
     overflow: hidden;
   }
 
+  /* Source link only revealed on item hover — keeps the card quiet */
   .tool-widget__source {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    font-size: var(--text-xs);
+    font-size: 11px;
     color: var(--text-muted);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: opacity var(--transition-fast), color var(--transition-fast);
     line-height: var(--leading-snug);
+    margin-top: var(--space-1);
+    opacity: 0;
+  }
+  .tool-widget__item:hover .tool-widget__source,
+  .tool-widget__item:focus-within .tool-widget__source {
+    opacity: 1;
   }
   .tool-widget__source:hover { color: var(--text-secondary); }
 
@@ -222,15 +233,15 @@ const impactConfig: Record<string, { label: string; color: string }> = {
   .tool-widget__more-btn {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1-5);
     width: 100%;
-    margin-top: var(--space-4);
-    padding: var(--space-2) var(--space-3);
-    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
+    margin-top: var(--space-3);
+    padding: var(--space-1-5) var(--space-2);
+    background: transparent;
     border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
     border-radius: var(--radius-md);
     color: var(--primary-bright);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--font-medium);
     cursor: pointer;
     transition: all var(--transition-fast);
