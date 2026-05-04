@@ -11,7 +11,7 @@
  * badge, tool name (Space Grotesk Bold), description, stats footer row.
  */
 
-import satori from 'satori';
+import satori, { type Font } from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import { createElement as h } from 'react';
 import {
@@ -196,11 +196,11 @@ async function main() {
   const interSb   = loadFont(FONT_INTER_SB);
   const interBold = loadFont(FONT_INTER_BOLD);
   const sgBold    = loadFont(FONT_SG);
-  const fonts = [
-    { name: 'Inter',         data: interReg,  style: 'normal' as const, weight: 400 },
-    { name: 'Inter',         data: interSb,   style: 'normal' as const, weight: 600 },
-    { name: 'Inter',         data: interBold, style: 'normal' as const, weight: 700 },
-    { name: 'Space Grotesk', data: sgBold,    style: 'normal' as const, weight: 700 },
+  const fonts: Font[] = [
+    { name: 'Inter',         data: interReg,  style: 'normal', weight: 400 },
+    { name: 'Inter',         data: interSb,   style: 'normal', weight: 600 },
+    { name: 'Inter',         data: interBold, style: 'normal', weight: 700 },
+    { name: 'Space Grotesk', data: sgBold,    style: 'normal', weight: 700 },
   ];
 
   // Load radar stats (slug → buzz_score)

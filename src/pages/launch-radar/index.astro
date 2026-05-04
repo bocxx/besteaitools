@@ -179,9 +179,10 @@ const activeCategories = [...categoryCounts.entries()]
         const logo = launch.favicon || src.favicon;
 
         const categoryNl = launch.category_nl || launch.category || '';
-        const hasPrevLaunches =
-          Array.isArray(launch.previous_launches) &&
-          launch.previous_launches.length > 0;
+        const prevLaunches = Array.isArray(launch.previous_launches)
+          ? launch.previous_launches
+          : [];
+        const hasPrevLaunches = prevLaunches.length > 0;
 
         return (
           <a
@@ -283,11 +284,11 @@ const activeCategories = [...categoryCounts.entries()]
                   Eerdere launches:
                 </span>
                 <span class="lr-card__history-list">
-                  {launch.previous_launches
+                  {prevLaunches
                     .slice(0, 2)
                     .map((prev: any) => `${prev.date} · ${prev.points} punten`)
                     .join(' · ')}
-                  {launch.previous_launches.length > 2 && ' · …'}
+                  {prevLaunches.length > 2 && ' · …'}
                 </span>
               </div>
             )}
