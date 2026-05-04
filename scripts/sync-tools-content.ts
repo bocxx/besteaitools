@@ -1,6 +1,12 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { isExcludedTool } from '../src/config/excluded-tools';
+import {
+  translateToNl,
+  translateArrayToNl,
+  flushCache,
+  logTranslationSummary,
+} from './lib/translate-nl';
 
 type RadarEnrichment = {
   description_long_nl?: string;
@@ -199,8 +205,29 @@ function toFileSlug(slug: string): string {
   return slug.replace(/\s+/g, '-');
 }
 
-function createDraftTool(tool: RadarTool): ToolContent {
+async function createDraftTool(tool: RadarTool): Promise<ToolContent> {
   const enrichment = tool.enrichment;
+  // Velden zonder _nl-suffix kunnen Engels lekken vanuit de Radar API → vertaal die.
+  // Eigennamen-arrays (integrations, mainCompetitors, notableCustomers, tags) en
+  // velden mét _nl-suffix worden overgeslagen.
+  const useCases = await translateArrayToNl(enrichment?.use_cases);
+  const strengths = await translateArrayToNl(enrichment?.strengths);
+  const limitations = await translateArrayToNl(enrichment?.limitations);
+  const whenToChoose = await translateToNl(enrichment?.whenToChoose);
+  const headlineValueProp = await translateToNl(enrichment?.headlineValueProp);
+  const implementationTimeEstimate = await translateToNl(enrichment?.implementationTimeEstimate);
+  const exampleOutput = await translateToNl(enrichment?.exampleOutput);
+  const exampleWorkflow = await translateToNl(enrichment?.exampleWorkflow);
+  const keyFeatures = enrichment?.key_features
+    ? await Promise.all(
+        enrichment.key_features.map(async (f) => ({
+          ...f,
+          title: await translateToNl(f.title),
+          description: f.description ? await translateToNl(f.description) : undefined,
+        })),
+      )
+    : [];
+
   return {
     name: tool.name,
     category: mapCategory(tool.category),
@@ -208,9 +235,9 @@ function createDraftTool(tool: RadarTool): ToolContent {
     shortDescription: tool.description_nl ?? `${tool.name} AI-tool`,
     longDescription: enrichment?.description_long_nl,
     bestFor: enrichment?.best_for_nl,
-    useCases: enrichment?.use_cases ?? [],
-    strengths: enrichment?.strengths ?? [],
-    limitations: enrichment?.limitations ?? [],
+    useCases,
+    strengths,
+    limitations,
     pricing: enrichment?.pricing_nl,
     openSource: enrichment?.open_source,
     pricingModel: mapPricingModel(enrichment?.pricing_nl),
@@ -244,17 +271,17 @@ function createDraftTool(tool: RadarTool): ToolContent {
     hasDutchUI: enrichment?.hasDutchUI,
     offersDutchSupport: enrichment?.offersDutchSupport,
     mainCompetitors: enrichment?.mainCompetitors ?? [],
-    whenToChoose: enrichment?.whenToChoose,
-    headlineValueProp: enrichment?.headlineValueProp,
-    implementationTimeEstimate: enrichment?.implementationTimeEstimate,
+    whenToChoose,
+    headlineValueProp,
+    implementationTimeEstimate,
     screenshotUrls: enrichment?.screenshotUrls ?? [],
     demoUrl: enrichment?.demoUrl,
-    exampleOutput: enrichment?.exampleOutput,
-    exampleWorkflow: enrichment?.exampleWorkflow,
+    exampleOutput,
+    exampleWorkflow,
     reviewMethod: enrichment?.reviewMethod,
     lastReviewedAt: enrichment?.lastReviewedAt,
     // v4 fields
-    keyFeatures: enrichment?.key_features ?? [],
+    keyFeatures,
   };
 }
 
@@ -322,7 +349,7 @@ async function main() {
     const enrichment = tool.enrichment;
 
     if (!existingPath) {
-      const draft = createDraftTool(tool);
+      const draft = await createDraftTool(tool);
       const outPath = path.join(CONTENT_DIR, `${fileSlug}.json`);
       await fs.writeFile(outPath, `${JSON.stringify(draft, null, 2)}\n`, 'utf8');
       created.push(fileSlug);
@@ -330,11 +357,28 @@ async function main() {
     }
 
     const current = await readJson<ToolContent>(existingPath);
+    // Velden zonder _nl-suffix uit enrichment vóór diff vertalen (idempotent: cache hits gratis).
+    const useCasesNl = await translateArrayToNl(enrichment?.use_cases);
+    const strengthsNl = await translateArrayToNl(enrichment?.strengths);
+    const limitationsNl = await translateArrayToNl(enrichment?.limitations);
+    const whenToChooseNl = await translateToNl(enrichment?.whenToChoose);
+    const headlineValuePropNl = await translateToNl(enrichment?.headlineValueProp);
+    const implementationTimeEstimateNl = await translateToNl(enrichment?.implementationTimeEstimate);
+    const keyFeaturesNl = enrichment?.key_features
+      ? await Promise.all(
+          enrichment.key_features.map(async (f) => ({
+            ...f,
+            title: await translateToNl(f.title),
+            description: f.description ? await translateToNl(f.description) : undefined,
+          })),
+        )
+      : [];
+
     pushDiff(diffs, fileSlug, 'longDescription', current.longDescription, enrichment?.description_long_nl, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'bestFor', current.bestFor, enrichment?.best_for_nl, enrichment?.enriched_at);
-    pushDiff(diffs, fileSlug, 'useCases', current.useCases ?? [], enrichment?.use_cases ?? [], enrichment?.enriched_at);
-    pushDiff(diffs, fileSlug, 'strengths', current.strengths ?? [], enrichment?.strengths ?? [], enrichment?.enriched_at);
-    pushDiff(diffs, fileSlug, 'limitations', current.limitations ?? [], enrichment?.limitations ?? [], enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'useCases', current.useCases ?? [], useCasesNl, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'strengths', current.strengths ?? [], strengthsNl, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'limitations', current.limitations ?? [], limitationsNl, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'pricing', current.pricing, enrichment?.pricing_nl, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'openSource', current.openSource, enrichment?.open_source, enrichment?.enriched_at);
     // v2 diffs
@@ -355,20 +399,22 @@ async function main() {
     pushDiff(diffs, fileSlug, 'hasDutchUI', current.hasDutchUI, enrichment?.hasDutchUI, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'offersDutchSupport', current.offersDutchSupport, enrichment?.offersDutchSupport, enrichment?.enriched_at);
     pushDiff(diffs, fileSlug, 'mainCompetitors', current.mainCompetitors ?? [], enrichment?.mainCompetitors ?? [], enrichment?.enriched_at);
-    pushDiff(diffs, fileSlug, 'whenToChoose', current.whenToChoose, enrichment?.whenToChoose, enrichment?.enriched_at);
-    pushDiff(diffs, fileSlug, 'headlineValueProp', current.headlineValueProp, enrichment?.headlineValueProp, enrichment?.enriched_at);
-    pushDiff(diffs, fileSlug, 'implementationTimeEstimate', current.implementationTimeEstimate, enrichment?.implementationTimeEstimate, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'whenToChoose', current.whenToChoose, whenToChooseNl, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'headlineValueProp', current.headlineValueProp, headlineValuePropNl, enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'implementationTimeEstimate', current.implementationTimeEstimate, implementationTimeEstimateNl, enrichment?.enriched_at);
     // v4 diffs — keyFeatures is always editorial review (TIER 3 in apply-diffs.ts)
-    pushDiff(diffs, fileSlug, 'keyFeatures', current.keyFeatures ?? [], enrichment?.key_features ?? [], enrichment?.enriched_at);
+    pushDiff(diffs, fileSlug, 'keyFeatures', current.keyFeatures ?? [], keyFeaturesNl, enrichment?.enriched_at);
   }
 
   await fs.writeFile(DIFF_PATH, `${JSON.stringify(diffs, null, 2)}\n`, 'utf8');
+  await flushCache();
 
   console.log(`Created ${created.length} draft tool file(s).`);
   if (created.length) {
     console.log(`New drafts: ${created.join(', ')}`);
   }
   console.log(`Wrote ${diffs.length} enrichment diff suggestion(s) to ${path.relative(ROOT, DIFF_PATH)}`);
+  logTranslationSummary();
 }
 
 main().catch((error) => {
