@@ -3,52 +3,52 @@
   "category": "search",
   "websiteUrl": "https://notebooklm.google.com",
   "shortDescription": "Google's AI-onderzoeksassistent die je eigen documenten analyseert en samenvat",
+  "headlineValueProp": "Upload je bronnen, chat met antwoorden inclusief citaten — of laat NotebookLM er een podcast van maken",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [
-    "research",
-    "documenten",
-    "samenvatten",
-    "google"
-  ],
+  "tags": ["research", "documenten", "samenvatten", "google", "podcast"],
+  "mentionAliases": ["notebook lm", "notebook-lm"],
   "draft": false,
-  "longDescription": "NotebookLM is een AI-tool die is ontworpen om gebruikers te helpen bij het zoeken naar informatie en het genereren van content. Het maakt gebruik van natuurlijke taalverwerking en machine learning-technieken om relevante resultaten te leveren.",
-  "bestFor": "NotebookLM is vooral waardevol voor gebruikers die snel en efficiënt informatie willen vinden of content willen genereren.",
+  "longDescription": "NotebookLM is Googles onderzoeksassistent die uitsluitend werkt op bronnen die jij erin laadt — PDF's, Google Docs, websites, YouTube-video's of plain text. Antwoorden komen altijd met inline-citaten naar de exacte plek in je bron, waardoor hallucinaties veel zeldzamer zijn dan bij algemene chatbots. De viraal-geworden Audio Overview-functie zet je bronnen om in een podcast-achtig gesprek tussen twee AI-stemmen, inmiddels ook in het Nederlands beschikbaar.",
+  "bestFor": "Onderzoekers, studenten en kenniswerkers die snel willen begrijpen wat er in een stapel documenten staat, met betrouwbare bronvermelding bij elk antwoord.",
+  "primaryJobsToBeDone": [
+    "Een set bronnen (papers, contracten, rapporten) doorzoeken zonder ze allemaal te hoeven lezen",
+    "Een briefing of samenvatting genereren met directe citaten naar de bron",
+    "Een podcast-overview genereren om materie passief te kunnen consumeren"
+  ],
   "useCases": [
-    "Informatie zoeken",
-    "Content genereren",
-    "Onderzoek ondersteunen"
+    "Wetenschappelijke literatuur snel doorgronden voor een review-artikel",
+    "Een collectie meeting-notities doorzoekbaar maken voor het hele team",
+    "Een lange juridische of technische tekst samenvatten met directe verwijzingen",
+    "Studiemateriaal omzetten naar audio voor onderweg"
   ],
   "strengths": [
-    "Intuïtieve interface",
-    "Snelle en relevante resultaten"
+    "Antwoorden zijn gegrond in jouw eigen bronnen, niet in algemene web-data",
+    "Inline-citaten verwijzen naar de exacte passage in het brondocument",
+    "Audio Overview is uniek en kwalitatief sterk — werkt in meerdere talen waaronder Nederlands"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor complexe zoekopdrachten"
+    "Geen API of automatisering — alles loopt via de webinterface",
+    "Bronnen blijven binnen één notebook; geen organisatie-brede kennisbank",
+    "Documenten leven op Google-infrastructuur in de VS — niet geschikt voor strikt vertrouwelijke data"
   ],
-  "pricing": "Gratis",
+  "antiUseCases": [
+    "Workflows die programmatische toegang nodig hebben — kies dan een RAG-stack of een dedicated platform",
+    "Strikt vertrouwelijke data (medisch, contractueel) waar US-dataverwerking niet acceptabel is",
+    "Real-time vragen over algemene actuele kennis — daarvoor is Perplexity of ChatGPT search geschikter"
+  ],
+  "pricing": "Gratis met Google-account. Plus-tier (binnen Google AI Premium of Workspace-abonnementen) verhoogt limieten en voegt teamfeatures toe.",
   "openSource": false,
-  "businessFunctions": [
-    "marketing",
-    "data",
-    "hr"
-  ],
+  "businessFunctions": ["marketing", "data", "hr"],
   "deploymentType": "saas",
   "dataResidency": "us",
-  "targetAudience": [
-    "mkb",
-    "solo",
-    "freelancer"
-  ],
+  "targetAudience": ["mkb", "solo", "freelancer"],
   "nlSupport": true,
-  "integrations": [
-    "Google Drive",
-    "Google Docs"
-  ],
-  "companySizeFit": [
-    "solo",
-    "small"
-  ],
+  "integrations": ["Google Drive", "Google Docs", "YouTube"],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "learningCurve": "low",
+  "companySizeFit": ["solo", "small"],
   "bestUseCaseStage": "experiment",
   "verdict": "NotebookLM is uniek: AI-chat exclusief gebaseerd op je eigen documenten. Ideaal voor research en het doorzoeken van lange documenten. Gratis, van Google en bijzonder nauwkeurig.",
   "whyListed": "NotebookLM populariseerde de 'chat met je documenten'-categorie en groeide snel, versterkt door de unieke podcast-samenvattingsfunctie die viraal ging.",
