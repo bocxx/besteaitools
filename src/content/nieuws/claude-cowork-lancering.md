@@ -51,7 +51,7 @@ De eerste release was macOS-only en alleen voor Max-abonnees. Vier dagen later (
 
 In een normale chat praat Claude terug. In Cowork voert Claude uit. Drie soorten gereedschappen maken dat verschil.
 
-**Bestand-tools (Read, Edit, Write).** Claude krijgt toegang tot een door jou gekozen map op je computer. Daarbinnen mag Claude bestanden lezen, aanpassen en aanmaken. Een marketeer kan een map met concept-teksten aanwijzen en zeggen: "lees deze tien briefings en maak er één samenvattingsdocument van". Een recruiter wijst een map met CV's aan en laat Claude ze samenvatten in een shortlist.
+**Bestand-tools (Read, Edit, Write).** Claude krijgt toegang tot een door jou gekozen map op je computer. Daarbinnen mag Claude bestanden lezen, aanpassen en aanmaken. Een marketeer kan een map met concept-teksten aanwijzen en zeggen: "lees deze tien briefings en maak er één samenvattingsdocument van". Een recruiter wijst een map met CV's aan en laat Claude ze samenvatten in een shortlist. Wie schrijfwerk in de map zet, kan ook een [anti-ai-writing-style.md](/nieuws/ai-tekst-herkennen-menselijker-schrijven) toevoegen waarin staat welke AI-tells de output moet vermijden.
 
 **Bash-sandbox.** Voor echt werk is bestanden lezen niet genoeg. Cowork draait shell-commando's in een geïsoleerde virtuele machine die alleen bij jouw werkmap kan en alleen via een proxy naar internet kan ([Bron: Claude Code-docs](https://code.claude.com/docs/en/sandboxing)). Daarbinnen mag Claude Python draaien, Node-pakketten installeren, een CSV parsen, of een PDF converteren. Wat er buiten de map gebeurt, blijft buiten bereik.
 
@@ -94,6 +94,8 @@ Cowork is nog niet de juiste keus als:
 - Je vooral korte, losse vragen stelt — dan is de gewone Claude-chat sneller en eenvoudiger
 - Je werkt met zwaar gereguleerde data zonder dat je organisatie een Enterprise-contract heeft waarin data-governance goed geregeld is
 - Je geen geduld hebt om agents te leren aansturen: Cowork wordt beter als jij scherper wordt in het geven van contexten en constraints
+
+Wil je niet alleen weten *of* je Cowork wilt, maar ook *hoe* je het in één werkdag goed inricht? Onze gids [Claude in één dag instellen](/nieuws/claude-instellen-1-dag-6-tools) loopt de zes bouwstenen langs — van een brain file tot connectoren en herhaalbare prompts.
 
 > **⚡ Gevorderden:** De grens tussen "handig" en "een puinhoop" zit voor de meeste MKB-gebruikers bij één vraag: hoe specifiek beschrijf je het einddoel én de grenzen waarbinnen Claude mag werken? Hoe bonter je instructie, hoe interessanter de output (leuk en onverwacht); hoe strakker je instructie, hoe meer Cowork doet wat je bedoelde.
 

@@ -32,7 +32,7 @@ Claude 4 Sonnet (Anthropic) en ChatGPT-4o (OpenAI) domineren momenteel de markt 
 
 ## Schrijven en redeneren
 
-Claude heeft een voorsprong bij lange, genuanceerde teksten. Het model volgt instructies nauwkeuriger op, bewaart consistentie over duizenden woorden, en maakt minder "hallucinations" bij feitelijke claims. Als je lange rapporten, samenstellingen of analyses schrijft, is Claude de betere keuze.
+Claude heeft een voorsprong bij lange, genuanceerde teksten. Het model volgt instructies nauwkeuriger op, bewaart consistentie over duizenden woorden, en maakt minder "hallucinations" bij feitelijke claims. Als je lange rapporten, samenstellingen of analyses schrijft, is Claude de betere keuze. Wie wil voorkomen dat de output herkenbaar als AI klinkt, vindt in onze gids [Klinkt jouw tekst nog als AI?](/nieuws/ai-tekst-herkennen-menselijker-schrijven) de vier patronen om te vermijden plus de prompt-aanpak die Ruben Hassid populair maakte.
 
 ChatGPT-4o is snel en veelzijdig. Voor kortere taken — een e-mail opstellen, een samenvatting maken, een brainstorm — is het verschil verwaarloosbaar. ChatGPT is ook wat informeler van toon, wat sommige gebruikers prettig vinden.
 
@@ -46,7 +46,7 @@ Als je met Cursor of een andere AI-editor werkt, maakt het voor dagelijks gebrui
 
 Hier wint ChatGPT. De GPT Store biedt honderden kant-en-klare assistenten voor specifieke taken. DALL-E is ingebouwd voor afbeeldingen genereren. De mobiele app is volwassener, met spraakassistent en real-time conversatie.
 
-Claude heeft Artifacts (interactieve inhoud direct in de chat) en sinds begin 2026 ook [Cowork](/nieuws/claude-cowork-lancering) — een desktop-modus waarin Claude daadwerkelijk met je bestanden en apps werkt in plaats van alleen chatten. Dat is een ander soort ecosysteem-argument dan de GPT Store: niet "meer kant-en-klare assistants", maar "één agent die langer doorwerkt". Voor zakelijk gebruik heeft Claude's operator-API wel voordelen: eenvoudiger compliance, betere rolscheiding.
+Claude heeft Artifacts (interactieve inhoud direct in de chat) en sinds begin 2026 ook [Cowork](/nieuws/claude-cowork-lancering) — een desktop-modus waarin Claude daadwerkelijk met je bestanden en apps werkt in plaats van alleen chatten. Dat is een ander soort ecosysteem-argument dan de GPT Store: niet "meer kant-en-klare assistants", maar "één agent die langer doorwerkt". Wie de stap naar Claude maakt en het serieus wil inrichten, vindt in onze gids [Claude in één dag instellen](/nieuws/claude-instellen-1-dag-6-tools) een werkbaar stappenplan met zes concrete tools. Voor zakelijk gebruik heeft Claude's operator-API wel voordelen: eenvoudiger compliance, betere rolscheiding.
 
 ## Aanbeveling per profiel
 

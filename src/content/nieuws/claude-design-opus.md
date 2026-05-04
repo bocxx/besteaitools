@@ -34,7 +34,7 @@ heroImage: "/images/nieuws/claude-design-launch.webp"
 
 Anthropic Labs introduceert Claude Design als een nieuwe laag bovenop Claude: een omgeving waarin je websites, prototypes, decks en one-pagers bouwt door simpelweg in natuurlijke taal uit te leggen wat je nodig hebt. Waar eerdere generatieve design-tools vooral losse beelden of statische mockups opleverden, is Claude Design vanaf de start gekoppeld aan Claude Opus 4.7, een model dat juist is getraind op langdurige, complexe workflows.
 
-In de praktijk betekent dit dat je Claude niet alleen vraagt om “een landing page”, maar dat je samen iteratief aan de IA, layout, states en copy werkt — en dat Claude voorstellen doet op basis van je eerdere beslissingen, je productstrategie en bestaande assets. Het voelt minder als “prompt in, pixel uit” en meer als samenwerken met een digitale product designer die context onthoudt en over meerdere sessies heen kan doorbouwen.
+In de praktijk betekent dit dat je Claude niet alleen vraagt om “een landing page”, maar dat je samen iteratief aan de IA, layout, states en copy werkt — en dat Claude voorstellen doet op basis van je eerdere beslissingen, je productstrategie en bestaande assets. Het voelt minder als “prompt in, pixel uit” en meer als samenwerken met een digitale product designer die context onthoudt en over meerdere sessies heen kan doorbouwen. Voor de copy-component is het overigens slim om een anti-AI-stijlbestand mee te geven, zodat de gegenereerde teksten niet meteen als AI herkenbaar zijn — onze gids [Klinkt jouw tekst nog als AI?](/nieuws/ai-tekst-herkennen-menselijker-schrijven) loopt die aanpak langs.
 
 ### Aangedreven door Opus 4.7
 
@@ -64,7 +64,7 @@ De échte verschuiving zit niet in “nog een AI die slides kan maken”, maar i
 
 Met Claude Design worden die capabilities voor het eerst gebundeld rond één duidelijke use case: end‑to‑end ontwerpen. Van eerste user story tot klikbare demo en pitchdeck kan één en dezelfde AI-agent de lijn vasthouden, varianten testen en de gekozen richting uitwerken in meerdere form factors (site, deck, one-pager). Dit is een andere filosofie dan de huidige “prompt → afbeelding” tools: je bouwt een relatie met een AI die je product, merk en constraints over tijd leert kennen.
 
-Dezelfde agent-filosofie zit achter [Claude Cowork](/nieuws/claude-cowork-lancering), Anthropic's desktop-modus voor kenniswerkers — Claude Design richt zich op visuele output, Cowork op bestanden en workflows. Samen schetsen ze hoe Anthropic de schil rond het model per doelgroep verschillend invult.
+Dezelfde agent-filosofie zit achter [Claude Cowork](/nieuws/claude-cowork-lancering), Anthropic's desktop-modus voor kenniswerkers — Claude Design richt zich op visuele output, Cowork op bestanden en workflows. Samen schetsen ze hoe Anthropic de schil rond het model per doelgroep verschillend invult. Wie Claude breder wil inrichten als vaste collega, niet alleen voor design, vindt in onze gids [Claude in één dag instellen](/nieuws/claude-instellen-1-dag-6-tools) de praktische zes-stappen-aanpak.
 
 ## Wat betekent dit voor teams, bureaus en solo-makers?
 
