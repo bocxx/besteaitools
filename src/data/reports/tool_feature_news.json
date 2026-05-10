@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-09T15:49:33.590449",
+  "generated_at": "2026-05-10T07:40:25.380531",
   "window_days": 7,
   "week": "2026-w19",
-  "total_candidates_scanned": 953,
-  "total_after_dedup": 922,
-  "total_feature_updates": 139,
+  "total_candidates_scanned": 909,
+  "total_after_dedup": 881,
+  "total_feature_updates": 144,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "GPT-Realtime-2 in the API",
-      "summary_nl": "ChatGPT introduceert GPT-Realtime-2 in de API, hun meest intelligente spraakmodel tot nu toe, waardoor GPT-5-klasse redenering beschikbaar komt voor spraakagenten.",
+      "summary_nl": "ChatGPT introduceert GPT-Realtime-2 in de API, hun meest intelligente spraakmodel tot nu toe, waardoor GPT-5-klasse redenering naar spraakagenten komt.",
       "impact": "high",
       "sources": [
         {
@@ -22,7 +22,115 @@
           "source": "@OpenAI"
         }
       ],
-      "detected_at": "2026-05-09",
+      "detected_at": "2026-05-10",
+      "week": "2026-w19"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "ChatGPT in Excel and Google Sheets",
+      "summary_nl": "ChatGPT is nu beschikbaar als add-on in Excel en Google Sheets. Het kan helpen bij het analyseren van rommelige data, het schrijven van formules, het bijwerken van spreadsheets en het uitleggen van complexe concepten.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPTapp/status/2051776032127238266",
+          "title": "ChatGPT is now available as an add-on in Excel and Google Sheets.\n\nIt can help analyze messy data, write formulas, update spreadsheets, and ",
+          "platform": "twitter",
+          "source": "@ChatGPTapp"
+        }
+      ],
+      "detected_at": "2026-05-10",
+      "week": "2026-w19"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "GPT-4 Cost Reduction",
+      "summary_nl": "De prijs van GPT-4-niveau output is ongeveer 100 keer gedaald sinds de oorspronkelijke GPT-4 werd uitgebracht. Dit zou deflatoir moeten zijn en klanten geld moeten besparen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/demian_ai/status/2052395660108759174",
+          "title": "Inference got a hundred times cheaper this year. The compute bill went up anyway.\n\nIf you understand why those two sentences are both true a",
+          "platform": "twitter",
+          "source": "@demian_ai"
+        }
+      ],
+      "detected_at": "2026-05-10",
+      "week": "2026-w19"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Keyless Authentication",
+      "summary_nl": "Claude Platform introduceert keyless authenticatie, waarmee je kunt authenticeren via de browser met de CLI, of workloads kunnen gebruikmaken van hun bestaande cloud-identiteiten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2051393709619732758",
+          "title": "Managing API keys is one of the top security concerns we hear from customers.\n\nToday we’re introducing keyless auth for Claude Platform: aut",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-05-10",
+      "week": "2026-w19"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "AI-Assisted Bug Fixing",
+      "summary_nl": "Het Claude-team heeft een speciaal testsysteem gebouwd om het werk van de AI te verifiëren, waardoor bijna geen van de gerapporteerde problemen in Firefox vals positief waren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Pirat_Nation/status/2052795666057838669",
+          "title": "Mozilla used a new AI tool called Claude Mythos to find 271 security problems in Firefox, and all of them have been fixed in Firefox version",
+          "platform": "twitter",
+          "source": "@Pirat_Nation"
+        }
+      ],
+      "detected_at": "2026-05-10",
+      "week": "2026-w19"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek V4 Cost Reduction",
+      "summary_nl": "DeepSeek V4 heeft de kosten aanzienlijk verlaagd, waardoor het een aantrekkelijk alternatief is voor andere AI-tools.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/jbhuang0604/status/2050686882653065496",
+          "title": "Keep getting rate-limited by Claude, so I tried out DeepSeek V4 for the first time.\n\nAfter 10M+ tokens, holy crap the cost is ... 🤯 https://",
+          "platform": "twitter",
+          "source": "@jbhuang0604"
+        }
+      ],
+      "detected_at": "2026-05-10",
+      "week": "2026-w19"
+    },
+    {
+      "tool_slug": "together ai",
+      "tool_name": "Together AI",
+      "tool_category": "infra",
+      "feature_title": "AI Co-Mathematician",
+      "summary_nl": "Together AI introduceert een multi-agent systeem ontworpen om actief samen te werken met menselijke experts op het gebied van wiskunde.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/pushmeet/status/2052812585804685322",
+          "title": "The future of Math is mathematicians and AI agents working together.\n\nVery pleased to introduce  @GoogleDeepMind's  AI co-mathematician: a m",
+          "platform": "twitter",
+          "source": "@pushmeet"
+        }
+      ],
+      "detected_at": "2026-05-10",
       "week": "2026-w19"
     },
     {
@@ -56,24 +164,6 @@
           "title": "Inference got a hundred times cheaper this year. The compute bill went up anyway.\n\nIf you understand why those two sentences are both true a",
           "platform": "twitter",
           "source": "@demian_ai"
-        }
-      ],
-      "detected_at": "2026-05-09",
-      "week": "2026-w19"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Keyless Authentication",
-      "summary_nl": "Claude Platform introduceert keyless authenticatie, waarmee je kunt authenticeren via de browser met de CLI, of waarbij werkbelastingen gebruik kunnen maken van hun bestaande cloud-identiteiten.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2051393709619732758",
-          "title": "Managing API keys is one of the top security concerns we hear from customers.\n\nToday we’re introducing keyless auth for Claude Platform: aut",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
         }
       ],
       "detected_at": "2026-05-09",
