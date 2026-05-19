@@ -302,6 +302,7 @@ export const prerender = true;
       <div class="match-actions">
         <button type="button" id="btn-refine">← Profiel aanpassen</button>
         <button type="button" id="btn-reset">Opnieuw beginnen</button>
+        <a href="/zakelijk" class="match-actions__browse">Bekijk alle tools →</a>
       </div>
     </section>
 
@@ -804,13 +805,30 @@ export const prerender = true;
     .rejected-list > div { padding: 6px 0; border-bottom: 1px solid var(--border); }
 
     .match-actions {
-      display: flex; gap: 12px; margin-top: 32px;
-      padding-top: 20px; border-top: 1px solid var(--border);
+      display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+      padding-top: 20px; border-top: 1px solid var(--border-subtle);
+      align-items: center;
     }
     .match-actions button {
       padding: 10px 16px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--bg-surface);
+      border: 1px solid var(--border-subtle); background: var(--bg-surface);
       color: var(--text-primary); cursor: pointer;
+    }
+    .match-actions__browse {
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px dashed transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .match-actions__browse:hover {
+      color: var(--primary-bright);
+      border-bottom-color: var(--primary-bright);
+    }
+    @media (max-width: 560px) {
+      .match-actions__browse { margin-left: 0; width: 100%; text-align: center; padding: 12px 0; }
     }
 
     .sr-only {
@@ -1501,7 +1519,19 @@ export const prerender = true;
     const draft = loadDraft();
     if (draft) applyDraft(draft);
     updateConditionals();
-    showStep(1);
+
+    // Auto-advance when arriving with a pre-filled profile (e.g. from
+    // /zakelijk's free-text shortcut). Step 3 reveals the "Toon top-3"
+    // CTA so the user can submit straight away after confirming.
+    const startStep = (!isStepValid(1) && !isStepValid(2) && !isStepValid(3))
+      ? 3
+      : !isStepValid(1) && !isStepValid(2)
+        ? 3
+        : !isStepValid(1)
+          ? 2
+          : 1;
+    showStep(startStep);
+
     // Prefetch tool data in background
     ensureTools().catch(() => { /* ignore */ });
   </script>
