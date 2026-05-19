@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Badge from '../../components/atoms/Badge.astro';
 import NewsCard from '../../components/nieuws/NewsCard.astro';
-import ToolUpdatesWidget from '../../components/nieuws/ToolUpdatesWidget.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
 import { getCollection, render } from 'astro:content';
 import { nieuwsCategoryConfig } from '../../lib/nieuws-schema';
 import { ArrowLeft, Clock, Calendar, User, Lightbulb, ChevronRight } from '@lucide/astro';
@@ -46,7 +46,7 @@ export const prerender = true;
       Nieuws & Analyses
     </a>
 
-    <div class="grid-container grid-layout-sidebar-right">
+    <div class="article-wrap">
 
       <article class="article">
         <!-- Article header -->
@@ -79,6 +79,10 @@ export const prerender = true;
                 {article.data.readingTime} min lezen
               </span>
             )}
+          </div>
+
+          <div class="article__share-top">
+            <ShareButtons title={article.data.title} tags={article.data.tags} compact />
           </div>
         </header>
 
@@ -135,6 +139,11 @@ export const prerender = true;
           </section>
         )}
 
+        <!-- Share buttons (full) -->
+        <div class="article__share">
+          <ShareButtons title={article.data.title} tags={article.data.tags} />
+        </div>
+
         <!-- Related articles -->
         {related.length > 0 && (
           <section class="article__related">
@@ -157,13 +166,17 @@ export const prerender = true;
         )}
       </article>
 
-      <ToolUpdatesWidget />
-
     </div>
   </main>
 </Layout>
 
 <style>
+  /* Single-column article wrapper (no sidebar — Tool Updates moved to /nieuws index) */
+  .article-wrap {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -240,6 +253,16 @@ export const prerender = true;
     border-radius: var(--radius-xl);
     margin-bottom: var(--space-6);
     border: 1px solid var(--border-subtle);
+  }
+
+  /* Share buttons wrappers */
+  .article__share-top {
+    margin-top: var(--space-4);
+  }
+
+  .article__share {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-6);
   }
 
   /* Key takeaways */

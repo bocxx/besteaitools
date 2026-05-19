@@ -1,8 +1,20 @@
 ---
 import Badge from '../atoms/Badge.astro';
 import { toolCategories } from '../../lib/tools-schema';
-import { Zap, Minus, ExternalLink, RefreshCw } from '@lucide/astro';
+import { Zap, Minus, ExternalLink, RefreshCw, TrendingUp, Rocket, Star } from '@lucide/astro';
 
+// ─── 0. Radar-wide stats (mini sentiment bar) ────────────────────────
+let radarStats = { tracked: 0, rising: 0, launches: 0 };
+let radarTools: any[] = [];
+try {
+  const raw = await import('../../data/reports/ai_tools_radar.json');
+  const radar: any = raw.default ?? raw;
+  radarTools = radar.tools ?? [];
+  radarStats.tracked = radarTools.length;
+  radarStats.rising = radarTools.filter((t: any) => t.trend_direction === 'rising').length;
+} catch {}
+
+// ─── 1. Feature updates (tool_feature_news.json) ─────────────────────
 let featureNews: any = { features: [], generated_at: null };
 try {
   const raw = await import('../../data/reports/tool_feature_news.json');
@@ -11,7 +23,6 @@ try {
   // no data yet
 }
 
-// Sort by detected_at descending so newest updates are always at top
 const features = [...(featureNews.features ?? [])]
   .sort((a: any, b: any) => {
     const ta = a.detected_at ? new Date(a.detected_at).getTime() : 0;
@@ -20,7 +31,76 @@ const features = [...(featureNews.features ?? [])]
   })
   .slice(0, 50);
 
-const INITIAL_SHOW = 8;
+const FEATURES_INITIAL = 5;
+
+// ─── 2. Rising tools (re-uses radarTools loaded above) ───────────────
+type RadarTool = {
+  slug: string;
+  name?: string;
+  category?: string;
+  trend_direction?: string;
+  velocity?: number;
+  buzz_score?: number;
+  mentions?: number;
+  github_top_repos?: { repo: string; stars_today: number; description?: string }[];
+};
+
+const risingTools: RadarTool[] = radarTools
+  .filter((t: RadarTool) => t.trend_direction === 'rising' && (t.velocity ?? 0) > 0)
+  .sort((a: RadarTool, b: RadarTool) => (b.velocity ?? 0) - (a.velocity ?? 0))
+  .slice(0, 3);
+
+// ─── 2b. GitHub trending repos (deduped, top by stars_today) ─────────
+type TrendingRepo = { repo: string; stars_today: number; description?: string; toolSlug: string };
+const repoMap = new Map<string, TrendingRepo>();
+for (const t of radarTools) {
+  for (const r of (t.github_top_repos as any[]) ?? []) {
+    const existing = repoMap.get(r.repo);
+    const stars = r.stars_today ?? 0;
+    if (!existing || stars > existing.stars_today) {
+      repoMap.set(r.repo, {
+        repo: r.repo,
+        stars_today: stars,
+        description: r.description,
+        toolSlug: t.slug,
+      });
+    }
+  }
+}
+const trendingRepos = [...repoMap.values()]
+  .filter((r) => r.stars_today > 0)
+  .sort((a, b) => b.stars_today - a.stars_today)
+  .slice(0, 3);
+
+// ─── 3. Recent launches (launchradar.json) ───────────────────────────
+type Launch = {
+  name: string;
+  url?: string;
+  product_hunt_url?: string;
+  website_url?: string;
+  date?: string;
+  category_nl?: string;
+  category?: string;
+  tagline?: string;
+};
+
+let recentLaunches: Launch[] = [];
+try {
+  const raw = await import('../../data/reports/launchradar.json');
+  const launches: any = raw.default ?? raw;
+  const list: Launch[] = launches.launches ?? launches ?? [];
+  recentLaunches = list
+    .slice()
+    .sort((a, b) => {
+      const da = a.date ? new Date(a.date).getTime() : 0;
+      const db = b.date ? new Date(b.date).getTime() : 0;
+      return db - da;
+    })
+    .slice(0, 3);
+  radarStats.launches = list.length;
+} catch {
+  // no data yet
+}
 
 const genDate = featureNews.generated_at ? new Date(featureNews.generated_at) : null;
 const formattedDate = genDate?.toLocaleDateString('nl-NL', {
@@ -32,64 +112,177 @@ const impactConfig: Record<string, { label: string; color: string }> = {
   medium: { label: 'Mid',    color: 'var(--color-warning)' },
   low:    { label: 'Laag',   color: 'var(--text-muted)' },
 };
+
+// Display name fallback for radar slugs (newsflux uses spaces sometimes)
+function displayName(t: RadarTool): string {
+  return t.name ?? t.slug.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
 ---
 
 <aside class="tool-widget">
   <header class="tool-widget__header">
     <div class="tool-widget__title-row">
-      <RefreshCw size={15} stroke-width={1.5} />
-      <span class="tool-widget__title">Tool updates</span>
+      <RefreshCw size={14} stroke-width={1.5} />
+      <span class="tool-widget__title">Tools radar</span>
     </div>
     <span class="tool-widget__meta">bijgewerkt {formattedDate}</span>
   </header>
 
-  {features.length === 0 ? (
-    <p class="tool-widget__empty">Geen updates beschikbaar.</p>
-  ) : (
-    <ul class="tool-widget__list" id="updates-list">
-      {features.map((item: any, i: number) => {
-        const impact = impactConfig[item.impact] ?? impactConfig.medium;
-        const catKey = item.tool_category as keyof typeof toolCategories;
-        const cat = toolCategories[catKey];
-        const firstSource = item.sources?.[0];
-
-        return (
-          <li
-            class:list={['tool-widget__item', { 'tool-widget__item--hidden': i >= INITIAL_SHOW }]}
-            data-update-idx={i}
-          >
-            <div class="tool-widget__item-header">
-              <a href={`/ai-tools/${item.tool_slug}`} class="tool-widget__tool-name">
-                {item.tool_name}
-              </a>
-              {cat && (
-                <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
-              )}
-              <span class="tool-widget__impact" style={`color: ${impact.color}`}>
-                {item.impact === 'high'
-                  ? <Zap size={10} stroke-width={2} />
-                  : <Minus size={10} stroke-width={2} />
-                }
-              </span>
-            </div>
-            <p class="tool-widget__feature">{item.feature_title}</p>
-            {firstSource && (
-              <a href={firstSource.url} target="_blank" rel="noopener" class="tool-widget__source">
-                <ExternalLink size={10} stroke-width={1.5} />
-                {firstSource.title?.slice(0, 55)}{firstSource.title?.length > 55 ? '…' : ''}
-              </a>
-            )}
-          </li>
-        );
-      })}
-    </ul>
+  {(radarStats.tracked > 0 || radarStats.launches > 0) && (
+    <div class="tw-stats" aria-label="Radar samenvatting">
+      <span class="tw-stat">
+        <strong>{radarStats.tracked}</strong>
+        <span class="tw-stat__label">tools</span>
+      </span>
+      <span class="tw-stat tw-stat--rising">
+        <strong>{radarStats.rising}</strong>
+        <span class="tw-stat__label">stijgend</span>
+      </span>
+      <span class="tw-stat tw-stat--launch">
+        <strong>{radarStats.launches}</strong>
+        <span class="tw-stat__label">launches</span>
+      </span>
+    </div>
   )}
 
-  {features.length > INITIAL_SHOW && (
-    <button id="updates-more" class="tool-widget__more-btn" aria-expanded="false">
-      Toon meer
-      <span class="tool-widget__more-count">({features.length - INITIAL_SHOW} meer)</span>
-    </button>
+  <!-- ─── Section 1: Tool updates ──────────────────────────────────── -->
+  {features.length > 0 && (
+    <section class="tw-section">
+      <h3 class="tw-section__title">
+        <RefreshCw size={11} stroke-width={1.5} />
+        Tool updates
+      </h3>
+      <ul class="tw-list" id="updates-list">
+        {features.map((item: any, i: number) => {
+          const impact = impactConfig[item.impact] ?? impactConfig.medium;
+          const catKey = item.tool_category as keyof typeof toolCategories;
+          const cat = toolCategories[catKey];
+          const firstSource = item.sources?.[0];
+          return (
+            <li
+              class:list={['tw-item', { 'tw-item--hidden': i >= FEATURES_INITIAL }]}
+              data-update-idx={i}
+            >
+              <div class="tw-item__header">
+                <a href={`/ai-tools/${item.tool_slug}`} class="tw-item__name">
+                  {item.tool_name}
+                </a>
+                {cat && (
+                  <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
+                )}
+                <span class="tw-item__impact" style={`color: ${impact.color}`}>
+                  {item.impact === 'high'
+                    ? <Zap size={10} stroke-width={2} />
+                    : <Minus size={10} stroke-width={2} />
+                  }
+                </span>
+              </div>
+              <p class="tw-item__feature">{item.feature_title}</p>
+              {firstSource && (
+                <a href={firstSource.url} target="_blank" rel="noopener" class="tw-item__source">
+                  <ExternalLink size={10} stroke-width={1.5} />
+                  {firstSource.title?.slice(0, 55)}{firstSource.title?.length > 55 ? '…' : ''}
+                </a>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      {features.length > FEATURES_INITIAL && (
+        <button id="updates-more" class="tw-more-btn" aria-expanded="false">
+          Toon meer
+          <span class="tw-more-count">({features.length - FEATURES_INITIAL} meer)</span>
+        </button>
+      )}
+    </section>
+  )}
+
+  <!-- ─── Section 2: Rising tools ──────────────────────────────────── -->
+  {risingTools.length > 0 && (
+    <section class="tw-section">
+      <h3 class="tw-section__title tw-section__title--rising">
+        <TrendingUp size={11} stroke-width={1.5} />
+        Stijgers deze week
+      </h3>
+      <ul class="tw-list tw-list--compact">
+        {risingTools.map((t) => {
+          const catKey = t.category as keyof typeof toolCategories;
+          const cat = catKey ? toolCategories[catKey] : null;
+          return (
+            <li class="tw-item tw-item--rising">
+              <a href={`/ai-tools/${t.slug.replace(/\s+/g, '-')}`} class="tw-rising">
+                <span class="tw-rising__name">{displayName(t)}</span>
+                {cat && (
+                  <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
+                )}
+                <span class="tw-rising__velocity">
+                  +{t.velocity?.toFixed(1)}/dag
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )}
+
+  <!-- ─── Section 3: Recent launches ───────────────────────────────── -->
+  {recentLaunches.length > 0 && (
+    <section class="tw-section">
+      <h3 class="tw-section__title tw-section__title--launch">
+        <Rocket size={11} stroke-width={1.5} />
+        Recent gelanceerd
+      </h3>
+      <ul class="tw-list tw-list--compact">
+        {recentLaunches.map((l) => {
+          const url = l.product_hunt_url ?? l.website_url ?? l.url ?? '#';
+          const dateStr = l.date
+            ? new Date(l.date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short' })
+            : '';
+          return (
+            <li class="tw-item tw-item--launch">
+              <a href={url} target="_blank" rel="noopener" class="tw-launch">
+                <span class="tw-launch__name">{l.name}</span>
+                {dateStr && <span class="tw-launch__date">{dateStr}</span>}
+                {l.tagline && (
+                  <span class="tw-launch__tagline">{l.tagline.slice(0, 70)}{l.tagline.length > 70 ? '…' : ''}</span>
+                )}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )}
+
+  <!-- ─── Section 4: GitHub trending ──────────────────────────────── -->
+  {trendingRepos.length > 0 && (
+    <section class="tw-section">
+      <h3 class="tw-section__title tw-section__title--github">
+        <Star size={11} stroke-width={1.5} />
+        GitHub trending
+      </h3>
+      <ul class="tw-list tw-list--compact">
+        {trendingRepos.map((r) => (
+          <li class="tw-item tw-item--repo">
+            <a href={`https://github.com/${r.repo}`} target="_blank" rel="noopener" class="tw-repo">
+              <span class="tw-repo__name">{r.repo}</span>
+              <span class="tw-repo__stars">
+                <Star size={10} stroke-width={1.5} />
+                {r.stars_today.toLocaleString('nl-NL')}
+              </span>
+              {r.description && (
+                <span class="tw-repo__desc">{r.description.slice(0, 70)}{r.description.length > 70 ? '…' : ''}</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {features.length === 0 && risingTools.length === 0 && recentLaunches.length === 0 && trendingRepos.length === 0 && (
+    <p class="tw-empty">Geen updates beschikbaar.</p>
   )}
 </aside>
 
@@ -99,167 +292,322 @@ const impactConfig: Record<string, { label: string; color: string }> = {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
     position: sticky;
     top: calc(80px + var(--space-4));
   }
 
   .tool-widget__header {
-    margin-bottom: var(--space-4);
-    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
     border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
   }
-
   .tool-widget__title-row {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1-5);
     color: var(--primary-bright);
-    margin-bottom: var(--space-1);
   }
-
   .tool-widget__title {
     font-family: var(--font-display);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--font-bold);
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
   }
-
   .tool-widget__meta {
     font-size: var(--text-xs);
     color: var(--text-muted);
+    white-space: nowrap;
   }
 
-  .tool-widget__empty {
+  .tw-empty {
     font-size: var(--text-sm);
     color: var(--text-muted);
     text-align: center;
-    padding: var(--space-4) 0;
+    padding: var(--space-3) 0;
+    margin: 0;
   }
 
-  .tool-widget__list {
+  /* ─── Mini-stats sentiment bar ─────────────────────────── */
+  .tw-stats {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-2-5) 0;
+    margin-bottom: var(--space-1);
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+  }
+  .tw-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    flex: 1;
+    text-align: center;
+  }
+  .tw-stat strong {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .tw-stat__label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    line-height: 1;
+  }
+  .tw-stat--rising strong { color: var(--color-success); }
+  .tw-stat--launch strong { color: var(--secondary-bright); }
+
+  /* ─── Section heads ─────────────────────────────────────── */
+  .tw-section {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+  }
+  .tw-section:first-of-type { padding-top: 0; }
+  .tw-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .tw-section__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: 11px;
+    font-weight: var(--font-semibold);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    margin: 0 0 var(--space-2);
+  }
+  .tw-section__title--rising { color: var(--color-success); }
+  .tw-section__title--launch { color: var(--secondary-bright); }
+  .tw-section__title--github { color: var(--tertiary-bright); }
+
+  /* ─── Item list ─────────────────────────────────────────── */
+  .tw-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-2-5);
   }
+  .tw-list--compact { gap: var(--space-1-5); }
 
-  .tool-widget__item {
-    padding-bottom: var(--space-4);
+  .tw-item {
+    padding-bottom: var(--space-2-5);
     border-bottom: 1px solid color-mix(in oklch, var(--text-primary) 5%, transparent);
   }
-
-  .tool-widget__item:last-child {
+  .tw-list--compact .tw-item {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .tw-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
   }
 
-  .tool-widget__item-header {
+  /* ─── Updates item ──────────────────────────────────────── */
+  .tw-item__header {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-1);
+    gap: var(--space-1-5);
+    margin-bottom: var(--space-0-5);
     flex-wrap: wrap;
   }
-
-  .tool-widget__tool-name {
-    font-size: var(--text-sm);
+  .tw-item__name {
+    font-size: var(--text-xs);
     font-weight: var(--font-bold);
     color: var(--primary-bright);
     text-decoration: none;
     transition: color var(--transition-fast);
   }
-  .tool-widget__tool-name:hover { color: var(--text-primary); }
+  .tw-item__name:hover { color: var(--text-primary); }
 
-  .tool-widget__impact {
+  .tw-item__impact {
     margin-left: auto;
     display: flex;
     align-items: center;
   }
-
-  .tool-widget__feature {
-    font-size: var(--text-sm);
+  .tw-item__feature {
+    font-size: var(--text-xs);
     color: var(--text-secondary);
-    margin: 0 0 var(--space-1);
+    margin: 0;
     line-height: var(--leading-snug);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
-  .tool-widget__source {
+  .tw-item__source {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    font-size: var(--text-xs);
+    font-size: 11px;
     color: var(--text-muted);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: opacity var(--transition-fast), color var(--transition-fast);
     line-height: var(--leading-snug);
+    margin-top: var(--space-1);
+    opacity: 0;
   }
-  .tool-widget__source:hover { color: var(--text-secondary); }
+  .tw-item:hover .tw-item__source,
+  .tw-item:focus-within .tw-item__source { opacity: 1; }
+  .tw-item__source:hover { color: var(--text-secondary); }
 
-  /* Progressive disclosure */
-  .tool-widget__item--hidden {
-    display: none;
-  }
-
-  /* When expanded, cap the list height and add a subtle scroll */
-  .tool-widget__list--expanded {
-    max-height: calc(100vh - 220px);
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: color-mix(in oklch, var(--text-primary) 15%, transparent) transparent;
-    padding-right: var(--space-1);
-  }
-
-  .tool-widget__more-btn {
+  /* ─── Rising tool item ──────────────────────────────────── */
+  .tw-rising {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1-5);
+    flex-wrap: wrap;
+    text-decoration: none;
+    padding: var(--space-1) 0;
+    transition: color var(--transition-fast);
+  }
+  .tw-rising__name {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    text-transform: capitalize;
+  }
+  .tw-rising:hover .tw-rising__name { color: var(--color-success); }
+  .tw-rising__velocity {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--color-success);
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--font-medium);
+  }
+
+  /* ─── Launch item ──────────────────────────────────────── */
+  .tw-launch {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-1) var(--space-2);
+    text-decoration: none;
+    padding: var(--space-1) 0;
+  }
+  .tw-launch__name {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+  }
+  .tw-launch:hover .tw-launch__name { color: var(--secondary-bright); }
+  .tw-launch__date {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .tw-launch__tagline {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ─── GitHub repo item ──────────────────────────────────── */
+  .tw-repo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-1) var(--space-2);
+    text-decoration: none;
+    padding: var(--space-1) 0;
+  }
+  .tw-repo__name {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    transition: color var(--transition-fast);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tw-repo:hover .tw-repo__name { color: var(--tertiary-bright); }
+  .tw-repo__stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    color: var(--color-warning);
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--font-medium);
+  }
+  .tw-repo__desc {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ─── Progressive disclosure for updates ────────────────── */
+  .tw-item--hidden { display: none; }
+
+  .tw-more-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
     width: 100%;
-    margin-top: var(--space-4);
-    padding: var(--space-2) var(--space-3);
-    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
+    margin-top: var(--space-2-5);
+    padding: var(--space-1-5) var(--space-2);
+    background: transparent;
     border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
     border-radius: var(--radius-md);
     color: var(--primary-bright);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--font-medium);
     cursor: pointer;
     transition: all var(--transition-fast);
     justify-content: center;
   }
-
-  .tool-widget__more-btn:hover {
-    background: color-mix(in oklch, var(--primary-bright) 15%, transparent);
+  .tw-more-btn:hover {
+    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
     border-color: color-mix(in oklch, var(--primary-bright) 35%, transparent);
   }
-
-  .tool-widget__more-count {
+  .tw-more-count {
     color: var(--text-muted);
-    font-weight: var(--font-normal);
+    font-weight: var(--font-regular);
   }
 </style>
 
 <script>
-  const btn = document.getElementById('updates-more');
-  const list = document.getElementById('updates-list');
+  function initUpdatesMore() {
+    const btn = document.getElementById('updates-more');
+    const list = document.getElementById('updates-list');
+    if (!btn || !list) return;
+    if ((btn as HTMLButtonElement).dataset.bound === '1') return;
+    (btn as HTMLButtonElement).dataset.bound = '1';
 
-  btn?.addEventListener('click', () => {
-    // Reveal all hidden items
-    list?.querySelectorAll('.tool-widget__item--hidden').forEach(item => {
-      item.classList.remove('tool-widget__item--hidden');
+    btn.addEventListener('click', () => {
+      list.querySelectorAll('.tw-item--hidden').forEach(el => {
+        el.classList.remove('tw-item--hidden');
+      });
+      btn.setAttribute('aria-expanded', 'true');
+      (btn as HTMLButtonElement).style.display = 'none';
     });
-    // Cap the list height so the sidebar doesn't become endless
-    list?.classList.add('tool-widget__list--expanded');
-    // Hide the button
-    btn.style.display = 'none';
-  });
+  }
+  initUpdatesMore();
+  document.addEventListener('astro:after-swap', initUpdatesMore);
 </script>

@@ -34,6 +34,8 @@ Cursor, de AI-first code-editor die is gebouwd op VS Code, heeft versie 1.0 uitg
 
 De meest opvallende toevoeging is de **agentic mode**: de editor kan nu zelfstandig meerdere stappen uitvoeren, bestanden aanmaken en aanpassen, en terminalopdrachten uitvoeren — zonder dat je elke stap handmatig goedkeurt. In de bèta was dit nog experimenteel; 1.0 maakt het een eerste-klasburger.
 
+Hetzelfde agent-principe zie je nu ook bij Anthropic opduiken — voor niet-developers — in [Claude Cowork](/nieuws/claude-cowork-lancering), waar Claude in een desktop-app bestanden beheert en shell-commando's uitvoert zonder terminal. Cursor blijft voorlopig de scherpere keuze voor wie echt dagelijks codeert; Cowork richt zich juist op kenniswerkers buiten de engineering-stoel. Wie wil zien hoe je Cowork in één werkdag goed inricht, kan onze gids [Claude in één dag instellen](/nieuws/claude-instellen-1-dag-6-tools) erbij pakken.
+
 ### BugBot
 
 BugBot koppelt direct aan GitHub. Wanneer je een pull request opent, scant BugBot de diff automatisch op logicafouten, potentiële crashes en veelgemaakte fouten. De suggesties verschijnen als comments in de PR — net als een collega-reviewer, maar dan sneller.

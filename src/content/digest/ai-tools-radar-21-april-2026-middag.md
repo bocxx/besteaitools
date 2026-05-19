@@ -1,6 +1,6 @@
 ---
 title: AI Tools Radar – Claude · Qwen · Hailuo AI (Middag 21 april)
-description: 'AI Tools Digest 21 april: 108 launches, 26 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
+description: 'AI Tools Radar 21 april: 108 launches, 26 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-21'
 timeSlot: tools-digest
 featured: []

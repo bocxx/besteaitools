@@ -1,4 +1,4 @@
-# AI Tools Digest
+# AI Tools Radar
 
 Auto-generated daily digests produced by the **newsflux** pipeline
 (`src/digest/tools_digest.py`). Each digest is a Dutch summary that

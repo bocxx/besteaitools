@@ -595,6 +595,10 @@ export interface ProductHuntStats {
   dailyRank?: number;
 }
 
+// Re-export LaunchItem from tools-engine for convenience
+export type { LaunchItem, LaunchItemStats } from '../lib/tools-engine';
+import type { LaunchItem } from '../lib/tools-engine';
+
 export interface LaunchRadarSection {
   key: 'product_hunt' | 'github' | 'hackernews' | 'twitter' | 'bluesky';
   label: string;
