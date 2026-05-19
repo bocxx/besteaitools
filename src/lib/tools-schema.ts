@@ -8,6 +8,21 @@
  */
 
 import { z } from 'astro/zod';
+import {
+  segmentSchema,
+  jtbdSchema,
+  useCaseBucketSchema,
+  integrationSchema,
+  dutchOutputQualitySchema,
+  dataTrainingUseSchema,
+  aiActRiskClassSchema,
+  vendorLockInRiskSchema,
+  setupTimeBucketSchema,
+} from './taxonomies';
+
+// Re-export taxonomy symbols so downstream code can import everything
+// matching-related from a single entry point (tools-schema).
+export * from './taxonomies';
 
 // ============================================
 // 1. TOOL CATEGORIES
@@ -93,13 +108,22 @@ export const dataResidencySchema = z.enum(dataResidencyKeys);
 // ============================================
 
 export const targetAudienceOptions = {
-  mkb:        { label: 'MKB',        color: 'var(--color-info)' },
-  enterprise: { label: 'Enterprise', color: 'var(--color-warning)' },
-  solo:       { label: 'Solo',       color: 'var(--color-success)' },
-  freelancer: { label: 'Freelancer', color: 'var(--text-secondary)' },
+  mkb:             { label: 'MKB',                    color: 'var(--color-info)' },
+  enterprise:      { label: 'Enterprise',             color: 'var(--color-warning)' },
+  solo:            { label: 'Solo',                   color: 'var(--color-success)' },
+  freelancer:      { label: 'Freelancer',             color: 'var(--text-secondary)' },
+  // ── Matching-plan uitbreidingen (§5a) ──
+  zzp:             { label: 'ZZP',                    color: 'var(--color-success)' },
+  mkb_klein:       { label: 'MKB klein (1-10)',       color: 'var(--color-info)' },
+  mkb_middel:      { label: 'MKB middel (10-50)',     color: 'var(--color-info)' },
+  vereniging:      { label: 'Vereniging',             color: 'var(--tertiary-bright)' },
+  stichting:       { label: 'Stichting',              color: 'var(--tertiary-bright)' },
+  overheid_klein:  { label: 'Kleine overheid',        color: 'var(--primary-bright)' },
+  onderwijs:       { label: 'Onderwijs',              color: 'var(--secondary-bright)' },
 } as const;
 
-export const targetAudienceKeys = Object.keys(targetAudienceOptions) as ['mkb', 'enterprise', 'solo', 'freelancer'];
+export type TargetAudienceKey = keyof typeof targetAudienceOptions;
+export const targetAudienceKeys = Object.keys(targetAudienceOptions) as [TargetAudienceKey, ...TargetAudienceKey[]];
 export const targetAudienceSchema = z.enum(targetAudienceKeys);
 
 // ============================================
@@ -344,6 +368,9 @@ export const toolContentSchema = z.object({
   pricing: z.string().optional(),
   openSource: z.boolean().optional(),
   pricingModel: pricingModelSchema.default('freemium'),
+  // TODO(fase 1): collapse `difficulty` + `easeOfUseScore` + `beginnerFriendlyScore`
+  // into two distinct scores (beginner vs power-user). Three overlapping ease
+  // fields is a foot-gun for editors and the scoring pipeline.
   difficulty: difficultyLevelSchema.default('beginner'),
   tags: z.array(z.string()).default([]),
   /**
@@ -440,4 +467,103 @@ export const toolContentSchema = z.object({
   verdict: z.string().optional(),
   bestAlternative: z.string().optional(),
   whyListed: z.string().optional(),
+
+  // ============================================
+  // MATCHING-PLAN v2 VELDEN (§5b)
+  //
+  // Alles additief. Oude velden blijven staan tot migratie volledig is.
+  // Nieuwe matching-engine gebruikt velden hieronder met voorrang.
+  // ============================================
+
+  // ── Matching Laag 1-3: segment + fit ──────────
+  /** Controlled segments that this tool is suitable for (intake Laag 1). */
+  matchSegments: z.array(segmentSchema).default([]),
+  /** Minimum and maximum team size where this tool fits well. */
+  idealTeamSize: z.object({
+    min: z.number().int().min(1),
+    max: z.number().int().min(1),
+  }).optional(),
+  /** Controlled use-case buckets (intake Laag 2). */
+  useCaseBuckets: z.array(useCaseBucketSchema).default([]),
+  /** Granular JTBDs, mapped from the `primaryJobsToBeDone` free-text list. */
+  matchJtbds: z.array(jtbdSchema).default([]),
+
+  // ── Matching Laag 4: constraints & governance ──
+  /** Coarse setup-time bucket; preferred over `timeToFirstValue`+`setupComplexity`. */
+  setupTime: setupTimeBucketSchema.optional(),
+  /** Quality of Dutch-language *output*; distinct from `supportsDutchLanguage` bool. */
+  outputLanguageQualityNl: dutchOutputQualitySchema.optional(),
+  /** Is user data used to train the model? */
+  dataUsedForTraining: dataTrainingUseSchema.optional(),
+  /** EU AI Act risk classification. */
+  aiActRiskClass: aiActRiskClassSchema.optional(),
+  /** How hard is it to migrate away once adopted? */
+  vendorLockInRisk: vendorLockInRiskSchema.optional(),
+  /** Controlled integrations (matching-engine filter). Free-text `integrations` blijft voor display. */
+  controlledIntegrations: z.array(integrationSchema).default([]),
+
+  // ── Matching Laag 5: pricing structure ─────────
+  /** Structured tier list; fills the gap where free-text `pricing` and `startingPriceMonthly` fall short. */
+  priceTiers: z.array(z.object({
+    name: z.string(),
+    eurPerMonth: z.number().min(0),
+    features: z.array(z.string()).default([]),
+    perSeat: z.boolean().optional(),
+  })).default([]),
+  /** Free-tier limits as a JSON string (e.g. `'{"convs_per_day": 10}'`).
+   *  Stored as a string so free-form keys (per-tool limits) can be added
+   *  without schema changes; parse at read-time via `parseFreeTierLimits()`. */
+  freeTierLimits: z.string().optional(),
+
+  // ── Matching UX & adoptie ──────────────────────
+  /** 1-10 score specifically for *beginners*; distinct from `easeOfUseScore` (which leans power-user). */
+  beginnerFriendlyScore: z.number().int().min(1).max(10).optional(),
+  /** Short human-readable estimate of weekly time saved. */
+  typicalWeeklyTimeSaved: z.string().optional(),
+  /** Slugs of tools that work well alongside this one (starter-stack aanbevelingen). */
+  complementaryTools: z.array(z.string()).default([]),
+  /** Tools this one typically replaces (strong match-boost signal). */
+  replacesTools: z.array(z.string()).default([]),
+
+  // ── Vereniging-specifiek ───────────────────────
+  /** Explicit flag: bruikbaar voor vrijwilligersorganisatie. */
+  verenigingSuitable: z.boolean().optional(),
+  /** Free-text nuance bij `verenigingSuitable`. */
+  verenigingNotes: z.string().optional(),
+
+  // ── Introductievolgorde (90-dagen plan output) ─
+  /** Per use-case bucket: introduction order as JSON string.
+   *  Bv. `'{"writing": 1, "images": 2}'`. Parse via `parseToolIntroductionOrder()`. */
+  toolIntroductionOrder: z.string().optional(),
 });
+
+// ============================================
+// 12. JSON-BLOB PARSERS (free-form record fields)
+// ============================================
+
+/** Parse `freeTierLimits` string into a typed record. Returns {} on empty/invalid. */
+export function parseFreeTierLimits(raw?: string): Record<string, number | string | boolean> {
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    return typeof parsed === 'object' && parsed !== null ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+/** Parse `toolIntroductionOrder` string into a typed record. Returns {} on empty/invalid. */
+export function parseToolIntroductionOrder(raw?: string): Record<string, number> {
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null) return {};
+    const out: Record<string, number> = {};
+    for (const [k, v] of Object.entries(parsed)) {
+      if (typeof v === 'number') out[k] = v;
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}

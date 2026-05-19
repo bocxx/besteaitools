@@ -83,7 +83,42 @@ export type DeploymentType = 'saas' | 'self-hosted' | 'both';
 export type DataResidency = 'eu' | 'us' | 'global' | 'unknown';
 
 /** Target audience */
-export type TargetAudience = 'mkb' | 'enterprise' | 'solo' | 'freelancer';
+export type TargetAudience =
+  | 'mkb' | 'enterprise' | 'solo' | 'freelancer'
+  // Matching-plan uitbreidingen (§5a)
+  | 'zzp' | 'mkb_klein' | 'mkb_middel'
+  | 'vereniging' | 'stichting' | 'overheid_klein' | 'onderwijs';
+
+// ── Matching-plan taxonomies (§4, §5b) ──
+export type SegmentKey =
+  | 'zzp' | 'mkb_klein' | 'mkb_middel' | 'vereniging' | 'stichting'
+  | 'overheid_klein' | 'onderwijs' | 'enterprise';
+
+export type UseCaseBucketKey =
+  | 'social_content' | 'customer_mail' | 'writing' | 'images' | 'scheduling'
+  | 'admin_finance' | 'meetings' | 'data_analysis' | 'customer_info' | 'code_web';
+
+export type SetupTimeBucket = 'under_15min' | 'under_1h' | 'under_4h' | 'days';
+
+export type DutchOutputQuality = 'native' | 'good' | 'basic' | 'poor';
+
+export type DataTrainingUse = 'yes' | 'no' | 'opt-out' | 'opt-in';
+
+export type AiActRiskClass = 'minimal' | 'limited' | 'high' | 'prohibited' | 'unknown';
+
+export type VendorLockInRisk = 'low' | 'medium' | 'high';
+
+export interface PriceTier {
+  name: string;
+  eurPerMonth: number;
+  features: string[];
+  perSeat?: boolean;
+}
+
+export interface IdealTeamSize {
+  min: number;
+  max: number;
+}
 
 /** Funding stage (market proof) */
 export type FundingStage = 'bootstrapped' | 'seed' | 'series-a' | 'series-b' | 'series-c' | 'growth' | 'public';
@@ -297,6 +332,54 @@ export interface ToolContent {
   // ── Laag 10: Functies (capabilities) ────────────────
   /** Concrete capabilities of the tool ("what can it do?") */
   keyFeatures: ToolKeyFeature[];
+
+  // ============================================
+  // MATCHING-PLAN v2 VELDEN (§5b — additief)
+  // ============================================
+
+  /** Segments this tool is suitable for (intake Laag 1). */
+  matchSegments: SegmentKey[];
+  /** Team-size bounds where this tool fits well. */
+  idealTeamSize?: IdealTeamSize;
+  /** Controlled use-case buckets (intake Laag 2). */
+  useCaseBuckets: UseCaseBucketKey[];
+  /** Granular JTBDs, mapped from primaryJobsToBeDone free-text. */
+  matchJtbds: string[];
+
+  /** Coarse setup-time bucket; preferred over TTV+setupComplexity. */
+  setupTime?: SetupTimeBucket;
+  /** Quality of Dutch-language output (distinct from supportsDutchLanguage bool). */
+  outputLanguageQualityNl?: DutchOutputQuality;
+  /** Is user data used to train the model? */
+  dataUsedForTraining?: DataTrainingUse;
+  /** EU AI Act risk classification. */
+  aiActRiskClass?: AiActRiskClass;
+  /** How hard is it to migrate away once adopted? */
+  vendorLockInRisk?: VendorLockInRisk;
+  /** Controlled integration slugs (distinct from free-text `integrations`). */
+  controlledIntegrations: string[];
+
+  /** Structured price-tier list. */
+  priceTiers: PriceTier[];
+  /** Free-tier limits as JSON string; parse with parseFreeTierLimits(). */
+  freeTierLimits?: string;
+
+  /** 1-10 score tuned for beginners specifically. */
+  beginnerFriendlyScore?: number;
+  /** Short human-readable estimate of weekly time saved. */
+  typicalWeeklyTimeSaved?: string;
+  /** Slugs of tools that work well alongside this one. */
+  complementaryTools: string[];
+  /** Tools this one typically replaces. */
+  replacesTools: string[];
+
+  /** Vereniging-geschikt flag. */
+  verenigingSuitable?: boolean;
+  /** Nuance bij verenigingSuitable. */
+  verenigingNotes?: string;
+
+  /** Introduction order per use-case bucket as JSON string. */
+  toolIntroductionOrder?: string;
 }
 
 // ============================================

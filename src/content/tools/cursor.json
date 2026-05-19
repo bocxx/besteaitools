@@ -111,6 +111,25 @@
       "group": "enterprise"
     }
   ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 1000
+  },
+  "controlledIntegrations": [
+    "vscode",
+    "github",
+    "gitlab"
+  ],
+  "beginnerFriendlyScore": 6,
+  "dataUsedForTraining": "opt-out",
+  "vendorLockInRisk": "medium",
   "headlineValueProp": "AI-first IDE die VS Code's UX combineert met agent-modus en codebase-bewuste suggesties",
   "primaryJobsToBeDone": [
     "Code schrijven met inline AI-suggesties die de hele codebase als context hebben",

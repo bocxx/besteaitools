@@ -2,3 +2,19 @@
 /sitemap.xml /sitemap-index.xml 301
 /ai-tools/fireflies /ai-tools/fireflies-ai 301
 /ai-tools/fireflies/ /ai-tools/fireflies-ai/ 301
+
+# GSC-reported 404s: slug normalisation dropped dots (copy.ai → copyai, you.com → youcom)
+/ai-tools/copy.ai /ai-tools/copyai 301
+/ai-tools/copy.ai/ /ai-tools/copyai/ 301
+/ai-tools/you.com /ai-tools/youcom 301
+/ai-tools/you.com/ /ai-tools/youcom/ 301
+
+# Excluded tool — redirect to the radar
+/ai-tools/sora /ai-tools 301
+/ai-tools/sora/ /ai-tools 301
+
+# /vergelijk pages that were once indexed but no longer generated
+# (top-20 buzz-rank churn). Wildcard catches any /vergelijk/X-vs-Y/ that
+# doesn't match a static file — Cloudflare evaluates _redirects after
+# static-asset lookup, so valid comparisons keep serving normally.
+/vergelijk/*-vs-* /vergelijk 301

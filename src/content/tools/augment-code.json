@@ -94,6 +94,24 @@
       "group": "integration"
     }
   ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "zzp",
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "vscode",
+    "github"
+  ],
+  "beginnerFriendlyScore": 5,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "medium",
   "verdict": "Augment Code positioneert zich expliciet als coding-assistent voor grote enterprise codebases waar Cursor en Copilot last hebben van context. Sterk in de niche; voor solo-projecten is Cursor sneller en goedkoper.",
   "whyListed": "Augment Code groeide in 2025 als enterprise-alternatief voor mainstream coding-assistenten, met focus op security, codebase-context en grote monorepo's.",
   "bestAlternative": "cursor",

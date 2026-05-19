@@ -30,6 +30,8 @@ const byCategory = Array.from(byCategoryMap.entries()).sort((a, b) => {
   const scoreB = b[1].reduce((s, p) => s + (p.toolA.stats?.buzz_score ?? 0) + (p.toolB.stats?.buzz_score ?? 0), 0);
   return scoreB - scoreA;
 });
+
+export const prerender = true;
 ---
 
 <Layout

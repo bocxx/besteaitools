@@ -15,7 +15,7 @@ import {
 import { businessFunctions } from '../lib/tools-schema';
 import type { BusinessFunctionKey } from '../lib/tools-schema';
 import type { Tool } from '../types/tools-domain';
-import { Building2, Briefcase, ShieldCheck, Zap, UserX, Gift, BadgeCheck } from '@lucide/astro';
+import { Building2, Briefcase, ShieldCheck, Zap, UserX, Gift, BadgeCheck, Sparkles, ArrowRight } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const sections = await getBusinessFunctionSections();
@@ -43,6 +43,8 @@ zakelijkTools.sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?
 // Count per function
 const fnCounts = new Map<string, number>();
 for (const s of sections) fnCounts.set(s.key, s.tools.length);
+
+export const prerender = true;
 ---
 
 <Layout
@@ -68,6 +70,40 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
         op bedrijfsfunctie — van marketing en sales tot development en data-analyse.
       </p>
     </header>
+
+    <!-- Matching wizard shortcut: "answer-first" path -->
+    <section class="match-cta" aria-labelledby="match-cta-title">
+      <div class="match-cta__icon">
+        <Sparkles size={22} stroke-width={1.6} />
+      </div>
+      <div class="match-cta__body">
+        <h2 class="match-cta__title" id="match-cta-title">
+          Geen idee waar te beginnen?
+        </h2>
+        <p class="match-cta__lead">
+          Beschrijf in één zin wat je doet, of beantwoord 3 vragen — wij geven een
+          eerlijke top-3 met uitleg en een 90-dagen plan. Geen affiliate-invloed.
+        </p>
+        <form id="match-cta-form" class="match-cta__form" autocomplete="off">
+          <label class="sr-only" for="match-cta-input">Beschrijf je situatie</label>
+          <input
+            type="text"
+            id="match-cta-input"
+            name="text"
+            placeholder='bv. "MKB van 8 mensen, vooral klant-mails en facturen"'
+            maxlength="2000"
+          />
+          <button type="submit" class="match-cta__primary">
+            <span>Geef mijn top-3</span>
+            <ArrowRight size={16} stroke-width={2} />
+          </button>
+        </form>
+        <a href="/match" class="match-cta__secondary">
+          Of klik door de 3 vragen →
+        </a>
+        <p class="match-cta__status" id="match-cta-status" hidden></p>
+      </div>
+    </section>
 
     <!-- Filter bar (same pattern as index) -->
     <nav class="filter-bar" aria-label="Filter op bedrijfsfunctie">
@@ -268,6 +304,75 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
     });
     sorted.forEach(wrap => grid.appendChild(wrap));
   }
+
+  // ── Matching wizard shortcut ─────────────────────
+  // Submitting the inline free-text form parses the description via
+  // /api/match-parse and forwards the user to /match with the resulting
+  // profile encoded in the URL hash. The wizard then prefills the form,
+  // so the user lands directly on Step 3 (or earlier if required fields
+  // are still missing). Empty input just navigates to /match for the
+  // 3-vragen-flow.
+  const matchForm = document.getElementById('match-cta-form') as HTMLFormElement | null;
+  const matchInput = document.getElementById('match-cta-input') as HTMLInputElement | null;
+  const matchBtn = matchForm?.querySelector<HTMLButtonElement>('.match-cta__primary') ?? null;
+  const matchStatus = document.getElementById('match-cta-status');
+
+  function setCtaStatus(msg: string, isError = false) {
+    if (!matchStatus) return;
+    if (!msg) {
+      matchStatus.hidden = true;
+      matchStatus.textContent = '';
+      matchStatus.className = 'match-cta__status';
+      return;
+    }
+    matchStatus.hidden = false;
+    matchStatus.textContent = msg;
+    matchStatus.className = 'match-cta__status' + (isError ? ' is-error' : '');
+  }
+
+  matchForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = matchInput?.value.trim() ?? '';
+
+    // Empty → just hop to the wizard
+    if (!text) {
+      location.href = '/match';
+      return;
+    }
+    if (text.length < 10) {
+      setCtaStatus('Schrijf even iets meer (één hele zin werkt het beste).', true);
+      return;
+    }
+
+    matchBtn!.disabled = true;
+    setCtaStatus('Bezig met lezen…');
+
+    try {
+      const res = await fetch('/api/match-parse', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      });
+      if (!res.ok) {
+        // 503 (no LLM key) → silently fall back to the wizard;
+        // the user can still answer the 3 questions manually.
+        if (res.status === 503) {
+          location.href = '/match';
+          return;
+        }
+        const err = await res.json().catch(() => ({}));
+        throw new Error((err as { error?: string }).error ?? `Parse failed (${res.status})`);
+      }
+      const data = await res.json() as { profile: Record<string, unknown>; interpretation?: string };
+      // Encode profile as URL hash — /match reads this on load
+      const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data.profile))));
+      location.href = '/match#p=' + encoded;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Onbekende fout';
+      setCtaStatus(`Kon niet lezen: ${msg}. Klik op de 3 vragen-link hieronder.`, true);
+      matchBtn!.disabled = false;
+    }
+  });
 </script>
 
 <style>
@@ -317,6 +422,148 @@ for (const s of sections) fnCounts.set(s.key, s.tools.length);
   .zakelijk-subtitle strong {
     color: var(--text-primary);
     font-weight: var(--font-semibold);
+  }
+
+  /* ── Matching wizard shortcut ──────────────────── */
+  .match-cta {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+    position: relative;
+    overflow: hidden;
+  }
+  .match-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--primary-bright) 8%, transparent),
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+  .match-cta__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: color-mix(in oklch, var(--primary-bright) 14%, transparent);
+    color: var(--primary-bright);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    position: relative;
+    z-index: 1;
+  }
+  .match-cta__body {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .match-cta__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-1);
+    color: var(--text-primary);
+  }
+  .match-cta__lead {
+    margin: 0 0 var(--space-3);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+  .match-cta__form {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .match-cta__form input {
+    flex: 1;
+    min-width: 220px;
+    padding: var(--space-2-5) var(--space-3);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-family: inherit;
+  }
+  .match-cta__form input:focus {
+    outline: 2px solid var(--primary-bright);
+    outline-offset: 1px;
+    border-color: var(--primary-bright);
+  }
+  .match-cta__primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-2-5) var(--space-4);
+    border-radius: var(--radius-md);
+    background: var(--primary-bright);
+    color: var(--bg-deep);
+    border: 1px solid var(--primary-bright);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.15s;
+    white-space: nowrap;
+  }
+  .match-cta__primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in oklch, var(--primary-bright) 30%, transparent);
+  }
+  .match-cta__primary:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+  }
+  .match-cta__secondary {
+    display: inline-block;
+    margin-top: var(--space-2);
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    text-decoration: none;
+  }
+  .match-cta__secondary:hover {
+    color: var(--primary-bright);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .match-cta__status {
+    margin: var(--space-2) 0 0;
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+  }
+  .match-cta__status.is-error { color: var(--color-error); }
+
+  @media (max-width: 640px) {
+    .match-cta {
+      flex-direction: column;
+      padding: var(--space-4);
+    }
+    .match-cta__icon { display: none; }
+    .match-cta__form input { min-width: 0; width: 100%; }
+    .match-cta__primary { width: 100%; justify-content: center; }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   /* ── Filter bar (matching index.astro) ──────────── */

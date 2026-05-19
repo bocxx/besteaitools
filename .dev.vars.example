@@ -1,0 +1,13 @@
+# Copy to .dev.vars (gitignored) to enable the /api/match-explain endpoint
+# locally. The Cloudflare adapter reads .dev.vars in `npm run dev`.
+#
+# Set EITHER an Anthropic key (direct) OR an OpenRouter key (proxy).
+# If both are set, Anthropic direct takes precedence.
+
+# Option A — Anthropic direct
+#   https://console.anthropic.com/settings/keys
+ANTHROPIC_API_KEY=sk-ant-...
+
+# Option B — OpenRouter (uses anthropic/claude-haiku-4.5)
+#   https://openrouter.ai/keys
+OPENROUTER_API_KEY=sk-or-v1-...

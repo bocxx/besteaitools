@@ -13,7 +13,6 @@ debesteaitools.nl is een open AI-tools directory voor de Nederlandse markt. De s
 - **Weekradar** — wekelijkse highlights: tool van de week, stijgers, dalers, nieuwkomers
 - **Vergelijkingen** — automatisch gegenereerde "X vs Y" vergelijkingspagina's voor top tools
 - **RSS-feed** — voor abonnees die updates willen volgen
-- **Keystatic CMS** — admin UI op `/keystatic` voor redactioneel beheer van tool-content
 
 ### Hoe werkt het?
 
@@ -39,7 +38,7 @@ Scant 8+ bronnen  ──→  ai_tools_radar.json  ──→  Merged Tool
 
 - **Framework**: [Astro](https://astro.build/) v6 (SSG + Cloudflare adapter)
 - **Taal**: TypeScript
-- **CMS**: [Keystatic](https://keystatic.com/) (lokale JSON bestanden)
+- **Content**: redactioneel beheerd via JSON bestanden in `src/content/tools/`
 - **Hosting**: Cloudflare Pages
 - **Styling**: Custom CSS met design tokens (Ember thema), geen CSS framework
 - **Iconen**: Lucide
@@ -111,6 +110,22 @@ npm run build        # Productie-build → dist/
 npm run preview      # Preview productie-build
 npm run sync-tools   # Sync tools van newsflux radar → content + enrichment diffs
 ```
+
+## Matching-engine env vars
+
+De `/match` wizard werkt volledig zonder extra config — scoring draait
+client-side en top-3 toont template-reasons uit de scoring-pipeline.
+
+Om de **LLM-uitleg per tool** (`/api/match-explain`, Haiku 4.5) te
+activeren:
+
+1. Kopieer `.dev.vars.example` naar `.dev.vars` (lokaal, gitignored).
+2. Zet `ANTHROPIC_API_KEY=sk-ant-...` — haal een key bij
+   [console.anthropic.com](https://console.anthropic.com/settings/keys).
+3. Voor productie: `wrangler secret put ANTHROPIC_API_KEY`.
+
+Zonder key geeft het endpoint 503; de wizard valt gracefully terug op
+de template-reasons (logt één `console.warn`, geen UI-fout).
 
 ## Slug-conventie
 

@@ -3,21 +3,20 @@ import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
-import keystatic from '@keystatic/astro';
 import rehypeExternalLinks from 'rehype-external-links';
 
 const isDev = process.argv.includes('dev');
 
 export default defineConfig({
   site: 'https://debesteaitools.nl',
-  output: 'static',
-  adapter: isDev ? undefined : cloudflare(),
+  // 'server' mode so /api/* routes run at request time. Every existing
+  // page opts back into prerendering via `export const prerender = true`
+  // so static build output is unchanged.
+  output: 'server',
+  adapter: cloudflare(),
   integrations: [
     react(),
     markdoc(),
-    // Keystatic only active in dev — local CMS for editing tool profiles
-    // Access at: http://localhost:4321/keystatic
-    ...(isDev ? [keystatic()] : []),
     sitemap({
       filter: (page) => !page.includes('/og/'),
       serialize(item) {

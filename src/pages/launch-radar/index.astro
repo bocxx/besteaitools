@@ -74,6 +74,8 @@ const activeCategories = [...categoryCounts.entries()]
   .filter(([, count]) => count >= 3)
   .map(([cat]) => cat)
   .sort();
+
+export const prerender = true;
 ---
 
 <Layout

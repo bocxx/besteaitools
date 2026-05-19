@@ -30,6 +30,8 @@ const related = allNieuws
   .filter(a => a.data.category === article.data.category && a.id !== article.id)
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
   .slice(0, 3);
+
+export const prerender = true;
 ---
 
 <Layout
