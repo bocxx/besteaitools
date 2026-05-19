@@ -103,5 +103,19 @@
     "min": 1,
     "max": 100000
   },
-  "controlledIntegrations": []
+  "controlledIntegrations": [],
+  "verdict": "Modal maakt serverless GPU-jobs in Python triviaal: deploy een functie en draai 'm op A100's. Dev-favoriet voor batch-AI en model-inference; voor één-klik OSS-modellen via API is Replicate eenvoudiger.",
+  "whyListed": "Modal werd snel een populair platform voor AI-engineers die Python-native workflows willen draaien op serverless GPU-infra zonder Kubernetes te beheren.",
+  "bestAlternative": "replicate",
+  "headlineValueProp": "Python-native serverless platform voor GPU-jobs en AI-inference",
+  "primaryJobsToBeDone": [
+    "Een Python-functie deployen die op A100/H100-GPU's draait",
+    "Batch-inference of fine-tuning-jobs runnen zonder eigen cluster",
+    "Een AI-pipeline orchestreren met scheduled functies en webhooks"
+  ],
+  "antiUseCases": [
+    "OSS-modellen via simpele REST-API draaien — Replicate is dan directer",
+    "Teams zonder Python-expertise",
+    "Strikt EU-only deployments — primair US-infra"
+  ]
 }

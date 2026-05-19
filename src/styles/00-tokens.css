@@ -300,14 +300,81 @@
   }
   
   /* ============================================
-     DARK MODE OVERRIDES (future-proofing)
+     LIGHT THEME OVERRIDES
+     Applied via data-theme="light" on <html>.
+     Keeps the Ember warmth (amber primary, warm red secondary)
+     but inverts the surface palette to warm cream + white.
      ============================================ */
-  
-  @media (prefers-color-scheme: light) {
-    /* Light mode tokens would go here if needed */
-    /* Currently designed for dark mode only */
+
+  [data-theme="light"] {
+    /* Background Palette - Warm Cream */
+    --bg-deep: oklch(98% 0.006 60);
+    --bg-surface: oklch(95% 0.010 60);
+    --bg-elevated: oklch(100% 0 0);
+    --bg-panel: oklch(100% 0 0);
+
+    /* Brand Colors - Amber Gold (deeper for contrast on light) */
+    --primary-bright: oklch(58% 0.16 var(--primary-h));
+    --primary-mid: oklch(48% 0.15 var(--primary-h));
+    --primary-dark: oklch(38% 0.13 var(--primary-h));
+
+    /* Brand Colors - Warm Red (deeper for contrast on light) */
+    --secondary-bright: oklch(50% 0.20 var(--secondary-h));
+    --secondary-mid: oklch(42% 0.18 var(--secondary-h));
+    --secondary-dark: oklch(35% 0.15 var(--secondary-h));
+
+    /* Support Colors - Soft Purple (deeper for legibility) */
+    --tertiary-bright: oklch(50% 0.12 var(--tertiary-h));
+    --tertiary-dark: oklch(40% 0.10 var(--tertiary-h));
+
+    /* Semantic Colors - tuned for contrast on white */
+    --color-success: oklch(48% 0.14 165);
+    --color-warning: oklch(55% 0.14 85);
+    --color-error: oklch(50% 0.20 25);
+    --color-info: oklch(48% 0.14 230);
+
+    /* Text Palette - dark on cream */
+    --text-primary: oklch(20% 0.02 260);
+    --text-secondary: oklch(40% 0.025 255);
+    --text-muted: oklch(50% 0.02 250);
+    --text-inverse: oklch(98% 0.005 60);
+
+    /* Borders - blend warm-dark text into transparent */
+    --border-subtle: color-mix(in oklch, var(--text-secondary) 14%, transparent);
+    --border-strong: color-mix(in oklch, var(--text-primary) 16%, transparent);
+    --border-accent: color-mix(in oklch, var(--primary-bright) 30%, transparent);
+
+    /* Glow Effects - softer on light bg */
+    --glow-primary: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    --glow-secondary: color-mix(in oklch, var(--secondary-bright) 10%, transparent);
+    --glow-tertiary: color-mix(in oklch, var(--tertiary-bright) 8%, transparent);
+
+    /* Glass Morphism - mostly opaque white panels */
+    --bg-glass: color-mix(in oklch, var(--bg-panel) 82%, transparent);
+    --bg-overlay: color-mix(in oklch, var(--bg-deep) 60%, transparent);
+
+    /* Shadows - subtle gray rather than deep-color mix */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.10);
+    --shadow-2xl: 0 40px 80px rgba(0, 0, 0, 0.12);
+    --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    --shadow-inner-lg: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+
+    /* Glow Shadows - subtle on light */
+    --shadow-glow-primary: 0 0 30px var(--glow-primary);
+    --shadow-glow-secondary: 0 0 30px var(--glow-secondary);
+    --shadow-glow-tertiary: 0 0 30px var(--glow-tertiary);
+
+    /* Focus Rings */
+    --ring-primary: 0 0 0 3px var(--glow-primary);
+    --ring-secondary: 0 0 0 3px var(--glow-secondary);
+    --ring-tertiary: 0 0 0 3px var(--glow-tertiary);
+    --ring-offset: 0 0 0 2px var(--bg-deep);
   }
-  
+
   /* ============================================
      REDUCED MOTION OVERRIDES
      ============================================ */

@@ -373,6 +373,16 @@ export const toolContentSchema = z.object({
   // fields is a foot-gun for editors and the scoring pipeline.
   difficulty: difficultyLevelSchema.default('beginner'),
   tags: z.array(z.string()).default([]),
+  /**
+   * Extra terms (besides name + slug) that this tool is known by.
+   * Used for two things:
+   *   1. Relevance filter for social/news/YouTube items (whole-word match)
+   *   2. Fallback slug lookup against the newsflux radar stats — so a tool
+   *      filed as `fireflies-ai.json` can still pick up stats keyed under
+   *      `fireflies`.
+   * Examples: DALL-E → ["dalle", "dall e"]; Fireflies.ai → ["fireflies"].
+   */
+  mentionAliases: z.array(z.string()).default([]),
   businessFunctions: z.array(businessFunctionSchema).default([]),
   draft: z.boolean().default(false),
   // Zakelijke metadata

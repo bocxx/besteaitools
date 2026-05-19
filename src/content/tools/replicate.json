@@ -107,5 +107,19 @@
   "controlledIntegrations": [],
   "beginnerFriendlyScore": 3,
   "dataUsedForTraining": "no",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "verdict": "Replicate is de eenvoudigste manier om open-source AI-modellen via API te draaien — model kiezen, API-call doen, resultaat krijgen. Voor productie-workloads met eigen modellen is Modal flexibeler.",
+  "whyListed": "Replicate werd de standaard manier voor developers om met open-source AI-modellen te experimenteren zonder eigen GPU-infrastructuur op te zetten.",
+  "bestAlternative": "huggingface",
+  "headlineValueProp": "Run open-source AI-modellen via een eenvoudige API — geen GPU-infra nodig",
+  "primaryJobsToBeDone": [
+    "Een open-source model (SDXL, Whisper, Llama) via REST-API aanroepen",
+    "Snel experimenteren met diverse modellen zonder lokale install",
+    "Een prototype demo bouwen die op community-modellen leunt"
+  ],
+  "antiUseCases": [
+    "Hoge-throughput productie-workloads waar marge op cold starts telt",
+    "Custom Python pipelines — Modal is daar geschikter",
+    "Strikte data-residency die Replicates regio's niet dekken"
+  ]
 }
