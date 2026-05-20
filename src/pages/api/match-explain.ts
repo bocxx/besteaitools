@@ -8,6 +8,16 @@
  * Runs at request time on Cloudflare Workers; non-prerendered.
  * Graceful degradation: 503 when no LLM key is configured — the wizard
  * falls back to the template-based `reason` it already rendered.
+ *
+ * Result caching (cost control):
+ * The matching engine is deterministic — an identical profile always
+ * yields the identical top-3. So the LLM output for a given
+ * (system-prompt + user-payload) pair can be safely frozen and reused.
+ * We cache via the Cloudflare Cache API (`caches.default`): zero config,
+ * per-colo. NL traffic concentrates in 1-2 colos so per-colo ≈ global
+ * in practice. Cache key = SHA-256 of the exact prompt we'd send, so
+ * any prompt change auto-invalidates. 30-day TTL; misses just
+ * regenerate. Responses carry `X-Cache: HIT|MISS`.
  */
 
 import type { APIRoute } from 'astro';
@@ -130,6 +140,28 @@ Return:
 Geen headers, geen inleidende zinnen — alleen de korte teksten.`;
 }
 
+// ─── Result cache (Cloudflare Cache API) ───────────────────────
+
+const CACHE_TTL_SECONDS = 30 * 24 * 60 * 60; // 30 days
+/** Synthetic origin for cache keys — never actually fetched. */
+const CACHE_KEY_ORIGIN = 'https://match-cache.debesteaitools.nl/explain/';
+
+/** SHA-256 hex of the exact prompt pair — any prompt change re-keys. */
+async function computeCacheKey(system: string, user: string): Promise<string> {
+  const data = new TextEncoder().encode(`${system}\u0000${user}`);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+/** The Cache API is absent in some dev shims — guard every access. */
+function getCache(): Cache | null {
+  try {
+    return typeof caches !== 'undefined' && caches.default ? caches.default : null;
+  } catch {
+    return null;
+  }
+}
+
 // ─── POST handler ──────────────────────────────────────────────
 
 export const POST: APIRoute = async ({ request }) => {
@@ -146,6 +178,31 @@ export const POST: APIRoute = async ({ request }) => {
   }
   const { profile, top3, alternatives = [] } = parsed.data;
 
+  const system = buildSystemPrompt();
+  const user = JSON.stringify({ profile, top3, alternatives }, null, 2);
+
+  // ── Cache lookup ──
+  const cache = getCache();
+  let cacheKeyReq: Request | null = null;
+  if (cache) {
+    const hash = await computeCacheKey(system, user);
+    cacheKeyReq = new Request(CACHE_KEY_ORIGIN + hash);
+    const hit = await cache.match(cacheKeyReq);
+    if (hit) {
+      // Clone + tag so the client can see it was a cache hit.
+      const cachedBody = await hit.text();
+      return new Response(cachedBody, {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Cache-Control': 'no-store',
+          'X-Cache': 'HIT',
+        },
+      });
+    }
+  }
+
+  // ── Cache miss → call the LLM ──
   const availability = resolveLlmKeys();
   if (!availability.available) {
     return jsonError(503, availability.reason!);
@@ -153,8 +210,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     const result = await callLlmWithJson({
-      system: buildSystemPrompt(),
-      user: JSON.stringify({ profile, top3, alternatives }, null, 2),
+      system,
+      user,
       schema: ExplanationsSchema,
       openrouterJsonSchema: {
         name: 'explanations',
@@ -175,21 +232,37 @@ export const POST: APIRoute = async ({ request }) => {
     const explanations = padTo([...result.parsed.explanations], top3.length);
     const whyNot = padTo([...result.parsed.whyNot], alternatives.length);
 
-    return new Response(
-      JSON.stringify({
-        explanations,
-        whyNot,
-        usage: result.usage,
-        provider: result.provider,
-      }),
-      {
-        status: 200,
+    const payload = JSON.stringify({
+      explanations,
+      whyNot,
+      usage: result.usage,
+      provider: result.provider,
+    });
+
+    // ── Store in cache (best-effort — never block the response) ──
+    if (cache && cacheKeyReq) {
+      const cacheable = new Response(payload, {
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'Cache-Control': 'no-store',
+          'Cache-Control': `public, max-age=${CACHE_TTL_SECONDS}`,
         },
+      });
+      // cache.put is async; failure to cache must not break the request.
+      try {
+        await cache.put(cacheKeyReq, cacheable);
+      } catch {
+        /* ignore — caching is opportunistic */
+      }
+    }
+
+    return new Response(payload, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-store',
+        'X-Cache': cache ? 'MISS' : 'BYPASS',
       },
-    );
+    });
   } catch (err) {
     return llmErrorToResponse(err);
   }
