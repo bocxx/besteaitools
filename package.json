@@ -7,6 +7,7 @@
     "generate-og": "tsx scripts/generate-og-images.ts",
     "build": "npm run generate-og && node scripts/build-search-index.mjs && astro build",
     "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
     "fetch-ph-stats": "tsx scripts/fetch-ph-stats.ts"
   },
@@ -32,7 +33,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^13.5.2",
+    "@astrojs/cloudflare": "13.5.1",
     "pagefind": "^1.5.2",
     "wrangler": "^4.78.0"
   }

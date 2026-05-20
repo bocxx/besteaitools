@@ -4,9 +4,11 @@ Geverifieerd tegen `wrangler.toml`, `astro.config.mjs`, `package.json`, recente 
 
 ## Stack
 
-- **Framework**: Astro v6 in `output: 'static'` mode
-- **Adapter**: `@astrojs/cloudflare` (productie), niet in dev
-- **Hosting**: Cloudflare Pages
+- **Framework**: Astro v6 in `output: 'server'` mode — alle bestaande
+  pagina's prerenderen via `export const prerender = true`, zodat `/api/*`
+  at-request draaien zonder de static output te veranderen
+- **Adapter**: `@astrojs/cloudflare` — altijd actief, ook in dev
+- **Hosting**: Cloudflare Workers (met Workers Static Assets)
 - **Custom domains**: `debesteaitools.nl`, `www.debesteaitools.nl` (zie [wrangler.toml](../wrangler.toml))
 - **Compatibility date**: 2026-03-27 met `nodejs_compat` flag
 - **Observability**: enabled (Cloudflare metrics)
@@ -25,35 +27,45 @@ Geverifieerd tegen `wrangler.toml`, `astro.config.mjs`, `package.json`, recente 
    → Bouwt Pagefind search-index voor client-side zoeken
 
 3. astro build
-   → Static build naar dist/
+   → dist/client/ (static assets) + dist/server/ (SSR-worker)
+   → de adapter genereert óók dist/server/wrangler.json (deploy-config)
+     en .wrangler/deploy/config.json
 ```
 
-Cloudflare Pages serveert vervolgens `dist/`.
-
 ## Branches & deploy-flow
-
-Geverifieerd uit `git log`:
 
 - **`feat/tools-domain`** — huidige werkbranch (mei 2026)
 - **`main`** — productie
 
-**Auto-deploy commits** (zichtbaar in log):
-- `Auto-deploy: content update` — komt van automatische sync (newsflux output → commit → push)
-- `deploy` — handmatige push naar productie
+**Deploy gebeurt handmatig** — er is géén Cloudflare git-integratie (geen
+GitHub deployments of commit-checks zichtbaar op de repo). Een push triggert
+dus niets:
 
-**Cloudflare Pages git-integratie** triggert builds op push. Geen GitHub Actions in deze repo (`.github/` ontbreekt).
+```bash
+npm run deploy      # = npm run build && wrangler deploy
+```
+
+`npm run build` MOET vóór `wrangler deploy` draaien: de deploy-config
+(`dist/server/wrangler.json`) is zelf een build-artefact. `wrangler deploy`
+pakt die via `.wrangler/deploy/config.json` automatisch op. Het
+`deploy`-script borgt de juiste volgorde.
+
+**Commits in de log**:
+- `Auto-deploy: content update` — automatische content-sync (newsflux →
+  commit → push). Pusht naar GitHub voor versiehistorie; triggert géén deploy.
+- `deploy` — handmatige content-push.
+
+Geen GitHub Actions in deze repo (`.github/` ontbreekt).
 
 ## Lokaal draaien
 
 ```bash
 npm install         # eerste keer
 npm run dev         # → http://localhost:4321
-                    # Keystatic op http://localhost:4321/keystatic
 ```
 
 In dev:
-- Geen Cloudflare adapter (Astro default dev server)
-- Keystatic CMS actief
+- Cloudflare adapter draait mee (workerd dev-runner via `@cloudflare/vite-plugin`)
 - Hot module reload via Vite
 
 ## Productie-build testen
