@@ -4,6 +4,11 @@ node_modules/
 # Build output
 dist/
 
+# Generated build artifacts — regenerated every `npm run build`
+# (generate-og + build-search-index). Tracking them only adds churn.
+public/og/
+public/pagefind/
+
 # Environment
 .env
 .env.local
