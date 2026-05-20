@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-19T21:00:06.938274",
+  "generated_at": "2026-05-20T07:17:41.779798",
   "window_days": 7,
   "week": "2026-w21",
   "total_candidates_scanned": 1090,
-  "total_after_dedup": 1039,
-  "total_feature_updates": 124,
+  "total_after_dedup": 1035,
+  "total_feature_updates": 125,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "Codex in the ChatGPT mobile app",
-      "summary_nl": "ChatGPT gebruikers kunnen nu Codex gebruiken in de mobiele app om nieuwe taken te starten, outputs te bekijken, uit te voeren en volgende stappen goed te keuren.",
+      "summary_nl": "ChatGPT gebruikers kunnen nu Codex gebruiken in de mobiele app om nieuwe code te schrijven, bestaande code te bekijken en bij te sturen, en volgende stappen goed te keuren, allemaal vanaf hun mobiele apparaat.",
       "impact": "high",
       "sources": [
         {
@@ -22,7 +22,73 @@
           "source": "@OpenAI"
         }
       ],
-      "detected_at": "2026-05-19",
+      "detected_at": "2026-05-20",
+      "week": "2026-w21"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok Build CLI",
+      "summary_nl": "Grok heeft een krachtige AI-gestuurde coderingsagent en CLI gelanceerd, speciaal ontwikkeld voor professionele ontwikkelaars om hun workflows te automatiseren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/xai/status/2054993285152989373",
+          "title": "An early beta of Grok Build, an agentic CLI for coding, building apps, and automating workflows is now available for SuperGrok Heavy subscri",
+          "platform": "twitter",
+          "source": "@xai"
+        },
+        {
+          "url": "https://twitter.com/XFreeze/status/2055008375381922137",
+          "title": "xAI just released Grok Build CLI and it’s a game changer for developers\n\nGrok Build is a powerful AI coding agent and CLI built for professi",
+          "platform": "twitter",
+          "source": "@XFreeze"
+        }
+      ],
+      "detected_at": "2026-05-20",
+      "week": "2026-w21"
+    },
+    {
+      "tool_slug": "copilot",
+      "tool_name": "GitHub Copilot",
+      "tool_category": "coding",
+      "feature_title": "GitHub Certified: Agentic AI Developer",
+      "summary_nl": "GitHub introduceert een nieuw certificaat voor ontwikkelaars die geleerd hebben om AI-agenten te integreren in hun moderne ontwikkelworkflows.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/MicrosoftLearn/status/2054969993410818299",
+          "title": "We’re introducing a new GitHub Certified: Agentic AI Developer (GH-600).\nAs AI agents become part of modern development workflows, this role",
+          "platform": "twitter",
+          "source": "@MicrosoftLearn"
+        }
+      ],
+      "detected_at": "2026-05-20",
+      "week": "2026-w21"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Cowork Workflow Automation",
+      "summary_nl": "De Anthropic-ingenieur die Claude Cowork heeft gebouwd, heeft een masterclass gepubliceerd over hoe je de tool effectief kunt gebruiken om je workflow te automatiseren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2054351031279186040",
+          "title": "How do you keep Claude working until the job is done? Claude Code helps with this in a few ways, including one we shipped recently: /goal. h",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        },
+        {
+          "url": "https://twitter.com/cgtwts/status/2052331797640515960",
+          "title": "the Anthropic engineer who built Claude Cowork, Boris Cherny, just dropped a masterclass on how to actually use it properly.\n\nAutomate your ",
+          "platform": "twitter",
+          "source": "@cgtwts"
+        }
+      ],
+      "detected_at": "2026-05-20",
       "week": "2026-w21"
     },
     {
@@ -62,24 +128,6 @@
       "week": "2026-w21"
     },
     {
-      "tool_slug": "copilot",
-      "tool_name": "GitHub Copilot",
-      "tool_category": "coding",
-      "feature_title": "GitHub Certified: Agentic AI Developer",
-      "summary_nl": "GitHub introduceert een nieuw certificaat voor ontwikkelaars die AI-agenten kunnen inzetten in moderne ontwikkelworkflows.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/MicrosoftLearn/status/2054969993410818299",
-          "title": "We’re introducing a new GitHub Certified: Agentic AI Developer (GH-600).\nAs AI agents become part of modern development workflows, this role",
-          "platform": "twitter",
-          "source": "@MicrosoftLearn"
-        }
-      ],
-      "detected_at": "2026-05-19",
-      "week": "2026-w21"
-    },
-    {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
@@ -92,30 +140,6 @@
           "title": "We're introducing the Claude Platform on AWS. This gives developers access to the same models and features as our native API, including Clau",
           "platform": "twitter",
           "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-05-19",
-      "week": "2026-w21"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Grok Build CLI",
-      "summary_nl": "Grok lanceert Grok Build, een krachtige AI-gestuurde CLI voor coderen, app-ontwikkeling en workflow-automatisering, beschikbaar voor SuperGrok Heavy-abonnees.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/xai/status/2054993285152989373",
-          "title": "An early beta of Grok Build, an agentic CLI for coding, building apps, and automating workflows is now available for SuperGrok Heavy subscri",
-          "platform": "twitter",
-          "source": "@xai"
-        },
-        {
-          "url": "https://twitter.com/XFreeze/status/2055008375381922137",
-          "title": "xAI just released Grok Build CLI and it’s a game changer for developers\n\nGrok Build is a powerful AI coding agent and CLI built for professi",
-          "platform": "twitter",
-          "source": "@XFreeze"
         }
       ],
       "detected_at": "2026-05-19",
