@@ -145,69 +145,65 @@ export const prerender = true;
       AI Tools
     </a>
 
-    <!-- Tool header -->
+    <!-- Tool header — redesigned hero, see /design-critique #5 -->
     <header class="tool-header">
-      <div class="tool-header__top">
-        <div class="tool-header__badges">
-          <Badge variant="category" color={cat.color}>{cat.name}</Badge>
-          <Badge variant="outline" color={pricing.color}>{pricing.label}</Badge>
-          {tool.openSource && <Badge variant="secondary">Open Source</Badge>}
-        </div>
+      <div class="tool-header__badges">
+        <Badge variant="category" color={cat.color}>{cat.name}</Badge>
+        <Badge variant="outline" color={pricing.color}>{pricing.label}</Badge>
+        {tool.openSource && <Badge variant="secondary">Open Source</Badge>}
       </div>
+
+      <h1 class="tool-name">
+        <span class="tool-name__gradient">{tool.name}</span>
+      </h1>
 
       {tool.headlineValueProp && (
         <p class="tool-value-prop">{tool.headlineValueProp}</p>
       )}
-      <h1 class="tool-name">{tool.name}</h1>
       <p class="tool-desc">{tool.longDescription || tool.shortDescription}</p>
 
-      <a href={tool.websiteUrl} target="_blank" rel="noopener" class="cta-btn">
-        <Globe size={15} stroke-width={1.5} />
-        Bezoek {tool.name}
-        <ExternalLink size={13} stroke-width={1.5} />
-      </a>
-    </header>
-
-    <!-- Quick Facts strip -->
-    {(tool.timeToFirstValue || tool.difficulty || tool.deploymentType || tool.nlSupport || tool.freeTrialAvailable != null) && (
+      <!-- Primary quick-facts (max 3 — speed, level, NL). Rest moved to Specs. -->
       <div class="quick-facts">
         {tool.timeToFirstValue && (
-          <span class="qf-pill" style={`color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}; border-color: color-mix(in oklch, ${timeToFirstValueOptions[tool.timeToFirstValue].color} 30%, transparent)`}>
+          <span class="qf-pill qf-pill--primary" style={`--qf-color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}`}>
             <Zap size={13} stroke-width={2} />
             {qfLabels.timeToFirstValue[tool.timeToFirstValue]}
           </span>
         )}
         {tool.difficulty && (
-          <span class="qf-pill" style={`color: ${difficultyLevels[tool.difficulty].color}; border-color: color-mix(in oklch, ${difficultyLevels[tool.difficulty].color} 30%, transparent)`}>
+          <span class="qf-pill qf-pill--primary" style={`--qf-color: ${difficultyLevels[tool.difficulty].color}`}>
             {qfLabels.difficulty[tool.difficulty]}
           </span>
         )}
-        {tool.deploymentType && (
-          <span class="qf-pill">
-            {tool.deploymentType === 'saas' && <Cloud size={13} stroke-width={1.5} />}
-            {tool.deploymentType === 'self-hosted' && <Server size={13} stroke-width={1.5} />}
-            {tool.deploymentType === 'both' && <Layers size={13} stroke-width={1.5} />}
-            {qfLabels.deploymentType[tool.deploymentType]}
-          </span>
-        )}
         {tool.nlSupport && (
-          <span class="qf-pill qf-pill--nl">
-            🇳🇱 NL
-          </span>
-        )}
-        {tool.freeTrialAvailable && (
-          <span class="qf-pill qf-pill--free">
-            <CheckCircle2 size={13} stroke-width={1.5} />
-            Gratis proberen
-          </span>
-        )}
-        {tool.requiresDeveloper === false && (
-          <span class="qf-pill qf-pill--nodev">
-            Geen developer nodig
+          <span class="qf-pill qf-pill--primary qf-pill--nl">
+            🇳🇱 NL-ondersteuning
           </span>
         )}
       </div>
-    )}
+
+      <div class="tool-header__cta">
+        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="cta-btn">
+          <Globe size={15} stroke-width={1.5} />
+          Bezoek {tool.name}
+          <ExternalLink size={13} stroke-width={1.5} />
+        </a>
+        <a href="/match" class="cta-btn cta-btn--ghost">
+          Past dit bij mij? →
+        </a>
+      </div>
+    </header>
+
+    <!-- Sticky in-page navigation (see critique #1) -->
+    <nav class="toc" aria-label="Inhoudsopgave">
+      {hasEditorial && <a href="#verdict" class="toc__link" data-toc-target="verdict">Verdict</a>}
+      <a href="#features" class="toc__link" data-toc-target="features">Features</a>
+      <a href="#specs" class="toc__link" data-toc-target="specs">Specificaties</a>
+      {(stats?.youtube_videos?.length || stats?.source_articles?.length || stats?.social_posts?.length) && (
+        <a href="#social" class="toc__link" data-toc-target="social">Buzz</a>
+      )}
+      {faqs.length > 0 && <a href="#faq" class="toc__link" data-toc-target="faq">FAQ</a>}
+    </nav>
 
     <!-- Two-column body -->
     <div class="page-body">
@@ -217,7 +213,7 @@ export const prerender = true;
 
         <!-- Editorial verdict -->
         {hasEditorial && (
-          <section class="verdict-panel">
+          <section id="verdict" class="verdict-panel">
             <div class="verdict-panel__meta">
               {tool.testedByEditor && (
                 <div class="verdict-panel__badge">
@@ -262,8 +258,10 @@ export const prerender = true;
 
         <!-- Functies (keyFeatures) -->
         {hasFeatures && (
-          <section class="content-section features-section">
-            <h2 class="section-heading"><Sparkles size={15} stroke-width={1.5} /> Functies</h2>
+          <section id="features" class="content-section features-section">
+            <h2 class="section-heading section-heading--kapittel">
+              <Sparkles size={18} stroke-width={1.5} /> Functies
+            </h2>
             {hasAnyGroup ? (
               <div class="features-groups">
                 {featureGroupOrder.filter(g => groupedFeatures[g]?.length).map(g => (
@@ -332,7 +330,7 @@ export const prerender = true;
         <!-- Gebruiksscenario's (voorheen Use cases) -->
         {tool.useCases && tool.useCases.length > 0 && (
           <section class="content-section">
-            <h2 class="section-heading">Gebruiksscenario's</h2>
+            <h3 class="section-subheading">Gebruiksscenario's</h3>
             <ul class="usecase-list">
               {tool.useCases.map(uc => <li>{uc}</li>)}
             </ul>
@@ -370,222 +368,233 @@ export const prerender = true;
         <!-- Pricing -->
         {tool.pricing && (
           <section class="content-section">
-            <h2 class="section-heading">Prijzen</h2>
+            <h3 class="section-subheading">Prijzen</h3>
             <p class="pricing-text">{tool.pricing}</p>
           </section>
         )}
 
-        <!-- Zakelijke info -->
-        {hasZakelijkMeta && (
-          <section class="meta-panel">
-            <h2 class="section-heading"><Building2 size={15} stroke-width={1.5} /> Zakelijke info</h2>
-            <div class="meta-grid">
-              {dt && (
-                <div class="meta-item">
-                  <span class="meta-label">Deployment</span>
-                  <span class="meta-value" style={`color: ${dt.color}`}>
-                    {tool.deploymentType === 'saas' && <Cloud size={13} stroke-width={1.5} />}
-                    {tool.deploymentType === 'self-hosted' && <Server size={13} stroke-width={1.5} />}
-                    {tool.deploymentType === 'both' && <Layers size={13} stroke-width={1.5} />}
-                    {dt.label}
-                  </span>
-                </div>
-              )}
-              {dr && (
-                <div class="meta-item">
-                  <span class="meta-label">Data locatie</span>
-                  <span class="meta-value" style={`color: ${dr.color}`}>
-                    <Shield size={13} stroke-width={1.5} />{dr.label}
-                  </span>
-                </div>
-              )}
-              {audience.length > 0 && (
-                <div class="meta-item">
-                  <span class="meta-label">Doelgroep</span>
-                  <div class="meta-tags">
-                    {audience.map(a => (
-                      <Badge variant="outline" size="sm" color={targetAudienceOptions[a].color}>
-                        {targetAudienceOptions[a].label}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {tool.nlSupport && (
-                <div class="meta-item">
-                  <span class="meta-label">Nederlands</span>
-                  <span class="meta-value" style="color: var(--color-success)">Ja</span>
-                </div>
-              )}
-              {toolFunctions.length > 0 && (
-                <div class="meta-item meta-item--wide">
-                  <span class="meta-label">Bedrijfsfuncties</span>
-                  <div class="meta-tags">
-                    {toolFunctions.map(fn => (
-                      <Badge variant="outline" size="sm" color={fn.color}>{fn.name}</Badge>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {tool.integrations && tool.integrations.length > 0 && (
-                <div class="meta-item meta-item--wide">
-                  <span class="meta-label"><Puzzle size={11} stroke-width={1.5} /> Integraties</span>
-                  <div class="meta-tags">
-                    {tool.integrations.map(i => <Badge variant="outline" size="sm">{i}</Badge>)}
-                  </div>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
+        <!-- Specificaties (consolidated meta-panels — see critique #2) -->
+        {(hasZakelijkMeta || hasImplementation || hasUx || hasMarketProof || hasGovernance || hasFit) && (
+          <section id="specs" class="content-section specs-section">
+            <h2 class="section-heading section-heading--kapittel">
+              <Building2 size={18} stroke-width={1.5} /> Specificaties
+            </h2>
 
-        <!-- Inzetbaarheid & UX -->
-        {(hasImplementation || hasUx || hasMarketProof) && (
-          <section class="meta-panel">
-            <h2 class="section-heading"><Clock size={15} stroke-width={1.5} /> Inzetbaarheid & UX</h2>
-            <div class="meta-grid">
-              {tool.timeToFirstValue && (
-                <div class="meta-item">
-                  <span class="meta-label">Tijd tot eerste waarde</span>
-                  <span class="meta-value" style={`color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}`}>
-                    {timeToFirstValueOptions[tool.timeToFirstValue].label}
-                  </span>
-                </div>
-              )}
-              {tool.setupComplexity && (
-                <div class="meta-item">
-                  <span class="meta-label">Setup</span>
-                  <span class="meta-value" style={`color: ${setupComplexityLevels[tool.setupComplexity].color}`}>
-                    {setupComplexityLevels[tool.setupComplexity].label}
-                  </span>
-                </div>
-              )}
-              {tool.requiresDeveloper != null && (
-                <div class="meta-item">
-                  <span class="meta-label">Developer vereist</span>
-                  <span class="meta-value" style={`color: ${tool.requiresDeveloper ? 'var(--color-warning)' : 'var(--color-success)'}`}>
-                    {tool.requiresDeveloper ? 'Ja' : 'Nee'}
-                  </span>
-                </div>
-              )}
-              {tool.freeTrialAvailable != null && (
-                <div class="meta-item">
-                  <span class="meta-label">Gratis proberen</span>
-                  <span class="meta-value" style={`color: ${tool.freeTrialAvailable ? 'var(--color-success)' : 'var(--text-muted)'}`}>
-                    {tool.freeTrialAvailable ? 'Ja' : 'Nee'}
-                  </span>
-                </div>
-              )}
-              {tool.learningCurve && (
-                <div class="meta-item">
-                  <span class="meta-label">Leercurve</span>
-                  <span class="meta-value" style={`color: ${learningCurveLevels[tool.learningCurve].color}`}>
-                    {learningCurveLevels[tool.learningCurve].label}
-                  </span>
-                </div>
-              )}
-              {tool.documentationQuality && (
-                <div class="meta-item">
-                  <span class="meta-label">Documentatie</span>
-                  <span class="meta-value" style={`color: ${qualityLevels[tool.documentationQuality].color}`}>
-                    {qualityLevels[tool.documentationQuality].label}
-                  </span>
-                </div>
-              )}
-              {tool.supportQuality && (
-                <div class="meta-item">
-                  <span class="meta-label">Support</span>
-                  <span class="meta-value" style={`color: ${qualityLevels[tool.supportQuality].color}`}>
-                    {qualityLevels[tool.supportQuality].label}
-                  </span>
-                </div>
-              )}
-              {tool.easeOfUseScore && (
-                <div class="meta-item">
-                  <span class="meta-label">Gebruiksgemak</span>
-                  <span class="meta-value" style="color: var(--color-success)">{tool.easeOfUseScore}/10</span>
-                </div>
-              )}
-              {tool.fundingStage && (
-                <div class="meta-item">
-                  <span class="meta-label">Financiering</span>
-                  <span class="meta-value" style={`color: ${fundingStages[tool.fundingStage].color}`}>
-                    {fundingStages[tool.fundingStage].label}
-                  </span>
-                </div>
-              )}
-              {tool.yearsActive != null && (
-                <div class="meta-item">
-                  <span class="meta-label">Jaren actief</span>
-                  <span class="meta-value">{tool.yearsActive} jaar</span>
-                </div>
-              )}
-              {tool.g2Rating != null && (
-                <div class="meta-item">
-                  <span class="meta-label">G2 Rating</span>
-                  <span class="meta-value" style="color: var(--color-success)">
-                    ★ {tool.g2Rating}{tool.g2ReviewCount ? ` (${tool.g2ReviewCount})` : ''}
-                  </span>
-                </div>
-              )}
-              {tool.notableCustomers?.length > 0 && (
-                <div class="meta-item meta-item--wide">
-                  <span class="meta-label">Bekende klanten</span>
-                  <div class="meta-tags">
-                    {tool.notableCustomers.map(c => <Badge variant="outline" size="sm">{c}</Badge>)}
-                  </div>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        <!-- Governance -->
-        {hasGovernance && (
-          <section class="meta-panel">
-            <h2 class="section-heading"><ShieldCheck size={15} stroke-width={1.5} /> Governance & Compliance</h2>
-            <div class="governance-grid">
-              <span class={`gov-item ${tool.gdprReady ? 'gov-item--yes' : 'gov-item--no'}`}>GDPR</span>
-              <span class={`gov-item ${tool.euHostingAvailable ? 'gov-item--yes' : 'gov-item--no'}`}>EU Hosting</span>
-              <span class={`gov-item ${tool.dpaAvailable ? 'gov-item--yes' : 'gov-item--no'}`}>DPA</span>
-              <span class={`gov-item ${tool.soc2 ? 'gov-item--yes' : 'gov-item--no'}`}>SOC 2</span>
-              <span class={`gov-item ${tool.sso ? 'gov-item--yes' : 'gov-item--no'}`}>SSO</span>
-              <span class={`gov-item ${tool.auditLogs ? 'gov-item--yes' : 'gov-item--no'}`}>Audit Logs</span>
-            </div>
-          </section>
-        )}
-
-        <!-- Concrete fit -->
-        {hasFit && (
-          <section class="meta-panel">
-            <h2 class="section-heading"><Target size={15} stroke-width={1.5} /> Geschiktheid</h2>
-            {tool.primaryJobsToBeDone?.length > 0 && (
-              <div class="fit-block">
-                <h4>Primaire taken</h4>
-                <ul class="usecase-list">{tool.primaryJobsToBeDone.map(j => <li>{j}</li>)}</ul>
-              </div>
-            )}
-            {tool.antiUseCases?.length > 0 && (
-              <div class="fit-block">
-                <h4><AlertTriangle size={13} stroke-width={1.5} /> Wanneer NIET gebruiken</h4>
-                <ul class="cons">{tool.antiUseCases.map(a => <li>{a}</li>)}</ul>
-              </div>
-            )}
-            {tool.replacementFor?.length > 0 && (
-              <div class="fit-block">
-                <h4>Vervangt</h4>
-                <div class="meta-tags">
-                  {tool.replacementFor.map(r => <Badge variant="outline" size="sm">{r}</Badge>)}
+            {hasZakelijkMeta && (
+              <div class="specs-group">
+                <h3 class="section-subheading"><Building2 size={14} stroke-width={1.5} /> Zakelijk</h3>
+                <div class="meta-grid">
+                  {dt && (
+                    <div class="meta-item">
+                      <span class="meta-label">Deployment</span>
+                      <span class="meta-value" style={`color: ${dt.color}`}>
+                        {tool.deploymentType === 'saas' && <Cloud size={13} stroke-width={1.5} />}
+                        {tool.deploymentType === 'self-hosted' && <Server size={13} stroke-width={1.5} />}
+                        {tool.deploymentType === 'both' && <Layers size={13} stroke-width={1.5} />}
+                        {dt.label}
+                      </span>
+                    </div>
+                  )}
+                  {dr && (
+                    <div class="meta-item">
+                      <span class="meta-label">Data locatie</span>
+                      <span class="meta-value" style={`color: ${dr.color}`}>
+                        <Shield size={13} stroke-width={1.5} />{dr.label}
+                      </span>
+                    </div>
+                  )}
+                  {audience.length > 0 && (
+                    <div class="meta-item">
+                      <span class="meta-label">Doelgroep</span>
+                      <div class="meta-tags">
+                        {audience.map(a => (
+                          <Badge variant="outline" size="sm" color={targetAudienceOptions[a].color}>
+                            {targetAudienceOptions[a].label}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {tool.nlSupport && (
+                    <div class="meta-item">
+                      <span class="meta-label">Nederlands</span>
+                      <span class="meta-value" style="color: var(--color-success)">Ja</span>
+                    </div>
+                  )}
+                  {toolFunctions.length > 0 && (
+                    <div class="meta-item meta-item--wide">
+                      <span class="meta-label">Bedrijfsfuncties</span>
+                      <div class="meta-tags">
+                        {toolFunctions.map(fn => (
+                          <Badge variant="outline" size="sm" color={fn.color}>{fn.name}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {tool.integrations && tool.integrations.length > 0 && (
+                    <div class="meta-item meta-item--wide">
+                      <span class="meta-label"><Puzzle size={11} stroke-width={1.5} /> Integraties</span>
+                      <div class="meta-tags">
+                        {tool.integrations.map(i => <Badge variant="outline" size="sm">{i}</Badge>)}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
+
+            {(hasImplementation || hasUx || hasMarketProof) && (
+              <div class="specs-group">
+                <h3 class="section-subheading"><Clock size={14} stroke-width={1.5} /> Inzetbaarheid & UX</h3>
+                <div class="meta-grid">
+                  {tool.timeToFirstValue && (
+                    <div class="meta-item">
+                      <span class="meta-label">Tijd tot eerste waarde</span>
+                      <span class="meta-value" style={`color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}`}>
+                        {timeToFirstValueOptions[tool.timeToFirstValue].label}
+                      </span>
+                    </div>
+                  )}
+                  {tool.setupComplexity && (
+                    <div class="meta-item">
+                      <span class="meta-label">Setup</span>
+                      <span class="meta-value" style={`color: ${setupComplexityLevels[tool.setupComplexity].color}`}>
+                        {setupComplexityLevels[tool.setupComplexity].label}
+                      </span>
+                    </div>
+                  )}
+                  {tool.requiresDeveloper != null && (
+                    <div class="meta-item">
+                      <span class="meta-label">Developer vereist</span>
+                      <span class="meta-value" style={`color: ${tool.requiresDeveloper ? 'var(--color-warning)' : 'var(--color-success)'}`}>
+                        {tool.requiresDeveloper ? 'Ja' : 'Nee'}
+                      </span>
+                    </div>
+                  )}
+                  {tool.freeTrialAvailable != null && (
+                    <div class="meta-item">
+                      <span class="meta-label">Gratis proberen</span>
+                      <span class="meta-value" style={`color: ${tool.freeTrialAvailable ? 'var(--color-success)' : 'var(--text-muted)'}`}>
+                        {tool.freeTrialAvailable ? 'Ja' : 'Nee'}
+                      </span>
+                    </div>
+                  )}
+                  {tool.learningCurve && (
+                    <div class="meta-item">
+                      <span class="meta-label">Leercurve</span>
+                      <span class="meta-value" style={`color: ${learningCurveLevels[tool.learningCurve].color}`}>
+                        {learningCurveLevels[tool.learningCurve].label}
+                      </span>
+                    </div>
+                  )}
+                  {tool.documentationQuality && (
+                    <div class="meta-item">
+                      <span class="meta-label">Documentatie</span>
+                      <span class="meta-value" style={`color: ${qualityLevels[tool.documentationQuality].color}`}>
+                        {qualityLevels[tool.documentationQuality].label}
+                      </span>
+                    </div>
+                  )}
+                  {tool.supportQuality && (
+                    <div class="meta-item">
+                      <span class="meta-label">Support</span>
+                      <span class="meta-value" style={`color: ${qualityLevels[tool.supportQuality].color}`}>
+                        {qualityLevels[tool.supportQuality].label}
+                      </span>
+                    </div>
+                  )}
+                  {tool.easeOfUseScore && (
+                    <div class="meta-item">
+                      <span class="meta-label">Gebruiksgemak</span>
+                      <span class="meta-value" style="color: var(--color-success)">{tool.easeOfUseScore}/10</span>
+                    </div>
+                  )}
+                  {tool.fundingStage && (
+                    <div class="meta-item">
+                      <span class="meta-label">Financiering</span>
+                      <span class="meta-value" style={`color: ${fundingStages[tool.fundingStage].color}`}>
+                        {fundingStages[tool.fundingStage].label}
+                      </span>
+                    </div>
+                  )}
+                  {tool.yearsActive != null && (
+                    <div class="meta-item">
+                      <span class="meta-label">Jaren actief</span>
+                      <span class="meta-value">{tool.yearsActive} jaar</span>
+                    </div>
+                  )}
+                  {tool.g2Rating != null && (
+                    <div class="meta-item">
+                      <span class="meta-label">G2 Rating</span>
+                      <span class="meta-value" style="color: var(--color-success)">
+                        ★ {tool.g2Rating}{tool.g2ReviewCount ? ` (${tool.g2ReviewCount})` : ''}
+                      </span>
+                    </div>
+                  )}
+                  {tool.notableCustomers?.length > 0 && (
+                    <div class="meta-item meta-item--wide">
+                      <span class="meta-label">Bekende klanten</span>
+                      <div class="meta-tags">
+                        {tool.notableCustomers.map(c => <Badge variant="outline" size="sm">{c}</Badge>)}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {hasGovernance && (
+              <div class="specs-group">
+                <h3 class="section-subheading"><ShieldCheck size={14} stroke-width={1.5} /> Governance & Compliance</h3>
+                <div class="governance-grid">
+                  <span class={`gov-item ${tool.gdprReady ? 'gov-item--yes' : 'gov-item--no'}`}>GDPR</span>
+                  <span class={`gov-item ${tool.euHostingAvailable ? 'gov-item--yes' : 'gov-item--no'}`}>EU Hosting</span>
+                  <span class={`gov-item ${tool.dpaAvailable ? 'gov-item--yes' : 'gov-item--no'}`}>DPA</span>
+                  <span class={`gov-item ${tool.soc2 ? 'gov-item--yes' : 'gov-item--no'}`}>SOC 2</span>
+                  <span class={`gov-item ${tool.sso ? 'gov-item--yes' : 'gov-item--no'}`}>SSO</span>
+                  <span class={`gov-item ${tool.auditLogs ? 'gov-item--yes' : 'gov-item--no'}`}>Audit Logs</span>
+                </div>
+              </div>
+            )}
+
+            {hasFit && (
+              <div class="specs-group">
+                <h3 class="section-subheading"><Target size={14} stroke-width={1.5} /> Geschiktheid</h3>
+                {tool.primaryJobsToBeDone?.length > 0 && (
+                  <div class="fit-block">
+                    <h4>Primaire taken</h4>
+                    <ul class="usecase-list">{tool.primaryJobsToBeDone.map(j => <li>{j}</li>)}</ul>
+                  </div>
+                )}
+                {tool.antiUseCases?.length > 0 && (
+                  <div class="fit-block">
+                    <h4><AlertTriangle size={13} stroke-width={1.5} /> Wanneer NIET gebruiken</h4>
+                    <ul class="cons">{tool.antiUseCases.map(a => <li>{a}</li>)}</ul>
+                  </div>
+                )}
+                {tool.replacementFor?.length > 0 && (
+                  <div class="fit-block">
+                    <h4>Vervangt</h4>
+                    <div class="meta-tags">
+                      {tool.replacementFor.map(r => <Badge variant="outline" size="sm">{r}</Badge>)}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </section>
         )}
 
-        <!-- YouTube -->
+        <!-- Buzz: YouTube + articles + social posts (see critique #6) -->
+        {(stats?.youtube_videos?.length || stats?.source_articles?.length || stats?.social_posts?.length) && (
+        <section id="social" class="content-section">
+          <h2 class="section-heading section-heading--kapittel">
+            <MessageSquare size={18} stroke-width={1.5} /> Wat de wereld er van zegt
+          </h2>
+
         {stats?.youtube_videos && stats.youtube_videos.length > 0 && (
-          <section class="media-panel">
-            <h2 class="section-heading"><Youtube size={15} stroke-width={1.5} /> YouTube</h2>
+          <div class="specs-group media-panel">
+            <h3 class="section-subheading"><Youtube size={14} stroke-width={1.5} /> YouTube</h3>
             <ul class="media-list">
               {stats.youtube_videos.map(v => (
                 <li>
@@ -600,13 +609,12 @@ export const prerender = true;
                 </li>
               ))}
             </ul>
-          </section>
+          </div>
         )}
 
-        <!-- Articles -->
         {stats?.source_articles && stats.source_articles.length > 0 && (
-          <section class="media-panel">
-            <h2 class="section-heading"><Newspaper size={15} stroke-width={1.5} /> In het nieuws</h2>
+          <div class="specs-group media-panel">
+            <h3 class="section-subheading"><Newspaper size={14} stroke-width={1.5} /> In het nieuws</h3>
             <div class="article-grid">
               {stats.source_articles.map(a => (
                 <a href={a.url} target="_blank" rel="noopener" class="article-card">
@@ -622,13 +630,12 @@ export const prerender = true;
                 </a>
               ))}
             </div>
-          </section>
+          </div>
         )}
 
-        <!-- Social -->
         {stats?.social_posts && stats.social_posts.length > 0 && (
-          <section class="media-panel">
-            <h2 class="section-heading"><MessageSquare size={15} stroke-width={1.5} /> Wat mensen zeggen</h2>
+          <div class="specs-group media-panel">
+            <h3 class="section-subheading"><MessageSquare size={14} stroke-width={1.5} /> Wat mensen zeggen</h3>
             <div class="social-grid">
               {stats.social_posts.map(p => {
                 const initials = (p.author_name || p.author_handle)
@@ -665,7 +672,9 @@ export const prerender = true;
                 );
               })}
             </div>
-          </section>
+          </div>
+        )}
+        </section>
         )}
 
         <!-- Cross-site related news (from hetlaatsteainieuws.nl + own nieuws) -->
@@ -673,8 +682,16 @@ export const prerender = true;
 
       </div>{/* end content-col */}
 
-      <!-- ── SIDEBAR ── -->
+      <!-- ── SIDEBAR ── (sticky on desktop, see critique #4) -->
       <aside class="sidebar">
+        <div class="sidebar-sticky">
+
+        <!-- Persistent CTA — always visible while scrolling -->
+        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="sidebar-cta">
+          <Globe size={15} stroke-width={1.5} />
+          <span>Bezoek {tool.name}</span>
+          <ExternalLink size={12} stroke-width={1.5} />
+        </a>
 
         <!-- Stats -->
         {stats && (
@@ -760,14 +777,24 @@ export const prerender = true;
           </div>
         )}
 
+        </div>{/* end sidebar-sticky */}
       </aside>{/* end sidebar */}
+
+      <!-- Mobile bottom-bar CTA (visible <1024px) -->
+      <div class="mobile-cta-bar">
+        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="mobile-cta-bar__primary">
+          <Globe size={14} stroke-width={1.5} />
+          Bezoek {tool.name}
+          <ExternalLink size={11} stroke-width={1.5} />
+        </a>
+      </div>
 
     </div>{/* end page-body */}
 
     <!-- FAQ section (visible + schema) -->
     {faqs.length > 0 && (
-      <section class="faq-section">
-        <h2 class="section-heading">Veelgestelde vragen over {tool.name}</h2>
+      <section id="faq" class="faq-section">
+        <h2 class="section-heading section-heading--kapittel">Veelgestelde vragen over {tool.name}</h2>
         <dl class="faq-list">
           {faqs.map(faq => (
             <div class="faq-item">
@@ -1450,7 +1477,7 @@ export const prerender = true;
   .article-card:hover {
     border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px oklch(0% 0 0 / 20%);
+    box-shadow: var(--shadow-md);
   }
 
   .article-card__header {
@@ -1539,9 +1566,9 @@ export const prerender = true;
     transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
   }
   .social-card:hover {
-    border-color: oklch(65% 0.15 240 / 50%);
+    border-color: color-mix(in oklch, var(--color-info) 50%, transparent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px oklch(0% 0 0 / 20%);
+    box-shadow: var(--shadow-md);
   }
 
   .social-card__header {
@@ -1651,4 +1678,206 @@ export const prerender = true;
     line-height: var(--leading-relaxed);
     margin: 0;
   }
+
+  /* ══════════════════════════════════════════════════
+     REDESIGN: hero, TOC, heading-hierarchy, sticky sidebar
+     See /design-critique recommendations #1-#6.
+     ══════════════════════════════════════════════════ */
+
+  /* Hero: gradient title + tighter rhythm */
+  .tool-name__gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .tool-header__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .cta-btn--ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    box-shadow: none;
+  }
+  .cta-btn--ghost:hover {
+    background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
+    color: var(--primary-bright);
+    border-color: var(--primary-bright);
+  }
+
+  /* Primary quick-facts (just 3, theme-aware) */
+  .qf-pill--primary {
+    background: color-mix(in oklch, var(--qf-color, var(--text-muted)) 10%, transparent);
+    color: var(--qf-color, var(--text-secondary));
+    border-color: color-mix(in oklch, var(--qf-color, var(--text-muted)) 35%, transparent);
+    font-weight: var(--font-semibold);
+  }
+
+  /* ── Sticky in-page navigation ───────────────────── */
+  .toc {
+    position: sticky;
+    top: 64px; /* below site header */
+    z-index: 10;
+    display: flex;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    margin: 0 0 var(--space-6);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc__link {
+    flex-shrink: 0;
+    padding: var(--space-1-5) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  .toc__link:hover {
+    color: var(--primary-bright);
+    background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
+  }
+  .toc__link.is-active {
+    background: var(--primary-bright);
+    color: var(--bg-deep);
+  }
+
+  /* ── Section-heading hierarchy ───────────────────── */
+  .section-heading--kapittel {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: var(--space-5);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .section-heading--kapittel svg {
+    color: var(--primary-bright);
+  }
+  .section-subheading {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 var(--space-3);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+  }
+  .section-subheading svg {
+    color: var(--primary-bright);
+    opacity: 0.7;
+  }
+
+  /* ── Specs section: grouped sub-blocks ───────────── */
+  .specs-section .specs-group + .specs-group {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px dashed var(--border-subtle);
+  }
+
+  /* ── Sticky sidebar (desktop) ────────────────────── */
+  .sidebar-sticky {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  @media (min-width: 1024px) {
+    .sidebar-sticky {
+      position: sticky;
+      top: calc(64px + var(--space-4));
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+  }
+  .sidebar-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    background: var(--primary-bright);
+    color: var(--bg-deep);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .sidebar-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Mobile bottom CTA bar (<1024px) ─────────────── */
+  .mobile-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-subtle);
+    box-shadow: 0 -4px 12px color-mix(in oklch, var(--text-primary) 8%, transparent);
+  }
+  @media (max-width: 1023px) {
+    .mobile-cta-bar { display: block; }
+    main { padding-bottom: 80px; } /* keep last content visible above bar */
+  }
+  .mobile-cta-bar__primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background: var(--primary-bright);
+    color: var(--bg-deep);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+  }
 </style>
+
+<script>
+  // TOC active-state — highlight link when its section enters viewport
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc__link');
+  const targets = Array.from(tocLinks)
+    .map((a) => ({ link: a, section: document.getElementById(a.dataset.tocTarget ?? '') }))
+    .filter((t) => t.section);
+
+  if (targets.length > 0 && 'IntersectionObserver' in window) {
+    const map = new Map(targets.map((t) => [t.section!.id, t.link]));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          tocLinks.forEach((l) => l.classList.remove('is-active'));
+          map.get(entry.target.id)?.classList.add('is-active');
+        }
+      },
+      { rootMargin: '-120px 0px -60% 0px', threshold: 0 },
+    );
+    targets.forEach((t) => observer.observe(t.section!));
+  }
+</script>
