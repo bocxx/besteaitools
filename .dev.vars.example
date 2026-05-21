@@ -11,3 +11,13 @@ ANTHROPIC_API_KEY=sk-ant-...
 # Option B — OpenRouter (uses anthropic/claude-haiku-4.5)
 #   https://openrouter.ai/keys
 OPENROUTER_API_KEY=sk-or-v1-...
+
+# ─────────────────────────────────────────────────────────────────
+# Admin notifier — /api/match-event pings this webhook when a visitor
+# completes the /match wizard. Leave unset to disable (silent no-op).
+# Works with ntfy.sh (recommended — zero signup), Discord or Slack.
+#   ntfy:    https://ntfy.sh/<pick-a-private-topic-name>
+#   Discord: Server Settings → Integrations → Webhooks → New Webhook
+#   Slack:   https://api.slack.com/messaging/webhooks
+# In production set it as a secret: wrangler secret put ADMIN_NOTIFY_WEBHOOK
+ADMIN_NOTIFY_WEBHOOK=
