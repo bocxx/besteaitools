@@ -835,6 +835,79 @@ export const prerender = true;
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
     }
+
+    /* ════════════ MOBILE (≤560px) — consolidated overrides ════════════ */
+    @media (max-width: 560px) {
+      /* Reclaim side padding so cards and inputs get the full width */
+      .match-page {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+      }
+
+      /* Progress: compact numbered row — no more horizontal scroll.
+         The step name is already shown by each panel's <h2>, so the
+         long labels are hidden (font-size:0) and only the numbered
+         markers remain. */
+      .match-progress {
+        overflow-x: visible;
+        gap: 4px;
+        margin-bottom: 28px;
+      }
+      .match-progress li {
+        flex: 1;
+        min-width: 0;
+        gap: 0;
+        font-size: 0;
+        justify-content: center;
+        padding: 10px 2px;
+      }
+      .match-progress li::before { font-size: 0.72rem; }
+      /* `.opt` sets its own font-size, so font-size:0 won't hide it */
+      .match-progress .opt { display: none; }
+
+      /* Option grids: always a single column on phones (the 240px
+         minmax could otherwise overflow very narrow screens) */
+      .radio-grid,
+      .check-grid,
+      .radio-grid.compact,
+      .check-grid.compact {
+        grid-template-columns: 1fr;
+      }
+
+      /* Inputs/selects: drop the rigid 240px min-width */
+      input[type="number"],
+      select {
+        min-width: 0;
+        width: 100%;
+      }
+
+      /* CTA bar: stack vertically with the primary action on top and
+         full-size tap targets, instead of cramming 3 buttons + hint
+         into one row */
+      .match-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .match-cta button {
+        width: 100%;
+        margin: 0;
+        min-height: 48px;
+      }
+      .match-cta button[data-action="match"] { order: 1; }
+      .match-cta button[data-action="next"] { order: 2; }
+      .match-cta button[data-action="back"] { order: 3; }
+      .match-cta__hint {
+        order: 4;
+        flex: none;
+        text-align: center;
+      }
+
+      /* Result view: trim horizontal padding so content isn't squeezed */
+      .result-card,
+      .followup-box,
+      .plan-block { padding: 16px; }
+    }
   </style>
 
   <!-- ═════════════════════════ WIZARD LOGIC ═════════════════════════ -->
@@ -1017,12 +1090,41 @@ export const prerender = true;
         const tools = await ensureTools();
         const output = run({ profile, tools });
         renderResult(output, tools, profile);
+        notifyMatchUsage(output);
       } catch (e) {
         console.error(e);
         alert('Er ging iets mis bij het matchen. Probeer opnieuw.');
       } finally {
         btnMatch.disabled = false; btnMatch.textContent = 'Toon mijn top-3 →';
       }
+    }
+
+    // ─── Admin usage notifier ────────────────────────────────
+    // Fires once per browser session when a match completes, so the
+    // site owner can see the wizard is actually being used. No profile
+    // data leaves the device — only the coarse result shape (count +
+    // top score), keeping the on-page "blijft op je apparaat" promise.
+    function notifyMatchUsage(output: MatchOutput) {
+      try {
+        if (sessionStorage.getItem('match:notified')) return;
+        sessionStorage.setItem('match:notified', '1');
+      } catch {
+        return; // storage blocked — skip rather than risk a double ping
+      }
+
+      const resultCount = output.top3.length;
+      const topScore = output.top3[0]?.score ?? null;
+
+      // Umami custom event — no-op when analytics is not configured.
+      (window as any).umami?.track?.('match-voltooid', { resultaten: resultCount });
+
+      // Webhook ping — no-op when ADMIN_NOTIFY_WEBHOOK is unset.
+      fetch('/api/match-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resultCount, topScore }),
+        keepalive: true,
+      }).catch(() => { /* a notifier failure must never disrupt the user */ });
     }
 
     // ─── Render result ───────────────────────────────────────
