@@ -1,25 +1,115 @@
 {
-  "generated_at": "2026-05-26T07:39:30.684001",
+  "generated_at": "2026-05-26T15:43:55.735786",
   "window_days": 7,
   "week": "2026-w22",
-  "total_candidates_scanned": 1049,
-  "total_after_dedup": 1007,
-  "total_feature_updates": 119,
+  "total_candidates_scanned": 1048,
+  "total_after_dedup": 997,
+  "total_feature_updates": 121,
   "llm_curated": true,
   "features": [
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
+      "feature_title": "Managed Agents",
+      "summary_nl": "Claude ondersteunt nu managed agents waarmee je agents binnen je eigen omgeving kunt uitvoeren, inclusief self-hosted sandboxes en MCP tunnels.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2056645485696315581",
+          "title": "Live from Code with Claude London: we're launching self-hosted sandboxes (public beta) and MCP tunnels (research preview) in Claude Managed ",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-05-26",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "New Model Family",
+      "summary_nl": "Gemini heeft een nieuwe familie van modellen gelanceerd, Gemini 3.5, die frontier intelligentie combineren met real-world acties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/GoogleDeepMind/status/2056787987774816525",
+          "title": "Introducing Gemini 3.5: our newest family of models combining frontier intelligence with real-world action.\n\nThe first release is 3.5 Flash,",
+          "platform": "twitter",
+          "source": "@GoogleDeepMind"
+        }
+      ],
+      "detected_at": "2026-05-26",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "PowerPoint Integration",
+      "summary_nl": "ChatGPT kan nu presentaties direct in PowerPoint maken, bewerken, begrijpen en verbeteren, waarbij de dia's bewerkbaar blijven.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPTapp/status/2057560276384563560",
+          "title": "Have you ever thought to yourself: I really don't want to make this PowerPoint.\n\nGood news: ChatGPT can now create and edit presentations di",
+          "platform": "twitter",
+          "source": "@ChatGPTapp"
+        }
+      ],
+      "detected_at": "2026-05-26",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "llama",
+      "tool_name": "Llama",
+      "tool_category": "tekst",
+      "feature_title": "Contrastive Neuron Attribution",
+      "summary_nl": "Llama heeft een nieuwe methode genaamd Contrastive Neuron Attribution gelanceerd, waarmee het gedrag van taalmodellen kan worden gestuurd door sparse circuits te identificeren en te verwijderen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/NousResearch/status/2056778746716107193",
+          "title": "Today we release Contrastive Neuron Attribution (CNA), a method for steering LLM behavior by identifying and ablating sparse circuits in the",
+          "platform": "twitter",
+          "source": "@NousResearch"
+        }
+      ],
+      "detected_at": "2026-05-26",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
       "feature_title": "Free AI Courses",
       "summary_nl": "Anthropic heeft 13+ gratis AI-cursussen met certificaten gelanceerd, waaronder cursussen over Agentic AI en Claude Code.",
-      "impact": "high",
+      "impact": "medium",
       "sources": [
         {
           "url": "https://reddit.com/r/ClaudeAI/comments/1tjpfh8/anthropic_officially_launched_13_free_ai_courses/",
           "title": "Anthropic officially launched 13+ FREE AI courses with certificates (Including Agentic AI and Claude Code!)",
           "platform": "reddit",
           "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-05-26",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos 1 Preview",
+      "summary_nl": "Anthropic bereidt de release voor van Mythos 1, een nieuw model genaamd 'claude-mythos-1-preview', op Claude Code en Claude Security.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/testingcatalog/status/2058322222297518498",
+          "title": "ANTHROPIC 🔥: Mythos 1, \"claude-mythos-1-preview\", is being prepared for a release on Claude Code and Claude Security. \n\nThe model became vis",
+          "platform": "twitter",
+          "source": "@testingcatalog"
         }
       ],
       "detected_at": "2026-05-26",
@@ -74,24 +164,6 @@
           "title": "We're reducing the price of our top-tier Google AI Ultra plan from $250 to $200/mo AND introducing a new $100/mo Ultra plan tier.\n\nThis new ",
           "platform": "twitter",
           "source": "@GeminiApp"
-        }
-      ],
-      "detected_at": "2026-05-26",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "llama",
-      "tool_name": "Llama",
-      "tool_category": "tekst",
-      "feature_title": "Contrastive Neuron Attribution",
-      "summary_nl": "Nous Research heeft een nieuwe methode genaamd Contrastive Neuron Attribution gelanceerd, waarmee het gedrag van LLM's kan worden gestuurd.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/NousResearch/status/2056778746716107193",
-          "title": "Today we release Contrastive Neuron Attribution (CNA), a method for steering LLM behavior by identifying and ablating sparse circuits in the",
-          "platform": "twitter",
-          "source": "@NousResearch"
         }
       ],
       "detected_at": "2026-05-26",
@@ -167,24 +239,6 @@
         }
       ],
       "detected_at": "2026-05-26",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "PowerPoint Integration",
-      "summary_nl": "ChatGPT kan nu rechtstreeks in PowerPoint presentaties maken, bewerken en verbeteren. Gebruikers kunnen hun slides direct in PowerPoint aanpassen en bewerken.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/ChatGPTapp/status/2057560276384563560",
-          "title": "Have you ever thought to yourself: I really don't want to make this PowerPoint.\n\nGood news: ChatGPT can now create and edit presentations di",
-          "platform": "twitter",
-          "source": "@ChatGPTapp"
-        }
-      ],
-      "detected_at": "2026-05-25",
       "week": "2026-w22"
     },
     {
@@ -2108,30 +2162,6 @@
           "title": "Do you actually realize what's happening?\n\nDeepseek just dropped a 1.6 trillion parameter open-source model featuring a 1 million token cont",
           "platform": "twitter",
           "source": "@DataChaz"
-        }
-      ],
-      "detected_at": "2026-05-04",
-      "week": "2026-w19"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agents",
-      "summary_nl": "Anthropic heeft een workshop gepubliceerd over hoe je Claude-modellen op de juiste manier kunt promoten en gebruiken.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/codewithimanshu/status/2046415534523306303",
-          "title": "The Head of Claude Code at Anthropic hasn't written code by hand in months.\n\nIn 2 days he shipped 49 full features. 100% written by AI.\n\nHe ",
-          "platform": "twitter",
-          "source": "@codewithimanshu"
-        },
-        {
-          "url": "https://twitter.com/codewithimanshu/status/2047124368623534362",
-          "title": "Anthropic's applied AI team just dropped a 24-minute workshop on how to actually prompt Claude properly.\n\nFree. From the people who built it",
-          "platform": "twitter",
-          "source": "@codewithimanshu"
         }
       ],
       "detected_at": "2026-05-04",
