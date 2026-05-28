@@ -30,10 +30,15 @@ function scoreJobFit(tool: Tool, profile: UserProfile): number {
   if (profile.useCaseBuckets.length === 0) return NEUTRAL;
 
   // Bucket overlap — combine recall ("does the tool meet my needs?")
-  // with a precision-style penalty ("is the tool actually focused on
-  // this, or does it claim to cover everything?"). Without the precision
-  // signal, generalist chatbots (ChatGPT, Claude, Gemini) that derive
-  // every bucket out-rank specialists for every query.
+  // with precision via F1, plus a small specialist bonus for tools
+  // whose entire bucket set falls inside what the user asked for.
+  //
+  // Without precision, generalist chatbots covering every bucket would
+  // always max recall and out-rank focused specialists. With pure
+  // precision, tools covering one wanted bucket out of three would beat
+  // tools covering three out of three. F1 (harmonic mean) is the
+  // standard balance — penalises generalists who cover ten buckets to
+  // win three, without crushing them when recall is genuinely perfect.
   const toolBuckets = new Set(tool.useCaseBuckets);
   const wantedBuckets = profile.useCaseBuckets;
   const bucketHits = wantedBuckets.filter((b) => toolBuckets.has(b)).length;
@@ -45,12 +50,19 @@ function scoreJobFit(tool: Tool, profile: UserProfile): number {
   } else {
     const recall = bucketHits / wantedBuckets.length;
     const precision = bucketHits / toolBuckets.size;
-    // Softened precision: take sqrt so a generalist covering 8 buckets
-    // when 3 are wanted (precision 0.375) only loses ~40% of its weight
-    // rather than ~63%. Specialists still win, but generalists stay
-    // viable as second-choice picks.
-    const precisionSoft = Math.sqrt(precision);
-    bucketScore = (recall * 0.6 + precisionSoft * 0.4) * 100;
+    const f1 = (2 * recall * precision) / (recall + precision);
+    // Weight: recall 0.4 (do we cover the need?) + F1 0.6 (is the
+    // coverage focused?). Tilted slightly toward F1 to favour
+    // specialists over jack-of-all-trades.
+    let base = recall * 0.4 + f1 * 0.6;
+    // Specialist bonus: tool's bucket set is entirely contained in the
+    // user's wanted set AND it covers at least half. Rewards a tool
+    // that does exactly what the user asked, nothing more.
+    const containedInWanted = [...toolBuckets].every((b) =>
+      wantedBuckets.includes(b),
+    );
+    if (containedInWanted && recall >= 0.5) base = Math.min(1, base + 0.08);
+    bucketScore = base * 100;
   }
 
   // JTBD overlap (only if user supplied granular JTBDs)
@@ -169,6 +181,15 @@ function scoreBudgetFit(tool: Tool, profile: UserProfile): number {
 // ============================================
 
 /**
+ * Categories whose primary output is not Dutch text (code, images,
+ * video). The `outputLanguageQualityNl` field is editorially meaningless
+ * for these — GitHub Copilot outputting "native" Dutch makes no sense
+ * because its output is code, not language. Skip the field and fall
+ * back to UI/support flags only.
+ */
+const NON_TEXT_OUTPUT_CATEGORIES = new Set(['coding', 'image', 'video']);
+
+/**
  * Dutch-language output, UI, support. If user hasn't set a hard
  * minDutchOutputQuality, score the soft preference.
  */
@@ -176,7 +197,10 @@ function scoreNlContext(tool: Tool): number {
   let score = 0;
   let parts = 0;
 
-  if (tool.outputLanguageQualityNl) {
+  const isNonTextOutput = tool.category != null
+    && NON_TEXT_OUTPUT_CATEGORIES.has(tool.category);
+
+  if (tool.outputLanguageQualityNl && !isNonTextOutput) {
     const map = { native: 100, good: 80, basic: 50, poor: 20 };
     score += map[tool.outputLanguageQualityNl];
     parts += 1;
@@ -281,7 +305,16 @@ export function finalScore(breakdown: ScoreBreakdown): number {
   for (const factor of Object.keys(breakdown) as ScoringFactor[]) {
     sum += breakdown[factor].weighted;
   }
-  return Math.round(sum);
+
+  // Job-fit floor: a tool that poorly matches the user's actual
+  // use-cases should never out-rank a specialist on the strength of
+  // beginner-friendliness, Dutch UI or governance flags alone. Apply a
+  // proportional taper for raw jobFit < 70 so a perfect-fit specialist
+  // (jobFit 80) reliably beats a generalist (jobFit 50) even when
+  // other axes favour the generalist.
+  const jobFitRaw = breakdown.jobFit.raw;
+  const multiplier = Math.min(1, jobFitRaw / 70);
+  return Math.round(sum * multiplier);
 }
 
 // ============================================
