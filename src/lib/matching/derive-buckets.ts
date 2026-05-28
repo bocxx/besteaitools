@@ -44,6 +44,15 @@ const CATEGORY_BUCKETS: Record<string, UseCaseBucketKey[]> = {
  */
 const NARROW_CATEGORIES = new Set(['coding', 'image', 'audio', 'video', 'design', 'infrastructure']);
 
+/**
+ * Buckets that, when matched purely from keyword evidence, indicate the
+ * tool has a specific specialty. Once detected, the bucket set is
+ * pruned to only specialty-buckets — e.g. Fireflies' "transcribe /
+ * vergader" matches imply it's a meetings tool, so the bf=sales/
+ * marketing tags don't get to add five unrelated buckets on top.
+ */
+const SPECIALTY_BUCKETS = new Set<UseCaseBucketKey>(['meetings', 'admin_finance', 'scheduling']);
+
 // ─── Business function → buckets (high precision) ───────────────
 const FUNCTION_BUCKETS: Record<string, UseCaseBucketKey[]> = {
   development: ['code_web'],
@@ -77,16 +86,19 @@ const KEYWORD_PATTERNS: Record<UseCaseBucketKey, RegExp[]> = {
     /\bblog(\s|-)?(post|artikel|schrijv)/,
     /\bnieuwsbrief/,
     /\bnewsletter/,
-    /\bvertaal/,
-    /\btranslat(e|ion)/,
-    /\b(copy|tekst)(\s|-)?(schrijv|writing)/,
+    /\b(tekst|copy|artikel)en?\s+vertal/,
+    /\bvertal(ing|en)\s+(van|naar)\s+(tekst|copy|artikel|content)/,
+    /\b(copy|tekst|content)(\s|-)?(schrijv|writing)/,
     /\bcopywriting/,
-    /\b(artikel|tekst)en?\s+(schrijv|opstell|redigeer|corrigeer)/,
-    /\b(proofread|redigeer|herschrijv)/,
+    /\b(artikel|tekst|copy)en?\s+(schrijv|opstell|redigeer|corrigeer|herschrijv)/,
+    /\b(copy|tekst)\s+(vertal|herschrijv|redigeer)/,
+    /\bproofread/,
     /\b(offerte|voorstel)s?\s+(schrijv|opstell|maken)/,
-    /\b(samenvatting|samenvatten)\b/,
+    /\b(samenvatting|samenvatten)\s+(maken|genereer|van\s+(een\s+)?(document|artikel|tekst|pagina))/,
+    /\bdocument(en)?\s+samenvat/,
     /\bseo(\s|-)?artikel/,
     /\bwebsite(\s|-)?(tekst|copy|content)/,
+    /\b(content|copy)\s+(genereer|generation|maken|schrijv)/,
   ],
   images: [
     /\bafbeelding(en)?\s+(genereer|maken|bewerken)/,
@@ -172,25 +184,9 @@ const KEYWORD_PATTERNS: Record<UseCaseBucketKey, RegExp[]> = {
  * keyword scan. Empty array if no signal was found.
  */
 export function deriveUseCaseBuckets(tool: DerivableTool): UseCaseBucketKey[] {
-  const out = new Set<UseCaseBucketKey>();
-
-  // 1. Category mapping
-  if (tool.category && CATEGORY_BUCKETS[tool.category]) {
-    for (const b of CATEGORY_BUCKETS[tool.category]) out.add(b);
-  }
-
-  // 2. Business functions — skipped for narrow categories where the
-  // business-function tag is incidental rather than core (e.g. a video
-  // tool tagged bf=marketing).
-  const isNarrow = tool.category != null && NARROW_CATEGORIES.has(tool.category);
-  if (!isNarrow) {
-    for (const fn of tool.businessFunctions ?? []) {
-      const buckets = FUNCTION_BUCKETS[fn];
-      if (buckets) for (const b of buckets) out.add(b);
-    }
-  }
-
-  // 3. Keyword scan over combined free-text
+  // ── 1. Keyword scan over combined free-text ──
+  // Runs first so we can detect specialty signals before deciding
+  // whether to apply the broader bf-expansion.
   const text = [
     tool.name ?? '',
     tool.shortDescription ?? '',
@@ -200,12 +196,38 @@ export function deriveUseCaseBuckets(tool: DerivableTool): UseCaseBucketKey[] {
     ...((tool.keyFeatures ?? []).flatMap((f) => [f.title ?? '', f.description ?? ''])),
   ].join('\n').toLowerCase();
 
+  const keywordHits = new Set<UseCaseBucketKey>();
   if (text.trim().length > 0) {
     for (const [bucket, patterns] of Object.entries(KEYWORD_PATTERNS) as [
       UseCaseBucketKey,
       RegExp[],
     ][]) {
-      if (patterns.some((p) => p.test(text))) out.add(bucket);
+      if (patterns.some((p) => p.test(text))) keywordHits.add(bucket);
+    }
+  }
+
+  // ── 2. Specialty short-circuit ──
+  // If keyword evidence puts the tool in a narrow specialty (meetings,
+  // admin_finance, scheduling), trust that signal: the bucket set is
+  // just the specialty buckets. Prevents Fireflies (vergaderen + bf=
+  // marketing) from claiming five unrelated buckets.
+  const specialties = [...keywordHits].filter((b) => SPECIALTY_BUCKETS.has(b));
+  if (specialties.length > 0) return specialties;
+
+  // ── 3. Category mapping ──
+  const out = new Set<UseCaseBucketKey>(keywordHits);
+  if (tool.category && CATEGORY_BUCKETS[tool.category]) {
+    for (const b of CATEGORY_BUCKETS[tool.category]) out.add(b);
+  }
+
+  // ── 4. Business functions ──
+  // Skipped for narrow categories where the business-function tag is
+  // incidental rather than core (e.g. a video tool tagged bf=marketing).
+  const isNarrow = tool.category != null && NARROW_CATEGORIES.has(tool.category);
+  if (!isNarrow) {
+    for (const fn of tool.businessFunctions ?? []) {
+      const buckets = FUNCTION_BUCKETS[fn];
+      if (buckets) for (const b of buckets) out.add(b);
     }
   }
 
