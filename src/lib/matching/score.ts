@@ -29,13 +29,29 @@ const NEUTRAL = 50;
 function scoreJobFit(tool: Tool, profile: UserProfile): number {
   if (profile.useCaseBuckets.length === 0) return NEUTRAL;
 
-  // Bucket overlap
+  // Bucket overlap — combine recall ("does the tool meet my needs?")
+  // with a precision-style penalty ("is the tool actually focused on
+  // this, or does it claim to cover everything?"). Without the precision
+  // signal, generalist chatbots (ChatGPT, Claude, Gemini) that derive
+  // every bucket out-rank specialists for every query.
   const toolBuckets = new Set(tool.useCaseBuckets);
   const wantedBuckets = profile.useCaseBuckets;
   const bucketHits = wantedBuckets.filter((b) => toolBuckets.has(b)).length;
-  const bucketScore = toolBuckets.size > 0
-    ? (bucketHits / wantedBuckets.length) * 100
-    : NEUTRAL;
+  let bucketScore: number;
+  if (toolBuckets.size === 0) {
+    bucketScore = NEUTRAL;
+  } else if (bucketHits === 0) {
+    bucketScore = 0;
+  } else {
+    const recall = bucketHits / wantedBuckets.length;
+    const precision = bucketHits / toolBuckets.size;
+    // Softened precision: take sqrt so a generalist covering 8 buckets
+    // when 3 are wanted (precision 0.375) only loses ~40% of its weight
+    // rather than ~63%. Specialists still win, but generalists stay
+    // viable as second-choice picks.
+    const precisionSoft = Math.sqrt(precision);
+    bucketScore = (recall * 0.6 + precisionSoft * 0.4) * 100;
+  }
 
   // JTBD overlap (only if user supplied granular JTBDs)
   let jtbdScore = NEUTRAL;
