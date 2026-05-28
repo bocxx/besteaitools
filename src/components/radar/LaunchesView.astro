@@ -109,6 +109,21 @@ const activeCategories = [...categoryCounts.entries()]
 
     <!-- Filter bar -->
     <div class="lr-filters">
+      <div class="lr-filter-row lr-filter-row--period">
+        <span class="lr-filter-label">Periode</span>
+        <button class="lr-chip lr-chip--sm lr-chip--active" data-filter="period" data-value="all">
+          Alles
+        </button>
+        <button class="lr-chip lr-chip--sm" data-filter="period" data-value="week">
+          Deze week
+        </button>
+        <button class="lr-chip lr-chip--sm" data-filter="period" data-value="month">
+          Deze maand
+        </button>
+        <button class="lr-chip lr-chip--sm" data-filter="period" data-value="year">
+          Dit jaar
+        </button>
+      </div>
       <div class="lr-filter-row">
         <button class="lr-chip lr-chip--active" data-filter="source" data-value="all">
           Alle bronnen
@@ -184,6 +199,7 @@ const activeCategories = [...categoryCounts.entries()]
             class="lr-card"
             data-source={launch.source}
             data-category={launch.category_nl || launch.category || ''}
+            data-launch-date={launch.date || ''}
           >
             <div class="lr-card__header">
               {logo && (
@@ -307,6 +323,15 @@ const activeCategories = [...categoryCounts.entries()]
 <script>
   let activeSource = 'all';
   let activeCat = 'all';
+  let activePeriod = 'all';
+
+  // Period-filter: hoeveel dagen terug telt nog mee. 0 = geen filter.
+  const PERIOD_DAYS: Record<string, number> = {
+    all: 0,
+    week: 7,
+    month: 30,
+    year: 365,
+  };
 
   const grid = document.getElementById('lr-grid')!;
   const cards = Array.from(grid.querySelectorAll<HTMLElement>('.lr-card'));
@@ -314,11 +339,24 @@ const activeCategories = [...categoryCounts.entries()]
   const empty = document.getElementById('lr-empty')!;
 
   function applyFilters() {
+    const days = PERIOD_DAYS[activePeriod] ?? 0;
+    const threshold = days > 0 ? Date.now() - days * 86_400_000 : null;
+
     let visible = 0;
     cards.forEach(card => {
       const matchSource = activeSource === 'all' || card.dataset.source === activeSource;
       const matchCat = activeCat === 'all' || card.dataset.category === activeCat;
-      const show = matchSource && matchCat;
+      let matchPeriod = true;
+      if (threshold !== null) {
+        const dateStr = card.dataset.launchDate;
+        if (dateStr) {
+          const t = new Date(dateStr).getTime();
+          // Valide datum → vergelijk met threshold. Ongeldige/onbekende
+          // datum → laat de tegel zichtbaar (niet penaliseren voor missende data).
+          if (!Number.isNaN(t)) matchPeriod = t >= threshold;
+        }
+      }
+      const show = matchSource && matchCat && matchPeriod;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -326,23 +364,20 @@ const activeCategories = [...categoryCounts.entries()]
     empty.style.display = visible === 0 ? '' : 'none';
   }
 
-  document.querySelectorAll<HTMLButtonElement>('[data-filter="source"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      activeSource = btn.dataset.value!;
-      document.querySelectorAll('[data-filter="source"]').forEach(b => b.classList.remove('lr-chip--active'));
-      btn.classList.add('lr-chip--active');
-      applyFilters();
+  function bindFilterRow(filterName: string, stateSetter: (v: string) => void) {
+    document.querySelectorAll<HTMLButtonElement>(`[data-filter="${filterName}"]`).forEach(btn => {
+      btn.addEventListener('click', () => {
+        stateSetter(btn.dataset.value!);
+        document.querySelectorAll(`[data-filter="${filterName}"]`).forEach(b => b.classList.remove('lr-chip--active'));
+        btn.classList.add('lr-chip--active');
+        applyFilters();
+      });
     });
-  });
+  }
 
-  document.querySelectorAll<HTMLButtonElement>('[data-filter="cat"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      activeCat = btn.dataset.value!;
-      document.querySelectorAll('[data-filter="cat"]').forEach(b => b.classList.remove('lr-chip--active'));
-      btn.classList.add('lr-chip--active');
-      applyFilters();
-    });
-  });
+  bindFilterRow('source', v => { activeSource = v; });
+  bindFilterRow('cat',    v => { activeCat = v; });
+  bindFilterRow('period', v => { activePeriod = v; });
 </script>
 
 <style>
@@ -368,6 +403,21 @@ const activeCategories = [...categoryCounts.entries()]
   .lr-filter-row--cats {
     padding-top: var(--space-2);
     border-top: 1px solid var(--border-subtle);
+  }
+
+  /* Period-row: dezelfde lr-chip styling als categorie-chips, maar met
+     een prefix-label zodat duidelijk is dat dit een tijdsperiode is. */
+  .lr-filter-row--period {
+    align-items: center;
+  }
+
+  .lr-filter-label {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-right: var(--space-1);
   }
 
   .lr-chip {
