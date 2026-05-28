@@ -2,41 +2,81 @@
 import Layout from '../../layouts/Layout.astro';
 import NewsBentoGrid from '../../components/nieuws/NewsBentoGrid.astro';
 import ToolUpdatesWidget from '../../components/nieuws/ToolUpdatesWidget.astro';
-import Badge from '../../components/atoms/Badge.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { nieuwsCategoryConfig, type NieuwsCategory } from '../../lib/nieuws-schema';
 import { Newspaper, ArrowLeft, Rss } from '@lucide/astro';
 
+// Redactionele artikelen
 const allNieuws = await getCollection('nieuws', ({ data }) => !data.draft);
 
+// Dag-digests — sinds de /digest/-route-consolidatie verschijnen die
+// ook hier in de feed (met een 'Dag-digest'-badge). We mappen ze naar
+// dezelfde shape als nieuws-entries zodat NewsBentoGrid ze zonder
+// refactor kan renderen. category='digest' triggert badge + de juiste
+// /digest/<slug>/ href in NewsBentoGrid.
+const allDigests = await getCollection('digest', ({ data }) => !data.draft);
+const digestsAsArticles = allDigests.map((d) => ({
+  id: d.id,
+  collection: 'nieuws' as const,
+  data: {
+    title: d.data.title,
+    description: d.data.description,
+    publishedAt: d.data.date,
+    updatedAt: d.data.date,
+    category: 'digest' as NieuwsCategory,
+    author: d.data.author,
+    heroImage: d.data.heroImage,
+    tags: d.data.tags ?? [],
+    featured: false,
+    draft: false,
+  },
+})) as unknown as CollectionEntry<'nieuws'>[];
+
+const merged = [...allNieuws, ...digestsAsArticles];
+
 // Sort newest first; use updatedAt if present
-const sorted = allNieuws.sort((a, b) => {
+const sorted = merged.sort((a, b) => {
   const dateA = a.data.updatedAt ?? a.data.publishedAt;
   const dateB = b.data.updatedAt ?? b.data.publishedAt;
   return dateB.getTime() - dateA.getTime();
 });
 
-// Active category filter (from URL ?cat=)
+// Active filters from URL
+//   ?type=articles|digests  → toon alleen redactionele artikelen of alleen digests
+//   ?cat=<NieuwsCategory>   → toon alleen die subcategorie (impliciet articles-only)
 const url = new URL(Astro.request.url);
+const activeType = url.searchParams.get('type') as 'articles' | 'digests' | null;
 const activeCat = url.searchParams.get('cat') as NieuwsCategory | null;
-const filtered = activeCat
-  ? sorted.filter(a => a.data.category === activeCat)
-  : sorted;
 
-// Category counts for filter chips
+let filtered = sorted;
+if (activeType === 'articles') {
+  filtered = filtered.filter((a) => a.data.category !== 'digest');
+} else if (activeType === 'digests') {
+  filtered = filtered.filter((a) => a.data.category === 'digest');
+}
+if (activeCat) {
+  filtered = filtered.filter((a) => a.data.category === activeCat);
+}
+
+// Counts
+const articleCount = sorted.filter((a) => a.data.category !== 'digest').length;
+const digestCount  = sorted.filter((a) => a.data.category === 'digest').length;
 const categoryCounts = Object.fromEntries(
-  Object.keys(nieuwsCategoryConfig).map(cat => [
+  Object.keys(nieuwsCategoryConfig).map((cat) => [
     cat,
-    sorted.filter(a => a.data.category === cat).length,
-  ])
+    sorted.filter((a) => a.data.category === cat).length,
+  ]),
 ) as Record<NieuwsCategory, number>;
 
-export const prerender = true;
+// Subcategorie-chips alleen tonen bij artikelen-view (digest heeft geen subcats).
+const showCategoryChips = activeType !== 'digests';
+
+export const prerender = false;
 ---
 
 <Layout
-  title="Nieuws over AI-tools — Updates, lanceringen & analyses | debesteaitools.nl"
-  description={`${sorted.length} handgeschreven artikelen over AI-tools: lanceringen, updates, vergelijkingen en analyses. Bijgehouden door de redactie.`}
+  title="Nieuws over AI-tools — Artikelen + dagelijkse digests | debesteaitools.nl"
+  description={`${articleCount} handgeschreven artikelen en ${digestCount} dagelijkse digests over AI-tools: lanceringen, updates, vergelijkingen en analyses.`}
 >
   <main class="container container-wide" style="padding-top: 80px;">
 
@@ -51,40 +91,68 @@ export const prerender = true;
       </div>
       <h1 class="page-header__title">Nieuws & Analyses</h1>
       <p class="page-header__subtitle">
-        Handgeschreven artikelen over <strong>AI-tools</strong>: lanceringen, updates, vergelijkingen en diepere analyses.
+        Redactionele artikelen én dagelijkse digests over <strong>AI-tools</strong>: lanceringen, updates, vergelijkingen en analyses.
       </p>
       <p class="page-header__meta">
-        <strong>{sorted.length} artikelen</strong>
+        <strong>{articleCount} artikelen</strong> · <strong>{digestCount} dag-digests</strong>
         {activeCat && <span> · gefilterd op <strong>{nieuwsCategoryConfig[activeCat].label}</strong></span>}
       </p>
     </header>
 
-    <!-- Category filter chips -->
-    <nav class="cat-filter" aria-label="Categoriefilter">
+    <!-- Type filter: alles / artikelen / digests. Bij keuze voor 'digests'
+         worden subcategorie-chips verborgen (digests hebben geen subcats). -->
+    <nav class="type-filter" aria-label="Soort content">
       <a
-        href="/nieuws"
-        class:list={['cat-chip', { 'cat-chip--active': !activeCat }]}
+        href="/nieuws/"
+        class:list={['type-chip', { 'type-chip--active': !activeType && !activeCat }]}
       >
         Alles
-        <span class="cat-chip__count">{sorted.length}</span>
+        <span class="type-chip__count">{sorted.length}</span>
       </a>
-      {Object.entries(nieuwsCategoryConfig).map(([key, cfg]) => (
-        categoryCounts[key as NieuwsCategory] > 0 && (
-          <a
-            href={`/nieuws?cat=${key}`}
-            class:list={['cat-chip', { 'cat-chip--active': activeCat === key }]}
-            style={activeCat === key ? `--chip-color: ${cfg.color}` : undefined}
-          >
-            {cfg.label}
-            <span class="cat-chip__count">{categoryCounts[key as NieuwsCategory]}</span>
-          </a>
-        )
-      ))}
-      <a href="/nieuws.xml" class="cat-chip cat-chip--rss" title="RSS-feed">
-        <Rss size={13} stroke-width={1.5} />
-        RSS
+      <a
+        href="/nieuws/?type=articles"
+        class:list={['type-chip', { 'type-chip--active': activeType === 'articles' }]}
+      >
+        Artikelen
+        <span class="type-chip__count">{articleCount}</span>
+      </a>
+      <a
+        href="/nieuws/?type=digests"
+        class:list={['type-chip', { 'type-chip--active': activeType === 'digests' }]}
+      >
+        Dag-digests
+        <span class="type-chip__count">{digestCount}</span>
       </a>
     </nav>
+
+    {showCategoryChips && (
+      <!-- Subcategorie filter chips voor de redactionele artikelen -->
+      <nav class="cat-filter" aria-label="Categoriefilter">
+        <a
+          href="/nieuws/"
+          class:list={['cat-chip', { 'cat-chip--active': !activeCat && activeType !== 'articles' }]}
+        >
+          Alle categorieën
+        </a>
+        {Object.entries(nieuwsCategoryConfig).map(([key, cfg]) => (
+          // 'digest' is geen redactionele subcategorie — verberg in deze rij
+          key !== 'digest' && categoryCounts[key as NieuwsCategory] > 0 && (
+            <a
+              href={`/nieuws/?cat=${key}`}
+              class:list={['cat-chip', { 'cat-chip--active': activeCat === key }]}
+              style={activeCat === key ? `--chip-color: ${cfg.color}` : undefined}
+            >
+              {cfg.label}
+              <span class="cat-chip__count">{categoryCounts[key as NieuwsCategory]}</span>
+            </a>
+          )
+        ))}
+        <a href="/nieuws.xml" class="cat-chip cat-chip--rss" title="RSS-feed">
+          <Rss size={13} stroke-width={1.5} />
+          RSS
+        </a>
+      </nav>
+    )}
 
     <!-- Main content + sidebar -->
     <div class="grid-container grid-layout-sidebar-right">
@@ -154,7 +222,53 @@ export const prerender = true;
   }
   .page-header__meta strong { color: var(--text-secondary); }
 
-  /* Category filter chips */
+  /* Type filter — segmented control voor artikelen / digests. Visueel
+     prominenter dan de subcategorie-chips eronder; het is de primary
+     content-as-type splitsing. */
+  .type-filter {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+  }
+  .type-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  .type-chip:hover { color: var(--text-primary); }
+  .type-chip--active {
+    background: var(--primary-bright);
+    color: var(--bg-deep);
+    font-weight: var(--font-semibold);
+  }
+  .type-chip__count {
+    font-size: var(--text-xs);
+    opacity: 0.7;
+    font-weight: var(--font-normal);
+  }
+  .type-chip--active .type-chip__count {
+    opacity: 0.85;
+  }
+  @media (max-width: 640px) {
+    .type-filter { display: flex; width: 100%; }
+    .type-chip { flex: 1; justify-content: center; }
+  }
+
+  /* Category filter chips (subcategorie binnen artikelen-type) */
   .cat-filter {
     display: flex;
     align-items: center;

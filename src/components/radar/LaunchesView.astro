@@ -1,0 +1,661 @@
+---
+/**
+ * LaunchesView — herbruikbare view-component voor net-gelanceerde AI-tools.
+ * Gebruikt door /radar/?view=launches (en als content-bron geconsolideerd
+ * van de oude /launch-radar/-route).
+ * Bevat header, filters, grid, client-side filter-script en scoped styling.
+ */
+import RiskBadges from '../atoms/RiskBadges.astro';
+import { getLaunchRadar } from '../../lib/tools-engine';
+import {
+  Rocket,
+  ExternalLink,
+  ArrowUp,
+  Star,
+  MessageCircle,
+} from '@lucide/astro';
+
+const data = await getLaunchRadar();
+const launches = data?.launches ?? [];
+const genDate = data?.generated_at ? new Date(data.generated_at) : new Date();
+const formattedDate = genDate.toLocaleDateString('nl-NL', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+// Source config for visual accent (colors + fallback favicon)
+const sourceConfig: Record<
+  string,
+  { label: string; color: string; favicon: string }
+> = {
+  product_hunt: {
+    label: 'Product Hunt',
+    color: '#da552f',
+    favicon: 'https://www.google.com/s2/favicons?domain=producthunt.com&sz=32',
+  },
+  github: {
+    label: 'GitHub',
+    color: '#238636',
+    favicon: 'https://www.google.com/s2/favicons?domain=github.com&sz=32',
+  },
+  hackernews: {
+    label: 'Hacker News',
+    color: '#ff6600',
+    favicon: 'https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=32',
+  },
+  twitter: {
+    label: 'X / Twitter',
+    color: '#1d9bf0',
+    favicon: 'https://www.google.com/s2/favicons?domain=x.com&sz=32',
+  },
+  bluesky: {
+    label: 'Bluesky',
+    color: '#0085ff',
+    favicon: 'https://www.google.com/s2/favicons?domain=bsky.app&sz=32',
+  },
+  reddit: {
+    label: 'Reddit',
+    color: '#ff4500',
+    favicon: 'https://www.google.com/s2/favicons?domain=reddit.com&sz=32',
+  },
+};
+
+// Derive available sources + categories from actual data
+const activeSources = [...new Set(launches.map(l => l.source))].filter(s => s in sourceConfig);
+
+// Only show categories with ≥ 3 items — single-item buckets add no filter value
+const categoryCounts = new Map<string, number>();
+for (const l of launches) {
+  const cat = l.category_nl || l.category || '';
+  if (cat) categoryCounts.set(cat, (categoryCounts.get(cat) ?? 0) + 1);
+}
+const activeCategories = [...categoryCounts.entries()]
+  .filter(([, count]) => count >= 3)
+  .map(([cat]) => cat)
+  .sort();
+
+---
+
+<section class="launches-view">
+    <header class="lr-header">
+      <div class="lr-header__icon">
+        <Rocket size={28} stroke-width={1.5} />
+      </div>
+      <h1 class="lr-title">Launch Radar</h1>
+      <p class="lr-subtitle">
+        Elke week scannen we Product Hunt, GitHub, Hacker News en social media op
+        <strong> net gelanceerde AI-tools</strong>.
+        Hier zie je wat er deze week is verschenen — nog voordat het mainstream wordt.
+      </p>
+      <p class="lr-meta">
+        <strong>{launches.length} tools</strong> gevonden · bijgewerkt {formattedDate}
+        {data?.window_days && (
+          <span class="lr-window">
+            {' '}· laatste {data.window_days} dagen
+          </span>
+        )}
+        {data?.by_source && (
+          <span class="lr-sources">
+            · {data.by_source.product_hunt > 0 && `${data.by_source.product_hunt} via Product Hunt`}
+            {data.by_source.github > 0 && ` · ${data.by_source.github} via GitHub`}
+            {data.by_source.hackernews > 0 && ` · ${data.by_source.hackernews} via Hacker News`}
+            {data.by_source.twitter > 0 && ` · ${data.by_source.twitter} via X/Twitter`}
+            {data.by_source.bluesky > 0 && ` · ${data.by_source.bluesky} via Bluesky`}
+          </span>
+        )}
+      </p>
+    </header>
+
+    <!-- Filter bar -->
+    <div class="lr-filters">
+      <div class="lr-filter-row">
+        <button class="lr-chip lr-chip--active" data-filter="source" data-value="all">
+          Alle bronnen
+          <span class="lr-chip__count">{launches.length}</span>
+        </button>
+        {activeSources.map(src => {
+          const cfg = sourceConfig[src];
+          const count = launches.filter(l => l.source === src).length;
+          return (
+            <button
+              class="lr-chip"
+              data-filter="source"
+              data-value={src}
+              style={`--chip-color: ${cfg.color}`}
+            >
+              <img src={cfg.favicon} alt="" width="12" height="12" loading="lazy" />
+              {cfg.label}
+              <span class="lr-chip__count">{count}</span>
+            </button>
+          );
+        })}
+      </div>
+      {activeCategories.length > 1 && (
+        <div class="lr-filter-row lr-filter-row--cats">
+          <button class="lr-chip lr-chip--sm lr-chip--active" data-filter="cat" data-value="all">
+            Alle categorieën
+          </button>
+          {activeCategories.map(cat => {
+            const count = launches.filter(l => (l.category_nl || l.category || '') === cat).length;
+            return (
+              <button class="lr-chip lr-chip--sm" data-filter="cat" data-value={cat}>
+                {cat}
+                <span class="lr-chip__count">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+
+    <p class="lr-count" id="lr-count">
+      <strong id="lr-count-num">{launches.length}</strong> tools
+    </p>
+
+    <div class="lr-grid" id="lr-grid">
+      {launches.map((launch) => {
+        const src = sourceConfig[launch.source] || sourceConfig.product_hunt;
+        const risks = (launch.risk_flags ?? []) as any[];
+        const stats = launch.stats ?? {};
+        const description =
+          launch.display_description ||
+          launch.description_nl ||
+          launch.description ||
+          '';
+        const sourceLabel =
+          launch.display_source_label ||
+          launch.source_label_nl ||
+          launch.source_label ||
+          src.label;
+        const logo = launch.favicon || src.favicon;
+
+        const categoryNl = launch.category_nl || launch.category || '';
+        const prevLaunches = Array.isArray(launch.previous_launches)
+          ? launch.previous_launches
+          : [];
+        const hasPrevLaunches = prevLaunches.length > 0;
+
+        return (
+          <a
+            href={launch.url}
+            target="_blank"
+            rel="noopener"
+            class="lr-card"
+            data-source={launch.source}
+            data-category={launch.category_nl || launch.category || ''}
+          >
+            <div class="lr-card__header">
+              {logo && (
+                <img
+                  src={logo}
+                  alt=""
+                  class="lr-card__logo"
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                />
+              )}
+              <div class="lr-card__title-group">
+                <h3 class="lr-card__name">{launch.name}</h3>
+                <span class="lr-card__date">
+                  {launch.date || 'onbekende datum'}
+                </span>
+              </div>
+              <ExternalLink size={13} stroke-width={1.5} class="lr-card__ext" />
+            </div>
+
+            <p class="lr-card__desc">{description}</p>
+
+            {/* Extra meta: categorie + bron + reacties/sterren */}
+            <div class="lr-card__meta">
+              {categoryNl && (
+                <span class="lr-card__pill lr-card__pill--category">
+                  {categoryNl}
+                </span>
+              )}
+
+              {launch.source === 'hackernews' && launch.points != null && (
+                <span class="lr-card__pill lr-card__pill--hn">
+                  <ArrowUp size={11} stroke-width={2} />
+                  {launch.points} punten
+                  {launch.num_comments != null && (
+                    <>
+                      <span class="lr-card__pill-sep">·</span>
+                      <MessageCircle size={11} stroke-width={1.7} />
+                      {launch.num_comments} reacties
+                    </>
+                  )}
+                </span>
+              )}
+
+              {launch.source === 'github' && stats.stars != null && (
+                <span class="lr-card__pill lr-card__pill--gh">
+                  <Star size={11} stroke-width={1.5} />
+                  {stats.stars}★ vandaag
+                  {stats.total_stars != null && stats.total_stars > stats.stars && (
+                    <span class="lr-card__pill-dim">
+                      {' '}· totaal {stats.total_stars}★
+                    </span>
+                  )}
+                </span>
+              )}
+            </div>
+
+            {launch.source === 'product_hunt' && (
+              <div class="lr-card__ph-stats">
+                {stats.points != null && stats.points > 0 && (
+                  <span class="lr-card__stat lr-card__stat--votes">
+                    <ArrowUp size={12} stroke-width={2} />
+                    {stats.points}
+                  </span>
+                )}
+                {stats.followers != null && stats.followers > 0 && (
+                  <span class="lr-card__stat">
+                    <Star size={11} stroke-width={1.5} />
+                    {stats.followers}
+                    <span class="lr-card__stat-dim">volgers</span>
+                  </span>
+                )}
+                {stats.day_rank != null &&
+                  stats.day_rank > 0 &&
+                  stats.day_rank <= 10 && (
+                    <span class="lr-card__rank">#{stats.day_rank}</span>
+                  )}
+                {stats.launch_count != null && stats.launch_count > 1 && (
+                  <span class="lr-card__stat lr-card__stat--history">
+                    {stats.launch_count}e launch op Product Hunt
+                  </span>
+                )}
+              </div>
+            )}
+
+            {hasPrevLaunches && (
+              <div class="lr-card__history">
+                <span class="lr-card__history-label">
+                  Eerdere launches:
+                </span>
+                <span class="lr-card__history-list">
+                  {prevLaunches
+                    .slice(0, 2)
+                    .map((prev: any) => `${prev.date} · ${prev.points} punten`)
+                    .join(' · ')}
+                  {prevLaunches.length > 2 && ' · …'}
+                </span>
+              </div>
+            )}
+
+            <footer class="lr-card__footer">
+              <span
+                class="lr-card__source"
+                style={`color: ${src.color}; border-color: color-mix(in oklch, ${src.color} 35%, transparent)`}
+              >
+                <img src={logo} alt="" width="12" height="12" loading="lazy" />
+                {sourceLabel}
+              </span>
+              {risks.length > 0 && <RiskBadges flags={risks} max={2} />}
+            </footer>
+          </a>
+        );
+      })}
+    </div>
+    <p class="lr-empty" id="lr-empty" style="display:none;">
+      Geen tools gevonden voor deze combinatie van filters.
+    </p>
+</section>
+
+<script>
+  let activeSource = 'all';
+  let activeCat = 'all';
+
+  const grid = document.getElementById('lr-grid')!;
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.lr-card'));
+  const countNum = document.getElementById('lr-count-num')!;
+  const empty = document.getElementById('lr-empty')!;
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(card => {
+      const matchSource = activeSource === 'all' || card.dataset.source === activeSource;
+      const matchCat = activeCat === 'all' || card.dataset.category === activeCat;
+      const show = matchSource && matchCat;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    countNum.textContent = String(visible);
+    empty.style.display = visible === 0 ? '' : 'none';
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-filter="source"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeSource = btn.dataset.value!;
+      document.querySelectorAll('[data-filter="source"]').forEach(b => b.classList.remove('lr-chip--active'));
+      btn.classList.add('lr-chip--active');
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-filter="cat"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCat = btn.dataset.value!;
+      document.querySelectorAll('[data-filter="cat"]').forEach(b => b.classList.remove('lr-chip--active'));
+      btn.classList.add('lr-chip--active');
+      applyFilters();
+    });
+  });
+</script>
+
+<style>
+  /* ── Filter bar ─────────────────────────────────── */
+  .lr-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+  }
+
+  .lr-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .lr-filter-row--cats {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .lr-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: var(--space-1-5) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .lr-chip--sm {
+    font-size: var(--text-xs);
+    padding: 3px var(--space-2-5);
+  }
+
+  .lr-chip:hover {
+    border-color: var(--chip-color, var(--primary-bright));
+    color: var(--chip-color, var(--primary-bright));
+    background: color-mix(in oklch, var(--chip-color, var(--primary-bright)) 10%, transparent);
+  }
+
+  .lr-chip--active {
+    background: var(--chip-color, var(--primary-bright));
+    border-color: var(--chip-color, var(--primary-bright));
+    color: #fff;
+    font-weight: var(--font-semibold);
+  }
+
+  /* Active "all" chip uses primary color, not white text on white */
+  .lr-chip--active:not([style]) {
+    background: var(--primary-bright);
+    border-color: var(--primary-bright);
+    color: var(--bg-deep);
+  }
+
+  .lr-chip__count {
+    font-size: var(--text-xs);
+    opacity: 0.75;
+  }
+
+  .lr-chip img {
+    border-radius: 2px;
+  }
+
+  .lr-count {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .lr-count strong { color: var(--text-secondary); }
+
+  .lr-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    padding: var(--space-8) 0;
+  }
+
+  .lr-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+  .lr-header__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright);
+    margin-bottom: var(--space-3);
+  }
+  .lr-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .lr-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin: 0;
+  }
+  .lr-subtitle strong { color: var(--text-primary); }
+  .lr-meta {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: var(--space-2) 0 0;
+  }
+  .lr-meta strong { color: var(--text-secondary); }
+  .lr-sources { opacity: 0.7; }
+  .lr-window { opacity: 0.8; }
+
+  /* Grid */
+  .lr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+
+  /* Card */
+  .lr-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+  }
+  .lr-card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklch, var(--text-primary) 15%, transparent);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .lr-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2-5);
+  }
+  .lr-card__logo {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+  .lr-card__title-group {
+    flex: 1;
+    min-width: 0;
+  }
+  .lr-card__name {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .lr-card__date {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  :global(.lr-card__ext) {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: color var(--transition-fast);
+  }
+  .lr-card:hover :global(.lr-card__ext) { color: var(--primary-bright); }
+
+  .lr-card__desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .lr-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    align-items: center;
+    margin-top: var(--space-1);
+  }
+  .lr-card__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+  }
+  .lr-card__pill--category {
+    background: color-mix(in oklch, var(--primary-soft) 18%, transparent);
+    color: var(--primary-strong);
+  }
+  .lr-card__pill--hn {
+    background: color-mix(in oklch, #ff6600 18%, transparent);
+    color: #ff6600;
+  }
+  .lr-card__pill--gh {
+    background: color-mix(in oklch, #238636 18%, transparent);
+    color: #238636;
+  }
+  .lr-card__pill-sep {
+    opacity: 0.5;
+  }
+  .lr-card__pill-dim {
+    opacity: 0.7;
+  }
+
+  /* PH Stats row */
+  .lr-card__ph-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .lr-card__stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+  }
+  .lr-card__stat--votes {
+    color: var(--color-success);
+    font-weight: var(--font-semibold);
+  }
+  .lr-card__stat--history {
+    font-size: 10px;
+  }
+  .lr-card__stat-dim {
+    opacity: 0.6;
+    font-size: 10px;
+  }
+  .lr-card__rank {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-bold);
+    background: color-mix(in oklch, var(--primary-bright) 15%, transparent);
+    color: var(--primary-bright);
+  }
+
+  .lr-card__history {
+    margin-top: var(--space-1);
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+  .lr-card__history-label {
+    font-weight: var(--font-medium);
+  }
+  .lr-card__history-list {
+    opacity: 0.8;
+  }
+
+  .lr-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: auto;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .lr-card__source {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .lr-card__source img {
+    border-radius: 2px;
+  }
+</style>

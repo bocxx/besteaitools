@@ -26,20 +26,26 @@ function getSize(i: number): 'hero' | 'large' | 'medium' | 'small' {
   </div>
 ) : (
   <div class="bento news-bento">
-    {visible.map((article, i) => (
-      <NewsCard
-        title={article.data.title}
-        description={article.data.description}
-        href={`/nieuws/${article.id}`}
-        category={article.data.category}
-        publishedAt={article.data.publishedAt}
-        author={article.data.author}
-        readingTime={article.data.readingTime}
-        featured={article.data.featured}
-        heroImage={article.data.heroImage}
-        size={getSize(i)}
-      />
-    ))}
+    {visible.map((article, i) => {
+      // Digest-entries lopen mee in dezelfde feed (via /nieuws/index.astro)
+      // maar wijzen naar /digest/<slug>/ voor de detail-pagina.
+      const isDigest = article.data.category === 'digest';
+      const href = isDigest ? `/digest/${article.id}` : `/nieuws/${article.id}`;
+      return (
+        <NewsCard
+          title={article.data.title}
+          description={article.data.description}
+          href={href}
+          category={article.data.category}
+          publishedAt={article.data.publishedAt}
+          author={article.data.author}
+          readingTime={article.data.readingTime}
+          featured={article.data.featured}
+          heroImage={article.data.heroImage}
+          size={getSize(i)}
+        />
+      );
+    })}
   </div>
 )}
 

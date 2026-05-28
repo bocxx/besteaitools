@@ -25,12 +25,13 @@ export const siteConfig = {
   // NAVIGATION
   // ============================================
   navigation: {
-    // Top nav stays deliberately short and plain-language — the three
-    // "radar" feeds (Weekradar / Launch Radar / Tools Radar) live in the
-    // footer to keep the header readable for non-technical visitors.
+    // Top nav: redactionele "Nieuws" + automation-feed "Radar" zijn nu
+    // twee duidelijke hubs. /digest/ is samengevoegd onder /nieuws/;
+    // /launch-radar/ en /weekradar/ onder /radar/ (beide redirecten).
     main: [
       { label: "Match", href: "/match" },
       { label: "Nieuws", href: "/nieuws" },
+      { label: "Radar", href: "/radar/?view=launches" },
       { label: "Vergelijk", href: "/vergelijk" },
       { label: "Zakelijk", href: "/zakelijk" },
     ],
