@@ -1,0 +1,79 @@
+{
+  "name": "Strix",
+  "category": "security",
+  "websiteUrl": "https://usestrix.com",
+  "shortDescription": "Open-source autonome AI-agent die je app aanvalt zoals een pentester en kwetsbaarheden bewijst met werkende proofs-of-concept.",
+  "headlineValueProp": "Open-source AI-agent die je code dynamisch aanvalt, kwetsbaarheden vindt en proofs-of-concept levert",
+  "pricingModel": "open-source",
+  "difficulty": "intermediate",
+  "tags": [
+    "security",
+    "pentest",
+    "ai-agent",
+    "open-source",
+    "vulnerability-scanning",
+    "apache-2"
+  ],
+  "draft": false,
+  "longDescription": "Strix is een open-source agentic security platform van het usestrix-team. In plaats van vooraf-gedefinieerde scan-templates draait Strix autonome AI-agents die je applicatie dynamisch aanvallen, kwetsbaarheden ontdekken en die ontdekkingen bewijzen met werkende proofs-of-concept. De v0.6-release voegt 'thinking blocks' toe die tussen stappen blijven hangen, gestructureerde vulnerability-reporting met aparte velden voor impact, evidence en remediatie, en een centraal configuratie-systeem dat herhaalde runs vereenvoudigt. De codebase staat op GitHub onder Apache 2.0 met meer dan 24.000 sterren.",
+  "verdict": "Strix is op dit moment de serieuste open-source AI-agent voor security-testing. De v0.6-release schuift het project van demo-fase naar productie-relevant — vooral voor MKB en startups die geen pentest-budget hebben maar wel een eerste-lijn-scan willen. Vervangt geen professionele pentester voor compliance-werk, maar dicht een gat dat tools als Burp en ZAP open laten: autonome breedte-coverage met werkende exploits in plaats van alleen findings.",
+  "bestFor": "MKB-teams en startups die security willen integreren in hun development-workflow zonder aparte security-engineer; bug-bounty hunters die parallelle agents willen inzetten voor brede coverage; teams die vibe-coded prototypes willen testen op kwetsbaarheden voor go-live.",
+  "primaryJobsToBeDone": [
+    "Vind en bewijs OWASP Top 10-kwetsbaarheden in een web-applicatie binnen 30 minuten",
+    "Genereer gestructureerde vulnerability-rapporten met evidence en remediation, klaar voor Jira/Linear",
+    "Run parallelle security-scans als onderdeel van je CI/CD-pipeline op staging-omgevingen"
+  ],
+  "useCases": [
+    "Eerste-lijn security-scans voor MKB zonder pentest-budget",
+    "Bug-bounty workflow automatisering met parallelle agents",
+    "Pre-release security-checks op staging-omgevingen",
+    "Quick security-audit van vibe-coded prototypes en MVP's"
+  ],
+  "strengths": [
+    "Autonome end-to-end workflow: van scan tot proof-of-concept",
+    "Open-source onder Apache 2.0, geen vendor lock-in",
+    "Werkt met meerdere LLM-backends (Anthropic, OpenAI, OpenRouter)",
+    "Container-first design voor CI/CD-integratie",
+    "Actief onderhouden, ~24.600 GitHub-sterren"
+  ],
+  "limitations": [
+    "False positives komen voor — output vergt nog steeds menselijke review",
+    "Niet geschikt voor compliance-pentests die handtekening vereisen",
+    "LLM-tokens kunnen oplopen bij grote of complexe doelen (5-50 EUR per run)",
+    "Mist business-context: zeer specifieke privilege-escalation of race-condition bugs blijven menselijk werk",
+    "Productie-scans alleen met expliciete afspraken — Strix doet daadwerkelijk exploits"
+  ],
+  "antiUseCases": [
+    "Productie-systemen scannen zonder afgesproken venster",
+    "Compliance-pentests waarvan certificaten met menselijke handtekening vereist zijn",
+    "Teams zonder budget voor LLM-tokens",
+    "Zeer specifieke business-logic-fouten in workflows met veel context"
+  ],
+  "bestAlternative": "Burp Suite Professional voor interactieve handmatige pentest-werk; OWASP ZAP voor template-gebaseerde CI-scans; Nuclei voor CVE-gerichte inventarisatie. Strix vervangt geen van die drie maar vult ze aan op het autonome-agent niveau.",
+  "pricing": "Gratis (open-source, Apache 2.0). LLM-kosten zijn variabel: typisch 5-15 EUR per scan op een eenvoudige web-app, 30-50 EUR op een uitgebreid API-systeem.",
+  "openSource": true,
+  "businessFunctions": [
+    "security",
+    "development",
+    "devops"
+  ],
+  "deploymentType": "self-hosted",
+  "dataResidency": "eu-or-us-controlled-by-user",
+  "targetAudience": [
+    "mkb",
+    "startup",
+    "solo",
+    "freelancer",
+    "security-team"
+  ],
+  "nlSupport": true,
+  "integrations": [
+    "Anthropic Claude",
+    "OpenAI",
+    "OpenRouter",
+    "GitHub Actions",
+    "Docker",
+    "Jira",
+    "Linear"
+  ]
+}

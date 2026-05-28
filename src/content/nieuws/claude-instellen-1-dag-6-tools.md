@@ -440,6 +440,7 @@ Lukt iets niet? De [officiële setup-handleiding van Anthropic](https://support.
 - De zes tools zijn cumulatief, niet allemaal-tegelijk: brain file en outputs-map zijn essentieel, connectoren en skills volgen wanneer je merkt dat je dezelfde stappen vaak herhaalt.
 - Projects op claude.ai blijft relevant voor teams; Cowork is krachtiger voor solowerk omdat het je bestanden en je shell echt aanraakt.
 - Eerstvolgende stap: download de desktop-app, maak een Cowork-werkmap aan, schrijf een eerste `about-me.md` van vijf à tien regels en gebruik die bij je volgende drie sessies. De overige vijf tools voeg je later toe op basis van wat je dagelijks doet.
+- Wil je de tool-capabilities later snel uitbreiden zonder per service API-keys te beheren? Lees onze launch-coverage van [zero.xyz — een gateway naar ~8.000 tools voor Claude Code en andere CLI-agents](/nieuws/zero-xyz-agent-tool-gateway). En voor wie security-werk wil automatiseren: [Strix is een open-source AI-pentester](/nieuws/strix-open-source-ai-pentester) die naast Claude prima draait.
 
 ## Bronnen
 

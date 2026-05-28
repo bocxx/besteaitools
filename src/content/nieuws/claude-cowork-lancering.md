@@ -106,6 +106,7 @@ Wil je niet alleen weten *of* je Cowork wilt, maar ook *hoe* je het in één wer
 - De nieuwste laag zijn live artifacts — dashboards die bij elke opening meegroeien met je data, uitgerold op 21 april 2026.
 - Grootste valkuil: onderschatten hoeveel verschil er zit tussen "chatten met Claude" en "Claude laten werken" — het tweede vraagt andere discipline in het geven van context en grenzen.
 - Eerste stap: kies één wekelijkse herhaaltaak die je nu handmatig doet en probeer of Cowork hem in één sessie kan overnemen, inclusief de koppelingen naar Gmail of Drive die je normaal handmatig doet.
+- Wil je Cowork uitbreiden met externe services zonder per tool een MCP-server op te zetten? Zie onze coverage van [zero.xyz — een gateway naar ~8.000 tools voor CLI-agents](/nieuws/zero-xyz-agent-tool-gateway). En voor wie security-testen wil integreren in z'n agent-workflow: [Strix is een open-source AI-pentester](/nieuws/strix-open-source-ai-pentester) die parallel met Claude kan draaien.
 
 ## Bronnen
 
