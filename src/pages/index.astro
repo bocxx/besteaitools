@@ -94,6 +94,38 @@ const organizationJsonLd = {
   ].filter(Boolean),
 };
 
+// FAQ — single source of truth for the visible section AND the JSON-LD below,
+// so structured data always matches on-page content (Google guideline).
+const currentYear = new Date().getFullYear();
+const faqItems = [
+  {
+    q: `Wat zijn de beste AI-tools van ${currentYear}?`,
+    a: `We volgen ${tools.length}+ AI-tools en ranken ze objectief op buzz, groei en mentions — niet op betaalde plaatsing. De ranglijst wordt elke week bijgewerkt, zodat je ziet wat er nú opkomt.`,
+  },
+  {
+    q: 'Hoe bepalen jullie de ranking?',
+    a: 'Elke tool krijgt scores op basis van meetbare signalen: hoeveel er over gepraat wordt (buzz), hoe snel die aandacht groeit (velocity) en het aantal mentions. Geen redactionele voorkeur of advertenties — daardoor verschuift de ranglijst mee met de werkelijkheid.',
+  },
+  {
+    q: 'Zijn deze AI-tools gratis?',
+    a: 'Dat verschilt per tool. Bij elke tool staat het prijsmodel vermeld (gratis, freemium of betaald), plus of er een gratis proefperiode beschikbaar is.',
+  },
+  {
+    q: 'Welke AI-tools zijn geschikt voor zakelijk gebruik in Nederland?',
+    a: 'Let op de GDPR-ready- en Nederlandstalig-labels bij elke tool, of gebruik "Vind je beste AI-tool" om op basis van je use case en eisen een passende match te krijgen.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
 export const prerender = true;
 ---
 
@@ -104,6 +136,7 @@ export const prerender = true;
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   </Fragment>
   <main class="container container-wide" style="padding-top: 80px;">
 
@@ -234,7 +267,20 @@ export const prerender = true;
       <p class="grid-empty" id="grid-empty" style="display:none;">
         Geen tools gevonden voor deze combinatie van filters.
       </p>
-    </div>  
+    </div>
+
+    <!-- FAQ — visible content backing the FAQPage structured data -->
+    <section class="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="faq__heading">Veelgestelde vragen</h2>
+      <div class="faq__list">
+        {faqItems.map(({ q, a }) => (
+          <details class="faq__item">
+            <summary class="faq__question">{q}</summary>
+            <p class="faq__answer">{a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
 
   </main>
 </Layout>
@@ -644,5 +690,78 @@ export const prerender = true;
     .filter-bar__row--secondary {
       flex-direction: column;
     }
+  }
+
+  /* ── FAQ ────────────────────────────────────────── */
+  .faq {
+    max-width: 760px;
+    margin: var(--space-12) auto 0;
+  }
+
+  .faq__heading {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    text-align: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .faq__item {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+  }
+
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq__question::-webkit-details-marker { display: none; }
+
+  .faq__question::after {
+    content: '+';
+    flex-shrink: 0;
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--primary-bright);
+    transition: transform var(--transition-fast);
+  }
+
+  .faq__item[open] .faq__question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq__question:hover { color: var(--primary-bright); }
+
+  .faq__question:focus-visible {
+    outline: 2px solid var(--primary-bright);
+    outline-offset: -2px;
+  }
+
+  .faq__answer {
+    margin: 0;
+    padding: 0 var(--space-5) var(--space-4);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
   }
 </style>
