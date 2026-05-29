@@ -1,5 +1,6 @@
 ---
 title: "Claude Design gelanceerd: wat betekent Anthropic’s nieuwe AI-designtool voor Canva, Figma en Adobe?"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Design gelanceerd: wat betekent Anthropic’s nieuwe AI-designtool voor Canva, Figma en Adobe?'"
 description: "Anthropic introduceert Claude Design: een AI-first tool om prototypes, slides en one-pagers te bouwen door simpelweg te praten met Claude. Wat betekent dit voor gevestigde spelers als Canva, Figma en Adobe?"
 publishedAt: 2026-04-17
 author: "Redactie"
@@ -27,7 +28,7 @@ faq:
    a: "Niet direct. Op dit moment werkt Claude Design vooral als een slimme laag bovenop bestaande tools: het genereert concepten, layouts en content die je vervolgens in Figma, Canva of andere tools kunt finetunen."
  - q: "Waarom is Opus 4.7 belangrijk voor designers?"
    a: "Opus 4.7 heeft sterk verbeterde visie en is expliciet geoptimaliseerd voor hoogwaardige interfaces, slides en data-rijke schermen, waardoor de output van Claude Design bruikbaarder en consistenter wordt voor professionals."
-heroImage: "/images/nieuws/claude-design-launch.webp"
+heroImage: "/images/articles/diorama-claude-design-opus.webp"
 ---
 
 ## Wat is er nieuw met Claude Design?

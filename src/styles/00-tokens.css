@@ -2,8 +2,8 @@
  * Design Tokens
  * Core design values - colors, spacing, typography, effects
  * 
- * THEME: Ember (Minimalist Black & Coral)
- * Clean, dark, subtle warmth
+ * THEME: Ember Warm (Soft Charcoal & Friendly Coral)
+ * Cozy warm-charcoal surfaces, softened amber + coral accents
  * 
  * Archived themes:
  * - 00-tokens-archive-purple.css (Original purple/coral)
@@ -18,32 +18,32 @@
 @layer tokens {
   :root {
     /* ============================================
-       COLOR SYSTEM - Ember Palette
-       Deep blacks, warm coral, cool cyan accent
+       COLOR SYSTEM - Ember Warm Palette
+       Soft warm-charcoal surfaces, friendly amber + coral
        ============================================ */
-    
-    /* Background Palette - Deep Black */
-    --bg-deep: oklch(6% 0.005 15);
-    --bg-surface: oklch(10% 0.008 15);
-    --bg-elevated: oklch(14% 0.01 15);
-    --bg-panel: oklch(17% 0.012 15);
-    
-    /* Brand Colors - Amber Gold */
-    --primary-h: 45;
-    --primary-bright: oklch(75% 0.18 var(--primary-h));
-    --primary-mid: oklch(62% 0.16 var(--primary-h));
-    --primary-dark: oklch(50% 0.14 var(--primary-h));
-    
-    /* Brand Colors - Warm Red */
-    --secondary-h: 15;
-    --secondary-bright: oklch(65% 0.20 var(--secondary-h));
-    --secondary-mid: oklch(55% 0.18 var(--secondary-h));
-    --secondary-dark: oklch(45% 0.15 var(--secondary-h));
-    
-    /* Support Colors - Soft Purple */
-    --tertiary-h: 280;
-    --tertiary-bright: oklch(70% 0.10 var(--tertiary-h));
-    --tertiary-dark: oklch(55% 0.08 var(--tertiary-h));
+
+    /* Background Palette - Warm Charcoal (softer than pure black) */
+    --bg-deep: oklch(13% 0.012 45);
+    --bg-surface: oklch(16% 0.014 45);
+    --bg-elevated: oklch(20% 0.016 45);
+    --bg-panel: oklch(24% 0.018 45);
+
+    /* Brand Colors - Soft Amber Gold (lighter, less neon = friendlier) */
+    --primary-h: 48;
+    --primary-bright: oklch(80% 0.145 var(--primary-h));
+    --primary-mid: oklch(68% 0.135 var(--primary-h));
+    --primary-dark: oklch(56% 0.12 var(--primary-h));
+
+    /* Brand Colors - Friendly Coral (warmer hue, softer chroma than blood-red) */
+    --secondary-h: 25;
+    --secondary-bright: oklch(72% 0.155 var(--secondary-h));
+    --secondary-mid: oklch(62% 0.145 var(--secondary-h));
+    --secondary-dark: oklch(52% 0.13 var(--secondary-h));
+
+    /* Support Colors - Soft Warm Violet */
+    --tertiary-h: 300;
+    --tertiary-bright: oklch(74% 0.09 var(--tertiary-h));
+    --tertiary-dark: oklch(58% 0.075 var(--tertiary-h));
     
     /* Semantic Colors */
     --color-success: oklch(75% 0.14 165);
@@ -51,11 +51,11 @@
     --color-error: oklch(68% 0.20 25);
     --color-info: oklch(72% 0.13 230);
     
-    /* Text Palette */
-    --text-primary: oklch(97% 0.01 260);
-    --text-secondary: oklch(72% 0.04 255);
-    --text-muted: oklch(50% 0.03 250);
-    --text-inverse: oklch(8% 0.02 260);
+    /* Text Palette - warm-tinted neutrals (cozy, not cold blue) */
+    --text-primary: oklch(96% 0.008 70);
+    --text-secondary: oklch(76% 0.022 60);
+    --text-muted: oklch(58% 0.02 55);
+    --text-inverse: oklch(15% 0.02 45);
     
     /* Borders */
     --border-subtle: color-mix(in oklch, var(--text-secondary) 16%, transparent);

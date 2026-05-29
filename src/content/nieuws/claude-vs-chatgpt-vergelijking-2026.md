@@ -1,5 +1,6 @@
 ---
 title: "Claude 4 vs ChatGPT-4o: welke AI-assistent past bij jou?"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude 4 vs ChatGPT-4o: welke AI-assistent past bij jou?'"
 description: "We vergelijken Claude 4 Sonnet en ChatGPT-4o op schrijfkwaliteit, redeneren, codeerhulp en dagelijks gebruik. Met duidelijke aanbevelingen per gebruikerstype."
 publishedAt: 2026-04-15
 author: "Redactie"
@@ -23,7 +24,7 @@ faq:
     a: "Ja, zowel Claude als ChatGPT-4o ondersteunen vision: je kunt afbeeldingen, screenshots en documenten uploaden."
   - q: "Welke heeft een beter geheugen?"
     a: "ChatGPT heeft een explicieter geheugen dat je zelf kunt beheren. Claude's geheugen is meer impliciet via lange context."
-heroImage: "/images/nieuws/claude-vs-chatgpt-vergelijking-2026.webp"
+heroImage: "/images/articles/diorama-claude-vs-chatgpt-vergelijking-2026.webp"
 ---
 
 ## Twee koplopers, verschillende sterktes

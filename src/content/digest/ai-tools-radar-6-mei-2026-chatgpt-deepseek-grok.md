@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · DeepSeek · Grok (Ochtend 6 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · DeepSeek · Grok (Ochtend 6 mei)'"
 description: 'AI Tools Radar 6 mei: 130 launches, 133 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-06'
 timeSlot: tools-digest
@@ -18,7 +19,7 @@ topics:
 - ChatGPT
 - DeepSeek
 - Grok
-heroImage: /images/digest/ai-tools-radar-6-mei-2026-chatgpt-deepseek-grok.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-6-mei-2026-chatgpt-deepseek-grok.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

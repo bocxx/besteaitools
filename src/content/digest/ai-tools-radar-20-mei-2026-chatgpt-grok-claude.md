@@ -1,5 +1,7 @@
 ---
 title: AI Tools Radar – ChatGPT · Grok · Claude (Ochtend 20 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Grok · Claude (Ochtend 20 mei)'"
+heroImage: "/images/articles/diorama-ai-tools-radar-20-mei-2026-chatgpt-grok-claude.webp"
 description: 'AI Tools Radar 20 mei: 141 launches, 125 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-20'
 timeSlot: tools-digest

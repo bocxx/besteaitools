@@ -1,5 +1,7 @@
 ---
 title: AI Tools Radar – ChatGPT · Grok · GitHub Copilot (Ochtend 18 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Grok · GitHub Copilot (Ochtend 18 mei)'"
+heroImage: "/images/articles/diorama-ai-tools-radar-18-mei-2026-chatgpt-grok-github-copilot.webp"
 description: 'AI Tools Radar 18 mei: 128 launches, 119 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-18'
 timeSlot: tools-digest

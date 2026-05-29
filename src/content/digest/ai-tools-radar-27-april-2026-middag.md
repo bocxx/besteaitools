@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – DeepSeek · You.com · ChatGPT (Middag 27 april)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – DeepSeek · You.com · ChatGPT (Middag 27 april)'"
 description: 'AI Tools Radar 27 april: 140 launches, 81 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-27'
 timeSlot: tools-digest
@@ -22,7 +23,7 @@ topics:
 - ChatGPT
 - Grok
 - Claude
-heroImage: /images/digest/ai-tools-radar-27-april-2026-middag.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-27-april-2026-middag.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

@@ -76,6 +76,24 @@ const websiteJsonLd = {
   inLanguage: 'nl',
 };
 
+// Organization structured data — brand/entity signals (logo + social profiles)
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteConfig.url}/android-chrome-512x512.png`,
+  },
+  sameAs: [
+    siteConfig.social.github?.url,
+    siteConfig.social.x?.url,
+    siteConfig.social.linkedin?.url,
+  ].filter(Boolean),
+};
+
 export const prerender = true;
 ---
 
@@ -85,6 +103,7 @@ export const prerender = true;
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
   </Fragment>
   <main class="container container-wide" style="padding-top: 80px;">
 

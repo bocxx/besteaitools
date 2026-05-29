@@ -1,6 +1,7 @@
 ---
 
 title: AI Tools Radar – Claude · Hugging Face · Grok (Ochtend 24 april)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · Hugging Face · Grok (Ochtend 24 april)'"
 description: 'AI Tools Radar 24 april: 137 launches, 66 feature-updates, 6 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-24'
 timeSlot: tools-digest
@@ -23,7 +24,7 @@ topics:
 - Grok
 - Llama
 - ChatGPT
-heroImage: "/images/digest/ai-tools-radar-24-april-2026-ochtend.webp"
+heroImage: "/images/articles/diorama-ai-tools-radar-24-april-2026-ochtend.webp"
 ---
 # AI Tools Radar – Claude · Hugging Face · Grok (Ochtend 24 april)
 

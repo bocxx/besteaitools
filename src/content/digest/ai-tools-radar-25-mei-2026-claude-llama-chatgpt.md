@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – Claude · Llama · ChatGPT (Ochtend 25 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · Llama · ChatGPT (Ochtend 25 mei)'"
 description: 'AI Tools Radar 25 mei: 128 launches, 114 feature-updates, 8 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-25'
 timeSlot: tools-digest
@@ -20,7 +21,7 @@ topics:
 - Llama
 - ChatGPT
 - Pi
-heroImage: /images/digest/ai-tools-radar-25-mei-2026-claude-llama-chatgpt.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-25-mei-2026-claude-llama-chatgpt.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

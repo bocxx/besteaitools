@@ -1,6 +1,7 @@
 ---
 
 title: AI Tools Radar – Claude · ChatGPT · MCP (Middag 23 april)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · ChatGPT · MCP (Middag 23 april)'"
 description: 'AI Tools Radar 23 april: 134 launches, 63 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-04-23'
 timeSlot: tools-digest
@@ -19,7 +20,7 @@ topics:
 - Claude
 - ChatGPT
 - MCP
-heroImage: "/images/digest/ai-tools-radar-23-april-2026-middag.webp"
+heroImage: "/images/articles/diorama-ai-tools-radar-23-april-2026-middag.webp"
 ---
 # AI Tools Radar – Claude · ChatGPT · MCP (Middag 23 april)
 

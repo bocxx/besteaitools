@@ -1,5 +1,7 @@
 ---
 title: AI Tools Radar – ChatGPT · GitHub Copilot · Claude (Ochtend 16 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · GitHub Copilot · Claude (Ochtend 16 mei)'"
+heroImage: "/images/articles/diorama-ai-tools-radar-16-mei-2026-chatgpt-github-copilot-claude.webp"
 description: 'AI Tools Radar 16 mei: 128 launches, 181 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-16'
 timeSlot: tools-digest

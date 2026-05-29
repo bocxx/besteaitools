@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Gemini · Together AI (Ochtend 14 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Gemini · Together AI (Ochtend 14 mei)'"
 description: 'AI Tools Radar 14 mei: 85 launches, 170 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-14'
 timeSlot: tools-digest
@@ -18,7 +19,7 @@ topics:
 - ChatGPT
 - Gemini
 - Together AI
-heroImage: /images/digest/ai-tools-radar-14-mei-2026-chatgpt-gemini-together-ai.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-14-mei-2026-chatgpt-gemini-together-ai.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

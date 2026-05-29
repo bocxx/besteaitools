@@ -1,0 +1,1859 @@
+---
+/**
+ * /vind-je-beste-ai-tool — Vind je beste AI-tool
+ *
+ * Samenvoeging van de oude /match-wizard en de /zakelijk-directory.
+ * Boven: de 3-vragen-wizard (matching-engine client-side tegen
+ * /match/tools.json). Onder: de filterbare tool-directory per
+ * bedrijfsfunctie (ToolDirectory-component). Plus FAQ + interne links.
+ *
+ * State: URL-hash voor deelbare profielen, localStorage voor drafts.
+ * Geoptimaliseerd voor "vind je beste AI-tool" / "beste ai tool voor ..."
+ * zonder de homepage (die op "beste ai tools" mikt) te kannibaliseren.
+ */
+import Layout from '../layouts/Layout.astro';
+import ToolDirectory from '../components/ToolDirectory.astro';
+import { buildFaqPageLd } from '../lib/seo-helpers';
+import { siteConfig } from '../config/site';
+import { getAllTools } from '../lib/tools-engine';
+import {
+  segments, useCaseBuckets, jtbds, verenigingTypes, verenigingTimeSinks,
+  aiComfortLevels, budgetBuckets, dutchOutputQualityLevels,
+  integrations as integrationsTax, integrationCategories,
+} from '../lib/taxonomies';
+
+const segmentEntries = Object.entries(segments);
+const bucketEntries = Object.entries(useCaseBuckets);
+const jtbdEntries = Object.entries(jtbds);
+const aiComfortEntries = Object.entries(aiComfortLevels);
+const budgetEntries = Object.entries(budgetBuckets);
+const dutchQualityEntries = Object.entries(dutchOutputQualityLevels);
+const verenigingTypeEntries = Object.entries(verenigingTypes);
+const verenigingTimeSinkEntries = Object.entries(verenigingTimeSinks);
+
+// Group integrations by category for the multi-select
+const integrationsByCategory: Record<string, { key: string; label: string }[]> = {};
+for (const [key, int] of Object.entries(integrationsTax)) {
+  (integrationsByCategory[int.category] ??= []).push({ key, label: int.label });
+}
+const integrationCategoryEntries = Object.entries(integrationCategories)
+  .filter(([k]) => integrationsByCategory[k]?.length)
+  .map(([k, c]) => ({ key: k, label: c.label, items: integrationsByCategory[k] }));
+
+const pageUrl = `${siteConfig.url}/vind-je-beste-ai-tool`;
+
+// ── FAQ (zichtbaar + FAQPage JSON-LD) ──────────────────────────────
+const faqs = [
+  {
+    question: 'Wat is de beste AI-tool?',
+    answer: 'Dat hangt af van je werk, team en budget — er is geen één "beste" AI-tool voor iedereen. Doe de 3-vragen-test hierboven voor een eerlijke top-3 die past bij jouw situatie, of blader door de tools per bedrijfsfunctie.',
+  },
+  {
+    question: 'Wat is de beste AI-tool voor het MKB?',
+    answer: 'Voor het MKB wegen prijs, Nederlandse ondersteuning, AVG/EU-hosting en gebruiksgemak het zwaarst. Selecteer "MKB" in de filters of doe de test; je krijgt tools die op die punten scoren, met controleerbare redenen.',
+  },
+  {
+    question: 'Wat is de beste gratis AI-tool?',
+    answer: 'Veel tools hebben een gratis plan of proefperiode. Gebruik de quick-filter "Gratis proberen" of zet je budget op "Gratis" in de test, dan tonen we alleen tools die je zonder kosten kunt uitproberen.',
+  },
+  {
+    question: 'Welke AI-tool is het beste voor verenigingen of vrijwilligers?',
+    answer: 'Voor verenigingen en stichtingen letten we op lage kosten, eenvoud en taken als nieuwsbrieven, social en administratie. Kies het segment "Vereniging" of "Stichting" in de test voor een advies inclusief een 90-dagen introductieplan.',
+  },
+  {
+    question: 'Is de ranking beïnvloed door affiliate-deals?',
+    answer: 'Nee. De top-3 en de directory zijn gebaseerd op je profiel en op objectieve signalen (buzz, groei, functies, geschiktheid). Er is geen affiliate-invloed op de volgorde.',
+  },
+];
+
+// ── JSON-LD ────────────────────────────────────────────────────────
+const allTools = await getAllTools();
+const topTools = [...allTools]
+  .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0))
+  .slice(0, 20);
+
+const howToLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Vind je beste AI-tool in 3 stappen',
+  description: 'Beantwoord 3 vragen — wie je bent, waar je tijd verliest en je AI-niveau — en krijg een eerlijke top-3 AI-tools die bij je past.',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Wie ben je?', text: 'Kies je situatie: ZZP, MKB, vereniging, onderwijs, overheid of enterprise.' },
+    { '@type': 'HowToStep', position: 2, name: 'Waar verlies je tijd?', text: 'Selecteer de taken waar je de meeste tijd aan kwijt bent.' },
+    { '@type': 'HowToStep', position: 3, name: 'Wat is je AI-niveau?', text: 'Geef aan hoe ervaren je bent met AI-tools. Daarna tonen we je top-3.' },
+  ],
+};
+
+const faqLd = buildFaqPageLd(faqs);
+
+const itemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Beste AI-tools',
+  itemListElement: topTools.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.name,
+    url: `${siteConfig.url}/ai-tools/${t.slug}/`,
+  })),
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteConfig.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Vind je beste AI-tool', item: pageUrl },
+  ],
+};
+
+export const prerender = true;
+---
+
+<Layout
+  title="Vind je beste AI-tool — eerlijke top-3 + alle tools per functie | debesteaitools.nl"
+  description="Beantwoord 3 vragen en krijg een eerlijke top-3 AI-tools voor jouw werk, of blader door alle AI-tools per bedrijfsfunctie. Voor MKB, ZZP, verenigingen en teams."
+  robots="index, follow, max-image-preview:large"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(howToLd)} />
+    {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(itemListLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <main class="container container-narrow match-page">
+    <header class="match-hero">
+      <h1>Vind je beste AI-tool</h1>
+      <p class="match-subtitle">
+        Welke AI-tool past bij jouw werk? Beantwoord 3 vragen voor een eerlijke top-3 —
+        we matchen je profiel tegen {<span id="tool-count">110+</span>} tools met controleerbare
+        redenen, geen affiliate-invloed. Of <a href="#alle-tools">blader hieronder door de beste
+        AI-tools per functie</a> voor MKB, ZZP en teams.
+      </p>
+    </header>
+
+    <!-- Progress -->
+    <ol class="match-progress" aria-label="Voortgang">
+      <li data-step="1" class="active">Wie ben je?</li>
+      <li data-step="2">Waar verlies je tijd?</li>
+      <li data-step="3">AI-niveau</li>
+      <li data-step="4">Eisen <span class="opt">(optioneel)</span></li>
+      <li data-step="5">Voorkeuren <span class="opt">(optioneel)</span></li>
+    </ol>
+
+    <!-- Free-text shortcut (optioneel, gebruikt /api/match-parse) -->
+    <details class="freetext-block">
+      <summary>
+        <span class="freetext-icon">✨</span>
+        Geen zin in vragenlijst? Vertel het in één zin
+      </summary>
+      <div class="freetext-body">
+        <p class="step-hint">
+          Beschrijf jezelf in een paar zinnen. Wij vullen de vragenlijst alvast in — jij controleert.
+          <span class="muted small">(Voorbeeld: "Ik ben zzp-tekstschrijver, veel social posts, nooit AI gebruikt, max €20/mnd.")</span>
+        </p>
+        <textarea
+          id="freetext-input"
+          placeholder="Vertel over je werk, team, budget, taal-eisen..."
+          rows="3"
+          maxlength="2000"
+        ></textarea>
+        <div class="freetext-cta">
+          <button type="button" id="freetext-parse">Profiel voor mij invullen →</button>
+          <span class="freetext-status" id="freetext-status"></span>
+        </div>
+      </div>
+    </details>
+
+    <form id="match-form" class="match-form" novalidate>
+
+      <!-- ═════════════════════════ STEP 1 ═════════════════════════ -->
+      <section data-step-panel="1" class="match-step">
+        <h2>1. Wie ben je?</h2>
+        <p class="step-hint">Kies wat het dichtst bij jouw situatie ligt.</p>
+
+        <fieldset class="radio-grid">
+          <legend class="sr-only">Segment</legend>
+          {segmentEntries.map(([key, seg]) => (
+            <label class="radio-card">
+              <input type="radio" name="segment" value={key} required />
+              <div>
+                <strong>{seg.label}</strong>
+                <span class="muted">{seg.description}</span>
+              </div>
+            </label>
+          ))}
+        </fieldset>
+
+        <div data-show-if-segment="mkb_klein mkb_middel overheid_klein onderwijs enterprise" hidden>
+          <label class="field-label" for="teamSize">Hoeveel mensen werken er bij jullie?</label>
+          <input type="number" id="teamSize" name="teamSize" min="1" max="100000" placeholder="bv. 12" />
+        </div>
+
+        <div data-show-if-segment="vereniging stichting" hidden>
+          <label class="field-label" for="verenigingType">Type organisatie</label>
+          <select id="verenigingType" name="verenigingType">
+            <option value="">— Kies —</option>
+            {verenigingTypeEntries.map(([key, t]) => (
+              <option value={key}>{t.label}</option>
+            ))}
+          </select>
+
+          <label class="field-label" for="verenigingTimeSink">Waar gaat de meeste tijd in zitten?</label>
+          <select id="verenigingTimeSink" name="verenigingTimeSink">
+            <option value="">— Kies —</option>
+            {verenigingTimeSinkEntries.map(([key, t]) => (
+              <option value={key}>{t.label}</option>
+            ))}
+          </select>
+        </div>
+      </section>
+
+      <!-- ═════════════════════════ STEP 2 ═════════════════════════ -->
+      <section data-step-panel="2" class="match-step" hidden>
+        <h2>2. Waar verlies je tijd?</h2>
+        <p class="step-hint">Kies alles wat van toepassing is — minimaal één.</p>
+
+        <fieldset class="check-grid">
+          <legend class="sr-only">Use cases</legend>
+          {bucketEntries.map(([key, b]) => (
+            <label class="check-card">
+              <input type="checkbox" name="useCaseBuckets" value={key} />
+              <span>{b.label}</span>
+            </label>
+          ))}
+        </fieldset>
+
+        <details class="optional-block">
+          <summary>Specifieker? Kies je exacte taken (optioneel)</summary>
+          <div class="jtbd-grid" data-jtbd-grid>
+            {jtbdEntries.map(([key, j]) => (
+              <label class="check-card small" data-jtbd-bucket={j.bucket} hidden>
+                <input type="checkbox" name="jtbds" value={key} />
+                <span>{j.label}</span>
+              </label>
+            ))}
+          </div>
+          <p class="muted small">Selecteer eerst use-cases hierboven om de lijst te zien.</p>
+        </details>
+      </section>
+
+      <!-- ═════════════════════════ STEP 3 ═════════════════════════ -->
+      <section data-step-panel="3" class="match-step" hidden>
+        <h2>3. Wat is je AI-niveau?</h2>
+        <p class="step-hint">Eerlijk antwoorden — dit weegt zwaar in de aanbevelingen.</p>
+
+        <fieldset class="radio-grid">
+          <legend class="sr-only">AI-comfort</legend>
+          {aiComfortEntries.map(([key, c]) => (
+            <label class="radio-card">
+              <input type="radio" name="aiComfort" value={key} required />
+              <div><strong>{c.label}</strong></div>
+            </label>
+          ))}
+        </fieldset>
+
+        <p class="ready-note">
+          Na deze stap kunnen we al matchen — vraag 4 en 5 zijn optioneel en maken het preciezer.
+        </p>
+      </section>
+
+      <!-- ═════════════════════════ STEP 4 ═════════════════════════ -->
+      <section data-step-panel="4" class="match-step" hidden>
+        <h2>4. Harde eisen <span class="opt">(optioneel)</span></h2>
+        <p class="step-hint">Vink alleen aan wat écht nodig is — te veel filters kan kandidaten onnodig wegfilteren.</p>
+
+        <label class="toggle">
+          <input type="checkbox" name="requireEuHosting" />
+          <span>Data moet in EU gehost zijn (AVG)</span>
+        </label>
+
+        <div>
+          <label class="field-label" for="minDutchOutputQuality">Minimale Nederlandse output-kwaliteit</label>
+          <select id="minDutchOutputQuality" name="minDutchOutputQuality">
+            <option value="">— Maakt niet uit —</option>
+            {dutchQualityEntries.map(([key, d]) => (
+              <option value={key}>{d.label}</option>
+            ))}
+          </select>
+        </div>
+
+        <label class="toggle">
+          <input type="checkbox" name="disallowTraining" />
+          <span>Mijn data mag niet voor AI-training gebruikt worden</span>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" name="requireSso" />
+          <span>Moet SSO ondersteunen</span>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" name="requireAuditLogs" />
+          <span>Moet audit logs hebben</span>
+        </label>
+
+        <details class="optional-block">
+          <summary>Moet koppelen met specifieke software?</summary>
+          <p class="step-hint">Groepen uit te klappen — vink alleen aan wat écht nodig is.</p>
+          <div class="integration-groups">
+            {integrationCategoryEntries.map((cat) => (
+              <details class="integration-cat">
+                <summary>{cat.label}</summary>
+                <div class="check-grid compact">
+                  {cat.items.map((it) => (
+                    <label class="check-card small">
+                      <input type="checkbox" name="requiredIntegrations" value={it.key} />
+                      <span>{it.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+        </details>
+      </section>
+
+      <!-- ═════════════════════════ STEP 5 ═════════════════════════ -->
+      <section data-step-panel="5" class="match-step" hidden>
+        <h2>5. Voorkeuren <span class="opt">(optioneel)</span></h2>
+
+        <div>
+          <label class="field-label">Budget per maand</label>
+          <fieldset class="radio-grid compact">
+            <legend class="sr-only">Budget</legend>
+            {budgetEntries.map(([key, b]) => (
+              <label class="radio-card">
+                <input type="radio" name="budget" value={key} />
+                <div><strong>{b.label}</strong></div>
+              </label>
+            ))}
+          </fieldset>
+        </div>
+
+        <details class="optional-block">
+          <summary>Welke software gebruik je nu? (matcht integraties)</summary>
+          <div class="integration-groups">
+            {integrationCategoryEntries.map((cat) => (
+              <details class="integration-cat">
+                <summary>{cat.label}</summary>
+                <div class="check-grid compact">
+                  {cat.items.map((it) => (
+                    <label class="check-card small">
+                      <input type="checkbox" name="currentStack" value={it.key} />
+                      <span>{it.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+        </details>
+      </section>
+
+      <!-- ═════════════════════════ CTA BAR ═════════════════════════ -->
+      <nav class="match-cta">
+        <button type="button" data-action="back" disabled>← Terug</button>
+        <span class="match-cta__hint" data-hint></span>
+        <button type="button" data-action="next">Verder →</button>
+        <button type="button" data-action="match" hidden>Toon mijn top-3 →</button>
+      </nav>
+
+      <p class="match-foot">
+        Je antwoorden blijven op je apparaat — we bewaren niets zonder toestemming.
+        Je kunt altijd <a href="/vind-je-beste-ai-tool">opnieuw beginnen</a>.
+      </p>
+    </form>
+
+    <!-- ═════════════════════════ RESULT VIEW ═════════════════════════ -->
+    <section id="match-result" hidden aria-live="polite">
+      <header class="result-hero">
+        <p class="result-hero__eyebrow">Top 3 voor jouw profiel</p>
+        <h2 class="result-hero__title" id="result-hero-title">Aanbevelingen</h2>
+        <p class="result-hero__profile" id="result-hero-profile"></p>
+        <div class="result-hero__conf" id="result-hero-confidence" hidden></div>
+      </header>
+      <div id="result-followup" class="followup-box" hidden></div>
+      <div id="result-top3"></div>
+      <div id="result-90day" hidden></div>
+      <div id="result-alternatives"></div>
+      <details class="rejected-block">
+        <summary><span id="rejected-count">0</span> tools uitgefilterd — bekijk waarom</summary>
+        <div id="result-rejected" class="rejected-list"></div>
+      </details>
+      <div class="match-actions">
+        <button type="button" id="btn-refine">← Profiel aanpassen</button>
+        <button type="button" id="btn-reset">Opnieuw beginnen</button>
+        <a href="#alle-tools" class="match-actions__browse">Bekijk alle tools →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═════════════════════════ DIRECTORY ═════════════════════════ -->
+  <section class="container container-wide directory-section">
+    <header class="directory-head">
+      <h2>Of blader door de beste AI-tools per functie</h2>
+      <p>Filter op bedrijfsfunctie, doelgroep, prijs en inzetbaarheid — of sorteer op buzz, groei en business-readiness.</p>
+    </header>
+    <ToolDirectory />
+  </section>
+
+  <!-- ═════════════════════════ FAQ ═════════════════════════ -->
+  <section class="container container-narrow faq-section" aria-labelledby="faq-title">
+    <h2 id="faq-title">Veelgestelde vragen over de beste AI-tool kiezen</h2>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═════════════════════════ INTERNE LINKS ═════════════════════════ -->
+  <section class="container container-narrow hub-links" aria-label="Verder kijken">
+    <a href="/" class="hub-link">
+      <strong>Volledige ranking →</strong>
+      <span>Alle AI-tools, objectief gerankt op buzz en groei</span>
+    </a>
+    <a href="/vergelijk" class="hub-link">
+      <strong>Vergelijk twee tools →</strong>
+      <span>Zet AI-tools naast elkaar op prijs, functies en signalen</span>
+    </a>
+    <a href="/nieuws" class="hub-link">
+      <strong>Laatste AI-nieuws →</strong>
+      <span>Lanceringen, updates en analyses uit de AI-wereld</span>
+    </a>
+  </section>
+
+  <!-- ═════════════════════════ STYLES ═════════════════════════ -->
+  <style is:global>
+    .match-page { padding-top: 80px; padding-bottom: 120px; }
+    .container-narrow { max-width: 820px; }
+
+    .match-hero h1 {
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1; margin: 0 0 12px;
+    }
+    .match-subtitle {
+      color: var(--text-secondary); font-size: 1.125rem; margin: 0 0 40px;
+    }
+
+    .freetext-block {
+      margin: 0 0 32px;
+      padding: 14px 18px;
+      border: 1px dashed color-mix(in oklch, var(--primary-bright) 40%, var(--border-subtle));
+      border-radius: 10px;
+      background: color-mix(in oklch, var(--primary-bright) 3%, transparent);
+    }
+    .freetext-block > summary {
+      cursor: pointer; font-weight: 500; color: var(--text-primary);
+      list-style: none; display: flex; align-items: center; gap: 8px;
+    }
+    .freetext-block > summary::-webkit-details-marker { display: none; }
+    .freetext-block > summary::after {
+      content: '▸'; margin-left: auto; transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+    .freetext-block[open] > summary::after { transform: rotate(90deg); }
+    .freetext-icon { font-size: 1.1em; }
+    .freetext-body { margin-top: 14px; }
+    .freetext-body textarea {
+      width: 100%; padding: 12px 14px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      background: var(--bg-surface); color: var(--text-primary);
+      font-family: inherit; font-size: 0.95rem;
+      resize: vertical; min-height: 80px;
+    }
+    .freetext-body textarea:focus {
+      outline: 2px solid var(--primary-bright); outline-offset: 2px;
+    }
+    .freetext-cta {
+      display: flex; align-items: center; gap: 14px; margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .freetext-cta button {
+      padding: 10px 16px; border-radius: 8px;
+      background: var(--primary-bright); color: #000;
+      border: 1px solid var(--primary-bright);
+      font-weight: 500; cursor: pointer;
+      transition: transform 0.1s, opacity 0.15s;
+    }
+    .freetext-cta button:hover { transform: translateY(-1px); }
+    .freetext-cta button:disabled { opacity: 0.5; cursor: wait; transform: none; }
+    .freetext-status {
+      color: var(--text-secondary); font-size: 0.9rem;
+      flex: 1; min-width: 200px;
+    }
+    .freetext-status.is-error { color: var(--color-error); }
+    .freetext-status.is-success { color: var(--color-success); }
+
+    .match-progress {
+      list-style: none; padding: 0;
+      display: flex; gap: 4px; overflow-x: auto;
+      margin: 0 0 40px; counter-reset: step;
+    }
+    .match-progress li {
+      flex: 1; min-width: 100px;
+      padding: 12px 8px; font-size: 0.85rem;
+      border-bottom: 2px solid var(--border-subtle);
+      color: var(--text-muted); counter-increment: step;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .match-progress li::before {
+      content: counter(step);
+      display: inline-flex; width: 22px; height: 22px;
+      border-radius: 50%; background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 600;
+    }
+    .match-progress li.active {
+      border-bottom-color: var(--primary-bright);
+      color: var(--text-primary);
+    }
+    .match-progress li.active::before {
+      background: var(--primary-bright); color: #000; border-color: var(--primary-bright);
+    }
+    .match-progress li.done { color: var(--text-secondary); }
+    .match-progress li.done::before {
+      content: '✓'; background: var(--color-success); color: #000; border-color: var(--color-success);
+    }
+    .match-progress .opt { font-size: 0.75rem; opacity: 0.7; }
+
+    .match-step { animation: fadein 0.2s ease; }
+    .match-step > h2 {
+      font-family: 'Space Grotesk Variable', sans-serif;
+      margin: 0 0 8px;
+    }
+    .match-step > .step-hint {
+      color: var(--text-secondary); margin: 0 0 24px; font-size: 0.95rem;
+    }
+    @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+    .field-label {
+      display: block; margin: 20px 0 8px;
+      font-size: 0.9rem; color: var(--text-secondary);
+    }
+
+    .radio-grid, .check-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px; border: 0; padding: 0; margin: 0 0 16px;
+    }
+    .radio-grid.compact, .check-grid.compact {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .radio-card, .check-card {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px; border: 1px solid var(--border-subtle);
+      border-radius: 10px; cursor: pointer;
+      background: var(--bg-surface);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .radio-card:hover, .check-card:hover { border-color: var(--primary-bright); }
+    .radio-card input, .check-card input {
+      margin: 2px 0 0; flex-shrink: 0;
+    }
+    .radio-card:has(input:checked), .check-card:has(input:checked) {
+      border-color: var(--primary-bright);
+      background: color-mix(in oklch, var(--primary-bright) 10%, var(--bg-surface));
+    }
+    .radio-card div, .check-card span { display: flex; flex-direction: column; gap: 2px; }
+    .radio-card .muted, .check-card .muted {
+      color: var(--text-secondary); font-size: 0.85rem; font-weight: 400;
+    }
+    .check-card.small, .radio-card.small {
+      padding: 8px 12px; font-size: 0.875rem;
+    }
+
+    .toggle {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 0; border-bottom: 1px solid var(--border-subtle);
+    }
+
+    input[type="number"], select {
+      padding: 10px 14px; border: 1px solid var(--border-subtle);
+      background: var(--bg-surface); color: var(--text-primary);
+      border-radius: 8px; font-size: 1rem; min-width: 240px;
+    }
+    input[type="number"]:focus, select:focus {
+      outline: 2px solid var(--primary-bright); outline-offset: 2px;
+    }
+
+    .optional-block {
+      margin-top: 20px; padding: 14px;
+      border: 1px dashed var(--border-subtle); border-radius: 8px;
+    }
+    .optional-block > summary {
+      cursor: pointer; font-weight: 500;
+    }
+    .optional-block[open] > summary { margin-bottom: 14px; }
+
+    .integration-groups { display: flex; flex-direction: column; gap: 8px; }
+    .integration-cat {
+      border: 1px solid var(--border-subtle); border-radius: 6px; padding: 10px 14px;
+    }
+    .integration-cat > summary { cursor: pointer; font-size: 0.9rem; }
+    .integration-cat[open] > summary { margin-bottom: 12px; }
+
+    .ready-note {
+      margin-top: 24px; padding: 12px 16px;
+      background: color-mix(in oklch, var(--color-success) 10%, var(--bg-surface));
+      border-left: 3px solid var(--color-success);
+      color: var(--text-secondary); font-size: 0.9rem;
+      border-radius: 4px;
+    }
+
+    .match-cta {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 32px; padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .match-cta button {
+      padding: 12px 20px; border-radius: 8px;
+      border: 1px solid var(--border-subtle); background: var(--bg-surface);
+      color: var(--text-primary); font-size: 1rem; font-weight: 500;
+      cursor: pointer; transition: background 0.15s, border-color 0.15s;
+    }
+    .match-cta button:not(:disabled):hover {
+      border-color: var(--primary-bright);
+    }
+    .match-cta button:disabled { opacity: 0.4; cursor: not-allowed; }
+    .match-cta button[data-action="next"], .match-cta button[data-action="match"] {
+      margin-left: auto; background: var(--primary-bright); border-color: var(--primary-bright);
+      color: #000;
+    }
+    .match-cta__hint { color: var(--text-muted); font-size: 0.85rem; flex: 1; }
+
+    .match-foot {
+      margin-top: 32px; color: var(--text-muted); font-size: 0.85rem;
+      text-align: center;
+    }
+    .match-foot a { color: inherit; text-decoration: underline; }
+
+    /* Result view */
+    #match-result { animation: fadein 0.2s ease; }
+
+    .result-hero {
+      margin: 0 0 28px;
+      padding: 20px 0 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .result-hero__eyebrow {
+      margin: 0 0 8px; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .result-hero__title {
+      margin: 0 0 10px;
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.15;
+    }
+    .result-hero__profile {
+      margin: 0; color: var(--text-secondary); font-size: 1rem;
+    }
+    .result-hero__profile .chip {
+      display: inline-block; padding: 2px 10px; margin: 2px 4px 2px 0;
+      border-radius: 999px; font-size: 0.85rem;
+      background: color-mix(in oklch, var(--primary-bright) 14%, transparent);
+      color: var(--text-primary);
+      border: 1px solid color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    }
+    .result-hero__conf {
+      margin: 14px 0 0; padding: 10px 14px;
+      border-radius: 8px; font-size: 0.9rem;
+      background: color-mix(in oklch, var(--color-warning) 12%, var(--bg-surface));
+      border-left: 3px solid var(--color-warning);
+      color: var(--text-secondary);
+    }
+
+    .followup-box {
+      padding: 20px 24px; border-radius: 12px;
+      background: color-mix(in oklch, var(--color-warning) 15%, var(--bg-surface));
+      border-left: 4px solid var(--color-warning);
+      margin-bottom: 24px;
+    }
+    .followup-box h3 { margin: 0 0 12px; font-family: 'Space Grotesk Variable', sans-serif; }
+    .followup-box p { margin: 0 0 4px; color: var(--text-secondary); }
+    .followup-options { display: flex; gap: 12px; margin-top: 16px; }
+    .followup-options button {
+      flex: 1; padding: 14px 18px; border-radius: 8px;
+      border: 1px solid color-mix(in oklch, var(--color-warning) 40%, var(--border-subtle));
+      background: var(--bg-surface);
+      color: var(--text-primary); cursor: pointer;
+      text-align: left; font-size: 0.95rem; font-weight: 500;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .followup-options button:first-child {
+      background: color-mix(in oklch, var(--color-warning) 18%, var(--bg-surface));
+      border-color: var(--color-warning);
+    }
+    .followup-options button:hover {
+      border-color: var(--primary-bright);
+      transform: translateY(-1px);
+    }
+    .followup-options button:active { transform: none; }
+    @media (max-width: 560px) {
+      .followup-options { flex-direction: column; }
+    }
+
+    .result-card {
+      padding: 20px 24px; border: 1px solid var(--border-subtle);
+      border-radius: 12px; margin-bottom: 16px; background: var(--bg-surface);
+    }
+    .result-card.top { border-color: var(--primary-bright); }
+    .result-card.top.rank-1 {
+      background: color-mix(in oklch, var(--primary-bright) 12%, var(--bg-surface));
+    }
+    .result-card__head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 16px; margin-bottom: 10px;
+    }
+    .result-card__head h3 {
+      margin: 0; font-family: 'Space Grotesk Variable', sans-serif;
+    }
+    .result-card__head h3 a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px dashed transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .result-card__head h3 a:hover {
+      color: var(--primary-bright);
+      border-bottom-color: var(--primary-bright);
+    }
+    .result-card__head h3 a:focus-visible {
+      outline: 2px solid var(--primary-bright); outline-offset: 4px;
+      border-radius: 2px;
+    }
+    .result-card__score {
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--primary-bright); font-family: 'JetBrains Mono', monospace;
+    }
+    .result-card__rank {
+      font-size: 0.75rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .result-card__desc {
+      color: var(--text-secondary); font-size: 0.95rem; margin: 4px 0 12px;
+    }
+    .result-card__reason {
+      color: var(--text-primary); font-size: 0.9rem;
+      padding: 10px 12px;
+      background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .result-card__reason.is-loading {
+      position: relative; opacity: 0.7;
+    }
+    .result-card__reason.is-loading::after {
+      content: ' ⌛';
+      animation: pulse 1.2s ease-in-out infinite;
+      display: inline-block;
+    }
+    .result-card__reason.llm-enhanced {
+      background: color-mix(in oklch, var(--primary-bright) 14%, transparent);
+      border-left: 2px solid var(--primary-bright);
+      padding-left: 14px;
+    }
+    .result-card__whynot {
+      margin-top: 10px; padding: 8px 12px;
+      font-size: 0.85rem; color: var(--text-secondary);
+      background: color-mix(in oklch, var(--text-muted) 8%, transparent);
+      border-left: 2px solid var(--text-muted);
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .result-card__whynot.is-loading { opacity: 0.6; }
+    .result-card__whynot.is-loading::after {
+      content: ' ⌛'; animation: pulse 1.2s ease-in-out infinite;
+    }
+    .result-card__whynot.llm-enhanced {
+      color: var(--text-primary);
+      background: color-mix(in oklch, var(--color-warning) 8%, transparent);
+      border-left-color: var(--color-warning);
+    }
+    @keyframes pulse { 50% { opacity: 0.4; } }
+
+    /* Tool badges */
+    .result-card__badges {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin: 0 0 12px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 500;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .badge--vereniging {
+      background: color-mix(in oklch, var(--color-success) 15%, var(--bg-surface));
+      color: var(--color-success);
+      border-color: color-mix(in oklch, var(--color-success) 40%, transparent);
+    }
+    .badge--eu {
+      background: color-mix(in oklch, var(--primary-bright) 12%, var(--bg-surface));
+      color: var(--primary-bright);
+      border-color: color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    }
+    .badge--privacy {
+      background: color-mix(in oklch, var(--color-success) 12%, var(--bg-surface));
+      color: var(--color-success);
+      border-color: color-mix(in oklch, var(--color-success) 30%, transparent);
+    }
+    .badge--privacy-soft {
+      background: color-mix(in oklch, var(--color-warning) 10%, var(--bg-surface));
+      color: var(--color-warning);
+      border-color: color-mix(in oklch, var(--color-warning) 30%, transparent);
+    }
+    .badge--free {
+      background: color-mix(in oklch, var(--color-info) 12%, var(--bg-surface));
+      color: var(--color-info);
+      border-color: color-mix(in oklch, var(--color-info) 30%, transparent);
+    }
+
+    /* 90-dagen plan */
+    .plan-block {
+      margin: 28px 0;
+      padding: 20px 24px;
+      border-radius: 12px;
+      background: color-mix(in oklch, var(--tertiary-bright) 8%, var(--bg-surface));
+      border: 1px solid color-mix(in oklch, var(--tertiary-bright) 30%, var(--border-subtle));
+    }
+    .plan-block__title {
+      margin: 0 0 8px;
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: 1.15rem;
+    }
+    .plan-block__intro {
+      margin: 0 0 18px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .plan-steps {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 14px;
+    }
+    .plan-step {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 16px;
+      padding: 14px 16px;
+      background: var(--bg-surface);
+      border-radius: 10px;
+      border-left: 3px solid var(--tertiary-bright);
+    }
+    .plan-step__month {
+      font-weight: 600;
+      color: var(--tertiary-bright);
+      font-size: 0.9rem;
+    }
+    .plan-step__body { display: flex; flex-direction: column; gap: 4px; }
+    .plan-step__tool {
+      display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap;
+    }
+    .plan-step__tool strong { font-size: 1rem; }
+    .plan-step__setup {
+      font-size: 0.8rem; color: var(--text-muted);
+      padding: 2px 8px; background: var(--bg-elevated);
+      border-radius: 999px;
+    }
+    .plan-step__hint {
+      margin: 0; color: var(--text-secondary); font-size: 0.9rem;
+    }
+    .plan-step__saved {
+      margin: 0; color: var(--text-muted); font-size: 0.85rem;
+    }
+    @media (max-width: 560px) {
+      .plan-step { grid-template-columns: 1fr; gap: 6px; }
+    }
+    .result-card__bars {
+      display: flex; flex-direction: column; gap: 6px;
+      margin-top: 14px; font-size: 0.8rem;
+    }
+    .result-card__bar-row {
+      display: grid; grid-template-columns: 130px 1fr 2.5em;
+      gap: 10px; align-items: center;
+    }
+    .result-card__bar-label { color: var(--text-secondary); }
+    .result-card__bar-value {
+      color: var(--text-muted); text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .result-card__bar {
+      height: 6px; border-radius: 3px;
+      background: var(--border-subtle); overflow: hidden;
+    }
+    .result-card__bar > div {
+      height: 100%; background: var(--primary-bright);
+      transition: width 0.3s ease;
+    }
+    /* Mobile: stack as "label ... value / bar fullwidth" */
+    @media (max-width: 560px) {
+      .result-card__bar-row {
+        grid-template-columns: 1fr auto;
+        row-gap: 2px;
+      }
+      .result-card__bar-row .result-card__bar {
+        grid-column: 1 / -1;
+        order: 2;
+        margin-bottom: 4px;
+      }
+    }
+
+    .result-section-heading {
+      margin: 40px 0 16px;
+      font-family: 'Space Grotesk Variable', sans-serif;
+      font-size: 1.25rem; color: var(--text-secondary);
+      padding-top: 16px; border-top: 1px solid var(--border-subtle);
+    }
+
+    .rejected-block { margin-top: 40px; }
+    .rejected-block summary { cursor: pointer; color: var(--text-muted); }
+    .rejected-list {
+      margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);
+      max-height: 320px; overflow-y: auto;
+    }
+    .rejected-list > div { padding: 6px 0; border-bottom: 1px solid var(--border-subtle); }
+
+    .match-actions {
+      display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+      padding-top: 20px; border-top: 1px solid var(--border-subtle);
+      align-items: center;
+    }
+    .match-actions button {
+      padding: 10px 16px; border-radius: 8px;
+      border: 1px solid var(--border-subtle); background: var(--bg-surface);
+      color: var(--text-primary); cursor: pointer;
+    }
+    .match-actions__browse {
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px dashed transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .match-actions__browse:hover {
+      color: var(--primary-bright);
+      border-bottom-color: var(--primary-bright);
+    }
+    @media (max-width: 560px) {
+      .match-actions__browse { margin-left: 0; width: 100%; text-align: center; padding: 12px 0; }
+    }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+
+    /* ════════════ MOBILE (≤560px) — consolidated overrides ════════════ */
+    @media (max-width: 560px) {
+      /* Reclaim side padding so cards and inputs get the full width */
+      .match-page {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+      }
+
+      /* Progress: compact numbered row — no more horizontal scroll.
+         The step name is already shown by each panel's <h2>, so the
+         long labels are hidden (font-size:0) and only the numbered
+         markers remain. */
+      .match-progress {
+        overflow-x: visible;
+        gap: 4px;
+        margin-bottom: 28px;
+      }
+      .match-progress li {
+        flex: 1;
+        min-width: 0;
+        gap: 0;
+        font-size: 0;
+        justify-content: center;
+        padding: 10px 2px;
+      }
+      .match-progress li::before { font-size: 0.72rem; }
+      /* `.opt` sets its own font-size, so font-size:0 won't hide it */
+      .match-progress .opt { display: none; }
+
+      /* Option grids: always a single column on phones (the 240px
+         minmax could otherwise overflow very narrow screens) */
+      .radio-grid,
+      .check-grid,
+      .radio-grid.compact,
+      .check-grid.compact {
+        grid-template-columns: 1fr;
+      }
+
+      /* Inputs/selects: drop the rigid 240px min-width */
+      input[type="number"],
+      select {
+        min-width: 0;
+        width: 100%;
+      }
+
+      /* CTA bar: stack vertically with the primary action on top and
+         full-size tap targets, instead of cramming 3 buttons + hint
+         into one row */
+      .match-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .match-cta button {
+        width: 100%;
+        margin: 0;
+        min-height: 48px;
+      }
+      .match-cta button[data-action="match"] { order: 1; }
+      .match-cta button[data-action="next"] { order: 2; }
+      .match-cta button[data-action="back"] { order: 3; }
+      .match-cta__hint {
+        order: 4;
+        flex: none;
+        text-align: center;
+      }
+
+      /* Result view: trim horizontal padding so content isn't squeezed */
+      .result-card,
+      .followup-box,
+      .plan-block { padding: 16px; }
+    }
+  </style>
+
+  <!-- ═════════════════════════ DIRECTORY / FAQ / HUB STYLES ═════════════════════════ -->
+  <style>
+    .directory-section {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-4);
+      margin-top: var(--space-8);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .directory-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto var(--space-6);
+    }
+    .directory-head h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: var(--font-bold);
+      letter-spacing: var(--tracking-tight);
+      margin: 0 0 var(--space-2);
+    }
+    .directory-head p {
+      color: var(--text-secondary);
+      font-size: var(--text-base);
+      margin: 0;
+    }
+
+    .faq-section {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-4);
+    }
+    .faq-section > h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      letter-spacing: var(--tracking-tight);
+      margin: 0 0 var(--space-5);
+    }
+    .faq-list { display: flex; flex-direction: column; gap: var(--space-2); }
+    .faq-item {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      padding: var(--space-3) var(--space-4);
+    }
+    .faq-item > summary {
+      cursor: pointer;
+      font-weight: var(--font-semibold);
+      color: var(--text-primary);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .faq-item > summary::-webkit-details-marker { display: none; }
+    .faq-item > summary::after {
+      content: '+';
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 1.2em;
+      transition: transform var(--transition-fast);
+    }
+    .faq-item[open] > summary::after { transform: rotate(45deg); }
+    .faq-item > p {
+      margin: var(--space-3) 0 0;
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      font-size: var(--text-sm);
+    }
+
+    .hub-links {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-16);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+    }
+    .hub-link {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      padding: var(--space-4);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      text-decoration: none;
+      transition: border-color var(--transition-fast), transform var(--transition-fast);
+    }
+    .hub-link:hover {
+      border-color: var(--primary-bright);
+      transform: translateY(-2px);
+    }
+    .hub-link strong { color: var(--text-primary); font-size: var(--text-base); }
+    .hub-link span { color: var(--text-muted); font-size: var(--text-sm); }
+    @media (max-width: 768px) {
+      .hub-links { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- ═════════════════════════ WIZARD LOGIC ═════════════════════════ -->
+  <script>
+    import { run } from '../lib/matching';
+    import type { UserProfile, MatchOutput } from '../lib/matching/types';
+    import type { Tool } from '../types/tools-domain';
+
+    // ─── DOM refs ────────────────────────────────────────────
+    const form = document.getElementById('match-form') as HTMLFormElement;
+    const progress = document.querySelectorAll<HTMLElement>('.match-progress li');
+    const panels = document.querySelectorAll<HTMLElement>('[data-step-panel]');
+    const btnBack = form.querySelector<HTMLButtonElement>('[data-action="back"]')!;
+    const btnNext = form.querySelector<HTMLButtonElement>('[data-action="next"]')!;
+    const btnMatch = form.querySelector<HTMLButtonElement>('[data-action="match"]')!;
+    const hint = form.querySelector<HTMLElement>('[data-hint]')!;
+    const resultView = document.getElementById('match-result')!;
+    const resultTop3 = document.getElementById('result-top3')!;
+    const resultAlt = document.getElementById('result-alternatives')!;
+    const resultReject = document.getElementById('result-rejected')!;
+    const rejectedCount = document.getElementById('rejected-count')!;
+    const resultFollowup = document.getElementById('result-followup')!;
+    const toolCountEl = document.getElementById('tool-count');
+    const TOTAL_STEPS = 5;
+
+    // ─── State ───────────────────────────────────────────────
+    let currentStep = 1;
+    let toolData: Tool[] | null = null;
+    let followUpAsked = false;
+
+    // ─── URL hash / localStorage state roundtrip ─────────────
+    const DRAFT_KEY = 'match:draft';
+    function saveDraft(profile: Partial<UserProfile>) {
+      try { localStorage.setItem(DRAFT_KEY, JSON.stringify(profile)); } catch {}
+      const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(profile))));
+      history.replaceState(null, '', '#p=' + encoded);
+    }
+    function loadDraft(): Partial<UserProfile> | null {
+      const hash = location.hash.match(/#p=([^&]+)/);
+      if (hash) {
+        try { return JSON.parse(decodeURIComponent(escape(atob(hash[1])))); } catch {}
+      }
+      try {
+        const raw = localStorage.getItem(DRAFT_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch { return null; }
+    }
+
+    // ─── Apply draft to form inputs ──────────────────────────
+    function applyDraft(draft: Partial<UserProfile>) {
+      for (const [k, v] of Object.entries(draft)) {
+        const inputs = form.querySelectorAll<HTMLInputElement>(`[name="${k}"]`);
+        if (inputs.length === 0) continue;
+        if (Array.isArray(v)) {
+          for (const input of inputs) {
+            input.checked = v.includes(input.value as never);
+          }
+        } else if (typeof v === 'boolean') {
+          for (const input of inputs) input.checked = v;
+        } else {
+          for (const input of inputs) {
+            if (input.type === 'radio') input.checked = input.value === String(v);
+            else input.value = String(v ?? '');
+          }
+        }
+      }
+    }
+
+    // ─── Collect profile from form ───────────────────────────
+    function collectProfile(): Partial<UserProfile> {
+      const fd = new FormData(form);
+      const getStr = (k: string) => (fd.get(k) as string) || undefined;
+      const getAll = (k: string) => fd.getAll(k).map(String).filter(Boolean);
+      const getBool = (k: string) => fd.get(k) === 'on';
+      const getNum = (k: string) => {
+        const v = fd.get(k); const n = v ? Number(v) : NaN;
+        return Number.isFinite(n) ? n : undefined;
+      };
+
+      const profile: Partial<UserProfile> = {
+        segment: getStr('segment') as UserProfile['segment'],
+        teamSize: getNum('teamSize'),
+        verenigingType: getStr('verenigingType') as never,
+        verenigingTimeSink: getStr('verenigingTimeSink') as never,
+        useCaseBuckets: getAll('useCaseBuckets') as UserProfile['useCaseBuckets'],
+        jtbds: getAll('jtbds') as UserProfile['jtbds'],
+        aiComfort: getStr('aiComfort') as never,
+        requireEuHosting: getBool('requireEuHosting') || undefined,
+        minDutchOutputQuality: getStr('minDutchOutputQuality') as never,
+        requiredIntegrations: getAll('requiredIntegrations') as UserProfile['requiredIntegrations'],
+        disallowTraining: getBool('disallowTraining') || undefined,
+        requireSso: getBool('requireSso') || undefined,
+        requireAuditLogs: getBool('requireAuditLogs') || undefined,
+        budget: getStr('budget') as never,
+        currentStack: getAll('currentStack') as UserProfile['currentStack'],
+      };
+
+      // Strip empty
+      for (const k of Object.keys(profile) as (keyof UserProfile)[]) {
+        const v = profile[k];
+        if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) {
+          delete profile[k];
+        }
+      }
+      return profile;
+    }
+
+    // ─── Conditional show/hide ───────────────────────────────
+    function updateConditionals() {
+      const segment = (form.querySelector<HTMLInputElement>('[name="segment"]:checked'))?.value;
+      document.querySelectorAll<HTMLElement>('[data-show-if-segment]').forEach((el) => {
+        const segs = (el.dataset.showIfSegment ?? '').split(' ');
+        el.hidden = !segment || !segs.includes(segment);
+      });
+      // JTBD grid: show only items in selected buckets
+      const buckets = Array.from(form.querySelectorAll<HTMLInputElement>('[name="useCaseBuckets"]:checked'))
+        .map((i) => i.value);
+      document.querySelectorAll<HTMLElement>('[data-jtbd-bucket]').forEach((el) => {
+        el.hidden = !buckets.includes(el.dataset.jtbdBucket!);
+      });
+    }
+
+    // ─── Step validation ─────────────────────────────────────
+    function isStepValid(step: number): string | null {
+      const p = collectProfile();
+      if (step >= 1) {
+        if (!p.segment) return 'Kies een segment.';
+      }
+      if (step >= 2) {
+        if (!p.useCaseBuckets || p.useCaseBuckets.length === 0) return 'Kies minimaal één use-case.';
+      }
+      if (step >= 3) {
+        if (!p.aiComfort) return 'Kies je AI-niveau.';
+      }
+      return null;
+    }
+
+    // ─── Navigation ──────────────────────────────────────────
+    function showStep(step: number) {
+      currentStep = Math.max(1, Math.min(TOTAL_STEPS, step));
+      panels.forEach((p) => {
+        p.hidden = p.dataset.stepPanel !== String(currentStep);
+      });
+      progress.forEach((li) => {
+        const s = Number(li.dataset.step);
+        li.classList.toggle('active', s === currentStep);
+        li.classList.toggle('done', s < currentStep);
+      });
+      btnBack.disabled = currentStep === 1;
+      btnNext.hidden = currentStep === TOTAL_STEPS;
+      btnMatch.hidden = currentStep < 3;
+      hint.textContent = currentStep < 3
+        ? `Stap ${currentStep} van ${TOTAL_STEPS}`
+        : currentStep === 3
+          ? 'Genoeg info — klik "Toon top-3" of verfijn met 4 & 5.'
+          : `Optioneel (stap ${currentStep} van ${TOTAL_STEPS})`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    async function ensureTools(): Promise<Tool[]> {
+      if (toolData) return toolData;
+      // `no-store` ensures a fresh dataset after editorial re-seeds; the
+      // browser would otherwise hang onto a stale version for up to the
+      // server cache-control window.
+      const res = await fetch('/match/tools.json', { cache: 'no-store' });
+      toolData = await res.json() as Tool[];
+      if (toolCountEl) toolCountEl.textContent = String(toolData.length);
+      return toolData;
+    }
+
+    // ─── Run match ───────────────────────────────────────────
+    async function doMatch() {
+      const err = isStepValid(3);
+      if (err) { alert(err); return; }
+      const profile = collectProfile() as UserProfile;
+      saveDraft(profile);
+
+      btnMatch.disabled = true; btnMatch.textContent = 'Bezig…';
+      try {
+        const tools = await ensureTools();
+        const output = run({ profile, tools });
+        renderResult(output, tools, profile);
+        notifyMatchUsage(output);
+      } catch (e) {
+        console.error(e);
+        alert('Er ging iets mis bij het matchen. Probeer opnieuw.');
+      } finally {
+        btnMatch.disabled = false; btnMatch.textContent = 'Toon mijn top-3 →';
+      }
+    }
+
+    // ─── Admin usage notifier ────────────────────────────────
+    // Fires once per browser session when a match completes, so the
+    // site owner can see the wizard is actually being used. No profile
+    // data leaves the device — only the coarse result shape (count +
+    // top score), keeping the on-page "blijft op je apparaat" promise.
+    function notifyMatchUsage(output: MatchOutput) {
+      try {
+        if (sessionStorage.getItem('match:notified')) return;
+        sessionStorage.setItem('match:notified', '1');
+      } catch {
+        return; // storage blocked — skip rather than risk a double ping
+      }
+
+      const resultCount = output.top3.length;
+      const topScore = output.top3[0]?.score ?? null;
+
+      // Umami custom event — no-op when analytics is not configured.
+      (window as any).umami?.track?.('match-voltooid', { resultaten: resultCount });
+
+      // Webhook ping — no-op when ADMIN_NOTIFY_WEBHOOK is unset.
+      fetch('/api/match-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resultCount, topScore }),
+        keepalive: true,
+      }).catch(() => { /* a notifier failure must never disrupt the user */ });
+    }
+
+    // ─── Render result ───────────────────────────────────────
+    function renderResult(output: MatchOutput, tools: Tool[], profile: UserProfile) {
+      form.hidden = true;
+      resultView.hidden = false;
+      currentProfile = profile;
+      // Hide wizard chrome (hero + progress) while showing results
+      document.querySelector<HTMLElement>('.match-hero')?.style.setProperty('display', 'none');
+      document.querySelector<HTMLElement>('.match-progress')?.style.setProperty('display', 'none');
+
+      const toolMap = new Map(tools.map((t) => [t.slug, t]));
+
+      // ── Result hero: profile summary + confidence note ──
+      const heroTitle = document.getElementById('result-hero-title')!;
+      const heroProfile = document.getElementById('result-hero-profile')!;
+      const heroConf = document.getElementById('result-hero-confidence')!;
+
+      heroTitle.textContent = output.top3.length > 0
+        ? `Top ${Math.min(3, output.top3.length)} voor jouw profiel`
+        : 'Geen match op dit profiel';
+
+      const chips: string[] = [];
+      chips.push(`<span class="chip">${escapeHtml(SEGMENT_LABELS[profile.segment] ?? profile.segment)}</span>`);
+      for (const b of (profile.useCaseBuckets ?? []).slice(0, 3)) {
+        chips.push(`<span class="chip">${escapeHtml(BUCKET_LABELS[b] ?? b)}</span>`);
+      }
+      if (profile.aiComfort) {
+        chips.push(`<span class="chip">${escapeHtml(COMFORT_LABELS[profile.aiComfort] ?? profile.aiComfort)}</span>`);
+      }
+      if (profile.budget) {
+        chips.push(`<span class="chip">${escapeHtml(BUDGET_LABELS[profile.budget] ?? profile.budget)}</span>`);
+      }
+      if (profile.requireEuHosting) chips.push(`<span class="chip">EU-hosting</span>`);
+      heroProfile.innerHTML = chips.join(' ');
+
+      // Confidence banner (only for low-confidence with results showing)
+      if (output.suppressed && output.top3.length > 0) {
+        heroConf.innerHTML = `⚠️ <strong>Beperkte data</strong> — de top-3 ligt dicht bij elkaar en we weten weinig van jouw context. Beantwoord de vraag hieronder of verfijn je profiel (stap 4 & 5) voor een scherper advies.`;
+        heroConf.hidden = false;
+      } else {
+        heroConf.hidden = true;
+        heroConf.innerHTML = '';
+      }
+
+      // Follow-up (one-shot — if user already answered once, skip)
+      if (output.followUp && !followUpAsked) {
+        const f = output.followUp;
+        resultFollowup.hidden = false;
+        resultFollowup.innerHTML = `
+          <h3>We hebben nog één vraag</h3>
+          <p>${escapeHtml(f.question)}</p>
+          <div class="followup-options">
+            <button type="button" data-fup="a">${escapeHtml(f.optionA.label)}</button>
+            <button type="button" data-fup="b">${escapeHtml(f.optionB.label)}</button>
+          </div>
+        `;
+        resultFollowup.querySelectorAll('button').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            followUpAsked = true;
+            const which = (btn as HTMLButtonElement).dataset.fup;
+            const option = which === 'a' ? f.optionA : f.optionB;
+            const next = { ...profile, ...option.implies } as UserProfile;
+            saveDraft(next);
+            applyDraft(next);
+            resultFollowup.hidden = true;
+            doMatch();
+          });
+        });
+      } else {
+        resultFollowup.hidden = true;
+      }
+
+      // Top 3 (heading lives in hero, just render cards)
+      resultTop3.innerHTML = output.top3.length === 0
+        ? `<p class="muted" style="margin-top: 8px">Geen tools passen bij dit profiel. Zie uitgefilterde lijst hieronder.</p>`
+        : output.top3.map((r) => card(r, toolMap.get(r.slug)!, true)).join('');
+
+      // 90-dagen plan for beginners / vereniging / stichting
+      render90DayPlan(output.top3, toolMap, profile);
+
+      // Alternatives
+      resultAlt.innerHTML = output.alternatives.length === 0 ? '' :
+        `<h3 class="result-section-heading">Alternatieven</h3>` +
+        output.alternatives.map((r) => card(r, toolMap.get(r.slug)!, false)).join('');
+
+      // Fire LLM explanation enrichment in the background (optional; template reason
+      // stays put until the LLM response arrives, and survives if it never does).
+      if (output.top3.length > 0) {
+        enrichWithLlmExplanations(output.top3, output.alternatives, toolMap, profile).catch((err) => {
+          console.warn('[match] LLM explain unavailable:', err);
+        });
+      }
+
+      // Rejected
+      rejectedCount.textContent = String(output.rejected.length);
+      resultReject.innerHTML = output.rejected.map((r) => {
+        const t = toolMap.get(r.slug);
+        return `<div><strong>${escapeHtml(t?.name ?? r.slug)}</strong> — ${escapeHtml(r.reasons.join('; '))}</div>`;
+      }).join('');
+
+      // Scroll to top
+      window.scrollTo({ top: resultView.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    // ─── LLM explanation enrichment (Fase 2) ─────────────────
+    async function enrichWithLlmExplanations(
+      top3: MatchResult[],
+      alternatives: MatchResult[],
+      toolMap: Map<string, Tool>,
+      profile: UserProfile,
+    ): Promise<void> {
+      // Show a subtle "enriching…" state on top-3 reasons + alt whyNot
+      document.querySelectorAll<HTMLElement>('.result-card.top .result-card__reason, .result-card.alt .result-card__whynot')
+        .forEach((el) => el.classList.add('is-loading'));
+
+      const toPayload = (r: MatchResult) => {
+        const t = toolMap.get(r.slug);
+        return {
+          slug: r.slug,
+          name: t?.name ?? r.slug,
+          score: r.score,
+          rank: r.rank,
+          shortDescription: t?.shortDescription ?? '',
+          topFactors: Object.entries(r.breakdown)
+            .filter(([, b]: any) => b.weight > 0 && b.raw >= 60)
+            .sort((a: any, b: any) => b[1].weighted - a[1].weighted)
+            .slice(0, 3)
+            .map(([f]) => FACTOR_LABELS[f] ?? f),
+          setupTime: t?.setupTime,
+          outputLanguageQualityNl: t?.outputLanguageQualityNl,
+          beginnerFriendlyScore: t?.beginnerFriendlyScore,
+          hasFreePlan: t?.hasFreePlan,
+          startingPriceMonthly: t?.startingPriceMonthly,
+          dataUsedForTraining: t?.dataUsedForTraining,
+          euHostingAvailable: t?.euHostingAvailable,
+          typicalWeeklyTimeSaved: t?.typicalWeeklyTimeSaved,
+          verenigingSuitable: t?.verenigingSuitable,
+        };
+      };
+
+      const payload = {
+        profile,
+        top3: top3.map(toPayload),
+        alternatives: alternatives.slice(0, 3).map(toPayload),
+      };
+
+      let response: Response;
+      try {
+        response = await fetch('/api/match-explain', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      } catch (err) {
+        clearEnrichState();
+        throw err;
+      }
+
+      if (!response.ok) {
+        clearEnrichState();
+        throw new Error(`/api/match-explain ${response.status}`);
+      }
+
+      const data = await response.json() as { explanations: string[]; whyNot: string[] };
+
+      // Top-3 reasons
+      const topCards = document.querySelectorAll<HTMLElement>('.result-card.top');
+      topCards.forEach((cardEl, i) => {
+        const reasonEl = cardEl.querySelector<HTMLElement>('.result-card__reason');
+        if (!reasonEl) return;
+        reasonEl.classList.remove('is-loading');
+        const text = data.explanations[i];
+        if (text && text.trim()) {
+          reasonEl.textContent = text;
+          reasonEl.classList.add('llm-enhanced');
+        }
+      });
+
+      // Alternative whyNot
+      const altCards = document.querySelectorAll<HTMLElement>('.result-card.alt');
+      altCards.forEach((cardEl, i) => {
+        const whynotEl = cardEl.querySelector<HTMLElement>('.result-card__whynot');
+        if (!whynotEl) return;
+        whynotEl.classList.remove('is-loading');
+        const text = data.whyNot?.[i];
+        if (text && text.trim()) {
+          whynotEl.textContent = text;
+          whynotEl.classList.add('llm-enhanced');
+        }
+      });
+    }
+
+    function clearEnrichState() {
+      document.querySelectorAll<HTMLElement>('.result-card__reason.is-loading, .result-card__whynot.is-loading')
+        .forEach((el) => el.classList.remove('is-loading'));
+    }
+
+    function card(r: any, tool: Tool, isTop: boolean): string {
+      const bars = Object.entries(r.breakdown)
+        .filter(([, b]: any) => b.weight > 0)
+        .sort((a: any, b: any) => b[1].weight - a[1].weight)
+        .map(([factor, b]: any) => `
+          <div class="result-card__bar-row">
+            <span class="result-card__bar-label">${FACTOR_LABELS[factor] ?? factor}</span>
+            <span class="result-card__bar"><div style="width:${b.raw}%"></div></span>
+            <span class="result-card__bar-value">${b.raw}</span>
+          </div>
+        `).join('');
+
+      const whyNotBlock = !isTop
+        ? `<div class="result-card__whynot">${escapeHtml(r.whyNotTop3 ?? '')}</div>`
+        : '';
+      const reasonBlock = isTop
+        ? `<div class="result-card__reason">${escapeHtml(r.reason ?? '')}</div>`
+        : '';
+      const badges = renderBadges(tool, currentProfile).join('');
+
+      return `
+        <article class="result-card ${isTop ? 'top' : 'alt'} rank-${r.rank}">
+          <div class="result-card__head">
+            <div>
+              <div class="result-card__rank">#${r.rank}</div>
+              <h3><a href="/ai-tools/${escapeHtml(tool.slug)}">${escapeHtml(tool.name)}</a></h3>
+            </div>
+            <div class="result-card__score">${r.score}<span style="font-size:0.8em;opacity:0.6">/100</span></div>
+          </div>
+          <p class="result-card__desc">${escapeHtml(tool.shortDescription)}</p>
+          ${badges ? `<div class="result-card__badges">${badges}</div>` : ''}
+          ${reasonBlock}
+          ${whyNotBlock}
+          <div class="result-card__bars">${bars}</div>
+        </article>
+      `;
+    }
+
+    // ─── 90-dagen plan (Fase 3) ──────────────────────────────
+    function render90DayPlan(
+      top3: MatchResult[],
+      toolMap: Map<string, Tool>,
+      profile: UserProfile,
+    ): void {
+      const planEl = document.getElementById('result-90day')!;
+      const isBeginner = profile.aiComfort === 'never' || profile.aiComfort === 'tried_chatgpt';
+      const isVerenigingish = profile.segment === 'vereniging' || profile.segment === 'stichting';
+      const shouldShow = top3.length >= 2 && (isBeginner || isVerenigingish);
+
+      if (!shouldShow) {
+        planEl.hidden = true;
+        planEl.innerHTML = '';
+        return;
+      }
+
+      const months = [
+        { n: 1, label: 'Maand 1', hint: 'Begin hier. Geef jezelf ruimte om te wennen.' },
+        { n: 2, label: 'Maand 2', hint: 'Voeg toe zodra de eerste routine zit.' },
+        { n: 3, label: 'Maand 3', hint: 'Optioneel — alleen als er ritme in zit.' },
+      ];
+
+      const steps = top3.slice(0, 3).map((r, i) => {
+        const t = toolMap.get(r.slug);
+        const m = months[i];
+        const usecase = pickUseCaseLabel(profile.useCaseBuckets[0]);
+        const hint = i === 0
+          ? `${m.hint} Focus: ${usecase}.`
+          : m.hint;
+        return `
+          <li class="plan-step">
+            <div class="plan-step__month">${m.label}</div>
+            <div class="plan-step__body">
+              <div class="plan-step__tool">
+                <strong>${escapeHtml(t?.name ?? r.slug)}</strong>
+                ${t?.setupTime ? `<span class="plan-step__setup">setup ${escapeHtml(setupLabel(t.setupTime))}</span>` : ''}
+              </div>
+              <p class="plan-step__hint">${escapeHtml(hint)}</p>
+              ${t?.typicalWeeklyTimeSaved ? `<p class="plan-step__saved">📅 ${escapeHtml(t.typicalWeeklyTimeSaved)}</p>` : ''}
+            </div>
+          </li>
+        `;
+      }).join('');
+
+      const intro = isVerenigingish
+        ? 'Voor een vrijwilligersorganisatie werkt het het best om niet alles tegelijk te adopteren. Begin klein, voeg pas toe als mensen comfortabel zijn.'
+        : 'Als beginner is het slim om niet alles tegelijk te proberen. Start met één tool, bouw rust op, breid daarna uit.';
+
+      planEl.hidden = false;
+      planEl.innerHTML = `
+        <section class="plan-block">
+          <h3 class="plan-block__title">📅 90-dagen introductieplan</h3>
+          <p class="plan-block__intro">${escapeHtml(intro)}</p>
+          <ol class="plan-steps">${steps}</ol>
+        </section>
+      `;
+    }
+
+    function pickUseCaseLabel(key: string | undefined): string {
+      return key ? (BUCKET_LABELS[key] ?? key).toLowerCase() : 'jouw belangrijkste taak';
+    }
+
+    function setupLabel(s: string): string {
+      const map: Record<string, string> = {
+        under_15min: 'onder 15 min',
+        under_1h: 'onder 1 uur',
+        under_4h: 'onder 4 uur',
+        days: 'meerdere dagen',
+      };
+      return map[s] ?? s;
+    }
+
+    // ─── Badge rendering ─────────────────────────────────────
+    function renderBadges(tool: Tool, profile: UserProfile | null): string[] {
+      const badges: string[] = [];
+      const isVerenigingSegment = profile?.segment === 'vereniging' || profile?.segment === 'stichting';
+
+      if (isVerenigingSegment && tool.verenigingSuitable) {
+        badges.push(`<span class="badge badge--vereniging" title="Redactie-geverifieerd voor vrijwilligersorganisaties">💚 Vrijwilligers-vriendelijk</span>`);
+      }
+      if (tool.euHostingAvailable) {
+        badges.push(`<span class="badge badge--eu" title="Data kan in EU worden gehost">🇪🇺 EU-hosting</span>`);
+      }
+      if (tool.dataUsedForTraining === 'no') {
+        badges.push(`<span class="badge badge--privacy" title="Jouw data wordt nooit gebruikt om het model te trainen">🔒 Geen training</span>`);
+      } else if (tool.dataUsedForTraining === 'opt-out') {
+        badges.push(`<span class="badge badge--privacy-soft" title="Standaard wel, maar uit te zetten">🔓 Training: opt-out</span>`);
+      }
+      const freeish = tool.hasFreePlan || tool.pricingModel === 'free' || tool.pricingModel === 'freemium';
+      if (freeish) {
+        badges.push(`<span class="badge badge--free" title="Gratis plan beschikbaar">🎁 Gratis plan</span>`);
+      }
+      return badges;
+    }
+
+    // Profile is stashed on renderResult; card() runs per-invocation.
+    let currentProfile: UserProfile | null = null;
+
+    const FACTOR_LABELS: Record<string, string> = {
+      jobFit: 'Taak-fit',
+      techComfort: 'Tech-comfort',
+      budgetFit: 'Budget',
+      nlContext: 'NL-ondersteuning',
+      integrations: 'Integraties',
+      security: 'Beveiliging',
+      teamFit: 'Team-fit',
+    };
+
+    const SEGMENT_LABELS: Record<string, string> = {
+      zzp: 'ZZP',
+      mkb_klein: 'MKB klein (1-10)',
+      mkb_middel: 'MKB middel (10-50)',
+      vereniging: 'Vereniging',
+      stichting: 'Stichting',
+      overheid_klein: 'Kleine overheid',
+      onderwijs: 'Onderwijs',
+      enterprise: 'Enterprise',
+    };
+
+    const BUCKET_LABELS: Record<string, string> = {
+      social_content: 'Social content',
+      customer_mail: 'Klant-mails',
+      writing: 'Teksten schrijven',
+      images: 'Afbeeldingen',
+      scheduling: 'Agenda',
+      admin_finance: 'Administratie',
+      meetings: 'Vergaderingen',
+      data_analysis: 'Data',
+      customer_info: 'Klant-info',
+      code_web: 'Code / web',
+    };
+
+    const COMFORT_LABELS: Record<string, string> = {
+      never: 'Nieuw met AI',
+      tried_chatgpt: 'ChatGPT geprobeerd',
+      regular_1_2: '1-2 tools in gebruik',
+      power_user: 'Power-user',
+    };
+
+    const BUDGET_LABELS: Record<string, string> = {
+      free: 'Gratis',
+      under_20: '< €20/mnd',
+      under_50: '< €50/mnd',
+      under_200: '< €200/mnd',
+      any: 'Budget flexibel',
+    };
+
+    function escapeHtml(s: string): string {
+      return (s ?? '').replace(/[&<>"']/g, (c) => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!
+      ));
+    }
+
+    // ─── Event wiring ────────────────────────────────────────
+    btnNext.addEventListener('click', () => {
+      const err = isStepValid(currentStep);
+      if (err) { hint.textContent = err; hint.style.color = 'var(--color-error)'; return; }
+      hint.style.color = '';
+      saveDraft(collectProfile());
+      showStep(currentStep + 1);
+    });
+    btnBack.addEventListener('click', () => showStep(currentStep - 1));
+    btnMatch.addEventListener('click', doMatch);
+
+    form.addEventListener('change', () => {
+      updateConditionals();
+      saveDraft(collectProfile());
+    });
+
+    // ─── Free-text parse (Fase 2) ─────────────────────────────
+    const freetextInput = document.getElementById('freetext-input') as HTMLTextAreaElement | null;
+    const freetextBtn = document.getElementById('freetext-parse') as HTMLButtonElement | null;
+    const freetextStatus = document.getElementById('freetext-status');
+
+    freetextBtn?.addEventListener('click', async () => {
+      if (!freetextInput || !freetextStatus) return;
+      const text = freetextInput.value.trim();
+      if (text.length < 10) {
+        freetextStatus.textContent = 'Schrijf minstens een volledige zin.';
+        freetextStatus.className = 'freetext-status is-error';
+        return;
+      }
+      freetextBtn.disabled = true;
+      freetextStatus.textContent = 'Bezig met lezen…';
+      freetextStatus.className = 'freetext-status';
+
+      try {
+        const res = await fetch('/api/match-parse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error ?? `Parse failed (${res.status})`);
+        }
+        const data = await res.json() as {
+          profile: Partial<UserProfile>;
+          interpretation: string;
+          confidence: number;
+        };
+
+        // Apply the parsed profile to the form
+        applyDraft(data.profile);
+        updateConditionals();
+        saveDraft(collectProfile());
+
+        // Show interpretation + advance to the first unanswered step
+        const fieldCount = Object.keys(data.profile).length;
+        if (fieldCount === 0) {
+          freetextStatus.textContent = `Niets kunnen afleiden — ${data.interpretation}`;
+          freetextStatus.className = 'freetext-status is-error';
+        } else {
+          const pct = Math.round(data.confidence * 100);
+          freetextStatus.textContent = `${data.interpretation} (zekerheid ${pct}%). Controleer + klik Verder.`;
+          freetextStatus.className = 'freetext-status is-success';
+          // Auto-advance to first step with a missing required field
+          const err1 = isStepValid(1);
+          const err2 = isStepValid(2);
+          const err3 = isStepValid(3);
+          if (!err1 && !err2 && !err3) showStep(3);
+          else if (!err1 && !err2) showStep(3);
+          else if (!err1) showStep(2);
+          else showStep(1);
+        }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Onbekende fout';
+        freetextStatus.textContent = `Kon niet lezen: ${msg}`;
+        freetextStatus.className = 'freetext-status is-error';
+      } finally {
+        freetextBtn.disabled = false;
+      }
+    });
+
+    function restoreChrome() {
+      document.querySelector<HTMLElement>('.match-hero')?.style.removeProperty('display');
+      document.querySelector<HTMLElement>('.match-progress')?.style.removeProperty('display');
+    }
+
+    document.getElementById('btn-refine')?.addEventListener('click', () => {
+      resultView.hidden = true; form.hidden = false;
+      restoreChrome();
+      showStep(currentStep);
+    });
+    document.getElementById('btn-reset')?.addEventListener('click', () => {
+      try { localStorage.removeItem(DRAFT_KEY); } catch {}
+      location.hash = '';
+      form.reset();
+      followUpAsked = false;
+      resultView.hidden = true; form.hidden = false;
+      restoreChrome();
+      showStep(1);
+      updateConditionals();
+    });
+
+    // ─── Init ────────────────────────────────────────────────
+    const draft = loadDraft();
+    if (draft) applyDraft(draft);
+    updateConditionals();
+
+    // Auto-advance when arriving with a pre-filled profile (e.g. from
+    // /zakelijk's free-text shortcut). Step 3 reveals the "Toon top-3"
+    // CTA so the user can submit straight away after confirming.
+    const startStep = (!isStepValid(1) && !isStepValid(2) && !isStepValid(3))
+      ? 3
+      : !isStepValid(1) && !isStepValid(2)
+        ? 3
+        : !isStepValid(1)
+          ? 2
+          : 1;
+    showStep(startStep);
+
+    // Prefetch tool data in background
+    ensureTools().catch(() => { /* ignore */ });
+  </script>
+</Layout>
