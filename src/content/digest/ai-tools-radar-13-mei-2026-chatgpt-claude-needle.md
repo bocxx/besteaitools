@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Claude · Needle (Ochtend 13 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Claude · Needle (Ochtend 13 mei)'"
 description: 'AI Tools Radar 13 mei: 91 launches, 159 feature-updates, 6 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-13'
 timeSlot: tools-digest
@@ -16,7 +17,7 @@ categoriesCount: 3
 topics:
 - ChatGPT
 - Claude
-heroImage: /images/digest/ai-tools-radar-13-mei-2026-chatgpt-claude-needle.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-13-mei-2026-chatgpt-claude-needle.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

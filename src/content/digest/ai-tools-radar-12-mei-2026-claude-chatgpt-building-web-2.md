@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – Claude · ChatGPT · Building a web (Middag 12 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · ChatGPT · Building a web (Middag 12 mei)'"
 description: 'AI Tools Radar 12 mei: 99 launches, 148 feature-updates, 6 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-12'
 timeSlot: tools-digest
@@ -16,7 +17,7 @@ categoriesCount: 3
 topics:
 - Claude
 - ChatGPT
-heroImage: /images/digest/ai-tools-radar-12-mei-2026-claude-chatgpt-building-web-2.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-12-mei-2026-claude-chatgpt-building-web-2.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

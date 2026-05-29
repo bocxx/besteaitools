@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – Claude · Gemini · OpenRouter (Ochtend 28 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · Gemini · OpenRouter (Ochtend 28 mei)'"
 description: 'AI Tools Radar 28 mei: 117 launches, 126 feature-updates, 8 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-28'
 timeSlot: tools-digest
@@ -20,7 +21,7 @@ topics:
 - Gemini
 - OpenRouter
 - MCP
-heroImage: /images/digest/ai-tools-radar-28-mei-2026-claude-gemini-openrouter.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-28-mei-2026-claude-gemini-openrouter.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

@@ -2,6 +2,13 @@
 import { siteConfig } from '../config/site';
 import ThemeToggle from './ThemeToggle.astro';
 const { logo, navigation, social } = siteConfig;
+
+const pathname = Astro.url.pathname;
+function isActive(href: string) {
+  const base = (href.split('?')[0].replace(/\/+$/, '')) || '/';
+  if (base === '/') return pathname === '/';
+  return pathname === base || pathname.startsWith(base + '/');
+}
 ---
 
 
@@ -25,7 +32,11 @@ const { logo, navigation, social } = siteConfig;
     <!-- Desktop Navigation -->
     <nav class="header-nav" aria-label="Hoofdnavigatie">
       {navigation.main.map(item => (
-        <a href={item.href} class="nav-link">{item.label}</a>
+        <a
+          href={item.href}
+          class:list={['nav-link', { 'nav-link--active': isActive(item.href) }]}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >{item.label}</a>
       ))}
       <!-- Search button -->
       <button
@@ -69,7 +80,11 @@ const { logo, navigation, social } = siteConfig;
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mobile-nav" aria-label="Mobiele navigatie">
       {navigation.main.map(item => (
-        <a href={item.href} class="mobile-nav-link">{item.label}</a>
+        <a
+          href={item.href}
+          class:list={['mobile-nav-link', { 'mobile-nav-link--active': isActive(item.href) }]}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >{item.label}</a>
       ))}
       <a href={social.github.url} target="_blank" rel="noopener" class="mobile-nav-link mobile-nav-link--github">
         <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -82,7 +97,7 @@ const { logo, navigation, social } = siteConfig;
 </header>
 
 <style>
-  /* Header Base */
+  /* Header Base — transparent wrapper; the pill itself carries the chrome */
   .site-header {
     position: fixed;
     top: 0;
@@ -90,21 +105,32 @@ const { logo, navigation, social } = siteConfig;
     right: 0;
     z-index: var(--z-sticky, 200);
     padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
-    background: var(--bg-glass, rgba(20, 20, 22, 0.72));
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
-    transition: background var(--transition-base, 240ms ease-in-out),
-                box-shadow var(--transition-base, 240ms ease-in-out);
+    background: transparent;
+    border: none;
+    transition: padding var(--transition-base, 240ms ease-in-out);
   }
 
+  /* Floating rounded pill navbar */
   .header-container {
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4, 1rem);
+    padding: var(--space-2, 0.5rem) var(--space-2, 0.5rem) var(--space-2, 0.5rem) var(--space-4, 1rem);
+    background: var(--bg-glass, rgba(28, 24, 22, 0.72));
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+    border-radius: var(--radius-full, 9999px);
+    box-shadow: var(--shadow-md), inset 0 1px 0 color-mix(in oklch, var(--text-primary) 5%, transparent);
+    transition: box-shadow var(--transition-base, 240ms ease-in-out),
+                border-color var(--transition-base, 240ms ease-in-out);
+  }
+
+  .header-container:hover {
+    border-color: var(--border-strong);
   }
 
   /* Logo */
@@ -153,37 +179,32 @@ const { logo, navigation, social } = siteConfig;
 
   .nav-link {
     position: relative;
-    padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+    padding: var(--space-2, 0.5rem) var(--space-3-5, 0.875rem);
     color: var(--text-secondary, rgba(255, 255, 255, 0.7));
     text-decoration: none;
     font-size: var(--text-sm, 0.875rem);
     font-weight: var(--font-medium, 500);
     background: transparent;
     border: none;
-    border-radius: 0;
-    transition: color var(--transition-fast, 150ms ease-out);
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: var(--space-3, 0.75rem);
-    right: var(--space-3, 0.75rem);
-    bottom: 0;
-    height: 2px;
-    background: var(--primary-bright, #ff6b6b);
-    transform: scaleX(0);
-    transition: transform var(--transition-fast, 150ms ease-out);
+    border-radius: var(--radius-full, 9999px);
+    transition: color var(--transition-fast, 150ms ease-out),
+                background var(--transition-fast, 150ms ease-out);
   }
 
   .nav-link:hover {
     color: var(--text-primary, #fff);
-    background: transparent;
-    border-color: transparent;
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
   }
 
-  .nav-link:hover::after {
-    transform: scaleX(1);
+  /* Active page — soft filled pill */
+  .nav-link--active {
+    color: var(--primary-bright);
+    background: color-mix(in oklch, var(--primary-bright) 15%, transparent);
+  }
+
+  .nav-link--active:hover {
+    color: var(--primary-bright);
+    background: color-mix(in oklch, var(--primary-bright) 20%, transparent);
   }
 
   .nav-link--github {
@@ -197,10 +218,6 @@ const { logo, navigation, social } = siteConfig;
 
   .nav-link--github:hover {
     color: var(--primary-bright, #ff6b6b);
-  }
-
-  .nav-link--github::after {
-    display: none;
   }
 
   /* Search button */
@@ -294,12 +311,12 @@ const { logo, navigation, social } = siteConfig;
   /* Mobile Menu Overlay */
   .mobile-menu {
     position: fixed;
-    top: 60px;
+    top: 76px;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: var(--z-overlay, 400);
-    background: var(--bg-base, #0a0a0c);
+    background: var(--bg-deep, #0a0a0c);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     opacity: 0;
@@ -345,6 +362,12 @@ const { logo, navigation, social } = siteConfig;
   .mobile-nav-link:focus-visible {
     outline: 2px solid var(--primary-bright, #ff6b6b);
     outline-offset: 2px;
+  }
+
+  .mobile-nav-link--active {
+    color: var(--primary-bright);
+    border-color: color-mix(in oklch, var(--primary-bright) 35%, transparent);
+    background: color-mix(in oklch, var(--primary-bright) 12%, var(--bg-elevated));
   }
 
   .mobile-nav-link--github {

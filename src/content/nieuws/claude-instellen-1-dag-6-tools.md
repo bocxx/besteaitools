@@ -1,5 +1,6 @@
 ---
 title: "Claude in één dag instellen: zes tools die hem laten werken als een collega"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude in één dag instellen: zes tools die hem laten werken als een collega'"
 description: "Claude instellen voelt overweldigend tot je weet hoe je het stap voor stap doet. Zo richt je Claude Cowork in één dag in: zes tools, één checklist."
 publishedAt: 2026-05-04
 updatedAt: 2026-05-04
@@ -33,7 +34,7 @@ faq:
     a: "Cowork draait in de desktop-app en geeft Claude toegang tot een lokale werkmap, shell-commando's en connectoren. Projects draait in de browser op claude.ai en bewaart alleen instructies en geüploade bestanden. Voor solowerk is Cowork sneller en krachtiger. Voor teams die context willen delen, blijft Projects vaak praktischer omdat je het via een link kunt delen."
   - q: "Wat doe ik als Claude mijn brain file niet leest?"
     a: "Negen van de tien problemen zitten in één van drie dingen. Een: staat about-me.md in de exacte Cowork-werkmap die je hebt geselecteerd, en niet in een submap? Twee: heet het bestand letterlijk 'about-me.md' met kleine letters en de juiste .md-extensie? Drie: heb je je vaste startprompt gebruikt waarin je Claude expliciet vraagt eerst de bestanden te lezen voor hij iets doet? Lukt het na controle nog niet, dan helpt het opnieuw selecteren van de werkmap in de Cowork-instellingen meestal direct."
-heroImage: "/images/nieuws/claude-instellen-1-dag-6-tools.webp"
+heroImage: "/images/articles/diorama-claude-instellen-1-dag-6-tools.webp"
 ---
 
 Claude instellen voelt voor veel mensen overweldigend — je downloadt de app, je begint te chatten, en het stopt daar. Maar wie het stap voor stap aanpakt en zes simpele bouwstenen op de juiste plek zet, heeft geen chatbot meer; die heeft een digitale collega die jou kent. Hieronder loop je elke bouwsteen langs, met per stap precies wat je moet doen, in welke volgorde, en wat je daarna op je scherm zou moeten zien.
@@ -41,7 +42,7 @@ Claude instellen voelt voor veel mensen overweldigend — je downloadt de app, j
 > **💡 Beginner-tip:** Nog nooit met Claude gewerkt? Begin dan eerst bij onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) om te zien of Claude bij jou past. Dit artikel gaat ervan uit dat je al een betaald abonnement hebt of overweegt.
 
 <style>
-.viz-tl{--tl-blue:#2563eb;--tl-blue-soft:#93c5fd;--tl-ink:#1b2533;--tl-muted:#66758a;--tl-line:4px;--tl-bg:#fbfcfe;background:var(--tl-bg);border-radius:16px;padding:clamp(32px,5vw,56px) clamp(20px,3vw,40px);margin:32px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--tl-ink)}
+.viz-tl{--tl-blue:var(--primary-bright);--tl-blue-soft:color-mix(in oklch,var(--primary-bright) 35%,transparent);--tl-ink:var(--text-primary);--tl-muted:var(--text-muted);--tl-line:4px;--tl-bg:var(--bg-surface);background:var(--tl-bg);border:1px solid var(--border-subtle);border-radius:16px;padding:clamp(32px,5vw,56px) clamp(20px,3vw,40px);margin:32px 0;font-family:var(--font-body);color:var(--tl-ink)}
 .viz-tl-head{margin-bottom:clamp(40px,6vw,72px);max-width:720px}
 .viz-tl-eyebrow{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tl-blue);font-weight:600;margin-bottom:8px;display:inline-flex;align-items:center;gap:12px}
 .viz-tl-eyebrow::before{content:"";width:32px;height:var(--tl-line);background:var(--tl-blue);border-radius:999px}
@@ -171,12 +172,12 @@ Zonder structuur belandt al Claudes werk los in dezelfde map en weet je na een w
 **Resultaat:** Claude weet nu waar dingen heen moeten, en je hebt een groeiend mapje voorbeelden waar je later naar kunt verwijzen ("schrijf in de stijl van TEMPLATES/klant-mail-juni.md").
 
 <style>
-.viz-fs{background:#f8fafc;border-left:4px solid #2563eb;border-radius:8px;padding:24px 28px;margin:32px 0;font-family:"SF Mono",Monaco,"Cascadia Code","Roboto Mono",Consolas,"Courier New",monospace;font-size:.92rem;line-height:1.7;color:#1b2533;overflow-x:auto}
+.viz-fs{background:var(--bg-surface);border:1px solid var(--border-subtle);border-left:4px solid var(--primary-bright);border-radius:8px;padding:24px 28px;margin:32px 0;font-family:var(--font-mono);font-size:.92rem;line-height:1.7;color:var(--text-primary);overflow-x:auto}
 .viz-fs pre{margin:0;font-family:inherit;background:none;padding:0;color:inherit}
-.viz-fs-folder{color:#2563eb;font-weight:600}
-.viz-fs-file{color:#475569}
-.viz-fs-comment{color:#94a3b8;font-style:italic}
-.viz-fs-tree{color:#cbd5e1}
+.viz-fs-folder{color:var(--primary-bright);font-weight:600}
+.viz-fs-file{color:var(--text-secondary)}
+.viz-fs-comment{color:var(--text-muted);font-style:italic}
+.viz-fs-tree{color:var(--text-muted)}
 </style>
 
 <figure class="viz-fs" aria-label="Mappenstructuur van een Claude Cowork-werkmap">
@@ -208,13 +209,13 @@ Een connector is een digitale brug tussen Claude en een externe app. Eenmaal gek
 5. Test de verbinding met een eenvoudige opdracht: *"Toon de drie meest recente e-mails van klant X."*
 
 <style>
-.viz-hub{background:linear-gradient(180deg,#fbfcfe 0%,#eff6ff 100%);border-radius:16px;padding:clamp(32px,5vw,56px) clamp(20px,3vw,40px);margin:32px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column;align-items:center;gap:20px}
+.viz-hub{background:linear-gradient(180deg,var(--bg-elevated) 0%,var(--bg-surface) 100%);border:1px solid var(--border-subtle);border-radius:16px;padding:clamp(32px,5vw,56px) clamp(20px,3vw,40px);margin:32px 0;font-family:var(--font-body);display:flex;flex-direction:column;align-items:center;gap:20px}
 .viz-hub-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-.viz-hub-card{background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:14px 20px;font-size:.95rem;font-weight:500;color:#1b2533;display:flex;align-items:center;gap:10px}
-.viz-hub-claude{background:#2563eb;border-color:#2563eb;color:#fff;padding:22px 40px;font-size:1.4rem;font-weight:600;border-radius:16px;letter-spacing:-.01em}
-.viz-hub-icon{width:24px;height:24px;display:inline-grid;place-items:center;background:#eff6ff;border-radius:6px;font-size:.85rem;color:#2563eb;font-weight:700}
-.viz-hub-claude .viz-hub-icon{background:rgba(255,255,255,.2);color:#fff;font-size:1rem}
-.viz-hub-cap{text-align:center;font-size:.85rem;color:#66758a;margin-top:4px;max-width:480px}
+.viz-hub-card{background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:14px 20px;font-size:.95rem;font-weight:500;color:var(--text-primary);display:flex;align-items:center;gap:10px}
+.viz-hub-claude{background:var(--primary-bright);border:1px solid var(--primary-bright);color:var(--text-inverse);padding:22px 40px;font-size:1.4rem;font-weight:600;border-radius:16px;letter-spacing:-.01em}
+.viz-hub-icon{width:24px;height:24px;display:inline-grid;place-items:center;background:color-mix(in oklch,var(--primary-bright) 16%,transparent);border-radius:6px;font-size:.85rem;color:var(--primary-bright);font-weight:700}
+.viz-hub-claude .viz-hub-icon{background:color-mix(in oklch,var(--text-inverse) 22%,transparent);color:var(--text-inverse);font-size:1rem}
+.viz-hub-cap{text-align:center;font-size:.85rem;color:var(--text-muted);margin-top:4px;max-width:480px}
 </style>
 
 <figure class="viz-hub" aria-label="Claude in het midden, omringd door connectoren naar veelgebruikte apps">
@@ -301,14 +302,14 @@ De zesde tool draait niet op je desktop, maar in je browser — en is bedoeld vo
 **Wanneer kies je Projects boven Cowork?**
 
 <style>
-.viz-pick{background:#fbfcfe;border-radius:16px;padding:clamp(28px,4vw,40px) clamp(20px,3vw,32px);margin:32px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1b2533}
-.viz-pick-q{text-align:center;font-size:1.1rem;font-weight:600;margin:0 0 22px;color:#1b2533}
+.viz-pick{background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:16px;padding:clamp(28px,4vw,40px) clamp(20px,3vw,32px);margin:32px 0;font-family:var(--font-body);color:var(--text-primary)}
+.viz-pick-q{text-align:center;font-size:1.1rem;font-weight:600;margin:0 0 22px;color:var(--text-primary)}
 .viz-pick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.viz-pick-card{background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:12px}
-.viz-pick-scenario{font-size:.93rem;color:#475569;line-height:1.5;flex:1}
-.viz-pick-arrow{font-size:1.3rem;color:#94a3b8;text-align:center;line-height:1}
-.viz-pick-choice{background:#ecfdf5;color:#065f46;font-weight:600;font-size:1.05rem;text-align:center;padding:10px;border-radius:8px;border:2px solid #10b981}
-.viz-pick-alt{background:#eff6ff;color:#1e40af;border-color:#2563eb}
+.viz-pick-card{background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.viz-pick-scenario{font-size:.93rem;color:var(--text-secondary);line-height:1.5;flex:1}
+.viz-pick-arrow{font-size:1.3rem;color:var(--text-muted);text-align:center;line-height:1}
+.viz-pick-choice{background:color-mix(in oklch,var(--color-success) 16%,var(--bg-surface));color:var(--color-success);font-weight:600;font-size:1.05rem;text-align:center;padding:10px;border-radius:8px;border:1px solid color-mix(in oklch,var(--color-success) 45%,transparent)}
+.viz-pick-alt{background:color-mix(in oklch,var(--primary-bright) 14%,var(--bg-surface));color:var(--primary-bright);border-color:color-mix(in oklch,var(--primary-bright) 45%,transparent)}
 </style>
 
 <figure class="viz-pick" aria-label="Beslishulp: Cowork of Projects?">
@@ -349,19 +350,19 @@ De vuistregel: voor solowerk is Cowork sneller en krachtiger; voor teams blijft 
 <style>
 .viz-ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 .viz-ba-panel{border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;gap:14px}
-.viz-ba-before{background:#fef2f2;border:2px solid #fecaca}
-.viz-ba-after{background:#ecfdf5;border:2px solid #a7f3d0}
+.viz-ba-before{background:color-mix(in oklch,var(--color-error) 10%,var(--bg-surface));border:1px solid color-mix(in oklch,var(--color-error) 35%,transparent)}
+.viz-ba-after{background:color-mix(in oklch,var(--color-success) 10%,var(--bg-surface));border:1px solid color-mix(in oklch,var(--color-success) 35%,transparent)}
 .viz-ba-icon{font-size:1.8rem;line-height:1}
 .viz-ba-title{font-size:1.1rem;font-weight:600;margin:0;letter-spacing:-.01em}
-.viz-ba-before .viz-ba-title{color:#991b1b}
-.viz-ba-after .viz-ba-title{color:#065f46}
+.viz-ba-before .viz-ba-title{color:var(--color-error)}
+.viz-ba-after .viz-ba-title{color:var(--color-success)}
 .viz-ba-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
 .viz-ba-list li{font-size:.92rem;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
 .viz-ba-list li::before{content:"";flex-shrink:0;width:6px;height:6px;border-radius:999px;margin-top:8px}
-.viz-ba-before .viz-ba-list li::before{background:#dc2626}
-.viz-ba-after .viz-ba-list li::before{background:#10b981}
-.viz-ba-before .viz-ba-list li{color:#7f1d1d}
-.viz-ba-after .viz-ba-list li{color:#064e3b}
+.viz-ba-before .viz-ba-list li::before{background:var(--color-error)}
+.viz-ba-after .viz-ba-list li::before{background:var(--color-success)}
+.viz-ba-before .viz-ba-list li{color:var(--text-secondary)}
+.viz-ba-after .viz-ba-list li{color:var(--text-secondary)}
 @media (max-width:720px){.viz-ba{grid-template-columns:1fr}}
 </style>
 

@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Claude · DeepSeek (Ochtend 10 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Claude · DeepSeek (Ochtend 10 mei)'"
 description: 'AI Tools Radar 10 mei: 102 launches, 144 feature-updates, 6 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-10'
 timeSlot: tools-digest
@@ -20,7 +21,7 @@ topics:
 - Claude
 - DeepSeek
 - Together AI
-heroImage: /images/digest/ai-tools-radar-10-mei-2026-chatgpt-claude-deepseek.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-10-mei-2026-chatgpt-claude-deepseek.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

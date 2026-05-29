@@ -1,5 +1,6 @@
 ---
 title: "Cursor 1.0 officieel gelanceerd: de AI-code-editor is volwassen geworden"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Cursor 1.0 officieel gelanceerd: de AI-code-editor is volwassen geworden'"
 description: "Na maanden van bèta lanceert Cursor versie 1.0 met verbeterde agentic mode, achtergrondagenten en een vernieuwd geheugen- en regelsysteem."
 publishedAt: 2026-04-17
 author: "Redactie"
@@ -25,7 +26,7 @@ faq:
     a: "Er is een gratis tier met beperkte AI-verzoeken. De Pro-versie kost $20 per maand en geeft onbeperkte snelle verzoeken."
   - q: "Werkt Cursor ook in bestaande projecten?"
     a: "Ja, Cursor is gebouwd op VS Code en opent elk bestaand project direct. Je bestaande extensies blijven werken."
-heroImage: "/images/nieuws/cursor-1-0-lancering.webp"
+heroImage: "/images/articles/diorama-cursor-1-0-lancering.webp"
 ---
 
 ## Wat is er nieuw in Cursor 1.0?

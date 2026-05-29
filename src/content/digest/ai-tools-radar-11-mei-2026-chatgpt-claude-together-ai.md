@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Claude · Together AI (Ochtend 11 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Claude · Together AI (Ochtend 11 mei)'"
 description: 'AI Tools Radar 11 mei: 102 launches, 143 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-11'
 timeSlot: tools-digest
@@ -18,7 +19,7 @@ topics:
 - ChatGPT
 - Claude
 - Together AI
-heroImage: /images/digest/ai-tools-radar-11-mei-2026-chatgpt-claude-together-ai.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-11-mei-2026-chatgpt-claude-together-ai.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – Claude · Gemini · ChatGPT (Middag 26 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · Gemini · ChatGPT (Middag 26 mei)'"
 description: 'AI Tools Radar 26 mei: 132 launches, 121 feature-updates, 9 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-26'
 timeSlot: tools-digest
@@ -22,7 +23,7 @@ topics:
 - ChatGPT
 - Llama
 - Pi
-heroImage: /images/digest/ai-tools-radar-26-mei-2026-claude-gemini-chatgpt.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-26-mei-2026-claude-gemini-chatgpt.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

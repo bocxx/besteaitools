@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Grok · WhatCable, a tiny (Middag 8 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Grok · WhatCable, a tiny (Middag 8 mei)'"
 description: 'AI Tools Radar 8 mei: 119 launches, 138 feature-updates, 5 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-08'
 timeSlot: tools-digest
@@ -16,7 +17,7 @@ categoriesCount: 3
 topics:
 - ChatGPT
 - Grok
-heroImage: /images/digest/ai-tools-radar-8-mei-2026-chatgpt-grok-whatcable-tiny.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-8-mei-2026-chatgpt-grok-whatcable-tiny.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

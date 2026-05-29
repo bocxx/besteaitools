@@ -1,5 +1,7 @@
 ---
 title: AI Tools Radar – ChatGPT · Grok · Needle (Middag 15 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Grok · Needle (Middag 15 mei)'"
+heroImage: "/images/articles/diorama-ai-tools-radar-15-mei-2026-chatgpt-grok-needle-2.webp"
 description: 'AI Tools Radar 15 mei: 127 launches, 179 feature-updates, 7 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-15'
 timeSlot: tools-digest

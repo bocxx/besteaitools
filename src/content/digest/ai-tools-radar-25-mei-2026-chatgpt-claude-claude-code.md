@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – ChatGPT · Claude · Claude Code (Middag 25 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – ChatGPT · Claude · Claude Code (Middag 25 mei)'"
 description: 'AI Tools Radar 25 mei: 134 launches, 117 feature-updates, 8 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-25'
 timeSlot: tools-digest
@@ -22,7 +23,7 @@ topics:
 - Claude Code
 - Llama
 - Pi
-heroImage: /images/digest/ai-tools-radar-25-mei-2026-chatgpt-claude-claude-code.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-25-mei-2026-chatgpt-claude-claude-code.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

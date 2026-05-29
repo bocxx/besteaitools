@@ -1,5 +1,6 @@
 ---
 title: AI Tools Radar – Claude · Llama · Pi (Ochtend 26 mei)
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI Tools Radar – Claude · Llama · Pi (Ochtend 26 mei)'"
 description: 'AI Tools Radar 26 mei: 124 launches, 119 feature-updates, 9 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-05-26'
 timeSlot: tools-digest
@@ -22,7 +23,7 @@ topics:
 - Pi
 - Cursor
 - ChatGPT
-heroImage: /images/digest/ai-tools-radar-26-mei-2026-claude-llama-pi.webp
+heroImage: "/images/articles/diorama-ai-tools-radar-26-mei-2026-claude-llama-pi.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
