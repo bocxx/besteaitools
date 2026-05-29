@@ -398,6 +398,26 @@ export async function getComparisonPairs(): Promise<ComparisonPair[]> {
     }
   }
 
+  // Stable floor: always (re)generate previously-published comparison slugs
+  // so live-buzz churn in the top-20 above never turns an indexed
+  // /vergelijk/<a>-vs-<b>/ URL into a 404. The floor is a committed list
+  // (data/comparison-slugs.json); a pair is only added if BOTH tools still
+  // exist. Add slugs there to keep a comparison page permanently.
+  try {
+    const floorRaw = await import('../data/comparison-slugs.json');
+    const floor = ((floorRaw.default ?? floorRaw) as { slugs?: string[] }).slugs ?? [];
+    const bySlug = new Map(tools.map((t) => [t.slug, t]));
+    for (const slug of floor) {
+      const sep = slug.indexOf('-vs-');
+      if (sep === -1) continue;
+      const a = bySlug.get(slug.slice(0, sep));
+      const b = bySlug.get(slug.slice(sep + 4));
+      if (a && b) addPair(a, b);
+    }
+  } catch {
+    // No floor file or parse error — fall back to the dynamic set only.
+  }
+
   return Array.from(pairs.values());
 }
 
