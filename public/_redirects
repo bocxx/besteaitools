@@ -25,8 +25,8 @@
 /beste-ai-tool /vind-je-beste-ai-tool 301
 /beste-ai-tool/ /vind-je-beste-ai-tool 301
 
-# /vergelijk pages that were once indexed but no longer generated
-# (top-20 buzz-rank churn). Wildcard catches any /vergelijk/X-vs-Y/ that
-# doesn't match a static file — Cloudflare evaluates _redirects after
-# static-asset lookup, so valid comparisons keep serving normally.
-/vergelijk/*-vs-* /vergelijk 301
+# NB: comparison-page churn (oude /vergelijk/X-vs-Y/ → 404) wordt nu bij de
+# bron opgelost via een stabiele slug-floor (src/data/comparison-slugs.json,
+# verwerkt in getComparisonPairs), niet via een redirect. Een blanket
+# /vergelijk/* redirect kan hier niet: in Workers Assets gaat _redirects vóór
+# static assets, dus dat zou ook de geldige vergelijk-pagina's wegredirecten.
