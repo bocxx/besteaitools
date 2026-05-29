@@ -80,7 +80,7 @@ Anthropic onderhoudt een [open-source repository](https://github.com/anthropics/
 
 Cowork staat niet op zichzelf. De afgelopen weken lanceerde Anthropic ook [Claude Design](/nieuws/claude-design-opus) — een ontwerpomgeving bovenop Opus 4.7 — en werkt Cursor parallel aan hun eigen agent-vision in Cursor 3. Voor de context: Claude Code werkt in de terminal voor developers. Cowork werkt in de desktop-app voor iedereen. Claude Design werkt in de browser voor ontwerptaken. Cursor werkt in de editor voor code.
 
-De drie Anthropic-lagen delen hun motor (Claude Opus 4.7 waar relevant, Claude Sonnet voor snelle taken), maar je kiest per use case welk schil het best past. Eerlijk: dat is nog niet voor iedereen duidelijk — en Anthropic's eigen communicatie maakt het onderscheid niet altijd scherp. Een developer die Cowork probeert, mist Claude Code. Een marketeer die Claude Code opent op advies van een collega, raakt verdwaald in de terminal. Begin bij je dagelijkse werkomgeving: als dat een desktop is, is Cowork het juiste startpunt.
+De drie Anthropic-lagen delen hun motor (sinds 28 mei 2026 schakelbaar tussen [Claude Opus 4.8](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts) en Opus 4.7 voor zwaardere taken, Claude Sonnet voor snelle taken), maar je kiest per use case welk schil het best past. Eerlijk: dat is nog niet voor iedereen duidelijk — en Anthropic's eigen communicatie maakt het onderscheid niet altijd scherp. Een developer die Cowork probeert, mist Claude Code. Een marketeer die Claude Code opent op advies van een collega, raakt verdwaald in de terminal. Begin bij je dagelijkse werkomgeving: als dat een desktop is, is Cowork het juiste startpunt.
 
 ## Wanneer Cowork de moeite waard is
 

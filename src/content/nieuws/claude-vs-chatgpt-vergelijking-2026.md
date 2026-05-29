@@ -39,7 +39,7 @@ ChatGPT-4o is snel en veelzijdig. Voor kortere taken — een e-mail opstellen, e
 
 ## Code
 
-Beide modellen debuggen en schrijven code op hoog niveau. In onze tests had Claude een licht voordeel bij complexe refactors over meerdere bestanden en bij het volgen van specifieke architectuurpatronen. ChatGPT scoorde beter bij het snel genereren van werkende code voor een specifiek framework.
+Beide modellen debuggen en schrijven code op hoog niveau. In onze tests had Claude een licht voordeel bij complexe refactors over meerdere bestanden en bij het volgen van specifieke architectuurpatronen. ChatGPT scoorde beter bij het snel genereren van werkende code voor een specifiek framework. *Update mei 2026: [Claude Opus 4.8](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts) laat volgens Anthropic vier keer minder vaak code-fouten ongemerkt door — relevant voor wie review-werk aan AI uitbesteedt.*
 
 Als je met Cursor of een andere AI-editor werkt, maakt het voor dagelijks gebruik weinig verschil: beide modellen zijn beschikbaar als backend.
 

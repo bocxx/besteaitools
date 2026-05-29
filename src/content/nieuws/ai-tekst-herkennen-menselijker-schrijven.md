@@ -61,7 +61,7 @@ Wikipedia somt tientallen patronen op. Deze vier zie je terug in vrijwel elke on
 
 **4. Het "niet X, maar Y"-patroon.** Constructies als "het gaat niet om snelheid, maar om precisie" of "dit is geen tool, dit is een filosofie" duiken in bijna elke AI-output op. Negatief parallellisme heet het in stijlleer, en mensen gebruiken het ook — alleen niet drie keer per artikel.
 
-> **⚡ Gevorderden:** De Wikipedia-lijst bevat ook subtieler signalen: het overdadig gebruik van *"importantly"*, *"notably"*, *"crucially"* aan het begin van zinnen, het altijd-driedelige ritme van bijvoeglijke naamwoorden ("snel, schaalbaar en betrouwbaar"), en een voorkeur voor *"delve"*, *"underscore"* en *"foster"* boven hun simpelere alternatieven. Wie eenmaal getraind is, ziet het overal.
+> **⚡ Gevorderden:** De Wikipedia-lijst bevat ook subtieler signalen: het overdadig gebruik van *"importantly"*, *"notably"*, *"crucially"* aan het begin van zinnen, het altijd-driedelige ritme van bijvoeglijke naamwoorden ("snel, schaalbaar en betrouwbaar"), en een voorkeur voor *"delve"*, *"underscore"* en *"foster"* boven hun simpelere alternatieven. Wie eenmaal getraind is, ziet het overal. Een nieuwere lijn vermijden van AI-tells is *zelfverzekerde maar onjuiste beweringen* — daar helpt sinds 28 mei 2026 [Claude Opus 4.8's 'ik weet het niet'-modus](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts), die expliciet hedget op feiten waarover het twijfelt.
 
 ## Hassids 29-woord-prompt om Claude te ontkoppelen
 

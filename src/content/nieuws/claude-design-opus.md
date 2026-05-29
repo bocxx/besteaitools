@@ -39,7 +39,7 @@ In de praktijk betekent dit dat je Claude niet alleen vraagt om “een landing p
 
 ### Aangedreven door Opus 4.7
 
-De motor onder Claude Design is Opus 4.7, Anthropic’s nieuwste vlaggenschipmodel, dat expliciet is gepositioneerd voor complexe kenniswerk- en ontwerptaken. Opus 4.7 brengt niet alleen betere redenering en agentische workflows, maar ook een significante upgrade in multimodale visie: het model kan hoge-resolutie UI’s, diagrammen en slides interpreteren en daar pixel-precies mee werken.
+De motor onder Claude Design is Opus 4.7, Anthropic’s nieuwste vlaggenschipmodel, dat expliciet is gepositioneerd voor complexe kenniswerk- en ontwerptaken. *Update 29 mei 2026: sinds 28 mei is ook [Claude Opus 4.8 beschikbaar](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts) — voor zuiver ontwerpwerk blijft Opus 4.7 vaak prettiger, voor design-gedreven copy en specificatie-teksten zet je Opus 4.8 in om hallucinaties te beperken.* Opus 4.7 brengt niet alleen betere redenering en agentische workflows, maar ook een significante upgrade in multimodale visie: het model kan hoge-resolutie UI’s, diagrammen en slides interpreteren en daar pixel-precies mee werken.
 
 Die verbeterde visie vertaalt zich direct naar bruikbaarder design-output: Claude kan bestaande merkcomponenten, typografie en layout-patronen beter herkennen en respecteren dan eerdere generatieve tools. Daarmee verschuift Claude Design van “handige inspiratiegenerator” naar een serieuze kandidaat voor productie-waardige decks, dashboards en interfaceconcepten.
 
