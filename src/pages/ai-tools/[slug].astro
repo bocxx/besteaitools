@@ -29,14 +29,20 @@ export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
   return tools.map((tool) => {
     const toolPairs = pairs.filter(p => p.slugA === tool.slug || p.slugB === tool.slug);
+    // Sibling tools in the same category — adds unique per-page content +
+    // category internal-linking (helps "crawled, not indexed" thin pages).
+    const related = tools
+      .filter(t => t.slug !== tool.slug && t.category === tool.category)
+      .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0))
+      .slice(0, 6);
     return {
       params: { slug: tool.slug },
-      props: { tool, comparisons: toolPairs },
+      props: { tool, comparisons: toolPairs, related },
     };
   });
 }
 
-const { tool, comparisons } = Astro.props;
+const { tool, comparisons, related } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
@@ -675,6 +681,26 @@ export const prerender = true;
           </div>
         )}
         </section>
+        )}
+
+        <!-- Alternatieven in dezelfde categorie — unieke interne links per pagina -->
+        {related && related.length > 0 && (
+          <section class="related-tools">
+            <h2 class="related-tools__title">Alternatieven voor {tool.name} in {cat.name}</h2>
+            <p class="related-tools__intro">
+              Vergelijkbare {cat.name.toLowerCase()}-tools die we volgen op buzz, groei en functies.
+              Bekijk de details of zet ze naast elkaar.
+            </p>
+            <div class="related-tools__grid">
+              {related.map(rt => (
+                <a href={`/ai-tools/${rt.slug}`} class="related-tool">
+                  <span class="related-tool__name">{rt.name}</span>
+                  <span class="related-tool__desc">{rt.shortDescription}</span>
+                  <span class="related-tool__cta">Bekijk {rt.name} →</span>
+                </a>
+              ))}
+            </div>
+          </section>
         )}
 
         <!-- Cross-site related news (from hetlaatsteainieuws.nl + own nieuws) -->
@@ -1856,6 +1882,64 @@ export const prerender = true;
     border-radius: var(--radius-md);
     font-weight: var(--font-semibold);
     text-decoration: none;
+  }
+
+  /* Alternatieven in dezelfde categorie */
+  .related-tools {
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .related-tools__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+  }
+  .related-tools__intro {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin: 0 0 var(--space-5);
+  }
+  .related-tools__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-3);
+  }
+  .related-tool {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface);
+    text-decoration: none;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+  .related-tool:hover {
+    border-color: var(--primary-bright);
+    transform: translateY(-2px);
+  }
+  .related-tool__name {
+    font-family: var(--font-display);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+  }
+  .related-tool__desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .related-tool__cta {
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--primary-bright);
   }
 </style>
 
