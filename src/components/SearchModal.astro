@@ -5,6 +5,11 @@
  * Searches all 80+ AI-tool profiles.
  */
 import { Search, X } from '@lucide/astro';
+import { getAllTools } from '../lib/tools-engine';
+
+// Dynamic placeholder count — rounds down to the nearest 10 so it reads as "80+"
+// and stays in sync with the catalog instead of drifting against a hardcoded number.
+const toolCount = Math.floor((await getAllTools()).length / 10) * 10;
 ---
 
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="AI-tools zoeken">
@@ -18,7 +23,7 @@ import { Search, X } from '@lucide/astro';
         type="search"
         id="search-input"
         class="search-modal__input"
-        placeholder="Zoek in 80+ AI-tools..."
+        placeholder={`Zoek in ${toolCount}+ AI-tools...`}
         autocomplete="off"
         spellcheck="false"
       />
@@ -191,6 +196,26 @@ import { Search, X } from '@lucide/astro';
     if (active) (active.querySelector('a') as HTMLAnchorElement)?.click();
   }
 
+  // Keep keyboard focus inside the dialog while it's open (a11y: WAI-ARIA dialog pattern).
+  function trapFocus(e: KeyboardEvent) {
+    const focusable = modal.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+    );
+    const visible = Array.from(focusable).filter(el => el.offsetParent !== null);
+    if (!visible.length) return;
+    const first = visible[0];
+    const last = visible[visible.length - 1];
+    const active = document.activeElement as HTMLElement;
+
+    if (e.shiftKey && (active === first || !modal.contains(active))) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   function bindListeners() {
     getElements();
 
@@ -199,6 +224,7 @@ import { Search, X } from '@lucide/astro';
       if (e.key === 'ArrowDown') { e.preventDefault(); navigateResults(1); }
       if (e.key === 'ArrowUp') { e.preventDefault(); navigateResults(-1); }
       if (e.key === 'Enter' && activeIndex >= 0) { e.preventDefault(); selectActiveResult(); }
+      if (e.key === 'Tab') trapFocus(e);
     });
 
     modal.querySelectorAll('[data-search-close]').forEach(el => {

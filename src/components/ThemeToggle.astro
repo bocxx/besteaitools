@@ -11,7 +11,8 @@ import { Sun, Moon } from '@lucide/astro';
   class="theme-toggle"
   id="theme-toggle"
   type="button"
-  aria-label="Wissel thema"
+  aria-label="Schakel tussen donker en licht thema"
+  aria-pressed="true"
   title="Wissel thema"
 >
   <Sun size={16} strokeWidth={1.5} class="theme-toggle__icon theme-toggle__sun" />
@@ -83,6 +84,15 @@ import { Sun, Moon } from '@lucide/astro';
   function initThemeToggle() {
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
+
+    // Sync aria-pressed to the actual theme (set pre-paint by the FOUC script).
+    // aria-pressed="true" means dark mode is active.
+    const syncPressed = () => {
+      const isDark = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark';
+      btn.setAttribute('aria-pressed', String(isDark));
+    };
+    syncPressed();
+
     if (btn.dataset.bound === '1') return;
     btn.dataset.bound = '1';
 
@@ -92,6 +102,7 @@ import { Sun, Moon } from '@lucide/astro';
       const next = current === 'dark' ? 'light' : 'dark';
 
       html.setAttribute('data-theme', next);
+      btn.setAttribute('aria-pressed', String(next === 'dark'));
       localStorage.setItem('theme', next);
 
       const colorScheme = document.querySelector('meta[name="color-scheme"]');
