@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-05-29T09:02:35.788750",
+  "generated_at": "2026-05-29T15:21:41.437492",
   "window_days": 7,
   "week": "2026-w22",
-  "total_candidates_scanned": 1131,
-  "total_after_dedup": 1090,
-  "total_feature_updates": 129,
+  "total_candidates_scanned": 1113,
+  "total_after_dedup": 1075,
+  "total_feature_updates": 131,
   "llm_curated": true,
   "features": [
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Security Guidance Plugin",
-      "summary_nl": "Claude heeft een security-guidance plugin uitgebracht die helpt bij het identificeren en oplossen van kwetsbaarheden tijdens het schrijven van code.",
+      "feature_title": "Security-Guidance Plugin",
+      "summary_nl": "Claude Code heeft een nieuwe plugin gelanceerd die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
       "impact": "high",
       "sources": [
         {
@@ -30,7 +30,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Self-Hosted Sandboxes and MCP Tunnels",
-      "summary_nl": "Claude lanceert self-hosted sandboxes (publieke beta) en MCP tunnels (onderzoeksvoorvertoning) in Claude Managed Agents, waarmee je agents binnen je eigen omgeving kunt uitvoeren.",
+      "summary_nl": "Claude Managed Agents ondersteunt nu self-hosted sandboxes (publieke bèta) en MCP tunnels (onderzoeksvoorbeeld) waarmee je agents binnen je eigen omgeving kunt uitvoeren.",
       "impact": "high",
       "sources": [
         {
@@ -48,7 +48,7 @@
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "PowerPoint Integration",
-      "summary_nl": "ChatGPT kan nu presentaties direct in PowerPoint maken en bewerken. Je kunt presentaties bouwen, bijwerken, begrijpen en verbeteren, terwijl de dia's bewerkbaar blijven.",
+      "summary_nl": "ChatGPT kan nu presentaties direct in PowerPoint maken, bijwerken, begrijpen en verbeteren, waarbij de dia's bewerkbaar blijven.",
       "impact": "high",
       "sources": [
         {
@@ -62,11 +62,29 @@
       "week": "2026-w22"
     },
     {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "AI Model Selection",
+      "summary_nl": "In iOS 27 kunnen gebruikers Grok als standaard AI-model kiezen, naast andere modellen zoals Claude, Gemini en anderen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/myrhex/status/2060033765036921273",
+          "title": "Apple is opening up Siri in iOS 27 so you can choose Grok as your default AI.\n\niOS 27 will reportedly introduce an “Extensions” system that ",
+          "platform": "twitter",
+          "source": "@myrhex"
+        }
+      ],
+      "detected_at": "2026-05-29",
+      "week": "2026-w22"
+    },
+    {
       "tool_slug": "make",
       "tool_name": "Make",
       "tool_category": "automatisering",
       "feature_title": "Agentic Trading and Credit Card",
-      "summary_nl": "Robinhood lanceert Agentic Trading en een Agentic Credit Card, waarmee gebruikers AI-agents kunnen verbinden met Robinhood via MCP-servers om handelingen en uitgaven te automatiseren.",
+      "summary_nl": "Robinhood lanceert Agentic Trading en een Agentic Credit Card, waarmee gebruikers AI-agents kunnen koppelen aan Robinhood via MCP-servers.",
       "impact": "high",
       "sources": [
         {
@@ -74,6 +92,30 @@
           "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
           "platform": "twitter",
           "source": "@amitisinvesting"
+        },
+        {
+          "url": "https://twitter.com/StockMKTNewz/status/2059621017744716014",
+          "title": "Robinhood $HOOD just announced new AI Agents for trading and for credit card spending \n\n“Once up and running, the agent can scan for the bes",
+          "platform": "twitter",
+          "source": "@StockMKTNewz"
+        }
+      ],
+      "detected_at": "2026-05-29",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos 1 Preview Release",
+      "summary_nl": "Anthropic bereidt de release voor van Mythos 1, een nieuw Claude-model, op Claude Code en Claude Security.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/testingcatalog/status/2058322222297518498",
+          "title": "ANTHROPIC 🔥: Mythos 1, \"claude-mythos-1-preview\", is being prepared for a release on Claude Code and Claude Security. \n\nThe model became vis",
+          "platform": "twitter",
+          "source": "@testingcatalog"
         }
       ],
       "detected_at": "2026-05-29",
