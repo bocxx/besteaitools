@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-29T15:21:41.437492",
+  "generated_at": "2026-05-30T07:25:48.897601",
   "window_days": 7,
   "week": "2026-w22",
-  "total_candidates_scanned": 1113,
-  "total_after_dedup": 1075,
-  "total_feature_updates": 131,
+  "total_candidates_scanned": 1078,
+  "total_after_dedup": 1037,
+  "total_feature_updates": 135,
   "llm_curated": true,
   "features": [
     {
@@ -12,8 +12,8 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Security-Guidance Plugin",
-      "summary_nl": "Claude Code heeft een nieuwe plugin gelanceerd die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
-      "impact": "high",
+      "summary_nl": "Claude heeft een plugin gelanceerd die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
+      "impact": "medium",
       "sources": [
         {
           "url": "https://twitter.com/ClaudeDevs/status/2059385239781384341",
@@ -22,7 +22,79 @@
           "source": "@ClaudeDevs"
         }
       ],
-      "detected_at": "2026-05-29",
+      "detected_at": "2026-05-30",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos 1 Model Preview",
+      "summary_nl": "Anthropic bereidt de release voor van een nieuw Mythos 1 model op Claude Code en Claude Security.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/testingcatalog/status/2058322222297518498",
+          "title": "ANTHROPIC 🔥: Mythos 1, \"claude-mythos-1-preview\", is being prepared for a release on Claude Code and Claude Security. \n\nThe model became vis",
+          "platform": "twitter",
+          "source": "@testingcatalog"
+        }
+      ],
+      "detected_at": "2026-05-30",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok Build CLI in Public Beta",
+      "summary_nl": "De Grok Build CLI, die agentic coding ondersteunt, is nu beschikbaar via de xAI API in openbare bèta.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/xai/status/2060392249402552457",
+          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
+          "platform": "twitter",
+          "source": "@xai"
+        }
+      ],
+      "detected_at": "2026-05-30",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Robinhood Agentic Trading and Credit Card",
+      "summary_nl": "Robinhood lanceert Agentic Trading en een Agentic Credit Card, waarmee gebruikers AI-agenten kunnen koppelen aan Robinhood.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/amitisinvesting/status/2059667155914813484",
+          "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
+          "platform": "twitter",
+          "source": "@amitisinvesting"
+        }
+      ],
+      "detected_at": "2026-05-30",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "ollama",
+      "tool_name": "Ollama",
+      "tool_category": "infra",
+      "feature_title": "OpenJarvis Local-First Personal AI",
+      "summary_nl": "OpenJarvis, een local-first persoonlijke AI gebouwd door Stanford's Hazy Research en Scaling Intelligence labs, is nu beschikbaar om te draaien met Ollama.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ollama/status/2060428074102206496",
+          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
+          "platform": "twitter",
+          "source": "@ollama"
+        }
+      ],
+      "detected_at": "2026-05-30",
       "week": "2026-w22"
     },
     {
