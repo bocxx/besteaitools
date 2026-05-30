@@ -59,7 +59,7 @@ Opus 4.8's code-honesty is meetbaar verbeterd. Een prompt die dat uitnut:
 
 De tweede lijst is waar het verschil zit. Waar Opus 4.7 vaak doorduwde met "verbeter dit" omdat het zelfverzekerd klonk, geeft 4.8 nu vaker terug: *"Twijfel: deze loop kan onbedoeld blocking gedrag vertonen als `process_batch()` synchroon is. Kun je me laten zien hoe die functie geïmplementeerd is?"* Dat is precies wat je van een collega zou willen — vragen voor je code wegslaat.
 
-Voor wie zwaardere code-werk doet en parallelle subagents wil inzetten: Anthropic's [Dynamic Workflows](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/) (research preview in Claude Code) draait honderden subagents naast elkaar en verifieert hun output voordat het je een antwoord geeft. Combineer dat met onze guide over [zero.xyz als gateway naar circa 8.000 tools](/nieuws/zero-xyz-agent-tool-gateway) en je hebt een serieuze agent-stack.
+Voor wie zwaardere code-werk doet en parallelle subagents wil inzetten: Anthropic's [Dynamic Workflows](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/) (research preview in Claude Code) draait honderden subagents naast elkaar en verifieert hun output voordat het je een antwoord geeft. Combineer dat met onze guide over [zero.xyz als gateway naar circa 8.000 tools](/nieuws/zero-xyz-agent-tool-gateway) en je hebt een serieuze agent-stack. Voor niet-coders die hetzelfde principe van zelfstandige agents willen: [onze Notion-agent-tutorial](/nieuws/notion-agent-concurrentieanalyse-opzetten) laat zien hoe een agent binnen Notion 20 minuten lang research doet zonder dat jij meekijkt.
 
 ## Prompt 3: klantantwoord dat geen schijnzekerheid wekt
 

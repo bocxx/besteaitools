@@ -39,7 +39,7 @@ heroImage: "/images/articles/diorama-ai-tekst-herkennen-menselijker-schrijven.we
 
 Lezers spotten AI-tekst tegenwoordig binnen drie zinnen. Niet omdat ze tools draaien, maar omdat ze de patronen herkennen: dezelfde overdrachtelijke woorden, dezelfde holle bijzinnen, hetzelfde ritme. Wikipedia bundelde de bekendste tells in een artikel 'Signs of AI writing', en AI-schrijver Ruben Hassid bouwde er een prompt-workflow omheen die Claude weer laat klinken zoals jij. Zo werkt het — en zo bouw je hem zelf in een paar minuten.
 
-> **💡 Beginner-tip:** Nog niet zeker of Claude bij je schrijfwerk past? Lees eerst onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) — Claude scoort beter op lange teksten en nuance, wat dit specifieke trucje extra effectief maakt.
+> **💡 Beginner-tip:** Nog niet zeker of Claude bij je schrijfwerk past? Lees eerst onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) — Claude scoort beter op lange teksten en nuance, wat dit specifieke trucje extra effectief maakt. Werk je liever met Gemini? Onze [tutorial om Canva aan Gemini Spark te koppelen via MCP](/nieuws/gemini-spark-canva-mcp-koppelen) laat zien hoe je vergelijkbare file-context-workflows in het Google-ecosysteem opzet.
 
 ## Waarom AI-tekst plotseling overal opvalt
 

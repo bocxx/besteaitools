@@ -45,7 +45,7 @@ Iedereen die met Claude Code of een vergelijkbare CLI-agent werkt loopt tegen he
 
 ## De architectuur in één alinea
 
-zero.xyz is geen alternatief voor MCP, maar bouwt erbovenop. De gateway accepteert agent-requests, kijkt of er een MCP-server of een x402-aangeboden tool beschikbaar is die de gevraagde taak kan vervullen, en routeert de call door. Betaalt zelf via je gekoppelde wallet of het startkrediet, en geeft de output terug aan de agent. Vanuit het perspectief van de agent voelt het als één tool — onder water is het potentieel honderden microservices.
+zero.xyz is geen alternatief voor MCP, maar bouwt erbovenop. De gateway accepteert agent-requests, kijkt of er een MCP-server of een x402-aangeboden tool beschikbaar is die de gevraagde taak kan vervullen, en routeert de call door. Betaalt zelf via je gekoppelde wallet of het startkrediet, en geeft de output terug aan de agent. Vanuit het perspectief van de agent voelt het als één tool — onder water is het potentieel honderden microservices. Voor een laagdrempelig voorbeeld van een directe MCP-koppeling tussen agent en app, zie onze [tutorial om Canva aan Gemini Spark te koppelen via MCP](/nieuws/gemini-spark-canva-mcp-koppelen).
 
 > Dit patroon — één gateway die meerdere onderliggende protocollen verstopt — is hetzelfde wat OpenRouter doet voor LLM-providers en wat Composio doet voor enterprise-SaaS. Het verschil: zero.xyz focust expliciet op de "agentic web", de groei van x402-tools die zijn gebouwd om door agents te worden gebruikt, niet door mensen via een browser.
 
