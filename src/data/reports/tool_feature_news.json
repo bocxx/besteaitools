@@ -1,19 +1,37 @@
 {
-  "generated_at": "2026-05-30T15:27:47.171982",
+  "generated_at": "2026-05-31T07:26:22.830862",
   "window_days": 7,
   "week": "2026-w22",
-  "total_candidates_scanned": 1077,
-  "total_after_dedup": 1035,
-  "total_feature_updates": 139,
+  "total_candidates_scanned": 1052,
+  "total_after_dedup": 1009,
+  "total_feature_updates": 141,
   "llm_curated": true,
   "features": [
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Security-Guidance Plugin",
-      "summary_nl": "Claude heeft een security-guidance plugin uitgebracht die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
+      "feature_title": "Managed Agents",
+      "summary_nl": "Claude ondersteunt nu managed agents waarmee gebruikers agents kunnen uitvoeren binnen hun eigen omgeving.",
       "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2056645485696315581",
+          "title": "Live from Code with Claude London: we're launching self-hosted sandboxes (public beta) and MCP tunnels (research preview) in Claude Managed ",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-05-31",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Security Guidance Plugin",
+      "summary_nl": "Claude heeft een plugin gelanceerd die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
+      "impact": "medium",
       "sources": [
         {
           "url": "https://twitter.com/ClaudeDevs/status/2059385239781384341",
@@ -22,7 +40,97 @@
           "source": "@ClaudeDevs"
         }
       ],
-      "detected_at": "2026-05-30",
+      "detected_at": "2026-05-31",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos 1 Model Release",
+      "summary_nl": "Anthropic bereidt de release voor van een nieuw Mythos 1 model op Claude Code en Claude Security.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/testingcatalog/status/2058322222297518498",
+          "title": "ANTHROPIC 🔥: Mythos 1, \"claude-mythos-1-preview\", is being prepared for a release on Claude Code and Claude Security. \n\nThe model became vis",
+          "platform": "twitter",
+          "source": "@testingcatalog"
+        }
+      ],
+      "detected_at": "2026-05-31",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "ollama",
+      "tool_name": "Ollama",
+      "tool_category": "infra",
+      "feature_title": "OpenJarvis Local-First AI",
+      "summary_nl": "Ollama heeft nu beschikbaarheid van OpenJarvis, een lokaal uitgevoerde persoonlijke AI-assistent.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ollama/status/2060428074102206496",
+          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
+          "platform": "twitter",
+          "source": "@ollama"
+        }
+      ],
+      "detected_at": "2026-05-31",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Agentic Coding Workflow",
+      "summary_nl": "Gemini introduceert een agentic coding workflow met verschillende stappen, compatibel met diverse AI-tools.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/marcusyul/status/2058999264294883680",
+          "title": "Acaban de convertir Claude Code, Codex y Cursor en un senior developer real.\n\nGratis.\n\nSe llama Superpowers y ya tiene 204.000 estrellas en ",
+          "platform": "twitter",
+          "source": "@marcusyul"
+        }
+      ],
+      "detected_at": "2026-05-31",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "SkillOpt Model Updates",
+      "summary_nl": "ChatGPT introduceert SkillOpt, een model dat automatisch updates aanbrengt in de skill-bestanden van de AI-agent.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/omarsar0/status/2058936160291004483",
+          "title": "New research from Microsoft Research\n\nI see a lot of AI engineers handwriting agent skill docs and hope they generalize.\n\nProbably not optim",
+          "platform": "twitter",
+          "source": "@omarsar0"
+        }
+      ],
+      "detected_at": "2026-05-31",
+      "week": "2026-w22"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Agentic Trading and Credit Card",
+      "summary_nl": "Robinhood lanceert agentic trading en een agentic creditcard, waarbij gebruikers AI-agents kunnen koppelen aan hun Robinhood-account.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/amitisinvesting/status/2059667155914813484",
+          "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
+          "platform": "twitter",
+          "source": "@amitisinvesting"
+        }
+      ],
+      "detected_at": "2026-05-31",
       "week": "2026-w22"
     },
     {
@@ -80,24 +188,6 @@
           "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
           "platform": "twitter",
           "source": "@amitisinvesting"
-        }
-      ],
-      "detected_at": "2026-05-30",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "ollama",
-      "tool_name": "Ollama",
-      "tool_category": "infra",
-      "feature_title": "OpenJarvis Local-First AI",
-      "summary_nl": "OpenJarvis, een local-first persoonlijke AI, is nu beschikbaar om te draaien met Ollama.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ollama/status/2060428074102206496",
-          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
-          "platform": "twitter",
-          "source": "@ollama"
         }
       ],
       "detected_at": "2026-05-30",
@@ -230,53 +320,11 @@
       "week": "2026-w22"
     },
     {
-      "tool_slug": "make",
-      "tool_name": "Make",
-      "tool_category": "automatisering",
-      "feature_title": "Agentic Trading and Credit Card",
-      "summary_nl": "Robinhood lanceert Agentic Trading en een Agentic Credit Card, waarmee gebruikers AI-agents kunnen koppelen aan Robinhood via MCP-servers.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/amitisinvesting/status/2059667155914813484",
-          "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
-          "platform": "twitter",
-          "source": "@amitisinvesting"
-        },
-        {
-          "url": "https://twitter.com/StockMKTNewz/status/2059621017744716014",
-          "title": "Robinhood $HOOD just announced new AI Agents for trading and for credit card spending \n\n“Once up and running, the agent can scan for the bes",
-          "platform": "twitter",
-          "source": "@StockMKTNewz"
-        }
-      ],
-      "detected_at": "2026-05-29",
-      "week": "2026-w22"
-    },
-    {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Mythos 1 Preview Release",
       "summary_nl": "Anthropic bereidt de release voor van Mythos 1, een nieuw Claude-model, op Claude Code en Claude Security.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/testingcatalog/status/2058322222297518498",
-          "title": "ANTHROPIC 🔥: Mythos 1, \"claude-mythos-1-preview\", is being prepared for a release on Claude Code and Claude Security. \n\nThe model became vis",
-          "platform": "twitter",
-          "source": "@testingcatalog"
-        }
-      ],
-      "detected_at": "2026-05-29",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Mythos 1 Model Release",
-      "summary_nl": "Anthropic bereidt de release voor van het Mythos 1 model, genaamd 'claude-mythos-1-preview', op Claude Code en Claude Security.",
       "impact": "high",
       "sources": [
         {
@@ -431,24 +479,6 @@
         }
       ],
       "detected_at": "2026-05-28",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agents",
-      "summary_nl": "Claude ondersteunt nu managed agents waarmee je agents binnen je eigen omgeving kunt uitvoeren, inclusief self-hosted sandboxes en MCP tunnels.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2056645485696315581",
-          "title": "Live from Code with Claude London: we're launching self-hosted sandboxes (public beta) and MCP tunnels (research preview) in Claude Managed ",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-05-26",
       "week": "2026-w22"
     },
     {
