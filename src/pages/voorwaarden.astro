@@ -1,0 +1,159 @@
+---
+/**
+ * /voorwaarden — Gebruiksvoorwaarden
+ *
+ * ⚠️ SCAFFOLD: beschrijft het feitelijke karakter van de site (informatief,
+ * geen advies, geen affiliate-beïnvloeding — zie /over). Laat 'm vóór livegang
+ * juridisch nalopen, vooral aansprakelijkheid en toepasselijk recht.
+ */
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+import { FileText, Info, Scale, Copyright, ExternalLink, AlertTriangle, RefreshCw, Mail } from '@lucide/astro';
+
+const lastUpdated = '1 juni 2026';
+
+export const prerender = true;
+---
+
+<Layout
+  title={`Gebruiksvoorwaarden | ${siteConfig.name}`}
+  description={`De voorwaarden voor het gebruik van ${siteConfig.name}: een informatieve AI-tools radar zonder garanties, advies of betaalde beïnvloeding van de ranking.`}
+  robots="index, follow"
+>
+  <main class="container container-narrow legal-page" style="padding-top: 80px;">
+
+    <header class="legal-hero">
+      <div class="legal-hero__icon"><FileText size={28} stroke-width={1.5} /></div>
+      <h1 class="legal-hero__title">Gebruiksvoorwaarden</h1>
+      <p class="legal-hero__subtitle">
+        Door <strong>{siteConfig.name}</strong> te gebruiken ga je akkoord met onderstaande
+        voorwaarden. De site is informatief bedoeld — geen professioneel advies.
+        <br/><span class="legal-hero__timestamp">Laatst bijgewerkt: {lastUpdated}</span>
+      </p>
+    </header>
+
+    <section class="legal-section">
+      <h2><Info size={20} stroke-width={1.5} /> Aard van de site</h2>
+      <p>
+        {siteConfig.name} is een Nederlandstalige <strong>AI-tools radar</strong>: we combineren
+        dagelijks ververste, publiek waarneembare signalen (buzz, groei, mentions) met redactionele
+        reviews. De informatie is bedoeld als algemeen overzicht en oriëntatie, niet als professioneel,
+        juridisch, financieel of aankoopadvies.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><Scale size={20} stroke-width={1.5} /> Gebruik van de site</h2>
+      <ul class="legal-list">
+        <li>Je mag de inhoud vrij raadplegen voor eigen, niet-commercieel gebruik.</li>
+        <li>Je gebruikt de site niet op een manier die de werking, beveiliging of beschikbaarheid schaadt.</li>
+        <li>Geautomatiseerd grootschalig overnemen (scraping) van de content zonder bronvermelding is niet toegestaan.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2><AlertTriangle size={20} stroke-width={1.5} /> Geen garanties &amp; aansprakelijkheid</h2>
+      <p>
+        We doen ons best om informatie correct en actueel te houden, maar AI-tools veranderen snel:
+        prijzen, functies en beschikbaarheid kunnen afwijken van wat hier staat. We geven dan ook
+        <strong>geen garanties</strong> op volledigheid of juistheid en zijn niet aansprakelijk voor
+        schade die voortvloeit uit het gebruik van de site of beslissingen die je daarop baseert.
+        Controleer belangrijke informatie altijd bij de bron (de tool zelf).
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><Copyright size={20} stroke-width={1.5} /> Intellectueel eigendom</h2>
+      <p>
+        De redactionele teksten, structuur en vormgeving van {siteConfig.name} zijn van ons.
+        Tool-namen, logo's en merken zijn eigendom van hun respectieve eigenaren en worden uitsluitend
+        ter identificatie gebruikt. Overname van onze content mag met duidelijke bronvermelding en
+        een link terug.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><ExternalLink size={20} stroke-width={1.5} /> Externe links &amp; onafhankelijkheid</h2>
+      <p>
+        We linken naar externe tools en bronnen waarover we geen controle hebben. Onze ranking is
+        gebaseerd op publieke signalen en redactioneel oordeel: <strong>geen betaalde plaatsingen,
+        geen affiliate-kickbacks en geen vendor-verzoeken</strong> beïnvloeden de scores. Zie
+        <a href="/over">Over deze site</a> voor onze volledige methodologie.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><RefreshCw size={20} stroke-width={1.5} /> Wijzigingen &amp; toepasselijk recht</h2>
+      <p>
+        We kunnen deze voorwaarden aanpassen; de datum bovenaan toont de laatste wijziging. Op deze
+        voorwaarden en het gebruik van de site is <strong>Nederlands recht</strong> van toepassing.
+      </p>
+    </section>
+
+    <section class="legal-section legal-section--cta">
+      <h2><Mail size={20} stroke-width={1.5} /> Vragen?</h2>
+      <p>
+        Vragen over deze voorwaarden? Bereik ons via
+        <a href={siteConfig.social.x.url} target="_blank" rel="noopener">{siteConfig.social.x.handle}</a>
+        of <a href={siteConfig.social.github.url} target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  .legal-page { max-width: 820px; }
+  .legal-hero { text-align: center; margin-bottom: var(--space-8); }
+  .legal-hero__icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright); margin-bottom: var(--space-3);
+  }
+  .legal-hero__title {
+    font-family: var(--font-display); font-size: var(--text-4xl); font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight); margin: 0 0 var(--space-3);
+    background: var(--gradient-text); -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .legal-hero__subtitle {
+    font-size: var(--text-base); color: var(--text-secondary);
+    line-height: var(--leading-relaxed); margin: 0 auto; max-width: 620px;
+  }
+  .legal-hero__timestamp { font-size: var(--text-sm); color: var(--text-muted); }
+
+  .legal-section { margin-bottom: var(--space-8); }
+  .legal-section h2 {
+    display: flex; align-items: center; gap: var(--space-2);
+    font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--font-bold);
+    color: var(--text-primary); margin: 0 0 var(--space-3);
+    padding-bottom: var(--space-2); border-bottom: 1px solid var(--border-subtle);
+  }
+  .legal-section h2 :global(svg) { color: var(--primary-bright); }
+  .legal-section p {
+    color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-3);
+  }
+  .legal-section p strong { color: var(--text-primary); }
+  .legal-section a { color: var(--primary-bright); text-decoration: underline; text-underline-offset: 2px; }
+
+  .legal-list { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .legal-list li {
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-6); position: relative;
+    color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug);
+    border-left: 3px solid var(--primary-bright); background: var(--bg-glass);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .legal-list li strong { color: var(--text-primary); }
+
+  .legal-section--cta {
+    background: color-mix(in oklch, var(--primary-bright) 6%, var(--bg-glass));
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-radius: var(--radius-lg); padding: var(--space-5);
+  }
+  .legal-section--cta h2 { border-bottom: none; padding-bottom: 0; }
+
+  @media (max-width: 640px) {
+    .legal-hero__title { font-size: var(--text-3xl); }
+  }
+</style>

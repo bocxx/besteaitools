@@ -27,8 +27,15 @@ import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Build
 
 export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
+  const slugSet = new Set(tools.map(t => t.slug));
   return tools.map((tool) => {
     const toolPairs = pairs.filter(p => p.slugA === tool.slug || p.slugB === tool.slug);
+    // Only treat bestAlternative as a link when it resolves to a real tool
+    // slug. Some entries hold prose ("Burp Suite … vult ze aan op …") which
+    // would otherwise render as a broken /ai-tools/<sentence> 404.
+    const altSlug = tool.bestAlternative && slugSet.has(tool.bestAlternative)
+      ? tool.bestAlternative
+      : null;
     // Sibling tools in the same category — adds unique per-page content +
     // category internal-linking (helps "crawled, not indexed" thin pages).
     const related = tools
@@ -37,12 +44,12 @@ export async function getStaticPaths() {
       .slice(0, 6);
     return {
       params: { slug: tool.slug },
-      props: { tool, comparisons: toolPairs, related },
+      props: { tool, comparisons: toolPairs, related, altSlug },
     };
   });
 }
 
-const { tool, comparisons, related } = Astro.props;
+const { tool, comparisons, related, altSlug } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
@@ -248,7 +255,9 @@ export const prerender = true;
             {tool.bestAlternative && (
               <p class="verdict-panel__alt">
                 <ArrowRightLeft size={12} stroke-width={1.5} />
-                Beste alternatief: <a href={`/ai-tools/${tool.bestAlternative}`}>{tool.bestAlternative}</a>
+                Beste alternatief: {altSlug
+                  ? <a href={`/ai-tools/${altSlug}`}>{tool.bestAlternative}</a>
+                  : <span>{tool.bestAlternative}</span>}
               </p>
             )}
           </section>

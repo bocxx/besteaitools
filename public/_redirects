@@ -9,9 +9,10 @@
 /ai-tools/you.com /ai-tools/youcom 301
 /ai-tools/you.com/ /ai-tools/youcom/ 301
 
-# Excluded tool — redirect to the radar
-/ai-tools/sora /ai-tools 301
-/ai-tools/sora/ /ai-tools 301
+# Excluded tool — redirect direct naar de radar (= homepage). NIET via
+# /ai-tools, want dat 301't zelf weer naar / → onnodige redirect-keten.
+/ai-tools/sora / 301
+/ai-tools/sora/ / 301
 
 # Merge: /match + /zakelijk → /vind-je-beste-ai-tool.
 # Exact matches only — NO /match/* wildcard, so /match/tools.json
@@ -24,6 +25,11 @@
 # Singular head-term alias (no competing indexable URL)
 /beste-ai-tool /vind-je-beste-ai-tool 301
 /beste-ai-tool/ /vind-je-beste-ai-tool 301
+
+# Oud/fout pad: /vergelijking/* was nooit een echte route (de route is
+# /vergelijk/*). Google heeft er nog een paar onthouden → map ze door.
+# Veilig als splat: er bestaan geen echte /vergelijking/-assets.
+/vergelijking/* /vergelijk/:splat 301
 
 # NB: comparison-page churn (oude /vergelijk/X-vs-Y/ → 404) wordt nu bij de
 # bron opgelost via een stabiele slug-floor (src/data/comparison-slugs.json,

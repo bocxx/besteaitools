@@ -18,7 +18,12 @@ export default defineConfig({
     react(),
     markdoc(),
     sitemap({
-      filter: (page) => !page.includes('/og/'),
+      // Sluit OG-image routes uit, en de /ai-tools redirect-stub: die 301't
+      // naar / (zie public/_redirects), dus in de sitemap zou hij als
+      // "Pagina met omleiding" in GSC verschijnen.
+      filter: (page) =>
+        !page.includes('/og/') &&
+        page.replace(/\/$/, '').replace(/^https?:\/\/[^/]+/, '') !== '/ai-tools',
       serialize(item) {
         item.lastmod = new Date().toISOString();
         return item;
