@@ -2,14 +2,15 @@
  * Design Tokens
  * Core design values - colors, spacing, typography, effects
  * 
- * THEME: Ember Warm (Soft Charcoal & Friendly Coral)
- * Cozy warm-charcoal surfaces, softened amber + coral accents
- * 
+ * THEME: Editorial Yellow & Teal — aligned with hetlaatsteainieuws.nl
+ * Slate Deep dark mode, warm-wit light mode. Yellow primary (92°), Teal secondary (175°).
+ *
  * Archived themes:
  * - 00-tokens-archive-purple.css (Original purple/coral)
  * - 00-tokens-archive-blue.css (Editorial blue/amber)
  * - 00-tokens-archive-nebula.css (Rust & teal cosmic)
  * - 00-tokens-archive-volt.css (Black & yellow)
+ * - (Ember Warm / amber+coral was the previous active theme)
  * 
  * Using modern CSS with oklch colors for better gradients
  * and perceptually uniform color manipulation
@@ -18,55 +19,58 @@
 @layer tokens {
   :root {
     /* ============================================
-       COLOR SYSTEM - Ember Warm Palette
-       Soft warm-charcoal surfaces, friendly amber + coral
+       COLOR SYSTEM — Dark mode (default)
+       Electric Yellow primary, Teal secondary, Cyan tertiary
        ============================================ */
 
-    /* Background Palette - Warm Charcoal (softer than pure black) */
-    --bg-deep: oklch(13% 0.012 45);
-    --bg-surface: oklch(16% 0.014 45);
-    --bg-elevated: oklch(20% 0.016 45);
-    --bg-panel: oklch(24% 0.018 45);
+    /* Background Palette — Slate Deep */
+    --bg-deep: #010405;
+    --bg-surface: #040a0d;
+    --bg-elevated: #071114;
+    --bg-panel: #0d181c;
 
-    /* Brand Colors - Soft Amber Gold (lighter, less neon = friendlier) */
-    --primary-h: 48;
-    --primary-bright: oklch(80% 0.145 var(--primary-h));
-    --primary-mid: oklch(68% 0.135 var(--primary-h));
-    --primary-dark: oklch(56% 0.12 var(--primary-h));
+    /* Brand Colors — Editorial Yellow (Primary) */
+    --primary-h: 92;
+    --primary-bright: oklch(88% 0.19 92);
+    --primary-mid: oklch(72% 0.18 75);
+    --primary-dark: oklch(55% 0.16 55);
+    --primary-dim: oklch(32% 0.09 50);
 
-    /* Brand Colors - Friendly Coral (warmer hue, softer chroma than blood-red) */
-    --secondary-h: 25;
-    --secondary-bright: oklch(72% 0.155 var(--secondary-h));
-    --secondary-mid: oklch(62% 0.145 var(--secondary-h));
-    --secondary-dark: oklch(52% 0.13 var(--secondary-h));
+    /* Brand Colors — Teal (Secondary) */
+    --secondary-h: 175;
+    --secondary-bright: oklch(75% 0.14 var(--secondary-h));
+    --secondary-mid: oklch(62% 0.12 var(--secondary-h));
+    --secondary-dark: oklch(48% 0.10 var(--secondary-h));
+    --secondary-dim: oklch(32% 0.08 var(--secondary-h));
 
-    /* Support Colors - Soft Warm Violet */
-    --tertiary-h: 300;
-    --tertiary-bright: oklch(74% 0.09 var(--tertiary-h));
-    --tertiary-dark: oklch(58% 0.075 var(--tertiary-h));
-    
+    /* Support Colors — Cyan (Tertiary) */
+    --tertiary-h: 200;
+    --tertiary-bright: oklch(70% 0.12 var(--tertiary-h));
+    --tertiary-mid: oklch(55% 0.10 var(--tertiary-h));
+    --tertiary-dark: oklch(42% 0.08 var(--tertiary-h));
+
     /* Semantic Colors */
     --color-success: oklch(75% 0.14 165);
-    --color-warning: oklch(85% 0.15 95);
+    --color-warning: oklch(72% 0.18 60);
     --color-error: oklch(68% 0.20 25);
     --color-info: oklch(72% 0.13 230);
-    
-    /* Text Palette - warm-tinted neutrals (cozy, not cold blue) */
-    --text-primary: oklch(96% 0.008 70);
-    --text-secondary: oklch(76% 0.022 60);
-    --text-muted: oklch(58% 0.02 55);
-    --text-inverse: oklch(15% 0.02 45);
-    
+
+    /* Text Palette */
+    --text-primary: #f1f5fc;
+    --text-secondary: #94a6be;
+    --text-muted: #798898;
+    --text-inverse: #000205;
+
     /* Borders */
     --border-subtle: color-mix(in oklch, var(--text-secondary) 16%, transparent);
     --border-strong: color-mix(in oklch, var(--text-primary) 12%, transparent);
     --border-accent: color-mix(in oklch, var(--primary-bright) 40%, transparent);
-    
-    /* Glow Effects - Subtle for minimalism */
+
+    /* Glow Effects */
     --glow-primary: color-mix(in oklch, var(--primary-bright) 15%, transparent);
     --glow-secondary: color-mix(in oklch, var(--secondary-bright) 10%, transparent);
     --glow-tertiary: color-mix(in oklch, var(--tertiary-bright) 8%, transparent);
-    
+
     /* Glass Morphism */
     --bg-glass: color-mix(in oklch, var(--bg-panel) 72%, transparent);
     --bg-overlay: color-mix(in oklch, var(--bg-deep) 72%, transparent);
@@ -307,51 +311,54 @@
      ============================================ */
 
   [data-theme="light"] {
-    /* Background Palette - Warm Cream */
-    --bg-deep: oklch(98% 0.006 60);
-    --bg-surface: oklch(95% 0.010 60);
-    --bg-elevated: oklch(100% 0 0);
-    --bg-panel: oklch(100% 0 0);
+    /* Background Palette — Subtiel Warm Wit */
+    --bg-deep: #fcfaf7;
+    --bg-surface: #f3f0eb;
+    --bg-elevated: #ffffff;
+    --bg-panel: #fefdfb;
 
-    /* Brand Colors - Amber Gold (deeper for contrast on light) */
-    --primary-bright: oklch(58% 0.16 var(--primary-h));
-    --primary-mid: oklch(48% 0.15 var(--primary-h));
-    --primary-dark: oklch(38% 0.13 var(--primary-h));
+    /* Brand Colors — Orange-amber (contrast op wit) */
+    --primary-bright: oklch(58% 0.18 55);
+    --primary-mid: oklch(48% 0.17 50);
+    --primary-dark: oklch(38% 0.14 45);
+    --primary-dim: oklch(94% 0.06 92);
 
-    /* Brand Colors - Warm Red (deeper for contrast on light) */
-    --secondary-bright: oklch(50% 0.20 var(--secondary-h));
-    --secondary-mid: oklch(42% 0.18 var(--secondary-h));
-    --secondary-dark: oklch(35% 0.15 var(--secondary-h));
+    /* Brand Colors — Teal (Secondary) */
+    --secondary-bright: oklch(48% 0.14 var(--secondary-h));
+    --secondary-mid: oklch(40% 0.12 var(--secondary-h));
+    --secondary-dark: oklch(34% 0.10 var(--secondary-h));
+    --secondary-dim: oklch(92% 0.03 var(--secondary-h));
 
-    /* Support Colors - Soft Purple (deeper for legibility) */
-    --tertiary-bright: oklch(50% 0.12 var(--tertiary-h));
-    --tertiary-dark: oklch(40% 0.10 var(--tertiary-h));
+    /* Support Colors — Cyan (Tertiary) */
+    --tertiary-bright: oklch(48% 0.12 var(--tertiary-h));
+    --tertiary-mid: oklch(40% 0.10 var(--tertiary-h));
+    --tertiary-dark: oklch(34% 0.08 var(--tertiary-h));
 
-    /* Semantic Colors - tuned for contrast on white */
-    --color-success: oklch(48% 0.14 165);
-    --color-warning: oklch(55% 0.14 85);
-    --color-error: oklch(50% 0.20 25);
+    /* Semantic Colors */
+    --color-success: oklch(45% 0.16 165);
+    --color-warning: oklch(55% 0.18 55);
+    --color-error: oklch(48% 0.20 25);
     --color-info: oklch(48% 0.14 230);
 
-    /* Text Palette - dark on cream */
-    --text-primary: oklch(20% 0.02 260);
-    --text-secondary: oklch(40% 0.025 255);
-    --text-muted: oklch(50% 0.02 250);
-    --text-inverse: oklch(98% 0.005 60);
+    /* Text Palette */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-inverse: #ffffff;
 
-    /* Borders - blend warm-dark text into transparent */
-    --border-subtle: color-mix(in oklch, var(--text-secondary) 14%, transparent);
-    --border-strong: color-mix(in oklch, var(--text-primary) 16%, transparent);
-    --border-accent: color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    /* Borders */
+    --border-subtle: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --border-accent: color-mix(in oklch, var(--primary-bright) 35%, transparent);
 
-    /* Glow Effects - softer on light bg */
-    --glow-primary: color-mix(in oklch, var(--primary-bright) 12%, transparent);
-    --glow-secondary: color-mix(in oklch, var(--secondary-bright) 10%, transparent);
-    --glow-tertiary: color-mix(in oklch, var(--tertiary-bright) 8%, transparent);
+    /* Glow Effects */
+    --glow-primary: color-mix(in oklch, var(--primary-bright) 10%, transparent);
+    --glow-secondary: color-mix(in oklch, var(--secondary-bright) 8%, transparent);
+    --glow-tertiary: color-mix(in oklch, var(--tertiary-bright) 6%, transparent);
 
-    /* Glass Morphism - mostly opaque white panels */
-    --bg-glass: color-mix(in oklch, var(--bg-panel) 82%, transparent);
-    --bg-overlay: color-mix(in oklch, var(--bg-deep) 60%, transparent);
+    /* Glass Morphism */
+    --bg-glass: color-mix(in oklch, var(--bg-panel) 85%, transparent);
+    --bg-overlay: color-mix(in oklch, var(--bg-deep) 75%, transparent);
 
     /* Shadows - subtle gray rather than deep-color mix */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
