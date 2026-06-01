@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-01T07:24:23.082467",
+  "generated_at": "2026-06-01T15:34:08.285725",
   "window_days": 7,
   "week": "2026-w23",
   "total_candidates_scanned": 1075,
-  "total_after_dedup": 1023,
+  "total_after_dedup": 1021,
   "total_feature_updates": 121,
   "llm_curated": true,
   "features": [
@@ -11,7 +11,7 @@
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Security-guidance plugin",
+      "feature_title": "Security Guidance Plugin",
       "summary_nl": "Claude heeft een plugin gelanceerd die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
       "impact": "medium",
       "sources": [
@@ -29,8 +29,8 @@
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Opus 4.8 release",
-      "summary_nl": "Anthropic heeft een nieuwe versie van Claude, Opus 4.8, uitgebracht.",
+      "feature_title": "Opus 4.8 Release",
+      "summary_nl": "Claude heeft versie 4.8 van hun platform gelanceerd.",
       "impact": "medium",
       "sources": [
         {
@@ -38,12 +38,42 @@
           "title": "Introducing Claude Opus 4.8",
           "platform": "reddit",
           "source": "r/ClaudeAI"
-        },
+        }
+      ],
+      "detected_at": "2026-06-01",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok Build CLI in Public Beta",
+      "summary_nl": "Grok heeft de Grok Build CLI in publieke bèta gelanceerd, een model dat goed presteert bij agentisch coderen.",
+      "impact": "medium",
+      "sources": [
         {
-          "url": "https://reddit.com/r/singularity/comments/1tq9ml0/well_anthropic_released_opus_48/",
-          "title": "Well anthropic released opus 4.8",
-          "platform": "reddit",
-          "source": "r/singularity"
+          "url": "https://twitter.com/xai/status/2060392249402552457",
+          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
+          "platform": "twitter",
+          "source": "@xai"
+        }
+      ],
+      "detected_at": "2026-06-01",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "ollama",
+      "tool_name": "Ollama",
+      "tool_category": "infra",
+      "feature_title": "OpenJarvis Local-First Personal AI",
+      "summary_nl": "Ollama heeft OpenJarvis gelanceerd, een lokaal draaiende persoonlijke AI assistent.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ollama/status/2060428074102206496",
+          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
+          "platform": "twitter",
+          "source": "@ollama"
         }
       ],
       "detected_at": "2026-06-01",
@@ -290,24 +320,6 @@
       "week": "2026-w22"
     },
     {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Grok Build CLI in Public Beta",
-      "summary_nl": "De Grok Build CLI, die agentic coding ondersteunt, is nu beschikbaar via de xAI API in openbare bèta.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/xai/status/2060392249402552457",
-          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
-          "platform": "twitter",
-          "source": "@xai"
-        }
-      ],
-      "detected_at": "2026-05-30",
-      "week": "2026-w22"
-    },
-    {
       "tool_slug": "make",
       "tool_name": "Make",
       "tool_category": "automatisering",
@@ -320,24 +332,6 @@
           "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
           "platform": "twitter",
           "source": "@amitisinvesting"
-        }
-      ],
-      "detected_at": "2026-05-30",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "ollama",
-      "tool_name": "Ollama",
-      "tool_category": "infra",
-      "feature_title": "OpenJarvis Local-First Personal AI",
-      "summary_nl": "OpenJarvis, een local-first persoonlijke AI gebouwd door Stanford's Hazy Research en Scaling Intelligence labs, is nu beschikbaar om te draaien met Ollama.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ollama/status/2060428074102206496",
-          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
-          "platform": "twitter",
-          "source": "@ollama"
         }
       ],
       "detected_at": "2026-05-30",
