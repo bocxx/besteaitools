@@ -1,0 +1,66 @@
+{
+  "name": "Claude Cowork",
+  "category": "automation",
+  "websiteUrl": "https://claude.ai",
+  "shortDescription": "Anthropic's desktop-agent waarmee niet-developers Claude langlopende taken laat uitvoeren via bestanden, bash-commando's en connectoren",
+  "longDescription": "Claude Cowork is een modus in de Claude desktop-app waarin Claude zelfstandig meerstaps-taken uitvoert op je computer in plaats van alleen te chatten. Claude krijgt een werkmap, kan bestanden lezen en aanmaken, shell-commando's draaien in een filesystem- en netwerk-geïsoleerde sandbox, en via connectoren werken met apps als Gmail, Google Drive en CRM-systemen. Het gebruikt dezelfde agent-architectuur als Claude Code, maar zonder terminal en gericht op kenniswerkers — marketeers, recruiters, consultants, ondernemers. Sinds februari 2026 draait het op macOS én Windows voor alle betaalde Claude-plannen. Plugins bundelen skills, connectoren en slash-commando's per rol, en 'live artifacts' geven dashboards die automatisch ververen met actuele data uit je apps.",
+  "pricingModel": "paid",
+  "difficulty": "beginner",
+  "tags": ["claude", "anthropic", "ai-agent", "desktop", "productiviteit"],
+  "mentionAliases": ["cowork", "claude cowork"],
+  "draft": false,
+  "targetAudience": [],
+  "businessFunctions": [],
+  "companySizeFit": [],
+  "integrations": ["Gmail", "Google Drive", "CRM-connectoren"],
+  "mainCompetitors": ["chatgpt", "claude-code"],
+  "screenshotUrls": [],
+  "hasFreePlan": false,
+  "startingPriceMonthly": 20,
+  "keyFeatures": [
+    {
+      "title": "Agent-modus met werkmap",
+      "description": "Claude voert langlopende taken uit op een toegewezen map: bestanden lezen, aanmaken en bewerken in plaats van alleen antwoorden in chat.",
+      "group": "core"
+    },
+    {
+      "title": "Geïsoleerde bash-sandbox",
+      "description": "Shell-commando's draaien filesystem- en netwerk-geïsoleerd; acties buiten de werkmap vragen expliciet toestemming.",
+      "group": "core"
+    },
+    {
+      "title": "Live artifacts",
+      "description": "Dashboards en trackers die aan je apps hangen en bij elke opening automatisch ververen met actuele data — uitgerold 21 april 2026.",
+      "group": "core"
+    },
+    {
+      "title": "Plugins per rol",
+      "description": "Bundels van skills, connectoren en slash-commando's voor marketing, sales, finance, legal, HR, engineering en design.",
+      "group": "integration"
+    },
+    {
+      "title": "App-connectoren",
+      "description": "Werk via connectoren met Gmail, Google Drive, CRM-systemen en andere SaaS-tools.",
+      "group": "integration"
+    }
+  ],
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 7,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low",
+  "testedByEditor": false,
+  "verdict": "Cowork is de eerste Claude-feature die écht buiten het chatvenster werkt: dezelfde agent-motor als Claude Code, maar bruikbaar zonder terminal. Sterk voor wie herhaaltaken op eigen bestanden of tussen SaaS-tools draait. De keerzijde is vertrouwen — je geeft een agent toegang tot je bestanden, dus de waarde staat of valt met hoe goed je de permissies en sandbox begrijpt.",
+  "whyListed": "Claude Cowork brengt agentische automatisering naar niet-developers en is sinds begin 2026 breed beschikbaar op macOS en Windows voor alle betaalde Claude-plannen — een van de eerste mainstream desktop-agents voor kenniswerkers.",
+  "bestAlternative": "chatgpt",
+  "headlineValueProp": "Claude die zelfstandig taken uitvoert op je bestanden en apps — zonder terminal",
+  "primaryJobsToBeDone": [
+    "Terugkerende taken op je eigen bestanden automatiseren zonder te coderen",
+    "Dashboards en status-rapportages bouwen die automatisch ververen (live artifacts)",
+    "Werk tussen SaaS-apps koppelen via connectoren en rol-plugins"
+  ],
+  "antiUseCases": [
+    "Gratis Claude-gebruikers — Cowork zit alleen op betaalde plannen",
+    "Developers die in de terminal willen werken — kies dan Claude Code",
+    "Werk met gevoelige productie-data als je de sandbox en permissies niet wilt beheren"
+  ]
+}
