@@ -25,7 +25,9 @@ const digestsAsArticles = allDigests.map((d) => ({
     updatedAt: d.data.date,
     category: 'digest' as NieuwsCategory,
     author: d.data.author,
-    heroImage: d.data.heroImage,
+    // Default diorama-fallback: oudere digests (en toekomstige zonder eigen
+    // gegenereerde diorama) tonen anders een blanco hero/large-kaart.
+    heroImage: d.data.heroImage ?? '/images/digest-default.webp',
     tags: d.data.tags ?? [],
     featured: false,
     draft: false,
