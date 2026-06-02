@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-02T07:23:08.454858",
+  "generated_at": "2026-06-02T19:35:35.259547",
   "window_days": 7,
   "week": "2026-w23",
-  "total_candidates_scanned": 1143,
-  "total_after_dedup": 1082,
-  "total_feature_updates": 122,
+  "total_candidates_scanned": 1149,
+  "total_after_dedup": 1091,
+  "total_feature_updates": 124,
   "llm_curated": true,
   "features": [
     {
@@ -13,13 +13,121 @@
       "tool_category": "tekst",
       "feature_title": "Security Guidance Plugin",
       "summary_nl": "Claude heeft een plugin gelanceerd die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
-      "impact": "medium",
+      "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/ClaudeDevs/status/2059385239781384341",
           "title": "We’ve shipped a security-guidance plugin for Claude Code that helps identify and fix vulnerabilities as you’re writing code.\n\nAvailable for ",
           "platform": "twitter",
           "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-06-02",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Opus 4.8 Release",
+      "summary_nl": "Claude heeft versie 4.8 van Opus gelanceerd, een belangrijke update van het platform.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://reddit.com/r/ClaudeAI/comments/1tq99mu/introducing_claude_opus_48/",
+          "title": "Introducing Claude Opus 4.8",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-06-02",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "grok-build-0.1 Public Beta",
+      "summary_nl": "De grok-build-0.1 model is nu beschikbaar via de xAI API in openbare bèta.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/xai/status/2060392249402552457",
+          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
+          "platform": "twitter",
+          "source": "@xai"
+        }
+      ],
+      "detected_at": "2026-06-02",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Composer 2.5 Integration",
+      "summary_nl": "Composer 2.5, een krachtig model voor lange taken, is nu beschikbaar in Grok Build.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/xai/status/2061510464325206163",
+          "title": "Composer 2.5 is now available inside Grok Build. \n\nComposer 2.5 is a fast, highly intelligent model that excels on long-running tasks and fo",
+          "platform": "twitter",
+          "source": "@xai"
+        }
+      ],
+      "detected_at": "2026-06-02",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "openrouter",
+      "tool_name": "OpenRouter",
+      "tool_category": "infra",
+      "feature_title": "$113M Series B Funding",
+      "summary_nl": "OpenRouter heeft $113 miljoen opgehaald in een Serie B-financieringsronde, wat de groei van het platform ondersteunt.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/OpenRouter/status/2059277623629664758",
+          "title": "Today we’re announcing our $113M Series B led by @CapitalGVC.\n\nOver the last 6 months, weekly volume on OpenRouter grew from 5T to 25T token",
+          "platform": "twitter",
+          "source": "@OpenRouter"
+        }
+      ],
+      "detected_at": "2026-06-02",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "ollama",
+      "tool_name": "Ollama",
+      "tool_category": "infra",
+      "feature_title": "OpenJarvis Local-First AI",
+      "summary_nl": "Ollama ondersteunt nu OpenJarvis, een lokaal uitgevoerde persoonlijke AI-assistent ontwikkeld door Stanford.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ollama/status/2060428074102206496",
+          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
+          "platform": "twitter",
+          "source": "@ollama"
+        }
+      ],
+      "detected_at": "2026-06-02",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "perplexity",
+      "tool_name": "Perplexity",
+      "tool_category": "zoeken",
+      "feature_title": "Search as Code",
+      "summary_nl": "Perplexity introduceert een nieuwe zoekarchitectuur voor AI-agenten, waarbij de zoekfunctionaliteit direct in Python-code wordt geïntegreerd.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/perplexity_ai/status/2061506359326384319",
+          "title": "Introducing Search as Code, our new search architecture for AI agents.\n\nIt writes Python that calls our search stack directly, instead of lo",
+          "platform": "twitter",
+          "source": "@perplexity_ai"
         }
       ],
       "detected_at": "2026-06-02",
@@ -47,42 +155,6 @@
       "tool_slug": "grok",
       "tool_name": "Grok",
       "tool_category": "tekst",
-      "feature_title": "grok-build-0.1 Public Beta",
-      "summary_nl": "De grok-build-0.1 model is nu beschikbaar via de xAI API in publieke bèta.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/xai/status/2060392249402552457",
-          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
-          "platform": "twitter",
-          "source": "@xai"
-        }
-      ],
-      "detected_at": "2026-06-02",
-      "week": "2026-w23"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Opus 4.8 Release",
-      "summary_nl": "Claude heeft versie 4.8 van hun platform gelanceerd.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://reddit.com/r/ClaudeAI/comments/1tq99mu/introducing_claude_opus_48/",
-          "title": "Introducing Claude Opus 4.8",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-06-01",
-      "week": "2026-w23"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
       "feature_title": "Grok Build CLI in Public Beta",
       "summary_nl": "Grok heeft de Grok Build CLI in publieke bèta gelanceerd, een model dat goed presteert bij agentisch coderen.",
       "impact": "medium",
@@ -103,24 +175,6 @@
       "tool_category": "infra",
       "feature_title": "OpenJarvis Local-First Personal AI",
       "summary_nl": "Ollama heeft OpenJarvis gelanceerd, een lokaal draaiende persoonlijke AI assistent.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ollama/status/2060428074102206496",
-          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
-          "platform": "twitter",
-          "source": "@ollama"
-        }
-      ],
-      "detected_at": "2026-06-01",
-      "week": "2026-w23"
-    },
-    {
-      "tool_slug": "ollama",
-      "tool_name": "Ollama",
-      "tool_category": "infra",
-      "feature_title": "OpenJarvis local-first AI",
-      "summary_nl": "Ollama heeft OpenJarvis, een local-first persoonlijke AI, beschikbaar gemaakt om te draaien met Ollama.",
       "impact": "medium",
       "sources": [
         {
@@ -476,24 +530,6 @@
           "title": "Every humanoid robot being built right now depends on a $88M Japanese company that almost nobody in Western markets has looked at.\n\nWhile ca",
           "platform": "twitter",
           "source": "@Vaelis_X"
-        }
-      ],
-      "detected_at": "2026-05-28",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "openrouter",
-      "tool_name": "OpenRouter",
-      "tool_category": "infra",
-      "feature_title": "$113M Series B Funding",
-      "summary_nl": "OpenRouter heeft $113 miljoen opgehaald in een Series B financieringsronde, en ziet een sterke groei in het gebruik van hun platform.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenRouter/status/2059277623629664758",
-          "title": "Today we’re announcing our $113M Series B led by @CapitalGVC.\n\nOver the last 6 months, weekly volume on OpenRouter grew from 5T to 25T token",
-          "platform": "twitter",
-          "source": "@OpenRouter"
         }
       ],
       "detected_at": "2026-05-28",
