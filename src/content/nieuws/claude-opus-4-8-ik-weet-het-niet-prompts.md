@@ -16,7 +16,7 @@ tags:
 toolSlug: "claude"
 featured: true
 readingTime: 4
-heroImage: "/images/articles/diorama-claude-opus-4-8-ik-weet-het-niet-prompts.webp"
+heroImage: "/images/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Opus 4.8 zegt vaker 'ik weet het niet': zo benut je dat in drie prompts'"
 keyTakeaways:
   - "Claude Opus 4.8 is sinds 28 mei 2026 beschikbaar — geprijsd gelijk aan Opus 4.7, maar duidelijk eerlijker over wat het niet weet."

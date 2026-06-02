@@ -15,7 +15,7 @@ toolSlug: "notion-ai"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/articles/diorama-notion-agent-concurrentieanalyse-opzetten.webp"
+heroImage: "/images/nieuws/notion-agent-concurrentieanalyse-opzetten.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Notion Agent voor concurrentieanalyse opzetten in 5 stappen'"
 keyTakeaways:
   - "Met Notion 3.2 voer je een complete concurrentieanalyse in 15-20 minuten uit, autonoom door de agent."

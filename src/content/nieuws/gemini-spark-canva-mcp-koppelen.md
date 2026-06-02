@@ -15,7 +15,7 @@ toolSlug: "gemini"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/articles/diorama-gemini-spark-canva-mcp-koppelen.webp"
+heroImage: "/images/nieuws/gemini-spark-canva-mcp-koppelen.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Canva koppelen aan Gemini Spark via MCP: zo zet je het in 5 stappen op'"
 keyTakeaways:
   - "Sinds 19 mei 2026 koppelt Gemini Spark via Model Context Protocol direct met Canva."

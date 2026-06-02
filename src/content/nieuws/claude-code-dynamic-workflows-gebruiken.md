@@ -16,7 +16,7 @@ toolSlug: "claude-code"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/articles/diorama-claude-code-dynamic-workflows-gebruiken.webp"
+heroImage: "/images/nieuws/claude-code-dynamic-workflows-gebruiken.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Code dynamic workflows gebruiken: honderden subagents in één opdracht'"
 keyTakeaways:
   - "Dynamic workflows zijn JavaScript-scripts die Claude Code zelf schrijft om tot 1000 subagents parallel een grote taak te laten afmaken."

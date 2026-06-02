@@ -35,7 +35,7 @@ faq:
     a: "Live artifacts zijn dashboards en trackers die in Cowork aan je apps en bestanden hangen en bij elke opening automatisch ververen. In plaats van elke maandag data exporteren en in Excel zetten, bouw je het dashboard één keer — daarna geeft elke klik de actuele stand. Anthropic rolde deze update uit op 21 april 2026."
   - q: "Mag Claude Cowork ook echt iets kapot maken op mijn computer?"
     a: "De bash-sandbox is filesystem- en netwerk-geïsoleerd, dus scripts kunnen niet buiten de werkmap lezen of schrijven en netwerk loopt via een proxy. De Read-, Edit- en Write-tools vragen voor acties buiten die map expliciet toestemming. Vertrouwen blijft een keuze: geef Cowork toegang tot een map met productie-data alleen als je de stappen zou vertrouwen aan een nieuwe collega."
-heroImage: "/images/articles/diorama-claude-cowork-lancering.webp"
+heroImage: "/images/nieuws/claude-cowork-lancering.webp"
 ---
 
 Anthropic bracht Cowork op 12 januari 2026 uit als research preview, en inmiddels is het label weg: Claude Cowork draait op macOS én Windows, voor alle betaalde plannen, met connectoren, plugins en sinds deze week live dashboards. Voor Nederlandse kenniswerkers die tot nu toe naar Claude chatten betekent dat iets nieuws — Claude mag nu ook daadwerkelijk iets doen.

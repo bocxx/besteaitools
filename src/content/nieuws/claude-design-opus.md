@@ -28,7 +28,7 @@ faq:
    a: "Niet direct. Op dit moment werkt Claude Design vooral als een slimme laag bovenop bestaande tools: het genereert concepten, layouts en content die je vervolgens in Figma, Canva of andere tools kunt finetunen."
  - q: "Waarom is Opus 4.7 belangrijk voor designers?"
    a: "Opus 4.7 heeft sterk verbeterde visie en is expliciet geoptimaliseerd voor hoogwaardige interfaces, slides en data-rijke schermen, waardoor de output van Claude Design bruikbaarder en consistenter wordt voor professionals."
-heroImage: "/images/articles/diorama-claude-design-opus.webp"
+heroImage: "/images/nieuws/claude-design-opus.webp"
 ---
 
 ## Wat is er nieuw met Claude Design?

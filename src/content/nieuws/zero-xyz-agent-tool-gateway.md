@@ -17,7 +17,7 @@ tags:
 toolSlug: "zero-xyz"
 featured: true
 readingTime: 5
-heroImage: "/images/articles/diorama-zero-xyz-agent-tool-gateway.webp"
+heroImage: "/images/nieuws/zero-xyz-agent-tool-gateway.webp"
 keyTakeaways:
   - "zero.xyz lanceerde op Product Hunt als gateway tussen AI-agents en circa 8.000 tools — zonder dat je per tool API-keys hoeft te configureren."
   - "De gateway werkt met Claude Code, Codex, Gemini, OpenClaw, Hermes en de meeste andere CLI-agents en routeert calls via de x402-standaard (HTTP 402 payments van Coinbase/Cloudflare) of bestaande MCP-servers."
