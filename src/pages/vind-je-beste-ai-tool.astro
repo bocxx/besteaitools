@@ -122,281 +122,17 @@ export const prerender = true;
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
 
-  <main class="container container-narrow match-page">
-    <header class="match-hero">
-      <h1>Vind je beste AI-tool</h1>
-      <p class="match-subtitle">
-        Welke AI-tool past bij jouw werk? Beantwoord 3 vragen voor een eerlijke top-3 —
-        we matchen je profiel tegen {<span id="tool-count">110+</span>} tools met controleerbare
-        redenen, geen affiliate-invloed. Of <a href="#alle-tools">blader hieronder door de beste
-        AI-tools per functie</a> voor MKB, ZZP en teams.
-      </p>
-    </header>
+  <header class="container container-narrow directory-intro">
+    <h1>Alle AI-tools per functie</h1>
+    <p>
+      Blader door {<span id="tool-count">110+</span>} AI-tools — filter op bedrijfsfunctie,
+      doelgroep, prijs en inzetbaarheid. <a href="#faq-title" class="learn-more-link">Lees meer over hoe we tools beoordelen →</a>
+    </p>
+  </header>
 
-    <!-- Progress -->
-    <ol class="match-progress" aria-label="Voortgang">
-      <li data-step="1" class="active">Wie ben je?</li>
-      <li data-step="2">Waar verlies je tijd?</li>
-      <li data-step="3">AI-niveau</li>
-      <li data-step="4">Eisen <span class="opt">(optioneel)</span></li>
-      <li data-step="5">Voorkeuren <span class="opt">(optioneel)</span></li>
-    </ol>
-
-    <!-- Free-text shortcut (optioneel, gebruikt /api/match-parse) -->
-    <details class="freetext-block">
-      <summary>
-        <span class="freetext-icon">✨</span>
-        Geen zin in vragenlijst? Vertel het in één zin
-      </summary>
-      <div class="freetext-body">
-        <p class="step-hint">
-          Beschrijf jezelf in een paar zinnen. Wij vullen de vragenlijst alvast in — jij controleert.
-          <span class="muted small">(Voorbeeld: "Ik ben zzp-tekstschrijver, veel social posts, nooit AI gebruikt, max €20/mnd.")</span>
-        </p>
-        <textarea
-          id="freetext-input"
-          placeholder="Vertel over je werk, team, budget, taal-eisen..."
-          rows="3"
-          maxlength="2000"
-        ></textarea>
-        <div class="freetext-cta">
-          <button type="button" id="freetext-parse">Profiel voor mij invullen →</button>
-          <span class="freetext-status" id="freetext-status"></span>
-        </div>
-      </div>
-    </details>
-
-    <form id="match-form" class="match-form" novalidate>
-
-      <!-- ═════════════════════════ STEP 1 ═════════════════════════ -->
-      <section data-step-panel="1" class="match-step">
-        <h2>1. Wie ben je?</h2>
-        <p class="step-hint">Kies wat het dichtst bij jouw situatie ligt.</p>
-
-        <fieldset class="radio-grid">
-          <legend class="sr-only">Segment</legend>
-          {segmentEntries.map(([key, seg]) => (
-            <label class="radio-card">
-              <input type="radio" name="segment" value={key} required />
-              <div>
-                <strong>{seg.label}</strong>
-                <span class="muted">{seg.description}</span>
-              </div>
-            </label>
-          ))}
-        </fieldset>
-
-        <div data-show-if-segment="mkb_klein mkb_middel overheid_klein onderwijs enterprise" hidden>
-          <label class="field-label" for="teamSize">Hoeveel mensen werken er bij jullie?</label>
-          <input type="number" id="teamSize" name="teamSize" min="1" max="100000" placeholder="bv. 12" />
-        </div>
-
-        <div data-show-if-segment="vereniging stichting" hidden>
-          <label class="field-label" for="verenigingType">Type organisatie</label>
-          <select id="verenigingType" name="verenigingType">
-            <option value="">— Kies —</option>
-            {verenigingTypeEntries.map(([key, t]) => (
-              <option value={key}>{t.label}</option>
-            ))}
-          </select>
-
-          <label class="field-label" for="verenigingTimeSink">Waar gaat de meeste tijd in zitten?</label>
-          <select id="verenigingTimeSink" name="verenigingTimeSink">
-            <option value="">— Kies —</option>
-            {verenigingTimeSinkEntries.map(([key, t]) => (
-              <option value={key}>{t.label}</option>
-            ))}
-          </select>
-        </div>
-      </section>
-
-      <!-- ═════════════════════════ STEP 2 ═════════════════════════ -->
-      <section data-step-panel="2" class="match-step" hidden>
-        <h2>2. Waar verlies je tijd?</h2>
-        <p class="step-hint">Kies alles wat van toepassing is — minimaal één.</p>
-
-        <fieldset class="check-grid">
-          <legend class="sr-only">Use cases</legend>
-          {bucketEntries.map(([key, b]) => (
-            <label class="check-card">
-              <input type="checkbox" name="useCaseBuckets" value={key} />
-              <span>{b.label}</span>
-            </label>
-          ))}
-        </fieldset>
-
-        <details class="optional-block">
-          <summary>Specifieker? Kies je exacte taken (optioneel)</summary>
-          <div class="jtbd-grid" data-jtbd-grid>
-            {jtbdEntries.map(([key, j]) => (
-              <label class="check-card small" data-jtbd-bucket={j.bucket} hidden>
-                <input type="checkbox" name="jtbds" value={key} />
-                <span>{j.label}</span>
-              </label>
-            ))}
-          </div>
-          <p class="muted small">Selecteer eerst use-cases hierboven om de lijst te zien.</p>
-        </details>
-      </section>
-
-      <!-- ═════════════════════════ STEP 3 ═════════════════════════ -->
-      <section data-step-panel="3" class="match-step" hidden>
-        <h2>3. Wat is je AI-niveau?</h2>
-        <p class="step-hint">Eerlijk antwoorden — dit weegt zwaar in de aanbevelingen.</p>
-
-        <fieldset class="radio-grid">
-          <legend class="sr-only">AI-comfort</legend>
-          {aiComfortEntries.map(([key, c]) => (
-            <label class="radio-card">
-              <input type="radio" name="aiComfort" value={key} required />
-              <div><strong>{c.label}</strong></div>
-            </label>
-          ))}
-        </fieldset>
-
-        <p class="ready-note">
-          Na deze stap kunnen we al matchen — vraag 4 en 5 zijn optioneel en maken het preciezer.
-        </p>
-      </section>
-
-      <!-- ═════════════════════════ STEP 4 ═════════════════════════ -->
-      <section data-step-panel="4" class="match-step" hidden>
-        <h2>4. Harde eisen <span class="opt">(optioneel)</span></h2>
-        <p class="step-hint">Vink alleen aan wat écht nodig is — te veel filters kan kandidaten onnodig wegfilteren.</p>
-
-        <label class="toggle">
-          <input type="checkbox" name="requireEuHosting" />
-          <span>Data moet in EU gehost zijn (AVG)</span>
-        </label>
-
-        <div>
-          <label class="field-label" for="minDutchOutputQuality">Minimale Nederlandse output-kwaliteit</label>
-          <select id="minDutchOutputQuality" name="minDutchOutputQuality">
-            <option value="">— Maakt niet uit —</option>
-            {dutchQualityEntries.map(([key, d]) => (
-              <option value={key}>{d.label}</option>
-            ))}
-          </select>
-        </div>
-
-        <label class="toggle">
-          <input type="checkbox" name="disallowTraining" />
-          <span>Mijn data mag niet voor AI-training gebruikt worden</span>
-        </label>
-
-        <label class="toggle">
-          <input type="checkbox" name="requireSso" />
-          <span>Moet SSO ondersteunen</span>
-        </label>
-
-        <label class="toggle">
-          <input type="checkbox" name="requireAuditLogs" />
-          <span>Moet audit logs hebben</span>
-        </label>
-
-        <details class="optional-block">
-          <summary>Moet koppelen met specifieke software?</summary>
-          <p class="step-hint">Groepen uit te klappen — vink alleen aan wat écht nodig is.</p>
-          <div class="integration-groups">
-            {integrationCategoryEntries.map((cat) => (
-              <details class="integration-cat">
-                <summary>{cat.label}</summary>
-                <div class="check-grid compact">
-                  {cat.items.map((it) => (
-                    <label class="check-card small">
-                      <input type="checkbox" name="requiredIntegrations" value={it.key} />
-                      <span>{it.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </div>
-        </details>
-      </section>
-
-      <!-- ═════════════════════════ STEP 5 ═════════════════════════ -->
-      <section data-step-panel="5" class="match-step" hidden>
-        <h2>5. Voorkeuren <span class="opt">(optioneel)</span></h2>
-
-        <div>
-          <label class="field-label">Budget per maand</label>
-          <fieldset class="radio-grid compact">
-            <legend class="sr-only">Budget</legend>
-            {budgetEntries.map(([key, b]) => (
-              <label class="radio-card">
-                <input type="radio" name="budget" value={key} />
-                <div><strong>{b.label}</strong></div>
-              </label>
-            ))}
-          </fieldset>
-        </div>
-
-        <details class="optional-block">
-          <summary>Welke software gebruik je nu? (matcht integraties)</summary>
-          <div class="integration-groups">
-            {integrationCategoryEntries.map((cat) => (
-              <details class="integration-cat">
-                <summary>{cat.label}</summary>
-                <div class="check-grid compact">
-                  {cat.items.map((it) => (
-                    <label class="check-card small">
-                      <input type="checkbox" name="currentStack" value={it.key} />
-                      <span>{it.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </div>
-        </details>
-      </section>
-
-      <!-- ═════════════════════════ CTA BAR ═════════════════════════ -->
-      <nav class="match-cta">
-        <button type="button" data-action="back" disabled>← Terug</button>
-        <span class="match-cta__hint" data-hint></span>
-        <button type="button" data-action="next">Verder →</button>
-        <button type="button" data-action="match" hidden>Toon mijn top-3 →</button>
-      </nav>
-
-      <p class="match-foot">
-        Je antwoorden blijven op je apparaat — we bewaren niets zonder toestemming.
-        Je kunt altijd <a href="/vind-je-beste-ai-tool">opnieuw beginnen</a>.
-      </p>
-    </form>
-
-    <!-- ═════════════════════════ RESULT VIEW ═════════════════════════ -->
-    <section id="match-result" hidden aria-live="polite">
-      <header class="result-hero">
-        <p class="result-hero__eyebrow">Top 3 voor jouw profiel</p>
-        <h2 class="result-hero__title" id="result-hero-title">Aanbevelingen</h2>
-        <p class="result-hero__profile" id="result-hero-profile"></p>
-        <div class="result-hero__conf" id="result-hero-confidence" hidden></div>
-      </header>
-      <div id="result-followup" class="followup-box" hidden></div>
-      <div id="result-top3"></div>
-      <div id="result-90day" hidden></div>
-      <div id="result-alternatives"></div>
-      <details class="rejected-block">
-        <summary><span id="rejected-count">0</span> tools uitgefilterd — bekijk waarom</summary>
-        <div id="result-rejected" class="rejected-list"></div>
-      </details>
-      <div class="match-actions">
-        <button type="button" id="btn-refine">← Profiel aanpassen</button>
-        <button type="button" id="btn-reset">Opnieuw beginnen</button>
-        <a href="#alle-tools" class="match-actions__browse">Bekijk alle tools →</a>
-      </div>
-    </section>
-
-  </main>
 
   <!-- ═════════════════════════ DIRECTORY ═════════════════════════ -->
-  <section class="container container-wide directory-section">
-    <header class="directory-head">
-      <h2>Of blader door de beste AI-tools per functie</h2>
-      <p>Filter op bedrijfsfunctie, doelgroep, prijs en inzetbaarheid — of sorteer op buzz, groei en business-readiness.</p>
-    </header>
+  <section class="container container-wide directory-section" id="alle-tools">
     <ToolDirectory />
   </section>
 
@@ -1061,6 +797,36 @@ export const prerender = true;
       margin: 0;
     }
 
+    .directory-intro {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: var(--space-6);
+      min-height: 0;
+    }
+    .directory-intro h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: var(--font-bold);
+      letter-spacing: var(--tracking-tight);
+      margin: 0 0 var(--space-3);
+    }
+    .directory-intro p {
+      color: var(--text-secondary);
+      font-size: var(--text-lg);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .learn-more-link {
+      color: var(--primary-bright);
+      text-decoration: none;
+      font-weight: var(--font-medium);
+      white-space: nowrap;
+    }
+    .learn-more-link:hover {
+      color: var(--secondary-bright);
+      text-decoration: underline;
+    }
+
     .faq-section {
       padding-top: var(--space-12);
       padding-bottom: var(--space-4);
@@ -1142,7 +908,11 @@ export const prerender = true;
     import type { Tool } from '../types/tools-domain';
 
     // ─── DOM refs ────────────────────────────────────────────
-    const form = document.getElementById('match-form') as HTMLFormElement;
+    const form = document.getElementById('match-form') as HTMLFormElement | null;
+    // Wizard tijdelijk verwijderd uit de pagina — JS bailt zonder errors.
+    if (!form) {
+      // No-op: pagina toont alleen de directory.
+    } else {
     const progress = document.querySelectorAll<HTMLElement>('.match-progress li');
     const panels = document.querySelectorAll<HTMLElement>('[data-step-panel]');
     const btnBack = form.querySelector<HTMLButtonElement>('[data-action="back"]')!;
@@ -1861,5 +1631,6 @@ export const prerender = true;
 
     // Prefetch tool data in background
     ensureTools().catch(() => { /* ignore */ });
+    } // end if (form) wizard guard
   </script>
 </Layout>

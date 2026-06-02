@@ -23,11 +23,11 @@
        Electric Yellow primary, Teal secondary, Cyan tertiary
        ============================================ */
 
-    /* Background Palette — Slate Deep */
-    --bg-deep: #010405;
-    --bg-surface: #040a0d;
-    --bg-elevated: #071114;
-    --bg-panel: #0d181c;
+    /* Background Palette — Warm Neutral Slate (matches nebula warmth) */
+    --bg-deep: oklch(7% 0.006 25);
+    --bg-surface: oklch(11% 0.008 25);
+    --bg-elevated: oklch(15% 0.010 25);
+    --bg-panel: oklch(19% 0.012 25);
 
     /* Brand Colors — Editorial Yellow (Primary) */
     --primary-h: 92;
@@ -36,18 +36,18 @@
     --primary-dark: oklch(55% 0.16 55);
     --primary-dim: oklch(32% 0.09 50);
 
-    /* Brand Colors — Teal (Secondary) */
-    --secondary-h: 175;
-    --secondary-bright: oklch(75% 0.14 var(--secondary-h));
-    --secondary-mid: oklch(62% 0.12 var(--secondary-h));
-    --secondary-dark: oklch(48% 0.10 var(--secondary-h));
-    --secondary-dim: oklch(32% 0.08 var(--secondary-h));
+    /* Brand Colors — Warm Red (Secondary) */
+    --secondary-h: 25;
+    --secondary-bright: oklch(68% 0.18 var(--secondary-h));
+    --secondary-mid: oklch(58% 0.17 var(--secondary-h));
+    --secondary-dark: oklch(46% 0.15 var(--secondary-h));
+    --secondary-dim: oklch(32% 0.10 var(--secondary-h));
 
-    /* Support Colors — Cyan (Tertiary) */
-    --tertiary-h: 200;
-    --tertiary-bright: oklch(70% 0.12 var(--tertiary-h));
-    --tertiary-mid: oklch(55% 0.10 var(--tertiary-h));
-    --tertiary-dark: oklch(42% 0.08 var(--tertiary-h));
+    /* Support Colors — Deep Red (Tertiary, slightly cooler/darker red) */
+    --tertiary-h: 15;
+    --tertiary-bright: oklch(60% 0.16 var(--tertiary-h));
+    --tertiary-mid: oklch(50% 0.14 var(--tertiary-h));
+    --tertiary-dark: oklch(40% 0.12 var(--tertiary-h));
 
     /* Semantic Colors */
     --color-success: oklch(75% 0.14 165);
@@ -275,14 +275,6 @@
       var(--bg-deep) 0%,
       var(--bg-deep) 100%
     );
-    
-    /* Barely visible ambient glow */
-    --gradient-sheen: 
-      radial-gradient(
-        ellipse 50% 20% at 50% 0%,
-        color-mix(in oklch, var(--primary-bright) 4%, transparent),
-        transparent 50%
-      );
     
     --gradient-primary: linear-gradient(
       135deg,
