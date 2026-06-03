@@ -14,17 +14,15 @@
 /ai-tools/sora / 301
 /ai-tools/sora/ / 301
 
-# Merge: /match + /zakelijk → /vind-je-beste-ai-tool.
-# Exact matches only — NO /match/* wildcard, so /match/tools.json
-# (the wizard's dataset endpoint) keeps serving as a static asset.
-# Kept above the splat rule below for fastest matching.
-/match /vind-je-beste-ai-tool 301
-/match/ /vind-je-beste-ai-tool 301
-/zakelijk /vind-je-beste-ai-tool 301
-/zakelijk/ /vind-je-beste-ai-tool 301
-# Singular head-term alias (no competing indexable URL)
-/beste-ai-tool /vind-je-beste-ai-tool 301
-/beste-ai-tool/ /vind-je-beste-ai-tool 301
+# Wizard-pagina verwijderd — redirect oud verkeer naar homepage.
+/vind-je-beste-ai-tool / 301
+/vind-je-beste-ai-tool/ / 301
+/match / 301
+/match/ / 301
+/zakelijk / 301
+/zakelijk/ / 301
+/beste-ai-tool / 301
+/beste-ai-tool/ / 301
 
 # Oud/fout pad: /vergelijking/* was nooit een echte route (de route is
 # /vergelijk/*). Google heeft er nog een paar onthouden → map ze door.

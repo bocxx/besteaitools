@@ -18,7 +18,6 @@ import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
 import { businessFunctions } from './tools-schema';
 import { isExcludedTool } from '../config/excluded-tools';
 import { scrubStatsForRelevance } from './stats-relevance';
-import { deriveUseCaseBuckets } from './matching/derive-buckets';
 
 // ============================================
 // STATS LOADER
@@ -200,11 +199,7 @@ export async function getAllTools(): Promise<Tool[]> {
             ...(entry.data.mentionAliases ?? []),
           ])
         : undefined;
-      // Derive matching-engine buckets when the editorial data hasn't
-      // populated them yet. Explicit values in the JSON always win.
-      const useCaseBuckets = entry.data.useCaseBuckets.length > 0
-        ? entry.data.useCaseBuckets
-        : deriveUseCaseBuckets(entry.data);
+      const useCaseBuckets = entry.data.useCaseBuckets;
 
       const base = {
         ...entry.data,

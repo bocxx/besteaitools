@@ -29,7 +29,6 @@ export const siteConfig = {
     // twee duidelijke hubs. /digest/ is samengevoegd onder /nieuws/;
     // /launch-radar/ en /weekradar/ onder /radar/ (beide redirecten).
     main: [
-      { label: "Vind je tool", href: "/vind-je-beste-ai-tool" },
       { label: "Modellen", href: "/modellen" },
       { label: "Nieuws", href: "/nieuws" },
       { label: "Radar", href: "/radar/?view=launches" },
