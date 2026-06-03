@@ -38,6 +38,7 @@ export const siteConfig = {
     footer: {
       platform: [
         { label: "AI Tools", href: "/ai-tools" },
+        { label: "Makers", href: "/makers" },
         { label: "Over deze site", href: "/over" },
       ],
       juridisch: [
