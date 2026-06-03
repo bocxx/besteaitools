@@ -463,9 +463,23 @@ export const toolContentSchema = z.object({
   // ── Redactionele laag ───────────────────────────
   testedByEditor: z.boolean().default(false),
   reviewMethod: reviewMethodSchema.optional(),
+  /** Datum van laatste formele review/test van deze tool door de redactie. */
   lastReviewedAt: z.string().optional(),
+  /**
+   * Datum van laatste redactionele edit (verrijking, herziening, fact-check).
+   * Lichter signaal dan `lastReviewedAt`: elke contentwijziging bumpt dit,
+   * formele review-cycli bumpen `lastReviewedAt`. ISO-format YYYY-MM-DD.
+   * Wordt gebruikt voor freshness-tracking in audits.
+   */
+  lastUpdated: z.string().optional(),
   verdict: z.string().optional(),
   bestAlternative: z.string().optional(),
+  /**
+   * Aanvullende notitie bij het kiezen tussen deze tool en alternatieven.
+   * Vooral nuttig wanneer `bestAlternative` één slug is, maar meerdere
+   * concurrenten genoemd moeten worden met context.
+   */
+  whenToChoose: z.string().optional(),
   whyListed: z.string().optional(),
 
   // ============================================

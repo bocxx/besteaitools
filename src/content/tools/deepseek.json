@@ -4,10 +4,16 @@
   "websiteUrl": "https://www.deepseek.com",
   "shortDescription": "Chinese open-source AI met sterke reasoning-prestaties",
   "pricingModel": "freemium",
-  "difficulty": "beginner",
-  "tags": [],
+  "difficulty": "intermediate",
+  "tags": [
+    "open-source",
+    "reasoning",
+    "llm",
+    "chinese-ai",
+    "deepseek-v4"
+  ],
   "draft": false,
-  "longDescription": "DeepSeek is een geavanceerd AI-gestuurde zoekplatform dat gebruikers in staat stelt om snel en efficiënt relevante informatie te vinden in grote hoeveelheden tekst. Het platform maakt gebruik van natuurlijke taalverwerking en machine learning om de zoekresultaten te optimaliseren en gebruikers te voorzien van de meest relevante informatie.",
+  "longDescription": "DeepSeek is een familie open-weight reasoning-modellen van het gelijknamige Chinese AI-lab. Na de DeepSeek-R1-doorbraak in januari 2025 zit de huidige generatie op DeepSeek V4-Pro met top-tier reasoning-prestaties tegen een fractie van de trainings- en inferentiekosten van westerse frontier-modellen. Open weights zijn beschikbaar op Hugging Face en bruikbaar via Ollama, vLLM en OpenRouter — geschikt voor zelf-hosten of via een EU-provider draaien voor wie de Chinese hosted API om compliance-redenen wil vermijden.",
   "bestFor": "DeepSeek is vooral waardevol voor professionals en organisaties die grote hoeveelheden tekstdata moeten doorzoeken, zoals juristen, onderzoekers en beleidsmakers.",
   "useCases": [
     "Juridisch onderzoek",
@@ -49,8 +55,8 @@
     "enterprise"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "DeepSeek R1 is indrukwekkend efficiënt en beschikbaar als open-source. De Chinese herkomst en privacyoverwegingen wegen mee bij zakelijk gebruik, maar technisch is het een topmodel.",
-  "whyListed": "DeepSeek R1 schudde de AI-wereld wakker — open-source prestaties op niveau van GPT-4 tegen een fractie van de trainingskosten. Een mijlpaal voor de industrie.",
+  "verdict": "DeepSeek's V4-Pro is indrukwekkend efficiënt en beschikbaar als open-weight. De Chinese herkomst en privacyoverwegingen wegen mee bij zakelijk gebruik op de hosted API, maar via OpenRouter of self-hosting blijft het technisch een topmodel voor reasoning-taken.",
+  "whyListed": "DeepSeek schudde de AI-wereld wakker met R1 (jan 2025) en bouwde door naar V4-Pro — open-weight prestaties op frontier-niveau tegen een fractie van de trainingskosten. Een mijlpaal voor de industrie en het bewijs dat open-source de top kan halen.",
   "bestAlternative": "claude",
   "setupTime": "under_15min",
   "matchSegments": [
@@ -78,5 +84,6 @@
     "Use cases waar Chinese herkomst van het model een compliance-blocker is",
     "Real-time use cases met sub-seconde latency-eisen",
     "Workflows die zwaar leunen op tool-calling en agentic features"
-  ]
+  ],
+  "lastUpdated": "2026-06-02"
 }
