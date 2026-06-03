@@ -16,7 +16,7 @@
 import Layout from '../../layouts/Layout.astro';
 import LaunchesView from '../../components/radar/LaunchesView.astro';
 import RankingsView from '../../components/radar/RankingsView.astro';
-import { ArrowLeft, Rocket, TrendingUp } from '@lucide/astro';
+import { ArrowLeft, Rocket, TrendingUp, Zap } from '@lucide/astro';
 
 export const prerender = false;
 
@@ -57,6 +57,10 @@ const description = view === 'rankings'
       >
         <TrendingUp size={14} stroke-width={1.7} />
         Rankings
+      </a>
+      <a href="/radar/doorbraak" class="radar-tab">
+        <Zap size={14} stroke-width={1.7} />
+        Doorbraak
       </a>
     </nav>
 
