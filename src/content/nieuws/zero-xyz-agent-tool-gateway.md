@@ -3,7 +3,7 @@ title: "zero.xyz geeft je AI-agent toegang tot 8.000 tools — zonder API-keys"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'zero.xyz geeft je AI-agent toegang tot 8.000 tools — zonder API-keys'"
 description: "Een nieuwe gateway op Product Hunt verbindt Claude Code, Codex en Gemini met circa 8.000 tools via de x402-standaard. Wat het kan, wanneer je het inzet."
 publishedAt: 2026-05-28
-updatedAt: 2026-05-28
+updatedAt: 2026-06-02
 author: "Redactie"
 category: "lancering"
 tags:
@@ -90,6 +90,8 @@ Voor wie z'n agent-stack tactisch wil opzetten — bijvoorbeeld zoals beschreven
 Het is geen vervanging van Composio voor SaaS-integraties, en geen vervanging van eigen MCP-servers voor business-kritische tools. Maar voor de long-tail aan handige hulpmiddelen — converters, fetchers, scrapers, lookup-services — vermindert het de friction tussen "agent heeft idee" en "agent voert het uit" tot praktisch nul.
 
 Twee dingen om in de gaten te houden de komende maanden: de tool-coverage (is 8.000 echt nuttig of zit er veel ruis bij?) en de stabiliteit van het x402-ecosysteem. Beide zijn jong, beide kunnen snel veranderen. Maar het richting-signaal — agent-payments + tool-gateways als nieuwe laag in de stack — past in waar de [bredere agent-trend van 2026](/nieuws/cursor-1-0-lancering) heen gaat. Voor de context over wát die agents in de praktijk al doen voor Nederlandse organisaties, geeft onze zustersite een goed overzicht in [AI-agents 2026: wat zijn ze eigenlijk?](https://hetlaatsteainieuws.nl/ai-deep-dives/ai-agents-2026-wat-zijn-ze) — handig om bij je team te delen voordat je zero.xyz inzet.
+
+> **🔄 Update juni 2026:** het x402-ecosysteem groeit hard. Per maart 2026 verwerkt x402 al ruim 119 miljoen transacties op Base en 35 miljoen op Solana, met circa 600 miljoen dollar geannualiseerd volume ([Bron: BlockEden](https://blockeden.xyz/blog/2026/05/08/aws-bedrock-agentcore-payments-x402-usdc-base-agent-commerce/)). AWS lanceerde op 7 mei 2026 **Bedrock AgentCore Payments** als enterprise-laag bovenop x402. Dat betekent: zero.xyz's gok op het agentic web is in mei breed gevalideerd — niet meer een Product Hunt-experiment maar onderdeel van het serieuze enterprise-aanbod.
 
 ## Bronnen
 - [Product Hunt — zero.xyz](https://www.producthunt.com/products/zero-xyz) — launch-page met votes en discussion.

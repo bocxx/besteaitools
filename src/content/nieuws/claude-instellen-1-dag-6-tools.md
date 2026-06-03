@@ -3,7 +3,7 @@ title: "Claude in één dag instellen: zes tools die hem laten werken als een co
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude in één dag instellen: zes tools die hem laten werken als een collega'"
 description: "Claude instellen voelt overweldigend tot je weet hoe je het stap voor stap doet. Zo richt je Claude Cowork in één dag in: zes tools, één checklist."
 publishedAt: 2026-05-04
-updatedAt: 2026-05-04
+updatedAt: 2026-06-02
 author: "Redactie"
 category: "gids"
 tags:
@@ -101,9 +101,11 @@ Eerlijk: de eerste keer dat we [Claude Cowork](/nieuws/claude-cowork-lancering) 
 
 Voordat je de eerste stap zet, drie praktische voorwaarden:
 
-1. **Een betaald Claude-abonnement.** Cowork werkt alleen op Pro (vanaf 20 dollar per maand), Max, Team of Enterprise. De gratis versie heeft het niet. Heb je nog niets? Dan is Pro de logische start.
+1. **Een betaald Claude-abonnement.** Cowork werkt alleen op Pro (vanaf 20 dollar per maand), Max (100 dollar), Team of Enterprise. De gratis versie heeft het niet. Heb je nog niets? Dan is Pro de logische start.
 2. **Een Mac of Windows-pc.** Cowork draait sinds februari 2026 op beide besturingssystemen. Een Linux-versie staat nog niet op de roadmap.
 3. **Ongeveer twee tot vier uur, verspreid over een dag.** Niet aan één stuk; veel stappen werken beter als je er even tussen weggaat en terugkomt om te beoordelen of het klopt.
+
+> **💡 Update juni 2026:** sinds 28 mei 2026 staat **Claude Opus 4.8** in de modelkiezer als nieuwe default voor het zwaardere werk. De setup-stappen hieronder veranderen niet — je kiest alleen een ander model in de dropdown rechtsonder. Voor wie de hedging-modus expliciet wil benutten: onze [drie prompts voor Opus 4.8](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts) loopt het meteen langs.
 
 Verder is geen technische voorkennis nodig. Je hoeft niet te kunnen programmeren, geen terminal te openen, en geen instellingen-bestanden te bewerken. Alles gebeurt via klikken en het invullen van een tekstbestand.
 
@@ -389,7 +391,7 @@ De vuistregel: voor solowerk is Cowork sneller en krachtiger; voor teams blijft 
   </div>
 </figure>
 
-Acht uur is veel, in een week waarin je toch al achterloopt. Maar reken het eens om. De gemiddelde kenniswerker chat één tot twee uur per dag met een AI-assistent — en daarvan gaat een serieus deel naar opnieuw context geven.
+Acht uur is veel, in een week waarin je toch al achterloopt. Maar reken het eens om. De gemiddelde kenniswerker chat één tot twee uur per dag met een AI-assistent — en daarvan gaat een serieus deel naar opnieuw context geven. Voor wie de tijdwinst concreet wil zien op een specifieke output: onze gids [Claude Cowork voor Excel — een complete spreadsheet in vijf stappen](/nieuws/claude-cowork-excel-bouwen) laat de aannames-check-prompt zien die wij wekelijks gebruiken voor financiële modellen.
 
 Stel je voor: een marketingmanager bij een MKB die elke maandag drie uur kwijt is aan dezelfde routinetaken — nieuwsbrief opzetten, LinkedIn-posts plannen, klantmail bijwerken. Met een goed ingerichte Cowork-werkmap, een brain file en de juiste templates wordt dat anderhalf uur. Twee maandagen later heb je je investering al terug.
 

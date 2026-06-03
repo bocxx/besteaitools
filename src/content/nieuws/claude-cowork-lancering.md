@@ -3,7 +3,7 @@ title: "Claude Cowork: Anthropic's AI-agent voor kenniswerkers is breed beschikb
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Cowork: Anthropic's AI-agent voor kenniswerkers is breed beschikbaar'"
 description: "Claude Cowork brengt de agent-kracht van Claude Code naar niet-developers. Hoe werkt het, wat doet het concreet, en wanneer is het de moeite waard?"
 publishedAt: 2026-04-23
-updatedAt: 2026-04-23
+updatedAt: 2026-06-02
 author: "Redactie"
 category: "lancering"
 tags:
@@ -52,7 +52,7 @@ De eerste release was macOS-only en alleen voor Max-abonnees. Vier dagen later (
 
 In een normale chat praat Claude terug. In Cowork voert Claude uit. Drie soorten gereedschappen maken dat verschil.
 
-**Bestand-tools (Read, Edit, Write).** Claude krijgt toegang tot een door jou gekozen map op je computer. Daarbinnen mag Claude bestanden lezen, aanpassen en aanmaken. Een marketeer kan een map met concept-teksten aanwijzen en zeggen: "lees deze tien briefings en maak er één samenvattingsdocument van". Een recruiter wijst een map met CV's aan en laat Claude ze samenvatten in een shortlist. Wie schrijfwerk in de map zet, kan ook een [anti-ai-writing-style.md](/nieuws/ai-tekst-herkennen-menselijker-schrijven) toevoegen waarin staat welke AI-tells de output moet vermijden.
+**Bestand-tools (Read, Edit, Write).** Claude krijgt toegang tot een door jou gekozen map op je computer. Daarbinnen mag Claude bestanden lezen, aanpassen en aanmaken. Een marketeer kan een map met concept-teksten aanwijzen en zeggen: "lees deze tien briefings en maak er één samenvattingsdocument van". Een recruiter wijst een map met CV's aan en laat Claude ze samenvatten in een shortlist. Wie financieel of bedrijfskundig werk doet, zet Cowork in voor [een complete Excel-spreadsheet in vijf stappen](/nieuws/claude-cowork-excel-bouwen) — meerdere tabs, formules en dashboard in één run. Wie schrijfwerk in de map zet, kan ook een [anti-ai-writing-style.md](/nieuws/ai-tekst-herkennen-menselijker-schrijven) toevoegen waarin staat welke AI-tells de output moet vermijden.
 
 **Bash-sandbox.** Voor echt werk is bestanden lezen niet genoeg. Cowork draait shell-commando's in een geïsoleerde virtuele machine die alleen bij jouw werkmap kan en alleen via een proxy naar internet kan ([Bron: Claude Code-docs](https://code.claude.com/docs/en/sandboxing)). Daarbinnen mag Claude Python draaien, Node-pakketten installeren, een CSV parsen, of een PDF converteren. Wat er buiten de map gebeurt, blijft buiten bereik.
 
@@ -66,7 +66,9 @@ De opvallendste recente update kwam [op 21 april 2026](https://aiinsider.nl/nieu
 
 De use case is bijna prozaïsch genoeg om te onderschatten. Stel je een salesmanager voor die elke maandagochtend drie kwartier bezig is: CRM-export, Excel-tabblad, grafiek bijwerken, screenshot, Slack. Met een live artifact bouw je dat dashboard één keer — filters voor regio, stage, dealgrootte — en daarna is elke opening de huidige stand. Dezelfde logica werkt voor HR (hiring-plan versus werkelijk), finance (runway) en marketing (weekly content-pipeline).
 
-Anthropic's officiële aankondiging kwam via de [Claude-account op X](https://x.com/claudeai/status/2046328619249684989); een formeel productannouncement stond op het moment van de eerste geruchten nog niet op de blog. Dat hoort bij het tempo waarin Cowork zich nu ontwikkelt: features verschijnen eerst voor bestaande gebruikers, documentatie volgt.
+Sinds eind april is de feature uit de eerste-week-soep gegroeid: Anthropic heeft een eigen **"Live artifacts"-tab** in Cowork waarin al je live dashboards staan, met support voor connectoren naar Notion, Slack, Stripe, Gmail en HubSpot ([Bron: Anthropic Help Center](https://support.claude.com/en/articles/14729249-use-live-artifacts-in-claude-cowork)). Per artifact onthoudt Cowork de gekozen filters en sorteervolgorde tussen sessies. Voor de meeste teams is dit de eerste Claude-feature die echt "een dashboard zonder data-engineer" mogelijk maakt.
+
+> **⚡ Gevorderden:** elke live artifact draait `callMcpTool`- en `askClaude`-calls in de pagina zelf. Dat betekent dat je in dezelfde HTML zowel verse data uit een MCP-connector kunt halen als een korte Haiku-inferentie kunt draaien voor classificaties of samenvattingen — zonder een aparte ETL-pijplijn. Voor wie zelf met dashboards bouwt: dat verschil tussen "snapshot" en "self-refreshing" is precies waar live artifacts hun naam aan ontlenen.
 
 ## Plugins en skills — het roleringsysteem
 
@@ -80,7 +82,7 @@ Anthropic onderhoudt een [open-source repository](https://github.com/anthropics/
 
 Cowork staat niet op zichzelf. De afgelopen weken lanceerde Anthropic ook [Claude Design](/nieuws/claude-design-opus) — een ontwerpomgeving bovenop Opus 4.7 — en werkt Cursor parallel aan hun eigen agent-vision in Cursor 3. Buiten Anthropic zit Notion op een vergelijkbare laag: onze [tutorial om een Notion-agent voor concurrentieanalyse op te zetten](/nieuws/notion-agent-concurrentieanalyse-opzetten) laat zien hoe een agent binnen een werkruimte 20 minuten zelfstandig taken oppakt. Voor de context: Claude Code werkt in de terminal voor developers. Cowork werkt in de desktop-app voor iedereen. Claude Design werkt in de browser voor ontwerptaken. Cursor werkt in de editor voor code.
 
-De drie Anthropic-lagen delen hun motor (sinds 28 mei 2026 schakelbaar tussen [Claude Opus 4.8](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts) en Opus 4.7 voor zwaardere taken, Claude Sonnet voor snelle taken), maar je kiest per use case welk schil het best past. Eerlijk: dat is nog niet voor iedereen duidelijk — en Anthropic's eigen communicatie maakt het onderscheid niet altijd scherp. Een developer die Cowork probeert, mist Claude Code. Een marketeer die Claude Code opent op advies van een collega, raakt verdwaald in de terminal. Begin bij je dagelijkse werkomgeving: als dat een desktop is, is Cowork het juiste startpunt.
+De drie Anthropic-lagen delen hun motor. Anthropic biedt sinds eind mei een tiered Claude-systeem: [Opus 4.8 (28 mei 2026)](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts) als vlaggenschip met scherpere hedging, Opus 4.7 als alternatief voor pure ontwerp- en visuele taken, Sonnet 4.6 voor productiewerk met een 1M-context, en Haiku 4.5 voor goedkope routinetaken. Welk schil het beste past, kies je per use case. Eerlijk: dat is nog niet voor iedereen duidelijk — en Anthropic's eigen communicatie maakt het onderscheid niet altijd scherp. Een developer die Cowork probeert, mist Claude Code. Een marketeer die Claude Code opent op advies van een collega, raakt verdwaald in de terminal. Begin bij je dagelijkse werkomgeving: als dat een desktop is, is Cowork het juiste startpunt.
 
 ## Wanneer Cowork de moeite waard is
 

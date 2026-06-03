@@ -2,7 +2,7 @@
 title: "Canva koppelen aan Gemini Spark via MCP: zo zet je het in 5 stappen op"
 description: "Met de nieuwe MCP-koppeling laat je Gemini Spark direct ontwerpen genereren in jouw Canva-account. Vereist Google AI Ultra. Stap-voor-stap setup."
 publishedAt: 2026-05-30
-updatedAt: 2026-05-30
+updatedAt: 2026-06-02
 author: "Redactie"
 category: "gids"
 tags:

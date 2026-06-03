@@ -1,8 +1,9 @@
 ---
 title: "Claude Design gelanceerd: wat betekent Anthropic’s nieuwe AI-designtool voor Canva, Figma en Adobe?"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Design gelanceerd: wat betekent Anthropic’s nieuwe AI-designtool voor Canva, Figma en Adobe?'"
-description: "Anthropic introduceert Claude Design: een AI-first tool om prototypes, slides en one-pagers te bouwen door simpelweg te praten met Claude. Wat betekent dit voor gevestigde spelers als Canva, Figma en Adobe?"
+description: "Anthropic introduceert Claude Design: een AI-first tool om prototypes, slides en one-pagers te bouwen door simpelweg te praten met Claude. Wat betekent dit voor gevestigde spelers als Canva, Figma en Adobe? Bijgewerkt 2 juni 2026."
 publishedAt: 2026-04-17
+updatedAt: 2026-06-02
 author: "Redactie"
 category: "lancering"
 tags:
@@ -14,20 +15,22 @@ tags:
  - "adobe"
 toolSlug: "claude-design"
 featured: true
-readingTime: 5
+readingTime: 6
 keyTakeaways:
- - "Claude Design bouwt interactieve prototypes, websites, slides en one-pagers direct vanuit natuurlijke taal, aangestuurd door Claude Opus 4.7."
- - "De tool haakt in op bestaande design-workflows via integraties met onder meer Figma en Canva, in plaats van designers te dwingen naar een volledig nieuw ecosysteem te verhuizen."
- - "Opus 4.7 brengt sterk verbeterde multimodale visie, waardoor Claude pixel-precies met UI’s, slides en documenten kan werken."
- - "De lancering zet druk op visuele tools als Canva, Figma, Wix en traditionele Adobe-workflows, die minder ‘conversational’ zijn ontworpen."
- - "Voor teams verschuift AI-design van ‘snel een mockup genereren’ naar langdurige, agentische workflows waarin Claude als co-designer wikt, weegt en iteratief verbetert."
+ - "Claude Design bouwt interactieve prototypes, websites, slides en one-pagers direct vanuit natuurlijke taal, oorspronkelijk aangestuurd door Claude Opus 4.7 en sinds 28 mei 2026 ook door Opus 4.8."
+ - "De tool zit nog in research preview en is beschikbaar voor Claude Pro, Max, Team en Enterprise — niet voor de gratis tier."
+ - "Decks en prototypes exporteer je als PDF, URL, PPTX of stuur je door naar Canva voor verdere bewerking en team-collaboratie."
+ - "Claude Design leest een team-codebase en design-bestanden om het design-system consistent toe te passen op nieuwe projecten."
+ - "Voor teams verschuift AI-design van 'snel een mockup genereren' naar langdurige, agentische workflows waarin Claude als co-designer wikt, weegt en iteratief verbetert."
 faq:
  - q: "Wat is Claude Design precies?"
-   a: "Claude Design is een AI-gedreven ontwerptool van Anthropic Labs waarmee je prototypes, websites, slides en one-pagers kunt laten genereren door in gewone taal met Claude te praten, aangedreven door het Opus 4.7-model."
+   a: "Claude Design is een AI-gedreven ontwerptool van Anthropic Labs waarmee je prototypes, websites, slides en one-pagers kunt laten genereren door in gewone taal met Claude te praten. Bij de lancering aangedreven door Opus 4.7; sinds 28 mei 2026 ook beschikbaar met Opus 4.8 voor wie sterkere hedging op feiten en copy wil."
  - q: "Vervangt Claude Design tools als Canva of Figma?"
-   a: "Niet direct. Op dit moment werkt Claude Design vooral als een slimme laag bovenop bestaande tools: het genereert concepten, layouts en content die je vervolgens in Figma, Canva of andere tools kunt finetunen."
- - q: "Waarom is Opus 4.7 belangrijk voor designers?"
-   a: "Opus 4.7 heeft sterk verbeterde visie en is expliciet geoptimaliseerd voor hoogwaardige interfaces, slides en data-rijke schermen, waardoor de output van Claude Design bruikbaarder en consistenter wordt voor professionals."
+   a: "Niet direct. Claude Design werkt vooral als een slimme laag bovenop bestaande tools: het genereert concepten, layouts en content die je vervolgens in Figma, Canva of andere tools kunt finetunen. Output exporteer je als PDF, URL, PPTX of direct naar Canva."
+ - q: "Voor wie is Claude Design beschikbaar?"
+   a: "Op moment van schrijven (2 juni 2026) zit Claude Design nog in research preview voor Claude Pro, Max, Team en Enterprise. De gratis tier heeft geen toegang. Anthropic heeft nog geen GA-datum genoemd."
+ - q: "Welk model gebruikt Claude Design?"
+   a: "Standaard Opus 4.7 — Anthropic's model dat expliciet is geoptimaliseerd voor visuele en multimodale taken. Sinds 28 mei 2026 kun je in de modelkiezer ook Opus 4.8 selecteren, wat vooral nuttig is voor design-gedreven copy en specificatie-teksten waar je liever heldere onzekerheidsmarkering wilt dan zelfverzekerde-maar-mogelijk-foute claims."
 heroImage: "/images/nieuws/claude-design-opus.webp"
 ---
 
@@ -45,7 +48,7 @@ Die verbeterde visie vertaalt zich direct naar bruikbaarder design-output: Claud
 
 ## Hoe verhoudt Claude Design zich tot Canva, Figma en Adobe?
 
-De lancering van Claude Design raakt direct aan het domein van Canva, Figma en Adobe, maar de aanvalslijn is subtieler dan een klassieke “Figma-killer”. In plaats van een losstaande, gesloten omgeving te bouwen, positioneert Anthropic Claude als co-piloot binnen bestaande workflows: via integraties met Figma, Canva, Slack en andere productiviteitstools werkt Claude in de context van waar het team al zit.
+De lancering van Claude Design raakt direct aan het domein van Canva, Figma en Adobe, maar de aanvalslijn is subtieler dan een klassieke "Figma-killer". In plaats van een losstaande, gesloten omgeving te bouwen, positioneert Anthropic Claude als co-piloot binnen bestaande workflows: een team kan een prototype of pitchdeck in Claude Design opstellen en het vervolgens exporteren als PDF, URL of PPTX, of doorzetten naar Canva waar de output volledig editbaar en collaboratief blijft ([Bron: Anthropic — Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs)).
 
 Canva blijft sterk in kant-en-klare templates en toegankelijke social content, maar mist nog de diepe, conversatie-gedreven iteratie op product-level UX of complexe stakeholderdecks zoals Claude die nu ondersteunt. Wel kreeg Canva sinds mei 2026 een directe MCP-koppeling met Google's agent-laag — onze [tutorial om Canva aan Gemini Spark te koppelen via MCP](/nieuws/gemini-spark-canva-mcp-koppelen) laat zien hoe dat in de praktijk werkt en wat het MKB-teams oplevert. Figma is de standaard voor collaboratieve UI-design en blijft onovertroffen in handmatige finesse, maar Claude Design kan de fase vóór het pixel-perfect uitwerken radicaal versnellen: wireframes, flows en storyboards ontstaan nu in minuten, waarna designers in Figma de laatste 20% afmaken.
 

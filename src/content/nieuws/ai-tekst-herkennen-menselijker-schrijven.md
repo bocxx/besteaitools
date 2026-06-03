@@ -3,7 +3,7 @@ title: "Klinkt jouw tekst nog als AI? Vier verraders en de prompt die Claude bij
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Klinkt jouw tekst nog als AI? Vier verraders en de prompt die Claude bijstuurt'"
 description: "Wikipedia publiceerde een lijst van AI-schrijftells, en Ruben Hassids 29-woord-prompt past die toe in Claude. Zo schrijf jij weer als jezelf."
 publishedAt: 2026-05-04
-updatedAt: 2026-05-04
+updatedAt: 2026-06-02
 author: "Redactie"
 category: "gids"
 tags:

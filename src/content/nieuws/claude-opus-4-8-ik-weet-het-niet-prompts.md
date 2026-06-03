@@ -75,7 +75,7 @@ Resultaat: een werkbare conceptmail, plus een afzonderlijk lijstje met punten di
 
 ## Wanneer kies je voor Opus 4.8, en wanneer niet?
 
-Opus 4.8 is een logische default voor: research, klantcontact, juridische conceptteksten, code-review en alles waar fouten direct kosten met zich meebrengen. Voor creatief werk — brainstorms, scenarios, jeugdige tekstvarianten — voelt de hedging-modus soms wat remmend. In die taken is Sonnet 4.6 vaak vlotter, of zet Opus 4.7 in via de modelkiezer. Wil je een eerste vergelijking tussen Claude en ChatGPT voor jouw use case? Lees onze [Claude vs ChatGPT-vergelijking 2026](/nieuws/claude-vs-chatgpt-vergelijking-2026).
+Opus 4.8 is een logische default voor: research, klantcontact, juridische conceptteksten, code-review, financiële modellen en alles waar fouten direct kosten met zich meebrengen. Voor spreadsheets specifiek is de 4x lagere fout-passeer-rate goud waard — zie onze gids [Claude Cowork voor Excel in vijf stappen](/nieuws/claude-cowork-excel-bouwen) voor de prompt-template die de hedging-modus optimaal benut bij financiële modellen. Voor creatief werk — brainstorms, scenarios, jeugdige tekstvarianten — voelt de hedging-modus soms wat remmend. In die taken is Sonnet 4.6 vaak vlotter, of zet Opus 4.7 in via de modelkiezer. Wil je een eerste vergelijking tussen Claude en ChatGPT voor jouw use case? Lees onze [Claude vs ChatGPT-vergelijking 2026](/nieuws/claude-vs-chatgpt-vergelijking-2026).
 
 Voor visueel werk — ontwerp, illustratie, layout-feedback — blijft [Claude Design Opus](/nieuws/claude-design-opus) de gespecialiseerde variant. En als je nog twijfelt of Cowork-modus voor jouw werk verschil maakt: onze [launch-analyse van Claude Cowork](/nieuws/claude-cowork-lancering) zet de keuzes op een rij.
 
