@@ -187,6 +187,98 @@ function buildElement(tool: {
   );
 }
 
+// ── Feature/hub-pagina kaarten ─────────────────────────────────────────────────
+// De tool-detailpagina's krijgen elk een eigen kaart (buildElement). De
+// feature- en hub-pagina's (modellen, doorbraak, makers, leren, ontdek, …)
+// vielen terug op de site-wide /og-image.webp — WebP wordt door LinkedIn niet
+// als og:image geaccepteerd. Hier een merkgebonden PNG-kaart per pagina, in
+// dezelfde Ember-stijl als de tool-kaarten.
+interface FeaturePage {
+  key: string;       // → public/og/page-<key>.png  (of 'home' → og-image.png)
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  accent?: string;   // optioneel afwijkend accent (anders C.primary)
+}
+
+const FEATURE_PAGES: FeaturePage[] = [
+  { key: 'home',      eyebrow: 'AI Tools Radar',  title: 'De beste AI-tools, objectief gerankt', subtitle: 'Welke AI-tools groeien nú? Gevolgd op buzz, groei en mentions — zonder hype.' },
+  { key: 'ontdek',    eyebrow: 'Ontdek',          title: 'Ontdek de AI-radar',                   subtitle: 'Tools, modellen, de doorbraak-funnel en de makers erachter — dagelijks bijgewerkt.', accent: '#5ab0d8' },
+  { key: 'modellen',  eyebrow: 'Modellen',        title: 'Trending AI-modellen',                 subtitle: 'Welke open modellen zitten nú in de lift — gerangschikt op momentum.', accent: '#a87ed4' },
+  { key: 'doorbraak', eyebrow: 'Doorbraak-radar', title: 'Wat staat op punt te breken',          subtitle: 'Tools die dev en onderzoek al oppakt — vóór de pers volgt.', accent: '#df4d2c' },
+  { key: 'makers',    eyebrow: 'Makers',          title: 'Wie bouwt de trending AI',             subtitle: 'De mensen & organisaties achter de tools die nu stijgen.', accent: '#44c490' },
+  { key: 'leren',     eyebrow: 'Leren',           title: 'Leer AI-tools — de beste bronnen',     subtitle: 'Gecureerde GitHub-repos, hands-on guides en video’s.', accent: '#e8cc2c' },
+  { key: 'vergelijk', eyebrow: 'Vergelijk',       title: 'Vergelijk AI-tools',                   subtitle: 'Side-by-side op buzz, groei en functies.', accent: '#5ab0d8' },
+  { key: 'nieuws',    eyebrow: 'Nieuws',          title: 'AI-tools nieuws',                      subtitle: 'Nieuwe features, launches en tool-updates.' },
+  { key: 'radar',     eyebrow: 'Radar',           title: 'AI Tools Radar',                       subtitle: 'Launches, wekelijkse rankings en de doorbraak-funnel.' },
+];
+
+function buildFeatureCard(page: FeaturePage) {
+  const accent = page.accent ?? C.primary;
+  const title = trunc(page.title, 48);
+  const titleFontSize = title.length > 30 ? 64 : title.length > 22 ? 74 : 84;
+  return h('div', {
+    style: {
+      width: '1200px', height: '630px',
+      display: 'flex', backgroundColor: C.bg,
+      fontFamily: '"Inter"', position: 'relative', overflow: 'hidden',
+    },
+  },
+    // Radial glow (accent)
+    h('div', { style: {
+      position: 'absolute', top: '-150px', right: '-120px',
+      width: '560px', height: '560px', borderRadius: '50%',
+      background: `radial-gradient(circle, ${alpha(accent, 16)} 0%, transparent 70%)`,
+    }}),
+    // Left accent bar
+    h('div', { style: {
+      position: 'absolute', top: '0', left: '0', width: '8px', height: '630px',
+      background: `linear-gradient(to bottom, ${C.primary}, ${accent})`,
+    }}),
+    // Content column
+    h('div', {
+      style: {
+        display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+        padding: '64px 80px 56px 96px', width: '1200px', height: '630px',
+      },
+    },
+      // Top row: site label + eyebrow badge
+      h('div', { style: {
+        display: 'flex', flexDirection: 'row',
+        justifyContent: 'space-between', alignItems: 'center',
+      }},
+        h('div', { style: { color: C.primary, fontSize: '18px', fontWeight: '600', letterSpacing: '0.02em', fontFamily: '"Inter"' } },
+          'debesteaitools.nl'),
+        h('div', { style: {
+          display: 'flex', alignItems: 'center',
+          backgroundColor: alpha(accent, 18), border: `1.5px solid ${alpha(accent, 50)}`,
+          borderRadius: '999px', padding: '7px 20px',
+          color: accent, fontSize: '14px', fontWeight: '700',
+          letterSpacing: '0.07em', textTransform: 'uppercase', fontFamily: '"Inter"',
+        }}, page.eyebrow),
+      ),
+      // Title + subtitle
+      h('div', { style: { display: 'flex', flexDirection: 'column' }},
+        h('div', { style: {
+          color: C.textPrimary, fontSize: `${titleFontSize}px`, fontWeight: '700',
+          letterSpacing: '-0.03em', lineHeight: '1.05', marginBottom: '24px',
+          fontFamily: '"Space Grotesk"',
+        }}, title),
+        h('div', { style: {
+          color: C.textSec, fontSize: '28px', fontWeight: '400',
+          lineHeight: '1.45', fontFamily: '"Inter"', maxWidth: '900px',
+        }}, page.subtitle),
+      ),
+      // Footer
+      h('div', { style: { display: 'flex', flexDirection: 'column' }},
+        h('div', { style: { height: '1px', backgroundColor: C.border, marginBottom: '20px' }}),
+        h('div', { style: { color: C.textMuted, fontSize: '17px', fontFamily: '"Inter"' }},
+          'AI Tools Radar · Nederland · dagelijks bijgewerkt'),
+      ),
+    ),
+  );
+}
+
 // ── Main ───────────────────────────────────────────────────────────────────────
 async function main() {
   console.log('🖼  Generating OG images…');
@@ -247,7 +339,22 @@ async function main() {
     generated++;
   }
 
-  console.log(`✅  Generated ${generated} OG images → public/og/`);
+  console.log(`✅  Generated ${generated} tool OG images → public/og/`);
+
+  // ── Feature/hub-pagina kaarten ────────────────────────────────────────────
+  let featureCount = 0;
+  for (const page of FEATURE_PAGES) {
+    const svg = await satori(buildFeatureCard(page), { width: 1200, height: 630, fonts });
+    const png = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
+    if (page.key === 'home') {
+      // Site-wide fallback — vervangt de WebP-default (LinkedIn-incompatibel).
+      writeFileSync(join(ROOT, 'public/og-image.png'), png);
+    } else {
+      writeFileSync(join(OUTPUT_DIR, `page-${page.key}.png`), png);
+    }
+    featureCount++;
+  }
+  console.log(`✅  Generated ${featureCount} feature OG cards → public/og/page-*.png (+ og-image.png)`);
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });
