@@ -49,7 +49,13 @@
     "Teams zonder budget voor LLM-tokens",
     "Zeer specifieke business-logic-fouten in workflows met veel context"
   ],
-  "bestAlternative": "Burp Suite Professional voor interactieve handmatige pentest-werk; OWASP ZAP voor template-gebaseerde CI-scans; Nuclei voor CVE-gerichte inventarisatie. Strix vervangt geen van die drie maar vult ze aan op het autonome-agent niveau.",
+  "bestAlternative": "autogpt",
+  "mainCompetitors": [
+    "Burp Suite Professional (interactieve handmatige pentest)",
+    "OWASP ZAP (template-gebaseerde CI-scans)",
+    "Nuclei (CVE-gerichte inventarisatie)"
+  ],
+  "whenToChoose": "Kies Strix als je een autonome AI-agent zoekt voor breedte-coverage met werkende proofs-of-concept. Strix vervangt geen interactieve toolkits maar vult ze aan op het autonome-agent niveau — Burp blijft sterker voor handmatige diepe analyses en ZAP voor template-CI-scans.",
   "pricing": "Gratis (open-source, Apache 2.0). LLM-kosten zijn variabel: typisch 5-15 EUR per scan op een eenvoudige web-app, 30-50 EUR op een uitgebreid API-systeem.",
   "openSource": true,
   "businessFunctions": [
@@ -72,5 +78,6 @@
     "Docker",
     "Jira",
     "Linear"
-  ]
+  ],
+  "lastUpdated": "2026-06-02"
 }

@@ -3,7 +3,18 @@
   "category": "automation",
   "websiteUrl": "https://flowiseai.com",
   "shortDescription": "No-code AI-workflow builder met drag-and-drop",
+  "headlineValueProp": "Open-source drag-and-drop bouwer voor LLM-workflows en RAG-chatbots — zelfgehost zonder vendor-lock-in",
   "longDescription": "Flowise is een open-source low-code platform waarmee gebruikers visueel LLM-workflows en AI-agents kunnen bouwen door middel van een drag-and-drop interface. Het maakt het mogelijk om complexe AI-applicaties te creëren zonder uitgebreide programmeerkennis, met ondersteuning voor verschillende LLM-providers en integraties.",
+  "primaryJobsToBeDone": [
+    "Een RAG-chatbot bouwen op je eigen documenten zonder LangChain-code te schrijven",
+    "AI-workflows visueel orkestreren tussen LLM's, vector-databases en externe API's",
+    "Een interne kennis-assistent prototypen die je zelf host"
+  ],
+  "antiUseCases": [
+    "Productie-systemen die strikte schaalbaarheid en SLA's vereisen",
+    "Teams zonder technische kennis voor self-hosting en deployment",
+    "Workflows die diepe maatwerk-integraties of complexe code-logica nodig hebben — daar is een eigen LangChain/LangGraph-stack flexibeler"
+  ],
   "bestFor": "Developers en technische teams die snel AI-workflows en chatbots willen prototypen en implementeren zonder volledig custom code te schrijven.",
   "useCases": [
     "Bouwen van custom chatbots met bedrijfsspecifieke kennis",
@@ -29,7 +40,7 @@
     "rag",
     "ai-agents"
   ],
-  "draft": true,
+  "draft": false,
   "deploymentType": "both",
   "dataResidency": "unknown",
   "targetAudience": [
@@ -82,5 +93,6 @@
   "controlledIntegrations": [],
   "beginnerFriendlyScore": 4,
   "dataUsedForTraining": "no",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "lastUpdated": "2026-06-02"
 }
