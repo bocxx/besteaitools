@@ -9,6 +9,7 @@ import { siteConfig } from '../../config/site';
 import Badge from '../../components/atoms/Badge.astro';
 import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
+import Tooltip from '../../components/atoms/Tooltip.astro';
 import RelatedNewsForTool from '../../components/nieuws/RelatedNewsForTool.astro';
 import { getAllTools, getComparisonPairs } from '../../lib/tools-engine';
 import {
@@ -104,6 +105,19 @@ const qfLabels = {
   } as Record<string, string>,
 };
 
+const pricingTooltips: Record<string, string> = {
+  free:       'Volledig gratis te gebruiken, geen creditcard nodig.',
+  freemium:   'Gratis basisversie beschikbaar. Meer functies of gebruik vereisen een betaald abonnement.',
+  paid:       'Alleen beschikbaar met een betaald abonnement. Controleer of er een gratis proefperiode is.',
+  enterprise: 'Prijs op aanvraag, gericht op grote organisaties. Neem contact op met de aanbieder.',
+};
+
+const deploymentTooltips: Record<string, string> = {
+  saas:          'Werkt volledig in je browser — je hoeft niets te installeren of te beheren.',
+  'self-hosted': 'Je installeert de software op je eigen server. Meer controle, maar vereist technische kennis.',
+  both:          'Keuze tussen cloudversie (makkelijk) of zelf installeren (meer controle).',
+};
+
 // Responsive sparkline (viewBox only — CSS controls actual width)
 function buildSparkline(history: {date: string; mentions: number}[], width = 240, height = 36): string {
   if (!history || history.length < 2) return '';
@@ -162,8 +176,14 @@ export const prerender = true;
     <header class="tool-header">
       <div class="tool-header__badges">
         <Badge variant="category" color={cat.color}>{cat.name}</Badge>
-        <Badge variant="outline" color={pricing.color}>{pricing.label}</Badge>
-        {tool.openSource && <Badge variant="secondary">Open Source</Badge>}
+        <Tooltip tip={pricingTooltips[tool.pricingModel] ?? pricing.label}>
+          <Badge variant="outline" color={pricing.color}>{pricing.label}</Badge>
+        </Tooltip>
+        {tool.openSource && (
+          <Tooltip tip="De broncode is openbaar. Je kunt de tool gratis gebruiken, aanpassen en zelf hosten.">
+            <Badge variant="secondary">Open Source</Badge>
+          </Tooltip>
+        )}
       </div>
 
       <h1 class="tool-name">
@@ -178,20 +198,26 @@ export const prerender = true;
       <!-- Primary quick-facts (max 3 — speed, level, NL). Rest moved to Specs. -->
       <div class="quick-facts">
         {tool.timeToFirstValue && (
-          <span class="qf-pill qf-pill--primary" style={`--qf-color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}`}>
-            <Zap size={13} stroke-width={2} />
-            {qfLabels.timeToFirstValue[tool.timeToFirstValue]}
-          </span>
+          <Tooltip tip="Hoe lang duurt het voordat je de tool echt nuttig kunt gebruiken?">
+            <span class="qf-pill qf-pill--primary" style={`--qf-color: ${timeToFirstValueOptions[tool.timeToFirstValue].color}`}>
+              <Zap size={13} stroke-width={2} />
+              {qfLabels.timeToFirstValue[tool.timeToFirstValue]}
+            </span>
+          </Tooltip>
         )}
         {tool.difficulty && (
-          <span class="qf-pill qf-pill--primary" style={`--qf-color: ${difficultyLevels[tool.difficulty].color}`}>
-            {qfLabels.difficulty[tool.difficulty]}
-          </span>
+          <Tooltip tip="Hoeveel technische kennis is nodig om de tool te gebruiken?">
+            <span class="qf-pill qf-pill--primary" style={`--qf-color: ${difficultyLevels[tool.difficulty].color}`}>
+              {qfLabels.difficulty[tool.difficulty]}
+            </span>
+          </Tooltip>
         )}
         {tool.nlSupport && (
-          <span class="qf-pill qf-pill--primary qf-pill--nl">
-            🇳🇱 NL-ondersteuning
-          </span>
+          <Tooltip tip="De interface of het product is beschikbaar in het Nederlands.">
+            <span class="qf-pill qf-pill--primary qf-pill--nl">
+              🇳🇱 NL-ondersteuning
+            </span>
+          </Tooltip>
         )}
       </div>
 
@@ -207,16 +233,20 @@ export const prerender = true;
       </div>
     </header>
 
-    <!-- Sticky in-page navigation (see critique #1) -->
-    <nav class="toc" aria-label="Inhoudsopgave">
-      {hasEditorial && <a href="#verdict" class="toc__link" data-toc-target="verdict">Verdict</a>}
-      <a href="#features" class="toc__link" data-toc-target="features">Features</a>
-      <a href="#specs" class="toc__link" data-toc-target="specs">Specificaties</a>
-      {(stats?.youtube_videos?.length || stats?.source_articles?.length || stats?.social_posts?.length) && (
-        <a href="#social" class="toc__link" data-toc-target="social">Buzz</a>
-      )}
-      {faqs.length > 0 && <a href="#faq" class="toc__link" data-toc-target="faq">FAQ</a>}
-    </nav>
+    <!-- Sticky in-page navigation -->
+    <div class="toc-wrap">
+      <nav class="toc" aria-label="Inhoudsopgave">
+        {hasEditorial && <a href="#verdict" class="toc__link" data-toc-target="verdict">Oordeel</a>}
+        <a href="#features" class="toc__link" data-toc-target="features">Features</a>
+        <a href="#specs" class="toc__link" data-toc-target="specs">Specificaties</a>
+        {(stats?.youtube_videos?.length || stats?.source_articles?.length || stats?.social_posts?.length) && (
+          <a href="#social" class="toc__link" data-toc-target="social">
+            <Tooltip tip="Hoe actief deze tool wordt besproken op social media, nieuwssites en de tech-community." pos="below">Buzz</Tooltip>
+          </a>
+        )}
+        {faqs.length > 0 && <a href="#faq" class="toc__link" data-toc-target="faq">FAQ</a>}
+      </nav>
+    </div>
 
     <!-- Two-column body -->
     <div class="page-body">
@@ -401,13 +431,17 @@ export const prerender = true;
                 <div class="meta-grid">
                   {dt && (
                     <div class="meta-item">
-                      <span class="meta-label">Deployment</span>
-                      <span class="meta-value" style={`color: ${dt.color}`}>
-                        {tool.deploymentType === 'saas' && <Cloud size={13} stroke-width={1.5} />}
-                        {tool.deploymentType === 'self-hosted' && <Server size={13} stroke-width={1.5} />}
-                        {tool.deploymentType === 'both' && <Layers size={13} stroke-width={1.5} />}
-                        {dt.label}
-                      </span>
+                      <Tooltip tip="Hoe je de tool gebruikt: via internet (SaaS) of zelf installeren.">
+                        <span class="meta-label">Deployment</span>
+                      </Tooltip>
+                      <Tooltip tip={deploymentTooltips[tool.deploymentType ?? ''] ?? dt.label}>
+                        <span class="meta-value" style={`color: ${dt.color}`}>
+                          {tool.deploymentType === 'saas' && <Cloud size={13} stroke-width={1.5} />}
+                          {tool.deploymentType === 'self-hosted' && <Server size={13} stroke-width={1.5} />}
+                          {tool.deploymentType === 'both' && <Layers size={13} stroke-width={1.5} />}
+                          {dt.label}
+                        </span>
+                      </Tooltip>
                     </div>
                   )}
                   {dr && (
@@ -732,8 +766,12 @@ export const prerender = true;
         {stats && (
           <div class="sidebar-card sidebar-card--stats">
             <div class="sidebar-stats">
-              <ScoreMeter score={stats.buzz_score} />
-              <PhaseBadge phase={stats.phase} size="sm" />
+              <Tooltip tip="Buzz score: hoe actief deze tool wordt besproken online (0 = onbekend, 100 = extreem populair).">
+                <ScoreMeter score={stats.buzz_score} />
+              </Tooltip>
+              <Tooltip tip="Groeifase van de tool: Nieuw → Opkomend → Hot → Bewezen → Volwassen.">
+                <PhaseBadge phase={stats.phase} size="sm" />
+              </Tooltip>
             </div>
             {dir && (
               <div class="sidebar-trend" style={`color: ${dir.color}`}>
@@ -1719,12 +1757,9 @@ export const prerender = true;
      See /design-critique recommendations #1-#6.
      ══════════════════════════════════════════════════ */
 
-  /* Hero: gradient title + tighter rhythm */
+  /* Hero: title color */
   .tool-name__gradient {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
   }
   .tool-header__cta {
     display: flex;
@@ -1753,40 +1788,60 @@ export const prerender = true;
   }
 
   /* ── Sticky in-page navigation ───────────────────── */
-  .toc {
+  /* TOC scroll wrapper — overflow hier, zodat tooltip-bubbles niet geclipped worden */
+  .toc-wrap {
     position: sticky;
-    top: 64px; /* below site header */
-    z-index: 10;
+    top: 64px;
+    z-index: var(--z-sticky);
+    margin: 0 0 var(--space-8);
+    /* Fade-out aan de randen bij horizontaal scrollen */
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 16px,
+      black calc(100% - 16px),
+      transparent 100%
+    );
+  }
+
+  .toc {
     display: flex;
     gap: var(--space-1);
-    padding: var(--space-2) var(--space-3);
-    margin: 0 0 var(--space-6);
-    background: var(--bg-glass);
-    backdrop-filter: blur(12px);
+    padding: var(--space-2) var(--space-4);
+    background: color-mix(in oklch, var(--bg-elevated) 90%, transparent);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-full);
     overflow-x: auto;
+    overflow-y: visible;
     scrollbar-width: none;
+    box-shadow: var(--shadow-sm);
   }
   .toc::-webkit-scrollbar { display: none; }
+
   .toc__link {
     flex-shrink: 0;
-    padding: var(--space-1-5) var(--space-3);
+    padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: var(--text-secondary);
+    color: var(--text-muted);
     text-decoration: none;
-    transition: all var(--transition-fast);
+    transition: color var(--transition-fast), background var(--transition-fast);
     white-space: nowrap;
+    line-height: 1;
   }
   .toc__link:hover {
-    color: var(--primary-bright);
+    color: var(--text-primary);
     background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
   }
   .toc__link.is-active {
     background: var(--primary-bright);
-    color: var(--bg-deep);
+    color: var(--text-inverse);
+    font-weight: var(--font-semibold);
+  }
+  .toc__link.is-active:hover {
+    color: var(--text-inverse);
   }
 
   /* ── Section-heading hierarchy ───────────────────── */
@@ -1852,7 +1907,7 @@ export const prerender = true;
     width: 100%;
     padding: var(--space-3) var(--space-4);
     background: var(--primary-bright);
-    color: var(--bg-deep);
+    color: var(--text-inverse);
     border-radius: var(--radius-md);
     font-weight: var(--font-semibold);
     text-decoration: none;
@@ -1887,7 +1942,7 @@ export const prerender = true;
     gap: var(--space-2);
     padding: var(--space-3);
     background: var(--primary-bright);
-    color: var(--bg-deep);
+    color: var(--text-inverse);
     border-radius: var(--radius-md);
     font-weight: var(--font-semibold);
     text-decoration: none;

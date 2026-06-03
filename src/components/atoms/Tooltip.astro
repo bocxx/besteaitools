@@ -1,0 +1,91 @@
+---
+interface Props {
+  tip: string;
+  pos?: 'above' | 'below';
+  class?: string;
+}
+const { tip, pos = 'above', class: className } = Astro.props;
+---
+
+<span class={`tt tt--${pos} ${className ?? ''}`} data-tip={tip}>
+  <slot />
+  <span class="tt__bubble" role="tooltip">{tip}</span>
+</span>
+
+<style>
+  .tt {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: help;
+  }
+
+  /* Dotted underline alleen voor plain tekst, niet voor badge/pill children */
+  .tt > :not(.badge):not(.qf-pill):not([class]) {
+    border-bottom: 1px dotted color-mix(in oklch, currentColor 45%, transparent);
+  }
+
+  .tt__bubble {
+    position: fixed;
+    width: max-content;
+    max-width: 240px;
+    padding: 0.45rem 0.7rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.72rem;
+    line-height: 1.5;
+    font-weight: 400;
+    white-space: normal;
+    text-align: left;
+    box-shadow: var(--shadow-xl);
+    z-index: var(--z-tooltip);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 150ms var(--ease-out);
+    /* Positionering via JS-free anchor trick met CSS anchor positioning
+       fallback: verberg en toon via JS positie */
+    top: var(--tt-top, auto);
+    left: var(--tt-left, auto);
+  }
+
+  .tt:hover .tt__bubble,
+  .tt:focus-within .tt__bubble {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Positioneer elke tooltip bubble via JS zodat overflow:hidden containers
+  // de bubble niet clippen (fixed positioning, berekend vanuit het anker).
+  document.addEventListener('mouseover', (e) => {
+    const wrap = (e.target as Element).closest('.tt') as HTMLElement | null;
+    if (!wrap) return;
+    const bubble = wrap.querySelector<HTMLElement>('.tt__bubble');
+    if (!bubble) return;
+
+    const rect = wrap.getBoundingClientRect();
+    const pos = wrap.classList.contains('tt--below') ? 'below' : 'above';
+    const gap = 10;
+
+    // Horizontaal centreren op het anker
+    let left = rect.left + rect.width / 2;
+
+    // Tijdelijk zichtbaar maken om breedte te meten
+    bubble.style.opacity = '0';
+    bubble.style.display = 'block';
+    const bw = bubble.offsetWidth;
+    bubble.style.display = '';
+
+    // Clamp binnen viewport
+    left = Math.max(8, Math.min(left, window.innerWidth - bw / 2 - 8));
+
+    if (pos === 'below') {
+      bubble.style.top = `${rect.bottom + gap}px`;
+    } else {
+      bubble.style.top = `${rect.top - bubble.offsetHeight - gap}px`;
+    }
+    bubble.style.left = `${left - bw / 2}px`;
+  });
+</script>

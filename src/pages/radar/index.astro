@@ -102,7 +102,8 @@ const description = view === 'rankings'
     gap: var(--space-2);
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-full);
-    color: var(--text-secondary);
+    border: 1px solid transparent;
+    color: var(--text-muted);
     text-decoration: none;
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
@@ -111,12 +112,14 @@ const description = view === 'rankings'
   }
 
   .radar-tab:hover {
+    background: var(--surface-raised);
     color: var(--text-primary);
   }
 
-  .radar-tab--active {
+  .radar-tab--active,
+  .radar-tab--active:hover {
     background: var(--primary-bright);
-    color: var(--bg-deep);
+    color: var(--text-inverse);
     font-weight: var(--font-semibold);
   }
 

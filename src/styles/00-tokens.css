@@ -1,17 +1,18 @@
 /**
  * Design Tokens
  * Core design values - colors, spacing, typography, effects
- * 
- * THEME: Editorial Yellow & Teal — aligned with hetlaatsteainieuws.nl
- * Slate Deep dark mode, warm-wit light mode. Yellow primary (92°), Teal secondary (175°).
+ *
+ * THEME: Deep Space Nebula — Cosmic AI Tools Platform
+ * Koele blauwe diepteruimte, coral-rode sterspits, teal nebulagas, indigo diepte-accenten.
+ * Geïnspireerd op OpenClaw's nebula-identiteit.
  *
  * Archived themes:
  * - 00-tokens-archive-purple.css (Original purple/coral)
  * - 00-tokens-archive-blue.css (Editorial blue/amber)
- * - 00-tokens-archive-nebula.css (Rust & teal cosmic)
+ * - 00-tokens-archive-nebula.css (Rust & teal cosmic — vorige nebula versie)
  * - 00-tokens-archive-volt.css (Black & yellow)
- * - (Ember Warm / amber+coral was the previous active theme)
- * 
+ * - (Yellow+Red was the previous active theme)
+ *
  * Using modern CSS with oklch colors for better gradients
  * and perceptually uniform color manipulation
  */
@@ -20,34 +21,34 @@
   :root {
     /* ============================================
        COLOR SYSTEM — Dark mode (default)
-       Electric Yellow primary, Teal secondary, Cyan tertiary
+       Coral primary, Teal secondary, Indigo tertiary
        ============================================ */
 
-    /* Background Palette — Warm Neutral Slate (matches nebula warmth) */
-    --bg-deep: oklch(7% 0.006 25);
-    --bg-surface: oklch(11% 0.008 25);
-    --bg-elevated: oklch(15% 0.010 25);
-    --bg-panel: oklch(19% 0.012 25);
+    /* Background Palette — Deep Space (koele blauwtint hue 240) */
+    --bg-deep: oklch(7% 0.012 240);
+    --bg-surface: oklch(11% 0.015 240);
+    --bg-elevated: oklch(12% 0.015 240);
+    --bg-panel: oklch(14% 0.016 240);
 
-    /* Brand Colors — Editorial Yellow (Primary) */
-    --primary-h: 92;
-    --primary-bright: oklch(88% 0.19 92);
-    --primary-mid: oklch(72% 0.18 75);
-    --primary-dark: oklch(55% 0.16 55);
-    --primary-dim: oklch(32% 0.09 50);
+    /* Brand Colors — Vibrant Coral (Primary, = OpenClaw #ff5c5c in oklch) */
+    --primary-h: 15;
+    --primary-bright: oklch(70% 0.22 var(--primary-h));
+    --primary-mid: oklch(58% 0.22 var(--primary-h));
+    --primary-dark: oklch(46% 0.18 var(--primary-h));
+    --primary-dim: oklch(28% 0.10 var(--primary-h));
 
-    /* Brand Colors — Warm Red (Secondary) */
-    --secondary-h: 25;
-    --secondary-bright: oklch(68% 0.18 var(--secondary-h));
-    --secondary-mid: oklch(58% 0.17 var(--secondary-h));
-    --secondary-dark: oklch(46% 0.15 var(--secondary-h));
-    --secondary-dim: oklch(32% 0.10 var(--secondary-h));
+    /* Brand Colors — Nebula Teal (Secondary, koele tegenhanger) */
+    --secondary-h: 185;
+    --secondary-bright: oklch(72% 0.14 var(--secondary-h));
+    --secondary-mid: oklch(60% 0.12 var(--secondary-h));
+    --secondary-dark: oklch(48% 0.10 var(--secondary-h));
+    --secondary-dim: oklch(28% 0.06 var(--secondary-h));
 
-    /* Support Colors — Deep Red (Tertiary, slightly cooler/darker red) */
-    --tertiary-h: 15;
-    --tertiary-bright: oklch(60% 0.16 var(--tertiary-h));
-    --tertiary-mid: oklch(50% 0.14 var(--tertiary-h));
-    --tertiary-dark: oklch(40% 0.12 var(--tertiary-h));
+    /* Support Colors — Cosmic Indigo (Tertiary, diepte-accent) */
+    --tertiary-h: 270;
+    --tertiary-bright: oklch(68% 0.16 var(--tertiary-h));
+    --tertiary-mid: oklch(56% 0.14 var(--tertiary-h));
+    --tertiary-dark: oklch(44% 0.12 var(--tertiary-h));
 
     /* Semantic Colors */
     --color-success: oklch(75% 0.14 165);
@@ -59,7 +60,7 @@
     --text-primary: #f1f5fc;
     --text-secondary: #94a6be;
     --text-muted: #798898;
-    --text-inverse: #000205;
+    --text-inverse: #ffffff;
 
     /* Borders */
     --border-subtle: color-mix(in oklch, var(--text-secondary) 16%, transparent);
@@ -257,37 +258,41 @@
      ============================================ */
   
   :root {
+    /* Coral → Teal signature brand gradient */
     --gradient-claw: linear-gradient(
+      135deg,
+      var(--primary-bright) 0%,
+      var(--secondary-bright) 100%
+    );
+
+    /* Kosmische nebula-achtergrond: coral-gloed → diepe ruimte → teal-gas */
+    --gradient-nebula: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--primary-dark) 40%, var(--bg-deep)) 0%,
+      var(--bg-deep) 40%,
+      color-mix(in oklch, var(--secondary-dark) 50%, var(--bg-deep)) 70%,
+      color-mix(in oklch, var(--tertiary-dark) 30%, var(--bg-deep)) 100%
+    );
+
+    --gradient-midnight: linear-gradient(
+      180deg,
+      var(--bg-surface) 0%,
+      var(--bg-deep) 100%
+    );
+
+    --gradient-primary: linear-gradient(
       135deg,
       var(--primary-bright) 0%,
       var(--primary-dark) 100%
     );
-    
-    /* Minimal ambient glow */
-    --gradient-nebula: linear-gradient(
-      180deg,
-      var(--bg-deep) 0%,
-      var(--bg-surface) 100%
-    );
-    
-    --gradient-midnight: linear-gradient(
-      180deg,
-      var(--bg-deep) 0%,
-      var(--bg-deep) 100%
-    );
-    
-    --gradient-primary: linear-gradient(
-      135deg,
-      var(--primary-bright) 0%,
-      var(--primary-mid) 100%
-    );
-    
+
     --gradient-secondary: linear-gradient(
       135deg,
       var(--secondary-bright) 0%,
       var(--secondary-dark) 100%
     );
-    
+
+    /* Tekst-gradient: coral → teal (nebula-stijl) */
     --gradient-text: linear-gradient(
       90deg,
       var(--primary-bright) 0%,
@@ -303,28 +308,28 @@
      ============================================ */
 
   [data-theme="light"] {
-    /* Background Palette — Subtiel Warm Wit */
-    --bg-deep: #fcfaf7;
-    --bg-surface: #f3f0eb;
+    /* Background Palette — Koel Wit (lichte blauwgrijze tint) */
+    --bg-deep: #f6f7fb;
+    --bg-surface: #eef0f7;
     --bg-elevated: #ffffff;
-    --bg-panel: #fefdfb;
+    --bg-panel: #fafbfe;
 
-    /* Brand Colors — Orange-amber (contrast op wit) */
-    --primary-bright: oklch(58% 0.18 55);
-    --primary-mid: oklch(48% 0.17 50);
-    --primary-dark: oklch(38% 0.14 45);
-    --primary-dim: oklch(94% 0.06 92);
+    /* Brand Colors — Coral (donkerder voor contrast op wit) */
+    --primary-bright: oklch(52% 0.22 var(--primary-h));
+    --primary-mid: oklch(44% 0.20 var(--primary-h));
+    --primary-dark: oklch(36% 0.16 var(--primary-h));
+    --primary-dim: oklch(94% 0.05 var(--primary-h));
 
-    /* Brand Colors — Teal (Secondary) */
-    --secondary-bright: oklch(48% 0.14 var(--secondary-h));
-    --secondary-mid: oklch(40% 0.12 var(--secondary-h));
-    --secondary-dark: oklch(34% 0.10 var(--secondary-h));
-    --secondary-dim: oklch(92% 0.03 var(--secondary-h));
+    /* Brand Colors — Teal (Secondary, donker genoeg op wit) */
+    --secondary-bright: oklch(46% 0.14 var(--secondary-h));
+    --secondary-mid: oklch(38% 0.12 var(--secondary-h));
+    --secondary-dark: oklch(32% 0.10 var(--secondary-h));
+    --secondary-dim: oklch(92% 0.04 var(--secondary-h));
 
-    /* Support Colors — Cyan (Tertiary) */
-    --tertiary-bright: oklch(48% 0.12 var(--tertiary-h));
-    --tertiary-mid: oklch(40% 0.10 var(--tertiary-h));
-    --tertiary-dark: oklch(34% 0.08 var(--tertiary-h));
+    /* Support Colors — Indigo (Tertiary) */
+    --tertiary-bright: oklch(48% 0.16 var(--tertiary-h));
+    --tertiary-mid: oklch(40% 0.14 var(--tertiary-h));
+    --tertiary-dark: oklch(34% 0.12 var(--tertiary-h));
 
     /* Semantic Colors */
     --color-success: oklch(45% 0.16 165);
@@ -333,9 +338,9 @@
     --color-info: oklch(48% 0.14 230);
 
     /* Text Palette */
-    --text-primary: #1e293b;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
+    --text-primary: #1a2033;
+    --text-secondary: #3d4a62;
+    --text-muted: #5c6a84;
     --text-inverse: #ffffff;
 
     /* Borders */
