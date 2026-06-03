@@ -71,7 +71,7 @@ const canonicalUrl = new URL(
 const heroImageAbs = entry.data.heroImage
   ? new URL(entry.data.heroImage, siteConfig.url).href
   : undefined;
-const ogImage = heroImageAbs ?? `${siteConfig.url}/og-image.webp`;
+const ogImage = heroImageAbs ?? `${siteConfig.url}/og-image.png`;
 
 const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
   day: 'numeric',

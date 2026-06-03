@@ -11,7 +11,7 @@ import { siteConfig } from '../config/site';
 interface Props {
   title: string;
   description?: string;
-  ogImage?: string; // full URL — overrides the default og-image.webp
+  ogImage?: string; // absolute URL of pad (/og/...) — overschrijft de default og-image.png
   /**
    * Override the default robots directive ("index, follow, max-image-preview:large").
    * Use e.g. "noindex, follow" for stale time-sensitive pages you still want crawled
@@ -34,8 +34,16 @@ const {
   modifiedTime,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
-const resolvedOgImage = ogImage ?? `${siteConfig.url}/og-image.webp`;
-const resolvedOgImageType = resolvedOgImage.endsWith('.png') ? 'image/png' : 'image/webp';
+// Default is PNG (niet WebP): LinkedIn accepteert geen WebP als og:image en
+// valt dan terug op een mini-thumbnail. Per-pagina kaarten in public/og/.
+// Een relatief pad (/og/...) wordt naar een absolute URL genormaliseerd zodat
+// pagina's geen siteConfig hoeven te importeren.
+const resolvedOgImage = ogImage
+  ? (ogImage.startsWith('/') ? `${siteConfig.url}${ogImage}` : ogImage)
+  : `${siteConfig.url}/og-image.png`;
+const resolvedOgImageType = resolvedOgImage.endsWith('.png') ? 'image/png'
+  : /\.jpe?g$/.test(resolvedOgImage) ? 'image/jpeg'
+  : 'image/webp';
 const toIsoString = (d?: Date | string) => {
   if (!d) return undefined;
   return d instanceof Date ? d.toISOString() : new Date(d).toISOString();
