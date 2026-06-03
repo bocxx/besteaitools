@@ -29,6 +29,7 @@ export const siteConfig = {
     // twee duidelijke hubs. /digest/ is samengevoegd onder /nieuws/;
     // /launch-radar/ en /weekradar/ onder /radar/ (beide redirecten).
     main: [
+      { label: "Ontdek", href: "/ontdek" },
       { label: "Modellen", href: "/modellen" },
       { label: "Radar", href: "/radar/?view=launches" },
       { label: "Nieuws", href: "/nieuws" },

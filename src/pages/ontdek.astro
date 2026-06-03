@@ -1,0 +1,90 @@
+---
+/**
+ * /ontdek — Discovery-hub
+ *
+ * Eén centrale kaart van alle ontdek-oppervlakken: tools, modellen, de
+ * doorbraak-funnel, makers, leer-bronnen, weekradar, nieuws en vergelijk.
+ * Bundelt de losse data-features tot één coherente ingang en geeft elke
+ * feature een sterke interne link vanaf een thematische hub-pagina.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { Compass } from '@lucide/astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
+import { getAllTools } from '../lib/tools-engine';
+import modellenData from '../data/trending_models.json';
+import doorbraakData from '../data/tool_breakthrough.json';
+import makersData from '../data/makers.json';
+import lerenData from '../data/reports/tutorial_candidates.json';
+
+// ── Live counts uit de data-exports ──────────────────────
+const fmt = (n: number) => Intl.NumberFormat('nl-NL').format(n ?? 0);
+const tools = await getAllTools().catch(() => [] as any[]);
+const toolsCount = tools.length;
+
+const md: any = modellenData, db: any = doorbraakData, mk: any = makersData, lr: any = lerenData;
+const counts: Record<string, string> = {
+  modellen: `<strong>${fmt((md.models ?? []).length)}</strong> open modellen in de lift · ${fmt(md.new_this_week_count ?? 0)} nieuw deze week`,
+  doorbraak: `<strong>${fmt(db.funnel_counts?.about_to_break ?? 0)}</strong> tools staan op punt te breken — vóór de pers`,
+  makers: `<strong>${fmt(mk.total ?? 0)}</strong> bouwers & organisaties achter de trending AI`,
+  leren: `<strong>${fmt((lr.for_tools ?? []).length)}</strong> gecureerde bronnen om AI-tools te leren`,
+};
+if (toolsCount) counts.tools = `<strong>${fmt(toolsCount)}</strong> tools objectief gerankt op buzz en groei`;
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const ORDER = ['tools', 'modellen', 'doorbraak', 'makers', 'leren', 'weekradar', 'nieuws', 'vergelijk'];
+const LABELS: Record<string, [string, string]> = {
+  tools: ['AI-tools', '/ai-tools'], modellen: ['Modellen', '/modellen'],
+  doorbraak: ['Doorbraak-radar', '/radar/doorbraak'], makers: ['Makers', '/makers'],
+  leren: ['Leren', '/leren'], weekradar: ['Weekradar', '/radar/?view=rankings'],
+  nieuws: ['Nieuws', '/nieuws'], vergelijk: ['Vergelijk', '/vergelijk'],
+};
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Ontdek de AI-radar — debesteaitools.nl',
+  description: 'Alle ontdek-oppervlakken op één plek: tools, modellen, de doorbraak-funnel, makers, leer-bronnen en meer.',
+  url: `${siteOrigin}/ontdek`,
+  hasPart: ORDER.map((k) => ({
+    '@type': 'WebPage', name: LABELS[k][0], url: `${siteOrigin}${LABELS[k][1]}`,
+  })),
+};
+---
+
+<Layout
+  title="Ontdek de AI-radar — tools, modellen, doorbraak & makers | debesteaitools.nl"
+  description="Eén plek om de hele AI-radar te ontdekken: objectief gerankte tools, trending modellen, de doorbraak-funnel, de makers erachter en gecureerde leer-bronnen. Dagelijks bijgewerkt."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container ontdek">
+    <header class="ontdek__head">
+      <p class="ontdek__kicker"><Compass size={13} stroke-width={1.75} /> Ontdek</p>
+      <h1 class="ontdek__title">Ontdek de AI-radar</h1>
+      <p class="ontdek__lede">
+        Alles wat we volgen, op één plek. Van objectief gerankte tools en
+        trending modellen tot de doorbraak-funnel die laat zien wat op punt
+        staat te breken — en de mensen die het bouwen. Elke kaart is een eigen
+        ingang, dagelijks bijgewerkt door de pipeline.
+      </p>
+    </header>
+
+    <DiscoverGrid variant="grid" counts={counts} />
+
+    <p class="ontdek__foot">
+      Geen losse silo's: de tools, modellen, makers en doorbraak-signalen komen
+      uit dezelfde dagelijkse scan over honderden bronnen (GitHub, Hacker News,
+      ArXiv, Product Hunt, Reddit, X en de tech-pers).
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .ontdek { padding-top: 80px; max-width: 960px; padding-bottom: var(--space-20); }
+  .ontdek__head { max-width: 64ch; margin-bottom: var(--space-8); }
+  .ontdek__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-widest); margin: 0 0 var(--space-3) 0; }
+  .ontdek__title { font-family: var(--font-display); font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .ontdek__lede { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0; }
+  .ontdek__foot { margin-top: var(--space-8); font-size: var(--text-sm); color: var(--text-muted); max-width: 70ch; }
+</style>

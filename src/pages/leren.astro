@@ -11,6 +11,7 @@ export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import { ArrowLeft, GraduationCap, Github, Play, ArrowUpRight, Wrench } from '@lucide/astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
 import raw from '../data/reports/tutorial_candidates.json';
 
 const forTools = ((raw as any).for_tools ?? []) as any[];
@@ -103,6 +104,11 @@ const jsonLd = {
         </li>
       ))}
     </ul>
+
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['modellen', 'doorbraak', 'makers', 'tools']} />
+    </section>
 
     <p class="lr__source">
       Bronnen automatisch ontdekt en gecureerd via de newsflux-pipeline (GitHub,

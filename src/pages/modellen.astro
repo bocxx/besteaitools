@@ -10,6 +10,7 @@ export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import { ArrowLeft, Boxes, TrendingUp, Heart, Download, ArrowUpRight, Sparkles, Users } from '@lucide/astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
 import data from '../data/trending_models.json';
 
 const models = (data.models ?? []) as any[];
@@ -103,6 +104,11 @@ const jsonLd = {
         </li>
       ))}
     </ol>
+
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['doorbraak', 'makers', 'leren', 'tools']} />
+    </section>
 
     <p class="md__source">
       Bron: HuggingFace trending-snapshot ({data.snapshot_date}). Momentum t.o.v.
