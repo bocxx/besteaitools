@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-03T07:25:15.010168",
+  "generated_at": "2026-06-03T19:50:05.185196",
   "window_days": 7,
   "week": "2026-w23",
-  "total_candidates_scanned": 1102,
-  "total_after_dedup": 1042,
-  "total_feature_updates": 127,
+  "total_candidates_scanned": 1112,
+  "total_after_dedup": 1052,
+  "total_feature_updates": 130,
   "llm_curated": true,
   "features": [
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Security Guidance Plugin",
-      "summary_nl": "Claude heeft een plugin uitgebracht die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
+      "feature_title": "Security-Guidance Plugin",
+      "summary_nl": "Claude heeft een security-guidance plugin uitgebracht die kwetsbaarheden in code identificeert en oplost tijdens het schrijven.",
       "impact": "high",
       "sources": [
         {
@@ -29,8 +29,8 @@
       "tool_slug": "grok",
       "tool_name": "Grok",
       "tool_category": "tekst",
-      "feature_title": "Grok Build CLI Beta",
-      "summary_nl": "Grok heeft een publieke bèta uitgebracht van de Grok Build CLI, een model dat uitblinkt in agentisch coderen.",
+      "feature_title": "Grok Build CLI in Public Beta",
+      "summary_nl": "Grok heeft de Grok Build CLI in publieke bèta uitgebracht, een model dat uitblinkt in agentisch coderen.",
       "impact": "high",
       "sources": [
         {
@@ -48,12 +48,120 @@
       "tool_name": "Grok",
       "tool_category": "tekst",
       "feature_title": "Composer 2.5 Integration",
-      "summary_nl": "Grok heeft Composer 2.5 geïntegreerd, een snel en intelligent model voor langlopende taken.",
+      "summary_nl": "Grok heeft Composer 2.5 geïntegreerd, een snelle en intelligente model voor lange taken en het volgen van complexe instructies.",
       "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/xai/status/2061510464325206163",
           "title": "Composer 2.5 is now available inside Grok Build. \n\nComposer 2.5 is a fast, highly intelligent model that excels on long-running tasks and fo",
+          "platform": "twitter",
+          "source": "@xai"
+        }
+      ],
+      "detected_at": "2026-06-03",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "New World-Class MAI Models",
+      "summary_nl": "ChatGPT heeft zeven nieuwe wereld-klasse MAI modellen gelanceerd, die een nieuw tijdperk in AI inluiden waarbij de gebruiker meer controle heeft.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/mustafasuleyman/status/2061880164498428188",
+          "title": "Super excited to announce seven new world-class MAI models today. They represent what we consider a new era in AI designed to keep you in co",
+          "platform": "twitter",
+          "source": "@mustafasuleyman"
+        }
+      ],
+      "detected_at": "2026-06-03",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "openrouter",
+      "tool_name": "OpenRouter",
+      "tool_category": "infra",
+      "feature_title": "Significant Volume Growth",
+      "summary_nl": "OpenRouter heeft een sterke groei in wekelijks volume gezien, van 5T naar 25T tokens, en heeft een grote financieringsronde afgerond.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/OpenRouter/status/2059277623629664758",
+          "title": "Today we’re announcing our $113M Series B led by @CapitalGVC.\n\nOver the last 6 months, weekly volume on OpenRouter grew from 5T to 25T token",
+          "platform": "twitter",
+          "source": "@OpenRouter"
+        }
+      ],
+      "detected_at": "2026-06-03",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "mcp",
+      "tool_name": "MCP",
+      "tool_category": "infra",
+      "feature_title": "Agentic Trading and Credit Card",
+      "summary_nl": "Robinhood lanceert Agentic Trading en een Agentic Credit Card, waarmee gebruikers AI-agents kunnen koppelen aan hun Robinhood-account.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/amitisinvesting/status/2059667155914813484",
+          "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
+          "platform": "twitter",
+          "source": "@amitisinvesting"
+        }
+      ],
+      "detected_at": "2026-06-03",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "ollama",
+      "tool_name": "Ollama",
+      "tool_category": "infra",
+      "feature_title": "OpenJarvis Local-First Personal AI",
+      "summary_nl": "Ollama heeft OpenJarvis gelanceerd, een local-first persoonlijke AI assistent ontwikkeld door Stanford's Hazy Research en Scaling Intelligence labs.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/ollama/status/2060428074102206496",
+          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
+          "platform": "twitter",
+          "source": "@ollama"
+        }
+      ],
+      "detected_at": "2026-06-03",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "perplexity",
+      "tool_name": "Perplexity",
+      "tool_category": "zoeken",
+      "feature_title": "Search as Code Architecture",
+      "summary_nl": "Perplexity heeft een nieuwe zoekarchitectuur gelanceerd, 'Search as Code', waarmee AI-agents rechtstreeks kunnen communiceren met hun zoekstack.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/perplexity_ai/status/2061506359326384319",
+          "title": "Introducing Search as Code, our new search architecture for AI agents.\n\nIt writes Python that calls our search stack directly, instead of lo",
+          "platform": "twitter",
+          "source": "@perplexity_ai"
+        }
+      ],
+      "detected_at": "2026-06-03",
+      "week": "2026-w23"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok Build CLI Beta",
+      "summary_nl": "Grok heeft een publieke bèta uitgebracht van de Grok Build CLI, een model dat uitblinkt in agentisch coderen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/xai/status/2060392249402552457",
+          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
           "platform": "twitter",
           "source": "@xai"
         }
@@ -239,42 +347,6 @@
         }
       ],
       "detected_at": "2026-06-02",
-      "week": "2026-w23"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Grok Build CLI in Public Beta",
-      "summary_nl": "Grok heeft de Grok Build CLI in publieke bèta gelanceerd, een model dat goed presteert bij agentisch coderen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/xai/status/2060392249402552457",
-          "title": "grok-build-0.1 is now available via the xAI API in public beta.\n\nThis is the same model that powers the Grok Build CLI and excels at agentic",
-          "platform": "twitter",
-          "source": "@xai"
-        }
-      ],
-      "detected_at": "2026-06-01",
-      "week": "2026-w23"
-    },
-    {
-      "tool_slug": "ollama",
-      "tool_name": "Ollama",
-      "tool_category": "infra",
-      "feature_title": "OpenJarvis Local-First Personal AI",
-      "summary_nl": "Ollama heeft OpenJarvis gelanceerd, een lokaal draaiende persoonlijke AI assistent.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ollama/status/2060428074102206496",
-          "title": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford’s @HazyResearch and Scaling Intelligence labs, ",
-          "platform": "twitter",
-          "source": "@ollama"
-        }
-      ],
-      "detected_at": "2026-06-01",
       "week": "2026-w23"
     },
     {
@@ -584,24 +656,6 @@
           "title": "Every humanoid robot being built right now depends on a $88M Japanese company that almost nobody in Western markets has looked at.\n\nWhile ca",
           "platform": "twitter",
           "source": "@Vaelis_X"
-        }
-      ],
-      "detected_at": "2026-05-28",
-      "week": "2026-w22"
-    },
-    {
-      "tool_slug": "mcp",
-      "tool_name": "MCP",
-      "tool_category": "infra",
-      "feature_title": "Agentic Trading and Credit Card",
-      "summary_nl": "Robinhood lanceert Agentic Trading en een Agentic Credit Card, waarmee gebruikers AI-agenten kunnen koppelen aan hun Robinhood account.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/amitisinvesting/status/2059667155914813484",
-          "title": "$HOOD\n\nROBINHOOD OFFICIALLY ENTERS THE AGENTIC ERA. \n\n- Robinhood is launching Agentic Trading and an Agentic Credit Card, letting users con",
-          "platform": "twitter",
-          "source": "@amitisinvesting"
         }
       ],
       "detected_at": "2026-05-28",
