@@ -3,11 +3,27 @@
   "category": "infrastructure",
   "websiteUrl": "https://www.llamaindex.ai",
   "shortDescription": "Framework voor RAG en data-pipelines met LLM's",
+  "headlineValueProp": "Het standaard data-framework voor RAG — verbindt LLM's met je eigen documenten, databases en API's",
   "pricingModel": "free",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "rag",
+    "llm-framework",
+    "open-source",
+    "data-pipelines"
+  ],
   "draft": false,
-  "longDescription": "LlamaIndex is een open-source bibliotheek voor het bouwen van geïndexeerde gegevensstructuren voor het opslaan en ophalen van informatie uit grote hoeveelheden tekst. Het biedt een flexibel en schaalbaar raamwerk voor het ontwikkelen van toepassingen die gebruikmaken van taalmodellen.",
+  "longDescription": "LlamaIndex is een open-source Python-framework voor RAG-toepassingen — het verbindt LLM's met je eigen documenten, databases, API's en cloud-opslag. Het biedt sterke ingest- en parse-loaders, retrieval-strategieën (BM25, vector, hybrid, reranking) en agentic patterns voor productie-RAG. Veel gebruikt als motor onder enterprise-knowledge-assistants.",
+  "primaryJobsToBeDone": [
+    "RAG-pipelines bouwen die LLM's verbinden met je interne documenten en databases",
+    "Documenten parseren en chunken voor opname in een vector-store",
+    "Productie-retrieval-strategieën opzetten met hybrid search en reranking"
+  ],
+  "antiUseCases": [
+    "Teams die alleen een visuele drag-and-drop builder zoeken — gebruik dan Flowise of n8n",
+    "Use cases zonder ontwikkelaar — LlamaIndex vereist Python-kennis",
+    "Snelle prototypes waar agent-orkestratie zwaarder weegt dan data-ingest — daar past LangChain vaak beter"
+  ],
   "bestFor": "LlamaIndex is het meest waardevol voor ontwikkelaars en onderzoekers die efficiënte en schaalbare oplossingen nodig hebben voor het opslaan en ophalen van informatie uit grote hoeveelheden ongestructureerde tekst.",
   "useCases": [
     "Documentbeheer",
@@ -67,5 +83,6 @@
   ],
   "beginnerFriendlyScore": 2,
   "dataUsedForTraining": "no",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "lastUpdated": "2026-06-02"
 }

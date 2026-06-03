@@ -3,9 +3,26 @@
   "category": "audio",
   "websiteUrl": "https://openai.com/research/whisper",
   "shortDescription": "OpenAI's open-source spraakherkenning",
+  "headlineValueProp": "OpenAI's open-source speech-to-text — meertalig, native Nederlands, gratis en het fundament van tientallen transcriptie-diensten",
+  "primaryJobsToBeDone": [
+    "Vergaderingen, interviews en podcasts transcriberen met hoge nauwkeurigheid",
+    "Ondertiteling automatisch genereren voor video's in meerdere talen",
+    "Een eigen transcriptie- of dictatie-tool bouwen op een open weights-basis"
+  ],
+  "antiUseCases": [
+    "Realtime transcriptie zonder GPU — Whisper is rekenkracht-intensief lokaal",
+    "Gebruikers zonder technische vaardigheden — kies dan een hosted tool zoals Otter of Granola",
+    "Use cases die diariseren (sprekers herkennen) vereisen zonder extra layer"
+  ],
   "pricingModel": "free",
-  "difficulty": "beginner",
-  "tags": [],
+  "difficulty": "intermediate",
+  "tags": [
+    "speech-to-text",
+    "transcriptie",
+    "open-source",
+    "openai",
+    "meertalig"
+  ],
   "draft": false,
   "longDescription": "Whisper is een open-source automatische spraakherkennings-model ontwikkeld door OpenAI. Het model is in staat om audio op te nemen, te transcriberen en te vertalen naar verschillende talen.",
   "bestFor": "Whisper is vooral waardevol voor bedrijven en individuen die behoefte hebben aan accurate spraakherkenning en transcriptie in meerdere talen.",
@@ -74,5 +91,6 @@
   "outputLanguageQualityNl": "native",
   "beginnerFriendlyScore": 3,
   "dataUsedForTraining": "no",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "lastUpdated": "2026-06-02"
 }

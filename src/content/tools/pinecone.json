@@ -3,11 +3,27 @@
   "category": "infrastructure",
   "websiteUrl": "https://www.pinecone.io",
   "shortDescription": "Managed vector database voor AI-zoekfunctionaliteit",
+  "headlineValueProp": "Serverless vector-database voor productie-RAG — schaalt mee zonder zelf-hosting of infrastructuur-zorgen",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "vector-database",
+    "rag",
+    "embeddings",
+    "managed-service"
+  ],
   "draft": false,
   "longDescription": "Pinecone is een schaalbare, serverloze vector database die is ontworpen voor het opslaan en ophalen van embeddings voor AI-toepassingen zoals zoekmachines, aanbevelingssystemen en chatbots.",
+  "primaryJobsToBeDone": [
+    "Embeddings opslaan en semantisch ophalen voor RAG- en search-toepassingen",
+    "Productie-zoek-features bouwen die meegroeien met je gebruikersbasis",
+    "Real-time aanbevelingssystemen voeden met vector-search"
+  ],
+  "antiUseCases": [
+    "Hobby-projecten en kleine PoC's waar self-hosted (Chroma, Qdrant) goedkoper is",
+    "Teams die strikt EU-hosting vereisen voor alle vector-data — Pinecone is primair US-georiënteerd",
+    "Use cases die geen semantische search nodig hebben — een gewone Postgres + tsvector volstaat dan"
+  ],
   "bestFor": "Pinecone is het meest waardevol voor organisaties die AI-toepassingen ontwikkelen die gebruik maken van embeddings.",
   "useCases": [
     "Zoekmachines",
@@ -65,5 +81,6 @@
   },
   "controlledIntegrations": [
     "rest_api"
-  ]
+  ],
+  "lastUpdated": "2026-06-02"
 }
