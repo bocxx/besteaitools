@@ -30,8 +30,9 @@ export const siteConfig = {
     // /launch-radar/ en /weekradar/ onder /radar/ (beide redirecten).
     main: [
       { label: "Modellen", href: "/modellen" },
-      { label: "Nieuws", href: "/nieuws" },
       { label: "Radar", href: "/radar/?view=launches" },
+      { label: "Nieuws", href: "/nieuws" },
+      { label: "Leren", href: "/leren" },
       { label: "Vergelijk", href: "/vergelijk" },
     ],
     footer: {
