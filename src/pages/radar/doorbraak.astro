@@ -15,6 +15,7 @@ export const prerender = true;
 
 import Layout from '../../layouts/Layout.astro';
 import { ArrowLeft, Rocket, TrendingUp, Zap, FlaskConical, Wrench, Newspaper, ArrowUpRight } from '@lucide/astro';
+import DiscoverGrid from '../../components/DiscoverGrid.astro';
 import data from '../../data/tool_breakthrough.json';
 
 const funnel = (data as any).funnel ?? {};
@@ -184,6 +185,12 @@ const jsonLd = {
         achterblijft: hoe hoger, hoe groter het open venster.
         <strong>▲/▼</strong> is de velocity uit de radar.
       </p>
+    </section>
+
+    <!-- Ontdek ook -->
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['modellen', 'makers', 'leren', 'tools']} />
     </section>
 
     <!-- Methode -->

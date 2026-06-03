@@ -11,6 +11,7 @@ export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import { ArrowLeft, Users, MapPin, Building2, Star, Github, ArrowUpRight } from '@lucide/astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
 import raw from '../data/makers.json';
 
 const makers = ((raw as any).makers ?? []) as any[];
@@ -102,6 +103,11 @@ const SECTIONS = [
         </section>
       );
     })}
+
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['modellen', 'doorbraak', 'leren', 'tools']} />
+    </section>
 
     <p class="mk__source">
       Makers worden afgeleid uit AI-relevante GitHub-repos die in het venster

@@ -758,3 +758,21 @@
     .row-span-3 { grid-row: span 3; }
   }
 }
+
+/* ── "Ontdek ook" sibling-strip (cluster-interlinking) ──────────────
+   Gedeeld door /modellen, /leren, /makers, /radar/doorbraak.
+   De link-chips zelf staan in DiscoverGrid.astro (variant="strip"). */
+.siblings {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+.siblings__h {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-regular);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-muted);
+  margin: 0 0 var(--space-4) 0;
+}

@@ -8,6 +8,11 @@ import Layout from '../layouts/Layout.astro';
 import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
 import Badge from '../components/atoms/Badge.astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
+import modellenData from '../data/trending_models.json';
+import doorbraakData from '../data/tool_breakthrough.json';
+import makersData from '../data/makers.json';
+import lerenData from '../data/reports/tutorial_candidates.json';
 import {
   getAllTools,
   getSectionedTools,
@@ -40,6 +45,16 @@ const formattedDate = generatedAt
   : null;
 
 const weekNum = highlights.weekLabel.split('-w')[1];
+
+// Discovery-counts voor de "Ontdek de AI-radar"-sectie (nieuwe data-features)
+const _fmtNl = (n: number) => Intl.NumberFormat('nl-NL').format(n ?? 0);
+const _md: any = modellenData, _db: any = doorbraakData, _mk: any = makersData, _lr: any = lerenData;
+const discoverCounts: Record<string, string> = {
+  modellen: `<strong>${_fmtNl((_md.models ?? []).length)}</strong> open modellen in de lift`,
+  doorbraak: `<strong>${_fmtNl(_db.funnel_counts?.about_to_break ?? 0)}</strong> tools staan op punt te breken`,
+  makers: `<strong>${_fmtNl(_mk.total ?? 0)}</strong> bouwers achter de trending AI`,
+  leren: `<strong>${_fmtNl((_lr.for_tools ?? []).length)}</strong> gecureerde leer-bronnen`,
+};
 
 // Load latest feature news count
 let newsCount = 0;
@@ -211,6 +226,15 @@ export const prerender = true;
         <ArrowRight size={16} stroke-width={1.5} class="qa-card__arrow" />
       </a>
     </div>
+
+    <!-- Ontdek de AI-radar: nieuwe data-features -->
+    <section class="discover" aria-labelledby="discover-heading">
+      <div class="discover__head">
+        <h2 id="discover-heading" class="discover__title">Ontdek de AI-radar</h2>
+        <a class="discover__all" href="/ontdek">Alles ontdekken <ArrowRight size={14} stroke-width={1.75} /></a>
+      </div>
+      <DiscoverGrid variant="grid" only={['modellen', 'doorbraak', 'makers', 'leren']} counts={discoverCounts} />
+    </section>
 
     <!-- Filter bar -->
     <nav class="filter-bar" aria-label="Filter en sorteer">
@@ -483,6 +507,13 @@ export const prerender = true;
     gap: var(--space-3);
     margin-bottom: var(--space-8);
   }
+
+  /* Ontdek de AI-radar */
+  .discover { margin-bottom: var(--space-10); }
+  .discover__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-4); }
+  .discover__title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); margin: 0; }
+  .discover__all { display: inline-flex; align-items: center; gap: 4px; font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; white-space: nowrap; }
+  .discover__all:hover { text-decoration: underline; }
 
   .qa-card {
     display: flex;
