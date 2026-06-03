@@ -1,0 +1,169 @@
+---
+/**
+ * /modellen — Trending AI-modellen (HuggingFace)
+ *
+ * Nieuwe categorie naast de tools: welke open modellen staan nú in de lift.
+ * Gevoed door newsflux export_trending_models.py → src/data/trending_models.json
+ * (dagelijkse HuggingFace-trending-snapshot met momentum, downloads, likes).
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { ArrowLeft, Boxes, TrendingUp, Heart, Download, ArrowUpRight, Sparkles } from '@lucide/astro';
+import data from '../data/trending_models.json';
+
+const models = (data.models ?? []) as any[];
+const updated = data.generated_at
+  ? new Date(data.generated_at.slice(0, 10)).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' })
+  : null;
+const newCount = data.new_this_week_count ?? 0;
+
+// Category filter set (ordered by frequency)
+const catCounts = (data.category_counts ?? {}) as Record<string, number>;
+const categories = Object.entries(catCounts).sort((a, b) => b[1] - a[1]).map(([c]) => c);
+
+const fmtNum = (n: number) => {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace('.0', '') + 'M';
+  if (n >= 1_000) return (n / 1_000).toFixed(1).replace('.0', '') + 'k';
+  return String(n ?? 0);
+};
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Trending AI-modellen — debesteaitools.nl',
+  description: `De ${models.length} meest trending open AI-modellen op HuggingFace, met momentum, downloads en taakcategorie. Dagelijks bijgewerkt.`,
+  url: `${siteOrigin}/modellen`,
+  numberOfItems: models.length,
+  itemListElement: models.slice(0, 20).map((m, i) => ({
+    '@type': 'ListItem', position: i + 1, name: m.model_id, url: m.hf_url,
+  })),
+};
+---
+
+<Layout
+  title="Trending AI-modellen — wat staat er in de lift | debesteaitools.nl"
+  description={`De ${models.length} meest trending open AI-modellen op HuggingFace — LLM's, beeld, audio en multimodaal — met momentum en downloads. ${newCount} nieuw deze week. Dagelijks bijgewerkt.`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container md">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="md__head">
+      <p class="md__kicker"><Boxes size={13} stroke-width={1.75} /> Modellen-radar</p>
+      <h1 class="md__title">Trending AI-modellen</h1>
+      <p class="md__lede">
+        Tools draaien op modellen — en de open modellen op HuggingFace bewegen
+        snel. Dit zijn de namen die nú in de lift zitten: LLM's, beeld-, audio-
+        en multimodale modellen, gerangschikt op trending-momentum. Klik door
+        naar HuggingFace voor gewichten en details.
+      </p>
+      <div class="md__stats">
+        <span><strong>{models.length}</strong> modellen</span>
+        <span><strong>{newCount}</strong> nieuw deze week</span>
+        {updated && <span>bijgewerkt {updated}</span>}
+      </div>
+    </header>
+
+    <!-- Category filter -->
+    <nav class="md__filters" aria-label="Filter op taak">
+      <button class="chip chip--active" data-cat="all">Alle ({models.length})</button>
+      {categories.map((c) => (
+        <button class="chip" data-cat={c}>{c} ({catCounts[c]})</button>
+      ))}
+    </nav>
+
+    <!-- Model list -->
+    <ol class="models">
+      {models.map((m) => (
+        <li class="model" data-cat={m.category}>
+          <span class="model__rank">{m.trending_rank ?? '–'}</span>
+          <div class="model__body">
+            <div class="model__top">
+              <a class="model__name" href={m.hf_url} target="_blank" rel="noopener">{m.name}<ArrowUpRight size={13} stroke-width={2} /></a>
+              {m.is_new && <span class="badge badge--new"><Sparkles size={10} stroke-width={2} /> nieuw</span>}
+              {typeof m.rank_change === 'number' && m.rank_change > 0 && (
+                <span class="badge badge--up"><TrendingUp size={10} stroke-width={2} /> {m.rank_change}</span>
+              )}
+              {m.new_entry && <span class="badge badge--enter">nieuw in top</span>}
+            </div>
+            <div class="model__meta">
+              <span class="model__author">{m.author}</span>
+              <span class="model__cat">{m.category}</span>
+              {m.license && <span class="model__lic">{m.license}</span>}
+            </div>
+          </div>
+          <div class="model__stats">
+            <span title="Downloads (30d)"><Download size={12} stroke-width={1.75} /> {fmtNum(m.downloads)}</span>
+            <span title="Likes"><Heart size={12} stroke-width={1.75} /> {fmtNum(m.likes)}</span>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <p class="md__source">
+      Bron: HuggingFace trending-snapshot ({data.snapshot_date}). Momentum t.o.v.
+      {data.prior_date ? ` ${data.prior_date}` : ' de vorige meting'}. Downloads = laatste 30 dagen.
+    </p>
+  </main>
+</Layout>
+
+<script is:inline>
+  // Client-side category filter (no framework needed)
+  document.querySelectorAll('.chip').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-cat');
+      document.querySelectorAll('.chip').forEach((b) => b.classList.remove('chip--active'));
+      btn.classList.add('chip--active');
+      document.querySelectorAll('.model').forEach((row) => {
+        const show = cat === 'all' || row.getAttribute('data-cat') === cat;
+        row.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+  .md { padding-top: 80px; max-width: 960px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .md__head { max-width: 64ch; margin-bottom: var(--space-8, 2rem); }
+  .md__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .md__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-semibold); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .md__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.6; margin: 0 0 var(--space-5) 0; }
+  .md__stats { display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: var(--text-sm); color: var(--text-secondary); }
+  .md__stats strong { color: var(--text-primary); }
+
+  .md__filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+  .chip { font-size: var(--text-xs); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); border: 1px solid var(--border-subtle); background: transparent; color: var(--text-secondary); cursor: pointer; transition: var(--transition-fast, 0.15s); font-family: inherit; }
+  .chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
+  .chip--active { background: var(--primary-bright); color: var(--bg-deep, #1a1209); border-color: var(--primary-bright); font-weight: var(--font-medium); }
+
+  .models { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); counter-reset: none; }
+  .model { display: grid; grid-template-columns: 2.2rem 1fr auto; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .model__rank { font-family: var(--font-mono, monospace); font-size: var(--text-sm); color: var(--text-secondary); text-align: center; }
+  .model__body { min-width: 0; }
+  .model__top { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+  .model__name { display: inline-flex; align-items: center; gap: 3px; font-weight: var(--font-semibold); color: var(--text-primary); text-decoration: none; overflow-wrap: anywhere; }
+  .model__name:hover { color: var(--primary-bright); }
+  .model__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: 3px; font-size: var(--text-xs); color: var(--text-secondary); }
+  .model__cat { color: var(--primary-bright); }
+  .model__lic { font-family: var(--font-mono, monospace); opacity: 0.7; }
+  .model__stats { display: flex; flex-direction: column; gap: 3px; align-items: flex-end; font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--text-secondary); white-space: nowrap; }
+  .model__stats span { display: inline-flex; align-items: center; gap: 4px; }
+
+  .badge { display: inline-flex; align-items: center; gap: 3px; font-size: 0.65rem; font-family: var(--font-mono, monospace); text-transform: uppercase; letter-spacing: 0.04em; padding: 1px 6px; border-radius: var(--radius-full); white-space: nowrap; }
+  .badge--new { background: color-mix(in oklab, var(--primary-bright) 18%, transparent); color: var(--primary-bright); }
+  .badge--up { background: color-mix(in oklab, #34d399 18%, transparent); color: #34d399; }
+  .badge--enter { background: color-mix(in oklab, var(--text-secondary) 15%, transparent); color: var(--text-secondary); }
+
+  .md__source { margin-top: var(--space-8); font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.7; }
+
+  @media (max-width: 560px) {
+    .model { grid-template-columns: 1.8rem 1fr; }
+    .model__stats { grid-column: 2; flex-direction: row; gap: var(--space-3); align-items: flex-start; margin-top: var(--space-2); }
+  }
+</style>
