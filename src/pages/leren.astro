@@ -1,0 +1,151 @@
+---
+/**
+ * /leren — Leer-bronnen voor AI-tools
+ *
+ * Ontsluit de `for_tools`-bucket uit newsflux tutorial_candidates.json (lag
+ * ongebruikt in src/data/reports/). Gecureerde EXTERNE bronnen — GitHub-repos,
+ * guides, video's, threads — om AI-tools te leren. Geen eigen content; eerlijke
+ * pointers naar het beste leermateriaal, met een Nederlandse "wat je leert"-hoek.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { ArrowLeft, GraduationCap, Github, Play, ArrowUpRight, Wrench } from '@lucide/astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
+import raw from '../data/reports/tutorial_candidates.json';
+
+const forTools = ((raw as any).for_tools ?? []) as any[];
+
+// Quality sort: GitHub-repos en video's bovenaan (meestal echt educatief),
+// dan tool-gematchte bronnen, dan op score. Houdt losse social-threads onderaan.
+function qrank(it: any): number {
+  let s = it.score ?? 0;
+  if (it.platform === 'github') s += 12;
+  if (it.video) s += 8;
+  if ((it.matched_tools ?? []).length) s += 4;
+  if (it.platform === 'twitter_likes' || it.platform === 'tweet') s -= 3;
+  return s;
+}
+const items = [...forTools].sort((a, b) => qrank(b) - qrank(a)).slice(0, 18);
+
+const updated = (raw as any).generated_at
+  ? new Date((raw as any).generated_at.slice(0, 10)).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' })
+  : null;
+
+// Clean a title (strip unicode-styled chars, collapse whitespace, cap length)
+function cleanTitle(t: string): string {
+  if (!t) return '';
+  const norm = t.normalize('NFKC').replace(/\s+/g, ' ').trim();
+  return norm.length > 110 ? norm.slice(0, 107) + '…' : norm;
+}
+function host(url: string): string {
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; }
+}
+const platformLabel: Record<string, string> = {
+  github: 'GitHub', twitter_likes: 'X', tweet: 'X', hackernews: 'Hacker News',
+  reddit: 'Reddit', bluesky: 'Bluesky', article: 'Artikel', arxiv: 'ArXiv',
+};
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Leer-bronnen voor AI-tools — debesteaitools.nl',
+  description: `Gecureerde bronnen om AI-tools te leren: ${items.length} GitHub-repos, guides en video's, dagelijks bijgewerkt.`,
+  url: `${siteOrigin}/leren`,
+  numberOfItems: items.length,
+};
+---
+
+<Layout
+  title="Leer AI-tools — de beste bronnen & tutorials | debesteaitools.nl"
+  description={`Gecureerde leer-bronnen voor AI-tools: ${items.length} GitHub-repos, hands-on guides en video's om Claude, ChatGPT, Cursor en meer onder de knie te krijgen. Dagelijks bijgewerkt.`}
+  ogImage="/og/page-leren.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container leren">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="lr__head">
+      <p class="lr__kicker"><GraduationCap size={13} stroke-width={1.75} /> Leren</p>
+      <h1 class="lr__title">Leer AI-tools — de beste bronnen</h1>
+      <p class="lr__lede">
+        Geen losse cursus, maar een dagelijks bijgewerkte selectie van de beste
+        plekken om AI-tools écht te leren: GitHub-repos om mee te bouwen,
+        hands-on guides en video's. Gevonden over honderden bronnen, gefilterd
+        op leerwaarde. Elke kaart linkt naar de bron — met een korte hoek over
+        wat je eruit haalt.
+      </p>
+      {updated && <p class="lr__updated">Bijgewerkt {updated} · {items.length} bronnen</p>}
+    </header>
+
+    <ul class="resources">
+      {items.map((it) => (
+        <li class="res">
+          <div class="res__top">
+            <span class={`res__plat res__plat--${it.platform}`}>
+              {it.platform === 'github' && <Github size={12} stroke-width={1.75} />}
+              {it.video && <Play size={12} stroke-width={1.75} />}
+              {platformLabel[it.platform] ?? it.platform}
+            </span>
+            {it.video && <span class="res__badge">video</span>}
+            {it.new_product && <span class="res__badge res__badge--new">nieuw</span>}
+          </div>
+          <a class="res__title" href={it.url} target="_blank" rel="noopener nofollow">
+            {cleanTitle(it.title)}<ArrowUpRight size={14} stroke-width={2} />
+          </a>
+          {it.suggested_angle_nl && <p class="res__angle">{it.suggested_angle_nl}</p>}
+          <div class="res__foot">
+            {(it.matched_tools ?? []).slice(0, 3).map((t: string) => (
+              <a class="res__tool" href={`/ai-tools/${t.replace(/\s+/g, '-')}`}><Wrench size={10} stroke-width={2} /> {t}</a>
+            ))}
+            {host(it.url) && <span class="res__host">{host(it.url)}</span>}
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['tools', 'functies', 'vergelijk']} />
+    </section>
+
+    <p class="lr__source">
+      Bronnen automatisch ontdekt en gecureerd via de newsflux-pipeline (GitHub,
+      HackerNews, gecureerde X-likes, ArXiv). Externe links openen in een nieuw
+      tabblad. Dit zijn pointers naar het beste leermateriaal — geen eigen content.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .leren { padding-top: 80px; max-width: 880px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .lr__head { max-width: 64ch; margin-bottom: var(--space-8, 2rem); }
+  .lr__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .lr__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .lr__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.6; margin: 0 0 var(--space-4) 0; }
+  .lr__updated { font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--text-secondary); margin: 0; }
+
+  .resources { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: var(--space-3); }
+  @media (max-width: 800px) { .resources { grid-template-columns: 1fr; } }
+  .res { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .res__top { display: flex; align-items: center; gap: var(--space-2); }
+  .res__plat { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono, monospace); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); }
+  .res__plat--github { color: var(--text-primary); }
+  .res__badge { font-size: 0.6rem; font-family: var(--font-mono, monospace); text-transform: uppercase; padding: 1px 6px; border-radius: var(--radius-full); background: color-mix(in oklab, var(--text-secondary) 14%, transparent); color: var(--text-secondary); }
+  .res__badge--new { background: color-mix(in oklab, var(--primary-bright) 18%, transparent); color: var(--primary-bright); }
+  .res__title { display: inline-flex; align-items: flex-start; gap: 4px; font-weight: var(--font-semibold); color: var(--text-primary); text-decoration: none; line-height: 1.3; }
+  .res__title:hover { color: var(--primary-bright); }
+  .res__title :global(svg) { flex: none; margin-top: 3px; opacity: 0.6; }
+  .res__angle { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5; margin: 0; }
+  .res__foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: auto; padding-top: var(--space-2); }
+  .res__tool { display: inline-flex; align-items: center; gap: 3px; font-size: var(--text-xs); color: var(--primary-bright); text-decoration: none; border: 1px solid color-mix(in oklab, var(--primary-bright) 30%, var(--border-subtle)); border-radius: var(--radius-full); padding: 1px 8px; }
+  .res__tool:hover { background: color-mix(in oklab, var(--primary-bright) 12%, transparent); }
+  .res__host { font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.6; margin-left: auto; }
+
+  .lr__source { margin-top: var(--space-8); font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.7; max-width: 70ch; }
+</style>

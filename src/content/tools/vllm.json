@@ -1,0 +1,90 @@
+{
+  "name": "vLLM",
+  "category": "infrastructure",
+  "websiteUrl": "https://vllm.ai",
+  "shortDescription": "Snelle open-source LLM inference engine",
+  "headlineValueProp": "Open-source inference-engine voor LLM's op GPU-clusters — industriestandaard voor enterprise on-premise deploys",
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "tags": [
+    "llm-inference",
+    "self-hosted",
+    "open-source",
+    "gpu",
+    "enterprise"
+  ],
+  "draft": false,
+  "longDescription": "vLLM is een open-source inference-engine voor het serveren van LLM's op GPU-clusters in productie. Het gebruikt PagedAttention voor efficiënt geheugenbeheer en continuous batching voor hoge throughput. Wordt gebruikt door enterprise-organisaties die LLM's on-premise of in private cloud willen draaien, en is de de-facto standaard voor zelf-gehoste LLM-serving.",
+  "primaryJobsToBeDone": [
+    "Open-source LLM's serveren op GPU-clusters met hoge throughput",
+    "Een private OpenAI-compatibele API draaien op eigen infrastructuur",
+    "Token-kosten verlagen door bestaande GPU-investering te benutten"
+  ],
+  "antiUseCases": [
+    "Hobby-gebruikers en zzp'ers zonder GPU — Ollama is daar simpeler",
+    "Teams die geen DevOps-capaciteit hebben voor productie-deploys",
+    "Use cases die kant-en-klare RAG of agent-functionaliteit vereisen — vLLM is alleen de serving-laag"
+  ],
+  "bestFor": "vLLM is het meest waardevol voor organisaties die grootschalige taalmodellen willen inzetten in hun applicaties en diensten.",
+  "useCases": [
+    "Implementatie van grootschalige taalmodellen",
+    "Schalen en beheren van taalmodellen",
+    "Integratie van taalmodellen in applicaties"
+  ],
+  "strengths": [
+    "Geïntegreerde oplossing voor implementatie en beheer",
+    "Schaalbaar ontwerp voor grootschalige toepassingen",
+    "Robuuste infrastructuur voor betrouwbare prestaties"
+  ],
+  "limitations": [
+    "Complexiteit van configuratie en integratie"
+  ],
+  "pricing": "Gratis (open-source, Apache 2.0). GPU-infrastructuur is de echte kostenpost.",
+  "openSource": true,
+  "businessFunctions": [
+    "development",
+    "data",
+    "operations"
+  ],
+  "deploymentType": "self-hosted",
+  "dataResidency": "eu",
+  "targetAudience": [
+    "enterprise",
+    "mkb"
+  ],
+  "nlSupport": false,
+  "integrations": [
+    "Docker",
+    "Kubernetes",
+    "API"
+  ],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "high",
+  "learningCurve": "high",
+  "companySizeFit": [
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "mission-critical",
+  "verdict": "vLLM is de snelste open-source inference-server voor LLM's op GPU-clusters — ideaal voor productie self-hosting. De industriestandaard voor enterprise on-premise deployments.",
+  "whyListed": "vLLM is de meest gebruikte open-source LLM-serving-engine voor productie-deployments en de de-facto standaard in enterprise on-premise LLM-infrastructure.",
+  "bestAlternative": "ollama",
+  "setupTime": "days",
+  "matchSegments": [
+    "enterprise",
+    "mkb_klein",
+    "mkb_middel"
+  ],
+  "idealTeamSize": {
+    "min": 11,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "rest_api"
+  ],
+  "beginnerFriendlyScore": 1,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low",
+  "lastUpdated": "2026-06-02"
+}

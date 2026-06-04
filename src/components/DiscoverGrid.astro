@@ -1,0 +1,128 @@
+---
+/**
+ * DiscoverGrid — herbruikbaar discovery-oppervlak
+ *
+ * Eén bron van waarheid voor alle "ontdek"-oppervlakken op de site:
+ *   - homepage "Ontdek de AI-radar"-sectie  (variant="grid", only=nieuwe features)
+ *   - /ontdek hub-pagina                     (variant="grid", alle surfaces)
+ *   - sibling-strip onderaan feature-pagina's (variant="strip", only=siblings)
+ *
+ * Counts/omschrijvingen komen als prop binnen (`counts`) zodat de component
+ * puur presentationeel blijft — elke pagina heeft die data al.
+ *
+ * Props:
+ *   variant : 'grid' | 'strip'   (default 'grid')
+ *   only?   : string[]           toon alleen deze keys (in deze volgorde)
+ *   exclude?: string[]           verberg deze keys
+ *   counts? : Record<string,string>  per key een omschrijving (overschrijft default)
+ */
+import {
+  LayoutGrid, Boxes, Zap, Users, GraduationCap, TrendingUp, Newspaper, Scale, ArrowRight, ArrowUpRight, SlidersHorizontal, Briefcase,
+} from '@lucide/astro';
+
+interface Surface {
+  key: string;
+  label: string;
+  href: string;
+  icon: any;
+  desc: string;
+}
+
+const SURFACES: Surface[] = [
+  { key: 'finder',    label: 'Vind je tool', href: '/vind-je-beste-ai-tool', icon: SlidersHorizontal, desc: 'Match op taak, budget en eisen — in 30 seconden' },
+  { key: 'functies',  label: 'Per functie', href: '/ai-tools-voor',        icon: Briefcase,     desc: 'De beste AI-tools per bedrijfsfunctie' },
+  { key: 'tools',     label: 'AI-tools',  href: '/ai-tools',            icon: LayoutGrid,    desc: 'Alle tools objectief gerankt op buzz en groei' },
+  { key: 'modellen',  label: 'Modellen',  href: '/modellen',            icon: Boxes,         desc: 'Open modellen die nú in de lift zitten' },
+  { key: 'doorbraak', label: 'Doorbraak', href: '/radar/doorbraak',     icon: Zap,           desc: 'Tools die op punt staan te breken — vóór de pers' },
+  { key: 'makers',    label: 'Makers',    href: '/makers',              icon: Users,         desc: 'De mensen & organisaties achter de trending AI' },
+  { key: 'leren',     label: 'Leren',     href: '/leren',               icon: GraduationCap, desc: 'Gecureerde bronnen om AI-tools te leren' },
+  { key: 'weekradar', label: 'Weekradar', href: '/radar/?view=rankings',icon: TrendingUp,    desc: 'Stijgers, dalers en nieuwkomers per week' },
+  { key: 'nieuws',    label: 'Nieuws',    href: '/nieuws',              icon: Newspaper,     desc: 'Nieuwe features en tool-updates' },
+  { key: 'vergelijk', label: 'Vergelijk', href: '/vergelijk',           icon: Scale,         desc: 'Tools side-by-side op buzz, groei en functies' },
+];
+
+interface Props {
+  variant?: 'grid' | 'strip';
+  only?: string[];
+  exclude?: string[];
+  counts?: Record<string, string>;
+}
+const { variant = 'grid', only, exclude, counts = {} } = Astro.props as Props;
+
+let surfaces = SURFACES;
+if (only) {
+  surfaces = only
+    .map((k) => SURFACES.find((s) => s.key === k))
+    .filter((s): s is Surface => Boolean(s));
+} else if (exclude) {
+  surfaces = SURFACES.filter((s) => !exclude.includes(s.key));
+}
+---
+
+{variant === 'grid' ? (
+  <ul class="dg">
+    {surfaces.map((s) => {
+      const Icon = s.icon;
+      return (
+        <li class="dg__item">
+          <a class="dg__card" href={s.href}>
+            <span class="dg__icon"><Icon size={20} stroke-width={1.5} aria-hidden="true" /></span>
+            <span class="dg__body">
+              <span class="dg__label">{s.label}</span>
+              <span class="dg__desc" set:html={counts[s.key] ?? s.desc} />
+            </span>
+            <ArrowRight size={16} stroke-width={1.5} class="dg__arrow" />
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+) : (
+  <ul class="dgs">
+    {surfaces.map((s) => {
+      const Icon = s.icon;
+      return (
+        <li>
+          <a class="dgs__link" href={s.href}>
+            <Icon size={14} stroke-width={1.75} aria-hidden="true" />
+            <span>{s.label}</span>
+            <ArrowUpRight size={12} stroke-width={2} class="dgs__arrow" />
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+)}
+
+<style>
+  /* ── Grid-variant ───────────────────────────────────── */
+  .dg { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-3); }
+  .dg__item { display: flex; }
+  .dg__card {
+    flex: 1; display: flex; align-items: center; gap: var(--space-3);
+    padding: var(--space-4); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg); background: var(--bg-glass);
+    text-decoration: none; transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+  }
+  .dg__card:hover { border-color: var(--primary-bright); background: color-mix(in oklab, var(--primary-bright) 5%, var(--bg-glass)); transform: translateY(-1px); }
+  .dg__icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-md); background: color-mix(in oklab, var(--primary-bright) 10%, transparent); color: var(--primary-bright); }
+  .dg__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .dg__label { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--font-semibold); color: var(--text-primary); }
+  .dg__desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.4; }
+  .dg__desc :global(strong) { color: var(--text-primary); }
+  .dg__card :global(.dg__arrow) { flex: none; color: var(--text-muted); transition: color var(--transition-fast), transform var(--transition-fast); }
+  .dg__card:hover :global(.dg__arrow) { color: var(--primary-bright); transform: translateX(2px); }
+
+  /* ── Strip-variant (sibling-links) ──────────────────── */
+  .dgs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .dgs__link {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    padding: var(--space-2) var(--space-3); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full); background: var(--bg-glass);
+    font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+  }
+  .dgs__link:hover { border-color: var(--primary-bright); color: var(--text-primary); }
+  .dgs__link :global(svg:first-child) { color: var(--primary-bright); }
+  .dgs__link :global(.dgs__arrow) { opacity: 0.5; }
+</style>

@@ -1,0 +1,79 @@
+{
+  "name": "zero.xyz",
+  "category": "infrastructure",
+  "websiteUrl": "https://zero.xyz",
+  "shortDescription": "Gateway die AI-agents toegang geeft tot circa 8.000 tools via MCP en de x402-betalingsstandaard, zonder per-tool API-key configuratie.",
+  "headlineValueProp": "Eén CLI, ~8.000 tools voor je agent — zonder API-keys of MCP-servers per service",
+  "pricingModel": "paid",
+  "difficulty": "intermediate",
+  "tags": [
+    "agent-infrastructure",
+    "mcp",
+    "x402",
+    "tool-gateway",
+    "claude-code",
+    "agent-payments"
+  ],
+  "draft": false,
+  "longDescription": "zero.xyz is een gateway-service die AI-agents verbindt met circa 8.000 tools en API's via het Model Context Protocol (MCP) en de x402-betalingsstandaard (HTTP 402, Coinbase + Cloudflare). In plaats van per tool een API-key en MCP-server op te zetten, installeer je één keer de zero.xyz CLI en kan je agent (Claude Code, Codex, Gemini, OpenClaw, Hermes en de meeste andere CLI-agents) tools on-demand vinden en gebruiken. Tools worden gerangschikt per taak op basis van agent-reviews. Pricing: 5 euro startkrediet gratis, daarna pay-per-use via x402.",
+  "verdict": "zero.xyz dicht een echt gat in de agent-stack: de long-tail aan kleine tools waar je geen aparte integratie voor wilt opzetten. Het is geen vervanging van Composio voor enterprise-SaaS of van eigen MCP-servers voor business-kritische integraties — maar voor experimentele agent-workflows en het uitbreiden van Claude Code's capabilities zonder configuratie-overhead is dit het eerste serieuze aanbod. Jong project; rate-limits en logging zijn essentieel voor productie-gebruik.",
+  "bestFor": "Developers en MKB-teams die met CLI-agents als Claude Code, Codex of Gemini werken en de tool-capabilities snel willen uitbreiden zonder per-service configuratie. Vooral geschikt voor prototyping, experimentatie en agent-workflows met veel diverse tool-behoeften.",
+  "primaryJobsToBeDone": [
+    "Geef Claude Code of een vergelijkbare CLI-agent ad-hoc toegang tot externe tools zonder API-key management",
+    "Verbind agents met x402-aanbieders voor pay-per-use diensten (geocoding, conversie, lookup, etc.)",
+    "Centraliseer billing en logging van alle agent-tool-gebruik in één dashboard"
+  ],
+  "useCases": [
+    "Agent-prototyping waarbij elke nieuwe tool zonder setup beschikbaar moet zijn",
+    "MKB-teams die met meerdere CLI-agents werken en centrale governance willen",
+    "Bug bounty / security research met diverse external lookup-services",
+    "Document processing workflows die per stap een andere converter nodig hebben"
+  ],
+  "strengths": [
+    "Eén installatie geeft toegang tot ~8.000 tools",
+    "Werkt direct met Claude Code, Codex, Gemini en de meeste CLI-agents",
+    "Pay-per-use zonder abonnement — alleen betalen wat je verbruikt",
+    "Task-conditional tool-ranking op basis van agent-reviews",
+    "Centraal logging en billing voor multi-agent teams"
+  ],
+  "limitations": [
+    "Jong project — stabiliteit en tool-coverage moeten zich nog bewijzen",
+    "Agent-payments via x402 zijn nieuw; rate-limits zijn essentieel",
+    "Niet alle 8.000 tools zijn even hoogwaardig — sommige ranking-resultaten zijn nog ruwe schattingen",
+    "Voor enterprise-compliance vragen sommige organisaties strakker controle dan zero.xyz nu biedt",
+    "Geen vervanging van directe MCP-integraties met je belangrijkste SaaS-tools"
+  ],
+  "antiUseCases": [
+    "Productie-workflows met strikte compliance-eisen die directe netwerk-controle vereisen",
+    "Teams met 1-2 vaste tool-integraties — directe MCP-server is dan simpeler",
+    "Use-cases waar je elke tool-call vooraf wilt reviewen voordat hij draait",
+    "Organisaties zonder budget voor variabele kosten"
+  ],
+  "bestAlternative": "mcp",
+  "whenToChoose": "Kies zero.xyz voor experimentele agent-workflows met diverse long-tail tools en pay-per-use kostenmodel. Voor enterprise-SaaS-integraties (Salesforce, Notion, Slack) is Composio directer; voor business-kritische integraties bouw je een eigen MCP-server via de TypeScript/Python SDK; MCPTotal is gerichter op MCP-server hosting.",
+  "pricing": "Gratis startkrediet van $5; daarna pay-per-use via x402. Geen abonnement, kosten variëren per tool en agent-gedrag (typisch $0.001-$0.10 per call).",
+  "openSource": false,
+  "businessFunctions": [
+    "development",
+    "operations"
+  ],
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": [
+    "mkb",
+    "solo",
+    "freelancer"
+  ],
+  "nlSupport": true,
+  "integrations": [
+    "Claude Code",
+    "OpenAI Codex CLI",
+    "Gemini CLI",
+    "OpenClaw",
+    "Hermes",
+    "MCP-compatible agents",
+    "x402 payment standard",
+    "USDC wallets"
+  ],
+  "lastUpdated": "2026-06-02"
+}

@@ -1,0 +1,125 @@
+{
+  "name": "Replicate",
+  "category": "infrastructure",
+  "websiteUrl": "https://replicate.com",
+  "shortDescription": "Cloud-platform voor het draaien van open-source AI-modellen via API",
+  "longDescription": "Replicate is een platform voor het bouwen, testen en implementeren van machine learning-modellen. Het biedt een eenvoudige interface voor het trainen en implementeren van AI-modellen zonder dat je je zorgen hoeft te maken over de onderliggende infrastructuur.",
+  "bestFor": "Replicate is het meest waardevol voor ontwikkelaars en data scientists die snel machine learning-modellen willen bouwen en implementeren zonder zich te hoeven bezighouden met de technische details.",
+  "useCases": [
+    "Machine learning model training",
+    "Model implementatie",
+    "Snelle prototyping"
+  ],
+  "strengths": [
+    "Eenvoudige interface",
+    "Snelle model implementatie"
+  ],
+  "limitations": [
+    "Beperkte controle over onderliggende infrastructuur"
+  ],
+  "pricing": "Gratis voor kleine projecten, betaald vanaf $10/maand voor grotere projecten",
+  "openSource": true,
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "tags": [
+    "machine learning",
+    "AI",
+    "model deployment"
+  ],
+  "draft": false,
+  "deploymentType": "saas",
+  "dataResidency": "global",
+  "targetAudience": [
+    "solo",
+    "enterprise"
+  ],
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "fundingStage": "seed",
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "requiresDeveloper": true,
+  "freeTrialAvailable": true,
+  "nlSupport": true,
+  "learningCurve": "medium",
+  "documentationQuality": "good",
+  "supportQuality": "good",
+  "companySizeFit": [
+    "solo",
+    "small",
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "team-rollout",
+  "integrations": [
+    "TensorFlow",
+    "PyTorch",
+    "Hugging Face"
+  ],
+  "mainCompetitors": [],
+  "screenshotUrls": [],
+  "keyFeatures": [
+    {
+      "title": "Model Hosting",
+      "description": "Implementeer en host je AI-modellen op het Replicate-platform",
+      "group": "core"
+    },
+    {
+      "title": "Experiment Tracking",
+      "description": "Volg en vergelijk de prestaties van je AI-modellen",
+      "group": "core"
+    },
+    {
+      "title": "Gradio Integratie",
+      "description": "Bouw interactieve demo's voor je AI-modellen met Gradio",
+      "group": "integration"
+    },
+    {
+      "title": "Hugging Face Integratie",
+      "description": "Gebruik vooraf getrainde Hugging Face-modellen in je Replicate-projecten",
+      "group": "integration"
+    },
+    {
+      "title": "Privé Modellen",
+      "description": "Beheer je AI-modellen privé en veilig op het Replicate-platform",
+      "group": "enterprise"
+    },
+    {
+      "title": "Collaboratie",
+      "description": "Werk samen met je team aan de ontwikkeling van AI-modellen",
+      "group": "enterprise"
+    }
+  ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "zzp",
+    "enterprise",
+    "mkb_klein",
+    "mkb_middel"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 100000
+  },
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 3,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low",
+  "verdict": "Replicate is de eenvoudigste manier om open-source AI-modellen via API te draaien — model kiezen, API-call doen, resultaat krijgen. Voor productie-workloads met eigen modellen is Modal flexibeler.",
+  "whyListed": "Replicate werd de standaard manier voor developers om met open-source AI-modellen te experimenteren zonder eigen GPU-infrastructuur op te zetten.",
+  "bestAlternative": "huggingface",
+  "headlineValueProp": "Run open-source AI-modellen via een eenvoudige API — geen GPU-infra nodig",
+  "primaryJobsToBeDone": [
+    "Een open-source model (SDXL, Whisper, Llama) via REST-API aanroepen",
+    "Snel experimenteren met diverse modellen zonder lokale install",
+    "Een prototype demo bouwen die op community-modellen leunt"
+  ],
+  "antiUseCases": [
+    "Hoge-throughput productie-workloads waar marge op cold starts telt",
+    "Custom Python pipelines — Modal is daar geschikter",
+    "Strikte data-residency die Replicates regio's niet dekken"
+  ]
+}

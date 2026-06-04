@@ -1,0 +1,12 @@
+---
+/**
+ * /digest — 301 → /nieuws/?type=digests
+ *
+ * De /digest/-index is samengevoegd met /nieuws/ — alle dagelijkse
+ * digests verschijnen daar in dezelfde feed als de redactionele
+ * artikelen, met een 'Dag-digest'-badge. Individuele /digest/<slug>/
+ * detail-URLs blijven werken via digest/[slug].astro.
+ */
+export const prerender = false;
+return Astro.redirect('/nieuws/?type=digests', 301);
+---

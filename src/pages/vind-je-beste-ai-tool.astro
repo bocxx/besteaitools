@@ -1,0 +1,187 @@
+---
+/**
+ * /vind-je-beste-ai-tool — high-intent finder-landingspagina
+ *
+ * Mikt op transactionele zoekintentie ("beste AI tool voor [taak]", "AI tool
+ * voor MKB", "AVG-proof AI tool Nederlands") in plaats van merknavigatie.
+ * Bundelt de filterbare ToolDirectory met keyword-rijke intent-copy en
+ * structured data (ItemList + FAQPage + BreadcrumbList).
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { Compass, Search, ShieldCheck, Zap, UserX, Gift, ArrowRight } from '@lucide/astro';
+import ToolDirectory from '../components/ToolDirectory.astro';
+import { getAllTools, getBusinessFunctionSections } from '../lib/tools-engine';
+import { siteConfig } from '../config/site';
+
+// ── Data ──────────────────────────────────────────────
+const tools = await getAllTools();
+const toolsCount = tools.length;
+const sections = await getBusinessFunctionSections();
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const pageUrl = `${siteOrigin}/vind-je-beste-ai-tool`;
+const currentYear = new Date().getFullYear();
+
+// Tools gesorteerd op buzz voor de ItemList (meest relevante eerst)
+const itemListTools = [...tools]
+  .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+
+// ── Structured data ───────────────────────────────────
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Vind je beste AI-tool — ${toolsCount}+ tools gefilterd op taak en eisen`,
+  description: `Filterbare lijst van ${toolsCount}+ AI-tools, gerankt op buzz en groei en te filteren op bedrijfsfunctie, doelgroep, AVG en prijs.`,
+  url: pageUrl,
+  numberOfItems: itemListTools.length,
+  itemListElement: itemListTools.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.name,
+    url: `${siteOrigin}/ai-tools/${t.slug}`,
+  })),
+};
+
+const faqItems = [
+  {
+    q: 'Hoe vind ik de beste AI-tool voor mijn taak?',
+    a: `Filter de lijst op bedrijfsfunctie (marketing, sales, klantenservice, development en meer) en verfijn op je eisen: AVG-proof, geen developer nodig, gratis proberen of snel inzetbaar. Je houdt direct de tools over die bij jouw use case passen — objectief gerankt op buzz en groei, niet op betaalde plaatsing.`,
+  },
+  {
+    q: `Wat is de beste AI-tool voor het MKB in ${currentYear}?`,
+    a: `Dat hangt af van je taak. Zet de doelgroep-filter op "MKB" en kies je bedrijfsfunctie, dan zie je de tools die het beste passen bij kleinere teams — inclusief prijsmodel en of er een gratis proefperiode is.`,
+  },
+  {
+    q: 'Welke AI-tools zijn AVG-/GDPR-proof en geschikt voor Nederland?',
+    a: 'Gebruik het filter "AVG-klaar" om alleen tools te tonen met een gezonde privacy-positie, en let op het Nederlandstalig-label. Zo vind je snel tools die je zakelijk en compliant in Nederland kunt inzetten.',
+  },
+  {
+    q: 'Zijn deze AI-tools gratis te proberen?',
+    a: 'Veel tools bieden een gratis of freemium-plan. Zet het filter "Gratis proberen" aan om alleen tools met een proefperiode te zien. Bij elke tool staat het prijsmodel vermeld.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+    { '@type': 'ListItem', position: 2, name: 'Vind je beste AI-tool', item: pageUrl },
+  ],
+};
+---
+
+<Layout
+  title={`Vind je beste AI-tool — match op taak, budget & AVG | debesteaitools.nl`}
+  description={`Vind in 30 seconden de beste AI-tool voor jouw taak. Filter ${toolsCount}+ tools op bedrijfsfunctie, doelgroep (MKB, enterprise, solo), AVG en prijs — objectief gerankt op buzz en groei.`}
+  ogImage="/og/page-ontdek.png"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  </Fragment>
+
+  <main class="container container-wide vind">
+    <header class="vind__head">
+      <p class="vind__kicker"><Compass size={13} stroke-width={1.75} /> Tool-finder</p>
+      <h1 class="vind__title">Vind jouw beste AI-tool</h1>
+      <p class="vind__lede">
+        Geen eindeloze lijstjes — match op wat jij nodig hebt. Filter <strong>{toolsCount}+ AI-tools</strong>
+        op bedrijfsfunctie, doelgroep, AVG-status en prijs, en houd in 30 seconden de tools over die
+        écht bij je taak passen. Objectief gerankt op buzz en groei, zonder betaalde plaatsing.
+      </p>
+      <div class="vind__signals">
+        <span class="vind__signal"><ShieldCheck size={14} stroke-width={1.5} /> AVG-proof filteren</span>
+        <span class="vind__signal"><Zap size={14} stroke-width={1.5} /> Snel inzetbaar</span>
+        <span class="vind__signal"><UserX size={14} stroke-width={1.5} /> Geen developer nodig</span>
+        <span class="vind__signal"><Gift size={14} stroke-width={1.5} /> Gratis proberen</span>
+      </div>
+      <a href="#alle-tools" class="btn btn-primary btn-lg vind__cta">
+        <Search size={18} stroke-width={2} /> Start de tool-finder
+      </a>
+    </header>
+
+    <!-- Intent-copy per bedrijfsfunctie: keyword-rijk + interne diepte -->
+    <section class="vind__intent" aria-labelledby="intent-heading">
+      <h2 id="intent-heading" class="vind__h2">De beste AI-tool per taak</h2>
+      <p class="vind__intent-lede">
+        Zoek je een AI-tool voor een specifieke taak? Open de pillar-pagina van je
+        bedrijfsfunctie voor de complete, geranked-op-buzz selectie — of filter hieronder zelf verder.
+      </p>
+      <ul class="vind__fn-grid">
+        {sections.map((s) => (
+          <li>
+            <a class="vind__fn" href={`/ai-tools-voor/${s.key}`}>
+              <h3 class="vind__fn-name">AI-tools voor {s.name}</h3>
+              <p class="vind__fn-desc">{s.description}</p>
+              <p class="vind__fn-count">{s.tools.length} tools <ArrowRight size={13} stroke-width={1.75} /></p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- De filterbare directory zelf -->
+    <section aria-labelledby="finder-heading">
+      <h2 id="finder-heading" class="vind__h2">Filter alle {toolsCount}+ AI-tools</h2>
+      <ToolDirectory />
+    </section>
+
+    <!-- FAQ — zichtbaar én als FAQPage structured data -->
+    <section class="vind__faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="vind__h2">Veelgestelde vragen</h2>
+      <div class="vind__faq-list">
+        {faqItems.map(({ q, a }) => (
+          <details class="vind__faq-item">
+            <summary class="vind__faq-q">{q}</summary>
+            <p class="vind__faq-a">{a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .vind { padding-top: 80px; padding-bottom: var(--space-20); }
+  .vind__head { max-width: 64ch; margin-bottom: var(--space-10); }
+  .vind__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-widest); margin: 0 0 var(--space-3) 0; }
+  .vind__title { font-family: var(--font-logo); font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem); font-weight: var(--font-regular); letter-spacing: var(--tracking-tight); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .vind__lede { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-5) 0; }
+  .vind__signals { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-6); }
+  .vind__signal { display: inline-flex; align-items: center; gap: var(--space-1-5); font-size: var(--text-sm); color: var(--text-muted); }
+  .vind__cta { position: relative; }
+
+  .vind__h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); margin: 0 0 var(--space-4) 0; }
+
+  .vind__intent { margin-bottom: var(--space-12); }
+  .vind__intent-lede { font-size: var(--text-base); color: var(--text-secondary); max-width: 70ch; margin: 0 0 var(--space-6) 0; }
+  .vind__fn-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .vind__fn { display: block; height: 100%; padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-glass); text-decoration: none; transition: border-color var(--transition-fast), transform var(--transition-fast); }
+  .vind__fn:hover { border-color: var(--primary-bright); transform: translateY(-1px); }
+  .vind__fn-name { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--font-semibold); color: var(--text-primary); margin: 0 0 var(--space-2) 0; }
+  .vind__fn-desc { font-size: var(--text-sm); color: var(--text-secondary); margin: 0 0 var(--space-2) 0; line-height: var(--leading-normal); }
+  .vind__fn-count { display: inline-flex; align-items: center; gap: var(--space-1-5); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
+  .vind__fn:hover .vind__fn-count { color: var(--primary-bright); }
+
+  .vind__faq { margin-top: var(--space-12); max-width: 72ch; }
+  .vind__faq-list { display: flex; flex-direction: column; gap: var(--space-2); }
+  .vind__faq-item { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--bg-glass); }
+  .vind__faq-q { font-weight: var(--font-semibold); cursor: pointer; font-size: var(--text-base); }
+  .vind__faq-a { margin: var(--space-3) 0 0 0; color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+
+  @media (max-width: 900px) { .vind__fn-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .vind__fn-grid { grid-template-columns: 1fr; } }
+</style>

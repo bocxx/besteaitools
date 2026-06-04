@@ -1,0 +1,139 @@
+{
+  "name": "Claude Code",
+  "category": "coding",
+  "websiteUrl": "https://docs.anthropic.com/en/docs/claude-code",
+  "shortDescription": "Anthropic's terminal-based coding assistant",
+  "pricingModel": "freemium",
+  "difficulty": "beginner",
+  "tags": [
+    "coding",
+    "cli",
+    "ai-agent",
+    "anthropic"
+  ],
+  "draft": false,
+  "longDescription": "Claude Code is een AI-gebaseerd coderingsassistentiehulpmiddel dat ontwikkelaars helpt bij het schrijven, debuggen en optimaliseren van code.",
+  "bestFor": "Claude Code is het meest waardevol voor softwareontwikkelaars die efficiënter willen werken en hun productiviteit willen verbeteren.",
+  "useCases": [
+    "Automatisch genereren van code",
+    "Foutopsporing en debugging",
+    "Optimaliseren van code"
+  ],
+  "strengths": [
+    "Verhoogt de productiviteit van ontwikkelaars",
+    "Ondersteunt verschillende programmeertalen"
+  ],
+  "limitations": [
+    "Nog in de beginfase, beperkte functionaliteit"
+  ],
+  "pricing": "Gratis",
+  "openSource": false,
+  "businessFunctions": [
+    "development"
+  ],
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": [
+    "mkb",
+    "enterprise",
+    "solo"
+  ],
+  "nlSupport": false,
+  "integrations": [
+    "Terminal",
+    "GitHub"
+  ],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "learningCurve": "low",
+  "companySizeFit": [
+    "solo",
+    "small",
+    "medium",
+    "large"
+  ],
+  "bestUseCaseStage": "team-rollout",
+  "verdict": "Claude Code is het krachtigste agentic coding-tool voor complexe, meerstaps taken in een bestaande codebase. Minder goed voor snelle autocomplete, uitstekend voor het zelfstandig schrijven van hele features.",
+  "whyListed": "Claude Code zet de standaard voor agentic coding — een agent die zelfstandig door een codebase navigeert, plannen maakt en wijzigingen doorvoert.",
+  "bestAlternative": "cursor",
+  "keyFeatures": [
+    {
+      "title": "Terminal-native agent",
+      "description": "Draait direct in je terminal — geen IDE-plugin, geen nieuwe editor nodig.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-step planning",
+      "description": "Bouwt een plan, voert stappen uit en past aan op basis van tussenresultaten.",
+      "group": "core"
+    },
+    {
+      "title": "Codebase-navigatie",
+      "description": "Leest en doorzoekt bestaande projecten zelfstandig om context op te bouwen.",
+      "group": "core"
+    },
+    {
+      "title": "Sessies",
+      "description": "Blijvende conversatiegeschiedenis per project, zodat het werk voortzet waar je stopte.",
+      "group": "core"
+    },
+    {
+      "title": "Vision (screenshots)",
+      "description": "Plak schermafdrukken of ontwerpen in en laat Claude ze in code vertalen.",
+      "group": "input"
+    },
+    {
+      "title": "Bash-uitvoering",
+      "description": "Voert tests, builds en scripts uit in je lokale omgeving met expliciete goedkeuring.",
+      "group": "output"
+    },
+    {
+      "title": "File edits",
+      "description": "Maakt, wijzigt en verwijdert bestanden met duidelijke diffs ter review.",
+      "group": "output"
+    },
+    {
+      "title": "Git-integratie",
+      "description": "Stelt commits, branches en pull-request-beschrijvingen automatisch op.",
+      "group": "integration"
+    },
+    {
+      "title": "MCP-support",
+      "description": "Koppel externe tools en databronnen via het Model Context Protocol.",
+      "group": "integration"
+    },
+    {
+      "title": "Modelkeuze Sonnet/Opus",
+      "description": "Wissel tussen snel (Sonnet) en grondig (Opus) afhankelijk van de taakcomplexiteit.",
+      "group": "core"
+    }
+  ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 1000
+  },
+  "controlledIntegrations": [
+    "github"
+  ],
+  "beginnerFriendlyScore": 4,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low",
+  "headlineValueProp": "Anthropic's terminal-first coding agent — Claude die zelfstandig code leest, schrijft en draait",
+  "primaryJobsToBeDone": [
+    "Een feature volledig implementeren door Claude in je terminal taken te laten uitvoeren",
+    "Bestaande codebases doorgronden door Claude rond te laten lezen",
+    "Refactors of migraties uitvoeren over veel bestanden tegelijk"
+  ],
+  "antiUseCases": [
+    "Pure inline autocomplete in een editor — Cursor of Copilot zijn daar voor",
+    "Teams die geen CLI-affiniteit hebben",
+    "Workflows met strikte sandbox-eisen waar terminal-toegang geen optie is"
+  ]
+}

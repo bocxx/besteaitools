@@ -1,0 +1,94 @@
+{
+  "name": "LiteLLM",
+  "category": "infrastructure",
+  "websiteUrl": "https://www.litellm.ai",
+  "shortDescription": "Open-source proxy voor 100+ LLM-providers met één API-interface",
+  "longDescription": "LiteLLM is een open-source Python-bibliotheek en proxy-server die een uniforme OpenAI-compatibele API biedt voor meer dan 100 LLM-providers — van OpenAI en Anthropic tot Bedrock, Vertex AI en lokale modellen. De proxy voegt budgetbeheer, rate limiting, observability en load balancing toe, waardoor teams eenvoudig van model kunnen wisselen zonder code te herschrijven.",
+  "bestFor": "Engineering teams die meerdere LLM-providers gebruiken en één uniforme API-laag willen met kostencontrole, logging en failover — zonder vendor lock-in.",
+  "useCases": [
+    "Unified API voor meerdere LLM-providers",
+    "Kostenbewaking en budgetlimieten per team of project",
+    "LLM-observability en request logging",
+    "Automatische failover tussen modellen"
+  ],
+  "strengths": [
+    "Open-source en zelf te hosten",
+    "Ondersteunt 100+ providers via één interface",
+    "Budgetbeheer en rate limiting ingebouwd",
+    "Volledige OpenAI-compatibele API"
+  ],
+  "limitations": [
+    "Vereist zelf-hosting voor volledige controle",
+    "Setup en onderhoud kost meer tijd dan managed alternatieven",
+    "Documentatie kan achterlopen bij snelle ontwikkeling",
+    "Minder GUI dan OpenRouter"
+  ],
+  "pricing": "Open-source (MIT-licentie), gratis zelf te hosten; LiteLLM Enterprise met extra functies op maat",
+  "openSource": true,
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "tags": [
+    "llm-proxy",
+    "api-gateway",
+    "open-source",
+    "observability"
+  ],
+  "draft": false,
+  "deploymentType": "both",
+  "dataResidency": "global",
+  "targetAudience": [
+    "mkb",
+    "enterprise"
+  ],
+  "businessFunctions": [
+    "development",
+    "data",
+    "operations"
+  ],
+  "companySizeFit": [
+    "small",
+    "medium",
+    "large"
+  ],
+  "integrations": [
+    "OpenAI",
+    "Anthropic",
+    "AWS Bedrock",
+    "Google Vertex AI",
+    "Langfuse",
+    "Prometheus"
+  ],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "medium",
+  "learningCurve": "medium",
+  "bestUseCaseStage": "team-rollout",
+  "requiresDeveloper": true,
+  "gdprReady": true,
+  "euHostingAvailable": true,
+  "testedByEditor": false,
+  "verdict": "LiteLLM lost een concreet enterprise-probleem op: vendor lock-in bij LLM-providers. Voor teams die meerdere modellen draaien is het de meest volwassen open-source oplossing voor een uniforme API-laag.",
+  "bestAlternative": "openrouter",
+  "whyListed": "LiteLLM is uitgegroeid tot de de-facto standaard voor LLM-proxy in enterprise Python-stacks, met tienduizenden GitHub-stars en brede adoptie in productieomgevingen.",
+  "primaryJobsToBeDone": [
+    "Meerdere LLM-providers via één API aansturen",
+    "LLM-kosten en gebruik monitoren"
+  ],
+  "antiUseCases": [
+    "Eindgebruikersinterface voor chatgesprekken",
+    "Teams die slechts één LLM-provider gebruiken"
+  ],
+  "setupTime": "under_4h",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise"
+  ],
+  "idealTeamSize": {
+    "min": 2,
+    "max": 1000
+  },
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 2,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low"
+}

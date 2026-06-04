@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated build artifacts — regenerated every `npm run build`
+# (generate-og + build-search-index). Tracking them only adds churn.
+public/og/
+public/pagefind/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Astro
+.astro/
+
+# Local AI cache
+.claude/
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vercel
+.env*.local
+
+# Cloudflare
+.wrangler/
+.dev.vars
+
+# Planning / docs (lokaal)
+V3/
+
+# AI agent configs (lokaal)
+AGENTS.md
+CLAUDE.md
+WARP.md
+
+# AI scratch output (lokaal, niet voor productie)
+*.social.md
+public/og-image.png

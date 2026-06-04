@@ -1,0 +1,91 @@
+{
+  "name": "Fireworks AI",
+  "category": "infrastructure",
+  "websiteUrl": "https://fireworks.ai",
+  "shortDescription": "Snelste inference-platform voor open-source AI-modellen",
+  "longDescription": "Fireworks AI is een inference-platform gespecialiseerd in snelheid: het bedrijf claimt de laagste latency voor populaire open-source modellen zoals Llama, Mistral en Mixtral via een OpenAI-compatibele API. Naast hosted inference biedt het fine-tuning, functie-aanroepen (function calling) en een serverless modus voor kostenefficiënte sporadische workloads.",
+  "bestFor": "Developers en teams die open-source LLM's willen draaien met maximale snelheid en een OpenAI-compatibele API, zonder eigen GPU-infrastructuur te beheren.",
+  "useCases": [
+    "Snelle productie-inference voor open-source LLM's",
+    "Fine-tuning van Llama en Mistral op eigen data",
+    "Function calling voor AI-agent architecturen",
+    "Kostenoptimalisatie via serverless inferentie"
+  ],
+  "strengths": [
+    "Laagste latency in de markt voor open-source modellen",
+    "OpenAI-compatibele API — eenvoudige migratie",
+    "Brede modelondersteuning: Llama, Mistral, Mixtral",
+    "Serverless modus voor kostenefficiëntie"
+  ],
+  "limitations": [
+    "Geen eigen frontier-modellen",
+    "Afhankelijk van open-source modelkwaliteit",
+    "Minder enterprise-functies dan Together AI",
+    "Kleinere community dan Hugging Face"
+  ],
+  "pricing": "Pay-as-you-go per token; serverless modus betaalt alleen bij gebruik. Prijzen competitief met Together AI.",
+  "openSource": false,
+  "pricingModel": "paid",
+  "difficulty": "intermediate",
+  "tags": [
+    "inference",
+    "api",
+    "open-source",
+    "llm-hosting"
+  ],
+  "draft": false,
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": [
+    "mkb",
+    "enterprise",
+    "freelancer"
+  ],
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "companySizeFit": [
+    "small",
+    "medium",
+    "large"
+  ],
+  "integrations": [
+    "OpenAI SDK",
+    "LangChain",
+    "LlamaIndex"
+  ],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "learningCurve": "low",
+  "bestUseCaseStage": "team-rollout",
+  "requiresDeveloper": true,
+  "fundingStage": "series-b",
+  "testedByEditor": false,
+  "verdict": "Fireworks AI wint op snelheid. Voor teams die Llama of Mistral in productie willen draaien zonder eigen GPU-infra is het een van de beste keuzes — eenvoudige migratie via OpenAI-API.",
+  "bestAlternative": "together-ai",
+  "whyListed": "Fireworks AI is de snelste hosted inference provider voor open-source modellen en groeide snel als alternatief voor OpenAI voor prijs- en latency-gedreven use cases.",
+  "primaryJobsToBeDone": [
+    "Open-source LLM's in productie draaien",
+    "Inference-latency minimaliseren"
+  ],
+  "antiUseCases": [
+    "Gebruik van closed-source frontier modellen",
+    "Niet-technische gebruikers"
+  ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 2,
+    "max": 1000
+  },
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 3,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low"
+}

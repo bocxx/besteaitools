@@ -1,0 +1,362 @@
+---
+/**
+ * ToolDirectory — filterbare AI-tool directory, gegroepeerd op bedrijfsfunctie.
+ *
+ * Geëxtraheerd uit de oude /zakelijk-pagina; nu een sectie binnen
+ * /vind-je-beste-ai-tool. Bevat de filterbalk (functie-chips, quick-filters,
+ * select-filters) + het tool-grid + client-side filter/sort-logica.
+ */
+import ToolCard from './molecules/ToolCard.astro';
+import { getBusinessFunctionSections } from '../lib/tools-engine';
+import type { Tool } from '../types/tools-domain';
+import { ShieldCheck, Zap, UserX, Gift, BadgeCheck } from '@lucide/astro';
+
+const sections = await getBusinessFunctionSections();
+
+// Deduplicate tools across functions, sorted by buzz
+const seen = new Set<string>();
+const zakelijkTools: Tool[] = [];
+for (const section of sections) {
+  for (const tool of section.tools) {
+    if (!seen.has(tool.slug)) {
+      seen.add(tool.slug);
+      zakelijkTools.push(tool);
+    }
+  }
+}
+zakelijkTools.sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+---
+
+<!-- Filter bar -->
+<nav class="filter-bar" aria-label="Filter op bedrijfsfunctie">
+  <div class="filter-bar__row">
+    <button class="cat-chip cat-chip--active" data-fn-nav="all">Alles</button>
+    {sections.map(section => (
+      <button
+        class="cat-chip"
+        data-fn-nav={section.key}
+        style={`--chip-color: ${section.color}`}
+      >
+        {section.name}
+        <span class="cat-chip__count">{section.tools.length}</span>
+      </button>
+    ))}
+  </div>
+  <!-- Quick-filter chips -->
+  <div class="filter-bar__row filter-bar__row--quick">
+    <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools"><ShieldCheck size={13} stroke-width={1.5} /> GDPR-klaar</button>
+    <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren"><Zap size={13} stroke-width={1.5} /> Snel inzetbaar</button>
+    <button class="quick-chip" data-quick="nodev" title="Geen developer nodig"><UserX size={13} stroke-width={1.5} /> Geen developer</button>
+    <button class="quick-chip" data-quick="trial" title="Gratis proefperiode beschikbaar"><Gift size={13} stroke-width={1.5} /> Gratis proberen</button>
+    <button class="quick-chip" data-quick="tested" title="Getest door redactie"><BadgeCheck size={13} stroke-width={1.5} /> Redactie-getest</button>
+  </div>
+  <div class="filter-bar__row filter-bar__row--secondary">
+    <select id="audience-select" class="filter-select">
+      <option value="all">Alle doelgroepen</option>
+      <option value="mkb">MKB</option>
+      <option value="enterprise">Enterprise</option>
+      <option value="solo">Solo</option>
+      <option value="freelancer">Freelancer</option>
+    </select>
+    <select id="deployment-select" class="filter-select">
+      <option value="all">Alle types</option>
+      <option value="saas">SaaS</option>
+      <option value="self-hosted">Self-hosted</option>
+      <option value="both">SaaS + Self-hosted</option>
+    </select>
+    <select id="difficulty-select" class="filter-select">
+      <option value="all">Alle niveaus</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Gemiddeld</option>
+      <option value="advanced">Gevorderd</option>
+    </select>
+    <select id="sort-select" class="filter-select">
+      <option value="buzz">Buzz Score</option>
+      <option value="velocity">Stijgers eerst</option>
+      <option value="proven">Meest bewezen</option>
+      <option value="ttv">Snelst inzetbaar</option>
+      <option value="enterprise">Enterprise-ready</option>
+      <option value="ease">Gebruiksgemak</option>
+      <option value="brs">Business Readiness</option>
+      <option value="alpha">A → Z</option>
+    </select>
+  </div>
+</nav>
+
+<!-- Tool Grid -->
+<div id="alle-tools">
+  <div class="tool-grid" id="tool-grid">
+    {zakelijkTools.map(tool => (
+      <div class="tool-card-wrap" data-functions={tool.businessFunctions?.join(' ') ?? ''}>
+        <ToolCard tool={tool} />
+      </div>
+    ))}
+  </div>
+  <p class="grid-empty" id="grid-empty" style="display:none;">
+    Geen tools gevonden voor deze bedrijfsfunctie.
+  </p>
+</div>
+
+<!-- Client-side filtering, sorting -->
+<script>
+  let activeFn = 'all';
+  let activeAudience = 'all';
+  let activeDeployment = 'all';
+  let activeDifficulty = 'all';
+  const activeQuickFilters = new Set<string>();
+
+  const grid = document.getElementById('tool-grid')!;
+  const wraps = Array.from(grid.querySelectorAll<HTMLElement>('.tool-card-wrap'));
+  const emptyMsg = document.getElementById('grid-empty')!;
+  const fnChips = document.querySelectorAll<HTMLButtonElement>('.cat-chip');
+  const quickChips = document.querySelectorAll<HTMLButtonElement>('.quick-chip');
+
+  // ── Function chips ────────────────────────────────
+  fnChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      activeFn = chip.dataset.fnNav!;
+      fnChips.forEach(c => c.classList.toggle('cat-chip--active', c.dataset.fnNav === activeFn));
+      applyFilters();
+    });
+  });
+
+  // ── Quick-filter chips ────────────────────────────
+  quickChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.quick!;
+      if (activeQuickFilters.has(key)) {
+        activeQuickFilters.delete(key);
+        chip.classList.remove('quick-chip--active');
+      } else {
+        activeQuickFilters.add(key);
+        chip.classList.add('quick-chip--active');
+      }
+      applyFilters();
+    });
+  });
+
+  // ── Select filters ────────────────────────────────
+  const audienceSelect = document.getElementById('audience-select') as HTMLSelectElement;
+  const deploymentSelect = document.getElementById('deployment-select') as HTMLSelectElement;
+  const difficultySelect = document.getElementById('difficulty-select') as HTMLSelectElement;
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+
+  audienceSelect.addEventListener('change', () => { activeAudience = audienceSelect.value; applyFilters(); });
+  deploymentSelect.addEventListener('change', () => { activeDeployment = deploymentSelect.value; applyFilters(); });
+  difficultySelect.addEventListener('change', () => { activeDifficulty = difficultySelect.value; applyFilters(); });
+  sortSelect.addEventListener('change', () => applySort(sortSelect.value));
+
+  function matchQuickFilters(card: HTMLElement): boolean {
+    for (const qf of activeQuickFilters) {
+      if (qf === 'gdpr' && card.dataset.gdpr !== '1') return false;
+      if (qf === 'fast' && !['minutes', 'hours'].includes(card.dataset.ttfv ?? '')) return false;
+      if (qf === 'nodev' && card.dataset.requiresDev === '1') return false;
+      if (qf === 'trial' && card.dataset.freeTrial !== '1') return false;
+      if (qf === 'tested' && card.dataset.editorTested !== '1') return false;
+    }
+    return true;
+  }
+
+  function applyFilters() {
+    let visible = 0;
+    wraps.forEach(wrap => {
+      const card = wrap.querySelector<HTMLElement>('.tool-card');
+      if (!card) return;
+      const fns = (wrap.dataset.functions ?? '').split(' ');
+      const matchFn = activeFn === 'all' || fns.includes(activeFn);
+
+      const audience = (card.dataset.audience ?? '').split(' ');
+      const matchAudience = activeAudience === 'all' || audience.includes(activeAudience);
+
+      const deployment = card.dataset.deployment ?? '';
+      const matchDeployment = activeDeployment === 'all' || deployment === activeDeployment
+        || (activeDeployment === 'saas' && deployment === 'both')
+        || (activeDeployment === 'self-hosted' && deployment === 'both');
+
+      const difficulty = card.dataset.difficulty ?? '';
+      const matchDifficulty = activeDifficulty === 'all' || difficulty === activeDifficulty;
+
+      const matchQuick = matchQuickFilters(card);
+
+      const show = matchFn && matchAudience && matchDeployment && matchDifficulty && matchQuick;
+      wrap.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    emptyMsg.style.display = visible === 0 ? '' : 'none';
+  }
+
+  function applySort(mode: string) {
+    const sorted = [...wraps].sort((a, b) => {
+      const cardA = a.querySelector<HTMLElement>('.tool-card')!;
+      const cardB = b.querySelector<HTMLElement>('.tool-card')!;
+      if (mode === 'velocity') {
+        return parseFloat(cardB.dataset.velocity ?? '0') - parseFloat(cardA.dataset.velocity ?? '0');
+      }
+      if (mode === 'alpha') {
+        return (cardA.dataset.name ?? '').localeCompare(cardB.dataset.name ?? '');
+      }
+      if (mode === 'proven') {
+        return parseFloat(cardB.dataset.proven ?? '0') - parseFloat(cardA.dataset.proven ?? '0');
+      }
+      if (mode === 'ttv') {
+        return parseFloat(cardB.dataset.ttvScore ?? '0') - parseFloat(cardA.dataset.ttvScore ?? '0');
+      }
+      if (mode === 'enterprise') {
+        return parseFloat(cardB.dataset.govScore ?? '0') - parseFloat(cardA.dataset.govScore ?? '0');
+      }
+      if (mode === 'ease') {
+        return parseFloat(cardB.dataset.ease ?? '0') - parseFloat(cardA.dataset.ease ?? '0');
+      }
+      if (mode === 'brs') {
+        return parseFloat(cardB.dataset.brs ?? '0') - parseFloat(cardA.dataset.brs ?? '0');
+      }
+      return parseFloat(cardB.dataset.buzz ?? '0') - parseFloat(cardA.dataset.buzz ?? '0');
+    });
+    sorted.forEach(wrap => grid.appendChild(wrap));
+  }
+</script>
+
+<style>
+  /* ── Filter bar ──────────────────────────────────── */
+  .filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .filter-bar__row {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-bar__row--quick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .quick-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2-5);
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .quick-chip:hover {
+    border-color: transparent;
+    color: var(--text-primary);
+    background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
+  }
+
+  .quick-chip--active,
+  .quick-chip--active:hover {
+    background: color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-color: var(--primary-bright);
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .filter-bar__row--secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .cat-chip:hover {
+    border-color: transparent;
+    color: var(--chip-color, var(--primary-bright));
+    background: color-mix(in oklch, var(--chip-color, var(--primary-bright)) 10%, transparent);
+  }
+
+  .cat-chip--active,
+  .cat-chip--active:hover {
+    background: var(--chip-color, var(--primary-bright));
+    border-color: var(--chip-color, var(--primary-bright));
+    color: var(--text-inverse);
+    font-weight: var(--font-semibold);
+  }
+
+  .cat-chip__count {
+    font-size: 0.68em;
+    opacity: 0.45;
+    margin-left: 0.2em;
+  }
+
+  .filter-select {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    cursor: pointer;
+  }
+
+  /* ── Tool grid ─────────────────────────────────── */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    padding: var(--space-8) 0;
+  }
+
+  @media (max-width: 1024px) {
+    .tool-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .tool-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-bar__row--secondary {
+      flex-direction: column;
+    }
+  }
+</style>

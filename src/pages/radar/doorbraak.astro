@@ -1,0 +1,318 @@
+---
+/**
+ * /radar/doorbraak — Doorbraak-radar voor AI-tools
+ *
+ * Past het corroboratie-funnelmodel van de HLN-doorbraakradar toe op de
+ * gecureerde tool-taxonomie. Bron: newsflux src/export_tool_breakthrough.py
+ * → tool_breakthrough.json. Per tool de bron-klasse-spreiding (wetenschap /
+ * dev / product / pers / social), de mainstream-gap en de funnel-positie.
+ *
+ * De unieke hoek t.o.v. /radar (buzz-ranking): welke tools gonzen al in
+ * dev-/onderzoeks-kringen terwijl de pers ze nog niet breed oppikt — het
+ * alpha-venster vóór mainstream.
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import { ArrowLeft, Rocket, TrendingUp, Zap, FlaskConical, Wrench, Newspaper, ArrowUpRight } from '@lucide/astro';
+import DiscoverGrid from '../../components/DiscoverGrid.astro';
+import data from '../../data/tool_breakthrough.json';
+
+const funnel = (data as any).funnel ?? {};
+const counts = (data as any).funnel_counts ?? {};
+const updated = (data as any).generated_at
+  ? new Date((data as any).generated_at.slice(0, 10)).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' })
+  : null;
+
+// De vier getoonde stadia van de doorbraakketen (mainstream/fading verborgen).
+const STAGES = [
+  { key: 'research',       label: 'In onderzoek',          sub: 'ArXiv pikt het op — vroegste signaal',       icon: FlaskConical, alpha: false },
+  { key: 'adoption',       label: 'Developers bouwen',     sub: 'GitHub, Hacker News, Product Hunt',           icon: Wrench,       alpha: false },
+  { key: 'about_to_break', label: 'Staat op punt te breken', sub: 'Sterk in dev/onderzoek — pers nog niet',    icon: Rocket,       alpha: true  },
+  { key: 'breaking',       label: 'Breekt door',           sub: 'De pers pikt het nu breed op',                icon: Newspaper,    alpha: false },
+] as const;
+
+const CLASS_LABEL: Record<string, string> = {
+  science: 'wetenschap', dev: 'developers', product: 'product', press: 'pers', social: 'social',
+};
+
+const totalAbout = counts.about_to_break ?? 0;
+const totalShown = STAGES.reduce((n, s) => n + (counts[s.key] ?? 0), 0);
+const gapPct = (g: number) => Math.round((g ?? 0) * 100);
+const toolHref = (slug: string) => `/ai-tools/${slug}`;
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'Doorbraak-radar voor AI-tools — debesteaitools.nl',
+  description:
+    `Overzicht van ${totalShown} AI-tools op hun positie in de doorbraakketen. ` +
+    `${totalAbout} staan op punt te breken — sterk in dev- en onderzoeksbronnen, ` +
+    `nog niet breed in de pers.`,
+  url: `${siteOrigin}/radar/doorbraak`,
+  dateModified: (data as any).generated_at,
+  measurementTechnique:
+    'Cross-source corroboratie over 5 bronklassen (wetenschap/ArXiv, developers/GitHub+HN, ' +
+    'product/Product Hunt, pers, social) met mainstream-gap per tool.',
+  variableMeasured: ['corroboratie (bronklassen)', 'mainstream-gap', 'velocity', 'funnel-positie'],
+};
+---
+
+<Layout
+  title="Doorbraak-radar — welke AI-tools staan op punt te breken | debesteaitools.nl"
+  description={`${totalAbout} AI-tools staan op punt te breken: sterk in dev- en onderzoeksbronnen, nog niet breed in de pers. Volg elke tool door de doorbraakketen — van onderzoek tot mainstream.`}
+  ogImage="/og/page-doorbraak.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container db">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <nav class="radar-tabs" aria-label="Radar weergave">
+      <a href="/radar/?view=launches" class="radar-tab"><Rocket size={14} stroke-width={1.7} /> Launches</a>
+      <a href="/radar/?view=rankings" class="radar-tab"><TrendingUp size={14} stroke-width={1.7} /> Rankings</a>
+      <a href="/radar/doorbraak" class="radar-tab radar-tab--active" aria-current="page"><Zap size={14} stroke-width={1.7} /> Doorbraak</a>
+    </nav>
+
+    <header class="db__head">
+      <p class="db__kicker"><Zap size={13} stroke-width={1.75} /> Doorbraak-radar</p>
+      <h1 class="db__title">Welke tools staan op punt te breken</h1>
+      <p class="db__lede">
+        Een tool doorloopt een vaste keten: eerst onderzoek, dan een
+        implementatie bij developers, en pas daarna brede pers. Wij volgen elke
+        tool door die keten en meten de <strong>mainstream-gap</strong> — hoeveel
+        van de activiteit nog in dev- en onderzoeksbronnen zit terwijl de pers
+        achterblijft. De gemarkeerde kolom is het alpha-venster: tools waar de
+        techwereld al druk mee is, vóór ze mainstream worden.
+      </p>
+      {updated && <p class="db__updated">Bijgewerkt {updated} · {(data as any).total_tools_scanned} tools gescand · {(data as any).snapshot_window_days}-daags venster</p>}
+    </header>
+
+    <!-- De funnel -->
+    <section class="funnel" aria-label="Doorbraakketen">
+      {STAGES.map((stage) => {
+        const items = (funnel[stage.key] ?? []) as any[];
+        const Icon = stage.icon;
+        return (
+          <div class={`stage ${stage.alpha ? 'stage--alpha' : ''}`}>
+            <div class="stage__head">
+              <span class="stage__icon"><Icon size={16} stroke-width={1.75} aria-hidden="true" /></span>
+              <span class="stage__labels">
+                <span class="stage__label">{stage.label}</span>
+                <span class="stage__sub">{stage.sub}</span>
+              </span>
+              <span class="stage__count">{items.length}</span>
+            </div>
+            {stage.alpha && <p class="stage__alphatag">⚡ Het alpha-venster</p>}
+            <ul class="stage__list">
+              {items.length === 0 && <li class="stage__empty">— geen tools —</li>}
+              {items.map((s) => {
+                const bd = s.breakdown ?? {};
+                const bars = Object.entries(bd)
+                  .filter(([, v]) => (v as number) > 0)
+                  .sort((a, b) => (b[1] as number) - (a[1] as number));
+                const bmax = bars.length ? (bars[0][1] as number) : 1;
+                return (
+                <li class="sig">
+                  <details class="sig__d">
+                    <summary class="sig__summary">
+                      <span class="sig__top">
+                        <span class="sig__kw">{s.name}</span>
+                        <span class={`sig__vel ${s.velocity > 0 ? 'up' : s.velocity < 0 ? 'down' : ''}`}>
+                          {s.velocity > 0 ? '▲' : s.velocity < 0 ? '▼' : '•'} {Math.abs(s.velocity)}
+                        </span>
+                      </span>
+                      {s.category && <span class="sig__cat">{s.category}</span>}
+                      <span class="sig__classes">
+                        {(s.source_classes ?? []).map((c: string) => (
+                          <span class={`dot dot--${c}`} title={CLASS_LABEL[c] ?? c}></span>
+                        ))}
+                        <span class="sig__corrob">{s.corroboration}/5 bronnen</span>
+                      </span>
+                      {stage.alpha && (
+                        <span class="sig__gap" title={`${gapPct(s.mainstream_gap)}% van de activiteit zit in dev/onderzoek, nog niet in de pers`}>
+                          <span class="sig__gapbar"><span class="sig__gapfill" style={`width:${gapPct(s.mainstream_gap)}%`}></span></span>
+                          <span class="sig__gaptxt">{gapPct(s.mainstream_gap)}% voorsprong</span>
+                        </span>
+                      )}
+                    </summary>
+                    <div class="sig__detail">
+                      <div class="sig__bars">
+                        {bars.map(([cls, v]) => (
+                          <div class="sig__bar">
+                            <span class="sig__barlbl"><span class={`dot dot--${cls}`}></span>{CLASS_LABEL[cls] ?? cls}</span>
+                            <span class="sig__bartrack"><span class={`sig__barfill fill--${cls}`} style={`width:${Math.round((v as number) / bmax * 100)}%`}></span></span>
+                            <span class="sig__barval">{Math.round(v as number)}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {s.description_nl && <p class="sig__desc">{s.description_nl}</p>}
+                      <p class="sig__metaline">
+                        {s.total_mentions} vermeldingen
+                        {s.github_stars ? ` · ${Intl.NumberFormat('nl-NL').format(s.github_stars)} ★` : ''}
+                        {s.days_active ? ` · ${s.days_active}d actief` : ''}
+                      </p>
+                      <div class="sig__links">
+                        {s.slug && <a class="sig__toollink" href={toolHref(s.slug)}>Bekijk tool</a>}
+                        {s.url && <a class="sig__ext" href={s.url} target="_blank" rel="noopener nofollow">Website <ArrowUpRight size={12} stroke-width={2} /></a>}
+                      </div>
+                    </div>
+                  </details>
+                </li>
+              );})}
+            </ul>
+          </div>
+        );
+      })}
+    </section>
+
+    <!-- Legenda -->
+    <section class="db__legend" aria-label="Legenda">
+      <h2 class="db__h2">Hoe je dit leest</h2>
+      <ul class="legend">
+        <li><span class="dot dot--science"></span> wetenschap (ArXiv)</li>
+        <li><span class="dot dot--dev"></span> developers (GitHub, HN)</li>
+        <li><span class="dot dot--product"></span> product (Product Hunt)</li>
+        <li><span class="dot dot--press"></span> pers</li>
+        <li><span class="dot dot--social"></span> social</li>
+      </ul>
+      <p class="db__legendtxt">
+        <strong>Corroboratie</strong> telt hoeveel verschillende bronklassen een
+        tool oppikken — spreiding over bronnen is een sterker signaal dan veel
+        ruis uit één hoek (tools met maar één bronklasse tonen we niet). De
+        <strong>voorsprong</strong> (alleen in de alpha-kolom) is het aandeel
+        activiteit dat in dev- en onderzoeksbronnen zit terwijl de pers nog
+        achterblijft: hoe hoger, hoe groter het open venster.
+        <strong>▲/▼</strong> is de velocity uit de radar.
+      </p>
+    </section>
+
+    <!-- Ontdek ook -->
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['modellen', 'makers', 'leren', 'tools']} />
+    </section>
+
+    <!-- Methode -->
+    <section class="db__method">
+      <h2 class="db__h2">De doorbraakketen</h2>
+      <p>
+        De vroegheidsketen is empirisch: een tool of techniek verschijnt vaak
+        eerst als ArXiv-paper of GitHub-repo, bereikt dan Hacker News en Product
+        Hunt, en haalt pas daarna breed de pers. Een tool die tegelijk in
+        onderzoek én bij developers opduikt maar nog niet in het nieuws is het
+        sterkst mogelijke vroege signaal. Deze radar maakt die positie zichtbaar
+        — en draait elke dag mee met de pipeline.
+      </p>
+      <p class="db__honest">
+        Geen cherry-picking: dit is de volledige, gecureerde set van tools met
+        spreiding over minstens twee bronklassen. Zoek je puur wie deze week
+        stijgt? Bekijk de <a href="/radar/?view=rankings">rankings</a>. Op zoek
+        naar net gelanceerde tools? Zie de <a href="/radar/?view=launches">launches</a>.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .db { padding-top: 80px; max-width: 80rem; padding-bottom: var(--space-20); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); transition: color var(--transition-fast); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  /* Radar-tabs (overgenomen van /radar) */
+  .radar-tabs { display: inline-flex; gap: 4px; padding: 4px; background: var(--bg-glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); margin-bottom: var(--space-8); }
+  .radar-tab { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); border: 1px solid transparent; color: var(--text-muted); text-decoration: none; font-size: var(--text-sm); font-weight: var(--font-medium); transition: all var(--transition-fast); white-space: nowrap; }
+  .radar-tab:hover { background: var(--surface-raised); color: var(--text-primary); }
+  .radar-tab--active, .radar-tab--active:hover { background: var(--primary-bright); color: var(--text-inverse); font-weight: var(--font-semibold); }
+  @media (max-width: 640px) { .radar-tabs { display: flex; width: 100%; } .radar-tab { flex: 1; justify-content: center; } }
+
+  /* Hero */
+  .db__head { max-width: 64ch; margin-bottom: var(--space-10); }
+  .db__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-widest); margin: 0 0 var(--space-3) 0; }
+  .db__title { font-family: var(--font-logo); font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem); font-weight: var(--font-regular); letter-spacing: var(--tracking-tight); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .db__lede { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-3) 0; }
+  .db__updated { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
+
+  /* Funnel: 4 kolommen op desktop, gestapeld op mobiel */
+  .funnel { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-bottom: var(--space-12); align-items: start; }
+  .stage { position: relative; }
+  .stage__head { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3); border-bottom: 2px solid var(--border-subtle); }
+  .stage__icon { color: var(--text-muted); display: inline-flex; }
+  .stage__labels { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
+  .stage__label { font-family: var(--font-display); font-size: var(--text-base); color: var(--text-primary); line-height: 1.15; }
+  .stage__sub { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+  .stage__count { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--text-secondary); background: color-mix(in oklab, var(--text-muted) 12%, transparent); border-radius: var(--radius-full); padding: 1px var(--space-2); min-width: 1.6rem; text-align: center; }
+  .stage__alphatag { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin: var(--space-2) 0 0 0; }
+
+  /* Alpha-kolom geaccentueerd */
+  .stage--alpha .stage__head { border-bottom-color: var(--primary-bright); }
+  .stage--alpha .stage__icon { color: var(--primary-bright); }
+  .stage--alpha { background: color-mix(in oklab, var(--primary-bright) 5%, transparent); border-radius: var(--radius-lg); padding: var(--space-1) var(--space-2) var(--space-3); box-shadow: 0 0 0 1px color-mix(in oklab, var(--primary-bright) 20%, transparent); }
+
+  .stage__list { list-style: none; margin: var(--space-3) 0 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .stage__empty { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); padding: var(--space-3); }
+
+  /* Tool-kaart */
+  .sig { border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: var(--space-2-5) var(--space-3); background: var(--surface-raised); }
+  .stage--alpha .sig { background: color-mix(in oklab, var(--bg-base) 40%, transparent); border-color: color-mix(in oklab, var(--primary-bright) 25%, var(--border-subtle)); }
+  .sig__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .sig__kw { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--font-semibold); color: var(--text-primary); overflow-wrap: anywhere; }
+  .sig__vel { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); white-space: nowrap; }
+  .sig__vel.up { color: #34d399; }
+  .sig__vel.down { color: var(--text-muted); }
+  .sig__cat { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); display: block; margin-top: 2px; }
+  .sig__classes { display: flex; align-items: center; gap: 4px; margin-top: var(--space-2); }
+  .sig__corrob { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-left: auto; }
+
+  /* Drill-down */
+  .sig__summary { list-style: none; cursor: pointer; display: block; }
+  .sig__summary::-webkit-details-marker { display: none; }
+  .sig__summary::after { content: "›"; float: right; color: var(--text-muted); font-size: var(--text-base); line-height: 1; transition: transform 0.15s ease; }
+  .sig__d[open] .sig__summary::after { transform: rotate(90deg); }
+  .sig__detail { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px dashed var(--border-subtle); }
+  .sig__bars { display: flex; flex-direction: column; gap: 5px; }
+  .sig__bar { display: grid; grid-template-columns: 5.5rem 1fr auto; align-items: center; gap: var(--space-2); }
+  .sig__barlbl { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); }
+  .sig__bartrack { height: 5px; border-radius: 3px; background: color-mix(in oklab, var(--text-muted) 15%, transparent); overflow: hidden; }
+  .sig__barfill { display: block; height: 100%; border-radius: 3px; background: var(--text-muted); }
+  .fill--science { background: #8b5cf6; }
+  .fill--dev { background: #34d399; }
+  .fill--product { background: #f59e0b; }
+  .fill--press { background: #60a5fa; }
+  .fill--social { background: #f472b6; }
+  .sig__barval { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); white-space: nowrap; }
+  .sig__desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5; margin: var(--space-3) 0 var(--space-2); }
+  .sig__metaline { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin: var(--space-2) 0; }
+  .sig__links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+  .sig__toollink, .sig__ext { display: inline-flex; align-items: center; gap: 3px; font-size: var(--text-xs); text-decoration: none; border-radius: var(--radius-full); padding: 2px 10px; }
+  .sig__toollink { color: var(--text-inverse); background: var(--primary-bright); }
+  .sig__ext { color: var(--primary-bright); border: 1px solid color-mix(in oklab, var(--primary-bright) 30%, var(--border-subtle)); }
+  .sig__ext:hover { background: color-mix(in oklab, var(--primary-bright) 12%, transparent); }
+
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+  .dot--science { background: #8b5cf6; }
+  .dot--dev     { background: #34d399; }
+  .dot--product { background: #f59e0b; }
+  .dot--press   { background: #60a5fa; }
+  .dot--social  { background: #f472b6; }
+
+  /* Voorsprong-meter (alleen alpha) */
+  .sig__gap { margin-top: var(--space-2); display: flex; align-items: center; gap: var(--space-2); }
+  .sig__gapbar { flex: 1; height: 4px; border-radius: 2px; background: color-mix(in oklab, var(--text-muted) 18%, transparent); overflow: hidden; }
+  .sig__gapfill { display: block; height: 100%; background: var(--primary-bright); border-radius: 2px; }
+  .sig__gaptxt { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); white-space: nowrap; }
+
+  /* Legenda + methode */
+  .db__h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); margin: 0 0 var(--space-3) 0; }
+  .db__legend { margin-bottom: var(--space-10); }
+  .legend { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-4); padding: 0; margin: 0 0 var(--space-4) 0; }
+  .legend li { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); }
+  .db__legendtxt, .db__method p { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); max-width: 70ch; margin: 0 0 var(--space-3) 0; }
+  .db__method { margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--border-subtle); }
+  .db__honest { color: var(--text-muted); }
+  .db__honest a { color: var(--primary-bright); }
+
+  @media (max-width: 900px) { .funnel { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .funnel { grid-template-columns: 1fr; } }
+</style>

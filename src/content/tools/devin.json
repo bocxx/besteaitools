@@ -1,0 +1,75 @@
+{
+  "name": "Devin",
+  "category": "coding",
+  "websiteUrl": "https://devin.ai",
+  "shortDescription": "Autonome AI-developer die zelfstandig taken uitvoert",
+  "headlineValueProp": "Geef een ticket, krijg een PR — Devin werkt zelfstandig in zijn eigen sandbox",
+  "pricingModel": "paid",
+  "difficulty": "intermediate",
+  "tags": ["agent", "autonomous", "sandbox", "swe-agent"],
+  "mentionAliases": ["devin ai"],
+  "draft": false,
+  "longDescription": "Devin van Cognition Labs is een autonome software-engineer-agent: je geeft een taakomschrijving, Devin plant het werk, schrijft code, draait tests en levert uiteindelijk een pull request op. De agent werkt in een eigen sandboxomgeving met browser, code-editor en terminal — anders dan een coding-assistent in jouw IDE neemt Devin de uitvoering volledig over. De positionering richt zich op zakelijk gebruik waarbij teams werk willen offloaden in plaats van interactief pair-programmeren.",
+  "bestFor": "Engineering-teams die goed-afgebakende tickets autonoom willen laten uitvoeren — bug fixes, refactors, dependency-upgrades — zonder dat een developer er actief bij hoeft.",
+  "primaryJobsToBeDone": [
+    "Een ticket of bug volledig autonoom afhandelen tot pull request",
+    "Routine-werk delegeren zoals dependency-upgrades, lint-fixes en test-coverage uitbreiden",
+    "Parallel meerdere taken laten uitvoeren terwijl het team aan complexer werk werkt"
+  ],
+  "useCases": [
+    "Open issues in een backlog laten oppakken die geen architectuurkeuzes vergen",
+    "Migratiewerk uitvoeren (bijvoorbeeld een test-framework upgraden)",
+    "Documentatie en README's bijwerken na een refactor",
+    "Repetitieve code-modificaties op een groot aantal bestanden"
+  ],
+  "strengths": [
+    "Volledig autonoom uitvoeren — geen continue interactie nodig",
+    "Eigen sandbox met browser- en terminal-toegang vermijdt setup-overhead",
+    "Geschikt om meerdere taken parallel te draaien"
+  ],
+  "limitations": [
+    "Hoge kosten per actie maken het moeilijk te rechtvaardigen voor klein werk",
+    "Kwaliteit varieert sterk — strakke code review op iedere PR is essentieel",
+    "Werkt het beste bij goed-afgebakende taken; vage requirements geven slechte resultaten"
+  ],
+  "antiUseCases": [
+    "Pair-programming of dagelijkse coding-assistentie — Cursor of Claude Code zijn daar goedkoper en directer voor",
+    "Security-kritieke codepaden waar elke regel handmatig review nodig heeft",
+    "Greenfield-architectuur waar de richting nog onbepaald is",
+    "Kostengevoelige solo-developers en kleine teams"
+  ],
+  "pricing": "Geen gratis tier. Team-plan van Cognition Labs richt zich op zakelijk gebruik met seat-based pricing en credits per agent-run.",
+  "openSource": false,
+  "businessFunctions": ["development"],
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": ["enterprise", "mkb"],
+  "nlSupport": false,
+  "integrations": ["GitHub", "Slack", "Jira"],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "medium",
+  "learningCurve": "medium",
+  "companySizeFit": ["medium", "large", "enterprise"],
+  "bestUseCaseStage": "experiment",
+  "verdict": "Devin was het eerste 'volledig autonome AI-ontwikkelaar'-claim. In de praktijk krachtig voor geïsoleerde, goed-gedefinieerde taken maar te duur voor dagelijks gebruik en soms te autonoom.",
+  "whyListed": "Devin zette de toon voor de autonome software-engineer categorie en haalde ongekende media-aandacht als 'eerste AI-software engineer' met benchmark-resultaten.",
+  "bestAlternative": "claude-code",
+  "setupTime": "under_4h",
+  "matchSegments": [
+    "enterprise",
+    "mkb_klein",
+    "mkb_middel"
+  ],
+  "idealTeamSize": {
+    "min": 11,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "github",
+    "slack",
+    "jira"
+  ],
+  "beginnerFriendlyScore": 5,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "medium"
+}

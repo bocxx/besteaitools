@@ -1,0 +1,90 @@
+{
+  "name": "OpenRouter",
+  "category": "infrastructure",
+  "websiteUrl": "https://openrouter.ai",
+  "shortDescription": "Unified API-gateway voor alle grote AI-modellen — vergelijk en switch",
+  "longDescription": "OpenRouter is een managed API-gateway die toegang biedt tot meer dan 200 AI-modellen van OpenAI, Anthropic, Google, Meta, Mistral en tientallen andere providers via één uniforme OpenAI-compatibele API. Het platform toont realtime prijzen per model, ondersteunt automatisch model-fallback en biedt een webinterface om modellen te vergelijken zonder code te schrijven.",
+  "bestFor": "Developers en researchers die snel willen experimenteren met of schakelen tussen LLM-modellen, of kostenefficiënt meerdere modellen willen aanspreken via één API-account.",
+  "useCases": [
+    "Experimenteren met en vergelijken van AI-modellen",
+    "Kostenefficiënte routering naar goedkoopste model per taak",
+    "Toegang tot modellen zonder apart account per provider",
+    "Fallback-routing bij model-downtime"
+  ],
+  "strengths": [
+    "200+ modellen via één API-sleutel",
+    "Realtime prijsvergelijking per model",
+    "Geen subscripties per provider nodig",
+    "Snelle onboarding — direct bruikbaar"
+  ],
+  "limitations": [
+    "Derde partij tussen jou en de model-provider",
+    "Latency kan iets hoger zijn dan directe API",
+    "Minder enterprise-functies dan LiteLLM self-hosted",
+    "Privacyoverwegingen bij gevoelige data"
+  ],
+  "pricing": "Pay-as-you-go: betaal per token via OpenRouter-krediet, met kleine marge bovenop provider-prijzen. Geen maandabonnement.",
+  "openSource": false,
+  "pricingModel": "paid",
+  "difficulty": "beginner",
+  "tags": [
+    "api-gateway",
+    "llm-routing",
+    "model-vergelijking"
+  ],
+  "draft": false,
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": [
+    "solo",
+    "freelancer",
+    "mkb"
+  ],
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "companySizeFit": [
+    "solo",
+    "small",
+    "medium"
+  ],
+  "integrations": [
+    "OpenAI SDK",
+    "LangChain",
+    "LlamaIndex",
+    "Cursor",
+    "Open WebUI"
+  ],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "learningCurve": "low",
+  "bestUseCaseStage": "experiment",
+  "requiresDeveloper": true,
+  "testedByEditor": false,
+  "verdict": "OpenRouter is de snelste manier om toegang te krijgen tot bijna elk AI-model via één API. Ideaal voor experimenten en kostenoptimalisatie. Voor productie met gevoelige data is self-hosted LiteLLM een betere optie.",
+  "bestAlternative": "litellm",
+  "whyListed": "OpenRouter democratiseert toegang tot alle grote AI-modellen en werd populair als de eenvoudigste manier om te experimenteren met en te schakelen tussen frontier LLM's.",
+  "primaryJobsToBeDone": [
+    "Toegang tot meerdere AI-modellen via één API",
+    "Modellen vergelijken op prijs en kwaliteit"
+  ],
+  "antiUseCases": [
+    "Productieomgevingen met hoge privacyeisen",
+    "Teams die volledige controle over datastroom nodig hebben"
+  ],
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "zzp",
+    "mkb_klein",
+    "mkb_middel"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 250
+  },
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 4,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low"
+}

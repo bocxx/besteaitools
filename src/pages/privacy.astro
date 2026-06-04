@@ -1,0 +1,173 @@
+---
+/**
+ * /privacy — Privacyverklaring
+ *
+ * ⚠️ SCAFFOLD: deze tekst beschrijft de feitelijke werkwijze van de site
+ * (statische site, geen accounts, geen tracking-cookies — siteConfig.features
+ * .analytics === false). Laat 'm vóór livegang nog even juridisch nalopen,
+ * vooral de bedrijfs-/contactgegevens en de Cloudflare-verwerkersrelatie.
+ */
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+import { ShieldCheck, Database, Cookie, Server, ExternalLink, UserCheck, Mail, RefreshCw } from '@lucide/astro';
+
+const lastUpdated = '1 juni 2026';
+
+export const prerender = true;
+---
+
+<Layout
+  title={`Privacyverklaring | ${siteConfig.name}`}
+  description={`Hoe ${siteConfig.name} omgaat met je gegevens: geen accounts, geen tracking-cookies, geen verkoop van data. Een statische site met minimale verwerking.`}
+  robots="index, follow"
+>
+  <main class="container container-narrow legal-page" style="padding-top: 80px;">
+
+    <header class="legal-hero">
+      <div class="legal-hero__icon"><ShieldCheck size={28} stroke-width={1.5} /></div>
+      <h1 class="legal-hero__title">Privacyverklaring</h1>
+      <p class="legal-hero__subtitle">
+        <strong>{siteConfig.name}</strong> is een statische, informatieve site. We verzamelen
+        zo min mogelijk: geen accounts, geen tracking-cookies, geen verkoop van gegevens.
+        <br/><span class="legal-hero__timestamp">Laatst bijgewerkt: {lastUpdated}</span>
+      </p>
+    </header>
+
+    <section class="legal-section">
+      <h2><UserCheck size={20} stroke-width={1.5} /> Wie zijn we?</h2>
+      <p>
+        {siteConfig.name} wordt beheerd door <a href={siteConfig.footer.madeBy.url} target="_blank" rel="noopener">{siteConfig.footer.madeBy.name}</a>.
+        Voor vragen over deze verklaring of je gegevens kun je ons bereiken via
+        <a href={siteConfig.social.x.url} target="_blank" rel="noopener">{siteConfig.social.x.handle}</a>
+        of <a href={siteConfig.social.github.url} target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><Database size={20} stroke-width={1.5} /> Welke gegevens verzamelen we?</h2>
+      <p>
+        De site werkt zonder login, zonder profielen en zonder formulieren die persoonsgegevens
+        opslaan. We bouwen <strong>geen</strong> bezoekersprofielen op en koppelen geen gegevens
+        aan jou als persoon.
+      </p>
+      <ul class="legal-list">
+        <li><strong>Geen account-data</strong> — je kunt geen account aanmaken; er is dus niets om op te slaan.</li>
+        <li><strong>Geen nieuwsbrief of contactformulier</strong> — we vragen geen e-mailadres.</li>
+        <li><strong>Geen advertentie- of tracking-cookies</strong> — we plaatsen geen cookies voor profilering of advertenties.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2><Server size={20} stroke-width={1.5} /> Hosting en serverlogs</h2>
+      <p>
+        De site draait op <strong>Cloudflare</strong> (Workers). Zoals bij vrijwel elke website
+        verwerkt onze hostingpartij technische gegevens die nodig zijn om de site veilig te leveren —
+        denk aan je IP-adres, browsertype en opgevraagde pagina's. Deze gegevens worden gebruikt voor
+        beveiliging, misbruikpreventie en geaggregeerde, niet-herleidbare statistieken, en niet om je
+        persoonlijk te identificeren of te volgen.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><Cookie size={20} stroke-width={1.5} /> Cookies</h2>
+      <p>
+        We gebruiken <strong>geen</strong> tracking- of advertentiecookies. Eventuele cookies die
+        Cloudflare plaatst zijn strikt functioneel (beveiliging en correcte levering van de site) en
+        dienen geen marketingdoel.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><ExternalLink size={20} stroke-width={1.5} /> Links naar externe tools</h2>
+      <p>
+        We linken naar de websites van de AI-tools die we beschrijven. Zodra je doorklikt, geldt de
+        privacyverklaring van die partij — daar hebben wij geen controle over. Lees hun beleid als je
+        wilt weten hoe zij met je gegevens omgaan.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><ShieldCheck size={20} stroke-width={1.5} /> Jouw rechten (AVG)</h2>
+      <p>
+        Onder de AVG heb je onder meer recht op inzage, correctie en verwijdering van persoonsgegevens.
+        Omdat we vrijwel geen tot je herleidbare gegevens verwerken, is er in de praktijk weinig op te
+        vragen — maar heb je een vraag of verzoek, neem dan contact met ons op via de kanalen hierboven.
+        Je hebt ook het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2><RefreshCw size={20} stroke-width={1.5} /> Wijzigingen</h2>
+      <p>
+        We kunnen deze verklaring aanpassen als de site of de wetgeving daarom vraagt. De datum
+        bovenaan toont wanneer we voor het laatst iets hebben gewijzigd.
+      </p>
+    </section>
+
+    <section class="legal-section legal-section--cta">
+      <h2><Mail size={20} stroke-width={1.5} /> Vragen?</h2>
+      <p>
+        Vragen over privacy of deze verklaring? Bereik ons via
+        <a href={siteConfig.social.x.url} target="_blank" rel="noopener">{siteConfig.social.x.handle}</a>
+        of <a href={siteConfig.social.github.url} target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  .legal-page { max-width: 820px; }
+  .legal-hero { text-align: center; margin-bottom: var(--space-8); }
+  .legal-hero__icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright); margin-bottom: var(--space-3);
+  }
+  .legal-hero__title {
+    font-family: var(--font-logo); font-size: var(--text-4xl); font-weight: var(--font-regular);
+    letter-spacing: var(--tracking-tight); margin: 0 0 var(--space-3);
+    color: var(--text-primary);
+    
+  }
+  .legal-hero__subtitle {
+    font-size: var(--text-base); color: var(--text-secondary);
+    line-height: var(--leading-relaxed); margin: 0 auto; max-width: 620px;
+  }
+  .legal-hero__timestamp { font-size: var(--text-sm); color: var(--text-muted); }
+
+  .legal-section { margin-bottom: var(--space-8); }
+  .legal-section h2 {
+    display: flex; align-items: center; gap: var(--space-2);
+    font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--font-bold);
+    color: var(--text-primary); margin: 0 0 var(--space-3);
+    padding-bottom: var(--space-2); border-bottom: 1px solid var(--border-subtle);
+  }
+  .legal-section h2 :global(svg) { color: var(--primary-bright); }
+  .legal-section p {
+    color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-3);
+  }
+  .legal-section p strong { color: var(--text-primary); }
+  .legal-section a { color: var(--primary-bright); text-decoration: underline; text-underline-offset: 2px; }
+
+  .legal-list { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .legal-list li {
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-6); position: relative;
+    color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug);
+    border-left: 3px solid var(--primary-bright); background: var(--bg-glass);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .legal-list li strong { color: var(--text-primary); }
+
+  .legal-section--cta {
+    background: color-mix(in oklch, var(--primary-bright) 6%, var(--bg-glass));
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+    border-radius: var(--radius-lg); padding: var(--space-5);
+  }
+  .legal-section--cta h2 { border-bottom: none; padding-bottom: 0; }
+
+  @media (max-width: 640px) {
+    .legal-hero__title { font-size: var(--text-3xl); }
+  }
+</style>

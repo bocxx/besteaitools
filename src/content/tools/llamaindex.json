@@ -1,0 +1,88 @@
+{
+  "name": "LlamaIndex",
+  "category": "infrastructure",
+  "websiteUrl": "https://www.llamaindex.ai",
+  "shortDescription": "Framework voor RAG en data-pipelines met LLM's",
+  "headlineValueProp": "Het standaard data-framework voor RAG — verbindt LLM's met je eigen documenten, databases en API's",
+  "pricingModel": "free",
+  "difficulty": "beginner",
+  "tags": [
+    "rag",
+    "llm-framework",
+    "open-source",
+    "data-pipelines"
+  ],
+  "draft": false,
+  "longDescription": "LlamaIndex is een open-source Python-framework voor RAG-toepassingen — het verbindt LLM's met je eigen documenten, databases, API's en cloud-opslag. Het biedt sterke ingest- en parse-loaders, retrieval-strategieën (BM25, vector, hybrid, reranking) en agentic patterns voor productie-RAG. Veel gebruikt als motor onder enterprise-knowledge-assistants.",
+  "primaryJobsToBeDone": [
+    "RAG-pipelines bouwen die LLM's verbinden met je interne documenten en databases",
+    "Documenten parseren en chunken voor opname in een vector-store",
+    "Productie-retrieval-strategieën opzetten met hybrid search en reranking"
+  ],
+  "antiUseCases": [
+    "Teams die alleen een visuele drag-and-drop builder zoeken — gebruik dan Flowise of n8n",
+    "Use cases zonder ontwikkelaar — LlamaIndex vereist Python-kennis",
+    "Snelle prototypes waar agent-orkestratie zwaarder weegt dan data-ingest — daar past LangChain vaak beter"
+  ],
+  "bestFor": "LlamaIndex is het meest waardevol voor ontwikkelaars en onderzoekers die efficiënte en schaalbare oplossingen nodig hebben voor het opslaan en ophalen van informatie uit grote hoeveelheden ongestructureerde tekst.",
+  "useCases": [
+    "Documentbeheer",
+    "Kennisextractie",
+    "Vraag-antwoord systemen"
+  ],
+  "strengths": [
+    "Schaalbaar",
+    "Flexibel",
+    "Open-source"
+  ],
+  "limitations": [
+    "Complexe configuratie"
+  ],
+  "pricing": "Open-source, gratis te gebruiken",
+  "openSource": true,
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "deploymentType": "self-hosted",
+  "dataResidency": "eu",
+  "targetAudience": [
+    "mkb",
+    "enterprise"
+  ],
+  "nlSupport": false,
+  "integrations": [
+    "Python",
+    "API"
+  ],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "high",
+  "learningCurve": "high",
+  "companySizeFit": [
+    "small",
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "mission-critical",
+  "verdict": "LlamaIndex is gespecialiseerd in data-connectiviteit voor LLM's — sterker dan LangChain voor RAG en documentverwerking. De twee frameworks worden vaak complementair ingezet.",
+  "whyListed": "LlamaIndex is het meest gebruikte framework voor het verbinden van LLM's met eigen data en een kerncomponent van vrijwel elk productie-RAG-systeem.",
+  "bestAlternative": "langchain",
+  "setupTime": "days",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise"
+  ],
+  "idealTeamSize": {
+    "min": 2,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "rest_api"
+  ],
+  "beginnerFriendlyScore": 2,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low",
+  "lastUpdated": "2026-06-02"
+}

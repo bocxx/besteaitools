@@ -1,0 +1,38 @@
+---
+/**
+ * GridItem - Individual item within a GridContainer
+ * 
+ * Supports column and row spanning for complex layouts.
+ * Spans only apply on tablet+ screens to preserve mobile stacking.
+ * 
+ * @example
+ * <GridContainer layout="responsive-cols-3">
+ *   <GridItem span={2}>Featured item spanning 2 columns</GridItem>
+ *   <GridItem>Regular item</GridItem>
+ * </GridContainer>
+ */
+
+interface Props {
+  /** Number of columns to span (2, 3, or "full") */
+  span?: 2 | 3 | "full";
+  /** Number of rows to span */
+  rowSpan?: 2 | 3;
+  class?: string;
+}
+
+const { span, rowSpan, class: className } = Astro.props;
+
+// Build span classes
+const spanClass = span === "full" ? "col-span-full" : span ? `col-span-${span}` : "";
+const rowSpanClass = rowSpan ? `row-span-${rowSpan}` : "";
+
+const classes = [spanClass, rowSpanClass, className].filter(Boolean).join(" ");
+---
+
+{classes ? (
+  <div class={classes}>
+    <slot />
+  </div>
+) : (
+  <slot />
+)}

@@ -1,0 +1,36 @@
+/ai-tools / 301
+/sitemap.xml /sitemap-index.xml 301
+/ai-tools/fireflies /ai-tools/fireflies-ai 301
+/ai-tools/fireflies/ /ai-tools/fireflies-ai/ 301
+
+# GSC-reported 404s: slug normalisation dropped dots (copy.ai → copyai, you.com → youcom)
+/ai-tools/copy.ai /ai-tools/copyai 301
+/ai-tools/copy.ai/ /ai-tools/copyai/ 301
+/ai-tools/you.com /ai-tools/youcom 301
+/ai-tools/you.com/ /ai-tools/youcom/ 301
+
+# Excluded tool — redirect direct naar de radar (= homepage). NIET via
+# /ai-tools, want dat 301't zelf weer naar / → onnodige redirect-keten.
+/ai-tools/sora / 301
+/ai-tools/sora/ / 301
+
+# Wizard-pagina verwijderd — redirect oud verkeer naar homepage.
+/vind-je-beste-ai-tool / 301
+/vind-je-beste-ai-tool/ / 301
+/match / 301
+/match/ / 301
+/zakelijk / 301
+/zakelijk/ / 301
+/beste-ai-tool / 301
+/beste-ai-tool/ / 301
+
+# Oud/fout pad: /vergelijking/* was nooit een echte route (de route is
+# /vergelijk/*). Google heeft er nog een paar onthouden → map ze door.
+# Veilig als splat: er bestaan geen echte /vergelijking/-assets.
+/vergelijking/* /vergelijk/:splat 301
+
+# NB: comparison-page churn (oude /vergelijk/X-vs-Y/ → 404) wordt nu bij de
+# bron opgelost via een stabiele slug-floor (src/data/comparison-slugs.json,
+# verwerkt in getComparisonPairs), niet via een redirect. Een blanket
+# /vergelijk/* redirect kan hier niet: in Workers Assets gaat _redirects vóór
+# static assets, dus dat zou ook de geldige vergelijk-pagina's wegredirecten.

@@ -1,0 +1,891 @@
+---
+/**
+ * /digest/[slug] — Individual AI Tools Radar
+ *
+ * Layout: editorial dashboard for fast scanning.
+ *  - Hero: one title, one subtitle, one metadata row, 3 counters.
+ *  - In 3 signalen: redactionele hoofdpunten boven de lijsten.
+ *  - Launches + Updates: cards met source- en zekerheidsbadges.
+ *  - Deep-dives: compacte lijst met invalshoek.
+ *  - Editorial note ("wat valt op"): afsluitend blok.
+ *
+ * SEO strategy for thin-aggregation content:
+ *  - Recent digests (< 14 days): index, follow
+ *  - Older digests: noindex, follow (link-equity stays, index stays clean)
+ *  - NewsArticle + BreadcrumbList JSON-LD on every page
+ *  - Self-referencing canonical handled by Layout
+ *  - Prev/next links so crawlers can walk the archive
+ *
+ * Backward compat: when `launches`, `updates`, `deepDives` arrays are
+ * absent (older digest markdown), the page falls back to rendering the
+ * markdown body via <Content />.
+ */
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { siteConfig } from '../../config/site';
+import {
+  ArrowLeft,
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Rocket,
+  Wrench,
+  Target,
+} from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const digests = await getCollection('digest', ({ data }) => !data.draft);
+  // Newest-first order so we can compute prev/next deterministically.
+  const sorted = [...digests].sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  );
+  return sorted.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      // prev = older, next = newer in reader-direction.
+      prev: sorted[i + 1] ?? null,
+      next: sorted[i - 1] ?? null,
+    },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+
+const publishedAt = entry.data.date;
+const ageDays =
+  (Date.now() - publishedAt.getTime()) / (1000 * 60 * 60 * 24);
+
+const INDEX_MAX_AGE_DAYS = 14;
+const robots =
+  ageDays > INDEX_MAX_AGE_DAYS
+    ? 'noindex, follow'
+    : 'index, follow, max-image-preview:large';
+
+const canonicalUrl = new URL(
+  `/digest/${entry.id}`,
+  siteConfig.url,
+).href;
+const heroImageAbs = entry.data.heroImage
+  ? new URL(entry.data.heroImage, siteConfig.url).href
+  : undefined;
+const ogImage = heroImageAbs ?? `${siteConfig.url}/og-image.png`;
+
+const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+const launches = entry.data.launches ?? [];
+const updates = entry.data.updates ?? [];
+const deepDives = entry.data.deepDives ?? [];
+const keySignals = entry.data.keySignals ?? [];
+const hasStructured = launches.length + updates.length + deepDives.length > 0;
+
+const launchesCount = entry.data.launchesCount ?? launches.length;
+const updatesCount = entry.data.updatesCount ?? updates.length;
+const deepDivesCount = entry.data.deepDivesCount ?? deepDives.length;
+
+const SOURCE_LABELS: Record<string, string> = {
+  hn: 'Hacker News',
+  reddit: 'Reddit',
+  ph: 'Product Hunt',
+  x: 'X',
+  bluesky: 'Bluesky',
+  github: 'GitHub',
+  blog: 'Blog',
+  official: 'Officieel',
+  newsletter: 'Nieuwsbrief',
+  rss: 'RSS',
+  other: 'Bron',
+};
+
+function sourceName(type?: string, label?: string) {
+  if (label && label.trim().length > 0) return label;
+  return SOURCE_LABELS[type ?? 'other'] ?? 'Bron';
+}
+
+const CONFIDENCE_LABEL: Record<string, string> = {
+  hoog: 'Zekerheid: hoog',
+  medium: 'Zekerheid: medium',
+  laag: 'Zekerheid: laag',
+};
+const IMPACT_LABEL: Record<string, string> = {
+  hoog: 'Impact: hoog',
+  medium: 'Impact: medium',
+  laag: 'Impact: laag',
+};
+
+// JSON-LD — keep small and valid. Omit optional fields when unknown.
+const newsArticleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: entry.data.title,
+  description: entry.data.description,
+  url: canonicalUrl,
+  datePublished: publishedAt.toISOString(),
+  dateModified: publishedAt.toISOString(),
+  inLanguage: 'nl-NL',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  author: {
+    '@type': 'Organization',
+    name: entry.data.author ?? 'debesteaitools.nl Redactie',
+    url: siteConfig.url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/favicon-32x32.png`,
+    },
+  },
+  ...(heroImageAbs ? { image: [heroImageAbs] } : {}),
+  ...(entry.data.tags?.length ? { keywords: entry.data.tags.join(', ') } : {}),
+  ...(entry.data.topics?.length ? { articleSection: entry.data.topics[0] } : {}),
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'AI Tools Radar',
+      item: `${siteConfig.url}/digest`,
+    },
+    { '@type': 'ListItem', position: 3, name: entry.data.title, item: canonicalUrl },
+  ],
+};
+
+export const prerender = true;
+---
+
+<Layout
+  title={`${entry.data.title} | debesteaitools.nl`}
+  description={entry.data.description}
+  ogImage={ogImage}
+  ogType="article"
+  publishedTime={publishedAt}
+  modifiedTime={publishedAt}
+  robots={robots}
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(newsArticleJsonLd)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJsonLd)}
+    />
+    {prev && (
+      <link rel="prev" href={`/digest/${prev.id}`} />
+    )}
+    {next && (
+      <link rel="next" href={`/digest/${next.id}`} />
+    )}
+  </Fragment>
+
+  <main class="container digest-main">
+
+    <a href="/nieuws/?type=digests" class="back-link">
+      <ArrowLeft size={16} stroke-width={1.5} />
+      Alle AI Tools digests
+    </a>
+
+    <article class="digest">
+      <!-- Hero: single title, subtitle, metadata row. No duplicate H1. -->
+      <header class="digest__header">
+        <div class="digest__meta">
+          <Calendar size={13} stroke-width={1.5} />
+          <time datetime={publishedAt.toISOString()}>{formattedDate}</time>
+          {entry.data.slotLabel && (
+            <>
+              <span class="digest__meta-sep">·</span>
+              <span>{entry.data.slotLabel}</span>
+            </>
+          )}
+          {entry.data.itemsSelected != null && (
+            <>
+              <span class="digest__meta-sep">·</span>
+              <span>{entry.data.itemsSelected} items geselecteerd</span>
+            </>
+          )}
+          {ageDays > INDEX_MAX_AGE_DAYS && (
+            <>
+              <span class="digest__meta-sep">·</span>
+              <span class="digest__archived" title="Dit is een gearchiveerde digest (niet meer geïndexeerd).">Gearchiveerd</span>
+            </>
+          )}
+        </div>
+        <h1 class="digest__title">{entry.data.title}</h1>
+        <p class="digest__desc">{entry.data.description}</p>
+      </header>
+
+      {entry.data.heroImage && (
+        <img
+          src={entry.data.heroImage}
+          alt={entry.data.title}
+          class="digest__hero"
+          loading="eager"
+        />
+      )}
+
+      {hasStructured && (
+        <section class="digest__stats" aria-label="Kerncijfers">
+          <div class="stat">
+            <Rocket size={18} stroke-width={1.5} class="stat__icon" />
+            <span class="stat__number">{launchesCount}</span>
+            <span class="stat__label">launches</span>
+          </div>
+          <div class="stat">
+            <Wrench size={18} stroke-width={1.5} class="stat__icon" />
+            <span class="stat__number">{updatesCount}</span>
+            <span class="stat__label">feature-updates</span>
+          </div>
+          <div class="stat">
+            <Target size={18} stroke-width={1.5} class="stat__icon" />
+            <span class="stat__number">{deepDivesCount}</span>
+            <span class="stat__label">deep-dives</span>
+          </div>
+        </section>
+      )}
+
+      {keySignals.length > 0 && (
+        <section class="digest__signals" aria-label="In 3 signalen">
+          <h2 class="section-title">In 3 signalen</h2>
+          <ol class="signals-list">
+            {keySignals.map((signal, i) => (
+              <li class="signal">
+                <span class="signal__index">{i + 1}</span>
+                <span class="signal__text">{signal}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {launches.length > 0 && (
+        <section class="digest__section" aria-labelledby="section-launches">
+          <div class="section-head">
+            <Rocket size={18} stroke-width={1.5} />
+            <h2 id="section-launches" class="section-title">Nieuwe launches</h2>
+            <span class="section-count">{launches.length}</span>
+          </div>
+          <ul class="card-grid">
+            {launches.map(item => (
+              <li class="card">
+                <div class="card__badges">
+                  <span class={`badge badge--source src--${item.source_type}`}>
+                    {sourceName(item.source_type, item.source_label)}
+                  </span>
+                  <span
+                    class={`badge badge--confidence conf--${item.confidence}`}
+                    title={CONFIDENCE_LABEL[item.confidence] ?? ''}
+                  >
+                    {item.confidence}
+                  </span>
+                </div>
+                <h3 class="card__title">{item.name}</h3>
+                {item.summary_nl && (
+                  <p class="card__summary">{item.summary_nl}</p>
+                )}
+                {item.url && (
+                  <a
+                    href={item.url}
+                    class="card__link"
+                    target="_blank"
+                    rel="noopener nofollow"
+                  >
+                    Open bron
+                    <ExternalLink size={13} stroke-width={1.5} />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {updates.length > 0 && (
+        <section class="digest__section" aria-labelledby="section-updates">
+          <div class="section-head">
+            <Wrench size={18} stroke-width={1.5} />
+            <h2 id="section-updates" class="section-title">Feature-updates</h2>
+            <span class="section-count">{updates.length}</span>
+          </div>
+          <ul class="card-grid">
+            {updates.map(item => (
+              <li class="card">
+                <div class="card__badges">
+                  <span class="badge badge--tool">{item.tool_name}</span>
+                  <span class={`badge badge--impact impact--${item.impact}`} title={IMPACT_LABEL[item.impact] ?? ''}>
+                    impact {item.impact}
+                  </span>
+                  <span class={`badge badge--source src--${item.source_type}`}>
+                    {sourceName(item.source_type, item.source_label)}
+                  </span>
+                  <span
+                    class={`badge badge--confidence conf--${item.confidence}`}
+                    title={CONFIDENCE_LABEL[item.confidence] ?? ''}
+                  >
+                    {item.confidence}
+                  </span>
+                </div>
+                {item.feature_title && (
+                  <h3 class="card__title">{item.feature_title}</h3>
+                )}
+                {item.summary_nl && (
+                  <p class="card__summary">{item.summary_nl}</p>
+                )}
+                {item.url && (
+                  <a
+                    href={item.url}
+                    class="card__link"
+                    target="_blank"
+                    rel="noopener nofollow"
+                  >
+                    Open bron
+                    <ExternalLink size={13} stroke-width={1.5} />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {deepDives.length > 0 && (
+        <section class="digest__section" aria-labelledby="section-deep-dives">
+          <div class="section-head">
+            <Target size={18} stroke-width={1.5} />
+            <h2 id="section-deep-dives" class="section-title">Wat een deep-dive waard is</h2>
+            <span class="section-count">{deepDives.length}</span>
+          </div>
+          <ul class="dive-list">
+            {deepDives.map(item => (
+              <li class="dive">
+                <h3 class="dive__title">{item.title}</h3>
+                {item.summary_nl && (
+                  <p class="dive__summary">{item.summary_nl}</p>
+                )}
+                <div class="dive__meta">
+                  {item.tool && <span>Tool: <strong>{item.tool}</strong></span>}
+                  {item.trend_phase && <span>Fase: {item.trend_phase}</span>}
+                  {typeof item.score === 'number' && <span>Score {item.score.toFixed(1)}</span>}
+                  {item.url && (
+                    <a href={item.url} class="dive__link" target="_blank" rel="noopener nofollow">
+                      Open bron <ExternalLink size={12} stroke-width={1.5} />
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- Editorial note (markdown body). For old digests without structured
+           data, this is the entire digest body. -->
+      <section class={hasStructured ? 'digest__content prose digest__content--note' : 'digest__content prose'}>
+        {hasStructured && (
+          <h2 class="section-title">Wat valt op</h2>
+        )}
+        <Content />
+      </section>
+
+      {entry.data.tags && entry.data.tags.length > 0 && (
+        <footer class="digest__tags">
+          {entry.data.tags.map(tag => (
+            <span class="tag-chip">#{tag}</span>
+          ))}
+        </footer>
+      )}
+
+      {(prev || next) && (
+        <nav class="digest__pager" aria-label="Tools Radar navigatie">
+          {prev ? (
+            <a href={`/digest/${prev.id}`} class="pager__link pager__link--prev" rel="prev">
+              <ChevronLeft size={14} stroke-width={1.5} />
+              <span>
+                <span class="pager__label">Vorige digest</span>
+                <span class="pager__title">{prev.data.title}</span>
+              </span>
+            </a>
+          ) : <span></span>}
+          {next ? (
+            <a href={`/digest/${next.id}`} class="pager__link pager__link--next" rel="next">
+              <span>
+                <span class="pager__label">Volgende digest</span>
+                <span class="pager__title">{next.data.title}</span>
+              </span>
+              <ChevronRight size={14} stroke-width={1.5} />
+            </a>
+          ) : <span></span>}
+        </nav>
+      )}
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .digest-main {
+    padding-top: 80px;
+    max-width: 920px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  /* ── Hero ───────────────────────────────────────────────── */
+  .digest__header {
+    margin-bottom: var(--space-6);
+  }
+
+  .digest__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .digest__meta-sep { color: var(--border-subtle); }
+  .digest__archived { color: var(--color-warning); }
+
+  .digest__title {
+    font-family: var(--font-logo);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-regular);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-3);
+  }
+
+  .digest__desc {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  .digest__hero {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-6);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* ── 3 kerncijfers ──────────────────────────────────────── */
+  .digest__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+  }
+  .stat__icon { color: var(--primary-bright); }
+  .stat__number {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    line-height: 1;
+    margin-top: var(--space-1);
+  }
+  .stat__label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-transform: lowercase;
+  }
+
+  /* ── In 3 signalen ──────────────────────────────────────── */
+  .digest__signals {
+    padding: var(--space-5) var(--space-5);
+    background: color-mix(in oklch, var(--primary-bright) 5%, transparent);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 22%, transparent);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-8);
+  }
+  .digest__signals .section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-3);
+    letter-spacing: var(--tracking-tight);
+  }
+  .signals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .signal {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+  .signal__index {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    background: var(--primary-bright);
+    color: var(--bg-base, #000);
+    font-weight: var(--font-bold);
+    font-size: var(--text-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .signal__text { flex: 1 1 auto; }
+
+  /* ── Secties + kaarten ──────────────────────────────────── */
+  .digest__section {
+    margin-bottom: var(--space-8);
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: var(--tracking-tight);
+  }
+  .section-count {
+    margin-left: auto;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .card-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+  .card:hover {
+    border-color: color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    transform: translateY(-1px);
+  }
+  .card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+  .card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-snug, 1.35);
+  }
+  .card__summary {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+  .card__link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--primary-bright);
+    text-decoration: none;
+    min-height: 44px;  /* touch target */
+    padding-top: var(--space-2);
+  }
+  .card__link:hover { text-decoration: underline; }
+
+  /* ── Badges ─────────────────────────────────────────────── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    line-height: 1;
+    padding: 4px var(--space-2);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-medium);
+    background: var(--bg-glass);
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+    text-transform: none;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .badge--tool {
+    color: var(--text-primary);
+    border-color: color-mix(in oklch, var(--text-primary) 20%, transparent);
+    background: color-mix(in oklch, var(--text-primary) 6%, transparent);
+    font-weight: var(--font-semibold);
+  }
+
+  /* Source colors — subtle tints, not loud */
+  .src--hn       { color: oklch(70% 0.15 45);  border-color: color-mix(in oklch, oklch(70% 0.15 45) 30%, transparent); background: color-mix(in oklch, oklch(70% 0.15 45) 10%, transparent); }
+  .src--reddit   { color: oklch(72% 0.17 35);  border-color: color-mix(in oklch, oklch(72% 0.17 35) 30%, transparent); background: color-mix(in oklch, oklch(72% 0.17 35) 10%, transparent); }
+  .src--ph       { color: oklch(72% 0.17 25);  border-color: color-mix(in oklch, oklch(72% 0.17 25) 30%, transparent); background: color-mix(in oklch, oklch(72% 0.17 25) 10%, transparent); }
+  .src--x        { color: var(--text-muted); }
+  .src--bluesky  { color: oklch(75% 0.14 240); border-color: color-mix(in oklch, oklch(75% 0.14 240) 30%, transparent); background: color-mix(in oklch, oklch(75% 0.14 240) 10%, transparent); }
+  .src--github   { color: var(--text-secondary); }
+  .src--blog,
+  .src--official,
+  .src--newsletter,
+  .src--rss      { color: var(--primary-bright); border-color: color-mix(in oklch, var(--primary-bright) 30%, transparent); background: color-mix(in oklch, var(--primary-bright) 10%, transparent); }
+
+  /* Confidence */
+  .conf--hoog   { color: oklch(70% 0.15 150); border-color: color-mix(in oklch, oklch(70% 0.15 150) 35%, transparent); background: color-mix(in oklch, oklch(70% 0.15 150) 12%, transparent); }
+  .conf--medium { color: oklch(75% 0.13 85);  border-color: color-mix(in oklch, oklch(75% 0.13 85) 35%, transparent);  background: color-mix(in oklch, oklch(75% 0.13 85) 12%, transparent); }
+  .conf--laag   { color: oklch(70% 0.15 30);  border-color: color-mix(in oklch, oklch(70% 0.15 30) 35%, transparent);  background: color-mix(in oklch, oklch(70% 0.15 30) 12%, transparent); }
+
+  /* Impact */
+  .impact--hoog   { color: var(--primary-bright); border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent); background: color-mix(in oklch, var(--primary-bright) 12%, transparent); font-weight: var(--font-semibold); }
+  .impact--medium { color: var(--text-secondary); }
+  .impact--laag   { color: var(--text-muted); opacity: 0.85; }
+
+  /* ── Deep-dive lijst ────────────────────────────────────── */
+  .dive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .dive {
+    padding: var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+  }
+  .dive__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-2);
+    line-height: var(--leading-snug, 1.35);
+  }
+  .dive__summary {
+    margin: 0 0 var(--space-3);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+  .dive__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    align-items: center;
+  }
+  .dive__meta strong { color: var(--text-secondary); }
+  .dive__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary-bright);
+    text-decoration: none;
+  }
+  .dive__link:hover { text-decoration: underline; }
+
+  /* ── Editorial note ("wat valt op") ────────────────────── */
+  .digest__content.prose {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+  }
+  .digest__content--note {
+    padding: var(--space-5) var(--space-5);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+  }
+  .digest__content--note .section-title {
+    margin-bottom: var(--space-3);
+  }
+  .prose :global(h2) {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: var(--space-8) 0 var(--space-4);
+    letter-spacing: var(--tracking-tight);
+  }
+  .prose :global(h3) {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: var(--space-6) 0 var(--space-3);
+  }
+  .prose :global(p) { margin: 0 0 var(--space-4); }
+  .prose :global(strong) { color: var(--text-primary); font-weight: var(--font-semibold); }
+  .prose :global(a) {
+    color: var(--primary-bright);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    transition: text-decoration-color var(--transition-fast);
+  }
+  .prose :global(a:hover) { text-decoration-color: var(--primary-bright); }
+  .prose :global(ul), .prose :global(ol) {
+    padding-left: var(--space-6);
+    margin: 0 0 var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .prose :global(li) { line-height: var(--leading-relaxed); }
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--primary-bright);
+    padding-left: var(--space-4);
+    margin: var(--space-6) 0;
+    color: var(--text-secondary);
+    font-style: normal;
+    background: color-mix(in oklch, var(--primary-bright) 4%, transparent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+    padding-right: var(--space-4);
+  }
+
+  /* ── Tags ───────────────────────────────────────────────── */
+  .digest__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+  }
+  .tag-chip {
+    font-size: var(--text-xs);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* ── Prev/next pager ────────────────────────────────────── */
+  .digest__pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
+  }
+
+  .pager__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    background: var(--bg-glass);
+    backdrop-filter: blur(8px);
+    min-height: 44px;
+  }
+  .pager__link:hover {
+    color: var(--primary-bright);
+    border-color: color-mix(in oklch, var(--primary-bright) 35%, transparent);
+  }
+  .pager__link--next {
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .pager__label {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+  }
+  .pager__title {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    margin-top: 2px;
+  }
+  .pager__link:hover .pager__title { color: var(--primary-bright); }
+
+  /* ── Mobile ─────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .digest__title { font-size: var(--text-2xl); }
+    .digest__desc { font-size: var(--text-base); }
+    .digest__hero { height: 200px; }
+    .digest__stats { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-2); }
+    .stat { padding: var(--space-3); }
+    .stat__number { font-size: var(--text-2xl); }
+    .digest__pager { grid-template-columns: 1fr; }
+    .pager__link--next { justify-content: flex-start; text-align: left; }
+    .card-grid { grid-template-columns: 1fr; }
+    .card__link, .pager__link { min-height: 44px; }
+  }
+</style>

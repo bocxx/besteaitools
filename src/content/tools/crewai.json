@@ -1,0 +1,99 @@
+{
+  "name": "CrewAI",
+  "category": "agents",
+  "websiteUrl": "https://www.crewai.com",
+  "shortDescription": "Framework voor multi-agent AI-systemen",
+  "headlineValueProp": "Definieer agents met rollen en taken — laat ze samenwerken aan een doel",
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "tags": [
+    "agents",
+    "python",
+    "orchestration",
+    "open-source"
+  ],
+  "mentionAliases": [
+    "crew ai",
+    "crew-ai"
+  ],
+  "draft": false,
+  "longDescription": "CrewAI is een open-source Python-framework waarmee je AI-agents definieert met expliciete rollen, doelen en backstory's, en ze laat samenwerken aan een gedeelde taak. Het richt zich op rol-gebaseerde orchestratie: een 'researcher'-agent levert input aan een 'writer'-agent, die weer wordt gereviewd door een 'editor'. CrewAI ondersteunt OpenAI, Anthropic en lokale modellen via LiteLLM, en heeft inmiddels ook een gehoste enterprise-variant met monitoring en deployment.",
+  "bestFor": "Python-developers die meerdere LLM-agents willen orkestreren rond gespecialiseerde rollen, zonder een volledig graph-framework als LangGraph op te zetten.",
+  "primaryJobsToBeDone": [
+    "Een onderzoek-pipeline opzetten waarbij agents elkaars output verwerken",
+    "Repetitieve content-workflows automatiseren met rol-gebaseerde agents",
+    "Een prototype bouwen van een multi-agent product binnen een dag"
+  ],
+  "useCases": [
+    "Automatische marktrapporten genereren waarbij researcher-agents bronnen verzamelen",
+    "Customer-support triage met intake-, classificatie- en escalatie-agents",
+    "Code review pipelines waarin agents stijl, security en logica afzonderlijk checken",
+    "Data-enrichment workflows met scraper- en verificatie-agents"
+  ],
+  "strengths": [
+    "Sterke rol-metafoor maakt agent-design intuïtief voor business-stakeholders",
+    "Werkt out-of-the-box met de grote LLM-providers en lokale modellen",
+    "Actieve community en uitgebreide voorbeelden voor veelvoorkomende patterns"
+  ],
+  "limitations": [
+    "Vereist Python — geen no-code of TypeScript-pad",
+    "Voor complexe graph-flows met cycles en branches is LangGraph expliciet sterker",
+    "Productionaliseren vraagt veel eigen werk tenzij je naar de betaalde hosted variant gaat"
+  ],
+  "antiUseCases": [
+    "Single-agent toepassingen — overkill, gebruik direct een LLM-call",
+    "Real-time use cases met sub-seconde latency",
+    "Teams zonder Python-expertise die een no-code agent-builder zoeken"
+  ],
+  "pricing": "Open-source framework gratis. Gehoste enterprise-versie met monitoring en deployment via een betaald plan.",
+  "openSource": true,
+  "businessFunctions": [
+    "operations",
+    "sales",
+    "development",
+    "data"
+  ],
+  "deploymentType": "both",
+  "dataResidency": "us",
+  "targetAudience": [
+    "mkb",
+    "enterprise",
+    "solo"
+  ],
+  "nlSupport": false,
+  "integrations": [
+    "OpenAI",
+    "Anthropic",
+    "Ollama",
+    "LangChain",
+    "LiteLLM"
+  ],
+  "timeToFirstValue": "hours",
+  "setupComplexity": "medium",
+  "learningCurve": "medium",
+  "companySizeFit": [
+    "small",
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "experiment",
+  "verdict": "CrewAI is het populairste Python-framework voor multi-agent orchestratie. Toegankelijk voor Python-developers, met actieve community en brede integraties met LLM-providers.",
+  "whyListed": "CrewAI groeide explosief tot het meest gebruikte framework voor multi-agent AI-workflows en is de de-facto standaard voor Python-gebaseerde agent-orchestratie.",
+  "bestAlternative": "langchain",
+  "setupTime": "days",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise",
+    "zzp"
+  ],
+  "idealTeamSize": {
+    "min": 2,
+    "max": 100000
+  },
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 3,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low"
+}

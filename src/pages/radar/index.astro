@@ -1,0 +1,140 @@
+---
+/**
+ * /radar — AI Tools Radar hub
+ *
+ * Eén centrale pagina die beide automation-feeds bundelt:
+ *   ?view=launches  → recent gelanceerde AI-tools (Product Hunt, GitHub, HN, social)
+ *   ?view=rankings  → wekelijkse stijgers, dalers en nieuwkomers
+ *
+ * Vervangt /launch-radar/ en /weekradar/ — die routes blijven werken
+ * maar 301-redirecten hierheen voor backward compat / SEO.
+ *
+ * `prerender = false` zodat Astro de view-keuze server-side kan
+ * resolven uit searchParams. Cloudflare cache zorgt voor edge-perf via
+ * de Cache-Control header die de Layout default zet.
+ */
+import Layout from '../../layouts/Layout.astro';
+import LaunchesView from '../../components/radar/LaunchesView.astro';
+import RankingsView from '../../components/radar/RankingsView.astro';
+import { ArrowLeft, Rocket, TrendingUp, Zap } from '@lucide/astro';
+
+export const prerender = false;
+
+type View = 'launches' | 'rankings';
+const rawView = Astro.url.searchParams.get('view');
+const view: View = rawView === 'rankings' ? 'rankings' : 'launches';
+
+const title = view === 'rankings'
+  ? 'AI Tools Radar — Rankings deze week | debesteaitools.nl'
+  : 'AI Tools Radar — Recent gelanceerd | debesteaitools.nl';
+
+const description = view === 'rankings'
+  ? 'Wekelijkse stijgers, dalers en nieuwkomers in de AI-tools-markt. Bijgehouden op basis van buzz, GitHub-sterren en social signals.'
+  : 'Recent gelanceerde AI-tools, ontdekt via Product Hunt, GitHub, Hacker News en social media. Wees als eerste op de hoogte van nieuwe tools.';
+---
+
+<Layout title={title} description={description} ogImage="/og/page-radar.png">
+  <main class="container" style="padding-top: 80px; max-width: 960px;">
+
+    <a href="/" class="back-link">
+      <ArrowLeft size={16} stroke-width={1.5} />
+      Terug naar overzicht
+    </a>
+
+    <nav class="radar-tabs" aria-label="Radar weergave">
+      <a
+        href="/radar/?view=launches"
+        class={view === 'launches' ? 'radar-tab radar-tab--active' : 'radar-tab'}
+        aria-current={view === 'launches' ? 'page' : undefined}
+      >
+        <Rocket size={14} stroke-width={1.7} />
+        Launches
+      </a>
+      <a
+        href="/radar/?view=rankings"
+        class={view === 'rankings' ? 'radar-tab radar-tab--active' : 'radar-tab'}
+        aria-current={view === 'rankings' ? 'page' : undefined}
+      >
+        <TrendingUp size={14} stroke-width={1.7} />
+        Rankings
+      </a>
+      <a href="/radar/doorbraak" class="radar-tab">
+        <Zap size={14} stroke-width={1.7} />
+        Doorbraak
+      </a>
+    </nav>
+
+    {view === 'launches' && <LaunchesView />}
+    {view === 'rankings' && <RankingsView />}
+
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  /* ── Radar view-toggle ─────────────────────────────────────────────
+     Tab-bar boven de view-content. Gedraagt zich als segmented control:
+     één actieve weergave, andere wisselbaar via gewone <a>-link
+     (server-side render — geen JS nodig). Past visueel bij de bestaande
+     glass-bg + accent-uit-primary-bright cards op de site. */
+  .radar-tabs {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-6);
+  }
+
+  .radar-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .radar-tab:hover {
+    background: var(--surface-raised);
+    color: var(--text-primary);
+  }
+
+  .radar-tab--active,
+  .radar-tab--active:hover {
+    background: var(--primary-bright);
+    color: var(--text-inverse);
+    font-weight: var(--font-semibold);
+  }
+
+  @media (max-width: 640px) {
+    .radar-tabs {
+      display: flex;
+      width: 100%;
+    }
+    .radar-tab {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+</style>

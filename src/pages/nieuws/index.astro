@@ -1,0 +1,343 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import NewsBentoGrid from '../../components/nieuws/NewsBentoGrid.astro';
+import ToolUpdatesWidget from '../../components/nieuws/ToolUpdatesWidget.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { nieuwsCategoryConfig, type NieuwsCategory } from '../../lib/nieuws-schema';
+import { Newspaper, ArrowLeft, Rss } from '@lucide/astro';
+
+// Redactionele artikelen
+const allNieuws = await getCollection('nieuws', ({ data }) => !data.draft);
+
+// Dag-digests — sinds de /digest/-route-consolidatie verschijnen die
+// ook hier in de feed (met een 'Dag-digest'-badge). We mappen ze naar
+// dezelfde shape als nieuws-entries zodat NewsBentoGrid ze zonder
+// refactor kan renderen. category='digest' triggert badge + de juiste
+// /digest/<slug>/ href in NewsBentoGrid.
+const allDigests = await getCollection('digest', ({ data }) => !data.draft);
+const digestsAsArticles = allDigests.map((d) => ({
+  id: d.id,
+  collection: 'nieuws' as const,
+  data: {
+    title: d.data.title,
+    description: d.data.description,
+    publishedAt: d.data.date,
+    updatedAt: d.data.date,
+    category: 'digest' as NieuwsCategory,
+    author: d.data.author,
+    // Default diorama-fallback: oudere digests (en toekomstige zonder eigen
+    // gegenereerde diorama) tonen anders een blanco hero/large-kaart.
+    heroImage: d.data.heroImage ?? '/images/digest-default.webp',
+    tags: d.data.tags ?? [],
+    featured: false,
+    draft: false,
+  },
+})) as unknown as CollectionEntry<'nieuws'>[];
+
+const merged = [...allNieuws, ...digestsAsArticles];
+
+// Sort newest first; use updatedAt if present
+const sorted = merged.sort((a, b) => {
+  const dateA = a.data.updatedAt ?? a.data.publishedAt;
+  const dateB = b.data.updatedAt ?? b.data.publishedAt;
+  return dateB.getTime() - dateA.getTime();
+});
+
+// Active filters from URL
+//   ?type=articles|digests  → toon alleen redactionele artikelen of alleen digests
+//   ?cat=<NieuwsCategory>   → toon alleen die subcategorie (impliciet articles-only)
+const url = new URL(Astro.request.url);
+const activeType = url.searchParams.get('type') as 'articles' | 'digests' | null;
+const activeCat = url.searchParams.get('cat') as NieuwsCategory | null;
+
+let filtered = sorted;
+if (activeType === 'articles') {
+  filtered = filtered.filter((a) => a.data.category !== 'digest');
+} else if (activeType === 'digests') {
+  filtered = filtered.filter((a) => a.data.category === 'digest');
+}
+if (activeCat) {
+  filtered = filtered.filter((a) => a.data.category === activeCat);
+}
+
+// Counts
+const articleCount = sorted.filter((a) => a.data.category !== 'digest').length;
+const digestCount  = sorted.filter((a) => a.data.category === 'digest').length;
+const categoryCounts = Object.fromEntries(
+  Object.keys(nieuwsCategoryConfig).map((cat) => [
+    cat,
+    sorted.filter((a) => a.data.category === cat).length,
+  ]),
+) as Record<NieuwsCategory, number>;
+
+// Subcategorie-chips alleen tonen bij artikelen-view (digest heeft geen subcats).
+const showCategoryChips = activeType !== 'digests';
+
+export const prerender = false;
+---
+
+<Layout
+  title="Nieuws over AI-tools — Artikelen + dagelijkse digests | debesteaitools.nl"
+  description={`${articleCount} handgeschreven artikelen en ${digestCount} dagelijkse digests over AI-tools: lanceringen, updates, vergelijkingen en analyses.`}
+  ogImage="/og/page-nieuws.png"
+>
+  <main class="container container-wide" style="padding-top: 80px;">
+
+    <a href="/" class="back-link">
+      <ArrowLeft size={16} stroke-width={1.5} />
+      Terug naar overzicht
+    </a>
+
+    <header class="page-header">
+      <div class="page-header__icon">
+        <Newspaper size={28} stroke-width={1.5} />
+      </div>
+      <h1 class="page-header__title">Nieuws & Analyses</h1>
+      <p class="page-header__subtitle">
+        Redactionele artikelen én dagelijkse digests over <strong>AI-tools</strong>: lanceringen, updates, vergelijkingen en analyses.
+      </p>
+      <p class="page-header__meta">
+        <strong>{articleCount} artikelen</strong> · <strong>{digestCount} dag-digests</strong>
+        {activeCat && <span> · gefilterd op <strong>{nieuwsCategoryConfig[activeCat].label}</strong></span>}
+      </p>
+    </header>
+
+    <!-- Type filter: alles / artikelen / digests. Bij keuze voor 'digests'
+         worden subcategorie-chips verborgen (digests hebben geen subcats). -->
+    <nav class="type-filter" aria-label="Soort content">
+      <a
+        href="/nieuws/"
+        class:list={['type-chip', { 'type-chip--active': !activeType && !activeCat }]}
+      >
+        Alles
+        <span class="type-chip__count">{sorted.length}</span>
+      </a>
+      <a
+        href="/nieuws/?type=articles"
+        class:list={['type-chip', { 'type-chip--active': activeType === 'articles' }]}
+      >
+        Artikelen
+        <span class="type-chip__count">{articleCount}</span>
+      </a>
+      <a
+        href="/nieuws/?type=digests"
+        class:list={['type-chip', { 'type-chip--active': activeType === 'digests' }]}
+      >
+        Dag-digests
+        <span class="type-chip__count">{digestCount}</span>
+      </a>
+    </nav>
+
+    {showCategoryChips && (
+      <!-- Subcategorie filter chips voor de redactionele artikelen -->
+      <nav class="cat-filter" aria-label="Categoriefilter">
+        <a
+          href="/nieuws/"
+          class:list={['cat-chip', { 'cat-chip--active': !activeCat && activeType !== 'articles' }]}
+        >
+          Alle categorieën
+        </a>
+        {Object.entries(nieuwsCategoryConfig).map(([key, cfg]) => (
+          // 'digest' is geen redactionele subcategorie — verberg in deze rij
+          key !== 'digest' && categoryCounts[key as NieuwsCategory] > 0 && (
+            <a
+              href={`/nieuws/?cat=${key}`}
+              class:list={['cat-chip', { 'cat-chip--active': activeCat === key }]}
+              style={activeCat === key ? `--chip-color: ${cfg.color}` : undefined}
+            >
+              {cfg.label}
+              <span class="cat-chip__count">{categoryCounts[key as NieuwsCategory]}</span>
+            </a>
+          )
+        ))}
+        <a href="/nieuws.xml" class="cat-chip cat-chip--rss" title="RSS-feed">
+          <Rss size={13} stroke-width={1.5} />
+          RSS
+        </a>
+      </nav>
+    )}
+
+    <!-- Main content + sidebar -->
+    <div class="grid-container grid-layout-sidebar-right">
+      <section aria-label="Nieuwsartikelen">
+        <NewsBentoGrid articles={filtered} />
+      </section>
+
+      <ToolUpdatesWidget />
+    </div>
+
+  </main>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .page-header__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright);
+    margin-bottom: var(--space-3);
+  }
+
+  .page-header__title {
+    font-family: var(--font-logo);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-regular);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .page-header__subtitle {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    margin: 0;
+  }
+  .page-header__subtitle strong { color: var(--text-primary); }
+
+  .page-header__meta {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: var(--space-2) 0 0;
+  }
+  .page-header__meta strong { color: var(--text-secondary); }
+
+  /* Type filter — segmented control voor artikelen / digests. Visueel
+     prominenter dan de subcategorie-chips eronder; het is de primary
+     content-as-type splitsing. */
+  .type-filter {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+  }
+  .type-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  .type-chip:hover { color: var(--text-primary); }
+  .type-chip--active,
+  .type-chip--active:hover {
+    background: var(--primary-bright);
+    color: var(--text-inverse);
+    font-weight: var(--font-semibold);
+  }
+  .type-chip__count {
+    font-size: 0.68em;
+    opacity: 0.45;
+    font-weight: var(--font-normal);
+  }
+  .type-chip--active .type-chip__count {
+    opacity: 0.85;
+  }
+  @media (max-width: 640px) {
+    .type-filter { display: flex; width: 100%; }
+    .type-chip { flex: 1; justify-content: center; }
+  }
+
+  /* Category filter chips (subcategorie binnen artikelen-type) */
+  .cat-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-6);
+  }
+
+  .cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    background: var(--bg-glass);
+    backdrop-filter: blur(8px);
+    transition: all var(--transition-fast);
+  }
+
+  .cat-chip:hover {
+    color: var(--text-primary);
+    background: var(--bg-glass);
+  }
+
+  .cat-chip--active,
+  .cat-chip--active:hover {
+    color: var(--chip-color, var(--primary-bright));
+    border-color: var(--chip-color, var(--primary-bright));
+    background: color-mix(in oklch, var(--chip-color, var(--primary-bright)) 10%, transparent);
+  }
+
+  .cat-chip__count {
+    font-size: 0.68em;
+    color: var(--text-muted);
+    opacity: 0.45;
+    font-weight: var(--font-normal);
+  }
+
+  .cat-chip--active .cat-chip__count {
+    color: var(--chip-color, var(--primary-bright));
+    opacity: 0.7;
+  }
+
+  .cat-chip--rss {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    padding: var(--space-1) 0;
+    border-radius: 0;
+    background: none;
+    border: none;
+  }
+  .cat-chip--rss:hover {
+    color: var(--primary-bright);
+    background: none;
+  }
+
+  @media (max-width: 640px) {
+    .page-header__title { font-size: var(--text-3xl); }
+    .cat-chip--rss { margin-left: 0; }
+  }
+</style>

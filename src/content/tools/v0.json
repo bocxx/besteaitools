@@ -1,0 +1,72 @@
+{
+  "name": "v0",
+  "category": "coding",
+  "websiteUrl": "https://v0.dev",
+  "shortDescription": "Vercel's AI UI-generator — van prompt naar React-component",
+  "headlineValueProp": "Beschrijf wat je wil zien, krijg werkende React + shadcn/ui-componenten terug",
+  "pricingModel": "freemium",
+  "difficulty": "beginner",
+  "tags": ["react", "ui", "frontend", "shadcn", "vercel"],
+  "mentionAliases": ["v0.dev"],
+  "draft": false,
+  "longDescription": "v0 is Vercels AI-generator voor frontend-componenten. Je beschrijft een UI in natuurlijke taal of plakt een screenshot, en v0 levert een direct werkend React-component terug met shadcn/ui en Tailwind CSS. Iedere generatie is een chat-iteratie: je vraagt om aanpassingen totdat het component klopt, en exporteert het daarna naar je Next.js-project. v0 is geen full-stack agent — het richt zich expliciet op de UI-laag.",
+  "bestFor": "Frontend-developers en product designers die snel productie-waardige React-componenten willen genereren zonder elke keer vanaf scratch te beginnen.",
+  "primaryJobsToBeDone": [
+    "Een React/shadcn-component genereren uit een tekstbeschrijving of screenshot",
+    "Bestaande componenten itereren via een chat-interface tot het ontwerp klopt",
+    "Snel een werkbare prototype-UI bouwen voor klant- of stakeholder-feedback"
+  ],
+  "useCases": [
+    "Marketing-landingspagina's bouwen met shadcn-blokken",
+    "Dashboard-componenten genereren (tabellen, charts-wrappers, formulieren)",
+    "Een bestaand design systeem kopiëren door screenshots te uploaden",
+    "PoC-UI's maken voor pitches of investor demos"
+  ],
+  "strengths": [
+    "Directe export naar werkende Next.js + shadcn/ui code",
+    "Chat-iteratie maakt fine-tuning sneller dan full-prompt herschrijven",
+    "Sterke kwaliteit binnen de shadcn/Tailwind-stack"
+  ],
+  "limitations": [
+    "Beperkt tot React — geen Vue, Svelte of native frameworks",
+    "Bedoeld voor componenten, niet voor full-stack apps of backend-logica",
+    "Werkt het beste binnen de shadcn-stijl; afwijkende design systems vereisen veel handwerk"
+  ],
+  "antiUseCases": [
+    "Backend- of databaselaag bouwen — daarvoor is een coding-agent als Cursor of Claude Code geschikter",
+    "Niet-React frontends (Vue, Svelte, Flutter)",
+    "Een afwijkend bedrijfsdesign-system implementeren waarvoor shadcn niet de basis is"
+  ],
+  "pricing": "Gratis tier met dagelijkse generatielimiet, Premium vanaf $20/mnd voor hogere limieten en private projecten",
+  "openSource": false,
+  "businessFunctions": ["development", "marketing"],
+  "deploymentType": "saas",
+  "dataResidency": "us",
+  "targetAudience": ["solo", "freelancer", "mkb"],
+  "nlSupport": false,
+  "integrations": ["Vercel", "Next.js", "GitHub"],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
+  "learningCurve": "low",
+  "companySizeFit": ["solo", "small", "medium"],
+  "bestUseCaseStage": "experiment",
+  "verdict": "v0 van Vercel genereert React/shadcn UI-componenten van uitstekende kwaliteit. Beperkt tot frontend-componenten, maar daarin een van de beste tools beschikbaar voor snelle mockups.",
+  "whyListed": "v0 werd snel de standaard voor het genereren van React UI-componenten en is breed geadopteerd door frontend-developers voor snelle iteratie op designs.",
+  "bestAlternative": "lovable",
+  "setupTime": "under_15min",
+  "matchSegments": [
+    "zzp",
+    "mkb_klein",
+    "mkb_middel"
+  ],
+  "idealTeamSize": {
+    "min": 1,
+    "max": 250
+  },
+  "controlledIntegrations": [
+    "github"
+  ],
+  "beginnerFriendlyScore": 8,
+  "dataUsedForTraining": "opt-out",
+  "vendorLockInRisk": "medium"
+}

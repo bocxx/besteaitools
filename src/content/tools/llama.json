@@ -1,0 +1,83 @@
+{
+  "name": "Llama",
+  "category": "chatbots",
+  "websiteUrl": "https://llama.meta.com",
+  "shortDescription": "Meta's open-source taalmodel — populairste open model",
+  "pricingModel": "free",
+  "difficulty": "beginner",
+  "tags": [],
+  "draft": false,
+  "longDescription": "Llama is Meta's open-weight LLM-familie en het populairste open model wereldwijd. De huidige generatie (Llama 4 en nieuwer) bestaat uit varianten van 8B tot 400B+ parameters, beschikbaar voor commerciële inzet onder de Llama-licentie. Draait via Ollama, vLLM, Hugging Face, AWS Bedrock en andere providers. Sterke keuze voor organisaties die data-soevereiniteit eisen of de tokenkosten van proprietary modellen willen omzeilen.",
+  "bestFor": "Llama is vooral waardevol voor ontwikkelaars, onderzoekers en bedrijven die geavanceerde taalmodellen willen inzetten in hun applicaties en projecten.",
+  "useCases": [
+    "Tekstgeneratie",
+    "Samenvatten van teksten",
+    "Vertalen tussen talen",
+    "Beantwoorden van vragen"
+  ],
+  "strengths": [
+    "Krachtige taalmodellering",
+    "Flexibel inzetbaar voor diverse NLP-taken",
+    "Gratis en open source beschikbaar"
+  ],
+  "limitations": [
+    "Vereist aanzienlijke computerkracht en geheugen"
+  ],
+  "pricing": "Gratis en open source",
+  "openSource": true,
+  "businessFunctions": [
+    "development",
+    "data",
+    "operations"
+  ],
+  "deploymentType": "both",
+  "dataResidency": "eu",
+  "targetAudience": [
+    "mkb",
+    "enterprise"
+  ],
+  "nlSupport": false,
+  "integrations": [
+    "Ollama",
+    "vLLM",
+    "HuggingFace"
+  ],
+  "timeToFirstValue": "days",
+  "setupComplexity": "high",
+  "learningCurve": "high",
+  "companySizeFit": [
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "mission-critical",
+  "verdict": "Llama is het fundament van de open-source AI-wereld. Als basismodel niet direct voor eindgebruikers bedoeld, maar via fine-tunes, Ollama of API-diensten de beste open keuze.",
+  "whyListed": "Meta's Llama-modellen zijn het meest gebruikte open-source LLM-fundament ter wereld en de basis voor tientallen tools, services en fine-tuned deployments.",
+  "bestAlternative": "mistral",
+  "setupTime": "days",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise"
+  ],
+  "idealTeamSize": {
+    "min": 11,
+    "max": 100000
+  },
+  "controlledIntegrations": [],
+  "outputLanguageQualityNl": "basic",
+  "beginnerFriendlyScore": 3,
+  "dataUsedForTraining": "no",
+  "vendorLockInRisk": "low",
+  "headlineValueProp": "Meta's open-weight modelfamilie — gratis te downloaden en self-hosten",
+  "primaryJobsToBeDone": [
+    "Een eigen LLM self-hosten voor data-controle of kostenbeheersing",
+    "Modellen fine-tunen op proprietary data zonder vendor lock-in",
+    "Kleine modellen op laptop of edge-hardware draaien (Llama 3.2 1B/3B)"
+  ],
+  "antiUseCases": [
+    "Teams zonder ML-engineering capaciteit — hosting is je probleem",
+    "Frontier-niveau reasoning of agentic flows — gesloten modellen zijn voor",
+    "Workflows die direct out-of-the-box productiekwaliteit verwachten"
+  ]
+}

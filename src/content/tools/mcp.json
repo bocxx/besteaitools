@@ -1,0 +1,128 @@
+{
+  "name": "MCP",
+  "category": "infrastructure",
+  "websiteUrl": "https://modelcontextprotocol.io",
+  "shortDescription": "Model Context Protocol — standaard voor AI-tool integraties",
+  "pricingModel": "freemium",
+  "difficulty": "beginner",
+  "tags": [],
+  "draft": false,
+  "longDescription": "MCP is een infrastructuur-tool die het beheer en de implementatie van microservices vereenvoudigt. Het biedt een geïntegreerd platform voor het bouwen, testen en implementeren van microservices-gebaseerde applicaties.",
+  "bestFor": "MCP is vooral waardevol voor ontwikkelingsteams die microservices-architecturen gebruiken en op zoek zijn naar een efficiënt en schaalbaar platform om hun applicaties te beheren.",
+  "useCases": [
+    "Microservices-ontwikkeling",
+    "Automatische implementatie",
+    "Monitoring en logging"
+  ],
+  "strengths": [
+    "Geïntegreerd platform",
+    "Schaalbaar en efficiënt",
+    "Eenvoudige implementatie"
+  ],
+  "limitations": [
+    "Complexe configuratie voor grote projecten"
+  ],
+  "pricing": "Betaald vanaf $20/mnd",
+  "openSource": false,
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "deploymentType": "self-hosted",
+  "dataResidency": "eu",
+  "targetAudience": [
+    "mkb",
+    "enterprise"
+  ],
+  "nlSupport": false,
+  "integrations": [],
+  "timeToFirstValue": "days",
+  "setupComplexity": "high",
+  "learningCurve": "high",
+  "companySizeFit": [
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "experiment",
+  "verdict": "Model Context Protocol (MCP) van Anthropic wordt snel de industriestandaard voor tool-integraties in AI-applicaties. Essentieel voor developers die agents en externe tools willen verbinden.",
+  "whyListed": "MCP van Anthropic groeit uit tot de industriestandaard voor AI-tool-integraties en is omarmd door vrijwel alle grote AI-toolmakers als de gemeenschappelijke taal voor agent-tools.",
+  "bestAlternative": "langchain",
+  "keyFeatures": [
+    {
+      "title": "Open protocol",
+      "description": "Gestandaardiseerde manier om LLM's aan externe tools en data te koppelen.",
+      "group": "core"
+    },
+    {
+      "title": "Resources",
+      "description": "Expose read-only context (databases, bestanden, API's) aan het model.",
+      "group": "input"
+    },
+    {
+      "title": "Tools",
+      "description": "Definieer callable functies die het model zelfstandig kan aanroepen.",
+      "group": "output"
+    },
+    {
+      "title": "Prompts",
+      "description": "Herbruikbare prompt-templates die servers aan clients aanbieden.",
+      "group": "core"
+    },
+    {
+      "title": "Sampling",
+      "description": "Servers kunnen zelf LLM-aanroepen initiëren voor agentic workflows.",
+      "group": "beta",
+      "badge": "beta"
+    },
+    {
+      "title": "stdio & SSE transports",
+      "description": "Draai lokale servers via stdio of remote via Server-Sent Events.",
+      "group": "integration"
+    },
+    {
+      "title": "Multi-language SDK's",
+      "description": "Officiële SDK's voor TypeScript, Python, Kotlin, Java en Rust.",
+      "group": "integration"
+    },
+    {
+      "title": "Lokale & remote servers",
+      "description": "Zelf-hostbaar op je machine of draaiend in cloud-infrastructuur.",
+      "group": "core"
+    },
+    {
+      "title": "Brede client-support",
+      "description": "Ondersteund door Claude, Cursor, Cline, Goose, Windsurf en meer.",
+      "group": "integration"
+    },
+    {
+      "title": "Open-source (MIT)",
+      "description": "Volledig open specificatie en referentie-implementaties onder MIT-licentie.",
+      "group": "enterprise"
+    }
+  ],
+  "setupTime": "days",
+  "matchSegments": [
+    "mkb_klein",
+    "mkb_middel",
+    "enterprise"
+  ],
+  "idealTeamSize": {
+    "min": 11,
+    "max": 100000
+  },
+  "controlledIntegrations": [],
+  "beginnerFriendlyScore": 2,
+  "vendorLockInRisk": "low",
+  "headlineValueProp": "Open standaard voor LLM-tool-integratie — laat agents lokale tools en bestanden veilig bereiken",
+  "primaryJobsToBeDone": [
+    "Een AI-agent verbinden met bestanden, databases of API's via een gestandaardiseerd protocol",
+    "Eigen MCP-servers bouwen die domeinspecifieke tools blootstellen",
+    "Vendor-onafhankelijke integraties opzetten tussen LLM-clients en backends"
+  ],
+  "antiUseCases": [
+    "Teams die geen agent-architectuur opzetten — MCP is overkill voor simpele chat",
+    "Use cases waar vendor-lock-in geen issue is en SDK-niveau koppelingen volstaan",
+    "Sterk gestandaardiseerde no-code workflows — Zapier/Make zijn directer"
+  ]
+}

@@ -1,0 +1,92 @@
+---
+import { siteConfig } from '../config/site';
+const { name, tagline, description, navigation, footer } = siteConfig;
+---
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-row">
+      <span class="footer-brand">{name}</span>
+      <nav class="footer-links">
+        {Object.values(navigation.footer).flat().map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+        <a href="/leren">Leren</a>
+        <a href="/nieuws">Nieuws</a>
+      </nav>
+      <span class="footer-meta">
+        &copy; {new Date().getFullYear()} · <a href={footer.madeBy.url} target="_blank" rel="noopener">{footer.madeBy.name}</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-8);
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {
+    font-family: var(--font-logo);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-muted);
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+
+  .footer-meta {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .footer-meta a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-meta a:hover {
+    color: var(--primary-bright);
+  }
+
+  @media (max-width: 640px) {
+    .footer-row {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-2);
+    }
+  }
+</style>

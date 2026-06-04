@@ -1,0 +1,248 @@
+---
+import Badge from '../atoms/Badge.astro';
+import { nieuwsCategoryConfig, type NieuwsCategory } from '../../lib/nieuws-schema';
+import { BookOpen, Clock } from '@lucide/astro';
+
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  category: NieuwsCategory;
+  publishedAt: Date;
+  author?: string;
+  readingTime?: number;
+  featured?: boolean;
+  heroImage?: string;
+  size?: 'hero' | 'large' | 'medium' | 'small';
+}
+
+const {
+  title,
+  description,
+  href,
+  category,
+  publishedAt,
+  author = 'Redactie',
+  readingTime,
+  featured = false,
+  heroImage,
+  size = 'medium',
+} = Astro.props;
+
+const showImage = heroImage && (size === 'hero' || size === 'large');
+
+const cat = nieuwsCategoryConfig[category] ?? nieuwsCategoryConfig.nieuws;
+
+const bentoClass = {
+  hero:   'bento-xl',
+  large:  'bento-lg',
+  medium: 'bento-md',
+  small:  'bento-sm',
+}[size];
+
+const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
+  day: 'numeric',
+  month: 'short',
+  year: size === 'small' ? undefined : 'numeric',
+});
+---
+
+<a
+  href={href}
+  class:list={['news-card', 'bento-item', bentoClass, { 'news-card--featured': featured, 'news-card--has-image': showImage }]}
+  style={`--card-accent: ${cat.color}`}
+>
+  {showImage && (
+    <div class="news-card__image-wrap">
+      <img src={heroImage} alt={title} class="news-card__image" loading="lazy" />
+      <div class="news-card__image-overlay" />
+    </div>
+  )}
+
+  <div class:list={['news-card__inner', { 'news-card__inner--over-image': showImage }]}>
+    <header class="news-card__header">
+      <Badge variant="category" color={cat.color} size="sm">{cat.label}</Badge>
+      <time class="news-card__date" datetime={publishedAt.toISOString()}>
+        {formattedDate}
+      </time>
+    </header>
+
+    <h3 class:list={['news-card__title', { 'news-card__title--large': size === 'hero' || size === 'large' }]}>
+      {title}
+    </h3>
+
+    {(size === 'hero' || size === 'medium') && (
+      <p class="news-card__description">{description}</p>
+    )}
+
+    {size !== 'small' && (
+      <footer class="news-card__footer">
+        <span class="news-card__author">
+          <BookOpen size={12} stroke-width={1.5} />
+          {author}
+        </span>
+        {readingTime && (
+          <span class="news-card__reading-time">
+            <Clock size={12} stroke-width={1.5} />
+            {readingTime} min
+          </span>
+        )}
+      </footer>
+    )}
+  </div>
+</a>
+
+<style>
+  .news-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  /* Image layout */
+  .news-card--has-image {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+  }
+
+  .news-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .news-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+  }
+
+  .news-card:hover .news-card__image {
+    transform: scale(1.04);
+  }
+
+  .news-card__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 40%,
+      color-mix(in oklch, var(--bg-panel) 80%, transparent) 100%
+    );
+  }
+
+  .news-card__inner--over-image {
+    padding: var(--space-4) var(--space-5) var(--space-5);
+    flex: 1;
+  }
+
+  .news-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--card-accent) 8%, transparent) 0%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+  }
+
+  .news-card:hover::before {
+    opacity: 1;
+  }
+
+  .news-card:hover {
+    border-color: color-mix(in oklch, var(--card-accent) 45%, transparent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), 0 0 0 1px color-mix(in oklch, var(--card-accent) 20%, transparent);
+  }
+
+  .news-card--featured {
+    border-color: color-mix(in oklch, var(--card-accent) 25%, transparent);
+  }
+
+  .news-card__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    height: 100%;
+  }
+
+  .news-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .news-card__date {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .news-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    color: var(--text-primary);
+    margin: 0;
+    transition: color var(--transition-fast);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-card__title--large {
+    font-size: var(--text-xl);
+    -webkit-line-clamp: 4;
+  }
+
+  .news-card:hover .news-card__title {
+    color: var(--card-accent);
+  }
+
+  .news-card__description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-top: auto;
+    padding-top: var(--space-3);
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 6%, transparent);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .news-card__author,
+  .news-card__reading-time {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+</style>

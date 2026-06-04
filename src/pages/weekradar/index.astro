@@ -1,0 +1,12 @@
+---
+/**
+ * /weekradar — 301 → /radar/?view=rankings
+ *
+ * Geconsolideerd onder de centrale /radar/-hub (server-side renders
+ * dezelfde content). Deze stub blijft bestaan voor backward compat:
+ * inkomende backlinks (Google, LinkedIn, X, RSS-readers) krijgen een
+ * permanente 301 i.p.v. een 404 sinds de URL-restructure.
+ */
+export const prerender = false;
+return Astro.redirect('/radar/?view=rankings', 301);
+---

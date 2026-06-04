@@ -1,0 +1,67 @@
+---
+import NewsCard from './NewsCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  articles: CollectionEntry<'nieuws'>[];
+  maxItems?: number;
+}
+
+const { articles, maxItems = 12 } = Astro.props;
+
+const visible = articles.slice(0, maxItems);
+
+// Assign bento sizes: hero → large → medium(×2) → small(rest)
+function getSize(i: number): 'hero' | 'large' | 'medium' | 'small' {
+  if (i === 0) return 'hero';
+  if (i === 1) return 'large';
+  if (i <= 3) return 'medium';
+  return 'small';
+}
+---
+
+{visible.length === 0 ? (
+  <div class="no-articles">
+    <p>Nog geen artikelen beschikbaar. Kom later terug!</p>
+  </div>
+) : (
+  <div class="bento news-bento">
+    {visible.map((article, i) => {
+      // Digest-entries lopen mee in dezelfde feed (via /nieuws/index.astro)
+      // maar wijzen naar /digest/<slug>/ voor de detail-pagina.
+      const isDigest = article.data.category === 'digest';
+      const href = isDigest ? `/digest/${article.id}` : `/nieuws/${article.id}`;
+      return (
+        <NewsCard
+          title={article.data.title}
+          description={article.data.description}
+          href={href}
+          category={article.data.category}
+          publishedAt={article.data.publishedAt}
+          author={article.data.author}
+          readingTime={article.data.readingTime}
+          featured={article.data.featured}
+          heroImage={article.data.heroImage}
+          size={getSize(i)}
+        />
+      );
+    })}
+  </div>
+)}
+
+<style>
+  .no-articles {
+    padding: var(--space-12);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(12px);
+  }
+
+  .news-bento {
+    align-items: start;
+  }
+</style>

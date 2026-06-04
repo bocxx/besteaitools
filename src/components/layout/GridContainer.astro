@@ -1,0 +1,59 @@
+---
+/**
+ * GridContainer - Responsive grid layout wrapper
+ * 
+ * Layouts:
+ * - responsive-cols-2: 1 col → 2 cols
+ * - responsive-cols-3: 1 col → 2 cols → 3 cols
+ * - responsive-cols-4: 1 col → 2 cols → 4 cols
+ * - sidebar-right: Main content + 340px sidebar
+ * - sidebar-left: 340px sidebar + main content
+ * 
+ * @example
+ * <GridContainer layout="responsive-cols-3">
+ *   <GridItem>...</GridItem>
+ * </GridContainer>
+ */
+
+type LayoutType = 
+  | "responsive-cols-2"
+  | "responsive-cols-3" 
+  | "responsive-cols-4"
+  | "sidebar-right"
+  | "sidebar-left";
+
+interface Props {
+  layout?: LayoutType;
+  gap?: "sm" | "md" | "lg";
+  class?: string;
+}
+
+const { layout = "responsive-cols-3", gap = "md", class: className } = Astro.props;
+
+// Map layout prop to CSS class
+const layoutClasses: Record<LayoutType, string> = {
+  "responsive-cols-2": "grid-cols-2-responsive",
+  "responsive-cols-3": "grid-cols-3-responsive",
+  "responsive-cols-4": "grid-cols-4-responsive",
+  "sidebar-right": "grid-layout-sidebar-right",
+  "sidebar-left": "grid-layout-sidebar-left",
+};
+
+// Map gap prop to CSS variable
+const gapClasses: Record<string, string> = {
+  sm: "gap-4",
+  md: "gap-6",
+  lg: "gap-8",
+};
+
+const classes = [
+  "grid-container",
+  layoutClasses[layout],
+  gapClasses[gap],
+  className,
+].filter(Boolean).join(" ");
+---
+
+<div class={classes}>
+  <slot />
+</div>

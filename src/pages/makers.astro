@@ -1,0 +1,160 @@
+---
+/**
+ * /makers — De mensen & organisaties achter de trending AI
+ *
+ * Ontsluit de github_users-verrijking (newsflux export_makers.py → makers.json):
+ * de makers achter de AI-repos die nú trending zijn, met bio, locatie, volgers,
+ * hun trending-repos en hun X/blog-links. Onderscheidende hoek — concurrenten
+ * tonen tools, niet wie ze bouwt. Complementeert /modellen (wat) en /leren (hoe).
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { ArrowLeft, Users, MapPin, Building2, Star, Github, ArrowUpRight } from '@lucide/astro';
+import DiscoverGrid from '../components/DiscoverGrid.astro';
+import raw from '../data/makers.json';
+
+const makers = ((raw as any).makers ?? []) as any[];
+const updated = (raw as any).generated_at
+  ? new Date((raw as any).generated_at.slice(0, 10)).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' })
+  : null;
+
+const orgs = makers.filter((m) => m.is_organization);
+const people = makers.filter((m) => !m.is_organization);
+const fmt = (n: number) => Intl.NumberFormat('nl-NL').format(n ?? 0);
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Makers achter de trending AI — debesteaitools.nl',
+  description: `De ${makers.length} mensen en organisaties achter de AI-repos die nu trending zijn.`,
+  url: `${siteOrigin}/makers`,
+  numberOfItems: makers.length,
+};
+
+const SECTIONS = [
+  { key: 'orgs',   label: 'Organisaties', sub: 'Labs, bedrijven en collectieven', icon: Building2, items: orgs },
+  { key: 'people', label: 'Mensen',       sub: 'Individuele bouwers en onderzoekers', icon: Users,  items: people },
+] as const;
+---
+
+<Layout
+  title="Makers — wie bouwt de trending AI | debesteaitools.nl"
+  description={`De ${makers.length} mensen en organisaties achter de AI-repos die nu trending zijn: van Anthropic en Microsoft tot losse onderzoekers. Met bio, volgers en hun trending werk.`}
+  ogImage="/og/page-makers.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container mk">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="mk__head">
+      <p class="mk__kicker"><Users size={13} stroke-width={1.75} /> Makers</p>
+      <h1 class="mk__title">Wie bouwt de trending AI</h1>
+      <p class="mk__lede">
+        Tools en modellen worden door mensen gemaakt. Dit zijn de organisaties en
+        individuele bouwers achter de AI-repos die de afgelopen {(raw as any).window_days}
+        dagen het hardst stegen op GitHub — gerangschikt op het momentum van hun
+        werk. Volg ze waar het nieuwe spul écht vandaan komt.
+      </p>
+      {updated && <p class="mk__updated">Bijgewerkt {updated} · {makers.length} makers · {(raw as any).window_days}-daags venster</p>}
+    </header>
+
+    {SECTIONS.map((section) => {
+      const Icon = section.icon;
+      if (!section.items.length) return null;
+      return (
+        <section class="mk__section">
+          <h2 class="mk__h2"><Icon size={18} stroke-width={1.75} /> {section.label} <span class="mk__h2sub">{section.sub}</span></h2>
+          <ul class="makers">
+            {section.items.map((m) => (
+              <li class="maker">
+                <a class="maker__avatar" href={m.github_url} target="_blank" rel="noopener nofollow" aria-label={`GitHub van ${m.name}`}>
+                  <img src={m.avatar_url} alt="" width="48" height="48" loading="lazy" />
+                </a>
+                <div class="maker__body">
+                  <div class="maker__top">
+                    <a class="maker__name" href={m.github_url} target="_blank" rel="noopener nofollow">{m.name}<ArrowUpRight size={13} stroke-width={2} /></a>
+                    <span class="maker__stars" title="Sterren erbij in het venster"><Star size={11} stroke-width={2} /> +{fmt(m.window_stars)}</span>
+                  </div>
+                  {m.bio && <p class="maker__bio">{m.bio}</p>}
+                  <div class="maker__meta">
+                    {m.followers > 0 && <span class="maker__metaitem"><Github size={11} stroke-width={1.75} /> {fmt(m.followers)} volgers</span>}
+                    {m.company && <span class="maker__metaitem"><Building2 size={11} stroke-width={1.75} /> {m.company}</span>}
+                    {m.location && <span class="maker__metaitem"><MapPin size={11} stroke-width={1.75} /> {m.location}</span>}
+                  </div>
+                  <div class="maker__repos">
+                    {(m.top_repos ?? []).map((r: any) => (
+                      <a class="maker__repo" href={`https://github.com/${m.login}/${r.repo}`} target="_blank" rel="noopener nofollow" title={r.description}>
+                        {r.repo}<span class="maker__repostars">+{fmt(r.window_stars)}</span>
+                      </a>
+                    ))}
+                  </div>
+                  {(m.twitter || m.blog) && (
+                    <div class="maker__links">
+                      {m.twitter && <a class="maker__link" href={`https://x.com/${m.twitter}`} target="_blank" rel="noopener nofollow">@{m.twitter}</a>}
+                      {m.blog && <a class="maker__link" href={m.blog} target="_blank" rel="noopener nofollow">website</a>}
+                    </div>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })}
+
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['modellen', 'doorbraak', 'leren', 'tools']} />
+    </section>
+
+    <p class="mk__source">
+      Makers worden afgeleid uit AI-relevante GitHub-repos die in het venster
+      trending waren, verrijkt met publieke GitHub-profieldata. Momentum =
+      sterren erbij in het venster. Dagelijks ververst door de pipeline.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .mk { padding-top: 80px; max-width: 960px; padding-bottom: var(--space-20); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); transition: color var(--transition-fast); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .mk__head { max-width: 64ch; margin-bottom: var(--space-10); }
+  .mk__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-widest); margin: 0 0 var(--space-3) 0; }
+  .mk__title { font-family: var(--font-logo); font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem); font-weight: var(--font-regular); letter-spacing: var(--tracking-tight); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .mk__lede { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-3) 0; }
+  .mk__updated { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
+
+  .mk__section { margin-bottom: var(--space-10); }
+  .mk__h2 { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); margin: 0 0 var(--space-5) 0; }
+  .mk__h2 :global(svg) { color: var(--primary-bright); }
+  .mk__h2sub { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--font-regular); color: var(--text-muted); text-transform: none; letter-spacing: 0; }
+
+  .makers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: var(--space-3); }
+  @media (max-width: 900px) { .makers { grid-template-columns: 1fr; } }
+  .maker { display: flex; gap: var(--space-3); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-glass); }
+  .maker__avatar { flex: none; }
+  .maker__avatar img { width: 48px; height: 48px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); display: block; background: var(--surface-raised); }
+  .maker__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .maker__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .maker__name { display: inline-flex; align-items: center; gap: 3px; font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--font-semibold); color: var(--text-primary); text-decoration: none; overflow-wrap: anywhere; }
+  .maker__name:hover { color: var(--primary-bright); }
+  .maker__name :global(svg) { opacity: 0.5; flex: none; }
+  .maker__stars { flex: none; display: inline-flex; align-items: center; gap: 3px; font-family: var(--font-mono); font-size: var(--text-xs); color: #f59e0b; white-space: nowrap; }
+  .maker__bio { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.45; margin: 0; }
+  .maker__meta { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .maker__metaitem { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+  .maker__repos { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: 2px; }
+  .maker__repo { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 2px 10px; }
+  .maker__repo:hover { border-color: var(--primary-bright); color: var(--text-primary); }
+  .maker__repostars { color: #f59e0b; }
+  .maker__links { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .maker__link { font-size: var(--text-xs); color: var(--primary-bright); text-decoration: none; }
+  .maker__link:hover { text-decoration: underline; }
+
+  .mk__source { margin-top: var(--space-8); font-size: var(--text-xs); color: var(--text-muted); max-width: 70ch; }
+</style>
