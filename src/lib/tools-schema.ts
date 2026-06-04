@@ -441,8 +441,8 @@ export const toolContentSchema = z.object({
   offersDutchSupport: z.boolean().default(false),
 
   // ── Laag 8: Concurrenten & positionering ──────
+  // (whenToChoose staat verderop bij bestAlternative — daar hoort 'ie thuis.)
   mainCompetitors: z.array(z.string()).default([]),
-  whenToChoose: z.string().optional(),
 
   // ── Laag 9: Praktische evaluatie ──────────────
   headlineValueProp: z.string().optional(),
