@@ -30,12 +30,19 @@ export * from './taxonomies';
 
 export const toolCategories = {
   chatbots:       { name: 'Chatbots',        icon: 'message-square', color: 'var(--primary-bright)',    description: 'Algemene AI-assistenten voor tekst, vragen en werk.' },
+  writing:        { name: 'Schrijven',       icon: 'pen-tool',       color: '#a78bfa',                 description: 'AI voor teksten, copy en content schrijven.' },
+  presentations:  { name: 'Presentaties',    icon: 'presentation',   color: '#f59e0b',                 description: 'AI die presentaties, decks en slides maakt.' },
   coding:         { name: 'Coding',          icon: 'code',           color: 'var(--secondary-bright)',  description: 'AI-tools voor developers, agents en code review.' },
-  automation:     { name: 'Automatisering',  icon: 'workflow',       color: 'var(--color-success)',     description: 'Automatisering, AI-agents en workflow tools.' },
   image:          { name: 'Beeld',           icon: 'image',          color: 'var(--color-warning)',     description: 'AI-beeldgeneratie en visuele bewerking.' },
   video:          { name: 'Video',           icon: 'film',           color: 'var(--tertiary-bright)',   description: 'AI-video, avatars en motion content.' },
   audio:          { name: 'Audio',           icon: 'mic',            color: 'var(--color-error)',       description: 'Transcriptie, spraak en audio-productie.' },
+  music:          { name: 'Muziek',          icon: 'music',          color: '#f472b6',                 description: 'AI die muziek en geluid genereert.' },
+  'meeting-notes':{ name: 'Notuleren',       icon: 'captions',       color: '#2dd4bf',                 description: 'AI-notulisten voor meetings en gesprekken.' },
   search:         { name: 'Zoeken',          icon: 'search',         color: 'var(--color-info)',        description: 'Zoeken, research en kennisverrijking.' },
+  agents:         { name: 'AI-agents',       icon: 'bot',            color: '#22d3ee',                 description: 'Autonome AI-agents en agent-frameworks.' },
+  automation:     { name: 'Automatisering',  icon: 'workflow',       color: 'var(--color-success)',     description: 'Workflow-automatisering en no-code koppelingen.' },
+  support:        { name: 'Klantenservice',  icon: 'headset',        color: '#818cf8',                 description: 'AI voor support, tickets en klantcontact.' },
+  marketing:      { name: 'Marketing',       icon: 'megaphone',      color: '#fb923c',                 description: 'AI voor marketing, ads en social media.' },
   productivity:   { name: 'Productiviteit',  icon: 'sparkles',       color: 'var(--primary-mid)',       description: 'Dagelijkse AI-tools voor kenniswerk en output.' },
   infrastructure: { name: 'Infrastructuur',  icon: 'server',         color: 'var(--secondary-mid)',     description: 'Modellen, infra, deployment en AI-platforms.' },
   design:         { name: 'Design',          icon: 'palette',        color: '#f0abfc',                 description: 'AI-tools voor grafisch ontwerp en visuele content.' },
@@ -447,6 +454,8 @@ export const toolContentSchema = z.object({
   // ── Laag 9: Praktische evaluatie ──────────────
   headlineValueProp: z.string().optional(),
   implementationTimeEstimate: z.string().optional(),
+  /** Genummerde eerste-stappen om met de tool te beginnen ("Zo gebruik je"-sectie). */
+  gettingStarted: z.array(z.string()).default([]),
   screenshotUrls: z.array(z.string()).default([]),
   demoUrl: z.string().url().optional(),
   exampleOutput: z.string().optional(),

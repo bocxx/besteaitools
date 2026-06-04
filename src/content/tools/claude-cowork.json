@@ -1,19 +1,38 @@
 {
   "name": "Claude Cowork",
-  "category": "automation",
+  "category": "agents",
   "websiteUrl": "https://claude.ai",
   "shortDescription": "Anthropic's desktop-agent waarmee niet-developers Claude langlopende taken laat uitvoeren via bestanden, bash-commando's en connectoren",
   "longDescription": "Claude Cowork is een modus in de Claude desktop-app waarin Claude zelfstandig meerstaps-taken uitvoert op je computer in plaats van alleen te chatten. Claude krijgt een werkmap, kan bestanden lezen en aanmaken, shell-commando's draaien in een filesystem- en netwerk-geïsoleerde sandbox, en via connectoren werken met apps als Gmail, Google Drive en CRM-systemen. Het gebruikt dezelfde agent-architectuur als Claude Code, maar zonder terminal en gericht op kenniswerkers — marketeers, recruiters, consultants, ondernemers. Sinds februari 2026 draait het op macOS én Windows voor alle betaalde Claude-plannen. Plugins bundelen skills, connectoren en slash-commando's per rol, en 'live artifacts' geven dashboards die automatisch ververen met actuele data uit je apps.",
   "pricingModel": "paid",
   "difficulty": "beginner",
-  "tags": ["claude", "anthropic", "ai-agent", "desktop", "productiviteit"],
-  "mentionAliases": ["cowork", "claude cowork"],
+  "tags": [
+    "claude",
+    "anthropic",
+    "ai-agent",
+    "desktop",
+    "productiviteit"
+  ],
+  "mentionAliases": [
+    "cowork",
+    "claude cowork"
+  ],
   "draft": false,
   "targetAudience": [],
-  "businessFunctions": [],
+  "businessFunctions": [
+    "operations",
+    "development"
+  ],
   "companySizeFit": [],
-  "integrations": ["Gmail", "Google Drive", "CRM-connectoren"],
-  "mainCompetitors": ["chatgpt", "claude-code"],
+  "integrations": [
+    "Gmail",
+    "Google Drive",
+    "CRM-connectoren"
+  ],
+  "mainCompetitors": [
+    "chatgpt",
+    "claude-code"
+  ],
   "screenshotUrls": [],
   "hasFreePlan": false,
   "startingPriceMonthly": 20,

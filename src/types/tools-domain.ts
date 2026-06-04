@@ -306,6 +306,8 @@ export interface ToolContent {
   headlineValueProp?: string;
   /** Human-readable implementation time estimate, e.g. "1–2 weken" */
   implementationTimeEstimate?: string;
+  /** Numbered first-steps to get started ("Zo gebruik je"-sectie). */
+  gettingStarted: string[];
   /** URLs to product screenshots */
   screenshotUrls: string[];
   /** URL to demo or trial page */

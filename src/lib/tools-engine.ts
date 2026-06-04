@@ -675,3 +675,68 @@ export async function getRadarToolCount(): Promise<number> {
   const radar = await getRadarData();
   return radar?.total_tools_tracked ?? 0;
 }
+
+// ============================================
+// TUTORIALS (curated learning resources per tool)
+// ============================================
+
+export interface ToolTutorial {
+  /** NL teaser angle if available, else the raw source title. */
+  label: string;
+  /** Raw source title (for secondary display). */
+  title: string;
+  url: string;
+  platform?: string;
+  isVideo: boolean;
+}
+
+let _tutorialCache: any[] | null = null;
+
+/** Load the `for_tools` bucket from tutorial_candidates.json (newsflux). */
+async function loadTutorialCandidates(): Promise<any[]> {
+  if (_tutorialCache) return _tutorialCache;
+  try {
+    const raw = await import('../data/reports/tutorial_candidates.json');
+    const data: any = raw.default ?? raw;
+    _tutorialCache = (data.for_tools ?? []) as any[];
+  } catch {
+    _tutorialCache = [];
+  }
+  return _tutorialCache;
+}
+
+/**
+ * Curated external tutorials matched to a tool via the newsflux
+ * `tutorial_candidates.json` (matched_tools ↔ slug/aliases). Sparse by design —
+ * returns [] for most tools. The detail page combines this with the radar's
+ * per-tool `youtube_videos` for the "Zo leer je"-sectie.
+ */
+export async function getToolTutorials(
+  tool: { slug: string; name?: string; mentionAliases?: string[] },
+  limit = 4,
+): Promise<ToolTutorial[]> {
+  const cands = await loadTutorialCandidates();
+  const keys = new Set<string>(
+    [
+      tool.slug,
+      tool.slug.replace(/-/g, ' '),
+      tool.name ?? '',
+      ...(tool.mentionAliases ?? []),
+    ]
+      .filter(Boolean)
+      .map((s) => s.toLowerCase()),
+  );
+
+  const matched = cands.filter((c) =>
+    (c.matched_tools ?? []).some((m: string) => keys.has(String(m).toLowerCase())),
+  );
+  matched.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+
+  return matched.slice(0, limit).map((c) => ({
+    label: (c.suggested_angle_nl || c.title || '').trim(),
+    title: (c.title || '').trim(),
+    url: c.url,
+    platform: c.platform,
+    isVideo: Boolean(c.video) || String(c.platform ?? '').includes('youtube'),
+  }));
+}

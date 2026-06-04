@@ -1,68 +1,29 @@
 ---
 /**
- * / — Homepage + AI Tools Radar
- * Hero with value prop and quick-access blocks, then full tool grid.
- * Data comes from tools-engine.ts (content + stats merged).
+ * / — Homepage = de AI-tool finder
+ *
+ * De homepage is de tool-finder zelf: een grote live-zoekbalk + taak/categorie-
+ * filters + quick-filters + het tool-grid, allemaal direct zichtbaar. Bezoekers
+ * vinden in seconden de beste tool voor hun taak — met focus op wát een tool doet,
+ * hoe makkelijk 'ie is en wat 'ie kost.
+ *
+ * Radar/buzz (Live radar, weekradar, groeifase, Trending-badges) is hier bewust
+ * weggehaald; die data voedt nu het aparte ainieuwsradar.nl.
  */
 import Layout from '../layouts/Layout.astro';
 import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
-import Badge from '../components/atoms/Badge.astro';
-import DiscoverGrid from '../components/DiscoverGrid.astro';
-import modellenData from '../data/trending_models.json';
-import doorbraakData from '../data/tool_breakthrough.json';
-import makersData from '../data/makers.json';
-import lerenData from '../data/reports/tutorial_candidates.json';
-import {
-  getAllTools,
-  getSectionedTools,
-  getRadarTimestamp,
-  getWeeklyHighlights,
-} from '../lib/tools-engine';
-import { toolCategories, trendPhases } from '../lib/tools-schema';
-import type { TrendPhaseKey } from '../lib/tools-schema';
-import { TrendingUp, Zap, Flame, ShieldCheck, Trophy, Newspaper, Scale, ArrowRight, SlidersHorizontal } from '@lucide/astro';
+import { getAllTools } from '../lib/tools-engine';
+import { toolCategories } from '../lib/tools-schema';
+import { Search, ShieldCheck, Zap, UserX, Gift, Languages, SlidersHorizontal } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
-const sections = await getSectionedTools();
-const highlights = await getWeeklyHighlights();
 
+// Standaardvolgorde: meest relevante eerst. Intern op buzz, maar neutraal
+// gelabeld als "Aanbevolen" — geen buzz/radar-taal naar de bezoeker.
 const toolsSorted = [...tools]
   .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
-
-const risingCount = tools.filter(t => t.stats?.trend_direction === 'rising').length;
-
-// Signal sets — used to mark cards with badges
-const topToolSlugs = new Set(sections.meestBesproken.map(t => t.slug));
-const stijgerSlugs = new Set(sections.stijgers.map(t => t.slug));
-
-const generatedAt = await getRadarTimestamp();
-const formattedDate = generatedAt
-  ? new Date(generatedAt).toLocaleDateString('nl-NL', {
-      day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
-    })
-  : null;
-
-const weekNum = highlights.weekLabel.split('-w')[1];
-
-// Discovery-counts voor de "Ontdek de AI-radar"-sectie (nieuwe data-features)
-const _fmtNl = (n: number) => Intl.NumberFormat('nl-NL').format(n ?? 0);
-const _md: any = modellenData, _db: any = doorbraakData, _mk: any = makersData, _lr: any = lerenData;
-const discoverCounts: Record<string, string> = {
-  modellen: `<strong>${_fmtNl((_md.models ?? []).length)}</strong> open modellen in de lift`,
-  doorbraak: `<strong>${_fmtNl(_db.funnel_counts?.about_to_break ?? 0)}</strong> tools staan op punt te breken`,
-  makers: `<strong>${_fmtNl(_mk.total ?? 0)}</strong> bouwers achter de trending AI`,
-  leren: `<strong>${_fmtNl((_lr.for_tools ?? []).length)}</strong> gecureerde leer-bronnen`,
-};
-
-// Load latest feature news count
-let newsCount = 0;
-try {
-  const raw = await import('../data/reports/tool_feature_news.json');
-  const data: any = raw.default ?? raw;
-  newsCount = (data.features ?? []).length;
-} catch { }
 
 // Categorieën gesorteerd op tool-count (meest gevuld eerst)
 const sortedCategories = Object.entries(toolCategories)
@@ -70,24 +31,6 @@ const sortedCategories = Object.entries(toolCategories)
   .filter(item => item.count > 0)
   .sort((a, b) => b.count - a.count);
 const TOP_CATS = 6;
-
-// Fase-labels in begrijpelijk Nederlands
-const phaseLabelsNl: Record<string, string> = {
-  weak_signal:  'Klein publiek',
-  emerging:     'Groeiend',
-  accelerating: 'Snel stijgend',
-  peaking:      'Op z\'n hoogtepunt',
-  sustained:    'Gevestigd',
-  declining:    'Afnemend',
-};
-
-// Fase-counts voor de Verfijn-dropdown
-const phaseCounts = new Map<string, number>();
-for (const t of tools) {
-  const p = t.stats?.phase;
-  if (p) phaseCounts.set(p, (phaseCounts.get(p) ?? 0) + 1);
-}
-const publicPhaseKeys = Object.keys(phaseLabelsNl).filter(k => (phaseCounts.get(k) ?? 0) > 0);
 
 // WebSite structured data
 const websiteJsonLd = {
@@ -117,25 +60,25 @@ const organizationJsonLd = {
   ].filter(Boolean),
 };
 
-// FAQ — single source of truth for the visible section AND the JSON-LD below,
-// so structured data always matches on-page content (Google guideline).
+// FAQ — single source of truth voor de zichtbare sectie ÉN de JSON-LD.
+// Finder-/kosten-intentie i.p.v. buzz-framing.
 const currentYear = new Date().getFullYear();
 const faqItems = [
   {
-    q: `Wat zijn de beste AI-tools van ${currentYear}?`,
-    a: `We volgen ${tools.length}+ AI-tools en ranken ze objectief op buzz, groei en mentions — niet op betaalde plaatsing. De ranglijst wordt elke week bijgewerkt, zodat je ziet wat er nú opkomt.`,
+    q: 'Hoe kies ik de beste AI-tool voor mijn taak?',
+    a: `Begin met zoeken of kies een categorie die past bij wat je wilt doen — schrijven, beeld, code, klantenservice. Filter daarna op je eisen: gratis proberen, Nederlandstalig, AVG-proof of zonder developer. Bij elke tool zie je wat 'ie doet, hoe makkelijk 'ie in gebruik is en wat 'ie kost.`,
   },
   {
-    q: 'Hoe bepalen jullie de ranking?',
-    a: 'Elke tool krijgt scores op basis van meetbare signalen: hoeveel er over gepraat wordt (buzz), hoe snel die aandacht groeit (velocity) en het aantal mentions. Geen redactionele voorkeur of advertenties — daardoor verschuift de ranglijst mee met de werkelijkheid.',
+    q: 'Wat kosten AI-tools?',
+    a: 'Dat verschilt per tool. Veel tools zijn gratis of freemium (gratis met betaalde upgrades), andere werken met een maandabonnement. Bij elke tool staat het prijsmodel vermeld en of er een gratis proefperiode is, zodat je zonder verrassingen kunt starten.',
   },
   {
-    q: 'Zijn deze AI-tools gratis?',
-    a: 'Dat verschilt per tool. Bij elke tool staat het prijsmodel vermeld (gratis, freemium of betaald), plus of er een gratis proefperiode beschikbaar is.',
+    q: `Zijn er gratis AI-tools in ${currentYear}?`,
+    a: `Ja. Zet het filter "Gratis proberen" aan om alleen tools met een gratis of freemium-plan te tonen. Veel tools kun je eerst uitproberen voordat je iets betaalt.`,
   },
   {
     q: 'Welke AI-tools zijn geschikt voor zakelijk gebruik in Nederland?',
-    a: 'Let op de GDPR-ready- en Nederlandstalig-labels bij elke tool, of gebruik "Vind je beste AI-tool" om op basis van je use case en eisen een passende match te krijgen.',
+    a: `Let op de AVG-klaar- en Nederlandstalig-labels bij elke tool, of gebruik de filters "AVG-klaar" en "Nederlandstalig". Zo vind je snel tools die je compliant en in het Nederlands kunt inzetten.`,
   },
 ];
 
@@ -153,8 +96,8 @@ export const prerender = true;
 ---
 
 <Layout
-  title={`${tools.length}+ Beste AI Tools ${new Date().getFullYear()} | debesteaitools.nl`}
-  description={`Ontdek en vergelijk ${tools.length}+ AI-tools op buzz, groei en mentions. Realtime gerankt voor Nederland — van ChatGPT tot Midjourney.`}
+  title={`Vind de beste AI-tool voor jouw taak — ${tools.length}+ tools | debesteaitools.nl`}
+  description={`Ontdek, vergelijk en leer werken met ${tools.length}+ AI-tools: wat ze doen, hoe je ze gebruikt en wat ze kosten. Zoek of filter op taak, prijs en AVG en vind in seconden de beste match.`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
@@ -163,95 +106,49 @@ export const prerender = true;
   </Fragment>
   <main class="container container-wide" style="padding-top: 80px;">
 
-    <!-- Hero -->
+    <!-- Hero + zoekbalk -->
     <header class="hero">
-      <div class="hero__meta">
-        <Badge variant="outline" size="sm">
-          <Zap size={12} stroke-width={1.5} />
-          Live radar
-        </Badge>
-        {formattedDate && <span class="tools-timestamp">Bijgewerkt {formattedDate}</span>}
-      </div>
       <h1 class="hero__title">
-        <span class="hero__gradient">De beste AI-tools</span>
-        <br />objectief gerankt
+        Vind de beste <span class="hero__accent">AI-tool</span> voor jouw taak
       </h1>
       <p class="hero__sub">
-        Welke AI-tools groeien nú? Wij volgen <strong>{tools.length}+ tools</strong> op buzz,
-        groei en mentions — elke week bijgewerkt, zonder hype.
+        Ontdek wat <strong>{tools.length}+ AI-tools</strong> doen, hoe je ze gebruikt en wat ze kosten.
+        Zoek of filter en houd in seconden de tools over die écht bij je taak passen — geen account nodig.
       </p>
-      <div class="hero__stats">
-        <span class="hero__stat"><strong>{tools.length}</strong> tools gevolgd</span>
-        <span class="hero__divider">·</span>
-        <span class="hero__stat"><strong>{risingCount}</strong> stijgers</span>
-        <span class="hero__divider">·</span>
-        <span class="hero__stat">Week <strong>{weekNum}</strong></span>
+
+      <div class="searchbar">
+        <Search size={20} stroke-width={1.75} class="searchbar__icon" />
+        <input
+          type="search"
+          id="tool-search"
+          class="searchbar__input"
+          placeholder="Zoek een tool of taak — bijv. ‘video’, ‘code’, ‘notuleren’…"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Zoek AI-tools op naam, taak of categorie"
+        />
+        <button type="button" class="searchbar__clear" id="search-clear" aria-label="Zoekopdracht wissen" hidden>✕</button>
       </div>
-      <div class="hero__cta-row">
-        <a href="/vind-je-beste-ai-tool" class="btn btn-primary btn-lg hero__cta">
-          <SlidersHorizontal size={18} stroke-width={2} /> Vind jouw beste AI-tool
-        </a>
-        <a href="/ontdek" class="btn btn-ghost hero__cta-secondary">
-          Of verken de hele radar <ArrowRight size={15} stroke-width={1.75} />
-        </a>
-      </div>
-      <p class="hero__cta-hint">Filter op je taak, budget en eisen — match in 30 seconden.</p>
+
+      <p class="hero__hint">
+        {tools.length}+ tools · {sortedCategories.length} categorieën · prijs, AVG-status en gebruiksgemak per tool
+      </p>
     </header>
 
-    <!-- Quick access blocks -->
-    <div class="qa-row">
-      <a href="/radar/?view=rankings" class="qa-card">
-        <span class="qa-card__icon"><Trophy size={20} stroke-width={1.5} /></span>
-        <span class="qa-card__body">
-          <span class="qa-card__label">Weekradar</span>
-          <span class="qa-card__desc">
-            {highlights.toolVanDeWeek
-              ? <>Tool van de week: <strong>{highlights.toolVanDeWeek.name}</strong></>
-              : <>Stijgers, dalers en nieuwkomers</>
-            }
-          </span>
-        </span>
-        <ArrowRight size={16} stroke-width={1.5} class="qa-card__arrow" />
-      </a>
-      <a href="/nieuws" class="qa-card">
-        <span class="qa-card__icon"><Newspaper size={20} stroke-width={1.5} /></span>
-        <span class="qa-card__body">
-          <span class="qa-card__label">Nieuws</span>
-          <span class="qa-card__desc">
-            {newsCount > 0
-              ? <><strong>{newsCount}</strong> nieuwe features &amp; updates</>
-              : <>Nieuwe features en tool-updates</>
-            }
-          </span>
-        </span>
-        <ArrowRight size={16} stroke-width={1.5} class="qa-card__arrow" />
-      </a>
-      <a href="/vergelijk" class="qa-card">
-        <span class="qa-card__icon"><Scale size={20} stroke-width={1.5} /></span>
-        <span class="qa-card__body">
-          <span class="qa-card__label">Vergelijk</span>
-          <span class="qa-card__desc">Side-by-side buzz, groei en functies</span>
-        </span>
-        <ArrowRight size={16} stroke-width={1.5} class="qa-card__arrow" />
-      </a>
+    <!-- Quick-filters: helpen kiezen op je eisen -->
+    <div class="quick-row" role="group" aria-label="Snelfilters">
+      <button class="quick-chip" data-quick="trial" title="Gratis of freemium-plan beschikbaar"><Gift size={13} stroke-width={1.5} /> Gratis proberen</button>
+      <button class="quick-chip" data-quick="nl" title="Ondersteunt Nederlands"><Languages size={13} stroke-width={1.5} /> Nederlandstalig</button>
+      <button class="quick-chip" data-quick="gdpr" title="AVG-/GDPR-klaar"><ShieldCheck size={13} stroke-width={1.5} /> AVG-klaar</button>
+      <button class="quick-chip" data-quick="nodev" title="Geen developer nodig"><UserX size={13} stroke-width={1.5} /> Geen developer</button>
+      <button class="quick-chip" data-quick="fast" title="Eerste resultaat in minuten of uren"><Zap size={13} stroke-width={1.5} /> Snel inzetbaar</button>
     </div>
 
-    <!-- Ontdek de AI-radar: nieuwe data-features -->
-    <section class="discover" aria-labelledby="discover-heading">
-      <div class="discover__head">
-        <h2 id="discover-heading" class="discover__title">Ontdek de AI-radar</h2>
-        <a class="discover__all" href="/ontdek">Alles ontdekken <ArrowRight size={14} stroke-width={1.75} /></a>
-      </div>
-      <DiscoverGrid variant="grid" only={['modellen', 'doorbraak', 'makers', 'leren']} counts={discoverCounts} />
-    </section>
+    <!-- Categorie-filter + sorteren -->
+    <nav class="filter-bar" aria-label="Filter op categorie en sorteer">
 
-    <!-- Filter bar -->
-    <nav class="filter-bar" aria-label="Filter en sorteer">
-
-      <!-- Alles -->
       <button class="cat-chip cat-chip--active" data-cat-nav="all">Alles</button>
 
-      <!-- Top-6 categorieën (meest gevuld) -->
       {sortedCategories.slice(0, TOP_CATS).map(({ slug, cat, count }) => (
         <button class="cat-chip" data-cat-nav={slug} style={`--chip-color: ${cat.color}`}>
           {cat.name}
@@ -259,7 +156,6 @@ export const prerender = true;
         </button>
       ))}
 
-      <!-- Overflow: overige categorieën in micro-dropdown -->
       {sortedCategories.length > TOP_CATS && (
         <div class="overflow-wrap">
           <button class="cat-chip cat-chip--overflow" id="overflow-btn" aria-expanded="false">
@@ -277,50 +173,43 @@ export const prerender = true;
         </div>
       )}
 
-      <!-- Spacer duwt Verfijn naar rechts -->
       <span class="filter-spacer"></span>
 
-      <!-- Verfijn: sort + fase in één dropdown -->
+      <!-- Sorteren -->
       <div class="refine-wrap" id="refine-wrap">
         <button class="refine-btn" id="refine-btn" aria-expanded="false">
           <SlidersHorizontal size={13} stroke-width={1.5} />
-          Verfijn
+          Sorteer
           <span class="refine-chevron">▾</span>
         </button>
         <div class="refine-panel" id="refine-panel" hidden>
           <p class="refine-section-label">Sorteer op</p>
           <div class="refine-opts">
-            <button class="refine-opt refine-opt--active" data-sort="buzz">Meest populair</button>
-            <button class="refine-opt" data-sort="velocity">Snelst groeiend</button>
+            <button class="refine-opt refine-opt--active" data-sort="buzz">Aanbevolen</button>
+            <button class="refine-opt" data-sort="ttv">Snelst inzetbaar</button>
             <button class="refine-opt" data-sort="alpha">A → Z</button>
-          </div>
-          <p class="refine-section-label">Groeifase</p>
-          <div class="refine-opts">
-            <button class="refine-opt refine-phase refine-opt--active" data-phase="all">Alle fases</button>
-            {publicPhaseKeys.map((key) => (
-              <button class="refine-opt refine-phase" data-phase={key}>
-                {phaseLabelsNl[key]}
-                <span class="refine-count">{phaseCounts.get(key)}</span>
-              </button>
-            ))}
           </div>
         </div>
       </div>
 
     </nav>
 
+    <!-- Resultaat-teller -->
+    <p class="result-count" id="result-count" aria-live="polite">{tools.length} tools</p>
+
     <!-- Tool Grid -->
     <div id="alle-tools">
       <div class="tool-grid" id="tool-grid">
-        {toolsSorted.map(tool => <ToolCard tool={tool} isTopTool={topToolSlugs.has(tool.slug)} isStijger={stijgerSlugs.has(tool.slug)} />)}
+        {toolsSorted.map(tool => <ToolCard tool={tool} />)}
       </div>
 
-      <p class="grid-empty" id="grid-empty" style="display:none;">
-        Geen tools gevonden voor deze combinatie van filters.
-      </p>
+      <div class="grid-empty" id="grid-empty" style="display:none;">
+        <p>Geen tools gevonden voor deze zoekopdracht en filters.</p>
+        <button type="button" class="btn btn-ghost" id="reset-filters">Filters wissen</button>
+      </div>
     </div>
 
-    <!-- FAQ — visible content backing the FAQPage structured data -->
+    <!-- FAQ — zichtbaar én als FAQPage structured data -->
     <section class="faq" aria-labelledby="faq-heading">
       <h2 id="faq-heading" class="faq__heading">Veelgestelde vragen</h2>
       <div class="faq__list">
@@ -336,42 +225,76 @@ export const prerender = true;
   </main>
 </Layout>
 
-<!-- Client-side filtering, sorting -->
+<!-- Client-side: live zoeken + filteren + sorteren -->
 <script>
-  let activeCat   = 'all';
-  let activePhase = 'all';
-  let activeSort  = 'buzz';
+  let activeCat = 'all';
+  let activeSort = 'buzz';
+  let searchTerm = '';
+  const activeQuick = new Set<string>();
 
-  const grid     = document.getElementById('tool-grid')!;
-  const cards    = Array.from(grid.querySelectorAll<HTMLElement>('.tool-card'));
-  const emptyMsg = document.getElementById('grid-empty')!;
+  const grid       = document.getElementById('tool-grid')!;
+  const cards      = Array.from(grid.querySelectorAll<HTMLElement>('.tool-card'));
+  const emptyMsg   = document.getElementById('grid-empty')!;
+  const resultCount = document.getElementById('result-count')!;
+  const searchInput = document.getElementById('tool-search') as HTMLInputElement;
+  const searchClear = document.getElementById('search-clear') as HTMLButtonElement;
+  const totalTools = cards.length;
 
-  // ── Categorie chips (ook die in overflow-panel) ──────────
+  // ── Zoekbalk (live, terwijl je typt) ─────────────────────
+  let debounce: ReturnType<typeof setTimeout>;
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(debounce);
+    searchClear.hidden = searchInput.value.length === 0;
+    debounce = setTimeout(() => {
+      searchTerm = searchInput.value.trim().toLowerCase();
+      applyFilters();
+    }, 120);
+  });
+  searchClear?.addEventListener('click', () => {
+    searchInput.value = '';
+    searchTerm = '';
+    searchClear.hidden = true;
+    searchInput.focus();
+    applyFilters();
+  });
+
+  // ── Categorie chips (incl. overflow-panel) ───────────────
   function bindCatChip(chip: HTMLButtonElement) {
     chip.addEventListener('click', () => {
       activeCat = chip.dataset.catNav!;
-      // Update alle zichtbare chips + overflow-opts
       document.querySelectorAll<HTMLButtonElement>('[data-cat-nav]').forEach(c => {
         c.classList.toggle('cat-chip--active', c.dataset.catNav === activeCat);
         c.classList.toggle('overflow-opt--active', c.dataset.catNav === activeCat);
       });
-      // Sluit overflow-panel
       closeOverflow();
       applyFilters();
     });
   }
   document.querySelectorAll<HTMLButtonElement>('[data-cat-nav]').forEach(bindCatChip);
 
+  // ── Quick-filters ────────────────────────────────────────
+  document.querySelectorAll<HTMLButtonElement>('.quick-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.quick!;
+      if (activeQuick.has(key)) {
+        activeQuick.delete(key);
+        chip.classList.remove('quick-chip--active');
+      } else {
+        activeQuick.add(key);
+        chip.classList.add('quick-chip--active');
+      }
+      applyFilters();
+    });
+  });
+
   // ── Overflow dropdown ────────────────────────────────────
   const overflowBtn   = document.getElementById('overflow-btn') as HTMLButtonElement | null;
   const overflowPanel = document.getElementById('overflow-panel') as HTMLElement | null;
 
   function closeOverflow() {
-    overflowPanel?.removeAttribute('hidden') === undefined;
     overflowPanel?.setAttribute('hidden', '');
     overflowBtn?.setAttribute('aria-expanded', 'false');
   }
-
   overflowBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     const open = overflowPanel?.hasAttribute('hidden');
@@ -384,7 +307,7 @@ export const prerender = true;
     }
   });
 
-  // ── Verfijn dropdown ─────────────────────────────────────
+  // ── Sorteer dropdown ─────────────────────────────────────
   const refineBtn   = document.getElementById('refine-btn') as HTMLButtonElement | null;
   const refinePanel = document.getElementById('refine-panel') as HTMLElement | null;
 
@@ -393,7 +316,6 @@ export const prerender = true;
     refineBtn?.setAttribute('aria-expanded', 'false');
     refineBtn?.querySelector('.refine-chevron')?.classList.remove('refine-chevron--open');
   }
-
   refineBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     const open = refinePanel?.hasAttribute('hidden');
@@ -407,7 +329,6 @@ export const prerender = true;
     }
   });
 
-  // Sorteer-opties
   document.querySelectorAll<HTMLButtonElement>('.refine-opt[data-sort]').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.refine-opt[data-sort]').forEach(b => b.classList.remove('refine-opt--active'));
@@ -418,40 +339,59 @@ export const prerender = true;
     });
   });
 
-  // Fase-opties
-  document.querySelectorAll<HTMLButtonElement>('.refine-phase').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.refine-phase').forEach(b => b.classList.remove('refine-opt--active'));
-      btn.classList.add('refine-opt--active');
-      activePhase = btn.dataset.phase!;
-      applyFilters();
-      closeRefine();
-    });
+  document.addEventListener('click', () => { closeOverflow(); closeRefine(); });
+
+  // ── Reset (vanuit lege-staat) ────────────────────────────
+  document.getElementById('reset-filters')?.addEventListener('click', () => {
+    activeCat = 'all';
+    activeQuick.clear();
+    searchTerm = '';
+    searchInput.value = '';
+    searchClear.hidden = true;
+    document.querySelectorAll<HTMLButtonElement>('[data-cat-nav]').forEach(c =>
+      c.classList.toggle('cat-chip--active', c.dataset.catNav === 'all'));
+    document.querySelectorAll('.quick-chip').forEach(c => c.classList.remove('quick-chip--active'));
+    applyFilters();
   });
 
-  // Sluit dropdowns bij klik buiten
-  document.addEventListener('click', () => {
-    closeOverflow();
-    closeRefine();
-  });
+  // ── Match-helpers ────────────────────────────────────────
+  function matchQuick(card: HTMLElement): boolean {
+    for (const qf of activeQuick) {
+      if (qf === 'trial' && card.dataset.freeTrial !== '1') return false;
+      if (qf === 'nl'    && card.dataset.nl !== '1') return false;
+      if (qf === 'gdpr'  && card.dataset.gdpr !== '1') return false;
+      if (qf === 'nodev' && card.dataset.requiresDev === '1') return false;
+      if (qf === 'fast'  && !['minutes', 'hours'].includes(card.dataset.ttfv ?? '')) return false;
+    }
+    return true;
+  }
 
-  // ── Filter + sort ────────────────────────────────────────
+  function matchSearch(card: HTMLElement): boolean {
+    if (!searchTerm) return true;
+    return (card.dataset.search ?? '').includes(searchTerm);
+  }
+
+  // ── Filter + teller ──────────────────────────────────────
   function applyFilters() {
     let visible = 0;
     cards.forEach(card => {
-      const matchCat   = activeCat   === 'all' || card.dataset.category === activeCat;
-      const matchPhase = activePhase === 'all' || card.dataset.phase    === activePhase;
-      const show = matchCat && matchPhase;
+      const matchCat = activeCat === 'all' || card.dataset.category === activeCat;
+      const show = matchCat && matchQuick(card) && matchSearch(card);
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     emptyMsg.style.display = visible === 0 ? '' : 'none';
+    resultCount.style.display = visible === 0 ? 'none' : '';
+    resultCount.textContent = visible === totalTools
+      ? `${totalTools} tools`
+      : `${visible} van ${totalTools} tools`;
   }
 
+  // ── Sorteren ─────────────────────────────────────────────
   function applySort(mode: string) {
     const sorted = [...cards].sort((a, b) => {
-      if (mode === 'velocity') return parseFloat(b.dataset.velocity ?? '0') - parseFloat(a.dataset.velocity ?? '0');
-      if (mode === 'alpha')    return (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
+      if (mode === 'ttv')   return parseFloat(b.dataset.ttvScore ?? '0') - parseFloat(a.dataset.ttvScore ?? '0');
+      if (mode === 'alpha') return (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '');
       return parseFloat(b.dataset.buzz ?? '0') - parseFloat(a.dataset.buzz ?? '0');
     });
     sorted.forEach(card => grid.appendChild(card));
@@ -462,15 +402,8 @@ export const prerender = true;
   /* ── Hero ───────────────────────────────────────── */
   .hero {
     text-align: center;
-    margin-bottom: var(--space-8);
-  }
-
-  .hero__meta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
-    margin-bottom: var(--space-5);
+    max-width: 720px;
+    margin: var(--space-6) auto var(--space-8);
   }
 
   .hero__title {
@@ -481,157 +414,113 @@ export const prerender = true;
     line-height: var(--leading-tight);
     margin-bottom: var(--space-4);
   }
-
-  .hero__gradient {
-    color: var(--text-primary);
-  }
+  .hero__accent { color: var(--primary-bright); }
 
   .hero__sub {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     color: var(--text-secondary);
-    max-width: 560px;
+    max-width: 620px;
     margin-inline: auto;
     line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-6);
   }
-
   .hero__sub strong { color: var(--text-primary); font-weight: var(--font-semibold); }
 
-  .hero__stats {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
-    font-size: var(--text-sm);
-    color: var(--text-muted);
-  }
-
-  .hero__stat strong { color: var(--text-secondary); }
-  .hero__divider { opacity: 0.4; }
-
-  /* ── Primary CTA ────────────────────────────────── */
-  .hero__cta-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-6);
-  }
-  .hero__cta { position: relative; }
-  .hero__cta-secondary { white-space: nowrap; }
-  .hero__cta-hint {
-    text-align: center;
-    font-size: var(--text-sm);
-    color: var(--text-muted);
-    margin: var(--space-3) 0 0 0;
-  }
-
-  /* ── Quick-access row ───────────────────────────── */
-  .qa-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3);
-    margin-bottom: var(--space-8);
-  }
-
-  /* Ontdek de AI-radar */
-  .discover { margin-bottom: var(--space-10); }
-  .discover__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-4); }
-  .discover__title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); margin: 0; }
-  .discover__all { display: inline-flex; align-items: center; gap: 4px; font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; white-space: nowrap; }
-  .discover__all:hover { text-decoration: underline; }
-
-  .qa-card {
+  /* ── Zoekbalk ───────────────────────────────────── */
+  .searchbar {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    padding: var(--space-4);
-    background: var(--bg-glass);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: all var(--transition-fast);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-full);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   }
-
-  .qa-card:hover {
-    border-color: color-mix(in oklch, var(--primary-bright) 40%, transparent);
-    transform: translateY(-1px);
+  .searchbar:focus-within {
+    border-color: var(--primary-bright);
+    box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary-bright) 18%, transparent);
   }
+  :global(.searchbar__icon) { flex-shrink: 0; color: var(--text-muted); }
+  .searchbar:focus-within :global(.searchbar__icon) { color: var(--primary-bright); }
 
-  .qa-card__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    border-radius: var(--radius-md);
-    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
-    color: var(--primary-bright);
-  }
-
-  .qa-card__body {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  .searchbar__input {
     flex: 1;
     min-width: 0;
-  }
-
-  .qa-card__label {
-    font-size: var(--text-sm);
-    font-weight: var(--font-bold);
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
     color: var(--text-primary);
+    caret-color: var(--primary-bright);
   }
+  .searchbar__input::placeholder { color: var(--text-muted); }
+  .searchbar__input::-webkit-search-cancel-button { display: none; }
 
-  .qa-card__desc {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .qa-card__desc strong { color: var(--text-secondary); }
-
-  .qa-card__arrow {
-    color: var(--text-muted);
+  .searchbar__clear {
     flex-shrink: 0;
-    transition: color var(--transition-fast);
-  }
-
-  .qa-card:hover .qa-card__arrow { color: var(--primary-bright); }
-
-  @media (max-width: 640px) {
-    .qa-row { grid-template-columns: 1fr; }
-    .hero__title { font-size: var(--text-4xl); }
-  }
-
-  /* ── Grid section header ────────────────────────── */
-  .tools-header {
-    margin-bottom: var(--space-8);
-    text-align: center;
-  }
-
-  .tools-header__meta {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-3);
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+  .searchbar__clear:hover { color: var(--text-primary); background: var(--bg-panel); }
+
+  .hero__hint {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin: var(--space-4) 0 0 0;
+  }
+
+  /* ── Quick-filters ──────────────────────────────── */
+  .quick-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
     margin-bottom: var(--space-5);
   }
-
-  .tools-timestamp {
-    font-size: var(--text-xs);
+  .quick-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    padding: var(--space-1-5) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    background: transparent;
     color: var(--text-muted);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  .quick-chip:hover {
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
+  }
+  .quick-chip--active,
+  .quick-chip--active:hover {
+    background: color-mix(in oklch, var(--primary-bright) 18%, transparent);
+    border-color: var(--primary-bright);
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
   }
 
-
-  /* Legends */
-  /* ── Filter bar ────────────────────────────────── */
+  /* ── Filter bar (categorieën + sorteren) ────────── */
   .filter-bar {
     display: flex;
     align-items: center;
@@ -642,15 +531,13 @@ export const prerender = true;
     backdrop-filter: blur(16px);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-full);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-4);
     overflow-x: auto;
     scrollbar-width: none;
   }
   .filter-bar::-webkit-scrollbar { display: none; }
-
   .filter-spacer { flex: 1; min-width: var(--space-2); }
 
-  /* ── Categorie chips ─────────────────────────── */
   .cat-chip {
     flex-shrink: 0;
     display: inline-flex;
@@ -684,11 +571,8 @@ export const prerender = true;
     font-weight: var(--font-regular);
   }
 
-  /* ── Overflow dropdown ───────────────────────── */
-  .overflow-wrap {
-    position: relative;
-    flex-shrink: 0;
-  }
+  /* Overflow dropdown */
+  .overflow-wrap { position: relative; flex-shrink: 0; }
   .cat-chip--overflow {
     color: var(--text-muted);
     font-size: var(--text-xs);
@@ -729,18 +613,10 @@ export const prerender = true;
     background: color-mix(in oklch, var(--chip-color, var(--primary-bright)) 12%, transparent);
     color: var(--chip-color, var(--primary-bright));
   }
-  .overflow-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  .overflow-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-  /* ── Verfijn dropdown ────────────────────────── */
-  .refine-wrap {
-    position: relative;
-    flex-shrink: 0;
-  }
+  /* Sorteer dropdown */
+  .refine-wrap { position: relative; flex-shrink: 0; }
   .refine-btn {
     display: inline-flex;
     align-items: center;
@@ -762,18 +638,14 @@ export const prerender = true;
     border-color: var(--border-strong);
     background: color-mix(in oklch, var(--text-primary) 5%, transparent);
   }
-  .refine-chevron {
-    font-size: 0.7em;
-    opacity: 0.6;
-    transition: rotate var(--transition-fast);
-  }
+  .refine-chevron { font-size: 0.7em; opacity: 0.6; transition: rotate var(--transition-fast); }
   .refine-chevron--open { rotate: 180deg; }
 
   .refine-panel {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    width: 220px;
+    width: 200px;
     background: var(--bg-panel);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
@@ -789,15 +661,7 @@ export const prerender = true;
     letter-spacing: var(--tracking-wider);
     margin: 0 0 var(--space-2);
   }
-  .refine-section-label + .refine-section-label,
-  .refine-opts + .refine-section-label {
-    margin-top: var(--space-4);
-  }
-  .refine-opts {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+  .refine-opts { display: flex; flex-direction: column; gap: 2px; }
   .refine-opt {
     display: flex;
     align-items: center;
@@ -816,17 +680,16 @@ export const prerender = true;
     background: color-mix(in oklch, var(--primary-bright) 10%, transparent);
     color: var(--text-primary);
   }
-  .refine-opt--active {
-    color: var(--primary-bright);
-    font-weight: var(--font-semibold);
-  }
-  .refine-count {
-    font-size: 0.72em;
-    opacity: 0.5;
-    font-weight: var(--font-regular);
+  .refine-opt--active { color: var(--primary-bright); font-weight: var(--font-semibold); }
+
+  /* ── Resultaat-teller ───────────────────────────── */
+  .result-count {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin: 0 0 var(--space-4) var(--space-1);
   }
 
-  /* ── Tool grid ─────────────────────────────────── */
+  /* ── Tool grid ──────────────────────────────────── */
   .tool-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -837,24 +700,20 @@ export const prerender = true;
     text-align: center;
     color: var(--text-muted);
     font-size: var(--text-sm);
-    padding: var(--space-8) 0;
+    padding: var(--space-10) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
   }
+  .grid-empty p { margin: 0; }
 
   @media (max-width: 1024px) {
-    .tool-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
+    .tool-grid { grid-template-columns: repeat(2, 1fr); }
   }
-
   @media (max-width: 640px) {
-    .tool-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .filter-bar__row--secondary {
-      flex-direction: column;
-    }
+    .tool-grid { grid-template-columns: 1fr; }
+    .hero__title { font-size: var(--text-4xl); }
   }
 
   /* ── FAQ ────────────────────────────────────────── */
@@ -862,7 +721,6 @@ export const prerender = true;
     max-width: 760px;
     margin: var(--space-12) auto 0;
   }
-
   .faq__heading {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
@@ -871,13 +729,7 @@ export const prerender = true;
     text-align: center;
     margin-bottom: var(--space-6);
   }
-
-  .faq__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
+  .faq__list { display: flex; flex-direction: column; gap: var(--space-2); }
   .faq__item {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
@@ -886,7 +738,6 @@ export const prerender = true;
     -webkit-backdrop-filter: blur(12px);
     overflow: hidden;
   }
-
   .faq__question {
     display: flex;
     align-items: center;
@@ -899,9 +750,7 @@ export const prerender = true;
     cursor: pointer;
     list-style: none;
   }
-
   .faq__question::-webkit-details-marker { display: none; }
-
   .faq__question::after {
     content: '+';
     flex-shrink: 0;
@@ -910,18 +759,9 @@ export const prerender = true;
     color: var(--primary-bright);
     transition: transform var(--transition-fast);
   }
-
-  .faq__item[open] .faq__question::after {
-    transform: rotate(45deg);
-  }
-
+  .faq__item[open] .faq__question::after { transform: rotate(45deg); }
   .faq__question:hover { color: var(--primary-bright); }
-
-  .faq__question:focus-visible {
-    outline: 2px solid var(--primary-bright);
-    outline-offset: -2px;
-  }
-
+  .faq__question:focus-visible { outline: 2px solid var(--primary-bright); outline-offset: -2px; }
   .faq__answer {
     margin: 0;
     padding: 0 var(--space-5) var(--space-4);

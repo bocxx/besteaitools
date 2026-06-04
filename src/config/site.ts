@@ -11,7 +11,7 @@ export const siteConfig = {
   // ============================================
   name: "debesteaitools.nl",
   tagline: "De beste AI-tools op een rij",
-  description: "Ontdek en vergelijk 80+ AI-tools op buzz, groei en mentions — objectief gerankt. Van ChatGPT tot Midjourney, altijd up-to-date.",
+  description: "Ontdek, vergelijk en leer werken met 110+ AI-tools — wat ze doen, hoe je ze gebruikt en wat ze kosten. Vind in seconden de beste tool voor jouw taak.",
   url: "https://debesteaitools.nl",
   
   // ============================================
@@ -25,22 +25,20 @@ export const siteConfig = {
   // NAVIGATION
   // ============================================
   navigation: {
-    // Top nav: redactionele "Nieuws" + automation-feed "Radar" zijn nu
-    // twee duidelijke hubs. /digest/ is samengevoegd onder /nieuws/;
-    // /launch-radar/ en /weekradar/ onder /radar/ (beide redirecten).
+    // Top nav gefocust op tool-finding. De homepage (/) ís de finder.
+    // Radar-/buzz-oppervlakken (Ontdek, Modellen, Radar, Makers) zijn uit de
+    // navigatie gehaald — die data voedt nu het aparte ainieuwsradar.nl.
+    // De pagina's bestaan nog (ongelinkt) en builden door.
     main: [
-      { label: "Vind je tool", href: "/vind-je-beste-ai-tool" },
-      { label: "Ontdek", href: "/ontdek" },
-      { label: "Modellen", href: "/modellen" },
-      { label: "Radar", href: "/radar/?view=launches" },
-      { label: "Nieuws", href: "/nieuws" },
-      { label: "Leren", href: "/leren" },
+      { label: "AI-tools", href: "/" },
       { label: "Vergelijk", href: "/vergelijk" },
+      { label: "Leren", href: "/leren" },
+      { label: "Nieuws", href: "/nieuws" },
     ],
     footer: {
       platform: [
-        { label: "AI Tools", href: "/ai-tools" },
-        { label: "Makers", href: "/makers" },
+        { label: "AI Tools", href: "/" },
+        { label: "Vergelijk", href: "/vergelijk" },
         { label: "Over deze site", href: "/over" },
       ],
       juridisch: [

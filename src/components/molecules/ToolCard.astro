@@ -5,30 +5,31 @@
  */
 import Badge from '../atoms/Badge.astro';
 import RiskBadges from '../atoms/RiskBadges.astro';
-import { toolCategories, pricingModels, deploymentTypes, trendPhases } from '../../lib/tools-schema';
+import { toolCategories, pricingModels, deploymentTypes } from '../../lib/tools-schema';
 import type { Tool } from '../../types/tools-domain';
-import { ExternalLink, Flame, TrendingUp, Shield, BadgeCheck } from '@lucide/astro';
+import { ExternalLink, Zap, Shield, BadgeCheck } from '@lucide/astro';
 
 interface Props {
   tool: Tool;
-  isTopTool?: boolean;
-  isStijger?: boolean;
 }
 
-const { tool, isTopTool = false, isStijger = false } = Astro.props;
+const { tool } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const pricing = pricingModels[tool.pricingModel];
 
-// Lifecycle phase — neutral label from trendPhases
-const phaseMeta = stats?.phase ? trendPhases[stats.phase] : null;
-const showPhaseBadge = !!phaseMeta && !['faded', 'sustained', 'weak_signal'].includes(stats!.phase);
+// Snel inzetbaar? (minuten/uren tot eerste waarde) — keuze-info i.p.v. buzz
+const isFastToValue = tool.timeToFirstValue === 'minutes' || tool.timeToFirstValue === 'hours';
 
-// Pick ONE signal chip: Trending > Stijger > Phase (avoid clutter)
-const signalChip = isTopTool ? 'top'
-  : isStijger ? 'stijger'
-  : showPhaseBadge ? 'phase'
-  : null;
+// Vrij doorzoekbare tekst voor de live-zoekbalk op de homepage:
+// naam + omschrijving + categorie + tags + use cases, lowercased.
+const searchText = [
+  tool.name,
+  tool.shortDescription,
+  cat.name,
+  ...(tool.tags ?? []),
+  ...(tool.useCases ?? []),
+].join(' ').toLowerCase();
 
 // Zakelijke metadata
 const dt = tool.deploymentType ? deploymentTypes[tool.deploymentType] : null;
@@ -44,21 +45,18 @@ const domain = new URL(tool.websiteUrl).hostname;
 const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
-<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-phase={stats?.phase ?? ''} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
+<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
   <div class="tool-card__inner">
 
-    <!-- Header: category + single signal chip -->
+    <!-- Header: category + logo -->
     <header class="tool-card__header">
       <Badge variant="category" color={cat.color} size="sm">{cat.name}</Badge>
-      <div class="tool-card__signals">
-        {signalChip === 'top' && <span class="signal-chip signal-chip--top"><Flame size={10} stroke-width={2} /> Trending</span>}
-        {signalChip === 'stijger' && <span class="signal-chip signal-chip--stijger"><TrendingUp size={10} stroke-width={2} /> Stijger</span>}
-        {signalChip === 'phase' && (
-          <span class={`signal-chip signal-chip--phase signal-chip--phase-${stats!.phase}`}>
-            {phaseMeta!.label}
-          </span>
-        )}
-      </div>
+      <span class="tool-card__spacer"></span>
+      {isFastToValue && (
+        <span class="tool-card__fast" title="Snel inzetbaar — eerste resultaat in minuten of uren">
+          <Zap size={10} stroke-width={2} /> Snel inzetbaar
+        </span>
+      )}
       <img src={faviconUrl} alt="" class="tool-card__logo" width="24" height="24" loading="lazy" />
     </header>
 
@@ -136,12 +134,21 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     gap: var(--space-2);
   }
 
-  .tool-card__signals {
-    display: flex;
+  .tool-card__spacer { flex: 1; }
+
+  /* "Snel inzetbaar" — keuze-info i.p.v. buzz-signaal */
+  .tool-card__fast {
+    display: inline-flex;
     align-items: center;
-    gap: var(--space-1-5);
-    flex: 1;
-    justify-content: flex-end;
+    gap: 3px;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-semibold);
+    color: var(--color-success);
+    border: 1px solid color-mix(in oklch, var(--color-success) 30%, transparent);
+    background: color-mix(in oklch, var(--color-success) 8%, transparent);
+    white-space: nowrap;
   }
 
   /* Favicon logo */
@@ -156,29 +163,6 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
   .tool-card:hover .tool-card__logo {
     opacity: 1;
   }
-
-  /* Signal chips — readable Dutch text */
-  .signal-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    padding: 2px var(--space-2);
-    border-radius: var(--radius-full);
-    font-size: 10px;
-    font-weight: var(--font-semibold);
-    border: 1px solid;
-  }
-  .signal-chip--top     { color: var(--color-error);   border-color: color-mix(in oklch, var(--color-error)   30%, transparent); background: color-mix(in oklch, var(--color-error)   8%, transparent); }
-  .signal-chip--stijger  { color: var(--color-info);    border-color: color-mix(in oklch, var(--color-info)    30%, transparent); background: color-mix(in oklch, var(--color-info)    8%, transparent); }
-
-  /* Lifecycle phase chips — neutral, data-driven */
-  .signal-chip--phase { font-weight: var(--font-medium); }
-  .signal-chip--phase-weak_signal  { color: var(--text-muted);       border-color: color-mix(in oklch, var(--text-muted)       30%, transparent); background: color-mix(in oklch, var(--text-muted)       10%, transparent); }
-  .signal-chip--phase-emerging     { color: var(--color-info);       border-color: color-mix(in oklch, var(--color-info)       30%, transparent); background: color-mix(in oklch, var(--color-info)        8%, transparent); }
-  .signal-chip--phase-accelerating { color: var(--color-warning);    border-color: color-mix(in oklch, var(--color-warning)    30%, transparent); background: color-mix(in oklch, var(--color-warning)     8%, transparent); }
-  .signal-chip--phase-peaking      { color: var(--color-error);      border-color: color-mix(in oklch, var(--color-error)      30%, transparent); background: color-mix(in oklch, var(--color-error)       8%, transparent); }
-  .signal-chip--phase-sustained    { color: var(--color-success);    border-color: color-mix(in oklch, var(--color-success)    30%, transparent); background: color-mix(in oklch, var(--color-success)     8%, transparent); }
-  .signal-chip--phase-declining    { color: var(--text-secondary);   border-color: color-mix(in oklch, var(--text-secondary)   30%, transparent); background: color-mix(in oklch, var(--text-secondary)    8%, transparent); }
 
   /* Name + description */
   .tool-card__name {

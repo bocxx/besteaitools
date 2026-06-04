@@ -11,20 +11,20 @@ import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
 import Tooltip from '../../components/atoms/Tooltip.astro';
 import RelatedNewsForTool from '../../components/nieuws/RelatedNewsForTool.astro';
-import { getAllTools, getComparisonPairs } from '../../lib/tools-engine';
+import { getAllTools, getComparisonPairs, getToolTutorials } from '../../lib/tools-engine';
 import {
   toolCategories, trendDirections, pricingModels, difficultyLevels,
   deploymentTypes, dataResidencyOptions, targetAudienceOptions, businessFunctions,
   timeToFirstValueOptions, setupComplexityLevels, learningCurveLevels, qualityLevels,
   companySizeFitOptions, useCaseStages, fundingStages, reviewMethods,
-  featureGroups, featureBadges,
+  featureGroups, featureBadges, parseFreeTierLimits,
 } from '../../lib/tools-schema';
 import {
   toolMetaTitle, toolMetaDescription, generateToolFaqs,
   buildSoftwareApplicationLd, buildFaqPageLd, buildBreadcrumbLd,
   reviewFreshnessLabel,
 } from '../../lib/seo-helpers';
-import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Youtube, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp, MessageSquare, CalendarCheck, Sparkles } from '@lucide/astro';
+import { ExternalLink, ArrowLeft, Globe, Tag, Star, Cloud, Server, Layers, Building2, Shield, Puzzle, BadgeCheck, Clock, ShieldCheck, AlertTriangle, ArrowRightLeft, Target, Video, Heart, Repeat2, Newspaper, Zap, CheckCircle2, XCircle, TrendingUp, MessageSquare, CalendarCheck, Sparkles, CreditCard, Check, Rocket, GraduationCap, BookOpen, UserCheck, Gift } from '@lucide/astro';
 
 export async function getStaticPaths() {
   const [tools, pairs] = await Promise.all([getAllTools(), getComparisonPairs()]);
@@ -151,6 +151,39 @@ function sourceLabel(s: string): string {
   return labels[s] ?? s;
 }
 
+function hostOf(url: string): string {
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; }
+}
+
+// ── Prijzen (tiers) ──────────────────────────────────────────────────────
+const priceTiers = tool.priceTiers ?? [];
+const hasPriceTiers = priceTiers.length > 0;
+const currencySymbol = tool.pricingCurrency === 'usd' ? '$' : '€';
+const fmtTierPrice = (n: number) =>
+  n === 0 ? 'Gratis' : `${currencySymbol}${Number.isInteger(n) ? n : n.toFixed(2)}`;
+const freeTierLimits = Object.entries(parseFreeTierLimits(tool.freeTierLimits));
+const pricingSignals: string[] = [];
+if (tool.hasFreePlan || tool.pricingModel === 'free' || tool.pricingModel === 'freemium') pricingSignals.push('Gratis versie');
+if (tool.freeTrialAvailable) pricingSignals.push('Gratis proefperiode');
+if (tool.startingPriceMonthly != null && tool.startingPriceMonthly > 0) pricingSignals.push(`Vanaf ${currencySymbol}${tool.startingPriceMonthly}/mnd`);
+const hasPricing = hasPriceTiers || !!tool.pricing;
+
+// ── "Zo gebruik je" (getting started) ────────────────────────────────────
+const gettingStarted = tool.gettingStarted ?? [];
+const gsSignals: string[] = [];
+if (tool.timeToFirstValue && qfLabels.timeToFirstValue[tool.timeToFirstValue]) gsSignals.push(qfLabels.timeToFirstValue[tool.timeToFirstValue]);
+if (tool.freeTrialAvailable) gsSignals.push('Gratis te proberen');
+if (tool.requiresDeveloper === false) gsSignals.push('Geen developer nodig');
+else if (tool.requiresDeveloper === true) gsSignals.push('Developer nodig');
+const hasGettingStarted = gettingStarted.length > 0 || !!tool.exampleWorkflow || !!tool.whenToChoose;
+
+// ── "Zo leer je" (tutorials) ─────────────────────────────────────────────
+const tutorials = await getToolTutorials(tool);
+const hasLearning = tutorials.length > 0 || (stats?.youtube_videos?.length ?? 0) > 0;
+
+// Buzz-sectie toont nu alleen nog nieuws + social (YouTube verhuisde naar "Leren")
+const hasBuzz = (stats?.source_articles?.length ?? 0) > 0 || (stats?.social_posts?.length ?? 0) > 0;
+
 export const prerender = true;
 ---
 
@@ -235,8 +268,11 @@ export const prerender = true;
       <nav class="toc" aria-label="Inhoudsopgave">
         {hasEditorial && <a href="#verdict" class="toc__link" data-toc-target="verdict">Oordeel</a>}
         <a href="#features" class="toc__link" data-toc-target="features">Features</a>
+        {hasGettingStarted && <a href="#getting-started" class="toc__link" data-toc-target="getting-started">Aan de slag</a>}
+        {hasPricing && <a href="#pricing" class="toc__link" data-toc-target="pricing">Prijzen</a>}
         <a href="#specs" class="toc__link" data-toc-target="specs">Specificaties</a>
-        {(stats?.youtube_videos?.length || stats?.source_articles?.length || stats?.social_posts?.length) && (
+        {hasLearning && <a href="#leren" class="toc__link" data-toc-target="leren">Leren</a>}
+        {hasBuzz && (
           <a href="#social" class="toc__link" data-toc-target="social">
             <Tooltip tip="Hoe actief deze tool wordt besproken op social media, nieuwssites en de tech-community." pos="below">Buzz</Tooltip>
           </a>
@@ -407,11 +443,72 @@ export const prerender = true;
           </section>
         )}
 
-        <!-- Pricing -->
-        {tool.pricing && (
-          <section class="content-section">
-            <h3 class="section-subheading">Prijzen</h3>
-            <p class="pricing-text">{tool.pricing}</p>
+        <!-- Zo gebruik je [tool] (getting started) -->
+        {hasGettingStarted && (
+          <section id="getting-started" class="content-section getting-started">
+            <h2 class="section-heading section-heading--kapittel">
+              <Rocket size={18} stroke-width={1.5} /> Zo ga je aan de slag met {tool.name}
+            </h2>
+            {gsSignals.length > 0 && (
+              <div class="gs-signals">
+                {gsSignals.map(s => <span class="gs-signal"><Zap size={12} stroke-width={1.75} /> {s}</span>)}
+              </div>
+            )}
+            {gettingStarted.length > 0 ? (
+              <ol class="gs-steps">
+                {gettingStarted.map(step => <li>{step}</li>)}
+              </ol>
+            ) : tool.exampleWorkflow ? (
+              <p class="gs-workflow">{tool.exampleWorkflow}</p>
+            ) : null}
+            {tool.whenToChoose && (
+              <div class="gs-when">
+                <UserCheck size={15} stroke-width={1.5} />
+                <p><strong>Wanneer kies je {tool.name}?</strong> {tool.whenToChoose}</p>
+              </div>
+            )}
+          </section>
+        )}
+
+        <!-- Prijzen (tiers + fallback) -->
+        {hasPricing && (
+          <section id="pricing" class="content-section pricing-section">
+            <h2 class="section-heading section-heading--kapittel">
+              <CreditCard size={18} stroke-width={1.5} /> Wat kost {tool.name}?
+            </h2>
+            {pricingSignals.length > 0 && (
+              <div class="pricing-signals">
+                {pricingSignals.map(s => <span class="pricing-signal"><Gift size={12} stroke-width={1.75} /> {s}</span>)}
+              </div>
+            )}
+            {hasPriceTiers ? (
+              <div class="tiers-grid">
+                {priceTiers.map(t => (
+                  <article class="tier">
+                    <header class="tier__head">
+                      <h3 class="tier__name">{t.name}</h3>
+                      <p class="tier__price">
+                        {fmtTierPrice(t.eurPerMonth)}
+                        {t.eurPerMonth > 0 && <span class="tier__per">/mnd{t.perSeat ? ' p.p.' : ''}</span>}
+                      </p>
+                    </header>
+                    {t.features && t.features.length > 0 && (
+                      <ul class="tier__features">
+                        {t.features.map(f => <li><Check size={13} stroke-width={2} /> {f}</li>)}
+                      </ul>
+                    )}
+                  </article>
+                ))}
+              </div>
+            ) : (
+              tool.pricing && <p class="pricing-text">{tool.pricing}</p>
+            )}
+            {freeTierLimits.length > 0 && (
+              <p class="pricing-free-limits">
+                <strong>Gratis-limieten:</strong> {freeTierLimits.map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`).join(' · ')}
+              </p>
+            )}
+            <p class="pricing-disclaimer">Prijzen indicatief — controleer altijd de actuele tarieven bij de aanbieder.</p>
           </section>
         )}
 
@@ -631,32 +728,61 @@ export const prerender = true;
           </section>
         )}
 
-        <!-- Buzz: YouTube + articles + social posts (see critique #6) -->
-        {(stats?.youtube_videos?.length || stats?.source_articles?.length || stats?.social_posts?.length) && (
+        <!-- Zo leer je [tool]: tutorials + YouTube -->
+        {hasLearning && (
+          <section id="leren" class="content-section learn-section">
+            <h2 class="section-heading section-heading--kapittel">
+              <GraduationCap size={18} stroke-width={1.5} /> Zo leer je {tool.name}
+            </h2>
+            <p class="learn-intro">Hands-on tutorials en uitleg om snel productief te worden met {tool.name}.</p>
+
+            {tutorials.length > 0 && (
+              <ul class="learn-list">
+                {tutorials.map(t => (
+                  <li>
+                    <a href={t.url} target="_blank" rel="noopener" class="learn-card">
+                      <span class="learn-card__icon">{t.isVideo ? <Video size={16} stroke-width={1.5} /> : <BookOpen size={16} stroke-width={1.5} />}</span>
+                      <span class="learn-card__body">
+                        <span class="learn-card__title">{t.label || t.title}</span>
+                        <span class="learn-card__meta">{hostOf(t.url)}</span>
+                      </span>
+                      <ExternalLink size={12} stroke-width={1.5} class="learn-card__ext" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {stats?.youtube_videos && stats.youtube_videos.length > 0 && (
+              <div class="specs-group media-panel">
+                <h3 class="section-subheading"><Video size={14} stroke-width={1.5} /> Video-tutorials</h3>
+                <ul class="media-list">
+                  {stats.youtube_videos.map(v => (
+                    <li>
+                      <a href={v.url} target="_blank" rel="noopener" class="media-card media-card--yt">
+                        <span class="media-card__icon"><Video size={16} stroke-width={1.5} /></span>
+                        <span class="media-card__body">
+                          <span class="media-card__title">{v.title}</span>
+                          <span class="media-card__meta">{v.channel}</span>
+                        </span>
+                        <ExternalLink size={12} stroke-width={1.5} class="media-card__ext" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <p class="learn-cta"><a href="/leren">Meer AI-tutorials en leerbronnen →</a></p>
+          </section>
+        )}
+
+        <!-- Buzz: articles + social posts (see critique #6) -->
+        {hasBuzz && (
         <section id="social" class="content-section">
           <h2 class="section-heading section-heading--kapittel">
             <MessageSquare size={18} stroke-width={1.5} /> Wat de wereld er van zegt
           </h2>
-
-        {stats?.youtube_videos && stats.youtube_videos.length > 0 && (
-          <div class="specs-group media-panel">
-            <h3 class="section-subheading"><Youtube size={14} stroke-width={1.5} /> YouTube</h3>
-            <ul class="media-list">
-              {stats.youtube_videos.map(v => (
-                <li>
-                  <a href={v.url} target="_blank" rel="noopener" class="media-card media-card--yt">
-                    <span class="media-card__icon"><Youtube size={16} stroke-width={1.5} /></span>
-                    <span class="media-card__body">
-                      <span class="media-card__title">{v.title}</span>
-                      <span class="media-card__meta">{v.channel}</span>
-                    </span>
-                    <ExternalLink size={12} stroke-width={1.5} class="media-card__ext" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
 
         {stats?.source_articles && stats.source_articles.length > 0 && (
           <div class="specs-group media-panel">
@@ -1177,6 +1303,159 @@ export const prerender = true;
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
   }
+
+  /* ── Zo ga je aan de slag (getting started) ─────────────────── */
+  .gs-signals, .pricing-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+  .gs-signal, .pricing-signal {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    background: color-mix(in oklch, var(--primary-bright) 8%, transparent);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 20%, transparent);
+  }
+  .gs-steps {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2-5);
+  }
+  .gs-steps li {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    padding-left: var(--space-1);
+  }
+  .gs-steps li::marker { color: var(--primary-bright); font-weight: var(--font-bold); }
+  .gs-workflow {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+  .gs-when {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+  }
+  .gs-when :global(svg) { flex-shrink: 0; margin-top: 2px; color: var(--primary-bright); }
+  .gs-when p { margin: 0; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); }
+  .gs-when strong { color: var(--text-primary); }
+
+  /* ── Prijzen (tiers) ────────────────────────────────────────── */
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-3);
+  }
+  .tier {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+  }
+  .tier__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .tier__name {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin: 0;
+  }
+  .tier__price {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin: 0;
+  }
+  .tier__per { font-size: var(--text-sm); font-weight: var(--font-regular); color: var(--text-muted); }
+  .tier__features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .tier__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+  }
+  .tier__features :global(svg) { flex-shrink: 0; margin-top: 2px; color: var(--color-success); }
+  .pricing-free-limits {
+    margin: var(--space-4) 0 0 0;
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+  }
+  .pricing-free-limits strong { color: var(--text-primary); }
+  .pricing-disclaimer {
+    margin: var(--space-3) 0 0 0;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ── Zo leer je [tool] ──────────────────────────────────────── */
+  .learn-intro {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-4) 0;
+  }
+  .learn-list { list-style: none; margin: 0 0 var(--space-5) 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .learn-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-glass);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+  .learn-card:hover { border-color: var(--primary-bright); background: color-mix(in oklch, var(--primary-bright) 5%, var(--bg-glass)); }
+  .learn-card__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: color-mix(in oklch, var(--primary-bright) 12%, transparent);
+    color: var(--primary-bright);
+  }
+  .learn-card__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .learn-card__title { font-size: var(--text-sm); font-weight: var(--font-medium); color: var(--text-primary); }
+  .learn-card__meta { font-size: var(--text-xs); color: var(--text-muted); }
+  .learn-card :global(.learn-card__ext) { flex-shrink: 0; color: var(--text-muted); }
+  .learn-cta { margin: var(--space-2) 0 0 0; font-size: var(--text-sm); }
+  .learn-cta a { color: var(--primary-bright); text-decoration: none; }
+  .learn-cta a:hover { text-decoration: underline; }
 
   /* ── Meta panels (zakelijke info, inzetbaarheid, governance) ─ */
   .meta-panel {
