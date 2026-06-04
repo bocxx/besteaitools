@@ -187,6 +187,15 @@ export const prerender = true;
         <span class="hero__divider">·</span>
         <span class="hero__stat">Week <strong>{weekNum}</strong></span>
       </div>
+      <div class="hero__cta-row">
+        <a href="/vind-je-beste-ai-tool" class="btn btn-primary btn-lg hero__cta">
+          <SlidersHorizontal size={18} stroke-width={2} /> Vind jouw beste AI-tool
+        </a>
+        <a href="/ontdek" class="btn btn-ghost hero__cta-secondary">
+          Of verken de hele radar <ArrowRight size={15} stroke-width={1.75} />
+        </a>
+      </div>
+      <p class="hero__cta-hint">Filter op je taak, budget en eisen — match in 30 seconden.</p>
     </header>
 
     <!-- Quick access blocks -->
@@ -499,6 +508,24 @@ export const prerender = true;
 
   .hero__stat strong { color: var(--text-secondary); }
   .hero__divider { opacity: 0.4; }
+
+  /* ── Primary CTA ────────────────────────────────── */
+  .hero__cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+  .hero__cta { position: relative; }
+  .hero__cta-secondary { white-space: nowrap; }
+  .hero__cta-hint {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin: var(--space-3) 0 0 0;
+  }
 
   /* ── Quick-access row ───────────────────────────── */
   .qa-row {

@@ -1,0 +1,188 @@
+---
+/**
+ * /ai-tools-voor/[functie] — pillar pages per bedrijfsfunctie.
+ *
+ * Eén SEO-pillar per bedrijfsfunctie (marketing, sales, klantenservice, …),
+ * mikkend op "beste AI-tools voor [functie]". Combineert unieke redactionele
+ * copy (function-content.ts) met de gefilterde tool-set en structured data
+ * (ItemList + FAQPage + BreadcrumbList). De /vind-je-beste-ai-tool-finder is
+ * de overkoepelende hub; deze pages vormen de cluster eronder.
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import ToolCard from '../../components/molecules/ToolCard.astro';
+import { getBusinessFunctionSections } from '../../lib/tools-engine';
+import { functionContent } from '../../lib/function-content';
+import { buildFaqPageLd } from '../../lib/seo-helpers';
+import { siteConfig } from '../../config/site';
+import { Compass, SlidersHorizontal, Scale, ArrowRight, CheckCircle2 } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const sections = await getBusinessFunctionSections();
+  return sections.map((section) => ({
+    params: { functie: section.key },
+    props: { section, allSections: sections },
+  }));
+}
+
+const { section, allSections } = Astro.props;
+const content = functionContent[section.key];
+const tools = section.tools;
+const toolCount = tools.length;
+const currentYear = new Date().getFullYear();
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const pageUrl = `${siteOrigin}/ai-tools-voor/${section.key}`;
+
+// Gerelateerde pillars (cluster-interlinking) — alle andere functies
+const related = allSections.filter((s) => s.key !== section.key);
+
+// ── Structured data ───────────────────────────────────
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Beste AI-tools voor ${section.name}`,
+  description: `${toolCount} AI-tools voor ${section.name.toLowerCase()}, objectief gerankt op buzz en groei.`,
+  url: pageUrl,
+  numberOfItems: tools.length,
+  itemListElement: tools.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.name,
+    url: `${siteOrigin}/ai-tools/${t.slug}`,
+  })),
+};
+
+const faqJsonLd = buildFaqPageLd(content.faqs);
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+    { '@type': 'ListItem', position: 2, name: 'Vind je tool', item: `${siteOrigin}/vind-je-beste-ai-tool` },
+    { '@type': 'ListItem', position: 3, name: `AI-tools voor ${section.name}`, item: pageUrl },
+  ],
+};
+
+const metaTitle = `Beste AI-tools voor ${section.name} (${currentYear}) | debesteaitools.nl`;
+const metaDescription = `De ${toolCount} beste AI-tools voor ${section.name.toLowerCase()}, objectief gerankt op buzz en groei. ${section.description}`;
+---
+
+<Layout title={metaTitle} description={metaDescription} ogImage="/og/page-functies.png">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  </Fragment>
+
+  <main class="container container-wide pillar">
+    <!-- Breadcrumb (zichtbaar) -->
+    <nav class="pillar__crumbs" aria-label="Kruimelpad">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/vind-je-beste-ai-tool">Vind je tool</a> <span aria-hidden="true">/</span>
+      <span class="pillar__crumb-current">{section.name}</span>
+    </nav>
+
+    <header class="pillar__head">
+      <p class="pillar__kicker"><Compass size={13} stroke-width={1.75} /> AI-tools per taak</p>
+      <h1 class="pillar__title">Beste AI-tools voor {section.name}</h1>
+      <p class="pillar__lede">{content.intro}</p>
+      <ul class="pillar__usecases">
+        {content.useCases.map((uc) => (
+          <li class="pillar__usecase"><CheckCircle2 size={15} stroke-width={1.75} /> {uc}</li>
+        ))}
+      </ul>
+      <div class="pillar__actions">
+        <a href="/vind-je-beste-ai-tool" class="btn btn-outline btn-sm">
+          <SlidersHorizontal size={15} stroke-width={1.75} /> Verfijn met de tool-finder
+        </a>
+        <a href="/vergelijk" class="btn btn-ghost btn-sm">
+          <Scale size={15} stroke-width={1.75} /> Vergelijk side-by-side
+        </a>
+      </div>
+    </header>
+
+    <!-- Tool-grid -->
+    <section aria-labelledby="tools-heading">
+      <h2 id="tools-heading" class="pillar__h2">{toolCount} AI-tools voor {section.name.toLowerCase()}</h2>
+      <div class="pillar__grid">
+        {tools.map((tool) => (
+          <ToolCard tool={tool} />
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="pillar__faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="pillar__h2">Veelgestelde vragen</h2>
+      <div class="pillar__faq-list">
+        {content.faqs.map(({ question, answer }) => (
+          <details class="pillar__faq-item">
+            <summary class="pillar__faq-q">{question}</summary>
+            <p class="pillar__faq-a">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Cluster-interlinking naar andere pillars -->
+    <section class="pillar__related" aria-labelledby="related-heading">
+      <h2 id="related-heading" class="pillar__h2">AI-tools voor andere taken</h2>
+      <ul class="pillar__related-grid">
+        {related.map((s) => (
+          <li>
+            <a class="pillar__related-link" href={`/ai-tools-voor/${s.key}`}>
+              <span class="pillar__related-name">{s.name}</span>
+              <span class="pillar__related-count">{s.tools.length} tools</span>
+              <ArrowRight size={15} stroke-width={1.75} class="pillar__related-arrow" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .pillar { padding-top: 80px; padding-bottom: var(--space-20); }
+
+  .pillar__crumbs { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-5); display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; }
+  .pillar__crumbs a { color: var(--text-secondary); text-decoration: none; }
+  .pillar__crumbs a:hover { color: var(--primary-bright); }
+  .pillar__crumb-current { color: var(--text-muted); }
+
+  .pillar__head { max-width: 68ch; margin-bottom: var(--space-10); }
+  .pillar__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-widest); margin: 0 0 var(--space-3) 0; }
+  .pillar__title { font-family: var(--font-display); font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .pillar__lede { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-5) 0; }
+  .pillar__usecases { list-style: none; padding: 0; margin: 0 0 var(--space-6) 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+  .pillar__usecase { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--text-secondary); }
+  .pillar__usecase :global(svg) { color: var(--primary-bright); flex: none; }
+  .pillar__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+  .pillar__h2 { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); margin: 0 0 var(--space-5) 0; }
+
+  .pillar__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-12); }
+
+  .pillar__faq { max-width: 72ch; margin-bottom: var(--space-12); }
+  .pillar__faq-list { display: flex; flex-direction: column; gap: var(--space-2); }
+  .pillar__faq-item { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--bg-glass); }
+  .pillar__faq-q { font-weight: var(--font-semibold); cursor: pointer; font-size: var(--text-base); }
+  .pillar__faq-a { margin: var(--space-3) 0 0 0; color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+
+  .pillar__related-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); }
+  .pillar__related-link { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-glass); text-decoration: none; transition: border-color var(--transition-fast), transform var(--transition-fast); }
+  .pillar__related-link:hover { border-color: var(--primary-bright); transform: translateY(-1px); }
+  .pillar__related-name { font-family: var(--font-display); font-weight: var(--font-semibold); color: var(--text-primary); font-size: var(--text-sm); flex: 1; }
+  .pillar__related-count { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+  .pillar__related-link :global(.pillar__related-arrow) { color: var(--text-muted); flex: none; transition: color var(--transition-fast), transform var(--transition-fast); }
+  .pillar__related-link:hover :global(.pillar__related-arrow) { color: var(--primary-bright); transform: translateX(2px); }
+
+  @media (max-width: 1024px) { .pillar__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+    .pillar__grid { grid-template-columns: 1fr; }
+    .pillar__usecases { grid-template-columns: 1fr; }
+  }
+</style>

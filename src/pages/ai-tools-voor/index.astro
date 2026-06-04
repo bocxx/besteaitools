@@ -1,0 +1,122 @@
+---
+/**
+ * /ai-tools-voor — pillar-hub: AI-tools per bedrijfsfunctie.
+ *
+ * De keystone boven de [functie]-pillars: één overzichtspagina die alle
+ * bedrijfsfuncties bundelt, link-autoriteit verzamelt en naar elke pillar
+ * distribueert. Vult het gat dat de bare /ai-tools-voor-route eerder 404'te.
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import { getBusinessFunctionSections } from '../../lib/tools-engine';
+import { functionContent } from '../../lib/function-content';
+import { siteConfig } from '../../config/site';
+import { Compass, SlidersHorizontal, ArrowRight } from '@lucide/astro';
+
+const sections = await getBusinessFunctionSections();
+const totalTools = new Set(sections.flatMap((s) => s.tools.map((t: any) => t.slug))).size;
+const currentYear = new Date().getFullYear();
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const pageUrl = `${siteOrigin}/ai-tools-voor`;
+
+// Korte intro-snippet per functie (uit de pillar-copy, ingekort).
+const snippet = (key: string): string => {
+  const intro = (functionContent as any)[key]?.intro ?? '';
+  const firstSentence = intro.split(/(?<=[.!?])\s/)[0] ?? intro;
+  return firstSentence.length > 130 ? firstSentence.slice(0, 127) + '…' : firstSentence;
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'AI-tools per bedrijfsfunctie — debesteaitools.nl',
+  description: `Vind de beste AI-tools per taak: ${sections.length} bedrijfsfuncties, van marketing tot legal, elk met een gecureerde, objectief gerankte tool-set.`,
+  url: pageUrl,
+  hasPart: sections.map((s) => ({
+    '@type': 'WebPage',
+    name: `AI-tools voor ${s.name}`,
+    url: `${siteOrigin}/ai-tools-voor/${s.key}`,
+  })),
+};
+---
+
+<Layout
+  title={`AI-tools per bedrijfsfunctie (${currentYear}) — marketing, sales, HR & meer | debesteaitools.nl`}
+  description={`De beste AI-tools per taak, objectief gerankt: ${sections.length} bedrijfsfuncties van marketing tot legal. Kies je functie of verfijn met de tool-finder.`}
+  ogImage="/og/page-functies.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container container-wide funcs">
+    <nav class="funcs__crumbs" aria-label="Kruimelpad">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <span class="funcs__crumb-current">AI-tools per functie</span>
+    </nav>
+
+    <header class="funcs__head">
+      <p class="funcs__kicker"><Compass size={13} stroke-width={1.75} /> AI-tools per taak</p>
+      <h1 class="funcs__title">AI-tools per bedrijfsfunctie</h1>
+      <p class="funcs__lede">
+        Welke AI-tools passen bij jóuw werk? Kies je functie en krijg een
+        gecureerde, objectief gerankte tool-set — of verfijn meteen op taak,
+        budget en eisen met de tool-finder.
+      </p>
+      <div class="funcs__actions">
+        <a href="/vind-je-beste-ai-tool" class="btn btn-primary btn-sm">
+          <SlidersHorizontal size={15} stroke-width={1.75} /> Naar de tool-finder
+        </a>
+        <span class="funcs__stat">{sections.length} functies · {totalTools} tools</span>
+      </div>
+    </header>
+
+    <ul class="funcs__grid">
+      {sections.map((s) => (
+        <li>
+          <a class="func-card" href={`/ai-tools-voor/${s.key}`}>
+            <div class="func-card__top">
+              <span class="func-card__name">{s.name}</span>
+              <span class="func-card__count">{s.tools.length} tools</span>
+            </div>
+            <p class="func-card__desc">{snippet(s.key)}</p>
+            <span class="func-card__cta">Bekijk tools <ArrowRight size={14} stroke-width={1.75} /></span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="funcs__foot">
+      Elke functie-pagina combineert een gecureerde tool-set met uitleg over de
+      belangrijkste toepassingen en veelgestelde vragen. De ranking is objectief
+      — gebaseerd op buzz, groei en mentions, dagelijks bijgewerkt.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .funcs { padding-top: 80px; padding-bottom: var(--space-20); }
+  .funcs__crumbs { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-5); display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; }
+  .funcs__crumbs a { color: var(--text-secondary); text-decoration: none; }
+  .funcs__crumbs a:hover { color: var(--primary-bright); }
+  .funcs__crumb-current { color: var(--text-muted); }
+
+  .funcs__head { max-width: 64ch; margin-bottom: var(--space-10); }
+  .funcs__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: var(--tracking-widest); margin: 0 0 var(--space-3) 0; }
+  .funcs__title { font-family: var(--font-display); font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem); font-weight: var(--font-semibold); letter-spacing: var(--tracking-tight); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .funcs__lede { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 var(--space-5) 0; }
+  .funcs__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+  .funcs__stat { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--text-muted); }
+
+  .funcs__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-3); }
+  .func-card { display: flex; flex-direction: column; gap: var(--space-2); height: 100%; padding: var(--space-5); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-glass); text-decoration: none; transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast); }
+  .func-card:hover { border-color: var(--primary-bright); transform: translateY(-2px); background: color-mix(in oklab, var(--primary-bright) 5%, var(--bg-glass)); }
+  .func-card__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .func-card__name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--font-semibold); color: var(--text-primary); }
+  .func-card__count { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); white-space: nowrap; }
+  .func-card__desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5; margin: 0; flex: 1; }
+  .func-card__cta { display: inline-flex; align-items: center; gap: 4px; font-size: var(--text-sm); color: var(--primary-bright); margin-top: var(--space-2); }
+  .func-card:hover .func-card__cta :global(svg) { transform: translateX(2px); transition: transform var(--transition-fast); }
+
+  .funcs__foot { margin-top: var(--space-8); font-size: var(--text-sm); color: var(--text-muted); max-width: 70ch; }
+</style>
