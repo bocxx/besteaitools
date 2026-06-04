@@ -209,6 +209,7 @@ const FEATURE_PAGES: FeaturePage[] = [
   { key: 'makers',    eyebrow: 'Makers',          title: 'Wie bouwt de trending AI',             subtitle: 'De mensen & organisaties achter de tools die nu stijgen.', accent: '#44c490' },
   { key: 'leren',     eyebrow: 'Leren',           title: 'Leer AI-tools — de beste bronnen',     subtitle: 'Gecureerde GitHub-repos, hands-on guides en video’s.', accent: '#e8cc2c' },
   { key: 'vergelijk', eyebrow: 'Vergelijk',       title: 'Vergelijk AI-tools',                   subtitle: 'Side-by-side op buzz, groei en functies.', accent: '#5ab0d8' },
+  { key: 'functies',  eyebrow: 'Per functie',     title: 'AI-tools per bedrijfsfunctie',         subtitle: 'Van marketing tot legal — de beste tools voor jouw werk.', accent: '#b07820' },
   { key: 'nieuws',    eyebrow: 'Nieuws',          title: 'AI-tools nieuws',                      subtitle: 'Nieuwe features, launches en tool-updates.' },
   { key: 'radar',     eyebrow: 'Radar',           title: 'AI Tools Radar',                       subtitle: 'Launches, wekelijkse rankings en de doorbraak-funnel.' },
 ];

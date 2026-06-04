@@ -17,7 +17,7 @@
  *   counts? : Record<string,string>  per key een omschrijving (overschrijft default)
  */
 import {
-  LayoutGrid, Boxes, Zap, Users, GraduationCap, TrendingUp, Newspaper, Scale, ArrowRight, ArrowUpRight,
+  LayoutGrid, Boxes, Zap, Users, GraduationCap, TrendingUp, Newspaper, Scale, ArrowRight, ArrowUpRight, SlidersHorizontal, Briefcase,
 } from '@lucide/astro';
 
 interface Surface {
@@ -29,6 +29,8 @@ interface Surface {
 }
 
 const SURFACES: Surface[] = [
+  { key: 'finder',    label: 'Vind je tool', href: '/vind-je-beste-ai-tool', icon: SlidersHorizontal, desc: 'Match op taak, budget en eisen — in 30 seconden' },
+  { key: 'functies',  label: 'Per functie', href: '/ai-tools-voor',        icon: Briefcase,     desc: 'De beste AI-tools per bedrijfsfunctie' },
   { key: 'tools',     label: 'AI-tools',  href: '/ai-tools',            icon: LayoutGrid,    desc: 'Alle tools objectief gerankt op buzz en groei' },
   { key: 'modellen',  label: 'Modellen',  href: '/modellen',            icon: Boxes,         desc: 'Open modellen die nú in de lift zitten' },
   { key: 'doorbraak', label: 'Doorbraak', href: '/radar/doorbraak',     icon: Zap,           desc: 'Tools die op punt staan te breken — vóór de pers' },
