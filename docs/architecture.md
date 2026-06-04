@@ -8,19 +8,42 @@ Geverifieerd in `src/pages/`:
 
 | Route | Bron | Doel |
 |---|---|---|
-| `/` | `index.astro` | Landing — hero + radar widgets |
+| `/` | `index.astro` | Landing — hero + "Ontdek de AI-radar"-sectie + tool-grid |
+| `/ontdek` | `ontdek.astro` | Discovery-hub — alle ontdek-oppervlakken met live counts |
 | `/ai-tools` | `ai-tools.astro` + `ai-tools/[slug].astro` | Tools-radar overzicht + per-tool detailpagina |
+| `/modellen` | `modellen.astro` | Trending AI-modellen uit `trending_models.json` (newsflux) |
+| `/makers` | `makers.astro` | Bouwers achter de trending AI uit `makers.json` (newsflux) |
+| `/leren` | `leren.astro` | Gecureerde leer-bronnen uit `tutorial_candidates.json` |
+| `/radar` | `radar/index.astro` | Hub met tabs: Launches · Rankings · Doorbraak |
+| `/radar/doorbraak` | `radar/doorbraak.astro` | Tools-doorbraak-funnel uit `tool_breakthrough.json` (newsflux) |
 | `/digest` | `digest/index.astro` + `digest/[slug].astro` | Dagelijkse tools-digest (28 items live) |
 | `/nieuws` | `nieuws/index.astro` + `nieuws/[slug].astro` | Redactionele artikelen (6 live) |
 | `/launch-radar` | `launch-radar/index.astro` | Recente launches uit `launch_radar.json` |
 | `/weekradar` | `weekradar/` | Wekelijkse highlights |
 | `/vergelijk` | `vergelijk/` | Tool-vergelijkingen ("X vs Y") |
+| `/vind-je-beste-ai-tool` | `vind-je-beste-ai-tool.astro` | Tool-finder (match op taak/budget) |
 | `/over` | `over.astro` | About-pagina |
 | `/zakelijk` | `zakelijk.astro` | B2B landing |
 | `/rss.xml`, `/nieuws.xml`, `/digest.xml` | `*.xml.ts` | RSS feeds (3 stuks) |
 | `/keystatic` | (dev only) | CMS admin |
 
 Navigatie en site-identiteit centraal in [src/config/site.ts](../src/config/site.ts).
+
+**Discovery-laag**: `src/components/DiscoverGrid.astro` is de gedeelde bron voor de
+homepage-"Ontdek"-sectie, de `/ontdek` hub en de "Ontdek ook"-sibling-strips
+onderaan de feature-pagina's (modellen/doorbraak/makers/leren) — cluster-
+interlinking voor SEO. Eén `SURFACES`-lijst; counts komen als prop binnen.
+
+**Newsflux-gevoede data-features**: `/modellen`, `/makers` en `/radar/doorbraak`
+lezen JSONs die de newsflux-pipeline (`stage_data_exports`) naar `src/data/`
+kopieert. Verversen dagelijks mee omdat `stage_deploy` DBAT herbouwt
+(`npm run build && npx wrangler deploy`) — er is **geen** git-push-auto-deploy.
+
+**OG-share-images**: `scripts/generate-og-images.ts` (build-step) rendert via
+satori+resvg een PNG-kaart per tool én per feature/hub-pagina →
+`public/og/page-<key>.png` + site-wide `public/og-image.png`. PNG (niet WebP:
+LinkedIn weigert WebP-og:image). `Layout.astro` normaliseert relatieve
+`ogImage`-paden naar absolute URLs. Feature-pagina's zetten hun eigen `ogImage`.
 
 ## Content collections
 
