@@ -137,23 +137,6 @@ const modifiedIso = toIsoString(modifiedTime);
     )}
 
     <slot name="head" />
-
-    {/* Cross-document View Transitions — inline zodat het op élke pagina laadt
-        (ook SSR-routes als /nieuws met hun eigen CSS-chunk). Pure CSS, MPA blijft
-        intact, niet-ondersteunende browsers vallen netjes terug. */}
-    <style is:inline>
-      @view-transition { navigation: auto; }
-      ::view-transition-old(root),
-      ::view-transition-new(root) {
-        animation-duration: 220ms;
-        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      @media (prefers-reduced-motion: reduce) {
-        ::view-transition-group(*),
-        ::view-transition-old(*),
-        ::view-transition-new(*) { animation: none !important; }
-      }
-    </style>
   </head>
   <body>
     <a href="#hoofdinhoud" class="skip-link">Naar inhoud</a>
