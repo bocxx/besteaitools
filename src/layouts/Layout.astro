@@ -139,11 +139,34 @@ const modifiedIso = toIsoString(modifiedTime);
     <slot name="head" />
   </head>
   <body>
+    <a href="#hoofdinhoud" class="skip-link">Naar inhoud</a>
     <div class="nebula" aria-hidden="true"></div>
     <SiteHeader />
-    <slot />
+    <div id="hoofdinhoud" tabindex="-1">
+      <slot />
+    </div>
     <SiteFooter />
     <SearchModal />
+
+    <style>
+      .skip-link {
+        position: fixed;
+        top: 0;
+        left: var(--space-3, 0.75rem);
+        z-index: var(--z-max, 9999);
+        padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+        background: var(--primary-bright);
+        color: var(--bg-base, #0a0a0c);
+        border-radius: 0 0 var(--radius-md, 0.5rem) var(--radius-md, 0.5rem);
+        font-size: var(--text-sm, 0.875rem);
+        font-weight: var(--font-semibold, 600);
+        text-decoration: none;
+        transform: translateY(-120%);
+        transition: transform var(--transition-fast, 150ms ease-out);
+      }
+      .skip-link:focus { transform: translateY(0); outline: 2px solid var(--text-primary); outline-offset: 2px; }
+      #hoofdinhoud { scroll-margin-top: 90px; }
+    </style>
   </body>
 </html>
 

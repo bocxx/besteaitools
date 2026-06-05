@@ -1,3 +1,10 @@
+# ── Newsletter (Resend) — secrets, zet via `wrangler secret put <NAAM>` ──────
+#   RESEND_API_KEY        (vereist voor live inschrijven; zonder = stub)
+#   RESEND_AUDIENCE_ID    (optioneel — laat aanmeldingen in een aparte
+#                          "debesteaitools"-audience landen, per site gescheiden)
+#   RESEND_WELCOME_FROM   (optioneel — geverifieerd from-adres voor de welkomstmail)
+# Elk contact krijgt sowieso property signup_site = "debesteaitools.nl".
+# ─────────────────────────────────────────────────────────────────────────────
 name = "debesteaitools"
 compatibility_date = "2026-03-27"
 compatibility_flags = [ "nodejs_compat" ]

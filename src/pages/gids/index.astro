@@ -1,0 +1,85 @@
+---
+/**
+ * /gids — hub voor de task-gidsen. Interne-link-knooppunt naar /gids/[slug].
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import { taskPages } from '../../lib/task-content';
+import { siteConfig } from '../../config/site';
+import { ArrowRight } from '@lucide/astro';
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+    { '@type': 'ListItem', position: 2, name: 'Gidsen', item: `${siteOrigin}/gids` },
+  ],
+};
+---
+
+<Layout
+  title={`AI-gidsen per taak | ${siteConfig.name}`}
+  description="Praktische gidsen met de beste AI-tools per taak: afbeeldingen maken, notuleren, transcriberen, video maken en tekst schrijven."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  </Fragment>
+
+  <main class="container container-wide gids-hub" style="padding-top: 80px;">
+    <nav class="gids-hub__crumbs" aria-label="Kruimelpad">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <span>Gidsen</span>
+    </nav>
+
+    <header class="gids-hub__head">
+      <h1 class="gids-hub__title">AI-gidsen per taak</h1>
+      <p class="gids-hub__sub">Wil je iets specifieks dóén met AI? Kies je taak en zie meteen de beste tools ervoor — met wat ze kunnen en wat ze kosten.</p>
+    </header>
+
+    <div class="gids-hub__grid">
+      {taskPages.map((t) => (
+        <a class="gids-hub__card" href={`/gids/${t.slug}`}>
+          <span class="gids-hub__kicker">{t.kicker}</span>
+          <span class="gids-hub__card-title">{t.h1}</span>
+          <span class="gids-hub__more">Bekijk tools <ArrowRight size={14} stroke-width={1.75} aria-hidden="true" /></span>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .gids-hub { max-width: 1120px; }
+  .gids-hub__crumbs { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-6); }
+  .gids-hub__crumbs a { color: var(--text-secondary); text-decoration: none; }
+  .gids-hub__crumbs a:hover { color: var(--primary-bright); }
+  .gids-hub__head { max-width: 60ch; margin-bottom: var(--space-10); }
+  .gids-hub__title {
+    font-family: var(--font-logo); font-weight: var(--font-regular);
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem); letter-spacing: var(--tracking-tight);
+    line-height: 1.1; color: var(--text-primary); margin: 0 0 var(--space-4);
+  }
+  .gids-hub__sub { color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin: 0; }
+  .gids-hub__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-4); }
+  .gids-hub__card {
+    display: flex; flex-direction: column; gap: var(--space-2);
+    padding: var(--space-5); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+    background: var(--bg-elevated); text-decoration: none;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+  .gids-hub__card:hover { border-color: var(--border-strong); background: var(--bg-panel); }
+  .gids-hub__kicker {
+    font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
+    letter-spacing: var(--tracking-widest); color: var(--primary-bright);
+  }
+  .gids-hub__card-title { font-size: var(--text-lg); font-weight: var(--font-semibold); color: var(--text-primary); line-height: 1.25; }
+  .gids-hub__more {
+    display: inline-flex; align-items: center; gap: var(--space-1-5); margin-top: var(--space-1);
+    font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
+    letter-spacing: var(--tracking-widest); color: var(--text-muted);
+  }
+  .gids-hub__card:hover .gids-hub__more { color: var(--primary-bright); }
+</style>

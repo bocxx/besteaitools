@@ -13,8 +13,17 @@
  */
 import type { APIRoute } from 'astro';
 import { welcomeEmail } from '../../lib/welcome-email';
+import { siteConfig } from '../../config/site';
 
 export const prerender = false;
+
+/** Site-tag op elk contact, zodat je in Resend ziet dat een aanmelding via
+ *  debesteaitools.nl binnenkwam (handig als je Resend-account meerdere sites
+ *  bedient). bv. "debesteaitools.nl". */
+const SITE_TAG = (() => {
+  try { return new URL(siteConfig.url).host.replace(/^www\./, ''); }
+  catch { return siteConfig.name; }
+})();
 
 interface SubPayload {
   email?: string;
@@ -25,6 +34,9 @@ interface CfEnv {
   RESEND_API_KEY?: string;
   RESEND_WELCOME_FROM?: string;
   RESEND_WELCOME_SUBJECT?: string;
+  /** Optioneel: laat aanmeldingen in een specifieke Resend-audience landen
+   *  (bv. een "debesteaitools"-audience), zodat ze per site gescheiden zijn. */
+  RESEND_AUDIENCE_ID?: string;
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -58,25 +70,35 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ ok: false, error: 'Vul een geldig e-mailadres in.' }, 400);
   }
 
-  const { RESEND_API_KEY, RESEND_WELCOME_FROM, RESEND_WELCOME_SUBJECT } = await getEnv();
+  const { RESEND_API_KEY, RESEND_WELCOME_FROM, RESEND_WELCOME_SUBJECT, RESEND_AUDIENCE_ID } = await getEnv();
 
   if (!RESEND_API_KEY) {
     console.log('[subscribe-stub] geen RESEND_API_KEY — API-call overgeslagen', {
       email: payload.email,
+      site: SITE_TAG,
       source: payload.source,
     });
     return json({ ok: true, mode: 'stub' });
   }
 
-  // 1. Contact aanmaken (globaal contacts-model — geen audience-id nodig).
+  // 1. Contact aanmaken. Met een RESEND_AUDIENCE_ID landt het in die audience
+  //    (per-site scheiding); zonder valt het terug op het globale contacts-model.
+  //    `signup_site` tagt elk contact zodat je in Resend ziet dat het via
+  //    debesteaitools.nl binnenkwam.
+  const contactsUrl = RESEND_AUDIENCE_ID
+    ? `https://api.resend.com/audiences/${RESEND_AUDIENCE_ID}/contacts`
+    : 'https://api.resend.com/contacts';
   try {
-    const res = await fetch('https://api.resend.com/contacts', {
+    const res = await fetch(contactsUrl, {
       method: 'POST',
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: payload.email,
         unsubscribed: false,
-        properties: { signup_source: (payload.source ?? 'direct').slice(0, 120) },
+        properties: {
+          signup_site: SITE_TAG,
+          signup_source: (payload.source ?? 'direct').slice(0, 120),
+        },
       }),
     });
     if (!res.ok) {

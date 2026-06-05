@@ -1,0 +1,170 @@
+---
+/**
+ * /gids/[slug] — task-landingspagina's (consument-taak-intentie).
+ * Gericht op laag-KD task-keywords; combineert unieke intro + de gefilterde
+ * tool-set + ItemList/FAQ/Breadcrumb structured data. Config: lib/task-content.ts
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import ToolCard from '../../components/molecules/ToolCard.astro';
+import SubscribeAnchor from '../../components/SubscribeAnchor.astro';
+import { getAllTools } from '../../lib/tools-engine';
+import { taskPages } from '../../lib/task-content';
+import { buildFaqPageLd } from '../../lib/seo-helpers';
+import { siteConfig } from '../../config/site';
+import { Sparkles, ArrowRight, Gift } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const allTools = await getAllTools();
+  return taskPages.map((task) => {
+    const tools = allTools
+      .filter((t) => task.categories.includes(t.category))
+      .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+    return { params: { slug: task.slug }, props: { task, tools } };
+  });
+}
+
+const { task, tools } = Astro.props;
+const year = new Date().getFullYear();
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const pageUrl = `${siteOrigin}/gids/${task.slug}`;
+
+const title = task.metaTitle.replace('{year}', String(year));
+const description = task.metaDescription;
+const related = taskPages.filter((t) => t.slug !== task.slug);
+
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: task.h1,
+  url: pageUrl,
+  numberOfItems: tools.length,
+  itemListElement: tools.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.name,
+    url: `${siteOrigin}/ai-tools/${t.slug}`,
+  })),
+};
+const faqJsonLd = buildFaqPageLd(task.faqs.map((f) => ({ question: f.q, answer: f.a })));
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+    { '@type': 'ListItem', position: 2, name: 'Gidsen', item: `${siteOrigin}/gids` },
+    { '@type': 'ListItem', position: 3, name: task.h1, item: pageUrl },
+  ],
+};
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  </Fragment>
+
+  <main class="container container-wide gids" style="padding-top: 80px;">
+    <nav class="gids__crumbs" aria-label="Kruimelpad">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <span class="gids__crumb-current">{task.h1}</span>
+    </nav>
+
+    <header class="gids__head">
+      <p class="gids__kicker"><Sparkles size={13} stroke-width={1.75} aria-hidden="true" /> {task.kicker}</p>
+      <h1 class="gids__title">{task.h1}</h1>
+      {task.intro.map((p) => <p class="gids__intro">{p}</p>)}
+      <p class="gids__free"><Gift size={14} stroke-width={1.75} aria-hidden="true" /> {task.freeNote}</p>
+    </header>
+
+    <section aria-label={`Tools voor ${task.h1}`}>
+      <p class="gids__count">{tools.length} tools</p>
+      {tools.length > 0 ? (
+        <div class="gids__grid">
+          {tools.map((tool) => <ToolCard tool={tool} />)}
+        </div>
+      ) : (
+        <p class="gids__empty">Nog geen tools in deze categorie — <a href="/">bekijk de hele directory</a>.</p>
+      )}
+    </section>
+
+    {task.faqs.length > 0 && (
+      <section class="gids__faq" aria-labelledby="faq-h2">
+        <h2 id="faq-h2" class="gids__h2">Veelgestelde vragen</h2>
+        <dl class="gids__faq-list">
+          {task.faqs.map((f) => (
+            <div class="gids__faq-item">
+              <dt class="gids__faq-q">{f.q}</dt>
+              <dd class="gids__faq-a">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
+
+    <nav class="gids__related" aria-label="Andere gidsen">
+      <h2 class="gids__h2">Andere gidsen</h2>
+      <div class="gids__related-grid">
+        {related.map((t) => (
+          <a class="gids__related-link" href={`/gids/${t.slug}`}>
+            {t.h1}
+            <ArrowRight size={14} stroke-width={1.75} aria-hidden="true" />
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <SubscribeAnchor />
+  </main>
+</Layout>
+
+<style>
+  .gids { max-width: 1120px; }
+  .gids__crumbs { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-6); }
+  .gids__crumbs a { color: var(--text-secondary); text-decoration: none; }
+  .gids__crumbs a:hover { color: var(--primary-bright); }
+  .gids__crumb-current { color: var(--text-secondary); }
+  .gids__head { max-width: 70ch; margin-bottom: var(--space-10); }
+  .gids__kicker {
+    display: inline-flex; align-items: center; gap: var(--space-1-5);
+    font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
+    letter-spacing: var(--tracking-widest); color: var(--primary-bright); margin: 0 0 var(--space-3);
+  }
+  .gids__title {
+    font-family: var(--font-logo); font-weight: var(--font-regular);
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem); letter-spacing: var(--tracking-tight);
+    line-height: 1.1; color: var(--text-primary); margin: 0 0 var(--space-4);
+  }
+  .gids__intro { color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin: 0 0 var(--space-3); }
+  .gids__free {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    margin-top: var(--space-3); padding: var(--space-2) var(--space-3);
+    border: 1px solid color-mix(in srgb, var(--color-success) 35%, transparent);
+    border-radius: var(--radius-sm); color: var(--color-success); font-size: var(--text-sm);
+  }
+  .gids__count { font-size: var(--text-sm); color: var(--text-muted); margin: 0 0 var(--space-4); }
+  .gids__grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: var(--space-4); margin-bottom: var(--space-16);
+  }
+  .gids__empty { color: var(--text-secondary); }
+  .gids__empty a { color: var(--primary-bright); }
+  .gids__h2 {
+    font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--font-semibold);
+    letter-spacing: var(--tracking-tight); color: var(--text-primary); margin: 0 0 var(--space-5);
+  }
+  .gids__faq { max-width: 70ch; margin-bottom: var(--space-16); }
+  .gids__faq-item { padding: var(--space-4) 0; border-bottom: 1px solid var(--border-subtle); }
+  .gids__faq-q { font-weight: var(--font-semibold); color: var(--text-primary); margin-bottom: var(--space-2); }
+  .gids__faq-a { color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0; }
+  .gids__related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: var(--space-3); }
+  .gids__related-link {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+    padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm); color: var(--text-primary); text-decoration: none;
+    font-weight: var(--font-medium); transition: border-color var(--transition-fast), color var(--transition-fast);
+  }
+  .gids__related-link:hover { border-color: var(--primary-bright); color: var(--primary-bright); }
+</style>

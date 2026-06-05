@@ -31,6 +31,7 @@ export const siteConfig = {
     // De pagina's bestaan nog (ongelinkt) en builden door.
     main: [
       { label: "AI-tools", href: "/" },
+      { label: "Gidsen", href: "/gids" },
       { label: "Vergelijk", href: "/vergelijk" },
       { label: "Leren", href: "/leren" },
       { label: "Nieuws", href: "/nieuws" },
