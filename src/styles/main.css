@@ -65,6 +65,31 @@
 }
 
 /* ============================================
+   CROSS-DOCUMENT VIEW TRANSITIONS
+   Smooth cross-fade tussen same-origin navigaties (bv. de ?cat=-filters op
+   /nieuws). Pure CSS — verandert het MPA-navigatiemodel niet, dus alle
+   scripts blijven werken. Niet-ondersteunende browsers vallen netjes terug.
+   ============================================ */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ============================================
    DEBUG MODE (optional)
    Uncomment to visualize layout issues
    ============================================ */
