@@ -23,7 +23,8 @@ const toolCount = Math.floor((await getAllTools()).length / 10) * 10;
         type="search"
         id="search-input"
         class="search-modal__input"
-        placeholder={`Zoek in ${toolCount}+ AI-tools...`}
+        placeholder={`Zoek in ${toolCount}+ AI-tools…`}
+        aria-label="Zoek AI-tools"
         autocomplete="off"
         spellcheck="false"
       />
@@ -303,6 +304,11 @@ const toolCount = Math.floor((await getAllTools()).length / 10) * 10;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-5);
     border-bottom: 1px solid var(--border-subtle);
+    transition: border-color var(--transition-fast);
+  }
+  /* Visible focus on the row (the input itself uses outline:none) */
+  .search-modal__input-wrap:focus-within {
+    border-bottom-color: var(--primary-bright);
   }
 
   :global(.search-modal__input-icon) {

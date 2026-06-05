@@ -1,0 +1,92 @@
+---
+/**
+ * SubscribeAnchor — full-bleed editorial CTA. Verschijnt onderaan tool- en
+ * artikelpagina's. Rustige outline-knop die in dark én light goed leest.
+ */
+import { ArrowRight } from '@lucide/astro';
+
+interface Props {
+  title?: string;
+  body?: string;
+  cta?: string;
+  href?: string;
+}
+const {
+  title = 'Mis geen enkele AI-tool.',
+  body = 'Schrijf je in en ontvang af en toe de beste nieuwe AI-tools en hoe je ze inzet — geen pop-ups, geen spam, alleen wat echt werkt.',
+  cta = 'Inschrijven',
+  href = '/nieuwsbrief',
+} = Astro.props;
+---
+
+<aside class="subscribe-anchor">
+  <div class="subscribe-anchor__inner">
+    <p class="subscribe-anchor__kicker">Nieuwsbrief</p>
+    <h2 class="subscribe-anchor__title">{title}</h2>
+    <p class="subscribe-anchor__body">{body}</p>
+    <a class="subscribe-anchor__cta" href={href}>
+      {cta}
+      <ArrowRight size={14} stroke-width={1.75} aria-hidden="true" />
+    </a>
+  </div>
+</aside>
+
+<style>
+  .subscribe-anchor {
+    margin: var(--space-20) calc(-1 * var(--space-6)) var(--space-20);
+    padding: var(--space-16) var(--space-6);
+    background: var(--bg-elevated);
+    border-block: 1px solid var(--border-subtle);
+    text-align: center;
+  }
+  .subscribe-anchor__inner { max-width: 56ch; margin: 0 auto; }
+  .subscribe-anchor__kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--primary-bright);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    margin: 0 0 var(--space-4) 0;
+  }
+  .subscribe-anchor__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 1.5rem + 1.5vw, 2.5rem);
+    font-weight: var(--font-semibold);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-4) 0;
+  }
+  .subscribe-anchor__body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-8) 0;
+  }
+  .subscribe-anchor__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    padding: 0 var(--space-5);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color var(--transition-fast), border-color var(--transition-fast), gap var(--transition-fast);
+  }
+  .subscribe-anchor__cta:hover {
+    color: var(--primary-bright);
+    border-color: var(--primary-bright);
+    gap: var(--space-3);
+  }
+  .subscribe-anchor__cta:focus-visible { outline: none; box-shadow: var(--ring-primary); }
+  @media (min-width: 64em) { .subscribe-anchor__cta { min-height: 32px; } }
+</style>

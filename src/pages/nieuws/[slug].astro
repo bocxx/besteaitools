@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Badge from '../../components/atoms/Badge.astro';
 import NewsCard from '../../components/nieuws/NewsCard.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
+import SubscribeAnchor from '../../components/SubscribeAnchor.astro';
 import { getCollection, render } from 'astro:content';
 import { nieuwsCategoryConfig } from '../../lib/nieuws-schema';
 import { siteConfig } from '../../config/site';
@@ -216,6 +217,8 @@ export const prerender = true;
           </section>
         )}
       </article>
+
+      <SubscribeAnchor />
 
     </div>
   </main>

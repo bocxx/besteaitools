@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+import { ArrowRight } from '@lucide/astro';
+
+export const prerender = true;
+---
+
+<Layout
+  title={`Nieuwsbrief | ${siteConfig.name}`}
+  description={`Schrijf je in voor de ${siteConfig.name}-nieuwsbrief: af en toe de beste nieuwe AI-tools en hoe je ze inzet. Geen spam, altijd uitschrijfbaar.`}
+>
+  <main class="container container-narrow" style="padding-top: 80px;">
+    <section class="nl">
+      <p class="nl__kicker">Nieuwsbrief</p>
+      <h1 class="nl__title">De beste AI-tools in je inbox</h1>
+      <p class="nl__sub">
+        Af en toe een korte mail met de scherpste nieuwe AI-tools en hoe je ze
+        praktisch inzet. Geen pop-ups, geen spam — je schrijft je op elk moment
+        weer uit.
+      </p>
+
+      <form class="nl__form" id="nl-form" aria-label="Nieuwsbrief-inschrijving" data-source="nieuwsbrief">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="jij@voorbeeld.nl"
+          aria-label="E-mailadres"
+          class="nl__input"
+        />
+        <button type="submit" class="nl__submit">
+          Inschrijven
+          <ArrowRight size={16} stroke-width={1.75} aria-hidden="true" />
+        </button>
+      </form>
+
+      <p class="nl__status" id="nl-status" role="status" aria-live="polite"></p>
+      <p class="nl__fine">Door je in te schrijven ga je akkoord met de <a href="/privacy">privacyverklaring</a>.</p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .nl { padding-block: var(--space-12) var(--space-24); max-width: 560px; }
+  .nl__kicker {
+    font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
+    letter-spacing: var(--tracking-widest); color: var(--primary-bright); margin-bottom: var(--space-3);
+  }
+  .nl__title {
+    font-family: var(--font-logo); font-weight: var(--font-regular);
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem); letter-spacing: var(--tracking-tight);
+    line-height: 1.1; color: var(--text-primary); margin-bottom: var(--space-4);
+  }
+  .nl__sub { color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
+  .nl__form { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .nl__input {
+    flex: 1; min-width: 240px; height: 48px; padding: 0 var(--space-4);
+    background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md); color: var(--text-primary);
+    font-family: var(--font-body); font-size: var(--text-base);
+  }
+  .nl__input::placeholder { color: var(--text-muted); }
+  .nl__input:focus-visible { outline: none; box-shadow: var(--ring-primary); border-color: var(--primary-bright); }
+  .nl__submit {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    height: 48px; padding: 0 var(--space-5);
+    background: var(--primary-bright); color: var(--bg-base);
+    border: none; border-radius: var(--radius-md);
+    font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--font-semibold);
+    cursor: pointer; transition: opacity var(--transition-fast);
+  }
+  .nl__submit:hover { opacity: 0.9; }
+  .nl__submit:disabled { opacity: 0.6; cursor: default; }
+  .nl__submit:focus-visible { outline: none; box-shadow: var(--ring-primary); }
+  .nl__status { margin-top: var(--space-4); font-size: var(--text-sm); min-height: 1.4em; }
+  .nl__status[data-state="ok"] { color: var(--color-success); }
+  .nl__status[data-state="error"] { color: var(--color-error); }
+  .nl__fine { margin-top: var(--space-3); color: var(--text-muted); font-size: var(--text-sm); }
+  .nl__fine a { color: var(--text-secondary); }
+</style>
+
+<script>
+  function initSubscribeForm() {
+    const form = document.getElementById('nl-form') as HTMLFormElement | null;
+    if (!form || form.dataset.bound) return;
+    form.dataset.bound = '1';
+    const status = document.getElementById('nl-status');
+    const submit = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+      if (!email) return;
+      if (status) { status.dataset.state = ''; status.textContent = 'Bezig met inschrijven…'; }
+      if (submit) submit.disabled = true;
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: form.dataset.source || 'nieuwsbrief' }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          if (status) { status.dataset.state = 'ok'; status.textContent = '✓ Je bent ingeschreven. Check je inbox!'; }
+          form.reset();
+        } else {
+          if (status) { status.dataset.state = 'error'; status.textContent = data.error || 'Er ging iets mis — probeer het opnieuw.'; }
+        }
+      } catch {
+        if (status) { status.dataset.state = 'error'; status.textContent = 'Netwerkfout — probeer het opnieuw.'; }
+      } finally {
+        if (submit) submit.disabled = false;
+      }
+    });
+  }
+  initSubscribeForm();
+  document.addEventListener('astro:page-load', initSubscribeForm);
+</script>

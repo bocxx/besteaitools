@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-04T17:40:57.177132",
+  "generated_at": "2026-06-05T05:36:01.620024",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 15,
+    "for_tools": 14,
     "for_news": 15,
-    "rejected_lang": 165,
+    "rejected_lang": 150,
     "already_covered": 0,
-    "total_scanned": 4683
+    "total_scanned": 4699
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
+        "how to",
         "tutorial",
-        "step-by-step",
-        "how to"
+        "step-by-step"
       ],
       "matched_tools": [
         "gemini",
@@ -141,8 +141,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -193,9 +193,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
+        "how to",
         "guide",
-        "how to"
+        "tutorial"
       ],
       "matched_tools": [
         "claude",
@@ -318,8 +318,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "breakdown",
-        "how to"
+        "how to",
+        "breakdown"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -534,20 +534,18 @@
       "id": "c7f7c9d65f0f3e0b"
     },
     {
-      "source": "likes:@zodchiii",
-      "platform": "twitter_likes",
-      "title": "Anthropic engineer: \"You can build 5 assistants in one afternoon. Each one handles a task you've been doing manually every single day.\" In 45 minutes he builds ",
-      "text": "Anthropic engineer: \"You can build 5 assistants in one afternoon. Each one handles a task you've been doing manually every single day.\" In 45 minutes he builds 5 focused agents from scratch on camera. Most people are still doing code review, testing, and documentation by https://t.co/HGSL6iKEsM https://t.co/uUfFA5q1AH",
-      "url": "https://twitter.com/zodchiii/status/2061040686330257656",
-      "date": "2026-05-31",
-      "engagement": 50.0,
-      "source_weight": 4.0,
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "date": "2026-05-20",
+      "engagement": 2448.0,
+      "source_weight": 3.0,
       "ai_relevant": true,
-      "pattern_hits": [
-        "from scratch"
-      ],
+      "pattern_hits": [],
       "matched_tools": [
-        "claude"
+        "chatgpt"
       ],
       "feature_update": false,
       "new_products": [],
@@ -556,8 +554,56 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "author": "zodchiii",
-      "media_url": "https://x.com/zodchiii/status/2061040686330257656/video/1",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.71,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.71,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "67bd84a16d5db4b6"
+    },
+    {
+      "source": "likes:@icreatelife",
+      "platform": "twitter_likes",
+      "title": "You are all AI pioneers and you are in an important position to help the rest of the world to understand how to use this tech and what to do with it. Itâs sti",
+      "text": "You are all AI pioneers and you are in an important position to help the rest of the world to understand how to use this tech and what to do with it. Itâs still early, you are not too late. Just start doing what matters to you, tell your stories, build things.",
+      "url": "https://twitter.com/icreatelife/status/2062538054846353806",
+      "date": "2026-06-04",
+      "engagement": 50.0,
+      "source_weight": 4.0,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "how to"
+      ],
+      "matched_tools": [
+        "you.com"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "author": "icreatelife",
+      "media_url": "",
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -578,31 +624,77 @@
         "media": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "claude versus de alternatieven — welke past bij jou?",
+      "suggested_angle_nl": "Zo gebruik je you.com in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "d9027ef8a4cf4975"
+      "id": "b9ab1c0520f204a9"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "GPT-5.5",
+      "text": "GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "date": "2026-04-23",
+      "engagement": 2601.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.3,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.8,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "chatgpt versus de alternatieven — welke past bij jou?",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "5fd20d07562884b6"
     },
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
-      "title": "Building a Conversational AI with Claude and ChatGPT APIs: A Practical Guide",
-      "text": "<blockquote>\n<p><strong>🚀 Technical Briefing:</strong> This tutorial is part of our deep-dive series on Agentic Workflows at <a href=\"https://gateofai.com/\">Gate of AI</a>. For the full technical breakdown, interactive code sandbox, and the native Arabic translation, visit the <a href=\"https://gateofai.com/tutorial/claude-chatgpt-api-conversational-ai-tutorial/\">original article here</a>.</p>\n</blockquote>\n<div data-sanitized-class=\"highlight js-code-highlight\">\n<pre data-sanitized-class=\"highlight plaintext\"><code>&lt;span&gt;Tutorial&lt;/span&gt;\n&lt;span&gt;Intermediate&lt;/span&gt;\n&lt;spa",
-      "url": "https://dev.to/gateofai/building-a-conversational-ai-with-claude-and-chatgpt-apis-a-practical-guide-4a3c",
-      "date": "2026-06-03",
+      "title": "Build Your Own MCP Server from Scratch",
+      "text": "<p>Every AI agent ships with the same bottleneck: it can only reason over what it can reach. MCP servers dissolve that boundary. They expose tools, resources, and prompts to any compliant client over a JSON-RPC wire format so lean you can implement it in an afternoon. Yet most developers grab a framework, copy a template, and ship something they can barely debug. Forge starts differently. You will build an MCP server from the bare protocol up, understand every byte on the wire, and gain the mental model that makes every future server trivial.</p>\n\n<h2>\n  \n  \n  The Idea (60 Seconds)\n</h2>\n\n<p>M",
+      "url": "https://dev.to/michal_szalinski_91bf893d/build-your-own-mcp-server-from-scratch-2mn7",
+      "date": "2026-06-05",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "breakdown",
-        "tutorial",
-        "practical guide"
+        "build your",
+        "build an",
+        "from scratch"
       ],
       "matched_tools": [
-        "chatgpt",
-        "claude"
+        "mcp",
+        "you.com"
       ],
-      "feature_update": false,
+      "feature_update": true,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
@@ -629,25 +721,25 @@
         "media": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "Nieuw in mcp: wat de update concreet voor je werk betekent.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "288427a5a2a4afe8"
+      "id": "44205e42f98f42fd"
     },
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
-      "title": "Annotated Git Hooks: Automating Your Local Workflow with a Practical, Portable Hook System",
-      "text": "<h1>\n  \n  \n  Annotated Git Hooks: Automating Your Local Workflow with a Practical, Portable Hook System\n</h1>\n\n<h3>\n  \n  \n  Annotated Git Hooks: Automating Your Local Workflow with a Practical, Portable Hook System\n</h3>\n\n<p>When teams talk about Git workflows, they often fixate on branch models and CI/CD pipelines. But the real power of version control happens locally, where small, well-placed automation can prevent mistakes, speed up routine tasks, and enforce personal or team conventions without nagging prompts. This tutorial shows you how to build a practical, portable set of Git hooks tha",
-      "url": "https://dev.to/therizwansaleem/annotated-git-hooks-automating-your-local-workflow-with-a-practical-portable-hook-system-2a62",
-      "date": "2026-06-03",
+      "title": "How to Utilize AI (Not Just Use It): The AI Utilization Guide",
+      "text": "<p>OPTIMIZED FOR NOTION: <a href=\"https://rebel-nurse-a44.notion.site/How-to-Utilize-AI-Not-Just-Use-It-The-AI-Utilization-Guide-36f38a21a4b880e0ae89fda867a4b75e?pvs=74\">How to Utilize AI</a></p>\n\n<h2>\n  \n  \n  Fundamentals of Utilizing AI\n</h2>\n\n\n\n\n<p>When using AI, people often run into two distinct experiences, information overload or putting in a question and getting an answer back. Leaving the learning experience to an afterthought. In today’s society, since AI is being pushed more and more in classrooms and workplaces, learning to use AI is becoming paramount to one’s success. </p>\n\n<p>Ho",
+      "url": "https://dev.to/iaso/how-to-utilize-ai-not-just-use-it-the-ai-utilization-guide-flb",
+      "date": "2026-06-04",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
+        "how-to",
         "how to",
-        "build a"
+        "guide"
       ],
       "matched_tools": [
         "you.com"
@@ -682,164 +774,7 @@
       "suggested_angle_nl": "Zo gebruik je you.com in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "5b90f43abc60837f"
-    },
-    {
-      "source": "articles:Towards AI - Medium",
-      "platform": "article",
-      "title": "Part 3 — Implementation/Engine-Level: Choosing the Runtime That Gives You These for Free",
-      "text": "<p>You now know how to make the model fast (Part 1) and how to build a stable serving layer around it (Part 2). The final question is: which engine actually implements all of this without forcing you to write a custom scheduler from scratch?</p><p><strong>The theme of this part:</strong> inference engines are not neutral wrappers. They bake in specific opinions about batching, KV cache memory layout, prefix caching, and kernel selection. Pick the engine that aligns with your pain points, and you get chunked prefill, continuous batching, and paged KV cache for free. Pick the wrong one, and you’",
-      "url": "https://pub.towardsai.net/part-3-implementation-engine-level-choosing-the-runtime-that-gives-you-these-for-free-b0e9081205b0?source=rss----98111c9905da---4",
-      "date": "2026-06-03",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "from scratch",
-        "how to",
-        "build a"
-      ],
-      "matched_tools": [
-        "make",
-        "you.com"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "0dca0bc9e192df66"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "Build a Developer-Centric AI Habit: Crafting a Personal Knowledge Automation System",
-      "text": "<h1>\n  \n  \n  Build a Developer-Centric AI Habit: Crafting a Personal Knowledge Automation System\n</h1>\n\n<h3>\n  \n  \n  Build a Developer-Centric AI Habit: Crafting a Personal Knowledge Automation System\n</h3>\n\n<p>In this tutorial, you’ll learn how to design and implement a lightweight, personal knowledge automation system that helps developers capture, organize, and reuse knowledge across projects. The goal is to boost your productivity by turning ephemeral insights into durable, actionable assets you can reference, search, and remix.</p>\n\n<p>This guide emphasizes practical, beginner-to-intermed",
-      "url": "https://dev.to/therizwansaleem/build-a-developer-centric-ai-habit-crafting-a-personal-knowledge-automation-system-1768",
-      "date": "2026-06-03",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "tutorial",
-        "how to",
-        "guide",
-        "build a"
-      ],
-      "matched_tools": [
-        "durable",
-        "you.com"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je durable in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "7e70f47b0d30b849"
-    },
-    {
-      "source": "articles:MarkTechPost",
-      "platform": "article",
-      "title": "How to Fine-Tune LFM2 Using QLoRA and DPO: A Complete Step-by-Step Coding Tutorial on Google Colab",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we fine-tune <a href=\"https://github.com/Liquid4All/leap-finetune\"><strong>Liquid AI’s LFM2</strong></a> model through a complete open-source workflow. We start by loading the base LFM2 checkpoint with QLoRA, preparing a chat-style supervised fine-tuning dataset, training a lightweight LoRA adapter using TRL and PEFT, and then merging the adapter back into the model. We also extend the workflow with DPO to show how we can improve response preference using chosen and rejected answers. At the end, we have a practical pipeline that mo",
-      "url": "https://www.marktechpost.com/2026/06/02/how-to-fine-tune-lfm2-using-qlora-and-dpo-a-complete-step-by-step-coding-tutorial-on-google-colab/",
-      "date": "2026-06-03",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "tutorial",
-        "step-by-step",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [
-        "Using QLoRA",
-        "Complete Step",
-        "Step Coding",
-        "Google Colab",
-        "Liquid AI"
-      ],
-      "new_product": true,
-      "version_bump": true,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je Using QLoRA in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e6dcd280e80a4d41"
+      "id": "aac729bf07864c06"
     }
   ],
   "for_news": [
@@ -886,6 +821,50 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "5f2022ca27584d63"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Failing grades soar with AI usage, dwindling math skills in Berkeley CS classes",
+      "text": "Failing grades soar with AI usage, dwindling math skills in Berkeley CS classes",
+      "url": "https://www.dailycal.org/news/campus/academics/failing-grades-soar-as-professors-see-greater-ai-usage-dwindling-math-skills-in-uc-berkeley/article_16fad0bf-02cb-4b8c-8d88-888ffd9f8608.html",
+      "date": "2026-06-04",
+      "engagement": 1472.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.44,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.94,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Wat Failing betekent voor de Nederlandse AI-markt.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "03ddacfa2c5a0018"
     },
     {
       "source": "likes:@NainsiDwiv50980",
@@ -942,7 +921,7 @@
       "text": "Uber's $1,500/Month AI Limit Is a Useful Signal for AI Tool Pricing",
       "url": "https://simonwillison.net/2026/Jun/3/uber-caps-usage/",
       "date": "2026-06-03",
-      "engagement": 1275.0,
+      "engagement": 1357.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -959,10 +938,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.23,
+      "score": 16.32,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.73,
+        "engagement_log": 10.82,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1068,50 +1047,6 @@
       "id": "3ff734914c0b86e9"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "DuckDuckGo search saw 28% more visits after Google said people love AI mode",
-      "text": "DuckDuckGo search saw 28% more visits after Google said people love AI mode",
-      "url": "https://www.pcgamer.com/hardware/duckduckgos-ai-free-search-saw-nearly-28-percent-more-visits-in-the-week-following-googles-insistence-that-people-love-ai-mode/",
-      "date": "2026-05-27",
-      "engagement": 1585.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.05,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.05,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "DuckDuckGo: de context die de internationale pers mist.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "d1769d19dc886986"
-    },
-    {
       "source": "tweets:@NadzuAI",
       "platform": "tweet",
       "title": "🚨 Claude just changed the game.\n\nAll you need is:\n\n💻 A laptop\n🌐 Internet connection\n⏰ 60 minutes a day\n\nThat’s enough to build a $7,200/month online income stre",
@@ -1122,9 +1057,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
+        "build a",
         "how to",
-        "build a"
+        "guide"
       ],
       "matched_tools": [
         "claude",
@@ -1176,9 +1111,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "masterclass",
+        "anatomy of",
         "how to",
-        "anatomy of"
+        "masterclass"
       ],
       "matched_tools": [
         "you.com"
@@ -1229,9 +1164,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "build your",
         "how to",
-        "hands-on",
-        "build your"
+        "hands-on"
       ],
       "matched_tools": [
         "huggingface",
@@ -1377,8 +1312,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "explained",
-        "guide",
-        "how to"
+        "how to",
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,

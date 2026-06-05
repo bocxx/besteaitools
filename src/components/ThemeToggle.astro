@@ -1,22 +1,28 @@
 ---
 /**
  * ThemeToggle — Dark/light theme switcher.
+ * Class-based binding so multiple instances (desktop + mobile menu) all work.
  * Persists choice to localStorage and syncs across Astro view transitions.
  * The initial theme is set by the inline FOUC script in Layout.astro.
+ *
+ * Props:
+ *   withLabel — render as a labeled outline pill (used in the mobile menu foot)
  */
 import { Sun, Moon } from '@lucide/astro';
+interface Props { withLabel?: boolean; }
+const { withLabel = false } = Astro.props;
 ---
 
 <button
-  class="theme-toggle"
-  id="theme-toggle"
+  class:list={['theme-toggle', { 'theme-toggle--label': withLabel }]}
   type="button"
   aria-label="Schakel tussen donker en licht thema"
   aria-pressed="true"
   title="Wissel thema"
 >
-  <Sun size={16} stroke-width={1.5} class="theme-toggle__icon theme-toggle__sun" />
-  <Moon size={16} stroke-width={1.5} class="theme-toggle__icon theme-toggle__moon" />
+  <Sun size={16} stroke-width={1.5} class="theme-toggle__icon theme-toggle__sun" aria-hidden="true" />
+  <Moon size={16} stroke-width={1.5} class="theme-toggle__icon theme-toggle__moon" aria-hidden="true" />
+  {withLabel && <span class="theme-toggle__text">Wissel thema</span>}
 </button>
 
 <style>
@@ -29,7 +35,7 @@ import { Sun, Moon } from '@lucide/astro';
     height: 34px;
     padding: 0;
     background: var(--bg-elevated);
-    border: 1px solid color-mix(in oklch, var(--text-primary) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--text-primary) 12%, transparent);
     border-radius: var(--radius-md);
     color: var(--text-muted);
     cursor: pointer;
@@ -42,7 +48,7 @@ import { Sun, Moon } from '@lucide/astro';
 
   .theme-toggle:hover {
     background: var(--bg-panel);
-    border-color: color-mix(in oklch, var(--primary-bright) 35%, transparent);
+    border-color: color-mix(in srgb, var(--primary-bright) 35%, transparent);
     color: var(--text-secondary);
   }
 
@@ -58,61 +64,62 @@ import { Sun, Moon } from '@lucide/astro';
       opacity var(--duration-fast) var(--ease-out),
       transform var(--duration-fast) var(--ease-out);
   }
+  .theme-toggle__sun { opacity: 1; transform: rotate(0deg); }
+  .theme-toggle__moon { opacity: 0; transform: rotate(-90deg); }
+  :global([data-theme="light"]) .theme-toggle__sun { opacity: 0; transform: rotate(90deg); }
+  :global([data-theme="light"]) .theme-toggle__moon { opacity: 1; transform: rotate(0deg); }
 
-  .theme-toggle__sun {
-    opacity: 1;
-    transform: rotate(0deg);
+  /* Labeled variant — outline pill with text (mobile menu foot) */
+  .theme-toggle--label {
+    width: auto;
+    height: 44px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
   }
-
-  .theme-toggle__moon {
-    opacity: 0;
-    transform: rotate(-90deg);
-  }
-
-  :global([data-theme="light"]) .theme-toggle__sun {
-    opacity: 0;
-    transform: rotate(90deg);
-  }
-
-  :global([data-theme="light"]) .theme-toggle__moon {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
+  .theme-toggle--label .theme-toggle__icon { position: static; }
+  .theme-toggle--label .theme-toggle__moon { display: none; }
+  :global([data-theme="light"]) .theme-toggle--label .theme-toggle__sun { display: none; }
+  :global([data-theme="light"]) .theme-toggle--label .theme-toggle__moon { display: inline; opacity: 1; transform: none; }
+  .theme-toggle--label .theme-toggle__sun { opacity: 1; transform: none; }
 </style>
 
 <script>
-  function initThemeToggle() {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
+  function initThemeToggles() {
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.theme-toggle'));
+    if (!buttons.length) return;
 
-    // Sync aria-pressed to the actual theme (set pre-paint by the FOUC script).
-    // aria-pressed="true" means dark mode is active.
     const syncPressed = () => {
       const isDark = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark';
-      btn.setAttribute('aria-pressed', String(isDark));
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(isDark)));
     };
     syncPressed();
 
-    if (btn.dataset.bound === '1') return;
-    btn.dataset.bound = '1';
+    buttons.forEach((btn) => {
+      if (btn.dataset.bound === '1') return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const next = (html.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        syncPressed();
 
-    btn.addEventListener('click', () => {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-
-      html.setAttribute('data-theme', next);
-      btn.setAttribute('aria-pressed', String(next === 'dark'));
-      localStorage.setItem('theme', next);
-
-      const colorScheme = document.querySelector('meta[name="color-scheme"]');
-      if (colorScheme) colorScheme.setAttribute('content', next);
-
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      if (themeColor) themeColor.setAttribute('content', next === 'light' ? '#fbf7f1' : '#0f0e0d');
+        const colorScheme = document.querySelector('meta[name="color-scheme"]');
+        if (colorScheme) colorScheme.setAttribute('content', next);
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) themeColor.setAttribute('content', next === 'light' ? '#fbf7f1' : '#0f0e0d');
+      });
     });
   }
 
-  initThemeToggle();
-  document.addEventListener('astro:after-swap', initThemeToggle);
+  initThemeToggles();
+  document.addEventListener('astro:after-swap', initThemeToggles);
+  document.addEventListener('astro:page-load', initThemeToggles);
 </script>

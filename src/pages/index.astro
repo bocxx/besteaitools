@@ -92,6 +92,22 @@ const faqJsonLd = {
   })),
 };
 
+// ItemList — laat Google de directory begrijpen als een geordende lijst tools.
+// Top 50 (op aanbevolen-volgorde) houdt de payload klein maar representatief.
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `AI-tools directory — ${tools.length}+ tools`,
+  numberOfItems: tools.length,
+  itemListOrder: 'https://schema.org/ItemListOrderDescending',
+  itemListElement: toolsSorted.slice(0, 50).map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${siteConfig.url}/ai-tools/${t.slug}`,
+    name: t.name,
+  })),
+};
+
 export const prerender = true;
 ---
 
@@ -103,6 +119,7 @@ export const prerender = true;
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
   </Fragment>
   <main class="container container-wide" style="padding-top: 80px;">
 
@@ -518,7 +535,7 @@ export const prerender = true;
     color: var(--text-muted);
     font-size: var(--text-sm);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
     white-space: nowrap;
   }
   .quick-chip:hover {

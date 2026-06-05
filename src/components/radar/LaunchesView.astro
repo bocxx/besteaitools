@@ -432,7 +432,7 @@ const activeCategories = [...categoryCounts.entries()]
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
     white-space: nowrap;
   }
 
@@ -544,7 +544,7 @@ const activeCategories = [...categoryCounts.entries()]
     border: 1px solid var(--border-subtle);
     text-decoration: none;
     color: inherit;
-    transition: all var(--transition-base);
+    transition: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base), opacity var(--transition-base);
   }
   .lr-card:hover {
     transform: translateY(-2px);

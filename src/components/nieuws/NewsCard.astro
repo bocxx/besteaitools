@@ -54,7 +54,7 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
 >
   {showImage && (
     <div class="news-card__image-wrap">
-      <img src={heroImage} alt={title} class="news-card__image" loading="lazy" />
+      <img src={heroImage} alt={title} class="news-card__image" width="400" height="180" loading="lazy" decoding="async" />
       <div class="news-card__image-overlay" />
     </div>
   )}
