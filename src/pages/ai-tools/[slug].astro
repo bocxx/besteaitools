@@ -2072,8 +2072,9 @@ export const prerender = true;
   /* TOC scroll wrapper — overflow hier, zodat tooltip-bubbles niet geclipped worden */
   .toc-wrap {
     position: sticky;
-    top: 64px;
-    z-index: var(--z-sticky);
+    /* Net onder de fixed header (pill eindigt ~67px); lagere z dan de header */
+    top: 78px;
+    z-index: var(--z-dropdown);
     margin: 0 0 var(--space-8);
     /* Fade-out aan de randen bij horizontaal scrollen */
     mask-image: linear-gradient(
@@ -2085,14 +2086,20 @@ export const prerender = true;
     );
   }
 
+  /* Ankers landen onder de fixed header + sticky TOC, niet erachter */
+  #verdict, #features, #getting-started, #pricing, #specs, #leren, #social, #faq {
+    scroll-margin-top: 138px;
+  }
+
   .toc {
     display: flex;
     gap: var(--space-1);
-    padding: var(--space-2) var(--space-4);
-    background: color-mix(in oklch, var(--bg-elevated) 90%, transparent);
+    padding: var(--space-2) var(--space-3);
+    /* Steviger zodat content er niet doorheen bleedt; strakker (geen pill) */
+    background: color-mix(in srgb, var(--bg-elevated) 96%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-md);
     overflow-x: auto;
     overflow-y: visible;
     scrollbar-width: none;
