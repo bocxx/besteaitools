@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-05T05:36:01.620024",
+  "generated_at": "2026-06-05T17:36:59.261891",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 14,
-    "for_news": 15,
-    "rejected_lang": 150,
+    "for_news": 16,
+    "rejected_lang": 163,
     "already_covered": 0,
-    "total_scanned": 4699
+    "total_scanned": 4706
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "tutorial",
-        "step-by-step"
+        "step-by-step",
+        "how to"
       ],
       "matched_tools": [
         "gemini",
@@ -141,8 +141,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
-        "step by step"
+        "step by step",
+        "tutorial"
       ],
       "matched_tools": [
         "chatgpt",
@@ -193,9 +193,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "tutorial",
         "guide",
-        "tutorial"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -318,8 +318,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -630,18 +630,23 @@
       "id": "b9ab1c0520f204a9"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "GPT-5.5",
-      "text": "GPT-5.5",
-      "url": "https://openai.com/index/introducing-gpt-5-5/",
-      "date": "2026-04-23",
-      "engagement": 2601.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
+      "source": "articles:HackerNoon",
+      "platform": "article",
+      "title": "The Warm Handoff: How to Transfer an AI Voice Agent to a Human Without Losing Context",
+      "text": "<p>Almost every \"build an AI receptionist\" tutorial ends the moment the AI picks up the phone. Production agents fail somewhere those tutorials never reach: handing the call to a human. The caller has spent ninety seconds explaining that they're calling about a crown that fell out, they have a flight tomorrow, and their insurance changed last month — and then the agent says \"let me transfer you,\" the hold music plays, and a front-desk staffer answers with \"Hi, how can I help you?\" The caller has to start over. That's a <strong>cold transfer</strong>, and it's the single fastest way to make an ",
+      "url": "https://hackernoon.com/the-warm-handoff-how-to-transfer-an-ai-voice-agent-to-a-human-without-losing-context?source=rss",
+      "date": "2026-06-05",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "tutorial",
+        "build an",
+        "how to"
+      ],
       "matched_tools": [
-        "chatgpt"
+        "make",
+        "you.com"
       ],
       "feature_update": false,
       "new_products": [],
@@ -653,15 +658,15 @@
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "hackernews"
+        "article"
       ],
-      "score": 16.3,
+      "score": 15.9,
       "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.8,
-        "source_weight": 3.0,
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 0.0,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -670,10 +675,10 @@
         "media": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "chatgpt versus de alternatieven — welke past bij jou?",
+      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "5fd20d07562884b6"
+      "id": "30ef897d6d2edf94"
     },
     {
       "source": "articles:The Practical Developer",
@@ -687,8 +692,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "build your",
-        "build an",
-        "from scratch"
+        "from scratch",
+        "build an"
       ],
       "matched_tools": [
         "mcp",
@@ -738,8 +743,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how-to",
-        "how to",
-        "guide"
+        "guide",
+        "how to"
       ],
       "matched_tools": [
         "you.com"
@@ -829,7 +834,7 @@
       "text": "Failing grades soar with AI usage, dwindling math skills in Berkeley CS classes",
       "url": "https://www.dailycal.org/news/campus/academics/failing-grades-soar-as-professors-see-greater-ai-usage-dwindling-math-skills-in-uc-berkeley/article_16fad0bf-02cb-4b8c-8d88-888ffd9f8608.html",
       "date": "2026-06-04",
-      "engagement": 1472.0,
+      "engagement": 1560.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -846,10 +851,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.44,
+      "score": 16.53,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.94,
+        "engagement_log": 11.03,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -921,7 +926,7 @@
       "text": "Uber's $1,500/Month AI Limit Is a Useful Signal for AI Tool Pricing",
       "url": "https://simonwillison.net/2026/Jun/3/uber-caps-usage/",
       "date": "2026-06-03",
-      "engagement": 1357.0,
+      "engagement": 1367.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -938,10 +943,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.32,
+      "score": 16.33,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.82,
+        "engagement_log": 10.83,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1058,8 +1063,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "build a",
-        "how to",
-        "guide"
+        "guide",
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1112,8 +1117,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "anatomy of",
-        "how to",
-        "masterclass"
+        "masterclass",
+        "how to"
       ],
       "matched_tools": [
         "you.com"
@@ -1154,6 +1159,57 @@
       "id": "ccc365abfef5c0ac"
     },
     {
+      "source": "linkedin:OluwaMayowa Ogbeide",
+      "platform": "linkedin",
+      "title": "AgentCamp Lagos 2026 was everything. 🙌\n\nTo everyone who showed up, asked questions, and built alongside me during the session — thank you. That energy in the ro",
+      "text": "AgentCamp Lagos 2026 was everything. 🙌\n\nTo everyone who showed up, asked questions, and built alongside me during the session — thank you. That energy in the room was real.\n\nAnd to the Global AI Community Lagos team — thank you for putting this together and for having me. Events like this remind me why community work matters.\n\nI promised a build guide, and I'm keeping that promise. The full interactive walkthrough is now live every step, every config, every screenshot from the session.\n\nWhether you were in the room and want to revisit, or you missed it and still want to build your own AI-power",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7467019055615430656/",
+      "date": "2026-06-05",
+      "engagement": 30.0,
+      "source_weight": 1.8,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "build your",
+        "guide",
+        "walkthrough"
+      ],
+      "matched_tools": [
+        "together ai",
+        "you.com"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "linkedin"
+      ],
+      "score": 15.45,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.15,
+        "source_weight": 1.8,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "together ai: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "f400260c2e0c22d7"
+    },
+    {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
       "title": "40% of enterprise applications now run AI agents, and that number's only growing.\n\nHere's what's happening in 2026: \n\n➤ Gartner reports that AI agents have jump",
@@ -1164,9 +1220,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "hands-on",
         "build your",
-        "how to",
-        "hands-on"
+        "how to"
       ],
       "matched_tools": [
         "huggingface",
@@ -1253,6 +1309,54 @@
       "id": "bcb0d22b7cb246e0"
     },
     {
+      "source": "articles:Artificial Intelligence on Medium",
+      "platform": "article",
+      "title": "How to Choose Between AI and Data Science: Complete Beginner Roadmap (2026 Guide)",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@shivakumark_32099/how-to-choose-between-ai-and-data-science-complete-beginner-roadmap-2026-guide-f58691e96523?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/1536/1*7rrTXNJC22sfM40HSah35Q.png\" width=\"1536\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Artificial Intelligence (AI) and Data Science are two of the most in-demand career paths in 2026. Many students and professionals find…</p><p data-sanitized-class=\"medium-feed-link\"",
+      "url": "https://medium.com/@shivakumark_32099/how-to-choose-between-ai-and-data-science-complete-beginner-roadmap-2026-guide-f58691e96523?source=rss------artificial_intelligence-5",
+      "date": "2026-06-05",
+      "engagement": 41.25,
+      "source_weight": 0.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how-to",
+        "guide",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.62,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.62,
+        "source_weight": 0.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "76b46f47382cc508"
+    },
+    {
       "source": "articles:Towards Data Science - Medium",
       "platform": "article",
       "title": "FPN Paper Walkthrough: Leveraging the Internal Pyramid",
@@ -1264,8 +1368,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "from scratch",
-        "how to",
-        "walkthrough"
+        "walkthrough",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1301,26 +1405,26 @@
       "id": "48f06b9f4c8125c8"
     },
     {
-      "source": "articles:The Practical Developer",
+      "source": "articles:Programming on Medium",
       "platform": "article",
-      "title": "URL Encoding Explained: Special Characters and How to Handle Them",
-      "text": "<h1>\n  \n  \n  URL Encoding Explained: Special Characters and How to Handle Them\n</h1>\n\n<div data-sanitized-class=\"highlight js-code-highlight\">\n<pre data-sanitized-class=\"highlight plaintext\"><code>    📅 May 25, 2026⏱️ 7 min read🔗 Network Tools\n\n\n  Every character in a URL has a meaning. Spaces, ampersands, question marks, and non-ASCII characters must be encoded or they'll break your links. This guide explains how URL encoding works and when to use it.\n\n  ## Why URLs Need Encoding\n\n  URLs were designed to be read by computers, not humans. A URL like `https://example.com/search?q=hello world` c",
-      "url": "https://dev.to/shuanghu_zhao_d6ead357228/url-encoding-explained-special-characters-and-how-to-handle-them-5a93",
-      "date": "2026-06-02",
-      "engagement": 50.0,
-      "source_weight": 1.5,
+      "title": "AI Engineer Roadmap 2026: The Complete Guide From Beginner to Job-Ready",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@dadhishankar1/ai-engineer-roadmap-2026-the-complete-guide-from-beginner-to-job-ready-eb7df4698fa2?source=rss------programming-5\"><img src=\"https://cdn-images-1.medium.com/max/600/0*wYWnzNzujjbvuAz5\" width=\"600\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">If I were starting from scratch in 2026, this is exactly the roadmap I would follow to become an AI Engineer.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@dadhishankar1/ai-engineer-roadma",
+      "url": "https://medium.com/@dadhishankar1/ai-engineer-roadmap-2026-the-complete-guide-from-beginner-to-job-ready-eb7df4698fa2?source=rss------programming-5",
+      "date": "2026-06-05",
+      "engagement": 36.95,
+      "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "explained",
-        "how to",
-        "guide"
+        "from scratch",
+        "guide",
+        "complete guide"
       ],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": false,
+      "paywall": true,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1328,12 +1432,12 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 14.4,
+      "score": 14.45,
       "score_breakdown": {
         "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 0.0,
+        "engagement_log": 5.45,
+        "source_weight": 0.5,
+        "ai_relevance": 1.5,
         "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
@@ -1343,10 +1447,10 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je URL Encoding Explained in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "Waarom AI Engineer Roadmap er nu toe doet — en wat je ermee moet.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "bd90fb59c75b029a"
+      "id": "cfbf8be2d570602f"
     },
     {
       "source": "likes:@Nick_zv_",
@@ -1439,52 +1543,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "5224c9fda4838741"
-    },
-    {
-      "source": "likes:@markgadala",
-      "platform": "twitter_likes",
-      "title": "Wow. This AI remake of Alice in Wonderland looks better than the original. Credit: Ghost Lite https://t.co/KdOk1y4dPJ",
-      "text": "Wow. This AI remake of Alice in Wonderland looks better than the original. Credit: Ghost Lite https://t.co/KdOk1y4dPJ",
-      "url": "https://twitter.com/markgadala/status/2060915166372352350",
-      "date": "2026-05-31",
-      "engagement": 50.0,
-      "source_weight": 4.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "author": "markgadala",
-      "media_url": "https://x.com/markgadala/status/2060915166372352350/video/1",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "twitter_likes"
-      ],
-      "score": 14.4,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 4.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 2.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom Wow. This AI er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8c4fdac24559b39c"
     }
   ]
 }
