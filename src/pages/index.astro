@@ -15,7 +15,7 @@ import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
 import { getAllTools } from '../lib/tools-engine';
 import { toolCategories } from '../lib/tools-schema';
-import { Search, ShieldCheck, Zap, UserX, Gift, Languages } from '@lucide/astro';
+import { Search } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
@@ -152,14 +152,8 @@ export const prerender = true;
       </p>
     </header>
 
-    <!-- Quick-filters: helpen kiezen op je eisen -->
-    <div class="quick-row" role="group" aria-label="Snelfilters">
-      <button class="quick-chip" data-quick="trial" title="Gratis of freemium-plan beschikbaar"><Gift size={13} stroke-width={1.5} /> Gratis proberen</button>
-      <button class="quick-chip" data-quick="nl" title="Ondersteunt Nederlands"><Languages size={13} stroke-width={1.5} /> Nederlandstalig</button>
-      <button class="quick-chip" data-quick="gdpr" title="AVG-/GDPR-klaar"><ShieldCheck size={13} stroke-width={1.5} /> AVG-klaar</button>
-      <button class="quick-chip" data-quick="nodev" title="Geen developer nodig"><UserX size={13} stroke-width={1.5} /> Geen developer</button>
-      <button class="quick-chip" data-quick="fast" title="Eerste resultaat in minuten of uren"><Zap size={13} stroke-width={1.5} /> Snel inzetbaar</button>
-    </div>
+    {/* Quick-filters tijdelijk op hold — werken nog niet goed genoeg.
+        Markup verwijderd; de filterlogica negeert lege activeQuick. */}
 
     <!-- Categorie-filter + sorteren -->
     <nav class="filter-bar" aria-label="Filter op categorie en sorteer">
