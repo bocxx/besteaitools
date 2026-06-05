@@ -15,7 +15,7 @@ import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
 import { getAllTools } from '../lib/tools-engine';
 import { toolCategories } from '../lib/tools-schema';
-import { Search, ShieldCheck, Zap, UserX, Gift, Languages, SlidersHorizontal } from '@lucide/astro';
+import { Search, ShieldCheck, Zap, UserX, Gift, Languages } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
@@ -175,23 +175,6 @@ export const prerender = true;
             <span class="cat-chip__count">{count}</span>
           </button>
         ))}
-      </div>
-
-      <!-- Sorteren -->
-      <div class="refine-wrap" id="refine-wrap">
-        <button class="refine-btn" id="refine-btn" aria-expanded="false">
-          <SlidersHorizontal size={13} stroke-width={1.5} />
-          Sorteer
-          <span class="refine-chevron">▾</span>
-        </button>
-        <div class="refine-panel" id="refine-panel" hidden>
-          <p class="refine-section-label">Sorteer op</p>
-          <div class="refine-opts">
-            <button class="refine-opt refine-opt--active" data-sort="buzz">Aanbevolen</button>
-            <button class="refine-opt" data-sort="ttv">Snelst inzetbaar</button>
-            <button class="refine-opt" data-sort="alpha">A → Z</button>
-          </div>
-        </div>
       </div>
 
     </nav>

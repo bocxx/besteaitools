@@ -110,27 +110,29 @@ function isActive(href: string) {
     left: 0;
     right: 0;
     z-index: var(--z-sticky, 200);
-    padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+    /* Inline padding = content-container padding (space-6) zodat de header
+       even breed is en gelijk uitlijnt met de rest van de pagina. */
+    padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
     background: transparent;
     border: none;
     transition: padding var(--transition-base, 240ms ease-in-out);
   }
 
-  /* Floating rounded pill navbar */
+  /* Navbar — even breed als de content, strak (weinig afronding) */
   .header-container {
-    max-width: 1120px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4, 1rem);
     padding: var(--space-2, 0.5rem) var(--space-2, 0.5rem) var(--space-2, 0.5rem) var(--space-4, 1rem);
-    background: var(--bg-glass, rgba(28, 24, 22, 0.72));
+    background: var(--bg-glass, rgba(20, 20, 20, 0.72));
     backdrop-filter: blur(18px) saturate(1.4);
     -webkit-backdrop-filter: blur(18px) saturate(1.4);
     border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
-    border-radius: var(--radius-full, 9999px);
-    box-shadow: var(--shadow-md), inset 0 1px 0 color-mix(in oklch, var(--text-primary) 5%, transparent);
+    border-radius: var(--radius-md, 0.375rem);
+    box-shadow: var(--shadow-md), inset 0 1px 0 color-mix(in srgb, var(--text-primary) 5%, transparent);
     transition: box-shadow var(--transition-base, 240ms ease-in-out),
                 border-color var(--transition-base, 240ms ease-in-out);
   }
@@ -164,10 +166,11 @@ function isActive(href: string) {
   }
 
   .logo-text {
-    font-family: var(--font-logo, 'Space Grotesk Variable', system-ui, sans-serif);
-    font-size: clamp(1.1rem, 3vw, 1.3rem);
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    /* Strak en clean — Geist (niet het display-font Boldonse) */
+    font-family: var(--font-body, system-ui, sans-serif);
+    font-size: clamp(1.05rem, 3vw, 1.25rem);
+    font-weight: var(--font-semibold, 600);
+    letter-spacing: -0.02em;
     line-height: 1;
     color: var(--text-primary);
   }
@@ -290,8 +293,8 @@ function isActive(href: string) {
   .mobile-nav-link--cta {
     justify-content: center;
     color: var(--primary-bright);
-    border-color: color-mix(in srgb, var(--primary-bright) 35%, transparent);
-    background: color-mix(in srgb, var(--primary-bright) 10%, var(--bg-elevated));
+    border-color: color-mix(in srgb, var(--primary-bright) 45%, transparent);
+    background: transparent;
     font-weight: var(--font-semibold);
   }
   .mobile-nav__foot {
@@ -391,17 +394,17 @@ function isActive(href: string) {
     text-decoration: none;
     font-size: var(--text-lg, 1.125rem);
     font-weight: var(--font-medium, 500);
-    border-radius: var(--radius-lg, 0.75rem);
-    background: var(--bg-elevated, oklch(14% 0.01 15));
+    border-radius: var(--radius-md, 0.375rem);
+    /* Geen achtergrondvulling — alleen een border, subtiel op hover */
+    background: transparent;
     border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
-    transition: background var(--transition-fast, 150ms ease-out),
+    transition: color var(--transition-fast, 150ms ease-out),
                 border-color var(--transition-fast, 150ms ease-out);
   }
 
   .mobile-nav-link:hover,
   .mobile-nav-link:focus {
-    background: var(--bg-panel, oklch(17% 0.012 15));
-    border-color: var(--border-strong, rgba(255, 255, 255, 0.12));
+    border-color: var(--border-strong, rgba(255, 255, 255, 0.18));
   }
 
   .mobile-nav-link:focus-visible {
@@ -411,8 +414,8 @@ function isActive(href: string) {
 
   .mobile-nav-link--active {
     color: var(--primary-bright);
-    border-color: color-mix(in oklch, var(--primary-bright) 35%, transparent);
-    background: color-mix(in oklch, var(--primary-bright) 12%, var(--bg-elevated));
+    border-color: color-mix(in srgb, var(--primary-bright) 45%, transparent);
+    background: transparent;
   }
 
   .mobile-nav-link--github {
