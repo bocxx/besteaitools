@@ -1,0 +1,80 @@
+{
+  "name": "Open Interpreter",
+  "category": "coding",
+  "websiteUrl": "https://github.com/OpenInterpreter/open-interpreter",
+  "shortDescription": "Open-source agent die code schrijft én direct op je eigen machine uitvoert",
+  "headlineValueProp": "De code-interpreter-loop van ChatGPT, maar dan op je eigen computer met toegang tot je echte bestanden",
+  "longDescription": "Open Interpreter geeft een taalmodel een natural-language interface naar je computer: het schrijft Python, shell of JavaScript, voert die code lokaal uit, leest de output en itereert tot de taak klaar is. Het verschil met de code-interpreter in ChatGPT is dat alles op jouw machine draait — met toegang tot je echte bestanden, netwerk en geïnstalleerde software, zonder sandbox-limieten op uploadgrootte of internettoegang. Je kiest zelf welk model erachter zit: een API-model zoals GPT of Claude, of volledig lokaal via Ollama. Sinds de Computer Use-updates kan het project ook GUI's aansturen met vision-modellen, waarmee het workflows automatiseert die code, web en desktop-software combineren. Voor elke uitvoering vraagt het standaard om jouw bevestiging.",
+  "verdict": "Open Interpreter was de eerste die de code-executie-loop lokaal bracht en blijft de meest open variant: elk model, elke taal, je eigen machine. Inmiddels hebben Claude Code en andere terminal-agents dat concept verfijnder uitgewerkt, met betere codebase-navigatie en stabielere tooling. Kies Open Interpreter vooral als modelvrijheid of volledig lokaal draaien je harde eis is.",
+  "whyListed": "Het project dat lokale code-executie door LLM's populair maakte en nog steeds de referentie is voor wie een open, modelagnostisch alternatief zoekt voor commerciële terminal-agents.",
+  "bestFor": "Developers en tinkerers die een LLM taken op hun eigen machine willen laten uitvoeren, met eigen modelkeuze",
+  "primaryJobsToBeDone": [
+    "Bestanden op je machine bulksgewijs verwerken via een opdracht in gewone taal (hernoemen, converteren, opschonen)",
+    "Data analyseren en plotten zonder de sandbox-limieten van ChatGPT's code interpreter",
+    "Systeemtaken automatiseren door de agent shell-commando's te laten schrijven en draaien",
+    "Volledig offline een code-agent draaien met een lokaal model via Ollama"
+  ],
+  "antiUseCases": [
+    "Productiewerk in een grote bestaande codebase — Claude Code of Cursor navigeren en refactoren daar veel beter",
+    "Machines met gevoelige data waar je geen LLM-gestuurde code-executie wilt toestaan, zelfs niet met bevestigingsstap",
+    "Teams die een onderhouden, commercieel ondersteund product nodig hebben — de ontwikkeling is community-gedreven en schoksgewijs"
+  ],
+  "useCases": [
+    "Een map vol documenten laten samenvatten, converteren of herstructureren",
+    "Snelle data-analyse op lokale CSV's en databases zonder upload",
+    "GUI-automatisering van apps zonder API via Computer Use",
+    "Experimenteren met agent-loops op lokale open-source modellen"
+  ],
+  "strengths": [
+    "Draait op je eigen machine: echte bestanden, geen upload-limieten, geen sandbox",
+    "Volledig modelagnostisch — OpenAI, Anthropic of lokaal via Ollama",
+    "Gratis en open source, alleen API-kosten van je gekozen model",
+    "Vraagt standaard bevestiging voor elke code-uitvoering"
+  ],
+  "limitations": [
+    "Code-uitvoering op je echte systeem blijft riskanter dan een sandbox — fouten raken je echte bestanden",
+    "Minder geschikt voor meerstaps werk in grote codebases dan moderne terminal-agents",
+    "Kwaliteit hangt sterk af van het gekozen model; lokale modellen leveren merkbaar zwakkere resultaten"
+  ],
+  "bestAlternative": "claude-code",
+  "mentionAliases": ["openinterpreter"],
+  "pricing": "Gratis en open source. Je betaalt alleen de API-kosten van het model dat je koppelt; met een lokaal model via Ollama is het volledig gratis.",
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "openSource": true,
+  "tags": ["open-source", "cli", "code-executie", "lokale-ai", "ai-agent"],
+  "draft": false,
+  "businessFunctions": ["development"],
+  "keyFeatures": [
+    {
+      "title": "Lokale executie-loop",
+      "description": "Schrijft code, voert die uit op je machine, leest de output en itereert tot de taak af is.",
+      "group": "core"
+    },
+    {
+      "title": "Meertalige runtime",
+      "description": "Voert Python, shell-scripts en JavaScript uit — wat de taak ook vraagt.",
+      "group": "core"
+    },
+    {
+      "title": "Vrije modelkeuze",
+      "description": "Koppel GPT, Claude of een lokaal model via Ollama; geen vendor lock-in op het model.",
+      "group": "core"
+    },
+    {
+      "title": "Bevestiging per stap",
+      "description": "Vraagt standaard jouw goedkeuring voordat code daadwerkelijk wordt uitgevoerd.",
+      "group": "core"
+    },
+    {
+      "title": "Computer Use (GUI)",
+      "description": "Stuurt met vision-modellen ook desktop-apps aan die geen API hebben.",
+      "group": "beta"
+    },
+    {
+      "title": "Toegang tot je echte omgeving",
+      "description": "Werkt met je lokale bestanden, netwerk en geïnstalleerde tools — geen sandbox-beperkingen.",
+      "group": "output"
+    }
+  ]
+}

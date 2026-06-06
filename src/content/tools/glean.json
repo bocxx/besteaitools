@@ -1,0 +1,80 @@
+{
+  "name": "Glean",
+  "category": "search",
+  "websiteUrl": "https://www.glean.com/",
+  "shortDescription": "Enterprise search en AI-assistent over al je werk-apps heen",
+  "headlineValueProp": "Eén zoekbalk en AI-assistent over Slack, Google Workspace, Jira, Salesforce en honderd andere werk-apps — met respect voor wie wat mag zien",
+  "longDescription": "Glean indexeert de content van je hele organisatie — documenten, tickets, chats, wiki's, CRM-data — via ruim honderd connectors en maakt die doorzoekbaar vanuit één interface. Het cruciale verschil met losse AI-chatbots: Glean bouwt per organisatie een knowledge graph en handhaaft bestaande toegangsrechten, zodat iedereen alleen vindt wat hij toch al mocht zien. Bovenop die zoeklaag draait een AI-assistent die vragen beantwoordt met bedrijfscontext en bronvermelding ('wat is ons parental leave-beleid?', 'wat is de status van project X?'), plus een agent-platform om workflows op die bedrijfskennis te bouwen. Glean is nadrukkelijk een enterprise-product: prijzen zijn niet publiek, contracten beginnen in de praktijk rond de honderd seats, en implementatie vraagt serieuze IT-betrokkenheid voor connectors en permissies.",
+  "verdict": "Glean is de maatstaf in enterprise search: de permission-aware indexering over honderd-plus bronnen is iets wat losse chatbots met een handvol connectors niet evenaren. Daar staat tegenover dat instappen duur en traag is — geen publieke prijzen, contracten vanaf zo'n honderd seats en een implementatietraject — waardoor het voor mkb en kleine teams praktisch buiten bereik ligt.",
+  "whyListed": "Marktleider in enterprise search met AI en een van de waardevolste private AI-bedrijven; de referentie waar elke 'chat met je bedrijfsdata'-oplossing tegen wordt afgezet.",
+  "bestFor": "Grote organisaties waar kennis versnipperd zit over tientallen tools en zoeken naar interne informatie dagelijks tijd kost",
+  "primaryJobsToBeDone": [
+    "Interne informatie terugvinden over alle werk-apps heen vanuit één zoekbalk",
+    "Vragen over beleid, projecten en klanten laten beantwoorden met bronvermelding uit je eigen systemen",
+    "Nieuwe medewerkers sneller laten landen door zelfbediening op bedrijfskennis",
+    "AI-agents bouwen die taken uitvoeren op basis van interne kennis en data"
+  ],
+  "antiUseCases": [
+    "Kleine bedrijven en teams onder de ~100 medewerkers: het contractmodel en de implementatie zijn daar niet op gebouwd",
+    "Organisaties die snel iets willen testen — verwacht een salestraject en weken tot maanden implementatie, geen self-service trial",
+    "Wie vooral het open web wil doorzoeken; daarvoor is Perplexity het juiste gereedschap"
+  ],
+  "useCases": [
+    "Bedrijfsbrede zoekfunctie over documenten, chats, tickets en CRM",
+    "AI-assistent met bedrijfscontext voor support- en salesteams",
+    "Onboarding en kennisbeheer in grote, gedistribueerde organisaties",
+    "Interne agents die terugkerende kenniswerk-taken automatiseren"
+  ],
+  "strengths": [
+    "Ruim honderd connectors naar gangbare enterprise-apps",
+    "Permission-aware: zoekresultaten respecteren bestaande toegangsrechten per gebruiker",
+    "Knowledge graph per organisatie maakt resultaten relevanter dan platte zoekindexen",
+    "Antwoorden met bronvermelding uit je eigen systemen"
+  ],
+  "limitations": [
+    "Geen publieke prijzen of self-service; alles loopt via sales met custom quotes",
+    "Hoge totaalkosten: gerapporteerde contracten lopen van tienduizenden tot honderdduizenden euro's per jaar",
+    "Implementatie en connector-beheer vragen blijvende IT-capaciteit"
+  ],
+  "bestAlternative": "notion-ai",
+  "mentionAliases": ["glean ai", "glean search"],
+  "pricing": "Geen publieke prijslijst; alles via sales. In de praktijk gerapporteerd: circa $40-50 per gebruiker per maand basis plus ~$15 voor AI-features, met contracten vanaf ongeveer 100 seats (~$60.000 per jaar).",
+  "pricingModel": "enterprise",
+  "difficulty": "intermediate",
+  "openSource": false,
+  "tags": ["enterprise-search", "kennisbeheer", "ai-assistent", "agents", "saas"],
+  "draft": false,
+  "businessFunctions": ["operations", "development", "sales", "hr", "klantenservice"],
+  "keyFeatures": [
+    {
+      "title": "100+ connectors",
+      "description": "Indexeert Slack, Google Workspace, Jira, Confluence, Salesforce, GitHub en tientallen andere bronnen.",
+      "group": "integration"
+    },
+    {
+      "title": "Permission-aware search",
+      "description": "Zoekresultaten respecteren per gebruiker de toegangsrechten die in de bronsystemen gelden.",
+      "group": "core"
+    },
+    {
+      "title": "AI-assistent met bedrijfscontext",
+      "description": "Beantwoordt vragen op basis van je interne data, met bronvermelding per antwoord.",
+      "group": "core"
+    },
+    {
+      "title": "Knowledge graph",
+      "description": "Bouwt per organisatie een graaf van mensen, projecten en content voor relevantere resultaten.",
+      "group": "core"
+    },
+    {
+      "title": "Agent-platform",
+      "description": "Bouw agents die workflows uitvoeren bovenop je bedrijfskennis en gekoppelde apps.",
+      "group": "core"
+    },
+    {
+      "title": "Enterprise governance",
+      "description": "SSO, audit logs en compliance-certificeringen voor grootschalige uitrol.",
+      "group": "enterprise"
+    }
+  ]
+}

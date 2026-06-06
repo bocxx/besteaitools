@@ -1,0 +1,90 @@
+{
+  "name": "Langflow",
+  "category": "agents",
+  "websiteUrl": "https://github.com/langflow-ai/langflow",
+  "shortDescription": "Open-source visuele builder voor agents en RAG-pipelines",
+  "headlineValueProp": "Sleep modellen, prompts, retrievers en tools op een canvas en deploy het resultaat als REST- of MCP-endpoint",
+  "longDescription": "Langflow is een open-source visuele canvas voor het bouwen van LLM-workflows, agents en RAG-pipelines. Je sleept nodes — modellen, prompts, retrievers, vectorstores, tools, agents — op een canvas, verbindt ze en test direct in een playground. Meer dan 150 voorgebouwde componenten dekken de gangbare RAG- en agent-patronen zonder dat je orkestratiecode schrijft; waar nodig schrijf je eigen Python-componenten. Het onderscheidende: elke flow is direct te deployen als REST-API of als MCP-server, waardoor je visueel gebouwde agents als tool in andere applicaties en IDE's prikt. Versie 1.9 (2026) voegde AI-geassisteerde componentgeneratie en flow-beheer buiten de visuele builder toe. Let op: de door DataStax gehoste cloudversie is in april 2026 stopgezet — het open-source-project draait onverminderd door, maar hosting regel je sindsdien zelf (lokaal, Docker of eigen cloud).",
+  "verdict": "Langflow is de meest complete open-source visuele agent-builder: het componentenaanbod, de LangChain/LangGraph-basis en vooral de export naar REST- én MCP-endpoints maken het meer dan een prototyping-speeltje. De nuance: sinds de stopzetting van de DataStax-cloudversie in april 2026 ben je voor productie volledig op eigen hosting aangewezen, en dat maakt de afstand tot 'in productie draaien' groter dan het canvas suggereert.",
+  "whyListed": "Samen met Flowise dé referentie voor visueel agent- en RAG-bouwen op open source; de MCP-server-export maakt het bovendien een brug tussen visuele flows en het bredere agent-ecosysteem.",
+  "bestFor": "Developers en technische teams die agents en RAG-pipelines visueel willen prototypen en als API of MCP-tool willen ontsluiten.",
+  "primaryJobsToBeDone": [
+    "Een RAG-pipeline visueel samenstellen uit retrievers, vectorstores en prompts",
+    "Een agent-workflow prototypen en direct testen in de playground",
+    "Flows deployen als REST-API of MCP-server voor gebruik in andere applicaties",
+    "Niet-developers in het team laten meebouwen aan LLM-workflows"
+  ],
+  "antiUseCases": [
+    "Wie een gehoste, klikklare oplossing zoekt — de DataStax-cloudversie is sinds april 2026 gestopt; je host zelf",
+    "Complexe productiesystemen met fijnmazige controle over state en errors — pure code (LangGraph, eigen stack) blijft daar flexibeler",
+    "Niet-technische teams zonder iemand die Python en deployment beheerst"
+  ],
+  "useCases": [
+    "Interne kennisbank-chatbot bouwen op eigen documenten",
+    "Agent-flows als MCP-tools aanbieden aan Claude Code of andere MCP-clients",
+    "Snel meerdere RAG-varianten naast elkaar testen voordat je er één productiewaardig maakt"
+  ],
+  "strengths": [
+    "150+ voorgebouwde componenten voor RAG- en agent-patronen",
+    "Elke flow direct te ontsluiten als REST-API of MCP-server",
+    "Open source en zelf te hosten; eigen Python-componenten mogelijk",
+    "AI-geassisteerde componentgeneratie sinds versie 1.9"
+  ],
+  "limitations": [
+    "Geen officiële gehoste versie meer sinds de DataStax-shutdown (april 2026)",
+    "Visuele flows worden bij grote projecten onoverzichtelijker dan code",
+    "Productie-deployment (schaling, monitoring, auth) moet je zelf inrichten"
+  ],
+  "bestAlternative": "flowise",
+  "mentionAliases": [
+    "lang flow"
+  ],
+  "pricing": "Gratis open-source (zelf hosten: lokaal, Docker of eigen cloud); je betaalt alleen je eigen LLM- en infrakosten",
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "openSource": true,
+  "tags": [
+    "open-source",
+    "visual-builder",
+    "rag",
+    "agents",
+    "low-code"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Visueel canvas",
+      "description": "Sleep modellen, prompts, retrievers, tools en agents op een canvas en verbind ze tot een flow.",
+      "group": "core"
+    },
+    {
+      "title": "150+ componenten",
+      "description": "Voorgebouwde bouwstenen voor de gangbare RAG- en agent-patronen, uitbreidbaar met eigen Python.",
+      "group": "core"
+    },
+    {
+      "title": "MCP-server-export",
+      "description": "Publiceer elke flow als MCP-server zodat IDE's en agents hem als tool kunnen aanroepen.",
+      "group": "integration"
+    },
+    {
+      "title": "REST-API-deployment",
+      "description": "Elke flow wordt met één stap een API-endpoint voor je eigen applicaties.",
+      "group": "output"
+    },
+    {
+      "title": "Playground",
+      "description": "Test flows direct in de browser tijdens het bouwen, zonder aparte testopstelling.",
+      "group": "core"
+    },
+    {
+      "title": "AI-geassisteerd bouwen",
+      "description": "Genereer componenten met AI-hulp en beheer flows programmatisch (sinds v1.9).",
+      "group": "beta"
+    }
+  ]
+}

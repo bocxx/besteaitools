@@ -1,0 +1,89 @@
+{
+  "name": "Microsoft Scout",
+  "category": "agents",
+  "websiteUrl": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+  "shortDescription": "Always-on persoonlijke agent voor Microsoft 365, gebouwd op OpenClaw",
+  "headlineValueProp": "Een agent die permanent meedraait in Teams, Outlook en SharePoint en werk oppakt zonder dat je er telkens om hoeft te vragen",
+  "longDescription": "Microsoft Scout is de eerste 'Autopilot' van Microsoft: een always-on agent die op 2 juni 2026 werd aangekondigd en draait bovenop de open-source OpenClaw-technologie. Anders dan Copilot, dat wacht op een prompt, blijft Scout actief op de achtergrond. Hij koppelt aan Teams, Outlook, OneDrive en SharePoint en bouwt via een systeem genaamd Work IQ context op over je prioriteiten: hij plant meetings over tijdzones, bereidt vergadermateriaal voor, blokkeert agendatijd voor deadlines en signaleert vastgelopen beslissingen. Elke Scout-agent krijgt een eigen, gegoverneerde Entra-identiteit met credentials die per taak gescoped zijn en uit logs worden geredigeerd. Scout is op dit moment een experimentele release, alleen beschikbaar voor klanten van Microsofts Frontier-programma (private preview).",
+  "verdict": "Scout is de eerste serieuze poging om de self-hosted OpenClaw-formule in enterprise-governance te gieten: per agent een eigen Entra-identiteit en gescopete credentials lossen precies het bezwaar op dat IT-afdelingen tegen always-on agents hebben. Maar het is een experimentele preview binnen het Frontier-programma — voor productiegebruik of een koopbeslissing is het in juni 2026 simpelweg te vroeg.",
+  "whyListed": "Met Scout maakt Microsoft van de OpenClaw-hype een officiële productcategorie ('Autopilots') binnen Microsoft 365. Dat een hyperscaler op open-source agent-tech bouwt, markeert een omslagpunt in de agent-markt.",
+  "bestFor": "Organisaties die al diep in Microsoft 365 zitten en willen experimenteren met een proactieve agent in plaats van een prompt-gestuurde copilot.",
+  "primaryJobsToBeDone": [
+    "Meetings over tijdzones heen laten inplannen en voorbereiden zonder zelf te schuiven",
+    "Agendatijd automatisch laten blokkeren voor aankomende deliverables",
+    "Vastgelopen beslissingen en risico's in lopende projecten laten signaleren",
+    "Context over je werkweek laten opbouwen zodat de agent weet wat er moet gebeuren"
+  ],
+  "antiUseCases": [
+    "Organisaties buiten het Microsoft Frontier-programma — Scout is nog niet algemeen beschikbaar",
+    "Teams die buiten Microsoft 365 werken (Google Workspace, Slack-first) — Scout leeft in Teams, Outlook en SharePoint",
+    "Wie nu een stabiele, uitontwikkelde agent voor productie zoekt — dit is een experimentele release"
+  ],
+  "useCases": [
+    "Vergadervoorbereiding: relevante documenten en context klaarzetten vóór elke meeting",
+    "Proactief agendabeheer over meerdere tijdzones",
+    "Risicosignalering: stalled decisions en gemiste follow-ups boven water halen"
+  ],
+  "strengths": [
+    "Eigen Entra-identiteit per agent met per-taak gescopete credentials — enterprise-governance vanaf dag één",
+    "Bouwt via Work IQ doorlopend context op in plaats van per prompt te beginnen",
+    "Werkt over cloud, desktop en web heen binnen het hele Microsoft 365-ecosysteem"
+  ],
+  "limitations": [
+    "Private preview: alleen beschikbaar via het Frontier-programma",
+    "Volledig gebonden aan Microsoft 365 — geen waarde buiten dat ecosysteem",
+    "Always-on agents zijn een nieuwe categorie; gedrag en kosten in de praktijk zijn nog onbewezen"
+  ],
+  "bestAlternative": "claude-cowork",
+  "mentionAliases": [
+    "microsoft autopilot",
+    "ms scout"
+  ],
+  "pricing": "Experimentele release binnen het Microsoft Frontier-programma (private preview); geen losse prijs bekend per juni 2026",
+  "pricingModel": "enterprise",
+  "difficulty": "beginner",
+  "openSource": false,
+  "tags": [
+    "personal-agent",
+    "microsoft-365",
+    "always-on",
+    "autopilot",
+    "enterprise"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Always-on Autopilot",
+      "description": "Blijft actief op de achtergrond en onderneemt actie zonder dat je per taak hoeft te prompten.",
+      "group": "core"
+    },
+    {
+      "title": "Work IQ-context",
+      "description": "Leert doorlopend je prioriteiten uit mail, agenda, chats en documenten.",
+      "group": "core"
+    },
+    {
+      "title": "OpenClaw-fundament",
+      "description": "Gebouwd op de open-source OpenClaw-agenttechnologie, uitgebreid voor enterprise-eisen.",
+      "group": "core"
+    },
+    {
+      "title": "Microsoft 365-integratie",
+      "description": "Koppelt native aan Teams, Outlook, OneDrive en SharePoint.",
+      "group": "integration"
+    },
+    {
+      "title": "Entra-identiteit per agent",
+      "description": "Elke agent opereert onder een eigen gegoverneerde identiteit; credentials zijn per taak gescoped en geredigeerd uit logs.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Proactief agendabeheer",
+      "description": "Plant meetings over tijdzones, blokkeert tijd voor deadlines en bereidt vergadermateriaal voor.",
+      "group": "core"
+    }
+  ]
+}

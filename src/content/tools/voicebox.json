@@ -1,0 +1,78 @@
+{
+  "name": "Voicebox",
+  "category": "audio",
+  "websiteUrl": "https://github.com/jamiepine/voicebox",
+  "shortDescription": "Lokale open-source voice-studio: stemkloon, TTS en dictatie op je eigen machine",
+  "headlineValueProp": "ElevenLabs én Wispr Flow in één gratis app — alleen draait alles lokaal op jouw computer",
+  "longDescription": "Voicebox van Jamie Pine is een open-source voice-studio (MIT-licentie) die volledig lokaal draait. Het combineert twee werelden: stemgeneratie zoals ElevenLabs en dictatie zoals Wispr Flow, in één app zonder cloud. Je kloont een stem op basis van een paar seconden audio en genereert spraak in 23 talen via zeven verschillende TTS-engines, waaronder Qwen3-TTS, Kokoro en Chatterbox. Voor dictatie houd je een globale sneltoets ingedrukt en spreekt — Whisper transcribeert lokaal en plaatst de tekst in het actieve tekstveld. Een gebundelde lokale LLM verzorgt tekstverfijning en persona's per stemprofiel. Bijzonder is de MCP-integratie: elke MCP-bewuste AI-agent (Claude Code, Cursor) kan via Voicebox terugpraten in een stem die jij kiest. Omdat niets je machine verlaat, is het ook geschikt voor privacygevoelige omgevingen.",
+  "verdict": "Voicebox is het meest complete lokale alternatief voor de combinatie ElevenLabs plus Wispr Flow — gratis, open source en zonder dat audio of tekst je machine verlaat. De kwaliteit van de stemmen hangt af van de open TTS-engines eronder, en die halen het topniveau van ElevenLabs' beste stemmen nog niet; bovendien vraagt lokaal draaien om een redelijk krachtige machine.",
+  "whyListed": "De vraag naar lokale, privacyvriendelijke alternatieven voor cloud-stemtools groeit hard, en Voicebox is het eerste open-source project dat stemkloon, TTS én dictatie in één bruikbare desktopapp bundelt — inclusief stem-output voor AI-agents via MCP.",
+  "bestFor": "Privacybewuste makers en developers die stemkloon en dictatie willen zonder cloud-abonnement.",
+  "primaryJobsToBeDone": [
+    "Een stem klonen uit een paar seconden audio en er lokaal spraak mee genereren",
+    "Dicteren in elk tekstveld via een globale sneltoets, met lokale Whisper-transcriptie",
+    "Je AI-agent (Claude Code, Cursor) laten terugpraten in een zelfgekozen stem via MCP"
+  ],
+  "antiUseCases": [
+    "Productie-voice-overs die de allerhoogste stemkwaliteit vereisen — ElevenLabs ligt daar nog voor",
+    "Gebruikers met een lichte laptop — zeven lokale TTS-engines en een lokale LLM vragen rekenkracht",
+    "Teams die een gehoste API met SLA's nodig hebben in plaats van een desktopapp"
+  ],
+  "useCases": [
+    "Voice-overs genereren voor video's zonder cloudkosten",
+    "Privacygevoelige dictatie waar audio het pand niet mag verlaten",
+    "AI-agents een hoorbare stem geven tijdens het werken",
+    "Experimenteren met verschillende open TTS-engines in één interface"
+  ],
+  "strengths": [
+    "Volledig lokaal — geen audio of tekst naar de cloud, geen abonnement",
+    "Zeven TTS-engines en 23 talen in één app, inclusief stemkloon uit korte samples",
+    "MCP-integratie geeft AI-agents spraakoutput in jouw gekozen stem"
+  ],
+  "limitations": [
+    "Stemkwaliteit van open engines blijft achter op de beste commerciële stemmen",
+    "Vraagt lokale rekenkracht; op zwakke hardware traag",
+    "Jong project in actieve ontwikkeling — functies en API's veranderen snel"
+  ],
+  "bestAlternative": "elevenlabs",
+  "mentionAliases": [],
+  "pricing": "Gratis en open source (MIT); draait volledig lokaal op je eigen machine — geen abonnement of API-kosten",
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "openSource": true,
+  "tags": ["open-source", "voice-cloning", "text-to-speech", "dicteren", "lokaal"],
+  "draft": false,
+  "businessFunctions": ["development", "marketing"],
+  "keyFeatures": [
+    {
+      "title": "Stemkloon uit korte samples",
+      "description": "Kloon een stem op basis van een paar seconden audio en gebruik die voor alle output.",
+      "group": "core"
+    },
+    {
+      "title": "Zeven TTS-engines",
+      "description": "Qwen3-TTS, Kokoro, Chatterbox en meer — wissel per taak van engine, in 23 talen.",
+      "group": "core"
+    },
+    {
+      "title": "Systeembrede dictatie",
+      "description": "Houd een sneltoets ingedrukt, spreek, en lokale Whisper-transcriptie landt in het actieve tekstveld.",
+      "group": "input"
+    },
+    {
+      "title": "Lokale LLM-verfijning",
+      "description": "Een gebundelde lokale LLM schoont transcripties op en ondersteunt persona's per stemprofiel.",
+      "group": "core"
+    },
+    {
+      "title": "Stem voor AI-agents (MCP)",
+      "description": "Elke MCP-bewuste agent zoals Claude Code of Cursor kan terugpraten via een on-screen pill in jouw gekozen stem.",
+      "group": "integration"
+    },
+    {
+      "title": "Volledig offline",
+      "description": "De hele voice-stack draait op je eigen machine — geen data naar externe servers.",
+      "group": "core"
+    }
+  ]
+}

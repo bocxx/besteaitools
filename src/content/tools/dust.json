@@ -1,0 +1,94 @@
+{
+  "name": "Dust",
+  "category": "agents",
+  "websiteUrl": "https://dust.tt/",
+  "shortDescription": "Interne AI-agents gebouwd op je eigen bedrijfsdata",
+  "headlineValueProp": "AI-agents die je bedrijf kennen — gevoed door je Slack, Notion, Drive en interne documentatie",
+  "longDescription": "Dust (dust.tt) is een platform waarmee organisaties zonder code interne AI-agents bouwen die op de eigen bedrijfsdata draaien. Je koppelt bronnen als Slack, Google Drive, Notion en GitHub; Dust indexeert die content en laat je daar agents bovenop configureren — een support-agent die antwoordt op basis van je interne documentatie, een sales-agent die proposals schrijft in jullie eigen toon, of een HR-agent die personeelsvragen afhandelt. Het bedrijf werd opgericht door ex-Stripe-engineers en wordt gesteund door Sequoia. Anders dan chatbot-abonnementen is Dust nadrukkelijk multiplayer: agents worden gedeeld binnen de workspace en collega's bouwen op elkaars agents voort. De prijs is per seat: Pro kost €29 per gebruiker per maand (met 15 dagen gratis trial), Enterprise is maatwerk en richt zich op organisaties vanaf zo'n honderd gebruikers. Een gratis tier is er niet.",
+  "verdict": "Dust is een van de volwassenste opties voor bedrijven die agents op eigen data willen zonder zelf een RAG-stack te bouwen — de connector-kwaliteit en het multiplayer-model onderscheiden het van losse chatbot-abonnementen. De nuance: per-seat-pricing zonder gratis tier maakt het onaantrekkelijk voor solo-gebruikers en kleine teams; bij twintig man betaal je al €580 per maand nog vóór API-gebruik.",
+  "whyListed": "Door ex-Stripe-engineers gebouwd en door Sequoia gesteund Europees platform dat het 'agents op bedrijfsdata'-segment serieus invult — het alternatief voor zelf een interne RAG-oplossing bouwen.",
+  "bestFor": "Bedrijven vanaf circa twintig medewerkers die meerdere interne AI-agents op hun eigen kennisbronnen willen draaien.",
+  "primaryJobsToBeDone": [
+    "Interne kennisbronnen (Slack, Drive, Notion) doorzoekbaar maken via een agent",
+    "Een support-agent bouwen die antwoordt op basis van je eigen documentatie",
+    "Afdelingsspecifieke agents configureren voor sales, HR of operations zonder code",
+    "Bedrijfsbrede AI-adoptie organiseren met gedeelde, herbruikbare agents"
+  ],
+  "antiUseCases": [
+    "Solo-gebruikers en heel kleine teams — geen gratis tier en per-seat-pricing maken het onnodig duur",
+    "Wie één simpele chatbot zoekt zonder bedrijfsdata-koppeling — een ChatGPT- of Claude-abonnement volstaat dan",
+    "Organisaties die hun data niet naar een SaaS-platform willen brengen — kies dan een self-hosted stack als Dify"
+  ],
+  "useCases": [
+    "Een interne helpdesk-agent op basis van handboeken en eerdere tickets",
+    "Onboarding-agent die nieuwe medewerkers wegwijs maakt in interne processen",
+    "Sales-enablement: proposals en antwoorden op RFP's in huisstijl"
+  ],
+  "strengths": [
+    "Kant-en-klare connectors voor Slack, Google Drive, Notion en GitHub",
+    "Multiplayer-model: agents worden gedeeld en hergebruikt binnen de workspace",
+    "Geen code nodig voor het bouwen van agents op eigen data",
+    "Sterke founding-pedigree (ex-Stripe) en Sequoia-backing"
+  ],
+  "limitations": [
+    "Geen gratis tier; alleen een trial van 15 dagen",
+    "Per-seat-kosten lopen snel op bij grotere teams (€29/gebruiker/mnd)",
+    "SaaS-only: je bedrijfsdata wordt op het platform geïndexeerd"
+  ],
+  "bestAlternative": "relevance-ai",
+  "mentionAliases": [
+    "dust.tt",
+    "dust-tt",
+    "dust tt"
+  ],
+  "pricing": "Pro €29 per gebruiker per maand (15 dagen gratis trial); Enterprise op maat voor organisaties vanaf ~100 gebruikers",
+  "pricingModel": "paid",
+  "difficulty": "intermediate",
+  "openSource": false,
+  "tags": [
+    "enterprise-agents",
+    "bedrijfsdata",
+    "rag",
+    "no-code",
+    "knowledge-management"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations",
+    "klantenservice",
+    "sales",
+    "hr"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Data-connectors",
+      "description": "Koppel Slack, Google Drive, Notion en GitHub; Dust houdt de index automatisch actueel.",
+      "group": "integration"
+    },
+    {
+      "title": "No-code agent-builder",
+      "description": "Configureer agents met instructies, databronnen en tools zonder te programmeren.",
+      "group": "core"
+    },
+    {
+      "title": "Multiplayer-workspace",
+      "description": "Agents worden gedeeld binnen het team; collega's bouwen voort op elkaars agents.",
+      "group": "core"
+    },
+    {
+      "title": "Modelkeuze",
+      "description": "Draai agents op verschillende frontier-modellen in plaats van vast te zitten aan één aanbieder.",
+      "group": "core"
+    },
+    {
+      "title": "API-toegang",
+      "description": "Roep agents programmatisch aan vanuit eigen applicaties en workflows.",
+      "group": "integration"
+    },
+    {
+      "title": "Enterprise-beheer",
+      "description": "Rechtenbeheer, workspace-administratie en maatwerk-deployment op het Enterprise-plan.",
+      "group": "enterprise"
+    }
+  ]
+}

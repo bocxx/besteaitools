@@ -1,0 +1,80 @@
+{
+  "name": "Playwright MCP",
+  "category": "coding",
+  "websiteUrl": "https://github.com/microsoft/playwright-mcp",
+  "shortDescription": "Microsofts officiële MCP-server die AI-agents een browser laat besturen",
+  "headlineValueProp": "Geef elke MCP-compatibele AI-agent browsertoegang via accessibility-snapshots in plaats van screenshots",
+  "longDescription": "Playwright MCP is de officiële Model Context Protocol-server van Microsoft bovenop het Playwright browser-automatiseringsframework. Het geeft AI-agents zoals Claude Code, Cursor en Copilot een gestructureerde toolset (browser_navigate, browser_click, browser_type, browser_snapshot en zo'n dertig andere) om webpagina's te bedienen. De kerninnovatie: in plaats van screenshots krijgt de agent de accessibility tree van de pagina — een tekstuele structuur van alle elementen. Daardoor is het sneller, deterministischer en veel goedkoper in tokens dan vision-gebaseerde benaderingen, en is er geen vision-model nodig. Het stuurt Chromium, Firefox en WebKit aan, en sessies houden tabs, cookies en login-status vast. De server zit inmiddels standaard in onder meer GitHub Copilot's coding agent en is de de-facto standaard voor browsergebruik door coding-agents.",
+  "verdict": "Playwright MCP is de standaardkeuze geworden om een coding-agent webpagina's te laten testen en bedienen — de accessibility-tree-aanpak verslaat screenshot-gebaseerde alternatieven op snelheid en tokenkosten. Kanttekening: voor agents met filesystem-toegang adviseert het Playwright-team inmiddels de CLI-variant, die ongeveer vier keer minder tokens verbruikt; de MCP-server is vooral de juiste keuze in sandboxed omgevingen zoals Claude Desktop.",
+  "whyListed": "De de-facto standaard om AI-agents browsertoegang te geven, onderhouden door Microsoft en standaard geïntegreerd in onder meer GitHub Copilot's coding agent.",
+  "bestFor": "Developers die hun coding-agent webapps willen laten testen, debuggen of bedienen",
+  "primaryJobsToBeDone": [
+    "Je coding-agent de webapp laten doorklikken die hij net heeft gebouwd, om te verifiëren dat alles werkt",
+    "End-to-end tests laten schrijven en uitvoeren op basis van wat de agent live in de browser ziet",
+    "Formulieren invullen en flows doorlopen op websites zonder API",
+    "Frontend-bugs laten reproduceren en debuggen met console- en netwerkinformatie uit de echte browser"
+  ],
+  "antiUseCases": [
+    "Grootschalige productie-scraping — daarvoor wil je kaal Playwright of een scraping-dienst, geen LLM in de loop",
+    "Coding-agents met filesystem-toegang waar tokenkosten tellen: de Playwright CLI doet hetzelfde ~4x goedkoper",
+    "Niet-technische gebruikers die browser-automatisering zoeken zonder MCP-client en configuratie"
+  ],
+  "useCases": [
+    "Agent-gestuurde verificatie van eigen frontend-werk",
+    "Geautomatiseerd end-to-end testen vanuit Claude Code, Cursor of Copilot",
+    "Webresearch en data-extractie binnen een agent-workflow",
+    "QA-flows naspelen inclusief login-status en meerdere tabs"
+  ],
+  "strengths": [
+    "Accessibility-snapshots: sneller, deterministischer en goedkoper dan screenshot/vision-aanpakken",
+    "Officieel Microsoft-project bovenop het volwassen Playwright-framework",
+    "Werkt met elke MCP-client en alle drie de browser-engines",
+    "Persistente sessies — cookies, auth en tabs blijven bewaard"
+  ],
+  "limitations": [
+    "Vraagt een MCP-client en enige configuratie; geen standalone tool",
+    "Tokenverbruik per taak blijft fors vergeleken met de CLI-variant",
+    "Puur visuele checks (ziet de pagina er goed uit?) vragen alsnog screenshots en een vision-model"
+  ],
+  "bestAlternative": "cline",
+  "mentionAliases": ["playwright mcp server", "playwright-mcp"],
+  "pricing": "Gratis en open source (Apache 2.0-licentie van Microsoft). Je betaalt alleen de tokens van het model dat de browser aanstuurt.",
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "openSource": true,
+  "tags": ["mcp", "browser-automatisering", "testing", "open-source", "microsoft"],
+  "draft": false,
+  "businessFunctions": ["development"],
+  "keyFeatures": [
+    {
+      "title": "Accessibility-snapshots",
+      "description": "De agent leest de accessibility tree van de pagina in plaats van screenshots — geen vision-model nodig.",
+      "group": "core"
+    },
+    {
+      "title": "Complete browser-toolset",
+      "description": "Zo'n dertig tools voor navigeren, klikken, typen, snapshots, tabs en dialogen.",
+      "group": "core"
+    },
+    {
+      "title": "Drie browser-engines",
+      "description": "Stuurt Chromium, Firefox en WebKit aan via het onderliggende Playwright-framework.",
+      "group": "core"
+    },
+    {
+      "title": "Persistente sessies",
+      "description": "Cookies, login-status en tabs blijven bewaard tussen acties — handig voor flows achter een login.",
+      "group": "core"
+    },
+    {
+      "title": "Werkt met elke MCP-client",
+      "description": "Claude Code, Claude Desktop, Cursor, Windsurf, VS Code en Copilot's coding agent.",
+      "group": "integration"
+    },
+    {
+      "title": "Headless en headed modes",
+      "description": "Draai onzichtbaar op een server of zichtbaar meekijkend op je eigen machine.",
+      "group": "core"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "name": "PicoClaw",
+  "category": "agents",
+  "websiteUrl": "https://github.com/sipeed/picoclaw",
+  "shortDescription": "Ultra-lichte OpenClaw-variant in Go: <10MB RAM, draait op hardware van $10",
+  "headlineValueProp": "Een persoonlijke AI-agent als enkele Go-binary die in minder dan een seconde boot op een board van een tientje",
+  "longDescription": "PicoClaw van hardwaremaker Sipeed is het radicale antwoord op de vraag hoe licht een personal agent kan zijn. Waar OpenClaw een volwaardige Node-stack en flinke machine vraagt, is PicoClaw een enkele Go-binary met een geheugengebruik onder de 10MB — zo'n 99% kleiner. Hij boot in minder dan een seconde, zelfs op een single-core processor van 0,6GHz, en draait op sub-$10 Linux-boards zoals de LicheeRV-Nano ($9,90), maar ook op een Raspberry Pi of Umbrel-homeserver. De binary is portable over RISC-V, ARM, MIPS en x86. Net als zijn grote broer ondersteunt PicoClaw zestien-plus chatplatforms (Telegram, Discord, Slack, QQ, DingTalk) en koppelt hij via native MCP-integratie aan externe tools. Opvallend detail: zo'n 95% van de core-code is door een agent gegenereerd en via human-in-the-loop review verfijnd.",
+  "verdict": "PicoClaw bewijst dat een bruikbare personal agent geen Mac mini of VPS nodig heeft — een board van een tientje volstaat, en dat maakt het de goedkoopste serieuze instap in self-hosted agents. De nuance: de intelligentie komt nog steeds uit een externe LLM-API, en je levert het brede skills-ecosysteem en de pluginrijkdom van OpenClaw in voor die voetafdruk.",
+  "whyListed": "De meest extreme uitloper van de OpenClaw-golf: een agent-runtime die de hardwaredrempel verlaagt van een Mac mini naar een Linux-board van $10, gemaakt door RISC-V-hardwarefabrikant Sipeed.",
+  "bestFor": "Tinkerers en embedded-liefhebbers die een always-on agent willen draaien op minimale, goedkope hardware.",
+  "primaryJobsToBeDone": [
+    "Een always-on agent draaien op een Raspberry Pi, LicheeRV-Nano of Umbrel-server",
+    "Een chatbot-assistent koppelen aan Telegram, Discord of Slack vanaf embedded hardware",
+    "Externe tools aansluiten via MCP zonder zware runtime",
+    "Een energiezuinige agent bouwen die 24/7 aan kan blijven staan"
+  ],
+  "antiUseCases": [
+    "Wie het volledige OpenClaw-ecosysteem wil (100+ skills, browser-tools, Active Memory) — die rijkdom heeft PicoClaw bewust niet",
+    "Volledig offline gebruik — de agent leunt op externe LLM-API's, het board draait alleen de runtime",
+    "Niet-technische gebruikers — installatie en configuratie verlopen via de command line"
+  ],
+  "useCases": [
+    "Een huisautomatiserings-agent op een board van een tientje",
+    "Een Telegram-assistent op een Umbrel-homeserver",
+    "Agent-experimenten op RISC-V- en ARM-hardware"
+  ],
+  "strengths": [
+    "Geheugengebruik onder 10MB en boot onder één seconde, zelfs op een 0,6GHz single-core",
+    "Eén binary voor RISC-V, ARM, MIPS en x86 — geen dependencies",
+    "Native MCP-ondersteuning voor externe tools",
+    "Draait op hardware vanaf circa $10"
+  ],
+  "limitations": [
+    "Veel kleiner feature- en skills-aanbod dan OpenClaw",
+    "Intelligentie vereist een externe LLM-API; het board zelf rekent niet",
+    "Jong project van een hardwarefabrikant — softwareondersteuning is niet de kernactiviteit van Sipeed"
+  ],
+  "bestAlternative": "openclaw",
+  "mentionAliases": [
+    "pico claw",
+    "sipeed picoclaw"
+  ],
+  "pricing": "Gratis open-source; je betaalt alleen je LLM-API-kosten en eenmalig de hardware (vanaf ~$10)",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": [
+    "personal-agent",
+    "self-hosted",
+    "edge",
+    "go",
+    "lightweight"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "development",
+    "operations"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Sub-10MB footprint",
+      "description": "Core-geheugengebruik onder de 10MB — zo'n 99% kleiner dan OpenClaw.",
+      "group": "core"
+    },
+    {
+      "title": "Eén Go-binary",
+      "description": "Geen dependencies of runtime; één bestand dat draait op RISC-V, ARM, MIPS en x86.",
+      "group": "core"
+    },
+    {
+      "title": "Boot in <1 seconde",
+      "description": "Start in minder dan een seconde, zelfs op een 0,6GHz single-core processor.",
+      "group": "core"
+    },
+    {
+      "title": "16+ chatplatforms",
+      "description": "Telegram, Discord, Slack, QQ, DingTalk, Feishu, LINE en meer als interface.",
+      "group": "integration"
+    },
+    {
+      "title": "Native MCP-integratie",
+      "description": "Koppel elke MCP-server aan de agent om zijn mogelijkheden uit te breiden.",
+      "group": "integration"
+    },
+    {
+      "title": "$10-hardware als doel",
+      "description": "Ontworpen voor sub-$10 Linux-boards zoals de LicheeRV-Nano; draait ook op Pi en Umbrel.",
+      "group": "core"
+    }
+  ]
+}

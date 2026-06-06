@@ -1,0 +1,78 @@
+{
+  "name": "OpenShorts",
+  "category": "video",
+  "websiteUrl": "https://github.com/mutonby/openshorts",
+  "shortDescription": "Open-source clip-generator voor shorts — self-hosted, geen watermerk",
+  "headlineValueProp": "Knip lange video's automatisch tot verticale shorts op je eigen server, zonder watermerk of abonnement",
+  "longDescription": "OpenShorts is een gratis, open-source alternatief (MIT-licentie) voor commerciële clip-generators. Je host het zelf en voert een YouTube-link of lokaal videobestand in; het systeem detecteert de sterkste momenten, herkadreert automatisch naar 9:16 met YOLOv8- en MediaPipe-tracking zodat sprekers in beeld blijven, en voegt ondertitels toe via faster-whisper. Naast de clip-generator zit er een AI-shorts-module in die marketingvideo's met AI-actors genereert op basis van een productomschrijving of URL, en een YouTube Studio-achtige planner waarmee je publicaties naar meerdere platformen tegelijk inplant. De stack is Python met FastAPI en FFmpeg; je koppelt je eigen API-keys (onder meer Gemini) voor de AI-onderdelen. Omdat alles op je eigen machine draait, zit er geen watermerk, limiet of maandbedrag aan vast.",
+  "verdict": "OpenShorts is het meest complete open-source antwoord op betaalde clip-tools als Opus Clip: automatische herkadrering met persoonstracking, ondertiteling en multi-platform-planning zonder watermerk of abonnementskosten. Daar staat tegenover dat je zelf moet installeren en hosten — wie geen Python-omgeving en FFmpeg wil opzetten, is bij een SaaS-tool sneller klaar.",
+  "whyListed": "Clip-generators zijn een van de duurste SaaS-categorieën in verhouding tot wat ze technisch doen; OpenShorts laat zien dat de hele keten — momentdetectie, herkadrering, ondertiteling, planning — ook open source en self-hosted kan.",
+  "bestFor": "Technische creators en teams die veel shorts produceren en de abonnementskosten van commerciële clip-tools willen schrappen.",
+  "primaryJobsToBeDone": [
+    "Lange YouTube-video's of opnames automatisch omzetten naar verticale shorts met ondertitels",
+    "Marketingvideo's met AI-actors genereren op basis van een productomschrijving of URL",
+    "Shorts inplannen en publiceren naar TikTok, Reels en YouTube Shorts vanuit één interface"
+  ],
+  "antiUseCases": [
+    "Wie niet zelf wil installeren en hosten — een SaaS-clip-tool werkt dan direct vanuit de browser",
+    "Redactionele controle per clip: de selectie is geautomatiseerd, fijnmazig handmatig knippen doe je beter in een editor als Descript",
+    "Organisaties die vendor-support en uptime-garanties nodig hebben voor hun contentpipeline"
+  ],
+  "useCases": [
+    "Podcast- of webinaropnames omzetten naar een week aan shorts",
+    "Een eigen clip-pipeline draaien zonder maandelijkse SaaS-kosten",
+    "UGC-achtige productvideo's genereren zonder camera of studio",
+    "Multi-platform-publicatie automatiseren vanaf je eigen server"
+  ],
+  "strengths": [
+    "Geen watermerk, limieten of abonnement — alleen je eigen API- en serverkosten",
+    "Automatische 9:16-herkadrering met persoonstracking (YOLOv8 + MediaPipe)",
+    "Ingebouwde planner voor publicatie naar meerdere platformen tegelijk"
+  ],
+  "limitations": [
+    "Self-hosted: je moet Python, FFmpeg en API-keys zelf opzetten en onderhouden",
+    "AI-functies leunen op externe API's (o.a. Gemini) — die kosten komen bovenop je hosting",
+    "Jong community-project; minder gepolijst dan commerciële alternatieven"
+  ],
+  "bestAlternative": "descript",
+  "mentionAliases": ["open shorts"],
+  "pricing": "Gratis en open source (MIT); self-hosted — je betaalt alleen je eigen server- en API-kosten",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": ["open-source", "shorts", "clip-generator", "self-hosted"],
+  "draft": false,
+  "businessFunctions": ["marketing"],
+  "keyFeatures": [
+    {
+      "title": "Clip-generator",
+      "description": "Detecteert de sterkste momenten in lange video's en knipt ze automatisch tot shorts.",
+      "group": "core"
+    },
+    {
+      "title": "Slimme 9:16-herkadrering",
+      "description": "YOLOv8- en MediaPipe-tracking houden sprekers in beeld bij het omzetten naar verticaal formaat.",
+      "group": "core"
+    },
+    {
+      "title": "Automatische ondertitels",
+      "description": "Transcriptie en captions via faster-whisper, direct ingebrand in de clip.",
+      "group": "core"
+    },
+    {
+      "title": "AI-shorts met AI-actors",
+      "description": "Genereer UGC-achtige marketingvideo's op basis van een productomschrijving of URL.",
+      "group": "core"
+    },
+    {
+      "title": "YouTube- en lokale input",
+      "description": "Voer een YouTube-link in via yt-dlp of upload eigen videobestanden.",
+      "group": "input"
+    },
+    {
+      "title": "Multi-platform-planner",
+      "description": "Plan publicaties naar TikTok, Reels en Shorts op datum en tijd vanuit één interface.",
+      "group": "integration"
+    }
+  ]
+}

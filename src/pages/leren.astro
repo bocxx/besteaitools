@@ -1,23 +1,126 @@
 ---
 /**
- * /leren — Leer-bronnen voor AI-tools
+ * /leren — Leer AI-tools: gecombineerde leerhub met filters
  *
- * Ontsluit de `for_tools`-bucket uit newsflux tutorial_candidates.json (lag
- * ongebruikt in src/data/reports/). Gecureerde EXTERNE bronnen — GitHub-repos,
- * guides, video's, threads — om AI-tools te leren. Geen eigen content; eerlijke
- * pointers naar het beste leermateriaal, met een Nederlandse "wat je leert"-hoek.
+ * Drie bronnen, één lijst:
+ *  1. Eigen gidsen — nieuws-collectie met category gids/vergelijking (NL, intern)
+ *  2. Gecureerde leerpaden — src/data/leren-curated.json (officiële docs,
+ *     academies en cursussen per tool; handmatig onderhouden)
+ *  3. Vers ontdekt — newsflux tutorial_candidates.json `for_tools`-bucket
+ *     (GitHub-repos, video's, threads; dagelijks bijgewerkt)
+ *
+ * Filters (client-side, geen framework): leerdoel ("wat wil je leren"),
+ * type en niveau. Doel van de pagina: snel de beste leerbron voor jóuw
+ * taak vinden — zelfde missie als de rest van het platform.
  */
 export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
-import { ArrowLeft, GraduationCap, Github, Play, ArrowUpRight, Wrench } from '@lucide/astro';
+import { getCollection } from 'astro:content';
+import { ArrowLeft, GraduationCap, Github, Play, ArrowUpRight, Wrench, BookOpen, FileText, Sparkles } from '@lucide/astro';
 import DiscoverGrid from '../components/DiscoverGrid.astro';
+import curated from '../data/leren-curated.json';
 import raw from '../data/reports/tutorial_candidates.json';
 
-const forTools = ((raw as any).for_tools ?? []) as any[];
+// ---------- Leerdoelen (filter-as "wat wil je leren") ----------
+const goals: Record<string, string> = {
+  basis: 'AI-basis & prompts',
+  chatbots: 'Chatten & schrijven',
+  coding: 'Coderen & agents',
+  automation: 'Automatiseren',
+  visual: 'Beeld & video',
+  audio: 'Audio & muziek',
+  research: 'Research & data',
+};
 
-// Quality sort: GitHub-repos en video's bovenaan (meestal echt educatief),
-// dan tool-gematchte bronnen, dan op score. Houdt losse social-threads onderaan.
+// Tool-categorie → leerdoel (voor automatische mapping van bronnen 1 en 3)
+const catToGoal: Record<string, string> = {
+  chatbots: 'chatbots', writing: 'chatbots', presentations: 'chatbots',
+  coding: 'coding', agents: 'coding', infrastructure: 'coding',
+  automation: 'automation',
+  image: 'visual', video: 'visual', design: 'visual',
+  audio: 'audio', music: 'audio', 'meeting-notes': 'audio',
+  search: 'research', productivity: 'research', marketing: 'chatbots',
+  support: 'automation',
+};
+
+// Tool-slug → categorie + naam lookup
+const toolEntries = await getCollection('tools', ({ data }: any) => !data.draft);
+const toolMap = new Map<string, { name: string; category: string }>();
+for (const t of toolEntries) toolMap.set(t.id, { name: (t.data as any).name, category: (t.data as any).category });
+
+type LearnItem = {
+  title: string;
+  url: string;
+  desc: string | null;
+  type: 'gids' | 'cursus' | 'docs' | 'repo' | 'video' | 'thread';
+  level: 'starter' | 'gevorderd';
+  goal: string;
+  toolSlugs: string[];
+  source: 'eigen' | 'leerpad' | 'vers';
+  internal: boolean;
+  host: string;
+  sortKey: number;
+};
+
+function hostOf(url: string): string {
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; }
+}
+function cleanTitle(t: string): string {
+  if (!t) return '';
+  const norm = t.normalize('NFKC').replace(/\s+/g, ' ').trim();
+  return norm.length > 110 ? norm.slice(0, 107) + '…' : norm;
+}
+function goalForSlugs(slugs: string[], fallback = 'basis'): string {
+  for (const s of slugs) {
+    const cat = toolMap.get(s)?.category;
+    if (cat && catToGoal[cat]) return catToGoal[cat];
+  }
+  return fallback;
+}
+
+const items: LearnItem[] = [];
+
+// ---------- Bron 1: eigen gidsen (NL, intern — bovenaan) ----------
+const eigenGidsen = (await getCollection('nieuws', ({ data }: any) =>
+  !data.draft && (data.category === 'gids' || data.category === 'vergelijking')
+)) as any[];
+for (const a of eigenGidsen) {
+  const slugs = a.data.toolSlug && toolMap.has(a.data.toolSlug) ? [a.data.toolSlug] : [];
+  items.push({
+    title: a.data.title,
+    url: `/nieuws/${a.id}`,
+    desc: a.data.description ?? null,
+    type: 'gids',
+    level: 'starter',
+    goal: goalForSlugs(slugs, 'chatbots'),
+    toolSlugs: slugs,
+    source: 'eigen',
+    internal: true,
+    host: '',
+    sortKey: 1000 + new Date(a.data.publishedAt ?? 0).getTime() / 1e10,
+  });
+}
+
+// ---------- Bron 2: gecureerde leerpaden ----------
+for (const c of (curated as any).items as any[]) {
+  items.push({
+    title: c.title,
+    url: c.url,
+    desc: c.desc ?? null,
+    type: c.type,
+    level: c.level,
+    goal: c.goal,
+    toolSlugs: (c.toolSlugs ?? []).filter((s: string) => toolMap.has(s)),
+    source: 'leerpad',
+    internal: false,
+    host: hostOf(c.url),
+    sortKey: 500,
+  });
+}
+
+// ---------- Bron 3: vers ontdekt (newsflux) ----------
+const forTools = ((raw as any).for_tools ?? []) as any[];
 function qrank(it: any): number {
   let s = it.score ?? 0;
   if (it.platform === 'github') s += 12;
@@ -26,40 +129,57 @@ function qrank(it: any): number {
   if (it.platform === 'twitter_likes' || it.platform === 'tweet') s -= 3;
   return s;
 }
-const items = [...forTools].sort((a, b) => qrank(b) - qrank(a)).slice(0, 18);
+const seen = new Set(items.map((i) => i.url));
+for (const it of [...forTools].sort((a, b) => qrank(b) - qrank(a)).slice(0, 24)) {
+  if (!it.url || seen.has(it.url)) continue;
+  seen.add(it.url);
+  const slugs = (it.matched_tools ?? [])
+    .map((t: string) => t.replace(/\s+/g, '-'))
+    .filter((s: string) => toolMap.has(s));
+  const type = it.platform === 'github' ? 'repo' : it.video ? 'video' : (it.platform === 'article' ? 'gids' : 'thread');
+  items.push({
+    title: cleanTitle(it.title),
+    url: it.url,
+    desc: it.suggested_angle_nl ?? null,
+    type: type as LearnItem['type'],
+    level: it.platform === 'github' ? 'gevorderd' : 'starter',
+    goal: goalForSlugs(slugs, 'coding'),
+    toolSlugs: slugs.slice(0, 3),
+    source: 'vers',
+    internal: false,
+    host: hostOf(it.url),
+    sortKey: qrank(it) / 100,
+  });
+}
+
+items.sort((a, b) => b.sortKey - a.sortKey);
+
+const typeLabels: Record<string, string> = {
+  gids: 'Gids', cursus: 'Cursus', docs: 'Docs', repo: 'GitHub', video: 'Video', thread: 'Thread',
+};
+const sourceLabels: Record<string, string> = { eigen: 'Onze gids', leerpad: 'Leerpad', vers: 'Vers ontdekt' };
+
+const goalCounts: Record<string, number> = {};
+for (const i of items) goalCounts[i.goal] = (goalCounts[i.goal] ?? 0) + 1;
 
 const updated = (raw as any).generated_at
   ? new Date((raw as any).generated_at.slice(0, 10)).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' })
   : null;
 
-// Clean a title (strip unicode-styled chars, collapse whitespace, cap length)
-function cleanTitle(t: string): string {
-  if (!t) return '';
-  const norm = t.normalize('NFKC').replace(/\s+/g, ' ').trim();
-  return norm.length > 110 ? norm.slice(0, 107) + '…' : norm;
-}
-function host(url: string): string {
-  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; }
-}
-const platformLabel: Record<string, string> = {
-  github: 'GitHub', twitter_likes: 'X', tweet: 'X', hackernews: 'Hacker News',
-  reddit: 'Reddit', bluesky: 'Bluesky', article: 'Artikel', arxiv: 'ArXiv',
-};
-
 const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Leer-bronnen voor AI-tools — debesteaitools.nl',
-  description: `Gecureerde bronnen om AI-tools te leren: ${items.length} GitHub-repos, guides en video's, dagelijks bijgewerkt.`,
+  name: 'Leer AI-tools — cursussen, gidsen en leerpaden | debesteaitools.nl',
+  description: `${items.length} gecureerde leerbronnen om AI-tools te leren: Nederlandse gidsen, officiële leerpaden en vers ontdekte tutorials — filterbaar op wat jij wilt leren.`,
   url: `${siteOrigin}/leren`,
   numberOfItems: items.length,
 };
 ---
 
 <Layout
-  title="Leer AI-tools — de beste bronnen & tutorials | debesteaitools.nl"
-  description={`Gecureerde leer-bronnen voor AI-tools: ${items.length} GitHub-repos, hands-on guides en video's om Claude, ChatGPT, Cursor en meer onder de knie te krijgen. Dagelijks bijgewerkt.`}
+  title="Leer AI-tools — cursussen, gidsen & leerpaden met filter | debesteaitools.nl"
+  description={`${items.length} leerbronnen om AI-tools onder de knie te krijgen: Nederlandse stap-voor-stap gidsen, officiële cursussen en vers ontdekte tutorials. Filter op wat jij wilt leren — van prompts tot agents bouwen.`}
   ogImage="/og/page-leren.png"
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
@@ -69,42 +189,84 @@ const jsonLd = {
 
     <header class="lr__head">
       <p class="lr__kicker"><GraduationCap size={13} stroke-width={1.75} /> Leren</p>
-      <h1 class="lr__title">Leer AI-tools — de beste bronnen</h1>
+      <h1 class="lr__title">Leer AI-tools — kies wat jij wilt leren</h1>
       <p class="lr__lede">
-        Geen losse cursus, maar een dagelijks bijgewerkte selectie van de beste
-        plekken om AI-tools écht te leren: GitHub-repos om mee te bouwen,
-        hands-on guides en video's. Gevonden over honderden bronnen, gefilterd
-        op leerwaarde. Elke kaart linkt naar de bron — met een korte hoek over
-        wat je eruit haalt.
+        {items.length} leerbronnen op één plek: onze eigen Nederlandse
+        stap-voor-stap gidsen, de beste officiële cursussen en docs per tool,
+        en vers ontdekte tutorials uit honderden bronnen. Filter op je
+        leerdoel en niveau — zo vind je in seconden de juiste plek om te starten.
       </p>
-      {updated && <p class="lr__updated">Bijgewerkt {updated} · {items.length} bronnen</p>}
+      {updated && <p class="lr__updated">Bijgewerkt {updated} · <span id="lr-count">{items.length}</span> bronnen</p>}
     </header>
 
-    <ul class="resources">
+    <!-- Filters -->
+    <div class="lf" id="lr-filters">
+      <div class="lf__group" role="group" aria-label="Wat wil je leren?">
+        <span class="lf__label">Wat wil je leren?</span>
+        <div class="lf__chips">
+          <button class="lf__chip lf__chip--on" data-filter="goal" data-value="">Alles</button>
+          {Object.entries(goals).map(([key, label]) => (
+            goalCounts[key] ? <button class="lf__chip" data-filter="goal" data-value={key}>{label} <span class="lf__n">{goalCounts[key]}</span></button> : null
+          ))}
+        </div>
+      </div>
+      <div class="lf__group" role="group" aria-label="Type bron">
+        <span class="lf__label">Type</span>
+        <div class="lf__chips">
+          <button class="lf__chip lf__chip--on" data-filter="type" data-value="">Alles</button>
+          <button class="lf__chip" data-filter="type" data-value="gids">Gidsen</button>
+          <button class="lf__chip" data-filter="type" data-value="cursus">Cursussen</button>
+          <button class="lf__chip" data-filter="type" data-value="docs">Docs</button>
+          <button class="lf__chip" data-filter="type" data-value="video">Video's</button>
+          <button class="lf__chip" data-filter="type" data-value="repo">GitHub</button>
+        </div>
+      </div>
+      <div class="lf__group" role="group" aria-label="Niveau">
+        <span class="lf__label">Niveau</span>
+        <div class="lf__chips">
+          <button class="lf__chip lf__chip--on" data-filter="level" data-value="">Alles</button>
+          <button class="lf__chip" data-filter="level" data-value="starter">Starter</button>
+          <button class="lf__chip" data-filter="level" data-value="gevorderd">Gevorderd</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="resources" id="lr-list">
       {items.map((it) => (
-        <li class="res">
+        <li class="res" data-goal={it.goal} data-type={it.type} data-level={it.level}>
           <div class="res__top">
-            <span class={`res__plat res__plat--${it.platform}`}>
-              {it.platform === 'github' && <Github size={12} stroke-width={1.75} />}
-              {it.video && <Play size={12} stroke-width={1.75} />}
-              {platformLabel[it.platform] ?? it.platform}
+            <span class={`res__src res__src--${it.source}`}>
+              {it.source === 'eigen' && <Sparkles size={12} stroke-width={1.75} />}
+              {it.source === 'leerpad' && <BookOpen size={12} stroke-width={1.75} />}
+              {it.source === 'vers' && (it.type === 'repo' ? <Github size={12} stroke-width={1.75} /> : it.type === 'video' ? <Play size={12} stroke-width={1.75} /> : <FileText size={12} stroke-width={1.75} />)}
+              {sourceLabels[it.source]}
             </span>
-            {it.video && <span class="res__badge">video</span>}
-            {it.new_product && <span class="res__badge res__badge--new">nieuw</span>}
+            <span class="res__badge">{typeLabels[it.type]}</span>
+            <span class={`res__badge res__badge--${it.level}`}>{it.level}</span>
           </div>
-          <a class="res__title" href={it.url} target="_blank" rel="noopener nofollow">
-            {cleanTitle(it.title)}<ArrowUpRight size={14} stroke-width={2} />
-          </a>
-          {it.suggested_angle_nl && <p class="res__angle">{it.suggested_angle_nl}</p>}
+          {it.internal ? (
+            <a class="res__title" href={it.url}>{it.title}</a>
+          ) : (
+            <a class="res__title" href={it.url} target="_blank" rel="noopener nofollow">
+              {it.title}<ArrowUpRight size={14} stroke-width={2} />
+            </a>
+          )}
+          {it.desc && <p class="res__angle">{it.desc}</p>}
           <div class="res__foot">
-            {(it.matched_tools ?? []).slice(0, 3).map((t: string) => (
-              <a class="res__tool" href={`/ai-tools/${t.replace(/\s+/g, '-')}`}><Wrench size={10} stroke-width={2} /> {t}</a>
+            <span class="res__goal">{goals[it.goal]}</span>
+            {it.toolSlugs.map((s) => (
+              <a class="res__tool" href={`/ai-tools/${s}`}><Wrench size={10} stroke-width={2} /> {toolMap.get(s)?.name ?? s}</a>
             ))}
-            {host(it.url) && <span class="res__host">{host(it.url)}</span>}
+            {it.host && <span class="res__host">{it.host}</span>}
           </div>
         </li>
       ))}
     </ul>
+
+    <p class="lr__empty" id="lr-empty" hidden>
+      Geen bronnen voor deze combinatie. Zet een filter terug op "Alles" — of
+      <a href="/vind-je-beste-ai-tool">vind eerst de juiste tool voor je taak</a>.
+    </p>
 
     <section class="siblings" aria-label="Ontdek ook">
       <h2 class="siblings__h">Ontdek ook</h2>
@@ -112,40 +274,88 @@ const jsonLd = {
     </section>
 
     <p class="lr__source">
-      Bronnen automatisch ontdekt en gecureerd via de newsflux-pipeline (GitHub,
-      HackerNews, gecureerde X-likes, ArXiv). Externe links openen in een nieuw
-      tabblad. Dit zijn pointers naar het beste leermateriaal — geen eigen content.
+      Drie bronnen: eigen Nederlandse gidsen, handmatig gecureerde officiële
+      leerpaden, en dagelijks vers ontdekte tutorials via de newsflux-pipeline
+      (GitHub, HackerNews, gecureerde X-likes). Externe links openen in een
+      nieuw tabblad.
     </p>
   </main>
 </Layout>
 
+<script is:inline>
+  (function () {
+    const state = { goal: '', type: '', level: '' };
+    const list = document.getElementById('lr-list');
+    const empty = document.getElementById('lr-empty');
+    const count = document.getElementById('lr-count');
+    const chips = document.querySelectorAll('#lr-filters .lf__chip');
+    function apply() {
+      let visible = 0;
+      list.querySelectorAll('.res').forEach((el) => {
+        const show = (!state.goal || el.dataset.goal === state.goal)
+          && (!state.type || el.dataset.type === state.type)
+          && (!state.level || el.dataset.level === state.level);
+        el.hidden = !show;
+        if (show) visible++;
+      });
+      if (count) count.textContent = String(visible);
+      if (empty) empty.hidden = visible > 0;
+    }
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const f = chip.dataset.filter;
+        state[f] = chip.dataset.value;
+        document.querySelectorAll(`#lr-filters .lf__chip[data-filter="${f}"]`).forEach((c) => c.classList.toggle('lf__chip--on', c === chip));
+        apply();
+      });
+    });
+  })();
+</script>
+
 <style>
-  .leren { padding-top: 80px; max-width: 880px; padding-bottom: var(--space-16, 4rem); }
+  .leren { padding-top: 80px; max-width: 960px; padding-bottom: var(--space-16, 4rem); }
   .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
   .back-link:hover { color: var(--primary-bright); }
 
-  .lr__head { max-width: 64ch; margin-bottom: var(--space-8, 2rem); }
+  .lr__head { max-width: 64ch; margin-bottom: var(--space-6, 1.5rem); }
   .lr__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
   .lr__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
   .lr__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.6; margin: 0 0 var(--space-4) 0; }
   .lr__updated { font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--text-secondary); margin: 0; }
 
+  /* Filters */
+  .lf { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-6); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .lf__group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-3); }
+  .lf__label { font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em; min-width: 130px; }
+  .lf__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .lf__chip { appearance: none; cursor: pointer; font: inherit; font-size: var(--text-xs); color: var(--text-secondary); background: transparent; border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 3px 12px; transition: all 0.15s ease; }
+  .lf__chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
+  .lf__chip--on { color: var(--primary-bright); border-color: var(--primary-bright); background: color-mix(in oklab, var(--primary-bright) 12%, transparent); }
+  .lf__n { opacity: 0.6; }
+  @media (max-width: 640px) { .lf__label { min-width: 100%; } }
+
   .resources { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: var(--space-3); }
   @media (max-width: 800px) { .resources { grid-template-columns: 1fr; } }
   .res { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
-  .res__top { display: flex; align-items: center; gap: var(--space-2); }
-  .res__plat { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono, monospace); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); }
-  .res__plat--github { color: var(--text-primary); }
+  .res[hidden] { display: none; }
+  .res__top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .res__src { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono, monospace); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); }
+  .res__src--eigen { color: var(--primary-bright); }
+  .res__src--leerpad { color: var(--color-success, #4ade80); }
   .res__badge { font-size: 0.6rem; font-family: var(--font-mono, monospace); text-transform: uppercase; padding: 1px 6px; border-radius: var(--radius-full); background: color-mix(in oklab, var(--text-secondary) 14%, transparent); color: var(--text-secondary); }
-  .res__badge--new { background: color-mix(in oklab, var(--primary-bright) 18%, transparent); color: var(--primary-bright); }
+  .res__badge--starter { background: color-mix(in oklab, var(--color-success, #4ade80) 16%, transparent); color: var(--color-success, #4ade80); }
+  .res__badge--gevorderd { background: color-mix(in oklab, var(--color-warning, #fbbf24) 16%, transparent); color: var(--color-warning, #fbbf24); }
   .res__title { display: inline-flex; align-items: flex-start; gap: 4px; font-weight: var(--font-semibold); color: var(--text-primary); text-decoration: none; line-height: 1.3; }
   .res__title:hover { color: var(--primary-bright); }
   .res__title :global(svg) { flex: none; margin-top: 3px; opacity: 0.6; }
   .res__angle { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5; margin: 0; }
   .res__foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: auto; padding-top: var(--space-2); }
+  .res__goal { font-family: var(--font-mono, monospace); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); opacity: 0.75; }
   .res__tool { display: inline-flex; align-items: center; gap: 3px; font-size: var(--text-xs); color: var(--primary-bright); text-decoration: none; border: 1px solid color-mix(in oklab, var(--primary-bright) 30%, var(--border-subtle)); border-radius: var(--radius-full); padding: 1px 8px; }
   .res__tool:hover { background: color-mix(in oklab, var(--primary-bright) 12%, transparent); }
   .res__host { font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.6; margin-left: auto; }
 
+  .lr__empty { margin: var(--space-6) 0; color: var(--text-secondary); }
+  .lr__empty a { color: var(--primary-bright); }
   .lr__source { margin-top: var(--space-8); font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.7; max-width: 70ch; }
 </style>

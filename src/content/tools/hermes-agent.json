@@ -1,0 +1,91 @@
+{
+  "name": "Hermes Agent",
+  "category": "agents",
+  "websiteUrl": "https://github.com/NousResearch/hermes-agent",
+  "shortDescription": "Self-improving open-source agent van Nous Research met persistent geheugen",
+  "headlineValueProp": "Een agent die na elke taak zelf herbruikbare skills destilleert en je over sessies heen blijft kennen",
+  "longDescription": "Hermes Agent van Nous Research (uitgebracht op 25 februari 2026) is een self-hosted agent die zichzelf verbetert terwijl je hem gebruikt. Het onderscheidende mechanisme is closed-loop skill learning: na elke afgeronde taak destilleert Hermes automatisch een herbruikbare 'Skill' en slaat die op in persistent geheugen, zodat vergelijkbare taken daarna sneller en betrouwbaarder verlopen. Een drielaags geheugenarchitectuur onthoudt je voorkeuren en gewoonten over sessies heen, en via 'dialectical user modeling' bouwt de agent een evoluerend beeld van jullie samenwerking op. Hermes draait als persistente daemon op je eigen infrastructuur, voert geplande cron-taken uit en is bereikbaar via zestien-plus messaging-platforms. Volgens interne benchmarks van Nous Research voltooien agents met twintig of meer zelfgemaakte skills vergelijkbare taken zo'n veertig procent sneller dan verse instanties.",
+  "verdict": "Hermes is de interessantste tegenhanger van OpenClaw omdat het één ding fundamenteel anders doet: de agent wordt aantoonbaar beter naarmate je hem langer gebruikt, doordat hij zijn eigen skills schrijft. De nuance: dat zelflerende karakter maakt het gedrag minder voorspelbaar dan een statische agent, en de 40%-snelheidsclaim komt uit interne benchmarks van Nous Research zelf.",
+  "whyListed": "Naast OpenClaw het meest besproken open-source agentproject van begin 2026, en het eerste dat skill-learning en persistent geheugen tot kern van de architectuur maakt in plaats van een plugin.",
+  "bestFor": "Technische gebruikers die een persoonlijke agent willen die over weken en maanden heen leert, in plaats van elke sessie blanco te beginnen.",
+  "primaryJobsToBeDone": [
+    "Een persoonlijke agent draaien die je voorkeuren en werkwijze over sessies heen onthoudt",
+    "Terugkerende taken laten versnellen doordat de agent er zelf skills voor destilleert",
+    "Geplande cron-taken op eigen infrastructuur laten uitvoeren",
+    "De agent aansturen vanuit je bestaande messaging-apps"
+  ],
+  "antiUseCases": [
+    "Wie een voorspelbare, auditeerbare agent nodig heeft — zelfgeschreven skills veranderen het gedrag over tijd",
+    "Niet-technische gebruikers zonder eigen server — er is geen hosted versie",
+    "Eenmalige of incidentele taken — het zelflerende voordeel ontstaat pas bij herhaald gebruik"
+  ],
+  "useCases": [
+    "Een langlopende persoonlijke assistent die meegroeit met je routines",
+    "Automatisering van wekelijkse rapportages en checks via cron",
+    "Experimenteren met memory-architecturen en skill-learning in agents"
+  ],
+  "strengths": [
+    "Closed-loop skill learning: elke afgeronde taak wordt een herbruikbare skill",
+    "Drielaags persistent geheugen voor voorkeuren, gewoonten en relatiecontext",
+    "Draait als daemon op eigen infrastructuur met cron-ondersteuning",
+    "Bereikbaar via 16+ messaging-platforms"
+  ],
+  "limitations": [
+    "Zelflerend gedrag is lastiger te auditen en te reproduceren dan een statische agent",
+    "Self-hosting vereist comfort met servers en configuratie",
+    "Jong project (v0.x sinds februari 2026) — API en architectuur kunnen nog schuiven"
+  ],
+  "bestAlternative": "openclaw",
+  "mentionAliases": [
+    "hermes agent",
+    "nous hermes agent"
+  ],
+  "pricing": "Gratis open-source; je betaalt alleen de API-kosten van je eigen LLM-provider",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": [
+    "personal-agent",
+    "self-hosted",
+    "open-source",
+    "memory",
+    "self-improving"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations",
+    "development"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Closed-loop skill learning",
+      "description": "Destilleert na elke afgeronde taak automatisch een herbruikbare skill en slaat die op.",
+      "group": "core"
+    },
+    {
+      "title": "Drielaags geheugen",
+      "description": "Persistent geheugen voor voorkeuren, gewoonten en evoluerende gebruikerscontext over sessies heen.",
+      "group": "core"
+    },
+    {
+      "title": "Dialectical user modeling",
+      "description": "Bouwt een meegroeiend beeld op van hoe jouw relatie met de agent zich ontwikkelt.",
+      "group": "core"
+    },
+    {
+      "title": "Persistente daemon",
+      "description": "Draait continu op je eigen infrastructuur in plaats van per sessie te starten.",
+      "group": "core"
+    },
+    {
+      "title": "Cron-taken",
+      "description": "Voert geplande taken uit op vaste momenten, ook zonder dat je iets vraagt.",
+      "group": "core"
+    },
+    {
+      "title": "16+ messaging-platforms",
+      "description": "Aanstuurbaar vanuit Telegram, Discord, Slack en andere chat-apps die je al gebruikt.",
+      "group": "integration"
+    }
+  ]
+}

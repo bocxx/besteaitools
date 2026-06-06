@@ -1,0 +1,91 @@
+{
+  "name": "WorkBeaver",
+  "category": "automation",
+  "websiteUrl": "https://workbeaver.com/",
+  "shortDescription": "Desktop-agent die taken leert door ze één keer voorgedaan te krijgen",
+  "headlineValueProp": "Doe een taak één keer voor op je scherm — WorkBeaver herhaalt hem daarna zelfstandig, in elke app",
+  "longDescription": "WorkBeaver — zelfbenoemde 'Digital Intern' — automatiseert computerwerk door demonstratie: je voert een taak één keer normaal uit, WorkBeaver kijkt mee en herhaalt de handelingen daarna zelfstandig met menselijke muis- en toetsenbordacties. Omdat de agent naar je scherm kijkt in plaats van via API's te koppelen, werkt hij in elke zichtbare applicatie — browsers én desktopsoftware, ook legacy-systemen zonder integratiemogelijkheden. AI vangt interfacewijzigingen op waar klassieke RPA-scripts breken. Het bedrijf bestaat sinds september 2024 en mikt nadrukkelijk op mkb in plaats van enterprise-RPA à la Automation Anywhere. Privacy is een speerpunt: zero-knowledge-architectuur, end-to-end-encryptie, geen retentie van taakdata en infrastructuur die SOC 2 Type II- en HIPAA-compliant is. Het prijsmodel telt 'Actions' (kliks, toetsaanslagen); het platform zit nog in beta met een gratis trial van 7 dagen en 10.000 acties.",
+  "verdict": "WorkBeaver maakt RPA-achtige automatisering haalbaar voor mkb-teams zonder developer: voordoen in plaats van bouwen is een wezenlijk lagere drempel dan elke flow-builder. De nuance: het platform zit nog in beta met één standaardabonnement waarvan de prijs achter een early-access-aanmelding zit, en screen-gebaseerde automatisering blijft inherent gevoeliger voor verrassingen dan API-koppelingen.",
+  "whyListed": "Vertegenwoordigt de leer-door-demonstratie-aanpak binnen de automation-golf: geen flow-builder, geen API's, maar een agent die meekijkt — relevant voor wie legacy-software wil automatiseren waar Zapier en n8n niet bij kunnen.",
+  "bestFor": "Mkb-teams die repetitief muis-en-toetsenbordwerk willen automatiseren in software zonder API's.",
+  "primaryJobsToBeDone": [
+    "Repetitieve datainvoer tussen systemen automatiseren door de taak één keer voor te doen",
+    "Legacy-desktopsoftware zonder API's bedienen via scherm-automatisering",
+    "Administratieve flows (overtypen, exporteren, kopiëren tussen apps) aan een agent overdragen",
+    "Browsertaken automatiseren zonder flow-builder of code"
+  ],
+  "antiUseCases": [
+    "Workflows die volledig via API's kunnen lopen — directe koppelingen via n8n of Zapier zijn sneller en robuuster dan schermacties",
+    "Bedrijfskritische processen die nu al productiestabiliteit vereisen — het platform zit nog in beta",
+    "Taken met veel uitzonderingen en beoordelingswerk — demonstratie-gebaseerde herhaling past het best bij uniforme, repetitieve flows"
+  ],
+  "useCases": [
+    "Facturen of orders overzetten van mail naar een boekhoud- of ERP-systeem",
+    "Wekelijkse rapportages samenstellen uit meerdere legacy-applicaties",
+    "Repeterende HR- of administratiehandelingen in desktopsoftware"
+  ],
+  "strengths": [
+    "Leert van één demonstratie of een prompt — geen flow-builder of code nodig",
+    "Werkt in elke zichtbare app, inclusief legacy-desktopsoftware zonder API",
+    "AI vangt interfacewijzigingen op waar klassieke RPA-scripts breken",
+    "Privacy-first: zero-knowledge, end-to-end-encryptie, geen retentie van taakdata"
+  ],
+  "limitations": [
+    "Nog in beta; exacte abonnementsprijs alleen zichtbaar na early-access-aanmelding",
+    "Action-gebaseerd verbruiksmodel: elke klik en toetsaanslag telt mee",
+    "Scherm-automatisering is gevoeliger voor onverwachte popups en variatie dan API-integraties"
+  ],
+  "bestAlternative": "lindy",
+  "mentionAliases": [
+    "work beaver"
+  ],
+  "pricing": "Beta: gratis trial van 7 dagen met 10.000 acties; daarna één standaard maandabonnement (met early-adopter-korting), extra acties los bij te kopen",
+  "pricingModel": "paid",
+  "difficulty": "beginner",
+  "openSource": false,
+  "tags": [
+    "desktop-automation",
+    "rpa",
+    "no-code",
+    "learn-by-demonstration",
+    "mkb"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations",
+    "finance",
+    "hr"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Leren door demonstratie",
+      "description": "Voer een taak één keer normaal uit; WorkBeaver registreert en herhaalt de handelingen.",
+      "group": "core"
+    },
+    {
+      "title": "Werkt in elke app",
+      "description": "Automatiseert alles wat op je scherm zichtbaar is — browsers én desktopsoftware, zonder API's.",
+      "group": "core"
+    },
+    {
+      "title": "Adaptief bij UI-wijzigingen",
+      "description": "AI herkent knoppen en velden ook als de interface verandert, waar klassieke RPA breekt.",
+      "group": "core"
+    },
+    {
+      "title": "Prompt-gestuurde taken",
+      "description": "Naast demonstratie kun je taken ook in gewone taal beschrijven.",
+      "group": "input"
+    },
+    {
+      "title": "Zero-knowledge-privacy",
+      "description": "End-to-end-encryptie en geen retentie van taakdata; SOC 2 Type II- en HIPAA-compliant infrastructuur.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Action-bundels",
+      "description": "Verbruik per klik en toetsaanslag, met bij te kopen acties die meerollen naar de volgende maand.",
+      "group": "core"
+    }
+  ]
+}

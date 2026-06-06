@@ -1,0 +1,85 @@
+{
+  "name": "Claude Context",
+  "category": "coding",
+  "websiteUrl": "https://github.com/zilliztech/claude-context",
+  "shortDescription": "Maakt je hele codebase semantisch doorzoekbaar voor coding-agents via MCP",
+  "headlineValueProp": "Semantic code search als MCP-server: je agent vindt relevante code in miljoenen regels zonder het hele project in context te laden",
+  "longDescription": "Claude Context van Zilliz (het bedrijf achter vectordatabase Milvus) lost een kernprobleem van coding-agents op: contextvensters schalen niet mee met grote codebases. Het indexeert je repository in een vectordatabase — chunks worden bepaald via AST-analyse zodat functies en klassen heel blijven — en stelt die index via MCP beschikbaar aan Claude Code of elke andere agent. Zoeken gebeurt hybride: BM25-keywordsearch gecombineerd met dense vectors, zodat zowel exacte symboolnamen als conceptuele vragen ('waar wordt rate limiting afgehandeld?') goede resultaten geven. Incrementele indexering via Merkle trees houdt de index automatisch in sync met je wijzigingen. Je kiest zelf de embedding-provider (OpenAI, VoyageAI, Gemini of lokaal via Ollama) en de vector-backend (Milvus zelf hosten of Zilliz Cloud).",
+  "verdict": "Voor wie agents op echt grote codebases loslaat is dit een van de effectiefste uitbreidingen: semantisch zoeken vindt relevante code die grep-gebaseerde navigatie mist, en het scheelt fors in tokens omdat je niet halve repo's in context propt. De nuance: de setup met embedding-provider en vectordatabase is niet triviaal, en op kleine projecten wint de ingebouwde zoek van Claude Code het qua eenvoud.",
+  "whyListed": "Het bekendste open-source antwoord op de contextlimiet van coding-agents bij grote codebases, gebouwd door Zilliz en breed opgepikt in het MCP-ecosysteem.",
+  "bestFor": "Developers met grote of meerdere repositories die hun coding-agent semantisch laten zoeken in plaats van grep-en-gokken",
+  "primaryJobsToBeDone": [
+    "Relevante code vinden in een monorepo van miljoenen regels via een conceptuele vraag",
+    "Je agent tokens besparen door alleen relevante chunks in context te laden in plaats van hele directories",
+    "Een codebase-index automatisch synchroon houden met je wijzigingen via incrementele indexering",
+    "Dezelfde semantische zoeklaag delen tussen meerdere agents en de VS Code-extensie"
+  ],
+  "antiUseCases": [
+    "Kleine projecten van enkele tienduizenden regels — de ingebouwde zoek van je agent volstaat en je bespaart de setup",
+    "Omgevingen waar code het pand niet uit mag en lokale embeddings via Ollama geen optie zijn",
+    "Wie geen vectordatabase wil beheren of aan Zilliz Cloud wil koppelen"
+  ],
+  "useCases": [
+    "Agent-werk in enterprise-monorepo's met miljoenen regels code",
+    "Onboarding op een onbekende codebase via conceptuele zoekvragen",
+    "Token-efficiënt refactoren over veel bestanden",
+    "Codebase-brede impact-analyse vóór een wijziging"
+  ],
+  "strengths": [
+    "Hybride zoeken (BM25 + dense vectors) vangt zowel exacte namen als conceptuele vragen",
+    "AST-gebaseerde chunking houdt functies en klassen intact in de index",
+    "Incrementele sync via Merkle trees — geen volledige herindexering na elke commit",
+    "Vrije keuze in embedding-provider en vector-backend, inclusief volledig lokaal"
+  ],
+  "limitations": [
+    "Setup vereist een embedding-API en een Milvus/Zilliz Cloud-instantie",
+    "Indexeren van grote repo's kost initieel tijd en embedding-tokens",
+    "Zoekkwaliteit hangt af van het gekozen embedding-model"
+  ],
+  "bestAlternative": "cursor",
+  "mentionAliases": ["claude context", "zilliz claude-context"],
+  "pricing": "Gratis en open source. Je betaalt voor embeddings (OpenAI, VoyageAI of Gemini; gratis lokaal via Ollama) en optioneel voor Zilliz Cloud als vectordatabase — daar is een gratis tier; Milvus zelf hosten kan ook.",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": ["mcp", "code-search", "vector-database", "open-source", "developer-tools"],
+  "draft": false,
+  "businessFunctions": ["development"],
+  "keyFeatures": [
+    {
+      "title": "Hybride code search",
+      "description": "Combineert BM25-keywordsearch met dense vector-zoeken voor exacte én conceptuele vragen.",
+      "group": "core"
+    },
+    {
+      "title": "AST-gebaseerde chunking",
+      "description": "Splitst code langs de syntaxboom, zodat functies en klassen als geheel geïndexeerd worden.",
+      "group": "core"
+    },
+    {
+      "title": "Incrementele indexering",
+      "description": "Merkle trees detecteren gewijzigde bestanden en indexeren alleen wat veranderd is.",
+      "group": "core"
+    },
+    {
+      "title": "MCP-server",
+      "description": "Werkt met Claude Code en elke andere MCP-compatibele coding-agent.",
+      "group": "integration"
+    },
+    {
+      "title": "Vrije embedding-keuze",
+      "description": "OpenAI, VoyageAI, Gemini of volledig lokaal via Ollama.",
+      "group": "core"
+    },
+    {
+      "title": "Milvus of Zilliz Cloud",
+      "description": "Host de vectordatabase zelf of gebruik de beheerde cloudvariant van Zilliz.",
+      "group": "integration"
+    },
+    {
+      "title": "VS Code-extensie",
+      "description": "Dezelfde semantische zoeklaag ook direct in je editor.",
+      "group": "integration"
+    }
+  ]
+}

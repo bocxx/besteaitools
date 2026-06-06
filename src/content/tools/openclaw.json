@@ -1,0 +1,96 @@
+{
+  "name": "OpenClaw",
+  "category": "agents",
+  "websiteUrl": "https://github.com/openclaw/openclaw",
+  "shortDescription": "Self-hosted open-source personal agent die je via je eigen chat-apps bestuurt",
+  "headlineValueProp": "Je eigen always-on AI-assistent op je eigen machine, aanstuurbaar via WhatsApp, Telegram, Signal en 20+ andere kanalen",
+  "longDescription": "OpenClaw is een self-hosted agent-runtime die als persoonlijke assistent op je eigen machine draait. De kern is een lokale Gateway die sessies, tools en events beheert, plus een message-router die ruim twintig chatkanalen ondersteunt — van WhatsApp, Telegram en Signal tot Slack, Discord, iMessage en Matrix. Je stuurt je agent dus aan vanuit de apps die je al gebruikt. Via een registry met meer dan honderd voorgeconfigureerde AgentSkills breid je hem uit met browser-automatisering, cron-taken en kanaal-acties; de Active Memory-plugin laat de agent per beurt relevante voorkeuren en historie ophalen. Het project (eind 2025 gestart als Clawdbot) explodeerde in januari 2026 van 9.000 naar ruim 100.000 GitHub-stars in ongeveer een week en werd dé referentie voor personal agents — Microsoft bouwde er zelfs Scout bovenop.",
+  "verdict": "OpenClaw is het referentiepunt voor self-hosted personal agents: nergens anders krijg je deze combinatie van kanalen, skills-ecosysteem en lokale controle gratis. Daar staat tegenover dat een always-on agent met toegang tot je machine serieuze security-aandacht vraagt — het project patchte in maart-april 2026 meerdere echte aanvalsvectoren, en die verantwoordelijkheid ligt bij self-hosting volledig bij jou.",
+  "whyListed": "Het snelst groeiende open-source agentproject van 2026: van 9.000 naar ruim 100.000 GitHub-stars in zo'n week tijd in januari, en daarna de technische basis onder Microsoft Scout. Definieerde de categorie 'personal agent'.",
+  "bestFor": "Technische gebruikers die een persoonlijke agent willen met volledige controle over data, model en infrastructuur.",
+  "primaryJobsToBeDone": [
+    "Een persoonlijke agent opzetten die je vanuit WhatsApp, Telegram of Signal aanstuurt",
+    "Terugkerende taken plannen via cron en op de achtergrond laten draaien",
+    "Browser- en webtaken laten uitvoeren vanaf je eigen server",
+    "Een agent uitbreiden met skills uit de community-registry of eigen skills schrijven"
+  ],
+  "antiUseCases": [
+    "Wie geen server wil beheren of niet comfortabel is met CLI en configuratie — kies dan Perplexity Personal Computer of wacht op Microsoft Scout",
+    "Organisaties met strikte compliance-eisen zonder capaciteit om een always-on agent zelf te hardenen",
+    "Wie alleen af en toe een chatbot-vraag heeft — de setup loont pas bij doorlopend gebruik"
+  ],
+  "useCases": [
+    "Een 24/7 assistent op een thuisserver of VPS die mail, agenda en taken bewaakt",
+    "Eén agent die je hele gezin of team via verschillende chatkanalen bereikt",
+    "Automatiseringen bouwen met de browser-, canvas- en cron-tools"
+  ],
+  "strengths": [
+    "Ruim twintig chatkanalen — je bestaande apps worden de interface",
+    "Skills-registry met 100+ voorgeconfigureerde uitbreidingen",
+    "Local-first: jouw machine, jouw data, jouw modelkeuze",
+    "Active Memory maakt de agent per gesprek persoonlijker"
+  ],
+  "limitations": [
+    "Security is je eigen verantwoordelijkheid; het project dichtte in voorjaar 2026 meerdere echte kwetsbaarheden",
+    "Geen managed hosting — installatie, updates en hardening doe je zelf",
+    "Hoog release-tempo betekent regelmatig breaking changes bijhouden"
+  ],
+  "bestAlternative": "hermes-agent",
+  "mentionAliases": [
+    "clawdbot",
+    "open claw"
+  ],
+  "pricing": "Gratis open-source; je betaalt alleen de API-kosten van je eigen LLM-provider (of draait een lokaal model)",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": [
+    "personal-agent",
+    "self-hosted",
+    "open-source",
+    "always-on",
+    "multi-channel"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations",
+    "development"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Lokale Gateway",
+      "description": "Local-first runtime die sessies, kanalen, tools en events op je eigen machine beheert.",
+      "group": "core"
+    },
+    {
+      "title": "20+ chatkanalen",
+      "description": "WhatsApp, Telegram, Signal, Slack, Discord, iMessage, Teams, Matrix en meer als interface naar je agent.",
+      "group": "integration"
+    },
+    {
+      "title": "AgentSkills-registry",
+      "description": "Meer dan honderd voorgeconfigureerde skills, doorzoekbaar en uitbreidbaar met eigen bijdragen.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-agent routing",
+      "description": "Routeert berichten naar geïsoleerde agents, elk met eigen context en rechten.",
+      "group": "core"
+    },
+    {
+      "title": "Active Memory",
+      "description": "Een memory-subagent haalt vóór elk antwoord relevante voorkeuren en historie op.",
+      "group": "core"
+    },
+    {
+      "title": "Voice wake words",
+      "description": "Spraakactivatie op macOS/iOS en continue spraak op Android, met ElevenLabs of systeem-TTS.",
+      "group": "input"
+    },
+    {
+      "title": "Cron en browser-tools",
+      "description": "Geplande achtergrondtaken en browser-automatisering als ingebouwde first-class tools.",
+      "group": "core"
+    }
+  ]
+}

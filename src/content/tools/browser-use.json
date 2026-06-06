@@ -1,0 +1,92 @@
+{
+  "name": "Browser Use",
+  "category": "automation",
+  "websiteUrl": "https://github.com/browser-use/browser-use",
+  "shortDescription": "Open-source library die AI-agents een echte browser laat besturen",
+  "headlineValueProp": "Beschrijf in gewone taal wat er op een website moet gebeuren — de agent zoekt zelf uit hoe, zonder CSS-selectors",
+  "longDescription": "Browser Use is een open-source Python-library (MIT-licentie) waarmee AI-agents een echte browser besturen. Het verschil met klassieke automatisering à la Selenium of Playwright: je programmeert geen brosse CSS-selectors of XPath-paden, maar beschrijft in natuurlijke taal wat er moet gebeuren — de agent kijkt naar de pagina en voert de stappen zelf uit, ook als de site-layout verandert. Je kiest zelf het model: Claude, GPT, Gemini of een lokaal model via Ollama; de library is niet aan één provider gebonden. Naast de gratis library is er Browser Use Cloud, met stealth-browsers die detectie en CAPTCHA's omzeilen en residentiële proxies in 195+ landen. Het is uitgegroeid tot een van de meest gebruikte open-source bouwstenen voor browser-agents en wordt door veel agent-frameworks als web-laag gebruikt.",
+  "verdict": "Browser Use is de defaultkeuze geworden voor wie web-automatisering in een agent bouwt: selector-vrije aansturing maakt scripts drastisch minder bros dan Playwright-code, en de modelvrijheid voorkomt vendor lock-in. De nuance: LLM-gestuurde browsing is per run trager en duurder dan een hard gecodeerd script, dus voor stabiele, hoogvolume scraping van één site blijft klassieke automatisering goedkoper.",
+  "whyListed": "De meest geadopteerde open-source browser-agent-library in het agent-ecosysteem en de facto standaard web-laag voor wie agents websites laat bedienen — veel agent-frameworks en automatiseringstools bouwen erop voort.",
+  "bestFor": "Developers die agents bouwen die formulieren invullen, data verzamelen of webtaken uitvoeren op wisselende websites.",
+  "primaryJobsToBeDone": [
+    "Webtaken automatiseren door ze in natuurlijke taal te beschrijven in plaats van selectors te coderen",
+    "Formulieren laten invullen en multi-step flows op websites laten doorlopen",
+    "Data verzamelen van sites waarvan de layout regelmatig verandert",
+    "Een web-laag toevoegen aan een eigen agent of pipeline via Python"
+  ],
+  "antiUseCases": [
+    "Hoogvolume scraping van één stabiele site — een klassiek Playwright-script is daar sneller en goedkoper per run",
+    "Niet-programmeurs — dit is een Python-library; kies dan een no-code tool zoals WorkBeaver of Lindy",
+    "Taken waar elke run identiek en deterministisch moet verlopen, zoals geautomatiseerde compliance-checks"
+  ],
+  "useCases": [
+    "Concurrentie- en prijsmonitoring over veel verschillende webshops",
+    "Geautomatiseerd onderzoek waarbij de agent zelf doorklikt en samenvat",
+    "QA-achtige flows: inloggen, formulier invullen, resultaat controleren"
+  ],
+  "strengths": [
+    "Selector-vrij: overleeft layoutwijzigingen waar klassieke scripts breken",
+    "Werkt met elk LLM — Claude, GPT, Gemini of lokale modellen",
+    "MIT-licentie; de library zelf kost niets",
+    "Cloud-optie met stealth-browsers en residentiële proxies in 195+ landen"
+  ],
+  "limitations": [
+    "Elke run kost LLM-tokens en is trager dan een hard gecodeerd script",
+    "Python-kennis vereist; geen grafische interface",
+    "Niet-deterministisch: dezelfde taak kan per run net anders verlopen"
+  ],
+  "bestAlternative": "workbeaver",
+  "mentionAliases": [
+    "browser use",
+    "browseruse"
+  ],
+  "pricing": "Library gratis open-source (MIT); Browser Use Cloud vanaf $29/mnd met $10 gratis startcredits. Plus je eigen LLM-API-kosten.",
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "openSource": true,
+  "tags": [
+    "browser-automation",
+    "open-source",
+    "python",
+    "web-scraping",
+    "agents"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "development",
+    "data",
+    "operations"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Natuurlijke-taal-aansturing",
+      "description": "Beschrijf de taak in gewone taal; de agent bepaalt zelf de klikken en invoer op de pagina.",
+      "group": "core"
+    },
+    {
+      "title": "Selector-vrije robuustheid",
+      "description": "Geen CSS-selectors of XPath — automatiseringen overleven layoutwijzigingen.",
+      "group": "core"
+    },
+    {
+      "title": "Modelvrijheid",
+      "description": "Werkt met Claude, GPT, Gemini of lokale modellen; geen binding aan één LLM-provider.",
+      "group": "core"
+    },
+    {
+      "title": "Python-library",
+      "description": "Integreert als bouwsteen in eigen agents, pipelines en frameworks.",
+      "group": "integration"
+    },
+    {
+      "title": "Stealth-browsers (Cloud)",
+      "description": "Cloudversie omzeilt botdetectie en CAPTCHA's voor productieworkloads.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Residentiële proxies (Cloud)",
+      "description": "Toegang vanuit 195+ landen voor geo-specifieke webtaken.",
+      "group": "enterprise"
+    }
+  ]
+}

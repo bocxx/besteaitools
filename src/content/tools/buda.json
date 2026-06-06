@@ -1,0 +1,90 @@
+{
+  "name": "Buda",
+  "category": "agents",
+  "websiteUrl": "https://buda.im/",
+  "shortDescription": "'Agents as a Company': cloud-workspace waar AI-agents als team je werk uitvoeren",
+  "headlineValueProp": "Recruteer AI-agents voor sales, ops en HR, laat een Organizer ze coördineren en kijk live mee in browser en terminal",
+  "longDescription": "Buda positioneert zich als 'Agents as a Company': je stelt een team van AI-agents samen — bijvoorbeeld een sales-, marketing-, operations- en finance-agent — die in cloud-sandboxes parallel taken uitvoeren, gecoördineerd door een Organizer-agent. Het platform ontstond nadat de oprichters hun eigen bedrijf op agents probeerden te draaien via OpenClaw op acht Linux-machines en twee Mac Mini's; Buda is dat idee als clouddienst, zonder eigen hardware. Elke agent krijgt een geïsoleerde sandbox met persistente Buda Drive (bestanden en geheugen overleven sessies), en je kijkt live mee via één scherm met Agent, Drive, Browser, Terminal en Git. Agents zijn ook inzetbaar in Slack, Discord, Telegram en WhatsApp, en een marketplace levert kant-en-klare skills, agents en teams. Je kiest per taak uit modellen van Anthropic, OpenAI, Google en DeepSeek.",
+  "verdict": "Buda is een van de interessantste pogingen om de 'AI-medewerkers'-belofte concreet te maken: de combinatie van persistente agent-werkruimtes, live meekijken en chat-deployment is verder uitgewerkt dan bij de meeste agent-platforms. Wel is het een jong product met een fors prijskaartje per agent op de Pro-tier, en 'replace entire departments' blijft marketingambitie — reken op intensief toezicht en bijsturen.",
+  "whyListed": "Exponent van de 'agents as employees'-golf van 2025-2026: een werkende multi-agent workspace die als cloud-alternatief voor OpenClaw-setups een eigen niche pakt.",
+  "bestFor": "Kleine teams en solo-ondernemers die terugkerend werk in sales, ops of content aan een team van agents willen delegeren",
+  "primaryJobsToBeDone": [
+    "Leadgeneratie, follow-ups en CRM-onderhoud laten draaien door een sales-agent",
+    "Contentproductie en social-planning delegeren aan een marketing-agent met terugkerende automations",
+    "Meerdere agents parallel laten werken aan research, code en operations vanuit één dashboard",
+    "Agents bereikbaar maken voor je team via Slack, Discord, Telegram of WhatsApp"
+  ],
+  "antiUseCases": [
+    "Organisaties die agents op eigen infrastructuur willen draaien zonder cloudafhankelijkheid — dan is een OpenClaw-achtige self-hosted setup logischer (self-hosting zit bij Buda pas in Enterprise)",
+    "Wie één coding-agent zoekt voor in de terminal: daarvoor is een los abonnement op Claude Code goedkoper en directer",
+    "Processen die foutloos en zonder menselijke controle moeten lopen — agents vragen hier nog dagelijks toezicht"
+  ],
+  "useCases": [
+    "Een 'agent-bedrijf' opzetten met gespecialiseerde rollen en een coördinerende Organizer",
+    "Terugkerende ops-taken via automations en cron laten draaien",
+    "Documenten, beelden en video laten verwerken en genereren in agent-workflows",
+    "Agents als chatbot-collega's in je bestaande teamkanalen zetten"
+  ],
+  "strengths": [
+    "Persistente Buda Drive: agents onthouden bestanden en context over sessies heen",
+    "Volledige transparantie — je ziet elke stap in browser, terminal en git, geen black box",
+    "Geïsoleerde sandbox per agent met eigen volumes en permissiecontroles",
+    "Deployment naar acht chatplatforms en een marketplace met kant-en-klare skills en teams"
+  ],
+  "limitations": [
+    "Pro-tier kost $100 per agent per maand — een team van vijf agents loopt snel in de papieren",
+    "Free-tier mist juist de onderscheidende features (browser, terminal, git)",
+    "Jong product van een kleine partij; lange-termijn continuïteit is minder zeker dan bij gevestigde platforms"
+  ],
+  "bestAlternative": "relevance-ai",
+  "mentionAliases": ["buda.im", "buda ai"],
+  "pricing": "Gratis plan met 2 agents en 300 credits per dag (zonder browser/terminal/git). Plus $20 per agent per maand; Pro $100 per agent per maand; Enterprise op maat met self-hosted optie en BYOK. Extra credits los bij te kopen, vanaf $5.",
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "openSource": false,
+  "tags": ["ai-agents", "multi-agent", "automatisering", "cloud-workspace", "agent-teams"],
+  "draft": false,
+  "businessFunctions": ["sales", "marketing", "operations", "hr"],
+  "keyFeatures": [
+    {
+      "title": "Agent-teams met Organizer",
+      "description": "Stel gespecialiseerde agents samen die parallel werken, gecoördineerd door een Organizer-agent.",
+      "group": "core"
+    },
+    {
+      "title": "Buda Drive",
+      "description": "Persistente cloud-werkruimte per agent: bestanden, context en geheugen overleven herstarts.",
+      "group": "core"
+    },
+    {
+      "title": "Visuele workspace",
+      "description": "Agent, Drive, Browser, Terminal en Git in één scherm — je ziet elke stap die je AI zet.",
+      "group": "core"
+    },
+    {
+      "title": "Chat-deployment",
+      "description": "Zet agents live in Slack, Discord, Telegram, WhatsApp, Teams en meer.",
+      "group": "integration"
+    },
+    {
+      "title": "Marketplace",
+      "description": "Kant-en-klare skills, agents en complete teams installeren of zelf verkopen.",
+      "group": "integration"
+    },
+    {
+      "title": "Automations en cron",
+      "description": "Terugkerende agent-taken inplannen, van dagelijkse rapportages tot CRM-syncs.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-model",
+      "description": "Kies per taak uit modellen van Anthropic, OpenAI, Google en DeepSeek met verschillende credit-tarieven.",
+      "group": "core"
+    },
+    {
+      "title": "Enterprise-opties",
+      "description": "Self-hosted deployment, BYOK, SSO, rollen en audit logs voor grotere organisaties.",
+      "group": "enterprise"
+    }
+  ]
+}

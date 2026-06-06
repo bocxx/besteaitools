@@ -1,0 +1,78 @@
+{
+  "name": "MOSS-TTS",
+  "category": "audio",
+  "websiteUrl": "https://github.com/OpenMOSS/MOSS-TTS",
+  "shortDescription": "Open-source TTS-modelfamilie voor multi-speaker dialoog en realtime spraak",
+  "headlineValueProp": "Spraakmodellen onder Apache 2.0 — van multi-speaker dialoog tot een 0.1B-model dat realtime op CPU draait",
+  "longDescription": "MOSS-TTS is een open-source familie van spraak- en geluidsgeneratiemodellen van MOSI.AI en het OpenMOSS-team, uitgebracht in februari 2026 onder Apache 2.0 — dus ook commercieel vrij te gebruiken. De familie dekt verschillende scenario's: het vlaggenschipmodel richt zich op stabiele lange-vorm spraak met zero-shot stemkloon op basis van zo'n drie seconden referentie-audio; MOSS-TTSD is gespecialiseerd in expressieve multi-speaker dialogen met long-context-modellering en flexibele sprekerscontrole (denk aan podcasts met meerdere stemmen); en MOSS-TTS-Nano is een model van slechts 0.1B parameters dat realtime spraak genereert op een gewone CPU, zonder GPU. Daarnaast ondersteunt de familie stem- en karakterontwerp, omgevingsgeluiden en streaming TTS met lage latency, in tien talen. Je draait de modellen zelf, lokaal of op eigen infrastructuur.",
+  "verdict": "MOSS-TTS is een van de compleetste open spraakmodel-families van dit moment: waar de meeste open TTS-modellen één ding doen, dekt deze familie lange-vorm spraak, multi-speaker dialoog én realtime CPU-inference onder één permissieve licentie. Het blijft wel een modelfamilie, geen product — je hebt technische kennis nodig om het te deployen, en Nederlands zit niet prominent in de talenlijst.",
+  "whyListed": "Open spraakmodellen halen het commerciële niveau snel in, en MOSS-TTS valt op door de breedte van de familie — vooral de dialoogvariant MOSS-TTSD en het CPU-vriendelijke Nano-model vullen gaten die andere open modellen laten liggen.",
+  "bestFor": "Developers die TTS, stemkloon of dialooggeneratie in eigen producten willen inbouwen zonder licentiekosten of vendor lock-in.",
+  "primaryJobsToBeDone": [
+    "TTS inbouwen in je eigen product zonder per-karakter API-kosten of licentierestricties",
+    "Multi-speaker dialogen genereren voor podcasts of audiodrama's met MOSS-TTSD",
+    "Realtime spraak draaien op CPU-only infrastructuur met het Nano-model"
+  ],
+  "antiUseCases": [
+    "Wie een kant-en-klare app of API zoekt — dit zijn modellen die je zelf moet hosten en integreren",
+    "Nederlandstalige voice-overs als kerntaak — Nederlands behoort niet tot de prominent ondersteunde talen",
+    "Teams zonder ML-deploy-ervaring; een gehoste dienst als ElevenLabs is dan sneller en voorspelbaarder"
+  ],
+  "useCases": [
+    "Een eigen TTS-API hosten voor producten met veel spraakvolume",
+    "Podcast-achtige dialogen met meerdere stemmen genereren uit een script",
+    "Stemmen klonen uit korte referentie-audio voor karakterontwerp",
+    "Streaming spraak met lage latency in realtime toepassingen"
+  ],
+  "strengths": [
+    "Apache 2.0 — commercieel vrij te gebruiken zonder licentiekosten",
+    "Familie dekt lange-vorm spraak, dialoog, geluidseffecten én realtime streaming",
+    "Nano-variant draait realtime op CPU, zonder GPU-infrastructuur"
+  ],
+  "limitations": [
+    "Zelf hosten en integreren vereist ML-engineering-kennis",
+    "Tien ondersteunde talen, maar Nederlands hoort daar niet prominent bij",
+    "Geen officiële gehoste API of SLA — je bent zelf verantwoordelijk voor uptime"
+  ],
+  "bestAlternative": "voicebox",
+  "mentionAliases": ["moss tts", "moss-ttsd", "moss-tts-nano"],
+  "pricing": "Gratis, open source onder Apache 2.0; je draait de modellen op eigen hardware — de Nano-variant zelfs op CPU",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": ["open-source", "text-to-speech", "voice-cloning", "multi-speaker"],
+  "draft": false,
+  "businessFunctions": ["development"],
+  "keyFeatures": [
+    {
+      "title": "Zero-shot stemkloon",
+      "description": "Kloon een stem op basis van circa drie seconden referentie-audio, zonder finetuning.",
+      "group": "core"
+    },
+    {
+      "title": "MOSS-TTSD: multi-speaker dialoog",
+      "description": "Genereert expressieve gesprekken tussen meerdere sprekers met long-context-modellering en sprekerscontrole.",
+      "group": "core"
+    },
+    {
+      "title": "MOSS-TTS-Nano (0.1B, CPU)",
+      "description": "Mini-model dat realtime spraak genereert op een gewone CPU — geschikt voor lokale demo's en lichte integraties.",
+      "group": "core"
+    },
+    {
+      "title": "Streaming TTS",
+      "description": "Realtime spraakgeneratie met lage latency voor conversational toepassingen.",
+      "group": "output"
+    },
+    {
+      "title": "Stem- en karakterontwerp",
+      "description": "Ontwerp stemmen en personages, inclusief omgevingsgeluiden en geluidseffecten.",
+      "group": "core"
+    },
+    {
+      "title": "Tien talen",
+      "description": "Meertalige generatie over de hele modelfamilie, met modellen ook beschikbaar op Hugging Face.",
+      "group": "output"
+    }
+  ]
+}

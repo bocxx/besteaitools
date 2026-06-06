@@ -2,7 +2,11 @@
   "name": "Claude Code",
   "category": "coding",
   "websiteUrl": "https://docs.anthropic.com/en/docs/claude-code",
-  "shortDescription": "Anthropic's terminal-based coding assistant",
+  "shortDescription": "Anthropic's terminal-coding-agent met subagents, plugins, hooks en MCP",
+  "mentionAliases": [
+    "claude code",
+    "claudecode"
+  ],
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [
@@ -12,21 +16,26 @@
     "anthropic"
   ],
   "draft": false,
-  "longDescription": "Claude Code is een AI-gebaseerd coderingsassistentiehulpmiddel dat ontwikkelaars helpt bij het schrijven, debuggen en optimaliseren van code.",
-  "bestFor": "Claude Code is het meest waardevol voor softwareontwikkelaars die efficiënter willen werken en hun productiviteit willen verbeteren.",
+  "longDescription": "Claude Code is Anthropic's agentic coding-tool voor de terminal: een agent die zelfstandig je codebase leest, een plan maakt, bestanden wijzigt en tests draait. Het is uitgegroeid tot een compleet platform: plugins bundelen commando's, MCP-servers en skills; hooks automatiseren checks rond elke wijziging; subagents en Dynamic Workflows orkestreren parallelle gespecialiseerde agents voor grote refactors of reviews. Claude Code draait op de actuele modellen-lineup (Opus 4.8, Sonnet 4.6, Haiku 4.5) en is inbegrepen bij Claude Pro en Max-abonnementen of via de API. Dezelfde agent-motor zit ook achter Claude Cowork — de variant voor niet-developers in de desktop-app.",
+  "bestFor": "Developers die hele features, refactors of migraties aan een agent willen delegeren in plaats van regel-voor-regel autocomplete.",
   "useCases": [
-    "Automatisch genereren van code",
-    "Foutopsporing en debugging",
-    "Optimaliseren van code"
+    "Hele features laten implementeren vanuit een beschrijving",
+    "Grote refactors en migraties over veel bestanden tegelijk",
+    "Codebases doorgronden en documenteren",
+    "Security-reviews en geautomatiseerde checks via plugins en hooks"
   ],
   "strengths": [
-    "Verhoogt de productiviteit van ontwikkelaars",
-    "Ondersteunt verschillende programmeertalen"
+    "Sterkste agentic-werkflow voor meerstaps-taken in bestaande codebases",
+    "Plugin/skills/hooks-ecosysteem maakt workflows herbruikbaar en deelbaar",
+    "Parallelle subagents voor grote taken (Dynamic Workflows)",
+    "Inbegrepen bij Claude Pro/Max — geen aparte licentie nodig"
   ],
   "limitations": [
-    "Nog in de beginfase, beperkte functionaliteit"
+    "Subscription-limieten op Pro vullen snel bij zware agent-taken — Max is dan nodig",
+    "Parallelle subagents kunnen tokenkosten hard laten oplopen zonder limieten",
+    "Terminal-first: minder geschikt voor wie liever in een visuele IDE werkt"
   ],
-  "pricing": "Gratis",
+  "pricing": "Inbegrepen bij Claude Pro ($20/mnd), Max ($100-200/mnd) en Team Premium; ook via API (pay-per-token)",
   "openSource": false,
   "businessFunctions": [
     "development"
@@ -103,9 +112,24 @@
       "group": "integration"
     },
     {
-      "title": "Modelkeuze Sonnet/Opus",
-      "description": "Wissel tussen snel (Sonnet) en grondig (Opus) afhankelijk van de taakcomplexiteit.",
+      "title": "Modelkeuze Opus/Sonnet/Haiku",
+      "description": "Wissel tussen grondig (Opus 4.8), productiewerk (Sonnet 4.6) en goedkoop-snel (Haiku 4.5) per taak.",
       "group": "core"
+    },
+    {
+      "title": "Subagents & Dynamic Workflows",
+      "description": "Orkestreer parallelle gespecialiseerde sub-agents vanuit één opdracht voor grote refactors of reviews.",
+      "group": "core"
+    },
+    {
+      "title": "Plugins & skills",
+      "description": "Installeerbare bundels van commando's, MCP-servers en skills — waaronder Anthropic's security-review plugin.",
+      "group": "integration"
+    },
+    {
+      "title": "Hooks",
+      "description": "Automatische acties op events — pre-commit checks of lint na elke edit, zonder handmatig prompten.",
+      "group": "integration"
     }
   ],
   "setupTime": "under_15min",

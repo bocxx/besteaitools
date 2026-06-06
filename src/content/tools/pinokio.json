@@ -1,0 +1,80 @@
+{
+  "name": "Pinokio",
+  "category": "infrastructure",
+  "websiteUrl": "https://pinokio.co/",
+  "shortDescription": "1-click launcher die open-source AI-tools lokaal installeert en beheert",
+  "headlineValueProp": "Installeer Stable Diffusion, voice cloning of een lokale LLM met één klik — zonder terminal, Git of Python-gedoe",
+  "longDescription": "Pinokio is een gratis, open-source 'AI-browser' die het installeren van lokale AI-tools terugbrengt tot één klik. Normaal vraagt een open-source AI-project: repo clonen, Python-omgeving opzetten, dependencies installeren, modellen downloaden en launch-commando's onthouden. Pinokio automatiseert dat hele traject via installatiescripts: je bladert door de catalogus, klikt op 'Install' en de tool regelt Python, Git, libraries en modelbestanden op de achtergrond. De catalogus omvat honderden tools voor beeldgeneratie, video, text-to-speech, voice cloning, muziek, 3D en lokale taalmodellen. Alles draait op je eigen hardware — Windows, Mac of Linux — zonder abonnement of cloudafhankelijkheid. Pinokio wordt vaak de 'Steam voor AI-tools' genoemd: één plek om lokale AI-apps te ontdekken, installeren, starten en verwijderen.",
+  "verdict": "Pinokio is de laagste drempel naar lokale AI: het haalt de hele terminal-setup weg die de meeste mensen tegenhoudt om open-source tools te proberen. De nuance: je hardware blijft de bottleneck — zonder behoorlijke GPU blijven veel beelden- en videotools traag of onbruikbaar, en community-scripts verschillen in kwaliteit en onderhoud.",
+  "whyListed": "De bekendste 1-click launcher voor lokale AI-tools en daarmee de toegangspoort tot het open-source AI-ecosysteem voor wie geen terminal wil aanraken.",
+  "bestFor": "Iedereen die open-source AI-tools lokaal wil draaien zonder technische installatiekennis",
+  "primaryJobsToBeDone": [
+    "Beeldgeneratie-tools zoals Stable Diffusion-varianten lokaal installeren met één klik",
+    "Voice cloning, text-to-speech of muziekgeneratie op je eigen machine uitproberen",
+    "Meerdere lokale AI-apps vanaf één dashboard starten, stoppen en verwijderen",
+    "AI gebruiken zonder dat je data naar een clouddienst gaat"
+  ],
+  "antiUseCases": [
+    "Machines zonder degelijke GPU of voldoende opslag — veel tools in de catalogus vragen serieuze hardware",
+    "Productie-omgevingen die reproduceerbare, geauditeerde deployments nodig hebben in plaats van community-installscripts",
+    "Wie alleen een lokale LLM met API wil draaien: Ollama is daarvoor kaler en gerichter"
+  ],
+  "useCases": [
+    "Lokaal experimenteren met beeld-, video- en audiogeneratie",
+    "Privacygevoelig werk waar cloud-AI geen optie is",
+    "Open-source modellen vergelijken zonder per tool een omgeving op te zetten",
+    "Een offline AI-toolkit opbouwen voor creatief werk"
+  ],
+  "strengths": [
+    "Eén klik vervangt het hele clone/venv/dependencies/launch-ritueel",
+    "Volledig gratis en open source, geen abonnement of limieten",
+    "Grote catalogus over beeld, video, audio, 3D en LLM's heen",
+    "Cross-platform: Windows, Mac en Linux"
+  ],
+  "limitations": [
+    "Prestaties volledig afhankelijk van je eigen hardware, vooral GPU en schijfruimte",
+    "Kwaliteit en onderhoud van installatiescripts wisselt per community-bijdrage",
+    "Modellen en dependencies slokken snel tientallen GB's op"
+  ],
+  "bestAlternative": "ollama",
+  "mentionAliases": ["pinokio browser", "pinokio computer"],
+  "pricing": "Volledig gratis en open source. Geen abonnementen of limieten; de enige beperking is je eigen hardware.",
+  "pricingModel": "free",
+  "difficulty": "beginner",
+  "openSource": true,
+  "tags": ["lokale-ai", "open-source", "launcher", "self-hosted", "beeldgeneratie"],
+  "draft": false,
+  "businessFunctions": ["development"],
+  "keyFeatures": [
+    {
+      "title": "1-click installatie",
+      "description": "Python, Git, dependencies en modelbestanden worden automatisch geregeld per tool.",
+      "group": "core"
+    },
+    {
+      "title": "Tool-catalogus",
+      "description": "Honderden installeerbare scripts voor beeld, video, audio, 3D, agents en lokale LLM's.",
+      "group": "core"
+    },
+    {
+      "title": "Centraal beheer",
+      "description": "Start, stop, update en verwijder al je lokale AI-apps vanaf één dashboard.",
+      "group": "core"
+    },
+    {
+      "title": "Volledig lokaal",
+      "description": "Alles draait op je eigen hardware; geen clouddienst of account nodig.",
+      "group": "core"
+    },
+    {
+      "title": "Cross-platform",
+      "description": "Native apps voor Windows, macOS en Linux.",
+      "group": "core"
+    },
+    {
+      "title": "Scriptbare automatisering",
+      "description": "Installaties zijn JSON-scripts; de community kan elke nieuwe AI-tool toevoegen.",
+      "group": "integration"
+    }
+  ]
+}

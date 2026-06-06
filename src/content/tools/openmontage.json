@@ -1,0 +1,78 @@
+{
+  "name": "OpenMontage",
+  "category": "video",
+  "websiteUrl": "https://github.com/calesthio/OpenMontage",
+  "shortDescription": "Open-source agentic videoproductie: je AI-codingagent wordt een videostudio",
+  "headlineValueProp": "Beschrijf de video die je wilt — je AI-agent doet research, script, assets, montage en render",
+  "longDescription": "OpenMontage is een open-source systeem dat je AI-codingagent (zoals Claude Code) verandert in een complete videoproductiestudio. Het bestaat uit 12 pipelines, 52 tools en meer dan 500 agent-skills die samen het hele productieproces afdekken: webresearch (YouTube, Reddit, nieuws, academische bronnen) als eerste stap, daarna scripting, asset-generatie, montage en eindcompositie. Bijzonder is dat het niet alleen AI-gegenereerde beelden gebruikt: de agent kan ook een corpus opbouwen uit gratis stockfootage en open archieven, echte bewegende clips ophalen en die tot een tijdlijn monteren. Je werkt in natuurlijke taal — 'maak een explainer over X' — en de agent volgt hetzelfde gestructureerde proces als een echt productieteam. Je betaalt alleen de API-kosten van de modellen en providers die je zelf koppelt.",
+  "verdict": "OpenMontage is het meest ambitieuze open-source videoproductieproject van dit moment: geen losse clip-tool maar een volledig agentic productieproces, inclusief research met bronvermelding en montage van echte stockfootage. De keerzijde is dat je een werkende AI-codingagent plus API-keys nodig hebt en comfortabel moet zijn met een terminal — dit is geen klik-en-klaar webapp.",
+  "whyListed": "Agentic videoproductie is de logische volgende stap na losse generatiemodellen, en OpenMontage is het eerste open-source systeem dat de hele keten — van research tot render — door een agent laat uitvoeren in plaats van door een SaaS-platform.",
+  "bestFor": "Technische makers die videoproductie willen automatiseren met hun eigen AI-agent en eigen API-keys.",
+  "primaryJobsToBeDone": [
+    "Complete video's laten produceren door je AI-agent op basis van een beschrijving in natuurlijke taal",
+    "Research-gedreven explainers maken waarbij de agent bronnen verzamelt en citeert",
+    "Video's monteren uit gratis stockfootage en open archieven zonder generatiekosten"
+  ],
+  "antiUseCases": [
+    "Wie zonder terminal of AI-codingagent wil werken — kies dan een webplatform als Syllaby of Higgsfield",
+    "Snelle social clips uit bestaande video's knippen — daar is OpenShorts gerichter voor",
+    "Teams die een vendor met support en SLA nodig hebben — dit is een community-project"
+  ],
+  "useCases": [
+    "Explainer-video's produceren met geautomatiseerde bronnenresearch",
+    "Faceless YouTube-content maken op basis van stockfootage in plaats van AI-beelden",
+    "Een videoproductie-pipeline opzetten die je volledig zelf beheert",
+    "Experimenteren met agentic workflows voorbij codegeneratie"
+  ],
+  "strengths": [
+    "Dekt de volledige productieketen: research, script, assets, montage, render",
+    "Werkt ook met gratis stockfootage en open archieven — niet alleen met betaalde generatiemodellen",
+    "Open source: pipelines en skills zijn inzichtelijk en aanpasbaar"
+  ],
+  "limitations": [
+    "Vereist een AI-codingagent, terminal-ervaring en eigen API-keys",
+    "Kwaliteit en kosten hangen af van de providers die je zelf koppelt",
+    "Jong project — verwacht scherpe randjes en snelle veranderingen"
+  ],
+  "bestAlternative": "openshorts",
+  "mentionAliases": ["open montage"],
+  "pricing": "Gratis en open source; je betaalt alleen de API-kosten van de modellen en providers die je zelf koppelt",
+  "pricingModel": "free",
+  "difficulty": "advanced",
+  "openSource": true,
+  "tags": ["open-source", "agentic", "video-productie", "automatisering"],
+  "draft": false,
+  "businessFunctions": ["marketing", "development"],
+  "keyFeatures": [
+    {
+      "title": "12 productie-pipelines",
+      "description": "Gestructureerde pipelines voor verschillende videotypen, van explainer tot stockfootage-montage.",
+      "group": "core"
+    },
+    {
+      "title": "Webresearch als eerste stap",
+      "description": "De agent doorzoekt YouTube, Reddit, Hacker News, nieuwssites en academische bronnen en levert een research-brief met citaten.",
+      "group": "core"
+    },
+    {
+      "title": "500+ agent-skills",
+      "description": "Kant-en-klare skills die je codingagent leren scripten, monteren en componeren.",
+      "group": "core"
+    },
+    {
+      "title": "Stockfootage-workflow",
+      "description": "Bouwt een corpus uit gratis stockvideo en open archieven en monteert echte clips tot een tijdlijn — zonder generatiekosten.",
+      "group": "input"
+    },
+    {
+      "title": "52 tools voor montage en compositie",
+      "description": "Van timeline-editing tot eindrender, aanstuurbaar door de agent in plaats van met de hand.",
+      "group": "output"
+    },
+    {
+      "title": "Provider-agnostisch",
+      "description": "Koppel zelf de generatie- en LLM-providers van je keuze via API-keys.",
+      "group": "integration"
+    }
+  ]
+}

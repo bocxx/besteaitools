@@ -1,0 +1,80 @@
+{
+  "name": "Solo",
+  "category": "coding",
+  "websiteUrl": "https://soloterm.com/",
+  "shortDescription": "Native workspace die je terminal-agents en dev-stack in één venster draait",
+  "headlineValueProp": "Draai Claude Code, Codex en Gemini CLI naast je dev-server en queue workers — in één dashboard met crash-detectie",
+  "longDescription": "Solo (van SoloTerm) is een lichtgewicht terminal-workspace van Aaron Francis, gebouwd voor het tijdperk waarin developers meerdere coding-agents tegelijk draaien. In plaats van negen terminal-tabs jongleren definieer je in een solo.yml welke agents (Claude Code, Codex, Gemini CLI, Amp, Aider) en processen (dev-server, queue workers, databases) bij een project horen; Solo start alles met één klik, herstart gecrashte processen automatisch en toont met groen/rood-indicatoren wat draait. De slimste zet is de MCP-integratie: je agents kunnen via Solo zelf logs lezen, processtatus opvragen en gecrashte services herstarten — zodat ze niet code genereren tegen een stack die stilligt. Het is een Tauri-app van zo'n 25MB, geen Electron-kolos, en vervangt bewust niet je editor.",
+  "verdict": "Solo lost een probleem op dat pas sinds de opkomst van terminal-agents bestaat: het overzicht kwijtraken over parallel draaiende agents en dev-processen. De MCP-koppeling waarmee agents je stack kunnen zien is het echte verkoopargument. Houd er rekening mee dat het nu alleen op Mac draait en dat wie maar één agent in één project gebruikt, weinig wint ten opzichte van gewone terminal-tabs.",
+  "whyListed": "Het bekendste voorbeeld van een nieuwe tool-categorie — de 'agentic metaharness' — die ontstond doordat developers meerdere CLI-agents tegelijk zijn gaan draaien. Gebouwd door Aaron Francis (faster.dev).",
+  "bestFor": "Developers die dagelijks meerdere terminal-agents naast een lokale dev-stack draaien en het overzicht willen houden",
+  "primaryJobsToBeDone": [
+    "Meerdere coding-agents (Claude Code, Codex, Gemini CLI) parallel draaien en monitoren vanuit één venster",
+    "Je hele dev-stack per project met één klik starten en stoppen via een gedeelde solo.yml",
+    "Agents via MCP toegang geven tot je logs en processtatus, zodat ze tegen een draaiende stack werken",
+    "Gecrashte dev-servers en workers automatisch laten herstarten met notificatie"
+  ],
+  "antiUseCases": [
+    "Windows- of Linux-gebruikers: Solo is voorlopig Mac-only",
+    "Wie één agent in één project draait — dan voegt een proces-dashboard weinig toe boven terminal-tabs",
+    "Teams die een agent-orchestrator zoeken die zelf taken verdeelt: Solo beheert processen, het stuurt geen agents aan"
+  ],
+  "useCases": [
+    "Parallel agents laten werken aan verschillende onderdelen van een project",
+    "Onboarding versnellen door de hele stack-definitie in de repo te committen",
+    "Lokale ontwikkeling met queue workers, dev-servers en agents in één overzicht",
+    "Agents laten debuggen op basis van live proceslogs via MCP"
+  ],
+  "strengths": [
+    "MCP-server waarmee agents je logs en processtatus kunnen lezen en services herstarten",
+    "Native Tauri-app van ~25MB — gebruikt minder RAM dan één Chrome-tab",
+    "Werkt met elke CLI-agent zonder lock-in; je eigen keys en config blijven onaangeraakt",
+    "Gratis tier is volwaardig en verloopt nooit (4 projecten, 20 processen)"
+  ],
+  "limitations": [
+    "Alleen macOS; Windows en Linux zijn aangekondigd maar nog niet beschikbaar",
+    "Alle processen stoppen als je Solo afsluit — niets blijft op de achtergrond draaien",
+    "Geen orchestratie of taakverdeling tussen agents; je bestuurt elke agent zelf"
+  ],
+  "bestAlternative": "cursor",
+  "mentionAliases": ["soloterm", "solo terminal"],
+  "pricing": "Gratis tot 4 projecten en 20 processen, alle features inbegrepen. Pro (onbeperkt): $99 het eerste jaar, daarna $69 per jaar, geldig op 3 apparaten.",
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "openSource": false,
+  "tags": ["terminal", "ai-agents", "developer-tools", "workspace", "mcp"],
+  "draft": false,
+  "businessFunctions": ["development"],
+  "keyFeatures": [
+    {
+      "title": "Multi-agent dashboard",
+      "description": "Draai Claude Code, Codex, Gemini CLI, Amp en Aider naast elkaar met live status per agent.",
+      "group": "core"
+    },
+    {
+      "title": "Stack-definitie in solo.yml",
+      "description": "Definieer agents en processen per project; commit het bestand en je hele team draait dezelfde stack.",
+      "group": "core"
+    },
+    {
+      "title": "Auto-restart",
+      "description": "Detecteert gecrashte dev-servers en workers en start ze automatisch opnieuw, met file-watchers voor code-wijzigingen.",
+      "group": "core"
+    },
+    {
+      "title": "MCP voor agents",
+      "description": "Agents lezen logs, zien processtatus en herstarten services via Solo's MCP-server.",
+      "group": "integration"
+    },
+    {
+      "title": "Interactieve terminals",
+      "description": "Typ direct in draaiende agents en processen — reageer op prompts zonder van venster te wisselen.",
+      "group": "core"
+    },
+    {
+      "title": "Trust-systeem",
+      "description": "Als solo.yml wijzigt na een git pull, vraagt Solo bevestiging voordat er iets draait.",
+      "group": "enterprise"
+    }
+  ]
+}
