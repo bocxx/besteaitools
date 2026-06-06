@@ -2,22 +2,25 @@
   "name": "DALL-E",
   "category": "image",
   "websiteUrl": "https://openai.com/dall-e",
-  "shortDescription": "OpenAI's beeldgenerator, geïntegreerd in ChatGPT",
-  "longDescription": "DALL-E is een kunstmatige intelligentie-tool die in staat is om op basis van tekstbeschrijvingen unieke en realistische beelden te genereren. Het maakt gebruik van diepgaande neurale netwerken om creatieve en verbeeldingsrijke afbeeldingen te creëren.",
-  "bestFor": "DALL-E is het meest waardevol voor creatieve professionals, marketeers en individuen die op zoek zijn naar een efficiënte manier om beelden te genereren op basis van tekstinvoer.",
+  "shortDescription": "OpenAI's klassieke beeldgenerator — in 2026 opgevolgd door GPT Image in ChatGPT",
+  "longDescription": "DALL-E was jarenlang OpenAI's beeldgenerator, maar bestaat sinds 12 mei 2026 niet meer: OpenAI heeft DALL-E 2 en 3 definitief uitgezet. Beeldgeneratie in ChatGPT loopt nu via de opvolgers uit de GPT Image-familie. ChatGPT-gebruikers werden eind 2025 automatisch overgezet naar GPT Image 1.5, en sinds april 2026 is GPT Image 2 ('ChatGPT Images 2.0') de standaard — een model dat tekst in beeld correct rendert, losse beeldelementen via het gesprek laat bewerken en zelfs mid-generatie het web kan raadplegen. Voor jou als gebruiker verandert de workflow weinig: je beschrijft in ChatGPT wat je wilt zien en krijgt het beeld in het gesprek terug. Wie nog API-integraties op DALL-E 3 heeft draaien, moet migreren naar gpt-image-2; de oude endpoints zijn gestopt.",
+  "bestFor": "ChatGPT-gebruikers die zonder extra tool of abonnement beelden willen genereren en bewerken binnen hun bestaande chat-workflow.",
   "useCases": [
-    "Genereren van afbeeldingen voor marketing en reclame",
-    "Creëren van conceptuele illustraties en kunstwerken",
-    "Visualiseren van abstracte ideeën en concepten"
+    "Beelden genereren voor marketing en social media direct vanuit ChatGPT",
+    "Bestaande afbeeldingen bewerken via conversatie (achtergrond, stijl, losse elementen)",
+    "Visuals met leesbare tekst maken, zoals posters en infographics"
   ],
   "strengths": [
-    "Unieke en creatieve beeldgeneratie",
-    "Realistische en gedetailleerde uitkomsten"
+    "Naadloos geïntegreerd in ChatGPT — geen aparte tool nodig",
+    "Opvolger GPT Image 2 rendert tekst in beeld correct en kan gericht bijwerken",
+    "Begrijpt complexe instructies beter dan het oude DALL-E dankzij autoregressieve architectuur"
   ],
   "limitations": [
-    "Beperkte controle over het generatieproces"
+    "DALL-E zelf is gestopt (mei 2026) — wie de naam zoekt, gebruikt feitelijk GPT Image",
+    "Gratis ChatGPT-gebruikers hebben beperkte generatie-limieten",
+    "Minder stijlcontrole dan gespecialiseerde tools als Midjourney"
   ],
-  "pricing": "Betaald, met verschillende abonnementsopties",
+  "pricing": "Beeldgeneratie zit in ChatGPT: beperkt gratis, ruimer met Plus ($20/mnd). Via de API betaal je per beeld voor gpt-image-2; de oude DALL-E API is per 12 mei 2026 gestopt",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -85,9 +88,37 @@
     "Stock foto diensten (Shutterstock, Getty Images)"
   ],
   "testedByEditor": false,
-  "verdict": "DALL-E is de pionier van AI-beeldgeneratie en naadloos geïntegreerd in ChatGPT. Ideaal voor snelle creatieve visualisaties zonder technische kennis. De kwaliteit is indrukwekkend maar mist nog de controle van gespecialiseerde tools zoals Midjourney of Adobe Firefly.",
+  "verdict": "DALL-E was de pionier van AI-beeldgeneratie, maar is in mei 2026 door OpenAI gepensioneerd. De opvolger GPT Image 2 in ChatGPT is op vrijwel alle vlakken beter: correcte tekst in beeld, gerichte bewerkingen via het gesprek en sterkere prompt-trouw. Voor maximale stijlcontrole blijven Midjourney en Adobe Firefly de gespecialiseerde keuze.",
   "bestAlternative": "midjourney",
-  "whyListed": "DALL-E staat op de site omdat het de meest toegankelijke AI-beeldgenerator is, direct beschikbaar via ChatGPT voor miljoenen gebruikers. Het verlaagt de drempel voor visuele content creatie enorm en is ontwikkeld door de meest invloedrijke AI-lab ter wereld.",
+  "whyListed": "DALL-E maakte AI-beeldgeneratie mainstream via ChatGPT. De naam leeft voort als zoekterm, maar de techniek is per mei 2026 vervangen door OpenAI's GPT Image-modellen — deze pagina beschrijft die overgang.",
+  "headlineValueProp": "OpenAI's beeldgeneratie in ChatGPT — DALL-E is gestopt, GPT Image 2 is de opvolger",
+  "keyFeatures": [
+    {
+      "title": "Beeldgeneratie in ChatGPT",
+      "description": "Beschrijf wat je wilt zien en krijg het beeld direct in het gesprek — geen aparte tool of account nodig",
+      "group": "core"
+    },
+    {
+      "title": "Conversationeel bewerken",
+      "description": "Pas losse onderdelen van een beeld aan via vervolginstructies in plaats van alles opnieuw te genereren",
+      "group": "core"
+    },
+    {
+      "title": "Correcte tekst in beeld",
+      "description": "GPT Image rendert leesbare tekst in posters, infographics en mockups — de grootste zwakte van het oude DALL-E",
+      "group": "output"
+    },
+    {
+      "title": "Redenerende generatie",
+      "description": "GPT Image 2 kan tijdens het genereren het web raadplegen en zijn eigen output controleren, tot 8 samenhangende beelden per prompt",
+      "group": "core"
+    },
+    {
+      "title": "API-toegang",
+      "description": "Voor developers via gpt-image-2 in de OpenAI API; oudere image-endpoints worden per december 2026 uitgefaseerd",
+      "group": "integration"
+    }
+  ],
   "setupTime": "under_15min",
   "matchSegments": [
     "mkb_klein",

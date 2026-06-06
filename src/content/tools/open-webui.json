@@ -23,22 +23,26 @@
     "chat-ui"
   ],
   "draft": false,
-  "longDescription": "Open WebUI is een open-source web-based gebruikersinterface voor het beheren en configureren van AI-modellen. Het biedt een intuïtieve en gebruiksvriendelijke manier om AI-modellen te implementeren en te testen.",
-  "bestFor": "Open WebUI is het meest waardevol voor ontwikkelaars en AI-experts die AI-modellen willen implementeren en testen in een web-based omgeving.",
+  "longDescription": "Open WebUI is de meest gebruikte open-source chatinterface voor self-hosted LLM's. Je draait het via Docker naast Ollama of koppelt elke OpenAI-compatibele API (OpenRouter, vLLM, LiteLLM) en krijgt een ChatGPT-achtige omgeving met multi-user beheer, chat-historie, RAG op eigen documenten, web search en een plugin-systeem (Pipelines en Functions). Sinds v0.6.6 (april 2025) geldt een aangepaste licentie: gratis en open blijft het, maar deployments met meer dan 50 gebruikers moeten de Open WebUI-branding behouden tenzij ze een enterprise-licentie afnemen. Die enterprise-laag voegt white-labeling, SLA's, SSO/LDAP-integratie en audit-trails toe. Voor teams die ChatGPT-achtig gemak willen zonder data naar een Amerikaanse SaaS te sturen is dit de standaardkeuze.",
+  "bestFor": "Teams en organisaties die een ChatGPT-achtige interface willen op eigen infrastructuur — gekoppeld aan lokale Ollama-modellen of externe API's, met volledige controle over data.",
   "useCases": [
-    "Implementatie en testen van AI-modellen",
-    "Beheer en configuratie van AI-modellen",
-    "Ontwikkeling van AI-toepassingen"
+    "ChatGPT-achtige interface draaien op lokale Ollama-modellen",
+    "Eén team-frontend voor meerdere modellen en API-providers",
+    "RAG op eigen documenten zonder data naar externe SaaS",
+    "Multi-user chatomgeving met rollen, groepen en chat-historie"
   ],
   "strengths": [
-    "Open-source",
-    "Gebruiksvriendelijke web-based interface",
-    "Ondersteuning voor verschillende AI-modellen"
+    "Meest volwassen open-source LLM-frontend met zeer actieve ontwikkeling",
+    "Werkt met Ollama én elke OpenAI-compatibele API",
+    "Ingebouwde RAG, web search, voice en image-generatie-koppelingen",
+    "Uitbreidbaar via Pipelines en Functions (Python-plugins)"
   ],
   "limitations": [
-    "Beperkte functionaliteit vergeleken met command-line tools"
+    "Branding-clausule sinds v0.6.6: bij 50+ gebruikers mag je de Open WebUI-branding niet verwijderen zonder enterprise-licentie",
+    "Self-hosting vereist Docker-kennis en onderhoud",
+    "Geen officiële mobiele apps"
   ],
-  "pricing": "Gratis",
+  "pricing": "Gratis en open-source (self-hosted). Enterprise-licentie op aanvraag (sales@openwebui.com) voor white-labeling, SLA's en dedicated support; geen publieke prijslijst.",
   "openSource": true,
   "businessFunctions": [
     "development",
@@ -55,7 +59,48 @@
   "nlSupport": true,
   "integrations": [
     "Ollama",
-    "OpenAI API"
+    "OpenAI API",
+    "OpenRouter",
+    "vLLM",
+    "LiteLLM",
+    "Docker"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Multi-backend chat",
+      "description": "Koppel Ollama, OpenAI, OpenRouter of elke OpenAI-compatibele API en wissel per gesprek van model.",
+      "group": "core"
+    },
+    {
+      "title": "RAG op eigen documenten",
+      "description": "Upload documenten of koppel een kennisbank en chat met je eigen data — lokaal verwerkt.",
+      "group": "input"
+    },
+    {
+      "title": "Multi-user met RBAC",
+      "description": "Gebruikersbeheer met rollen, groepen en permissies — geschikt als team-frontend.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Pipelines & Functions",
+      "description": "Python-plugin-framework voor custom logica, filters en tool-integraties.",
+      "group": "integration"
+    },
+    {
+      "title": "Web search",
+      "description": "Ingebouwde zoekintegraties (SearXNG, Google, Brave e.a.) voor actuele context in antwoorden.",
+      "group": "input"
+    },
+    {
+      "title": "Model-vergelijking",
+      "description": "Meerdere modellen naast elkaar in één gesprek om output te vergelijken.",
+      "group": "core"
+    },
+    {
+      "title": "Enterprise-laag",
+      "description": "White-labeling, SSO/LDAP, audit-logs en SLA's via een optionele enterprise-licentie.",
+      "group": "enterprise"
+    }
   ],
   "timeToFirstValue": "hours",
   "setupComplexity": "high",
@@ -85,5 +130,5 @@
   "beginnerFriendlyScore": 4,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

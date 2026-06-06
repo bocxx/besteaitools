@@ -3,31 +3,72 @@
   "category": "infrastructure",
   "websiteUrl": "https://groq.com",
   "shortDescription": "Ultra-snelle AI-inference chip en API — tot 10x sneller dan GPU-alternatieven",
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "inference",
+    "lpu",
+    "api",
+    "low-latency"
+  ],
   "draft": false,
-  "longDescription": "Groq is een declaratieve query-taal voor het opvragen en transformeren van gestructureerde data. Het biedt een efficiënte en schaalbare manier om complexe data-analyses uit te voeren.",
-  "bestFor": "Groq is met name waardevol voor organisaties die grote hoeveelheden gestructureerde data moeten verwerken en analyseren.",
+  "longDescription": "Groq levert ultrasnelle LLM-inference via eigen LPU-hardware (Language Processing Unit) — een chip die speciaal voor taalmodel-inference is ontworpen in plaats van een hergebruikte GPU. Het resultaat: honderden tokens per seconde, met pieken boven de 800 tokens/s op kleinere modellen. GroqCloud biedt een OpenAI-compatibele API met een catalogus van uitsluitend open-weight modellen, waaronder Llama 3.x, GPT-OSS, Qwen en Kimi K2 — geen GPT-4, Claude of Gemini dus. De gratis tier werkt zonder creditcard met ruime daglimieten; betaald gebruik is per token, met 50% korting via de Batch API en op gecachte prompt-tokens. Voor real-time chat, voice-agents en andere latency-kritische toepassingen is Groq de snelheidsreferentie in de markt.",
+  "bestFor": "Developers die latency-kritische AI-applicaties bouwen — real-time chat, voice-agents, streaming-UI's — en daarvoor open-weight modellen op maximale snelheid willen draaien.",
   "useCases": [
-    "Data-analyse",
-    "Data-transformatie",
-    "Datavisualisatie"
+    "Real-time chat- en voice-applicaties met sub-seconde respons",
+    "Hoog-volume inference tegen lage tokenprijzen",
+    "Agent-workflows waar veel opeenvolgende LLM-calls de latency optellen",
+    "Gratis experimenteren met open-weight modellen via de free tier"
   ],
   "strengths": [
-    "Efficiënt en schaalbaar",
-    "Declaratieve aanpak",
-    "Krachtige query-taal"
+    "Snelste inference in de markt dankzij LPU-hardware (3-10x sneller dan GPU-providers)",
+    "Scherpe tokenprijzen: $0,05-$1,00 per miljoen input-tokens",
+    "Gratis tier zonder creditcard",
+    "OpenAI-compatibele API — drop-in migratie",
+    "Batch API en prompt caching met 50% korting"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor ongestructureerde data"
+    "Alleen geselecteerde open-weight modellen — geen GPT, Claude of Gemini",
+    "Geen eigen of fine-tuned modellen uploaden",
+    "Beperkte regio-keuze voor data-residency"
   ],
-  "pricing": "Gratis voor open-source gebruik, betaald voor commercieel gebruik",
-  "openSource": true,
+  "pricing": "Gratis tier zonder creditcard (basis rate limits). Betaald per token: $0,05 (Llama 3.1 8B) tot ~$1,00 (Kimi K2) per miljoen input-tokens. Batch API -50%, prompt caching -50% op gecachte tokens. Developer-tier met 10x hogere limits.",
+  "openSource": false,
   "businessFunctions": [
     "development",
-    "data",
-    "klantenservice"
+    "data"
+  ],
+  "keyFeatures": [
+    {
+      "title": "LPU-hardware",
+      "description": "Eigen Language Processing Units leveren 3-10x snellere inference dan GPU-gebaseerde providers.",
+      "group": "core"
+    },
+    {
+      "title": "OpenAI-compatibele API",
+      "description": "Drop-in vervanging voor de OpenAI SDK — alleen base-URL en key wisselen.",
+      "group": "integration"
+    },
+    {
+      "title": "Open-weight catalogus",
+      "description": "Llama 3.x, GPT-OSS, Qwen, Kimi K2 en Whisper — getest en geoptimaliseerd voor LPU.",
+      "group": "core"
+    },
+    {
+      "title": "Batch API",
+      "description": "Niet-urgente workloads met 24-uurs venster tegen 50% korting.",
+      "group": "core"
+    },
+    {
+      "title": "Prompt caching",
+      "description": "50% korting op gecachte input-tokens bij herhaalde prompts.",
+      "group": "core"
+    },
+    {
+      "title": "Gratis tier",
+      "description": "Zonder creditcard toegang tot alle modellen met basis rate limits (~14.400 requests/dag op kleinere modellen).",
+      "group": "core"
+    }
   ],
   "deploymentType": "saas",
   "dataResidency": "us",

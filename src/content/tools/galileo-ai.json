@@ -1,9 +1,11 @@
 {
   "name": "Galileo AI",
   "category": "design",
-  "websiteUrl": "https://www.usegalileo.ai",
-  "shortDescription": "AI UI-generator — van tekstprompt naar volledige app-interface in seconden",
-  "headlineValueProp": "Text-to-UI generator die complete app-schermen genereert vanuit een korte prompt — startpunt voor designers",
+  "websiteUrl": "https://stitch.withgoogle.com",
+  "shortDescription": "AI UI-generator, in 2025 overgenomen door Google en doorgegaan als Google Stitch",
+  "headlineValueProp": "Text-to-UI generator die complete app-schermen genereert — leeft voort als het gratis Google Stitch",
+  "longDescription": "Galileo AI was een van de eerste text-to-UI generators: typ een korte prompt en krijg een compleet app- of webscherm terug. In mei 2025 nam Google het bedrijf over; het zelfstandige product op usegalileo.ai bestaat niet meer. De technologie leeft voort als Google Stitch, onderdeel van Google Labs en aangedreven door Gemini. Stitch gaat verder waar Galileo stopte: je genereert vanuit tekst, een schets of zelfs een gesproken beschrijving meerdere klikbare schermen op één canvas, en exporteert het resultaat als HTML/CSS of React-code, of rechtstreeks naar Figma. Stitch 2.0 (maart 2026) is gratis te gebruiken in beta, met generatie-limieten. Wie de oude Galileo zoekt, komt dus automatisch bij Google Stitch uit.",
+  "pricing": "Gratis (Google Stitch, beta) met generatie-limieten; een Google-account volstaat",
   "primaryJobsToBeDone": [
     "Complete app- of website-schermen genereren vanuit een tekstprompt",
     "Snelle UI-concepten en mockups maken voor pitches en stakeholder-reviews",
@@ -20,16 +22,17 @@
     "Stakeholder-reviews met snel iteratieve UI-varianten"
   ],
   "strengths": [
-    "Snelle text-to-UI generatie",
-    "Goede output voor mobiele app-schermen",
-    "Brede template-bibliotheek"
+    "Snelle text-to-UI generatie, nu aangedreven door Gemini",
+    "Gratis te gebruiken via Google Labs",
+    "Exporteert naar HTML/CSS, React-code en Figma"
   ],
   "limitations": [
-    "Geen directe code-export zoals v0",
+    "Bestaat niet meer als zelfstandig product — alleen nog als Google Stitch",
+    "Beta-status: generatie-limieten en geen garanties over continuïteit",
     "Design-systeem-consistentie vereist handmatig werk",
     "Engelse interface en Engelse prompts werken het best"
   ],
-  "pricingModel": "freemium",
+  "pricingModel": "free",
   "difficulty": "beginner",
   "tags": [
     "ui-design",
@@ -49,40 +52,34 @@
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "AI-powered design",
-      "description": "Automatisch genereren van ontwerpen op basis van ingevoerde content en ontwerprichtlijnen.",
+      "title": "Prompt-naar-UI",
+      "description": "Genereer complete app- en webschermen vanuit een tekstbeschrijving, aangedreven door Gemini",
       "group": "core"
     },
     {
-      "title": "Content library",
-      "description": "Toegang tot een uitgebreide bibliotheek met vooraf ontworpen templates en assets.",
+      "title": "Schets-naar-design",
+      "description": "Upload een wireframe-schets of screenshot en laat Stitch er een uitgewerkt scherm van maken",
       "group": "input"
     },
     {
-      "title": "Real-time collaboration",
-      "description": "Gelijktijdig werken met teamleden aan ontwerpen en content.",
+      "title": "Multi-screen canvas",
+      "description": "Werk met meerdere gekoppelde schermen op één canvas voor een klikbaar prototype",
+      "group": "core"
+    },
+    {
+      "title": "Code-export",
+      "description": "Exporteer gegenereerde schermen als HTML/CSS of React-code",
+      "group": "output"
+    },
+    {
+      "title": "Figma-export",
+      "description": "Zet ontwerpen door naar Figma om ze daar te verfijnen",
       "group": "integration"
-    },
-    {
-      "title": "Brand consistency",
-      "description": "Waarborgen van merkidentiteit en visuele coherentie in alle gegenereerde content.",
-      "group": "enterprise"
-    },
-    {
-      "title": "Artifact previews",
-      "description": "Live voorbeeld van de gegenereerde content, zoals webpagina's en sociale media posts.",
-      "group": "output",
-      "badge": "nieuw"
-    },
-    {
-      "title": "Prompt engineering",
-      "description": "Geavanceerde opties om de AI-prompts te optimaliseren voor specifieke use cases.",
-      "group": "beta"
     }
   ],
   "controlledIntegrations": [],
-  "verdict": "Galileo AI was een vroege text-to-UI generator en blijft sterk in het genereren van complete app-schermen. v0 heeft inmiddels meer momentum bij developers door directe code-export.",
-  "whyListed": "Galileo AI was een van de eerste tools die het 'tekst naar UI'-paradigma populariseerde en wordt nog veel gebruikt als design-startpunt voor app-schermen.",
+  "verdict": "Galileo AI pionierde text-to-UI en kreeg via de Google-overname (2025) een tweede leven als het gratis Google Stitch. Voor snelle UI-concepten met code- en Figma-export is Stitch nu een serieuze gratis optie; wie production-ready React in een eigen stack wil, zit bij v0 beter.",
+  "whyListed": "Galileo AI was een van de eerste tools die het 'tekst naar UI'-paradigma populariseerde; als Google Stitch is het de bekendste gratis instap in AI-UI-design.",
   "bestAlternative": "v0",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

@@ -9,7 +9,7 @@
   "tags": ["research", "documenten", "samenvatten", "google", "podcast"],
   "mentionAliases": ["notebook lm", "notebook-lm"],
   "draft": false,
-  "longDescription": "NotebookLM is Googles onderzoeksassistent die uitsluitend werkt op bronnen die jij erin laadt — PDF's, Google Docs, websites, YouTube-video's of plain text. Antwoorden komen altijd met inline-citaten naar de exacte plek in je bron, waardoor hallucinaties veel zeldzamer zijn dan bij algemene chatbots. De viraal-geworden Audio Overview-functie zet je bronnen om in een podcast-achtig gesprek tussen twee AI-stemmen, inmiddels ook in het Nederlands beschikbaar.",
+  "longDescription": "NotebookLM is Googles onderzoeksassistent die uitsluitend werkt op bronnen die jij erin laadt — PDF's, Google Docs, websites, YouTube-video's, EPUB's of plain text. Antwoorden komen altijd met inline-citaten naar de exacte plek in je bron, waardoor hallucinaties veel zeldzamer zijn dan bij algemene chatbots. De viraal-geworden Audio Overview-functie zet je bronnen om in een podcast-achtig gesprek tussen twee AI-stemmen, ook in het Nederlands. Sindsdien is de tool flink uitgebreid: Deep Research zoekt zelfstandig het web af en bouwt rapporten met bronvermelding, Video Overviews maken video-uitleg van je materiaal, Mind Maps visualiseren de structuur van je bronnen en je kunt presentaties exporteren. NotebookLM draait inmiddels op Gemini 3 en is daarmee uitgegroeid van document-chat tot volwaardige research-werkbank.",
   "bestFor": "Onderzoekers, studenten en kenniswerkers die snel willen begrijpen wat er in een stapel documenten staat, met betrouwbare bronvermelding bij elk antwoord.",
   "primaryJobsToBeDone": [
     "Een set bronnen (papers, contracten, rapporten) doorzoeken zonder ze allemaal te hoeven lezen",
@@ -37,7 +37,39 @@
     "Strikt vertrouwelijke data (medisch, contractueel) waar US-dataverwerking niet acceptabel is",
     "Real-time vragen over algemene actuele kennis — daarvoor is Perplexity of ChatGPT search geschikter"
   ],
-  "pricing": "Gratis met Google-account. Plus-tier (binnen Google AI Premium of Workspace-abonnementen) verhoogt limieten en voegt teamfeatures toe.",
+  "pricing": "Gratis met Google-account (100 notebooks, 50 bronnen per notebook, 3 Audio/Video Overviews per dag, 10 Deep Research-sessies per maand). Hogere limieten via Google AI-abonnementen: Plus ($7,99/maand), Pro ($19,99/maand) en Ultra.",
+  "keyFeatures": [
+    {
+      "title": "Bron-gegronde chat met citaten",
+      "description": "Stel vragen over je eigen documenten; elk antwoord linkt naar de exacte passage in de bron",
+      "group": "core"
+    },
+    {
+      "title": "Audio Overviews",
+      "description": "Zet je bronnen om in een podcast-achtig gesprek tussen twee AI-stemmen, ook in het Nederlands",
+      "group": "output"
+    },
+    {
+      "title": "Video Overviews",
+      "description": "Genereert video-uitleg met visuals op basis van je bronnen, inclusief cinematische variant",
+      "group": "output"
+    },
+    {
+      "title": "Deep Research",
+      "description": "Zoekt zelfstandig het web af en bouwt rapporten met bronvermelding, die je weer als bron kunt toevoegen",
+      "group": "core"
+    },
+    {
+      "title": "Mind Maps",
+      "description": "Visualiseert de structuur en hoofdthema's van je bronnen als interactief diagram",
+      "group": "output"
+    },
+    {
+      "title": "Brede bronondersteuning",
+      "description": "PDF's, Google Docs, websites, YouTube-video's, audio, EPUB's en plain text als input",
+      "group": "input"
+    }
+  ],
   "openSource": false,
   "businessFunctions": ["marketing", "data", "hr"],
   "deploymentType": "saas",

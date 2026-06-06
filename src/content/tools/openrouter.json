@@ -3,7 +3,8 @@
   "category": "infrastructure",
   "websiteUrl": "https://openrouter.ai",
   "shortDescription": "Unified API-gateway voor alle grote AI-modellen — vergelijk en switch",
-  "longDescription": "OpenRouter is een managed API-gateway die toegang biedt tot meer dan 200 AI-modellen van OpenAI, Anthropic, Google, Meta, Mistral en tientallen andere providers via één uniforme OpenAI-compatibele API. Het platform toont realtime prijzen per model, ondersteunt automatisch model-fallback en biedt een webinterface om modellen te vergelijken zonder code te schrijven.",
+  "headlineValueProp": "Eén API-key voor 300+ AI-modellen van 60+ providers — zonder marge op modelprijzen",
+  "longDescription": "OpenRouter is een managed API-gateway die toegang biedt tot ruim 300 AI-modellen van OpenAI, Anthropic, Google, Meta, Mistral en zo'n 60 providers via één uniforme OpenAI-compatibele API. Het platform rekent geen marge op de modelprijzen zelf — je betaalt een platform-fee van circa 5,5% bij het opwaarderen van krediet. Het toont realtime prijzen per model, routeert automatisch naar de snelste of goedkoopste provider, valt terug bij downtime en ondersteunt BYOK (bring your own key) met je eigen provider-accounts. Een gratis tier geeft toegang tot ruim 25 gratis modellen met daglimieten, en de webinterface laat je modellen vergelijken zonder code te schrijven.",
   "bestFor": "Developers en researchers die snel willen experimenteren met of schakelen tussen LLM-modellen, of kostenefficiënt meerdere modellen willen aanspreken via één API-account.",
   "useCases": [
     "Experimenteren met en vergelijken van AI-modellen",
@@ -12,9 +13,9 @@
     "Fallback-routing bij model-downtime"
   ],
   "strengths": [
-    "200+ modellen via één API-sleutel",
-    "Realtime prijsvergelijking per model",
-    "Geen subscripties per provider nodig",
+    "300+ modellen via één API-sleutel",
+    "Geen marge op modelprijzen — alleen platform-fee bij opwaarderen",
+    "Automatische fallback en routing op prijs, latency of throughput",
     "Snelle onboarding — direct bruikbaar"
   ],
   "limitations": [
@@ -23,7 +24,44 @@
     "Minder enterprise-functies dan LiteLLM self-hosted",
     "Privacyoverwegingen bij gevoelige data"
   ],
-  "pricing": "Pay-as-you-go: betaal per token via OpenRouter-krediet, met kleine marge bovenop provider-prijzen. Geen maandabonnement.",
+  "pricing": "Pay-as-you-go via OpenRouter-krediet: modelprijzen gelijk aan provider-prijzen, plus ~5,5% platform-fee bij opwaarderen. Gratis tier met 25+ gratis modellen (daglimieten). BYOK: eerste 1 miljoen requests/maand gratis, daarna 5% fee. Geen maandabonnement.",
+  "keyFeatures": [
+    {
+      "title": "300+ modellen, één API",
+      "description": "Frontier- en open modellen van ~60 providers achter één OpenAI-compatibel endpoint.",
+      "group": "core"
+    },
+    {
+      "title": "Slimme routing & fallbacks",
+      "description": "Sorteer providers op prijs, latency of throughput en val automatisch terug bij downtime.",
+      "group": "core"
+    },
+    {
+      "title": "Geen prijsmarge",
+      "description": "Modelprijzen zijn identiek aan die van de provider; OpenRouter verdient via een fee bij krediet opwaarderen.",
+      "group": "core"
+    },
+    {
+      "title": "BYOK",
+      "description": "Gebruik je eigen provider-API-keys via OpenRouter's routing — 1M requests per maand gratis.",
+      "group": "integration"
+    },
+    {
+      "title": "Gratis modellen-tier",
+      "description": "25+ gratis modellen met daglimieten — ideaal om te experimenteren zonder kosten.",
+      "group": "core"
+    },
+    {
+      "title": "Model-playground",
+      "description": "Vergelijk modellen naast elkaar in de browser, inclusief realtime prijzen en rankings.",
+      "group": "output"
+    },
+    {
+      "title": "Enterprise-opties",
+      "description": "SSO, SLA's, dedicated rate limits, invoicing en 5M gratis BYOK-requests per maand.",
+      "group": "enterprise"
+    }
+  ],
   "openSource": false,
   "pricingModel": "paid",
   "difficulty": "beginner",

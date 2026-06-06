@@ -7,7 +7,7 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Flux is een AI-tool voor het genereren en bewerken van beeldmateriaal. Het maakt gebruik van geavanceerde machine learning-algoritmen om gebruikers te helpen bij het creëren van unieke en creatieve afbeeldingen.",
+  "longDescription": "Flux is de beeldmodel-familie van het Duitse Black Forest Labs, opgericht door de oorspronkelijke Stable Diffusion-onderzoekers. De actuele generatie is FLUX.2 (november 2025): een 32-miljard-parameter model met een Mistral-gebaseerde vision-language-component, sterk in prompt-trouw, fotorealisme en tekst in beeld. Naast de commerciële API-varianten (FLUX.2 [pro] en [flex]) verscheen in januari 2026 FLUX.2 [klein] als open-weight model dat je zelf kunt draaien — daarmee blijft Flux het referentiepunt voor open beeldgeneratie. Je gebruikt Flux via de eigen API (credit-systeem, ongeveer $0,015-0,03 per beeld), via platforms als Replicate en OpenRouter, of self-hosted in ComfyUI. Flux-modellen zitten ook als partner-model in Adobe Firefly.",
   "bestFor": "Flux is vooral waardevol voor creatieve professionals, zoals grafisch ontwerpers, marketeers en kunstenaars, die op zoek zijn naar een efficiënte manier om beeldmateriaal te produceren.",
   "useCases": [
     "Genereren van unieke afbeeldingen",
@@ -21,7 +21,7 @@
   "limitations": [
     "Beperkte controle over het generatieproces"
   ],
-  "pricing": "Freemium, met betaalde abonnementen vanaf $20 per maand",
+  "pricing": "Open-weight varianten gratis (self-hosted); API via credits (1 credit = $0,01), FLUX.2 [pro] vanaf circa $0,015-0,03 per beeld afhankelijk van resolutie",
   "openSource": true,
   "businessFunctions": [
     "marketing",
@@ -48,8 +48,35 @@
     "medium"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Flux van Black Forest Labs levert de beste open-source beeldkwaliteit beschikbaar. FLUX.1 Pro is competitief met Midjourney, de open versies zijn ongeëvenaard gratis.",
-  "whyListed": "Flux werd snel de nieuwe standaard voor open-source beeldgeneratie na de lancering in 2024, met kwaliteit die Stable Diffusion ver achter zich liet.",
+  "verdict": "Flux van Black Forest Labs levert de beste open beeldkwaliteit beschikbaar. FLUX.2 [pro] is competitief met Midjourney; het open-weight FLUX.2 [klein] is de sterkste gratis self-hosted optie.",
+  "whyListed": "Flux verving Stable Diffusion als standaard voor open beeldgeneratie en is met de FLUX.2-generatie (eind 2025) ook commercieel een topspeler — tot in Adobe Firefly als partner-model.",
+  "keyFeatures": [
+    {
+      "title": "FLUX.2 [pro]",
+      "description": "Het productie-model via API: hoge prompt-trouw, fotorealisme en leesbare tekst in beeld, betaald per megapixel",
+      "group": "core"
+    },
+    {
+      "title": "FLUX.2 [klein] open-weight",
+      "description": "Open model (januari 2026) dat je zelf draait — commercieel bruikbaar zonder API-kosten",
+      "group": "core"
+    },
+    {
+      "title": "Beeldbewerking en referenties",
+      "description": "Bewerk bestaande beelden en stuur stijl of compositie met referentie-afbeeldingen",
+      "group": "input"
+    },
+    {
+      "title": "ComfyUI- en LoRA-ecosysteem",
+      "description": "Volwaardige ondersteuning voor ControlNet-achtige workflows, LoRA-training en node-based pipelines",
+      "group": "integration"
+    },
+    {
+      "title": "Beschikbaar op alle grote platforms",
+      "description": "Naast de eigen BFL-API ook via Replicate, OpenRouter, fal.ai en als partner-model in Adobe Firefly",
+      "group": "integration"
+    }
+  ],
   "bestAlternative": "stable-diffusion",
   "setupTime": "under_15min",
   "matchSegments": [

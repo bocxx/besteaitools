@@ -2,27 +2,33 @@
   "name": "Pika",
   "category": "video",
   "websiteUrl": "https://pika.art",
-  "shortDescription": "AI-videogeneratie en -bewerking in de browser",
+  "shortDescription": "Toegankelijke AI-videogenerator — Pika 2.5 met Pikaffects en Pikaframes",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "text-to-video",
+    "image-to-video",
+    "social-video"
+  ],
   "draft": false,
-  "longDescription": "Pika is een AI-tool voor het maken en bewerken van video's. Het biedt geavanceerde functies voor het automatisch genereren van video-inhoud en het toevoegen van visuele effecten.",
-  "bestFor": "Pika is het meest waardevol voor content creators en videoproducenten die efficiënt en creatief video-inhoud willen maken.",
+  "longDescription": "Pika is een toegankelijke AI-videogenerator van Pika Labs, ooit begonnen als Discord-bot en nu een web-app plus iOS-app. Het huidige Pika 2.5-model doet tekst-naar-video en image-naar-video met automatisch gegenereerde geluidseffecten, en is de motor achter Pikaframes: een keyframe-workflow waarmee je clips tot zo'n 20-25 seconden opbouwt met controle over begin- en eindbeelden. Kenmerkend zijn de speelse Pikaffects — smelten, exploderen, opblazen — die het platform populair maakten op TikTok en Reels. Minder geschikt voor cinematisch productiewerk, maar wel een van de goedkoopste manieren om snel opvallende social-clips te maken.",
+  "bestFor": "Pika is het meest waardevol voor social-media creators en marketeers die snel speelse, opvallende videoclips willen maken zonder groot budget.",
   "useCases": [
-    "Automatisch genereren van video-inhoud",
-    "Toevoegen van visuele effecten aan video's",
-    "Eenvoudig bewerken en aanpassen van video's"
+    "Korte social-clips met effecten voor TikTok en Reels",
+    "Foto's en productbeelden animeren met Pikaffects",
+    "Langere clips opbouwen met keyframes via Pikaframes"
   ],
   "strengths": [
-    "Geavanceerde AI-functies voor video-editing",
-    "Intuïtieve gebruikersinterface",
-    "Snelle en efficiënte video-productie"
+    "Zeer toegankelijk en goedkoop instapniveau",
+    "Pikaffects en lip-sync voor opvallende social content",
+    "Pikaframes: keyframe-controle tot ~25 seconden",
+    "Automatische geluidseffecten bij generaties"
   ],
   "limitations": [
-    "Beperkte mogelijkheden voor complexe video-editing"
+    "Beeldkwaliteit en realisme onder het niveau van Veo, Kling en Runway",
+    "Gratis tier alleen 480p, met watermerk en zonder commerciële rechten"
   ],
-  "pricing": "Freemium, met betaalde abonnementen vanaf $20 per maand",
+  "pricing": "Freemium: gratis 80 credits/mnd (480p); Standard $8/mnd (jaarlijks, 700 credits), Pro $28/mnd, Fancy $76/mnd",
   "openSource": false,
   "deploymentType": "saas",
   "dataResidency": "us",
@@ -45,7 +51,39 @@
     "medium"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Pika is snel en toegankelijk, maar minder krachtig dan Runway of Kling voor serieuze productie. Goed voor snelle sociale-media clips en creatieve experimenten.",
+  "keyFeatures": [
+    {
+      "title": "Pika 2.5 videogeneratie",
+      "description": "Tekst- en image-to-video tot 1080p, het kernmodel van het platform",
+      "group": "core"
+    },
+    {
+      "title": "Pikaframes",
+      "description": "Keyframe-workflow voor langere clips (tot ~25 sec) met controle over begin- en eindbeeld",
+      "group": "core"
+    },
+    {
+      "title": "Pikaffects",
+      "description": "Speelse transformatie-effecten zoals smelten, exploderen en opblazen — de virale signatuur van Pika",
+      "group": "output"
+    },
+    {
+      "title": "Automatische geluidseffecten",
+      "description": "Geluid dat meebeweegt met de actie in beeld, zonder aparte audio-stap",
+      "group": "output"
+    },
+    {
+      "title": "Image-to-video",
+      "description": "Upload een afbeelding en laat Pika die animeren, met object-swaps en scene-compositie",
+      "group": "input"
+    },
+    {
+      "title": "Lip-sync",
+      "description": "Laat personages in je clips meepraten met ingesproken of gegenereerde audio",
+      "group": "output"
+    }
+  ],
+  "verdict": "Pika is snel en toegankelijk, maar minder krachtig dan Runway of Kling voor serieuze productie. Goed voor snelle social-media clips, speelse effecten en creatieve experimenten tegen lage kosten.",
   "whyListed": "Pika was een van de eerste brede text-to-video tools en groeide snel door virale demonstraties van eenvoudige, toegankelijke videogeneratie.",
   "bestAlternative": "runway",
   "setupTime": "under_15min",
@@ -69,8 +107,9 @@
     "Snel itereren op video-prompts via een toegankelijke UI"
   ],
   "antiUseCases": [
-    "Cinematic productiewerk — minder geschikt dan Runway of Sora",
+    "Cinematic productiewerk — minder geschikt dan Runway of Veo",
     "Strakke broadcast-kwaliteit",
     "Workflows die diepe API-controles vereisen"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

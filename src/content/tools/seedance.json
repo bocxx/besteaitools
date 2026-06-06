@@ -1,10 +1,10 @@
 {
   "name": "Seedance",
   "category": "video",
-  "websiteUrl": "https://seedance.ai",
-  "shortDescription": "ByteDance's AI-videogenerator met sterke bewegingskwaliteit en camera-control",
-  "headlineValueProp": "ByteDance's AI-video-engine met opvallend sterke motion en camera-control — concurrent voor Kling en Sora",
-  "longDescription": "Seedance is een AI-videogenerator van ByteDance (TikTok). De engine valt op door realistische beweging, camera-control via prompt-instructies en hoge kwaliteit voor sociale media-formaten. Geschikt voor content-makers die professioneel ogende video's in seconden willen zonder editor-werk.",
+  "websiteUrl": "https://dreamina.capcut.com",
+  "shortDescription": "ByteDance's videomodel — Seedance 2.0 met multimodale input en 2K-output",
+  "headlineValueProp": "ByteDance's Seedance 2.0 — multimodale video-engine (tekst, beeld, audio én video als input) met topklasse motion",
+  "longDescription": "Seedance is de AI-video-engine van ByteDance (TikTok). Seedance 2.0 (begin 2026) is multimodaal: je stuurt het aan met tekst, afbeeldingen, audio én bestaande video, en het genereert clips tot 2K-resolutie (2048×1080, 24fps) in zes beeldverhoudingen. Video extension verlengt bestaande clips met behoud van visuele continuïteit. Je gebruikt Seedance via Dreamina — ByteDance's internationale creative-platform, sinds februari 2026 wereldwijd beschikbaar — via de API, of binnen platforms van derden zoals Runway. Het model scoort bovenaan veel motion-benchmarks en concurreert direct met Veo en Kling.",
   "primaryJobsToBeDone": [
     "Korte video's genereren met realistische beweging vanuit een tekstprompt",
     "Camerabewegingen sturen via prompt-instructies (pan, zoom, dolly)",
@@ -15,27 +15,32 @@
     "Workflows die data-residentie en EU-compliance vereisen",
     "Use cases die langere video's (>30 seconden) consistent moeten houden"
   ],
-  "bestFor": "Seedance is het meest waardevol voor content creators, marketeers en bedrijven die snel en efficiënt video-inhoud willen produceren.",
+  "bestFor": "Seedance is het meest waardevol voor content creators en marketeers die topklasse motion-kwaliteit willen voor korte video's, tegen lagere kosten dan Veo of Runway.",
   "useCases": [
-    "Video-content creatie",
-    "Automatische video-montage",
-    "Tekstondertiteling en animatie"
+    "Korte video's met realistische beweging vanuit tekst of beeld",
+    "Bestaande clips verlengen met video extension",
+    "Social-content in 9:16, 1:1 of 21:9 vanuit één prompt",
+    "Multimodale generatie waarbij audio of referentievideo de stijl bepaalt"
   ],
   "strengths": [
-    "Eenvoudig te gebruiken",
-    "Snelle video-productie"
+    "Multimodale input: tekst, beeld, audio en video",
+    "2K-output en zes beeldverhoudingen",
+    "Sterke motion-kwaliteit en temporele consistentie",
+    "Ook beschikbaar binnen Runway en via API"
   ],
   "limitations": [
-    "Beperkte geavanceerde video-bewerkingsfuncties"
+    "Chinese aanbieder — weeg datagebruik en content-restricties af",
+    "Gratis tier is krap: ~225 gedeelde credits per dag op Dreamina",
+    "Minder volwassen tooling-ecosysteem dan Runway"
   ],
-  "pricing": "Gratis",
+  "pricing": "Freemium: ~225 gratis credits/dag via Dreamina; abonnementen vanaf ~$10-15/mnd (Basic $15/mnd, 1.575 credits); API ~$0,15 per 5-seconden clip (Pro)",
   "openSource": false,
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [
-    "video-editing",
-    "AI-powered",
-    "content-creation"
+    "text-to-video",
+    "image-to-video",
+    "ai-video"
   ],
   "draft": false,
   "deploymentType": "saas",
@@ -68,43 +73,42 @@
   ],
   "bestUseCaseStage": "team-rollout",
   "integrations": [
-    "YouTube",
-    "Vimeo",
-    "Google Drive"
+    "Dreamina",
+    "Runway",
+    "API"
   ],
   "mainCompetitors": [],
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "Automatische montage",
-      "description": "Seedance analyseert je video-content en maakt automatisch een professionele montage",
-      "group": "core"
-    },
-    {
-      "title": "Titeling en animaties",
-      "description": "Voeg automatisch titels, logo's en animaties toe aan je video's",
-      "group": "output"
-    },
-    {
-      "title": "Tekstherkenning",
-      "description": "Seedance kan tekst in je video's herkennen en automatisch ondertiteling genereren",
+      "title": "Multimodale input",
+      "description": "Stuur het model aan met tekst, afbeeldingen, audio of bestaande video",
       "group": "input"
     },
     {
-      "title": "Integratie met opslagdiensten",
-      "description": "Upload en deel je video's direct vanuit Google Drive, Dropbox en andere opslagdiensten",
+      "title": "2K-videogeneratie",
+      "description": "Clips tot 2048×1080 op 24fps, in zes beeldverhoudingen (16:9 tot 21:9)",
+      "group": "core"
+    },
+    {
+      "title": "Video extension",
+      "description": "Verleng bestaande clips met behoud van visuele continuïteit",
+      "group": "core"
+    },
+    {
+      "title": "Camera-control via prompts",
+      "description": "Pan, zoom en dolly sturen via prompt-instructies",
+      "group": "input"
+    },
+    {
+      "title": "Dreamina-platform",
+      "description": "ByteDance's internationale web-app met Seedance en de andere Seed-modellen",
       "group": "integration"
     },
     {
-      "title": "Bedrijfsbranding",
-      "description": "Pas templates aan met je eigen logo, kleuren en stijl",
-      "group": "enterprise"
-    },
-    {
-      "title": "Magic Retouch",
-      "description": "Verwijder ongewenste objecten en verbeter video-kwaliteit automatisch",
-      "group": "beta",
-      "badge": "beta"
+      "title": "API en third-party toegang",
+      "description": "Beschikbaar via de API en binnen platforms als Runway",
+      "group": "integration"
     }
   ],
   "setupTime": "under_15min",
@@ -119,13 +123,13 @@
     "max": 1000
   },
   "controlledIntegrations": [
-    "google_drive"
+    "rest_api"
   ],
   "beginnerFriendlyScore": 6,
   "dataUsedForTraining": "yes",
   "vendorLockInRisk": "medium",
-  "verdict": "Seedance van ByteDance levert sterke AI-video met opvallend goede beweging en camera-control. Nieuwe speler die snel groeit; Kling heeft inmiddels meer volwassenheid in tooling.",
-  "whyListed": "Seedance is een van ByteDance's offensieven in AI-video en kreeg snel aandacht door benchmarks die de motion-kwaliteit boven westerse concurrenten plaatsen.",
+  "verdict": "Seedance 2.0 van ByteDance levert sterke AI-video met opvallend goede beweging en camera-control, nu wereldwijd beschikbaar via Dreamina. Kling heeft meer volwassenheid in tooling; Seedance wint op motion-benchmarks en prijs.",
+  "whyListed": "Seedance is ByteDance's offensief in AI-video en kreeg snel aandacht door benchmarks die de motion-kwaliteit boven westerse concurrenten plaatsen; sinds februari 2026 wereldwijd toegankelijk via Dreamina.",
   "bestAlternative": "kling",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

@@ -4,8 +4,8 @@
   "websiteUrl": "https://chat.openai.com",
   "shortDescription": "OpenAI's chatbot — de meest gebruikte AI-tool ter wereld",
   "headlineValueProp": "OpenAI's vlaggenschip-chatbot met GPT-5.5 — natively omnimodaal en de breedste ecosysteem-integratie",
-  "longDescription": "ChatGPT is OpenAI's consumenten- en zakelijke chatbot, sinds april 2026 standaard draaiend op GPT-5.5. Het model is natively omnimodaal (tekst, beeld, audio, video), heeft een 1M-token contextvenster en leidt op Terminal-Bench 2.0. Het ecosysteem rond ChatGPT — Custom GPTs, DALL-E, Sora, Advanced Voice, Memory, Tasks — maakt het de breedste AI-companion voor dagelijks gebruik. Pro kost $20/maand, Business en Enterprise voegen SSO, audit logs en zero-data-retention toe.",
-  "lastUpdated": "2026-06-02",
+  "longDescription": "ChatGPT is OpenAI's consumenten- en zakelijke chatbot, sinds 23 april 2026 standaard draaiend op GPT-5.5. Het model is natively omnimodaal (tekst, beeld, audio, video), heeft een 1M-token contextvenster en leidt op Terminal-Bench 2.0. Het ecosysteem rond ChatGPT — Custom GPTs, Images 2.0 (beeldgeneratie), Sora 2-videogeneratie binnen ChatGPT (de losse Sora-app stopte in april 2026), Agent Mode, Advanced Voice, Memory, Tasks — maakt het de breedste AI-companion voor dagelijks gebruik. Plus kost $20/maand, Pro $200/maand; Business en Enterprise voegen SSO, audit logs en zero-data-retention toe.",
+  "lastUpdated": "2026-06-06",
   "bestFor": "ChatGPT is het meest waardevol voor mensen die efficiënt informatie willen opzoeken, teksten willen genereren of hulp nodig hebben bij het oplossen van problemen.",
   "useCases": [
     "Informatie opzoeken",
@@ -19,9 +19,10 @@
   ],
   "limitations": [
     "Mogelijk bias in de antwoorden",
-    "Geen toegang tot real-time informatie"
+    "Hallucinaties blijven een risico — verifieer feiten bij belangrijke beslissingen",
+    "Gratis tier beperkt tot GPT-5.3 met een laag berichtenplafond"
   ],
-  "pricing": "Gratis met beperkte functies, betaald abonnement voor uitgebreide functies",
+  "pricing": "Gratis (GPT-5.3, beperkt aantal berichten); Go-instapabonnement; Plus $20/mnd; Pro $200/mnd (incl. GPT-5.5-pro); Team vanaf $25/gebruiker/mnd; Enterprise op maat",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -89,13 +90,13 @@
   ],
   "bestUseCaseStage": "team-rollout",
   "antiUseCases": [
-    "Wanneer realtime of actuele informatie cruciaal is"
+    "Wanneer je antwoorden ongecontroleerd wilt overnemen — hallucinaties blijven mogelijk"
   ],
   "replacementFor": [
     "Handmatig zoeken en browsen"
   ],
   "testedByEditor": false,
-  "verdict": "ChatGPT is de meest veelzijdige AI-assistent op de markt. Ideaal voor schrijven, onderzoek en codering. De gratis versie is al krachtig genoeg voor dagelijks gebruik.",
+  "verdict": "ChatGPT is de meest veelzijdige AI-assistent op de markt. Ideaal voor schrijven, onderzoek en codering. De gratis versie is sinds 2026 wel krapper (GPT-5.3, laag berichtenplafond) — voor dagelijks gebruik is Plus à $20/mnd de realistische instap.",
   "bestAlternative": "claude",
   "whyListed": "ChatGPT is de absolute marktleider en referentiepunt voor AI-assistenten. Met miljoenen gebruikers wereldwijd en continue updates blijft het de standaard waaraan andere tools worden gemeten.",
   "keyFeatures": [
@@ -142,9 +143,20 @@
       "badge": "nieuw"
     },
     {
-      "title": "DALL·E 3 beeldgeneratie",
-      "description": "Genereer afbeeldingen direct vanuit het gesprek zonder aparte tool.",
+      "title": "Images 2.0 beeldgeneratie",
+      "description": "Genereer en bewerk afbeeldingen direct in het gesprek — opvolger van DALL·E, op alle plannen beschikbaar.",
       "group": "output"
+    },
+    {
+      "title": "Sora 2-videogeneratie",
+      "description": "Genereer korte video's met gesynchroniseerd geluid vanuit ChatGPT; de losse Sora-app is in april 2026 gestopt.",
+      "group": "output"
+    },
+    {
+      "title": "Agent Mode",
+      "description": "Ingebouwde agent die meerstaps-taken uitvoert: browsen, formulieren invullen en workflows afronden.",
+      "group": "core",
+      "badge": "nieuw"
     },
     {
       "title": "Code interpreter",

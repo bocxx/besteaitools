@@ -3,20 +3,56 @@
   "category": "audio",
   "websiteUrl": "https://krisp.ai",
   "shortDescription": "AI noise-cancellation voor vergaderingen — filtert achtergrondgeluid in real-time",
-  "useCases": [],
-  "strengths": [],
-  "limitations": [],
+  "longDescription": "Krisp is een desktop-app die je microfoon- en speakeraudio in realtime opschoont: achtergrondgeluid, echo en stemmen van anderen verdwijnen uit je calls, ongeacht welke vergader- of belsoftware je gebruikt. Daarnaast levert Krisp AI-meeting-notes met transcriptie, samenvattingen en actiepunten, en — uniek in de markt — realtime accent conversion die accenten (onder andere Indiaas, Filipijns en Latijns-Amerikaans) verstaanbaarder maakt, zowel aan spreker- als luisteraarskant. Vooral populair bij remote teams en contactcenters; de audioverwerking draait grotendeels lokaal op je apparaat, zodat je gespreksaudio niet naar de cloud hoeft.",
+  "bestFor": "Remote professionals, teams en contactcenters die elke call helder willen houden zonder studio-microfoon of stille ruimte.",
+  "useCases": [
+    "Calls opschonen vanuit drukke ruimtes (thuis, café, flexkantoor)",
+    "AI-meeting-notes en samenvattingen van elke vergadering, tool-onafhankelijk",
+    "Accent conversion in contactcenters voor betere verstaanbaarheid",
+    "Opnames verbeteren zonder externe microfoon"
+  ],
+  "strengths": [
+    "Werkt met elke vergader- en calltool (Zoom, Teams, Meet, softphones)",
+    "Audioverwerking lokaal op het apparaat — gespreksaudio gaat niet naar de cloud",
+    "Accent conversion is uniek in de markt",
+    "Gratis tier volstaat voor dagelijks basisgebruik"
+  ],
+  "limitations": [
+    "Accent conversion zit alleen op het duurdere Advanced-plan",
+    "Desktop-first — de mobiele app is beperkter",
+    "Lichte extra CPU-belasting tijdens calls"
+  ],
+  "pricing": "Freemium: gratis 60 min/dag noise cancellation; Core $8/mnd (jaarlijks, $16 maandelijks); Advanced $15/mnd (jaarlijks) met accent conversion; Enterprise op aanvraag",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "noise-cancellation",
+    "vergaderingen",
+    "audio"
+  ],
   "draft": false,
-  "targetAudience": [],
+  "targetAudience": [
+    "solo",
+    "freelancer",
+    "mkb",
+    "enterprise"
+  ],
   "businessFunctions": [
     "operations",
     "klantenservice"
   ],
-  "companySizeFit": [],
-  "integrations": [],
+  "companySizeFit": [
+    "solo",
+    "small",
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "integrations": [
+    "Zoom",
+    "Microsoft Teams",
+    "Google Meet"
+  ],
   "mainCompetitors": [],
   "screenshotUrls": [],
   "keyFeatures": [
@@ -26,28 +62,28 @@
       "group": "core"
     },
     {
-      "title": "Automatische stemverbetering",
-      "description": "Verbetert de kwaliteit van uw stem voor een duidelijkere communicatie",
+      "title": "Accent conversion",
+      "description": "Realtime accent-aanpassing aan spreker- of luisteraarskant — o.a. voor contactcenters",
       "group": "core"
     },
     {
+      "title": "AI-meeting-notes",
+      "description": "Automatische transcriptie, samenvattingen en actiepunten van je calls",
+      "group": "output"
+    },
+    {
       "title": "Eenvoudige installatie",
-      "description": "Snel en gemakkelijk te installeren als desktop-app",
+      "description": "Snel te installeren als desktop-app; werkt als virtuele microfoon en speaker",
       "group": "input"
     },
     {
       "title": "Ondersteuning voor veel platformen",
-      "description": "Werkt met de meeste populaire videogesprek-apps",
+      "description": "Werkt met vrijwel elke videogesprek- en calltool, zonder plugins per app",
       "group": "integration"
     },
     {
-      "title": "Gratis voor persoonlijk gebruik",
-      "description": "Gratis versie beschikbaar voor individuele gebruikers",
-      "group": "enterprise"
-    },
-    {
-      "title": "Bedrijfslicenties",
-      "description": "Betaalde licenties voor teams en organisaties",
+      "title": "Enterprise en compliance",
+      "description": "SSO/SCIM, on-device transcriptie en HIPAA-opties op het Enterprise-plan",
       "group": "enterprise"
     }
   ],
@@ -58,7 +94,7 @@
   "verdict": "Krisp filtert achtergrondgeluid in real-time en werkt cross-platform met elk vergader-tool. Onmisbare utility voor remote-werk; geen alternatief in deze catalogus dat dezelfde rol vervult.",
   "whyListed": "Krisp is de meest gebruikte AI-noise-cancellation tool voor zakelijk video-bellen en standaard in veel remote-organisaties.",
   "bestAlternative": "deepgram",
-  "headlineValueProp": "Real-time noise cancellation die met elke vergadertool werkt",
+  "headlineValueProp": "Real-time noise cancellation en accent conversion die met elke vergadertool werken",
   "primaryJobsToBeDone": [
     "Achtergrondgeluid filteren tijdens calls vanuit een drukke ruimte",
     "Echo en stemmen van anderen verwijderen tijdens hybride meetings",
@@ -68,5 +104,6 @@
     "Studio-kwaliteit podcast-productie — gebruik dedicated audio-software",
     "Asynchrone transcriptie — Krisp is real-time, niet bestand-gebaseerd",
     "Mobiele alleen-gebruik — desktop is de primaire ervaring"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

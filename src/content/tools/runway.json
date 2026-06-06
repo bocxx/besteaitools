@@ -2,27 +2,35 @@
   "name": "Runway",
   "category": "video",
   "websiteUrl": "https://runwayml.com",
-  "shortDescription": "AI-videotools voor filmmakers en creators",
+  "shortDescription": "AI-videoplatform voor filmmakers — Gen-4.5, Aleph-editing en third-party modellen",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "text-to-video",
+    "video-editing",
+    "vfx",
+    "ai-video"
+  ],
   "draft": false,
-  "longDescription": "Runway is het AI-video-platform voor filmmakers en motion designers — bekend van Gen-3 Alpha en latere generatie-modellen voor tekst-naar-video en image-naar-video. Daarnaast Magic Tools voor object-removal, motion brush en green-screen zonder fysiek scherm. Wordt gebruikt in productie-pipelines van studio's en advertentiebureaus. Pricing vanaf $15/maand op credit-basis; Pro en Enterprise voegen langere clips, hogere resolutie en team-features toe.",
-  "bestFor": "Runway is vooral waardevol voor video-editors, motion designers en content creators die op zoek zijn naar geavanceerde AI-ondersteunde tools om hun workflow te verbeteren en efficiënter te maken.",
+  "longDescription": "Runway is het AI-videoplatform voor filmmakers en motion designers. De eigen Gen-4 en Gen-4.5 modellen doen tekst-naar-video en image-naar-video tot 4K; Aleph (2025) bewerkt bestaande video via tekstprompts — 'voeg regen toe aan deze scène' — zonder de hele clip opnieuw te genereren, en Act-Two zet acteursperformances om naar gegenereerde personages. Sinds eind 2025 host Runway ook modellen van derden, waaronder Veo 3.1, Kling 3.0 Pro en Seedance 2.0, naast de klassieke Magic Tools voor rotoscoping, inpainting en green-screen. Daarmee is het meer een complete productiesuite dan een losse generator. Prijzen vanaf $12/maand op credit-basis.",
+  "bestFor": "Runway is vooral waardevol voor video-editors, motion designers en content creators die generatie, AI-editing en VFX in één professionele workflow willen combineren.",
   "useCases": [
-    "Video-bewerking",
-    "Animatie",
-    "Visuele effecten"
+    "AI-videoclips genereren met Gen-4.5 voor social en marketing",
+    "Bestaande video bewerken met Aleph via tekstprompts",
+    "Performance capture met Act-Two: acteer zelf, render een personage",
+    "VFX, rotoscoping en green-screen zonder traditionele pipeline"
   ],
   "strengths": [
-    "Geavanceerde AI-technologieën",
-    "Uitgebreide functionaliteit",
-    "Intuïtieve gebruikersinterface"
+    "Combineert eigen modellen (Gen-4.5, Aleph) met third-party modellen als Veo, Kling en Seedance in één interface",
+    "Aleph: video bewerken zonder volledige regeneratie",
+    "Volwassen editing-suite, Workflows en API",
+    "Langste trackrecord in professionele AI-video"
   ],
   "limitations": [
-    "Kan een steile leercurve hebben voor nieuwe gebruikers"
+    "Credit-systeem wordt duur bij intensief gebruik — Aleph kost 15 credits per seconde",
+    "Leercurve voor de volledige suite is steiler dan bij simpele generators"
   ],
-  "pricing": "Freemium, met betaalde abonnementen vanaf $15/maand",
+  "pricing": "Freemium: 125 eenmalige gratis credits; Standard $12/mnd (625 credits), Pro $28/mnd, Max $76/mnd, Enterprise op aanvraag",
   "openSource": false,
   "businessFunctions": [
     "marketing",
@@ -50,9 +58,41 @@
     "large"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Runway is de meest complete AI-video-suite voor professionele creators. Sterkste camera-controle, uitgebreide editing-tools en het langste trackrecord. Premium geprijsd.",
+  "keyFeatures": [
+    {
+      "title": "Gen-4.5 videogeneratie",
+      "description": "Tekst- en image-to-video tot 4K met sterke consistentie van personages en omgevingen",
+      "group": "core"
+    },
+    {
+      "title": "Aleph in-video editing",
+      "description": "Bewerk gegenereerde of bestaande video via tekstprompts — belichting, weer, objecten — zonder regeneratie",
+      "group": "core"
+    },
+    {
+      "title": "Act-Two performance capture",
+      "description": "Neem zelf een performance op en zet die om naar beweging en expressie van een gegenereerd personage",
+      "group": "input"
+    },
+    {
+      "title": "Third-party modellen",
+      "description": "Veo 3.1, Kling 3.0 Pro en Seedance 2.0 direct binnen Runway gebruiken",
+      "group": "integration"
+    },
+    {
+      "title": "Workflows",
+      "description": "Eigen pipelines bouwen die meerdere modellen en tools aan elkaar koppelen",
+      "group": "core"
+    },
+    {
+      "title": "Enterprise en teams",
+      "description": "Team-workspaces, custom modellen en enterprise-beveiliging",
+      "group": "enterprise"
+    }
+  ],
+  "verdict": "Runway is de meest complete AI-video-suite voor professionele creators. Sterkste editing-tools (Aleph), het langste trackrecord, en sinds het ook Veo, Kling en Seedance host hoef je het platform zelden uit. Premium geprijsd.",
   "whyListed": "Runway is marktleider in professionele AI-videoproductie en wordt gebruikt door filmmakers, contentmakers en grote productiehuizen wereldwijd als standaard AI-video tool.",
-  "bestAlternative": "sora",
+  "bestAlternative": "veo",
   "setupTime": "under_15min",
   "matchSegments": [
     "zzp",
@@ -70,15 +110,16 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "medium",
-  "headlineValueProp": "Pioneer in AI-video — combineert generatie met klassieke editing tools",
+  "headlineValueProp": "Pioneer in AI-video — generatie, Aleph-editing en third-party modellen in één suite",
   "primaryJobsToBeDone": [
     "Korte AI-videoclips genereren voor social en marketing",
-    "Bestaande video bewerken met AI-tools (rotoscoping, inpainting, slow-mo)",
+    "Bestaande video bewerken met AI-tools (Aleph, rotoscoping, inpainting)",
     "Visual effects toevoegen zonder een traditionele VFX-pipeline"
   ],
   "antiUseCases": [
     "Lange-vorm cinematic productie — Runway is gericht op kortere clips",
     "Strikt budget-gevoelige workflows — credits gaan snel op",
     "Workflows die offline moeten draaien"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

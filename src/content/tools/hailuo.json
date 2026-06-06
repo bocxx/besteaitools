@@ -2,28 +2,28 @@
   "name": "Hailuo AI",
   "category": "video",
   "websiteUrl": "https://hailuoai.video",
-  "shortDescription": "MiniMax videogenerator met indrukwekkende bewegingskwaliteit",
-  "longDescription": "Hailuo AI is de video-generatietool van het Chinese AI-bedrijf MiniMax. Het platform is bekend om zijn realistische bewegingssimulatie — met name vloeiende menselijke bewegingen en fysieke interacties. Genereert clips tot 6 seconden vanuit tekst of afbeelding, via web-interface of API.",
-  "bestFor": "Creators en marketeers die korte, visueel overtuigende AI-videoclips willen maken met focus op realistische beweging, zonder dure productie.",
+  "shortDescription": "MiniMax videogenerator — Hailuo 2.3 met uitzonderlijk realistische beweging",
+  "longDescription": "Hailuo is de videogenerator van het Chinese AI-bedrijf MiniMax. Het huidige model Hailuo 2.3 genereert clips in 1080p (6 seconden) of 768p (10 seconden) en blinkt uit in realistische menselijke beweging, micro-expressies en fysiek kloppende interacties. Ook gestileerde looks — anime, illustratie, inktwas, game-CG — zijn een sterk punt. De goedkopere 2.3 Fast-variant halveert de kosten voor batch-werk. Je gebruikt Hailuo via de web-app of via de MiniMax API; het model is daarnaast beschikbaar op aggregator-platforms als OpenRouter.",
+  "bestFor": "Creators en marketeers die korte, visueel overtuigende AI-videoclips willen maken met focus op realistische beweging of stilering, zonder dure productie.",
   "useCases": [
     "Korte marketingvideo's vanuit productfoto's",
     "Animeren van stilstaande afbeeldingen",
-    "Social media content met AI-beweging",
-    "Concept-visualisaties voor creatieve projecten"
+    "Gestileerde content in anime-, illustratie- of game-CG-stijl",
+    "Social media content met realistische AI-beweging"
   ],
   "strengths": [
-    "Uitzonderlijk realistische menselijke beweging",
-    "Gratis credits bij aanmelden",
-    "Snelle generatietijden vergeleken met concurrenten",
+    "Uitzonderlijk realistische menselijke beweging en micro-expressies",
+    "Sterke stilisatie: anime, inktwas, game-CG",
+    "Gratis credits bij aanmelden; Fast-variant voor goedkoop batch-werk",
     "Sterk in image-to-video animaties"
   ],
   "limitations": [
-    "Clips beperkt tot 6 seconden",
-    "Inconsistentie bij complexe scènes",
-    "Minder controle over camerahoeken dan Runway",
+    "Clips beperkt tot 6 seconden op 1080p (10 seconden op 768p)",
+    "Minder regie-controle dan Runway of Flow",
+    "Chinese aanbieder — weeg datagebruik en compliance af",
     "Beperkte bewerkingsmogelijkheden na generatie"
   ],
-  "pricing": "Freemium: gratis credits bij aanmelden; creditpakketten vanaf ~$10 voor extra generaties",
+  "pricing": "Freemium: gratis dagelijkse credits; Standard $9,99/mnd, Pro vanaf $34,99/mnd; API vanaf ~$0,19 per video (2.3 Fast)",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -46,15 +46,50 @@
     "solo",
     "small"
   ],
-  "integrations": [],
+  "integrations": [
+    "API",
+    "OpenRouter"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Hailuo 2.3 videogeneratie",
+      "description": "Tekst- en image-to-video in 1080p (6 sec) of 768p (10 sec)",
+      "group": "core"
+    },
+    {
+      "title": "Realistische menselijke beweging",
+      "description": "Vloeiende, fysiek kloppende lichaamsbeweging en micro-expressies — het kenmerk van Hailuo",
+      "group": "core"
+    },
+    {
+      "title": "Stilisatie",
+      "description": "Sterke ondersteuning voor anime, illustratie, inktwas en game-CG-stijlen",
+      "group": "output"
+    },
+    {
+      "title": "Image-to-video",
+      "description": "Animeer stilstaande beelden met natuurlijke beweging en camera-dynamiek",
+      "group": "input"
+    },
+    {
+      "title": "Hailuo 2.3 Fast",
+      "description": "Snellere, tot 50% goedkopere variant voor batch-creatie",
+      "group": "core"
+    },
+    {
+      "title": "MiniMax API",
+      "description": "Programmatische toegang via de MiniMax API en platforms als OpenRouter",
+      "group": "integration"
+    }
+  ],
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
   "learningCurve": "low",
   "bestUseCaseStage": "experiment",
   "testedByEditor": false,
-  "verdict": "Hailuo AI valt op door de kwaliteit van menselijke bewegingen — duidelijk beter dan veel concurrenten. De beperking tot 6 seconden maakt het een aanvullend tool naast langere platformen zoals Runway.",
+  "verdict": "Hailuo 2.3 valt op door de kwaliteit van menselijke bewegingen en stilering — duidelijk beter dan veel concurrenten. De korte cliplengte (6-10 seconden) maakt het een aanvullende tool naast platformen als Runway of Kling.",
   "bestAlternative": "kling",
-  "whyListed": "Hailuo AI werd viraal door demonstraties van hyperrealistische menselijke beweging en groeide snel tot een van de meest besproken video-AI tools van 2024.",
+  "whyListed": "Hailuo werd in 2024 viraal door hyperrealistische menselijke beweging en bleef met de 2.x-modellen een van de sterkste Chinese video-AI's naast Kling en Seedance.",
   "primaryJobsToBeDone": [
     "Stilstaande afbeeldingen animeren",
     "Korte sociale-media videoclips genereren"
@@ -75,5 +110,7 @@
   "controlledIntegrations": [],
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "yes",
-  "vendorLockInRisk": "medium"
+  "vendorLockInRisk": "medium",
+  "headlineValueProp": "MiniMax Hailuo 2.3 — uitzonderlijk realistische menselijke beweging in korte clips",
+  "lastUpdated": "2026-06-06"
 }

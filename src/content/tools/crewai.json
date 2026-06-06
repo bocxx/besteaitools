@@ -17,7 +17,7 @@
     "crew-ai"
   ],
   "draft": false,
-  "longDescription": "CrewAI is een open-source Python-framework waarmee je AI-agents definieert met expliciete rollen, doelen en backstory's, en ze laat samenwerken aan een gedeelde taak. Het richt zich op rol-gebaseerde orchestratie: een 'researcher'-agent levert input aan een 'writer'-agent, die weer wordt gereviewd door een 'editor'. CrewAI ondersteunt OpenAI, Anthropic en lokale modellen via LiteLLM, en heeft inmiddels ook een gehoste enterprise-variant met monitoring en deployment.",
+  "longDescription": "CrewAI is een open-source Python-framework waarmee je AI-agents definieert met expliciete rollen, doelen en backstory's, en ze laat samenwerken aan een gedeelde taak. Het richt zich op rol-gebaseerde orchestratie: een 'researcher'-agent levert input aan een 'writer'-agent, die weer wordt gereviewd door een 'editor'. Naast Crews biedt het framework Flows voor deterministische, event-driven workflows met fijnmazige controle. CrewAI ondersteunt alle grote LLM-providers en lokale modellen, en heeft een gehost enterprise-platform met no-code studio, monitoring en deployment. De schaal is fors: rond de jaarwisseling 2025/2026 rapporteerde CrewAI zo'n 2 miljard agent-executies in twaalf maanden en gebruik bij circa 60% van de Fortune 500, met 47k+ GitHub-stars.",
   "bestFor": "Python-developers die meerdere LLM-agents willen orkestreren rond gespecialiseerde rollen, zonder een volledig graph-framework als LangGraph op te zetten.",
   "primaryJobsToBeDone": [
     "Een onderzoek-pipeline opzetten waarbij agents elkaars output verwerken",
@@ -45,7 +45,7 @@
     "Real-time use cases met sub-seconde latency",
     "Teams zonder Python-expertise die een no-code agent-builder zoeken"
   ],
-  "pricing": "Open-source framework gratis. Gehoste enterprise-versie met monitoring en deployment via een betaald plan.",
+  "pricing": "Open-source framework gratis (MIT); je betaalt alleen je eigen LLM-API-kosten. Het gehoste enterprise-platform (deployment, monitoring, no-code studio) heeft een gratis instapniveau en betaalde plannen op aanvraag.",
   "openSource": true,
   "businessFunctions": [
     "operations",
@@ -79,6 +79,38 @@
   ],
   "bestUseCaseStage": "experiment",
   "verdict": "CrewAI is het populairste Python-framework voor multi-agent orchestratie. Toegankelijk voor Python-developers, met actieve community en brede integraties met LLM-providers.",
+  "keyFeatures": [
+    {
+      "title": "Rol-gebaseerde Crews",
+      "description": "Definieer agents met rollen, doelen en backstory's die als team samenwerken aan een gedeelde taak.",
+      "group": "core"
+    },
+    {
+      "title": "Flows",
+      "description": "Event-driven workflows met deterministische controle, voor productieprocessen waar precisie zwaarder weegt dan autonomie.",
+      "group": "core"
+    },
+    {
+      "title": "Tools & integraties",
+      "description": "Honderden kant-en-klare tools voor web-search, API's, databases en bestanden, plus eenvoudig eigen tools schrijven.",
+      "group": "integration"
+    },
+    {
+      "title": "LLM-agnostisch",
+      "description": "Werkt met OpenAI, Anthropic, Gemini en lokale modellen — wissel van provider zonder je crews te herschrijven.",
+      "group": "integration"
+    },
+    {
+      "title": "Enterprise-platform",
+      "description": "Gehoste variant met no-code studio, deployment, monitoring en ROI-tracking voor productie-agents.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Observability & tracing",
+      "description": "Volg agent-beslissingen en task-output stap voor stap voor debugging en kwaliteitscontrole.",
+      "group": "enterprise"
+    }
+  ],
   "whyListed": "CrewAI groeide explosief tot het meest gebruikte framework voor multi-agent AI-workflows en is de de-facto standaard voor Python-gebaseerde agent-orchestratie.",
   "bestAlternative": "langchain",
   "setupTime": "days",
@@ -95,5 +127,6 @@
   "controlledIntegrations": [],
   "beginnerFriendlyScore": 3,
   "dataUsedForTraining": "no",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "lastUpdated": "2026-06-06"
 }

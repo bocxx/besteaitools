@@ -1,29 +1,28 @@
 {
   "name": "Veo",
   "category": "video",
-  "websiteUrl": "https://deepmind.google/technologies/veo",
-  "shortDescription": "Google DeepMind's videogeneratiemodel — hoge kwaliteit en lange clips",
-  "longDescription": "Veo is Google DeepMind's videogeneratiemodel dat video's genereert van tot 2 minuten in 1080p kwaliteit vanuit tekst- en afbeeldingsprompts. Het model blinkt uit in cinematische camera-bewegingen, fysicasimulatie en visuele consistentie. Beschikbaar via Google VideoFX, YouTube Dream Screen en voor enterprise via Vertex AI.",
-  "bestFor": "Filmmakers, contentmakers en marketeers die cinematisch ogende AI-video willen genereren met fijne controle over camerabewegingen en visuele stijl.",
+  "websiteUrl": "https://deepmind.google/models/veo",
+  "shortDescription": "Google's videogeneratiemodel — Veo 3.1 met native audio, via Gemini en Flow",
+  "longDescription": "Veo is het videogeneratiemodel van Google DeepMind. Sinds Veo 3 (mei 2025) genereert het native audio: dialoog, geluidseffecten en achtergrondgeluid komen samen met het beeld uit één generatie. De huidige versie Veo 3.1 levert clips tot 1080p (4K voor Ultra-abonnees) vanuit tekst of afbeeldingen. Je gebruikt Veo via de Gemini-app, via Flow — Googles AI-filmtool voor scènes met consistente personages, scene extension en camera-regie — of programmatisch via de Gemini API en Vertex AI. Toegang loopt via Google AI Pro ($19,99/mnd, 1.000 credits) of AI Ultra ($249,99/mnd, 25.000 credits); de snellere en goedkopere Veo 3 Fast-variant is er voor iteratiewerk.",
+  "bestFor": "Filmmakers, contentmakers en marketeers die cinematische AI-video mét geluid willen genereren, en teams die videogeneratie via de Gemini API in producten bouwen.",
   "useCases": [
-    "Cinematische videoclips vanuit tekstbeschrijvingen",
-    "Concept-visualisaties en storyboard-animaties",
-    "Achtergrondvideo's voor YouTube (Dream Screen)",
-    "Enterprise-videoproductie via Vertex AI"
+    "Cinematische videoclips met dialoog en geluidseffecten vanuit tekst",
+    "Scènes met consistente personages opbouwen in Flow",
+    "Marketing- en social-video's vanuit een afbeelding (image-to-video)",
+    "Programmatische videogeneratie via Gemini API of Vertex AI"
   ],
   "strengths": [
-    "Langste clips van de markt: tot 2 minuten",
-    "Uitstekende cinematische camera-controle",
-    "Sterke fysicasimulatie en bewegingsconsistentie",
-    "Integratie met Google Workspace en YouTube"
+    "Native audio: dialoog, geluidseffecten en sfeer in één generatie",
+    "Flow geeft echte regie-tools: scene extension, camera-besturing, ingredients-to-video",
+    "Breed beschikbaar via Gemini-app, Flow, API en Vertex AI",
+    "Sterke fysica-simulatie en prompt-volgzaamheid"
   ],
   "limitations": [
-    "Beperkte publieke toegang — wachtlijst of enterprise vereist",
-    "Minder direct toegankelijk dan Runway of Kling",
-    "Geen standalone tool voor consumenten",
-    "Mogelijke beperkingen op commercial use"
+    "Volwaardige Veo 3.1-generaties vereisen in de praktijk een betaald AI Pro- of Ultra-abonnement",
+    "Credit-gebaseerd: hoge kwaliteit en audio verbruiken snel credits",
+    "4K-output en prioriteit alleen op het dure Ultra-abonnement ($249,99/mnd)"
   ],
-  "pricing": "Via Google VideoFX (experimenteel, gratis met wachtlijst); enterprise gebruik via Vertex AI op verzoek",
+  "pricing": "Via Google AI Pro ($19,99/mnd, 1.000 credits) of AI Ultra ($249,99/mnd, 25.000 credits, 4K); API: $0,40/sec (Veo 3) of $0,15/sec (Veo 3 Fast), beide met audio",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "intermediate",
@@ -49,29 +48,63 @@
     "enterprise"
   ],
   "integrations": [
+    "Gemini",
+    "Flow",
     "Google Vertex AI",
-    "YouTube",
-    "Google Workspace"
+    "YouTube"
   ],
-  "timeToFirstValue": "hours",
-  "setupComplexity": "medium",
+  "keyFeatures": [
+    {
+      "title": "Native audio-generatie",
+      "description": "Dialoog, geluidseffecten en achtergrondgeluid worden samen met de video gegenereerd",
+      "group": "core"
+    },
+    {
+      "title": "Flow filmmaking-tool",
+      "description": "Bouw scènes met consistente personages, stuur camerabewegingen en verleng shots (scene extension)",
+      "group": "core"
+    },
+    {
+      "title": "Image-to-video en ingredients",
+      "description": "Start vanuit een afbeelding of combineer referentiebeelden (personage, object, stijl) tot één video",
+      "group": "input"
+    },
+    {
+      "title": "1080p tot 4K output",
+      "description": "Standaard 1080p; 4K-rendering en watermerk-vrije export op het Ultra-abonnement",
+      "group": "output"
+    },
+    {
+      "title": "Gemini API en Vertex AI",
+      "description": "Veo 3 en Veo 3 Fast per seconde afrekenen voor eigen producten en pipelines",
+      "group": "integration"
+    },
+    {
+      "title": "SynthID-watermerk",
+      "description": "Alle output bevat Googles onzichtbare SynthID-markering voor AI-herkomst",
+      "group": "enterprise"
+    }
+  ],
+  "timeToFirstValue": "minutes",
+  "setupComplexity": "low",
   "learningCurve": "medium",
   "bestUseCaseStage": "experiment",
   "gdprReady": true,
   "euHostingAvailable": false,
   "testedByEditor": false,
-  "verdict": "Veo is technisch indrukwekkend — de langste en meest cinematische AI-video's beschikbaar. De beperkte toegankelijkheid maakt het voor nu meer een aspiratieproduct dan een dagelijks inzetbare tool.",
-  "bestAlternative": "sora",
-  "whyListed": "Veo zet de benchmark voor videoduur en cinematische kwaliteit in AI-videogeneratie en vertegenwoordigt Google DeepMinds antwoord op OpenAI Sora.",
+  "verdict": "Veo 3.1 is op dit moment de meest complete videogenerator: native audio, sterke fysica en met Flow ook echte regie-tools. De vroegere toegangsdrempel is verdwenen — iedereen met een Google AI-abonnement kan ermee werken — maar de credit-prijzen zijn stevig voor hoog volume.",
+  "bestAlternative": "kling",
+  "whyListed": "Veo zet de benchmark voor AI-video met native audio en cinematische kwaliteit, en is via Gemini, Flow en Vertex AI het breedst inzetbare videomodel van de grote labs.",
   "primaryJobsToBeDone": [
-    "Lange, cinematische AI-videoclips genereren",
-    "Concept-visualisaties met hoge visuele kwaliteit maken"
+    "Cinematische AI-videoclips met native audio genereren",
+    "Scènes met consistente personages bouwen in Flow",
+    "Videogeneratie integreren in eigen producten via de Gemini API"
   ],
   "antiUseCases": [
-    "Snelle, iteratieve video-experimenten",
-    "Teams zonder enterprise Google-toegang"
+    "Hoog-volume contentproductie op een krap budget — credits zijn prijzig",
+    "Workflows die volledig buiten het Google-ecosysteem moeten draaien"
   ],
-  "setupTime": "under_4h",
+  "setupTime": "under_15min",
   "matchSegments": [
     "zzp",
     "enterprise",
@@ -86,5 +119,7 @@
   ],
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "opt-out",
-  "vendorLockInRisk": "medium"
+  "vendorLockInRisk": "medium",
+  "headlineValueProp": "Google's Veo 3.1 — AI-video met native audio en regie via Flow",
+  "lastUpdated": "2026-06-06"
 }

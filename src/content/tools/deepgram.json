@@ -3,7 +3,7 @@
   "category": "audio",
   "websiteUrl": "https://deepgram.com",
   "shortDescription": "Snelle en nauwkeurige speech-to-text API voor developers",
-  "longDescription": "Deepgram is een AI-gestuurde spraakherkennings- en transcriptie-oplossing die bedrijven in staat stelt om audio-inhoud te analyseren en te verwerken. Het platform biedt geavanceerde spraakherkenning, automatische transcriptie en sentiment-analyse.",
+  "longDescription": "Deepgram is een voice-AI-platform voor developers. Het Nova-3 speech-to-text-model combineert lage latency met scherpe prijzen en realtime meertalige transcriptie, inclusief speaker diarization en custom vocabulaire. Naast STT biedt Deepgram de Aura-modellen voor text-to-speech en een Voice Agent API die spraakherkenning, LLM en spraaksynthese bundelt voor realtime voice agents. Nieuwe accounts krijgen $200 gratis credits; self-hosted deployment kan op Enterprise-niveau.",
   "bestFor": "Deepgram is het meest waardevol voor bedrijven die audio-inhoud willen analyseren en transcriberen, zoals call centers, podcasters en media-organisaties.",
   "useCases": [
     "Spraakherkenning",
@@ -15,9 +15,9 @@
     "Nauwkeurige transcriptie"
   ],
   "limitations": [
-    "Beperkte integratiemogelijkheden"
+    "API-only: geen eindgebruikersapp — je hebt een developer nodig"
   ],
-  "pricing": "Betaald vanaf $0.10/minuut",
+  "pricing": "Pay-as-you-go: Nova-3 vanaf $0,0043/min (batch) en $0,0077/min (streaming); $200 gratis startcredits; Growth- en Enterprise-contracten met korting",
   "openSource": false,
   "pricingModel": "paid",
   "difficulty": "intermediate",
@@ -68,9 +68,9 @@
       "group": "core"
     },
     {
-      "title": "Sentiment analysis",
-      "description": "Analyseer de emotionele toon en sentiment van spraak.",
-      "group": "output"
+      "title": "Voice Agent API",
+      "description": "Gebundelde STT + LLM + TTS voor realtime spraakagenten die interrupties aankunnen.",
+      "group": "core"
     },
     {
       "title": "Custom vocabulary",
@@ -115,5 +115,6 @@
     "Een eindgebruiker-tool zoeken — Deepgram is API-only",
     "Sterk afhankelijk zijn van uitgebreide post-processing zoals samenvatting — kies dan AssemblyAI",
     "Strikte EU-residency vereist die Deepgram's regio's niet dekken"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

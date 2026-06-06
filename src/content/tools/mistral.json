@@ -7,22 +7,22 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Mistral is een Frans AI-lab dat sterke open-weight en proprietary modellen levert vanuit EU-bodem. De Mistral Large- en Codestral-modellen concurreren met westerse frontier-modellen, met als onderscheidend punt: Europese hosting, GDPR-afspraken en mogelijk Frans-talige finesse. Beschikbaar via La Plateforme (Mistral's eigen API), Hugging Face en cloud-providers. Voor organisaties met strenge EU-compliance-eisen vaak de eerste open-keuze.",
-  "bestFor": "Mistral is het meest waardevol voor professionals en organisaties die efficiënt en op maat gemaakte teksten willen genereren zonder veel tijd en moeite te investeren.",
+  "longDescription": "Mistral is een Frans AI-lab dat sterke open-weight en proprietary modellen levert vanuit EU-bodem. De actuele lineup (2026) omvat Mistral Medium 3.5 als vlaggenschip, Mistral Small 4 (dat reasoning, multimodaal en agentic coding in één model verenigt), plus de specialistische lijnen Magistral (reasoning), Devstral/Codestral (code) en Pixtral (vision). De chat-assistent Le Chat — eind mei 2026 hernoemd naar Vibe — kreeg agent mode, persistent geheugen en een Work Mode die meerstaps-workflows over gekoppelde tools uitvoert. Beschikbaar via La Plateforme (Mistral's eigen API), Hugging Face en cloud-providers. Voor organisaties met strenge EU-compliance-eisen vaak de eerste keuze.",
+  "bestFor": "Mistral is het meest waardevol voor Europese organisaties die een sterke AI-assistent of LLM-API willen met EU-hosting en GDPR-zekerheid, of open-weight modellen zelf willen draaien.",
   "useCases": [
-    "Contentcreatie",
-    "Marketingteksten",
-    "Zakelijke communicatie"
+    "AI-assistent met EU-datasoevereiniteit (Le Chat/Vibe)",
+    "LLM-API-integraties met Europese hosting",
+    "Open-weight modellen self-hosten of fine-tunen"
   ],
   "strengths": [
-    "Hoge kwaliteit van gegenereerde teksten",
-    "Snelle en efficiënte tekstproductie",
-    "Uitgebreide aanpassingsmogelijkheden"
+    "EU-gevestigd: GDPR, datasoevereiniteit en Europese hosting",
+    "Open-weight modellen naast een hosted API",
+    "Scherpe API-prijzen (Medium 3: $0,40/$2 per miljoen tokens)"
   ],
   "limitations": [
-    "Beperkte controle over de precieze output"
+    "Kleiner ecosysteem en minder integraties dan ChatGPT of Gemini"
   ],
-  "pricing": "Freemium, met betaalde abonnementen vanaf $20 per maand",
+  "pricing": "Le Chat/Vibe gratis; Pro ~$15/mnd; Team- en Enterprise-tiers per zetel; API pay-per-token (Mistral Medium 3 vanaf $0,40 input / $2 output per miljoen tokens)",
   "openSource": false,
   "businessFunctions": [
     "development",
@@ -83,6 +83,50 @@
   "antiUseCases": [
     "Top-tier reasoning op het niveau van Claude Opus / GPT-5",
     "Visuele/multimodale workflows — minder ontwikkeld dan bij concurrenten",
-    "Use cases die agressieve tool-calling vereisen"
-  ]
+    "Workflows die het allergrootste plugin- en integratie-ecosysteem vereisen"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Le Chat / Vibe",
+      "description": "Mistrals chat-assistent (eind mei 2026 hernoemd naar Vibe) met gratis instap en privacy-vriendelijke EU-insteek.",
+      "group": "core"
+    },
+    {
+      "title": "Agent mode & Work Mode",
+      "description": "Agents voeren meerstaps-workflows uit over gekoppelde tools: data ophalen, analyseren en acties uitvoeren.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Persistent geheugen",
+      "description": "Onthoudt voorkeuren en context tussen gesprekken door.",
+      "group": "core"
+    },
+    {
+      "title": "Magistral reasoning",
+      "description": "Speciale reasoning-modellen voor complexe analyse en wiskunde.",
+      "group": "core"
+    },
+    {
+      "title": "Devstral & Codestral",
+      "description": "Code-modellen voor agentic coding en completions, ook als open weights.",
+      "group": "core"
+    },
+    {
+      "title": "Open-weight modellen",
+      "description": "Diverse modellen vrij te downloaden en self-hosten via Hugging Face.",
+      "group": "core"
+    },
+    {
+      "title": "La Plateforme API",
+      "description": "EU-hosted API met scherpe tokenprijzen; ook beschikbaar via Azure en AWS.",
+      "group": "integration"
+    },
+    {
+      "title": "EU-compliance",
+      "description": "Europese hosting, GDPR-afspraken en on-premise deployment voor gevoelige sectoren.",
+      "group": "enterprise"
+    }
+  ],
+  "lastUpdated": "2026-06-06"
 }

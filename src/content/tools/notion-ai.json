@@ -12,7 +12,7 @@
     "productiviteit"
   ],
   "draft": false,
-  "longDescription": "Notion AI is een AI-assistent die direct in je Notion-workspace werkt. Het helpt bij het schrijven, samenvatten, brainstormen en doorzoeken van je kennisbank. Q&A over je eigen docs, automatische SOP-generatie en vertaling zijn standaard inbegrepen.",
+  "longDescription": "Notion AI is uitgegroeid van schrijfhulp tot een agent-laag over je hele workspace. De kern is Notion Agent: die voert meertraps-taken zelfstandig uit — documenten opstellen, databases bevragen, pagina's bijwerken — tot zo'n 20 minuten autonoom werken per opdracht. Daarnaast krijg je AI-zoeken over je workspace én gekoppelde apps als Slack, Google Drive en GitHub (Enterprise Search), AI Meeting Notes die gesprekken transcriberen en samenvatten met actiepunten, en de klassieke schrijf- en vertaalfuncties. Je kiest zelf het onderliggende model, waaronder GPT- en Claude-varianten. Belangrijk voor je budget: Notion verkoopt AI niet meer als losse add-on — de volledige AI-functionaliteit zit gebundeld in het Business-plan ($20 per gebruiker per maand, jaarlijks) en Enterprise.",
   "bestFor": "Teams die Notion gebruiken voor kennismanagement en hun productiviteit willen verhogen met AI die hun eigen content begrijpt.",
   "useCases": [
     "Teksten schrijven en verbeteren",
@@ -27,9 +27,10 @@
   ],
   "limitations": [
     "Alleen beschikbaar binnen Notion",
-    "AI add-on kost $10/gebruiker/maand extra"
+    "Volledige AI alleen in Business- en Enterprise-plannen — de losse $10-add-on is voor nieuwe gebruikers verdwenen",
+    "Custom Agents verbruiken aparte credits bovenop je abonnement"
   ],
-  "pricing": "$10/gebruiker/maand als add-on",
+  "pricing": "Gebundeld in het Business-plan: $20/gebruiker/maand (jaarlijks; $24 maandelijks) en Enterprise. De vroegere losse AI-add-on ($10/gebruiker/maand) is voor nieuwe Free/Plus-gebruikers gestopt. Custom Agents rekenen daarnaast per credit-bundel.",
   "openSource": false,
   "businessFunctions": [
     "operations",
@@ -86,11 +87,43 @@
   "beginnerFriendlyScore": 8,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "high",
-  "headlineValueProp": "AI ingebouwd in Notion — schrijf, vat samen en chat met je hele workspace",
+  "headlineValueProp": "AI ingebouwd in Notion — Notion Agent voert meertraps-taken uit over je hele workspace",
+  "keyFeatures": [
+    {
+      "title": "Notion Agent",
+      "description": "Voert meertraps-taken zelfstandig uit: documenten opstellen, databases bevragen en pagina's bijwerken vanuit één prompt",
+      "group": "core"
+    },
+    {
+      "title": "AI-zoeken & Enterprise Search",
+      "description": "Stel vragen in gewone taal over je workspace én gekoppelde apps als Slack, Google Drive en GitHub",
+      "group": "core"
+    },
+    {
+      "title": "AI Meeting Notes",
+      "description": "Transcribeert vergaderingen en genereert automatisch samenvattingen met actiepunten",
+      "group": "core"
+    },
+    {
+      "title": "Schrijven en herschrijven",
+      "description": "Teksten opstellen, samenvatten, vertalen en van toon veranderen direct in elke pagina",
+      "group": "output"
+    },
+    {
+      "title": "AI-databasevelden",
+      "description": "Laat tabelkolommen automatisch invullen op basis van AI-prompts per rij",
+      "group": "core"
+    },
+    {
+      "title": "Modelkeuze",
+      "description": "Kies zelf het onderliggende model, waaronder GPT- en Claude-varianten",
+      "group": "core"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Pagina's schrijven, samenvatten en herschrijven binnen Notion",
-    "Met Notion AI Q&A door alle pagina's en databases zoeken",
-    "Tabel-inhoud automatisch laten invullen op basis van AI-prompts"
+    "Met AI-zoeken door alle pagina's, databases en gekoppelde apps zoeken",
+    "Notion Agent meertraps-taken laten uitvoeren, zoals trackers bijwerken en docs opstellen"
   ],
   "antiUseCases": [
     "Teams die niet op Notion staan — alleenstaand zijn ChatGPT/Claude sterker",

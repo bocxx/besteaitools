@@ -1,20 +1,20 @@
 {
   "name": "AutoGPT",
   "category": "agents",
-  "websiteUrl": "https://autogpt.net",
-  "shortDescription": "Autonome AI-agent die zelfstandig taken plant en uitvoert",
-  "headlineValueProp": "Pionier-AI-agent die viraal ging in 2023 — historisch belangrijk, inmiddels ingehaald door volwassener frameworks",
+  "websiteUrl": "https://agpt.co",
+  "shortDescription": "Van virale 2023-agent naar visueel agent-platform voor doorlopende automatiseringen",
+  "headlineValueProp": "De pionier-agent van 2023, heruitgevonden als visueel platform voor agents die op triggers en schema's draaien",
   "primaryJobsToBeDone": [
-    "Een eerste autonome AI-agent draaien om het concept te leren kennen",
-    "Open-source agent-architectuur lokaal experimenteren zonder vendor-lock-in",
-    "Inspiratie en blueprints opdoen voor je eigen agent-frameworks"
+    "Terugkerende workflows automatiseren met agents die op een schema of trigger draaien",
+    "Een agent visueel bouwen met blokken in plaats van Python-code",
+    "Open-source agent-infrastructuur self-hosten zonder vendor-lock-in"
   ],
   "antiUseCases": [
-    "Productie-agents voor klanten — kies dan CrewAI of LangGraph",
-    "Teams zonder Python-kennis en geduld voor open-source setup",
-    "Use cases waar betrouwbaarheid en stabiliteit kritiek zijn"
+    "Code-gerichte multi-agent orchestratie — CrewAI of LangGraph geven daar meer controle",
+    "Interactief codewerk — daarvoor zijn Cursor, Claude Code of Devin gemaakt",
+    "Mission-critical processen die bewezen platform-stabiliteit vereisen — het platform is nog beta"
   ],
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [
     "ai-agent",
@@ -23,31 +23,33 @@
     "autonoom"
   ],
   "draft": false,
-  "longDescription": "AutoGPT is een open-source AI-assistent die automatisch taken kan uitvoeren op basis van natuurlijke taalinvoer. Het kan worden gebruikt voor een breed scala aan taken, zoals het schrijven van content, het beheren van e-mail, het maken van planning en het uitvoeren van research.",
-  "bestFor": "AutoGPT is het meest waardevol voor mensen die repetitieve taken willen automatiseren en hun productiviteit willen verhogen.",
+  "longDescription": "AutoGPT was in 2023 de eerste viraal gegane autonome AI-agent en is sindsdien volledig gepivoteerd: de oorspronkelijke experimentele agent is vervangen door het AutoGPT Platform, een visuele workflow-builder waarmee je agents bouwt uit blokken en ze doorlopend laat draaien op schema's of triggers — over je apps heen, van begin tot eind. Het platform (in beta, actieve releases in 2026) is open-source en gratis te self-hosten met je eigen model-API-keys; daarnaast is er een gehoste cloud-variant met pay-as-you-go credits en Pro/Max-abonnementen voor de meegeleverde AutoPilot-chat. De positionering verschoof daarmee van 'experimentele autonome agent' naar 'agents inhuren in plaats van workflows bouwen'. Voor code-gebaseerde multi-agent orchestratie blijven frameworks als CrewAI en LangGraph de logischer keuze.",
+  "bestFor": "AutoGPT is het meest waardevol voor makers en kleine teams die terugkerende taken willen automatiseren met agents die zelfstandig op triggers draaien, zonder zelf agent-code te schrijven.",
   "useCases": [
-    "Contentproductie",
-    "E-mailbeheer",
-    "Onderzoek en analyse",
-    "Taakplanning"
+    "Content-pipelines automatiseren die op een schema draaien",
+    "Research- en monitoring-agents bouwen die periodiek rapporteren",
+    "Multi-step workflows over meerdere apps koppelen met agent-logica",
+    "Open-source agent-architectuur lokaal draaien en aanpassen"
   ],
   "strengths": [
-    "Automatisering van repetitieve taken",
-    "Brede toepasbaarheid",
-    "Open-source"
+    "Visuele builder verlaagt de drempel fors ten opzichte van de oude Python-setup",
+    "Agents draaien doorlopend op triggers en schema's — niet alleen on-demand",
+    "Open-source en gratis te self-hosten met eigen API-keys",
+    "Grootste naamsbekendheid in de agent-categorie, actieve community"
   ],
   "limitations": [
-    "Afhankelijk van de kwaliteit van de taalinvoer",
-    "Nog in ontwikkeling, kan bugs bevatten"
+    "Platform is nog beta — features en billing veranderen regelmatig",
+    "Cloud-variant heeft geen gratis tier; credits maken kosten variabel",
+    "Minder geschikt voor complexe code-gebaseerde orchestratie dan CrewAI of LangGraph"
   ],
-  "pricing": "Gratis",
+  "pricing": "Self-hosted gratis (open-source, eigen model-API-keys). Cloud: geen gratis tier; agent-runs zijn pay-as-you-go via een prepaid credit-wallet, met Pro- en Max-abonnementen (vanaf circa $10/mnd) die AutoPilot-chatgebruik bepalen.",
   "openSource": true,
   "businessFunctions": [
     "operations",
     "development",
     "data"
   ],
-  "deploymentType": "self-hosted",
+  "deploymentType": "both",
   "dataResidency": "eu",
   "targetAudience": [
     "solo",
@@ -63,9 +65,42 @@
     "small"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "AutoGPT was een pionier in AI-agents, maar is inmiddels ingehaald door professionelere frameworks. Nuttig als experiment en leermiddel, minder geschikt voor productie-agents.",
-  "whyListed": "AutoGPT was de eerste viraal gegane AI-agent en heeft de autonome agent-categorie op de kaart gezet. Historisch belangrijk als startpunt van de agent-beweging.",
+  "verdict": "AutoGPT heeft zichzelf opnieuw uitgevonden: van viraal 2023-experiment naar visueel agent-platform voor doorlopende automatiseringen. Interessant voor makers die agents op triggers willen draaien; voor productie-orchestratie in code blijven CrewAI en LangGraph volwassener.",
+  "whyListed": "AutoGPT was de eerste viraal gegane AI-agent, zette de autonome agent-categorie op de kaart en is met de platform-pivot opnieuw relevant voor no-code agent-automatisering.",
   "bestAlternative": "crewai",
+  "keyFeatures": [
+    {
+      "title": "Visuele agent-builder",
+      "description": "Bouw agents uit blokken in een workflow-editor in plaats van Python-code te schrijven.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Triggers & schema's",
+      "description": "Agents draaien doorlopend: op vaste tijden, bij events of via webhooks — niet alleen on-demand.",
+      "group": "core"
+    },
+    {
+      "title": "AutoPilot-chat",
+      "description": "Chat-interface om agents te starten en bij te sturen; gebruik valt onder je Pro/Max-abonnement.",
+      "group": "core"
+    },
+    {
+      "title": "Agent-marketplace",
+      "description": "Kant-en-klare agents van de community als startpunt voor je eigen automatiseringen.",
+      "group": "integration"
+    },
+    {
+      "title": "Self-hosted optie",
+      "description": "Draai het hele platform gratis op eigen infrastructuur met je eigen model-API-keys.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Credit-wallet billing",
+      "description": "Cloud-runs betalen per gebruik vanuit een prepaid wallet, met workspace-opslag per tier.",
+      "group": "enterprise"
+    }
+  ],
   "setupTime": "days",
   "matchSegments": [
     "zzp",
@@ -76,8 +111,8 @@
     "max": 10
   },
   "controlledIntegrations": [],
-  "beginnerFriendlyScore": 3,
+  "beginnerFriendlyScore": 4,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

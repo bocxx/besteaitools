@@ -7,7 +7,7 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Llama is Meta's open-weight LLM-familie en het populairste open model wereldwijd. De huidige generatie (Llama 4 en nieuwer) bestaat uit varianten van 8B tot 400B+ parameters, beschikbaar voor commerciële inzet onder de Llama-licentie. Draait via Ollama, vLLM, Hugging Face, AWS Bedrock en andere providers. Sterke keuze voor organisaties die data-soevereiniteit eisen of de tokenkosten van proprietary modellen willen omzeilen.",
+  "longDescription": "Llama is Meta's open-weight LLM-familie en het populairste open model wereldwijd. De actuele open generatie is Llama 4 (april 2025) met de MoE-varianten Scout en Maverick (17B actieve parameters, tot 400B totaal), commercieel bruikbaar onder de Llama Community License. Let op: in april 2026 verlegde Meta Superintelligence Labs de frontier-focus naar het gesloten model Muse Spark, waardoor Llama vooral als onderhouden open fundament doorgaat. Draait via Ollama, vLLM, Hugging Face, AWS Bedrock en andere providers. Sterke keuze voor organisaties die data-soevereiniteit eisen of de tokenkosten van proprietary modellen willen omzeilen.",
   "bestFor": "Llama is vooral waardevol voor ontwikkelaars, onderzoekers en bedrijven die geavanceerde taalmodellen willen inzetten in hun applicaties en projecten.",
   "useCases": [
     "Tekstgeneratie",
@@ -21,9 +21,12 @@
     "Gratis en open source beschikbaar"
   ],
   "limitations": [
-    "Vereist aanzienlijke computerkracht en geheugen"
+    "Vereist aanzienlijke computerkracht en geheugen",
+    "Community-licentie is geen echte open source: attributie verplicht, aparte licentie boven 700M gebruikers",
+    "Multimodale (vision-)varianten van Llama 4 zijn onder de licentie uitgesloten voor EU-gevestigde bedrijven",
+    "Meta's frontier-ontwikkeling verschoof in 2026 naar het gesloten Muse Spark"
   ],
-  "pricing": "Gratis en open source",
+  "pricing": "Gratis te downloaden onder de Llama Community License (geen OSI-open source); je betaalt alleen je eigen hosting of de tokenprijzen van een provider als Bedrock of Groq",
   "openSource": true,
   "businessFunctions": [
     "development",
@@ -79,5 +82,38 @@
     "Teams zonder ML-engineering capaciteit — hosting is je probleem",
     "Frontier-niveau reasoning of agentic flows — gesloten modellen zijn voor",
     "Workflows die direct out-of-the-box productiekwaliteit verwachten"
-  ]
+  ],
+  "keyFeatures": [
+    {
+      "title": "Llama 4 Scout & Maverick",
+      "description": "Open-weight MoE-modellen met 17B actieve parameters; Maverick tot 400B totaal, Scout met extreem lange context.",
+      "group": "core"
+    },
+    {
+      "title": "Open weights downloaden",
+      "description": "Volledige modelgewichten via llama.com en Hugging Face — geen API-afhankelijkheid.",
+      "group": "core"
+    },
+    {
+      "title": "Natively multimodaal",
+      "description": "Llama 4 verwerkt tekst en beeld in één model (vision-varianten niet beschikbaar voor EU-bedrijven).",
+      "group": "input"
+    },
+    {
+      "title": "Kleine edge-modellen",
+      "description": "Llama 3.2 1B/3B draaien op laptops en edge-hardware voor offline gebruik.",
+      "group": "core"
+    },
+    {
+      "title": "Breed ecosysteem",
+      "description": "Ondersteund door Ollama, vLLM, Hugging Face, AWS Bedrock, Azure en Groq.",
+      "group": "integration"
+    },
+    {
+      "title": "Fine-tuning op eigen data",
+      "description": "Volledig fine-tunen of LoRA-trainen op proprietary data zonder vendor lock-in.",
+      "group": "enterprise"
+    }
+  ],
+  "lastUpdated": "2026-06-06"
 }

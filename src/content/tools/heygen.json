@@ -2,27 +2,32 @@
   "name": "HeyGen",
   "category": "video",
   "websiteUrl": "https://www.heygen.com",
-  "shortDescription": "AI-video met digitale avatars — populair voor bedrijfspresentaties en marketing",
-  "longDescription": "HeyGen is een AI-tool die automatisch video's kan genereren op basis van een tekstinvoer. Het maakt gebruik van geavanceerde taal- en videogeneratietechnologieën om binnen enkele minuten een video te produceren.",
-  "bestFor": "HeyGen is het meest waardevol voor content creators, marketeers en bedrijven die snel en kostenefficiënt video-inhoud willen produceren.",
+  "shortDescription": "AI-video met digitale avatars — populair voor training, marketing en sales",
+  "longDescription": "HeyGen maakt video's met fotorealistische AI-avatars: je typt een script en krijgt een sprekende presentator, zonder camera, studio of editor. De nieuwste avatar-generaties (Avatar IV en V) bewegen natuurlijk mee met lichaamstaal, micro-expressies en lip-sync. Daarnaast vertaalt HeyGen bestaande video's naar 175+ talen met behoud van stem en lipbeweging, maak je een digitale versie van jezelf op basis van een korte opname, en bouw je interactieve avatars die realtime reageren in gesprekken. Vooral populair voor trainingsvideo's, productdemo's en gepersonaliseerde sales-outreach op schaal.",
+  "bestFor": "HeyGen is het meest waardevol voor L&D-teams, marketeers en salesteams die regelmatig presentatievideo's nodig hebben in meerdere talen, zonder opnamestudio.",
   "useCases": [
-    "Sociale media video's",
-    "Productdemonstraties",
-    "Instructievideo's"
+    "Trainings- en onboardingvideo's in meerdere talen vanuit één script",
+    "Productdemo's en explainers met een avatar-presentator",
+    "Gepersonaliseerde sales-outreach video's op schaal",
+    "Bestaande video's vertalen met lip-sync voor internationale markten"
   ],
   "strengths": [
-    "Snelle video-generatie",
-    "Eenvoudige bediening"
+    "Beste avatar-kwaliteit in de markt (Avatar IV/V) met natuurlijke lichaamsbeweging",
+    "Video-vertaling naar 175+ talen met stembehoud",
+    "Geen camera, studio of editor nodig",
+    "API voor geautomatiseerde, gepersonaliseerde videoproductie"
   ],
   "limitations": [
-    "Beperkte aanpassingsmogelijkheden"
+    "Premium-avatars verbruiken snel credits (~20 credits per minuut Avatar IV)",
+    "Avatars blijven voor kritisch publiek herkenbaar als AI"
   ],
-  "pricing": "Gratis",
+  "pricing": "Freemium: gratis plan (3 video's/mnd met watermerk); Creator $29/mnd ($24 jaarlijks); Business-plannen vanaf ~$149/mnd met 4K en custom avatars; Enterprise op aanvraag",
   "openSource": false,
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [
     "video-generation",
+    "ai-avatars",
     "content-creation",
     "marketing"
   ],
@@ -30,13 +35,17 @@
   "deploymentType": "saas",
   "dataResidency": "global",
   "targetAudience": [
-    "solo"
+    "solo",
+    "freelancer",
+    "mkb",
+    "enterprise"
   ],
   "businessFunctions": [
     "marketing",
-    "sales"
+    "sales",
+    "hr"
   ],
-  "fundingStage": "seed",
+  "fundingStage": "growth",
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
   "requiresDeveloper": false,
@@ -48,46 +57,47 @@
   "companySizeFit": [
     "solo",
     "small",
-    "medium"
+    "medium",
+    "large"
   ],
   "bestUseCaseStage": "team-rollout",
   "integrations": [
-    "YouTube",
-    "Instagram"
+    "API",
+    "Zapier"
   ],
   "mainCompetitors": [],
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "Automatische video-generatie",
-      "description": "Genereer binnen enkele minuten professionele video's op basis van je input",
+      "title": "AI-avatars (Avatar IV/V)",
+      "description": "Fotorealistische avatars met natuurlijke lip-sync, micro-expressies en lichaamsbeweging",
       "group": "core"
     },
     {
-      "title": "Tekstinvoer",
-      "description": "Voeg tekst toe die wordt omgezet in gesproken voice-over",
+      "title": "Video-vertaling",
+      "description": "Vertaal bestaande video's naar 175+ talen met behoud van stem en lipbeweging",
+      "group": "core"
+    },
+    {
+      "title": "Eigen avatar maken",
+      "description": "Maak een digitale versie van jezelf op basis van een korte video-opname",
       "group": "input"
     },
     {
-      "title": "Beeldbibliotheek",
-      "description": "Gebruik uit duizenden stockbeelden om je video's te illustreren",
+      "title": "Voice cloning",
+      "description": "Kloon je stem zodat je avatar in elke taal met jouw stem spreekt",
       "group": "input"
     },
     {
-      "title": "Sociale media export",
-      "description": "Exporteer je video's direct naar YouTube, Instagram en andere kanalen",
-      "group": "output"
-    },
-    {
-      "title": "Branding-opties",
-      "description": "Voeg je eigen logo, kleuren en stijl toe aan je video's",
-      "group": "enterprise"
-    },
-    {
-      "title": "AI-gegenereerde scripts",
-      "description": "Laat de AI automatisch scripts genereren op basis van je input",
+      "title": "Interactieve avatars",
+      "description": "Realtime avatars die reageren in gesprekken — voor demo's, support en sales",
       "group": "beta",
       "badge": "nieuw"
+    },
+    {
+      "title": "Teams en enterprise",
+      "description": "4K-rendering, SCORM-export, brand kit en samenwerking op Business/Enterprise-plannen",
+      "group": "enterprise"
     }
   ],
   "setupTime": "under_15min",
@@ -101,13 +111,14 @@
     "max": 250
   },
   "controlledIntegrations": [
-    "meta_business"
+    "rest_api",
+    "zapier"
   ],
   "beginnerFriendlyScore": 8,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "medium",
   "verdict": "HeyGen is de toonaangevende AI-avatar tool voor zakelijke video's, met sterke meertalige lipsync en stem-cloning. Voor pure video-generatie zonder avatars zijn Runway en Veo geschikter.",
-  "whyListed": "HeyGen domineert de AI-avatar markt voor training, marketing en sales-outreach video's en groeide explosief in 2024–2025.",
+  "whyListed": "HeyGen domineert de AI-avatar markt voor training, marketing en sales-outreach video's en groeide explosief sinds 2024.",
   "bestAlternative": "runway",
   "headlineValueProp": "Maak video's met realistische digitale avatars en meertalige lipsync zonder studio",
   "primaryJobsToBeDone": [
@@ -116,8 +127,9 @@
     "Marketing-video's maken zonder camera, acteur of editor"
   ],
   "antiUseCases": [
-    "Hoogwaardige cinematic video's — gebruik Runway, Veo of Sora",
+    "Hoogwaardige cinematic video's — gebruik Runway, Veo of Kling",
     "Live broadcasting met echte presentators",
     "Sectoren waar AI-avatars compliance-issues opleveren (financieel advies, medisch)"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

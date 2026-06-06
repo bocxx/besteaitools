@@ -15,27 +15,32 @@
     "Use cases die diepe data-engineering vereisen — geen vervanging voor LangChain/LlamaIndex",
     "Teams met strikte budget-controle die geen variabele AI-kosten willen"
   ],
-  "bestFor": "Relevance AI is het meest waardevol voor e-commercebedrijven die hun conversie en klanttevredenheid willen verbeteren door middel van gepersonaliseerde aanbevelingen.",
+  "bestFor": "Relevance AI is het meest waardevol voor sales-, marketing- en operations-teams die zonder code een 'AI-workforce' van samenwerkende agents willen bouwen, bijvoorbeeld voor prospect-research en outreach.",
   "useCases": [
-    "Gepersonaliseerde productaanbevelingen",
-    "Relevante contentaanbevelingen",
-    "Optimalisatie van online winkelervaringen"
+    "Een AI-BDR bouwen die prospects onderzoekt, verrijkt en gepersonaliseerde outreach schrijft",
+    "Meerdere agents laten samenwerken in een keten (research → schrijven → opvolgen)",
+    "Data-enrichment-pijplijnen opzetten over CRM, spreadsheets en LLM-calls",
+    "Support- en operations-taken automatiseren met agent-templates"
   ],
   "strengths": [
-    "Geavanceerde machine learning-algoritmen",
-    "Eenvoudige integratie met bestaande systemen"
+    "Marketplace met 400+ kant-en-klare agent-templates (BDR-outreach, research, content)",
+    "Multi-agent: agents delen output en werken in sequentie, als een digitaal team",
+    "Modelkeuze uit OpenAI, Anthropic, Google en Meta — eigen API-keys meebrengen kan op betaalde plannen"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor meerdere talen"
+    "Tweeledig verbruiksmodel (actions + vendor credits) maakt kosten lastig in te schatten",
+    "Minder fijnmazige controle over agent-logica dan code-first frameworks",
+    "Complexe agents bouwen vergt alsnog flinke configuratie en testwerk"
   ],
-  "pricing": "Betaald vanaf $20/mnd",
+  "pricing": "Gratis plan (200 actions/maand). Pro $19/maand (30.000 actions/jaar plus vendor credits), Team circa $234/maand (jaarlijks), Enterprise op aanvraag. Eigen API-keys gebruiken vermijdt vendor credit-kosten.",
   "openSource": false,
-  "pricingModel": "paid",
+  "pricingModel": "freemium",
   "difficulty": "intermediate",
   "tags": [
-    "personalization",
-    "recommendation engine",
-    "e-commerce"
+    "ai-agents",
+    "no-code",
+    "sales-automatisering",
+    "data-enrichment"
   ],
   "draft": false,
   "deploymentType": "saas",
@@ -52,7 +57,7 @@
   "fundingStage": "series-a",
   "timeToFirstValue": "days",
   "setupComplexity": "medium",
-  "requiresDeveloper": true,
+  "requiresDeveloper": false,
   "freeTrialAvailable": true,
   "nlSupport": true,
   "learningCurve": "medium",
@@ -65,41 +70,43 @@
   ],
   "bestUseCaseStage": "team-rollout",
   "integrations": [
-    "Shopify",
-    "WooCommerce",
-    "Magento"
+    "HubSpot",
+    "Salesforce",
+    "Google Sheets",
+    "Slack",
+    "Zapier"
   ],
   "mainCompetitors": [],
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "Natural Language Understanding",
-      "description": "Geavanceerde NLP-modellen om content en queries te begrijpen en te analyseren",
+      "title": "Visuele agent-builder",
+      "description": "Definieer agents met tools, prompts en triggers in een low-code interface, zonder Python",
       "group": "core"
     },
     {
-      "title": "Relevance Scoring",
-      "description": "Algoritmen om de relevantie van content voor gebruikers te bepalen",
+      "title": "Multi-agent samenwerking",
+      "description": "Koppel agents in sequentie zodat ze output delen — research, schrijven en opvolging als één keten",
       "group": "core"
     },
     {
-      "title": "Personalized Recommendations",
-      "description": "Aanbevelingen op basis van gebruikersgedrag en content-relevantie",
-      "group": "output"
+      "title": "Marketplace met 400+ templates",
+      "description": "Kant-en-klare agents voor BDR-outreach, prospect-research, contentgeneratie en data-analyse",
+      "group": "core"
     },
     {
-      "title": "Search Optimization",
-      "description": "Zoekresultaten optimaliseren op basis van relevantie en context",
-      "group": "output"
+      "title": "Modelkeuze en eigen API-keys",
+      "description": "Werkt met OpenAI, Anthropic, Google en Meta; eigen keys meebrengen kan op betaalde plannen",
+      "group": "integration"
     },
     {
-      "title": "Content Insights",
-      "description": "Analyses en inzichten over content-prestaties en gebruikersinteractie",
-      "group": "output"
+      "title": "Data-enrichment tools",
+      "description": "Verrijk CRM- en spreadsheetdata met webresearch en LLM-extractie in bulk",
+      "group": "core"
     },
     {
-      "title": "Enterprise Integrations",
-      "description": "Koppelingen met CMS, CRM en andere bedrijfssystemen",
+      "title": "CRM- en app-koppelingen",
+      "description": "Integraties met HubSpot, Salesforce, Slack, Google Sheets en meer via API en Zapier",
       "group": "integration"
     }
   ],
@@ -114,9 +121,10 @@
     "max": 1000
   },
   "controlledIntegrations": [
-    "shopify",
-    "woocommerce",
-    "magento"
+    "hubspot",
+    "salesforce",
+    "slack",
+    "zapier"
   ],
   "beginnerFriendlyScore": 5,
   "dataUsedForTraining": "no",
@@ -124,5 +132,5 @@
   "verdict": "Relevance AI is een no-code platform om AI-agents en workflows te bouwen, gericht op zakelijke gebruikers zonder Python-skills. Sterk voor data-enrichment en sales-agents; voor developer-flows is CrewAI flexibeler.",
   "whyListed": "Relevance AI groeide als no-code agent-platform met focus op data-werkflows en GTM-teams, in een markt die gedomineerd wordt door code-first frameworks.",
   "bestAlternative": "crewai",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

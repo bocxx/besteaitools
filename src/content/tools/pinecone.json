@@ -13,7 +13,7 @@
     "managed-service"
   ],
   "draft": false,
-  "longDescription": "Pinecone is een schaalbare, serverloze vector database die is ontworpen voor het opslaan en ophalen van embeddings voor AI-toepassingen zoals zoekmachines, aanbevelingssystemen en chatbots.",
+  "longDescription": "Pinecone is de bekendste managed vector-database voor productie-RAG en semantische search. De serverless architectuur schaalt automatisch mee en rekent af op reads, writes en opslag in plaats van vaste pods. Het platform groeide uit tot meer dan kale vector-opslag: Pinecone Inference levert gehoste embedding- en reranking-modellen in dezelfde pipeline, Pinecone Assistant biedt een kant-en-klare RAG-laag voor chat- en agent-applicaties, en native full-text search maakt hybride zoeken (keyword + semantisch) mogelijk. Voor read-zware agent-workloads zijn er sinds eind 2025 Dedicated Read Nodes met voorspelbare prestaties. De prijsstructuur kreeg in 2026 een nieuwe Builder-tier ($20/maand) tussen de gratis Starter en de usage-based Standard- en Enterprise-tiers in.",
   "primaryJobsToBeDone": [
     "Embeddings opslaan en semantisch ophalen voor RAG- en search-toepassingen",
     "Productie-zoek-features bouwen die meegroeien met je gebruikersbasis",
@@ -21,24 +21,60 @@
   ],
   "antiUseCases": [
     "Hobby-projecten en kleine PoC's waar self-hosted (Chroma, Qdrant) goedkoper is",
-    "Teams die strikt EU-hosting vereisen voor alle vector-data — Pinecone is primair US-georiënteerd",
+    "Workloads met strakke kostenplafonds — usage-based pricing kan bij agent-verkeer hard oplopen",
     "Use cases die geen semantische search nodig hebben — een gewone Postgres + tsvector volstaat dan"
   ],
   "bestFor": "Pinecone is het meest waardevol voor organisaties die AI-toepassingen ontwikkelen die gebruik maken van embeddings.",
   "useCases": [
-    "Zoekmachines",
-    "Aanbevelingssystemen",
-    "Chatbots"
+    "RAG-systemen bouwen op bedrijfsdocumentatie",
+    "Semantische zoekmachines en hybride search (keyword + vector)",
+    "Aanbevelingssystemen met real-time vector-search",
+    "Agent-memory en kennisbanken voor AI-assistenten"
   ],
   "strengths": [
-    "Schaalbaar",
-    "Serverloze architectuur",
-    "Efficiënt opslaan en ophalen van embeddings"
+    "Serverless: schaalt automatisch, geen capaciteitsplanning",
+    "Inference en reranking ingebouwd — minder losse componenten",
+    "Pinecone Assistant als kant-en-klare RAG-laag",
+    "Volwassen ecosysteem met LangChain/LlamaIndex-integraties"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor andere gegevenstypen dan embeddings"
+    "Kosten lastig voorspelbaar bij groeiende agent-workloads (usage-based op reads/writes/opslag)",
+    "Niet open-source — migreren naar Qdrant/Weaviate vergt herindexeren",
+    "Duurder dan self-hosted alternatieven bij grote volumes"
   ],
-  "pricing": "Betaald vanaf $25/maand",
+  "pricing": "Starter gratis. Builder $20/maand (vast). Standard vanaf $50/maand en Enterprise vanaf $500/maand minimum, daarna usage-based op read/write-units en opslag (~$3,60/GB/maand).",
+  "keyFeatures": [
+    {
+      "title": "Serverless vector-search",
+      "description": "Automatisch schalende indexen, afgerekend op reads, writes en opslag — geen pods beheren.",
+      "group": "core"
+    },
+    {
+      "title": "Pinecone Inference",
+      "description": "Gehoste embedding- en reranking-modellen in dezelfde API-pipeline.",
+      "group": "core"
+    },
+    {
+      "title": "Pinecone Assistant",
+      "description": "Kant-en-klare RAG-laag voor chat- en agent-applicaties bovenop je data.",
+      "group": "output"
+    },
+    {
+      "title": "Hybride search",
+      "description": "Native full-text search gecombineerd met vector-similarity en metadata-filters.",
+      "group": "core"
+    },
+    {
+      "title": "Namespaces & metadata-filtering",
+      "description": "Partitioneer data per tenant of klant en filter op metadata bij elke query.",
+      "group": "core"
+    },
+    {
+      "title": "Dedicated Read Nodes",
+      "description": "Gereserveerde leescapaciteit voor voorspelbare prestaties bij read-zware agent-workloads.",
+      "group": "enterprise"
+    }
+  ],
   "openSource": false,
   "businessFunctions": [
     "development",
@@ -82,5 +118,5 @@
   "controlledIntegrations": [
     "rest_api"
   ],
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

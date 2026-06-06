@@ -2,8 +2,41 @@
   "name": "zero.xyz",
   "category": "infrastructure",
   "websiteUrl": "https://zero.xyz",
-  "shortDescription": "Gateway die AI-agents toegang geeft tot circa 8.000 tools via MCP en de x402-betalingsstandaard, zonder per-tool API-key configuratie.",
-  "headlineValueProp": "Eén CLI, ~8.000 tools voor je agent — zonder API-keys of MCP-servers per service",
+  "shortDescription": "Gateway die AI-agents toegang geeft tot circa 9.000 tools via MCP en de x402-betalingsstandaard, zonder per-tool API-key configuratie.",
+  "headlineValueProp": "Eén CLI, ~9.000 tools voor je agent — zonder API-keys of MCP-servers per service",
+  "whyListed": "zero.xyz is de eerste serieuze tool-gateway die MCP combineert met de x402-betalingsstandaard: agents krijgen on-demand toegang tot duizenden tools met pay-per-use afrekening, zonder per service API-keys te configureren — een voorproefje van het 'agentic web'.",
+  "keyFeatures": [
+    {
+      "title": "Tool-gateway via één CLI",
+      "description": "Eén installatie ontsluit ~9.000 MCP- en x402-tools voor je agent — geen API-keys of servers per service.",
+      "group": "core"
+    },
+    {
+      "title": "x402 pay-per-use betalingen",
+      "description": "Agents betalen per tool-call via de x402-standaard (HTTP 402, Coinbase/Cloudflare) — geen abonnementen.",
+      "group": "core"
+    },
+    {
+      "title": "Brede agent-support",
+      "description": "Werkt met Claude Code, Codex CLI, Gemini CLI en de meeste andere MCP-compatibele CLI-agents.",
+      "group": "integration"
+    },
+    {
+      "title": "Task-conditional ranking",
+      "description": "Tools worden per taak gerangschikt op basis van agent-reviews, zodat je agent het beste gereedschap kiest.",
+      "group": "core"
+    },
+    {
+      "title": "Centrale billing & logging",
+      "description": "Eén dashboard voor kosten en tool-gebruik van al je agents — handig voor teams met meerdere agents.",
+      "group": "enterprise"
+    },
+    {
+      "title": "On-demand tool-discovery",
+      "description": "Agents vinden zelf de juiste tool tijdens het werk in plaats van vooraf geconfigureerde integraties.",
+      "group": "core"
+    }
+  ],
   "pricingModel": "paid",
   "difficulty": "intermediate",
   "tags": [
@@ -15,7 +48,7 @@
     "agent-payments"
   ],
   "draft": false,
-  "longDescription": "zero.xyz is een gateway-service die AI-agents verbindt met circa 8.000 tools en API's via het Model Context Protocol (MCP) en de x402-betalingsstandaard (HTTP 402, Coinbase + Cloudflare). In plaats van per tool een API-key en MCP-server op te zetten, installeer je één keer de zero.xyz CLI en kan je agent (Claude Code, Codex, Gemini, OpenClaw, Hermes en de meeste andere CLI-agents) tools on-demand vinden en gebruiken. Tools worden gerangschikt per taak op basis van agent-reviews. Pricing: 5 euro startkrediet gratis, daarna pay-per-use via x402.",
+  "longDescription": "zero.xyz is een gateway-service die AI-agents verbindt met circa 9.000 tools en API's via het Model Context Protocol (MCP) en de x402-betalingsstandaard (HTTP 402, Coinbase + Cloudflare). In plaats van per tool een API-key en MCP-server op te zetten, installeer je één keer de zero.xyz CLI en kan je agent (Claude Code, Codex, Gemini, OpenClaw, Hermes en de meeste andere CLI-agents) tools on-demand vinden en gebruiken. Tools worden gerangschikt per taak op basis van agent-reviews. Pricing: $5 startkrediet gratis, daarna pay-per-use via x402.",
   "verdict": "zero.xyz dicht een echt gat in de agent-stack: de long-tail aan kleine tools waar je geen aparte integratie voor wilt opzetten. Het is geen vervanging van Composio voor enterprise-SaaS of van eigen MCP-servers voor business-kritische integraties — maar voor experimentele agent-workflows en het uitbreiden van Claude Code's capabilities zonder configuratie-overhead is dit het eerste serieuze aanbod. Jong project; rate-limits en logging zijn essentieel voor productie-gebruik.",
   "bestFor": "Developers en MKB-teams die met CLI-agents als Claude Code, Codex of Gemini werken en de tool-capabilities snel willen uitbreiden zonder per-service configuratie. Vooral geschikt voor prototyping, experimentatie en agent-workflows met veel diverse tool-behoeften.",
   "primaryJobsToBeDone": [
@@ -30,7 +63,7 @@
     "Document processing workflows die per stap een andere converter nodig hebben"
   ],
   "strengths": [
-    "Eén installatie geeft toegang tot ~8.000 tools",
+    "Eén installatie geeft toegang tot ~9.000 tools",
     "Werkt direct met Claude Code, Codex, Gemini en de meeste CLI-agents",
     "Pay-per-use zonder abonnement — alleen betalen wat je verbruikt",
     "Task-conditional tool-ranking op basis van agent-reviews",
@@ -39,7 +72,7 @@
   "limitations": [
     "Jong project — stabiliteit en tool-coverage moeten zich nog bewijzen",
     "Agent-payments via x402 zijn nieuw; rate-limits zijn essentieel",
-    "Niet alle 8.000 tools zijn even hoogwaardig — sommige ranking-resultaten zijn nog ruwe schattingen",
+    "Niet alle 9.000 tools zijn even hoogwaardig — sommige ranking-resultaten zijn nog ruwe schattingen",
     "Voor enterprise-compliance vragen sommige organisaties strakker controle dan zero.xyz nu biedt",
     "Geen vervanging van directe MCP-integraties met je belangrijkste SaaS-tools"
   ],
@@ -75,5 +108,5 @@
     "x402 payment standard",
     "USDC wallets"
   ],
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

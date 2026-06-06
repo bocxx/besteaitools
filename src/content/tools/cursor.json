@@ -21,7 +21,7 @@
   "limitations": [
     "Beperkte integratie met bepaalde IDE's"
   ],
-  "pricing": "Freemium, betaald abonnement vanaf $20/maand",
+  "pricing": "Gratis tier met beperkte requests. Pro $20/mnd, Pro+ $60/mnd, Ultra $200/mnd. Teams: Standard $40 of Premium $120 per gebruiker/mnd. Metered usage-model: prompts naar frontier-modellen verbruiken credits; Cloud Agents worden apart gemeterd.",
   "openSource": false,
   "businessFunctions": [
     "development"
@@ -60,8 +60,14 @@
       "group": "core"
     },
     {
-      "title": "Composer (Agent)",
-      "description": "Beschrijf een wijziging en Cursor bewerkt meerdere bestanden zelfstandig.",
+      "title": "Composer 2.5 (Agent)",
+      "description": "Cursor's eigen agent-model voor lange sessies: bewerkt meerdere bestanden zelfstandig en scoort op SWE-Bench vergelijkbaar met frontier-modellen tegen lagere kosten.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Cloud Agents",
+      "description": "Agents draaien in geïsoleerde cloud-VM's met terminal-, browser- en desktop-toegang — jij volgt de voortgang asynchroon in de IDE.",
       "group": "core",
       "badge": "nieuw"
     },
@@ -141,5 +147,5 @@
     "Compliance-omgevingen die geen externe AI-providers toelaten",
     "Workflows die volledig autonoom moeten draaien — Devin of Claude Code passen beter"
   ],
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

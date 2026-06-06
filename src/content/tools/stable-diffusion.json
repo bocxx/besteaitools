@@ -12,7 +12,7 @@
     "diffusion"
   ],
   "draft": false,
-  "longDescription": "Stable Diffusion is Stability AI's open-weight tekst-naar-beeld model — het standaard open alternatief voor Midjourney en DALL-E. Draait lokaal op een GPU of via hosted-services zoals Replicate, ComfyUI of AUTOMATIC1111. Sterke ecosystem: LoRA's, ControlNet en fine-tunes maken hyper-specifieke stijlen en personages mogelijk. Voor wie volledige controle wil over beeldgeneratie en data-residentie de eerste keuze.",
+  "longDescription": "Stable Diffusion is Stability AI's open-weight tekst-naar-beeld modelfamilie en het fundament van het open-source beeldgeneratie-ecosysteem. De actuele generatie is Stable Diffusion 3.5 (Large, Large Turbo en Medium), gratis commercieel bruikbaar onder de Community License tot $1 miljoen jaaromzet. Draait lokaal op een GPU of via hosted-services; SD 3.5 Medium (2,5 mld parameters) werkt op consumenten-hardware en er zijn NVIDIA- en AMD-geoptimaliseerde varianten. Het ecosysteem is de grootste kracht: LoRA's, ControlNet en duizenden fine-tunes maken hyper-specifieke stijlen en personages mogelijk. Kanttekening: Stability AI richt zich sinds de herstructurering van 2024-2025 (onder leiding van o.a. Sean Parker en met James Cameron in het bestuur) vooral op enterprise en audio/video-modellen; voor het nieuwste open beeldmodel kijkt de community inmiddels vaak naar Flux.",
   "bestFor": "Stable Diffusion is vooral waardevol voor creatieve professionals, kunstenaars en hobbyisten die op een efficiënte manier unieke beelden willen genereren.",
   "useCases": [
     "Creatie van kunstwerken",
@@ -26,7 +26,7 @@
   "limitations": [
     "Kan soms ongewenste of ongepaste content genereren"
   ],
-  "pricing": "Gratis",
+  "pricing": "Gratis (open-weight): SD 3.5 valt onder de Community License — gratis voor commercieel gebruik tot $1 miljoen jaaromzet, daarboven enterprise-licentie. Hosted gebruik via API-platforms betaal je per beeld",
   "openSource": true,
   "businessFunctions": [
     "marketing",
@@ -56,7 +56,39 @@
     "enterprise"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Stable Diffusion blijft de onbetwiste standaard voor open-source beeldgeneratie. Totale controle, onbeperkt gebruik, maar vereist technische kennis voor optimale resultaten.",
+  "verdict": "Stable Diffusion blijft het breedst ondersteunde open beeldmodel met het grootste fine-tune-ecosysteem, al heeft Flux de kwaliteitskroon overgenomen. Totale controle en lokaal draaien blijven de sterke punten; het vereist wel technische kennis.",
+  "keyFeatures": [
+    {
+      "title": "SD 3.5-modelfamilie",
+      "description": "Large (8,1 mld parameters), Large Turbo en Medium (2,5 mld, draait op consumenten-GPU's) — open weights, vrij te downloaden",
+      "group": "core"
+    },
+    {
+      "title": "Lokaal draaien",
+      "description": "Volledige controle over data en output, zonder externe API of cloud-afhankelijkheid",
+      "group": "core"
+    },
+    {
+      "title": "LoRA- en fine-tune-ecosysteem",
+      "description": "Het grootste aanbod community-modellen, stijlen en personage-fine-tunes van alle beeldgeneratoren",
+      "group": "input"
+    },
+    {
+      "title": "ControlNet-workflows",
+      "description": "Precies sturen op pose, compositie, diepte of lijntekening via ControlNet en vergelijkbare adapters",
+      "group": "input"
+    },
+    {
+      "title": "ComfyUI en Automatic1111",
+      "description": "Volwassen open-source interfaces voor node-based pipelines en klassieke generatie-workflows",
+      "group": "integration"
+    },
+    {
+      "title": "Hardware-geoptimaliseerde varianten",
+      "description": "Officiële NVIDIA NIM- en AMD-geoptimaliseerde versies voor snellere inference en enterprise-deployment",
+      "group": "enterprise"
+    }
+  ],
   "whyListed": "Stable Diffusion democratiseerde AI-beeldgeneratie en is het fundament van het open-source beeldgeneratie-ecosysteem met miljoenen actieve gebruikers wereldwijd.",
   "bestAlternative": "flux",
   "setupTime": "days",

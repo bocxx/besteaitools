@@ -4,7 +4,7 @@
   "websiteUrl": "https://flowiseai.com",
   "shortDescription": "No-code AI-workflow builder met drag-and-drop",
   "headlineValueProp": "Open-source drag-and-drop bouwer voor LLM-workflows en RAG-chatbots — zelfgehost zonder vendor-lock-in",
-  "longDescription": "Flowise is een open-source low-code platform waarmee gebruikers visueel LLM-workflows en AI-agents kunnen bouwen door middel van een drag-and-drop interface. Het maakt het mogelijk om complexe AI-applicaties te creëren zonder uitgebreide programmeerkennis, met ondersteuning voor verschillende LLM-providers en integraties.",
+  "longDescription": "Flowise is een open-source low-code platform waarmee je visueel LLM-workflows en AI-agents bouwt via een drag-and-drop interface. Met Agentflow orkestreer je multi-agent systemen met branching, loops en gedeelde state tussen flows, inclusief human-in-the-loop review van agent-taken. Het platform ondersteunt de grote LLM-providers en vector-databases, en heeft ingebouwde observability met volledige execution-traces en koppelingen naar Prometheus en OpenTelemetry. Je host Flowise gratis zelf (Node.js of Docker) of kiest Flowise Cloud als managed optie. Door de LangChain-basis sluit het aan op een groot ecosysteem van componenten, terwijl de visuele laag de drempel flink verlaagt voor RAG-chatbots en interne assistenten.",
   "primaryJobsToBeDone": [
     "Een RAG-chatbot bouwen op je eigen documenten zonder LangChain-code te schrijven",
     "AI-workflows visueel orkestreren tussen LLM's, vector-databases en externe API's",
@@ -28,9 +28,9 @@
   "limitations": [
     "Vereist technische kennis voor geavanceerde implementaties en deployment"
   ],
-  "pricing": "Gratis (open-source)",
+  "pricing": "Self-hosted gratis (open-source). Flowise Cloud: gratis instapplan, betaalde plannen vanaf $35/mnd (verschillen in predictions, storage en teamfeatures), Enterprise op aanvraag. LLM-API-kosten van je modelprovider komen daar bovenop.",
   "openSource": true,
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "intermediate",
   "tags": [
     "low-code",
@@ -76,7 +76,45 @@
     "Supabase",
     "PostgreSQL"
   ],
-  "verdict": "Flowise is een open-source visuele LangChain-bouwer — eenvoudiger dan code, minder flexibel dan n8n. Goede keuze voor RAG-workflows bouwen zonder programmeren.",
+  "verdict": "Flowise is een open-source visuele LangChain-bouwer — eenvoudiger dan code, minder flexibel dan n8n. Goede keuze voor RAG-workflows bouwen zonder programmeren; met Agentflow ook geschikt voor multi-agent systemen.",
+  "keyFeatures": [
+    {
+      "title": "Drag-and-drop flow-builder",
+      "description": "Bouw LLM-workflows visueel door nodes voor modellen, prompts, retrievers en tools te verbinden.",
+      "group": "core"
+    },
+    {
+      "title": "Agentflow (multi-agent)",
+      "description": "Orkestreer meerdere agents met branching, loops en gedeelde state tussen flows.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Human-in-the-loop",
+      "description": "Laat mensen agent-taken reviewen en goedkeuren binnen de feedback-loop.",
+      "group": "core"
+    },
+    {
+      "title": "RAG-componenten",
+      "description": "Document-loaders, vector-databases (Pinecone, Supabase, PostgreSQL/pgvector) en retrieval-nodes out-of-the-box.",
+      "group": "core"
+    },
+    {
+      "title": "Embed & API",
+      "description": "Publiceer flows als embeddable chat-widget of REST-API in je eigen site of app.",
+      "group": "output"
+    },
+    {
+      "title": "Observability",
+      "description": "Volledige execution-traces met ondersteuning voor Prometheus, OpenTelemetry en andere monitoring-tools.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Self-hosted of cloud",
+      "description": "Gratis zelf hosten via Node.js of Docker, of managed via Flowise Cloud.",
+      "group": "enterprise"
+    }
+  ],
   "whyListed": "Flowise is een van de meest gebruikte open-source drag-and-drop tools voor het bouwen van AI-workflows en RAG-toepassingen op basis van LangChain.",
   "bestAlternative": "n8n",
   "setupTime": "under_4h",
@@ -94,5 +132,5 @@
   "beginnerFriendlyScore": 4,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

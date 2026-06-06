@@ -1,27 +1,32 @@
 {
   "name": "Windsurf",
   "category": "coding",
-  "websiteUrl": "https://codeium.com/windsurf",
-  "shortDescription": "AI-code-editor van Codeium met flow-gebaseerde UX",
+  "websiteUrl": "https://windsurf.com",
+  "shortDescription": "AI-code-editor van Cognition met Cascade-agent en Devin-integratie",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Windsurf is een AI-tool die ontwikkelaars helpt bij het schrijven en testen van code. Het biedt functies zoals code-aanvulling, foutopsporing en refactoring.",
-  "bestFor": "Windsurf is het meest waardevol voor software ontwikkelaars die efficiënt en productief willen werken.",
+  "longDescription": "Windsurf is een AI-first code-editor, oorspronkelijk gebouwd door Codeium. Na een turbulente overnamesaga in 2025 — waarbij een deal met OpenAI afketste en Google de oprichters wegkocht — nam Cognition (het bedrijf achter Devin) het product over. Sindsdien is Windsurf het IDE-front van de Cognition-stack: de Cascade-agent voor multi-step codewijzigingen, Devin-integratie direct in de editor voor langlopende autonome taken, Codemaps voor visuele code-navigatie en het eigen SWE-1.5-model dat op zeer hoge snelheid (~950 tokens/sec) near-frontier codekwaliteit levert. Naast de standalone editor zijn er plugins voor 40+ IDE's, waaronder JetBrains, Vim en Xcode. Sinds maart 2026 werkt de pricing met dagelijkse en wekelijkse quota's in plaats van credits.",
+  "bestFor": "Windsurf is het meest waardevol voor developers die een Cursor-alternatief zoeken met een snel eigen model, en voor teams die agent-taken (via Devin) en interactief codewerk in één omgeving willen.",
   "useCases": [
-    "Schrijven van code",
-    "Testen van code",
-    "Refactoren van code"
+    "Multi-file refactors uitvoeren met de Cascade-agent",
+    "Langlopende taken delegeren aan Devin vanuit de editor",
+    "Onbekende codebases verkennen via Codemaps",
+    "AI-assistentie gebruiken in JetBrains, Vim of Xcode via plugins"
   ],
   "strengths": [
-    "Verbetert codeproductiviteit",
-    "Detecteert codefouten"
+    "Eigen SWE-1.5-model is opvallend snel (~950 tokens/sec) met near-frontier kwaliteit",
+    "Codemaps voor visuele code-navigatie — uniek tegenover Cursor en Claude Code",
+    "Devin-integratie brengt autonome agents in de editor",
+    "Plugins voor 40+ IDE's, breder dan de meeste concurrenten"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor sommige programmeertalen"
+    "Twee eigenaarswissels in één jaar maakten de roadmap onrustig",
+    "Quota-systeem (sinds maart 2026) is minder voorspelbaar dan een vast aantal requests",
+    "Kleinere extension-ecosysteem dan Cursor's VS Code-basis"
   ],
-  "pricing": "Gratis basisversie, betaald abonnement voor geavanceerde functies",
+  "pricing": "Gratis tier met beperkte quota. Pro $20/mnd (sinds maart 2026, daarvoor $15 — bestaande abonnees behielden hun prijs), Teams $40/gebruiker/mnd, Enterprise op aanvraag. Dagelijkse en wekelijkse quota's in plaats van credits.",
   "openSource": false,
   "businessFunctions": [
     "development"
@@ -36,7 +41,9 @@
   "nlSupport": false,
   "integrations": [
     "VS Code",
-    "GitHub"
+    "JetBrains",
+    "GitHub",
+    "Devin"
   ],
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
@@ -47,9 +54,47 @@
     "medium"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Windsurf is een serieuze concurrent voor Cursor met sterke Cascade-agent en competitieve prijs. De beste keuze voor developers die Cursor te duur vinden maar niet willen inleveren op agent-kwaliteit.",
-  "whyListed": "Windsurf (Codeium) groeide snel als betaalbaar alternatief voor Cursor en veroverde marktaandeel met een krachtige agent-modus en lagere abonnementskosten.",
+  "verdict": "Windsurf is onder Cognition uitgegroeid tot meer dan een Cursor-kloon: het snelle SWE-1.5-model, Codemaps en de Devin-integratie geven het een eigen profiel. De beste keuze als je interactief codewerk en autonome agent-taken in één product wilt.",
+  "whyListed": "Windsurf groeide als betaalbaar Cursor-alternatief, overleefde de meest besproken overnamesaga van 2025 en is nu het IDE-anker van Cognition's agent-stack.",
   "bestAlternative": "cursor",
+  "keyFeatures": [
+    {
+      "title": "Cascade-agent",
+      "description": "Agentic flow die multi-step wijzigingen over meerdere bestanden plant en uitvoert, met begrip van je hele codebase.",
+      "group": "core"
+    },
+    {
+      "title": "SWE-1.5 model",
+      "description": "Cognition's eigen coding-model: ~950 tokens per seconde, near-frontier kwaliteit tegen lagere kosten dan frontier-modellen.",
+      "group": "core"
+    },
+    {
+      "title": "Devin in de editor",
+      "description": "Delegeer langlopende taken aan de autonome Devin-agent zonder Windsurf te verlaten — voortgang volg je in het Agent Command Center.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Codemaps",
+      "description": "AI-geannoteerde visuele kaarten van je codebase om snel structuur en afhankelijkheden te begrijpen.",
+      "group": "output"
+    },
+    {
+      "title": "Supercomplete",
+      "description": "Context-bewuste autocomplete die intenties voorspelt over meerdere regels en bestanden heen.",
+      "group": "core"
+    },
+    {
+      "title": "Plugins voor 40+ IDE's",
+      "description": "Naast de standalone editor ook beschikbaar in JetBrains, Vim, Neovim en Xcode.",
+      "group": "integration"
+    },
+    {
+      "title": "Teams & SSO",
+      "description": "Teams-plan met centrale billing, beheer en enterprise-opties zoals SSO.",
+      "group": "enterprise"
+    }
+  ],
   "setupTime": "under_15min",
   "matchSegments": [
     "mkb_klein",
@@ -67,15 +112,16 @@
   "beginnerFriendlyScore": 6,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "medium",
-  "headlineValueProp": "Codeium's AI-IDE met agentic flows — directe concurrent van Cursor",
+  "headlineValueProp": "Cognition's AI-IDE met snel eigen model, Codemaps en Devin-agent — directe concurrent van Cursor",
   "primaryJobsToBeDone": [
     "Coding doen in een AI-first IDE met agent-acties op codebase-niveau",
-    "Een Cursor-alternatief proberen met andere ergonomie en modelkeuzes",
-    "Enterprise security en self-hosting toepassen op een AI-IDE"
+    "Interactief codewerk en autonome Devin-taken combineren in één omgeving",
+    "Een Cursor-alternatief gebruiken met een sneller eigen model"
   ],
   "antiUseCases": [
     "Teams die al diep in Cursor zitten — overstapkosten zijn voelbaar",
-    "JetBrains-only setups",
+    "JetBrains-only setups die alles native willen (de plugin is beperkter dan de editor)",
     "Compliance-omgevingen die geen externe AI toestaan"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

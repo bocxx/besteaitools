@@ -3,7 +3,39 @@
   "category": "support",
   "websiteUrl": "https://www.zendesk.com/ai/",
   "shortDescription": "AI-laag voor Zendesk — automatische ticketclassificatie, antwoordvoorstellen en agent assist",
-  "headlineValueProp": "AI-laag bovenop Zendesk — getraind op miljarden support-interacties voor triage en antwoordsuggesties",
+  "headlineValueProp": "AI-laag bovenop Zendesk — autonome AI-agents afgerekend per opgeloste resolutie, plus triage en agent-copilot",
+  "keyFeatures": [
+    {
+      "title": "Autonome AI-agents (outcome-based)",
+      "description": "AI-agents die tickets volledig zelfstandig oplossen; je betaalt per 'automated resolution' ($1,50 committed, $2,00 pay-as-you-go) — niet per seat.",
+      "group": "core"
+    },
+    {
+      "title": "Intelligente triage",
+      "description": "Inkomende tickets automatisch classificeren op intentie, taal en sentiment, en routeren naar de juiste agent of workflow.",
+      "group": "core"
+    },
+    {
+      "title": "Agent Copilot",
+      "description": "Antwoordsuggesties, ticketsamenvattingen en toonaanpassing voor menselijke agents, onderdeel van de Advanced AI add-on ($50/agent/maand).",
+      "group": "core"
+    },
+    {
+      "title": "Getraind op support-interacties",
+      "description": "Modellen gebouwd op miljarden echte klantenservice-gesprekken, waardoor intent-herkenning out-of-the-box goed werkt.",
+      "group": "input"
+    },
+    {
+      "title": "Kennisbank-generatie",
+      "description": "AI stelt nieuwe help-artikelen voor op basis van veelvoorkomende ticketonderwerpen en gaten in je kennisbank.",
+      "group": "output"
+    },
+    {
+      "title": "Werkt binnen het Zendesk-ecosysteem",
+      "description": "Naadloos gekoppeld aan Zendesk Support, Guide, Talk en Messaging plus integraties als Salesforce, Shopify en Jira.",
+      "group": "integration"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Inkomende tickets automatisch classificeren, prioriteren en routeren",
     "Antwoord-suggesties aan agents tonen op basis van vergelijkbare eerdere tickets",
@@ -23,7 +55,7 @@
     "ai-agent"
   ],
   "draft": false,
-  "longDescription": "Zendesk AI voegt een intelligente AI-laag toe aan het Zendesk-platform: automatische ticketclassificatie, sentimentanalyse, antwoordvoorstellen voor agents en een AI-chatbot die FAQ's afhandelt. Gebouwd op miljarden klantenservice-interacties.",
+  "longDescription": "Zendesk AI voegt een intelligente AI-laag toe aan het Zendesk-platform: automatische ticketclassificatie, sentimentanalyse, een Agent Copilot met antwoordvoorstellen en autonome AI-agents die tickets volledig zelfstandig afhandelen. Gebouwd op miljarden klantenservice-interacties. Zendesk is in 2025-2026 overgestapt op outcome-based pricing: je betaalt per 'automated resolution' ($1,50 bij commitment, $2,00 pay-as-you-go) in plaats van per seat, boven op de Advanced AI add-on van $50 per agent per maand. Let op: sinds januari 2026 worden resolutie-overages automatisch gefactureerd zonder voorafgaande melding — budgetbewaking is dus belangrijk. Voor bestaande Zendesk-klanten is de AI snel operationeel; buiten het Zendesk-ecosysteem zijn de functies niet bruikbaar.",
   "bestFor": "Organisaties die Zendesk al gebruiken en hun supportteam willen versterken met AI-automatisering.",
   "useCases": [
     "Automatische ticketclassificatie en prioritering",
@@ -38,9 +70,10 @@
   ],
   "limitations": [
     "Vereist Zendesk als platform",
-    "AI add-on kost extra boven op Zendesk licentie"
+    "AI add-on kost extra boven op Zendesk licentie",
+    "Automatische overage-facturering sinds januari 2026 — kosten kunnen ongemerkt oplopen"
   ],
-  "pricing": "AI add-on vanaf $50/agent/maand boven op Zendesk",
+  "pricing": "Advanced AI add-on $50/agent/maand + $1,50–2,00 per automatische resolutie, boven op Zendesk-plan",
   "openSource": false,
   "businessFunctions": [
     "klantenservice"
@@ -65,7 +98,7 @@
     "enterprise"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Zendesk AI voegt nuttige automatisering toe voor teams die al Zendesk gebruiken — triage, antwoordsuggesties en samenvatting werken goed. Buiten het Zendesk-ecosysteem niet relevant.",
+  "verdict": "Zendesk AI voegt nuttige automatisering toe voor teams die al Zendesk gebruiken — triage, Agent Copilot en autonome AI-agents werken goed. Het outcome-based prijsmodel (betalen per opgeloste resolutie) is eerlijk, maar reken vooraf goed door: bij hoog volume lopen de kosten hard op. Buiten het Zendesk-ecosysteem niet relevant.",
   "whyListed": "Zendesk AI is relevant voor de tienduizenden bedrijven die Zendesk als helpdesk-platform gebruiken en automatisch de klantenservice willen verbeteren.",
   "bestAlternative": "intercom-fin",
   "matchSegments": [
@@ -88,5 +121,5 @@
   "beginnerFriendlyScore": 6,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

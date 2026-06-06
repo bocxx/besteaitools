@@ -7,21 +7,26 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Lovable is een AI-tool die ontworpen is om ontwikkelaars te helpen bij het schrijven en verbeteren van code. Het biedt functies zoals automatische codecompletie, foutdetectie en -correctie, en suggesties voor optimalisatie.",
-  "bestFor": "Lovable is het meest waardevol voor software ontwikkelaars die efficiënter en productiever willen werken.",
+  "longDescription": "Lovable is het snelst groeiende vibe-coding platform van Europa (Stockholm): je beschrijft een app in gewone taal en Lovable genereert een complete React-applicatie met database, authenticatie en hosting. De Agent-modus werkt zelfstandig meerstaps-taken af — debuggen, bestanden aanpassen, externe data ophalen — in plaats van per prompt één wijziging. Met Lovable Cloud zit de hele backend (database, auth, storage, gebouwd op Supabase) in het platform, zonder dat je zelf iets hoeft te koppelen. De cijfers onderstrepen de groei: eind 2025 haalde Lovable $330 miljoen Series B op tegen een waardering van $6,6 miljard, en begin 2026 passeerde het $400 miljoen aan jaaromzet. In juni 2026 tekende het een meerjarige deal met Google Cloud. Voor ondernemers en non-developers is het de laagdrempeligste route van idee naar live product.",
+  "bestFor": "Lovable is het meest waardevol voor ondernemers, marketeers en non-developers die zonder code een volwaardige webapp met database en login willen bouwen en live zetten.",
   "useCases": [
-    "Automatische codecompletie",
-    "Foutdetectie en -correctie",
-    "Optimalisatie van code"
+    "Een MVP met auth, database en UI in een dag online krijgen",
+    "Interne tools en dashboards bouwen zonder development-team",
+    "Landingspagina's en SaaS-prototypes itereren via natuurlijke taal",
+    "Een bestaand idee valideren met een werkend product in plaats van mockups"
   ],
   "strengths": [
-    "Verhoogt de productiviteit van ontwikkelaars",
-    "Verbetert de kwaliteit van geschreven code"
+    "Agent-modus handelt meerstaps-taken zelfstandig af, inclusief debuggen",
+    "Lovable Cloud: backend, auth en storage inbegrepen zonder configuratie",
+    "GitHub-sync geeft developers volledige toegang tot de gegenereerde code",
+    "Zeer lage instapdrempel — de meest beginner-vriendelijke app-builder"
   ],
   "limitations": [
-    "Beperkt tot bepaalde programmeertalen"
+    "Credit-verbruik is lastig te voorspellen; Agent-acties kosten meerdere credits",
+    "Cloud-backendgebruik wordt apart usage-based gefactureerd bovenop je abonnement",
+    "Gebonden aan de React/Supabase-stack — geen custom backend-architectuur"
   ],
-  "pricing": "Gratis basisversie, betaald abonnement voor geavanceerde functies",
+  "pricing": "Gratis tier met beperkte dagelijkse credits. Pro vanaf $25/mnd (credit-gebaseerd, hogere tiers voor meer credits), Business en Enterprise voor teams. Lovable Cloud backend-gebruik (database, storage) wordt apart usage-based gefactureerd zodra je app schaalt.",
   "openSource": false,
   "businessFunctions": [
     "development",
@@ -37,7 +42,9 @@
   "nlSupport": false,
   "integrations": [
     "GitHub",
-    "Supabase"
+    "Supabase",
+    "Stripe",
+    "Figma"
   ],
   "timeToFirstValue": "hours",
   "setupComplexity": "medium",
@@ -48,9 +55,47 @@
     "medium"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Lovable is de snelste manier om een full-stack webapplicatie te genereren voor non-developers. Sterk in React/Supabase stacks, vergelijkbare beperkingen als Bolt bij complexe logica.",
-  "whyListed": "Lovable groeide in 2024 explosief en is een van de meest besproken vibe-coding platforms voor ondernemers en non-developers die snel webapps willen bouwen.",
+  "verdict": "Lovable is de snelste manier om een full-stack webapplicatie te genereren voor non-developers. Sterk in React/Supabase-stacks met Agent-modus en eigen Cloud-backend; let op de variabele credit- en Cloud-kosten bij intensief gebruik.",
+  "whyListed": "Lovable groeide naar $400 miljoen jaaromzet en een $6,6 miljard-waardering als hét Europese vibe-coding platform voor ondernemers en non-developers.",
   "bestAlternative": "bolt",
+  "keyFeatures": [
+    {
+      "title": "App-generatie uit natuurlijke taal",
+      "description": "Beschrijf je app en Lovable bouwt een complete React-applicatie met UI, database en login.",
+      "group": "core"
+    },
+    {
+      "title": "Agent-modus",
+      "description": "Werkt meerstaps-taken zelfstandig af: plant, debugt, past bestanden aan en haalt externe data op.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Lovable Cloud",
+      "description": "Volledige backend inbegrepen — database, authenticatie en file-storage op Supabase, zonder zelf te koppelen.",
+      "group": "core"
+    },
+    {
+      "title": "Visual edits",
+      "description": "Klik op een element en pas tekst, kleur of layout direct aan zonder prompt of credits.",
+      "group": "input"
+    },
+    {
+      "title": "Figma-import",
+      "description": "Zet bestaande designs om naar werkende interfaces.",
+      "group": "input"
+    },
+    {
+      "title": "GitHub-sync",
+      "description": "Tweerichtings-synchronisatie met GitHub zodat developers verder kunnen in hun eigen workflow.",
+      "group": "integration"
+    },
+    {
+      "title": "Publiceren met custom domain",
+      "description": "Eén klik van prototype naar live app, inclusief eigen domeinnaam op betaalde plannen.",
+      "group": "output"
+    }
+  ],
   "setupTime": "under_4h",
   "matchSegments": [
     "zzp",
@@ -77,5 +122,6 @@
     "Custom backend-architectuur buiten Supabase",
     "Codebases die senior engineering review en design patterns vragen",
     "Niet-React stacks of native mobile apps"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

@@ -2,17 +2,54 @@
   "name": "Intercom Fin",
   "category": "support",
   "websiteUrl": "https://www.intercom.com/fin",
-  "shortDescription": "AI-agent die tot 50% van supportvragen direct oplost — gebouwd op je eigen kennisbank",
-  "headlineValueProp": "AI-agent getraind op jouw help center — lost tot 50% van supportvragen automatisch op, pay-per-resolution",
+  "shortDescription": "AI-agent die supportvragen end-to-end oplost op basis van je eigen kennisbank — $0,99 per resolutie",
+  "headlineValueProp": "AI-agent getraind op jouw help center — Intercom claimt 67% automatische resolutie, pay-per-resolution en ook los van Intercom inzetbaar",
+  "keyFeatures": [
+    {
+      "title": "Resolutie-gebaseerd model",
+      "description": "Je betaalt $0,99 alleen wanneer Fin een vraag aantoonbaar oplost — niet per gesprek of per seat (minimum 50 resoluties/maand).",
+      "group": "core"
+    },
+    {
+      "title": "Traint op je eigen kennis",
+      "description": "Fin gebruikt je help center, eerdere supportgesprekken en interne documentatie als bron en citeert waar het antwoord vandaan komt.",
+      "group": "input"
+    },
+    {
+      "title": "Fin Procedures",
+      "description": "Meerstaps-workflows (refunds, abonnementswijzigingen, orderstatus) die Fin zelfstandig uitvoert via API-koppelingen.",
+      "group": "core"
+    },
+    {
+      "title": "Omnichannel inclusief Voice",
+      "description": "Werkt over chat, e-mail, WhatsApp, sms, social én telefonie — zonder extra feature-tiers.",
+      "group": "core"
+    },
+    {
+      "title": "Fin Vision",
+      "description": "Analyseert screenshots en afbeeldingen die klanten meesturen, standaard inbegrepen.",
+      "group": "input"
+    },
+    {
+      "title": "Standalone op andere helpdesks",
+      "description": "Fin draait sinds 2025 ook bovenop Zendesk, Salesforce en HubSpot — een Intercom-abonnement is niet meer verplicht.",
+      "group": "integration"
+    },
+    {
+      "title": "Simulaties en CX Score",
+      "description": "Test Fin vooraf op historische gesprekken en meet gesprekskwaliteit automatisch met AI-evaluaties.",
+      "group": "output"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Supportvragen automatisch beantwoorden op basis van jouw eigen help-center-content",
     "Complexe gesprekken escaleren naar menselijke agents met context-overdracht",
     "Proactieve hulp tonen op basis van gebruikersgedrag in je product"
   ],
   "antiUseCases": [
-    "Bedrijven zonder bestaand Intercom-abonnement — Fin is daar afhankelijk van",
     "Teams met zeer hoog ticketvolume waar per-resolution-pricing duurder uitvalt dan agent-licenties",
-    "Use cases die offline of on-premise support vereisen"
+    "Use cases die offline of on-premise support vereisen",
+    "Teams zonder onderhouden help center — Fin is zo goed als je kennisbank"
   ],
   "pricingModel": "paid",
   "difficulty": "beginner",
@@ -23,24 +60,26 @@
     "ai-agent"
   ],
   "draft": false,
-  "longDescription": "Intercom Fin is een AI-supportagent die klantvragen beantwoordt op basis van je eigen help center, docs en kennisbank. Fin lost tot 50% van inkomende vragen automatisch op, escaleert complex verkeer naar menselijke agents en leert continu bij.",
+  "longDescription": "Intercom Fin is een AI-supportagent die klantvragen end-to-end beantwoordt op basis van je eigen help center, docs en eerdere supportgesprekken. Intercom claimt een gemiddelde automatische resolutie van 67% over ruim 40 miljoen gesprekken; in gepubliceerde klantcases ligt dat realistischer tussen de 42 en 55%. Fin werkt over chat, e-mail, WhatsApp, sms, social en sinds 2025 ook telefonie (Fin Voice). Met Procedures voert Fin meerstaps-acties uit zoals refunds of orderwijzigingen, en Fin Vision analyseert meegezonden screenshots. Belangrijk: Fin is niet langer gebonden aan Intercom — het draait ook standalone bovenop Zendesk, Salesforce en HubSpot (minimaal $49,50/maand). Het prijsmodel blijft $0,99 per succesvolle resolutie, zonder feature-gating tussen tiers.",
   "bestFor": "SaaS-bedrijven en online dienstverleners die hun supportkosten willen halveren met AI die op hun eigen content is getraind.",
   "useCases": [
     "Automatisch beantwoorden van supportvragen",
+    "Meerstaps-acties uitvoeren zoals refunds via Fin Procedures",
     "Escalatie naar menselijke agents bij complexe vragen",
-    "Proactieve hulp op basis van gebruikersgedrag",
+    "Telefonische support automatiseren met Fin Voice",
     "Meertalige support"
   ],
   "strengths": [
-    "Traint op je eigen kennisbank — geen hallucinaties",
-    "Naadloos binnen Intercom-ecosysteem",
-    "Tot 50% automatische resolutie"
+    "Traint op je eigen kennisbank met bronvermelding per antwoord",
+    "Hoge automatische resolutie (claim 67%, cases 42-55%)",
+    "Draait ook standalone op Zendesk, Salesforce en HubSpot",
+    "Geen feature-gating — alles inbegrepen in per-resolutie-prijs"
   ],
   "limitations": [
-    "Vereist Intercom als platform",
-    "Per-resolutie pricing kan oplopen bij hoog volume"
+    "Per-resolutie pricing kan oplopen bij hoog volume",
+    "Definitie van 'resolutie' (klant vraagt niet door) telt soms te ruim"
   ],
-  "pricing": "Vanaf $0,99 per resolutie",
+  "pricing": "$0,99 per succesvolle resolutie, minimum 50 resoluties/maand (~$49,50)",
   "openSource": false,
   "businessFunctions": [
     "klantenservice"
@@ -65,8 +104,8 @@
     "large"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Intercom Fin lost klantenservice-tickets effectief op met hoge resolutiepercentages. Sterke integratie met de Intercom-suite, maar vereist een Intercom-abonnement.",
-  "whyListed": "Intercom Fin is de meest succesvolle AI-klantenservice-agent voor bedrijven die Intercom al gebruiken, met bewezen hoge automatische resolutiepercentages.",
+  "verdict": "Intercom Fin lost klantenservice-tickets effectief op met hoge resolutiepercentages en is sinds 2025 ook los van Intercom inzetbaar bovenop Zendesk, Salesforce of HubSpot. Het pay-per-resolution-model maakt de kosten voorspelbaar gekoppeld aan resultaat.",
+  "whyListed": "Fin is een van de meest gebruikte AI-klantenservice-agents wereldwijd (40M+ gesprekken), met bewezen hoge automatische resolutiepercentages en een outcome-based prijsmodel dat de markt heeft gezet.",
   "bestAlternative": "zendesk-ai",
   "matchSegments": [
     "mkb_klein",
@@ -88,5 +127,5 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

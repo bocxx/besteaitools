@@ -2,27 +2,33 @@
   "name": "Luma",
   "category": "video",
   "websiteUrl": "https://lumalabs.ai",
-  "shortDescription": "3D- en videogeneratie met AI (Dream Machine)",
+  "shortDescription": "Luma's Dream Machine — Ray3-videomodellen met HDR en Draft Mode",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "text-to-video",
+    "image-to-video",
+    "hdr"
+  ],
   "draft": false,
-  "longDescription": "Luma is een AI-aangedreven video-editor die gebruikers in staat stelt om snel en eenvoudig professioneel ogende video's te maken. Met geavanceerde functies zoals automatische stabilisatie, titels en animaties kunnen gebruikers hun video's moeiteloos verbeteren.",
-  "bestFor": "Luma is vooral waardevol voor content creators, marketeers en kleine bedrijven die hoogwaardige video-inhoud willen produceren zonder uitgebreide video-editing vaardigheden.",
+  "longDescription": "Luma Labs maakt Dream Machine, het videoplatform rond de eigen Ray-modellen. Ray3 (2025) was het eerste 'reasoning' videomodel en het eerste met native HDR-output; het huidige Ray3.14 genereert native 1080p, draait fors sneller en goedkoper dan de eerste Ray3 en levert coherentere beweging. Slim is de Draft Mode: je itereert eerst goedkoop op compositie, prompt en camerabeweging in lage resolutie, en rendert daarna pas op volle kwaliteit. Dream Machine ondersteunt image-to-video, eindframe-sturing, character reference en biedt sinds 2026 ook modellen van derden zoals Veo 3.1 en Kling 3.0 binnen dezelfde interface.",
+  "bestFor": "Luma is vooral waardevol voor creators en kleine teams die snel en betaalbaar willen itereren op AI-videoshots, met HDR als bonus voor wie kleurbewerking doet.",
   "useCases": [
-    "Video-content voor sociale media",
-    "Bedrijfspromoties en -presentaties",
-    "Persoonlijke video's en vlogs"
+    "Image-to-video clips genereren vanuit één startbeeld",
+    "Snel itereren op shots via Draft Mode voordat je vol rendert",
+    "HDR-videomateriaal genereren voor kleurbewerking in post-productie"
   ],
   "strengths": [
-    "Eenvoudig te gebruiken interface",
-    "Geavanceerde video-editing functies",
-    "Automatische video-optimalisatie"
+    "Draft Mode: goedkoop itereren, daarna pas vol renderen",
+    "Ray3.14: native 1080p, sneller en goedkoper dan eerdere Ray-versies",
+    "Native HDR-output — vrijwel uniek in de categorie",
+    "Multi-model: ook Veo en Kling beschikbaar binnen Dream Machine"
   ],
   "limitations": [
-    "Beperkte aanpassingsmogelijkheden voor gevorderde gebruikers"
+    "Credit-kosten lopen snel op bij 1080p-renders",
+    "Minder regie- en editing-tools dan Runway of Flow"
   ],
-  "pricing": "Gratis basisversie, betaald abonnement vanaf $15/maand",
+  "pricing": "Freemium: gratis generaties op web en iOS; betaalde plannen op credit-basis vanaf ~$10/mnd — 1080p kost fors meer credits dan lagere resoluties",
   "openSource": false,
   "deploymentType": "saas",
   "dataResidency": "us",
@@ -32,7 +38,9 @@
     "mkb"
   ],
   "nlSupport": false,
-  "integrations": [],
+  "integrations": [
+    "API"
+  ],
   "businessFunctions": [
     "marketing"
   ],
@@ -45,8 +53,40 @@
     "medium"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Luma Dream Machine levert snelle, kwalitatief goede videogeneratie met sterke fysica-simulatie. Goede prijs-kwaliteitverhouding vergeleken met Runway voor kortere clips.",
-  "whyListed": "Luma Dream Machine was een van de eerste toegankelijke text-to-video tools en bleef populair door snelle generatietijden en realistische bewegingsweergave.",
+  "keyFeatures": [
+    {
+      "title": "Ray3.14 videogeneratie",
+      "description": "Native 1080p tekst- en image-to-video met coherente beweging en fotorealistisch detail",
+      "group": "core"
+    },
+    {
+      "title": "Draft Mode",
+      "description": "Goedkope lage-resolutie previews om te itereren op prompt en compositie vóór de volledige render",
+      "group": "core"
+    },
+    {
+      "title": "Native HDR-output",
+      "description": "Genereert HDR-video — handig voor grading en professionele afwerking",
+      "group": "output"
+    },
+    {
+      "title": "Image-to-video met eindframe-sturing",
+      "description": "Start vanuit een beeld en stuur waar de clip moet eindigen (start/end frame)",
+      "group": "input"
+    },
+    {
+      "title": "Character en object reference",
+      "description": "Houd personages en objecten consistent over meerdere generaties",
+      "group": "input"
+    },
+    {
+      "title": "Multi-model support",
+      "description": "Naast de Ray-modellen ook Veo 3.1 en Kling 3.0 binnen Dream Machine",
+      "group": "integration"
+    }
+  ],
+  "verdict": "Luma Dream Machine levert snelle, kwalitatief goede videogeneratie met sterke fysica-simulatie. Draft Mode maakt het een van de prettigste tools om mee te itereren, en de prijs-kwaliteitverhouding is goed vergeleken met Runway voor kortere clips.",
+  "whyListed": "Luma Dream Machine was een van de eerste toegankelijke text-to-video tools en blijft relevant met de Ray3-lijn: het eerste reasoning-videomodel met native HDR.",
   "bestAlternative": "runway",
   "setupTime": "under_15min",
   "matchSegments": [
@@ -62,7 +102,7 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "medium",
-  "headlineValueProp": "Luma Labs' Dream Machine — videogenerator met sterke beweging en image-to-video",
+  "headlineValueProp": "Luma's Dream Machine — Ray3.14 met native HDR en goedkoop itereren via Draft Mode",
   "primaryJobsToBeDone": [
     "Image-to-video clips genereren vanuit één startbeeld",
     "Snel concept-video's draaien voor mood en richting",
@@ -72,5 +112,6 @@
     "Lange-vorm productie waar consistency over minuten belangrijk is",
     "Hoogfrequente use cases — credits zijn een rem",
     "API-zware workflows met strict SLA"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

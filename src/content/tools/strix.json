@@ -1,7 +1,7 @@
 {
   "name": "Strix",
   "category": "agents",
-  "websiteUrl": "https://usestrix.com",
+  "websiteUrl": "https://strix.ai",
   "shortDescription": "Open-source autonome AI-agent die je app aanvalt zoals een pentester en kwetsbaarheden bewijst met werkende proofs-of-concept.",
   "headlineValueProp": "Open-source AI-agent die je code dynamisch aanvalt, kwetsbaarheden vindt en proofs-of-concept levert",
   "pricingModel": "free",
@@ -16,6 +16,49 @@
   ],
   "draft": false,
   "longDescription": "Strix is een open-source agentic security platform van het usestrix-team. In plaats van vooraf-gedefinieerde scan-templates draait Strix autonome AI-agents die je applicatie dynamisch aanvallen, kwetsbaarheden ontdekken en die ontdekkingen bewijzen met werkende proofs-of-concept. De v0.6-release voegt 'thinking blocks' toe die tussen stappen blijven hangen, gestructureerde vulnerability-reporting met aparte velden voor impact, evidence en remediatie, en een centraal configuratie-systeem dat herhaalde runs vereenvoudigt. De codebase staat op GitHub onder Apache 2.0 met meer dan 24.000 sterren.",
+  "whyListed": "Strix is de meest serieuze open-source AI-pentest-agent van dit moment: multi-agent architectuur die kwetsbaarheden niet alleen vindt maar bewijst met werkende exploits, ~25.000 GitHub-sterren en een gefinancierd team ($117 miljoen opgehaald) achter de doorontwikkeling.",
+  "keyFeatures": [
+    {
+      "title": "Multi-agent orchestratie",
+      "description": "Gespecialiseerde agents (attack surface mapping, injectie-tests, validatie, reporting) werken parallel samen als een pentest-team.",
+      "group": "core"
+    },
+    {
+      "title": "Proof-of-concept validatie",
+      "description": "Gevonden kwetsbaarheden worden bewezen met werkende exploits in plaats van alleen gerapporteerd — minder false positives.",
+      "group": "core"
+    },
+    {
+      "title": "HTTP-proxy & request-manipulatie",
+      "description": "Onderschept en manipuleert verkeer voor injectie- en auth-tests, zoals een handmatige pentester met Burp.",
+      "group": "core"
+    },
+    {
+      "title": "Browser-automatisering",
+      "description": "Verkent client-side paden voor XSS-, CSRF- en andere frontend-kwetsbaarheden.",
+      "group": "core"
+    },
+    {
+      "title": "Terminal & Python-omgeving",
+      "description": "Draait commando's en schrijft custom exploits in een geïsoleerde Docker-omgeving — niets verlaat je machine.",
+      "group": "core"
+    },
+    {
+      "title": "Gestructureerde rapportage",
+      "description": "Vulnerability-reports met aparte velden voor impact, evidence en remediatie, klaar voor Jira of Linear.",
+      "group": "output"
+    },
+    {
+      "title": "CI/CD-integratie",
+      "description": "Container-first design voor security-scans op staging-omgevingen in je pipeline.",
+      "group": "integration"
+    },
+    {
+      "title": "Multi-LLM backends",
+      "description": "Werkt met Anthropic, OpenAI en OpenRouter — je kiest zelf model en kostenprofiel.",
+      "group": "integration"
+    }
+  ],
   "verdict": "Strix is op dit moment de serieuste open-source AI-agent voor security-testing. De v0.6-release schuift het project van demo-fase naar productie-relevant — vooral voor MKB en startups die geen pentest-budget hebben maar wel een eerste-lijn-scan willen. Vervangt geen professionele pentester voor compliance-werk, maar dicht een gat dat tools als Burp en ZAP open laten: autonome breedte-coverage met werkende exploits in plaats van alleen findings.",
   "bestFor": "MKB-teams en startups die security willen integreren in hun development-workflow zonder aparte security-engineer; bug-bounty hunters die parallelle agents willen inzetten voor brede coverage; teams die vibe-coded prototypes willen testen op kwetsbaarheden voor go-live.",
   "primaryJobsToBeDone": [
@@ -79,5 +122,5 @@
     "Jira",
     "Linear"
   ],
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

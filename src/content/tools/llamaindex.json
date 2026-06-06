@@ -4,7 +4,7 @@
   "websiteUrl": "https://www.llamaindex.ai",
   "shortDescription": "Framework voor RAG en data-pipelines met LLM's",
   "headlineValueProp": "Het standaard data-framework voor RAG — verbindt LLM's met je eigen documenten, databases en API's",
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [
     "rag",
@@ -13,7 +13,7 @@
     "data-pipelines"
   ],
   "draft": false,
-  "longDescription": "LlamaIndex is een open-source Python-framework voor RAG-toepassingen — het verbindt LLM's met je eigen documenten, databases, API's en cloud-opslag. Het biedt sterke ingest- en parse-loaders, retrieval-strategieën (BM25, vector, hybrid, reranking) en agentic patterns voor productie-RAG. Veel gebruikt als motor onder enterprise-knowledge-assistants.",
+  "longDescription": "LlamaIndex is een open-source framework (Python en TypeScript) voor RAG-toepassingen — het verbindt LLM's met je eigen documenten, databases, API's en cloud-opslag. Het biedt sterke ingest- en parse-loaders, retrieval-strategieën (BM25, vector, hybrid, reranking) en sinds de Workflows-uitbreiding ook event-driven agent-orkestratie. Daarnaast is er het commerciële LlamaCloud-platform, met LlamaParse als bekendste onderdeel: agentic OCR en documentparsing die ook complexe PDF's, tabellen en formulieren betrouwbaar omzet. LlamaParse v2 (eind 2025) bracht hogere accuratesse, lagere kosten en een tier-systeem (Fast tot Agentic Plus), aangevuld met modules voor Extract, Classify, Split en Sheets. Veel gebruikt als motor onder enterprise-knowledge-assistants en document-agents.",
   "primaryJobsToBeDone": [
     "RAG-pipelines bouwen die LLM's verbinden met je interne documenten en databases",
     "Documenten parseren en chunken voor opname in een vector-store",
@@ -26,19 +26,23 @@
   ],
   "bestFor": "LlamaIndex is het meest waardevol voor ontwikkelaars en onderzoekers die efficiënte en schaalbare oplossingen nodig hebben voor het opslaan en ophalen van informatie uit grote hoeveelheden ongestructureerde tekst.",
   "useCases": [
-    "Documentbeheer",
-    "Kennisextractie",
-    "Vraag-antwoord systemen"
+    "RAG-pipelines bouwen op interne documenten en databases",
+    "Complexe PDF's, tabellen en formulieren parseren met LlamaParse",
+    "Gestructureerde data extraheren uit ongestructureerde documenten",
+    "Document-agents bouwen voor back-office-processen (facturen, contracten)"
   ],
   "strengths": [
-    "Schaalbaar",
-    "Flexibel",
-    "Open-source"
+    "Beste documentparsing in zijn klasse via LlamaParse, ook voor complexe layouts",
+    "Honderden data-connectors voor bestanden, databases en SaaS-bronnen",
+    "Productie-retrieval: hybrid search, reranking en agentic patterns out-of-the-box",
+    "Python én TypeScript ondersteund"
   ],
   "limitations": [
-    "Complexe configuratie"
+    "Vereist programmeerkennis — geen visuele builder",
+    "LlamaCloud-kosten (parsing per pagina) komen bovenop je LLM-API-kosten",
+    "Voor pure agent-orkestratie zonder data-component zijn LangGraph of CrewAI specifieker"
   ],
-  "pricing": "Open-source, gratis te gebruiken",
+  "pricing": "Het framework is gratis en open-source (MIT); je betaalt alleen je LLM-API-gebruik. LlamaCloud (LlamaParse, Extract e.d.) werkt met een gratis credit-tegoed en daarna usage-based betaling per geparste pagina, met betaalde plannen voor teams en enterprise.",
   "openSource": true,
   "businessFunctions": [
     "development",
@@ -68,6 +72,39 @@
   "verdict": "LlamaIndex is gespecialiseerd in data-connectiviteit voor LLM's — sterker dan LangChain voor RAG en documentverwerking. De twee frameworks worden vaak complementair ingezet.",
   "whyListed": "LlamaIndex is het meest gebruikte framework voor het verbinden van LLM's met eigen data en een kerncomponent van vrijwel elk productie-RAG-systeem.",
   "bestAlternative": "langchain",
+  "keyFeatures": [
+    {
+      "title": "Data-connectors",
+      "description": "Honderden loaders voor bestanden, databases, API's en SaaS-bronnen om LLM's met je eigen data te verbinden.",
+      "group": "input"
+    },
+    {
+      "title": "LlamaParse (agentic OCR)",
+      "description": "Parseert complexe PDF's, tabellen en formulieren betrouwbaar; v2 brengt tiers van Fast tot Agentic Plus.",
+      "group": "input",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Retrieval-strategieën",
+      "description": "Vector, BM25, hybrid search en reranking voor productie-RAG met hoge precisie.",
+      "group": "core"
+    },
+    {
+      "title": "Workflows",
+      "description": "Event-driven orkestratie voor agentic pipelines met state management — verder dan pure RAG.",
+      "group": "core"
+    },
+    {
+      "title": "LlamaExtract & Classify",
+      "description": "Gestructureerde data-extractie en documentclassificatie als losse LlamaCloud-modules.",
+      "group": "output"
+    },
+    {
+      "title": "Python en TypeScript SDK's",
+      "description": "Volwaardige frameworks in beide talen, plus nieuwe LlamaCloud-SDK's voor het hele platform.",
+      "group": "integration"
+    }
+  ],
   "setupTime": "days",
   "matchSegments": [
     "mkb_klein",
@@ -84,5 +121,5 @@
   "beginnerFriendlyScore": 2,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

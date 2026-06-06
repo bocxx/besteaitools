@@ -4,11 +4,10 @@
   "websiteUrl": "https://www.udio.com",
   "shortDescription": "AI-muziekplatform voor het componeren van nummers in elk genre",
   "headlineValueProp": "AI-muziekgenerator die complete nummers met vocalen en instrumentatie maakt — directe concurrent van Suno",
-  "longDescription": "Udio is een AI-muziekgenerator die volledige muzieknummers kan creëren op basis van tekstprompts. De tool maakt gebruik van geavanceerde AI-modellen om originele composities te genereren in verschillende genres en stijlen, inclusief vocalen en instrumentatie.",
+  "longDescription": "Udio genereert volledige nummers met vocalen en instrumentatie vanuit tekstprompts, in vrijwel elk genre. Eind 2025 schikte Udio de copyright-rechtszaak met Universal Music Group en sloot het een licentiedeal: samen bouwen ze een gelicentieerd AI-muziekplatform (gepland voor 2026), getraind op geautoriseerde muziek en gecombineerd met streaming. In de overgangsfase draait het bestaande model in een 'walled garden': nieuwe nummers kun je binnen Udio streamen en delen, maar niet downloaden of extern publiceren. Daarmee is Udio nu vooral interessant om te experimenteren, en minder geschikt voor productiewerk buiten het platform.",
   "primaryJobsToBeDone": [
-    "Royalty-vrije achtergrondmuziek genereren voor video's en podcasts",
-    "Demo-versies van songideeën uitwerken zonder studio-tijd",
-    "Volledige nummers met vocalen en instrumentatie maken vanuit een prompt"
+    "Songideeën en demo's uitwerken zonder studio-tijd",
+    "Volledige nummers met vocalen en instrumentatie maken vanuit een prompt (binnen het platform)"
   ],
   "antiUseCases": [
     "Professionele muziekproductie waarin elke stem en instrument afzonderlijk gecontroleerd moet worden",
@@ -17,18 +16,21 @@
   ],
   "bestFor": "Contentcreators, muzikanten en marketeers die snel originele achtergrondmuziek of muzikale concepten nodig hebben zonder muzikale expertise.",
   "useCases": [
-    "Genereren van achtergrondmuziek voor video's en podcasts",
-    "Creëren van muzikale concepten en demo's voor songwriting",
-    "Produceren van royalty-vrije muziek voor commerciële projecten"
+    "Experimenteren met songideeën en genres",
+    "Demo's en referentietracks maken voor songwriting (binnen het platform)",
+    "AI-muziek streamen en delen binnen de Udio-community"
   ],
   "strengths": [
     "Genereert complete muzieknummers met vocalen en instrumentatie",
-    "Ondersteunt diverse muziekgenres en stijlen"
+    "Ondersteunt diverse muziekgenres en stijlen",
+    "Eerste AI-muziekplatform met een licentiedeal met een major label (UMG)"
   ],
   "limitations": [
-    "Beperkte controle over specifieke muzikale elementen en arrangementen"
+    "Downloads en externe publicatie zijn uitgeschakeld sinds de UMG-deal (walled garden)",
+    "Beperkte controle over specifieke muzikale elementen en arrangementen",
+    "Toekomst hangt af van het nieuwe gelicentieerde platform met UMG (gepland 2026)"
   ],
-  "pricing": "Freemium",
+  "pricing": "Freemium: gratis dagelijkse credits; betaalde plannen vanaf ~$10/mnd. Let op: nieuwe nummers zijn niet downloadbaar of extern publiceerbaar (walled garden sinds de UMG-deal)",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -66,7 +68,30 @@
   ],
   "bestUseCaseStage": "experiment",
   "integrations": [],
-  "verdict": "Udio levert muziek van uitstekende audiokwaliteit, vaak iets meer verfijnd dan Suno qua mix en arrangement. Beide zijn uitstekend — keuze is grotendeels persoonlijke voorkeur.",
+  "keyFeatures": [
+    {
+      "title": "Volledige songgeneratie",
+      "description": "Complete nummers met vocalen, instrumentatie en lyrics vanuit een tekstprompt",
+      "group": "core"
+    },
+    {
+      "title": "Extend en remix",
+      "description": "Verleng nummers of werk secties opnieuw uit voor langere composities",
+      "group": "core"
+    },
+    {
+      "title": "Walled-garden streaming",
+      "description": "Nieuwe nummers zijn binnen Udio te streamen en te delen, maar niet te downloaden",
+      "group": "output"
+    },
+    {
+      "title": "Gelicentieerd UMG-platform",
+      "description": "Nieuw platform met gelicentieerde major-label-muziek en streaming, gepland voor 2026",
+      "group": "beta",
+      "badge": "beta"
+    }
+  ],
+  "verdict": "Udio levert muziek van uitstekende audiokwaliteit, maar zit sinds de UMG-schikking in een walled garden: nieuwe nummers kun je niet downloaden of extern gebruiken. Voor productiemuziek is Suno nu praktischer; het gelicentieerde UMG-platform moet in 2026 het tij keren.",
   "whyListed": "Udio is de directe concurrent van Suno en samen democratiseerden ze AI-muziekgeneratie als nieuwe creatieve categorie voor niet-muzikanten.",
   "bestAlternative": "suno",
   "setupTime": "under_15min",
@@ -83,5 +108,5 @@
   "beginnerFriendlyScore": 9,
   "dataUsedForTraining": "yes",
   "vendorLockInRisk": "medium",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

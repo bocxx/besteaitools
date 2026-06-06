@@ -9,7 +9,7 @@
   "tags": ["agent", "autonomous", "sandbox", "swe-agent"],
   "mentionAliases": ["devin ai"],
   "draft": false,
-  "longDescription": "Devin van Cognition Labs is een autonome software-engineer-agent: je geeft een taakomschrijving, Devin plant het werk, schrijft code, draait tests en levert uiteindelijk een pull request op. De agent werkt in een eigen sandboxomgeving met browser, code-editor en terminal — anders dan een coding-assistent in jouw IDE neemt Devin de uitvoering volledig over. De positionering richt zich op zakelijk gebruik waarbij teams werk willen offloaden in plaats van interactief pair-programmeren.",
+  "longDescription": "Devin van Cognition is een autonome software-engineer-agent: je geeft een taakomschrijving, Devin plant het werk, schrijft code, draait tests en levert uiteindelijk een pull request op. De agent werkt in een eigen sandboxomgeving met browser, code-editor en terminal — anders dan een coding-assistent in jouw IDE neemt Devin de uitvoering volledig over. Sinds de lancering is de drempel flink verlaagd: het Core-plan begint bij $20/mnd met pay-as-you-go in plaats van het oorspronkelijke $500-abonnement. Cognition nam in 2025 ook Windsurf over, waardoor Devin nu direct vanuit die IDE is aan te sturen. Werk wordt afgerekend in ACU's (Agent Compute Units), elk goed voor zo'n 15 minuten agent-werk.",
   "bestFor": "Engineering-teams die goed-afgebakende tickets autonoom willen laten uitvoeren — bug fixes, refactors, dependency-upgrades — zonder dat een developer er actief bij hoeft.",
   "primaryJobsToBeDone": [
     "Een ticket of bug volledig autonoom afhandelen tot pull request",
@@ -28,17 +28,49 @@
     "Geschikt om meerdere taken parallel te draaien"
   ],
   "limitations": [
-    "Hoge kosten per actie maken het moeilijk te rechtvaardigen voor klein werk",
+    "ACU-kosten lopen bij complexe taken snel op — budgetbewaking is nodig",
     "Kwaliteit varieert sterk — strakke code review op iedere PR is essentieel",
     "Werkt het beste bij goed-afgebakende taken; vage requirements geven slechte resultaten"
   ],
-  "antiUseCases": [
-    "Pair-programming of dagelijkse coding-assistentie — Cursor of Claude Code zijn daar goedkoper en directer voor",
-    "Security-kritieke codepaden waar elke regel handmatig review nodig heeft",
-    "Greenfield-architectuur waar de richting nog onbepaald is",
-    "Kostengevoelige solo-developers en kleine teams"
+  "keyFeatures": [
+    {
+      "title": "Autonome taakuitvoering",
+      "description": "Van ticket naar pull request: Devin plant, codeert, test en levert op zonder tussentijdse interactie.",
+      "group": "core"
+    },
+    {
+      "title": "Eigen sandbox-omgeving",
+      "description": "Devin werkt in een geïsoleerde omgeving met browser, editor en terminal — geen setup op jouw machine nodig.",
+      "group": "core"
+    },
+    {
+      "title": "Parallelle sessies",
+      "description": "Meerdere Devins tegelijk aan verschillende tickets laten werken terwijl je team doorgaat met complexer werk.",
+      "group": "core"
+    },
+    {
+      "title": "Devin in Windsurf",
+      "description": "Sinds de Cognition-overname van Windsurf stuur je Devin direct aan vanuit de IDE, met voortgang in het Agent Command Center.",
+      "group": "integration",
+      "badge": "nieuw"
+    },
+    {
+      "title": "GitHub-, Slack- en Jira-integratie",
+      "description": "Wijs taken toe vanuit Slack of Jira en ontvang PR's in GitHub — Devin past in je bestaande workflow.",
+      "group": "integration"
+    },
+    {
+      "title": "Devin Wiki & DeepWiki",
+      "description": "Automatisch gegenereerde architectuurdocumentatie van je repository, die Devin zelf als context gebruikt.",
+      "group": "output"
+    },
+    {
+      "title": "Enterprise-controls",
+      "description": "VPC-deployment, SSO en audit-mogelijkheden voor teams met compliance-eisen.",
+      "group": "enterprise"
+    }
   ],
-  "pricing": "Geen gratis tier. Team-plan van Cognition Labs richt zich op zakelijk gebruik met seat-based pricing en credits per agent-run.",
+  "pricing": "Core $20/mnd met pay-as-you-go ACU's ($2,25 per ACU; 1 ACU is ~15 min agent-werk). Team $500/mnd inclusief 250 ACU's ($2,00 per extra ACU). Enterprise op aanvraag. Het oorspronkelijke instaptarief van $500/mnd is sinds 2025 vervangen door dit goedkopere model.",
   "openSource": false,
   "businessFunctions": ["development"],
   "deploymentType": "saas",
@@ -51,7 +83,13 @@
   "learningCurve": "medium",
   "companySizeFit": ["medium", "large", "enterprise"],
   "bestUseCaseStage": "experiment",
-  "verdict": "Devin was het eerste 'volledig autonome AI-ontwikkelaar'-claim. In de praktijk krachtig voor geïsoleerde, goed-gedefinieerde taken maar te duur voor dagelijks gebruik en soms te autonoom.",
+  "verdict": "Devin was het eerste 'volledig autonome AI-ontwikkelaar'-claim. In de praktijk krachtig voor geïsoleerde, goed-gedefinieerde taken; sinds het $20 Core-plan ook toegankelijk voor kleinere teams, al blijven ACU-kosten bij complexe taken een aandachtspunt.",
+  "antiUseCases": [
+    "Pair-programming of dagelijkse coding-assistentie — Cursor of Claude Code zijn daar goedkoper en directer voor",
+    "Security-kritieke codepaden waar elke regel handmatig review nodig heeft",
+    "Greenfield-architectuur waar de richting nog onbepaald is"
+  ],
+  "lastUpdated": "2026-06-06",
   "whyListed": "Devin zette de toon voor de autonome software-engineer categorie en haalde ongekende media-aandacht als 'eerste AI-software engineer' met benchmark-resultaten.",
   "bestAlternative": "claude-code",
   "setupTime": "under_4h",

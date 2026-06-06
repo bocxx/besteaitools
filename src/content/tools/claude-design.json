@@ -2,10 +2,27 @@
   "name": "Claude Design",
   "category": "design",
   "websiteUrl": "https://claude.ai",
-  "shortDescription": "Anthropic's AI-designtool voor het genereren van UI-ontwerpen en visuele interfaces vanuit tekst",
-  "useCases": [],
-  "strengths": [],
-  "limitations": [],
+  "shortDescription": "Anthropic's design-modus in Claude — visuele prototypes, slides en interfaces vanuit tekst",
+  "longDescription": "Claude Design begon als bijnaam voor wat je met Claude's artifacts kon: werkende React/Tailwind-componenten genereren via een gesprek. Sinds april 2026 is het een officieel product van Anthropic Labs — een gespecialiseerde modus binnen Claude voor visueel werk. Je beschrijft in gewone taal wat je wilt en krijgt een compleet, zelfstandig artifact terug: een slide-deck in HTML, een geanimeerde website, een dashboard met live grafieken of een intern tool-UI met tabellen en navigatie. Artifacts ondersteunen inmiddels opslag tussen sessies, kunnen zelf Claude's API aanroepen en koppelen via MCP met externe diensten. Belangrijk om te weten: Claude Design is front-end-only — het bouwt geen databases, authenticatie of server-logica. Beschikbaar voor Claude Pro-, Max-, Team- en Enterprise-abonnees; er is geen visuele drag-and-drop-editor zoals in Figma.",
+  "useCases": [
+    "Een UI-prototype of dashboard genereren via een gesprek in plaats van een design-tool",
+    "Slide-decks en one-pagers maken als interactieve HTML in plaats van PowerPoint",
+    "Een design-richting verkennen en direct als werkende code delen voor feedback",
+    "Interne tooltjes (calculators, formulieren, tabellen) bouwen zonder developer"
+  ],
+  "strengths": [
+    "Output is direct werkende front-end code, geen statische mockup",
+    "Artifacts met opslag, API-calls en MCP-koppelingen worden mini-applicaties",
+    "Geen aparte tool of abonnement naast je bestaande Claude-account",
+    "Itereren gaat via gewone taal — laagdrempelig voor niet-designers"
+  ],
+  "limitations": [
+    "Front-end only: geen databases, auth of server-logica",
+    "Geen visuele canvas of drag-and-drop — alles gaat via het gesprek",
+    "Vereist een betaald Claude-abonnement (Pro of hoger)",
+    "Labs-product: functionaliteit kan nog veranderen"
+  ],
+  "pricing": "Inbegrepen bij Claude Pro ($20/mnd), Max, Team en Enterprise; niet beschikbaar op het gratis plan",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
@@ -21,25 +38,34 @@
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "AI-aangedreven ontwerpen",
-      "description": "Genereer automatisch ontwerpen op basis van tekstinvoer met behulp van geavanceerde AI-technologie.",
+      "title": "Tekst-naar-prototype",
+      "description": "Beschrijf een interface, dashboard of website en krijg een werkend, interactief artifact terug",
       "group": "core"
     },
     {
-      "title": "Sjabloonbibliotheek",
-      "description": "Kies uit een uitgebreide bibliotheek van professionele sjablonen voor verschillende doeleinden.",
-      "group": "input"
+      "title": "Slides en one-pagers",
+      "description": "Genereer presentaties en documenten als opgemaakte, interactieve HTML in plaats van statische slides",
+      "group": "output"
     },
     {
-      "title": "Realtime samenwerking",
-      "description": "Werk samen met teamleden in realtime aan ontwerpen met geavanceerde samenwerkingsfuncties.",
-      "group": "enterprise"
+      "title": "Persistente artifacts",
+      "description": "Artifacts bewaren data tussen sessies en werken zo als kleine zelfstandige apps",
+      "group": "core"
     },
     {
-      "title": "Afbeeldingengenerator",
-      "description": "Genereer unieke afbeeldingen op basis van tekstinvoer met behulp van geavanceerde AI-technologie.",
-      "group": "output",
-      "badge": "beta"
+      "title": "AI-in-artifact",
+      "description": "Artifacts kunnen zelf Claude aanroepen, waardoor je intelligente micro-applicaties bouwt",
+      "group": "core"
+    },
+    {
+      "title": "MCP-koppelingen",
+      "description": "Verbind artifacts met externe diensten als Google Calendar, Gmail en Slack",
+      "group": "integration"
+    },
+    {
+      "title": "Deelbare output",
+      "description": "Publiceer een artifact als link zodat stakeholders het prototype direct kunnen gebruiken",
+      "group": "output"
     }
   ],
   "controlledIntegrations": [],
@@ -47,10 +73,10 @@
   "beginnerFriendlyScore": 8,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "verdict": "Claude is bijzonder sterk in het genereren van werkende UI-mockups via tekst, vooral met artifacts en code-uitvoer in React/Tailwind. Geen visuele canvas zoals v0; meer een gespreksinterface die code teruggeeft.",
-  "whyListed": "Claude wordt steeds vaker als design-assistent ingezet voor UI-prototypes en design-iteratie, geholpen door Anthropics artifacts-functie waarmee je componenten direct ziet renderen.",
+  "verdict": "Claude Design is sinds april 2026 een officieel Anthropic Labs-product en bijzonder sterk in werkende prototypes, slides en dashboards vanuit tekst. Geen visuele canvas zoals Figma — wel de snelste route van idee naar deelbaar, interactief front-end werk.",
+  "whyListed": "Claude Design maakt van Claude een volwaardige design-assistent: artifacts met opslag, API-calls en MCP-koppelingen overbruggen het gat tussen mockup en werkende mini-app — zonder extra tool naast je Claude-abonnement.",
   "bestAlternative": "v0",
-  "headlineValueProp": "Beschrijf een interface, krijg werkende React/Tailwind code via Claude artifacts",
+  "headlineValueProp": "Beschrijf wat je wilt en krijg een werkend visueel prototype — Claude's officiële design-modus",
   "primaryJobsToBeDone": [
     "Een UI-prototype genereren via een gesprek in plaats van een visuele editor",
     "Bestaande designcode itereren en uitleggen krijgen bij elke wijziging",

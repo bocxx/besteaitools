@@ -7,33 +7,75 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Ollama is een infrastructuur-tool die ontwikkelaars helpt bij het beheren en schalen van hun cloud-gebaseerde applicaties. Het biedt een geïntegreerd platform voor het automatiseren van implementatie, monitoring en onderhoud van cloud-resources.",
-  "bestFor": "Ollama is het meest waardevol voor ontwikkelaars en DevOps-teams die efficiënt en schaalbaar cloud-infrastructuur willen beheren.",
+  "longDescription": "Ollama laat je open-weight LLM's lokaal draaien met één commando: `ollama run llama3.3`. Het regelt model-downloads, kwantisatie en een OpenAI-compatibele API op localhost. Sinds 2025 is er naast de CLI een desktop-app voor macOS en Windows, en met Ollama Cloud draai je dezelfde modellen op gehoste hardware wanneer je laptop tekortschiet — met hetzelfde commando en dezelfde API. Recente versies voegden native vision-modellen, tool calling op OpenAI-niveau en structured outputs met JSON Schema-validatie toe. Met ruim 50 miljoen maandelijkse downloads en 40.000+ community-integraties is Ollama de standaard geworden voor lokale LLM-inference: privacy-first, offline en zonder API-kosten.",
+  "bestFor": "Developers en privacy-bewuste teams die open-weight modellen lokaal willen draaien voor prototyping, offline gebruik of data die het pand niet mag verlaten.",
   "useCases": [
-    "Automatiseren van cloud-implementaties",
-    "Monitoring en alertering van cloud-resources",
-    "Schalen van cloud-gebaseerde applicaties"
+    "Open-weight modellen lokaal draaien zonder cloud of API-kosten",
+    "Prototypes bouwen tegen een lokale OpenAI-compatibele API",
+    "Privacy-gevoelige data verwerken zonder dat die je machine verlaat",
+    "Grote modellen draaien via Ollama Cloud als lokale hardware tekortschiet"
   ],
   "strengths": [
-    "Geïntegreerd platform voor cloud-infrastructuur beheer",
-    "Automatisering van implementatie- en onderhoudstaken",
-    "Schaalbare en robuuste cloud-oplossingen"
+    "Eén commando van installatie tot werkend model",
+    "OpenAI-compatibele API — drop-in voor bestaande code",
+    "Desktop-app maakt lokale LLM's toegankelijk zonder terminal",
+    "Cloud-optie met dezelfde CLI en API als lokaal",
+    "Enorme community: 40.000+ integraties, o.a. Open WebUI"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor on-premise infrastructuur"
+    "Lokale prestaties hangen volledig af van je eigen hardware (RAM/GPU)",
+    "Minder throughput-optimalisatie dan vLLM voor productie-serving",
+    "Cloud-tier is relatief nieuw en beperkter dan gevestigde inference-providers"
   ],
-  "pricing": "Betaald vanaf $20/mnd",
+  "pricing": "Lokaal volledig gratis (open-source, MIT). Ollama Cloud: gratis tier, Pro $20/maand (50x meer cloud-gebruik), Max $100/maand voor productie-agents en grote MoE-modellen.",
   "openSource": true,
   "businessFunctions": [
     "development",
     "data"
   ],
-  "deploymentType": "self-hosted",
+  "deploymentType": "both",
   "dataResidency": "eu",
   "targetAudience": [
     "solo",
     "mkb",
     "enterprise"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Eén-commando model-run",
+      "description": "`ollama run <model>` downloadt, kwantiseert en start het model — geen handmatige setup.",
+      "group": "core"
+    },
+    {
+      "title": "OpenAI-compatibele API",
+      "description": "Lokale REST-API op localhost:11434 die werkt met bestaande OpenAI-SDK's en tools.",
+      "group": "integration"
+    },
+    {
+      "title": "Desktop-app",
+      "description": "Grafische app voor macOS en Windows — chatten met lokale modellen zonder terminal.",
+      "group": "core"
+    },
+    {
+      "title": "Ollama Cloud",
+      "description": "Draai grotere modellen op gehoste hardware met dezelfde CLI en API als lokaal.",
+      "group": "core"
+    },
+    {
+      "title": "Vision-modellen",
+      "description": "Native ondersteuning voor multimodale modellen zoals Qwen-VL en Llama Vision.",
+      "group": "input"
+    },
+    {
+      "title": "Tool calling & structured outputs",
+      "description": "Function calling op OpenAI-niveau en JSON Schema-validatie tijdens het genereren.",
+      "group": "output"
+    },
+    {
+      "title": "Modelbibliotheek",
+      "description": "Curated library met Llama, Qwen, Gemma, Mistral, DeepSeek en honderden andere open modellen.",
+      "group": "core"
+    }
   ],
   "nlSupport": false,
   "integrations": [
@@ -78,6 +120,6 @@
   "antiUseCases": [
     "Productie-deployments met scale en SLA-eisen",
     "Multi-user / shared inference omgevingen",
-    "Modellen die niet in lokaal geheugen passen"
+    "Modellen die niet in lokaal geheugen passen — al vangt Ollama Cloud dat deels op"
   ]
 }

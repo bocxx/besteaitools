@@ -14,7 +14,7 @@
     "enterprise"
   ],
   "draft": false,
-  "longDescription": "vLLM is een open-source inference-engine voor het serveren van LLM's op GPU-clusters in productie. Het gebruikt PagedAttention voor efficiënt geheugenbeheer en continuous batching voor hoge throughput. Wordt gebruikt door enterprise-organisaties die LLM's on-premise of in private cloud willen draaien, en is de de-facto standaard voor zelf-gehoste LLM-serving.",
+  "longDescription": "vLLM is een open-source inference-engine voor het serveren van LLM's op GPU-clusters in productie. Het gebruikt PagedAttention voor efficiënt geheugenbeheer en continuous batching voor hoge throughput. Sinds eind 2025 draait alles op de herbouwde V1-engine, met gescheiden scheduling van prefill en decode en chunked prefill als standaard — merkbaar lagere latency bij hoge concurrency. Het project valt onder de PyTorch Foundation en releaset vrijwel maandelijks. Naast NVIDIA ondersteunt vLLM ook AMD-GPU's, Intel- en ARM-CPU's en TPU's. Wordt gebruikt door enterprise-organisaties die LLM's on-premise of in private cloud willen draaien, en is de de-facto standaard voor zelf-gehoste LLM-serving.",
   "primaryJobsToBeDone": [
     "Open-source LLM's serveren op GPU-clusters met hoge throughput",
     "Een private OpenAI-compatibele API draaien op eigen infrastructuur",
@@ -27,17 +27,58 @@
   ],
   "bestFor": "vLLM is het meest waardevol voor organisaties die grootschalige taalmodellen willen inzetten in hun applicaties en diensten.",
   "useCases": [
-    "Implementatie van grootschalige taalmodellen",
-    "Schalen en beheren van taalmodellen",
-    "Integratie van taalmodellen in applicaties"
+    "Open-weight LLM's serveren in productie met hoge throughput",
+    "Een private OpenAI-compatibele API op eigen GPU's draaien",
+    "Multi-GPU en multi-node serving van grote modellen (70B+)",
+    "Batch-inference voor data-pipelines en evaluaties"
   ],
   "strengths": [
-    "Geïntegreerde oplossing voor implementatie en beheer",
-    "Schaalbaar ontwerp voor grootschalige toepassingen",
-    "Robuuste infrastructuur voor betrouwbare prestaties"
+    "Hoogste throughput onder open-source serving-engines (PagedAttention, continuous batching)",
+    "OpenAI-compatibele API-server out-of-the-box",
+    "Brede hardware-support: NVIDIA, AMD, Intel, TPU",
+    "Zeer actief project onder de PyTorch Foundation"
   ],
   "limitations": [
-    "Complexiteit van configuratie en integratie"
+    "Configuratie en tuning vereisen GPU- en DevOps-kennis",
+    "Snelle release-cadans betekent regelmatig breaking changes",
+    "Geen managed optie — je beheert zelf de infrastructuur"
+  ],
+  "keyFeatures": [
+    {
+      "title": "PagedAttention",
+      "description": "Virtueel-geheugen-achtig KV-cache-beheer dat GPU-geheugen vrijwel volledig benut.",
+      "group": "core"
+    },
+    {
+      "title": "Continuous batching",
+      "description": "Voegt binnenkomende requests dynamisch samen voor maximale GPU-bezetting.",
+      "group": "core"
+    },
+    {
+      "title": "V1-engine",
+      "description": "Herbouwde engine met gescheiden prefill/decode-scheduling en chunked prefill — lagere latency bij hoge concurrency.",
+      "group": "core"
+    },
+    {
+      "title": "OpenAI-compatibele server",
+      "description": "Start met één commando een API-server die drop-in werkt met OpenAI-SDK's.",
+      "group": "integration"
+    },
+    {
+      "title": "Tensor & pipeline parallelism",
+      "description": "Verdeel grote modellen over meerdere GPU's en nodes voor 70B+ modellen.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Quantisatie-support",
+      "description": "GPTQ, AWQ, FP8 en INT8 voor lagere geheugen- en kostenvoetafdruk.",
+      "group": "core"
+    },
+    {
+      "title": "Brede hardware-support",
+      "description": "Draait op NVIDIA en AMD GPU's, Intel/ARM CPU's en Google TPU's.",
+      "group": "enterprise"
+    }
   ],
   "pricing": "Gratis (open-source, Apache 2.0). GPU-infrastructuur is de echte kostenpost.",
   "openSource": true,
@@ -86,5 +127,5 @@
   "beginnerFriendlyScore": 1,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

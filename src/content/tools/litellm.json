@@ -3,6 +3,7 @@
   "category": "infrastructure",
   "websiteUrl": "https://www.litellm.ai",
   "shortDescription": "Open-source proxy voor 100+ LLM-providers met één API-interface",
+  "headlineValueProp": "Open-source AI-gateway: één OpenAI-compatibele API voor 100+ providers, met budgetten, logging en failover",
   "longDescription": "LiteLLM is een open-source Python-bibliotheek en proxy-server die een uniforme OpenAI-compatibele API biedt voor meer dan 100 LLM-providers — van OpenAI en Anthropic tot Bedrock, Vertex AI en lokale modellen. De proxy voegt budgetbeheer, rate limiting, observability en load balancing toe, waardoor teams eenvoudig van model kunnen wisselen zonder code te herschrijven.",
   "bestFor": "Engineering teams die meerdere LLM-providers gebruiken en één uniforme API-laag willen met kostencontrole, logging en failover — zonder vendor lock-in.",
   "useCases": [
@@ -23,7 +24,44 @@
     "Documentatie kan achterlopen bij snelle ontwikkeling",
     "Minder GUI dan OpenRouter"
   ],
-  "pricing": "Open-source (MIT-licentie), gratis zelf te hosten; LiteLLM Enterprise met extra functies op maat",
+  "pricing": "Open-source (MIT-licentie), gratis zelf te hosten. LiteLLM Enterprise (self-hosted) vanaf circa $250/maand, usage-based — voegt SSO/SAML, RBAC, guardrails, audit-logs en priority support toe.",
+  "keyFeatures": [
+    {
+      "title": "Unified API voor 100+ providers",
+      "description": "Eén OpenAI-compatibel endpoint voor OpenAI, Anthropic, Bedrock, Vertex AI, vLLM, Ollama en meer.",
+      "group": "core"
+    },
+    {
+      "title": "Proxy-server (AI Gateway)",
+      "description": "Self-hosted gateway met virtual keys per team of applicatie en centrale key-opslag.",
+      "group": "core"
+    },
+    {
+      "title": "Budgetten & rate limits",
+      "description": "Stel uitgavenlimieten en request-limieten in per key, team, model of project.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Kosten-tracking",
+      "description": "Automatische kostenberekening per request, exporteerbaar naar Prometheus, Langfuse en andere observability-tools.",
+      "group": "core"
+    },
+    {
+      "title": "Load balancing & fallbacks",
+      "description": "Routeer over meerdere deployments en val automatisch terug bij rate limits of downtime.",
+      "group": "core"
+    },
+    {
+      "title": "Guardrails",
+      "description": "Content-filtering en PII-maskering als tussenlaag op alle LLM-verkeer (enterprise).",
+      "group": "enterprise"
+    },
+    {
+      "title": "SSO & RBAC",
+      "description": "SAML/SSO-integratie en granulaire rolgebaseerde toegang tot modellen (enterprise).",
+      "group": "enterprise"
+    }
+  ],
   "openSource": true,
   "pricingModel": "freemium",
   "difficulty": "intermediate",

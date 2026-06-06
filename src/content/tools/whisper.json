@@ -24,7 +24,7 @@
     "meertalig"
   ],
   "draft": false,
-  "longDescription": "Whisper is een open-source automatische spraakherkennings-model ontwikkeld door OpenAI. Het model is in staat om audio op te nemen, te transcriberen en te vertalen naar verschillende talen.",
+  "longDescription": "Whisper is het open-source spraakherkenningsmodel van OpenAI, uitgebracht onder MIT-licentie — vrij te gebruiken, ook commercieel. Het transcribeert audio in zo'n 99 talen, met Nederlands bij de best presterende, en kan gesproken taal direct naar het Engels vertalen. De nieuwste varianten zijn large-v3 en het veel snellere large-v3-turbo, dat met gereduceerde decoder-lagen bijna dezelfde nauwkeurigheid haalt. Whisper draait lokaal (GPU aanbevolen) of via geoptimaliseerde runtimes als faster-whisper en whisper.cpp, en vormt het fundament onder tientallen transcriptiediensten. Wie niet zelf wil hosten, gebruikt het via de OpenAI API.",
   "bestFor": "Whisper is vooral waardevol voor bedrijven en individuen die behoefte hebben aan accurate spraakherkenning en transcriptie in meerdere talen.",
   "useCases": [
     "Transcriptie van vergaderingen en interviews",
@@ -60,6 +60,38 @@
     "API",
     "Python"
   ],
+  "keyFeatures": [
+    {
+      "title": "Meertalige transcriptie",
+      "description": "Zo'n 99 talen, met sterke prestaties in het Nederlands",
+      "group": "core"
+    },
+    {
+      "title": "Vertaling naar Engels",
+      "description": "Transcribeert en vertaalt gesproken taal in één stap",
+      "group": "core"
+    },
+    {
+      "title": "Open weights (MIT-licentie)",
+      "description": "Vrij te gebruiken, ook commercieel; zelf te hosten en aan te passen",
+      "group": "core"
+    },
+    {
+      "title": "large-v3-turbo",
+      "description": "Sterk versnelde variant met minimale kwaliteitsdaling — geschikt voor near-realtime gebruik",
+      "group": "core"
+    },
+    {
+      "title": "Ecosysteem-runtimes",
+      "description": "faster-whisper, whisper.cpp en WhisperX voor extra snelheid en sprekerherkenning",
+      "group": "integration"
+    },
+    {
+      "title": "OpenAI API",
+      "description": "Hosted variant via de OpenAI API voor wie geen eigen GPU wil draaien",
+      "group": "integration"
+    }
+  ],
   "timeToFirstValue": "hours",
   "setupComplexity": "medium",
   "learningCurve": "medium",
@@ -92,5 +124,5 @@
   "beginnerFriendlyScore": 3,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "low",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

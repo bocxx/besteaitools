@@ -2,8 +2,8 @@
   "name": "Xero",
   "category": "productivity",
   "websiteUrl": "https://www.xero.com",
-  "shortDescription": "Cloud-boekhouding met AI voor bonverwerking, cashflow-forecasting en anomaly-alerts",
-  "headlineValueProp": "Cloud-boekhouding met AI-OCR voor bonnen en facturen — populair Europees alternatief voor QuickBooks",
+  "shortDescription": "Cloud-boekhouding met JAX, de AI-agent die reconciliatie, declaraties en betaalvoorspellingen automatiseert",
+  "headlineValueProp": "Cloud-boekhouding met AI-superagent JAX (Just Ask Xero) — populair alternatief voor QuickBooks buiten de VS",
   "primaryJobsToBeDone": [
     "Bonnen en facturen automatisch uitlezen en in je boekhouding plaatsen via OCR",
     "Bankreconciliatie versnellen met AI-matching tussen feeds en transacties",
@@ -12,7 +12,7 @@
   "antiUseCases": [
     "Nederlandse ondernemers die Nederlands-talige interface en NL-bankintegraties willen — gebruik Moneybird of e-Boekhouden",
     "Enterprise-finance met IFRS-rapportages — Xero is gericht op MKB en zzp'ers",
-    "Teams die diepe AI-functies in de core willen — Xero leunt op marketplace-add-ons"
+    "Wie AI-functies wil die al volledig uitgerold zijn — JAX zit deels nog in gefaseerde uitrol"
   ],
   "pricingModel": "paid",
   "difficulty": "beginner",
@@ -23,7 +23,7 @@
     "mkb"
   ],
   "draft": false,
-  "longDescription": "Xero is een cloud-boekhoudplatform met AI-add-ons voor automatische verwerking van bonnen en facturen, cashflow-forecasting en anomaly-alerts. De open API en brede marketplace maken het eenvoudig om Xero uit te breiden met gespecialiseerde tools.",
+  "longDescription": "Xero is een cloud-boekhoudplatform dat zijn AI-strategie heeft gebundeld in JAX (Just Ask Xero), een 'financiële superagent' die in samenwerking met OpenAI is gebouwd. Je stelt vragen in gewone taal en JAX genereert rapporten, automatiseert bankreconciliatie, verwerkt declaraties en voorspelt op basis van betaalpatronen wanneer klanten daadwerkelijk gaan betalen — om vervolgens automatisch herinneringen te sturen. Een eigen controlesysteem (JAX Assure) moet hallucinaties beperken. JAX chat verschuift in 2026 van beta naar standaard beschikbaarheid voor alle Xero-organisaties. Daarnaast blijft de klassieke kracht overeind: een open API en een marketplace met 1000+ add-ons. Voor Nederlandse ondernemers geldt dezelfde kanttekening als bij QuickBooks: beperkte NL-lokalisatie, geen Nederlandse BTW-aangifte.",
   "bestFor": "MKB en accountantskantoren die een modern, cloud-gebaseerd boekhoudpakket zoeken met AI-mogelijkheden.",
   "useCases": [
     "Automatische bonnen- en factuurverwerking (OCR)",
@@ -37,10 +37,42 @@
     "Goede multi-currency support"
   ],
   "limitations": [
-    "Beperkte Nederlandse lokalisatie",
-    "AI-features vereisen vaak externe add-ons"
+    "Beperkte Nederlandse lokalisatie — geen NL BTW-aangifte",
+    "JAX-functionaliteit rolt gefaseerd uit en verschilt per regio"
   ],
-  "pricing": "Vanaf €15/maand",
+  "pricing": "Vanaf circa $20-25/maand voor het instapplan tot circa $80-90/maand; plan-namen en prijzen verschillen per land (VS: Early/Growing/Established, UK/AU: Ignite/Grow/Comprehensive). JAX chat is inbegrepen en wordt in 2026 standaard voor alle organisaties.",
+  "keyFeatures": [
+    {
+      "title": "JAX chat",
+      "description": "Stel boekhoudvragen in gewone taal en laat taken uitvoeren, zoals rapporten genereren of facturen aanmaken",
+      "group": "core"
+    },
+    {
+      "title": "Betalingsvoorspellingen",
+      "description": "JAX analyseert betaalpatronen, voorspelt wanneer klanten betalen en stuurt automatisch herinneringen",
+      "group": "core"
+    },
+    {
+      "title": "Automatische bankreconciliatie",
+      "description": "AI-matching tussen bankfeeds en transacties, met suggesties die leren van je correcties",
+      "group": "core"
+    },
+    {
+      "title": "Declaratie- en bonverwerking",
+      "description": "Leest bonnen en declaraties automatisch uit (OCR) en verwerkt ze in de boekhouding",
+      "group": "input"
+    },
+    {
+      "title": "JAX Assure",
+      "description": "Controlesysteem dat AI-output verifieert om fouten en hallucinaties te beperken",
+      "group": "core"
+    },
+    {
+      "title": "Marketplace met 1000+ add-ons",
+      "description": "Open API en grote app-marketplace voor koppelingen met Stripe, Dext, Shopify en meer",
+      "group": "integration"
+    }
+  ],
   "openSource": false,
   "businessFunctions": [
     "finance"
@@ -89,5 +121,5 @@
   "beginnerFriendlyScore": 6,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

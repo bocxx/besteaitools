@@ -3,23 +3,28 @@
   "category": "infrastructure",
   "websiteUrl": "https://replicate.com",
   "shortDescription": "Cloud-platform voor het draaien van open-source AI-modellen via API",
-  "longDescription": "Replicate is een platform voor het bouwen, testen en implementeren van machine learning-modellen. Het biedt een eenvoudige interface voor het trainen en implementeren van AI-modellen zonder dat je je zorgen hoeft te maken over de onderliggende infrastructuur.",
+  "longDescription": "Replicate maakt duizenden open-source AI-modellen — beeld (FLUX, SDXL), spraak (Whisper), video en LLM's — beschikbaar via één simpele REST-API: model kiezen, API-call doen, resultaat krijgen, afgerekend per gebruik. Eigen modellen verpak je met het open-source tool Cog en draai je op Replicates GPU-infrastructuur, inclusief fine-tuning en dedicated deployments. In november 2025 kondigde Cloudflare aan Replicate over te nemen; de overname is begin 2026 afgerond. Replicate blijft onder eigen naam draaien en wordt geïntegreerd in Cloudflare's Workers AI-ecosysteem, waarmee de modellencatalogus naar Cloudflare's edge-netwerk komt. Voor developers verandert er vooralsnog weinig: dezelfde API, hetzelfde model-aanbod.",
   "bestFor": "Replicate is het meest waardevol voor ontwikkelaars en data scientists die snel machine learning-modellen willen bouwen en implementeren zonder zich te hoeven bezighouden met de technische details.",
   "useCases": [
-    "Machine learning model training",
-    "Model implementatie",
-    "Snelle prototyping"
+    "Open-source modellen (beeld, spraak, video, tekst) via API aanroepen",
+    "Snel prototypen met verschillende modellen zonder lokale installatie",
+    "Eigen modellen deployen met Cog op managed GPU's",
+    "Beeldgeneratie-features inbouwen met FLUX of SDXL"
   ],
   "strengths": [
-    "Eenvoudige interface",
-    "Snelle model implementatie"
+    "Grootste catalogus direct aanroepbare community-modellen",
+    "Per-gebruik afrekenen zonder abonnement",
+    "Web playground om modellen te testen zonder code",
+    "Cloudflare-backing geeft continuïteit en edge-integratie"
   ],
   "limitations": [
-    "Beperkte controle over onderliggende infrastructuur"
+    "Beperkte controle over onderliggende infrastructuur",
+    "Cold starts bij weinig gebruikte modellen",
+    "Koers na Cloudflare-overname op langere termijn nog onzeker"
   ],
-  "pricing": "Gratis voor kleine projecten, betaald vanaf $10/maand voor grotere projecten",
-  "openSource": true,
-  "pricingModel": "free",
+  "pricing": "Pay-per-use: publieke modellen per output (bijv. per afbeelding of per token), private modellen per seconde GPU-tijd. Geen abonnement; kosten schalen met gebruik.",
+  "openSource": false,
+  "pricingModel": "paid",
   "difficulty": "intermediate",
   "tags": [
     "machine learning",
@@ -37,7 +42,7 @@
     "development",
     "data"
   ],
-  "fundingStage": "seed",
+  "fundingStage": "public",
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
   "requiresDeveloper": true,
@@ -63,34 +68,34 @@
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "Model Hosting",
-      "description": "Implementeer en host je AI-modellen op het Replicate-platform",
+      "title": "Duizenden modellen via REST-API",
+      "description": "Beeld-, video-, spraak- en taalmodellen direct aanroepen — van FLUX en SDXL tot Whisper en Llama.",
       "group": "core"
     },
     {
-      "title": "Experiment Tracking",
-      "description": "Volg en vergelijk de prestaties van je AI-modellen",
+      "title": "Cog model-packaging",
+      "description": "Open-source tool om eigen modellen als container te verpakken en op Replicate te draaien.",
       "group": "core"
     },
     {
-      "title": "Gradio Integratie",
-      "description": "Bouw interactieve demo's voor je AI-modellen met Gradio",
-      "group": "integration"
+      "title": "Fine-tuning",
+      "description": "Train varianten van beeld- en taalmodellen op eigen data via de API.",
+      "group": "core"
     },
     {
-      "title": "Hugging Face Integratie",
-      "description": "Gebruik vooraf getrainde Hugging Face-modellen in je Replicate-projecten",
-      "group": "integration"
-    },
-    {
-      "title": "Privé Modellen",
-      "description": "Beheer je AI-modellen privé en veilig op het Replicate-platform",
+      "title": "Deployments",
+      "description": "Dedicated capaciteit met eigen schaalinstellingen voor productie-workloads.",
       "group": "enterprise"
     },
     {
-      "title": "Collaboratie",
-      "description": "Werk samen met je team aan de ontwikkeling van AI-modellen",
-      "group": "enterprise"
+      "title": "Web playground",
+      "description": "Elk model direct in de browser testen voordat je een regel code schrijft.",
+      "group": "output"
+    },
+    {
+      "title": "Cloudflare-integratie",
+      "description": "Sinds de overname (2026) wordt Replicate geïntegreerd met Cloudflare Workers AI en het edge-netwerk.",
+      "group": "integration"
     }
   ],
   "setupTime": "under_15min",

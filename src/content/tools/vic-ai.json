@@ -3,7 +3,39 @@
   "category": "automation",
   "websiteUrl": "https://www.vic.ai",
   "shortDescription": "Autonome AI voor accounts payable — automatische factuurverwerking en boekingsvoorstellen",
-  "headlineValueProp": "Autonome AP-AI die 99%+ nauwkeurig factuurboekingen doet — leert van jouw goedkeuringspatronen",
+  "headlineValueProp": "Autonome AP-AI met 97-99% verwerkingsnauwkeurigheid, getraind op 500M+ facturen — leert van jouw goedkeuringspatronen",
+  "keyFeatures": [
+    {
+      "title": "Autonome factuurverwerking",
+      "description": "Facturen worden zonder templates uitgelezen, gecodeerd en geboekt; bij hoge AI-zekerheid volledig zonder menselijke tussenkomst.",
+      "group": "core"
+    },
+    {
+      "title": "Zelflerende GL-coding",
+      "description": "Grootboekcodering op basis van jouw historische boekingen en goedkeuringspatronen — wordt nauwkeuriger naarmate het systeem langer draait.",
+      "group": "core"
+    },
+    {
+      "title": "97-99% verwerkingsnauwkeurigheid",
+      "description": "Deep learning getraind op ruim een half miljard verwerkte facturen, ontwikkeld door accountants.",
+      "group": "core"
+    },
+    {
+      "title": "Goedkeuringsworkflows en fraudedetectie",
+      "description": "Afwijkende bedragen, duplicaten en verdachte facturen worden gesignaleerd voordat ze in de goedkeuringsflow komen.",
+      "group": "core"
+    },
+    {
+      "title": "AP-analytics",
+      "description": "Dashboards over verwerkingstijd, automatiseringsgraad en kosten per factuur voor finance-leiderschap.",
+      "group": "output"
+    },
+    {
+      "title": "ERP-integraties",
+      "description": "Koppelingen met NetSuite, Sage Intacct, QuickBooks, Microsoft Dynamics en SAP.",
+      "group": "integration"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Inkomende facturen autonoom verwerken, coderen en in je ERP boeken",
     "GL-coding automatiseren op basis van historische patronen",
@@ -23,7 +55,7 @@
     "ai-accounting"
   ],
   "draft": false,
-  "longDescription": "Vic.ai is een autonome AI-oplossing voor accounts payable die facturen automatisch verwerkt, codeert en boekt. De AI leert van historische boekingen en bereikt 99%+ nauwkeurigheid. Gebouwd voor mid-market en enterprise finance teams.",
+  "longDescription": "Vic.ai is een autonome AI-oplossing voor accounts payable die facturen automatisch verwerkt, codeert en boekt. Het platform is ontwikkeld door accountants en getraind op meer dan een half miljard facturen, met een verwerkingsnauwkeurigheid van 97-99% — de AI leert daarbij van jouw historische boekingen en goedkeuringspatronen, zodat de automatiseringsgraad over tijd stijgt. Naast pure verwerking biedt het goedkeuringsworkflows, fraudedetectie en AP-analytics, met integraties voor NetSuite, Sage Intacct, QuickBooks, Microsoft Dynamics en SAP. Gebouwd voor mid-market en enterprise finance-teams: de implementatie loont in de praktijk vanaf zo'n 500 facturen per maand. Pricing is custom; via AWS Marketplace zijn jaarcontracten rond de $25.000 zichtbaar.",
   "bestFor": "Finance teams die hun accounts payable volledig willen automatiseren met AI die leert van bestaande patronen.",
   "useCases": [
     "Autonome factuurverwerking en codering",
@@ -32,15 +64,16 @@
     "Cashflow-optimalisatie"
   ],
   "strengths": [
-    "99%+ nauwkeurigheid na training",
+    "97-99% verwerkingsnauwkeurigheid na training",
     "Volledig autonoom na inrichting",
     "Sterke ERP-integraties"
   ],
   "limitations": [
-    "Enterprise pricing",
-    "Vereist voldoende historische data voor training"
+    "Enterprise pricing — loont pas vanaf ~500 facturen/maand",
+    "Vereist voldoende historische data voor training",
+    "Geen gratis trial"
   ],
-  "pricing": "Enterprise pricing op aanvraag",
+  "pricing": "Op aanvraag — indicatie ~$25.000/jaar (AWS Marketplace-contracten); rendabel vanaf ~500 facturen/maand",
   "openSource": false,
   "businessFunctions": [
     "finance",
@@ -81,5 +114,5 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

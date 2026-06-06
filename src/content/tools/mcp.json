@@ -3,27 +3,36 @@
   "category": "infrastructure",
   "websiteUrl": "https://modelcontextprotocol.io",
   "shortDescription": "Model Context Protocol — standaard voor AI-tool integraties",
-  "pricingModel": "freemium",
-  "difficulty": "beginner",
-  "tags": [],
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "tags": [
+    "open-standaard",
+    "agents",
+    "tool-integratie",
+    "protocol"
+  ],
   "draft": false,
-  "longDescription": "MCP is een infrastructuur-tool die het beheer en de implementatie van microservices vereenvoudigt. Het biedt een geïntegreerd platform voor het bouwen, testen en implementeren van microservices-gebaseerde applicaties.",
-  "bestFor": "MCP is vooral waardevol voor ontwikkelingsteams die microservices-architecturen gebruiken en op zoek zijn naar een efficiënt en schaalbaar platform om hun applicaties te beheren.",
+  "longDescription": "Het Model Context Protocol (MCP) is dé open standaard om AI-modellen aan externe tools, bestanden en API's te koppelen. Gelanceerd door Anthropic in november 2024 en in december 2025 ondergebracht bij de Agentic AI Foundation onder de Linux Foundation — mede opgericht door Anthropic, OpenAI en Block, met steun van Google, Microsoft, AWS en Cloudflare. Daarmee is het van Anthropic-project tot industriestandaard uitgegroeid: de SDK's passeerden begin 2026 de grens van bijna 100 miljoen maandelijkse downloads en het officiële register telt zo'n 10.000 servers. Een MCP-server schrijf je één keer en werkt daarna in elke client die het protocol ondersteunt — Claude, ChatGPT, Cursor, VS Code, Gemini en tientallen andere. De 2026-roadmap richt zich op enterprise-auth (SSO in plaats van statische secrets), audit trails en beter schaalbare remote servers.",
+  "bestFor": "Developers en teams die AI-agents willen verbinden met eigen tools, data en systemen — via één standaard die in vrijwel elke AI-client werkt.",
   "useCases": [
-    "Microservices-ontwikkeling",
-    "Automatische implementatie",
-    "Monitoring en logging"
+    "Een AI-agent toegang geven tot interne databases, bestanden of API's",
+    "Eén integratie bouwen die in Claude, ChatGPT, Cursor én VS Code werkt",
+    "Bedrijfssystemen als tools beschikbaar maken voor agent-workflows",
+    "Vendor-onafhankelijke agent-infrastructuur opzetten"
   ],
   "strengths": [
-    "Geïntegreerd platform",
-    "Schaalbaar en efficiënt",
-    "Eenvoudige implementatie"
+    "Industriestandaard, gedragen door Anthropic, OpenAI, Google en Microsoft samen",
+    "Eén server werkt in alle MCP-compatibele clients",
+    "Volledig open (MIT) met officiële SDK's in meerdere talen",
+    "Enorm ecosysteem: ~10.000 servers in het officiële register"
   ],
   "limitations": [
-    "Complexe configuratie voor grote projecten"
+    "Authenticatie en authorisatie voor enterprise-gebruik nog in ontwikkeling",
+    "Remote servers op schaal (load balancing, sessies) vergen workarounds",
+    "Kwaliteit en veiligheid van community-servers wisselt — audit nodig voor productie"
   ],
-  "pricing": "Betaald vanaf $20/mnd",
-  "openSource": false,
+  "pricing": "Gratis — open standaard onder MIT-licentie, beheerd door de Agentic AI Foundation (Linux Foundation). Kosten zitten in je eigen hosting en LLM-gebruik.",
+  "openSource": true,
   "businessFunctions": [
     "development",
     "data"
@@ -45,8 +54,8 @@
     "enterprise"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Model Context Protocol (MCP) van Anthropic wordt snel de industriestandaard voor tool-integraties in AI-applicaties. Essentieel voor developers die agents en externe tools willen verbinden.",
-  "whyListed": "MCP van Anthropic groeit uit tot de industriestandaard voor AI-tool-integraties en is omarmd door vrijwel alle grote AI-toolmakers als de gemeenschappelijke taal voor agent-tools.",
+  "verdict": "Model Context Protocol ís de industriestandaard voor tool-integraties in AI-applicaties — sinds eind 2025 ondergebracht bij de Linux Foundation en gedragen door Anthropic, OpenAI, Google en Microsoft. Essentieel voor developers die agents en externe tools willen verbinden.",
+  "whyListed": "MCP groeide in anderhalf jaar uit van Anthropic-experiment tot dé industriestandaard voor AI-tool-integraties, nu beheerd door de Agentic AI Foundation (Linux Foundation) en omarmd door alle grote AI-toolmakers.",
   "bestAlternative": "langchain",
   "keyFeatures": [
     {
@@ -76,8 +85,8 @@
       "badge": "beta"
     },
     {
-      "title": "stdio & SSE transports",
-      "description": "Draai lokale servers via stdio of remote via Server-Sent Events.",
+      "title": "stdio & Streamable HTTP",
+      "description": "Draai lokale servers via stdio of remote via Streamable HTTP (vervanger van het oudere SSE-transport).",
       "group": "integration"
     },
     {
@@ -92,7 +101,12 @@
     },
     {
       "title": "Brede client-support",
-      "description": "Ondersteund door Claude, Cursor, Cline, Goose, Windsurf en meer.",
+      "description": "Ondersteund door Claude, ChatGPT, Gemini, Cursor, VS Code, Cline, Goose en meer.",
+      "group": "integration"
+    },
+    {
+      "title": "Officieel server-register",
+      "description": "Centraal register met ~10.000 MCP-servers voor discovery en distributie.",
       "group": "integration"
     },
     {

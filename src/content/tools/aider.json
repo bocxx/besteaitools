@@ -3,25 +3,30 @@
   "category": "coding",
   "websiteUrl": "https://aider.chat",
   "shortDescription": "Open-source terminal AI pair programmer",
-  "pricingModel": "freemium",
+  "pricingModel": "free",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Aider is een AI-aangedreven tool die ontwikkelaars ondersteunt bij het schrijven van code. Het biedt functionaliteiten zoals automatische codeaanvulling, foutopsporing en uitleg van code.",
-  "bestFor": "Aider is het meest waardevol voor software ontwikkelaars die efficiënter willen werken en hun productiviteit willen verhogen.",
+  "longDescription": "Aider is de meest volwassen open-source AI pair programmer voor de terminal. Het werkt direct in je git-repository: elke wijziging die het model maakt wordt automatisch gecommit met een beschrijvende message, zodat je alles met standaard git-tools kunt reviewen of terugdraaien. Aider ondersteunt 100+ programmeertalen en werkt met vrijwel elk model via je eigen API-keys — GPT, Claude, Gemini of lokaal. De architect/editor-modus splitst redeneren en code-edits over twee modellen voor betere resultaten, watch-mode pikt AI-commentaren in je code op als instructies, en linters en tests draaien automatisch mee zodat fouten direct worden hersteld. Configuratie via .aider.conf.yml maakt je AI-coding-beleid versioneerbaar als teampraktijk. Met 41k+ GitHub-stars en miljoenen installs een vaste waarde, al verschoof de innovatie-aandacht in 2025-2026 deels naar agents als Claude Code.",
+  "bestFor": "Aider is het meest waardevol voor terminal-gerichte developers die AI-codewijzigingen strak in hun git-workflow willen, met vrije modelkeuze en zonder abonnement.",
   "useCases": [
-    "Schrijven van code",
-    "Debuggen van code",
-    "Uitleg van code"
+    "Code-changes uitvoeren met automatische, atomaire git-commits",
+    "Refactoren en bugfixen in bestaande repositories vanuit de terminal",
+    "Lint- en testfouten automatisch laten herstellen na elke wijziging",
+    "Werken met screenshots of webpagina's als context (/web, image-support)"
   ],
   "strengths": [
-    "Verhoogt ontwikkelsnelheid",
-    "Vermindert codefouten"
+    "Automatische git-commits maken elke AI-wijziging reviewbaar en omkeerbaar",
+    "Model-agnostisch: werkt met GPT, Claude, Gemini of lokale modellen via eigen keys",
+    "Architect/editor-modus combineert een denk-model met een edit-model",
+    "Polyglot-benchmark en leaderboard geven transparant inzicht in modelprestaties"
   ],
   "limitations": [
-    "Beperkt tot bepaalde programmeertalen"
+    "Geen GUI — alles draait in de terminal",
+    "Minder autonoom dan moderne agents: jij stuurt elke stap",
+    "Ontwikkeltempo ligt lager dan bij commerciële concurrenten als Claude Code"
   ],
-  "pricing": "Gratis basisversie, betaald abonnement voor geavanceerde functies",
+  "pricing": "Volledig gratis en open-source (Apache 2.0). Je betaalt alleen de API-kosten van het model dat je via je eigen keys koppelt; met lokale modellen is het geheel gratis.",
   "openSource": true,
   "businessFunctions": [
     "development"
@@ -50,6 +55,43 @@
   "verdict": "Aider is de beste open-source terminal-coding-assistent voor developers die volledige controle willen. Git-integratie en model-onafhankelijkheid zijn grote pluspunten tegenover Cursor.",
   "whyListed": "Aider is de meest volwassen open-source coding-assistent in de terminal, populair bij developers die niet willen betalen voor Cursor of die hun eigen modelstack willen.",
   "bestAlternative": "claude-code",
+  "keyFeatures": [
+    {
+      "title": "Automatische git-commits",
+      "description": "Elke AI-wijziging wordt direct gecommit met een beschrijvende message — reviewen en terugdraaien gaat met standaard git.",
+      "group": "core"
+    },
+    {
+      "title": "Architect/editor-modus",
+      "description": "Een sterk redeneer-model bedenkt de aanpak, een snel edit-model voert de wijzigingen uit — betere kwaliteit tegen lagere kosten.",
+      "group": "core"
+    },
+    {
+      "title": "Repo-map context",
+      "description": "Aider bouwt een kaart van je hele repository zodat het model ook in grote codebases de juiste context heeft.",
+      "group": "core"
+    },
+    {
+      "title": "Auto-lint en auto-test",
+      "description": "Linters en tests draaien automatisch na elke wijziging; gevonden fouten worden direct hersteld.",
+      "group": "core"
+    },
+    {
+      "title": "Watch-mode",
+      "description": "Schrijf een AI!-comment in je editor en Aider pikt het op als instructie — werkt naast elke IDE.",
+      "group": "input"
+    },
+    {
+      "title": "Voice, images en /web",
+      "description": "Spreek instructies in, voeg screenshots toe of laat Aider een webpagina als context lezen.",
+      "group": "input"
+    },
+    {
+      "title": "Model-agnostisch (BYOK)",
+      "description": "Werkt met GPT, Claude, Gemini en lokale modellen via je eigen API-keys; .aider.conf.yml maakt teamconfiguratie versioneerbaar.",
+      "group": "integration"
+    }
+  ],
   "setupTime": "under_15min",
   "matchSegments": [
     "zzp",
@@ -74,5 +116,6 @@
     "GUI-gerichte gebruikers — alles draait in de terminal",
     "Teams zonder git-discipline (Aider's auto-commits worden dan vervelend)",
     "Volledig autonome agent-flows zonder mens-in-de-loop"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

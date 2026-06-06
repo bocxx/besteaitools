@@ -2,27 +2,36 @@
   "name": "Kling",
   "category": "video",
   "websiteUrl": "https://klingai.com",
-  "shortDescription": "Chinese AI-videogenerator met indrukwekkende resultaten",
+  "shortDescription": "Kuaishou's AI-videogenerator — Kling 3.0 met 4K, audio en multi-shot storyboards",
   "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": [
+    "text-to-video",
+    "image-to-video",
+    "ai-video",
+    "4k"
+  ],
   "draft": false,
-  "longDescription": "Kling is een AI-aangedreven video-editor die gebruikers in staat stelt om snel en eenvoudig professioneel ogende video's te maken. Het biedt geavanceerde functies zoals automatische video-montage, titels, overgangen en muziekintegratie.",
-  "bestFor": "Kling is het meest waardevol voor content creators, marketeers en kleine bedrijven die snel en efficiënt video-inhoud willen produceren.",
+  "longDescription": "Kling is het AI-videomodel van het Chinese Kuaishou. Kling 3.0 (februari 2026) is multimodaal opgezet: het genereert video tot 15 seconden in native 4K, inclusief meertalige audio en lip-sync voor meerdere personages. De multi-shot storyboard-functie houdt personages consistent over meerdere shots en laat je per shot duur, kader en camerabeweging bepalen — daarmee schuift Kling op van losse clips naar korte verhalende video's. Naast Video 3.0 en de Omni-variant levert het platform ook Image 3.0 voor beeldgeneratie tot 4K. Kling concurreert direct met Veo en Seedance, tegen merkbaar lagere prijzen dan westerse alternatieven.",
+  "bestFor": "Content creators, marketeers en kleine studio's die hoogwaardige AI-video met audio en shot-regie willen, zonder de prijzen van Veo of Runway.",
   "useCases": [
-    "Video-content voor sociale media",
-    "Bedrijfspromoties en -presentaties",
-    "Persoonlijke video's en vlogs"
+    "Korte verhalende video's met meerdere shots en consistente personages",
+    "Image-to-video animaties vanuit productfoto's of artwork",
+    "Video's met gesproken dialoog en lip-sync in meerdere talen",
+    "Social- en marketingvideo's in 4K zonder productieteam"
   ],
   "strengths": [
-    "Eenvoudig te gebruiken interface",
-    "Automatische video-montage",
-    "Uitgebreide bibliotheek met templates en effecten"
+    "Native 4K-output en clips tot 15 seconden",
+    "Multi-shot storyboard met consistente personages over cuts heen",
+    "Meertalige audio en lip-sync ingebouwd",
+    "Scherpe prijzen vergeleken met Veo en Runway"
   ],
   "limitations": [
-    "Beperkte aanpassingsmogelijkheden voor geavanceerde gebruikers"
+    "Chinese aanbieder — weeg datagebruik en compliance af",
+    "Moderatie en beschikbaarheid zijn minder voorspelbaar dan bij westerse tools",
+    "4K- en Omni-generaties verbruiken veel credits"
   ],
-  "pricing": "Freemium, met betaalde abonnementen vanaf $20 per maand",
+  "pricing": "Freemium: gratis dagelijkse credits; Standard $6,99/mnd, Pro $25,99/mnd, Premier $64,99/mnd, Ultra vanaf ~$128/mnd; API vanaf $0,084/sec",
   "openSource": false,
   "deploymentType": "saas",
   "dataResidency": "global",
@@ -32,7 +41,9 @@
     "mkb"
   ],
   "nlSupport": false,
-  "integrations": [],
+  "integrations": [
+    "API"
+  ],
   "businessFunctions": [
     "marketing"
   ],
@@ -45,8 +56,40 @@
     "medium"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Kling AI van Kuaishou levert indrukwekkende videokwaliteit met langere clips dan de meeste concurrenten. Sterk in realistische menselijke beweging en gezichtsuitdrukkingen.",
-  "whyListed": "Kling groeide explosief als Chinese concurrent van Runway en Sora, met demonstraties van uitzonderlijke menselijke bewegingssimulatie en aantrekkelijke prijsstelling.",
+  "keyFeatures": [
+    {
+      "title": "Kling 3.0 videogeneratie",
+      "description": "Tekst- en image-to-video tot 15 seconden in native 4K",
+      "group": "core"
+    },
+    {
+      "title": "Multi-shot storyboard",
+      "description": "Meerdere shots met consistente personages; per shot duur, kader en camerabeweging instellen",
+      "group": "core"
+    },
+    {
+      "title": "Native audio en lip-sync",
+      "description": "Meertalige dialoog met correcte lip-sync, ook bij meerdere personages in één scène",
+      "group": "output"
+    },
+    {
+      "title": "Camera-controls",
+      "description": "Expliciete besturing van pan, tilt, zoom en dolly-bewegingen",
+      "group": "input"
+    },
+    {
+      "title": "Image 3.0 beeldgeneratie",
+      "description": "Beeldgeneratie tot 4K als startpunt voor image-to-video workflows",
+      "group": "input"
+    },
+    {
+      "title": "API-toegang",
+      "description": "Video 3.0 en Omni-modellen via API, vanaf $0,084 per seconde",
+      "group": "integration"
+    }
+  ],
+  "verdict": "Kling levert met 3.0 indrukwekkende videokwaliteit: 4K, native audio en multi-shot consistentie. Het blijft sterk in realistische menselijke beweging en gezichtsuitdrukkingen, en is duidelijk goedkoper dan westerse concurrenten.",
+  "whyListed": "Kling groeide uit tot de sterkste Chinese concurrent van Veo en Runway; met Kling 3.0 (februari 2026) was het een van de eersten met 4K, multi-shot storyboards en meertalige lip-sync in één model.",
   "bestAlternative": "runway",
   "setupTime": "under_15min",
   "matchSegments": [
@@ -62,15 +105,16 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "yes",
   "vendorLockInRisk": "medium",
-  "headlineValueProp": "Kuaishou's AI-videomodel met sterke motion-kwaliteit en goede camera-controls",
+  "headlineValueProp": "Kuaishou's Kling 3.0 — 4K-video met native audio en multi-shot storyboards",
   "primaryJobsToBeDone": [
     "Realistische video's genereren met natuurlijke beweging",
-    "Image-to-video workflows opzetten waar je vanuit een foto vertrekt",
-    "Camera-bewegingen sturen via expliciete controls"
+    "Korte verhalende video's bouwen met multi-shot storyboards",
+    "Image-to-video workflows opzetten waar je vanuit een foto vertrekt"
   ],
   "antiUseCases": [
     "Gebruik in markten waar Chinese herkomst van het model een issue is",
     "Strakke API-integratie in westerse stack — toegang en SDK's zijn beperkter",
     "Hoogwaardige redactionele content waar bewijsbare provenance telt"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

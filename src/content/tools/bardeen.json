@@ -2,21 +2,43 @@
   "name": "Bardeen",
   "category": "automation",
   "websiteUrl": "https://www.bardeen.ai",
-  "shortDescription": "AI-browserautomatisering — scrapen, integreren en workflows bouwen zonder code",
-  "useCases": [],
-  "strengths": [],
-  "limitations": [],
-  "pricingModel": "freemium",
+  "shortDescription": "AI-browserautomatisering voor GTM-teams — scrapen, lead-research en outreach zonder code",
+  "longDescription": "Bardeen begon als gratis Chrome-extensie voor browserautomatisering, maar heeft zich gerepositioneerd als 'AI-copilot voor GTM-teams': sales, marketing en operations. De kern blijft browserautomatisering — Bardeen leeft in je browser en automatiseert acties in webapps als LinkedIn, Gmail en Google Sheets — maar de focus ligt nu op lead-research, data-verrijking, outreach en rapportage voor salesteams. Je bouwt 'playbooks' uit een grote template-bibliotheek of met de AI-builder, en betaalt per credit per actie. Die pivot heeft een prijs: het vroegere ruime gratis aanbod is vervangen door zakelijke plannen vanaf zo'n $129 per maand. Voor algemene workflow-automatisering zonder browser ben je bij Make, Zapier of n8n beter en goedkoper af; Bardeen is interessant als je werk juist ín de browser zit.",
+  "useCases": [
+    "Leads onderzoeken en verrijken vanuit LinkedIn naar je CRM of Sheets",
+    "Websitedata scrapen naar Google Sheets, Notion of een CRM",
+    "Herhalende multi-tab browserworkflows vastleggen als één playbook",
+    "Outreach en follow-ups voorbereiden op basis van gescrapete prospectdata"
+  ],
+  "strengths": [
+    "Sterk in browser-gebonden taken (LinkedIn, webscraping) waar server-side tools niet bijkomen",
+    "Grote playbook-bibliotheek met kant-en-klare GTM-templates",
+    "AI-builder die playbooks genereert op basis van een omschrijving in gewone taal"
+  ],
+  "limitations": [
+    "Fors duurder geworden na de GTM-pivot — instap rond $129/maand",
+    "Credit-model maakt kosten bij intensief gebruik lastig voorspelbaar",
+    "Browser-afhankelijk: minder geschikt voor server-side of geplande automatisering"
+  ],
+  "pricing": "Geen noemenswaardig gratis aanbod meer sinds de GTM-repositionering. Starter rond $99-129/maand (15.000 credits/jaar, AI-agents en playbook-builder), Teams $500/maand en Enterprise vanaf $1.500/maand (jaarlijks gefactureerd).",
+  "pricingModel": "paid",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": ["browserautomatisering", "scraping", "sales", "gtm"],
   "draft": false,
-  "targetAudience": [],
+  "targetAudience": ["mkb"],
   "businessFunctions": [
     "operations",
     "sales"
   ],
-  "companySizeFit": [],
-  "integrations": [],
+  "companySizeFit": ["small", "medium"],
+  "integrations": [
+    "LinkedIn",
+    "Gmail",
+    "Google Sheets",
+    "Notion",
+    "HubSpot",
+    "Salesforce"
+  ],
   "mainCompetitors": [],
   "screenshotUrls": [],
   "keyFeatures": [
@@ -55,10 +77,10 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "medium",
-  "verdict": "Bardeen is een van de meest gebruikte AI-browseragents voor scrapen en automatisering zonder code. Sterke template-bibliotheek; voor complexe of multi-step flows is een volwassen platform als Make of Zapier robuuster.",
-  "whyListed": "Bardeen werd populair als no-code agent voor browser-acties en scraping, gevoed door brede integraties met Notion, Sheets en CRM-tools.",
+  "verdict": "Bardeen is een capabele AI-browseragent voor scrapen en GTM-automatisering zonder code, met een sterke template-bibliotheek. Sinds de repositionering op salesteams is het fors duurder geworden; voor flows zonder browser-werk is Make of Zapier robuuster én goedkoper.",
+  "whyListed": "Bardeen werd populair als no-code agent voor browser-acties en scraping, en richt zich na zijn repositionering op GTM-teams die lead-research en outreach willen automatiseren.",
   "bestAlternative": "zapier",
-  "headlineValueProp": "AI-browseragent die scrapen en cross-app automatisering combineert in één Chrome-extensie",
+  "headlineValueProp": "AI-browseragent voor GTM-teams — scraping, lead-research en cross-app automatisering vanuit je browser",
   "primaryJobsToBeDone": [
     "Data van een website extraheren naar Sheets, Notion of een CRM",
     "Een herhalende multi-tab workflow vastleggen als één klik",

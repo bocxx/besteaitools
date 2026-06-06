@@ -3,7 +3,7 @@
   "category": "design",
   "websiteUrl": "https://www.figma.com",
   "shortDescription": "AI-functies in Figma — auto-layout, genereer designs vanuit tekst",
-  "longDescription": "Figma AI integreert AI-functies direct in de Figma-designtool: genereer UI-componenten vanuit tekstbeschrijvingen, automatische lay-out-suggesties, hernoem lagen in bulk, zoek naar design-assets met natuurlijke taal en vertaal copy in meerdere talen. Geen aparte tool nodig — alles binnen de bestaande Figma-workflow.",
+  "longDescription": "Figma AI bundelt de AI-functies in het Figma-platform, met Figma Make als blikvanger: beschrijf in natuurlijke taal een interface of wijs een bestaand prototype aan, en Make genereert werkende, interactieve code — met toegang tot je eigen team-libraries. Daarnaast: beeldgeneratie en background removal, AI-zoeken naar design-assets, lagen in bulk hernoemen en copy vertalen. Alles draait op een credit-systeem per seat: Professional-seats krijgen 3.000 AI-credits per maand, Organization 3.500 en Enterprise 4.250; sinds maart 2026 worden die limieten strikt gehandhaafd en een complexe Make-prompt kan tientallen tot honderden credits kosten. Geen aparte tool nodig — alles zit in de bestaande Figma-workflow, maar reken op bijbetalen (credit-add-ons of pay-as-you-go) als je team Make intensief gebruikt.",
   "bestFor": "Designers die sneller willen prototypen, copy willen genereren of herhaalbare taken in Figma willen automatiseren zonder de vertrouwde designomgeving te verlaten.",
   "useCases": [
     "UI-componenten genereren vanuit tekstbeschrijvingen",
@@ -13,17 +13,17 @@
   ],
   "strengths": [
     "Geïntegreerd in Figma — geen context-switch nodig",
+    "Figma Make genereert werkende prototypes met je eigen team-libraries",
     "Versnelt repetitieve designtaken sterk",
-    "Ondersteunt het volledige Figma-ecosysteem",
-    "Incluis in bestaand Figma-abonnement"
+    "Inbegrepen in bestaand Figma-abonnement (binnen credit-limieten)"
   ],
   "limitations": [
-    "AI-kwaliteit varieert per taaktype",
-    "Geen standalone tool — vereist Figma-abonnement",
-    "Minder krachtig dan gespecialiseerde generatieve design-tools",
-    "Beschikbaarheid AI-functies afhankelijk van abonnement"
+    "AI-credits worden sinds maart 2026 strikt gehandhaafd — intensief Make-gebruik kost extra",
+    "Geen standalone tool — vereist Figma-abonnement met Full seat",
+    "Eén complexe Make-prompt kan tientallen tot honderden credits verbruiken",
+    "AI-kwaliteit varieert per taaktype"
   ],
-  "pricing": "Onderdeel van Figma Professional (~$12/maand) en hogere abonnementen; gratis plan heeft beperkte AI-functies",
+  "pricing": "Onderdeel van Figma-abonnementen: Professional $16/seat/mnd (3.000 AI-credits), Organization $55, Enterprise $90/seat/mnd. Gratis plan heeft beperkte credits; extra credits via add-on ($120-240/mnd) of pay-as-you-go ($0,03/credit)",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -68,7 +68,40 @@
   "euHostingAvailable": false,
   "dpaAvailable": true,
   "testedByEditor": false,
-  "verdict": "Figma AI versnelt bestaande designworkflows merkbaar voor teams die Figma al gebruiken. Geen vervanging voor gespecialiseerde generatieve tools, maar een waardevolle aanvulling binnen de vertrouwde omgeving.",
+  "verdict": "Figma AI versnelt bestaande designworkflows merkbaar voor teams die Figma al gebruiken, en Figma Make maakt prompt-naar-prototype serieus bruikbaar. Houd de credit-limieten in de gaten — sinds maart 2026 zijn die hard en kan intensief gebruik geld kosten.",
+  "headlineValueProp": "AI in de designtool die je team al gebruikt — met Figma Make van prompt naar werkend prototype",
+  "keyFeatures": [
+    {
+      "title": "Figma Make",
+      "description": "Beschrijf een UI in natuurlijke taal en krijg interactieve, werkende code — met toegang tot je team-libraries",
+      "group": "core"
+    },
+    {
+      "title": "Beeldgeneratie en -bewerking",
+      "description": "Genereer afbeeldingen, verwijder achtergronden en verhoog resolutie zonder Figma te verlaten",
+      "group": "core"
+    },
+    {
+      "title": "AI-zoeken",
+      "description": "Vind design-assets en bestaande schermen met natuurlijke taal in plaats van bestandsnamen",
+      "group": "core"
+    },
+    {
+      "title": "Lagen hernoemen en opruimen",
+      "description": "Hernoem en organiseer lagen in bulk — de klassieke designer-klus geautomatiseerd",
+      "group": "core"
+    },
+    {
+      "title": "Copy schrijven en vertalen",
+      "description": "Genereer, herschrijf of vertaal interface-teksten direct in je designs",
+      "group": "input"
+    },
+    {
+      "title": "AI-credits per seat",
+      "description": "3.000-4.250 credits per maand afhankelijk van plan; uitbreidbaar via add-on of pay-as-you-go",
+      "group": "enterprise"
+    }
+  ],
   "bestAlternative": "adobe-firefly",
   "whyListed": "Figma is het meest gebruikte UI-designplatform ter wereld. De AI-integratie is relevant voor elke designer of product-team — zonder extra tools of abonnementen.",
   "primaryJobsToBeDone": [

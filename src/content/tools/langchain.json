@@ -2,27 +2,31 @@
   "name": "LangChain",
   "category": "agents",
   "websiteUrl": "https://www.langchain.com",
-  "shortDescription": "Populairste framework voor LLM-applicaties",
-  "pricingModel": "free",
+  "shortDescription": "Het bekendste framework-ecosysteem voor LLM-apps en agents",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "LangChain is een Python-framework dat ontwikkelaars helpt bij het bouwen van toepassingen met grote taalmodellen (LLMs) zoals GPT-3. Het biedt een reeks abstracties en hulpmiddelen om complexe LLM-gebaseerde applicaties op te bouwen, zoals chatbots, vraag-antwoord systemen en inhoudsgenerende tools.",
-  "bestFor": "LangChain is het meest waardevol voor ontwikkelaars die efficiënt en schaalbaar toepassingen willen bouwen met behulp van grote taalmodellen.",
+  "longDescription": "LangChain is het bekendste open-source framework voor LLM-applicaties, beschikbaar in Python en JavaScript/TypeScript. Sinds de 1.0-release (oktober 2025) is het ecosysteem duidelijk gelaagd: LangChain zelf levert de standaard-abstracties voor modellen, tools en agents; LangGraph is de runtime voor stateful, productie-waardige agent-workflows met cycles, branching en human-in-the-loop; LangSmith verzorgt observability, tracing en evaluatie. De grote kracht is provider-onafhankelijkheid — wissel tussen OpenAI, Anthropic, Gemini of open modellen zonder applicatiecode te herschrijven — plus het grootste integratie-ecosysteem van alle LLM-frameworks. De klassieke kritiek (te veel abstractie voor simpele use cases) is met 1.0 deels geadresseerd, maar voor een enkele LLM-call blijft een directe SDK eenvoudiger.",
+  "bestFor": "LangChain is het meest waardevol voor developers die productie-LLM-applicaties bouwen met meerdere providers, tools en agent-stappen, en daarbij observability nodig hebben.",
   "useCases": [
-    "Chatbots",
-    "Vraag-antwoord systemen",
-    "Inhoudsgenerende tools"
+    "Een RAG-applicatie bouwen op eigen documenten",
+    "Stateful agents bouwen met LangGraph: cycles, branching en human-in-the-loop",
+    "LLM-apps debuggen en evalueren met LangSmith-tracing",
+    "Tussen LLM-providers schakelen zonder applicatiecode te herschrijven"
   ],
   "strengths": [
-    "Abstracties voor complexe LLM-taken",
-    "Uitgebreide bibliotheek met voorgebouwde componenten",
-    "Ondersteuning voor verschillende LLM-providers"
+    "Grootste integratie-ecosysteem: honderden modellen, vector-stores en tools",
+    "LangGraph is de productiestandaard voor complexe agent-workflows",
+    "LangSmith geeft tracing en evaluatie out-of-the-box",
+    "Python én JavaScript/TypeScript volwaardig ondersteund"
   ],
   "limitations": [
-    "Steile leercurve voor nieuwe gebruikers"
+    "Voor simpele use cases blijft de abstractielaag overkill",
+    "Snelle release-cyclus betekent regelmatig migratiewerk",
+    "LangSmith- en LangGraph Platform-kosten komen bovenop je LLM-API-kosten"
   ],
-  "pricing": "Gratis",
+  "pricing": "LangChain en LangGraph zijn gratis en open-source (MIT); je betaalt alleen je LLM-API-gebruik. LangSmith: Developer gratis (5.000 traces/mnd), Plus $39 per gebruiker/mnd, Enterprise op aanvraag. LangGraph Platform (managed deployment) rekent per node-executie plus standby-tijd.",
   "openSource": true,
   "businessFunctions": [
     "development",
@@ -38,8 +42,11 @@
   ],
   "nlSupport": false,
   "integrations": [
+    "OpenAI",
+    "Anthropic",
+    "Google Gemini",
     "Python",
-    "API"
+    "TypeScript"
   ],
   "timeToFirstValue": "hours",
   "setupComplexity": "high",
@@ -51,9 +58,46 @@
     "enterprise"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "LangChain is het meest volwassen LLM-applicatieframework, maar heeft last van overmatige complexiteit voor simpele use cases. Goed voor complexe ketens, overkill voor eenvoudige RAG.",
-  "whyListed": "LangChain is het fundament van tientallen LLM-applicaties en het meest geciteerde AI-framework in developer-tutorials en productie-stacks wereldwijd.",
+  "verdict": "LangChain is het meest volwassen LLM-applicatieframework, sinds 1.0 met een helderder gelaagd ecosysteem (LangChain/LangGraph/LangSmith). Goed voor complexe agent-workflows en productie-observability; overkill voor eenvoudige RAG of losse LLM-calls.",
+  "whyListed": "LangChain is het fundament van duizenden LLM-applicaties en het meest geciteerde AI-framework in developer-tutorials en productie-stacks wereldwijd.",
   "bestAlternative": "llamaindex",
+  "keyFeatures": [
+    {
+      "title": "Provider-agnostische abstracties",
+      "description": "Eén interface voor OpenAI, Anthropic, Gemini en open modellen — wisselen zonder herschrijven.",
+      "group": "core"
+    },
+    {
+      "title": "LangGraph agent-runtime",
+      "description": "Stateful workflows met cycles, branching, persistentie en human-in-the-loop — de productiestandaard voor agents.",
+      "group": "core"
+    },
+    {
+      "title": "Agents & tool-calling",
+      "description": "Bouw agents die zelf tools kiezen en aanroepen, met standaard-patterns voor de meest voorkomende flows.",
+      "group": "core"
+    },
+    {
+      "title": "RAG-bouwstenen",
+      "description": "Document-loaders, splitters, retrievers en vector-store-integraties voor retrieval-augmented generation.",
+      "group": "core"
+    },
+    {
+      "title": "LangSmith observability",
+      "description": "Tracing, evaluatie en monitoring van elke LLM-call en agent-stap, ook bruikbaar zonder LangChain-code.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Grootste integratie-ecosysteem",
+      "description": "Honderden kant-en-klare koppelingen met databases, API's, vector-stores en tools.",
+      "group": "integration"
+    },
+    {
+      "title": "Python en JS/TS",
+      "description": "Volwaardige implementaties in beide talen, met dezelfde concepten en API-stijl.",
+      "group": "integration"
+    }
+  ],
   "setupTime": "days",
   "matchSegments": [
     "mkb_klein",
@@ -81,5 +125,6 @@
     "Eenvoudige use cases — directe SDK-calls zijn dan helderder",
     "Teams zonder Python/JS-engineers",
     "Use cases waar LangGraph of CrewAI specifieker passen"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

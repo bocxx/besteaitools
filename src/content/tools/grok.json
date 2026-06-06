@@ -1,27 +1,29 @@
 {
   "name": "Grok",
   "category": "chatbots",
-  "websiteUrl": "https://grok.x.ai",
+  "websiteUrl": "https://grok.com",
   "shortDescription": "xAI's chatbot met realtime toegang tot X/Twitter",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Grok is xAI's chatbot van Elon Musk, beschikbaar binnen X (voorheen Twitter) en via grok.x.ai. Onderscheidende feature: realtime toegang tot het X-platform voor actuele gebeurtenissen, trends en mentions. Grok 3 voegde reasoning-capabilities toe; latere versies focussen op multimodale taken en agent-functionaliteit. Voor X Premium+-abonnees inbegrepen, los abonnement via xAI ook beschikbaar.",
-  "bestFor": "Grok is vooral waardevol voor organisaties die grote hoeveelheden tekstdata moeten analyseren, zoals bedrijven in de media, marketing of klantenservice.",
+  "longDescription": "Grok is de chatbot van Elon Musks xAI, beschikbaar via grok.com, de Grok-apps en binnen X (voorheen Twitter). Onderscheidende feature: realtime toegang tot het X-platform voor actuele gebeurtenissen en trends, plus DeepSearch voor meerstaps-webonderzoek. Het vlaggenschip is sinds 30 april 2026 Grok 4.3, met een 1M-token contextvenster en sterk verlaagde API-prijzen ($1,25/$2,50 per miljoen tokens). Consumenten kiezen uit SuperGrok Lite ($10/mnd), SuperGrok ($30/mnd) of SuperGrok Heavy ($300/mnd); X Premium+ ($40/mnd) bundelt Grok met X-features.",
+  "bestFor": "Grok is vooral waardevol voor wie actuele gebeurtenissen, trends en discussies op X wil volgen en analyseren in een chat-context, of een minder gefilterde chatbot zoekt.",
   "useCases": [
-    "Sentiment-analyse",
-    "Thema-extractie",
-    "Anomalie-detectie"
+    "Actuele gebeurtenissen en trends volgen via realtime X-data",
+    "Meerstaps-webonderzoek met DeepSearch",
+    "Beeldgeneratie en multimodale prompts"
   ],
   "strengths": [
-    "Geavanceerde tekstanalyse",
-    "Snelle verwerking van grote datasets"
+    "Realtime toegang tot X/Twitter-data",
+    "Sterke reasoning met Grok 4.3 (1M-token context)",
+    "Genereuze gratis API-credits voor developers (data-sharing programma)"
   ],
   "limitations": [
-    "Complexe configuratie vereist"
+    "Lossere safety-filters — hoger risico op ongepaste output",
+    "Minder enterprise-compliance-aanbod dan OpenAI, Anthropic of Google"
   ],
-  "pricing": "Betaald vanaf $50/mnd",
+  "pricing": "Gratis (beperkt); SuperGrok Lite $10/mnd; SuperGrok $30/mnd; SuperGrok Heavy $300/mnd; inbegrepen bij X Premium+ ($40/mnd); API: Grok 4.3 $1,25/$2,50 per miljoen tokens",
   "openSource": false,
   "businessFunctions": [
     "marketing",
@@ -73,5 +75,44 @@
     "Zakelijke productie-workflows die strakke compliance vereisen",
     "Bewuste filtering en safety-grenzen — Grok is daar bewust losser in",
     "Toepassingen waar X-account vereist een drempel is"
-  ]
+  ],
+  "keyFeatures": [
+    {
+      "title": "Grok 4.3",
+      "description": "xAI's vlaggenschip sinds april 2026, met 1M-token contextvenster en fors lagere tokenprijzen dan Grok 4.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Realtime X-data",
+      "description": "Directe toegang tot posts, trends en discussies op X — uniek onder de grote chatbots.",
+      "group": "core"
+    },
+    {
+      "title": "DeepSearch",
+      "description": "Meerstaps-onderzoeksagent die web en X doorzoekt en bevindingen samenvat met bronnen.",
+      "group": "core"
+    },
+    {
+      "title": "Think-modus",
+      "description": "Uitgebreid redeneren vóór het antwoord voor complexe vragen, wiskunde en code.",
+      "group": "core"
+    },
+    {
+      "title": "Beeldgeneratie",
+      "description": "Genereert afbeeldingen direct in het gesprek, met bewust ruimere creatieve grenzen.",
+      "group": "output"
+    },
+    {
+      "title": "Voice mode",
+      "description": "Gesproken gesprekken in de Grok-apps op iOS en Android.",
+      "group": "input"
+    },
+    {
+      "title": "xAI API",
+      "description": "Grok-modellen via API, met tot $175/maand gratis credits via het data-sharing-programma.",
+      "group": "integration"
+    }
+  ],
+  "lastUpdated": "2026-06-06"
 }

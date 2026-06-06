@@ -3,7 +3,7 @@
   "category": "audio",
   "websiteUrl": "https://www.assemblyai.com",
   "shortDescription": "Speech-to-text API met speaker diarization en samenvatting",
-  "longDescription": "AssemblyAI is een spraaktechnologie-platform dat geavanceerde spraakherkenning, transcriptie en analyse biedt. Het stelt gebruikers in staat om audio-inhoud te converteren naar tekst, sentiment en andere inzichten te extraheren, en spraakgestuurde toepassingen te bouwen.",
+  "longDescription": "AssemblyAI is een speech-to-text API-platform voor developers. Het Universal-2 model levert hoge nauwkeurigheid met nette interpunctie en formatting, met daarbovenop speaker diarization, samenvatting, sentiment-analyse en PII-redactie in één pipeline. Slam-1, een prompt-gebaseerd speech language model, laat je transcripties sturen op vakterminologie zonder custom model training. Via LeMUR koppel je LLM's direct aan je transcripten voor samenvattingen en vraag-antwoord. Zowel batch als realtime streaming wordt ondersteund.",
   "bestFor": "AssemblyAI is het meest waardevol voor organisaties die spraaktechnologie willen integreren in hun producten of services, zoals podcasts, call centers, vergaderingen, en andere audio-gerelateerde toepassingen.",
   "useCases": [
     "Spraaktranscriptie",
@@ -15,9 +15,10 @@
     "Uitgebreide analyse-mogelijkheden"
   ],
   "limitations": [
-    "Beperkte ondersteuning voor niet-Engelstalige talen"
+    "Engels blijft het sterkst; voor sommige talen scoren Whisper of Deepgram beter",
+    "Add-ons (diarisatie, samenvatting, sentiment) tellen apart op bij de basisprijs"
   ],
-  "pricing": "Betaald vanaf $0.50/uur",
+  "pricing": "Pay-as-you-go: Universal vanaf $0,15/uur audio; Slam-1 $0,27/uur; gratis startcredits; add-ons zoals diarisatie en samenvatting kosten extra per uur",
   "openSource": false,
   "pricingModel": "paid",
   "difficulty": "intermediate",
@@ -64,25 +65,25 @@
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "200k token contextvenster",
-      "description": "Zeer lange audio-opnames kunnen worden verwerkt dankzij het grote contextvenster.",
+      "title": "Universal-2 model",
+      "description": "Hoge nauwkeurigheid met nette interpunctie en formatting, ook bij lange opnames.",
       "group": "core"
     },
     {
-      "title": "Artifacts live preview",
-      "description": "Transcripties, ondertiteling en andere output kunnen live worden bekeken tijdens het uploaden.",
+      "title": "LeMUR",
+      "description": "Koppel LLM's aan je transcripten voor samenvattingen, vraag-antwoord en taken.",
       "group": "output"
     },
     {
       "title": "Meerdere talen",
-      "description": "Ondersteuning voor meer dan 120 talen en dialecten.",
+      "description": "Ondersteuning voor tientallen talen, waaronder Nederlands.",
       "group": "core"
     },
     {
-      "title": "Custom vocabularies",
-      "description": "Mogelijkheid om aangepaste woordenlijsten te uploaden voor betere herkenning van specifieke terminologie.",
+      "title": "Slam-1 prompt-based model",
+      "description": "Stuur transcriptie via prompts op vakterminologie — zonder custom model training.",
       "group": "input",
-      "badge": "pro"
+      "badge": "nieuw"
     },
     {
       "title": "Enterprise security",
@@ -124,5 +125,6 @@
     "Real-time noise cancellation tijdens calls — daarvoor is Krisp geschikter",
     "Klein volume zonder developer — gebruik dan een eindgebruiker-tool als Otter",
     "Strikt EU-data — host loopt primair via VS"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

@@ -3,29 +3,34 @@
   "category": "infrastructure",
   "websiteUrl": "https://modal.com",
   "shortDescription": "Serverless GPU-platform voor AI-inference en batch jobs",
-  "longDescription": "Modal is een infrastructuur-tool die het mogelijk maakt om snel en eenvoudig interactieve modals, dialogen en overlays toe te voegen aan webapplicaties.",
-  "bestFor": "Modal is het meest waardevol voor ontwikkelaars die snel en eenvoudig interactieve UI-elementen willen toevoegen aan hun webapplicaties.",
+  "longDescription": "Modal is een serverless platform voor AI- en data-workloads: je schrijft een Python-functie, decoreert die met `@app.function(gpu=\"H100\")` en Modal regelt containers, GPU's, autoscaling en scheduling. Cold starts liggen typisch rond de 2-4 seconden, en je betaalt per seconde alleen voor wat draait — geen idle-kosten. Het platform ondersteunt GPU's van T4 tot H100 en B200, volumes voor model-weights, scheduled jobs, webhooks en sandboxes voor het veilig uitvoeren van agent-gegenereerde code. Modal is uitgegroeid tot dev-favoriet voor batch-inference, fine-tuning en custom AI-pipelines: alle infrastructuur als Python-code, zonder Kubernetes of Dockerfiles te beheren.",
+  "bestFor": "AI-engineers en data-teams die Python-workloads op GPU's willen draaien — batch-inference, fine-tuning, custom pipelines — zonder zelf clusters of Kubernetes te beheren.",
   "useCases": [
-    "Toevoegen van modals en dialogen",
-    "Creëren van overlays voor bijvoorbeeld cookietoestemmingen",
-    "Implementeren van interactieve UI-elementen"
+    "Een Python-functie deployen die on-demand op H100's draait",
+    "Batch-inference en fine-tuning-jobs zonder eigen GPU-cluster",
+    "AI-pipelines orchestreren met scheduled functies en webhooks",
+    "Sandboxes draaien voor code die AI-agents genereren"
   ],
   "strengths": [
-    "Eenvoudig in gebruik",
-    "Snel te implementeren"
+    "Alles in Python — geen Dockerfiles, YAML of Kubernetes",
+    "Snelle cold starts (2-4 seconden) en instant autoscaling",
+    "Per seconde afrekenen, geen idle-kosten",
+    "Brede GPU-keuze: T4 tot H100 en B200"
   ],
   "limitations": [
-    "Beperkte functionaliteit vergeleken met volledig maatwerk ontwikkelde modals"
+    "Python-only — geen first-class support voor andere talen",
+    "Vendor lock-in op Modal-specifieke decorators en primitieven",
+    "GPU-uurprijzen liggen hoger dan kale GPU-verhuurders (je betaalt voor het platformgemak)"
   ],
-  "pricing": "Gratis",
-  "openSource": true,
-  "pricingModel": "free",
-  "difficulty": "beginner",
+  "pricing": "Pay-per-use per seconde compute. Starter-plan gratis met $30/maand aan gratis credits; Team-plan $250/maand plus verbruik. GPU-tarieven circa: T4 ~$0,59/uur, A100 ~$3,72/uur, H100 ~$4,30/uur.",
+  "openSource": false,
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
   "tags": [
-    "modal",
-    "dialog",
-    "overlay",
-    "ui"
+    "serverless-gpu",
+    "python",
+    "ai-infrastructure",
+    "batch-compute"
   ],
   "draft": false,
   "deploymentType": "saas",
@@ -37,7 +42,7 @@
   "businessFunctions": [
     "development"
   ],
-  "fundingStage": "bootstrapped",
+  "fundingStage": "series-c",
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
   "requiresDeveloper": true,
@@ -55,41 +60,53 @@
   ],
   "bestUseCaseStage": "team-rollout",
   "integrations": [
-    "JavaScript"
+    "Python",
+    "Hugging Face",
+    "PyTorch",
+    "FastAPI",
+    "GitHub Actions"
   ],
-  "mainCompetitors": [],
+  "mainCompetitors": [
+    "Replicate",
+    "RunPod",
+    "AWS Lambda + SageMaker"
+  ],
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "Drag-and-drop UI Builder",
-      "description": "Visuele editor waarmee je snel interactieve UI-componenten kunt bouwen zonder code te schrijven",
+      "title": "Python-native deploys",
+      "description": "Definieer containers, GPU's en schaling als Python-decorators — geen Dockerfiles of YAML.",
       "group": "core"
     },
     {
-      "title": "Real-time Collaboration",
-      "description": "Meerdere gebruikers kunnen tegelijkertijd aan hetzelfde project werken",
+      "title": "Serverless GPU's",
+      "description": "On-demand T4 tot H100 en B200, per seconde afgerekend zonder idle-kosten.",
       "group": "core"
     },
     {
-      "title": "Embeddable Widgets",
-      "description": "Kant-en-klare widgets die je kunt inbedden in je eigen website of applicatie",
-      "group": "output"
-    },
-    {
-      "title": "Serverless Functions",
-      "description": "Voer serverside logica uit zonder je zorgen te hoeven maken over infrastructuur",
+      "title": "Snelle cold starts",
+      "description": "Containers starten typisch in 2-4 seconden, ook met grote model-images.",
       "group": "core"
     },
     {
-      "title": "Realtime Database",
-      "description": "Gedeelde, realtime database om applicatiedata op te slaan en te synchroniseren",
+      "title": "Autoscaling",
+      "description": "Schaalt automatisch van nul naar honderden containers op basis van request-volume.",
       "group": "core"
     },
     {
-      "title": "Visual Debugging",
-      "description": "Debug je applicatie visueel in de browser zonder te hoeven wisselen tussen editors",
-      "group": "core",
-      "badge": "beta"
+      "title": "Volumes & storage",
+      "description": "Persistente volumes voor model-weights en datasets, gedeeld over functies.",
+      "group": "core"
+    },
+    {
+      "title": "Scheduled jobs & webhooks",
+      "description": "Cron-achtige scheduling en HTTP-endpoints om pipelines te orchestreren.",
+      "group": "integration"
+    },
+    {
+      "title": "Sandboxes",
+      "description": "Geïsoleerde omgevingen om onvertrouwde of agent-gegenereerde code veilig uit te voeren.",
+      "group": "core"
     }
   ],
   "setupTime": "under_15min",

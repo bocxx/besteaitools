@@ -3,28 +3,69 @@
   "category": "infrastructure",
   "websiteUrl": "https://huggingface.co",
   "shortDescription": "Het GitHub van AI — modellen, datasets en spaces",
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Hugging Face is het centrale platform voor open-source AI-modellen — model-repository (Llama, Qwen, Mistral, DeepSeek, Stable Diffusion), datasets en Spaces (gedeelde inferentie-omgevingen). Daarnaast biedt het transformers en diffusers bibliotheken die de de-facto standaard zijn voor open-weight model-development. Voor teams die zelf modellen willen draaien, fine-tunen of distribueren is Hugging Face de standaardroute. Pro ($9/maand) en Enterprise Hub voegen private repos en team-features toe.",
+  "longDescription": "Hugging Face is het centrale platform voor open-source AI-modellen — een model-repository met ruim een miljoen modellen (Llama, Qwen, Mistral, DeepSeek, FLUX), datasets en Spaces (gedeelde demo- en inferentie-omgevingen met ZeroGPU). Daarnaast onderhoudt het de transformers- en diffusers-bibliotheken, de de-facto standaard voor open-weight model-development. Via Inference Providers routeer je API-calls naar partners als Together AI, Fireworks en Groq met één Hugging Face-token. Voor teams die zelf modellen willen draaien, fine-tunen of distribueren is Hugging Face de standaardroute. Pro ($9/maand), Team ($20/gebruiker/maand) en Enterprise voegen private storage, hogere quota's en governance toe.",
   "bestFor": "Hugging Face is vooral waardevol voor ontwikkelaars, onderzoekers en teams die aan taalmodellen en natuurlijke taalverwerking werken.",
   "useCases": [
-    "Tekstgeneratie",
-    "Sentiment-analyse",
-    "Vraag-antwoord systemen",
-    "Samenvatting genereren"
+    "Open-weight modellen zoeken, vergelijken en downloaden",
+    "Modellen fine-tunen met transformers/PEFT op eigen data",
+    "Model-demo's delen via Spaces zonder eigen hosting",
+    "Serverless inference draaien via Inference Providers",
+    "Datasets vinden en publiceren voor training en evaluatie"
   ],
   "strengths": [
-    "Uitgebreide bibliotheek van vooraf getrainde modellen",
-    "Eenvoudige integratie en gebruik",
-    "Actieve community en ondersteuning"
+    "Grootste catalogus van open modellen en datasets ter wereld",
+    "transformers/diffusers zijn de industrie-standaard bibliotheken",
+    "Actieve community — vrijwel elk nieuw open model verschijnt hier eerst",
+    "Eén token voor inference bij meerdere providers"
   ],
   "limitations": [
-    "Complexiteit voor minder ervaren gebruikers"
+    "Complexiteit voor minder ervaren gebruikers — gericht op developers",
+    "Kwaliteit van community-modellen wisselt sterk",
+    "Inference-credits op gratis en Pro-tier zijn beperkt ($0,10 resp. $2/maand)"
   ],
-  "pricing": "Gratis",
+  "pricing": "Gratis voor publieke repos en basisgebruik. Pro $9/maand (1TB private storage, ZeroGPU-quota, extra inference-credits). Team $20/gebruiker/maand. Enterprise op aanvraag (vanaf ca. $50/gebruiker/maand). Inference Providers en Inference Endpoints betaal je per gebruik.",
   "openSource": true,
+  "keyFeatures": [
+    {
+      "title": "Model Hub",
+      "description": "Ruim een miljoen open-weight modellen vinden, downloaden en versioneren — van Llama en Qwen tot FLUX en Whisper.",
+      "group": "core"
+    },
+    {
+      "title": "Datasets",
+      "description": "Honderdduizenden publieke datasets met streaming-API, direct bruikbaar voor training en evaluatie.",
+      "group": "input"
+    },
+    {
+      "title": "Spaces met ZeroGPU",
+      "description": "Host interactieve model-demo's (Gradio/Streamlit) op gedeelde GPU's zonder eigen infrastructuur.",
+      "group": "output"
+    },
+    {
+      "title": "Inference Providers",
+      "description": "Eén API en token voor serverless inference via partners als Together AI, Fireworks, Groq en Cerebras.",
+      "group": "integration"
+    },
+    {
+      "title": "transformers & diffusers",
+      "description": "De standaard Python-bibliotheken voor het laden, trainen en fine-tunen van open modellen.",
+      "group": "core"
+    },
+    {
+      "title": "Inference Endpoints",
+      "description": "Dedicated managed deployments van elk Hub-model op eigen gekozen hardware en regio.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Enterprise Hub",
+      "description": "SSO, audit logs, resource groups, hogere storage- en rate-limits voor organisaties.",
+      "group": "enterprise"
+    }
+  ],
   "businessFunctions": [
     "development",
     "data"
@@ -55,7 +96,7 @@
   ],
   "bestUseCaseStage": "mission-critical",
   "verdict": "Hugging Face is het onmisbare platform voor de open-source AI-community — model-hub, datasets, Spaces en inference in één. Het GitHub van AI-modellen.",
-  "whyListed": "Hugging Face is het centrale platform voor open-source AI met honderdduizenden modellen en de grootste AI-developer-community ter wereld.",
+  "whyListed": "Hugging Face is het centrale platform voor open-source AI met ruim een miljoen modellen en de grootste AI-developer-community ter wereld.",
   "bestAlternative": "ollama",
   "setupTime": "under_4h",
   "matchSegments": [

@@ -2,28 +2,28 @@
   "name": "You.com",
   "category": "search",
   "websiteUrl": "https://you.com",
-  "shortDescription": "AI-zoekmachine met meerdere modi — chat, zoeken, creëren",
-  "longDescription": "You.com combineert een traditionele zoekmachine met AI-chat en creatieve tools in één interface. Het platform biedt drie modi: Smart (AI-samengevatte zoekresultaten), Create (beeld- en contentgeneratie) en Research (diepgaande bronvermelding). Onderscheidend: You.com citeert bronnen transparant en laat gebruikers hun zoekervaring aanpassen.",
-  "bestFor": "Gebruikers die web-zoekresultaten gecombineerd willen met AI-samenvatting, met nadruk op bronvermelding en controle over de zoekervaring.",
+  "shortDescription": "Van AI-zoekmachine naar enterprise research — ARI-agent en zoek-API's",
+  "headlineValueProp": "AI-research voor bedrijven: de ARI-deep-research-agent en zoek-API's die LLM's van actuele webdata voorzien",
+  "longDescription": "You.com begon als AI-zoekmachine voor consumenten, maar heeft die markt grotendeels losgelaten en zich gerepositioneerd als enterprise-AI-bedrijf. De kern is nu ARI (Advanced Research & Insights): een deep-research-agent die 400+ bronnen tegelijk doorzoekt en rapporten met geverifieerde citaties en visualisaties produceert — gericht op analisten, consultants en gereguleerde sectoren. Daarnaast levert You.com Search-, News- en Research-API's waarmee developers LLM-applicaties van actuele webdata voorzien. ARI Enterprise scoorde 80% op de FRAMES-research-benchmark en claimt OpenAI's deep research in een ruime meerderheid van head-to-head tests te verslaan.",
+  "bestFor": "Bedrijven en analisten die diepgaande, citeerbare research-rapporten nodig hebben, en developers die LLM-apps willen gronden met actuele webdata via API.",
   "useCases": [
-    "AI-aangedreven webzoekopdrachten met bronvermelding",
-    "Research-taken met geciteerde bronnen",
-    "Combinatie van zoeken en AI-chat in één workflow",
-    "Privacyvriendelijk zoeken als Google-alternatief"
+    "Diepgaande research-rapporten genereren met de ARI-agent (400+ bronnen)",
+    "LLM-applicaties voorzien van actuele webdata via de Search/Research-API's",
+    "Due diligence en marktonderzoek met geverifieerde citaties",
+    "Research over gecombineerde web-, interne en premium databronnen (Enterprise)"
   ],
   "strengths": [
-    "Transparante bronvermelding bij elk antwoord",
-    "Meerdere AI-modi in één interface",
-    "Aanpasbare zoekervaring",
-    "Privacy-instellingen beter dan Google"
+    "ARI: sterke benchmark-resultaten op deep research (80% op FRAMES)",
+    "Transparante, geverifieerde bronvermelding in rapporten",
+    "Volwassen zoek-API's voor LLM-grounding",
+    "Combineert web-, interne en premium databronnen"
   ],
   "limitations": [
-    "Zoekindex kleiner dan Google of Bing",
-    "Minder bekend — lagere adoptie dan Perplexity",
-    "AI-antwoorden soms minder scherp dan Perplexity",
-    "Create-modus beperkt vergeleken met gespecialiseerde tools"
+    "Consumentenzoekmachine is geen focus meer — voor persoonlijk gebruik is Perplexity logischer",
+    "Enterprise-aanbod vraagt salescontact, prijzen niet publiek",
+    "Kleinere naamsbekendheid dan OpenAI of Perplexity"
   ],
-  "pricing": "Gratis; You.com Pro ~$15/maand voor geavanceerde modellen en meer generaties",
+  "pricing": "Gratis instap beperkt; zoek- en research-API's pay-per-use; ARI Enterprise op offerte",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -37,9 +37,8 @@
   "deploymentType": "saas",
   "dataResidency": "us",
   "targetAudience": [
-    "solo",
-    "freelancer",
-    "mkb"
+    "mkb",
+    "enterprise"
   ],
   "businessFunctions": [
     "marketing",
@@ -56,16 +55,16 @@
   "learningCurve": "low",
   "bestUseCaseStage": "experiment",
   "testedByEditor": false,
-  "verdict": "You.com is een solide AI-zoekmachine met goede bronvermelding, maar Perplexity heeft een voorsprong qua AI-kwaliteit en gebruiksgemak. Interessant voor privacy-bewuste gebruikers.",
+  "verdict": "You.com heeft de strijd om de consumentenzoekmachine losgelaten en zich succesvol gerepositioneerd op enterprise deep research (ARI) en zoek-API's. Voor persoonlijk zoeken is Perplexity het betere alternatief; voor bedrijven die research-agents of LLM-grounding nodig hebben is You.com juist interessanter geworden.",
   "bestAlternative": "perplexity",
-  "whyListed": "You.com is een van de eerste AI-native zoekmachines en pionier in het combineren van zoekresultaten met AI-chat, relevant als Europees-vriendelijk alternatief voor Google.",
+  "whyListed": "You.com was een van de eerste AI-native zoekmachines en is nu een relevant voorbeeld van de pivot naar enterprise-AI: de ARI-research-agent en zoek-API's worden breed gebruikt voor LLM-grounding en deep research.",
   "primaryJobsToBeDone": [
-    "Webzoekopdrachten met AI-samenvatting en bronvermelding",
-    "Research met geciteerde bronnen"
+    "Diepgaande research-rapporten genereren met geverifieerde citaties (ARI)",
+    "LLM-applicaties gronden met actuele webdata via API"
   ],
   "antiUseCases": [
-    "Zoekopdrachten die brede webindex vereisen",
-    "Zakelijke integraties"
+    "Dagelijks persoonlijk zoeken — daarvoor zijn Perplexity of Google AI Mode logischer",
+    "Teams zonder budget voor enterprise-sales-trajecten"
   ],
   "setupTime": "under_15min",
   "matchSegments": [
@@ -81,5 +80,33 @@
   "outputLanguageQualityNl": "good",
   "beginnerFriendlyScore": 8,
   "dataUsedForTraining": "opt-out",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "keyFeatures": [
+    {
+      "title": "ARI deep research-agent",
+      "description": "Doorzoekt 400+ bronnen parallel en levert research-rapporten met geverifieerde citaties.",
+      "group": "core"
+    },
+    {
+      "title": "Rapporten met visualisaties",
+      "description": "Interactieve grafieken, tabellen en bronoverzichten in de gegenereerde rapporten.",
+      "group": "output"
+    },
+    {
+      "title": "Search & News API's",
+      "description": "Web-zoek-API's om LLM-applicaties van actuele, citeerbare webdata te voorzien.",
+      "group": "integration"
+    },
+    {
+      "title": "Research API",
+      "description": "Meerstaps agentic research via API voor eigen producten en workflows.",
+      "group": "integration"
+    },
+    {
+      "title": "Interne en premium databronnen",
+      "description": "ARI Enterprise combineert web met interne documenten en betaalde databronnen.",
+      "group": "enterprise"
+    }
+  ],
+  "lastUpdated": "2026-06-06"
 }

@@ -1,13 +1,50 @@
 {
-  "name": "Salesforce Einstein",
+  "name": "Salesforce Agentforce (Einstein)",
   "category": "productivity",
-  "websiteUrl": "https://www.salesforce.com/einstein/",
-  "shortDescription": "AI-laag voor Salesforce — voorspellende inzichten, automatisering en generatieve AI in je CRM",
-  "headlineValueProp": "Predictieve plus generatieve AI in alle Salesforce Clouds — Einstein Copilot als ingebouwde assistent",
+  "websiteUrl": "https://www.salesforce.com/agentforce/",
+  "shortDescription": "Agentforce — de AI-agent-laag van Salesforce (opvolger van Einstein Copilot) voor sales, service en marketing",
+  "headlineValueProp": "Autonome AI-agents in alle Salesforce Clouds — Agentforce verving Einstein Copilot, afgerekend via Flex Credits per actie",
+  "keyFeatures": [
+    {
+      "title": "Agentforce-agents",
+      "description": "Autonome AI-agents voor service (cases oplossen), sales (SDR-agent, coaching) en intern gebruik — gebouwd en begrensd via de Atlas reasoning engine.",
+      "group": "core"
+    },
+    {
+      "title": "Agent Builder (low-code)",
+      "description": "Eigen agents samenstellen met topics, instructies en acties op basis van bestaande Flows, Apex en MuleSoft-API's.",
+      "group": "core"
+    },
+    {
+      "title": "Predictieve Einstein-AI",
+      "description": "De klassieke Einstein-functies blijven bestaan: lead- en opportunity-scoring, forecasting en next-best-action op basis van je CRM-data.",
+      "group": "core"
+    },
+    {
+      "title": "Generatieve AI in de Clouds",
+      "description": "Sales-e-mails, gespreksamenvattingen, case-antwoorden en kennisartikelen genereren binnen Sales, Service en Marketing Cloud.",
+      "group": "output"
+    },
+    {
+      "title": "Data 360-grounding",
+      "description": "Agents baseren antwoorden op je eigen klantdata via Data Cloud/Data 360, inclusief de Einstein Trust Layer voor datamaskering en audit.",
+      "group": "input"
+    },
+    {
+      "title": "Flex Credits-afrekening",
+      "description": "Verbruiksmodel: $500 per 100.000 credits, een standaard agent-actie kost 20 credits (~$0,10), voice-acties 30 (~$0,15).",
+      "group": "enterprise"
+    },
+    {
+      "title": "Agentforce Voice",
+      "description": "Telefonische AI-agents die gesprekken voeren en acties uitvoeren in Salesforce.",
+      "group": "core"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Lead- en opportunity-scoring automatiseren op basis van historische CRM-data",
     "Sales-emails, gespreksamenvattingen en follow-ups AI-genereren binnen Salesforce",
-    "Customer service-cases automatisch classificeren, routeren en met antwoord-suggesties oplossen"
+    "Customer service-cases autonoom laten oplossen door Agentforce-agents"
   ],
   "antiUseCases": [
     "MKB-organisaties zonder bestaande Salesforce-implementatie — instaplast en pricing zijn te hoog",
@@ -23,24 +60,25 @@
     "enterprise"
   ],
   "draft": false,
-  "longDescription": "Salesforce Einstein brengt voorspellende AI en generatieve AI naar het hele Salesforce-platform. Van lead scoring en opportunity insights tot Einstein Copilot die taken automatiseert in Sales Cloud, Service Cloud en Marketing Cloud. Gebouwd voor enterprise-schaal.",
+  "longDescription": "Agentforce is sinds eind 2024 het AI-platform van Salesforce en de opvolger van Einstein Copilot; de Einstein 1 Edition heet inmiddels Agentforce 1 Edition. Het combineert de klassieke predictieve Einstein-AI (lead scoring, forecasting) met autonome AI-agents die cases oplossen, prospects opvolgen en telefoongesprekken voeren in Sales Cloud, Service Cloud en Marketing Cloud. Agents bouw je low-code in Agent Builder en ze worden gegrond op je eigen klantdata via Data 360, met de Einstein Trust Layer voor datamaskering en auditing. De afrekening verschoof van $2 per conversatie naar Flex Credits: $500 per 100.000 credits, waarbij een standaard agent-actie 20 credits (~$0,10) kost. Gebouwd voor enterprise-schaal — reken op een serieus implementatietraject voordat agents betrouwbaar draaien.",
   "bestFor": "Enterprise-organisaties die Salesforce gebruiken en hun CRM-processen willen versterken met AI-gedreven inzichten en automatisering.",
   "useCases": [
     "Predictieve lead en opportunity scoring",
     "AI-gegenereerde sales-emails en call summaries",
-    "Einstein Copilot voor taken in Salesforce",
-    "Customer service case routing en antwoorden"
+    "Autonome service-agents die cases zelfstandig oplossen",
+    "SDR-agent voor geautomatiseerde prospect-opvolging",
+    "Telefonische AI-agents via Agentforce Voice"
   ],
   "strengths": [
     "Diep geïntegreerd in Salesforce-ecosysteem",
-    "Enterprise-grade security en compliance",
-    "Voorspellende en generatieve AI gecombineerd"
+    "Enterprise-grade security en compliance (Einstein Trust Layer)",
+    "Voorspellende, generatieve én agentic AI gecombineerd"
   ],
   "limitations": [
-    "Enterprise-pricing",
+    "Enterprise-pricing; credit-verbruik vergt actieve bewaking",
     "Complexe implementatie en configuratie"
   ],
-  "pricing": "Inbegrepen in Salesforce Enterprise+, Einstein Copilot vanaf $60/gebruiker/maand",
+  "pricing": "Flex Credits: $500 per 100.000 credits (agent-actie ~$0,10); Agentforce 1 Edition voor unlimited gebruik op aanvraag",
   "openSource": false,
   "businessFunctions": [
     "sales",
@@ -67,8 +105,8 @@
     "enterprise"
   ],
   "bestUseCaseStage": "mission-critical",
-  "verdict": "Salesforce Einstein levert krachtige AI voor grote sales- en serviceorganisaties. De waarde is het grootst voor organisaties die al diep in het Salesforce-ecosysteem zitten.",
-  "whyListed": "Salesforce Einstein is de AI-laag van het meest gebruikte enterprise-CRM ter wereld, relevant voor elke grote organisatie met een Salesforce-implementatie.",
+  "verdict": "Agentforce levert krachtige AI voor grote sales- en serviceorganisaties en is het strategische hart van Salesforce geworden. De waarde is het grootst voor organisaties die al diep in het Salesforce-ecosysteem zitten — en die het Flex Credits-verbruik actief bewaken.",
+  "whyListed": "Agentforce (voorheen Einstein) is de AI-laag van het meest gebruikte enterprise-CRM ter wereld, relevant voor elke grote organisatie met een Salesforce-implementatie.",
   "bestAlternative": "hubspot-ai",
   "matchSegments": [
     "enterprise"
@@ -86,5 +124,5 @@
   "beginnerFriendlyScore": 4,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

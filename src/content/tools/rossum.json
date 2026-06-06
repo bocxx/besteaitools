@@ -3,7 +3,39 @@
   "category": "automation",
   "websiteUrl": "https://rossum.ai",
   "shortDescription": "AI-factuurverwerking met OCR, automatische extractie en validatie",
-  "headlineValueProp": "EU-gebaseerd OCR+AI-platform voor factuurverwerking — GDPR-compliant en getraind op miljoenen documenten",
+  "headlineValueProp": "EU-gebouwd document-AI-platform met eigen Aurora-LLM (getraind op 11 mln transactionele documenten) — sinds mei 2026 onderdeel van Coupa",
+  "keyFeatures": [
+    {
+      "title": "Aurora Document AI",
+      "description": "Eigen LLM getraind op 11 miljoen transactionele documenten (facturen, inkooporders), met gemiddeld 92,5% extractie-nauwkeurigheid.",
+      "group": "core"
+    },
+    {
+      "title": "Template-vrije extractie",
+      "description": "Geen sjablonen per leverancier nodig: Aurora herkent velden in nieuwe lay-outs en leert realtime bij van je correcties (Instant Learning, 276 talen).",
+      "group": "core"
+    },
+    {
+      "title": "Validatie en PO-matching",
+      "description": "Geëxtraheerde data wordt gevalideerd, gematcht met inkooporders en gecheckt op duplicaten voordat het je ERP in gaat.",
+      "group": "core"
+    },
+    {
+      "title": "Documentclassificatie en routing",
+      "description": "Documenten worden automatisch in de juiste queue gesorteerd, inclusief AI-voorgestelde e-mailantwoorden bij uitzonderingen.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-channel intake",
+      "description": "Documenten binnenhalen via e-mailbox, API of handmatige upload, met 12 maanden doorzoekbaar archief.",
+      "group": "input"
+    },
+    {
+      "title": "ERP-integraties",
+      "description": "Koppelingen met SAP, Oracle, Microsoft Dynamics en Coupa — sinds de overname door Coupa (mei 2026) wordt die laatste integratie alleen maar dieper.",
+      "group": "integration"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Facturen en bonnen automatisch uitlezen met deep-learning-OCR",
     "Geëxtraheerde data valideren en matchen met inkooporders in je ERP",
@@ -23,7 +55,7 @@
     "document-ai"
   ],
   "draft": false,
-  "longDescription": "Rossum gebruikt deep learning voor het automatisch uitlezen en verwerken van facturen, bonnen en andere zakelijke documenten. De AI extraheert velden, valideert data en leert van correcties. Gebouwd in Europa met focus op GDPR-compliance.",
+  "longDescription": "Rossum gebruikt deep learning voor het automatisch uitlezen en verwerken van facturen, bonnen en andere zakelijke documenten. Kern is Aurora, een eigen LLM getraind op 11 miljoen transactionele documenten, met gemiddeld 92,5% extractie-nauwkeurigheid, realtime bijleren van correcties en ondersteuning voor 276 talen. Het platform is template-vrij: nieuwe leveranciers-lay-outs werken zonder configuratie. Gebouwd in Europa (Praag) met focus op GDPR-compliance. Belangrijk nieuws: in mei 2026 is Rossum overgenomen door spend-management-platform Coupa — het product blijft bestaan, maar verwacht dat de roadmap richting het Coupa-ecosysteem beweegt. Pricing begint bij circa $18.000 per jaar (Starter, onbeperkte seats), wat het tot een oplossing voor serieuze documentvolumes maakt.",
   "bestFor": "Finance-afdelingen die grote volumes facturen verwerken en handmatige data-entry willen elimineren.",
   "useCases": [
     "Automatische factuurextractie (OCR + AI)",
@@ -37,10 +69,10 @@
     "Leert van correcties en wordt beter over tijd"
   ],
   "limitations": [
-    "Vereist initiële configuratie per documenttype",
-    "Pricing niet transparant"
+    "Instapprijs (~$18.000/jaar) te hoog voor lage documentvolumes",
+    "Toekomstige roadmap na Coupa-overname (mei 2026) nog onzeker"
   ],
-  "pricing": "Op aanvraag, betaald per document",
+  "pricing": "Starter vanaf ~$18.000/jaar (onbeperkte seats, volume-gebaseerd); Business en Enterprise op aanvraag",
   "openSource": false,
   "businessFunctions": [
     "finance",
@@ -65,8 +97,8 @@
     "large"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Rossum is uitstekend in het verwerken van facturen en inkooporders met hoge nauwkeurigheid. Sterke keuze voor finance-teams die documentverwerking willen automatiseren.",
-  "whyListed": "Rossum is een van de meest nauwkeurige AI-platforms voor documentverwerking en wordt gebruikt door financiële teams van grote Europese bedrijven voor factuurautomatisering.",
+  "verdict": "Rossum is uitstekend in het verwerken van facturen en inkooporders met hoge nauwkeurigheid dankzij de eigen Aurora-LLM. Sterke keuze voor finance-teams met serieus documentvolume — houd wel de koersontwikkeling na de Coupa-overname (mei 2026) in de gaten.",
+  "whyListed": "Rossum is een van de meest nauwkeurige AI-platforms voor documentverwerking, Europees gebouwd, en wordt gebruikt door financiële teams van grote Europese bedrijven. De overname door Coupa in mei 2026 bevestigt de marktpositie.",
   "bestAlternative": "vic-ai",
   "matchSegments": [
     "mkb_klein",
@@ -83,5 +115,5 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "no",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

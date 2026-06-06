@@ -3,7 +3,39 @@
   "category": "automation",
   "websiteUrl": "https://ironcladapp.com",
   "shortDescription": "AI-gestuurd contract lifecycle management — van opstellen tot ondertekening",
-  "headlineValueProp": "AI-contract lifecycle management voor enterprise — van drafting via approvals tot signing en compliance",
+  "headlineValueProp": "AI-contract lifecycle management voor enterprise — met Jurist, de multi-agent AI die contracten draft, redlined en risico's beoordeelt",
+  "keyFeatures": [
+    {
+      "title": "Jurist (AI-contractpartner)",
+      "description": "Multi-agent AI die contracten draft, redlined en risico's beoordeelt zoals een jurist dat doet — met dealcontext (contracttype, tegenpartij, looptijd) al in beeld.",
+      "group": "core"
+    },
+    {
+      "title": "Redlining Agent met playbooks",
+      "description": "Eerste-pass redlines op basis van je eigen onderhandelingsplaybooks, in Word-track-changes-stijl.",
+      "group": "core"
+    },
+    {
+      "title": "Review en Drafting Agents",
+      "description": "Detecteren ontbrekende clausules, risicovolle voorwaarden en compliance-gaten; genereren playbooks en conceptcontracten vanuit natuurlijke taal.",
+      "group": "core"
+    },
+    {
+      "title": "Workflow-orkestratie",
+      "description": "Goedkeuringsflows tussen juridisch, sales en procurement, inclusief intake via Salesforce en Slack.",
+      "group": "core"
+    },
+    {
+      "title": "Repository en clausule-extractie",
+      "description": "AI extraheert kernvoorwaarden uit je hele contractenportefeuille en maakt die doorzoekbaar voor compliance en rapportage.",
+      "group": "output"
+    },
+    {
+      "title": "Native ondertekening en integraties",
+      "description": "E-signing plus koppelingen met Salesforce, Microsoft 365, Google Workspace, Slack en DocuSign.",
+      "group": "integration"
+    }
+  ],
   "primaryJobsToBeDone": [
     "Contracten opstellen vanuit AI-templates met automatische clausule-suggesties",
     "Goedkeuringsworkflows orkestreren tussen juridisch, sales en procurement",
@@ -24,17 +56,18 @@
     "workflow"
   ],
   "draft": false,
-  "longDescription": "Ironclad is een AI-gestuurd Contract Lifecycle Management (CLM) platform dat het volledige contractproces automatiseert: van opstellen en onderhandelen tot goedkeuring en ondertekening. AI Assistant helpt bij het reviewen van clausules, extractie van kernvoorwaarden en het bewaken van compliance.",
+  "longDescription": "Ironclad is een AI-gestuurd Contract Lifecycle Management (CLM) platform dat het volledige contractproces automatiseert: van opstellen en onderhandelen tot goedkeuring en ondertekening. Het AI-aanbod draait sinds 2025-2026 om Jurist, een multi-agent contractpartner die contracten draft, redlined en risico's beoordeelt met de dealcontext (contracttype, tegenpartij, looptijd) al in beeld — in interne tests presteerde die zo'n 30% beter dan algemene LLM's op redlines. Daaromheen staan losse Redlining-, Review- en Drafting-agents die werken vanuit je eigen playbooks. De kracht van Ironclad blijft de combinatie van workflow-orkestratie tussen juridisch, sales en procurement met een doorzoekbare contractrepository waarin AI kernvoorwaarden extraheert. Enterprise-pricing op aanvraag, met een serieus implementatietraject.",
   "bestFor": "Juridische en procurement-afdelingen die hun contractworkflows willen digitaliseren en versnellen.",
   "useCases": [
     "Contract opstellen met AI-templates",
+    "Eerste-pass redlines genereren met Jurist en playbooks",
     "Clausule-extractie en analyse",
     "Goedkeuringsworkflows automatiseren",
     "Compliance monitoring en audit trails"
   ],
   "strengths": [
     "Volledig contract lifecycle management",
-    "Sterke AI voor clausule-analyse",
+    "Jurist: multi-agent AI met dealcontext, sterker dan algemene LLM's op redlines",
     "Goede integraties met enterprise-tools"
   ],
   "limitations": [
@@ -66,7 +99,7 @@
     "enterprise"
   ],
   "bestUseCaseStage": "mission-critical",
-  "verdict": "Ironclad is het meest complete AI-contractbeheerplatform voor enterprise. Sterk voor juridische teams die contractworkflows willen automatiseren met compliance-controles.",
+  "verdict": "Ironclad is het meest complete AI-contractbeheerplatform voor enterprise, met Jurist als serieuze AI-onderhandelaar erbovenop. Sterk voor juridische teams die contractworkflows willen automatiseren met compliance-controles.",
   "whyListed": "Ironclad is marktleider in AI-gedreven contractbeheer en wordt gebruikt door de juridische afdelingen van Fortune 500-bedrijven voor contractworkflow-automatisering.",
   "bestAlternative": "spellbook",
   "matchSegments": [
@@ -87,5 +120,5 @@
   "dataUsedForTraining": "no",
   "aiActRiskClass": "limited",
   "vendorLockInRisk": "high",
-  "lastUpdated": "2026-06-02"
+  "lastUpdated": "2026-06-06"
 }

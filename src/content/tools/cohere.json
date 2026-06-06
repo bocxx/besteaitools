@@ -3,7 +3,8 @@
   "category": "infrastructure",
   "websiteUrl": "https://cohere.com",
   "shortDescription": "Enterprise-AI met sterke RAG en meertalige embeddings",
-  "longDescription": "Cohere biedt enterprise-klare NLP-modellen via API: Command (chat en tekstgeneratie), Embed (semantische zoekvectoren) en Rerank (herordening voor RAG-pijplijnen). Beschikbaar als cloud-API én zelf te hosten voor datasoevereiniteit. Sterk in meertalige toepassingen en privacygevoelige omgevingen.",
+  "headlineValueProp": "Enterprise-AI voor RAG en agents — Command-modellen, topklasse embeddings en het North-platform, ook volledig self-hosted",
+  "longDescription": "Cohere biedt enterprise-klare AI-modellen via API: de Command-lijn (chat, tekstgeneratie en agents), Embed (semantische zoekvectoren) en Rerank (herordening voor RAG-pijplijnen). Het vlaggenschip is sinds mei 2026 Command A+ — een 218B sparse-MoE-model (25B actief) voor agentic workflows dat al op twee H100-GPU's draait en als open weights onder Apache 2.0 is vrijgegeven. Daaromheen bouwde Cohere North: een geïntegreerde enterprise-werkruimte voor het bouwen en uitrollen van AI-agents op bedrijfsdata. Alles is beschikbaar als cloud-API én zelf te hosten voor datasoevereiniteit — Cohere positioneert zich nadrukkelijk op 'sovereign AI' voor overheden en gereguleerde sectoren.",
   "bestFor": "Bedrijven die RAG-systemen, semantische zoekmachines of meertalige documentverwerking bouwen zonder afhankelijk te willen zijn van één Amerikaanse cloudprovider.",
   "useCases": [
     "RAG-pijplijnen en semantisch zoeken over bedrijfsdocumenten",
@@ -23,7 +24,7 @@
     "Duurder dan zelf-draaiende open-source modellen",
     "Kleinere developer-community"
   ],
-  "pricing": "Pay-as-you-go API per token; enterprise contracten op maat met dedicated deployment",
+  "pricing": "Pay-as-you-go API per token; Command A+ open weights gratis te self-hosten (Apache 2.0); North en dedicated/on-prem deployments via enterprise-contracten op maat",
   "openSource": false,
   "pricingModel": "paid",
   "difficulty": "intermediate",
@@ -93,5 +94,39 @@
   "outputLanguageQualityNl": "good",
   "beginnerFriendlyScore": 5,
   "dataUsedForTraining": "opt-out",
-  "vendorLockInRisk": "low"
+  "vendorLockInRisk": "low",
+  "keyFeatures": [
+    {
+      "title": "Command A+",
+      "description": "Vlaggenschip sinds mei 2026: 218B sparse-MoE (25B actief) voor agentic taken, draait al op twee H100's en is open-weight onder Apache 2.0.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "North",
+      "description": "Geïntegreerde enterprise-werkruimte om AI-agents te bouwen en uit te rollen op je eigen bedrijfsdata.",
+      "group": "core"
+    },
+    {
+      "title": "Embed",
+      "description": "Meertalige embeddings voor semantisch zoeken — een van de sterkste opties voor niet-Engelse RAG.",
+      "group": "core"
+    },
+    {
+      "title": "Rerank",
+      "description": "Herordent zoekresultaten in RAG-pijplijnen en verhoogt de precisie aanzienlijk.",
+      "group": "core"
+    },
+    {
+      "title": "Self-hosted & on-prem",
+      "description": "Volledige private deployment voor datasoevereiniteit — kernpunt van Cohere's 'sovereign AI'-strategie.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Cloud-integraties",
+      "description": "Beschikbaar via AWS, Azure, Google Cloud en frameworks als LangChain en LlamaIndex.",
+      "group": "integration"
+    }
+  ],
+  "lastUpdated": "2026-06-06"
 }

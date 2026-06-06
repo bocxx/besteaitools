@@ -3,7 +3,7 @@
   "category": "music",
   "websiteUrl": "https://suno.com",
   "shortDescription": "AI-muziekgenerator die complete nummers maakt vanuit een tekstprompt",
-  "longDescription": "Suno is een AI-muziekgenerator die volledige nummers kan creëren inclusief instrumentatie, vocalen en teksten op basis van tekstprompts. De tool maakt het mogelijk om in verschillende muziekstijlen en genres originele composities te genereren zonder muzikale kennis of ervaring.",
+  "longDescription": "Suno genereert complete nummers — instrumentatie, zang en lyrics — vanuit een tekstprompt, zonder dat je muzikale kennis nodig hebt. Het v5-model (en v5.5 voor Premier-abonnees) levert merkbaar schonere mixen en betere stemkwaliteit dan eerdere versies, en met Suno Studio is er een browser-DAW waarin je nummers kunt splitsen in maximaal 12 stems, arrangeren en bewerken. Na de schikking met Warner Music (november 2025) werkt Suno aan gelicentieerde modellen; downloaden vereist sindsdien een betaald account. De rechtszaken van Universal en Sony lopen nog.",
   "bestFor": "Content creators, marketeers en hobbyisten die snel unieke achtergrondmuziek of experimentele muziekcomposities willen genereren zonder muzikale vaardigheden.",
   "useCases": [
     "Achtergrondmuziek genereren voor video's en podcasts",
@@ -12,12 +12,15 @@
   ],
   "strengths": [
     "Genereert complete nummers met vocalen en instrumentatie in seconden",
-    "Zeer toegankelijk zonder muzikale kennis vereist"
+    "Zeer toegankelijk zonder muzikale kennis vereist",
+    "Suno Studio: stems splitsen, arrangeren en bewerken in de browser"
   ],
   "limitations": [
-    "Beperkte controle over specifieke muzikale elementen en arrangementen"
+    "Beperkte controle over specifieke muzikale elementen en arrangementen",
+    "Rechtenpositie deels onzeker: Warner schikte, maar zaken van Universal en Sony lopen nog",
+    "Gratis tier is niet-commercieel; downloaden vereist een betaald account"
   ],
-  "pricing": "Freemium",
+  "pricing": "Freemium: 50 gratis credits/dag (niet-commercieel, geen downloads); Pro $10/mnd (2.500 credits, commercieel gebruik); Premier $30/mnd (10.000 credits + Suno Studio en v5.5)",
   "openSource": false,
   "pricingModel": "freemium",
   "difficulty": "beginner",
@@ -55,6 +58,33 @@
   ],
   "bestUseCaseStage": "experiment",
   "integrations": [],
+  "keyFeatures": [
+    {
+      "title": "v5-muziekgeneratie",
+      "description": "Complete songs met zang, instrumentatie en lyrics uit één prompt; v5.5 voor Premier-abonnees",
+      "group": "core"
+    },
+    {
+      "title": "Suno Studio",
+      "description": "Browser-DAW: nummers splitsen in tot 12 stems, arrangeren en bewerken",
+      "group": "core"
+    },
+    {
+      "title": "Personas",
+      "description": "Houd een stem en stijl consistent over meerdere nummers heen",
+      "group": "input"
+    },
+    {
+      "title": "Eigen audio uploaden",
+      "description": "Werk verder op eigen opnames of geüploade audiofragmenten",
+      "group": "input"
+    },
+    {
+      "title": "Stems-export",
+      "description": "Exporteer losse sporen voor afwerking in je eigen DAW (betaalde plannen)",
+      "group": "output"
+    }
+  ],
   "verdict": "Suno genereert volledige liedjes inclusief lyrics en zang van hoge kwaliteit. Het beste tool voor niet-muzikanten die snel muziek willen maken voor projecten of content.",
   "whyListed": "Suno was de eerste mainstream AI-muziekgenerator die volledige liedjes van professionele kwaliteit kon produceren en bereikte snel miljoenen actieve gebruikers.",
   "bestAlternative": "udio",
@@ -82,5 +112,6 @@
     "Studio-niveau eindproductie — DAW-werk blijft nodig voor mastering",
     "Commercieel werk waar bewijsbare clearance belangrijk is",
     "Specifieke instrumentale producties die fine-grained control vragen"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

@@ -3,7 +3,7 @@
   "category": "coding",
   "websiteUrl": "https://www.augmentcode.com",
   "shortDescription": "AI-coding-assistent geoptimaliseerd voor grote enterprise codebases",
-  "longDescription": "Augment Code is een AI-tool die ontwikkelaars helpt bij het schrijven en verbeteren van code. De tool gebruikt natuurlijke taalverwerking en machine learning om suggesties te doen voor codeverbeteringen, foutoplossingen en functionaliteit-uitbreidingen.",
+  "longDescription": "Augment Code is een AI-coding-assistent die zich expliciet richt op grote, complexe codebases. De context-engine indexeert je hele repository — ook monorepo's met miljoenen regels — zodat suggesties en agent-acties kloppen met bestaande architectuur en conventies. Het werkt als extensie in VS Code en JetBrains-IDE's, met een agent-modus voor meerstaps-taken en terminalwerk. Sinds eind 2025 rekent Augment in credits: elke tool-call van de agent verbruikt credits, waardoor kleine taken goedkoop zijn en zware agent-sessies meer kosten. Op compliance-vlak onderscheidt het zich met SOC 2, ISO 42001 en CMEK-ondersteuning, gericht op enterprises die AI-assistentie willen zonder dat code traint of weglekt.",
   "bestFor": "Augment Code is het meest waardevol voor ontwikkelaars die efficiënter willen werken en hun productiviteit willen verhogen.",
   "useCases": [
     "Automatisch genereren van code-snippets",
@@ -17,9 +17,9 @@
   "limitations": [
     "Vereist integratie in ontwikkelomgeving"
   ],
-  "pricing": "Gratis",
+  "pricing": "Geen gratis tier meer (wel proefperiode). Credit-gebaseerd: Indie $20/mnd (40.000 credits), Developer $50/mnd. Teamplannen: Standard $60/mnd en Max $200/mnd (tot 20 gebruikers, gepoolde credits). Enterprise op aanvraag met SSO, SOC 2 en CMEK. Overage via auto top-up ($15 per 24.000 credits).",
   "openSource": false,
-  "pricingModel": "free",
+  "pricingModel": "paid",
   "difficulty": "intermediate",
   "tags": [
     "coding",
@@ -38,7 +38,7 @@
   "businessFunctions": [
     "development"
   ],
-  "fundingStage": "seed",
+  "fundingStage": "series-b",
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
   "requiresDeveloper": true,
@@ -64,34 +64,34 @@
   "screenshotUrls": [],
   "keyFeatures": [
     {
-      "title": "Codeaanvulling",
-      "description": "Automatisch aanvullen van code op basis van context",
+      "title": "Context-engine voor grote codebases",
+      "description": "Indexeert je hele repository — ook monorepo's — zodat suggesties kloppen met bestaande architectuur en conventies.",
       "group": "core"
     },
     {
-      "title": "Foutopsporing",
-      "description": "Identificeren en oplossen van bugs in code",
+      "title": "Agent-modus",
+      "description": "Voert meerstaps-taken uit over meerdere bestanden, inclusief terminal-commando's; verbruik wordt per tool-call in credits gemeten.",
       "group": "core"
     },
     {
-      "title": "Refactoring",
-      "description": "Automatisch herschrijven van code voor betere leesbaarheid en onderhoud",
+      "title": "Codeaanvulling en chat",
+      "description": "Context-bewuste completions en chat die je projectstructuur kennen.",
       "group": "core"
     },
     {
-      "title": "Contextvenster",
-      "description": "Tonen van relevante code-context tijdens het schrijven",
-      "group": "input"
+      "title": "Next Edit",
+      "description": "Stelt na elke wijziging de logische vervolg-edits voor, door de hele codebase heen.",
+      "group": "core"
     },
     {
-      "title": "Live preview",
-      "description": "Onmiddellijke weergave van code-output",
-      "group": "output"
-    },
-    {
-      "title": "GitHub-integratie",
-      "description": "Rechtstreeks pushen van code naar GitHub-repositories",
+      "title": "VS Code- en JetBrains-extensies",
+      "description": "Werkt in beide grote IDE-families plus via Slack-integratie op teamplannen.",
       "group": "integration"
+    },
+    {
+      "title": "Enterprise-compliance",
+      "description": "SOC 2, ISO 42001, CMEK en SSO/SCIM — code wordt niet gebruikt voor training.",
+      "group": "enterprise"
     }
   ],
   "setupTime": "under_15min",
@@ -125,5 +125,6 @@
     "Solo-developers en kleine projecten — Cursor of Copilot zijn dan logischer",
     "Pure agent-workflows zonder IDE — gebruik Devin of Claude Code",
     "Greenfield prototypes waar codebase-context geen rol speelt"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

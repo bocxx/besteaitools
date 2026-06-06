@@ -2,27 +2,31 @@
   "name": "Replit",
   "category": "coding",
   "websiteUrl": "https://replit.com",
-  "shortDescription": "Online IDE met ingebouwde AI-agent voor snelle prototypes",
+  "shortDescription": "Online dev-platform met autonome Agent 3 — van prompt naar gedeployde app",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Replit is een online IDE (Integrated Development Environment) die gebruikers in staat stelt om snel en eenvoudig code te schrijven, testen en delen. Het platform biedt ondersteuning voor verschillende programmeertalen en maakt het mogelijk om samen te werken aan projecten.",
-  "bestFor": "Replit is vooral waardevol voor beginnende programmeurs, studenten en kleine teams die snel aan de slag willen met coderen.",
+  "longDescription": "Replit is een browser-based ontwikkelplatform dat een online IDE combineert met hosting, databases en een autonome AI-agent. Replit Agent 3 bouwt complete applicaties vanuit één prompt: frontend, backend, database-setup en API-integraties. De agent test zijn eigen werk — hij schrijft unit-tests, draait ze en herstelt gevonden fouten zonder dat je erom vraagt — en deployt het resultaat direct op Replit-infrastructuur. Agent-gebruik wordt afgerekend via effort-based pricing: simpele aanpassingen kosten centen, complexe builds meer. Met mobiele apps bouw en test je ook vanaf je telefoon. Voor beginners, onderwijs en snelle prototypes is de drempel ongeëvenaard laag; professionele teams lopen tegen de grenzen van het platform aan bij strikte CI/CD-eisen.",
+  "bestFor": "Replit is vooral waardevol voor beginnende bouwers, studenten en ondernemers die zonder lokale setup van idee naar werkende, gehoste app willen.",
   "useCases": [
-    "Leren programmeren",
-    "Snel prototypes bouwen",
-    "Samen aan projecten werken"
+    "Een complete webapp laten bouwen en deployen door Agent 3 vanuit één prompt",
+    "Leren programmeren zonder installatie of configuratie",
+    "Snel prototypes en interne tools bouwen met database en auth inbegrepen",
+    "Samen aan projecten werken in realtime, ook vanaf mobiel"
   ],
   "strengths": [
-    "Eenvoudig in gebruik",
-    "Ondersteuning voor veel programmeertalen",
-    "Mogelijkheid tot samenwerken"
+    "Agent 3 test en debugt zijn eigen werk autonoom",
+    "Alles-in-één: IDE, AI-agent, database en hosting op één platform",
+    "Effort-based pricing: simpele taken kosten weinig",
+    "Zeer lage instapdrempel, ook via mobiele apps"
   ],
   "limitations": [
-    "Beperkte mogelijkheden voor grotere, complexe projecten"
+    "Agent-kosten zijn vooraf lastig in te schatten bij complexe taken",
+    "Vendor lock-in: apps draaien het makkelijkst op Replit-infrastructuur",
+    "Minder geschikt voor grote productie-codebases met strikte CI/CD-eisen"
   ],
-  "pricing": "Gratis basisversie, betaalde abonnementen vanaf $8/maand",
+  "pricing": "Starter gratis (met Agent 3-trial en publieke apps). Core $20/mnd (jaarlijks gefactureerd, $25 bij maandbetaling) met volledige Agent 3-toegang en maandelijkse credits. Pro vanaf $100/mnd voor teams tot 15 bouwers. Enterprise op aanvraag. Agent-gebruik is effort-based: simpele taken vanaf minder dan $0,25.",
   "openSource": false,
   "businessFunctions": [
     "development"
@@ -47,9 +51,47 @@
     "medium"
   ],
   "bestUseCaseStage": "experiment",
-  "verdict": "Replit combineert een online IDE met AI-codegeneratie en direct hosting. Ideaal voor beginners, onderwijs en snelle experimenten, maar minder productief voor professionele developers.",
-  "whyListed": "Replit is het populairste online coding-platform met AI-integratie en speelt een centrale rol in het democratiseren van softwareontwikkeling voor nieuwe coders.",
+  "verdict": "Replit combineert een online IDE met de meest autonome consumenten-agent in zijn categorie en directe hosting. Ideaal voor beginners, onderwijs en snelle experimenten; professionele dev-teams kiezen eerder een IDE-agent plus eigen infra.",
+  "whyListed": "Replit is het populairste online coding-platform met AI-integratie en zette met Agent 3 de standaard voor autonoom bouwen-testen-deployen zonder lokale setup.",
   "bestAlternative": "bolt",
+  "keyFeatures": [
+    {
+      "title": "Agent 3",
+      "description": "Bouwt complete apps vanuit één prompt — frontend, backend, database en API-integraties — en deployt direct.",
+      "group": "core"
+    },
+    {
+      "title": "Autonoom testen",
+      "description": "De agent schrijft unit-tests, draait ze en lost gevonden fouten zelf op, zonder expliciete prompts.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "High power & extended thinking",
+      "description": "Schakel een capabeler model of langere denktijd in voor complexe taken — tegen hogere effort-kosten.",
+      "group": "core"
+    },
+    {
+      "title": "Online IDE met multiplayer",
+      "description": "Volwaardige browser-IDE met realtime samenwerking, voor tientallen programmeertalen.",
+      "group": "core"
+    },
+    {
+      "title": "Ingebouwde database en auth",
+      "description": "PostgreSQL, key-value storage en authenticatie zitten in het platform — geen externe services nodig.",
+      "group": "integration"
+    },
+    {
+      "title": "One-click deployments",
+      "description": "Van prototype naar live URL met autoscaling, custom domains en scheduled jobs.",
+      "group": "output"
+    },
+    {
+      "title": "Mobiele apps",
+      "description": "Bouw en test vanaf je telefoon — handig voor snelle fixes onderweg.",
+      "group": "input"
+    }
+  ],
   "setupTime": "under_15min",
   "matchSegments": [
     "zzp",
@@ -66,15 +108,16 @@
   "beginnerFriendlyScore": 7,
   "dataUsedForTraining": "opt-out",
   "vendorLockInRisk": "medium",
-  "headlineValueProp": "Browser-based dev-environment met ingebouwde AI-agent en hosting",
+  "headlineValueProp": "Browser-based dev-platform met autonome Agent 3, database en hosting inbegrepen",
   "primaryJobsToBeDone": [
     "Een idee snel werkend krijgen in browser zonder lokale setup",
     "Onderwijs of workshops draaien waar setup-tijd minimaal moet zijn",
-    "Een AI-agent een hele app laten bouwen, deployen en hosten"
+    "Een AI-agent een hele app laten bouwen, testen, deployen en hosten"
   ],
   "antiUseCases": [
     "Production-grade systemen met strikte CI/CD-eisen",
     "Teams die offline of in beperkte netwerken werken",
     "Sensitive code die niet op shared infra kan draaien"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

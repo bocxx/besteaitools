@@ -13,21 +13,24 @@
     "deepseek-v4"
   ],
   "draft": false,
-  "longDescription": "DeepSeek is een familie open-weight reasoning-modellen van het gelijknamige Chinese AI-lab. Na de DeepSeek-R1-doorbraak in januari 2025 zit de huidige generatie op DeepSeek V4-Pro met top-tier reasoning-prestaties tegen een fractie van de trainings- en inferentiekosten van westerse frontier-modellen. Open weights zijn beschikbaar op Hugging Face en bruikbaar via Ollama, vLLM en OpenRouter — geschikt voor zelf-hosten of via een EU-provider draaien voor wie de Chinese hosted API om compliance-redenen wil vermijden.",
-  "bestFor": "DeepSeek is vooral waardevol voor professionals en organisaties die grote hoeveelheden tekstdata moeten doorzoeken, zoals juristen, onderzoekers en beleidsmakers.",
+  "longDescription": "DeepSeek is een familie open-weight reasoning-modellen van het gelijknamige Chinese AI-lab. Na de DeepSeek-R1-doorbraak in januari 2025 zit de huidige generatie op DeepSeek V4 (preview sinds 24 april 2026): V4-Pro (1,6T parameters, 49B actief) en het goedkopere V4-Flash (284B, 13B actief), beide met 1M-token context en een optionele thinking-modus die de aparte R-lijn feitelijk vervangt. Open weights zijn beschikbaar op Hugging Face en bruikbaar via Ollama, vLLM en OpenRouter — geschikt voor zelf-hosten of via een EU-provider draaien voor wie de Chinese hosted API om compliance-redenen wil vermijden.",
+  "bestFor": "DeepSeek is vooral waardevol voor teams die reasoning-zware taken (wiskunde, code, analyse) willen uitvoeren tegen lage kosten, of een sterk open-weight model willen self-hosten.",
   "useCases": [
-    "Juridisch onderzoek",
-    "Academisch onderzoek",
-    "Beleidsanalyse"
+    "Reasoning-zware taken zoals wiskunde, code en analyse",
+    "Goedkope API-integraties voor tekst- en codegeneratie",
+    "Self-hosted LLM-deployments met open weights"
   ],
   "strengths": [
-    "Geavanceerde zoekfunctionaliteit",
-    "Hoge relevantie van zoekresultaten"
+    "Top-tier reasoning tegen een fractie van westerse frontier-prijzen",
+    "Open weights vrij beschikbaar op Hugging Face",
+    "1M-token contextvenster (V4-generatie)"
   ],
   "limitations": [
-    "Vereist een abonnement voor volledige toegang"
+    "Hosted app en API vallen onder Chinese jurisdictie",
+    "Censuur op politiek gevoelige onderwerpen",
+    "Minder multimodaal dan westerse concurrenten"
   ],
-  "pricing": "Betaald vanaf $50/mnd",
+  "pricing": "Chat-app en webversie gratis; API pay-per-use met V4-Flash als budgetoptie en V4-Pro als vlaggenschip — fors goedkoper dan westerse frontier-API's; open weights gratis te self-hosten",
   "openSource": false,
   "businessFunctions": [
     "development",
@@ -85,5 +88,38 @@
     "Real-time use cases met sub-seconde latency-eisen",
     "Workflows die zwaar leunen op tool-calling en agentic features"
   ],
-  "lastUpdated": "2026-06-02"
+  "keyFeatures": [
+    {
+      "title": "DeepSeek V4-Pro & V4-Flash",
+      "description": "Vierde generatie (april 2026): V4-Pro voor maximale reasoning, V4-Flash als snelle budgetvariant.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Thinking-modus",
+      "description": "Optionele uitgebreide redeneerstap die de aparte R-reasoning-lijn (R1) vervangt.",
+      "group": "core"
+    },
+    {
+      "title": "1M-token context",
+      "description": "Verwerkt complete codebases of lange dossiers in één prompt.",
+      "group": "core"
+    },
+    {
+      "title": "Open weights",
+      "description": "Modelgewichten vrij te downloaden via Hugging Face voor self-hosting en fine-tuning.",
+      "group": "core"
+    },
+    {
+      "title": "Goedkope API",
+      "description": "Pay-per-use API tegen een fractie van de tokenprijzen van GPT- en Claude-modellen.",
+      "group": "integration"
+    },
+    {
+      "title": "Self-hosting via Ollama/vLLM",
+      "description": "Draai DeepSeek lokaal of bij een EU-provider om de Chinese hosted API te vermijden.",
+      "group": "integration"
+    }
+  ],
+  "lastUpdated": "2026-06-06"
 }

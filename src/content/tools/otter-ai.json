@@ -12,7 +12,7 @@
     "productiviteit"
   ],
   "draft": false,
-  "longDescription": "Otter.ai is een AI-meeting assistent die live meevergadert, transcripties maakt, kernpunten samenvat en automatisch actiepunten extraheert. Werkt met Zoom, Teams, Google Meet en als standalone recorder.",
+  "longDescription": "Otter.ai is een AI-meeting-assistent die live meevergadert, transcripties maakt, kernpunten samenvat en automatisch actiepunten extraheert. Werkt met Zoom, Teams, Google Meet en als standalone recorder. Inmiddels bouwt Otter verder dan notuleren alleen: met AI Chat stel je vragen over al je eerdere meetings, en een reeks gespecialiseerde agents — waaronder een Meeting Agent die tijdens de call hardop vragen kan beantwoorden en een Sales Agent die follow-up-mails schrijft en notities naar Salesforce of HubSpot stuurt — automatiseert de afhandeling. Grootste beperking voor Nederlandse teams: Otter transcribeert alleen Engels, Spaans, Frans, Duits, Japans en Chinees. Nederlands wordt niet ondersteund, dus voor Nederlandstalige vergaderingen ben je aangewezen op alternatieven als Fireflies of Notizy.",
   "bestFor": "Teams die geen notulen meer willen missen en automatisch actiepunten willen extraheren uit vergaderingen.",
   "useCases": [
     "Live meeting transcriptie",
@@ -26,10 +26,42 @@
     "Gratis plan met 300 minuten/maand"
   ],
   "limitations": [
-    "Engels is de sterkste taal",
-    "Nederlandse transcriptie minder nauwkeurig"
+    "Geen Nederlandse transcriptie — ondersteunt alleen Engels, Spaans, Frans, Duits, Japans en Chinees",
+    "Gratis plan beperkt tot 300 minuten per maand en 30 minuten per gesprek"
   ],
-  "pricing": "Gratis (300 min/maand), Pro vanaf $16,99/maand",
+  "pricing": "Gratis (300 min/maand). Pro $8,33/gebruiker/maand (jaarlijks; $16,99 maandelijks), Business $19,99/gebruiker/maand (jaarlijks), Enterprise op aanvraag met SSO en Sales Agent.",
+  "keyFeatures": [
+    {
+      "title": "Live transcriptie",
+      "description": "Transcribeert meetings real-time met sprekerherkenning, in Zoom, Teams en Google Meet",
+      "group": "core"
+    },
+    {
+      "title": "Automatische samenvatting",
+      "description": "Genereert na elke meeting een samenvatting met kernpunten en actiepunten",
+      "group": "core"
+    },
+    {
+      "title": "AI Chat over je meetings",
+      "description": "Stel vragen over de inhoud van al je eerdere gesprekken en doorzoek je archief",
+      "group": "core"
+    },
+    {
+      "title": "Meeting Agent",
+      "description": "Spraakgestuurde agent die tijdens de call vragen kan beantwoorden op basis van eerdere meetings",
+      "group": "beta"
+    },
+    {
+      "title": "Sales Agent",
+      "description": "Extraheert sales-inzichten, schrijft follow-up-mails en pusht notities naar Salesforce en HubSpot",
+      "group": "enterprise"
+    },
+    {
+      "title": "Mobiele app en recorder",
+      "description": "Neem ook fysieke gesprekken en interviews op via de mobiele app",
+      "group": "input"
+    }
+  ],
   "openSource": false,
   "businessFunctions": [
     "operations",
@@ -93,6 +125,6 @@
   "antiUseCases": [
     "Diepe CRM/projecttool-integratie — Fireflies is daar sterker in",
     "Sterk vertrouwelijke gesprekken zonder externe tools",
-    "Niet-Engelse meetings waar Otter's accuracy lager ligt"
+    "Nederlandstalige meetings — Otter ondersteunt geen Nederlandse transcriptie"
   ]
 }

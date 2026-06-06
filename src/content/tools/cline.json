@@ -1,27 +1,32 @@
 {
   "name": "Cline",
   "category": "coding",
-  "websiteUrl": "https://github.com/cline/cline",
-  "shortDescription": "Open-source AI-agent voor VS Code",
+  "websiteUrl": "https://cline.bot",
+  "shortDescription": "Open-source AI-coding-agent voor VS Code, JetBrains en CLI",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Cline is een AI-tool die ontwikkelaars helpt bij het schrijven en verbeteren van code. Het biedt functies zoals automatische codecompletion, foutdetectie en -correctie, en suggesties voor optimalisatie.",
-  "bestFor": "Cline is het meest waardevol voor softwareontwikkelaars die hun productiviteit willen verhogen en de kwaliteit van hun code willen verbeteren.",
+  "longDescription": "Cline is de populairste open-source coding-agent, begonnen als VS Code-extensie en inmiddels ook beschikbaar voor JetBrains, Cursor, Windsurf en als CLI. Je koppelt je eigen API-keys aan een van de 30+ ondersteunde providers — van Anthropic en OpenAI tot lokale modellen via Ollama — en houdt zo volledige controle over model en kosten. De Plan/Act-modus laat je eerst de strategie van de agent reviewen voordat hij code aanpast of terminal-commando's draait. Via de MCP Marketplace koppel je databases, observability-tools en interne systemen aan de agent. Sinds 2026 is er ook een optionele Cline Provider (app.cline.bot) voor pay-as-you-go inference zonder zelf keys te beheren, plus automatische model-routing die per taak het goedkoopste geschikte model kiest.",
+  "bestFor": "Cline is het meest waardevol voor developers die een krachtige coding-agent willen zonder SaaS-abonnement, met vrije modelkeuze en expliciete goedkeuring per actie.",
   "useCases": [
-    "Softwareontwikkeling",
-    "Codeoptimalisatie",
-    "Foutopsporing"
+    "Een coding-agent draaien op je eigen API-keys zonder abonnementskosten",
+    "Features implementeren met review van het plan vóór uitvoering (Plan/Act)",
+    "Interne tools en databases koppelen aan je agent via MCP",
+    "Lokale modellen gebruiken voor codewerk dat het netwerk niet mag verlaten"
   ],
   "strengths": [
-    "Verbetert codeproductiviteit",
-    "Detecteert en corrigeert codefouten"
+    "Volledig open-source en gratis — je betaalt alleen je model-gebruik",
+    "30+ LLM-providers plus lokale modellen via Ollama of LM Studio",
+    "Plan/Act-modus geeft controle vóór elke wijziging",
+    "MCP Marketplace voor eenvoudige tool-integraties"
   ],
   "limitations": [
-    "Werkt alleen met bepaalde programmeertalen"
+    "Vereist eigen API-keys en billing-setup (tenzij je de Cline Provider gebruikt)",
+    "Minder gepolijst dan commerciële producten als Cursor",
+    "API-kosten kunnen bij intensief gebruik oplopen zonder goede model-keuze"
   ],
-  "pricing": "Freemium, met betaalde abonnementen voor geavanceerde functies",
+  "pricing": "Gratis en open-source. Je betaalt alleen de API-kosten van je gekozen model-provider (typisch $8-12/mnd bij gemiddeld gebruik met automatische model-routing). Optioneel: pay-as-you-go inference via de Cline Provider zonder eigen keys.",
   "openSource": true,
   "businessFunctions": [
     "development"
@@ -35,7 +40,11 @@
   ],
   "nlSupport": false,
   "integrations": [
-    "VS Code"
+    "VS Code",
+    "JetBrains",
+    "Cursor",
+    "Windsurf",
+    "Ollama"
   ],
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
@@ -46,9 +55,47 @@
     "medium"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Cline is de meest configureerbare open-source coding-agent voor VS Code — werkt met elk model naar keuze. Steile leercurve, maar geeft maximale controle over model en kosten.",
+  "verdict": "Cline is de meest configureerbare open-source coding-agent — werkt met elk model naar keuze en draait inmiddels ver buiten VS Code. Steile leercurve, maar geeft maximale controle over model en kosten.",
   "whyListed": "Cline is het populairste open-source alternatief voor Cursor's agent-modus, met een grote community van developers die hun eigen model-stack willen beheren.",
   "bestAlternative": "cursor",
+  "keyFeatures": [
+    {
+      "title": "Agent met Plan/Act-modus",
+      "description": "De agent presenteert eerst een plan dat jij goedkeurt, en voert daarna pas bestandswijzigingen en terminal-commando's uit.",
+      "group": "core"
+    },
+    {
+      "title": "30+ model-providers (BYOK)",
+      "description": "Anthropic, OpenAI, Gemini, Bedrock, OpenRouter, DeepSeek, Mistral en meer — of lokaal via Ollama en LM Studio, altijd op je eigen keys.",
+      "group": "core"
+    },
+    {
+      "title": "Automatische model-routing",
+      "description": "Kiest per taak het goedkoopste model dat de klus aankan, wat typische maandkosten flink drukt.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "MCP Marketplace",
+      "description": "Koppel databases, observability en interne tools aan de agent via het Model Context Protocol.",
+      "group": "integration"
+    },
+    {
+      "title": "Computer Use",
+      "description": "De agent verifieert zijn eigen UI-werk in een echte browser.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-editor + CLI",
+      "description": "Draait in VS Code, JetBrains, Cursor, Windsurf en Zed, plus een CLI voor macOS en Linux.",
+      "group": "integration"
+    },
+    {
+      "title": "Checkpoints & diff-view",
+      "description": "Elke agent-stap is terug te draaien; wijzigingen zie je als diff voordat je ze accepteert.",
+      "group": "output"
+    }
+  ],
   "setupTime": "under_15min",
   "matchSegments": [
     "zzp",
@@ -74,6 +121,7 @@
   "antiUseCases": [
     "Teams die een gepolijste managed ervaring willen — Cursor of Copilot leveren dat",
     "Gebruikers zonder eigen API-keys of billing-setup",
-    "Niet-VS-Code editors"
-  ]
+    "Editors buiten het VS Code/JetBrains-ecosysteem"
+  ],
+  "lastUpdated": "2026-06-06"
 }

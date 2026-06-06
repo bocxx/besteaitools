@@ -1,15 +1,15 @@
 {
   "name": "v0",
   "category": "coding",
-  "websiteUrl": "https://v0.dev",
-  "shortDescription": "Vercel's AI UI-generator — van prompt naar React-component",
-  "headlineValueProp": "Beschrijf wat je wil zien, krijg werkende React + shadcn/ui-componenten terug",
+  "websiteUrl": "https://v0.app",
+  "shortDescription": "Vercel's AI app-builder — van prompt naar React-component of complete Next.js-app",
+  "headlineValueProp": "Beschrijf wat je wil zien, krijg werkende React + shadcn/ui-componenten of een complete Next.js-app terug",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": ["react", "ui", "frontend", "shadcn", "vercel"],
-  "mentionAliases": ["v0.dev"],
+  "mentionAliases": ["v0.dev", "v0.app"],
   "draft": false,
-  "longDescription": "v0 is Vercels AI-generator voor frontend-componenten. Je beschrijft een UI in natuurlijke taal of plakt een screenshot, en v0 levert een direct werkend React-component terug met shadcn/ui en Tailwind CSS. Iedere generatie is een chat-iteratie: je vraagt om aanpassingen totdat het component klopt, en exporteert het daarna naar je Next.js-project. v0 is geen full-stack agent — het richt zich expliciet op de UI-laag.",
+  "longDescription": "v0 (inmiddels op v0.app) is Vercels AI-builder voor React-interfaces. Je beschrijft een UI in natuurlijke taal of plakt een screenshot, en v0 levert direct werkende componenten met shadcn/ui en Tailwind CSS. Iedere generatie is een chat-iteratie: je vraagt om aanpassingen tot het klopt. Sinds begin 2026 is v0 meer dan een component-generator: het bouwt multi-page Next.js-apps met routing en layouts in een sandbox-runtime, heeft een VS Code-achtige editor, een Git-paneel voor branches en pull requests vanuit de chat, en database-koppelingen. De sterkste resultaten blijven binnen de Vercel/Next.js/shadcn-stack; voor zware backend-logica en niet-React-frontends heb je andere tools nodig. Billing is sinds februari 2026 token-based.",
   "bestFor": "Frontend-developers en product designers die snel productie-waardige React-componenten willen genereren zonder elke keer vanaf scratch te beginnen.",
   "primaryJobsToBeDone": [
     "Een React/shadcn-component genereren uit een tekstbeschrijving of screenshot",
@@ -29,15 +29,16 @@
   ],
   "limitations": [
     "Beperkt tot React — geen Vue, Svelte of native frameworks",
-    "Bedoeld voor componenten, niet voor full-stack apps of backend-logica",
-    "Werkt het beste binnen de shadcn-stijl; afwijkende design systems vereisen veel handwerk"
+    "Zware backend-logica, custom auth en complexe databases vergen nog steeds externe tools",
+    "Werkt het beste binnen de shadcn-stijl; afwijkende design systems vereisen veel handwerk",
+    "Token-based billing maakt kosten per generatie variabel"
   ],
   "antiUseCases": [
     "Backend- of databaselaag bouwen — daarvoor is een coding-agent als Cursor of Claude Code geschikter",
     "Niet-React frontends (Vue, Svelte, Flutter)",
     "Een afwijkend bedrijfsdesign-system implementeren waarvoor shadcn niet de basis is"
   ],
-  "pricing": "Gratis tier met dagelijkse generatielimiet, Premium vanaf $20/mnd voor hogere limieten en private projecten",
+  "pricing": "Gratis tier met $5 aan maandelijkse credits. Premium $20/mnd, Team $30/gebruiker/mnd, Business $100/gebruiker/mnd, Enterprise op aanvraag. Sinds februari 2026 token-based: elke generatie kost tokens afhankelijk van complexiteit.",
   "openSource": false,
   "businessFunctions": ["development", "marketing"],
   "deploymentType": "saas",
@@ -50,7 +51,46 @@
   "learningCurve": "low",
   "companySizeFit": ["solo", "small", "medium"],
   "bestUseCaseStage": "experiment",
-  "verdict": "v0 van Vercel genereert React/shadcn UI-componenten van uitstekende kwaliteit. Beperkt tot frontend-componenten, maar daarin een van de beste tools beschikbaar voor snelle mockups.",
+  "verdict": "v0 van Vercel genereert React/shadcn UI van uitstekende kwaliteit en groeide in 2026 uit tot een lichte full-stack-builder met Git-integratie. Binnen de Next.js/shadcn-stack een van de beste tools; daarbuiten kies je beter een alternatief.",
+  "keyFeatures": [
+    {
+      "title": "UI-generatie uit prompt of screenshot",
+      "description": "Beschrijf een interface of upload een design en krijg werkende React-componenten met shadcn/ui en Tailwind terug.",
+      "group": "core"
+    },
+    {
+      "title": "Chat-iteratie",
+      "description": "Pas componenten aan via vervolgvragen tot het ontwerp klopt — sneller dan steeds opnieuw prompten.",
+      "group": "core"
+    },
+    {
+      "title": "Multi-page Next.js-apps",
+      "description": "Genereert complete apps met routing, gedeelde layouts en navigatie in een sandbox-runtime.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Git-paneel",
+      "description": "Maak branches, commit wijzigingen en open pull requests rechtstreeks vanuit de chat.",
+      "group": "integration",
+      "badge": "nieuw"
+    },
+    {
+      "title": "VS Code-achtige editor",
+      "description": "Bewerk gegenereerde code direct in de browser zonder export-stap.",
+      "group": "core"
+    },
+    {
+      "title": "Database-koppelingen",
+      "description": "Verbind databases en data-bronnen (o.a. Snowflake en AWS) voor data-gedreven UI's.",
+      "group": "integration"
+    },
+    {
+      "title": "Deploy naar Vercel",
+      "description": "Eén klik van prototype naar live deployment op Vercel-infrastructuur.",
+      "group": "output"
+    }
+  ],
   "whyListed": "v0 werd snel de standaard voor het genereren van React UI-componenten en is breed geadopteerd door frontend-developers voor snelle iteratie op designs.",
   "bestAlternative": "lovable",
   "setupTime": "under_15min",
@@ -68,5 +108,6 @@
   ],
   "beginnerFriendlyScore": 8,
   "dataUsedForTraining": "opt-out",
-  "vendorLockInRisk": "medium"
+  "vendorLockInRisk": "medium",
+  "lastUpdated": "2026-06-06"
 }

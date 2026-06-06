@@ -3,7 +3,8 @@
   "category": "infrastructure",
   "websiteUrl": "https://www.together.ai",
   "shortDescription": "Snelle en betaalbare API voor open-source LLM's",
-  "longDescription": "Together AI biedt hosted inference voor meer dan 100 open-source modellen — van Llama en Mistral tot DeepSeek en Qwen. Het platform onderscheidt zich door lage prijzen, fine-tuning mogelijkheden en een brede modelcatalogus. De API is OpenAI-compatibel en ondersteunt zowel streaming als function calling.",
+  "headlineValueProp": "AI-cloud voor open-source modellen: serverless inference, fine-tuning en GPU-clusters onder één dak",
+  "longDescription": "Together AI biedt hosted inference voor meer dan 200 open-source modellen — van Llama, DeepSeek en Qwen tot FLUX (beeld), Kling (video) en Whisper (spraak). Het platform is uitgegroeid van inference-API naar volwaardige AI-cloud: naast serverless per-token inference verhuur je dedicated endpoints en complete GPU-clusters met H100-, H200-, B200- en GB200-hardware in 25+ datacenters. Fine-tuning (SFT en DPO) zit ingebouwd, inclusief hosting van het resultaat. De API is OpenAI-compatibel en ondersteunt streaming, function calling en JSON-mode. Voor teams die open modellen serieus in productie draaien is Together een van de meest complete platformen.",
   "bestFor": "Teams en developers die betaalbare, schaalbare inference nodig hebben voor open-source LLM's, inclusief fine-tuning op eigen datasets, zonder eigen GPU-clusters.",
   "useCases": [
     "Productie-inference voor open-source LLM's",
@@ -23,7 +24,39 @@
     "Minder focust op snelheid dan Fireworks AI",
     "Self-hosting niet beschikbaar"
   ],
-  "pricing": "Pay-as-you-go per token; prijzen per model variëren. Fine-tuning kost extra per run.",
+  "pricing": "Serverless: pay-as-you-go per token, circa $0,03-$4,50 per miljoen tokens afhankelijk van model. Dedicated endpoints per GPU-uur (H100 ~$6,49/uur). GPU-clusters vanaf ~$4/uur per H100 (reserved). Fine-tuning per miljoen trainings-tokens.",
+  "keyFeatures": [
+    {
+      "title": "Serverless inference",
+      "description": "200+ open modellen per token afrekenen via een OpenAI-compatibele API.",
+      "group": "core"
+    },
+    {
+      "title": "Fine-tuning",
+      "description": "SFT en DPO op eigen data, inclusief hosting van het fine-tuned model.",
+      "group": "core"
+    },
+    {
+      "title": "Dedicated endpoints",
+      "description": "Eigen GPU-capaciteit per uur voor voorspelbare latency en throughput.",
+      "group": "enterprise"
+    },
+    {
+      "title": "GPU-clusters",
+      "description": "Huur H100- tot GB200-clusters met InfiniBand voor training en grootschalige inference.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Multimodale catalogus",
+      "description": "Naast LLM's ook beeldmodellen (FLUX), videomodellen (Kling) en speech (Whisper).",
+      "group": "core"
+    },
+    {
+      "title": "OpenAI-compatibele API",
+      "description": "Streaming, function calling en JSON-mode — drop-in migratie vanaf OpenAI.",
+      "group": "integration"
+    }
+  ],
   "openSource": false,
   "pricingModel": "paid",
   "difficulty": "intermediate",

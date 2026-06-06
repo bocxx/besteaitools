@@ -7,7 +7,7 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Midjourney is de populairste AI-beeldgenerator onder creatieve professionals — bekend om consistente, artistiek-sterke output met een herkenbare 'Midjourney-stijl'. De laatste versies (v7+) ondersteunen besturingsparameters, character-consistency en stijl-referenties via image-prompts. Pricing draait via een credit-systeem ('Fast hours') vanaf $10/maand. Werkt via web-interface en oorspronkelijk via Discord; voor productiewerk is de web-app inmiddels de hoofdroute.",
+  "longDescription": "Midjourney is de populairste AI-beeldgenerator onder creatieve professionals — bekend om consistente, artistiek-sterke output met een herkenbare 'Midjourney-stijl'. Het actuele model V8.1 (april 2026) rendert 4-5x sneller dan eerdere versies en genereert standaard 2K-beelden zonder upscaling, met betere prompt-trouw en detailbehoud. De web-app op midjourney.com is inmiddels de hoofdroute: je prompt, beheert je galerij en bewerkt beelden met de ingebouwde Editor (inpainting, aspect-ratio wijzigen). Sinds 2026 kun je ook stilstaande beelden omzetten naar korte video's van 5 seconden, verlengbaar tot 21 seconden. Discord blijft werken maar is niet meer nodig. Abonnementen lopen van $10 tot $120 per maand op basis van GPU-tijd ('Fast hours'); een gratis tier is er niet.",
   "bestFor": "Midjourney is vooral waardevol voor creatieve professionals, kunstenaars en hobbyisten die op zoek zijn naar nieuwe manieren om hun ideeën visueel tot uitdrukking te brengen.",
   "useCases": [
     "Kunstzinnige afbeeldingen genereren",
@@ -22,7 +22,7 @@
   "limitations": [
     "Beperkte controle over het generatieproces"
   ],
-  "pricing": "Betaald vanaf $10/mnd",
+  "pricing": "Betaald vanaf $10/mnd (Basic); Standard $30, Pro $60, Mega $120 per maand. Geen gratis tier; jaarlijks betalen scheelt 20%",
   "openSource": false,
   "businessFunctions": [
     "marketing",
@@ -48,7 +48,39 @@
     "medium"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Midjourney is ongeëvenaard in artistieke beeldkwaliteit en stijlconsistentie. De Discord-interface is onconventioneel maar krachtig. De go-to keuze voor creatieve professionals die de hoogste beeldkwaliteit willen.",
+  "verdict": "Midjourney is ongeëvenaard in artistieke beeldkwaliteit en stijlconsistentie. Met V8.1 en de volwassen web-app (inclusief editor en video) is de oude Discord-drempel verdwenen. De go-to keuze voor creatieve professionals die de hoogste beeldkwaliteit willen.",
+  "keyFeatures": [
+    {
+      "title": "V8.1 beeldmodel",
+      "description": "Genereert standaard 2K-beelden zonder upscaling, 4-5x sneller dan eerdere versies en met betere prompt-trouw",
+      "group": "core"
+    },
+    {
+      "title": "Web-editor",
+      "description": "Bewerk gegenereerde beelden direct in de browser: gebieden overschilderen, aspect-ratio aanpassen, losse elementen wijzigen",
+      "group": "core"
+    },
+    {
+      "title": "Image-to-video",
+      "description": "Zet een stilstaand beeld om in een video van 5 seconden, verlengbaar tot 21 seconden",
+      "group": "output"
+    },
+    {
+      "title": "Stijl- en character-referenties",
+      "description": "Houd stijl en personages consistent over meerdere beelden via referentie-afbeeldingen en personalisatie",
+      "group": "input"
+    },
+    {
+      "title": "Galerij en zoeken",
+      "description": "Beheer al je generaties in de web-app, doorzoek je eigen werk en verken de community-feed voor prompt-inspiratie",
+      "group": "core"
+    },
+    {
+      "title": "Stealth mode",
+      "description": "Op Pro- en Mega-plannen blijven je beelden buiten de publieke galerij — relevant voor klantwerk",
+      "group": "enterprise"
+    }
+  ],
   "whyListed": "Midjourney is de populairste AI-beeldgenerator onder creatieve professionals en stelt de standaard voor artistieke AI-beeldkwaliteit, met miljoenen actieve gebruikers.",
   "bestAlternative": "flux",
   "setupTime": "under_15min",

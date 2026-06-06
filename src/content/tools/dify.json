@@ -7,21 +7,26 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Dify is een AI-aangedreven automatiseringsplatform dat bedrijven in staat stelt om repetitieve taken te automatiseren, waardoor de productiviteit wordt verhoogd en de werkbelasting wordt verminderd.",
-  "bestFor": "Dify is vooral waardevol voor bedrijven die op zoek zijn naar manieren om hun operationele efficiëntie te verbeteren en hun medewerkers te ontlasten van tijdrovende, repetitieve taken.",
+  "longDescription": "Dify is een van de meest gebruikte open-source platforms voor het bouwen van LLM-applicaties. Het combineert een visuele drag-and-drop workflow-editor, een complete RAG-pipeline (van documentingest tot retrieval), agent-mogelijkheden op basis van function calling of ReAct, en LLMOps-functies zoals logging, monitoring en versioning — alles in één interface. Het ondersteunt honderden modellen van tientallen providers, van GPT en Claude tot self-hosted open modellen, en levert 50+ ingebouwde tools voor agents zoals web-search en beeldgeneratie. Je draait Dify zelf via Docker (gratis) of gebruikt Dify Cloud. Met tienduizenden GitHub-stars is het uitgegroeid tot de referentie voor low-code LLM-app-development; let er wel op dat LLM-inference apart wordt afgerekend bij je modelprovider.",
+  "bestFor": "Dify is vooral waardevol voor teams die zonder volledig custom codewerk AI-chatbots, RAG-apps en agent-workflows willen bouwen, deployen en monitoren.",
   "useCases": [
-    "Automatisering van e-mailverwerking",
-    "Automatisering van facturatie- en boekhoudprocessen",
-    "Automatisering van HR-taken zoals onboarding"
+    "Een AI-chatbot of kennisassistent bouwen op eigen documenten (RAG)",
+    "Agent-workflows visueel orkestreren met tools, branching en condities",
+    "LLM-apps publiceren als web-app of API zonder eigen frontend",
+    "Prompts en modellen vergelijken en versioneren met ingebouwde LLMOps"
   ],
   "strengths": [
-    "Intuïtieve no-code interface",
-    "Brede integratiemogelijkheden met populaire bedrijfssoftware"
+    "Visuele workflow-editor maakt complexe LLM-apps toegankelijk zonder veel code",
+    "Complete RAG-pipeline ingebouwd, inclusief documentverwerking",
+    "Honderden modellen en providers ondersteund, ook self-hosted",
+    "Open-source met actieve community en Docker-deployment"
   ],
   "limitations": [
-    "Beperkte mogelijkheden voor complexe workflows"
+    "LLM-inference wordt apart afgerekend bij je modelprovider — abonnement is niet de totale kostprijs",
+    "Voor diepe maatwerk-logica is een code-framework als LangChain flexibeler",
+    "Self-hosting op schaal vraagt eigen DevOps-kennis"
   ],
-  "pricing": "Freemium, betaald vanaf $20/maand",
+  "pricing": "Self-hosted gratis (open-source). Dify Cloud: Sandbox gratis met beperkte credits, Professional $59/mnd, Team $159/mnd, Enterprise op aanvraag. LLM-API-kosten van je modelprovider komen daar bovenop.",
   "openSource": true,
   "businessFunctions": [
     "operations",
@@ -37,6 +42,9 @@
   ],
   "nlSupport": false,
   "integrations": [
+    "OpenAI",
+    "Anthropic",
+    "Ollama",
     "Slack",
     "API"
   ],
@@ -50,9 +58,46 @@
     "large"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Dify is de beste low-code optie voor het bouwen van LLM-applicaties met een visuele workflow-editor. Sterk voor RAG-apps en chatbots zonder diep codeerwerk.",
+  "verdict": "Dify is de beste low-code optie voor het bouwen van LLM-applicaties met een visuele workflow-editor. Sterk voor RAG-apps en chatbots zonder diep codeerwerk; reken naast het abonnement op aparte LLM-API-kosten.",
   "whyListed": "Dify groeide snel als meest gedownloade open-source LLM-applicatieplatform en maakt AI-app-development toegankelijk voor niet-engineers.",
   "bestAlternative": "flowise",
+  "keyFeatures": [
+    {
+      "title": "Visuele workflow-editor",
+      "description": "Bouw AI-apps en agent-flows met drag-and-drop nodes voor LLM-calls, condities, tools en code-blokken.",
+      "group": "core"
+    },
+    {
+      "title": "RAG-pipeline",
+      "description": "Van documentingest (PDF, PPT en meer) tot chunking, embedding en retrieval — volledig ingebouwd.",
+      "group": "core"
+    },
+    {
+      "title": "Agents met 50+ tools",
+      "description": "Definieer agents op basis van function calling of ReAct, met ingebouwde tools als Google Search en beeldgeneratie.",
+      "group": "core"
+    },
+    {
+      "title": "Honderden modellen",
+      "description": "GPT, Claude, Gemini, Mistral, Llama en elke OpenAI-compatibele API — ook self-hosted modellen.",
+      "group": "integration"
+    },
+    {
+      "title": "Publiceren als app of API",
+      "description": "Elke workflow is direct beschikbaar als deelbare web-app of REST-API, zonder eigen frontend te bouwen.",
+      "group": "output"
+    },
+    {
+      "title": "LLMOps & monitoring",
+      "description": "Logging, annotatie en analyse van conversaties om je app na livegang te verbeteren.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Self-hosted of cloud",
+      "description": "Draai gratis via Docker op eigen infrastructuur of kies de managed Dify Cloud.",
+      "group": "enterprise"
+    }
+  ],
   "setupTime": "under_4h",
   "matchSegments": [
     "mkb_klein",
@@ -81,5 +126,6 @@
     "Teams die volledige code-flexibiliteit willen — LangChain is dan logischer",
     "Pure single-prompt use cases zonder workflow-laag",
     "Gebruikers zonder enige technische context"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

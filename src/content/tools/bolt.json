@@ -3,26 +3,30 @@
   "category": "coding",
   "websiteUrl": "https://bolt.new",
   "shortDescription": "StackBlitz' AI-tool voor instant full-stack webapps",
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Bolt is een open-source JavaScript-framework voor het bouwen van moderne web-applicaties. Het biedt een uitgebreide set tools en functies voor het ontwikkelen, testen en deployen van web-apps.",
-  "bestFor": "Bolt is vooral waardevol voor web-ontwikkelaars die snel en efficiënt moderne web-applicaties willen bouwen.",
+  "longDescription": "Bolt.new is StackBlitz' AI-app-builder: je beschrijft een webapp in een prompt en Bolt genereert frontend, backend en database in één keer. Het draait op WebContainers, StackBlitz' technologie waarmee een complete Node.js-omgeving in je browser-tab draait — je ziet de app live tijdens het genereren, zonder server of lokale setup. Deployen kan met één klik naar Netlify, en integraties met Supabase, Stripe en GitHub dekken database, betalingen en versiebeheer af. Afrekening gaat per token: het grootste deel van je verbruik zit in het synchroniseren van je projectbestanden met de AI, dus grotere projecten kosten meer per bericht. De kern van Bolt is open-source op GitHub (basis van het community-project bolt.diy), het gehoste product is commercieel.",
+  "bestFor": "Bolt is vooral waardevol voor makers en ondernemers die snel een werkende full-stack webapp willen prototypen vanuit een beschrijving, zonder lokale ontwikkelomgeving.",
   "useCases": [
-    "Web-applicaties ontwikkelen",
-    "Single Page Applications (SPA's) bouwen",
-    "Serverless functies implementeren"
+    "Een full-stack webapp genereren vanuit één prompt met live preview",
+    "MVP's en prototypes bouwen voor stakeholder-feedback met een live URL",
+    "Landingspagina's en kleine SaaS-tools bouwen met Supabase en Stripe",
+    "Bestaande GitHub-repos importeren en met AI doorontwikkelen"
   ],
   "strengths": [
-    "Uitgebreide toolset",
-    "Snelle ontwikkeling",
-    "Goede documentatie"
+    "WebContainers: alles draait live in de browser, geen lokale setup",
+    "Full-stack generatie — frontend, backend en database in één prompt",
+    "One-click deploy naar Netlify en directe Supabase/Stripe-integraties",
+    "Token-rollover op betaalde plannen (tot twee maanden geldig)"
   ],
   "limitations": [
-    "Relatief kleine community"
+    "Tokenverbruik schaalt met projectgrootte — grote projecten worden snel duur",
+    "Beperkt tot de web/JavaScript-stack",
+    "Gegenereerde code vergt review voordat het productie in kan"
   ],
-  "pricing": "Gratis",
+  "pricing": "Gratis plan met 1M tokens/mnd (max 300K per dag). Pro $25/mnd met 10M tokens, Teams $30/lid/mnd, Enterprise op aanvraag. Ongebruikte tokens op betaalde plannen rollen één maand door; 10% korting bij jaarbetaling.",
   "openSource": true,
   "businessFunctions": [
     "development",
@@ -38,7 +42,10 @@
   ],
   "nlSupport": false,
   "integrations": [
-    "GitHub"
+    "GitHub",
+    "Netlify",
+    "Supabase",
+    "Stripe"
   ],
   "timeToFirstValue": "minutes",
   "setupComplexity": "low",
@@ -48,10 +55,47 @@
     "small",
     "medium"
   ],
-  "bestUseCaseStage": "team-rollout",
-  "verdict": "Bolt is een van de beste tools om snel een werkende webapplicatie te genereren vanuit een beschrijving. Ideaal voor prototypes en MVP's, minder geschikt voor complexe productie-applicaties.",
+  "bestUseCaseStage": "experiment",
+  "verdict": "Bolt is een van de beste tools om snel een werkende webapplicatie te genereren vanuit een beschrijving. Ideaal voor prototypes en MVP's; let bij grotere projecten op het tokenverbruik, dat met de projectgrootte meeschaalt.",
   "whyListed": "Bolt populariseerde 'vibe coding' voor webapps en groeide razendsnel naar miljoenen gebruikers als go-to tool voor snelle app-prototyping zonder coderingskennis.",
   "bestAlternative": "lovable",
+  "keyFeatures": [
+    {
+      "title": "Full-stack generatie",
+      "description": "Frontend, backend en database uit één prompt — geen aparte stappen of tools nodig.",
+      "group": "core"
+    },
+    {
+      "title": "WebContainers live preview",
+      "description": "Een complete Node.js-omgeving draait in je browser-tab; je ziet de app live veranderen tijdens het genereren.",
+      "group": "core"
+    },
+    {
+      "title": "Code direct bewerken",
+      "description": "Open de gegenereerde code in de ingebouwde editor en pas zelf aan waar de AI tekortschiet.",
+      "group": "core"
+    },
+    {
+      "title": "Supabase-integratie",
+      "description": "Database, auth en storage koppel je rechtstreeks vanuit Bolt.",
+      "group": "integration"
+    },
+    {
+      "title": "Stripe-betalingen",
+      "description": "Voeg betaalfunctionaliteit toe aan je app via de ingebouwde Stripe-koppeling.",
+      "group": "integration"
+    },
+    {
+      "title": "One-click deploy",
+      "description": "Publiceer direct naar Netlify met een live URL, inclusief custom domains op betaalde plannen.",
+      "group": "output"
+    },
+    {
+      "title": "GitHub import/export",
+      "description": "Importeer bestaande repos of push je Bolt-project naar GitHub voor verdere ontwikkeling.",
+      "group": "integration"
+    }
+  ],
   "setupTime": "under_15min",
   "matchSegments": [
     "zzp",
@@ -79,5 +123,6 @@
     "Productie-codebases die strikte security en code review vereisen",
     "Talen of frameworks buiten de web/JS-stack",
     "Werk in een offline omgeving"
-  ]
+  ],
+  "lastUpdated": "2026-06-06"
 }

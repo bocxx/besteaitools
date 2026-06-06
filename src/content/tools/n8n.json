@@ -3,11 +3,11 @@
   "category": "automation",
   "websiteUrl": "https://n8n.io",
   "shortDescription": "Open-source workflow-automatisering met AI-integraties",
-  "pricingModel": "free",
+  "pricingModel": "freemium",
   "difficulty": "beginner",
-  "tags": [],
+  "tags": ["automation", "open-source", "ai-agents", "self-hosted"],
   "draft": false,
-  "longDescription": "n8n is een open-source, no-code workflow automation tool waarmee gebruikers eenvoudig workflows kunnen bouwen en integreren tussen verschillende applicaties en diensten.",
+  "longDescription": "n8n is de snelst groeiende workflow-automatisering en heeft zich ontwikkeld van Zapier-alternatief tot volwaardig AI-agent-platform. Je bouwt workflows visueel met nodes en kunt overal JavaScript- of Python-code invoegen waar no-code tekortschiet. De AI Agent-node laat je tool-calling agents bouwen met OpenAI, Anthropic (Claude), Gemini of lokale modellen, inclusief native vector store-integraties zoals Pinecone, Qdrant en pgvector. Het grote verschil met concurrenten: de Community Edition is gratis self-hosted met onbeperkte executions — je betaalt alleen je server. Bovendien telt n8n volledige workflow-runs in plaats van losse stappen, waardoor complexe flows niet duurder worden. Voor wie niet wil hosten is er n8n Cloud vanaf €24 per maand.",
   "bestFor": "n8n is het meest waardevol voor teams en organisaties die hun bedrijfsprocessen willen automatiseren zonder diepgaande technische kennis te hoeven hebben.",
   "useCases": [
     "Automatiseren van marketing- en salesprocessen",
@@ -15,14 +15,49 @@
     "Stroomlijnen van IT-ondersteuning"
   ],
   "strengths": [
-    "Eenvoudige, visuele workflow-editor",
-    "Ondersteuning voor honderden integraties",
-    "Gratis en open-source"
+    "Gratis self-hosted Community Edition met onbeperkte executions",
+    "Prijsmodel telt workflow-runs, niet losse stappen — complexe flows blijven betaalbaar",
+    "Native AI Agent-nodes met ondersteuning voor OpenAI, Claude, Gemini en lokale modellen",
+    "Code-nodes (JavaScript/Python) waar no-code niet volstaat"
   ],
   "limitations": [
-    "Beperkte mogelijkheden voor complexe workflows"
+    "Self-hosting vraagt technisch beheer (updates, backups, server)",
+    "Minder kant-en-klare integraties dan Zapier (7000+)",
+    "Leercurve steiler dan bij Zapier voor niet-technische gebruikers"
   ],
-  "pricing": "Gratis",
+  "pricing": "Gratis self-hosted (Community Edition, onbeperkte executions). n8n Cloud: Starter €24/maand (2.500 executions), Pro €60/maand (10.000), Business €800/maand (50.000); jaarlijks betalen is ~17% goedkoper.",
+  "keyFeatures": [
+    {
+      "title": "Visuele workflow-editor",
+      "description": "Bouw workflows met nodes via drag-and-drop, met live debugging per stap",
+      "group": "core"
+    },
+    {
+      "title": "AI Agent-nodes",
+      "description": "Bouw tool-calling AI-agents met OpenAI, Claude, Gemini of lokale modellen direct in je workflow",
+      "group": "core"
+    },
+    {
+      "title": "Code-nodes",
+      "description": "Voeg JavaScript- of Python-stappen toe waar no-code tekortschiet",
+      "group": "core"
+    },
+    {
+      "title": "Vector store-integraties",
+      "description": "Native koppelingen met Pinecone, Qdrant, Weaviate en Supabase pgvector voor RAG-workflows",
+      "group": "integration"
+    },
+    {
+      "title": "1000+ app-integraties",
+      "description": "Kant-en-klare nodes voor Slack, Google Workspace, HubSpot, Salesforce en honderden andere apps",
+      "group": "integration"
+    },
+    {
+      "title": "Self-hosted deployment",
+      "description": "Draai n8n op je eigen server of VPS voor volledige data-controle en compliance",
+      "group": "enterprise"
+    }
+  ],
   "openSource": true,
   "businessFunctions": [
     "operations",
