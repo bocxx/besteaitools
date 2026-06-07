@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-06T17:41:41.921165",
+  "generated_at": "2026-06-07T05:32:42.658779",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 15,
-    "for_news": 18,
-    "rejected_lang": 166,
+    "for_tools": 16,
+    "for_news": 17,
+    "rejected_lang": 157,
     "already_covered": 0,
-    "total_scanned": 4700
+    "total_scanned": 4699
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
         "how to",
-        "step-by-step"
+        "step-by-step",
+        "tutorial"
       ],
       "matched_tools": [
         "gemini",
@@ -140,8 +140,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
-        "step by step"
+        "step by step",
+        "tutorial"
       ],
       "matched_tools": [
         "chatgpt",
@@ -161,13 +161,13 @@
       "consensus_sources": [
         "twitter_likes"
       ],
-      "score": 18.4,
+      "score": 17.9,
       "score_breakdown": {
         "pattern_hits": 2,
         "engagement_log": 5.9,
         "source_weight": 4.0,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 2.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -192,9 +192,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
         "how to",
-        "guide"
+        "guide",
+        "tutorial"
       ],
       "matched_tools": [
         "claude",
@@ -316,8 +316,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -620,6 +620,54 @@
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
+      "title": "Agent Substrate: Building Actors and Workers",
+      "text": "<p>Any time AI is spoken about, it's followed up with \"and this is how much it's costing us\". Cost management/optimization along with overall optimization of Agentic resources is top of mind for everyone in an organization, from the engineer implementing Agents to the CFO trying to figure out how to effectively spend tokens.</p>\n\n<p>In this blog post, you will learn how to set up Agent Substrate Actors and Workers to ensure agentic efficiency.</p>\n\n<h2>\n  \n  \n  Prerequisites\n</h2>\n\n<p>To follow along from a hands-on perspective, you will need the following:</p>\n\n<ol>\n<li>A GKE or Kind cluster ",
+      "url": "https://dev.to/thenjdevopsguy/agent-substrate-building-actors-and-workers-4221",
+      "date": "2026-06-06",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "hands-on",
+        "how to",
+        "guide"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je Agent Substrate in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "8a236dd2dbdeaa48"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
       "title": "Automatically Attaching YouTube Video Footers to AI Tutorial Questions: Gemini LLM ＆ YouTube Search Service Integration",
       "text": "<p>Automatically Attaching YouTube Video Footers to Tutorial-Style Questions: An Integration Log of gemini_llm_service &amp; youtube_search_service</p>\n\n<p>I've been developing a feature to automatically attach YouTube video footers to AI tutorial questions. My initial thought was simple: find a YouTube video relevant to the question and display it as a footer.</p>\n\n<h2>\n  \n  \n  Attempts and Pitfalls\n</h2>\n\n<p>My first approach was to have <code>gemini_llm_service</code> understand the intent of the question and then use those keywords to search for videos via <code>youtube_search_service</cod",
       "url": "https://dev.to/junhee916/automatically-attaching-youtube-video-footers-to-ai-tutorial-questions-gemini-llm-youtube-search-5df2",
@@ -628,9 +676,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
+        "build a",
         "how to",
-        "build a"
+        "tutorial"
       ],
       "matched_tools": [
         "gemini"
@@ -678,8 +726,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
         "how to",
+        "from scratch",
         "crash course"
       ],
       "matched_tools": [],
@@ -776,9 +824,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "build your",
         "from scratch",
-        "build an",
-        "build your"
+        "build an"
       ],
       "matched_tools": [
         "mcp"
@@ -1096,7 +1144,7 @@
       "text": "When AI Builds Itself",
       "url": "https://www.anthropic.com/institute/recursive-self-improvement",
       "date": "2026-06-04",
-      "engagement": 1205.0,
+      "engagement": 1211.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1113,10 +1161,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.14,
+      "score": 16.15,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.64,
+        "engagement_log": 10.65,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1189,8 +1237,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "how to",
-        "guide",
-        "build a"
+        "build a",
+        "guide"
       ],
       "matched_tools": [
         "claude"
@@ -1204,7 +1252,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "NadzuAI",
-      "followers": 166505,
+      "followers": 167975,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1242,8 +1290,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "how-to",
-        "explained"
+        "explained",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1290,8 +1338,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "guide",
-        "how-to"
+        "how-to",
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1337,9 +1385,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "anatomy of",
+        "masterclass",
         "how to",
-        "masterclass"
+        "anatomy of"
       ],
       "matched_tools": [
         "hermes-agent"
@@ -1390,9 +1438,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build your",
+        "walkthrough",
         "guide",
-        "walkthrough"
+        "build your"
       ],
       "matched_tools": [
         "together ai"
@@ -1488,8 +1536,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "hands-on",
+        "how to",
         "build your"
       ],
       "matched_tools": [
@@ -1528,54 +1576,6 @@
       "id": "e75d75bee69ac5f2"
     },
     {
-      "source": "likes:@victor_bigfield",
-      "platform": "twitter_likes",
-      "title": "reddit isn't anti-marketing. it's anti-lazy-marketing. i pull 10k+ visitors/mo from it and have never been banned. the whole system comes down to one ratio most",
-      "text": "reddit isn't anti-marketing. it's anti-lazy-marketing. i pull 10k+ visitors/mo from it and have never been banned. the whole system comes down to one ratio most founders get backwards. here it is, step by step ð https://t.co/fbRw8C8o2L",
-      "url": "https://twitter.com/victor_bigfield/status/2060696918192242765",
-      "date": "2026-05-30",
-      "engagement": 50.0,
-      "source_weight": 4.0,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "step by step"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "author": "victor_bigfield",
-      "media_url": "https://x.com/victor_bigfield/status/2060696918192242765/video/1",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "twitter_likes"
-      ],
-      "score": 14.9,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 5.9,
-        "source_weight": 4.0,
-        "ai_relevance": 0.0,
-        "recency": 1.0,
-        "editorial": 2.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom dit er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "bcb0d22b7cb246e0"
-    },
-    {
       "source": "articles:Artificial Intelligence on Medium",
       "platform": "article",
       "title": "How to Choose Between AI and Data Science: Complete Beginner Roadmap (2026 Guide)",
@@ -1587,8 +1587,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "guide",
-        "how-to"
+        "how-to",
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1634,9 +1634,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
+        "walkthrough",
         "how to",
-        "walkthrough"
+        "from scratch"
       ],
       "matched_tools": [],
       "feature_update": false,
