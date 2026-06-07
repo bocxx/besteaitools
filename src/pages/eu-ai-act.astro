@@ -1,0 +1,265 @@
+---
+/**
+ * /eu-ai-act — AI-tools en de EU AI Act / AVG
+ *
+ * Unieke datalaag die geen enkele andere directory heeft: per tool de
+ * geverifieerde compliance-signalen (EU-hosting, verwerkersovereenkomst,
+ * SOC 2, training op jouw data, AI Act-risicoklasse) — plus een nuchtere
+ * MKB-uitleg van wat er per 2 augustus 2026 verandert. Client-side filters,
+ * geen framework. Nadrukkelijk geen juridisch advies.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { getAllTools } from '../lib/tools-engine';
+import { aiActRiskClasses } from '../lib/tools-schema';
+import { ArrowLeft, Scale, ShieldCheck, ShieldAlert, Check, X, Minus, ArrowUpRight } from '@lucide/astro';
+
+const tools = await getAllTools();
+
+// Alleen tools met minstens één geverifieerd governance-signaal
+const govTools = tools
+  .filter(t =>
+    t.gdprReady != null || t.euHostingAvailable != null || t.dpaAvailable != null ||
+    t.soc2 != null || t.aiActRiskClass != null
+  )
+  .sort((a, b) => {
+    const score = (t: typeof a) =>
+      (t.euHostingAvailable ? 4 : 0) + (t.dpaAvailable ? 2 : 0) +
+      (t.gdprReady ? 1 : 0) + (t.soc2 ? 1 : 0) + (t.dataUsedForTraining === 'no' ? 1 : 0);
+    return score(b) - score(a) || a.name.localeCompare(b.name);
+  });
+
+const counts = {
+  eu: govTools.filter(t => t.euHostingAvailable).length,
+  dpa: govTools.filter(t => t.dpaAvailable).length,
+  noTrain: govTools.filter(t => t.dataUsedForTraining === 'no').length,
+  high: govTools.filter(t => t.aiActRiskClass === 'high').length,
+};
+
+function tri(v: boolean | null | undefined): 'yes' | 'no' | 'unknown' {
+  return v === true ? 'yes' : v === false ? 'no' : 'unknown';
+}
+const trainLabel: Record<string, string> = {
+  no: 'Nee', yes: 'Ja', 'opt-out': 'Opt-out', 'opt-in': 'Opt-in',
+};
+
+const faqs = [
+  { question: 'Wat verandert er op 2 augustus 2026 door de EU AI Act?', answer: 'Vanaf die datum gelden de verplichtingen voor hoog-risico-AI-systemen (zoals AI voor werving en selectie) en wordt het toezicht actief. Voor de meeste kantoor-tools geldt vooral: transparantie richting gebruikers en AI-geletterdheid binnen je organisatie (dat laatste geldt al sinds februari 2025).' },
+  { question: 'Welke AI-tools vallen onder "hoog risico"?', answer: 'Onder andere AI die personen beoordeelt bij werving en selectie (Annex III) — denk aan CV-screening en video-interview-analyse. In ons overzicht markeren we zulke tools met de klasse "Hoog risico". Gebruik je zo\'n tool, dan gelden er extra plichten zoals menselijke controle en informeren van kandidaten.' },
+  { question: 'Is een AI-tool met EU-hosting automatisch AVG-proof?', answer: 'Nee. EU-hosting is een sterk signaal, maar je hebt ook een verwerkersovereenkomst (DPA) nodig, duidelijkheid over training op jouw data, en interne afspraken over wat medewerkers in de tool mogen plakken. Onze tabel toont die signalen per tool — de afweging blijft aan jou.' },
+  { question: 'Traint elke AI-tool op mijn bedrijfsdata?', answer: 'Nee, en dit verschilt sterk per tool en per plan. Zakelijke plannen sluiten training meestal uit; gratis consumentenplannen juist vaak niet (of via opt-out). In de tabel zie je per tool de geverifieerde status.' },
+];
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'AI-tools en de EU AI Act — compliance-signalen per tool',
+  description: `Geverifieerde AVG- en EU AI Act-signalen voor ${govTools.length} AI-tools: EU-hosting, verwerkersovereenkomst, SOC 2, training op jouw data en risicoklasse.`,
+  url: `${siteOrigin}/eu-ai-act`,
+};
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question', name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+
+<Layout
+  title={`AI-tools en de EU AI Act — AVG-signalen per tool (${new Date().getFullYear()}) | debesteaitools.nl`}
+  description={`Welke AI-tools zijn klaar voor de EU AI Act en de AVG? Geverifieerde signalen voor ${govTools.length} tools: EU-hosting, verwerkersovereenkomst, SOC 2, training op jouw data en risicoklasse. Deadline hoog-risico: 2 augustus 2026.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </Fragment>
+
+  <main class="container euai">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="ea__head">
+      <p class="ea__kicker"><Scale size={13} stroke-width={1.75} /> EU AI Act & AVG</p>
+      <h1 class="ea__title">AI-tools en de EU AI Act</h1>
+      <p class="ea__lede">
+        Op <strong>2 augustus 2026</strong> wordt de EU AI Act actief gehandhaafd voor
+        hoog-risico-systemen. Voor Nederlandse organisaties betekent dat: weten welke
+        AI-tools je gebruikt, waar je data heen gaat en welke plichten erbij horen.
+        Hieronder de geverifieerde compliance-signalen per tool — als enige
+        Nederlandstalige bron.
+      </p>
+      <p class="ea__stats">
+        <span><strong>{counts.eu}</strong> tools met EU-hosting-optie</span> ·
+        <span><strong>{counts.dpa}</strong> met verwerkersovereenkomst</span> ·
+        <span><strong>{counts.noTrain}</strong> trainen niet op jouw data</span> ·
+        <span class="ea__stats-high"><strong>{counts.high}</strong> hoog-risico (Annex III)</span>
+      </p>
+      <p class="ea__disclaimer">
+        ⚠️ Dit is een feitelijk overzicht op basis van vendor-documentatie
+        (trust centers, DPA's, security-pagina's), geen juridisch advies. De
+        risicoklasse hangt mede af van hoe jíj een tool inzet. Raadpleeg bij
+        twijfel een specialist.
+      </p>
+    </header>
+
+    <!-- Filters -->
+    <div class="ea__filters" id="ea-filters" role="group" aria-label="Filter op compliance-signaal">
+      <button class="ea__chip ea__chip--on" data-f="">Alles <span>{govTools.length}</span></button>
+      <button class="ea__chip" data-f="eu">EU-hosting <span>{counts.eu}</span></button>
+      <button class="ea__chip" data-f="dpa">Verwerkersovereenkomst <span>{counts.dpa}</span></button>
+      <button class="ea__chip" data-f="notrain">Traint niet op jouw data <span>{counts.noTrain}</span></button>
+      <button class="ea__chip ea__chip--warn" data-f="high">Hoog-risico (HR/werving) <span>{counts.high}</span></button>
+    </div>
+
+    <!-- Tabel -->
+    <div class="ea__tablewrap">
+      <table class="ea__table" id="ea-table">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>EU-hosting</th>
+            <th>DPA</th>
+            <th>AVG-info</th>
+            <th>SOC 2</th>
+            <th>Traint op jouw data</th>
+            <th>AI Act-klasse</th>
+          </tr>
+        </thead>
+        <tbody>
+          {govTools.map((t) => {
+            const risk = t.aiActRiskClass ? (aiActRiskClasses as any)[t.aiActRiskClass] : null;
+            return (
+              <tr
+                data-eu={tri(t.euHostingAvailable)}
+                data-dpa={tri(t.dpaAvailable)}
+                data-notrain={t.dataUsedForTraining === 'no' ? 'yes' : 'no'}
+                data-high={t.aiActRiskClass === 'high' ? 'yes' : 'no'}
+              >
+                <td class="ea__tool">
+                  <a href={`/ai-tools/${t.slug}`}>{t.name}</a>
+                  <span class="ea__cat">{t.category}</span>
+                </td>
+                {[t.euHostingAvailable, t.dpaAvailable, t.gdprReady, t.soc2].map((v) => (
+                  <td class={`ea__tri ea__tri--${tri(v)}`}>
+                    {v === true ? <Check size={15} stroke-width={2.5} /> : v === false ? <X size={15} stroke-width={2.5} /> : <Minus size={15} stroke-width={2} />}
+                  </td>
+                ))}
+                <td class="ea__train">{t.dataUsedForTraining ? (trainLabel[t.dataUsedForTraining] ?? t.dataUsedForTraining) : '—'}</td>
+                <td>
+                  {risk ? <span class="ea__risk" style={`--rc: ${risk.color}`}>{risk.label}</span> : '—'}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <p class="ea__legend">
+      <Check size={13} stroke-width={2.5} /> = geverifieerd beschikbaar ·
+      <X size={13} stroke-width={2.5} /> = geverifieerd niet beschikbaar ·
+      <Minus size={13} stroke-width={2} /> = niet geverifieerd. Sommige opties (EU-hosting, SSO) gelden alleen voor enterprise-plannen — check de toolpagina.
+    </p>
+
+    <!-- Wat moet je als MKB? -->
+    <section class="ea__mkb">
+      <h2><ShieldCheck size={18} stroke-width={1.75} /> Wat moet je als organisatie geregeld hebben?</h2>
+      <ol>
+        <li><strong>Inventariseer je AI-gebruik.</strong> Welke tools gebruiken medewerkers, ook ongevraagd ("schaduw-AI")? Deze pagina helpt bij het beoordelen per tool.</li>
+        <li><strong>AI-geletterdheid (art. 4 — geldt nu al).</strong> Zorg dat medewerkers begrijpen wat AI wel en niet kan en wat ze er niet in mogen plakken.</li>
+        <li><strong>Sluit verwerkersovereenkomsten.</strong> Voor elke tool die persoonsgegevens verwerkt heb je een DPA nodig — zie de kolom hierboven.</li>
+        <li><strong>Extra plichten bij hoog-risico.</strong> Gebruik je AI voor werving en selectie? Dan gelden vanaf 2 augustus 2026 strengere eisen: menselijke controle, kandidaten informeren, logging.</li>
+        <li><strong>Transparantie (art. 50).</strong> AI-gegenereerde content en chatbots moeten als zodanig herkenbaar zijn voor gebruikers en klanten.</li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="ea__faq" aria-label="Veelgestelde vragen">
+      <h2><ShieldAlert size={18} stroke-width={1.75} /> Veelgestelde vragen</h2>
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <p class="ea__source">
+      Signalen geverifieerd tegen officiële trust centers, security-pagina's en
+      DPA-documenten van de leveranciers (juni 2026). Mis je een tool of klopt
+      er iets niet meer? <a href="/over">Laat het ons weten</a> — we corrigeren
+      binnen 48 uur. Meer context: <a href="https://ondernemersplein.overheid.nl/wetten-en-regels/ai-act/" target="_blank" rel="noopener">AI Act op Ondernemersplein <ArrowUpRight size={11} stroke-width={2} /></a>
+    </p>
+  </main>
+</Layout>
+
+<script is:inline>
+  (function () {
+    const chips = document.querySelectorAll('#ea-filters .ea__chip');
+    const rows = document.querySelectorAll('#ea-table tbody tr');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.toggle('ea__chip--on', c === chip));
+        const f = chip.dataset.f;
+        rows.forEach((r) => {
+          r.hidden = !!f && r.dataset[f === 'notrain' ? 'notrain' : f] !== 'yes';
+        });
+      });
+    });
+  })();
+</script>
+
+<style>
+  .euai { padding-top: 80px; max-width: 960px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .ea__head { max-width: 70ch; margin-bottom: var(--space-6); }
+  .ea__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .ea__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .ea__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.65; margin: 0 0 var(--space-3) 0; }
+  .ea__stats { font-size: var(--text-sm); color: var(--text-secondary); margin: 0 0 var(--space-3) 0; }
+  .ea__stats strong { color: var(--text-primary); }
+  .ea__stats-high strong { color: var(--color-warning, #fbbf24); }
+  .ea__disclaimer { font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.85; border-left: 2px solid var(--color-warning, #fbbf24); padding-left: var(--space-3); margin: 0; }
+
+  .ea__filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+  .ea__chip { appearance: none; cursor: pointer; font: inherit; font-size: var(--text-xs); color: var(--text-secondary); background: transparent; border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 4px 14px; transition: all 0.15s ease; }
+  .ea__chip span { opacity: 0.6; }
+  .ea__chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
+  .ea__chip--on { color: var(--primary-bright); border-color: var(--primary-bright); background: color-mix(in oklab, var(--primary-bright) 12%, transparent); }
+  .ea__chip--warn.ea__chip--on { color: var(--color-warning); border-color: var(--color-warning); background: color-mix(in oklab, var(--color-warning) 12%, transparent); }
+
+  .ea__tablewrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); }
+  .ea__table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .ea__table th { text-align: left; font-family: var(--font-mono, monospace); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); padding: var(--space-3); border-bottom: 1px solid var(--border-subtle); white-space: nowrap; }
+  .ea__table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid color-mix(in oklab, var(--border-subtle) 50%, transparent); }
+  .ea__table tr[hidden] { display: none; }
+  .ea__tool { white-space: nowrap; }
+  .ea__tool a { color: var(--text-primary); font-weight: var(--font-semibold); text-decoration: none; }
+  .ea__tool a:hover { color: var(--primary-bright); }
+  .ea__cat { display: block; font-family: var(--font-mono, monospace); font-size: 0.6rem; color: var(--text-secondary); opacity: 0.7; }
+  .ea__tri { text-align: center; }
+  .ea__tri--yes { color: var(--color-success, #4ade80); }
+  .ea__tri--no { color: var(--color-error, #f87171); }
+  .ea__tri--unknown { color: var(--text-secondary); opacity: 0.4; }
+  .ea__train { white-space: nowrap; color: var(--text-secondary); }
+  .ea__risk { font-size: 0.65rem; font-family: var(--font-mono, monospace); text-transform: uppercase; padding: 2px 8px; border-radius: var(--radius-full); border: 1px solid var(--rc); color: var(--rc); white-space: nowrap; }
+
+  .ea__legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--text-secondary); margin: var(--space-3) 0 var(--space-8) 0; }
+
+  .ea__mkb { margin-bottom: var(--space-10); }
+  .ea__mkb h2, .ea__faq h2 { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4) 0; }
+  .ea__mkb ol { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: var(--space-3); color: var(--text-secondary); line-height: 1.6; }
+  .ea__mkb strong { color: var(--text-primary); }
+
+  .ea__faq { margin-bottom: var(--space-8); }
+  .ea__faq details { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-2); }
+  .ea__faq summary { cursor: pointer; font-weight: var(--font-semibold); color: var(--text-primary); }
+  .ea__faq details p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: 1.6; }
+
+  .ea__source { font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.8; max-width: 70ch; }
+  .ea__source a { color: var(--primary-bright); }
+</style>

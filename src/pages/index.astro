@@ -150,6 +150,14 @@ export const prerender = true;
       <p class="hero__hint">
         {tools.length}+ tools · {sortedCategories.length} categorieën · prijs, AVG-status en gebruiksgemak per tool
       </p>
+
+      <nav class="hero__taken" aria-label="Populaire taken">
+        <span class="hero__taken-label">Populaire taken:</span>
+        <a href="/ai-voor/afbeelding-maken">AI-afbeelding maken</a>
+        <a href="/ai-voor/presentatie-maken">Presentatie maken</a>
+        <a href="/ai-voor/notulen-maken">Notulen maken</a>
+        <a href="/vind-je-beste-ai-tool" class="hero__taken-all">alle taken →</a>
+      </nav>
     </header>
 
     {/* Quick-filters tijdelijk op hold — werken nog niet goed genoeg.
@@ -491,6 +499,27 @@ export const prerender = true;
     color: var(--text-muted);
     margin: var(--space-4) 0 0 0;
   }
+
+  .hero__taken {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: var(--space-2) var(--space-3);
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+  }
+  .hero__taken-label { color: var(--text-muted); }
+  .hero__taken a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    padding: 3px 12px;
+    transition: all 0.15s ease;
+  }
+  .hero__taken a:hover { color: var(--primary-bright); border-color: var(--primary-bright); }
+  .hero__taken-all { border: none !important; color: var(--primary-bright) !important; }
 
   /* ── Quick-filters ──────────────────────────────── */
   .quick-row {

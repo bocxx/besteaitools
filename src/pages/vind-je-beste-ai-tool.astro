@@ -13,6 +13,7 @@ import Layout from '../layouts/Layout.astro';
 import { Compass, Search, ShieldCheck, Zap, UserX, Gift, ArrowRight } from '@lucide/astro';
 import ToolDirectory from '../components/ToolDirectory.astro';
 import { getAllTools, getBusinessFunctionSections } from '../lib/tools-engine';
+import { taakContent } from '../lib/taak-content';
 import { siteConfig } from '../config/site';
 
 // ── Data ──────────────────────────────────────────────
@@ -120,6 +121,17 @@ const breadcrumbJsonLd = {
         Zoek je een AI-tool voor een specifieke taak? Open de pillar-pagina van je
         bedrijfsfunctie voor de complete, geranked-op-buzz selectie — of filter hieronder zelf verder.
       </p>
+      <ul class="vind__fn-grid vind__fn-grid--taken">
+        {Object.values(taakContent).map((t) => (
+          <li>
+            <a class="vind__fn" href={`/ai-voor/${t.key}`}>
+              <h3 class="vind__fn-name">{t.title}</h3>
+              <p class="vind__fn-desc">{t.metaDescription.split('?')[0]}? Snelle keuze + alle opties, incl. wat gratis kan.</p>
+              <p class="vind__fn-count">{t.picks.length} tools <ArrowRight size={13} stroke-width={1.75} /></p>
+            </a>
+          </li>
+        ))}
+      </ul>
       <ul class="vind__fn-grid">
         {sections.map((s) => (
           <li>
@@ -169,6 +181,8 @@ const breadcrumbJsonLd = {
   .vind__intent { margin-bottom: var(--space-12); }
   .vind__intent-lede { font-size: var(--text-base); color: var(--text-secondary); max-width: 70ch; margin: 0 0 var(--space-6) 0; }
   .vind__fn-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .vind__fn-grid--taken { margin-bottom: var(--space-4); }
+  .vind__fn-grid--taken .vind__fn { border-color: color-mix(in oklab, var(--primary-bright) 30%, var(--border-subtle)); }
   .vind__fn { display: block; height: 100%; padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-glass); text-decoration: none; transition: border-color var(--transition-fast), transform var(--transition-fast); }
   .vind__fn:hover { border-color: var(--primary-bright); transform: translateY(-1px); }
   .vind__fn-name { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--font-semibold); color: var(--text-primary); margin: 0 0 var(--space-2) 0; }
