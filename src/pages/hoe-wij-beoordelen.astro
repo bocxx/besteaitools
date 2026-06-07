@@ -1,0 +1,162 @@
+---
+/**
+ * /hoe-wij-beoordelen — Review-methodologie & onafhankelijkheid
+ *
+ * Citeerbare methodologie-pagina (GEO + vertrouwen): hoe verdicts tot stand
+ * komen, de kwaliteitsbar per tool, het verificatieproces, en wat we
+ * principieel NIET doen (betaalde posities). Linkt naar /over voor de
+ * volledige data-pipeline-uitleg.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { getAllTools } from '../lib/tools-engine';
+import { ArrowLeft, ShieldCheck, Scale, CheckCircle2, XCircle, Activity, PenTool, BadgeEuro } from '@lucide/astro';
+
+const tools = await getAllTools();
+const toolCount = tools.length;
+const verifiedCount = tools.filter(t => t.lastReviewedAt).length;
+const lastVerified = tools
+  .map(t => t.lastReviewedAt)
+  .filter(Boolean)
+  .sort()
+  .at(-1);
+const lastVerifiedLabel = lastVerified
+  ? new Date(lastVerified as string).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
+  : null;
+
+const qualityBar = [
+  { field: 'Verdict', q: 'Wat is ons redactionele oordeel — wat doet deze tool uniek goed of slecht?', detail: 'Eén stelling plus één eerlijke nuance. Niet wat de leverancier claimt, maar wat wij concluderen.' },
+  { field: 'Taken (jobs-to-be-done)', q: 'Welke concrete taak doe je morgen met deze tool?', detail: 'Geen feature-lijst maar taken in werkwoordvorm: "notulen automatisch uitwerken", "React-componenten genereren".' },
+  { field: 'Beste alternatief', q: 'Wat is de beste vervanger?', detail: 'Elke tool verwijst naar een serieus alternatief — ook als dat een concurrent van onze "favoriet" is.' },
+  { field: 'Anti-use-cases', q: 'Wanneer kies je deze tool juist níét?', detail: 'Het eerlijkheids-signaal dat vrijwel geen enkele directory geeft: situaties waarin je beter iets anders kiest.' },
+];
+
+const notDoing = [
+  'Posities of rankings verkopen — geen "featured" plekken, geen biedingen, geen betaalde badges.',
+  'Verdicts aanpassen op verzoek van leveranciers.',
+  'Tools opnemen omdat ze betalen — opname is altijd een redactiebeslissing.',
+  'Affiliate-deals die de volgorde of het oordeel beïnvloeden.',
+  'Verouderde claims laten staan: elke toolpagina toont de laatste verificatiedatum.',
+];
+
+const proces = [
+  { step: '1. Signaal', detail: 'Onze data-pipeline scant dagelijks 10+ bronnen (nieuws, GitHub, Reddit, HN, Product Hunt, X, nieuwsbrieven) en meldt nieuwe tools met aantoonbare tractie.' },
+  { step: '2. Verificatie', detail: 'Vóór publicatie checken we de officiële site, actuele prijzen en features tegen primaire bronnen. Geen stergetallen of claims zonder live check — en we letten op SEO-clones van populaire tools.' },
+  { step: '3. Kwaliteitsbar', detail: `Een tool gaat pas live als alle vier de redactionele velden staan (zie hieronder). Dat geldt vandaag voor ${toolCount}/${toolCount} gepubliceerde tools.` },
+  { step: '4. Onderhoud', detail: 'Buzz-stats verversen dagelijks automatisch. Redactionele feiten (pricing, features, status) worden periodiek opnieuw geverifieerd — gestopte tools markeren we eerlijk of archiveren we.' },
+];
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Hoe wij beoordelen — debesteaitools.nl',
+  description: `Onze review-methodologie: onafhankelijke verdicts, een vierdelige kwaliteitsbar en dagelijkse data. Posities zijn niet te koop. ${verifiedCount} tools geverifieerd, laatst op ${lastVerifiedLabel}.`,
+  url: `${siteOrigin}/hoe-wij-beoordelen`,
+};
+---
+
+<Layout
+  title="Hoe wij beoordelen — onafhankelijke AI-tool reviews | debesteaitools.nl"
+  description={`Onze methodologie: onafhankelijke verdicts, anti-use-cases en dagelijkse data over ${toolCount} AI-tools. Posities zijn niet te koop — zo komen onze oordelen tot stand.`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container hwb">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="hwb__head">
+      <p class="hwb__kicker"><Scale size={13} stroke-width={1.75} /> Methodologie</p>
+      <h1 class="hwb__title">Hoe wij beoordelen</h1>
+      <p class="hwb__lede">
+        Bij de meeste AI-tool-directories is de "top" te koop: betaalde posities,
+        gekochte badges, ongecheckte listings. Wij doen dat anders. Elk oordeel
+        op deze site is redactioneel, elke claim is geverifieerd tegen primaire
+        bronnen, en geen enkele positie is te koop.
+      </p>
+      {lastVerifiedLabel && (
+        <p class="hwb__verified">
+          <ShieldCheck size={14} stroke-width={2} />
+          Alle {verifiedCount} tools feitelijk geverifieerd — laatste volledige verificatieronde: {lastVerifiedLabel}
+        </p>
+      )}
+    </header>
+
+    <section class="hwb__section">
+      <h2><Activity size={18} stroke-width={1.75} /> Het proces</h2>
+      <ol class="hwb__steps">
+        {proces.map((p) => (
+          <li><strong>{p.step}</strong><span>{p.detail}</span></li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="hwb__section">
+      <h2><PenTool size={18} stroke-width={1.75} /> De kwaliteitsbar: vier verplichte oordelen per tool</h2>
+      <p class="hwb__intro">
+        Een toolpagina mag pas live als hij vier dingen levert die je niet uit
+        een marketingpagina kunt halen:
+      </p>
+      <ul class="hwb__bar">
+        {qualityBar.map((b) => (
+          <li>
+            <CheckCircle2 size={15} stroke-width={2} class="ok" />
+            <div>
+              <strong>{b.field}</strong> — <em>{b.q}</em>
+              <p>{b.detail}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="hwb__section">
+      <h2><BadgeEuro size={18} stroke-width={1.75} /> Wat wij principieel niet doen</h2>
+      <ul class="hwb__not">
+        {notDoing.map((n) => (
+          <li><XCircle size={15} stroke-width={2} class="nope" /> {n}</li>
+        ))}
+      </ul>
+      <p class="hwb__note">
+        Hoe de dagelijkse buzz-scores, trendfases en databronnen precies werken
+        lees je op <a href="/over">de over-pagina</a>. Fout gezien? Mail ons —
+        we corrigeren binnen 48 uur.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hwb { padding-top: 80px; max-width: 760px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .hwb__head { margin-bottom: var(--space-8); }
+  .hwb__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .hwb__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .hwb__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.65; margin: 0 0 var(--space-4) 0; }
+  .hwb__verified { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--color-success, #4ade80); margin: 0; }
+
+  .hwb__section { margin-bottom: var(--space-10, 2.5rem); }
+  .hwb__section h2 { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4) 0; }
+  .hwb__intro { color: var(--text-secondary); margin: 0 0 var(--space-4) 0; }
+
+  .hwb__steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); counter-reset: none; }
+  .hwb__steps li { display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .hwb__steps strong { color: var(--text-primary); }
+  .hwb__steps span { color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.55; }
+
+  .hwb__bar { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+  .hwb__bar li { display: flex; gap: var(--space-3); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); }
+  .hwb__bar :global(.ok) { flex: none; margin-top: 3px; color: var(--color-success, #4ade80); }
+  .hwb__bar strong { color: var(--text-primary); }
+  .hwb__bar em { color: var(--text-secondary); font-style: italic; }
+  .hwb__bar p { margin: 4px 0 0 0; color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.55; }
+
+  .hwb__not { list-style: none; margin: 0 0 var(--space-5) 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .hwb__not li { display: flex; gap: var(--space-2); align-items: flex-start; color: var(--text-secondary); line-height: 1.55; }
+  .hwb__not :global(.nope) { flex: none; margin-top: 4px; color: var(--color-error, #f87171); }
+  .hwb__note { color: var(--text-secondary); font-size: var(--text-sm); }
+  .hwb__note a { color: var(--primary-bright); }
+</style>

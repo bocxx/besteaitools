@@ -1,0 +1,192 @@
+---
+/**
+ * /ai-voor/[taak] — taak-landingspagina's
+ *
+ * SEO/GEO-pagina's op bewezen NL-keywordclusters ("ai afbeelding maken
+ * gratis", "presentatie maken met ai", "notulen maken met ai"). Gecureerde
+ * volgorde + reden per tool uit taak-content.ts, gecombineerd met live
+ * tool-data (cards, prijzen, verdicts). Kern van de site-missie: snel de
+ * beste tool voor je taak.
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import ToolCard from '../../components/molecules/ToolCard.astro';
+import { getAllTools } from '../../lib/tools-engine';
+import { taakContent } from '../../lib/taak-content';
+import { buildFaqPageLd } from '../../lib/seo-helpers';
+import { siteConfig } from '../../config/site';
+import { ArrowLeft, Target, Gift, CheckCircle2, ArrowRight, ShieldCheck } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const tools = await getAllTools();
+  const bySlug = new Map(tools.map(t => [t.slug, t]));
+  return Object.values(taakContent).map((taak) => ({
+    params: { taak: taak.key },
+    props: {
+      taak,
+      picks: taak.picks
+        .map(p => ({ ...p, tool: bySlug.get(p.slug) }))
+        .filter(p => p.tool),
+    },
+  }));
+}
+
+const { taak, picks } = Astro.props;
+const top3 = picks.slice(0, 3);
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const pageUrl = `${siteOrigin}/ai-voor/${taak.key}`;
+
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: taak.title,
+  description: taak.metaDescription,
+  url: pageUrl,
+  numberOfItems: picks.length,
+  itemListElement: picks.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.tool!.name,
+    url: `${siteOrigin}/ai-tools/${p.slug}`,
+  })),
+};
+const faqJsonLd = buildFaqPageLd(taak.faqs);
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+    { '@type': 'ListItem', position: 2, name: 'Vind je tool', item: `${siteOrigin}/vind-je-beste-ai-tool` },
+    { '@type': 'ListItem', position: 3, name: taak.title, item: pageUrl },
+  ],
+};
+
+const otherTaken = Object.values(taakContent).filter(t => t.key !== taak.key);
+---
+
+<Layout title={`${taak.metaTitle} | debesteaitools.nl`} description={taak.metaDescription}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  </Fragment>
+
+  <main class="container taak">
+    <a href="/vind-je-beste-ai-tool" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Alle taken</a>
+
+    <header class="tk__head">
+      <p class="tk__kicker"><Target size={13} stroke-width={1.75} /> Beste tool voor je taak</p>
+      <h1 class="tk__title">{taak.title}</h1>
+      {taak.intro.map((p) => <p class="tk__lede">{p}</p>)}
+      <p class="tk__verified">
+        <ShieldCheck size={13} stroke-width={2} />
+        <span>Redactionele selectie, feiten geverifieerd · <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a></span>
+      </p>
+    </header>
+
+    <!-- Snelle keuze: top 3 -->
+    <section class="tk__quick" aria-label="Snelle keuze">
+      <h2>De snelle keuze</h2>
+      <ol class="tk__top3">
+        {top3.map((p, i) => (
+          <li>
+            <span class="tk__rank">{i + 1}</span>
+            <div>
+              <a class="tk__toolname" href={`/ai-tools/${p.slug}`}>{p.tool!.name}</a>
+              {p.gratis && <span class="tk__gratis"><Gift size={11} stroke-width={2} /> {p.gratis}</span>}
+              <p>{p.reden}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- Alle opties -->
+    <section class="tk__all" aria-label="Alle opties">
+      <h2>Alle opties vergeleken</h2>
+      <div class="tk__list">
+        {picks.map((p) => (
+          <div class="tk__pick">
+            <div class="tk__pick-why">
+              <CheckCircle2 size={14} stroke-width={2} />
+              <p>{p.reden}</p>
+            </div>
+            <ToolCard tool={p.tool!} />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Gratis-hoek -->
+    <section class="tk__free">
+      <h2><Gift size={18} stroke-width={1.75} /> Wat kan er gratis?</h2>
+      <p>{taak.gratisNote}</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="tk__faq" aria-label="Veelgestelde vragen">
+      <h2>Veelgestelde vragen</h2>
+      {taak.faqs.map((f) => (
+        <details>
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <!-- Andere taken -->
+    <nav class="tk__more" aria-label="Andere taken">
+      <h2>Andere taken</h2>
+      <ul>
+        {otherTaken.map((t) => (
+          <li><a href={`/ai-voor/${t.key}`}>{t.title} <ArrowRight size={13} stroke-width={2} /></a></li>
+        ))}
+        <li><a href="/vind-je-beste-ai-tool">Vind je beste AI-tool (alle taken) <ArrowRight size={13} stroke-width={2} /></a></li>
+      </ul>
+    </nav>
+  </main>
+</Layout>
+
+<style>
+  .taak { padding-top: 80px; max-width: 880px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .tk__head { max-width: 66ch; margin-bottom: var(--space-8); }
+  .tk__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .tk__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .tk__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.65; margin: 0 0 var(--space-3) 0; }
+  .tk__verified { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--color-success, #4ade80); margin: var(--space-2) 0 0 0; }
+  .tk__verified span { color: var(--text-secondary); }
+  .tk__verified a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
+
+  .tk__quick { margin-bottom: var(--space-10); }
+  .tk__quick h2, .tk__all h2, .tk__free h2, .tk__faq h2, .tk__more h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4) 0; display: flex; align-items: center; gap: var(--space-2); }
+  .tk__top3 { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); counter-reset: none; }
+  .tk__top3 li { display: flex; gap: var(--space-4); padding: var(--space-4); border: 1px solid color-mix(in oklab, var(--primary-bright) 25%, var(--border-subtle)); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .tk__rank { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: var(--radius-full); background: color-mix(in oklab, var(--primary-bright) 18%, transparent); color: var(--primary-bright); font-family: var(--font-mono, monospace); font-weight: var(--font-bold); }
+  .tk__toolname { font-weight: var(--font-semibold); color: var(--text-primary); text-decoration: none; font-size: var(--text-lg); }
+  .tk__toolname:hover { color: var(--primary-bright); }
+  .tk__gratis { display: inline-flex; align-items: center; gap: 4px; margin-left: var(--space-2); font-size: 0.65rem; font-family: var(--font-mono, monospace); text-transform: uppercase; padding: 2px 8px; border-radius: var(--radius-full); background: color-mix(in oklab, var(--color-success, #4ade80) 16%, transparent); color: var(--color-success, #4ade80); }
+  .tk__top3 p { margin: var(--space-1) 0 0 0; color: var(--text-secondary); line-height: 1.55; }
+
+  .tk__all { margin-bottom: var(--space-10); }
+  .tk__list { display: flex; flex-direction: column; gap: var(--space-5); }
+  .tk__pick-why { display: flex; gap: var(--space-2); align-items: flex-start; margin-bottom: var(--space-2); color: var(--text-secondary); }
+  .tk__pick-why :global(svg) { flex: none; margin-top: 4px; color: var(--primary-bright); }
+  .tk__pick-why p { margin: 0; line-height: 1.55; font-size: var(--text-sm); }
+
+  .tk__free { margin-bottom: var(--space-10); padding: var(--space-5); border: 1px solid color-mix(in oklab, var(--color-success, #4ade80) 30%, var(--border-subtle)); border-radius: var(--radius-lg, 12px); }
+  .tk__free p { margin: 0; color: var(--text-secondary); line-height: 1.6; }
+
+  .tk__faq { margin-bottom: var(--space-10); }
+  .tk__faq details { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-2); }
+  .tk__faq summary { cursor: pointer; font-weight: var(--font-semibold); color: var(--text-primary); }
+  .tk__faq details p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: 1.6; }
+
+  .tk__more ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .tk__more a { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-bright); text-decoration: none; }
+  .tk__more a:hover { text-decoration: underline; }
+</style>

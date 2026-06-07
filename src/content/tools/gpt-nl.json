@@ -1,0 +1,91 @@
+{
+  "name": "GPT-NL",
+  "category": "chatbots",
+  "websiteUrl": "https://gpt-nl.nl",
+  "shortDescription": "Soeverein Nederlands taalmodel van TNO, SURF en NFI — het eerste LLM dat aantoonbaar AVG-conform is getraind",
+  "headlineValueProp": "Een Nederlands taalmodel op Nederlandse infrastructuur, getraind op data waarvoor expliciet toestemming is gegeven",
+  "longDescription": "GPT-NL is het soevereine Nederlandse taalmodel, ontwikkeld door TNO, SURF en het Nederlands Forensisch Instituut met overheidsfinanciering. Het onderscheidt zich radicaal van commerciële modellen: het is uitsluitend getraind op data waarvoor expliciet toestemming is gegeven, persoonsgegevens van niet-publieke personen zijn vooraf verwijderd of geanonimiseerd, en contentleveranciers worden gecompenseerd. Daarmee is het volgens TNO het eerste grote taalmodel dat aantoonbaar aan de AVG voldoet — in januari 2026 bekroond met de Nederlandse Privacy Award. Sinds februari 2026 draait de eerste release bij een selecte groep launching customers, waaronder overheidsorganisaties die het op eigen infrastructuur testen voor gevoelige informatie. Een bredere uitrol — mogelijk via hostingproviders en SURF's platform voor onderwijs en onderzoek — staat gepland voor de tweede helft van 2026. Voor consumenten is er nog geen toegang.",
+  "verdict": "GPT-NL is geen concurrent voor ChatGPT of Claude op capaciteiten — het is bewust kleiner en getraind op een veel beperktere, maar volledig rechtmatige dataset. De waarde zit ergens anders: organisaties die met hooggevoelige of gereguleerde data werken krijgen voor het eerst een taalmodel waarvan de herkomst, training en hosting volledig controleerbaar zijn. Voor algemene taken blijft een frontier-model de betere keuze.",
+  "whyListed": "Het eerste soevereine Nederlandse taalmodel en winnaar van de Nederlandse Privacy Award 2026. Voor Nederlandse overheden en gereguleerde sectoren is dit de relevantste AI-ontwikkeling van het jaar — ook al kun je het nog niet zelf gebruiken.",
+  "bestFor": "Nederlandse overheidsorganisaties en gereguleerde sectoren die taalmodellen willen inzetten op gevoelige data zonder afhankelijkheid van Amerikaanse of Chinese aanbieders.",
+  "primaryJobsToBeDone": [
+    "Gevoelige documenten samenvatten en analyseren op eigen of Nederlandse infrastructuur",
+    "AI-taaltaken uitvoeren binnen AVG-kaders waar commerciële cloud-LLM's juridisch niet mogen",
+    "Nederlandstalige tekstverwerking draaien zonder dat data het land verlaat"
+  ],
+  "antiUseCases": [
+    "Algemene assistent-taken zoals brainstormen, coderen of research — frontier-modellen zijn daar aanzienlijk sterker in",
+    "Particulieren en bedrijven die nu direct toegang willen — het model is alleen beschikbaar voor launching customers, bredere uitrol volgt in H2 2026",
+    "Toepassingen die multimodaliteit (beeld, audio) of zeer lange context vereisen"
+  ],
+  "useCases": [
+    "Overheidsinstanties die documentverwerking testen op lokale infrastructuur",
+    "Forensische en juridische tekstanalyse waar datasoevereiniteit een harde eis is",
+    "Onderwijs- en onderzoeksinstellingen via SURF's deployment-platform (in ontwikkeling)"
+  ],
+  "strengths": [
+    "Aantoonbaar AVG-conform: getraind op rechtmatige data met vooraf geanonimiseerde persoonsgegevens — winnaar Nederlandse Privacy Award 2026",
+    "Volledige transparantie over trainingsbronnen, met compensatie voor contentleveranciers",
+    "Draait op Nederlandse infrastructuur — data verlaat het land niet"
+  ],
+  "limitations": [
+    "Aanzienlijk minder capabel dan frontier-modellen als GPT, Claude of Gemini — de rechtmatige dataset is veel kleiner",
+    "Nog niet publiek beschikbaar: alleen launching customers (betaald TNO-onderzoekstraject van 3-6 maanden), bredere uitrol in H2 2026",
+    "Geen consumentenproduct: geen kant-en-klare chat-app, implementatie vraagt technische capaciteit"
+  ],
+  "bestAlternative": "mistral",
+  "mentionAliases": [
+    "gpt nl",
+    "gptnl"
+  ],
+  "pricing": "Nog geen publieke prijzen. Launching customers betalen voor een TNO-onderzoeksprogramma van 3-6 maanden; eindgebruikersprijzen worden lager maar zijn nog niet vastgesteld. Bredere uitrol volgt in de tweede helft van 2026.",
+  "pricingModel": "enterprise",
+  "difficulty": "advanced",
+  "openSource": false,
+  "tags": [
+    "nederlands-taalmodel",
+    "soevereine-ai",
+    "avg",
+    "overheid",
+    "tno"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations",
+    "legal"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Rechtmatig getraind taalmodel",
+      "description": "Uitsluitend getraind op data met expliciete toestemming — persoonsgegevens van niet-publieke personen vooraf verwijderd of geanonimiseerd.",
+      "group": "core"
+    },
+    {
+      "title": "Nederlandse taal en context",
+      "description": "Gebouwd voor Nederlandstalige tekstverwerking, met Nederlandse bronnen en context als uitgangspunt in plaats van vertaalde Engelse data.",
+      "group": "core"
+    },
+    {
+      "title": "Lokale en Nederlandse hosting",
+      "description": "Draait op eigen of Nederlandse infrastructuur — geschikt voor hooggevoelige informatie die de organisatie niet mag verlaten.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Transparante trainingsbronnen",
+      "description": "Volledige openheid over welke data gebruikt is, met een licentiemodel dat contentleveranciers compenseert.",
+      "group": "enterprise"
+    },
+    {
+      "title": "Launching customer-programma",
+      "description": "Sinds februari 2026 testen overheidsorganisaties en TNO het model in productie binnen een begeleid onderzoekstraject.",
+      "group": "beta"
+    },
+    {
+      "title": "SURF-platform voor onderwijs en onderzoek",
+      "description": "SURF ontwikkelt een eigen deployment-platform zodat onderwijs- en onderzoeksinstellingen GPT-NL kunnen gebruiken.",
+      "group": "beta"
+    }
+  ],
+  "lastUpdated": "2026-06-06",
+  "lastReviewedAt": "2026-06-06"
+}
