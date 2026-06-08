@@ -14,6 +14,16 @@ import { Compass, Search, ShieldCheck, Zap, UserX, Gift, ArrowRight } from '@luc
 import ToolDirectory from '../components/ToolDirectory.astro';
 import { getAllTools, getBusinessFunctionSections } from '../lib/tools-engine';
 import { taakContent } from '../lib/taak-content';
+
+// Splits taakpagina's in "per taak" (werkwoord) en "voor wie" (doelgroep/rol),
+// zodat de hub net als de concurrent een aparte 'Voor wie ben jij?'-sectie heeft.
+const doelgroepKeys = new Set([
+  'studenten', 'onderzoek', 'zzp', 'freelancers', 'docenten', 'juristen',
+  'recruiters', 'accountants', 'sales', 'marketeers', 'e-commerce',
+  'fotografen', 'podcasters', 'coaches',
+]);
+const taakDoelgroepen = Object.values(taakContent).filter((t) => doelgroepKeys.has(t.key));
+const taakTaken = Object.values(taakContent).filter((t) => !doelgroepKeys.has(t.key));
 import { siteConfig } from '../config/site';
 
 // ── Data ──────────────────────────────────────────────
@@ -118,15 +128,33 @@ const breadcrumbJsonLd = {
     <section class="vind__intent" aria-labelledby="intent-heading">
       <h2 id="intent-heading" class="vind__h2">De beste AI-tool per taak</h2>
       <p class="vind__intent-lede">
-        Zoek je een AI-tool voor een specifieke taak? Open de pillar-pagina van je
-        bedrijfsfunctie voor de complete, geranked-op-buzz selectie — of filter hieronder zelf verder.
+        Zoek je een AI-tool voor een specifieke taak? Open de pagina van je
+        taak voor de complete, gecureerde selectie — of filter hieronder zelf verder.
       </p>
       <ul class="vind__fn-grid vind__fn-grid--taken">
-        {Object.values(taakContent).map((t) => (
+        {taakTaken.map((t) => (
           <li>
             <a class="vind__fn" href={`/ai-voor/${t.key}`}>
               <h3 class="vind__fn-name">{t.title}</h3>
               <p class="vind__fn-desc">{t.metaDescription.split('?')[0]}? Snelle keuze + alle opties, incl. wat gratis kan.</p>
+              <p class="vind__fn-count">{t.picks.length} tools <ArrowRight size={13} stroke-width={1.75} /></p>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <h2 class="vind__h2" style="margin-top: var(--space-8);">Voor wie ben jij?</h2>
+      <p class="vind__intent-lede">
+        Direct naar de tools die passen bij jouw rol of situatie — met aandacht
+        voor wat in jouw vak telt: AVG, rechten, terugverdientijd en de grenzen
+        van AI.
+      </p>
+      <ul class="vind__fn-grid vind__fn-grid--taken">
+        {taakDoelgroepen.map((t) => (
+          <li>
+            <a class="vind__fn" href={`/ai-voor/${t.key}`}>
+              <h3 class="vind__fn-name">{t.title}</h3>
+              <p class="vind__fn-desc">{t.metaDescription.split('?')[0]}? Gecureerde keuze, eerlijk over kosten en grenzen.</p>
               <p class="vind__fn-count">{t.picks.length} tools <ArrowRight size={13} stroke-width={1.75} /></p>
             </a>
           </li>
