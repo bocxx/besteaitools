@@ -8,6 +8,7 @@ import Badge from '../../components/atoms/Badge.astro';
 import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
 import PhaseBadge from '../../components/atoms/PhaseBadge.astro';
 import { getComparisonPairs } from '../../lib/tools-engine';
+import { comparisonMetaTitle, comparisonMetaDescription } from '../../lib/seo-helpers';
 import { toolCategories, trendDirections, pricingModels } from '../../lib/tools-schema';
 import { ArrowLeft, Star, ExternalLink, TrendingUp, TrendingDown, Minus } from '@lucide/astro';
 import type { Tool } from '../../types/tools-domain';
@@ -50,14 +51,13 @@ function buildSparkline(tool: Tool, color: string, width = 200, height = 40): st
 
 const catA = toolCategories[toolA.category];
 const catB = toolCategories[toolB.category];
-const year = new Date().getFullYear();
 
 export const prerender = true;
 ---
 
 <Layout
-  title={`${toolA.name} vs ${toolB.name} — Vergelijking ${year} | debesteaitools.nl`}
-  description={`${toolA.name} of ${toolB.name} kiezen? Vergelijk buzz score, groei, functies en prijs — objectief gebaseerd op live data.`}
+  title={comparisonMetaTitle(toolA.name, toolB.name)}
+  description={comparisonMetaDescription(toolA.name, toolB.name)}
 >
   <main class="container" style="padding-top: 80px; max-width: 900px;">
 

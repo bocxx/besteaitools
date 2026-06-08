@@ -24,9 +24,10 @@ type View = 'launches' | 'rankings';
 const rawView = Astro.url.searchParams.get('view');
 const view: View = rawView === 'rankings' ? 'rankings' : 'launches';
 
+const year = new Date().getFullYear();
 const title = view === 'rankings'
-  ? 'AI Tools Radar — Rankings deze week | debesteaitools.nl'
-  : 'AI Tools Radar — Recent gelanceerd | debesteaitools.nl';
+  ? `AI-tools rankings ${year}: stijgers, dalers & nieuwkomers | debesteaitools.nl`
+  : `Nieuwe AI-tools ${year}: recent gelanceerd & trending | debesteaitools.nl`;
 
 const description = view === 'rankings'
   ? 'Wekelijkse stijgers, dalers en nieuwkomers in de AI-tools-markt. Bijgehouden op basis van buzz, GitHub-sterren en social signals.'

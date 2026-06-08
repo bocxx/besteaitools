@@ -19,10 +19,12 @@ import type { ToolCategoryKey } from './tools-schema';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-/** Tool detail page meta title */
+/** Tool detail page meta title.
+ *  Front-load tool-naam + commerciële modifiers (prijzen/alternatieven) die
+ *  mensen daadwerkelijk intikken bij een tool-naam. De categorie als filler
+ *  ("– X AI Tool") is geschrapt: die voegt voor de zoeker niets toe. */
 export function toolMetaTitle(tool: Tool): string {
-  const cat = toolCategories[tool.category];
-  return `${tool.name} Review (${CURRENT_YEAR}) – ${cat.name} AI Tool | debesteaitools.nl`;
+  return `${tool.name} review (${CURRENT_YEAR}): prijzen, functies & alternatieven | debesteaitools.nl`;
 }
 
 /** Tool detail page meta description */
