@@ -71,7 +71,10 @@ const modifiedIso = toIsoString(modifiedTime);
     <Font cssVariable="--font-geist" />
     <Font cssVariable="--font-jetbrains-mono" />
     <link rel="alternate" type="application/rss+xml" title="AI Tools Radar — debesteaitools.nl" href="/rss.xml" />
-    <link rel="preconnect" href="https://www.google.com" crossorigin />
+    <!-- Favicon-service voor tool-logo's: non-CORS img-requests, dus preconnect
+         zonder crossorigin (anders wordt de connectie niet hergebruikt) + dns-prefetch fallback. -->
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 

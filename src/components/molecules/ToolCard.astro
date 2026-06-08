@@ -41,7 +41,8 @@ const scores = tool.scores;
 const riskFlags = stats?.risk_flags ?? [];
 
 // Favicon URL from Google's service
-const domain = new URL(tool.websiteUrl).hostname;
+let domain = '';
+try { domain = new URL(tool.websiteUrl).hostname; } catch { domain = ''; }
 const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
@@ -57,7 +58,7 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
           <Zap size={10} stroke-width={2} /> Snel inzetbaar
         </span>
       )}
-      <img src={faviconUrl} alt="" class="tool-card__logo" width="24" height="24" loading="lazy" />
+      <img src={faviconUrl} alt="" class="tool-card__logo" width="24" height="24" loading="lazy" decoding="async" fetchpriority="low" />
     </header>
 
     <!-- Tool name + description -->
