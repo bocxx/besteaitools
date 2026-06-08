@@ -1,0 +1,230 @@
+---
+/**
+ * /gratis-ai-tools — "De beste gratis AI-tools, per taak"
+ *
+ * Mikt op het hoge-volume consumenten-cluster "gratis ai tools" / "beste
+ * gratis ai tools". Per taak de beste écht-gratis opties, met eerlijke uitleg
+ * over wat "gratis" betekent (limieten, watermerk). Live tool-data, ItemList/
+ * FAQ-schema, interne links naar taakpagina's en de /?gratis-filter.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { getAllTools } from '../lib/tools-engine';
+import { ArrowLeft, Gift, ShieldCheck, ArrowRight, ExternalLink } from '@lucide/astro';
+
+const year = new Date().getFullYear();
+const tools = await getAllTools();
+const bySlug = new Map(tools.map((t) => [t.slug, t]));
+
+// Per taak: gratis aanraders + wat je gratis kunt (eerlijk over de grens).
+type Pick = { slug: string; gratis: string };
+type Group = { titel: string; taak?: string; picks: Pick[] };
+
+const groepen: Group[] = [
+  { titel: 'Chatten & schrijven', taak: 'tekst-schrijven', picks: [
+    { slug: 'chatgpt', gratis: 'Ruime gratis versie voor tekst, vragen en beeld — met dag-limieten op de slimste modellen.' },
+    { slug: 'claude', gratis: 'Gratis basisplan; fijn voor langere, natuurlijke teksten. Beperkt aantal berichten per dag.' },
+    { slug: 'gemini', gratis: 'Gratis met een Google-account, inclusief beeld — sterk binnen Gmail en Docs.' },
+    { slug: 'deepl', gratis: 'Gratis vertalen en je toon verbeteren (DeepL Write) voor losse teksten.' },
+  ]},
+  { titel: 'Beeld maken', taak: 'afbeelding-maken', picks: [
+    { slug: 'gemini', gratis: 'Gratis beeld maken én bewerken in de chat, in het Nederlands.' },
+    { slug: 'ideogram', gratis: 'Gratis credits per week — de beste keuze als er tekst in je beeld moet.' },
+    { slug: 'krea', gratis: 'Gratis dagcredits voor realtime genereren en upscalen.' },
+    { slug: 'stable-diffusion', gratis: 'Volledig gratis en onbeperkt als je het lokaal draait (eigen videokaart nodig).' },
+  ]},
+  { titel: 'Foto bewerken', taak: 'foto-bewerken', picks: [
+    { slug: 'removebg', gratis: 'Gratis achtergrond verwijderen in één klik (op lagere resolutie).' },
+    { slug: 'photoroom', gratis: '250 gratis exports per maand, met nette nieuwe achtergrond.' },
+    { slug: 'canva-ai', gratis: 'Achtergrond weg, retoucheren en ontwerpen op het gratis plan.' },
+  ]},
+  { titel: 'Video maken', taak: 'video-maken', picks: [
+    { slug: 'capcut', gratis: 'Gratis monteren met AI-hulp en de beste auto-ondertitels.' },
+    { slug: 'opus-clip', gratis: 'Gratis credits per maand om lange video tot shorts te knippen.' },
+    { slug: 'runway', gratis: 'Gratis startcredits om AI-videogeneratie te proberen.' },
+  ]},
+  { titel: 'Presentaties', taak: 'presentatie-maken', picks: [
+    { slug: 'gamma', gratis: 'Gratis plan met credits — complete decks (met klein watermerk).' },
+    { slug: 'canva-ai', gratis: 'Gratis presentatie-templates met AI-tekenhulp.' },
+  ]},
+  { titel: 'Notuleren', taak: 'notulen-maken', picks: [
+    { slug: 'fathom', gratis: 'De gulste: onbeperkt gratis opnemen, transcriberen en samenvatten.' },
+    { slug: 'granola', gratis: 'Gratis proef-notities, geen bot in de call.' },
+    { slug: 'fireflies-ai', gratis: 'Gratis plan met maandlimiet op transcriptie.' },
+  ]},
+  { titel: 'Logo maken', taak: 'logo-maken', picks: [
+    { slug: 'looka', gratis: 'Gratis ontwerpen; je betaalt pas bij het downloaden.' },
+    { slug: 'canva-ai', gratis: 'Gratis logo maken en meteen in je huisstijl gebruiken.' },
+  ]},
+  { titel: 'CV & sollicitatie', taak: 'cv-maken', picks: [
+    { slug: 'canva-ai', gratis: 'Gratis CV-templates met AI-tekenhulp.' },
+    { slug: 'chatgpt', gratis: 'Gratis je CV en motivatiebrief afstemmen op de vacature.' },
+  ]},
+  { titel: 'Research & studie', taak: 'studenten', picks: [
+    { slug: 'notebooklm', gratis: 'Gratis je eigen documenten bevragen, met bronverwijzing.' },
+    { slug: 'perplexity', gratis: 'Gratis antwoorden mét klikbare bronnen.' },
+    { slug: 'elicit', gratis: 'Gratis instap voor literatuuronderzoek over miljoenen papers.' },
+  ]},
+  { titel: 'Coderen', picks: [
+    { slug: 'aider', gratis: 'Open-source en gratis; je betaalt alleen de model-API die je kiest.' },
+    { slug: 'cursor', gratis: 'Gratis plan met een beperkt aantal slimme acties.' },
+    { slug: 'copilot', gratis: 'Gratis tier voor individuele developers.' },
+  ]},
+  { titel: 'Automatiseren', picks: [
+    { slug: 'n8n', gratis: 'Open-source en gratis als je het zelf host; ook een gratis proefperiode in de cloud.' },
+    { slug: 'zapier', gratis: 'Gratis plan voor je eerste simpele automatiseringen.' },
+  ]},
+  { titel: 'Muziek', picks: [
+    { slug: 'suno', gratis: 'Gratis dagelijkse credits om complete nummers te maken (niet-commercieel).' },
+  ]},
+];
+
+const verrijkt = groepen.map((g) => ({
+  ...g,
+  items: g.picks.map((p) => ({ ...p, tool: bySlug.get(p.slug) })).filter((p) => p.tool),
+})).filter((g) => g.items.length > 0);
+const totaal = verrijkt.reduce((n, g) => n + g.items.length, 0);
+const gratisCount = tools.filter((t) => t.pricingModel === 'free' || t.pricingModel === 'freemium').length;
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const pageUrl = `${siteOrigin}/gratis-ai-tools`;
+const itemListJsonLd = {
+  '@context': 'https://schema.org', '@type': 'ItemList',
+  name: `Beste gratis AI-tools ${year}`,
+  description: `${totaal} gratis AI-tools per taak, eerlijk beoordeeld — met uitleg over wat echt gratis kan.`,
+  url: pageUrl, numberOfItems: totaal,
+  itemListElement: verrijkt.flatMap((g) => g.items).map((p, i) => ({
+    '@type': 'ListItem', position: i + 1, name: p.tool!.name, url: `${siteOrigin}/ai-tools/${p.slug}`,
+  })),
+};
+const faqs = [
+  { q: `Wat zijn de beste gratis AI-tools van ${year}?`, a: 'Voor tekst en chat: ChatGPT, Claude en Gemini. Voor beeld: Gemini en Ideogram. Voor notuleren: Fathom (onbeperkt gratis). Voor foto: remove.bg en Photoroom. Voor presentaties: Gamma. Hierboven staat per taak onze gratis top-keuze met uitleg over de grenzen.' },
+  { q: 'Zijn deze AI-tools echt helemaal gratis?', a: 'Bijna allemaal hebben een gratis tier die voor dagelijks gebruik volstaat, maar let op de grens: dag-/maandlimieten, een watermerk (bijv. Gamma), lagere resolutie (remove.bg) of geen commerciële rechten (Suno). Per tool zetten we erbij wat je gratis kunt. Volledig onbeperkt gratis kan meestal alleen lokaal (Stable Diffusion, n8n).' },
+  { q: 'Welke gratis AI-tool is het beste voor beginners?', a: 'Begin met ChatGPT of Gemini voor tekst en vragen — beide gratis, in het Nederlands en zonder installatie. Wil je beeld: Gemini doet dat ook gratis. Voor notulen is Fathom de makkelijkste gratis start.' },
+  { q: 'Werken deze gratis tools in het Nederlands?', a: 'Veel wel — ChatGPT, Claude, Gemini, DeepL, Fathom en CapCut bijvoorbeeld. Bij elke tool op onze site staat of het Nederlands ondersteunt, en je kunt in het overzicht filteren op "Werkt in het Nederlands".' },
+];
+const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
+---
+
+<Layout
+  title={`Beste gratis AI-tools ${year} — per taak, eerlijk beoordeeld | debesteaitools.nl`}
+  description={`De beste gratis AI-tools van ${year}, per taak: chatten, beeld, video, notuleren, presentaties en meer. Eerlijk over wat écht gratis kan — limieten, watermerken en commerciële rechten.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  </Fragment>
+
+  <main class="container best">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="bt__head">
+      <p class="bt__kicker"><Gift size={13} stroke-width={1.75} /> Gratis AI-tools {year}</p>
+      <h1 class="bt__title">De beste gratis AI-tools, per taak</h1>
+      <p class="bt__lede">
+        Je hebt geen abonnement nodig om met AI te beginnen. Per taak onze beste
+        gratis keuze — en, eerlijk, waar de gratis grens ligt: een limiet, een
+        watermerk of geen commerciële rechten. Geen verrassingen achteraf.
+      </p>
+      <p class="bt__verified">
+        <ShieldCheck size={14} stroke-width={2} />
+        {gratisCount} van onze tools hebben een gratis versie ·
+        <a href="/vind-je-beste-ai-tool">filter ze allemaal met "Gratis versie"</a>
+      </p>
+    </header>
+
+    <nav class="bt__toc" aria-label="Inhoud">
+      {verrijkt.map((g) => (
+        <a href={`#${g.titel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '')}`}>{g.titel}</a>
+      ))}
+    </nav>
+
+    {verrijkt.map((g) => {
+      const id = g.titel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+      return (
+        <section class="bt__group" id={id}>
+          <div class="bt__group-head">
+            <h2>{g.titel}</h2>
+            {g.taak && <a class="bt__taak" href={`/ai-voor/${g.taak}`}>Volledige gids <ArrowRight size={13} stroke-width={2} /></a>}
+          </div>
+          <ol class="bt__picks">
+            {g.items.map((p, i) => (
+              <li class="bt__pick">
+                <span class="bt__rank">{i + 1}</span>
+                <div class="bt__pick-body">
+                  <div class="bt__pick-top">
+                    <a class="bt__pick-name" href={`/ai-tools/${p.slug}`}>{p.tool!.name}</a>
+                    {p.tool!.supportsDutchLanguage && <span class="bt__nl" title="Werkt in het Nederlands">🇳🇱</span>}
+                    <span class="bt__free">Gratis</span>
+                  </div>
+                  <p class="bt__reden">{p.gratis}</p>
+                  <div class="bt__pick-cta">
+                    <a href={`/ai-tools/${p.slug}`}>Lees onze review →</a>
+                    {p.tool!.websiteUrl && <a href={p.tool!.websiteUrl} target="_blank" rel="noopener nofollow">Naar {p.tool!.name} <ExternalLink size={11} stroke-width={2} /></a>}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      );
+    })}
+
+    <section class="bt__faq" aria-label="Veelgestelde vragen">
+      <h2>Veelgestelde vragen</h2>
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </section>
+
+    <p class="bt__foot">
+      Liever betaald maar beter? Bekijk de <a href="/beste-ai-tools">beste AI-tools per taak</a>,
+      of filter <a href="/">alle {tools.length} tools</a> zelf. Methodologie:
+      <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a>.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .best { padding-top: 80px; max-width: 880px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+  .bt__head { max-width: 66ch; margin-bottom: var(--space-6); }
+  .bt__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--color-success, #4ade80); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .bt__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .bt__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.65; margin: 0 0 var(--space-3) 0; }
+  .bt__verified { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--color-success, #4ade80); margin: 0; }
+  .bt__verified a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
+  .bt__toc { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0 var(--space-8); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); }
+  .bt__toc a { font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 3px 12px; }
+  .bt__toc a:hover { color: var(--primary-bright); border-color: var(--primary-bright); }
+  .bt__group { margin-bottom: var(--space-10, 2.5rem); scroll-margin-top: 90px; }
+  .bt__group-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+  .bt__group-head h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-3); }
+  .bt__taak { font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+  .bt__taak:hover { text-decoration: underline; }
+  .bt__picks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+  .bt__pick { display: flex; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .bt__rank { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: var(--radius-full); background: color-mix(in oklab, var(--color-success, #4ade80) 16%, transparent); color: var(--color-success, #4ade80); font-family: var(--font-mono, monospace); font-weight: var(--font-bold); }
+  .bt__pick-body { flex: 1; min-width: 0; }
+  .bt__pick-top { display: flex; align-items: baseline; gap: var(--space-2); flex-wrap: wrap; }
+  .bt__pick-name { font-weight: var(--font-semibold); font-size: var(--text-lg); color: var(--text-primary); text-decoration: none; }
+  .bt__pick-name:hover { color: var(--primary-bright); }
+  .bt__free { margin-left: auto; font-size: 0.62rem; font-family: var(--font-mono, monospace); text-transform: uppercase; padding: 2px 8px; border-radius: var(--radius-full); background: color-mix(in oklab, var(--color-success, #4ade80) 14%, transparent); color: var(--color-success, #4ade80); }
+  .bt__reden { margin: var(--space-1) 0 0; color: var(--text-primary); line-height: 1.5; }
+  .bt__pick-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-2); }
+  .bt__pick-cta a { font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .bt__pick-cta a:hover { text-decoration: underline; }
+  .bt__faq { margin: var(--space-10) 0; }
+  .bt__faq h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4); }
+  .bt__faq details { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-2); }
+  .bt__faq summary { cursor: pointer; font-weight: var(--font-semibold); }
+  .bt__faq details p { margin: var(--space-3) 0 0; color: var(--text-secondary); line-height: 1.6; }
+  .bt__foot { color: var(--text-secondary); font-size: var(--text-sm); }
+  .bt__foot a { color: var(--primary-bright); }
+</style>
