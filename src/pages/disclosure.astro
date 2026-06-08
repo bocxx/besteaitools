@@ -1,0 +1,101 @@
+---
+/**
+ * /disclosure — Affiliate-disclosure & onafhankelijkheid
+ *
+ * Wettelijk verplichte transparantie (ACM/consumentenrecht) én een
+ * vertrouwens-asset: legt de firewall uit tussen verdienen en rangschikken.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { ArrowLeft, Scale, CheckCircle2, XCircle } from '@lucide/astro';
+
+const wel = [
+  'Sommige "Bezoek"-links zijn affiliate-links. Meld je je via zo\'n link aan voor een betaald plan, dan kunnen wij een commissie ontvangen — zonder dat jij meer betaalt.',
+  'Affiliate-links zijn technisch gemarkeerd (rel="sponsored") en op de toolpagina voorzien van een zichtbare melding bij de knop.',
+  'De inkomsten houden de site gratis en advertentievrij, en betalen het verificatiewerk.',
+];
+const niet = [
+  'Affiliate-links bepalen NOOIT onze rangschikking, volgorde of ons oordeel.',
+  'We verkopen geen posities en nemen geen geld aan om een tool hoger te zetten of beter te beoordelen.',
+  'Of een tool een affiliate-programma heeft, speelt geen rol bij de vraag of we hem opnemen of aanraden. Veel van onze aanraders (zoals ChatGPT, Claude en Gemini) hebben er niet eens een.',
+];
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Affiliate-disclosure — debesteaitools.nl',
+  description: 'Hoe debesteaitools.nl geld verdient met affiliate-links, en waarom dat onze onafhankelijke rangschikking en oordelen nooit beïnvloedt.',
+  url: `${siteOrigin}/disclosure`,
+};
+---
+
+<Layout
+  title="Affiliate-disclosure & onafhankelijkheid | debesteaitools.nl"
+  description="Hoe wij geld verdienen met affiliate-links — en waarom dat onze rangschikking en oordelen nooit beïnvloedt. Posities zijn niet te koop."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container disc">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="disc__head">
+      <p class="disc__kicker"><Scale size={13} stroke-width={1.75} /> Transparantie</p>
+      <h1 class="disc__title">Affiliate-disclosure & onafhankelijkheid</h1>
+      <p class="disc__lede">
+        debesteaitools.nl is gratis en advertentievrij. Om dat zo te houden,
+        gebruiken we op sommige toolpagina's affiliate-links. Hier lees je precies
+        hoe dat werkt — en, belangrijker, waar de grens ligt.
+      </p>
+    </header>
+
+    <section class="disc__section">
+      <h2><CheckCircle2 size={18} stroke-width={1.75} /> Wat we doen</h2>
+      <ul class="disc__list disc__list--yes">
+        {wel.map((x) => <li><CheckCircle2 size={15} stroke-width={2} class="ok" /> {x}</li>)}
+      </ul>
+    </section>
+
+    <section class="disc__section">
+      <h2><XCircle size={18} stroke-width={1.75} /> Wat we niet doen — de firewall</h2>
+      <ul class="disc__list disc__list--no">
+        {niet.map((x) => <li><XCircle size={15} stroke-width={2} class="nope" /> {x}</li>)}
+      </ul>
+    </section>
+
+    <section class="disc__section">
+      <h2>Waarom dit zo werkt</h2>
+      <p>
+        Ons hele bestaansrecht is dat je ons kunt geloven. Zodra geld zou bepalen
+        wie er bovenaan staat, ben je beter af bij een willekeurige advertentie.
+        Daarom is er een harde scheiding: de redactie kiest en beoordeelt op
+        inhoud, los van of er een affiliate-programma achter een tool zit. De
+        monetisatie zit puur in een aanbeveling die we tóch al zouden doen.
+      </p>
+      <p>
+        Hoe onze oordelen tot stand komen — en waarom posities niet te koop zijn —
+        lees je op <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a>. Fout gezien
+        of vraag? <a href="/over">Neem contact op</a>.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .disc { padding-top: 80px; max-width: 720px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+  .disc__head { margin-bottom: var(--space-8); }
+  .disc__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .disc__title { font-size: clamp(1.9rem, 1.4rem + 2.2vw, 2.5rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .disc__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.65; margin: 0; }
+  .disc__section { margin-bottom: var(--space-8); }
+  .disc__section h2 { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4); }
+  .disc__section p { color: var(--text-secondary); line-height: 1.7; margin: 0 0 var(--space-3); }
+  .disc__section a { color: var(--primary-bright); }
+  .disc__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+  .disc__list li { display: flex; gap: var(--space-2); align-items: flex-start; color: var(--text-secondary); line-height: 1.6; }
+  .disc__list :global(.ok) { flex: none; margin-top: 4px; color: var(--color-success, #4ade80); }
+  .disc__list :global(.nope) { flex: none; margin-top: 4px; color: var(--color-error, #f87171); }
+</style>

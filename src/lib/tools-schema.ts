@@ -367,6 +367,16 @@ export const toolContentSchema = z.object({
   name: z.string(),
   category: toolCategorySchema,
   websiteUrl: z.string().url(),
+  /**
+   * Optionele affiliate-/referral-link. Wanneer gezet, gebruikt de "Bezoek"-CTA
+   * deze link (met rel="sponsored nofollow") in plaats van websiteUrl, plus een
+   * zichtbare disclosure. FIREWALL: affiliateUrl beïnvloedt NOOIT de ranking,
+   * volgorde, het verdict of of een tool gelijst is — het monetiseert alleen
+   * een aanbeveling die we toch al doen. Leeg laten = gewone link.
+   */
+  affiliateUrl: z.string().url().optional(),
+  /** Label van het affiliate-netwerk/programma (bv. "PartnerStack", "Awin"). Optioneel, intern/disclosure. */
+  affiliateNetwork: z.string().optional(),
   shortDescription: z.string(),
   longDescription: z.string().optional(),
   bestFor: z.string().optional(),

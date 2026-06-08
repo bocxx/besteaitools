@@ -63,6 +63,12 @@ const taakLinks = Object.values(taakContent)
   .filter((t) => t.picks.some((p) => p.slug === tool.slug))
   .map((t) => ({ key: t.key, title: t.title }));
 
+// Affiliate-CTA: gebruik affiliateUrl indien aanwezig (met sponsored/nofollow +
+// disclosure), anders de gewone websiteUrl. De link bepaalt nooit de ranking.
+const ctaUrl = (tool as any).affiliateUrl || tool.websiteUrl;
+const isAffiliate = !!(tool as any).affiliateUrl;
+const ctaRel = isAffiliate ? 'sponsored noopener nofollow' : 'noopener';
+
 // Redactionele NL-tutorials van hetlaatsteainieuws.nl die deze tool behandelen.
 // Bron: hln_tutorials.json (gegenereerd door newsflux/export_hln_tutorials.py).
 const hlnForTool = ((hlnTutorials as any).tutorials ?? [])
@@ -274,12 +280,20 @@ export const prerender = true;
       </div>
 
       <div class="tool-header__cta">
-        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="cta-btn">
+        <a href={ctaUrl} target="_blank" rel={ctaRel} class="cta-btn">
           <Globe size={15} stroke-width={1.5} />
           Bezoek {tool.name}
           <ExternalLink size={13} stroke-width={1.5} />
         </a>
       </div>
+
+      {isAffiliate && (
+        <p class="cta-disclosure">
+          Affiliate-link: we kunnen een commissie ontvangen als je je via deze link
+          aanmeldt. Dat houdt de site gratis — en het verandert nooit onze
+          rangschikking of ons oordeel. <a href="/disclosure">Meer hierover</a>.
+        </p>
+      )}
 
       {verifiedLabel && (
         <p class="tool-verified">
@@ -877,7 +891,7 @@ export const prerender = true;
         <div class="sidebar-sticky">
 
         <!-- Persistent CTA — always visible while scrolling -->
-        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="sidebar-cta">
+        <a href={ctaUrl} target="_blank" rel={ctaRel} class="sidebar-cta">
           <Globe size={15} stroke-width={1.5} />
           <span>Bezoek {tool.name}</span>
           <ExternalLink size={12} stroke-width={1.5} />
@@ -976,7 +990,7 @@ export const prerender = true;
 
       <!-- Mobile bottom-bar CTA (visible <1024px) -->
       <div class="mobile-cta-bar">
-        <a href={tool.websiteUrl} target="_blank" rel="noopener" class="mobile-cta-bar__primary">
+        <a href={ctaUrl} target="_blank" rel={ctaRel} class="mobile-cta-bar__primary">
           <Globe size={14} stroke-width={1.5} />
           Bezoek {tool.name}
           <ExternalLink size={11} stroke-width={1.5} />
@@ -2057,6 +2071,16 @@ export const prerender = true;
     gap: var(--space-3);
     margin-top: var(--space-4);
   }
+  .cta-disclosure {
+    margin: var(--space-2) 0 0 0;
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    opacity: 0.85;
+    max-width: 56ch;
+    line-height: 1.5;
+  }
+  .cta-disclosure a { color: var(--primary-bright); text-decoration: underline; text-underline-offset: 2px; }
+
   .tool-verified {
     display: inline-flex;
     align-items: center;
