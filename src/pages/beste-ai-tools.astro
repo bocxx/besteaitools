@@ -1,0 +1,305 @@
+---
+/**
+ * /beste-ai-tools — "Beste AI-tools 2026" listicle
+ *
+ * Doel: het commerciële NL-kern-keyword "beste ai tools (2026)" — waar we nu
+ * op positie ~31-39 staan (GSC, juni 2026). Gecureerde redactionele top-keuze
+ * per taak/categorie, gevoed met live tool-data (verdict, prijs) zodat het
+ * actueel blijft. Sterke interne links naar taak- en toolpagina's + ItemList/
+ * FAQ-schema. Onafhankelijkheid expliciet (geen betaalde posities).
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { getAllTools } from '../lib/tools-engine';
+import { ArrowLeft, Trophy, ShieldCheck, ArrowRight, Star, ExternalLink } from '@lucide/astro';
+
+const year = new Date().getFullYear();
+const tools = await getAllTools();
+const bySlug = new Map(tools.map((t) => [t.slug, t]));
+
+// Redactionele top-keuze per taak. reden = waarom dit DE keuze is.
+type Pick = { slug: string; reden: string };
+type Group = { titel: string; taak?: string; intro: string; picks: Pick[] };
+
+const groepen: Group[] = [
+  {
+    titel: 'Chatten, schrijven & algemeen werk',
+    taak: 'tekst-schrijven',
+    intro: 'De allrounders waar je het vaakst naar grijpt: e-mails, teksten, samenvatten, brainstormen.',
+    picks: [
+      { slug: 'chatgpt', reden: 'De bekendste en breedste allrounder — voor de meeste mensen het beste startpunt, ook gratis.' },
+      { slug: 'claude', reden: 'De fijnste schrijver voor langere, genuanceerde teksten; klinkt het minst "AI-achtig".' },
+      { slug: 'gemini', reden: 'De sterkste keuze binnen Google Workspace, met de gulste gratis mogelijkheden.' },
+    ],
+  },
+  {
+    titel: 'Vertalen',
+    taak: 'tekst-schrijven',
+    intro: 'Nauwkeurig vertalen en je toon verbeteren — Europees en privacyvriendelijk.',
+    picks: [
+      { slug: 'deepl', reden: 'Dé Europese standaard voor vertalen, met DeepL Write voor je schrijfstijl.' },
+    ],
+  },
+  {
+    titel: 'Beeld maken',
+    taak: 'afbeelding-maken',
+    intro: 'Van fotorealisme tot logo\'s met tekst — kies op gebruiksdoel, niet op hype.',
+    picks: [
+      { slug: 'midjourney', reden: 'Nog steeds de kwaliteitsstandaard voor artistiek en fotorealistisch werk.' },
+      { slug: 'ideogram', reden: 'De beste keuze als er leesbare tekst in je beeld moet (posters, social, logo\'s).' },
+      { slug: 'adobe-firefly', reden: 'Commercieel veilig: getraind op gelicentieerd materiaal, de minste juridische risico\'s.' },
+    ],
+  },
+  {
+    titel: 'Foto bewerken',
+    taak: 'foto-bewerken',
+    intro: 'Achtergrond weghalen, opschonen, productfoto\'s — vaak gratis.',
+    picks: [
+      { slug: 'removebg', reden: 'Snelste voor achtergrond verwijderen, één klik, Nederlandse interface.' },
+      { slug: 'photoroom', reden: 'De beste voor productfoto\'s met directe export naar Vinted, Etsy en Shopify.' },
+    ],
+  },
+  {
+    titel: 'Video maken',
+    taak: 'video-maken',
+    intro: 'Genereren, pratende avatars of social clips — heel andere tools per doel.',
+    picks: [
+      { slug: 'runway', reden: 'De referentie voor creatieve, cinematische AI-videogeneratie.' },
+      { slug: 'heygen', reden: 'De standaard voor pratende avatars in 100+ talen — ideaal voor uitleg en training.' },
+      { slug: 'veo', reden: 'Google\'s topmodel voor realistische clips mét geluid.' },
+    ],
+  },
+  {
+    titel: 'Presentaties maken',
+    taak: 'presentatie-maken',
+    intro: 'Van tekst of document naar een complete, vormgegeven presentatie.',
+    picks: [
+      { slug: 'gamma', reden: 'De onbetwiste favoriet: prompt of document → complete deck in minuten.' },
+    ],
+  },
+  {
+    titel: 'Notuleren & vergaderen',
+    taak: 'notulen-maken',
+    intro: 'Transcriptie en actiepunten — let op of de tool goed Nederlands verstaat.',
+    picks: [
+      { slug: 'fathom', reden: 'De gulste gratis notetaker: onbeperkt opnemen, transcriberen en samenvatten.' },
+      { slug: 'granola', reden: 'De slimste voor wie veel vergadert: geen bot in de call, lokaal opgenomen.' },
+      { slug: 'notizy', reden: 'De Nederlandse specialist — gebouwd voor NL-gesprekken en AVG-proof.' },
+    ],
+  },
+  {
+    titel: 'Coderen & bouwen',
+    intro: 'Van hele features tot autocomplete — de sterkste agentic coding-tools.',
+    picks: [
+      { slug: 'claude-code', reden: 'De sterkste agentic-werkflow: laat hele features, refactors en migraties uitvoeren.' },
+      { slug: 'cursor', reden: 'De beste AI-editor voor wie dagelijks codeert met snelle inline-hulp.' },
+      { slug: 'copilot', reden: 'De brede standaard, diep geïntegreerd in GitHub en je IDE.' },
+    ],
+  },
+  {
+    titel: 'Automatiseren',
+    intro: 'Processen en apps koppelen, met of zonder code.',
+    picks: [
+      { slug: 'make', reden: 'Visueel en krachtig — de beste prijs-kwaliteit voor complexe automatiseringen.' },
+      { slug: 'n8n', reden: 'Open-source en zelf te hosten, met AI-agent-nodes; favoriet bij technische teams.' },
+      { slug: 'zapier', reden: 'De makkelijkste start met de meeste app-koppelingen.' },
+    ],
+  },
+  {
+    titel: 'Klantenservice',
+    taak: 'klantenservice-chatbot',
+    intro: '24/7 vragen beantwoorden op je eigen content — let op NL en AVG.',
+    picks: [
+      { slug: 'intercom-fin', reden: 'Het sterkst voor groeiende supportteams; lost vragen end-to-end op.' },
+      { slug: 'watermelon', reden: 'Nederlandse speler met EU-servers — de veilige keuze voor NL-organisaties.' },
+    ],
+  },
+  {
+    titel: 'Research & studie',
+    intro: 'Bronnen doorzoeken, samenvatten en onderbouwen.',
+    picks: [
+      { slug: 'notebooklm', reden: 'De beste voor je eigen documenten: samenvatten, vragen stellen, audio-overzichten.' },
+      { slug: 'elicit', reden: 'Voor wetenschappelijk werk: literatuuronderzoek over 125M+ papers.' },
+    ],
+  },
+  {
+    titel: 'Muziek & audio',
+    intro: 'Nummers genereren of natuurlijke stemmen maken.',
+    picks: [
+      { slug: 'suno', reden: 'Maakt complete nummers met zang uit een tekstprompt — de leider in zijn niche.' },
+      { slug: 'elevenlabs', reden: 'De standaard voor realistische stemmen en voice cloning.' },
+    ],
+  },
+];
+
+// Verrijk picks met live tool-data; filter ontbrekende.
+const verrijkt = groepen.map((g) => ({
+  ...g,
+  items: g.picks.map((p) => ({ ...p, tool: bySlug.get(p.slug) })).filter((p) => p.tool),
+})).filter((g) => g.items.length > 0);
+
+const totaalPicks = verrijkt.reduce((n, g) => n + g.items.length, 0);
+const lastVerified = tools.map((t) => t.lastReviewedAt).filter(Boolean).sort().at(-1);
+const lastVerifiedLabel = lastVerified
+  ? new Date(lastVerified as string).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
+  : null;
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const pageUrl = `${siteOrigin}/beste-ai-tools`;
+
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Beste AI-tools ${year}`,
+  description: `${totaalPicks} redactioneel gekozen beste AI-tools per taak, onafhankelijk beoordeeld en geverifieerd.`,
+  url: pageUrl,
+  numberOfItems: totaalPicks,
+  itemListElement: verrijkt.flatMap((g) => g.items).map((p, i) => ({
+    '@type': 'ListItem', position: i + 1, name: p.tool!.name, url: `${siteOrigin}/ai-tools/${p.slug}`,
+  })),
+};
+const faqs = [
+  { q: `Wat zijn de beste AI-tools van ${year}?`, a: `Dat hangt af van je taak. De breedste allrounders zijn ChatGPT, Claude en Gemini. Voor beeld is Midjourney de kwaliteitsstandaard, voor presentaties Gamma, voor vertalen DeepL, voor notuleren Fathom, en voor coderen Claude Code. Hierboven staat per taak onze onafhankelijke top-keuze met uitleg waarom.` },
+  { q: 'Wat is de beste gratis AI-tool?', a: 'ChatGPT, Claude en Gemini hebben sterke gratis plannen voor tekst. Voor beeld is Gemini gratis, voor notuleren Fathom (onbeperkt gratis), en voor achtergrond verwijderen remove.bg. Per toolpagina zie je precies wat gratis kan.' },
+  { q: 'Hoe kiezen jullie de beste tools — is dit te koop?', a: 'Nee. Onze keuze is redactioneel en niet te koop: er zijn geen betaalde posities of affiliate-deals die de volgorde bepalen. We verifiëren prijzen en functies tegen primaire bronnen. Lees hoe wij beoordelen.' },
+  { q: `Werken deze AI-tools in het Nederlands?`, a: 'Veel wel, maar niet alle — en dat checken we per tool. In ons overzicht kun je filteren op tools die aantoonbaar in het Nederlands werken, en bij elke tool staat de NL-taalkwaliteit vermeld.' },
+];
+const faqJsonLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+
+<Layout
+  title={`Beste AI-tools ${year} — onafhankelijk gekozen per taak | debesteaitools.nl`}
+  description={`De beste AI-tools van ${year}, per taak gekozen en onafhankelijk beoordeeld: chatten, beeld, video, presentaties, vertalen, notuleren, coderen en meer. Met prijzen, gratis opties en of het in het Nederlands werkt.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  </Fragment>
+
+  <main class="container best">
+    <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
+
+    <header class="bt__head">
+      <p class="bt__kicker"><Trophy size={13} stroke-width={1.75} /> Beste AI-tools {year}</p>
+      <h1 class="bt__title">De beste AI-tools van {year}</h1>
+      <p class="bt__lede">
+        Geen lijst van 500 namen, maar per taak één tot drie échte aanraders —
+        onafhankelijk gekozen, met uitleg waarom, de prijs en of het in het
+        Nederlands werkt. Geen betaalde posities: onze volgorde is niet te koop.
+      </p>
+      {lastVerifiedLabel && (
+        <p class="bt__verified">
+          <ShieldCheck size={14} stroke-width={2} />
+          {totaalPicks} tools, feiten geverifieerd op {lastVerifiedLabel} ·
+          <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a>
+        </p>
+      )}
+    </header>
+
+    <nav class="bt__toc" aria-label="Inhoud">
+      {verrijkt.map((g) => (
+        <a href={`#${g.titel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '')}`}>{g.titel}</a>
+      ))}
+    </nav>
+
+    {verrijkt.map((g) => {
+      const id = g.titel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+      return (
+        <section class="bt__group" id={id}>
+          <div class="bt__group-head">
+            <h2>{g.titel}</h2>
+            {g.taak && <a class="bt__taak" href={`/ai-voor/${g.taak}`}>Volledige gids <ArrowRight size={13} stroke-width={2} /></a>}
+          </div>
+          <p class="bt__group-intro">{g.intro}</p>
+          <ol class="bt__picks">
+            {g.items.map((p, i) => (
+              <li class="bt__pick">
+                <span class="bt__rank">{i + 1}</span>
+                <div class="bt__pick-body">
+                  <div class="bt__pick-top">
+                    <a class="bt__pick-name" href={`/ai-tools/${p.slug}`}>{p.tool!.name}</a>
+                    {p.tool!.supportsDutchLanguage && <span class="bt__nl" title="Werkt in het Nederlands">🇳🇱</span>}
+                    <span class="bt__price">{p.tool!.pricing ?? ''}</span>
+                  </div>
+                  <p class="bt__reden">{p.reden}</p>
+                  {p.tool!.verdict && <p class="bt__verdict">{p.tool!.verdict}</p>}
+                  <div class="bt__pick-cta">
+                    <a href={`/ai-tools/${p.slug}`}>Lees onze review →</a>
+                    {p.tool!.websiteUrl && <a href={p.tool!.websiteUrl} target="_blank" rel="noopener nofollow">Naar {p.tool!.name} <ExternalLink size={11} stroke-width={2} /></a>}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      );
+    })}
+
+    <section class="bt__faq" aria-label="Veelgestelde vragen">
+      <h2>Veelgestelde vragen</h2>
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </section>
+
+    <p class="bt__foot">
+      Liever zelf filteren? Bekijk <a href="/">alle {tools.length} AI-tools</a> of
+      gebruik de <a href="/vind-je-beste-ai-tool">keuzehulp per taak</a>. Methodologie:
+      <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a>.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .best { padding-top: 80px; max-width: 880px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .bt__head { max-width: 66ch; margin-bottom: var(--space-6); }
+  .bt__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .bt__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .bt__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.65; margin: 0 0 var(--space-3) 0; }
+  .bt__verified { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--color-success, #4ade80); margin: 0; }
+  .bt__verified a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
+
+  .bt__toc { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-6) 0 var(--space-8); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); }
+  .bt__toc a { font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 3px 12px; }
+  .bt__toc a:hover { color: var(--primary-bright); border-color: var(--primary-bright); }
+
+  .bt__group { margin-bottom: var(--space-10, 2.5rem); scroll-margin-top: 90px; }
+  .bt__group-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+  .bt__group-head h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0; }
+  .bt__taak { font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+  .bt__taak:hover { text-decoration: underline; }
+  .bt__group-intro { color: var(--text-secondary); margin: var(--space-1) 0 var(--space-4); }
+
+  .bt__picks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+  .bt__pick { display: flex; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .bt__rank { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: var(--radius-full); background: color-mix(in oklab, var(--primary-bright) 16%, transparent); color: var(--primary-bright); font-family: var(--font-mono, monospace); font-weight: var(--font-bold); }
+  .bt__pick-body { flex: 1; min-width: 0; }
+  .bt__pick-top { display: flex; align-items: baseline; gap: var(--space-2); flex-wrap: wrap; }
+  .bt__pick-name { font-weight: var(--font-semibold); font-size: var(--text-lg); color: var(--text-primary); text-decoration: none; }
+  .bt__pick-name:hover { color: var(--primary-bright); }
+  .bt__price { margin-left: auto; font-size: var(--text-xs); color: var(--text-secondary); font-family: var(--font-mono, monospace); }
+  .bt__reden { margin: var(--space-1) 0 0; color: var(--text-primary); line-height: 1.5; }
+  .bt__verdict { margin: var(--space-2) 0 0; color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.55; }
+  .bt__pick-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-2); }
+  .bt__pick-cta a { font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .bt__pick-cta a:hover { text-decoration: underline; }
+
+  .bt__faq { margin: var(--space-10) 0; }
+  .bt__faq h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4); }
+  .bt__faq details { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-2); }
+  .bt__faq summary { cursor: pointer; font-weight: var(--font-semibold); }
+  .bt__faq details p { margin: var(--space-3) 0 0; color: var(--text-secondary); line-height: 1.6; }
+
+  .bt__foot { color: var(--text-secondary); font-size: var(--text-sm); }
+  .bt__foot a { color: var(--primary-bright); }
+</style>

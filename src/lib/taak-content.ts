@@ -312,6 +312,109 @@ export const taakContent: Record<string, TaakContent> = {
       { question: 'Mag een AI-chatbot klantgegevens verwerken onder de AVG?', answer: 'Ja, mits goed geregeld: sluit een verwerkersovereenkomst, kies waar mogelijk EU-dataopslag, en check of de tool op jouw gesprekken traint (dat wil je meestal uitzetten). Zendesk, Intercom en Ada bieden EU-hosting en verwerkersovereenkomsten — zie onze EU AI Act-pagina voor de status per tool.' },
     ],
   },
+
+  'studenten': {
+    key: 'studenten',
+    title: 'AI-tools voor studenten',
+    metaTitle: `AI-tools voor studenten — slimmer studeren, samenvatten en bronnen (${year})`,
+    metaDescription: 'De beste AI-tools voor studenten: stof samenvatten, begrippen begrijpen, oefenvragen en bronnen — bijna alles gratis. Met eerlijke uitleg over wat wel en niet mag van je opleiding.',
+    intro: [
+      'Als student wil je sneller door grote stapels stof, lastige begrippen écht snappen en je tijd verdelen tussen colleges, bijbanen en deadlines. AI helpt je daarbij niet door het werk over te nemen, maar door stof te ontsluiten: een dictaat van 60 pagina\'s wordt een overzichtelijke samenvatting, en een vaag tentamenonderwerp wordt een setje oefenvragen.',
+      'De winst zit in begrip en planning, niet in kopieerwerk. Gebruik AI als een geduldige bijles-tutor — maar lever altijd je eigen werk in. Hieronder de tools die studenten het meeste opleveren, met steeds een gratis instap.',
+    ],
+    picks: [
+      { slug: 'notebooklm', reden: 'Upload je colleges en pdf\'s en stel er vragen over; antwoorden verwijzen terug naar de exacte passage, dus je studeert binnen je eigen materiaal.', gratis: 'Gratis met Google-account' },
+      { slug: 'chatgpt', reden: 'Laat moeilijke begrippen in gewone taal uitleggen, genereer oefenvragen en overhoor jezelf voor tentamens.', gratis: 'Ruime gratis versie' },
+      { slug: 'perplexity', reden: 'Snel betrouwbare antwoorden mét klikbare bronnen — ideaal om een onderwerp te verkennen voor je de literatuur in duikt.', gratis: 'Gratis te gebruiken' },
+      { slug: 'quillbot', reden: 'Herschrijf en kort je eigen teksten in en parafraseer netjes met bronvermelding voor je verslagen.', gratis: 'Gratis basisversie' },
+      { slug: 'deepl', reden: 'Vertaal Engelse of Duitse vakliteratuur naar helder Nederlands — of je paper andersom.', gratis: 'Gratis voor losse teksten' },
+      { slug: 'gamma', reden: 'Maak in minuten een verzorgde presentatie voor je werkgroep of eindpitch vanuit een paar bullets.', gratis: 'Gratis met credits' },
+      { slug: 'goblin-tools', reden: 'Hakt grote opdrachten op in behapbare stappen — fijn als plannen of beginnen lastig is.', gratis: 'Vrijwel gratis' },
+    ],
+    gratisNote: 'Vrijwel alles hierboven kun je als student gratis doen. NotebookLM, Perplexity en de gratis ChatGPT dekken samen je belangrijkste taken — stof samenvatten, bevragen en uitleggen. DeepL en QuillBot hebben royale gratis niveaus. Begin klein: pak één tool per taak en stap pas over op betaald als je er echt tegenaan loopt.',
+    faqs: [
+      { question: 'Mag ik van mijn opleiding AI gebruiken, of is dat fraude?', answer: 'Dat verschilt per opleiding en zelfs per vak. De algemene lijn in 2026: AI als studiehulp (uitleg, samenvatten, oefenvragen, plannen) mag bijna overal, maar AI-tekst inleveren als je eigen werk geldt vrijwel overal als fraude. Veel instellingen verplichten je bovendien te vermelden of en hoe je AI hebt gebruikt. Check de regels van je vak.' },
+      { question: 'Pikt een plagiaatscanner het op als ik AI gebruik?', answer: 'Scanners zoals Turnitin hebben een AI-detectiefunctie, maar die is in de praktijk onbetrouwbaar en geeft regelmatig vals alarm — in beide richtingen. De veilige route blijft: gebruik AI om te begrijpen en te oefenen, schrijf je tekst zelf, en wees transparant over je hulpmiddelen.' },
+      { question: 'Hoe gebruik ik AI zonder dat ik er dommer van word?', answer: 'Laat AI niet het denkwerk doen maar het uitlegwerk. Vraag om een begrip in jouw woorden uit te leggen, laat je overhoren met oefenvragen, en controleer het antwoord tegen je eigen materiaal (NotebookLM verwijst terug naar de bron). Zo gebruik je AI als bijles, niet als spiekbriefje — en onthoud je de stof beter.' },
+    ],
+  },
+
+  'onderzoek': {
+    key: 'onderzoek',
+    title: 'AI-tools voor onderzoek & wetenschap',
+    metaTitle: `AI-tools voor onderzoekers — literatuur doorzoeken met bronnen (${year})`,
+    metaDescription: 'De beste AI-tools voor wetenschappelijk onderzoek: miljoenen papers doorzoeken, kernbevindingen samenvatten en claims aan citaties koppelen — met eerlijke aandacht voor hallucinatie en bronverificatie.',
+    intro: [
+      'Als onderzoeker verlies je veel tijd aan de voorkant van een project: honderden abstracts doorworstelen, de stand van zaken in kaart brengen en lange Engelstalige papers ontleden. AI-tools die specifiek op wetenschappelijke literatuur zijn gebouwd halen die berg werk fors omlaag.',
+      'De crux is verifieerbaarheid: een generieke chatbot verzint soms net zo overtuigend een niet-bestaande studie als hij een echte citeert. Daarom leun je op tools die hun bron erbij leveren, en sla je de bronverificatie nooit over.',
+    ],
+    picks: [
+      { slug: 'elicit', reden: 'Doorzoekt 125M+ papers en geeft per studie een compacte samenvatting met kernbevindingen — ideaal voor het opzetten van een literatuuroverzicht.', gratis: 'Gratis instap met credits' },
+      { slug: 'consensus', reden: 'Stel een onderzoeksvraag en krijg een antwoord dat direct put uit peer-reviewed studies, met de bronnen erbij.', gratis: 'Gratis basisversie' },
+      { slug: 'notebooklm', reden: 'Laad je eigen pdf-corpus en stel er vragen over; antwoorden verwijzen terug naar de exacte passage zodat je grip houdt.', gratis: 'Gratis met Google-account' },
+      { slug: 'perplexity', reden: 'Brede verkenning van een nieuw onderwerp met klikbare bronnen — goed om de juiste zoektermen en sleutelpublicaties te vinden.', gratis: 'Gratis te gebruiken' },
+      { slug: 'claude', reden: 'Sterk in het ontleden en samenvatten van lange, complexe papers en het structureren van je argumentatie of methodesectie.', gratis: 'Gratis versie' },
+      { slug: 'deepl', reden: 'Vertaal anderstalige vakliteratuur nauwkeurig zonder dat nuance verloren gaat.', gratis: 'Gratis voor losse teksten' },
+    ],
+    gratisNote: 'Je komt ver met gratis accounts: Elicit en Consensus bieden allebei een gratis instap die genoeg is om een onderwerp af te tasten en de eerste sleutelpublicaties te vinden. Perplexity en NotebookLM zijn gratis voor brede verkenning en het bevragen van je eigen pdf-collectie. Voor een grote systematische review loont een betaald Elicit-abonnement — test eerst gratis.',
+    faqs: [
+      { question: 'Kan ik op deze AI-samenvattingen vertrouwen, of hallucineren ze?', answer: 'Ook tools mét bronvermelding kunnen een bevinding net iets anders weergeven dan in het origineel staat. Behandel een AI-samenvatting als aanwijzing, nooit als bewijs: open de geciteerde paper en controleer de claim in de bron voordat je hem overneemt. Elicit, Consensus en NotebookLM verwijzen terug naar de passage, maar de verificatie blijft jouw verantwoordelijkheid.' },
+      { question: 'Wat doe ik tegen verzonnen citaties?', answer: 'Een generieke chatbot kan plausibel ogende maar niet-bestaande referenties produceren. Vraag nooit aan een gewone chatbot om je literatuurlijst; gebruik tools die echte papers indexeren (Elicit, Consensus). Verifieer elke referentie in een echte database (DOI, PubMed, je bibliotheekcatalogus) voor hij in je manuscript belandt.' },
+      { question: 'Mag dit van mijn instelling en tijdschrift?', answer: 'Veel uitgevers en universiteiten vragen transparantie: vermeld in je methode of acknowledgements welke AI-tools je gebruikte en waarvoor. AI mag je literatuur helpen vinden en samenvatten, maar de wetenschappelijke conclusies en de tekst blijven jouw werk. Check het AI-beleid van je doeltijdschrift en instelling.' },
+    ],
+  },
+
+  'zzp': {
+    key: 'zzp',
+    title: 'AI-tools voor zzp\'ers',
+    metaTitle: `AI-tools voor zzp'ers — minder administratie, meer factureerbare tijd (${year})`,
+    metaDescription: 'De beste AI-tools voor zzp\'ers: boekhouding automatiseren, offertes en klantmails schrijven en je huisstijl maken. Met aandacht voor kosten, AVG en hoeveel tijd het echt scheelt.',
+    intro: [
+      'Als zzp\'er ben je je eigen boekhouder, marketeer en officemanager tegelijk. Nederlandse ondernemers besteden gemiddeld zo\'n 15 uur per maand aan administratie — elk uur dat je daaraan kwijt bent kun je niet factureren. Daar zit de winst van AI: facturen en bankmutaties automatisch koppelen, je btw voorbereiden, en in minuten een nette offerte of klantmail schrijven.',
+      'AI hoeft je accountant niet te vervangen, maar neemt het herhaalwerk uit handen zodat jij je op klanten richt. Hieronder de tools die zzp\'ers in Nederland het snelst tijdwinst opleveren, met aandacht voor kosten en AVG.',
+    ],
+    picks: [
+      { slug: 'moneybird', reden: 'Gebruiksvriendelijk Nederlands boekhoudpakket dat facturen en bankmutaties automatisch koppelt; fijne mobiele app voor onderweg.', gratis: 'Gratis te proberen' },
+      { slug: 'jortt', reden: 'Automatiseert je boekhouding met een Boekhoudbot die mutaties boekt en je btw-aangifte en jaarrekening opbouwt — sterk als je zo min mogelijk wilt omkijken.', gratis: 'Gratis startniveau' },
+      { slug: 'tellow', reden: 'Boekhouding speciaal op zzp\'ers gericht, met automatische koppeling van facturen en banktransacties.', gratis: 'Gratis instap' },
+      { slug: 'chatgpt', reden: 'Schrijf in minuten offertes, klantmails, concept-voorwaarden en social posts in jouw toon.', gratis: 'Ruime gratis versie' },
+      { slug: 'canva-ai', reden: 'Maak zelf je logo, visitekaartjes, offerte-sjablonen en social content zonder ontwerper.', gratis: 'Royale gratis versie' },
+      { slug: 'gamma', reden: 'Zet een paar bullets om in een verzorgde pitch of klantpresentatie.', gratis: 'Gratis met credits' },
+      { slug: 'boekie-ai', reden: 'Nederlandse AI-hulp die je administratie en bonnetjes-verwerking vereenvoudigt.', gratis: 'Gratis te proberen' },
+    ],
+    gratisNote: 'Voor de communicatiekant betaal je weinig tot niets: de gratis versies van ChatGPT, Canva en Gamma dekken offertes, klantmails, huisstijl en presentaties. De boekhoudpakketten (Moneybird, Jortt, Tellow) zijn betaald maar bieden allemaal een gratis proefperiode — vaak vanaf ~€10-15 per maand, ruim minder dan de uren die je bespaart.',
+    faqs: [
+      { question: 'Hoeveel tijd levert AI me echt op als zzp\'er?', answer: 'De grootste winst zit in geautomatiseerde boekhouding: bankmutaties en facturen die zichzelf koppelen schelen makkelijk enkele uren per maand. Daarbovenop bespaart een AI-tekstassistent tijd op offertes en klantmails. Geen magie, maar wel het wegnemen van saai herhaalwerk waar je je marge op verliest.' },
+      { question: 'Hoe zit het met de AVG als ik klantgegevens in AI stop?', answer: 'Wees voorzichtig met persoonsgegevens van klanten. Zet geen gevoelige of herleidbare klantdata in een gewone chatbot zonder zakelijke voorwaarden, en kies voor je boekhouding Nederlandse pakketten (Moneybird, Jortt, Tellow) die op de Nederlandse regelgeving zijn ingericht. Anonimiseer waar je kunt.' },
+      { question: 'Vervangt AI mijn boekhouder?', answer: 'Nee. AI en moderne boekhoudsoftware nemen het invoer- en koppelwerk over en bereiden je btw-aangifte voor, maar voor je inkomstenbelasting, fiscale keuzes en complexe situaties blijft een boekhouder waardevol. Zie AI als de assistent die het routinewerk doet.' },
+    ],
+  },
+
+  'freelancers': {
+    key: 'freelancers',
+    title: 'AI-tools voor freelancers',
+    metaTitle: `AI-tools voor freelancers — sneller content, beeld en acquisitie (${year})`,
+    metaDescription: 'De beste AI-tools voor freelancers: content en beeld sneller maken, jezelf zichtbaar maken en klanten binnenhalen. Met eerlijke kijk op terugverdienen, AVG en onderscheidend blijven.',
+    intro: [
+      'Als freelancer verkoop je je tijd én je output. Hoe sneller je kwaliteit levert, hoe meer opdrachten je aankunt. Tegelijk gaat veel tijd op aan niet-factureerbare dingen: pitches schrijven, je portfolio en social bijhouden, beeld maken en acquisitie. AI helpt je die niet-declarabele uren in te dikken.',
+      'De kunst is AI strategisch inzetten: gebruik het om concepten en eerste versies te versnellen en beeld te maken zonder dure tools, terwijl jij de eindredactie en de menselijke laag verzorgt waar klanten je voor inhuren.',
+    ],
+    picks: [
+      { slug: 'copy.ai', reden: 'Maakt in seconden meerdere varianten van advertentieteksten, productbeschrijvingen en landingspagina-copy — fijn voor marketing-opdrachten.', gratis: 'Gratis instap' },
+      { slug: 'jasper', reden: 'Sterke schrijfassistent voor blogs, e-mails en adcopy die zich aanpast aan jouw toon en branche.', gratis: undefined },
+      { slug: 'canva-ai', reden: 'Ontwerp client-presentaties, social posts en visuals zonder designtool — snel professioneel beeld leveren.', gratis: 'Royale gratis versie' },
+      { slug: 'chatgpt', reden: 'Brainstorm pitches, schrijf voorstellen en klantmails, en versnel je conceptfase.', gratis: 'Ruime gratis versie' },
+      { slug: 'typefully', reden: 'Plan en schrijf je posts om jezelf als freelancer zichtbaar te maken en opdrachten aan te trekken.', gratis: 'Gratis basisversie' },
+      { slug: 'descript', reden: 'Bewerk video en podcast als een tekstdocument en haal er moeiteloos clips uit voor je portfolio en socials.', gratis: 'Gratis startniveau' },
+      { slug: 'midjourney', reden: 'Genereer onderscheidend beeld voor je eigen merk of voor creatieve opdrachten.', gratis: undefined },
+    ],
+    gratisNote: 'De meeste content- en acquisitietaken kun je gratis starten: ChatGPT, Canva, Copy.ai, Typefully en Gamma hebben allemaal een gratis niveau dat ruim genoeg is om te beginnen en klanten te bedienen. Voor zwaarder werk — veel beeld (Midjourney) of intensieve copy (Jasper) — loont een betaald plan; test eerst de gratis varianten.',
+    faqs: [
+      { question: 'Verdienen deze tools zich terug voor een freelancer?', answer: 'Reken simpel: bespaart een tool je per week een paar niet-declarabele uren op concepten, beeld of acquisitie, en gebruik je die tijd voor betaald werk, dan verdient een abonnement van enkele tientjes zich snel terug. Begin gratis, meet of het echt tijd oplevert, en upgrade pas als het zich bewijst.' },
+      { question: 'Mag ik AI-content aan mijn klanten leveren, en hoe zit het met de AVG?', answer: 'Wees transparant naar je klant over AI-gebruik en lever nooit onbewerkte AI-output: jouw eindredactie en oordeel zijn waar je voor wordt ingehuurd. Zet geen vertrouwelijke klantdata in een gewone chatbot zonder zakelijke voorwaarden, en check bij beeld- en muziektools de gebruiksrechten voor commercieel werk.' },
+      { question: 'Hoe blijf ik onderscheidend als iedereen dezelfde AI gebruikt?', answer: 'AI versnelt de basis, maar je waarde zit in je smaak, strategie en stem. Gebruik AI voor het ruwe werk en eerste versies, en stop je eigen expertise in de eindversie. Klanten huren steeds vaker juist freelancers in die AI strategisch op een écht probleem kunnen inzetten — laat dat zien in je pitches en portfolio.' },
+    ],
+  },
 };
 
 export const taakKeys = Object.keys(taakContent);

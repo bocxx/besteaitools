@@ -649,42 +649,6 @@ export const prerender = true;
                       </span>
                     </div>
                   )}
-                  {tool.documentationQuality && (
-                    <div class="meta-item">
-                      <span class="meta-label">Documentatie</span>
-                      <span class="meta-value" style={`color: ${qualityLevels[tool.documentationQuality].color}`}>
-                        {qualityLevels[tool.documentationQuality].label}
-                      </span>
-                    </div>
-                  )}
-                  {tool.supportQuality && (
-                    <div class="meta-item">
-                      <span class="meta-label">Support</span>
-                      <span class="meta-value" style={`color: ${qualityLevels[tool.supportQuality].color}`}>
-                        {qualityLevels[tool.supportQuality].label}
-                      </span>
-                    </div>
-                  )}
-                  {tool.easeOfUseScore && (
-                    <div class="meta-item">
-                      <span class="meta-label">Gebruiksgemak</span>
-                      <span class="meta-value" style="color: var(--color-success)">{tool.easeOfUseScore}/10</span>
-                    </div>
-                  )}
-                  {tool.fundingStage && (
-                    <div class="meta-item">
-                      <span class="meta-label">Financiering</span>
-                      <span class="meta-value" style={`color: ${fundingStages[tool.fundingStage].color}`}>
-                        {fundingStages[tool.fundingStage].label}
-                      </span>
-                    </div>
-                  )}
-                  {tool.yearsActive != null && (
-                    <div class="meta-item">
-                      <span class="meta-label">Jaren actief</span>
-                      <span class="meta-value">{tool.yearsActive} jaar</span>
-                    </div>
-                  )}
                   {tool.g2Rating != null && (
                     <div class="meta-item">
                       <span class="meta-label">G2 Rating</span>
@@ -824,47 +788,11 @@ export const prerender = true;
           </div>
         )}
 
-        {stats?.social_posts && stats.social_posts.length > 0 && (
-          <div class="specs-group media-panel">
-            <h3 class="section-subheading"><MessageSquare size={14} stroke-width={1.5} /> Wat mensen zeggen</h3>
-            <div class="social-grid">
-              {stats.social_posts.map(p => {
-                const initials = (p.author_name || p.author_handle)
-                  .split(/\s+/).slice(0, 2).map((w: string) => w[0]?.toUpperCase()).join('');
-                const platformLabel = p.platform === 'reddit' ? 'Reddit'
-                  : p.platform === 'twitter' ? 'X / Twitter'
-                  : 'Bluesky';
-                return (
-                  <a href={p.url} target="_blank" rel="noopener" class="social-card">
-                    <div class="social-card__header">
-                      <span class="social-card__avatar" aria-hidden="true">{initials}</span>
-                      <div class="social-card__author-info">
-                        <span class="social-card__name">{p.author_name || p.author_handle}</span>
-                        <span class="social-card__handle">@{p.author_handle}</span>
-                      </div>
-                      <span class={`social-card__platform social-card__platform--${p.platform || 'bluesky'}`} title={platformLabel}>
-                        {p.platform === 'reddit' && <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" alt="" width="14" height="14" />}
-                        {p.platform === 'twitter' && <img src="https://www.google.com/s2/favicons?domain=x.com&sz=32" alt="" width="14" height="14" />}
-                        {(!p.platform || p.platform === 'bluesky') && <img src="https://www.google.com/s2/favicons?domain=bsky.app&sz=32" alt="" width="14" height="14" />}
-                      </span>
-                    </div>
-                    <p class="social-card__text">{p.text}</p>
-                    {(p.likes > 0 || p.reposts > 0) && (
-                      <div class="social-card__engagement">
-                        {p.likes > 0 && <span class="social-card__stat">
-                          <Heart size={12} stroke-width={1.5} />{p.likes}
-                        </span>}
-                        {p.reposts > 0 && <span class="social-card__stat">
-                          <Repeat2 size={12} stroke-width={1.5} />{p.platform === 'reddit' ? `${p.reposts} comments` : p.reposts}
-                        </span>}
-                      </div>
-                    )}
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        )}
+        {/* "Wat mensen zeggen" (losse social-posts) bewust verwijderd juni 2026:
+            de feed haalde willekeurige, soms verkeerd toegeschreven posts binnen
+            (politieke/nieuws-tweets onder een toolnaam) — een credibility-risico
+            voor een site die op betrouwbaarheid drijft. "In het nieuws"
+            (gecureerde artikelen) blijft als versheidssignaal. */}
         </section>
         )}
 
