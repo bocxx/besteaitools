@@ -18,6 +18,14 @@ const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const pricing = pricingModels[tool.pricingModel];
 
+// Gratis-signaal: consumenten zoeken "gratis". Toon een duidelijke groene badge.
+//  - free/freemium → er is een gratis versie ("Gratis tier")
+//  - paid/enterprise mét proefperiode → "Gratis proberen"
+const hasFreeTier = tool.pricingModel === 'free' || tool.pricingModel === 'freemium';
+const freeBadge = tool.pricingModel === 'freemium' ? 'Gratis tier'
+  : (!hasFreeTier && tool.freeTrialAvailable) ? 'Gratis proberen'
+  : null;
+
 // Snel inzetbaar? (minuten/uren tot eerste waarde) — keuze-info i.p.v. buzz
 const isFastToValue = tool.timeToFirstValue === 'minutes' || tool.timeToFirstValue === 'hours';
 
@@ -46,7 +54,7 @@ try { domain = new URL(tool.websiteUrl).hostname; } catch { domain = ''; }
 const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
-<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
+<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-free={hasFreeTier ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
   <div class="tool-card__inner">
 
     <!-- Header: category + logo -->
@@ -70,6 +78,7 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
       <span class="fact-pill" style={`color: ${pricing.color}; border-color: color-mix(in oklch, ${pricing.color} 30%, transparent)`}>
         {pricing.label}
       </span>
+      {freeBadge && <span class="free-pill">{freeBadge}</span>}
       <div class="tool-card__icons">
         {riskFlags.length > 0 && <RiskBadges flags={riskFlags} />}
         {isEditorTested && <BadgeCheck size={13} stroke-width={1.5} class="icon--editor" title="Getest door redactie" />}
@@ -205,6 +214,21 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     font-weight: var(--font-medium);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  /* Gratis-tier badge: het signaal dat consumenten zoeken */
+  .free-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-semibold);
+    color: var(--color-success);
+    border: 1px solid color-mix(in oklch, var(--color-success) 35%, transparent);
+    background: color-mix(in oklch, var(--color-success) 10%, transparent);
     white-space: nowrap;
   }
 

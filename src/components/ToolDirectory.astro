@@ -44,6 +44,7 @@ zakelijkTools.sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?
   </div>
   <!-- Quick-filter chips -->
   <div class="filter-bar__row filter-bar__row--quick">
+    <button class="quick-chip" data-quick="free" title="Heeft een gratis versie (gratis of freemium)"><Gift size={13} stroke-width={1.5} /> Gratis versie</button>
     <button class="quick-chip" data-quick="nl" title="Nederlandse interface of gedocumenteerde NL-taalondersteuning — geverifieerd per tool">🇳🇱 Werkt in het Nederlands</button>
     <button class="quick-chip" data-quick="gdpr" title="Alleen GDPR-ready tools"><ShieldCheck size={13} stroke-width={1.5} /> GDPR-klaar</button>
     <button class="quick-chip" data-quick="fast" title="Tijd tot eerste waarde: minuten of uren"><Zap size={13} stroke-width={1.5} /> Snel inzetbaar</button>
@@ -149,6 +150,7 @@ zakelijkTools.sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?
 
   function matchQuickFilters(card: HTMLElement): boolean {
     for (const qf of activeQuickFilters) {
+      if (qf === 'free' && card.dataset.free !== '1') return false;
       if (qf === 'nl' && card.dataset.nl !== '1') return false;
       if (qf === 'gdpr' && card.dataset.gdpr !== '1') return false;
       if (qf === 'fast' && !['minutes', 'hours'].includes(card.dataset.ttfv ?? '')) return false;
