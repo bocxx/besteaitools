@@ -13,6 +13,7 @@ import Tooltip from '../../components/atoms/Tooltip.astro';
 import RelatedNewsForTool from '../../components/nieuws/RelatedNewsForTool.astro';
 import SubscribeAnchor from '../../components/SubscribeAnchor.astro';
 import { taakContent } from '../../lib/taak-content';
+import hlnTutorials from '../../data/hln_tutorials.json';
 import { getAllTools, getComparisonPairs, getToolTutorials } from '../../lib/tools-engine';
 import {
   toolCategories, trendDirections, pricingModels, difficultyLevels,
@@ -61,6 +62,12 @@ const cat = toolCategories[tool.category];
 const taakLinks = Object.values(taakContent)
   .filter((t) => t.picks.some((p) => p.slug === tool.slug))
   .map((t) => ({ key: t.key, title: t.title }));
+
+// Redactionele NL-tutorials van hetlaatsteainieuws.nl die deze tool behandelen.
+// Bron: hln_tutorials.json (gegenereerd door newsflux/export_hln_tutorials.py).
+const hlnForTool = ((hlnTutorials as any).tutorials ?? [])
+  .filter((t: any) => (t.tool_slugs ?? []).includes(tool.slug))
+  .slice(0, 4);
 const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
 const pricing = pricingModels[tool.pricingModel];
@@ -191,7 +198,7 @@ const hasGettingStarted = gettingStarted.length > 0 || !!tool.exampleWorkflow ||
 
 // ── "Zo leer je" (tutorials) ─────────────────────────────────────────────
 const tutorials = await getToolTutorials(tool);
-const hasLearning = tutorials.length > 0 || (stats?.youtube_videos?.length ?? 0) > 0;
+const hasLearning = tutorials.length > 0 || (stats?.youtube_videos?.length ?? 0) > 0 || hlnForTool.length > 0;
 
 // Buzz-sectie toont nu alleen nog nieuws + social (YouTube verhuisde naar "Leren")
 const hasBuzz = (stats?.source_articles?.length ?? 0) > 0 || (stats?.social_posts?.length ?? 0) > 0;
@@ -749,6 +756,30 @@ export const prerender = true;
                           <span class="media-card__meta">{v.channel}</span>
                         </span>
                         <ExternalLink size={12} stroke-width={1.5} class="media-card__ext" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {hlnForTool.length > 0 && (
+              <div class="specs-group hln-panel">
+                <h3 class="section-subheading"><BookOpen size={14} stroke-width={1.5} /> Nederlandse tutorials van Het Laatste AI Nieuws</h3>
+                <ul class="hln-list">
+                  {hlnForTool.map((t: any) => (
+                    <li>
+                      <a href={t.url} target="_blank" rel="noopener" class="hln-card">
+                        <span class="hln-card__body">
+                          <span class="hln-card__title">{t.title}</span>
+                          {t.description && <span class="hln-card__desc">{t.description}</span>}
+                          <span class="hln-card__meta">
+                            {t.niveau && <span class="hln-card__tag">{t.niveau}</span>}
+                            {t.reading_time && <span>{t.reading_time} min</span>}
+                            <span>hetlaatsteainieuws.nl</span>
+                          </span>
+                        </span>
+                        <ExternalLink size={12} stroke-width={1.5} class="hln-card__ext" />
                       </a>
                     </li>
                   ))}
@@ -1427,6 +1458,18 @@ export const prerender = true;
   .learn-cta { margin: var(--space-2) 0 0 0; font-size: var(--text-sm); }
   .learn-cta a { color: var(--primary-bright); text-decoration: none; }
   .learn-cta a:hover { text-decoration: underline; }
+
+  /* HLN-tutorials (cross-domain, redactioneel) */
+  .hln-panel { margin-top: var(--space-4); }
+  .hln-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .hln-card { display: flex; gap: var(--space-3); align-items: flex-start; padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); text-decoration: none; color: var(--text-primary); transition: border-color var(--transition-fast); }
+  .hln-card:hover { border-color: var(--primary-bright); }
+  .hln-card__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .hln-card__title { font-weight: var(--font-semibold); line-height: 1.35; }
+  .hln-card__desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.45; }
+  .hln-card__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: 4px; font-family: var(--font-mono, monospace); font-size: 0.62rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+  .hln-card__tag { color: var(--color-success, #4ade80); }
+  .hln-card__ext { flex: none; margin-top: 4px; color: var(--text-secondary); }
 
   /* ── Meta panels (zakelijke info, inzetbaarheid, governance) ─ */
   .meta-panel {

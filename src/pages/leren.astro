@@ -21,6 +21,7 @@ import { ArrowLeft, GraduationCap, Github, Play, ArrowUpRight, Wrench, BookOpen,
 import DiscoverGrid from '../components/DiscoverGrid.astro';
 import curated from '../data/leren-curated.json';
 import raw from '../data/reports/tutorial_candidates.json';
+import hlnTutorials from '../data/hln_tutorials.json';
 
 // ---------- Leerdoelen (filter-as "wat wil je leren") ----------
 const goals: Record<string, string> = {
@@ -57,7 +58,7 @@ type LearnItem = {
   level: 'starter' | 'gevorderd';
   goal: string;
   toolSlugs: string[];
-  source: 'eigen' | 'leerpad' | 'vers';
+  source: 'eigen' | 'leerpad' | 'vers' | 'hln';
   internal: boolean;
   host: string;
   sortKey: number;
@@ -99,6 +100,24 @@ for (const a of eigenGidsen) {
     internal: true,
     host: '',
     sortKey: 1000 + new Date(a.data.publishedAt ?? 0).getTime() / 1e10,
+  });
+}
+
+// ---------- Bron 1b: HLN-tutorials (redactioneel NL, cross-domain) ----------
+for (const t of ((hlnTutorials as any).tutorials ?? []) as any[]) {
+  const slugs = (t.tool_slugs ?? []).filter((s: string) => toolMap.has(s));
+  items.push({
+    title: t.title,
+    url: t.url,
+    desc: t.description ?? null,
+    type: 'gids',
+    level: t.niveau === 'gevorderd' ? 'gevorderd' : 'starter',
+    goal: goalForSlugs(slugs, 'basis'),
+    toolSlugs: slugs.slice(0, 3),
+    source: 'hln',
+    internal: false,
+    host: 'hetlaatsteainieuws.nl',
+    sortKey: 900 + (t.published_at ? new Date(t.published_at).getTime() / 1e10 : 0),
   });
 }
 
@@ -157,7 +176,7 @@ items.sort((a, b) => b.sortKey - a.sortKey);
 const typeLabels: Record<string, string> = {
   gids: 'Gids', cursus: 'Cursus', docs: 'Docs', repo: 'GitHub', video: 'Video', thread: 'Thread',
 };
-const sourceLabels: Record<string, string> = { eigen: 'Onze gids', leerpad: 'Leerpad', vers: 'Vers ontdekt' };
+const sourceLabels: Record<string, string> = { eigen: 'Onze gids', hln: 'NL-tutorial', leerpad: 'Leerpad', vers: 'Vers ontdekt' };
 
 const goalCounts: Record<string, number> = {};
 for (const i of items) goalCounts[i.goal] = (goalCounts[i.goal] ?? 0) + 1;
