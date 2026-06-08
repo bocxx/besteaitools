@@ -1,0 +1,96 @@
+{
+  "name": "Boekie AI",
+  "category": "productivity",
+  "websiteUrl": "https://www.boekie-ai.nl",
+  "shortDescription": "Nederlandse autonome AI-boekhouder die boven je bestaande boekhoudpakket draait en banktransacties, facturen en bonnen automatisch verwerkt en je btw-aangifte voorbereidt.",
+  "headlineValueProp": "AI-boekhouder die 24/7 in je bestaande pakket (Exact Online, e-Boekhouden) banktransacties, facturen en bonnen verwerkt en bij twijfel een mens laat controleren.",
+  "longDescription": "Boekie AI uit Arnhem is geen los boekhoudpakket maar een autonome AI-laag die je koppelt aan je bestaande administratie — momenteel Exact Online en e-Boekhouden.nl via officiële API's. De AI categoriseert banktransacties, herkent inkoop- en verkoopfacturen, verwerkt bonnetjes en bereidt btw-aangiftes voor, inclusief tariefberekening (0/9/21%). Boekie boekt zelfstandig wanneer de confidence boven een drempel ligt; daaronder maakt de AI een taak aan voor menselijke review, zodat je niet blind op de automatisering vertrouwt. De positionering is expliciet: Boekie wil de traditionele boekhouder grotendeels vervangen voor zzp en MKB, met een claimde automatiseringsgraad rond 95%. Werkt met een creditmodel per verwerkte boeking. Data wordt versleuteld opgeslagen binnen de EU.",
+  "verdict": "Boekie gaat verder dan scan-en-herken: het is een van de weinige Nederlandse tools die echt autonoom probeert te boeken in plaats van alleen voorstellen te doen. De ingebouwde confidence-drempel met menselijke review is verstandig en eerlijk. Beperking: het werkt (nog) alleen bovenop Exact Online en e-Boekhouden, en het creditmodel maakt de kosten lastiger te voorspellen dan een vast maandtarief.",
+  "whyListed": "Een van de eerste Nederlandse aanbieders die een echt autonome AI-boekhouder neerzet bovenop bestaande pakketten, met EU-dataopslag en een transparant confidence-model.",
+  "bestAlternative": "vic-ai",
+  "bestFor": "Zzp'ers en MKB-ondernemers die al Exact Online of e-Boekhouden gebruiken en hun administratie grotendeels willen automatiseren zonder hun pakket te verlaten.",
+  "primaryJobsToBeDone": [
+    "Banktransacties automatisch laten categoriseren en boeken in je bestaande pakket",
+    "Inkoop- en verkoopfacturen en bonnen automatisch laten verwerken",
+    "Btw-aangifte laten voorbereiden inclusief tariefberekening"
+  ],
+  "antiUseCases": [
+    "Wie geen Exact Online of e-Boekhouden gebruikt — andere koppelingen (Moneybird, Twinfield, SnelStart) zijn nog in aanvraag",
+    "Wie een vaste, voorspelbare maandprijs wil — Boekie rekent met credits per boeking",
+    "Wie geen vertrouwen heeft in autonoom boeken zonder elke boeking zelf te willen zien"
+  ],
+  "useCases": [
+    "Een zzp-administratie in Exact Online vrijwel volledig automatiseren",
+    "Wekelijkse bankverwerking laten afhandelen door de AI",
+    "Kwartaalrapport en btw-voorbereiding klaarzetten voor je accountant"
+  ],
+  "strengths": [
+    "Autonoom boeken in plaats van alleen voorstellen, met confidence-drempel",
+    "Menselijke review wordt automatisch ingepland bij lage zekerheid",
+    "Data versleuteld binnen de EU, Nederlands bedrijf en support"
+  ],
+  "limitations": [
+    "Koppelt vooralsnog alleen met Exact Online en e-Boekhouden.nl",
+    "Creditmodel maakt de maandkosten minder voorspelbaar",
+    "Relatief jong bedrijf met een nog groeiende klantenbasis"
+  ],
+  "pricing": "Creditmodel per 4 weken, excl. btw: Start/Freelance vanaf circa €25-49 (50-75 credits), MKB €99 (200 credits), Autopilot/Plus €219-299 (500 credits). Losse credits €0,55/stuk. 7 dagen gratis proberen.",
+  "pricingModel": "paid",
+  "difficulty": "beginner",
+  "openSource": false,
+  "tags": [
+    "ai-boekhouder",
+    "boekhouden",
+    "automatisering",
+    "btw",
+    "nederlands"
+  ],
+  "mentionAliases": [
+    "boekie",
+    "boekie-ai",
+    "boekie ai"
+  ],
+  "businessFunctions": [
+    "finance"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Autonome boeking met confidence-drempel",
+      "description": "Boekt zelfstandig bij hoge zekerheid; bij twijfel maakt de AI een taak aan voor menselijke controle.",
+      "group": "core"
+    },
+    {
+      "title": "Bankverwerking",
+      "description": "Categoriseert en matcht banktransacties automatisch via Open Banking (PSD2).",
+      "group": "input"
+    },
+    {
+      "title": "Bon- en factuurherkenning",
+      "description": "Herkent en boekt inkoop- en verkoopfacturen en bonnen, ook van minder nette scans.",
+      "group": "input"
+    },
+    {
+      "title": "Btw-voorbereiding",
+      "description": "Berekent btw per tarief (0/9/21%) en bereidt de aangifte voor conform de regels van de Belastingdienst.",
+      "group": "output"
+    },
+    {
+      "title": "Chat met je boekhouddata",
+      "description": "Beantwoordt vragen over je eigen cijfers, facturen en cashflow in gewone taal (vanaf het Groei-pakket).",
+      "group": "core"
+    },
+    {
+      "title": "Koppeling met bestaand pakket",
+      "description": "Integreert via officiële API met Exact Online en e-Boekhouden.nl; meer koppelingen in aanvraag.",
+      "group": "integration"
+    }
+  ],
+  "supportsDutchLanguage": true,
+  "outputLanguageQualityNl": "native",
+  "gdprReady": true,
+  "euHostingAvailable": true,
+  "aiActRiskClass": "minimal",
+  "draft": false,
+  "lastUpdated": "2026-06-07",
+  "lastReviewedAt": "2026-06-07"
+}
