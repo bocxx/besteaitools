@@ -34,6 +34,10 @@ export default defineConfig({
       styles: ['normal'],
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['Helvetica Neue', 'Arial', 'sans-serif'],
+      // optional: gebruik de (metric-aangepaste) fallback als Geist niet binnen
+      // ~100ms klaar is, en wissel daarna NIET meer → geen layout-shift (CLS).
+      // Samen met preload in Layout.astro is Geist meestal toch op tijd.
+      display: 'optional',
     },
     {
       provider: fontProviders.fontsource(),
@@ -43,6 +47,7 @@ export default defineConfig({
       styles: ['normal'],
       subsets: ['latin'],
       fallbacks: ['SF Mono', 'Menlo', 'monospace'],
+      display: 'optional',
     },
   ],
   integrations: [

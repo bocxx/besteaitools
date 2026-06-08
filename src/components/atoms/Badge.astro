@@ -87,6 +87,15 @@ const Tag = href ? 'a' : 'span';
     border: 1px solid color-mix(in oklch, var(--badge-color, var(--primary-bright, #ff6b6b)) 40%, transparent);
     color: var(--badge-color, var(--primary-bright, #ff6b6b));
   }
+  /* Light-modus: de categorie-accenten zijn afgestemd op een donkere
+     achtergrond en halen op wit geen WCAG-AA contrast. Meng de tekst naar
+     het donkere thematekst-token (en geef een lichte tint als backing) zodat
+     de categoriekleur herkenbaar blijft maar de tekst leesbaar is. */
+  :global([data-theme="light"]) .badge--category {
+    color: color-mix(in oklch, var(--badge-color, var(--primary-bright)) 42%, var(--text-primary, #1a2033));
+    background: color-mix(in oklch, var(--badge-color, var(--primary-bright)) 10%, transparent);
+    border-color: color-mix(in oklch, var(--badge-color, var(--primary-bright)) 50%, transparent);
+  }
   
   .badge--outline {
     background: transparent;
