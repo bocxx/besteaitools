@@ -43,6 +43,7 @@ export const toolCategories = {
   automation:     { name: 'Automatisering',  icon: 'workflow',       color: 'var(--color-success)',     description: 'Workflow-automatisering en no-code koppelingen.' },
   support:        { name: 'Klantenservice',  icon: 'headset',        color: '#818cf8',                 description: 'AI voor support, tickets en klantcontact.' },
   marketing:      { name: 'Marketing',       icon: 'megaphone',      color: '#fb923c',                 description: 'AI voor marketing, ads en social media.' },
+  seo:            { name: 'SEO',             icon: 'trending-up',    color: '#34d399',                 description: 'AI voor zoekmachine-optimalisatie, vindbaarheid en content-ranking.' },
   productivity:   { name: 'Productiviteit',  icon: 'sparkles',       color: 'var(--primary-mid)',       description: 'Dagelijkse AI-tools voor kenniswerk en output.' },
   infrastructure: { name: 'Infrastructuur',  icon: 'server',         color: 'var(--secondary-mid)',     description: 'Modellen, infra, deployment en AI-platforms.' },
   design:         { name: 'Design',          icon: 'palette',        color: '#f0abfc',                 description: 'AI-tools voor grafisch ontwerp en visuele content.' },
