@@ -12,6 +12,7 @@ import ScoreMeter from '../../components/atoms/ScoreMeter.astro';
 import Tooltip from '../../components/atoms/Tooltip.astro';
 import RelatedNewsForTool from '../../components/nieuws/RelatedNewsForTool.astro';
 import SubscribeAnchor from '../../components/SubscribeAnchor.astro';
+import { taakContent } from '../../lib/taak-content';
 import { getAllTools, getComparisonPairs, getToolTutorials } from '../../lib/tools-engine';
 import {
   toolCategories, trendDirections, pricingModels, difficultyLevels,
@@ -53,6 +54,13 @@ export async function getStaticPaths() {
 
 const { tool, comparisons, related, altSlug } = Astro.props;
 const cat = toolCategories[tool.category];
+
+// Reverse-map: voor welke taak-landingspagina's is deze tool een aanrader?
+// Voedt het "Waarvoor gebruik je"-blok + interne links naar /ai-voor/ (helpt
+// indexatie en lift van striking-distance pagina's). Bron: taak-content.ts.
+const taakLinks = Object.values(taakContent)
+  .filter((t) => t.picks.some((p) => p.slug === tool.slug))
+  .map((t) => ({ key: t.key, title: t.title }));
 const stats = tool.stats;
 const dir = stats ? trendDirections[stats.trend_direction] : null;
 const pricing = pricingModels[tool.pricingModel];
@@ -858,6 +866,26 @@ export const prerender = true;
           </div>
         )}
         </section>
+        )}
+
+        <!-- Waarvoor gebruik je deze tool — links naar taak-landingspagina's -->
+        {taakLinks.length > 0 && (
+          <section class="task-links">
+            <h2 class="task-links__title">Waarvoor gebruik je {tool.name}?</h2>
+            <p class="task-links__intro">
+              {tool.name} is een van onze aanraders voor deze taken. Bekijk de
+              complete vergelijking met alternatieven en wat gratis kan.
+            </p>
+            <div class="task-links__grid">
+              {taakLinks.map((t) => (
+                <a href={`/ai-voor/${t.key}`} class="task-link">
+                  <Target size={15} stroke-width={1.75} />
+                  <span>{t.title}</span>
+                  <span class="task-link__cta">Bekijk →</span>
+                </a>
+              ))}
+            </div>
+          </section>
         )}
 
         <!-- Alternatieven in dezelfde categorie — unieke interne links per pagina -->
@@ -2262,6 +2290,34 @@ export const prerender = true;
     transition: color var(--transition-fast), border-color var(--transition-fast);
   }
   .mobile-cta-bar__primary:hover { color: var(--primary-bright); border-color: var(--primary-bright); }
+
+  /* Waarvoor gebruik je deze tool — taak-links */
+  .task-links {
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .task-links__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+  }
+  .task-links__intro { color: var(--text-secondary); margin: 0 0 var(--space-5); max-width: 64ch; }
+  .task-links__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-3); }
+  .task-link {
+    display: flex; align-items: center; gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid color-mix(in oklch, var(--primary-bright) 28%, var(--border-subtle));
+    border-radius: var(--radius-lg, 12px);
+    color: var(--text-primary); text-decoration: none;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  }
+  .task-link:hover { border-color: var(--primary-bright); background: color-mix(in oklch, var(--primary-bright) 8%, transparent); }
+  .task-link :global(svg) { flex: none; color: var(--primary-bright); }
+  .task-link span:first-of-type { font-weight: var(--font-semibold); }
+  .task-link__cta { margin-left: auto; font-size: var(--text-sm); color: var(--primary-bright); white-space: nowrap; }
 
   /* Alternatieven in dezelfde categorie */
   .related-tools {
