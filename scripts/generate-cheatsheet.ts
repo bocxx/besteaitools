@@ -47,6 +47,7 @@ const ROOT = resolve(process.cwd());
 const DATA_DIR = join(ROOT, 'src/data/cheatsheets');
 const RADAR_PATH = join(ROOT, 'src/data/reports/ai_tools_radar.json');
 const DEFAULT_OUT = join(ROOT, 'public/cheatsheets');
+const HERO_DIR = join(ROOT, 'public/cheatsheets/heroes');
 const FONT_INTER_REG = join(ROOT, 'src/assets/fonts/inter-regular.ttf');
 const FONT_INTER_SB = join(ROOT, 'src/assets/fonts/inter-semibold.ttf');
 const FONT_INTER_BOLD = join(ROOT, 'src/assets/fonts/inter-bold.ttf');
@@ -64,6 +65,16 @@ interface BaseSheet {
   footnote?: string;
   width?: number;
   columns?: number; // tool-grid only
+  /**
+   * Optional AI-generated header image (the "hero strip").
+   *  - omit / undefined → auto-detect public/cheatsheets/heroes/<slug>.(webp|png|jpg)
+   *  - { image: "path" } → use this file (relative to cwd or the data dir)
+   *  - { height: 320 }   → override band height (px)
+   *  - false             → never render a hero even if a file exists
+   * Generating the image costs Leonardo tokens and is a SEPARATE, opt-in
+   * step (scripts/gen-cheatsheet-hero.py). The render itself never calls an API.
+   */
+  hero?: { image?: string; height?: number } | false;
 }
 
 interface ToolGridSheet extends BaseSheet {
@@ -327,8 +338,85 @@ function footer(sheet: Sheet) {
   );
 }
 
+// ── Hero strip (optional, AI-generated header image) ──────────────────────────
+// satori's image reader only understands PNG/JPEG (not WebP) — heroes must
+// therefore be PNG/JPEG. The Leonardo generator writes PNG for this reason.
+const MIME: Record<string, string> = {
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+};
+
+/** Resolve a hero image to a base64 data-URI, or null if none/disabled. */
+function resolveHero(sheet: Sheet): string | null {
+  if (sheet.hero === false) return null;
+  const candidates: string[] = [];
+  if (sheet.hero && sheet.hero.image) {
+    candidates.push(resolve(sheet.hero.image), join(DATA_DIR, sheet.hero.image));
+  }
+  // Auto-detect by slug (PNG/JPEG only — satori cannot embed WebP)
+  const slug = sheet.slug;
+  if (slug) {
+    for (const ext of ['.png', '.jpg', '.jpeg']) {
+      candidates.push(join(HERO_DIR, `${slug}${ext}`));
+    }
+  }
+  const found = candidates.find((p) => existsSync(p));
+  if (!found) {
+    // Helpful nudge if a WebP hero exists but can't be used.
+    if (slug && existsSync(join(HERO_DIR, `${slug}.webp`))) {
+      console.warn(`   ⚠️  ${slug}.webp found but satori needs PNG — converteer naar ${slug}.png`);
+    }
+    return null;
+  }
+  const ext = found.slice(found.lastIndexOf('.')).toLowerCase();
+  if (!MIME[ext]) {
+    console.warn(`   ⚠️  hero "${found}" is geen PNG/JPEG — overgeslagen`);
+    return null;
+  }
+  const b64 = readFileSync(found).toString('base64');
+  return `data:${MIME[ext]};base64,${b64}`;
+}
+
+function heroBand(dataUri: string, width: number, height: number) {
+  return h(
+    'div',
+    {
+      style: {
+        display: 'flex',
+        position: 'relative',
+        width: `${width}px`,
+        height: `${height}px`,
+        overflow: 'hidden',
+      },
+    },
+    h('img', {
+      src: dataUri,
+      width,
+      height,
+      style: { width: `${width}px`, height: `${height}px`, objectFit: 'cover' },
+    }),
+    // top tint for brand cohesion
+    h('div', {
+      style: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: `${height}px`,
+        background: `linear-gradient(to bottom, ${alpha(C.bg, 45)} 0%, transparent 35%, transparent 60%, ${C.bg} 100%)`,
+      },
+    }),
+  );
+}
+
 function frame(sheet: Sheet, accent: string, body: ReturnType<typeof h>) {
   const width = sheet.width ?? DEFAULT_WIDTH;
+  const heroUri = resolveHero(sheet);
+  const heroH =
+    sheet.hero && sheet.hero !== false && sheet.hero.height
+      ? sheet.hero.height
+      : Math.round(width * 0.27);
   const fill = {
     position: 'absolute' as const,
     top: 0,
@@ -383,20 +471,26 @@ function frame(sheet: Sheet, accent: string, body: ReturnType<typeof h>) {
         background: `linear-gradient(to bottom, ${C.primary}, ${accent})`,
       },
     }),
-    // content column
+    // main column: optional hero band (full-bleed) + padded content
     h(
       'div',
-      {
-        style: {
-          display: 'flex',
-          flexDirection: 'column',
-          padding: '72px 80px 60px 96px',
-          width: `${width}px`,
+      { style: { display: 'flex', flexDirection: 'column', width: `${width}px` } },
+      ...(heroUri ? [heroBand(heroUri, width, heroH)] : []),
+      h(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            padding: heroUri ? '8px 80px 60px 96px' : '72px 80px 60px 96px',
+            marginTop: heroUri ? `-${Math.round(heroH * 0.18)}px` : '0px',
+            width: `${width}px`,
+          },
         },
-      },
-      header(sheet, accent),
-      h('div', { style: { display: 'flex', flexDirection: 'column', marginTop: '52px' } }, body),
-      footer(sheet),
+        header(sheet, accent),
+        h('div', { style: { display: 'flex', flexDirection: 'column', marginTop: '52px' } }, body),
+        footer(sheet),
+      ),
     ),
   );
 }

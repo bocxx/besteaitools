@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-08T17:44:06.478900",
+  "generated_at": "2026-06-09T05:31:34.626855",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 16,
     "for_news": 17,
-    "rejected_lang": 172,
+    "rejected_lang": 159,
     "already_covered": 0,
-    "total_scanned": 4688
+    "total_scanned": 4699
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
         "how to",
-        "tutorial"
+        "tutorial",
+        "step-by-step"
       ],
       "matched_tools": [
         "gemini",
@@ -545,52 +545,6 @@
       "id": "c7f7c9d65f0f3e0b"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
-      "date": "2026-05-20",
-      "engagement": 2448.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.71,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.71,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "67bd84a16d5db4b6"
-    },
-    {
       "source": "likes:@icreatelife",
       "platform": "twitter_likes",
       "title": "You are all AI pioneers and you are in an important position to help the rest of the world to understand how to use this tech and what to do with it. Itâs sti",
@@ -683,6 +637,112 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "82594c5cd7a0e536"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "🚀 Build a Fully Local AI Agent with Hermes Agent, Ollama, Qwen 3.5, and SearXNG (100% Private ＆ $0 Cost)",
+      "text": "<p>What if you could build an AI agent that can:</p>\n\n<p>✅ Think and reason<br><br>\n✅ Search the web<br><br>\n✅ Read and write files<br><br>\n✅ Generate reports and dashboards<br><br>\n✅ Run entirely on your own machine</p>\n\n<p>Without:</p>\n\n<p>❌ OpenAI API keys<br><br>\n❌ Anthropic subscriptions<br><br>\n❌ Monthly AI bills<br><br>\n❌ Sending your prompts and files to third-party servers</p>\n\n<p>That's exactly what I built.</p>\n\n<p>In this tutorial, I'll show you how to create a fully local AI agent stack using:</p>\n\n<p><strong>🤖 Hermes Agent</strong><br><br>\n<strong>🧠 Qwen 3.5 9B via Ollama</strong",
+      "url": "https://dev.to/vivek_shetye/build-a-fully-local-ai-agent-with-hermes-agent-ollama-qwen-35-and-searxng-100-private-0-568d",
+      "date": "2026-06-08",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "build a",
+        "build an",
+        "walkthrough",
+        "tutorial"
+      ],
+      "matched_tools": [
+        "chatgpt",
+        "claude",
+        "hermes-agent",
+        "ollama",
+        "qwen"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "96af571687ac4cb1"
+    },
+    {
+      "source": "articles:MarkTechPost",
+      "platform": "article",
+      "title": "ClawHub Security Signals: A Coding Guide to End-to-End Security Signal Analysis and Verdict Classification on the AI Skills Dataset",
+      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we use the<a href=\"https://huggingface.co/datasets/OpenClaw/clawhub-security-signals\"> <strong>ClawHub Security Signals dataset</strong></a><strong> </strong>to examine how different security scanners assess AI skills and related files. We load the dataset directly from the Hugging Face Parquet conversion to avoid compatibility issues with newer dataset metadata, then inspect the main columns, verdict distribution, scanner outputs, and severity labels. After exploring scanner disagreement and overlap patterns, we build a practical ",
+      "url": "https://www.marktechpost.com/2026/06/08/clawhub-security-signals-a-coding-guide-to-end-to-end-security-signal-analysis-and-verdict-classification-on-the-ai-skills-dataset/",
+      "date": "2026-06-08",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "tutorial",
+        "build a",
+        "guide"
+      ],
+      "matched_tools": [
+        "huggingface"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je huggingface in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "c35d23d348ce363f"
     },
     {
       "source": "articles:The Practical Developer",
@@ -793,8 +853,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "hands-on",
         "how to",
+        "hands-on",
         "guide"
       ],
       "matched_tools": [],
@@ -829,56 +889,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "8a236dd2dbdeaa48"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "Automatically Attaching YouTube Video Footers to AI Tutorial Questions: Gemini LLM ＆ YouTube Search Service Integration",
-      "text": "<p>Automatically Attaching YouTube Video Footers to Tutorial-Style Questions: An Integration Log of gemini_llm_service &amp; youtube_search_service</p>\n\n<p>I've been developing a feature to automatically attach YouTube video footers to AI tutorial questions. My initial thought was simple: find a YouTube video relevant to the question and display it as a footer.</p>\n\n<h2>\n  \n  \n  Attempts and Pitfalls\n</h2>\n\n<p>My first approach was to have <code>gemini_llm_service</code> understand the intent of the question and then use those keywords to search for videos via <code>youtube_search_service</cod",
-      "url": "https://dev.to/junhee916/automatically-attaching-youtube-video-footers-to-ai-tutorial-questions-gemini-llm-youtube-search-5df2",
-      "date": "2026-06-06",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "tutorial",
-        "build a"
-      ],
-      "matched_tools": [
-        "gemini"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je gemini in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "f5c1fa249f15ad65"
     }
   ],
   "for_news": [
@@ -1355,8 +1365,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "how-to",
-        "explained"
+        "explained",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1390,54 +1400,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "3cb9a3f8c747176a"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Utilize AI (Not Just Use It): The AI Utilization Guide",
-      "text": "<p>OPTIMIZED FOR NOTION: <a href=\"https://rebel-nurse-a44.notion.site/How-to-Utilize-AI-Not-Just-Use-It-The-AI-Utilization-Guide-36f38a21a4b880e0ae89fda867a4b75e?pvs=74\">How to Utilize AI</a></p>\n\n<h2>\n  \n  \n  Fundamentals of Utilizing AI\n</h2>\n\n\n\n\n<p>When using AI, people often run into two distinct experiences, information overload or putting in a question and getting an answer back. Leaving the learning experience to an afterthought. In today’s society, since AI is being pushed more and more in classrooms and workplaces, learning to use AI is becoming paramount to one’s success. </p>\n\n<p>Ho",
-      "url": "https://dev.to/iaso/how-to-utilize-ai-not-just-use-it-the-ai-utilization-guide-flb",
-      "date": "2026-06-04",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "how-to",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "aac729bf07864c06"
     },
     {
       "source": "tweets:@akshay_pachaar",
@@ -1503,8 +1465,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "walkthrough",
         "build your",
+        "walkthrough",
         "guide"
       ],
       "matched_tools": [
@@ -1553,8 +1515,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "hands-on",
         "how to",
+        "hands-on",
         "build your"
       ],
       "matched_tools": [
@@ -1593,18 +1555,18 @@
       "id": "e75d75bee69ac5f2"
     },
     {
-      "source": "articles:Artificial Intelligence on Medium",
+      "source": "articles:Deep Learning on Medium",
       "platform": "article",
-      "title": "How to Choose Between AI and Data Science: Complete Beginner Roadmap (2026 Guide)",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@shivakumark_32099/how-to-choose-between-ai-and-data-science-complete-beginner-roadmap-2026-guide-f58691e96523?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/1536/1*7rrTXNJC22sfM40HSah35Q.png\" width=\"1536\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Artificial Intelligence (AI) and Data Science are two of the most in-demand career paths in 2026. Many students and professionals find…</p><p data-sanitized-class=\"medium-feed-link\"",
-      "url": "https://medium.com/@shivakumark_32099/how-to-choose-between-ai-and-data-science-complete-beginner-roadmap-2026-guide-f58691e96523?source=rss------artificial_intelligence-5",
-      "date": "2026-06-05",
-      "engagement": 41.25,
+      "title": "How LLM Quantization Works: INT8, INT4, GPTQ, and AWQ Explained",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://pub.towardsai.net/how-llm-quantization-works-int8-int4-gptq-and-awq-explained-172e1a76b347?source=rss------deep_learning-5\"><img src=\"https://cdn-images-1.medium.com/max/1238/1*4M0Hf5tg3sypd97KzEMpmA.png\" width=\"1238\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">A plain-language guide to reducing model precision: the mechanism, the accuracy trade-off, and how to choose a method.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://pub.towardsai.net/how-llm-quantization-w",
+      "url": "https://pub.towardsai.net/how-llm-quantization-works-int8-int4-gptq-and-awq-explained-172e1a76b347?source=rss------deep_learning-5",
+      "date": "2026-06-06",
+      "engagement": 36.5,
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "how-to",
+        "explained",
         "guide"
       ],
       "matched_tools": [],
@@ -1612,7 +1574,7 @@
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": true,
+      "paywall": false,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1620,10 +1582,10 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 14.62,
+      "score": 14.44,
       "score_breakdown": {
         "pattern_hits": 3,
-        "engagement_log": 5.62,
+        "engagement_log": 5.44,
         "source_weight": 0.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1638,21 +1600,22 @@
       "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "76b46f47382cc508"
+      "id": "4566d45023e70d6c"
     },
     {
-      "source": "articles:Programming on Medium",
+      "source": "articles:The Practical Developer",
       "platform": "article",
-      "title": "AI Engineer Roadmap 2026: The Complete Guide From Beginner to Job-Ready",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@dadhishankar1/ai-engineer-roadmap-2026-the-complete-guide-from-beginner-to-job-ready-eb7df4698fa2?source=rss------programming-5\"><img src=\"https://cdn-images-1.medium.com/max/600/0*wYWnzNzujjbvuAz5\" width=\"600\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">If I were starting from scratch in 2026, this is exactly the roadmap I would follow to become an AI Engineer.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@dadhishankar1/ai-engineer-roadma",
-      "url": "https://medium.com/@dadhishankar1/ai-engineer-roadmap-2026-the-complete-guide-from-beginner-to-job-ready-eb7df4698fa2?source=rss------programming-5",
-      "date": "2026-06-05",
-      "engagement": 36.95,
-      "source_weight": 0.5,
+      "title": "How to Migrate from Contentful to Cosmic in 30 Minutes",
+      "text": "<blockquote>\n<p>Originally published on the <a href=\"https://www.cosmicjs.com/blog/contentful-to-cosmic-migration\">Cosmic blog</a>.</p>\n</blockquote>\n\n<p>Since Salesforce completed its acquisition of Contentful, teams across the industry have been re-evaluating their CMS stack. Pricing changes, roadmap uncertainty, and enterprise-first repositioning are pushing developers and content teams to look for a more focused alternative. If you've already decided to move on, this guide covers the practical how-to. For the \"why,\" see our posts on <a href=\"https://www.cosmicjs.com/blog/contentful-alterna",
+      "url": "https://dev.to/tonyspiro/how-to-migrate-from-contentful-to-cosmic-in-30-minutes-3939",
+      "date": "2026-06-08",
+      "engagement": 50.0,
+      "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
-        "complete guide",
+        "how to",
+        "walkthrough",
+        "how-to",
         "guide"
       ],
       "matched_tools": [],
@@ -1660,7 +1623,7 @@
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": true,
+      "paywall": false,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1668,12 +1631,12 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 14.45,
+      "score": 14.4,
       "score_breakdown": {
         "pattern_hits": 3,
-        "engagement_log": 5.45,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
         "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
@@ -1683,10 +1646,59 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Waarom AI Engineer Roadmap er nu toe doet — en wat je ermee moet.",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "cfbf8be2d570602f"
+      "id": "c47333a8699275b9"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "How to Record Your Screen and Upload to YouTube (Quick Guide)",
+      "text": "<p>You want to record your screen – maybe for a bug report, a quick how‑to for a teammate, or a YouTube tutorial. The process is simpler than you think.</p>\n\n<p>Here’s a step‑by‑step guide that works with most free screen recorders on Windows. For this walkthrough, I’m using <a href=\"https://www.freescreenrecording.com/\">Free Cam</a> because it has no watermark or time limits, but the same principles apply to any tool you prefer.</p>\n\n<h2>\n  \n  \n  🎯 Step 1: Choose what to record\n</h2>\n\n<p>Decide what your audience needs to see:</p>\n\n<ul>\n<li>    Full screen – everything on your monitor. Good f",
+      "url": "https://dev.to/elearner/how-to-record-your-screen-and-upload-to-youtube-quick-guide-kad",
+      "date": "2026-06-08",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "tutorial",
+        "walkthrough",
+        "guide"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "3069ed63aca811a5"
     }
   ]
 }
