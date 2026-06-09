@@ -1,0 +1,86 @@
+{
+  "name": "LM Studio",
+  "category": "infrastructure",
+  "websiteUrl": "https://lmstudio.ai",
+  "shortDescription": "Desktopapp om lokale LLM's te downloaden, draaien en testen zonder cloudverbinding",
+  "headlineValueProp": "Download een open-source taalmodel en draai het privé op je eigen computer — geen API, geen abonnement",
+  "longDescription": "LM Studio is een desktopapplicatie voor macOS, Windows en Linux waarmee je open-source taalmodellen lokaal kunt draaien. Via de ingebouwde modelbibliotheek download je modellen van Hugging Face — van kleine 1B-parameter-modellen tot 70B-modellen — en chat je er direct mee in een nette interface. LM Studio biedt ook een lokale OpenAI-compatibele API-server, zodat je lokale tools en scripts kunt koppelen die normaal naar de OpenAI API praten. GPU-acceleratie wordt ondersteund voor NVIDIA en Apple Silicon. Populair bij developers en onderzoekers die modellen willen vergelijken, fine-tunen of privacy-gevoelige data niet naar de cloud willen sturen.",
+  "verdict": "LM Studio is de toegankelijkste manier om lokale LLM's op je eigen machine te draaien — de GUI verlaagt de drempel enorm ten opzichte van commandoregelalternatieven als llama.cpp. De OpenAI-compatibele API maakt het direct bruikbaar als lokale drop-in voor bestaande tools. Beperking: je bent gebonden aan je eigen hardware, en grote modellen vereisen flinke VRAM.",
+  "whyListed": "Meest gebruikte GUI-tool voor lokale LLM's; standaard aanbeveling voor developers die privé of offline met open-source modellen willen werken.",
+  "bestFor": "Developers, onderzoekers en privacy-bewuste gebruikers die open-source LLM's lokaal willen draaien en testen.",
+  "primaryJobsToBeDone": [
+    "Open-source taalmodellen downloaden en lokaal draaien zonder cloud of API-sleutel",
+    "Lokale OpenAI-compatibele API-server opzetten voor eigen tools en scripts",
+    "Meerdere modellen vergelijken in één interface",
+    "Privacy-gevoelige data verwerken zonder informatie naar externe servers te sturen"
+  ],
+  "antiUseCases": [
+    "Gebruikers zonder krachtige hardware — grote modellen vereisen veel VRAM en RAM",
+    "Productie-API's op schaal — lokale modellen zijn langzamer en minder betrouwbaar dan cloud-inference",
+    "Niet-technische gebruikers die gewoon een chatbot willen — Ollama of ChatGPT zijn eenvoudiger"
+  ],
+  "useCases": [
+    "Llama, Mistral of Qwen lokaal draaien voor codering of tekstverwerking zonder privacyrisico",
+    "Eigen scripts koppelen aan een lokale OpenAI-compatibele API",
+    "Modellen benchmarken voor een lokale deployment-beslissing",
+    "Offline werken met LLM's op een laptop zonder internetverbinding"
+  ],
+  "strengths": [
+    "Eenvoudigste GUI voor lokale LLM's — geen commandoregel nodig voor installatie en gebruik",
+    "Ingebouwde modelbibliotheek met directe download van Hugging Face",
+    "Lokale OpenAI-compatibele API: bestaande tools werken zonder codewijziging",
+    "GPU-acceleratie voor NVIDIA en Apple Silicon (Metal)"
+  ],
+  "limitations": [
+    "Vereist krachtige hardware voor grote modellen — zonder GPU traag onbruikbaar",
+    "Geen cloudoptie — alles draait lokaal, dus geen mobiele toegang",
+    "Modelkeuze is overweldigend voor niet-technische gebruikers"
+  ],
+  "bestAlternative": "ollama",
+  "mentionAliases": [
+    "lmstudio.ai",
+    "lm studio ai",
+    "local llm"
+  ],
+  "pricing": "Gratis voor persoonlijk gebruik. Betaalde business-licentie beschikbaar voor commercieel gebruik.",
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "openSource": false,
+  "tags": [
+    "lokale-llm",
+    "open-source",
+    "privacy",
+    "inference",
+    "developer"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Lokale modelbibliotheek",
+      "description": "Browse en download modellen direct vanuit de app via Hugging Face — geen commandoregel.",
+      "group": "core"
+    },
+    {
+      "title": "Chat-interface",
+      "description": "Ingebouwde chatinterface om direct met geladen modellen te praten.",
+      "group": "core"
+    },
+    {
+      "title": "Lokale OpenAI-compatibele API",
+      "description": "Start een lokale server die dezelfde API-interface biedt als OpenAI — drop-in voor bestaande tools.",
+      "group": "integration"
+    },
+    {
+      "title": "GPU-acceleratie",
+      "description": "Ondersteunt NVIDIA CUDA en Apple Silicon Metal voor snellere inference.",
+      "group": "core"
+    }
+  ],
+  "nlSupport": false,
+  "lastUpdated": "2026-06-09",
+  "lastReviewedAt": "2026-06-09",
+  "supportsDutchLanguage": false
+}

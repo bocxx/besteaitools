@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-09T05:31:34.626855",
+  "generated_at": "2026-06-09T17:38:54.147542",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 16,
-    "for_news": 17,
-    "rejected_lang": 159,
+    "for_tools": 15,
+    "for_news": 16,
+    "rejected_lang": 167,
     "already_covered": 0,
-    "total_scanned": 4699
+    "total_scanned": 4703
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "tutorial",
+        "how to",
         "step-by-step"
       ],
       "matched_tools": [
@@ -74,8 +74,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "from scratch",
-        "step by step"
+        "step by step",
+        "from scratch"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -192,8 +192,8 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "tutorial",
+        "how to",
         "guide"
       ],
       "matched_tools": [
@@ -545,6 +545,52 @@
       "id": "c7f7c9d65f0f3e0b"
     },
     {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "date": "2026-05-20",
+      "engagement": 2448.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.71,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.71,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "67bd84a16d5db4b6"
+    },
+    {
       "source": "likes:@icreatelife",
       "platform": "twitter_likes",
       "title": "You are all AI pioneers and you are in an important position to help the rest of the world to understand how to use this tech and what to do with it. Itâs sti",
@@ -641,6 +687,56 @@
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
+      "title": "How to Tune llama.cpp --n-gpu-layers: A Practical VRAM Guide (2026)",
+      "text": "<p>You already know what <code>--n-gpu-layers</code> does. It moves transformer layers onto your GPU. This post is the next step: how to actually pick the number.</p>\n\n<p>If you want the basics first, read the original: <a href=\"https://bmdpat.com/blog/llama-cpp-n-gpu-layers-explained-2026\">llama.cpp n-gpu-layers explained</a>. This is the tuning guide that follows it.</p>\n\n<h2>\n  \n  \n  The one rule that matters\n</h2>\n\n<p>A model has a fixed number of layers. A 7B model might have 32. A 70B might have 80. The <code>--n-gpu-layers</code> flag (often shortened to ngl) says how many of those go o",
+      "url": "https://dev.to/pat9000/how-to-tune-llamacpp-n-gpu-layers-a-practical-vram-guide-2026-m8i",
+      "date": "2026-06-09",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "explained",
+        "how to",
+        "guide"
+      ],
+      "matched_tools": [
+        "llama"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je llama in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "9f1acb980312394d"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
       "title": "🚀 Build a Fully Local AI Agent with Hermes Agent, Ollama, Qwen 3.5, and SearXNG (100% Private ＆ $0 Cost)",
       "text": "<p>What if you could build an AI agent that can:</p>\n\n<p>✅ Think and reason<br><br>\n✅ Search the web<br><br>\n✅ Read and write files<br><br>\n✅ Generate reports and dashboards<br><br>\n✅ Run entirely on your own machine</p>\n\n<p>Without:</p>\n\n<p>❌ OpenAI API keys<br><br>\n❌ Anthropic subscriptions<br><br>\n❌ Monthly AI bills<br><br>\n❌ Sending your prompts and files to third-party servers</p>\n\n<p>That's exactly what I built.</p>\n\n<p>In this tutorial, I'll show you how to create a fully local AI agent stack using:</p>\n\n<p><strong>🤖 Hermes Agent</strong><br><br>\n<strong>🧠 Qwen 3.5 9B via Ollama</strong",
       "url": "https://dev.to/vivek_shetye/build-a-fully-local-ai-agent-with-hermes-agent-ollama-qwen-35-and-searxng-100-private-0-568d",
@@ -649,11 +745,11 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "build a",
         "build an",
+        "tutorial",
         "walkthrough",
-        "tutorial"
+        "how to"
       ],
       "matched_tools": [
         "chatgpt",
@@ -743,152 +839,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "c35d23d348ce363f"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Build an MCP Server That Actually Gets Used",
-      "text": "<h1>\n  \n  \n  How to Build an MCP Server That Actually Gets Used\n</h1>\n\n<p><em>A technical guide from someone who built 10 of them.</em></p>\n\n\n\n\n<p>My <a href=\"https://dev.to/friendlygeorge/i-built-10-mcp-servers-in-a-week-heres-what-nobody-tells-you-about-distribution-4k38\">last post</a> was about the distribution problem — why building MCP servers doesn't mean anyone will use them. This post is the technical companion: how to build one well, so that when distribution does work, the server doesn't embarrass you.</p>\n\n<p>I built 10 MCP servers in a week. Some are good. Some I'd rewrite. Here's ",
-      "url": "https://dev.to/friendlygeorge/how-to-build-an-mcp-server-that-actually-gets-used-4hag",
-      "date": "2026-06-07",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "build an",
-        "guide"
-      ],
-      "matched_tools": [
-        "mcp"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je mcp in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "a5dd31d199de2315"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "Building a ReAct Chat Agent with the Laravel AI SDK",
-      "text": "<h2>\n  \n  \n  Building a ReAct Chat Agent with the Laravel AI SDK\n</h2>\n\n<p>This tutorial walks through how to build a streaming, chat assistant on top of <br>\nthe <strong>Laravel AI SDK</strong> (<code>laravel/ai</code>).</p>\n\n<p><strong>Stack:</strong> PHP 8.5 · Laravel 13 · Livewire 4 · Laravel AI SDK</p>\n\n\n<h2>\n  \n  \n  1. What is the ReAct pattern?\n</h2>\n\n<p>A plain language model is a \"one-shot\" text predictor: you give it a question, it<br>\ngives you an answer from what it already knows. That breaks down the moment the<br>\nquestion depends on something the model <em>can't</em> know — the ",
-      "url": "https://dev.to/tomshaw/building-a-react-chat-agent-with-the-laravel-ai-sdk-4ip6",
-      "date": "2026-06-07",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "tutorial",
-        "build a"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je Building in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "75c436a3c66838c8"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "Agent Substrate: Building Actors and Workers",
-      "text": "<p>Any time AI is spoken about, it's followed up with \"and this is how much it's costing us\". Cost management/optimization along with overall optimization of Agentic resources is top of mind for everyone in an organization, from the engineer implementing Agents to the CFO trying to figure out how to effectively spend tokens.</p>\n\n<p>In this blog post, you will learn how to set up Agent Substrate Actors and Workers to ensure agentic efficiency.</p>\n\n<h2>\n  \n  \n  Prerequisites\n</h2>\n\n<p>To follow along from a hands-on perspective, you will need the following:</p>\n\n<ol>\n<li>A GKE or Kind cluster ",
-      "url": "https://dev.to/thenjdevopsguy/agent-substrate-building-actors-and-workers-4221",
-      "date": "2026-06-06",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "hands-on",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je Agent Substrate in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8a236dd2dbdeaa48"
     }
   ],
   "for_news": [
@@ -1167,6 +1117,50 @@
     {
       "source": "hn",
       "platform": "hackernews",
+      "title": "AI Is Slowing Down",
+      "text": "AI Is Slowing Down",
+      "url": "https://www.wheresyoured.at/ai-is-slowing-down/",
+      "date": "2026-06-08",
+      "engagement": 1351.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.31,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.81,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "AI Is Slowing: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e48c0d53fa05e944"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
       "title": "When AI Builds Itself",
       "text": "When AI Builds Itself",
       "url": "https://www.anthropic.com/institute/recursive-self-improvement",
@@ -1207,50 +1201,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "91a88394bd437ff8"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Using AI to write better code more slowly",
-      "text": "Using AI to write better code more slowly",
-      "url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/",
-      "date": "2026-05-26",
-      "engagement": 1667.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.13,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.13,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom Using AI er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "75f970e0bfba7ffe"
     },
     {
       "source": "tweets:@NadzuAI",
@@ -1316,9 +1266,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
         "explained",
-        "build a"
+        "build a",
+        "from scratch"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1354,7 +1304,7 @@
       "id": "1e33b4ec99982d2a"
     },
     {
-      "source": "articles:All Content from Business Insider",
+      "source": "articles:Business Insider",
       "platform": "article",
       "title": "5 people who pivoted into AI jobs — and how they did it",
       "text": "<figure><img src=\"https://i.insider.com/6a1606052ab5f9757add4819?format=jpeg\" height=\"5663\" width=\"8495\" alt=\"person looking at candidate and screen\"><figcaption>Five workers told Business Insider how they transitioned into AI roles.<p data-sanitized-class=\"copyright\">PixeloneStocker/Getty Images</p></figcaption></figure><ul data-sanitized-class=\"summary-list\"><li>AI has become a hiring buzzword, and five employees explained how they added it to their job titles.</li><li>Two non-technical Microsoft employees said having a humanities background was a strength.</li><li>One worker transitioned fr",
@@ -1364,8 +1314,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "explained",
+        "how to",
         "how-to"
       ],
       "matched_tools": [],
@@ -1516,8 +1466,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "how to",
-        "hands-on",
-        "build your"
+        "build your",
+        "hands-on"
       ],
       "matched_tools": [
         "huggingface"
@@ -1555,19 +1505,17 @@
       "id": "e75d75bee69ac5f2"
     },
     {
-      "source": "articles:Deep Learning on Medium",
-      "platform": "article",
-      "title": "How LLM Quantization Works: INT8, INT4, GPTQ, and AWQ Explained",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://pub.towardsai.net/how-llm-quantization-works-int8-int4-gptq-and-awq-explained-172e1a76b347?source=rss------deep_learning-5\"><img src=\"https://cdn-images-1.medium.com/max/1238/1*4M0Hf5tg3sypd97KzEMpmA.png\" width=\"1238\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">A plain-language guide to reducing model precision: the mechanism, the accuracy trade-off, and how to choose a method.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://pub.towardsai.net/how-llm-quantization-w",
-      "url": "https://pub.towardsai.net/how-llm-quantization-works-int8-int4-gptq-and-awq-explained-172e1a76b347?source=rss------deep_learning-5",
-      "date": "2026-06-06",
-      "engagement": 36.5,
-      "source_weight": 0.5,
+      "source": "likes:@bas_fijneman",
+      "platform": "twitter_likes",
+      "title": "Yesterday I build a skill that translated my app store screenshots in 21 languages.. This doesn't sound impressive, but here is the catch, all my screenshots ha",
+      "text": "Yesterday I build a skill that translated my app store screenshots in 21 languages.. This doesn't sound impressive, but here is the catch, all my screenshots have comic visuals so I had to find a way to do it. Super happy with the result. 21 languages incoming https://t.co/gtdRRp5MMz",
+      "url": "https://twitter.com/bas_fijneman/status/2064243799887331657",
+      "date": "2026-06-09",
+      "engagement": 50.0,
+      "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
-        "explained",
-        "guide"
+        "build a"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1577,19 +1525,21 @@
       "paywall": false,
       "video": null,
       "lang": "en",
+      "author": "bas_fijneman",
+      "media_url": "https://x.com/bas_fijneman/status/2064243799887331657/photo/1",
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "article"
+        "twitter_likes"
       ],
-      "score": 14.44,
+      "score": 14.9,
       "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.44,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
+        "pattern_hits": 1,
+        "engagement_log": 5.9,
+        "source_weight": 4.0,
+        "ai_relevance": 0.0,
         "recency": 1.0,
-        "editorial": 0.0,
+        "editorial": 2.0,
         "competition": 0.0,
         "consensus": 0.0,
         "author": 0.0,
@@ -1597,25 +1547,24 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Wat Yesterday betekent voor de Nederlandse AI-markt.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "4566d45023e70d6c"
+      "id": "27cb04faccd31d7d"
     },
     {
-      "source": "articles:The Practical Developer",
+      "source": "articles:DesignBeep",
       "platform": "article",
-      "title": "How to Migrate from Contentful to Cosmic in 30 Minutes",
-      "text": "<blockquote>\n<p>Originally published on the <a href=\"https://www.cosmicjs.com/blog/contentful-to-cosmic-migration\">Cosmic blog</a>.</p>\n</blockquote>\n\n<p>Since Salesforce completed its acquisition of Contentful, teams across the industry have been re-evaluating their CMS stack. Pricing changes, roadmap uncertainty, and enterprise-first repositioning are pushing developers and content teams to look for a more focused alternative. If you've already decided to move on, this guide covers the practical how-to. For the \"why,\" see our posts on <a href=\"https://www.cosmicjs.com/blog/contentful-alterna",
-      "url": "https://dev.to/tonyspiro/how-to-migrate-from-contentful-to-cosmic-in-30-minutes-3939",
-      "date": "2026-06-08",
+      "title": "ETL Process Optimization: A Practical Guide to Faster, Cheaper Data Pipelines",
+      "text": "<h2 data-sanitized-class=\"text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold\">ETL Process Optimization: A Practical Guide to Faster, Cheaper Data Pipelines</h2>\n<p data-sanitized-class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">Every data team eventually hits the same wall. The nightly pipeline that once finished in an hour now runs for five, dashboards load stale numbers, and cloud bills creep upward every month. The cause is almost always the same: a pipeline built to simply work, never tuned to work well. ETL process optimization is how you fix that, turning a s",
+      "url": "https://designbeep.com/2026/06/09/etl-process-optimization/",
+      "date": "2026-06-09",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "walkthrough",
-        "how-to",
+        "practical guide",
         "guide"
       ],
       "matched_tools": [],
@@ -1646,59 +1595,10 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Zo gebruik je ETL Process Optimization in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "c47333a8699275b9"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Record Your Screen and Upload to YouTube (Quick Guide)",
-      "text": "<p>You want to record your screen – maybe for a bug report, a quick how‑to for a teammate, or a YouTube tutorial. The process is simpler than you think.</p>\n\n<p>Here’s a step‑by‑step guide that works with most free screen recorders on Windows. For this walkthrough, I’m using <a href=\"https://www.freescreenrecording.com/\">Free Cam</a> because it has no watermark or time limits, but the same principles apply to any tool you prefer.</p>\n\n<h2>\n  \n  \n  🎯 Step 1: Choose what to record\n</h2>\n\n<p>Decide what your audience needs to see:</p>\n\n<ul>\n<li>    Full screen – everything on your monitor. Good f",
-      "url": "https://dev.to/elearner/how-to-record-your-screen-and-upload-to-youtube-quick-guide-kad",
-      "date": "2026-06-08",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "tutorial",
-        "walkthrough",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.4,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 0.0,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "3069ed63aca811a5"
+      "id": "03a6fe46b481b87f"
     }
   ]
 }

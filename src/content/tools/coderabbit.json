@@ -1,0 +1,85 @@
+{
+  "name": "CodeRabbit",
+  "category": "coding",
+  "websiteUrl": "https://coderabbit.ai",
+  "shortDescription": "AI-code review die automatisch pull requests analyseert en commentaar geeft in GitHub of GitLab",
+  "headlineValueProp": "AI die elke pull request reviewt en concreet commentaar geeft voordat een mens ernaar kijkt",
+  "longDescription": "CodeRabbit integreert als een GitHub- of GitLab-app en reviewt automatisch iedere pull request die wordt geopend. Het analyseert de diff, begrijpt de context van de wijziging en plaatst inline commentaar op specifieke regels — van logicafouten en beveiligingsproblemen tot stijlinconsistenties. CodeRabbit genereert ook een samenvatting van de PR en een walkthroughdiagram van de wijzigingen. Reviewers kunnen chatten met CodeRabbit over specifieke commentaren. Het platform ondersteunt meerdere programmeertalen en is configureerbaar per repo via een YAML-bestand. Open-source projecten kunnen CodeRabbit gratis gebruiken.",
+  "verdict": "CodeRabbit is de meest complete AI-code-review-tool: de inline commentaren zijn concreter en actiegerichter dan generieke lint-tools, en de PR-samenvattingen besparen reviewers tijd bij grote diffs. Het vervangt geen menselijke review voor architectuurbeslissingen, maar filtert effectief het laaghangende fruit eruit zodat reviewers zich kunnen focussen op wat ertoe doet.",
+  "whyListed": "Snelst groeiende AI-code-reviewtool met brede GitHub/GitLab-adoptie; unieke propositie als automated reviewer die vóór menselijke review commentaar plaatst.",
+  "bestFor": "Engineering-teams die de kwaliteit van pull requests willen verhogen en reviewtijd willen verkorten.",
+  "primaryJobsToBeDone": [
+    "Pull requests automatisch laten reviewen op bugs, beveiligingsproblemen en stijlissues",
+    "PR-samenvattingen genereren zodat reviewers snel de context begrijpen",
+    "Inline AI-commentaar krijgen op specifieke coderegels in GitHub of GitLab",
+    "Terugkerende review-opmerkingen automatiseren zodat menselijke reviewers zich focussen op architectuur"
+  ],
+  "antiUseCases": [
+    "Vervanging van menselijke code review voor architectuurbeslissingen en domeinlogica — dat blijft mensenwerk",
+    "Teams zonder GitHub of GitLab — CodeRabbit werkt alleen met die twee platforms",
+    "Individuele developers zonder pull request-workflow"
+  ],
+  "useCases": [
+    "Automatisch eerste review plaatsen op elke PR vóór menselijke reviewer",
+    "Beveiligingsproblemen en common vulnerabilities vroegtijdig detecteren",
+    "PR-beschrijvingen automatisch genereren voor developers die die stap overslaan",
+    "Code review sneller maken in een team met beperkte reviewcapaciteit"
+  ],
+  "strengths": [
+    "Inline commentaar op specifieke coderegels — concreter dan generieke waarschuwingen",
+    "PR-samenvatting en walkthroughdiagram ingebouwd",
+    "Chat met CodeRabbit over specifieke opmerkingen in de PR",
+    "Gratis voor open-source projecten"
+  ],
+  "limitations": [
+    "Alleen GitHub en GitLab — geen Bitbucket of Azure DevOps",
+    "Vervangt geen architectuurreview of domeinkennis",
+    "Commentaar kan bij grote diffs overweldigend zijn — vereist goede configuratie"
+  ],
+  "bestAlternative": "cursor",
+  "mentionAliases": [
+    "coderabbit.ai",
+    "code rabbit"
+  ],
+  "pricing": "Gratis voor open-source. Pro $12/gebruiker/mnd. Enterprise op aanvraag met SSO en privédeployment.",
+  "pricingModel": "freemium",
+  "difficulty": "beginner",
+  "openSource": false,
+  "tags": [
+    "code-review",
+    "pull-request",
+    "github",
+    "gitlab",
+    "ai-coding"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "operations"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Automatische PR-review",
+      "description": "Analyseert elke pull request en plaatst inline commentaar op bugs, beveiligings- en stijlissues.",
+      "group": "core"
+    },
+    {
+      "title": "PR-samenvatting",
+      "description": "Genereert een leesbare samenvatting en walkthroughdiagram van de PR-wijzigingen.",
+      "group": "output"
+    },
+    {
+      "title": "Chat over review",
+      "description": "Reviewers en developers kunnen chatten met CodeRabbit over specifieke opmerkingen.",
+      "group": "core"
+    },
+    {
+      "title": "YAML-configuratie",
+      "description": "Pas reviewgedrag per repo aan via een configuratiebestand in de root.",
+      "group": "core"
+    }
+  ],
+  "nlSupport": false,
+  "lastUpdated": "2026-06-09",
+  "lastReviewedAt": "2026-06-09",
+  "supportsDutchLanguage": false
+}
