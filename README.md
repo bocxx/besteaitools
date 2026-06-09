@@ -12,6 +12,7 @@ debesteaitools.nl is een open AI-tools directory voor de Nederlandse markt. De s
 - **Tool-detailpagina's** — per tool: beschrijving, scores, trend-sparkline, bronartikelen, GitHub-repos
 - **Weekradar** — wekelijkse highlights: tool van de week, stijgers, dalers, nieuwkomers
 - **Vergelijkingen** — automatisch gegenereerde "X vs Y" vergelijkingspagina's voor top tools
+- **Cheatsheets** — merkgebonden poster-PNG's (tool-grid, tips, stappenplan, vergelijking) via `npm run generate-cheatsheet`. Zie [docs/cheatsheets-handleiding.md](docs/cheatsheets-handleiding.md)
 - **RSS-feed** — voor abonnees die updates willen volgen
 
 ### Hoe werkt het?

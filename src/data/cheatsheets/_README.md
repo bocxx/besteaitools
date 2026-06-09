@@ -24,38 +24,6 @@ npm run generate-cheatsheet -- prompt-tips --out public/og   # andere outputmap
 | `accent` | — | Hex-accent, bv. `"#00c0b0"` (standaard coral `#ff5171`) |
 | `footnote` | — | Tekst linksonder (standaard `AI Tools Radar · Nederland`) |
 | `width` | — | Posterbreedte in px (standaard `1200`; hoogte groeit automatisch) |
-| `hero` | — | Optionele AI-hero-strip bovenaan. Zie hieronder. |
-
-## Hero-strip (optioneel, AI-beeld bovenaan)
-
-De render zelf is **gratis en lokaal** — hij raakt nooit een API. Een hero-strip
-is een los gegenereerd beeld dat de engine als bovenband composit als het bestaat.
-
-- **Weglaten** → engine zoekt automatisch `public/cheatsheets/heroes/<slug>.png`
-  (of `.jpg`). Bestaat die niet, dan rendert de poster gewoon zonder hero.
-- `"hero": { "image": "pad/naar/beeld.png" }` → gebruik dit bestand.
-- `"hero": { "height": 360 }` → bandhoogte in px (standaard ~27% van de breedte).
-- `"hero": false` → nooit een hero, ook al staat er een bestand.
-
-⚠️ **Alleen PNG/JPEG** — satori kan geen WebP inbedden.
-
-### Het hero-beeld genereren (kost Leonardo-tokens — aparte stap)
-
-Dit is de **enige** stap die geld kost. Hij zit bewust níet in
-`generate-cheatsheet`. Draai vanuit de `newsflux`-repo:
-
-```bash
-cd ~/Projects/DEPLOYED/newsflux && source venv/bin/activate
-python3 src/digest/cheatsheet_hero.py --slug prompt-tips \
-    --title "9 regels voor betere AI-prompts" --topic prompting
-# → schrijft ~/Projects/DEPLOYED/debesteaitools.nl.ai/public/cheatsheets/heroes/prompt-tips.png
-```
-
-Kostenremmen: cachet per slug (bestaat het beeld al → géén API-call, tenzij
-`--force`), en een token-balans-drempel (`leonardo_token_min_balance` uit config)
-slaat generatie over bij te weinig tegoed. `--dry-run` toont alleen de prompt,
-zonder kosten. Daarna `npm run generate-cheatsheet -- <slug>` om de poster mét
-hero te renderen.
 
 ## 1. `tool-grid` — categorieën met tool-lijstjes
 
