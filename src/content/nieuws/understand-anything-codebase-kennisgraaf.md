@@ -16,7 +16,7 @@ featured: false
 draft: false
 readingTime: 4
 heroImage: "/images/nieuws/understand-anything-codebase-kennisgraaf.webp"
-heroImageAlt: "Illustratie bij artikel 'Understand-Anything: maak van elke codebase een interactieve kennisgraaf'"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Understand-Anything: maak van elke codebase een interactieve kennisgraaf'"
 keyTakeaways:
   - "Understand-Anything zet elke codebase, kennisbank of documentatie om in een interactieve kennisgraaf die je kunt doorzoeken en bevragen."
   - "Een multi-agent-pijplijn scant je project en slaat de graaf op in .understand-anything/knowledge-graph.json, met een web-dashboard erbovenop."
