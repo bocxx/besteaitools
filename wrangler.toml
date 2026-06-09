@@ -19,6 +19,9 @@ routes = [
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
+# Worker draait vóór static assets — nodig voor Link headers en markdown
+# negotiation via middleware op prerendered (statische) pagina's.
+run_worker_first = true
 
 [observability]
 enabled = true

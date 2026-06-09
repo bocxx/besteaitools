@@ -1,0 +1,24 @@
+{
+  "serverInfo": {
+    "name": "debesteaitools.nl",
+    "version": "1.0.0",
+    "description": "Independent Dutch-language AI tools directory with editorial verdicts, pricing, and use cases for 500+ tools."
+  },
+  "transport": {
+    "endpoint": "https://debesteaitools.nl/llms.txt",
+    "type": "http"
+  },
+  "capabilities": {
+    "resources": true,
+    "tools": false,
+    "prompts": false
+  },
+  "resources": [
+    {
+      "name": "AI Tools Catalogue",
+      "uri": "https://debesteaitools.nl/llms.txt",
+      "description": "Machine-readable overview of all AI tools with verdicts, tasks, and pricing",
+      "mimeType": "text/plain"
+    }
+  ]
+}
