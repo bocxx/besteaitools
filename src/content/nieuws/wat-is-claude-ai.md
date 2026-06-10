@@ -1,5 +1,7 @@
 ---
 title: "Wat is Claude AI? De complete gids voor 2026"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Wat is Claude AI? De complete gids voor 2026'"
+heroImage: "/images/nieuws/wat-is-claude-ai.webp"
 description: "Claude is de AI-assistent van Anthropic: sterk in lange documenten, schrijven en code, en sinds 2026 ook de motor achter agents als Cowork. Wat het kan, wat het kost en waar je op let met bedrijfsdata."
 publishedAt: 2026-06-10
 updatedAt: 2026-06-10
@@ -17,7 +19,7 @@ toolSlug: "claude"
 featured: true
 draft: false
 readingTime: 8
-heroScene: "A tiny wooden desk with a warm glowing amber lamp, miniature stacks of paper documents being sorted by small brass mechanical arms, one document magnified under a glass lens showing highlighted lines"
+heroScene: "A small chrome robot with a glowing coral starburst emblem sorts miniature paper contracts into wooden drawers"
 keyTakeaways:
   - "Claude is de AI-assistent van Anthropic, opgericht in 2021 door oud-OpenAI-onderzoekers. Het onderscheidt zich met sterke analyse van lange documenten en een nadruk op veiligheid."
   - "Er is een gratis basisplan; Pro kost $20 per maand en bevat ook Claude Code en de Cowork-agentmodus in de desktop-app. Max ($100-200) is voor zwaar agent-gebruik."
