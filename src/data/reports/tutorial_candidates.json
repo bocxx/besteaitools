@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-10T05:36:34.290157",
+  "generated_at": "2026-06-10T17:43:28.413925",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 16,
     "for_news": 17,
-    "rejected_lang": 163,
+    "rejected_lang": 169,
     "already_covered": 0,
-    "total_scanned": 4711
+    "total_scanned": 4719
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
+        "step-by-step",
         "tutorial",
-        "how to",
-        "step-by-step"
+        "how to"
       ],
       "matched_tools": [
         "gemini",
@@ -74,8 +74,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -192,9 +192,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
+        "how to",
         "guide",
-        "how to"
+        "tutorial"
       ],
       "matched_tools": [
         "claude",
@@ -316,8 +316,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -641,6 +641,106 @@
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
+      "title": "Proxy OpenAI Through Kong AI Gateway on Kubernetes",
+      "text": "<h2>\n  \n  \n  The Problem With Talking Directly to LLMs\n</h2>\n\n<p>Most teams start by wiring their app straight to the OpenAI API. It works — until you need to add auth, rate limiting, observability, or swap out the model provider. Now you're rewriting application code instead of config.</p>\n\n<p>An AI Gateway solves this. One entry point, one place to govern traffic, providers become swappable. Kong Gateway is a mature choice here — it's been doing this for APIs for years, and the AI Proxy plugin extends that to LLMs.</p>\n\n<p>This post walks through the key ideas. For the full step-by-step guid",
+      "url": "https://dev.to/thegatewayguy/proxy-openai-through-kong-ai-gateway-on-kubernetes-1p83",
+      "date": "2026-06-10",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "step-by-step",
+        "guide",
+        "tutorial"
+      ],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e5d27c7caa26c765"
+    },
+    {
+      "source": "articles:Towards AI - Medium",
+      "platform": "article",
+      "title": "Build a Customer Service AI Agent with OpenAI and Node.js",
+      "text": "<p>Customer expectations have fundamentally shifted. Shoppers expect instant, intelligent responses at 2 AM on a Sunday just as much as during business hours. A customer service AI agent running on OpenAI can meet that bar, but only if you wire it correctly.</p><p>This tutorial shows you how to build a customer service AI agent using <a href=\"https://www.kommunicate.io/integration/openai\">OpenAI</a> and <a href=\"https://www.kommunicate.io/product/kompose-bot-builder\">Kommunicate’s Kompose AI agent builder</a>, with Node.js powering the dynamic responses behind your most important intents.</p><",
+      "url": "https://pub.towardsai.net/build-a-customer-service-ai-agent-with-openai-and-node-js-847fe4dbeab0?source=rss----98111c9905da---4",
+      "date": "2026-06-10",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "build a",
+        "tutorial"
+      ],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "9a9177ee04fb10c4"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
       "title": "Stop Guessing Your Meds: Building a Multi-Drug Conflict Scanner with GPT-4o ＆ FDA API",
       "text": "<p>Have you ever stared at two different medicine boxes, squinting at the tiny font of the active ingredients, wondering: <em>\"Can I actually take these together?\"</em> Modern healthcare is complex, and drug-drug interactions (DDI) are a leading cause of avoidable ER visits.</p>\n\n<p>In this tutorial, we’re going to leverage <strong>GPT-4o Vision</strong>, <strong>React Native</strong>, and the <strong>FDA OpenData API</strong> to build a \"Drug Conflict Scanner.\" We will utilize <strong>multimodal AI</strong> to transform messy pill-box photos into structured data and cross-reference them again",
       "url": "https://dev.to/beck_moulton/stop-guessing-your-meds-building-a-multi-drug-conflict-scanner-with-gpt-4o-fda-api-5b24",
@@ -649,9 +749,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "build a",
         "tutorial",
-        "guide",
-        "build a"
+        "guide"
       ],
       "matched_tools": [
         "chatgpt"
@@ -699,9 +799,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "explained",
         "guide",
-        "how to",
-        "explained"
+        "how to"
       ],
       "matched_tools": [
         "llama"
@@ -750,9 +850,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "walkthrough",
-        "build an",
         "build a",
         "tutorial",
+        "build an",
         "how to"
       ],
       "matched_tools": [
@@ -793,106 +893,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "96af571687ac4cb1"
-    },
-    {
-      "source": "articles:MarkTechPost",
-      "platform": "article",
-      "title": "ClawHub Security Signals: A Coding Guide to End-to-End Security Signal Analysis and Verdict Classification on the AI Skills Dataset",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we use the<a href=\"https://huggingface.co/datasets/OpenClaw/clawhub-security-signals\"> <strong>ClawHub Security Signals dataset</strong></a><strong> </strong>to examine how different security scanners assess AI skills and related files. We load the dataset directly from the Hugging Face Parquet conversion to avoid compatibility issues with newer dataset metadata, then inspect the main columns, verdict distribution, scanner outputs, and severity labels. After exploring scanner disagreement and overlap patterns, we build a practical ",
-      "url": "https://www.marktechpost.com/2026/06/08/clawhub-security-signals-a-coding-guide-to-end-to-end-security-signal-analysis-and-verdict-classification-on-the-ai-skills-dataset/",
-      "date": "2026-06-08",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "tutorial",
-        "guide",
-        "build a"
-      ],
-      "matched_tools": [
-        "huggingface"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je huggingface in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c35d23d348ce363f"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Build an MCP Server That Actually Gets Used",
-      "text": "<h1>\n  \n  \n  How to Build an MCP Server That Actually Gets Used\n</h1>\n\n<p><em>A technical guide from someone who built 10 of them.</em></p>\n\n\n\n\n<p>My <a href=\"https://dev.to/friendlygeorge/i-built-10-mcp-servers-in-a-week-heres-what-nobody-tells-you-about-distribution-4k38\">last post</a> was about the distribution problem — why building MCP servers doesn't mean anyone will use them. This post is the technical companion: how to build one well, so that when distribution does work, the server doesn't embarrass you.</p>\n\n<p>I built 10 MCP servers in a week. Some are good. Some I'd rewrite. Here's ",
-      "url": "https://dev.to/friendlygeorge/how-to-build-an-mcp-server-that-actually-gets-used-4hag",
-      "date": "2026-06-07",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "guide",
-        "how to",
-        "build an"
-      ],
-      "matched_tools": [
-        "mcp"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je mcp in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "a5dd31d199de2315"
     }
   ],
   "for_news": [
@@ -1182,7 +1182,7 @@
       "version_bump": false,
       "paywall": false,
       "video": null,
-      "lang": "nl",
+      "lang": "en",
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1220,8 +1220,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "guide",
-        "how to",
-        "build a"
+        "build a",
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1235,7 +1235,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "NadzuAI",
-      "followers": 169045,
+      "followers": 170724,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1260,54 +1260,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "80e259d51ee1f99c"
-    },
-    {
-      "source": "articles:reddit.com: search results - artificial",
-      "platform": "article",
-      "title": "BCom student wanting to learn AI — which beginner course with certification should I go for?",
-      "text": "<div data-sanitized-class=\"md\"><p>Hey everyone! 👋</p> <p>I'm currently pursuing <strong>BCom</strong> and I've been really interested in getting into <strong>Artificial Intelligence</strong>. I have no prior tech background but I want to start from the basics and build a strong foundation.</p> <p>I'm looking for a course that:</p> <p>✅ Covers <strong>AI/ML fundamentals</strong> from scratch (no coding experience needed)<br> ✅ Gives a <strong>recognised certification</strong> at the end<br> ✅ Is <strong>beginner-friendly</strong> — explained in simple terms<br> ✅ Preferably <strong>affordable o",
-      "url": "https://www.reddit.com/r/AILearningHub/comments/1tza76g/bcom_student_wanting_to_learn_ai_which_beginner/",
-      "date": "2026-06-07",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "explained",
-        "from scratch",
-        "build a"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "BCom uitgelegd voor Nederlandse teams — zonder de hype.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "1e33b4ec99982d2a"
     },
     {
       "source": "likes:@NainsiDwiv50980",
@@ -1418,9 +1370,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "hands-on",
         "how to",
-        "build your",
-        "hands-on"
+        "build your"
       ],
       "matched_tools": [
         "huggingface"
@@ -1516,9 +1468,9 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "explained",
         "from scratch",
-        "deep dive"
+        "deep dive",
+        "explained"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1554,6 +1506,102 @@
       "id": "c9080034feebbe84"
     },
     {
+      "source": "articles:Mashable",
+      "platform": "article",
+      "title": "NYT Pips hints, answers for June 10, 2026",
+      "text": "<img src=\"https://helios-i.mashable.com/imagery/articles/077jCDvo22I5BgTCr0CG2HL/hero-image.jpg\" alt=\"A phone with the Pips logo.\"><p>Welcome to your guide to Pips, the latest game in the <a href=\"https://www.nytco.com/games/\" data-ga-click=\"1\" data-ga-label=\"$text\" data-ga-item=\"text-link\" data-ga-module=\"content_body\"><em>New York Times</em></a> catalogue.</p><p>Released in August 2025, <a href=\"https://mashable.com/article/pips-nyt-game-how-to-play\" data-ga-click=\"1\" data-ga-label=\"$text\" data-ga-item=\"text-link\" data-ga-module=\"content_body\">Pips</a> puts a unique spin on dominoes, creatin",
+      "url": "https://mashable.com/entertainment/pips-nyt-games-hints-answers-easy-medium-hard-june-10-2026",
+      "date": "2026-06-10",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "how to",
+        "how-to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je NYT Pips in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "48605c5bec318dc2"
+    },
+    {
+      "source": "articles:DesignBeep",
+      "platform": "article",
+      "title": "Places to Eat Near Me: The Ultimate Guide to Finding Great Food Nearby",
+      "text": "<h2 data-sanitized-class=\"text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold\">Places to Eat Near Me: The Ultimate Guide to Finding Great Food Nearby</h2>\n<p data-sanitized-class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">We have all been there. It is mealtime, the hunger is real, and the only question that matters is simple: where are the best places to eat near me right now? Whether you are craving a quick burger, a sit-down dinner, a steaming plate of noodles, or just something delivered to your door, finding the right spot nearby has never been easier. This guid",
+      "url": "https://designbeep.com/2026/06/10/places-to-eat-near-me-the-ultimate-guide-to-finding-great-food-nearby/",
+      "date": "2026-06-10",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "ultimate guide",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Places in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "773e3093494fdba6"
+    },
+    {
       "source": "articles:Business Insider",
       "platform": "article",
       "title": "The typical US home could cost $1 million by 2050, according to an economist",
@@ -1564,8 +1612,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
         "step-by-step",
+        "guide",
         "how-to"
       ],
       "matched_tools": [],
@@ -1612,10 +1660,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "explained",
         "step by step",
-        "how to",
-        "build a"
+        "explained",
+        "build a",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1649,54 +1697,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "fde9ff3f676d7b0e"
-    },
-    {
-      "source": "articles:DesignBeep",
-      "platform": "article",
-      "title": "How to Fix a Running Toilet: A Simple DIY Guide",
-      "text": "<h1 data-sanitized-class=\"text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold\">How to Fix a Running Toilet: A Simple DIY Guide</h1>\n<p data-sanitized-class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">That endless trickle or hiss from the bathroom is more than annoying. A running toilet can waste hundreds of gallons of water a day and quietly add a small fortune to your water bill over a month. The good news is that learning how to fix a running toilet is one of the easiest home repairs there is. The parts cost a few dollars, the tools are minimal, and most fixes take",
-      "url": "https://designbeep.com/2026/06/09/how-to-fix-a-running-toilet/",
-      "date": "2026-06-09",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "guide",
-        "step by step",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.4,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 0.0,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "cec953f92d22448e"
     }
   ]
 }
