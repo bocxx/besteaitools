@@ -9,6 +9,7 @@ import Badge from '../../components/atoms/Badge.astro';
 import { getComparisonPairs } from '../../lib/tools-engine';
 import { toolCategories } from '../../lib/tools-schema';
 import { ArrowLeft, Scale } from '@lucide/astro';
+import { Filter } from '@lucide/astro';
 
 const pairs = await getComparisonPairs();
 const year = new Date().getFullYear();
@@ -56,12 +57,38 @@ export const prerender = true;
       <p class="vi-meta"><strong>{pairs.length} vergelijkingen</strong> beschikbaar</p>
     </header>
 
+    <!-- Filters — zelfde stijl als /leren -->
+    <div class="lf" id="vgl-filters">
+      <div class="lf__group" role="group" aria-label="Filter op categorie">
+        <span class="lf__label">Categorie</span>
+        <div class="lf__chips">
+          <button class="lf__chip lf__chip--on" data-filter="" type="button">
+            Alles <span class="lf__n">{pairs.length}</span>
+          </button>
+          {byCategory.map(([cat, catPairs]) => {
+            const catConfig = toolCategories[cat as keyof typeof toolCategories];
+            if (!catConfig) return null;
+            return (
+              <button class="lf__chip" data-filter={cat} type="button">
+                {catConfig.name} <span class="lf__n">{catPairs.length}</span>
+              </button>
+            );
+          })}
+          {crossCat.length > 0 && (
+            <button class="lf__chip" data-filter="__cross" type="button">
+              Categorie-overschrijdend <span class="lf__n">{crossCat.length}</span>
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+
     <!-- Same-category comparisons grouped by category -->
     {byCategory.map(([cat, catPairs]) => {
       const catConfig = toolCategories[cat as keyof typeof toolCategories];
       if (!catConfig) return null;
       return (
-        <section class="vi-section">
+        <section class="vi-section" data-cat={cat}>
           <h2 class="vi-section__title">
             <Badge variant="category" color={catConfig.color} size="sm">{catConfig.name}</Badge>
             <span class="vi-section__count">{catPairs.length} vergelijkingen</span>
@@ -86,7 +113,7 @@ export const prerender = true;
 
     <!-- Cross-category comparisons -->
     {crossCat.length > 0 && (
-      <section class="vi-section">
+      <section class="vi-section" data-cat="__cross">
         <h2 class="vi-section__title">
           <span class="vi-section__label">Categorie-overschrijdend</span>
           <span class="vi-section__count">{crossCat.length} vergelijkingen</span>
@@ -115,6 +142,29 @@ export const prerender = true;
 
   </main>
 </Layout>
+
+<script is:inline>
+  (function () {
+    var chips = document.querySelectorAll('#vgl-filters .lf__chip');
+    var sections = document.querySelectorAll('.vi-section[data-cat]');
+    var active = '';
+
+    function apply() {
+      sections.forEach(function (sec) {
+        var show = !active || sec.dataset.cat === active;
+        sec.hidden = !show;
+      });
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        active = chip.dataset.filter || '';
+        chips.forEach(function (c) { c.classList.toggle('lf__chip--on', c === chip); });
+        apply();
+      });
+    });
+  })();
+</script>
 
 <style>
   .back-link {
@@ -255,4 +305,37 @@ export const prerender = true;
   @media (max-width: 640px) {
     .vi-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── Filterbalk ── */
+  .lf {
+    display: flex; flex-direction: column; gap: var(--space-3);
+    padding: var(--space-4); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg, 12px); background: var(--bg-glass);
+    margin-bottom: var(--space-8);
+  }
+  .lf__group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-3); }
+  .lf__label {
+    font-family: var(--font-mono, monospace); font-size: var(--text-xs);
+    color: var(--text-secondary); text-transform: uppercase;
+    letter-spacing: 0.06em; min-width: 90px;
+  }
+  .lf__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .lf__chip {
+    appearance: none; cursor: pointer; font: inherit;
+    font-size: var(--text-xs); color: var(--text-secondary);
+    background: transparent; border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full); padding: 3px 12px;
+    transition: all 0.15s ease;
+  }
+  .lf__chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
+  .lf__chip--on {
+    color: var(--primary-bright);
+    border-color: var(--primary-bright);
+    background: color-mix(in oklab, var(--primary-bright) 12%, transparent);
+  }
+  .lf__n { opacity: 0.55; font-size: 0.85em; }
+
+  .vi-section[hidden] { display: none; }
+
+  @media (max-width: 640px) { .lf__label { min-width: 100%; } }
 </style>

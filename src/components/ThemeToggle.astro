@@ -90,36 +90,53 @@ const { withLabel = false } = Astro.props;
   .theme-toggle--label .theme-toggle__sun { opacity: 1; transform: none; }
 </style>
 
-<script>
-  function initThemeToggles() {
-    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.theme-toggle'));
-    if (!buttons.length) return;
+<script is:inline>
+  (function () {
+    function bindToggles() {
+      document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+        if (btn.dataset.bound === '1') return;
+        btn.dataset.bound = '1';
 
-    const syncPressed = () => {
-      const isDark = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark';
-      buttons.forEach((b) => b.setAttribute('aria-pressed', String(isDark)));
-    };
-    syncPressed();
+        var isDark = function () {
+          return (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark';
+        };
 
-    buttons.forEach((btn) => {
-      if (btn.dataset.bound === '1') return;
-      btn.dataset.bound = '1';
-      btn.addEventListener('click', () => {
-        const html = document.documentElement;
-        const next = (html.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        syncPressed();
+        // Sync aria-pressed on attach
+        btn.setAttribute('aria-pressed', String(isDark()));
 
-        const colorScheme = document.querySelector('meta[name="color-scheme"]');
-        if (colorScheme) colorScheme.setAttribute('content', next);
-        const themeColor = document.querySelector('meta[name="theme-color"]');
-        if (themeColor) themeColor.setAttribute('content', next === 'light' ? '#fbf7f1' : '#0f0e0d');
+        btn.addEventListener('click', function () {
+          var next = isDark() ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+
+          // Sync alle knoppen
+          document.querySelectorAll('.theme-toggle').forEach(function (b) {
+            b.setAttribute('aria-pressed', String(next === 'dark'));
+          });
+
+          var cs = document.querySelector('meta[name="color-scheme"]');
+          if (cs) cs.setAttribute('content', next);
+          var tc = document.querySelector('meta[name="theme-color"]');
+          if (tc) tc.setAttribute('content', next === 'light' ? '#fbf7f1' : '#0f0e0d');
+        });
       });
-    });
-  }
+    }
 
-  initThemeToggles();
-  document.addEventListener('astro:after-swap', initThemeToggles);
-  document.addEventListener('astro:page-load', initThemeToggles);
+    // Bind bij laden (is:inline = draait direct, DOM is al gerenderd tot hier)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindToggles);
+    } else {
+      bindToggles();
+    }
+
+    // Herstel binding na bfcache (terug-knop in browser)
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        document.querySelectorAll('.theme-toggle').forEach(function (b) {
+          b.removeAttribute('data-bound');
+        });
+        bindToggles();
+      }
+    });
+  })();
 </script>
