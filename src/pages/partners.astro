@@ -1,0 +1,319 @@
+---
+/**
+ * /partners — Voor AI-toolaanbieders
+ * Propositionele landingspagina voor vendors die zichtbaarheid willen.
+ * Geen betaalde rankings — wel gesponsorde content en partnerprofielen.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+import { getAllTools } from '../lib/tools-engine';
+import { ArrowRight, ShieldCheck, BadgeEuro, Star, Newspaper, UserCheck, XCircle, Mail } from '@lucide/astro';
+
+const tools = await getAllTools();
+const toolCount = tools.length;
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
+const contactMail = 'partners@debesteaitools.nl';
+
+const formats = [
+  {
+    icon: 'star',
+    title: 'Gesponsorde deep-dive review',
+    price: 'Eenmalig',
+    desc: 'Wij schrijven een uitgebreide, eerlijke review van jouw tool: use-cases, sterktes, beperkingen en voor wie het echt werkt. Gelabeld als "Gesponsord", nooit als redactioneel. Onze vaste kwaliteitsbar (verdict, alternatieven, anti-use-cases) geldt ook hier.',
+    includes: [
+      'Eigen /ai-tools/-pagina + gesponsord artikel op /nieuws/',
+      'Eerlijk oordeel — ook de beperkingen',
+      'Doorgezet via onze nieuwsbrief naar abonnees',
+      'Permanent op de site',
+    ],
+  },
+  {
+    icon: 'user',
+    title: 'Partnerprofiel',
+    price: 'Halfjaarlijks of jaarlijks',
+    desc: 'Je tool krijgt een uitgebreider profiel: logo, use-cases, doelgroepen, video, integraties en een "partner"-badge. Je rankt niet hoger door het profiel — ranking blijft louter op basis van buzz en onze redactionele criteria.',
+    includes: [
+      'Uitgebreide toolpagina met extra secties',
+      '"Partner"-badge (visueel herkenbaar, geen ranking-effect)',
+      'Vermelding in 1–2 relevante gidspagina\'s',
+      'Maandelijks bereikrapport op aanvraag',
+    ],
+  },
+  {
+    icon: 'newspaper',
+    title: 'Nieuwsbrief-sponsoring',
+    price: 'Per editie',
+    desc: 'Eén gesponsord blok in onze wekelijkse AI-tools nieuwsbrief. Duidelijk gelabeld. Je schrijft zelf de copy (max. 60 woorden + link), wij plaatsen het in de juiste editie.',
+    includes: [
+      'Één gesponsord tekstblok per editie',
+      'Duidelijk "Gesponsord" gelabeld',
+      'Keuze uit relevante editie (lancering, update, thema)',
+      'Open-rate + klikrapport na verzending',
+    ],
+  },
+];
+
+const notDoing = [
+  'Posities kopen — geen enkele tool rankt hoger door te betalen.',
+  'Onze redactionele verdict of score aanpassen in ruil voor geld.',
+  'Verborgen advertenties — elk gesponsord stuk is duidelijk gelabeld.',
+  'Exclusiviteitsdeals — we blijven altijd ook jouw concurrenten vermelden als die beter scoren.',
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Samenwerken met debesteaitools.nl — Voor AI-toolaanbieders',
+  description: 'Gesponsorde reviews, partnerprofielen en nieuwsbrief-sponsoring voor AI-toolaanbieders. Geen betaalde rankings — wel eerlijke zichtbaarheid bij een betrokken NL-doelgroep.',
+  url: `${siteOrigin}/partners`,
+};
+---
+
+<Layout
+  title="Samenwerken — Voor AI-toolaanbieders | debesteaitools.nl"
+  description={`Gesponsorde reviews, partnerprofielen en nieuwsbrief-sponsoring voor AI-toolaanbieders. ${toolCount} tools gevolgd, onafhankelijke rankings, betrokken NL-doelgroep.`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container pt">
+
+    <header class="pt__head">
+      <p class="pt__kicker"><BadgeEuro size={14} stroke-width={1.75} /> Voor AI-toolaanbieders</p>
+      <h1 class="pt__title">Bereik ondernemers die actief AI-tools zoeken</h1>
+      <p class="pt__lede">
+        debesteaitools.nl is de onafhankelijke Nederlandstalige directory voor AI-tools.
+        We volgen {toolCount} tools en helpen MKB-ondernemers, freelancers en teams
+        bij het kiezen van de juiste AI-stack. Geen betaalde rankings — wel
+        eerlijke formats om jouw tool bij de juiste doelgroep onder de aandacht te brengen.
+      </p>
+      <a href={`mailto:${contactMail}`} class="pt__cta">
+        Neem contact op <ArrowRight size={15} stroke-width={1.75} />
+      </a>
+    </header>
+
+    <!-- Bereik-stats -->
+    <div class="pt__stats">
+      <div class="pt__stat">
+        <strong>{toolCount}</strong>
+        <span>AI-tools gevolgd</span>
+      </div>
+      <div class="pt__stat">
+        <strong>NL</strong>
+        <span>Nederlandstalig publiek</span>
+      </div>
+      <div class="pt__stat">
+        <strong>MKB</strong>
+        <span>Focus op ondernemers en teams</span>
+      </div>
+      <div class="pt__stat">
+        <strong>0</strong>
+        <span>Betaalde posities in ranking</span>
+      </div>
+    </div>
+
+    <!-- Formats -->
+    <section class="pt__section">
+      <h2 class="pt__section-title">Wat we aanbieden</h2>
+      <p class="pt__section-desc">
+        Drie formats die zichtbaarheid geven zonder onze onafhankelijke rankings
+        te beïnvloeden. Elk format is altijd duidelijk gelabeld.
+      </p>
+
+      <div class="pt__formats">
+        {formats.map((f, i) => (
+          <article class="pt__format">
+            <div class="pt__format-head">
+              <h3 class="pt__format-title">
+                {f.icon === 'star' && <Star size={18} stroke-width={1.5} />}
+                {f.icon === 'user' && <UserCheck size={18} stroke-width={1.5} />}
+                {f.icon === 'newspaper' && <Newspaper size={18} stroke-width={1.5} />}
+                {f.title}
+              </h3>
+              <span class="pt__format-price">{f.price}</span>
+            </div>
+            <p class="pt__format-desc">{f.desc}</p>
+            <ul class="pt__format-list">
+              {f.includes.map(item => (
+                <li>
+                  <ShieldCheck size={13} stroke-width={2} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Wat we NIET doen -->
+    <section class="pt__section pt__section--not">
+      <h2 class="pt__section-title pt__section-title--warn">
+        <XCircle size={20} stroke-width={1.75} /> Wat we principieel niet doen
+      </h2>
+      <ul class="pt__not-list">
+        {notDoing.map(item => (
+          <li>{item}</li>
+        ))}
+      </ul>
+      <p class="pt__not-note">
+        Onze rankings zijn volledig gebaseerd op buzz, velocity, onafhankelijke reviews
+        en redactionele criteria. Dat staat beschreven op onze{' '}
+        <a href="/hoe-wij-beoordelen">methodologie-pagina</a> en onze{' '}
+        <a href="/disclosure">disclosure</a>.
+      </p>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="pt__cta-block">
+      <Mail size={22} stroke-width={1.5} />
+      <div>
+        <h2>Interesse? Laten we kennismaken.</h2>
+        <p>
+          Stuur een mail met jouw tool, doelgroep en wat je wilt bereiken.
+          We sturen je dan een concrete propositie terug — inclusief bereikdata
+          en een eerlijk beeld van wat we voor jou kunnen doen.
+        </p>
+        <a href={`mailto:${contactMail}?subject=Samenwerking debesteaitools.nl&body=Hoi,%0A%0AMijn tool is: %0ADoelgroep: %0AIk ben geïnteresseerd in: (gesponsorde review / partnerprofiel / nieuwsbrief)%0A%0AMet vriendelijke groet,`} class="pt__mail-btn">
+          <Mail size={15} stroke-width={1.75} />
+          Mail ons: {contactMail}
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  .pt { padding-top: 80px; max-width: 860px; padding-bottom: var(--space-16, 4rem); }
+
+  /* ── Header ─────────────────────────── */
+  .pt__head { margin-bottom: var(--space-8); }
+  .pt__kicker {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    color: var(--primary-bright); text-transform: uppercase;
+    letter-spacing: 0.08em; margin: 0 0 var(--space-3);
+  }
+  .pt__title {
+    font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.5rem);
+    font-weight: var(--font-regular); line-height: 1.15;
+    margin: 0 0 var(--space-4);
+  }
+  .pt__lede {
+    color: var(--text-secondary); font-size: var(--text-lg);
+    line-height: 1.65; margin: 0 0 var(--space-5); max-width: 680px;
+  }
+  .pt__cta {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    background: var(--primary-bright); color: #fff;
+    padding: var(--space-3) var(--space-5); border-radius: var(--radius-full);
+    font-size: var(--text-sm); font-weight: var(--font-semibold);
+    text-decoration: none; transition: opacity 0.15s;
+  }
+  .pt__cta:hover { opacity: 0.88; }
+
+  /* ── Stats ──────────────────────────── */
+  .pt__stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--space-3); margin-bottom: var(--space-10);
+  }
+  .pt__stat {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: var(--space-4); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg); background: var(--bg-glass); text-align: center;
+  }
+  .pt__stat strong {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    font-weight: var(--font-bold); color: var(--primary-bright);
+    line-height: 1;
+  }
+  .pt__stat span { font-size: var(--text-xs); color: var(--text-secondary); }
+
+  /* ── Sections ───────────────────────── */
+  .pt__section { margin-bottom: var(--space-10); }
+  .pt__section-title {
+    display: flex; align-items: center; gap: var(--space-2);
+    font-size: var(--text-xl); font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-2);
+  }
+  .pt__section-title--warn { color: var(--color-error); }
+  .pt__section-desc { color: var(--text-secondary); font-size: var(--text-sm); margin: 0 0 var(--space-5); }
+
+  /* ── Formats ────────────────────────── */
+  .pt__formats { display: flex; flex-direction: column; gap: var(--space-4); }
+  .pt__format {
+    padding: var(--space-5); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg); background: var(--bg-glass);
+  }
+  .pt__format-head {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: var(--space-3); margin-bottom: var(--space-3); flex-wrap: wrap;
+  }
+  .pt__format-title {
+    display: flex; align-items: center; gap: var(--space-2);
+    font-size: var(--text-lg); font-weight: var(--font-semibold);
+    color: var(--text-primary); margin: 0;
+  }
+  .pt__format-title :global(svg) { color: var(--primary-bright); flex-shrink: 0; }
+  .pt__format-price {
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    color: var(--text-muted); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full); padding: 2px 10px; white-space: nowrap;
+  }
+  .pt__format-desc {
+    color: var(--text-secondary); font-size: var(--text-sm);
+    line-height: 1.65; margin: 0 0 var(--space-3);
+  }
+  .pt__format-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: var(--space-2);
+  }
+  .pt__format-list li {
+    display: flex; align-items: flex-start; gap: var(--space-2);
+    font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5;
+  }
+  .pt__format-list :global(svg) { color: var(--color-success); flex-shrink: 0; margin-top: 2px; }
+
+  /* ── Not-doing ──────────────────────── */
+  .pt__not-list {
+    list-style: none; margin: 0 0 var(--space-4); padding: 0;
+    display: flex; flex-direction: column; gap: var(--space-2);
+  }
+  .pt__not-list li {
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-7);
+    position: relative; color: var(--text-secondary); font-size: var(--text-sm);
+    line-height: 1.55; border-left: 3px solid var(--color-error);
+    background: color-mix(in oklch, var(--color-error) 4%, transparent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .pt__not-list li::before { content: '✗'; position: absolute; left: var(--space-3); color: var(--color-error); font-weight: bold; }
+  .pt__not-note { font-size: var(--text-sm); color: var(--text-secondary); }
+  .pt__not-note a { color: var(--primary-bright); }
+
+  /* ── CTA block ──────────────────────── */
+  .pt__cta-block {
+    display: flex; gap: var(--space-5); align-items: flex-start;
+    padding: var(--space-6); border: 1px solid color-mix(in oklch, var(--primary-bright) 30%, transparent);
+    border-radius: var(--radius-lg);
+    background: color-mix(in oklch, var(--primary-bright) 6%, var(--bg-glass));
+  }
+  .pt__cta-block > :global(svg) { color: var(--primary-bright); flex-shrink: 0; margin-top: 4px; }
+  .pt__cta-block h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-2); }
+  .pt__cta-block p { color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.65; margin: 0 0 var(--space-4); }
+  .pt__mail-btn {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    color: var(--primary-bright); font-size: var(--text-sm); font-weight: var(--font-semibold);
+    text-decoration: none; border: 1px solid color-mix(in oklch, var(--primary-bright) 40%, transparent);
+    padding: var(--space-2) var(--space-4); border-radius: var(--radius-full);
+    transition: background 0.15s;
+  }
+  .pt__mail-btn:hover { background: color-mix(in oklch, var(--primary-bright) 10%, transparent); }
+
+  @media (max-width: 640px) {
+    .pt__cta-block { flex-direction: column; }
+    .pt__title { font-size: 1.75rem; }
+  }
+</style>

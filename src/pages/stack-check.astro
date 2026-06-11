@@ -1,0 +1,390 @@
+---
+/**
+ * /stack-check — Score mijn Stack
+ * Client-side stack auditor: gebruiker voert AI-tools in, krijgt
+ * HOUD / ONDERZOEK / VERVANG advies terug op basis van onze tool-database.
+ * Geen API-kosten, volledig statisch.
+ */
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+import { getAllTools } from '../lib/tools-engine';
+import { Layers, CheckCircle, AlertCircle, XCircle, ArrowRight, Sparkles } from '@lucide/astro';
+
+const tools = await getAllTools();
+
+// Bouw een minified JSON-lookup table voor client-side matching
+const toolLookup = tools.map(t => ({
+  slug: t.slug,
+  name: t.name,
+  category: t.category,
+  pricingModel: t.pricingModel,
+  buzz: (t as any).stats?.buzz_score ?? 0,
+  trend: (t as any).stats?.trend_direction ?? 'stable',
+  hasFreePlan: !!(t as any).hasFreePlan,
+  url: `/ai-tools/${t.slug}`,
+}));
+const toolJson = JSON.stringify(toolLookup);
+---
+
+<Layout
+  title="Score mijn AI-stack — Welke tools mag je houden? | debesteaitools.nl"
+  description="Voer je huidige AI-tools in en ontdek welke je moet houden, onderzoeken of vervangen. Gratis stack-analyse op basis van buzz, trend en prijs."
+>
+  <main class="container sc" style="padding-top: 80px; max-width: 860px;">
+
+    <header class="sc__head">
+      <p class="sc__kicker"><Layers size={14} stroke-width={1.75} /> Stack-check</p>
+      <h1 class="sc__title">Score mijn AI-stack</h1>
+      <p class="sc__lede">
+        Welke AI-tools in jouw stack zijn het waard om te houden — en welke
+        zijn verouderd, duur of beter te vervangen? Voer je tools in en
+        krijg direct een eerlijk oordeel.
+      </p>
+    </header>
+
+    <!-- Input -->
+    <div class="sc__card" id="sc-input-card">
+      <label class="sc__label" for="sc-input">
+        Je huidige AI-tools
+        <span class="sc__label-hint">één per regel, of kommagescheiden</span>
+      </label>
+      <textarea
+        id="sc-input"
+        class="sc__textarea"
+        placeholder={"ChatGPT\nCopilot\nMidjourney\nGrammarly\nNotion AI"}
+        rows={6}
+        autocomplete="off"
+        spellcheck="false"
+      ></textarea>
+      <div class="sc__actions">
+        <button id="sc-run" class="sc__run-btn" type="button">
+          <Sparkles size={15} stroke-width={1.75} />
+          Analyseer mijn stack
+        </button>
+        <span id="sc-status" class="sc__status" hidden></span>
+      </div>
+    </div>
+
+    <!-- Resultaten -->
+    <div id="sc-results" hidden>
+      <div class="sc__summary" id="sc-summary"></div>
+      <div class="sc__results-grid" id="sc-grid"></div>
+
+      <div class="sc__cta-block">
+        <p>Wil je de volledige analyse per mail ontvangen?</p>
+        <form id="sc-email-form" class="sc__email-form">
+          <input
+            type="email"
+            id="sc-email"
+            class="sc__email-input"
+            placeholder="jouw@email.nl"
+            autocomplete="email"
+          />
+          <button type="submit" class="sc__email-btn">Stuur analyse</button>
+        </form>
+        <p class="sc__disclaimer">We sturen je één mail met je stack-analyse. Geen spam.</p>
+      </div>
+
+      <button id="sc-reset" class="sc__reset-btn" type="button">
+        ← Nieuwe analyse
+      </button>
+    </div>
+
+  </main>
+</Layout>
+
+<script is:inline define:vars={{ toolJson }}>
+(function () {
+  var DB = JSON.parse(toolJson);
+
+  // ── Fuzzy match: zoek best passende tool in DB ──────────────────────────────
+  function normalize(s) {
+    return s.toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function findTool(query) {
+    var q = normalize(query);
+    if (!q) return null;
+    // Exact match
+    for (var i = 0; i < DB.length; i++) {
+      if (normalize(DB[i].name) === q || DB[i].slug === q.replace(/\s/g, '-')) return DB[i];
+    }
+    // Starts-with
+    for (var i = 0; i < DB.length; i++) {
+      if (normalize(DB[i].name).startsWith(q) || q.startsWith(normalize(DB[i].name))) return DB[i];
+    }
+    // Contains
+    for (var i = 0; i < DB.length; i++) {
+      if (normalize(DB[i].name).includes(q) || q.includes(normalize(DB[i].name))) return DB[i];
+    }
+    return null;
+  }
+
+  // ── Score logic ─────────────────────────────────────────────────────────────
+  function verdict(tool) {
+    var buzz = tool.buzz || 0;
+    var trend = tool.trend || 'stable';
+    var pricing = tool.pricingModel || 'paid';
+
+    // VERVANG: lage buzz + negatieve trend
+    if (buzz < 30 && trend === 'down') return 'vervang';
+    // VERVANG: gestopt / zeer lage buzz
+    if (buzz < 15) return 'vervang';
+    // ONDERZOEK: matige buzz, dalend
+    if (buzz < 50 && trend === 'down') return 'onderzoek';
+    // ONDERZOEK: duur + matige buzz
+    if (pricing === 'paid' && buzz < 55) return 'onderzoek';
+    // HOUD: hoge buzz en stabiel/stijgend
+    if (buzz >= 60 && (trend === 'up' || trend === 'stable')) return 'houd';
+    // Default matig
+    return buzz >= 45 ? 'houd' : 'onderzoek';
+  }
+
+  function reasonText(tool, v) {
+    var buzz = tool.buzz || 0;
+    var trend = tool.trend || 'stable';
+    var trendLabel = { up: 'groeiend', down: 'dalend', stable: 'stabiel' }[trend] || 'onbekend';
+    var pricingLabel = { free: 'gratis', freemium: 'freemium', paid: 'betaald', enterprise: 'enterprise' }[tool.pricingModel] || tool.pricingModel;
+    if (v === 'houd') return 'Buzz ' + buzz + ' (' + trendLabel + ') — sterke keuze.';
+    if (v === 'onderzoek') return 'Buzz ' + buzz + ' (' + trendLabel + '), ' + pricingLabel + '. Vergelijk alternatieven.';
+    return 'Buzz ' + buzz + ' (' + trendLabel + ') — overweeg te vervangen.';
+  }
+
+  // ── DOM helpers ──────────────────────────────────────────────────────────────
+  function iconHtml(v) {
+    if (v === 'houd') return '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+    if (v === 'onderzoek') return '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+  }
+
+  function labelText(v) {
+    return { houd: 'Houd', onderzoek: 'Onderzoek', vervang: 'Vervang' }[v] || v;
+  }
+
+  // ── Run ─────────────────────────────────────────────────────────────────────
+  document.getElementById('sc-run').addEventListener('click', function () {
+    var raw = document.getElementById('sc-input').value;
+    // Split op newline of komma
+    var entries = raw.split(/[\n,]+/).map(function (s) { return s.trim(); }).filter(Boolean);
+    if (!entries.length) {
+      var st = document.getElementById('sc-status');
+      st.textContent = 'Voer ten minste één tool in.';
+      st.hidden = false;
+      return;
+    }
+    document.getElementById('sc-status').hidden = true;
+
+    var results = entries.map(function (entry) {
+      var tool = findTool(entry);
+      if (!tool) return { query: entry, tool: null, verdict: 'onbekend' };
+      var v = verdict(tool);
+      return { query: entry, tool: tool, verdict: v };
+    });
+
+    // Summary counts
+    var counts = { houd: 0, onderzoek: 0, vervang: 0, onbekend: 0 };
+    results.forEach(function (r) { counts[r.verdict] = (counts[r.verdict] || 0) + 1; });
+
+    // Render summary
+    var sumEl = document.getElementById('sc-summary');
+    sumEl.innerHTML =
+      '<div class="sc__sum-item sc__sum--houd"><strong>' + counts.houd + '</strong><span>Houd</span></div>' +
+      '<div class="sc__sum-item sc__sum--onderzoek"><strong>' + counts.onderzoek + '</strong><span>Onderzoek</span></div>' +
+      '<div class="sc__sum-item sc__sum--vervang"><strong>' + counts.vervang + '</strong><span>Vervang</span></div>' +
+      (counts.onbekend ? '<div class="sc__sum-item sc__sum--onbekend"><strong>' + counts.onbekend + '</strong><span>Onbekend</span></div>' : '');
+
+    // Render cards
+    var gridEl = document.getElementById('sc-grid');
+    gridEl.innerHTML = results.map(function (r) {
+      var v = r.verdict;
+      var name = r.tool ? r.tool.name : r.query;
+      var reason = r.tool ? reasonText(r.tool, v) : 'Niet gevonden in onze database.';
+      var link = r.tool ? '<a href="' + r.tool.url + '" class="sc__card-link" target="_blank">Bekijk profiel →</a>' : '';
+      return (
+        '<article class="sc__result sc__result--' + v + '">' +
+        '<div class="sc__result-icon">' + iconHtml(v) + '</div>' +
+        '<div class="sc__result-body">' +
+        '<strong class="sc__result-name">' + name + '</strong>' +
+        '<span class="sc__result-badge sc__badge--' + v + '">' + labelText(v) + '</span>' +
+        '<p class="sc__result-reason">' + reason + '</p>' +
+        link +
+        '</div></article>'
+      );
+    }).join('');
+
+    // Toon resultaten
+    document.getElementById('sc-input-card').hidden = true;
+    document.getElementById('sc-results').hidden = false;
+  });
+
+  // ── Reset ────────────────────────────────────────────────────────────────────
+  document.getElementById('sc-reset').addEventListener('click', function () {
+    document.getElementById('sc-input-card').hidden = false;
+    document.getElementById('sc-results').hidden = true;
+    document.getElementById('sc-input').value = '';
+  });
+
+  // ── Email form ───────────────────────────────────────────────────────────────
+  document.getElementById('sc-email-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('sc-email').value;
+    if (!email) return;
+    // Simple feedback — in prod koppel je dit aan een email service
+    var btn = this.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Verstuurd!';
+    btn.disabled = true;
+    document.querySelector('.sc__disclaimer').textContent =
+      'Check je inbox voor je stack-analyse (ook spam checken).';
+  });
+})();
+</script>
+
+<style>
+  .sc { padding-bottom: var(--space-16, 4rem); }
+
+  /* ── Header ─────────────────────────── */
+  .sc__head { margin-bottom: var(--space-8); }
+  .sc__kicker {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    color: var(--primary-bright); text-transform: uppercase;
+    letter-spacing: 0.08em; margin: 0 0 var(--space-3);
+  }
+  .sc__title {
+    font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.5rem);
+    font-weight: var(--font-regular); line-height: 1.15;
+    margin: 0 0 var(--space-4);
+  }
+  .sc__lede {
+    color: var(--text-secondary); font-size: var(--text-lg);
+    line-height: 1.65; margin: 0; max-width: 680px;
+  }
+
+  /* ── Input card ─────────────────────── */
+  .sc__card {
+    padding: var(--space-5); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg); background: var(--bg-glass);
+    margin-bottom: var(--space-8);
+  }
+  .sc__label {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: var(--space-2);
+    font-size: var(--text-sm); font-weight: var(--font-semibold);
+    color: var(--text-primary); margin-bottom: var(--space-3);
+  }
+  .sc__label-hint { font-size: var(--text-xs); font-weight: normal; color: var(--text-muted); }
+  .sc__textarea {
+    width: 100%; box-sizing: border-box;
+    background: var(--bg-input, var(--bg-elevated));
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+    color: var(--text-primary); font: inherit; font-size: var(--text-sm);
+    padding: var(--space-3); resize: vertical; line-height: 1.7;
+    transition: border-color 0.15s;
+  }
+  .sc__textarea:focus { outline: none; border-color: var(--primary-bright); }
+  .sc__actions { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-4); flex-wrap: wrap; }
+  .sc__run-btn {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    background: var(--primary-bright); color: #fff;
+    border: none; border-radius: var(--radius-full);
+    padding: var(--space-3) var(--space-5); font: inherit;
+    font-size: var(--text-sm); font-weight: var(--font-semibold);
+    cursor: pointer; transition: opacity 0.15s;
+  }
+  .sc__run-btn:hover { opacity: 0.88; }
+  .sc__status { font-size: var(--text-sm); color: var(--color-error); }
+
+  /* ── Summary ────────────────────────── */
+  .sc__summary {
+    display: flex; gap: var(--space-3); flex-wrap: wrap;
+    margin-bottom: var(--space-6);
+  }
+  .sc__sum-item {
+    display: flex; flex-direction: column; align-items: center;
+    min-width: 80px; padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md); border: 1px solid var(--border-subtle);
+    background: var(--bg-glass);
+  }
+  .sc__sum-item strong { font-size: 1.75rem; font-weight: var(--font-bold); line-height: 1; }
+  .sc__sum-item span { font-size: var(--text-xs); color: var(--text-secondary); margin-top: 4px; }
+  .sc__sum--houd strong { color: var(--color-success); }
+  .sc__sum--onderzoek strong { color: var(--color-warning, #f59e0b); }
+  .sc__sum--vervang strong { color: var(--color-error); }
+  .sc__sum--onbekend strong { color: var(--text-muted); }
+
+  /* ── Result cards ───────────────────── */
+  .sc__results-grid { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); }
+  .sc__result {
+    display: flex; gap: var(--space-4); align-items: flex-start;
+    padding: var(--space-4); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md); background: var(--bg-glass);
+  }
+  .sc__result--houd { border-left: 3px solid var(--color-success); }
+  .sc__result--onderzoek { border-left: 3px solid var(--color-warning, #f59e0b); }
+  .sc__result--vervang { border-left: 3px solid var(--color-error); }
+  .sc__result--onbekend { border-left: 3px solid var(--border-subtle); opacity: 0.65; }
+
+  .sc__result-icon { flex-shrink: 0; margin-top: 2px; }
+  .sc__result--houd .sc__result-icon { color: var(--color-success); }
+  .sc__result--onderzoek .sc__result-icon { color: var(--color-warning, #f59e0b); }
+  .sc__result--vervang .sc__result-icon { color: var(--color-error); }
+  .sc__result--onbekend .sc__result-icon { color: var(--text-muted); }
+
+  .sc__result-body { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .sc__result-name { font-size: var(--text-base); font-weight: var(--font-semibold); width: 100%; }
+  .sc__result-badge {
+    font-size: var(--text-xs); font-weight: var(--font-semibold);
+    padding: 2px 10px; border-radius: var(--radius-full); border: 1px solid;
+  }
+  .sc__badge--houd { color: var(--color-success); border-color: var(--color-success); background: color-mix(in oklch, var(--color-success) 10%, transparent); }
+  .sc__badge--onderzoek { color: var(--color-warning, #f59e0b); border-color: var(--color-warning, #f59e0b); background: color-mix(in oklch, var(--color-warning, #f59e0b) 10%, transparent); }
+  .sc__badge--vervang { color: var(--color-error); border-color: var(--color-error); background: color-mix(in oklch, var(--color-error) 10%, transparent); }
+  .sc__badge--onbekend { color: var(--text-muted); border-color: var(--border-subtle); }
+  .sc__result-reason { font-size: var(--text-sm); color: var(--text-secondary); margin: 0; width: 100%; }
+  .sc__card-link { font-size: var(--text-sm); color: var(--primary-bright); text-decoration: none; }
+  .sc__card-link:hover { text-decoration: underline; }
+
+  /* ── Email CTA ──────────────────────── */
+  .sc__cta-block {
+    padding: var(--space-5); border: 1px solid color-mix(in oklch, var(--primary-bright) 25%, transparent);
+    border-radius: var(--radius-lg); background: color-mix(in oklch, var(--primary-bright) 5%, var(--bg-glass));
+    margin-bottom: var(--space-6);
+  }
+  .sc__cta-block > p:first-child { font-size: var(--text-sm); font-weight: var(--font-semibold); margin: 0 0 var(--space-3); }
+  .sc__email-form { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+  .sc__email-input {
+    flex: 1; min-width: 200px;
+    background: var(--bg-input, var(--bg-elevated));
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+    color: var(--text-primary); font: inherit; font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3); transition: border-color 0.15s;
+  }
+  .sc__email-input:focus { outline: none; border-color: var(--primary-bright); }
+  .sc__email-btn {
+    background: var(--primary-bright); color: #fff;
+    border: none; border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4); font: inherit;
+    font-size: var(--text-sm); font-weight: var(--font-semibold);
+    cursor: pointer; transition: opacity 0.15s;
+  }
+  .sc__email-btn:hover:not(:disabled) { opacity: 0.88; }
+  .sc__email-btn:disabled { opacity: 0.5; cursor: default; }
+  .sc__disclaimer { font-size: var(--text-xs); color: var(--text-muted); margin: var(--space-2) 0 0; }
+
+  /* ── Reset ──────────────────────────── */
+  .sc__reset-btn {
+    background: transparent; border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full); color: var(--text-secondary);
+    font: inherit; font-size: var(--text-sm); padding: var(--space-2) var(--space-4);
+    cursor: pointer; transition: color 0.15s, border-color 0.15s;
+  }
+  .sc__reset-btn:hover { color: var(--primary-bright); border-color: var(--primary-bright); }
+
+  @media (max-width: 480px) {
+    .sc__result { flex-direction: column; gap: var(--space-2); }
+  }
+</style>

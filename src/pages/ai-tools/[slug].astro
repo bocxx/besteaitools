@@ -280,7 +280,13 @@ export const prerender = true;
       </div>
 
       <div class="tool-header__cta">
-        <a href={ctaUrl} target="_blank" rel={ctaRel} class="cta-btn">
+        {(tool.pricingModel === 'free' || tool.pricingModel === 'freemium' || (tool as any).hasFreePlan) && (
+          <a href={ctaUrl} target="_blank" rel={ctaRel} class="cta-btn cta-btn--free">
+            Gratis proberen
+            <ExternalLink size={13} stroke-width={1.5} />
+          </a>
+        )}
+        <a href={ctaUrl} target="_blank" rel={ctaRel} class:list={['cta-btn', { 'cta-btn--secondary': tool.pricingModel === 'free' || tool.pricingModel === 'freemium' || (tool as any).hasFreePlan }]}>
           <Globe size={15} stroke-width={1.5} />
           Bezoek {tool.name}
           <ExternalLink size={13} stroke-width={1.5} />
@@ -1110,6 +1116,20 @@ export const prerender = true;
   .cta-btn:hover {
     color: var(--primary-bright);
     border-color: var(--primary-bright);
+  }
+  .cta-btn--free {
+    background: var(--primary-bright);
+    border-color: var(--primary-bright);
+    color: #fff;
+  }
+  .cta-btn--free:hover {
+    opacity: 0.88;
+    color: #fff;
+    border-color: var(--primary-bright);
+  }
+  .cta-btn--secondary {
+    background: transparent;
+    color: var(--text-secondary);
   }
 
   /* ── Quick Facts ────────────────────────────────────────── */
