@@ -7,7 +7,13 @@ export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
 import { taskPages } from '../../lib/task-content';
 import { siteConfig } from '../../config/site';
-import { ArrowRight } from '@lucide/astro';
+import { ArrowRight, BookOpen } from '@lucide/astro';
+
+// Unieke kickers voor filterchips
+const allKickers = [...new Set(taskPages.map(t => t.kicker))].sort();
+const kickerCounts = Object.fromEntries(
+  allKickers.map(k => [k, taskPages.filter(t => t.kicker === k).length])
+);
 
 const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
 const breadcrumbJsonLd = {
@@ -35,51 +41,152 @@ const breadcrumbJsonLd = {
     </nav>
 
     <header class="gids-hub__head">
+      <p class="gids-hub__kicker"><BookOpen size={13} stroke-width={1.75} /> Gidsen</p>
       <h1 class="gids-hub__title">AI-gidsen per taak</h1>
-      <p class="gids-hub__sub">Wil je iets specifieks dóén met AI? Kies je taak en zie meteen de beste tools ervoor — met wat ze kunnen en wat ze kosten.</p>
+      <p class="gids-hub__sub">
+        Wil je iets specifieks dóén met AI? Kies je taak en zie meteen de beste tools
+        ervoor — met wat ze kunnen en wat ze kosten.
+      </p>
+      <p class="gids-hub__meta">{taskPages.length} gidsen beschikbaar</p>
     </header>
 
-    <div class="gids-hub__grid">
+    <!-- Filters — zelfde stijl als /leren -->
+    <div class="lf" id="gids-filters">
+      <div class="lf__group" role="group" aria-label="Filter op categorie">
+        <span class="lf__label">Categorie</span>
+        <div class="lf__chips">
+          <button class="lf__chip lf__chip--on" data-filter="" type="button">
+            Alles <span class="lf__n">{taskPages.length}</span>
+          </button>
+          {allKickers.map(k => (
+            <button class="lf__chip" data-filter={k} type="button">
+              {k} <span class="lf__n">{kickerCounts[k]}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="gids-hub__grid" id="gids-grid">
       {taskPages.map((t) => (
-        <a class="gids-hub__card" href={`/gids/${t.slug}`}>
-          <span class="gids-hub__kicker">{t.kicker}</span>
+        <a class="gids-hub__card" href={`/gids/${t.slug}`} data-kicker={t.kicker}>
+          <span class="gids-hub__card-kicker">{t.kicker}</span>
           <span class="gids-hub__card-title">{t.h1}</span>
           <span class="gids-hub__more">Bekijk tools <ArrowRight size={14} stroke-width={1.75} aria-hidden="true" /></span>
         </a>
       ))}
     </div>
+
+    <p class="gids-hub__empty" id="gids-empty" hidden>
+      Geen gidsen voor deze categorie.
+    </p>
   </main>
 </Layout>
 
+<script is:inline>
+  (function () {
+    var chips = document.querySelectorAll('#gids-filters .lf__chip');
+    var cards = document.querySelectorAll('#gids-grid .gids-hub__card');
+    var empty = document.getElementById('gids-empty');
+    var active = '';
+
+    function apply() {
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = !active || card.dataset.kicker === active;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (empty) empty.hidden = visible > 0;
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        active = chip.dataset.filter || '';
+        chips.forEach(function (c) { c.classList.toggle('lf__chip--on', c === chip); });
+        apply();
+      });
+    });
+  })();
+</script>
+
 <style>
   .gids-hub { max-width: 1120px; }
+
   .gids-hub__crumbs { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-6); }
   .gids-hub__crumbs a { color: var(--text-secondary); text-decoration: none; }
   .gids-hub__crumbs a:hover { color: var(--primary-bright); }
-  .gids-hub__head { max-width: 60ch; margin-bottom: var(--space-10); }
-  .gids-hub__title {
-    font-family: var(--font-logo); font-weight: var(--font-regular);
-    font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem); letter-spacing: var(--tracking-tight);
-    line-height: 1.1; color: var(--text-primary); margin: 0 0 var(--space-4);
+
+  .gids-hub__head { max-width: 64ch; margin-bottom: var(--space-8); }
+  .gids-hub__kicker {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    color: var(--primary-bright); text-transform: uppercase;
+    letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0;
   }
-  .gids-hub__sub { color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin: 0; }
-  .gids-hub__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-4); }
+  .gids-hub__title {
+    font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
+    font-weight: var(--font-regular); line-height: 1.15;
+    color: var(--text-primary); margin: 0 0 var(--space-4);
+  }
+  .gids-hub__sub { color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin: 0 0 var(--space-3); }
+  .gids-hub__meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin: 0; }
+
+  /* Filters */
+  .lf {
+    display: flex; flex-direction: column; gap: var(--space-3);
+    padding: var(--space-4); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg, 12px); background: var(--bg-glass);
+    margin-bottom: var(--space-6);
+  }
+  .lf__group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-3); }
+  .lf__label {
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    color: var(--text-secondary); text-transform: uppercase;
+    letter-spacing: 0.06em; min-width: 90px;
+  }
+  .lf__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .lf__chip {
+    appearance: none; cursor: pointer; font: inherit;
+    font-size: var(--text-xs); color: var(--text-secondary);
+    background: transparent; border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full); padding: 3px 12px;
+    transition: all 0.15s ease;
+  }
+  .lf__chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
+  .lf__chip--on {
+    color: var(--primary-bright);
+    border-color: var(--primary-bright);
+    background: color-mix(in oklab, var(--primary-bright) 12%, transparent);
+  }
+  .lf__n { opacity: 0.55; font-size: 0.85em; }
+
+  /* Grid */
+  .gids-hub__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: var(--space-4);
+  }
   .gids-hub__card {
     display: flex; flex-direction: column; gap: var(--space-2);
     padding: var(--space-5); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
     background: var(--bg-elevated); text-decoration: none;
     transition: border-color var(--transition-fast), background var(--transition-fast);
   }
-  .gids-hub__card:hover { border-color: var(--border-strong); background: var(--bg-panel); }
-  .gids-hub__kicker {
+  .gids-hub__card[hidden] { display: none; }
+  .gids-hub__card:hover { border-color: var(--primary-bright); background: var(--bg-panel); }
+  .gids-hub__card-kicker {
     font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
     letter-spacing: var(--tracking-widest); color: var(--primary-bright);
   }
   .gids-hub__card-title { font-size: var(--text-lg); font-weight: var(--font-semibold); color: var(--text-primary); line-height: 1.25; }
   .gids-hub__more {
-    display: inline-flex; align-items: center; gap: var(--space-1-5); margin-top: var(--space-1);
+    display: inline-flex; align-items: center; gap: var(--space-1-5); margin-top: auto; padding-top: var(--space-2);
     font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase;
     letter-spacing: var(--tracking-widest); color: var(--text-muted);
   }
   .gids-hub__card:hover .gids-hub__more { color: var(--primary-bright); }
+  .gids-hub__empty { color: var(--text-secondary); font-size: var(--text-sm); margin-top: var(--space-4); }
+
+  @media (max-width: 640px) { .lf__label { min-width: 100%; } }
 </style>
