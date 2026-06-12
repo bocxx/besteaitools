@@ -1,12 +1,90 @@
 {
-  "generated_at": "2026-06-11T19:36:48.506607",
+  "generated_at": "2026-06-12T07:29:27.324102",
   "window_days": 7,
   "week": "2026-w24",
-  "total_candidates_scanned": 1247,
-  "total_after_dedup": 1205,
-  "total_feature_updates": 147,
+  "total_candidates_scanned": 1191,
+  "total_after_dedup": 1155,
+  "total_feature_updates": 148,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Fable 5",
+      "summary_nl": "Anthropic heeft zijn krachtigste AI-model 'Claude Fable 5' gebaseerd op Mythos officieel uitgebracht.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2064394167292174738",
+          "title": "JUST IN: Anthropic officially releases its most powerful AI model \"Claude Fable\" based on Mythos. https://t.co/AJvsbayG6s",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
+        },
+        {
+          "url": "https://twitter.com/PolymarketMoney/status/2064174573487058989",
+          "title": "JUST IN: Anthropic will reportedly release its new AI model “Mythos” tomorrow. https://t.co/kIYVA3dF2t",
+          "platform": "twitter",
+          "source": "@PolymarketMoney"
+        },
+        {
+          "url": "https://reddit.com/r/ClaudeAI/comments/1u1fsdi/claude_fable_5_feels_less_like_a_model_launch_and/",
+          "title": "Claude Fable 5 feels less like a model launch and more like a preview of AI inequality",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        },
+        {
+          "url": "https://reddit.com/r/ClaudeAI/comments/1u1b22l/introducing_claude_fable_5/",
+          "title": "Introducing Claude Fable 5",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-06-12",
+      "week": "2026-w24"
+    },
+    {
+      "tool_slug": "claude-code",
+      "tool_name": "Claude-Code",
+      "tool_category": "tekst",
+      "feature_title": "Scheduled Deployments and Environment Variables",
+      "summary_nl": "Geplande implementaties en omgevingsvariabelen in kluizen zijn in openbare bèta in Claude Managed Agents, en dynamische workflows in Claude Code zijn algemeen beschikbaar.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2064741174317924421",
+          "title": "New from Code with Claude Tokyo: scheduled deployments and environment variables in vaults are in public beta in Claude Managed Agents, and ",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-06-12",
+      "week": "2026-w24"
+    },
+    {
+      "tool_slug": "langchain",
+      "tool_name": "LangChain",
+      "tool_category": "automatisering",
+      "feature_title": "TurboVec Memory Optimization",
+      "summary_nl": "TurboVec is een nieuw open-source hulpmiddel dat de gegevens waar uw AI-app naar zoekt, opslaat met 16 keer minder geheugen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/RodmanAi/status/2063234655822774556",
+          "title": "SAM ALTMAN HAS A NEW PROBLEM. 🤯\n\nGoogle just shrunk 31GB of AI memory down to 4GB.\n\nThe tool is called TurboVec.\n\nIt uses up to 16x less mem",
+          "platform": "twitter",
+          "source": "@RodmanAi"
+        },
+        {
+          "url": "https://twitter.com/dr_cintas/status/2062941225133510658",
+          "title": "Google's new algorithm just shrunk 31GB of memory down to 4GB 🤯\n\nTurboVec is a new open-source tool that stores the data your AI app searche",
+          "platform": "twitter",
+          "source": "@dr_cintas"
+        }
+      ],
+      "detected_at": "2026-06-12",
+      "week": "2026-w24"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -116,30 +194,6 @@
       "week": "2026-w24"
     },
     {
-      "tool_slug": "langchain",
-      "tool_name": "LangChain",
-      "tool_category": "automatisering",
-      "feature_title": "TurboVec Memory Optimization",
-      "summary_nl": "LangChain heeft een nieuw open-source tool genaamd TurboVec gelanceerd, dat de geheugengebruik van AI-toepassingen met 16x kan verminderen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/RodmanAi/status/2063234655822774556",
-          "title": "SAM ALTMAN HAS A NEW PROBLEM. 🤯\n\nGoogle just shrunk 31GB of AI memory down to 4GB.\n\nThe tool is called TurboVec.\n\nIt uses up to 16x less mem",
-          "platform": "twitter",
-          "source": "@RodmanAi"
-        },
-        {
-          "url": "https://twitter.com/dr_cintas/status/2062941225133510658",
-          "title": "Google's new algorithm just shrunk 31GB of memory down to 4GB 🤯\n\nTurboVec is a new open-source tool that stores the data your AI app searche",
-          "platform": "twitter",
-          "source": "@dr_cintas"
-        }
-      ],
-      "detected_at": "2026-06-11",
-      "week": "2026-w24"
-    },
-    {
       "tool_slug": "gemini",
       "tool_name": "Gemini",
       "tool_category": "tekst",
@@ -191,36 +245,6 @@
         }
       ],
       "detected_at": "2026-06-11",
-      "week": "2026-w24"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Fable 5",
-      "summary_nl": "Anthropic heeft de nieuwste versie van hun krachtige AI-model Claude Fable 5 uitgebracht.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/WatcherGuru/status/2064394167292174738",
-          "title": "JUST IN: Anthropic officially releases its most powerful AI model \"Claude Fable\" based on Mythos. https://t.co/AJvsbayG6s",
-          "platform": "twitter",
-          "source": "@WatcherGuru"
-        },
-        {
-          "url": "https://twitter.com/PolymarketMoney/status/2064174573487058989",
-          "title": "JUST IN: Anthropic will reportedly release its new AI model “Mythos” tomorrow. https://t.co/kIYVA3dF2t",
-          "platform": "twitter",
-          "source": "@PolymarketMoney"
-        },
-        {
-          "url": "https://reddit.com/r/ClaudeAI/comments/1u1b22l/introducing_claude_fable_5/",
-          "title": "Introducing Claude Fable 5",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-06-10",
       "week": "2026-w24"
     },
     {
