@@ -96,6 +96,7 @@ Geen AI-vertaling is perfect. Doe voor belangrijke teksten altijd een snelle kwa
 - [ ] Voor documenten (Word/PowerPoint): DeepL Pro gebruikt met opmaakbehoud
 - [ ] Eigen woordenlijst aangemaakt voor veelgebruikte vaktermen (DeepL Pro)
 - [ ] Gevoelige juridische/medische teksten laten nalopen door een expert
+- [ ] Wil je vertaling client-side bouwen zonder API? Bekijk [Transformers.js in de browser](/nieuws/transformers-js-ai-in-de-browser-gebruiken)
 
 ## Bronnen
 

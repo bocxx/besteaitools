@@ -102,6 +102,8 @@ Dit vangt de meest voor de hand liggende problemen op voor je een collega vraagt
 - [ ] Een foutmelding ingeplakt en de uitleg begrepen vóór je de fix toepaste
 - [ ] Eigen code laten reviewen op bugs en beveiliging voor commit
 
+Wil je een stap verder en ML-inferentie direct in een webapplicatie inbouwen zonder backend? Lees onze gids [Transformers.js gebruiken: AI in de browser zonder server](/nieuws/transformers-js-ai-in-de-browser-gebruiken).
+
 ## Bronnen
 
 - [Cursor — Getting Started](https://docs.cursor.com/get-started/introduction)

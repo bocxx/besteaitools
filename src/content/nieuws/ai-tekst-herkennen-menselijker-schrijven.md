@@ -118,6 +118,8 @@ De vraag is dus niet of je AI gebruikt, maar of het stuk de toon heeft die jij w
 - Een kort prompt plus extern bestand werkt beter dan een lange instructie omdat Claude het bestand in zijn geheel meeneemt zonder dat regels verdwijnen in prompt-ruis.
 - Eerstvolgende stap: kopieer het Wikipedia-artikel naar een Google Doc, exporteer als markdown, upload naar je Claude-project of Cowork-werkmap, en test de prompt op één tekst die je vandaag toch al moet schrijven.
 
+Wil je taalmodellen inbouwen in je eigen tool zonder API-afhankelijkheid? Onze gids [Transformers.js gebruiken: AI direct in de browser](/nieuws/transformers-js-ai-in-de-browser-gebruiken) laat zien hoe dat werkt met client-side inferentie.
+
 ## Bronnen
 
 - [Wikipedia — Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) — de complete handleiding van Wikipedia-editors over patronen die AI-tekst verraden
