@@ -97,7 +97,7 @@ export const prerender = false;
         Lanceringen, updates, vergelijkingen en analyses — dagelijks bijgewerkt.
       </p>
       <p class="page-header__meta">
-        <strong>{articleCount} artikelen</strong> · <strong>{digestCount} dag-digests</strong>
+        <strong>{articleCount} artikelen</strong> · <strong>{digestCount} AI Tools Radars</strong>
         {activeCat && <span> · gefilterd op <strong>{nieuwsCategoryConfig[activeCat].label}</strong></span>}
       </p>
     </header>
@@ -115,7 +115,7 @@ export const prerender = false;
               Artikelen <span class="lf__n">{articleCount}</span>
             </a>
             <a href="/nieuws/?type=digests" class:list={['lf__chip', { 'lf__chip--on': activeType === 'digests' }]}>
-              Dag-digests <span class="lf__n">{digestCount}</span>
+              AI Tools Radar <span class="lf__n">{digestCount}</span>
             </a>
           </div>
         </div>
