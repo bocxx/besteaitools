@@ -61,7 +61,7 @@ launches:
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=reddit.com&sz=64
 - name: A Karpathy
-  summary_nl: A Karpathy's 'wuphf' tool allows you to style your LLM-powered wiki agents using Markdown and Git.
+  summary_nl: Karpathy's 'wuphf' stelt je in staat LLM-wiki-agents te stylen in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (258 punten, 114 reacties)
@@ -151,7 +151,7 @@ updates:
   key: claude::Managed Agent Memory
 deepDives:
 - title: 'The Anatomy of a Claude 4.6 Prompt: 1. Task Define what you want & what success looks like: "I want to [TASK] so that […'
-  summary_nl: A practical guide on using Claude, the AI assistant, for the Dutch market.
+  summary_nl: Praktische gids voor Claude voor de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2027991271252320693
   tool: claude
   trend_phase: tracked
@@ -163,13 +163,13 @@ deepDives:
   trend_phase: tracked
   score: 22.36
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A guide on setting up and using Claude in 5 steps for the Dutch market.
+  summary_nl: Gids voor Claude in 5 stappen, gericht op de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked
   score: 21.53
 - title: 'Biggest announcement of my life: I have raised pre-seed funding from 021T, @alexwg , and @devontriplett21 to build an A…'
-  summary_nl: A practical overview of You.com for the Dutch market.
+  summary_nl: Praktisch overzicht van You.com voor de Nederlandse markt.
   url: https://twitter.com/AlexFinn/status/2041267605747712370
   tool: you.com
   trend_phase: tracked

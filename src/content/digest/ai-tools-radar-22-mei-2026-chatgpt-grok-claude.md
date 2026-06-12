@@ -68,7 +68,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: Rmux
-  summary_nl: A programmable terminal multiplexer with a Playwright-style SDK
+  summary_nl: Een programmeerbare terminal-multiplexer met een Playwright-achtige SDK.
   url: https://github.com/helvesec/rmux
   source_type: hn
   source_label: Hacker News (174 punten, 83 reacties)

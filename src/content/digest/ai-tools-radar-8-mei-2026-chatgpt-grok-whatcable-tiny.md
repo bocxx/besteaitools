@@ -149,7 +149,7 @@ deepDives:
   trend_phase: tracked
   score: 21.86
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A detailed tutorial on setting up the Claude AI tool, providing a comprehensive guide for new users.
+  summary_nl: Uitgebreide handleiding voor nieuwe gebruikers van Claude.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked

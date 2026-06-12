@@ -153,7 +153,7 @@ deepDives:
   trend_phase: tracked
   score: 21.86
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A detailed guide on setting up and using the Claude AI platform, a valuable resource for developers and teams.
+  summary_nl: Uitgebreide gids voor het instellen van Claude — nuttig voor ontwikkelaars en teams.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked
@@ -165,7 +165,7 @@ deepDives:
   trend_phase: tracked
   score: 21.14
 - title: 🚨 Do you understand what happened in the last 24 hours? > Zuckerberg killed the Metaverse after burning $80 billion on…
-  summary_nl: A discussion on the recent developments in the Metaverse space, including Zuckerberg's decision to scale back investments, an important topic for those following the industry.
+  summary_nl: Discussie over recente ontwikkelingen in de Metaverse, inclusief Zuckerbergs besluit om investeringen terug te schroeven.
   url: https://twitter.com/TukiFromKL/status/2034391059279511821
   tool: chatgpt
   trend_phase: tracked

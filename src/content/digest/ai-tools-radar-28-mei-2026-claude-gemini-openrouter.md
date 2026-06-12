@@ -147,7 +147,7 @@ updates:
   key: gemini::New Model Family
 deepDives:
 - title: the anatomy of the perfect 𝗦𝗢𝗨𝗟.𝗺𝗱 file for AI agents. 𝗦𝗢𝗨𝗟.𝗺𝗱 is the one file you write yourself for an AI agent. it s…
-  summary_nl: A detailed guide on creating the perfect 'soul.md' file for AI agents, a crucial component for customizing their behavior.
+  summary_nl: Uitgebreide gids voor het maken van het perfecte 'soul.md'-bestand voor AI-agents.
   url: https://twitter.com/akshay_pachaar/status/2058584154292584853
   tool: you.com
   trend_phase: tracked

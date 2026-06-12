@@ -50,7 +50,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: A Karpathy
-  summary_nl: A Karpathy is een tool om LLM-wiki's en -agents te stylen in Markdown en Git.
+  summary_nl: Karpathy's tool om LLM-wiki's en -agents te stylen in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (258 punten, 114 reacties)

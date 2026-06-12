@@ -50,7 +50,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: A Karpathy
-  summary_nl: A Karpathy is a tool that allows you to style your LLM-powered agents' wiki content using Markdown and Git.
+  summary_nl: Karpathy's tool om wiki-content voor LLM-agents te stylen in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (258 punten, 114 reacties)
@@ -154,7 +154,7 @@ deepDives:
   trend_phase: tracked
   score: 21.86
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A detailed tutorial on setting up and using the Claude AI tool, tailored for the Dutch market.
+  summary_nl: Uitgebreide handleiding voor Claude, afgestemd op de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked
@@ -166,7 +166,7 @@ deepDives:
   trend_phase: tracked
   score: 20.64
 - title: Learn how to run Qwen3.5 locally using Claude Code. Our guide shows you how to run Qwen3.5 on your server for local age…
-  summary_nl: A guide on running the Qwen3.5 AI model locally using the Claude Code platform, a useful resource for Dutch users.
+  summary_nl: Gids voor het lokaal draaien van Qwen3.5 via Claude Code, nuttig voor Nederlandse gebruikers.
   url: https://twitter.com/UnslothAI/status/2031008078850924840
   tool: claude
   trend_phase: tracked

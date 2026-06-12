@@ -59,7 +59,7 @@ launches:
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=reddit.com&sz=64
 - name: A Karpathy
-  summary_nl: A Karpathy has released a tool that allows agents to style their LLM-powered wikis using Markdown and Git.
+  summary_nl: Karpathy brengt een tool uit waarmee agents hun LLM-wiki's stylen in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (258 punten, 114 reacties)
@@ -148,7 +148,7 @@ updates:
   key: claude::Managed Agents Memory
 deepDives:
 - title: 'The Anatomy of a Claude 4.6 Prompt: 1. Task Define what you want & what success looks like: "I want to [TASK] so that […'
-  summary_nl: A practical guide on using the Claude AI assistant effectively, including tips on defining tasks and measuring success.
+  summary_nl: Praktische gids voor Claude: taken definiëren en succes meten.
   url: https://twitter.com/rubenhassid/status/2027991271252320693
   tool: claude
   trend_phase: tracked
@@ -166,7 +166,7 @@ deepDives:
   trend_phase: tracked
   score: 21.53
 - title: 'Biggest announcement of my life: I have raised pre-seed funding from 021T, @alexwg , and @devontriplett21 to build an A…'
-  summary_nl: A practical guide on using the You.com search engine, tailored for the Dutch market.
+  summary_nl: Praktische gids voor You.com, afgestemd op de Nederlandse markt.
   url: https://twitter.com/AlexFinn/status/2041267605747712370
   tool: you.com
   trend_phase: tracked

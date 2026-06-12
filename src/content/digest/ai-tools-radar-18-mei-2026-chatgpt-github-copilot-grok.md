@@ -151,7 +151,7 @@ deepDives:
   trend_phase: tracked
   score: 21.86
 - title: Stop wasting hours trying to learn AI. I have already done it for you. With one list. Zero confusion. And no fluff. 📹 V…
-  summary_nl: A practical guide on using ChatGPT, tailored for the Dutch market.
+  summary_nl: Praktische gids voor ChatGPT, afgestemd op de Nederlandse markt.
   url: https://twitter.com/ajitcodes/status/2053705861839897023
   tool: chatgpt
   trend_phase: tracked

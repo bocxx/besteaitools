@@ -51,14 +51,14 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=gitdot.io&sz=64
 - name: Edsger
-  summary_nl: A handwritten Clojure REPL for the reMarkable 2
+  summary_nl: Een handgeschreven Clojure REPL voor de reMarkable 2.
   url: https://handwritten.danieljanus.pl/2026-06-01-edsger.html
   source_type: hn
   source_label: Hacker News (257 punten, 34 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=handwritten.danieljanus.pl&sz=64
 - name: Uruky (EU
-  summary_nl: based Kagi alternative) now has Image Search and URL Rewrites
+  summary_nl: EU-gebaseerd Kagi-alternatief, nu met afbeeldingszoekopdrachten en URL-herschrijving.
   url: https://uruky.com/?il=en
   source_type: hn
   source_label: Hacker News (232 punten, 224 reacties)

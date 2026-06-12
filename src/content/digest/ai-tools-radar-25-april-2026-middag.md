@@ -54,14 +54,14 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=ynarwal.github.io&sz=64
 - name: I've built a nice home server OS
-  summary_nl: A developer has built a home server OS with a focus on ease of use and functionality.
+  summary_nl: Ontwikkelaar bouwt een home-server-OS met focus op gebruiksgemak en functionaliteit.
   url: https://lightwhale.asklandd.dk/
   source_type: hn
   source_label: Hacker News (152 punten, 55 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=lightwhale.asklandd.dk&sz=64
 - name: A Karpathy
-  summary_nl: A Karpathy-style LLM wiki that agents can maintain using Markdown and Git.
+  summary_nl: Een Karpathy-stijl LLM-wiki die agents kunnen onderhouden in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (125 punten, 59 reacties)

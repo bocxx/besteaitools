@@ -64,7 +64,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=ynarwal.github.io&sz=64
 - name: I've built a nice home server OS
-  summary_nl: A developer has built a home server OS, potentially interesting for those looking to set up their own home infrastructure.
+  summary_nl: Ontwikkelaar bouwt een home-server-OS — interessant voor wie eigen infrastructuur wil opzetten.
   url: https://lightwhale.asklandd.dk/
   source_type: hn
   source_label: Hacker News (187 punten, 81 reacties)
@@ -147,7 +147,7 @@ updates:
   key: grok::FSD 14.3 and Reinforcement Learning Upgrade
 deepDives:
 - title: 'The Anatomy of a Claude 4.6 Prompt: 1. Task Define what you want & what success looks like: "I want to [TASK] so that […'
-  summary_nl: A practical guide on using the Claude AI assistant effectively in the Dutch market.
+  summary_nl: Praktische gids voor effectief gebruik van Claude in de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2027991271252320693
   tool: claude
   trend_phase: tracked
@@ -159,7 +159,7 @@ deepDives:
   trend_phase: tracked
   score: 22.36
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A step-by-step guide on setting up and using the Claude AI assistant.
+  summary_nl: Stap-voor-stap handleiding voor het instellen en gebruiken van Claude.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked

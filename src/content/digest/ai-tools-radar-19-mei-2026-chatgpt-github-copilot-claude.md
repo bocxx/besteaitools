@@ -59,7 +59,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: Watch a neural net learn to play Snake
-  summary_nl: A demo that lets you watch a neural network learn to play the classic game Snake.
+  summary_nl: Demo waarbij je een neuraal netwerk Snake leert spelen in real-time.
   url: https://ppo.gradexp.xyz/
   source_type: hn
   source_label: Hacker News (191 punten, 44 reacties)
@@ -153,7 +153,7 @@ deepDives:
   trend_phase: tracked
   score: 21.86
 - title: Stop wasting hours trying to learn AI. I have already done it for you. With one list. Zero confusion. And no fluff. 📹 V…
-  summary_nl: A practical guide on using ChatGPT for the Dutch market.
+  summary_nl: Praktische gids voor het gebruik van ChatGPT, gericht op de Nederlandse markt.
   url: https://twitter.com/ajitcodes/status/2053705861839897023
   tool: chatgpt
   trend_phase: tracked

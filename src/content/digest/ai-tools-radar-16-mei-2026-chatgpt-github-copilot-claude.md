@@ -45,7 +45,7 @@ launches:
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=reddit.com&sz=64
 - name: Building a web server in assembly to give my life (a lack of) meaning
-  summary_nl: A developer is building a web server in assembly to give their life (a lack of) meaning.
+  summary_nl: Ontwikkelaar bouwt een webserver in assembly — puur voor de zingeving.
   url: https://github.com/imtomt/ymawky
   source_type: hn
   source_label: Hacker News (420 punten, 223 reacties)
@@ -66,7 +66,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: TikTok but for Scientific Papers
-  summary_nl: A platform that aims to be the "TikTok for Scientific Papers".
+  summary_nl: Een platform dat de 'TikTok voor wetenschappelijke papers' wil zijn.
   url: https://andreaturchet.github.io/website/index.html
   source_type: hn
   source_label: Hacker News (188 punten, 76 reacties)
@@ -153,7 +153,7 @@ deepDives:
   trend_phase: tracked
   score: 21.86
 - title: Stop wasting hours trying to learn AI. I have already done it for you. With one list. Zero confusion. And no fluff. 📹 V…
-  summary_nl: A practical guide to ChatGPT for the Dutch market.
+  summary_nl: Praktische gids voor ChatGPT, gericht op de Nederlandse markt.
   url: https://twitter.com/ajitcodes/status/2053705861839897023
   tool: chatgpt
   trend_phase: tracked

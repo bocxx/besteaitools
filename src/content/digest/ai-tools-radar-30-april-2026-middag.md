@@ -36,7 +36,7 @@ launches:
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=reddit.com&sz=64
 - name: OSS Agent I built topped the TerminalBench on Gemini
-  summary_nl: A developer has built an open-source AI agent that topped the TerminalBench on Gemini, showcasing its capabilities.
+  summary_nl: Ontwikkelaar bouwt een open-source AI-agent die de TerminalBench op Gemini aanvoert.
   url: https://github.com/dirac-run/dirac
   source_type: hn
   source_label: Hacker News (388 punten, 145 reacties)
@@ -57,7 +57,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: A Karpathy
-  summary_nl: A project that allows you to style your LLM-powered agents' wiki content using Markdown and Git.
+  summary_nl: Project waarmee je wiki-content voor LLM-agents stylt in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (258 punten, 114 reacties)
@@ -147,7 +147,7 @@ updates:
   key: claude::AI-generated Code
 deepDives:
 - title: 'The Anatomy of a Claude 4.6 Prompt: 1. Task Define what you want & what success looks like: "I want to [TASK] so that […'
-  summary_nl: A practical guide on using the Claude AI model, focusing on the anatomy of a prompt and how to achieve desired results.
+  summary_nl: Praktische gids voor Claude: de anatomie van een prompt en hoe je gewenste resultaten bereikt.
   url: https://twitter.com/rubenhassid/status/2027991271252320693
   tool: claude
   trend_phase: tracked
@@ -159,13 +159,13 @@ deepDives:
   trend_phase: tracked
   score: 22.36
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A guide on setting up the Claude AI model in just one day, with step-by-step instructions.
+  summary_nl: Handleiding voor het inrichten van Claude in één dag, met stapsgewijze instructies.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked
   score: 21.53
 - title: 'Biggest announcement of my life: I have raised pre-seed funding from 021T, @alexwg , and @devontriplett21 to build an A…'
-  summary_nl: A practical guide on using the You.com search engine, tailored for the Dutch market.
+  summary_nl: Praktische gids voor You.com, afgestemd op de Nederlandse markt.
   url: https://twitter.com/AlexFinn/status/2041267605747712370
   tool: you.com
   trend_phase: tracked

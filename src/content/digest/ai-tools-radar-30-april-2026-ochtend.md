@@ -55,7 +55,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: A Karpathy
-  summary_nl: A new tool that allows developers to style their LLM-powered wiki agents using Markdown and Git.
+  summary_nl: Een nieuwe tool waarmee ontwikkelaars LLM-wiki-agents stylen in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (258 punten, 114 reacties)
@@ -145,7 +145,7 @@ updates:
   key: chatgpt::GPT-5.5 and GPT-5.5 Pro
 deepDives:
 - title: 'The Anatomy of a Claude 4.6 Prompt: 1. Task Define what you want & what success looks like: "I want to [TASK] so that […'
-  summary_nl: A practical guide on using the Claude AI tool, focusing on the Dutch market.
+  summary_nl: Praktische gids voor Claude, gericht op de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2027991271252320693
   tool: claude
   trend_phase: tracked
@@ -157,13 +157,13 @@ deepDives:
   trend_phase: tracked
   score: 22.36
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A step-by-step guide on setting up and using the Claude AI tool, for the Dutch market.
+  summary_nl: Stap-voor-stap handleiding voor Claude, gericht op de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked
   score: 21.53
 - title: 'Biggest announcement of my life: I have raised pre-seed funding from 021T, @alexwg , and @devontriplett21 to build an A…'
-  summary_nl: A practical guide on using the You.com search engine, with a focus on the Dutch market.
+  summary_nl: Praktische gids voor de You.com-zoekmachine met focus op de Nederlandse markt.
   url: https://twitter.com/AlexFinn/status/2041267605747712370
   tool: you.com
   trend_phase: tracked

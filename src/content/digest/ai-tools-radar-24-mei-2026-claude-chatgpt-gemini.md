@@ -148,7 +148,7 @@ updates:
   key: chatgpt::Government Partnership in Malta
 deepDives:
 - title: A British kid became a chess master at 13, then a bestselling video game designer at 17, then a PhD neuroscientist at 3…
-  summary_nl: A step-by-step guide on how to use the Together AI tool, which could be valuable for developers and product builders.
+  summary_nl: Stap-voor-stap gids voor Together AI — nuttig voor ontwikkelaars en productbouwers.
   url: https://twitter.com/ihtesham2005/status/2047346853310845284
   tool: together ai
   trend_phase: tracked

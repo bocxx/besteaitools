@@ -144,7 +144,7 @@ updates:
   key: chatgpt::PowerPoint Integration
 deepDives:
 - title: the anatomy of the perfect 𝗦𝗢𝗨𝗟.𝗺𝗱 file for AI agents. 𝗦𝗢𝗨𝗟.𝗺𝗱 is the one file you write yourself for an AI agent. it s…
-  summary_nl: A detailed guide on creating the perfect .soul.md file for AI agents, a crucial component for customizing agent behavior.
+  summary_nl: Uitgebreide gids voor het .soul.md-bestand — cruciaal voor het aanpassen van agentgedrag.
   url: https://twitter.com/akshay_pachaar/status/2058584154292584853
   tool: you.com
   trend_phase: tracked
@@ -162,7 +162,7 @@ deepDives:
   trend_phase: tracked
   score: 20.9
 - title: Stop wasting hours trying to learn AI. I have already done it for you. With one list. Zero confusion. And no fluff. 📹 V…
-  summary_nl: A practical guide to ChatGPT, a valuable resource for developers and product builders looking to leverage this powerful AI tool.
+  summary_nl: Praktische gids voor ChatGPT, nuttig voor ontwikkelaars en productbouwers.
   url: https://twitter.com/ajitcodes/status/2053705861839897023
   tool: chatgpt
   trend_phase: tracked

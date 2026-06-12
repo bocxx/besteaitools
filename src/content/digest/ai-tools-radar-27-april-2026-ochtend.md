@@ -50,7 +50,7 @@ launches:
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=reddit.com&sz=64
 - name: A Karpathy
-  summary_nl: A Karpathy introduces Wuphf, a tool that allows agents to maintain a style-consistent LLM wiki using Markdown and Git.
+  summary_nl: Karpathy introduceert Wuphf: een tool waarmee agents een stijlconsistente LLM-wiki bijhouden in Markdown en Git.
   url: https://github.com/nex-crm/wuphf
   source_type: hn
   source_label: Hacker News (252 punten, 112 reacties)
@@ -74,7 +74,7 @@ updates:
 - tool_name: Claude
   tool_slug: claude
   feature_title: Managed Agents
-  summary_nl: Claude now supports managed agents, allowing users to have agents learn from each session and leverage an intelligence-optimized memory layer to balance performance and safety.
+  summary_nl: Claude ondersteunt nu managed agents, waarmee gebruikers have agents learn from each session and leverage an intelligence-optimized memory layer to balance performance and safety.
   impact: hoog
   url: https://twitter.com/claudeai/status/2047421844311949513
   source_type: x
@@ -145,7 +145,7 @@ updates:
   key: deepseek::DeepSeek v4
 deepDives:
 - title: 'The Anatomy of a Claude 4.6 Prompt: 1. Task Define what you want & what success looks like: "I want to [TASK] so that […'
-  summary_nl: A practical guide on using Claude, the AI assistant, for the Dutch market.
+  summary_nl: Praktische gids voor Claude voor de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2027991271252320693
   tool: claude
   trend_phase: tracked
@@ -157,13 +157,13 @@ deepDives:
   trend_phase: tracked
   score: 22.36
 - title: 'How to set up the Claude completely in just 1 day: (Save this. Send it to your team. Thank me later.) Tool 1: Cowork Do…'
-  summary_nl: A step-by-step guide on setting up and using the Claude AI assistant, for the Dutch market.
+  summary_nl: Stap-voor-stap handleiding voor Claude in de Nederlandse markt.
   url: https://twitter.com/rubenhassid/status/2031667053371732044
   tool: claude
   trend_phase: tracked
   score: 21.53
 - title: 'Biggest announcement of my life: I have raised pre-seed funding from 021T, @alexwg , and @devontriplett21 to build an A…'
-  summary_nl: A practical guide on using the You.com search engine for the Dutch market.
+  summary_nl: Praktische gids voor de You.com-zoekmachine, gericht op de Nederlandse markt.
   url: https://twitter.com/AlexFinn/status/2041267605747712370
   tool: you.com
   trend_phase: tracked

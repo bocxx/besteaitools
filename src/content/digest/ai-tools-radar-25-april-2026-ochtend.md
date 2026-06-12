@@ -148,7 +148,7 @@ updates:
   key: chatgpt::GPT-5.5 and Codex Features
 deepDives:
 - title: A British kid became a chess master at 13, then a bestselling video game designer at 17, then a PhD neuroscientist at 3…
-  summary_nl: A fascinating profile of a young polymath who has achieved remarkable success in chess, game design, and neuroscience, highlighting the potential of AI-powered tools to support diverse talents.
+  summary_nl: Profiel van een jonge polymath met succes in schaken, gamedesign en neurowetenschappen.
   url: https://twitter.com/ihtesham2005/status/2047346853310845284
   tool: together ai
   trend_phase: tracked

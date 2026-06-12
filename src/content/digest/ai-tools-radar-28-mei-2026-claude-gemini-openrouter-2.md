@@ -147,13 +147,13 @@ updates:
   key: gemini::New Model Family
 deepDives:
 - title: the anatomy of the perfect 𝗦𝗢𝗨𝗟.𝗺𝗱 file for AI agents. 𝗦𝗢𝗨𝗟.𝗺𝗱 is the one file you write yourself for an AI agent. it s…
-  summary_nl: A step-by-step guide on how to effectively use the you.com platform, providing a practical walkthrough for users.
+  summary_nl: Stap-voor-stap gids voor effectief gebruik van het You.com-platform.
   url: https://twitter.com/akshay_pachaar/status/2058584154292584853
   tool: you.com
   trend_phase: tracked
   score: 21.53
 - title: A British kid became a chess master at 13, then a bestselling video game designer at 17, then a PhD neuroscientist at 3…
-  summary_nl: A detailed tutorial on leveraging the together ai platform, offering a comprehensive overview for interested users.
+  summary_nl: Uitgebreide handleiding voor het Together AI-platform — een compleet overzicht.
   url: https://twitter.com/ihtesham2005/status/2047346853310845284
   tool: together ai
   trend_phase: tracked

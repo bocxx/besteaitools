@@ -36,7 +36,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: I made a Clojure
-  summary_nl: A new Clojure-like language in Go that boots up in just 7ms, offering a fast and efficient alternative.
+  summary_nl: Een nieuwe Clojure-achtige taal in Go die in slechts 7ms opstart.
   url: https://github.com/nooga/let-go
   source_type: hn
   source_label: Hacker News (260 punten, 83 reacties)
@@ -64,7 +64,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=64
 - name: Git for AI Agents
-  summary_nl: A Git-based version control system designed specifically for AI agents, enabling better collaboration and tracking.
+  summary_nl: Een Git-gebaseerd versiebeheersysteem speciaal voor AI-agents, voor betere samenwerking en tracking.
   url: https://github.com/regent-vcs/re_gent
   source_type: hn
   source_label: Hacker News (119 punten, 66 reacties)
@@ -163,7 +163,7 @@ deepDives:
   trend_phase: tracked
   score: 20.32
 - title: Google Chrome is quietly downloading a roughly 4 GB AI model to many users’ computers without clear upfront consent. Th…
-  summary_nl: A practical guide to Gemini, the Dutch market-focused AI tool.
+  summary_nl: Praktische gids voor Gemini, gericht op de Nederlandse markt.
   url: https://twitter.com/Pirat_Nation/status/2051679058124210673
   tool: gemini
   trend_phase: tracked
