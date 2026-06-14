@@ -50,6 +50,8 @@ Gemiddeld besteden professionals 2-3 uur per dag aan e-mail. Met AI kun je die t
 
 > **💡 Beginner-tip:** Begin met Gmail AI als je Gmail gebruikt. Open een nieuwe e-mail, klik op het Gemini-sterretje rechtsonder en type een korte beschrijving van wat je wilt zeggen. Gmail genereert een complete draft. Aanpassen, versturen — klaar.
 
+Wil je Gemini ook buiten je inbox leren kennen, in de losse chat-app? Dan brengt onze [Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen)-gids je van inloggen naar je eerste bruikbare antwoord — handig voordat je het sterretje in Gmail serieus gaat inzetten.
+
 ## Prompt-templates die direct werken
 
 Kopieer deze templates en pas ze aan voor je eigen situatie:

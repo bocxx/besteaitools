@@ -70,6 +70,8 @@ Vertalen was vroeger duur en langzaam. Nu is het gratis en in seconden klaar —
 - Je snel een stuk onbekende taal wilt begrijpen zonder perfectie
 - Je een app of website in real time wilt vertalen via de Google Translate-extensie
 
+Wil je Google's chatbot Gemini erbij inzetten om vertalingen te verfijnen of de toon aan te passen? Onze [Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen)-gids laat zien hoe je in gewone taal zo'n opdracht geeft — net als bij de ChatGPT-aanpak hieronder.
+
 ## De ChatGPT-aanpak voor betere vertalingen
 
 Een simpele "vertaal dit"-prompt geeft een basisvertaling. Meer instructies = betere output:

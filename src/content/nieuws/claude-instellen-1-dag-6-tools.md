@@ -261,6 +261,8 @@ Een skill (of plugin — de termen lopen door elkaar) is een vooraf geschreven i
 
 **Belangrijk:** je hoeft hier niet meteen mee te beginnen. Werk eerst een paar weken met Cowork voor je begint met skills. Zo weet je welke taken écht repetitief zijn en welke je gevoelsmatig herhaalt maar feitelijk maar één keer per kwartaal doet.
 
+Werk je liever vanuit de terminal met Claude Code? Daar zit hetzelfde idee, maar dan filesystem-gebaseerd: in [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) zie je in vier stappen waar het `SKILL.md`-bestand hoort en hoe Claude het automatisch oppakt.
+
 <!-- VIDEO-IDEE 5: 60-sec screencast — een bestaande plugin downloaden uit de GitHub-repo en activeren in Cowork. -->
 
 ## Tool 5: Een vaste startprompt die je discipline borgt

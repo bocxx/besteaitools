@@ -60,6 +60,8 @@ Voorwaarden: Claude Code v2.1.154 of nieuwer, en een betaald Claude-abonnement. 
 
 > **⚡ Gevorderden:** Workflows die je zelf bouwt — of die Claude schrijft en je opslaat — worden eigen slash-commando's. Ze verschijnen in `/` autocomplete naast `/deep-research`. Handig voor terugkerend werk: één keer een goede migratie-workflow opslaan, en daarna start je hem met één commando in elke repo. Voor het bredere agent-orkestratie-verhaal hebben we eerder de [Cowork-lancering](/nieuws/claude-cowork-lancering) en [zero.xyz tool-gateway](/nieuws/zero-xyz-agent-tool-gateway) besproken — daar zit hetzelfde patroon onder, alleen vanuit een andere hoek.
 
+Zoek je iets lichters dan een hele workflow voor je vaste checklists? Dan zijn skills de simpelere route: in [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) leg je in een mapje één vaste instructie vast die Claude automatisch oppakt of die je met `/skill-naam` aanroept.
+
 ## De valkuilen waar je tegenaan loopt
 
 Drie dingen die je in de eerste week tegenkomt. Eén: het cap van 1000 subagents is hard, maar bij langere runs vraagt Claude soms tussentijds bevestiging om door te gaan — pas je workflow in op kleinere batches als je dat patroon ziet. Twee: dynamic workflows draait in research preview, wat betekent dat Anthropic exacte limieten, naamgeving van slash-commando's en defaults zonder veel waarschuwing kan veranderen. Bouw geen productie-pipeline op een exact aantal subagents. Drie: de kosten lopen sneller op dan een normale Opus-sessie omdat elke subagent een eigen call doet. Begin altijd met een kleine test-repo of een afgebakende sub-taak voor je iets codebase-breed afvuurt.

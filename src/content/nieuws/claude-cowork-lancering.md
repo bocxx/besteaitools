@@ -78,6 +78,8 @@ Anthropic onderhoudt een [open-source repository](https://github.com/anthropics/
 
 > **💡 Beginner-tip:** Je hoeft niet technisch te zijn om een plugin te gebruiken. Installeren gaat via de interface; schrijven van je eigen plugin is een aparte stap die je kunt uitstellen tot je weet welke herhaaltaken je automatiseert.
 
+Dezelfde skills-bouwsteen bestaat ook aan de terminal-kant: zit je in Claude Code in plaats van Cowork, dan leg je een herhaaltaak vast in een mapje met `SKILL.md`. In [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) zie je in vier stappen waar dat bestand hoort en hoe Claude het zelf oppakt.
+
 ## Hoe Cowork zich verhoudt tot Claude Design en Cursor
 
 Cowork staat niet op zichzelf. De afgelopen weken lanceerde Anthropic ook [Claude Design](/nieuws/claude-design-opus) — een ontwerpomgeving bovenop Opus 4.7 — en werkt Cursor parallel aan hun eigen agent-vision in Cursor 3. Buiten Anthropic zit Notion op een vergelijkbare laag: onze [tutorial om een Notion-agent voor concurrentieanalyse op te zetten](/nieuws/notion-agent-concurrentieanalyse-opzetten) laat zien hoe een agent binnen een werkruimte 20 minuten zelfstandig taken oppakt. Voor de context: Claude Code werkt in de terminal voor developers. Cowork werkt in de desktop-app voor iedereen. Claude Design werkt in de browser voor ontwerptaken. Cursor werkt in de editor voor code.

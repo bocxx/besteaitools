@@ -46,6 +46,8 @@ Het motto van het project — "Graphs that teach > graphs that impress" — vat 
 
 Understand-Anything werkt native met Claude Code en biedt één-regel-installaties voor andere omgevingen, waaronder Cursor, Codex, VS Code met GitHub Copilot en Gemini CLI ([Bron: Understand-Anything README](https://github.com/Lum1104/Understand-Anything/blob/main/README.md)). Volg de installatie-instructie uit de repository voor jouw omgeving; voor Claude Code is dat de native route.
 
+De `/understand-*`-commando's die je hierna gebruikt werken precies zoals eigen skills in Claude Code. Wil je zelf zo'n vaste instructie of checklist vastleggen, dan laat [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) zien hoe je in vier stappen je eerste `SKILL.md` aanmaakt.
+
 > **💡 Beginner-tip:** Nog niet eerder met Claude Code gewerkt? Begin dan eerst met onze [Claude instellen in één dag](/nieuws/claude-instellen-1-dag-6-tools) — daar staat hoe je Claude Desktop en Claude Code naast elkaar krijgt. Understand-Anything is pas zinvol als je al eens een normale Claude Code-sessie hebt gedraaid.
 
 ## Stap 2: bouw de kennisgraaf

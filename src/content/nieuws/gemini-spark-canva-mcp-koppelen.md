@@ -38,6 +38,8 @@ faq:
 
 Sinds 19 mei 2026 koppelt **Gemini Spark** via Model Context Protocol direct met **Canva**. Voor wie ontwerpwerk regelmatig in zijn workflow heeft is dat een sprong: in plaats van zelf Canva openen, prompts intypen, exporteren en delen, geef je Spark de opdracht en het resultaat verschijnt in jouw projectmap. In deze gids zet je de koppeling in 5 stappen op.
 
+Heb je de gewone Gemini-app nog nooit gebruikt? Loop dan eerst onze [Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen)-gids langs — daar ga je van inloggen naar je eerste bruikbare antwoord, zodat de Spark-koppeling hieronder logisch aanvoelt.
+
 ## Wat je vooraf nodig hebt
 
 - Google AI Ultra-abonnement ($100/maand, sinds 26 mei breder uitgerold in de VS)

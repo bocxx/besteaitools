@@ -82,6 +82,8 @@ Het model draait op de Colossus-datacenters die SpaceX beheert — dezelfde infr
 | Langlopende API-integratie | ⚠️ Check ecosystem-volwassenheid |
 | Multimodale document-analyse | ❌ Liever GPT-4o of Claude |
 
+Twijfel je tussen Grok en de andere grote chatbots? Voor Google's variant hebben we eenzelfde stappen-gids: [Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen) laat je zonder voorkennis kennismaken, zodat je beide naast elkaar kunt uitproberen voor jouw use case.
+
 ## Prijzen (check actueel)
 
 Via X Premium is Grok inbegrepen in het abonnement (~€10-16/maand afhankelijk van tier). De xAI API hanteert token-based pricing — controleer [x.ai/api](https://x.ai/api) voor actuele tarieven, want die zijn in beweging nu de infrastructuur opschaalt.
