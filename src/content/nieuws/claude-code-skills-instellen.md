@@ -16,7 +16,9 @@ toolSlug: "claude-code"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/claude-code-skills-instellen.webp"
+heroImage: "/images/articles/diorama-claude-code-skills-instellen.webp"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Code skills: wat ze zijn en hoe je je eerste instelt'"
+heroScene: "A tiny workshop bench with labeled brass drawers; a small robot slots a new glowing tool-card into one open drawer."
 keyTakeaways:
   - "Een skill is een mapje met een SKILL.md-bestand erin: jouw vaste instructie of checklist die Claude Code automatisch oppakt zodra hij past."
   - "Claude Code ondersteunt alleen eigen (custom) skills, filesystem-gebaseerd. Je hoeft niets te uploaden — je maakt gewoon een map aan."

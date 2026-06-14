@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
+    "images:one": "scripts/diorama.sh --slug",
+    "images:preview": "scripts/diorama.sh --dry-run --slug",
+    "images:regen": "scripts/diorama.sh --force --slug",
     "generate-og": "tsx scripts/generate-og-images.ts",
     "generate-cheatsheet": "tsx scripts/generate-cheatsheet.ts",
     "build": "npm run generate-og && node scripts/build-search-index.mjs && astro build",

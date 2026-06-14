@@ -16,8 +16,9 @@ toolSlug: "gemini"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/gemini-gebruiken-5-stappen.webp"
-heroImageAlt: "Gemini gebruiken in 5 stappen — Google's AI-chatbot voor beginners"
+heroImage: "/images/articles/diorama-gemini-gebruiken-5-stappen.webp"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Gemini gebruiken in 5 stappen: een Nederlandse walkthrough voor beginners'"
+heroScene: "A small brass robot assistant at a wooden desk handing a glowing answer card to a tiny figure, miniature query slips scattered around."
 evergreen: true
 volatility: high
 factsCheckedAt: 2026-06-14
