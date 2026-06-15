@@ -85,6 +85,7 @@ Aan de developer-kant zit dezelfde filosofie in Claude Code, dat sinds eind mei 
 **Goedkope automatisering / batch-API** → GPT-5.4 of Claude Haiku 4.5
 **Compliance & klantantwoorden** → Claude Opus 4.8 (zie [Aithos LARA-test](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts))
 **Financiële modellen / Excel** → Claude Opus 4.8 in Cowork (zie [Cowork voor Excel in vijf stappen](/nieuws/claude-cowork-excel-bouwen))
+**Actuele feiten met bronnen** → een zoek-AI zoals Perplexity i.p.v. een pure chatbot (zie [een wedstrijd analyseren met Perplexity](/nieuws/ai-voetbalwedstrijd-voorspellen))
 
 ## Bronnen
 

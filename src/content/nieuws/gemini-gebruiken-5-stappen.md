@@ -76,7 +76,7 @@ Zodra je het chatten doorhebt, zijn er een paar extra's die het verschil maken �
 
 ## Waar Gemini minder geschikt voor is
 
-Eerlijk blijven hoort erbij. Voor coderen binnen een echte ontwikkelomgeving zijn tools als [Cursor](/nieuws/coderen-met-ai-cursor-copilot-beginners) of Claude Code directer. En zoals elke chatbot kan Gemini overtuigend klinken terwijl het ernaast zit — lees feitelijke claims, namen en cijfers altijd na voor je ze gebruikt. Zit je niet in het Google-ecosysteem en twijfel je tussen aanbieders, dan helpt onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) om je eigen afweging scherp te krijgen.
+Eerlijk blijven hoort erbij. Voor coderen binnen een echte ontwikkelomgeving zijn tools als [Cursor](/nieuws/coderen-met-ai-cursor-copilot-beginners) of Claude Code directer. En zoals elke chatbot kan Gemini overtuigend klinken terwijl het ernaast zit — lees feitelijke claims, namen en cijfers altijd na voor je ze gebruikt. Voor actuele vragen waarbij je de bron wilt kunnen aanklikken, is een zoek-AI handiger; zie hoe je [een voetbalwedstrijd analyseert met Perplexity](/nieuws/ai-voetbalwedstrijd-voorspellen). Zit je niet in het Google-ecosysteem en twijfel je tussen aanbieders, dan helpt onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) om je eigen afweging scherp te krijgen.
 
 ## Checklist: ben je klaar?
 

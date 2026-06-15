@@ -98,6 +98,8 @@ AI-data-analyse bevat soms fouten. Doe altijd dit:
 - **Vraag de AI om de methode uit te leggen**: *"Hoe heb je dit berekend?"* — als de uitleg niet klopt, klopt de uitkomst ook niet
 - **Vergelijk totalen**: kloppen de subtotalen op met het eindtotaal?
 
+Hetzelfde wantrouwen tegen mooie-maar-onbewezen cijfers geldt buiten spreadsheets. Zie hoe je AI [een voetbalwedstrijd laat analyseren zonder verzonnen statistieken](/nieuws/ai-voetbalwedstrijd-voorspellen).
+
 ## Checklist: ben je klaar?
 
 - [ ] Bestand geüpload en bevestigd dat de AI de data heeft herkend (kolommen, rijen)

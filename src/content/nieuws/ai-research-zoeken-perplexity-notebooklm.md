@@ -89,6 +89,8 @@ AI-zoektools zijn betrouwbaarder dan pure chatbots, maar niet onfeilbaar. Volg d
 3. **Zoek een tweede bron** — als slechts één bron een claim ondersteunt, vraag dan door: *"Zijn er andere bronnen die dit bevestigen?"*
 4. **Wees alert op circulaire referenties** — AI-tools kunnen soms naar AI-gegenereerde content verwijzen als bron
 
+Ditzelfde protocol werkt voor elke actuele vraag. Wil je het toegepast zien op een concreet voorbeeld, lees dan hoe je [een voetbalwedstrijd laat analyseren met Perplexity](/nieuws/ai-voetbalwedstrijd-voorspellen) — inclusief het aanklikken van de bronnen.
+
 ## Checklist: ben je klaar?
 
 - [ ] Vraag geformuleerd met context (wat gebruik je het voor?) en specifieke parameters
