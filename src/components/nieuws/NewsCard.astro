@@ -31,6 +31,15 @@ const {
 
 const showImage = heroImage && (size === 'hero' || size === 'large');
 
+// Responsive varianten bestaan alleen voor de gegenereerde nieuws-beelden
+// (scripts/generate-responsive-images.mjs). Alleen dan srcset emitten, anders
+// zou de browser naar niet-bestaande -400w/-600w/-1024w bestanden wijzen.
+const hasResponsiveVariants =
+  !!heroImage && /\/images\/(nieuws|digest)\/.*\.webp$/.test(heroImage);
+const srcset = hasResponsiveVariants
+  ? `${heroImage!.replace(/\.webp$/, '-400w.webp')} 400w, ${heroImage!.replace(/\.webp$/, '-600w.webp')} 600w, ${heroImage!.replace(/\.webp$/, '-1024w.webp')} 1024w`
+  : undefined;
+
 const cat = nieuwsCategoryConfig[category] ?? nieuwsCategoryConfig.nieuws;
 
 const bentoClass = {
@@ -54,7 +63,7 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
 >
   {showImage && (
     <div class="news-card__image-wrap">
-      <img src={heroImage} alt={title} class="news-card__image" width="400" height="180" loading="lazy" decoding="async" />
+      <img src={heroImage} alt={title} class="news-card__image" width="400" height="180" loading="lazy" decoding="async" srcset={srcset} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px" />
       <div class="news-card__image-overlay" />
     </div>
   )}

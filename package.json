@@ -9,7 +9,7 @@
     "images:regen": "scripts/diorama.sh --force --slug",
     "generate-og": "tsx scripts/generate-og-images.ts",
     "generate-cheatsheet": "tsx scripts/generate-cheatsheet.ts",
-    "build": "npm run generate-og && node scripts/build-search-index.mjs && astro build",
+    "build": "npm run generate-og && node scripts/generate-responsive-images.mjs && node scripts/build-search-index.mjs && astro build",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
