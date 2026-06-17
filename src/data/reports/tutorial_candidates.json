@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-16T17:39:35.193866",
+  "generated_at": "2026-06-17T05:32:57.415914",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 17,
-    "for_news": 16,
-    "rejected_lang": 154,
+    "for_tools": 18,
+    "for_news": 15,
+    "rejected_lang": 155,
     "already_covered": 0,
-    "total_scanned": 4472
+    "total_scanned": 4482
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "step-by-step",
         "tutorial",
-        "step-by-step"
+        "how to"
       ],
       "matched_tools": [
         "gemini",
@@ -74,8 +74,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "build your"
+        "build your",
+        "how to"
       ],
       "matched_tools": [
         "langchain",
@@ -127,8 +127,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -245,9 +245,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "guide",
-        "tutorial"
+        "tutorial",
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -369,8 +369,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -462,9 +462,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build an",
+        "step-by-step",
         "tutorial",
-        "step-by-step"
+        "build an"
       ],
       "matched_tools": [
         "gemini",
@@ -727,11 +727,57 @@
     {
       "source": "hn",
       "platform": "hackernews",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "date": "2026-05-20",
+      "engagement": 2448.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.71,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.71,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "67bd84a16d5db4b6"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
       "title": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "text": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
       "date": "2026-06-16",
-      "engagement": 1059.0,
+      "engagement": 1680.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -750,10 +796,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 15.95,
+      "score": 16.64,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.45,
+        "engagement_log": 11.14,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -773,6 +819,56 @@
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
+      "title": "How to Build a Private Offline Voice Assistant with Gemma 4 12B: A Complete Local Setup Guide",
+      "text": "<h1>\n  \n  \n  How to Build a Private Offline Voice Assistant with Gemma 4 12B: A Complete Local Setup Guide\n</h1>\n\n<p><em>A developer’s guide to running Google’s 11.95B-parameter multimodal model with local STT/TTS on a 16 GB laptop under Apache 2.0.</em></p>\n\n<p><strong>TL;DR:</strong> Download Gemma 4 12B (~6.7 GB at 4-bit) into a local runtime such as Google AI Edge Gallery, pair it with a local STT/TTS stack, and expose a local endpoint. The 11.95B-parameter model fits on a 16 GB laptop, runs offline under Apache 2.0, and keeps all voice data on-device.</p>\n\n<h2>\n  \n  \n  Check Hardware Cons",
+      "url": "https://dev.to/unfairhq/how-to-build-a-private-offline-voice-assistant-with-gemma-4-12b-a-complete-local-setup-guide-20nn",
+      "date": "2026-06-17",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "how to",
+        "build a"
+      ],
+      "matched_tools": [
+        "gemini"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je gemini in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "b69769335a7965d3"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
       "title": "Google ADK Tutorial: Build Your First AI Agent [2026]",
       "text": "<blockquote>\n<p>Originally published at <a href=\"https://www.kunalganglani.com/blog/google-adk-tutorial-first-agent\">kunalganglani.com</a> — read it there for inline code, hero image, and live links.</p>\n</blockquote>\n\n<p>Google's Agent Development Kit (ADK) just hit 20,100+ stars on GitHub, making it the fastest-growing <a href=\"https://dev.to/pillars/ai-agents\">agent framework</a> out there. With version 2.0 reaching General Availability in June 2026, it's no longer experimental. This Google ADK tutorial takes you from zero to a production-hardened agent in under 10 minutes — and unlike ever",
       "url": "https://dev.to/kunal_d6a8fea2309e1571ee7/google-adk-tutorial-build-your-first-ai-agent-2026-2129",
@@ -781,8 +877,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build your",
         "guide",
+        "build your",
         "tutorial"
       ],
       "matched_tools": [],
@@ -839,9 +935,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "step-by-step",
         "build your",
-        "step-by-step"
+        "how to"
       ],
       "matched_tools": [
         "n8n"
@@ -877,153 +973,9 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "35d7aced15f03e1e"
-    },
-    {
-      "source": "articles:freeCodeCamp.org News",
-      "platform": "article",
-      "title": "How to Build a Production-Safe Agent Loop: From Exit Conditions to Audit Trails",
-      "text": "<p>In July 2025, a Claude Code recursion loop burned between 16,000 USD and 50,000 USD in five hours. There was no crash or error, just agents doing exactly what they were told, indefinitely, because nobody told them when to stop.</p>\n<p>Four months later, a four-agent LangChain loop ran for eleven days and cost 47,000 USD. Nobody noticed until the invoice arrived. The pipeline worked correctly in testing, and the agents were doing exactly what they were told. Same pattern.</p>\n<p>This tutorial is about that missing instruction.</p>\n<p>You'll build five small Python primitives that catch most ",
-      "url": "https://www.freecodecamp.org/news/how-to-build-a-production-safe-agent-loop-from-exit-conditions-to-audit-trails/",
-      "date": "2026-06-16",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "tutorial",
-        "build a"
-      ],
-      "matched_tools": [
-        "claude",
-        "claude code",
-        "langchain"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "078dc229748ab23a"
     }
   ],
   "for_news": [
-    {
-      "source": "reddit:r/technology",
-      "platform": "reddit",
-      "title": "Americans don’t know how to fight AI. So they’re fighting data centers.",
-      "text": "",
-      "url": "https://www.vox.com/future-perfect/490350/data-center-moratoria-ai-backlash",
-      "date": "2026-06-02",
-      "engagement": 10933.0,
-      "source_weight": 0.8,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "reddit"
-      ],
-      "score": 18.75,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 13.95,
-        "source_weight": 0.8,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Americans in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "45b92ba0df036b1d"
-    },
-    {
-      "source": "reddit:r/technology",
-      "platform": "reddit",
-      "title": "Cloudflare layoffs: After firing 20% staff, CEO Matthew Prince explains in op-ed on how to decide which employees AI should replace",
-      "text": "",
-      "url": "https://www.msn.com/en-in/money/news/cloudflare-layoffs-after-firing-20-staff-ceo-matthew-prince-explains-in-op-ed-on-how-to-decide-which-employees-ai-should-replace/ar-AA249vSa?ocid=winp2fptaskbar&cvid=2dad9a2016224ef6908f38c3bc05ff58&ei=36",
-      "date": "2026-06-02",
-      "engagement": 3731.0,
-      "source_weight": 0.8,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "reddit"
-      ],
-      "score": 17.14,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 12.34,
-        "source_weight": 0.8,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Cloudflare in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "711e44e85dadf0ea"
-    },
     {
       "source": "hn",
       "platform": "hackernews",
@@ -1031,7 +983,7 @@
       "text": "Ask HN: Has anyone replaced Claude/GPT with a local model for daily coding?",
       "url": "https://news.ycombinator.com/item?id=48542100",
       "date": "2026-06-15",
-      "engagement": 1723.0,
+      "engagement": 1743.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1048,10 +1000,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.68,
+      "score": 16.7,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.18,
+        "engagement_log": 11.2,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1157,50 +1109,6 @@
       "id": "03ddacfa2c5a0018"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "CEOs who think AI replaces their employees are just bad CEOs",
-      "text": "CEOs who think AI replaces their employees are just bad CEOs",
-      "url": "https://www.techdirt.com/2026/06/09/ceos-who-think-ai-replaces-their-employees-are-just-bad-ceos/",
-      "date": "2026-06-09",
-      "engagement": 1139.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.06,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 10.56,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom CEOs er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "a526631a3f00ffa6"
-    },
-    {
       "source": "tweets:@eng_khairallah1",
       "platform": "tweet",
       "title": "this is f*cking gold\n\nHow to build your first AI agent (Full guide)\n\nif I had this a year ago, I would've shipped my first agent in a day instead of 2 weeks\n\nin",
@@ -1211,9 +1119,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "guide",
         "build your",
-        "guide"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1264,10 +1172,10 @@
       "pattern_hits": [
         "how to",
         "breakdown",
-        "build your",
         "build a",
-        "build an",
-        "from scratch"
+        "from scratch",
+        "build your",
+        "build an"
       ],
       "matched_tools": [
         "make",
@@ -1327,8 +1235,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "guide",
+        "how to",
         "build a"
       ],
       "matched_tools": [
@@ -1376,7 +1284,7 @@
       "text": "No, everyone is not using AI for everything",
       "url": "https://gabrielweinberg.com/p/people-are-consuming-ai-like-they",
       "date": "2026-06-14",
-      "engagement": 1047.0,
+      "engagement": 1049.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1414,18 +1322,16 @@
       "id": "5b4000a8f9c96e83"
     },
     {
-      "source": "likes:@NainsiDwiv50980",
-      "platform": "twitter_likes",
-      "title": "Andrej Karpathy just explained the future of software engineering without directly saying it. The best AI engineers are no longer âprompting.â Theyâre bui",
-      "text": "Andrej Karpathy just explained the future of software engineering without directly saying it. The best AI engineers are no longer âprompting.â Theyâre building systems around the agents. Karpathyâs biggest insight wasnât: âClaude can code.â It was: LLMs become dramatically https://t.co/SzueLk1a78 https://t.co/aaFClLtCv0",
-      "url": "https://twitter.com/NainsiDwiv50980/status/2061783825659679047",
-      "date": "2026-06-02",
-      "engagement": 50.0,
-      "source_weight": 4.0,
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "AI Is Slowing Down",
+      "text": "AI Is Slowing Down",
+      "url": "https://www.wheresyoured.at/ai-is-slowing-down/",
+      "date": "2026-06-08",
+      "engagement": 1422.0,
+      "source_weight": 3.0,
       "ai_relevant": true,
-      "pattern_hits": [
-        "explained"
-      ],
+      "pattern_hits": [],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -1434,21 +1340,19 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "author": "NainsiDwiv50980",
-      "media_url": "https://x.com/NainsiDwiv50980/status/2061783825659679047/photo/1",
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "twitter_likes"
+        "hackernews"
       ],
-      "score": 15.9,
+      "score": 15.89,
       "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 5.9,
-        "source_weight": 4.0,
+        "pattern_hits": 0,
+        "engagement_log": 10.89,
+        "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 0.5,
-        "editorial": 2.0,
+        "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
         "author": 0.0,
@@ -1456,10 +1360,10 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Andrej Karpathy uitgelegd voor Nederlandse teams — zonder de hype.",
+      "suggested_angle_nl": "AI Is Slowing: de context die de internationale pers mist.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "abf54296e605c2f3"
+      "id": "e48c0d53fa05e944"
     },
     {
       "source": "tweets:@NadzuAI",
@@ -1472,8 +1376,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "guide",
+        "how to",
         "build a"
       ],
       "matched_tools": [
@@ -1525,9 +1429,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "walkthrough",
+        "guide",
         "build your",
-        "guide"
+        "walkthrough"
       ],
       "matched_tools": [
         "together ai"
@@ -1565,17 +1469,19 @@
       "id": "f400260c2e0c22d7"
     },
     {
-      "source": "likes:@bas_fijneman",
-      "platform": "twitter_likes",
-      "title": "Yesterday I build a skill that translated my app store screenshots in 21 languages.. This doesn't sound impressive, but here is the catch, all my screenshots ha",
-      "text": "Yesterday I build a skill that translated my app store screenshots in 21 languages.. This doesn't sound impressive, but here is the catch, all my screenshots have comic visuals so I had to find a way to do it. Super happy with the result. 21 languages incoming https://t.co/gtdRRp5MMz",
-      "url": "https://twitter.com/bas_fijneman/status/2064243799887331657",
-      "date": "2026-06-09",
+      "source": "articles:DesignBeep",
+      "platform": "article",
+      "title": "Panera Bread Near Me: Hours, Menu, and What to Order",
+      "text": "<h2 data-sourcepos=\"1:1-1:55;0-54\" data-sanitized-class=\"text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold\">Panera Bread Near Me: Hours, Menu, and What to Order</h2>\n<p data-sourcepos=\"5:1-5:465;222-686\" data-sanitized-class=\"font-claude-response-body break-words whitespace-normal\">Panera Bread sits in a comfortable spot between fast food and a sit-down restaurant. The food comes quickly, the ingredients are fresh, and the menu is broad enough that most people can find something they want regardless of what kind of meal they are after. Whether you need a quick breakfast before work, a bowl of",
+      "url": "https://designbeep.com/2026/06/16/panera-bread-near-me/",
+      "date": "2026-06-16",
       "engagement": 50.0,
-      "source_weight": 4.0,
+      "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a"
+        "guide",
+        "walkthrough",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1585,68 +1491,18 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "author": "bas_fijneman",
-      "media_url": "https://x.com/bas_fijneman/status/2064243799887331657/photo/1",
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "twitter_likes"
+        "article"
       ],
-      "score": 14.9,
+      "score": 14.4,
       "score_breakdown": {
-        "pattern_hits": 1,
+        "pattern_hits": 3,
         "engagement_log": 5.9,
-        "source_weight": 4.0,
+        "source_weight": 1.5,
         "ai_relevance": 0.0,
         "recency": 1.0,
-        "editorial": 2.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat Yesterday betekent voor de Nederlandse AI-markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "27cb04faccd31d7d"
-    },
-    {
-      "source": "articles:Artificial Intelligence on Medium",
-      "platform": "article",
-      "title": "How to Automate a 6-Figure Faceless YouTube Channel Using AI Content Engines",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@thebrilliantwriter/how-to-automate-a-6-figure-faceless-youtube-channel-using-ai-content-engines-16ad6e7d9280?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/2600/0*u0gZCl6jnHBZsUwV\" width=\"5184\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">The System Behind the Screen: A Practical Guide to Building Passive Video Income Without Ever Showing Your Face</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@thebr",
-      "url": "https://medium.com/@thebrilliantwriter/how-to-automate-a-6-figure-faceless-youtube-channel-using-ai-content-engines-16ad6e7d9280?source=rss------artificial_intelligence-5",
-      "date": "2026-06-13",
-      "engagement": 39.45,
-      "source_weight": 0.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "practical guide",
-        "how to",
-        "how-to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": true,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.55,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.55,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1655,33 +1511,32 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Zo gebruik je Panera Bread Near in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "50415632bbee8c1d"
+      "id": "75090a4c512794c0"
     },
     {
-      "source": "articles:Artificial Intelligence on Medium",
+      "source": "articles:Mashable",
       "platform": "article",
-      "title": "How to Architect an AI Claims Processing Assistant: A Step-by-Step Field Guide Example",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@sanjaybg96_4359/how-to-architect-an-ai-claims-processing-assistant-a-step-by-step-field-guide-example-92fafb45030d?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/2600/0*EjKKTMJd2kM4eX1E\" width=\"7360\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Most AI architecture mistakes happen before anyone chooses a model.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@sanjaybg96_4359/how-to-architect-an-ai-clai",
-      "url": "https://medium.com/@sanjaybg96_4359/how-to-architect-an-ai-claims-processing-assistant-a-step-by-step-field-guide-example-92fafb45030d?source=rss------artificial_intelligence-5",
-      "date": "2026-06-13",
-      "engagement": 37.85,
-      "source_weight": 0.5,
+      "title": "NYT Pips hints, answers for June 16, 2026",
+      "text": "<img src=\"https://helios-i.mashable.com/imagery/articles/07JSEpBd9Q1GvDfrDZXT5Q5/hero-image.jpg\" alt=\"A phone with the Pips logo.\"><p>Welcome to your guide to Pips, the latest game in the <a href=\"https://www.nytco.com/games/\" data-ga-click=\"1\" data-ga-label=\"$text\" data-ga-item=\"text-link\" data-ga-module=\"content_body\"><em>New York Times</em></a> catalogue.</p><p>Released in August 2025, <a href=\"https://mashable.com/article/pips-nyt-game-how-to-play\" data-ga-click=\"1\" data-ga-label=\"$text\" data-ga-item=\"text-link\" data-ga-module=\"content_body\">Pips</a> puts a unique spin on dominoes, creatin",
+      "url": "https://mashable.com/entertainment/pips-nyt-games-hints-answers-easy-medium-hard-june-16-2026",
+      "date": "2026-06-16",
+      "engagement": 50.0,
+      "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
-        "how-to",
         "guide",
-        "step-by-step"
+        "how-to",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": true,
+      "paywall": false,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1689,12 +1544,12 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 14.49,
+      "score": 14.4,
       "score_breakdown": {
         "pattern_hits": 3,
-        "engagement_log": 5.49,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
         "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
@@ -1704,10 +1559,154 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Zo gebruik je NYT Pips in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "0b2d16305aacdbd7"
+      "id": "ec9f3d1c7313e5f6"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "Decoding error 1010 on Midnight: What \"Invalid Transaction\" actually means",
+      "text": "<h2>\n  \n  \n  What this guide covers\n</h2>\n\n<p><code>1010: Invalid Transaction</code> often leaves Midnight developers with an error that is too generic to fix on its own. In most cases, <code>1010</code> is the outer JSON-RPC / author-RPC error, not the full diagnosis. The more useful clue is often in <code>error.data</code>, such as <code>Custom error: 186</code>.</p>\n\n<p>The sections below explain the <code>1010</code> error structure, how to read <code>Custom error: N</code>, how to interpret custom codes <code>139</code>, <code>154</code>, <code>168</code>, <code>170</code>, and <code>186<",
+      "url": "https://dev.to/cobra1/decoding-error-1010-on-midnight-what-invalid-transaction-actually-means-5ecc",
+      "date": "2026-06-15",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "tutorial",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Decoding in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "4fe80ea1cdebd1bc"
+    },
+    {
+      "source": "articles:DesignBeep",
+      "platform": "article",
+      "title": "Teachers Pay Teachers: What It Is and How to Get Started",
+      "text": "<h2 data-sourcepos=\"1:1-1:59;0-58\" data-sanitized-class=\"text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold\">Teachers Pay Teachers: What It Is and How to Get Started</h2>\n<p data-sourcepos=\"5:1-5:394;229-622\" data-sanitized-class=\"font-claude-response-body break-words whitespace-normal\">Every teacher knows the late-night scramble of building a lesson from scratch when something better surely already exists somewhere. Teachers Pay Teachers exists for exactly that moment. It is an online marketplace where educators buy and sell classroom resources, from worksheets and lesson plans to full units ",
+      "url": "https://designbeep.com/2026/06/15/teachers-pay-teachers/",
+      "date": "2026-06-15",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "from scratch",
+        "guide",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Teachers Pay Teachers in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "a9f46ac85861b175"
+    },
+    {
+      "source": "articles:DesignBeep",
+      "platform": "article",
+      "title": "NCEdCloud: A Complete Guide to North Carolina’s School Login System",
+      "text": "<h2 data-sourcepos=\"1:1-1:70;0-69\" data-sanitized-class=\"text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold\">NCEdCloud: A Complete Guide to North Carolina’s School Login System</h2>\n<p data-sourcepos=\"5:1-5:442;233-674\" data-sanitized-class=\"font-claude-response-body break-words whitespace-normal\">If you are a student, teacher, or parent in North Carolina’s public schools, you have almost certainly run into NCEdCloud. It is the login system that sits between you and nearly every digital learning tool your school uses, from Canvas to Google Workspace to PowerSchool. For something so central to ",
+      "url": "https://designbeep.com/2026/06/15/ncedcloud/",
+      "date": "2026-06-15",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "complete guide",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je NCEdCloud in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "ac26ad470c9ccf25"
     }
   ]
 }
