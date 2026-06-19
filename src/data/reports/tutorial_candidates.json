@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-18T17:58:41.827652",
+  "generated_at": "2026-06-19T05:28:34.364739",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 18,
     "for_news": 16,
-    "rejected_lang": 164,
+    "rejected_lang": 146,
     "already_covered": 0,
-    "total_scanned": 4487
+    "total_scanned": 4486
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
+        "tutorial",
         "how to",
-        "tutorial"
+        "step-by-step"
       ],
       "matched_tools": [
         "gemini",
@@ -245,8 +245,8 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "tutorial",
+        "how to",
         "guide"
       ],
       "matched_tools": [
@@ -673,6 +673,52 @@
     {
       "source": "hn",
       "platform": "hackernews",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "date": "2026-05-20",
+      "engagement": 2448.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.71,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.71,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "67bd84a16d5db4b6"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
       "title": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "text": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
@@ -763,6 +809,56 @@
       "id": "12565a5895a5deab"
     },
     {
+      "source": "articles:freeCodeCamp.org News",
+      "platform": "article",
+      "title": "How to Analyze Analyst Estimate Ranges with Python",
+      "text": "<p>Most financial models use analyst consensus as a single forward-looking input: revenue estimate, EPS estimate, EBITDA estimate, or some version of a forward margin assumption.</p>\n<p>That works, but it flattens the data.</p>\n<p>The average estimate is only the center of the range. Behind it, there is usually a low estimate, a high estimate, and the number of analysts contributing to the view. Two companies can have the same average estimate but very different levels of agreement behind it.</p>\n<p>So I wanted to test a simple idea: what happens if we stop treating consensus as one number and",
+      "url": "https://www.freecodecamp.org/news/how-to-analyze-analyst-estimate-ranges-with-python/",
+      "date": "2026-06-18",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "build a",
+        "how-to"
+      ],
+      "matched_tools": [
+        "consensus"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je consensus in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "77fce18077f3aa64"
+    },
+    {
       "source": "articles:Towards AI - Medium",
       "platform": "article",
       "title": "LAI #130: That Cheap AI API Is Probably Stealing From You",
@@ -773,8 +869,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
         "how to",
+        "from scratch",
         "build your"
       ],
       "matched_tools": [
@@ -829,8 +925,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "tutorial",
-        "step-by-step",
         "from scratch",
+        "step-by-step",
         "build your"
       ],
       "matched_tools": [],
@@ -865,103 +961,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "696125a4fc526e44"
-    },
-    {
-      "source": "articles:The Ai Rabbit Hole",
-      "platform": "article",
-      "title": "How to Use Boolean Logic in AI Prompts (The Budget Gate Protocol)",
-      "text": "<h1><strong>The AI Rabbit Hole| Week 8</strong></h1><h1><strong>How to Use Boolean Logic in AI Prompts (The Budget Gate Protocol)</strong></h1><p><em>A step-by-step guide to building automated risk filters with IF/THEN logic to audit data and stop silent failures.</em></p><p>Master the “Budget Gate” protocol in STP. Learn how to write conditional Boolean logic <code>(IF/THEN/ELSE)</code> inside your AI prompts to automatically flag high-risk data, stop hallucinations, and audit enterprise expense reports.</p><div data-sanitized-class=\"captioned-image-container\"><figure><a href=\"https://substac",
-      "url": "https://jtnovelo2131.substack.com/p/how-to-use-boolean-logic-in-ai-prompts",
-      "date": "2026-06-18",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "step-by-step",
-        "how to",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 1,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article",
-        "newsletter"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "fe3d2c54ceaa7bf7"
-    },
-    {
-      "source": "articles:MarkTechPost",
-      "platform": "article",
-      "title": "NVIDIA SkillSpector Guide: Scanning AI Skills for Security Risks with Static Analysis and SARIF Reports",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we explore how<a href=\"https://github.com/NVIDIA/SkillSpector\"> <strong>NVIDIA SkillSpector</strong></a><strong> </strong>helps us evaluate AI skills for security risks before they are used in real-world workflows. We build a controlled corpus containing both benign and deliberately vulnerable skills, scan them through SkillSpector’s programmatic LangGraph workflow, and organize the resulting risk scores and findings with pandas. We then visualize severity and category distributions, export results in SARIF format, extend the frame",
-      "url": "https://www.marktechpost.com/2026/06/17/nvidia-skillspector-guide-scanning-ai-skills-for-security-risks-with-static-analysis-and-sarif-reports/",
-      "date": "2026-06-18",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "tutorial",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je NVIDIA SkillSpector Guide in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "a1aba1d7148a0345"
     }
   ],
   "for_news": [
@@ -1023,9 +1022,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "tutorial",
-        "build your",
         "how to",
-        "build an"
+        "build an",
+        "build your"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1156,50 +1155,6 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Failing grades soar with AI usage, dwindling math skills in Berkeley CS classes",
-      "text": "Failing grades soar with AI usage, dwindling math skills in Berkeley CS classes",
-      "url": "https://www.dailycal.org/news/campus/academics/failing-grades-soar-as-professors-see-greater-ai-usage-dwindling-math-skills-in-uc-berkeley/article_16fad0bf-02cb-4b8c-8d88-888ffd9f8608.html",
-      "date": "2026-06-04",
-      "engagement": 1604.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.07,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.07,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat Failing betekent voor de Nederlandse AI-markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "03ddacfa2c5a0018"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
       "title": "German ruling declares Google liable for false answers in AI Overviews",
       "text": "German ruling declares Google liable for false answers in AI Overviews",
       "url": "https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers/",
@@ -1253,8 +1208,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "how to",
-        "build your",
-        "guide"
+        "guide",
+        "build your"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1303,12 +1258,12 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "breakdown",
         "how to",
-        "build your",
+        "breakdown",
+        "build a",
         "from scratch",
         "build an",
-        "build a"
+        "build your"
       ],
       "matched_tools": [
         "make",
@@ -1368,9 +1323,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "build a",
         "guide",
-        "build a"
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1465,9 +1420,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build an",
         "tutorial",
-        "build a"
+        "build a",
+        "build an"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1503,6 +1458,50 @@
       "id": "d2dd3db649e95819"
     },
     {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "AI Is Slowing Down",
+      "text": "AI Is Slowing Down",
+      "url": "https://www.wheresyoured.at/ai-is-slowing-down/",
+      "date": "2026-06-08",
+      "engagement": 1422.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 15.89,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.89,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "AI Is Slowing: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e48c0d53fa05e944"
+    },
+    {
       "source": "linkedin:OluwaMayowa Ogbeide",
       "platform": "linkedin",
       "title": "AgentCamp Lagos 2026 was everything. 🙌\n\nTo everyone who showed up, asked questions, and built alongside me during the session — thank you. That energy in the ro",
@@ -1513,9 +1512,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build your",
         "walkthrough",
-        "guide"
+        "guide",
+        "build your"
       ],
       "matched_tools": [
         "together ai"
@@ -1553,6 +1552,56 @@
       "id": "f400260c2e0c22d7"
     },
     {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "ACE-Step XL 1.5 Premium + Facebook / META Sam Audio + Auto-Editor Trim + Audio Tools Enhancement Full Tutorial",
+      "text": "<h2>\n  \n  \n  Video Tutorial\n</h2>\n\n<p><a href=\"https://youtu.be/9C_6qNKjgpA\">https://youtu.be/9C_6qNKjgpA</a></p>\n\n<p>  <iframe src=\"https://www.youtube.com/embed/9C_6qNKjgpA\" allow=\"accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" sandbox=\"allow-scripts allow-same-origin\">\n  </iframe>\n</p>\n\n<h2>\n  \n  \n  Source Video, Links, And Chapters\n</h2>\n\n<p>The public video description presents this as a full ACE-Step XL 1.5 Premium guide for local AI music generation, remix, repaint, stem extraction, wildcard prompt variation, audio processing, SAM Audio segmen",
+      "url": "https://dev.to/furkangozukara/ace-step-xl-15-premium-facebook-meta-sam-audio-auto-editor-trim-audio-tools-enhancement-4h0o",
+      "date": "2026-06-19",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "tutorial",
+        "guide"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": {
+        "platform": "youtube",
+        "url": "https://youtu.be/9C_6qNKjgpA"
+      },
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.9,
+      "score_breakdown": {
+        "pattern_hits": 2,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 1.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je ACE in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "74941b9edd0fcb37"
+    },
+    {
       "source": "articles:MarketingProfs How-To Articles",
       "platform": "article",
       "title": "How to Build and Use an AI Sales Coach That Closes Deals (Part 1)",
@@ -1563,9 +1612,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how-to",
         "how to",
-        "build a"
+        "build a",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1603,17 +1652,17 @@
     {
       "source": "articles:Artificial Intelligence on Medium",
       "platform": "article",
-      "title": "How to Build Passive Income From Scratch With AI",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@nuclearmarketer/how-to-build-passive-income-from-scratch-with-ai-9f82087b8d07?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/2600/0*3hIqoD-pkOushy56\" width=\"3000\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Four clear steps any complete beginner can follow — regardless of background, budget or technical knowledge</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@nuclearmarketer/how-to-build-passive-inc",
-      "url": "https://medium.com/@nuclearmarketer/how-to-build-passive-income-from-scratch-with-ai-9f82087b8d07?source=rss------artificial_intelligence-5",
-      "date": "2026-06-17",
-      "engagement": 36.15,
+      "title": "AI Agents in Manufacturing: 5 Failure Patterns and How to Prevent Them",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@tpriya27/ai-agents-in-manufacturing-5-failure-patterns-and-how-to-prevent-them-5ec1393c0b15?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/1536/1*csg6j5dONK9bmXezIVnpaA.png\" width=\"1536\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Non-deterministic systems in deterministic environments: a recipe for failure, and a field guide for fixing it</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@tpriya27/ai-a",
+      "url": "https://medium.com/@tpriya27/ai-agents-in-manufacturing-5-failure-patterns-and-how-to-prevent-them-5ec1393c0b15?source=rss------artificial_intelligence-5",
+      "date": "2026-06-19",
+      "engagement": 38.2,
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how-to",
-        "from scratch",
-        "how to"
+        "how to",
+        "guide",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1628,10 +1677,10 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 14.42,
+      "score": 14.5,
       "score_breakdown": {
         "pattern_hits": 3,
-        "engagement_log": 5.42,
+        "engagement_log": 5.5,
         "source_weight": 0.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1643,58 +1692,10 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Zo gebruik je AI Agents in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "abe02ebbb5361eaa"
-    },
-    {
-      "source": "articles:Mashable",
-      "platform": "article",
-      "title": "NYT Pips hints, answers for June 18, 2026",
-      "text": "<img src=\"https://helios-i.mashable.com/imagery/articles/06Di1hPo3zAc36ecfbqfAev/hero-image.jpg\" alt=\"A phone with the Pips logo.\"><p>Welcome to your guide to Pips, the latest game in the <a href=\"https://www.nytco.com/games/\" data-ga-click=\"1\" data-ga-label=\"$text\" data-ga-item=\"text-link\" data-ga-module=\"content_body\"><em>New York Times</em></a> catalogue.</p><p>Released in August 2025, <a href=\"https://mashable.com/article/pips-nyt-game-how-to-play\" data-ga-click=\"1\" data-ga-label=\"$text\" data-ga-item=\"text-link\" data-ga-module=\"content_body\">Pips</a> puts a unique spin on dominoes, creatin",
-      "url": "https://mashable.com/entertainment/pips-nyt-games-hints-answers-easy-medium-hard-june-18-2026",
-      "date": "2026-06-18",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how-to",
-        "how to",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.4,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 0.0,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je NYT Pips in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "167c7540cb0d402f"
+      "id": "72f1ee2c1417e166"
     },
     {
       "source": "likes:@bas_fijneman",
