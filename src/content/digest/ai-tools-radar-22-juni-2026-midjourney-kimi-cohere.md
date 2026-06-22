@@ -24,7 +24,6 @@ topics:
 - MCP
 - Cursor
 - Qwen
-heroImage: /images/digest/ai-tools-radar-22-juni-2026-midjourney-kimi-cohere.webp
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

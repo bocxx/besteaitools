@@ -17,7 +17,6 @@ toolSlug: "cursor"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/articles/diorama-firecrawl-website-naar-ai-databron.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Firecrawl: zo zet je een website om in bruikbare input voor je AI'"
 heroScene: "A tiny conveyor belt: a messy miniature webpage with banners and ads goes in one end, passes through a small funnel machine, and clean stacked markdown cards come out the other side toward a little robot."
 keyTakeaways:

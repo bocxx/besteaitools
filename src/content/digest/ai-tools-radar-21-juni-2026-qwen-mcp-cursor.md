@@ -24,7 +24,6 @@ topics:
 - Claude Code
 - Claude
 - Make
-heroImage: /images/digest/ai-tools-radar-21-juni-2026-qwen-mcp-cursor.webp
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4

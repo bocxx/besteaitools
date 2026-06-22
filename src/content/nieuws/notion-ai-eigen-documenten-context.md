@@ -17,7 +17,6 @@ toolSlug: "notion-ai"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/articles/diorama-notion-ai-eigen-documenten-context.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Notion AI: zo laat je het je eigen documenten als context gebruiken'"
 heroScene: "A tiny librarian robot standing before labeled filing drawers and small connected app-icons (Slack, Drive), pulling a few documents and assembling one glowing answer card on the desk."
 keyTakeaways:

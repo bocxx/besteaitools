@@ -18,7 +18,6 @@ toolSlug: "claude-cowork"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/nieuws/claude-cowork-excel-bouwen.webp"
 keyTakeaways:
   - "Claude Cowork bouwt sinds begin 2026 complete Excel-bestanden met meerdere tabs en werkende formules in één run — mits je een betaald Claude-account hebt (Pro, Max, Team of Enterprise)."
   - "De prompt-truc die werkt: laat Claude eerst tien aannames opsommen voordat het bouwt, zodat je vroeg corrigeert in plaats van later repareert."

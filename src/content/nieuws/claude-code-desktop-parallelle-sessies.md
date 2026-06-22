@@ -17,7 +17,6 @@ toolSlug: "claude-code"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/articles/diorama-claude-code-desktop-parallelle-sessies.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Code desktop: zo werk je met meerdere parallelle agents tegelijk'"
 heroScene: "A miniature control room desk with three small glowing screens side by side, a tiny robot orchestrator moving between them, each screen showing a different code task."
 keyTakeaways:
