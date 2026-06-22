@@ -1,4 +1,5 @@
 ---
+heroImage: /images/digest/ai-tools-radar-15-juni-2026-claude-claude-code-gemini.webp
 title: AI Tools Radar – Claude · Claude-Code · Gemini (Avond 15 juni)
 description: 'AI Tools Radar 15 juni: 129 launches, 122 feature-updates, 16 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-06-15'

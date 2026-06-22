@@ -1,4 +1,5 @@
 ---
+heroImage: /images/digest/ai-tools-radar-22-juni-2026-midjourney-kimi-cohere.webp
 title: AI Tools Radar – Midjourney · Kimi · Cohere (Ochtend 22 juni)
 description: 'AI Tools Radar 22 juni: 104 launches, 125 feature-updates, 19 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-06-22'

@@ -1,4 +1,5 @@
 ---
+heroImage: "/images/articles/diorama-claude-code-desktop-parallelle-sessies.webp"
 title: "Claude Code desktop: zo werk je met meerdere parallelle agents tegelijk"
 description: "Anthropic gaf de Claude Code desktop-app een nieuwe sidebar voor meerdere sessies naast elkaar. Zo zet je drie taken parallel op zonder dat ze elkaar in de weg zitten."
 publishedAt: 2026-06-19

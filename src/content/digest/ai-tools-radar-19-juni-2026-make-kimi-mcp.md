@@ -1,4 +1,5 @@
 ---
+heroImage: /images/digest/ai-tools-radar-19-juni-2026-make-kimi-mcp.webp
 title: AI Tools Radar – Make · Kimi · MCP (Avond 19 juni)
 description: 'AI Tools Radar 19 juni: 119 launches, 147 feature-updates, 17 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-06-19'

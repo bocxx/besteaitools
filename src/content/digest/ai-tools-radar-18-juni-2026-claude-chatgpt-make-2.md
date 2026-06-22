@@ -1,4 +1,5 @@
 ---
+heroImage: /images/digest/ai-tools-radar-18-juni-2026-claude-chatgpt-make-2.webp
 title: AI Tools Radar – Claude · ChatGPT · Make (Avond 18 juni)
 description: 'AI Tools Radar 18 juni: 121 launches, 130 feature-updates, 18 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-06-18'

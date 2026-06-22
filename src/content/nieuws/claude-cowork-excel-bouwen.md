@@ -35,6 +35,7 @@ faq:
     a: "Ja. Anthropic biedt sinds januari 2026 een officiële Claude-add-in voor Excel en PowerPoint, generally available voor alle betaalde Claude-plannen. De add-in is sterker voor edits, pivot-tabel-aanpassingen en finance-specifieke formatting binnen een bestaand bestand. Cowork blijft sterker voor 'bouw vanaf nul' omdat het meerdere tabs in één run aanlegt en je via connectoren direct kunt exporteren naar Drive of OneDrive."
   - q: "Werkt deze workflow ook op een Mac met M1/M2/M3?"
     a: "Ja. Claude Desktop draait native op zowel Intel- als Apple-silicon-Macs. Voor de Cowork-shell-sandbox heb je geen Rosetta nodig; de container draait Linux ARM64. Op Windows-laptops is Cowork sinds februari 2026 algemeen beschikbaar — Linux-ondersteuning staat nog niet op de roadmap."
+heroImage: "/images/nieuws/claude-cowork-excel-bouwen.webp"
 ---
 
 Spreadsheets bouwen met AI was tot eind 2025 vooral teleurstellend — vage formules, kapotte tabs, één keer "wow" en daarna terug naar Excel. Vanaf het tweede kwartaal van 2026 is dat veranderd. Met [Claude Cowork](/nieuws/claude-cowork-lancering) bouw je in onder een uur een werkende .xlsx met zes tabs, dashboards en scenario-toggles. Dit is precies hoe — inclusief de prompt-truc die het verschil maakt tussen "wat staat hier nou" en "dit kan zo naar de board".

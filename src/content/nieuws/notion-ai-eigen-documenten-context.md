@@ -1,4 +1,5 @@
 ---
+heroImage: "/images/articles/diorama-notion-ai-eigen-documenten-context.webp"
 title: "Notion AI: zo laat je het je eigen documenten als context gebruiken"
 description: "Notion AI doorzoekt je hele workspace én gekoppelde apps. Zo richt je Enterprise Search in en stuur je het met 'Add context' precies naar de juiste pagina's."
 publishedAt: 2026-06-19

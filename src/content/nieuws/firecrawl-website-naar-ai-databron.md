@@ -1,4 +1,5 @@
 ---
+heroImage: "/images/articles/diorama-firecrawl-website-naar-ai-databron.webp"
 title: "Firecrawl: zo zet je een website om in bruikbare input voor je AI"
 description: "Firecrawl verandert elke webpagina in schone markdown die een AI-model meteen begrijpt. Zo scrape je in een paar regels een site en voer je die als context aan je AI-tool."
 publishedAt: 2026-06-19

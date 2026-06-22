@@ -1,4 +1,5 @@
 ---
+heroImage: /images/digest/ai-tools-radar-21-juni-2026-qwen-mcp-cursor.webp
 title: AI Tools Radar – Qwen · MCP · Cursor (Ochtend 21 juni)
 description: 'AI Tools Radar 21 juni: 112 launches, 151 feature-updates, 18 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-06-21'

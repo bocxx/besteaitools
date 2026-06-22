@@ -1,4 +1,5 @@
 ---
+heroImage: /images/digest/ai-tools-radar-17-juni-2026-claude-make-claude-code-2.webp
 title: AI Tools Radar – Claude · Make · Claude-Code (Avond 17 juni)
 description: 'AI Tools Radar 17 juni: 125 launches, 126 feature-updates, 18 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-06-17'
