@@ -86,6 +86,8 @@ AI-samenvattingen zijn 90-95% betrouwbaar, maar die 5% kan precies de harde dead
 
 > **⚡ Gevorderd:** NotebookLM kan van je documenten automatisch een **audio-samenvatting** genereren — twee AI-stemmen voeren een gesprek over de inhoud van je bronnen. Handig als je onderweg een rapport wilt 'beluisteren'. Klik op "Audio Overview" in je notebook.
 
+Staan je documenten al in Notion? Dan hoef je niets te uploaden: [zo laat je Notion AI je eigen workspace als context gebruiken](/nieuws/notion-ai-eigen-documenten-context) en doorzoek je alles in gewone taal.
+
 ## Checklist: ben je klaar?
 
 - [ ] Document geüpload en bevestigd dat de AI het heeft ingelezen

@@ -66,7 +66,7 @@ Hier zit de echte tijdwinst. Open in de notitie de **Chat with note**-knop en pl
 
 > *Maak op basis van deze notulen drie dingen: (1) een genummerde lijst actiepunten in de vorm "wie / wat / wanneer", (2) een korte vervolgmail aan de deelnemers in een vriendelijke maar zakelijke Nederlandse toon, met de afspraken en deadlines, en (3) een lijst van openstaande vragen die we volgende keer moeten oppakken. Geen bullshit, alleen wat er echt is besproken.*
 
-Binnen vijftien seconden heb je drie blokken die je kunt kopiëren naar Outlook, Asana of waar je vervolgwerk ook in zit. Voor wie dit verder wil uitbouwen tot een complete workflow met agent-achtige automatisering — denk: notulen automatisch in je CRM, taken in Asana, mail in concept — geeft onze [achtergrond bij Claude voor beginners](https://hetlaatsteainieuws.nl/tutorials/claude-voor-beginners-eerste-gesprek) de bredere context van hoe AI-assistenten het beste werken.
+Binnen vijftien seconden heb je drie blokken die je kunt kopiëren naar Outlook, Asana of waar je vervolgwerk ook in zit. Werk je in Notion, dan kun je die notulen daarna laten doorzoeken door de AI: [zo laat je Notion AI je eigen documenten als context gebruiken](/nieuws/notion-ai-eigen-documenten-context). Voor wie dit verder wil uitbouwen tot een complete workflow met agent-achtige automatisering — denk: notulen automatisch in je CRM, taken in Asana, mail in concept — geeft onze [achtergrond bij Claude voor beginners](https://hetlaatsteainieuws.nl/tutorials/claude-voor-beginners-eerste-gesprek) de bredere context van hoe AI-assistenten het beste werken.
 
 ## Checklist: ben je klaar?
 

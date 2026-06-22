@@ -79,6 +79,14 @@ export default defineConfig({
     defaultStrategy: 'hover'
   },
   vite: {
+    // Sandbox-build (CI / agent-omgeving): de gedeelde node_modules/.vite-cache
+    // is door de host (macOS) aangemaakt en kan in een Linux-sandbox niet
+    // worden ge-unlinkt (EPERM op mount). Met SANDBOX_BUILD=1 schrijft Vite zijn
+    // herbouwbare cache naar /tmp i.p.v. de mount. Geen effect op een normale
+    // (lokale of productie-) build, want dan is de env-var niet gezet.
+    ...(process.env.SANDBOX_BUILD
+      ? { cacheDir: '/tmp/astro-vite-cache-debesteaitools' }
+      : {}),
     optimizeDeps: {
       exclude: ['astro'],
     },

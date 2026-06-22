@@ -91,7 +91,7 @@ Als de agent klaar is, krijg je een melding. Loop kritisch langs:
 
 De tweede ronde duurt meestal 3-5 minuten en levert vaak een merkbaar scherper document op.
 
-Wie meer wil weten over wat de Notion-agents allemaal kunnen, kan onze [analyse van Notion 3.2 op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/notion-3-2-autonome-agents) erbij pakken — daar staat de bredere context en hoe de agent zich verhoudt tot Gemini Spark en Claude.
+Wie meer wil weten over wat de Notion-agents allemaal kunnen, kan onze [analyse van Notion 3.2 op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/notion-3-2-autonome-agents) erbij pakken — daar staat de bredere context en hoe de agent zich verhoudt tot Gemini Spark en Claude. Wil je Notion AI eerst je bestaande documenten laten doorzoeken voordat je een agent loslaat, lees dan [hoe je Notion je eigen documenten als context laat gebruiken](/nieuws/notion-ai-eigen-documenten-context).
 
 > **🔄 Update juni 2026:** sinds 6 mei 2026 heeft Notion een **Custom Agent Directory** in de Library — daar staan alle agents van je werkruimte, je kunt favorieten pinnen en nieuwe agents aanmaken zonder telkens door menu's te klikken ([Bron: Notion releases](https://www.notion.com/releases/2026-05-06)). Admins kunnen sinds 5 mei ook per-agent credit-limieten zetten en op Enterprise één workspace-breed budget instellen — handig om kosten van langlopende concurrentie-analyses te beperken.
 

@@ -102,7 +102,7 @@ Dit vangt de meest voor de hand liggende problemen op voor je een collega vraagt
 - [ ] Een foutmelding ingeplakt en de uitleg begrepen vóór je de fix toepaste
 - [ ] Eigen code laten reviewen op bugs en beveiliging voor commit
 
-Wil je een stap verder en ML-inferentie direct in een webapplicatie inbouwen zonder backend? Lees onze gids [Transformers.js gebruiken: AI in de browser zonder server](/nieuws/transformers-js-ai-in-de-browser-gebruiken).
+Wil je een stap verder en ML-inferentie direct in een webapplicatie inbouwen zonder backend? Lees onze gids [Transformers.js gebruiken: AI in de browser zonder server](/nieuws/transformers-js-ai-in-de-browser-gebruiken). Werk je met Claude Code, dan draai je sinds april 2026 [meerdere coding-agents parallel in de desktop-app](/nieuws/claude-code-desktop-parallelle-sessies). En externe docs of API-pagina's geef je je AI mee met [Firecrawl, dat een site omzet in schone markdown](/nieuws/firecrawl-website-naar-ai-databron).
 
 ## Bronnen
 

@@ -100,7 +100,7 @@ Na de eerste week hou je alleen een oog op de wekelijkse statistieken. Een goed 
 - [ ] Fout-handler toegevoegd (e-mail of Slack-notificatie bij fout)
 - [ ] Eerste week gemonitord en output gevalideerd
 
-Dit sluit aan op een andere manier om API-afhankelijkheid te vermijden: ML-modellen die direct in de browser draaien. Lees [Transformers.js gebruiken: AI in de browser zonder server](/nieuws/transformers-js-ai-in-de-browser-gebruiken) voor de aanpak zonder backend én zonder automatiseringstool.
+Dit sluit aan op een andere manier om API-afhankelijkheid te vermijden: ML-modellen die direct in de browser draaien. Lees [Transformers.js gebruiken: AI in de browser zonder server](/nieuws/transformers-js-ai-in-de-browser-gebruiken) voor de aanpak zonder backend én zonder automatiseringstool. Wil je in plaats daarvan je eigen kennis ontsluiten zonder workflow te bouwen, lees dan [hoe Notion AI je documenten als context gebruikt](/nieuws/notion-ai-eigen-documenten-context).
 
 ## Bronnen
 
