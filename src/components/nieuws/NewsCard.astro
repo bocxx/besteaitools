@@ -29,7 +29,7 @@ const {
   size = 'medium',
 } = Astro.props;
 
-const showImage = heroImage && (size === 'hero' || size === 'large');
+const showImage = !!heroImage;
 
 // Responsive varianten bestaan alleen voor de gegenereerde nieuws-beelden
 // (scripts/generate-responsive-images.mjs). Alleen dan srcset emitten, anders
@@ -124,6 +124,15 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
     height: 180px;
     flex-shrink: 0;
     overflow: hidden;
+  }
+
+  /* Compactere beelden op de kleinere bento-kaarten zodat ze niet te lang worden. */
+  .bento-md .news-card__image-wrap {
+    height: 150px;
+  }
+
+  .bento-sm .news-card__image-wrap {
+    height: 120px;
   }
 
   .news-card__image {
