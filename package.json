@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
+    "postinstall": "node scripts/sync-native-binaries.mjs",
     "dev": "astro dev",
     "images:one": "scripts/diorama.sh --slug",
     "images:preview": "scripts/diorama.sh --dry-run --slug",
