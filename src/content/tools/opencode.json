@@ -1,0 +1,48 @@
+{
+  "name": "OpenCode",
+  "category": "coding",
+  "websiteUrl": "https://opencode.ai",
+  "shortDescription": "Open-source AI-coding-agent voor de terminal, met vrije modelkeuze.",
+  "headlineValueProp": "Open-source coding-agent in je terminal die met elk model werkt",
+  "longDescription": "OpenCode is een open-source AI-coding-agent van het team achter SST (Anomaly Innovations). Hij draait in je terminal als TUI, maar dezelfde lokale agent-server is ook te benaderen vanuit een desktop-app (beta), IDE-extensies en CI-pipelines. OpenCode leest je codebase, schrijft en wijzigt code, draait shell-commando's en navigeert door grote projecten. Anders dan veel concurrenten is hij model-agnostisch: je koppelt Claude, OpenAI, Google of een lokaal model via je eigen keys. Een aparte Plan-modus (Tab) laat de agent eerst zijn aanpak voorstellen zonder iets te wijzigen. De client-server-architectuur maakt het mogelijk om dezelfde agent vanuit meerdere interfaces aan te sturen.",
+  "verdict": "OpenCode is een van de sterkste open-source terminal-agents van het moment: model-onafhankelijk, snel en met een doordachte Plan-modus die ongewenste edits voorkomt. Het is wel een tool voor wie thuis is in de terminal en zelf zijn model-keys beheert — beginners die een kant-en-klare GUI willen, zitten elders beter.",
+  "whyListed": "OpenCode groeide sinds de release in 2025 uit tot een van de snelst geadopteerde open-source developer-tools en is een serieus, gratis alternatief voor commerciële agents als Claude Code en Cursor.",
+  "bestFor": "Terminal-gerichte developers die een gratis, model-onafhankelijke coding-agent willen zonder vendor lock-in.",
+  "primaryJobsToBeDone": [
+    "Code lezen, schrijven en wijzigen vanuit de terminal met een AI-agent",
+    "Een aanpak laten voorstellen vóór wijzigingen via de Plan-modus",
+    "Werken met je eigen modelkeuze (Claude, OpenAI, Google of lokaal) via eigen keys"
+  ],
+  "antiUseCases": [
+    "Beginners die een grafische interface verwachten in plaats van een terminal",
+    "Teams die één dichtgetimmerde commerciële tool met support willen",
+    "Wie geen eigen model-API-keys wil beheren"
+  ],
+  "useCases": [
+    "Bugs opsporen en fixen in een bestaande codebase",
+    "Multi-file refactors uitvoeren vanuit de terminal",
+    "Een feature laten plannen (Plan-modus) voordat er code verandert"
+  ],
+  "strengths": [
+    "Model-agnostisch: Claude, OpenAI, Google of lokale modellen via eigen keys",
+    "Plan-modus voorkomt ongewenste wijzigingen",
+    "Client-server-opzet: TUI, desktop (beta), IDE en CI delen dezelfde agent"
+  ],
+  "limitations": [
+    "Terminal-first — geen volwaardige GUI",
+    "Je beheert zelf de model-keys en API-kosten",
+    "Snel bewegend project: features en docs veranderen regelmatig"
+  ],
+  "pricing": "Gratis en open-source. Je betaalt alleen de API-kosten van het model dat je via je eigen keys koppelt; met een lokaal model is het geheel kosteloos.",
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "openSource": true,
+  "deploymentType": "self-hosted",
+  "tags": ["coding", "open-source", "terminal", "agent"],
+  "mentionAliases": ["open code"],
+  "bestAlternative": "aider",
+  "supportsDutchLanguage": false,
+  "lastUpdated": "2026-06-22",
+  "lastReviewedAt": "2026-06-22",
+  "draft": false
+}
