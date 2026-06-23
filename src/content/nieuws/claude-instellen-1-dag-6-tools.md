@@ -259,7 +259,7 @@ Een skill (of plugin — de termen lopen door elkaar) is een vooraf geschreven i
 3. Vind je niets passends, dan schrijf je er zelf een. Maak in je Cowork-werkmap een submap `SKILLS` aan, en daarin een markdown-bestand per skill (bijvoorbeeld `weekrapport.md`). Schrijf in dat bestand exact wat Claude moet doen: welke bestanden lezen, welke connector raadplegen, welke output produceren.
 4. Verwijs in je `about-me.md` naar de skills-map: *"In /SKILLS staan herbruikbare instructies. Pas ze toe als ik om een specifieke taak vraag."*
 
-**Belangrijk:** je hoeft hier niet meteen mee te beginnen. Werk eerst een paar weken met Cowork voor je begint met skills. Zo weet je welke taken écht repetitief zijn en welke je gevoelsmatig herhaalt maar feitelijk maar één keer per kwartaal doet.
+**Belangrijk:** je hoeft hier niet meteen mee te beginnen. Werk eerst een paar weken met Cowork voor je begint met skills. Zo weet je welke taken écht repetitief zijn en welke je gevoelsmatig herhaalt maar feitelijk maar één keer per kwartaal doet. Wil je naast inrichten ook de basis stevig onder de knie krijgen? Anthropic biedt daarvoor [gratis cursussen met certificaat aan op Anthropic Academy](/nieuws/anthropic-academy-gratis-ai-cursussen).
 
 Werk je liever vanuit de terminal met Claude Code? Daar zit hetzelfde idee, maar dan filesystem-gebaseerd: in [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) zie je in vier stappen waar het `SKILL.md`-bestand hoort en hoe Claude het automatisch oppakt.
 
