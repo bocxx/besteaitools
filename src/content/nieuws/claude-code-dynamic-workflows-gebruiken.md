@@ -43,7 +43,7 @@ Anthropic bracht eind mei 2026 Claude Opus 4.8 uit, en de bijbehorende dynamic w
 
 Een dynamic workflow is een JavaScript-script dat Claude voor je schrijft om een grote taak op te delen in subtaken, en vervolgens tot 1000 subagents parallel inzet om die af te werken ([Bron: Anthropic — Workflows docs](https://code.claude.com/docs/en/workflows)). Het script draait op de achtergrond, terwijl je zelf iets anders kan doen.
 
-Voorwaarden: Claude Code v2.1.154 of nieuwer, en een betaald Claude-abonnement. Bij Team, Max en Enterprise staat de feature standaard aan. Op Pro zet je hem aan via `/config` — kies de Dynamic workflows-regel en zet hem op enabled. Voor de context rond de bredere release lees je onze launch-analyse op het zusterdomein: [Claude Opus 4.8 brengt dynamic workflows](https://hetlaatsteainieuws.nl/nieuws/claude-opus-4-8-dynamic-workflows).
+Voorwaarden: Claude Code v2.1.154 of nieuwer, en een betaald Claude-abonnement. Bij Team, Max en Enterprise staat de feature standaard aan. Op Pro zet je hem aan via `/config` — kies de Dynamic workflows-regel en zet hem op enabled. Werk je liever in een AI-editor dan in de terminal? Dan is [code refactoren met Cursor](/nieuws/cursor-code-refactoren) het editor-equivalent van dit soort meerstaps-werk. Voor de context rond de bredere release lees je onze launch-analyse op het zusterdomein: [Claude Opus 4.8 brengt dynamic workflows](https://hetlaatsteainieuws.nl/nieuws/claude-opus-4-8-dynamic-workflows).
 
 ## In vier stappen je eerste workflow draaien
 

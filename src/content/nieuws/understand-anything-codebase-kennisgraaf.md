@@ -34,7 +34,7 @@ faq:
     a: "De code is open source en publiek beschikbaar op GitHub (Lum1104/Understand-Anything). Houd er rekening mee dat het werkt bovenop een AI-coding-assistent zoals Claude Code; de kosten van die onderliggende tool en de modelaanroepen vallen dus buiten de tool zelf. Controleer altijd de actuele voorwaarden in de repository en bij je gekozen platform vóór gebruik in productie."
 ---
 
-Een onbekende codebase begrijpen is vaak het traagste deel van het werk. Understand-Anything pakt dat probleem aan: het zet elke codebase, kennisbank of documentatie om in een interactieve kennisgraaf die je kunt verkennen, doorzoeken en bevragen — en het werkt native met Claude Code. In deze gids zie je hoe je het installeert en de vijf commando's inzet.
+Een onbekende codebase begrijpen is vaak het traagste deel van het werk. Understand-Anything pakt dat probleem aan: het zet elke codebase, kennisbank of documentatie om in een interactieve kennisgraaf die je kunt verkennen, doorzoeken en bevragen — en het werkt native met Claude Code. In deze gids zie je hoe je het installeert en de vijf commando's inzet. Heb je de codebase eenmaal doorgrond, dan is opschonen vaak de logische volgende stap: zie [code refactoren met Cursor zonder rommel](/nieuws/cursor-code-refactoren).
 
 ## Wat het is
 

@@ -38,7 +38,7 @@ faq:
 heroImage: "/images/nieuws/claude-cowork-lancering.webp"
 ---
 
-Anthropic bracht Cowork op 12 januari 2026 uit als research preview, en inmiddels is het label weg: Claude Cowork draait op macOS én Windows, voor alle betaalde plannen, met connectoren, plugins en sinds deze week live dashboards. Voor Nederlandse kenniswerkers die tot nu toe naar Claude chatten betekent dat iets nieuws — Claude mag nu ook daadwerkelijk iets doen.
+Anthropic bracht Cowork op 12 januari 2026 uit als research preview, en inmiddels is het label weg: Claude Cowork draait op macOS én Windows, voor alle betaalde plannen, met connectoren, plugins en sinds deze week live dashboards. Voor Nederlandse kenniswerkers die tot nu toe naar Claude chatten betekent dat iets nieuws — Claude mag nu ook daadwerkelijk iets doen. Aan de bouw-kant zie je dezelfde verschuiving bij no-code: Lovable genereert een complete webapp uit een beschrijving, en je kunt [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github) om de code zelf te bezitten.
 
 ## Wat Claude Cowork eigenlijk is
 

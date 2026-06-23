@@ -37,7 +37,7 @@ faq:
 heroImage: "/images/nieuws/claude-instellen-1-dag-6-tools.webp"
 ---
 
-Claude instellen voelt voor veel mensen overweldigend — je downloadt de app, je begint te chatten, en het stopt daar. Maar wie het stap voor stap aanpakt en zes simpele bouwstenen op de juiste plek zet, heeft geen chatbot meer; die heeft een digitale collega die jou kent. Hieronder loop je elke bouwsteen langs, met per stap precies wat je moet doen, in welke volgorde, en wat je daarna op je scherm zou moeten zien.
+Claude instellen voelt voor veel mensen overweldigend — je downloadt de app, je begint te chatten, en het stopt daar. Maar wie het stap voor stap aanpakt en zes simpele bouwstenen op de juiste plek zet, heeft geen chatbot meer; die heeft een digitale collega die jou kent. Hieronder loop je elke bouwsteen langs, met per stap precies wat je moet doen, in welke volgorde, en wat je daarna op je scherm zou moeten zien. Wil je vervolgens zelf een werkende webapp bouwen zonder code, dan is Lovable een laagdrempelige route — en [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github) laat zien hoe je die code daarna zelf in handen houdt.
 
 > **💡 Beginner-tip:** Nog nooit met Claude gewerkt? Begin dan eerst bij onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) om te zien of Claude bij jou past. Dit artikel gaat ervan uit dat je al een betaald abonnement hebt of overweegt.
 

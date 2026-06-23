@@ -38,7 +38,7 @@ faq:
     a: "Cursor biedt een 'Privacy Mode' waarbij je code niet wordt gebruikt voor modeltraining. GitHub Copilot Business en Enterprise geven organisaties vergelijkbare garanties. Replit verwerkt code op hun servers; voor gevoelige bedrijfscode check je hun verwerkersovereenkomst."
 ---
 
-Drie jaar geleden was auto-complete het hoogtepunt van AI in je editor. Nu schrijft AI complete functies, legt het bestaande code uit, stelt refactorings voor en debugt mee terwijl je typt. Dit zijn de drie tools waarmee je direct aan de slag kunt — en wanneer je welke kiest.
+Drie jaar geleden was auto-complete het hoogtepunt van AI in je editor. Nu schrijft AI complete functies, legt het bestaande code uit, stelt refactorings voor en debugt mee terwijl je typt. Dit zijn de drie tools waarmee je direct aan de slag kunt — en wanneer je welke kiest. Ben je eenmaal op weg en wil je bestaande code veilig opschonen, lees dan ook [code refactoren met Cursor zonder rommel](/nieuws/cursor-code-refactoren).
 
 ## De drie tools op een rij
 

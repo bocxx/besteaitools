@@ -38,7 +38,7 @@ faq:
 heroImage: "/images/nieuws/claude-cowork-excel-bouwen.webp"
 ---
 
-Spreadsheets bouwen met AI was tot eind 2025 vooral teleurstellend — vage formules, kapotte tabs, één keer "wow" en daarna terug naar Excel. Vanaf het tweede kwartaal van 2026 is dat veranderd. Met [Claude Cowork](/nieuws/claude-cowork-lancering) bouw je in onder een uur een werkende .xlsx met zes tabs, dashboards en scenario-toggles. Dit is precies hoe — inclusief de prompt-truc die het verschil maakt tussen "wat staat hier nou" en "dit kan zo naar de board".
+Spreadsheets bouwen met AI was tot eind 2025 vooral teleurstellend — vage formules, kapotte tabs, één keer "wow" en daarna terug naar Excel. Vanaf het tweede kwartaal van 2026 is dat veranderd. Met [Claude Cowork](/nieuws/claude-cowork-lancering) bouw je in onder een uur een werkende .xlsx met zes tabs, dashboards en scenario-toggles. Dit is precies hoe — inclusief de prompt-truc die het verschil maakt tussen "wat staat hier nou" en "dit kan zo naar de board". Wil je geen spreadsheet maar een complete webapp bouwen zonder code? Dan is Lovable de no-code route — en als je later je eigen code wilt bezitten, lees [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github).
 
 > **💡 Beginner-tip:** Test dit eerst met iets onbelangrijks — een budget voor een feestje, een boekenlijst — voordat je je financiële model erop loslaat. Je leert in een halfuur hoe Cowork reageert, en die les is veel meer waard dan de uren herwerk die je anders riskeert.
 
