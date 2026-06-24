@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-24T05:30:16.331559",
+  "generated_at": "2026-06-24T17:33:50.774747",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 17,
     "for_news": 15,
-    "rejected_lang": 168,
+    "rejected_lang": 154,
     "already_covered": 0,
-    "total_scanned": 4429
+    "total_scanned": 4447
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "tutorial",
-        "step-by-step"
+        "step-by-step",
+        "how to"
       ],
       "matched_tools": [
         "gemini",
@@ -74,8 +74,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -126,8 +126,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -192,8 +192,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "build your"
+        "build your",
+        "how to"
       ],
       "matched_tools": [
         "langchain",
@@ -490,8 +490,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -535,7 +535,7 @@
       "text": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
       "url": "https://github.com/calesthio/OpenMontage",
       "date": "2026-06-24",
-      "engagement": 3592.0,
+      "engagement": 3703.0,
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -547,7 +547,7 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "total_stars": 16403,
+      "total_stars": 18556,
       "topics": [
         "agent",
         "agentic-ai",
@@ -574,10 +574,10 @@
       "consensus_sources": [
         "github"
       ],
-      "score": 17.28,
+      "score": 17.33,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 12.28,
+        "engagement_log": 12.33,
         "source_weight": 2.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -739,6 +739,52 @@
     {
       "source": "hn",
       "platform": "hackernews",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "date": "2026-05-20",
+      "engagement": 2448.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.21,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.71,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "67bd84a16d5db4b6"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
       "title": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "text": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
@@ -793,9 +839,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "build a",
-        "tutorial"
+        "tutorial",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -847,10 +893,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "from scratch",
         "build a",
         "under the hood",
-        "from scratch"
+        "how to"
       ],
       "matched_tools": [
         "durable"
@@ -886,56 +932,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "0b2e0e0fdef06565"
-    },
-    {
-      "source": "articles:Analytics Insight",
-      "platform": "article",
-      "title": "How to Use Claude AI for Beginners: A Simple Step-by-Step Guide to Master Claude AI",
-      "text": "<h3><strong>Overview :</strong></h3><ul><li><p>Claude AI simplifies communication, research, writing, and problem-solving for beginners efficiently.</p></li><li><p>Users can access Claude through the web, mobile, desktop, and API.</p></li><li><p>Better prompts with context and examples produce more accurate, useful responses.</p></li></ul><p>Claude AI is Anthropic’s advanced, beginner-friendly AI assistant, a secure and one of the best conversational assistants in the market. With Claude, you can write drafts, send emails, brainstorm, and solve problems using a chat-like interface.</p><p>It’s ",
-      "url": "https://www.analyticsinsight.net/artificial-intelligence/how-to-use-claude-ai-for-beginners-a-simple-step-by-step-guide-to-master-claude-ai",
-      "date": "2026-06-23",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "guide",
-        "step-by-step"
-      ],
-      "matched_tools": [
-        "claude"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "13a8619d9a260c15"
     }
   ],
   "for_news": [
@@ -1222,9 +1218,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "how-to",
-        "guide"
+        "guide",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1270,9 +1266,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "guide",
-        "build your"
+        "build your",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1321,12 +1317,12 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "build a",
+        "breakdown",
+        "build your",
         "from scratch",
         "build an",
-        "build your",
-        "breakdown"
+        "how to"
       ],
       "matched_tools": [
         "make",
@@ -1386,9 +1382,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "build a",
-        "guide"
+        "guide",
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1473,6 +1469,58 @@
       "id": "5b4000a8f9c96e83"
     },
     {
+      "source": "articles:Gareth Pronovost",
+      "platform": "article",
+      "title": "How to build a projects database (＆ Automate Assignments)",
+      "text": "\n<figure class=\"enclosure\"><p><img class=\"enclosure-thumbnail\" src=\"https://i3.ytimg.com/vi/FhFd_mN_-Sk/hqdefault.jpg\" alt=\"\" title=\"How to build a projects database (&amp; Automate Assignments)\" /></p><p class=\"enclosure-content\"><a download=\"\" href=\"https://www.youtube.com/v/FhFd_mN_-Sk?version=3\" data-type=\"application/x-shockwave-flash\" title=\"How to build a projects database (&amp; Automate Assignments)\">💾</a></p><figcaption class=\"enclosure-description\">*Want to build a fully functional internal application without writing a single line of code?* Softr has evolved beyond just a front-end",
+      "url": "https://www.youtube.com/watch?v=FhFd_mN_-Sk",
+      "date": "2026-06-24",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "from scratch",
+        "build a",
+        "tutorial",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=FhFd_mN_-Sk"
+      },
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 1.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "de33695afc380dab"
+    },
+    {
       "source": "articles:Artificial Intelligence on Medium",
       "platform": "article",
       "title": "How to Train an AI Clone of Yourself to Handle Your Freelance Clients",
@@ -1483,9 +1531,9 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "how-to",
-        "practical guide"
+        "practical guide",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1531,9 +1579,9 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "how-to",
-        "build your"
+        "build your",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1571,54 +1619,6 @@
     {
       "source": "articles:Deep Learning on Medium",
       "platform": "article",
-      "title": "How I Trained My First Deep Learning Model for $0 (And the Secrets I Learned Along the Way)",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@tolaniakinola/how-i-trained-my-first-deep-learning-model-for-0-and-the-secrets-i-learned-along-the-way-61f0d30ff9d1?source=rss------deep_learning-5\"><img src=\"https://cdn-images-1.medium.com/max/2600/1*TRXtCv34Mjmtq40qc-iXgg.png\" width=\"2816\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">I sat at my desk looking at a tutorial that promised to teach me how to build a deep learning model.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@tolaniaki",
-      "url": "https://medium.com/@tolaniakinola/how-i-trained-my-first-deep-learning-model-for-0-and-the-secrets-i-learned-along-the-way-61f0d30ff9d1?source=rss------deep_learning-5",
-      "date": "2026-06-20",
-      "engagement": 39.1,
-      "source_weight": 0.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "build a",
-        "tutorial"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": true,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.54,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.54,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "670ba94e215c05f9"
-    },
-    {
-      "source": "articles:Deep Learning on Medium",
-      "platform": "article",
       "title": "Fine-Tuning LLMs From Scratch to Deployment: A Complete, Hands-On Guide",
       "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://aeontanvir.medium.com/fine-tuning-llms-from-scratch-to-deployment-a-complete-hands-on-guide-24f08181d34a?source=rss------deep_learning-5\"><img src=\"https://cdn-images-1.medium.com/max/600/1*KRDcz_vq32LA-l9PQ1UBKA.png\" width=\"600\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">When I started learning how to fine-tune large language models, I ran into the same wall most people do: there are a hundred tutorials…</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://aeontanvir.",
       "url": "https://aeontanvir.medium.com/fine-tuning-llms-from-scratch-to-deployment-a-complete-hands-on-guide-24f08181d34a?source=rss------deep_learning-5",
@@ -1627,10 +1627,10 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "from scratch",
         "how to",
         "hands-on",
-        "guide",
-        "from scratch"
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
