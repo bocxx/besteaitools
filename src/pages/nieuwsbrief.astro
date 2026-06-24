@@ -104,6 +104,13 @@ export const prerender = true;
         if (res.ok && data.ok) {
           if (status) { status.dataset.state = 'ok'; status.textContent = '✓ Je bent ingeschreven. Check je inbox!'; }
           form.reset();
+          // Funnel-meting (Umami), best-effort.
+          try {
+            (window as any).umami?.track?.('newsletter-signup', {
+              source: form.dataset.source || 'nieuwsbrief',
+              placement: 'nieuwsbrief-pagina',
+            });
+          } catch (_) {}
         } else {
           if (status) { status.dataset.state = 'error'; status.textContent = data.error || 'Er ging iets mis — probeer het opnieuw.'; }
         }

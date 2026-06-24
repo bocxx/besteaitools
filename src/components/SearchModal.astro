@@ -125,6 +125,22 @@ const toolCount = Math.floor((await getAllTools()).length / 10) * 10;
     }
   }
 
+  // Zoek-gaten loggen naar Umami: niet per toetsaanslag maar 1,4s nadat de
+  // gebruiker stopt met typen, genormaliseerd en ontdubbeld. results=0 = gat.
+  let searchLogTimer: number | null = null;
+  let lastLoggedSearch = '';
+  function queueSearchLog(query: string, count: number) {
+    const norm = query.trim().toLowerCase().slice(0, 80);
+    if (norm.length < 3) return;
+    if (searchLogTimer) window.clearTimeout(searchLogTimer);
+    searchLogTimer = window.setTimeout(() => {
+      if ((input?.value || '').trim().toLowerCase().slice(0, 80) !== norm) return;
+      if (norm === lastLoggedSearch) return;
+      lastLoggedSearch = norm;
+      try { (window as any).umami?.track?.('site-search', { q: norm, results: count, found: count > 0 }); } catch (_) {}
+    }, 1400) as unknown as number;
+  }
+
   async function performSearch(query: string) {
     if (!pagefind || !query.trim()) {
       list.innerHTML = '';
@@ -146,6 +162,7 @@ const toolCount = Math.floor((await getAllTools()).length / 10) * 10;
 
     loading.hidden = true;
     activeIndex = -1;
+    queueSearchLog(query, search.results.length);
 
     if (results.length === 0) {
       list.innerHTML = '';
