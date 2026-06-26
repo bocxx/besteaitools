@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-25T17:35:51.520222",
+  "generated_at": "2026-06-26T05:47:28.507949",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 16,
     "for_news": 15,
-    "rejected_lang": 157,
+    "rejected_lang": 148,
     "already_covered": 0,
-    "total_scanned": 4463
+    "total_scanned": 4460
   },
   "for_tools": [
     {
@@ -126,8 +126,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -245,8 +245,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -595,6 +595,52 @@
       "id": "62ba44f1e00feb0c"
     },
     {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "text": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+      "date": "2026-06-24",
+      "engagement": 1983.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "claude"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.89,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.39,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "claude versus de alternatieven — welke past bij jou?",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "dce15a5f9834764f"
+    },
+    {
       "source": "github:Python",
       "platform": "github",
       "title": "microsoft/markitdown — Python tool for converting files and office documents to Markdown.",
@@ -739,52 +785,6 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
-      "date": "2026-05-20",
-      "engagement": 2448.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.21,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.71,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "67bd84a16d5db4b6"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
       "title": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "text": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
       "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
@@ -829,25 +829,22 @@
       "id": "b49b738e8bae9386"
     },
     {
-      "source": "articles:The Practical Developer",
+      "source": "articles:cs.AI updates on arXiv.org",
       "platform": "article",
-      "title": "Why do we import 100MB of frameworks to run a 50-line LLM reasoning loop?",
-      "text": "<p>Stop Importing Bloated Frameworks: Build a Python AI Agent from Scratch</p>\n\n<p>You want to build an AI agent. </p>\n\n<p>So you head to the docs of a popular orchestration framework, copy the boilerplate, import 20 modules, and spin up an agent. It works—until it doesn't. </p>\n\n<p>Suddenly, you're looking at a 50-line stack trace originating from a library wrapper. You don't know where the query failed, what the exact prompt was, or why the tool call failed to parse.</p>\n\n<p>Here is the truth: <strong>You don't need AutoGen, LangChain, or CrewAI to build a working AI agent.</strong></p>\n\n<p>",
-      "url": "https://dev.to/venu_varma/why-do-we-import-100mb-of-frameworks-to-run-a-50-line-llm-reasoning-loop-3afh",
-      "date": "2026-06-25",
+      "title": "NeuraDock Visual Cognitive Load Agent Tutorial: A Quality-Gated Open-Source EEG Workflow for Alpha Dynamics and Real-Time Applications",
+      "text": "arXiv:2606.26518v1 Announce Type: new \nAbstract: This tutorial paper provides a step-by-step, reproducible walkthrough of NeuraDock Agent, an open-source EEG agent focused on Alpha dynamics and visual cognitive-load analysis. The goal is practical: a reader should be able to install the agent, run EEG preprocessing and quality control, generate Alpha dynamics figures, perform within-subject Rest/Task visual cognitive-load comparison, run the public mini-dataset analyses and compare them with the reference validation summary, start an online dashboard, call the real-time API from an external ap",
+      "url": "https://arxiv.org/abs/2606.26518",
+      "date": "2026-06-26",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
-        "build a",
-        "build an"
+        "tutorial",
+        "step-by-step",
+        "walkthrough"
       ],
-      "matched_tools": [
-        "crewai",
-        "langchain"
-      ],
-      "feature_update": false,
+      "matched_tools": [],
+      "feature_update": true,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
@@ -874,10 +871,10 @@
         "media": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Wat kan crewai écht? Een eerlijke test voor NL-gebruikers.",
+      "suggested_angle_nl": "Zo gebruik je NeuraDock Visual Cognitive in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "007d930e154d5801"
+      "id": "53457a425af8937f"
     }
   ],
   "for_news": [
@@ -1166,9 +1163,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "walkthrough",
+        "from scratch",
         "build a",
-        "from scratch"
+        "walkthrough"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1254,11 +1251,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Nvidia's 45°C cooling design cuts data center water use to near zero",
-      "text": "Nvidia's 45°C cooling design cuts data center water use to near zero",
-      "url": "https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/",
-      "date": "2026-06-24",
-      "engagement": 829.0,
+      "title": "Ford rehires 350 engineers after AI fails to preserve expertise or train juniors",
+      "text": "Ford rehires 350 engineers after AI fails to preserve expertise or train juniors",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-25/ford-has-been-rehiring-quality-inspectors-after-ai-fell-short",
+      "date": "2026-06-25",
+      "engagement": 889.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1267,7 +1264,7 @@
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": false,
+      "paywall": true,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1275,10 +1272,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 15.58,
+      "score": 15.69,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.08,
+        "engagement_log": 10.19,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1290,10 +1287,10 @@
         "media": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Wat Nvidia betekent voor de Nederlandse AI-markt.",
+      "suggested_angle_nl": "Ford: de context die de internationale pers mist.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "3ca37d137ae6f94f"
+      "id": "fb3e39732ba38acb"
     },
     {
       "source": "tweets:@eng_khairallah1",
@@ -1357,12 +1354,12 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "from scratch",
+        "how to",
+        "build a",
         "build your",
         "build an",
-        "breakdown",
-        "build a"
+        "breakdown"
       ],
       "matched_tools": [
         "make",
@@ -1523,10 +1520,10 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "from scratch",
         "hands-on",
-        "guide",
-        "from scratch"
+        "how to",
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
