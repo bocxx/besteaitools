@@ -84,6 +84,8 @@ Aan de developer-kant zit dezelfde filosofie in Claude Code, dat sinds eind mei 
 **Dagelijks gebruik / mobiel / multimodaal** → ChatGPT GPT-5.5
 **Goedkope automatisering / batch-API** → GPT-5.4 of Claude Haiku 4.5
 **Compliance & klantantwoorden** → Claude Opus 4.8 (zie [Aithos LARA-test](/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts))
+
+Achtergrond bij de Anthropic-kant: in juni 2026 beschuldigde Anthropic Alibaba van de grootste bekende poging om Claude's capaciteiten illegaal te kopiëren via 28,8 miljoen uitwisselingen. Dat legt uit waarom Anthropic zwaar investeert in het beschermen van de agentic reasoning en software-engineering kwaliteiten die Claude onderscheiden. De details staan in [Claude en de Alibaba-distillatieaanval](/nieuws/anthropic-alibaba-claude-distillatie-aanval).
 **Financiële modellen / Excel** → Claude Opus 4.8 in Cowork (zie [Cowork voor Excel in vijf stappen](/nieuws/claude-cowork-excel-bouwen))
 **Actuele feiten met bronnen** → een zoek-AI zoals Perplexity i.p.v. een pure chatbot (zie [een wedstrijd analyseren met Perplexity](/nieuws/ai-voetbalwedstrijd-voorspellen))
 

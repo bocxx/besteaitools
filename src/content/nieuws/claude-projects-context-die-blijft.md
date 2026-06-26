@@ -68,3 +68,5 @@ Op Pro draait Claude standaard op Sonnet 4.6, een gebalanceerd model dat voor de
 Je hoeft niet meteen tien Projecten op te zetten. Kies één terugkerende klus, maak er een Project voor, en schrijf de instructies goed. Binnen een dag merk je het verschil. Wil je weten hoe Claude zich verhoudt tot ChatGPT en de open alternatieven, lees dan ons overzicht over [open AI-modellen versus ChatGPT en Claude](https://hetlaatsteainieuws.nl/nieuws/open-ai-modellen-overstappen) op Het Laatste AI Nieuws.
 
 Claude-prijzen en plan-indeling wijzigen geregeld; controleer de actuele plannen en limieten op [claude.com](https://claude.com) voordat je upgradet.
+
+Wil je begrijpen waarom Anthropic zijn model zo strak bewaakt? In juni 2026 beschuldigde Anthropic Alibaba van 28,8 miljoen geautomatiseerde uitwisselingen via neppe accounts om Claude's agentic capaciteiten te kopiëren. Meer achtergrond: [Claude en de Alibaba-distillatieaanval](/nieuws/anthropic-alibaba-claude-distillatie-aanval).
