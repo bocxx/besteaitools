@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-27T17:31:31.948724",
+  "generated_at": "2026-06-28T05:30:14.307831",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 19,
+    "for_tools": 17,
     "for_news": 15,
     "rejected_lang": 155,
     "already_covered": 0,
-    "total_scanned": 4467
+    "total_scanned": 4464
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "tutorial",
         "step-by-step",
-        "tutorial"
+        "how to"
       ],
       "matched_tools": [
         "gemini",
@@ -126,8 +126,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "from scratch",
-        "step by step"
+        "step by step",
+        "from scratch"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -245,8 +245,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -297,9 +297,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "guide",
         "tutorial",
-        "guide"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -511,7 +511,7 @@
       "text": "U.S. government will decide who gets to use GPT-5.6",
       "url": "https://www.washingtonpost.com/technology/2026/06/26/openai-says-us-government-will-vet-users-its-latest-ai-model/",
       "date": "2026-06-26",
-      "engagement": 2303.0,
+      "engagement": 2362.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -530,10 +530,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.11,
+      "score": 17.15,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.61,
+        "engagement_log": 11.65,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -549,6 +549,52 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "cebb5a1ee0647ac4"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "text": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+      "date": "2026-06-24",
+      "engagement": 2098.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "claude"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.97,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.47,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "claude versus de alternatieven — welke past bij jou?",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "dce15a5f9834764f"
     },
     {
       "source": "github:TypeScript",
@@ -831,172 +877,24 @@
       "id": "1083a4446ba226cd"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
-      "text": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
-      "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
-      "date": "2026-06-16",
-      "engagement": 1680.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "cursor"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.14,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.14,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: cursor inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "b49b738e8bae9386"
-    },
-    {
-      "source": "articles:freeCodeCamp.org News",
+      "source": "articles:The Practical Developer",
       "platform": "article",
-      "title": "How to Build a Personal AI Web Research Agent with Ollama and Qwen",
-      "text": "<p>In this tutorial, I’ll show you how to build an AI web research agent using Ollama, Qwen, and Python. The agent searches the web for a topic, fetches relevant pages, and uses a local LLM to generate a concise digest.</p>\n<h3 data-sanitized-id=\"heading-table-of-contents\">Table of Contents</h3>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/build-a-personal-ai-web-research-agent-with-ollama-and-qwen/#heading-background\">Background</a></p>\n</li>\n<li><p><a href=\"https://www.freecodecamp.org/news/build-a-personal-ai-web-research-agent-with-ollama-and-qwen/#heading-motivation-and-architec",
-      "url": "https://www.freecodecamp.org/news/build-a-personal-ai-web-research-agent-with-ollama-and-qwen/",
-      "date": "2026-06-26",
+      "title": "Building a RAG System from Scratch with pgvector and Gemini — Introduction",
+      "text": "<h2>\n  \n  \n  What This Guide Covers\n</h2>\n\n<p>When you start building LLM-powered applications, one pattern becomes unavoidable: <strong>RAG (Retrieval-Augmented Generation)</strong>.</p>\n\n<p>LLMs only know what they were trained on. Your company's internal documents, the latest spec sheets, project-specific information — none of that exists in the model. To handle data the model doesn't know, you need a system that retrieves relevant knowledge in real time and injects it into the context. That's RAG.</p>\n\n<p>In this guide, we'll implement a RAG system from scratch using pgvector and Gemini, t",
+      "url": "https://dev.to/hiroki-kameyama/building-a-rag-system-from-scratch-with-pgvector-and-gemini-introduction-c8i",
+      "date": "2026-06-27",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "build an",
-        "how to",
-        "tutorial"
-      ],
-      "matched_tools": [
-        "ollama",
-        "qwen"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je ollama in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "599ea8dc4d2e8d74"
-    },
-    {
-      "source": "articles:freeCodeCamp",
-      "platform": "article",
-      "title": "Build an AI Agent in Telegram with Vercel, Cursor, Composio",
-      "text": "<p>Building your own AI agent has never been more accessible. We just released a comprehensive new course on the <a href=\"http://freecodecamp.org/\">freeCodeCamp.org</a> YouTube channel that guides you through building a powerful, persistent AI agent from scratch, inspired by the popular open-source project OpenClaw.</p>\n<p>In this project-based course, instructor Shawn Esquivel takes you through the entire development lifecycle, showing you how to move beyond simple chat interfaces to create an intelligent system capable of managing workflows across your favorite apps.</p>\n<p>You will start by",
-      "url": "https://www.freecodecamp.org/news/build-an-ai-agent-in-telegram-with-vercel-cursor-composio/",
-      "date": "2026-06-26",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "how to",
-        "build an",
+        "guide",
+        "explained",
+        "step by step",
         "from scratch"
       ],
       "matched_tools": [
-        "cursor",
-        "openclaw"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je cursor in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "2e6429ebfffe65ba"
-    },
-    {
-      "source": "articles:Artificial Intelligence – The Data Scientist",
-      "platform": "article",
-      "title": "How to Build an AI-Powered SaaS Product: A Beginner’s Guide",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">A few years ago, tacking artificial intelligence onto a software product felt like a real differentiator. Now, it’s quickly becoming kind of the default expectation.</p>\n\n\n\n<p data-sanitized-class=\"wp-block-paragraph\"><br>From platforms that solve user queries right away to analytics tools, AI has made a place for itself in every corner. Hence, businesses are approaching building AI-powered SaaS products.</p>\n\n\n\n<p data-sanitized-class=\"wp-block-paragraph\">The catch is that most first-time builders get tangled up in the AI before they actually settl",
-      "url": "https://thedatascientist.com/how-to-build-an-ai-powered-saas-product-a-beginners-guide/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-build-an-ai-powered-saas-product-a-beginners-guide",
-      "date": "2026-06-26",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build an",
-        "how to",
-        "guide"
-      ],
-      "matched_tools": [
-        "make"
+        "gemini",
+        "mcp"
       ],
       "feature_update": false,
       "new_products": [],
@@ -1025,10 +923,10 @@
         "media": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "gemini uitgelegd voor Nederlandse teams — zonder de hype.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "50cea01267116165"
+      "id": "a521c93cbc634afb"
     }
   ],
   "for_news": [
@@ -1085,7 +983,7 @@
       "text": "Previewing GPT‑5.6 Sol: a next-generation model",
       "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
       "date": "2026-06-26",
-      "engagement": 1759.0,
+      "engagement": 1830.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1102,10 +1000,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.71,
+      "score": 16.77,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.21,
+        "engagement_log": 11.27,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1307,7 +1205,7 @@
       "id": "f4167b3fa02ee34b"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "Scaling Your AI Models with Micro-DDP",
       "text": "<p>Scaling large AI models requires more than just raw computing power. It demands sophisticated techniques to distribute workloads efficiently across hardware.</p>\n<p>We just posted a new course on the <a href=\"http://freecodecamp.org/\">freeCodeCamp.org</a> YouTube channel, where instructor Kian Kyars provides a hands-on guide to mastering Distributed Data Parallelism (DDP).</p>\n<p>The course shows you how to overcome memory limitations by training models effectively across multiple GPUs. You will explore the theory behind distributed training, including the critical differences between data ",
@@ -1508,12 +1406,12 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build an",
-        "how to",
+        "build your",
         "breakdown",
         "build a",
+        "how to",
         "from scratch",
-        "build your"
+        "build an"
       ],
       "matched_tools": [
         "make",
@@ -1573,8 +1471,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "build a",
+        "how to",
         "guide"
       ],
       "matched_tools": [
@@ -1626,8 +1524,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how-to",
         "build a",
+        "how-to",
         "how to"
       ],
       "matched_tools": [],
@@ -1674,9 +1572,9 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
+        "guide",
         "deep dive",
-        "guide"
+        "from scratch"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1722,10 +1620,10 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how-to",
         "build a",
-        "from scratch",
-        "how to"
+        "how-to",
+        "how to",
+        "from scratch"
       ],
       "matched_tools": [],
       "feature_update": false,
