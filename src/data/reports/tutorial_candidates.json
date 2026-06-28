@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-28T05:30:14.307831",
+  "generated_at": "2026-06-28T17:35:11.285144",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 17,
     "for_news": 15,
-    "rejected_lang": 155,
+    "rejected_lang": 159,
     "already_covered": 0,
-    "total_scanned": 4464
+    "total_scanned": 4457
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
+        "how to",
         "step-by-step",
-        "how to"
+        "tutorial"
       ],
       "matched_tools": [
         "gemini",
@@ -74,8 +74,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "breakdown",
-        "how to"
+        "how to",
+        "breakdown"
       ],
       "matched_tools": [
         "claude"
@@ -126,8 +126,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -192,8 +192,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "build your",
-        "how to"
+        "how to",
+        "build your"
       ],
       "matched_tools": [
         "langchain",
@@ -245,8 +245,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
-        "step by step"
+        "step by step",
+        "tutorial"
       ],
       "matched_tools": [
         "chatgpt",
@@ -297,9 +297,9 @@
       "source_weight": 4.0,
       "ai_relevant": false,
       "pattern_hits": [
+        "how to",
         "guide",
-        "tutorial",
-        "how to"
+        "tutorial"
       ],
       "matched_tools": [
         "claude",
@@ -400,8 +400,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "breakdown",
-        "how to"
+        "how to",
+        "breakdown"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -511,7 +511,7 @@
       "text": "U.S. government will decide who gets to use GPT-5.6",
       "url": "https://www.washingtonpost.com/technology/2026/06/26/openai-says-us-government-will-vet-users-its-latest-ai-model/",
       "date": "2026-06-26",
-      "engagement": 2362.0,
+      "engagement": 2389.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -530,10 +530,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.15,
+      "score": 17.17,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.65,
+        "engagement_log": 11.67,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -735,6 +735,60 @@
       "id": "c7f7c9d65f0f3e0b"
     },
     {
+      "source": "articles:Creator Economy by Peter Yang",
+      "platform": "article",
+      "title": "Inside Anthropic’s Bet on Claude Agents that Work While You Sleep | Jess Yan",
+      "text": "<p>Dear subscribers,</p><p>Today, I want to share a new episode with Jess Yan.</p><p>As product lead at Anthropic, <a href=\"https://x.com/jess__yan\">Jess </a>has a first-hand look at how Anthropic teams are moving from prompting AI to building long-running agents that work overnight. In our episode, Jess showed me how to build a Claude analytics agent from scratch, then covered how Anthropic PMs use agents internally to understand the codebase, monitor customer feedback, and make better product decisions.</p><p>Watch now on <strong><a href=\"https://youtu.be/Xu5gz2qsaz8\">YouTube</a></strong>, <",
+      "url": "https://creatoreconomy.so/p/inside-anthropics-bet-on-claude-agents-jess-yan",
+      "date": "2026-06-28",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "from scratch",
+        "build a"
+      ],
+      "matched_tools": [
+        "claude",
+        "make"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": {
+        "platform": "youtube",
+        "url": "https://youtu.be/Xu5gz2qsaz8"
+      },
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 16.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 1.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "63929b9ceed47ed5"
+    },
+    {
       "source": "github:Python",
       "platform": "github",
       "title": "microsoft/markitdown — Python tool for converting files and office documents to Markdown.",
@@ -875,58 +929,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "1083a4446ba226cd"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "Building a RAG System from Scratch with pgvector and Gemini — Introduction",
-      "text": "<h2>\n  \n  \n  What This Guide Covers\n</h2>\n\n<p>When you start building LLM-powered applications, one pattern becomes unavoidable: <strong>RAG (Retrieval-Augmented Generation)</strong>.</p>\n\n<p>LLMs only know what they were trained on. Your company's internal documents, the latest spec sheets, project-specific information — none of that exists in the model. To handle data the model doesn't know, you need a system that retrieves relevant knowledge in real time and injects it into the context. That's RAG.</p>\n\n<p>In this guide, we'll implement a RAG system from scratch using pgvector and Gemini, t",
-      "url": "https://dev.to/hiroki-kameyama/building-a-rag-system-from-scratch-with-pgvector-and-gemini-introduction-c8i",
-      "date": "2026-06-27",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "guide",
-        "explained",
-        "step by step",
-        "from scratch"
-      ],
-      "matched_tools": [
-        "gemini",
-        "mcp"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "gemini uitgelegd voor Nederlandse teams — zonder de hype.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "a521c93cbc634afb"
     }
   ],
   "for_news": [
@@ -983,7 +985,7 @@
       "text": "Previewing GPT‑5.6 Sol: a next-generation model",
       "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
       "date": "2026-06-26",
-      "engagement": 1830.0,
+      "engagement": 1849.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1000,10 +1002,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.77,
+      "score": 16.78,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.27,
+        "engagement_log": 11.28,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1215,9 +1217,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "hands-on",
         "how to",
-        "guide"
+        "guide",
+        "hands-on"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1263,9 +1265,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "from scratch",
         "build a",
-        "walkthrough",
-        "from scratch"
+        "walkthrough"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1355,9 +1357,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build your",
         "how to",
-        "guide"
+        "guide",
+        "build your"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1369,7 +1371,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "eng_khairallah1",
-      "followers": 70036,
+      "followers": 70331,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1406,12 +1408,12 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build your",
-        "breakdown",
-        "build a",
-        "how to",
         "from scratch",
-        "build an"
+        "build a",
+        "breakdown",
+        "build an",
+        "how to",
+        "build your"
       ],
       "matched_tools": [
         "make",
@@ -1471,9 +1473,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
         "how to",
-        "guide"
+        "guide",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -1524,9 +1526,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "how to",
         "build a",
-        "how-to",
-        "how to"
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1562,6 +1564,59 @@
       "id": "1acc132351529995"
     },
     {
+      "source": "articles:Coder Coder",
+      "platform": "article",
+      "title": "Git ＆ GitHub | Beginners Tutorial (2026)",
+      "text": "\n<figure class=\"enclosure\"><p><img class=\"enclosure-thumbnail\" src=\"https://i1.ytimg.com/vi/h2a3Kw-I_Ec/hqdefault.jpg\" alt=\"\" title=\"Git &amp; GitHub | Beginners Tutorial (2026)\" /></p><p class=\"enclosure-content\"><a download=\"\" href=\"https://www.youtube.com/v/h2a3Kw-I_Ec?version=3\" data-type=\"application/x-shockwave-flash\" title=\"Git &amp; GitHub | Beginners Tutorial (2026)\">💾</a></p><figcaption class=\"enclosure-description\">Learn Git commands (git init, add, commit, log, branch, merge, revert) to stage and commit your files in this step-by-step beginner's tutorial.<br />\n<br />\n💥 Want to lea",
+      "url": "https://www.youtube.com/watch?v=h2a3Kw-I_Ec",
+      "date": "2026-06-28",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "from scratch",
+        "build a",
+        "how to",
+        "step-by-step",
+        "tutorial"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=h2a3Kw-I_Ec"
+      },
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 1.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Git in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "de33695afc380dab"
+    },
+    {
       "source": "articles:Artificial Intelligence on Medium",
       "platform": "article",
       "title": "Understanding Reasoning LLMs from Scratch: A Deep Dive into Inference-Time Compute Scaling",
@@ -1572,9 +1627,9 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "from scratch",
         "guide",
-        "deep dive",
-        "from scratch"
+        "deep dive"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1608,55 +1663,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "ec543497fdcf8276"
-    },
-    {
-      "source": "articles:Deep Learning on Medium",
-      "platform": "article",
-      "title": "How to Build a Vision Language Model from Scratch Using Q-Former, Contrastive Learning, and LoRA",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@mithilmaske/how-to-build-a-vision-language-model-from-scratch-using-q-former-contrastive-learning-and-lora-feeaa42af0b0?source=rss------deep_learning-5\"><img src=\"https://cdn-images-1.medium.com/max/2600/1*VOuiQj02ouPocqeOjmWKDA.png\" width=\"2816\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Train an image captioning and visual question answering model on 50,000 images in under 4 hours on a single GPU.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://mediu",
-      "url": "https://medium.com/@mithilmaske/how-to-build-a-vision-language-model-from-scratch-using-q-former-contrastive-learning-and-lora-feeaa42af0b0?source=rss------deep_learning-5",
-      "date": "2026-06-27",
-      "engagement": 40.1,
-      "source_weight": 0.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "how-to",
-        "how to",
-        "from scratch"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": true,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.57,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.57,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "41b29cfe4772dc20"
     }
   ]
 }
