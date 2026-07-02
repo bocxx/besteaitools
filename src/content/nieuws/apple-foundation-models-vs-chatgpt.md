@@ -39,7 +39,7 @@ Sinds iOS 26 zit er een AI-model ín je iPhone dat gratis en offline werkt. Geen
 
 Het is het on-device AI-model dat achter Apple Intelligence zit, sinds iOS 26 toegankelijk voor apps via een Swift-API ([Bron: Apple Developer](https://developer.apple.com/documentation/FoundationModels)). "On-device" is het sleutelwoord: het model draait op je toestel zelf, niet in een datacenter. Daardoor werkt het offline en blijft alles wat je erin stopt op je iPhone.
 
-De prijs van die privacy is omvang. Het gaat om een model van zo'n 3 miljard parameters dat lokaal draait op Apple Silicon: iPhone 15 Pro en nieuwer, M-serie iPads en alle M-serie Macs ([Bron: Stora](https://stora.sh/blog/2026-04-21-apple-foundation-models-framework-ios-26-integration-guide)). Klein en snel, maar geen alleskunner.
+De prijs van die privacy is omvang. Het gaat om een model van zo'n 3 miljard parameters dat lokaal draait op Apple Silicon: iPhone 15 Pro en nieuwer, M-serie iPads en alle M-serie Macs ([Bron: Stora](https://stora.sh/blog/2026-04-21-apple-foundation-models-framework-ios-26-integration-guide)). Klein en snel, maar geen alleskunner. Wil je lokaal méér kracht dan zo'n 3B-model, dan kun je op een Mac of pc zelf grotere modellen draaien — zie onze gids over [open-weight modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien).
 
 ## Waar het lokale model in uitblinkt
 

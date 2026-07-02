@@ -77,7 +77,7 @@ Als de agent vraagt om toegang tot Google Drive of Slack — bijvoorbeeld omdat 
 
 ## Stap 4: Doe iets anders gedurende 15-20 minuten
 
-Dit is het deel waar de Notion Agent zich onderscheidt van traditionele AI-assistenten: hij draait door zonder dat jij hoeft mee te kijken. Tot 20 minuten autonoom werk per opdracht. Maak koffie, doe een meeting, beantwoord wat e-mails. De agent meldt zich als hij klaar is — of als hij vastloopt en input nodig heeft.
+Dit is het deel waar de Notion Agent zich onderscheidt van traditionele AI-assistenten: hij draait door zonder dat jij hoeft mee te kijken. Tot 20 minuten autonoom werk per opdracht. Maak koffie, doe een meeting, beantwoord wat e-mails. De agent meldt zich als hij klaar is — of als hij vastloopt en input nodig heeft. Wil je dit soort autonoom werk breder trekken dan Notion, dan is onze gids over [Claude Managed Agents](/nieuws/claude-managed-agents-bouwen) een logische volgende stap.
 
 Bij voorkeur laat je hem doorlopen tot het einde voor je terugkijkt. Onderbreken kost vaak meer dan het oplevert.
 

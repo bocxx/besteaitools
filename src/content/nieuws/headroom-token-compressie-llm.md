@@ -101,7 +101,7 @@ Headroom registreert zichzelf als een MCP-tool die je agent automatisch beschikb
 
 Twee eigenschappen die relevant zijn als je dit in een zakelijke context inzet:
 
-**Lokaal-first.** Headroom draait volledig op jouw machine. Er gaan geen data naar een derde service voor compressie. De compressie-logica draait lokaal.
+**Lokaal-first.** Headroom draait volledig op jouw machine. Er gaan geen data naar een derde service voor compressie. De compressie-logica draait lokaal. Dezelfde filosofie kun je doortrekken naar het model zelf: in onze gids over [open-weight modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien) lees je welke modellen daarvoor in aanmerking komen.
 
 **Reversibel.** Headroom slaat originelen op in een lokale cache (CCR — Content-Compressed Retrieval). Als de LLM iets meer detail nodig heeft, kan die het origineel opvragen. Compressie is dus geen verlies-compressie waarbij je data kwijtraakt.
 

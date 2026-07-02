@@ -92,7 +92,7 @@ Gebruik AI als een eerste code-review. Selecteer je wijzigingen en vraag:
 
 > *"Review deze code op: (1) mogelijke bugs, (2) beveiligingsproblemen, (3) performance-bottlenecks. Geef per punt een concrete suggestie."*
 
-Dit vangt de meest voor de hand liggende problemen op voor je een collega vraagt te kijken — en dat scheelt iedereen tijd.
+Dit vangt de meest voor de hand liggende problemen op voor je een collega vraagt te kijken — en dat scheelt iedereen tijd. Wil je specifiek op beveiligingsfouten scannen, dan gaat onze gids over [GLM 5.2 voor code-security](/nieuws/z-ai-glm-52-code-security) daar dieper op in.
 
 ## Checklist: ben je klaar?
 

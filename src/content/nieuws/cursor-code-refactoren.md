@@ -59,7 +59,7 @@ Composer stageert iedere wijziging als een diff met goedkeuring per bestand. Nie
 
 ## Stap 5 — Draai je tests, dan pas door
 
-Een refactor is per definitie geslaagd als het gedrag gelijk blijft. Draai daarom je testsuite ná elke geaccepteerde wijziging, niet pas aan het eind van de dag. Zo weet je meteen welke stap iets brak, in plaats van te moeten zoeken in een berg veranderingen. Voor een breder beeld van waar AI-code juist technische schuld toevoegt in plaats van weghaalt, lees je de duiding op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/).
+Een refactor is per definitie geslaagd als het gedrag gelijk blijft. Draai daarom je testsuite ná elke geaccepteerde wijziging, niet pas aan het eind van de dag. Zo weet je meteen welke stap iets brak, in plaats van te moeten zoeken in een berg veranderingen. Check na een grote refactor ook de autorisatielaag: onze gids over [GLM 5.2 voor code-security](/nieuws/z-ai-glm-52-code-security) laat zien hoe je goedkoop op IDOR-fouten scant. Voor een breder beeld van waar AI-code juist technische schuld toevoegt in plaats van weghaalt, lees je de duiding op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/).
 
 ## Checklist: ben je klaar?
 

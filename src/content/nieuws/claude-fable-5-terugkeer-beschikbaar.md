@@ -56,7 +56,7 @@ De exportcontroles werden op 30 juni formeel opgeheven door de Amerikaanse overh
 
 ## Wat maakt Fable 5 anders dan de andere Claude-modellen?
 
-Fable 5 is Anthropics krachtigste model voor complexe redeneerwerk, lange agentic workflows en wetenschappelijke analyses. Het onderscheidt zich van Claude Opus 4.8 en Haiku 4.5 door betere prestaties op meerstaps-problemen waarbij het model zelf beslist welke tools het inzet.
+Fable 5 is Anthropics krachtigste model voor complexe redeneerwerk, lange agentic workflows en wetenschappelijke analyses. Het onderscheidt zich van Claude Opus 4.8 en Haiku 4.5 door betere prestaties op meerstaps-problemen waarbij het model zelf beslist welke tools het inzet. Wil je zulke lange, autonome taken in productie draaien, dan is [Claude Managed Agents](/nieuws/claude-managed-agents-bouwen) daarvoor de aangewezen infrastructuur.
 
 > **Tip**: Werk je al met Claude in je dagelijkse workflow? Lees dan ook hoe je [Claude instelt in één dag via 6 tools](/nieuws/claude-instellen-1-dag-6-tools) om direct meer uit Fable 5 te halen.
 
