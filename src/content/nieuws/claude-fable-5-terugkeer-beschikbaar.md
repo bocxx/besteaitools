@@ -2,6 +2,7 @@
 title: "Claude Fable 5 weer beschikbaar: wat veranderde er en hoe krijg je toegang"
 description: "Vanaf 1 juli 2026 is Claude Fable 5 wereldwijd terug beschikbaar op Claude.ai, Claude Code en Cowork. De VS-exportcontroles zijn opgeheven; Anthropic voegde een nieuwe veiligheidsclassificator toe."
 publishedAt: 2026-07-01
+updatedAt: 2026-07-01
 author: "Redactie"
 category: "gids"
 tags:

@@ -2,7 +2,7 @@
 title: "Werken met Claude Projects: geef Claude context die blijft hangen"
 description: "Stop met je achtergrond steeds opnieuw plakken. Met Claude Projects bundel je documenten en instructies, zodat elke chat je werk al kent. Zo stel je het in."
 publishedAt: 2026-06-25
-updatedAt: 2026-06-25
+updatedAt: 2026-07-03
 author: "Redactie"
 category: "gids"
 tags:
@@ -22,18 +22,20 @@ keyTakeaways:
   - "Een Project bundelt instructies, documenten en chats rond één onderwerp, zodat Claude je context kent zonder dat je 'm telkens opnieuw plakt."
   - "De projectkennis (uploads plus instructies) geldt voor elke chat binnen het Project — ideaal voor een lopende klus, klant of vakgebied."
   - "Projecten zijn onderdeel van het betaalde Pro-plan; daar zijn ze onbeperkt beschikbaar."
-  - "Claude draait op Pro standaard op Sonnet 4.6, met beperkte toegang tot het zwaardere Opus-model voor complexere taken."
+  - "Claude draait op Pro standaard op Sonnet 5, met beperkte toegang tot het zwaardere Opus-model voor complexere taken."
   - "Zet je vaste werkwijze in de projectinstructies één keer goed neer — dat bepaalt de kwaliteit van elk antwoord daarna."
 faq:
   - q: "Wat is een Claude Project precies?"
     a: "Een Project is een aparte werkruimte binnen Claude die drie dingen samenhoudt: vaste instructies (hoe Claude moet werken), geüploade documenten (jouw kennis) en alle chats die je binnen het Project voert. Alles wat je in een Project zet, kan Claude in elke chat daarbinnen gebruiken. Het verschil met een losse chat is dat de context blijft hangen: je hoeft je achtergrond, stijl of bronbestanden niet bij elke nieuwe vraag opnieuw te geven."
   - q: "Heb ik een betaald abonnement nodig voor Projects?"
-    a: "Ja. Projecten zitten in het betaalde Pro-plan van Claude (rond 20 dollar per maand), waar ze onbeperkt beschikbaar zijn. Het gratis plan geeft je toegang tot Claude zelf, Artifacts, basis-websearch en chatgeheugen, maar niet tot Projects. Prijzen en plan-indeling veranderen geregeld, dus check de actuele situatie op claude.com voordat je upgradet."
+    a: "Ja. Projecten zitten in het betaalde Pro-plan van Claude (rond €18 per maand, excl. btw), waar ze onbeperkt beschikbaar zijn. Het gratis plan geeft je toegang tot Claude zelf, Artifacts, basis-websearch en chatgeheugen, maar niet tot Projects. Prijzen en plan-indeling veranderen geregeld, dus check de actuele situatie op claude.com voordat je upgradet."
   - q: "Welk Claude-model gebruik ik in een Project?"
-    a: "Op het Pro-plan draait Claude standaard op Sonnet 4.6, het gebalanceerde model dat voor de meeste taken ruim voldoet. Voor de zwaarste redeneer- of analysetaken is er beperkte toegang tot een Opus-model, de krachtigste variant. Je kunt het model meestal per gesprek kiezen. Voor het bundelen van context in een Project maakt het model niet uit — de projectkennis werkt met elk model dat je kiest."
+    a: "Op het Pro-plan draait Claude standaard op Sonnet 5, het gebalanceerde model dat voor de meeste taken ruim voldoet. Voor de zwaarste redeneer- of analysetaken is er beperkte toegang tot een Opus-model, de krachtigste variant. Je kunt het model meestal per gesprek kiezen. Voor het bundelen van context in een Project maakt het model niet uit — de projectkennis werkt met elk model dat je kiest."
   - q: "Wat zet ik in de projectinstructies?"
     a: "Alles wat je anders bij elke chat zou herhalen. Denk aan: wie je bent en voor welke organisatie je werkt, in welke taal en toon je antwoorden wilt, welke termen of huisstijl je hanteert, en wat het doel van het Project is. Hoe concreter, hoe beter. 'Schrijf in helder Nederlands, vermijd jargon, en houd antwoorden onder de 300 woorden' levert merkbaar consistentere output dan een vage opdracht. Je kunt de instructies op elk moment bijschaven."
 ---
+
+> **ℹ️ Update 3 juli 2026:** Op Pro is het standaardmodel nu Claude Sonnet 5 (uit 30 juni 2026; voorheen Sonnet 4.6). Claude Pro genoteerd als €18 p/m (excl. btw), in de VS $20.
 
 Veruit de meeste mensen gebruiken Claude als een losse chatbox: vraag stellen, antwoord krijgen, venster sluiten. Functioneel, maar je begint elke keer weer bij nul. Claude moet telkens opnieuw horen wie je bent, waar je aan werkt en hoe je je antwoorden wilt. Projects lost dat op — en het is de snelste manier om Claude van een handige assistent naar een ingewerkte collega te tillen.
 
@@ -59,7 +61,7 @@ Projecten zitten in het betaalde Pro-plan, waar ze onbeperkt beschikbaar zijn. H
 
 ## Het model onder de motorkap
 
-Op Pro draait Claude standaard op Sonnet 4.6, een gebalanceerd model dat voor de meeste taken ruim voldoet. Voor de zwaarste redeneer- of analyseklussen is er beperkte toegang tot het krachtigere Opus-model. Voor het werken met projectcontext maakt de modelkeuze niet uit — de projectkennis werkt met elk model dat je kiest.
+Op Pro draait Claude standaard op Sonnet 5, een gebalanceerd model dat voor de meeste taken ruim voldoet. Voor de zwaarste redeneer- of analyseklussen is er beperkte toegang tot het krachtigere Opus-model. Voor het werken met projectcontext maakt de modelkeuze niet uit — de projectkennis werkt met elk model dat je kiest.
 
 > **⚡ Gevorderden:** Maak aparte Projecten per type werk in plaats van één grote bak. Een Project "Klantmails" met je toon en voorbeelden levert scherpere output dan een algemeen Project waarin alles door elkaar loopt. Hoe specifieker de context, hoe beter het antwoord.
 

@@ -24,10 +24,11 @@ const DIRS = ['nieuws', 'digest'];
 const WIDTHS = [
   { size: 400, suffix: '-400w' },
   { size: 600, suffix: '-600w' },
+  { size: 750, suffix: '-750w' },
   { size: 1024, suffix: '-1024w' }
 ];
 
-const VARIANT_RE = /-(400w|600w|1024w)\.webp$/;
+const VARIANT_RE = /-(400w|600w|750w|1024w)\.webp$/;
 
 async function processDir(dir) {
   const absDir = path.join(publicImages, dir);

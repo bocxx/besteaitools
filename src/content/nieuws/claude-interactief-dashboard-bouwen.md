@@ -3,7 +3,7 @@ title: "In één weekend een live dashboard bouwen met Claude — zo doe je het"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'In één weekend een live dashboard bouwen met Claude — zo doe je het'"
 description: "Een Reddit-gebruiker bouwde een 3D-nieuwsglobe met live-data en Claude als bouwpartner. Hoe doe je zoiets — ook als je geen programmeur bent? Stappenplan voor je eigen interactief dashboard."
 publishedAt: 2026-07-02
-updatedAt: 2026-07-02
+updatedAt: 2026-07-03
 author: "Redactie"
 category: "gids"
 tags:
@@ -30,7 +30,7 @@ faq:
   - q: "Heb ik programmeerkennis nodig om een dashboard te bouwen met Claude?"
     a: "Nee, maar een basisgevoel voor hoe browsers werken (HTML, een browser openen, een bestand opslaan) helpt. Claude schrijft alle code; jij kopieert die naar een bestand en opent het in je browser. Geen installaties, geen command line — tenzij je verder wilt gaan."
   - q: "Welke Claude-versie heb ik nodig?"
-    a: "Claude.ai gratis werkt voor eenvoudige projecten. Voor complexere dashboards (meerdere databronnen, kaarten, interactiviteit) werkt Claude Pro of Fable 5 beter — het model houdt meer context bij en maakt minder fouten in lange codebases. Een Pro-abonnement kost $20/maand."
+    a: "Claude.ai gratis werkt voor eenvoudige projecten. Voor complexere dashboards (meerdere databronnen, kaarten, interactiviteit) werkt Claude Pro of Fable 5 beter — het model houdt meer context bij en maakt minder fouten in lange codebases. Een Pro-abonnement kost €18/maand (excl. btw)."
   - q: "Kan Claude ook live data ophalen uit het internet?"
     a: "Claude zelf haalt geen live data op — maar het schrijft wel de code die jouw browser dat laat doen via publieke API's. Gratis API's met AI-nieuws, weer, aandelenkoersen en kaartdata zijn er genoeg; Claude helpt je ze te vinden en koppelen."
   - q: "Wat is het verschil tussen een prototype en een echte app?"
@@ -95,7 +95,7 @@ De nieuwsglobe van de Reddit-maker was ambitieuzer dan dit — meerdere data-lag
 
 > **💡 Beginner-tip:** Sla elke werkende versie op als een apart bestand (`dashboard-v1.html`, `dashboard-v2.html`). Claude maakt soms een stap vooruit en twee stappen terug. Met versiegeschiedenis kun je altijd terugkeren naar een versie die wél werkte.
 
-Wil je Claude uitproberen voor jouw eigen project? Start op [claude.ai](https://claude.ai) — gratis toegang is er voor eenvoudige projecten, Pro ($20/maand) voor de complexere bouw.
+Wil je Claude uitproberen voor jouw eigen project? Start op [claude.ai](https://claude.ai) — gratis toegang is er voor eenvoudige projecten, Pro (€18/maand, excl. btw) voor de complexere bouw.
 
 ---
 

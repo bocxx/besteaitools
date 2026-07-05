@@ -37,7 +37,7 @@ const showImage = !!heroImage;
 const hasResponsiveVariants =
   !!heroImage && /\/images\/(nieuws|digest)\/.*\.webp$/.test(heroImage);
 const srcset = hasResponsiveVariants
-  ? `${heroImage!.replace(/\.webp$/, '-400w.webp')} 400w, ${heroImage!.replace(/\.webp$/, '-600w.webp')} 600w, ${heroImage!.replace(/\.webp$/, '-1024w.webp')} 1024w`
+  ? `${heroImage!.replace(/\.webp$/, '-400w.webp')} 400w, ${heroImage!.replace(/\.webp$/, '-600w.webp')} 600w, ${heroImage!.replace(/\.webp$/, '-750w.webp')} 750w, ${heroImage!.replace(/\.webp$/, '-1024w.webp')} 1024w`
   : undefined;
 
 const cat = nieuwsCategoryConfig[category] ?? nieuwsCategoryConfig.nieuws;

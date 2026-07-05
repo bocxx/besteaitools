@@ -2,6 +2,7 @@
 title: "Claude in Microsoft Foundry: nu beschikbaar op Azure zonder apart Anthropic-account"
 description: "Claude Opus 4.8 en Haiku 4.5 zijn vanaf 29 juni algemeen beschikbaar in Microsoft Foundry. Gebruik Claude via je bestaande Azure-omgeving — met dezelfde authenticatie, facturering en compliance."
 publishedAt: 2026-06-30
+updatedAt: 2026-06-30
 author: "Redactie"
 category: "gids"
 tags:

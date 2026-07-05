@@ -4,7 +4,7 @@ heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Wat is Claude AI? De c
 heroImage: "/images/nieuws/wat-is-claude-ai.webp"
 description: "Claude is de AI-assistent van Anthropic: sterk in lange documenten, schrijven en code, en sinds 2026 ook de motor achter agents als Cowork. Wat het kan, wat het kost en waar je op let met bedrijfsdata."
 publishedAt: 2026-06-10
-updatedAt: 2026-06-10
+updatedAt: 2026-07-03
 author: "Redactie"
 category: "gids"
 tags:
@@ -22,13 +22,13 @@ readingTime: 8
 heroScene: "A small chrome robot with a glowing coral starburst emblem sorts miniature paper contracts into wooden drawers"
 keyTakeaways:
   - "Claude is de AI-assistent van Anthropic, opgericht in 2021 door oud-OpenAI-onderzoekers. Het onderscheidt zich met sterke analyse van lange documenten en een nadruk op veiligheid."
-  - "Er is een gratis basisplan; Pro kost $20 per maand en bevat ook Claude Code en de Cowork-agentmodus in de desktop-app. Max ($100-200) is voor zwaar agent-gebruik."
+  - "Er is een gratis basisplan; Pro kost €18 per maand (excl. btw) en bevat ook Claude Code en de Cowork-agentmodus in de desktop-app. Max ($100-200) is voor zwaar agent-gebruik."
   - "Sinds 9 juni 2026 is Claude Fable 5 het krachtigste beschikbare model — tot 22 juni zonder meerkosten in Pro, Max en Team. Voor dagelijks werk volstaat het standaardmodel ruimschoots."
   - "Met Cowork (desktop-app) laat je Claude zelfstandig taken afwerken in je eigen mappen en bestanden — agents zonder dat je hoeft te programmeren."
   - "Claude is GDPR-ready maar biedt geen EU-hosting. Wees dus terughoudend met gevoelige klantdata en leg intern vast wat er wel en niet in mag."
 faq:
   - q: "Is Claude AI gratis?"
-    a: "Er is een gratis basisplan waarmee je Claude in de browser of app gebruikt, met een beperkt aantal berichten per dag. Voor dagelijks werkgebruik is Pro ($20 per maand) de realistische instap: hogere limieten, toegang tot de krachtigste modellen en de agent-functies Cowork en Claude Code zitten erbij."
+    a: "Er is een gratis basisplan waarmee je Claude in de browser of app gebruikt, met een beperkt aantal berichten per dag. Voor dagelijks werkgebruik is Pro (€18 per maand, excl. btw) de realistische instap: hogere limieten, toegang tot de krachtigste modellen en de agent-functies Cowork en Claude Code zitten erbij."
   - q: "Spreekt Claude Nederlands?"
     a: "Ja, en goed. Claude schrijft, redigeert en vat samen in vloeiend Nederlands, inclusief zakelijke teksten als offertes en rapporten. Je kunt Nederlandse documenten uploaden en er in het Nederlands vragen over stellen. De interface zelf is Engelstalig."
   - q: "Wat is Claude Fable 5?"
@@ -40,6 +40,8 @@ faq:
   - q: "Is Claude beter dan ChatGPT?"
     a: "Anders. Claude is sterker in lange documenten, genuanceerd schrijfwerk en code; ChatGPT heeft een breder ecosysteem met beeldgeneratie en een ruimere gratis versie. Veel professionals gebruiken beide naast elkaar. Onze uitgebreide vergelijking zet de verschillen per taak op een rij."
 ---
+
+> **ℹ️ Update 3 juli 2026:** Anthropic bracht op 30 juni Claude Sonnet 5 uit — inmiddels het standaard-werkpaardmodel (voorheen Sonnet 4.6). Claude Pro is hier genoteerd als €18 p/m (excl. btw); in de VS is dat $20.
 
 Claude is de AI-assistent van Anthropic en het belangrijkste alternatief voor ChatGPT. Het verwerkt complete contracten en rapporten in één keer, schrijft genuanceerd Nederlands en is sinds 2026 ook de motor achter agents die zelfstandig taken afwerken op je computer. Deze gids legt uit wat Claude is, wat het kost en waar je als ondernemer op moet letten.
 
@@ -69,7 +71,7 @@ Claude draait op een familie van modellen. Je hoeft meestal niets te kiezen — 
 |---|---|---|
 | **Fable 5** | Nieuwste vlaggenschip (Mythos-klasse) | Lange, complexe taken; tijdelijk in Pro/Max |
 | **Opus 4.8** | Krachtigste reguliere model | Zwaar denk- en schrijfwerk |
-| **Sonnet 4.6** | Het werkpaard | Dagelijks gebruik, beste balans |
+| **Sonnet 5** | Het werkpaard | Dagelijks gebruik, beste balans |
 | **Haiku 4.5** | Snel en goedkoop | Simpele taken, hoge volumes |
 
 Over Fable 5: Anthropic lanceerde het op 9 juni 2026 als het krachtigste algemeen beschikbare model tot nu toe. Tot en met 22 juni zit het zonder meerkosten in de betaalde abonnementen. Indrukwekkend, maar laat je er niet door opjagen: voor offertes, mails en samenvattingen merk je het verschil met Sonnet nauwelijks. De voorsprong zit in taken van uren, niet van minuten. Wie de details wil: [Het Laatste AI Nieuws zocht uit wat Fable 5 wél en niet kan](https://www.hetlaatsteainieuws.nl/nieuws/claude-fable-5-mythos-5).
@@ -79,7 +81,7 @@ Over Fable 5: Anthropic lanceerde het op 9 juni 2026 als het krachtigste algemee
 | Plan | Prijs | Wat je krijgt |
 |---|---|---|
 | **Gratis** | $0 | Basistoegang, beperkt aantal berichten |
-| **Pro** | $20/maand | Hogere limieten, Cowork, Claude Code |
+| **Pro** | €18/maand (excl. btw) | Hogere limieten, Cowork, Claude Code |
 | **Max** | $100–200/maand | Veel hogere limieten voor zwaar agent-gebruik |
 | **Team / Enterprise** | Per gebruiker | Gedeelde werkruimte, beheer, hogere datagaranties |
 
@@ -110,7 +112,7 @@ De vraag die elke ondernemer stelt. Het korte antwoord: Claude wint op lange doc
 ## Zo begin je
 
 1. **Maak een gratis account** op claude.ai en test een week met echte taken uit je werk — een offerte herschrijven, een rapport samenvatten.
-2. **Bevalt het, neem Pro** ($20 per maand) en download de desktop-app. Daarmee krijg je ook Cowork en Claude Code erbij.
+2. **Bevalt het, neem Pro** (€18 per maand, excl. btw) en download de desktop-app. Daarmee krijg je ook Cowork en Claude Code erbij.
 3. **Richt het goed in.** Onze gids [Claude instellen op één dag](/nieuws/claude-instellen-1-dag-6-tools) loopt alle instellingen langs, van projecten tot geheugen.
 
 Claude is medio 2026 de meest capabele assistent voor tekst- en denkwerk, en via Cowork de toegankelijkste route naar AI-agents voor wie niet programmeert. De gratis versie kost je alleen een uurtje proberen.
