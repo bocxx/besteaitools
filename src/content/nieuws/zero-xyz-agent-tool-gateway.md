@@ -60,7 +60,7 @@ zero.xyz is geen alternatief voor MCP, maar bouwt erbovenop. De gateway acceptee
 **Niet:**
 - Je hebt 1-2 vaste integraties met specifieke SaaS-tools (Notion, Salesforce, etc.). Daarvoor is Composio of een eigen MCP-server vaak directer.
 - Je werkt aan productie-systemen met strikte compliance-eisen. zero.xyz is jong; voor enterprise wil je waarschijnlijk in een controleerbaar netwerk blijven.
-- Je hebt geen budget voor variabele kosten. De 5 euro startkrediet is genoeg voor experimenten, maar serieus gebruik gaat geld kosten.
+- Je hebt geen budget voor variabele kosten. De 5 euro startkrediet is genoeg voor experimenten, maar serieus gebruik gaat geld kosten — een patroon dat je breder ziet in agent-land, nu ook [Lindy zijn gratis plan heeft geschrapt](/nieuws/lindy-schrapt-gratis-plan).
 - Je wantrouwt agent-payments principieel. x402 is open en transparant, maar de hele "agent betaalt zelf"-cyclus is nieuw genoeg dat sommige teams er eerst regels voor willen zien.
 
 ## Aan de slag in 3 minuten

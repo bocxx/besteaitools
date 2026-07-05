@@ -54,6 +54,8 @@ Hoeveel uur per week doe je dingen die altijd hetzelfde zijn? E-mails doorsturen
 
 > **💡 Beginner-tip:** Als je voor het eerst met automatisering begint, kies dan Zapier. Ga naar [zapier.com](https://zapier.com), maak een gratis account en klik op **Create Zap**. Kies een trigger (bijv. "nieuw e-mail in Gmail") en een actie (bijv. "maak taak in Todoist"). Je eerste automatisering werkt in 5 minuten.
 
+Zoek je geen losse workflows maar een kant-en-klare "AI-medewerker" voor mail en agenda, dan kom je al snel bij Lindy uit — al [schrapte Lindy medio 2026 zijn gratis plan](/nieuws/lindy-schrapt-gratis-plan), waardoor gratis experimenteren juist bij de drie tools hierboven blijft.
+
 ## Stap 1: kies de juiste eerste automatisering
 
 De meest gemaakte fout: beginnen met een complexe workflow. Kies één kleine, repetitieve taak die je dagelijks of wekelijks handmatig doet. Goede startpunten:
