@@ -65,7 +65,7 @@ Hier zit waarschijnlijk de scherpste keuze van 2026:
 | API premium | — | GPT-5.5-pro: $30/$180 per 1M |
 | Goedkope laag | Haiku 4.5: $1/$5 per 1M | GPT-5.4: $2.50/$15 per 1M |
 
-Het verhaal op het consumentenniveau is gelijk; daarboven scheelt het flink. Op de API kies je vaak op latency, betrouwbaarheid en welk model jouw specifieke taak het beste oplost — niet alleen op prijs.
+Het verhaal op het consumentenniveau is gelijk; daarboven scheelt het flink. Op de API kies je vaak op latency, betrouwbaarheid en welk model jouw specifieke taak het beste oplost — niet alleen op prijs. Wil je Claude eerst gratis proberen voordat je kiest, dan is een [Claude-account aanmaken](/nieuws/claude-account-aanmaken) in vijf minuten gebeurd.
 
 ## Ecosysteem en integraties
 

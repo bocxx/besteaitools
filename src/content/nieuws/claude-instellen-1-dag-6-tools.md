@@ -132,7 +132,7 @@ Cowork is de modus binnen de Claude-desktopapp waarmee Claude een map op je comp
 **Wat je nu doet (stap voor stap):**
 
 1. Ga naar [claude.com/download](https://claude.com/download) en download de desktopapp voor jouw besturingssysteem.
-2. Installeer de app, log in met je betaalde Claude-account, en open hem.
+2. Installeer de app, log in met je betaalde Claude-account, en open hem. Nog helemaal geen account? [Zo maak je er in vijf minuten een aan](/nieuws/claude-account-aanmaken).
 3. In de linkerbovenhoek zie je drie tabbladen: **Chat**, **Cowork** en **Code**. Klik op **Cowork**.
 4. Maak ergens op je computer een nieuwe map aan. Naam vrij — bijvoorbeeld "Claude Cowork" — als je 'm maar terug kunt vinden, op je bureaublad of in je Documents-map.
 5. Selecteer die map binnen Cowork (de app vraagt erom bij eerste gebruik).

@@ -111,7 +111,7 @@ De vraag die elke ondernemer stelt. Het korte antwoord: Claude wint op lange doc
 
 ## Zo begin je
 
-1. **Maak een gratis account** op claude.ai en test een week met echte taken uit je werk — een offerte herschrijven, een rapport samenvatten.
+1. **Maak een gratis account** op claude.ai en test een week met echte taken uit je werk — een offerte herschrijven, een rapport samenvatten. Onze gids [Claude-account aanmaken](/nieuws/claude-account-aanmaken) loopt de aanmelding stap voor stap door, inclusief de sms-verificatie.
 2. **Bevalt het, neem Pro** (€18 per maand, excl. btw) en download de desktop-app. Daarmee krijg je ook Cowork en Claude Code erbij.
 3. **Richt het goed in.** Onze gids [Claude instellen op één dag](/nieuws/claude-instellen-1-dag-6-tools) loopt alle instellingen langs, van projecten tot geheugen.
 

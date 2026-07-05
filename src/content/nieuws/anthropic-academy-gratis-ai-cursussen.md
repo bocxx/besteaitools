@@ -63,6 +63,6 @@ Daarboven zit het zware werk. **Building with the Claude API** is met ruim acht 
 
 ## Is het de moeite waard?
 
-Voor een MKB'er of zelfstandige die AI serieuzer wil inzetten, is de drempel hier zo laag als hij kan zijn: gratis, in je eigen tempo, en met een tastbaar bewijs aan het eind. De cursussen zijn van de makers zelf, dus je leert het gereedschap zoals het bedoeld is — zonder de ruis van losse YouTube-tutorials.
+Voor een MKB'er of zelfstandige die AI serieuzer wil inzetten, is de drempel hier zo laag als hij kan zijn: gratis, in je eigen tempo, en met een tastbaar bewijs aan het eind. De cursussen zijn van de makers zelf, dus je leert het gereedschap zoals het bedoeld is — zonder de ruis van losse YouTube-tutorials. Wil je tijdens de lessen meteen meedoen in Claude zelf, dan is een [gratis Claude-account](/nieuws/claude-account-aanmaken) zo aangemaakt.
 
 Wil je eerst weten waar Claude staat op het gebied van privacy en je data voor je je erin verdiept? Lees dan [Is Claude Europees? En wat dat betekent voor je data](https://hetlaatsteainieuws.nl/nieuws/anthropic-claude-4-europa) op hetlaatsteainieuws.nl.

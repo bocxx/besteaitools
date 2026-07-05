@@ -49,7 +49,7 @@ Werk je aan een terugkerend onderwerp — een klant, een verslag, een vak — da
 
 ## Zo stel je een Project in
 
-Projecten zitten in het betaalde Pro-plan, waar ze onbeperkt beschikbaar zijn. Het opzetten kost een paar minuten:
+Projecten zitten in het betaalde Pro-plan, waar ze onbeperkt beschikbaar zijn. Nog geen Claude-account? Begin dan bij onze gids [Claude-account aanmaken](/nieuws/claude-account-aanmaken) — upgraden naar Pro kan daarna altijd. Het opzetten kost een paar minuten:
 
 **Stap 1 — Maak een Project aan** en geef het een duidelijke naam, bijvoorbeeld de klant of het onderwerp waar het om draait.
 
