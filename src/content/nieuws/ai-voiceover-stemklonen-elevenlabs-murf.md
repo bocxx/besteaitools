@@ -85,6 +85,8 @@ Upload het bestand, geef de stem een naam en klik **Add Voice**. Binnen een minu
 
 **Test de kloon** met een stuk tekst dat je niet hebt gebruikt in de trainingsopname. Zo zie je hoe goed de AI generaliseert naar nieuwe tekst.
 
+Leuk detail: de technologie die stemklonen groot maakte, heeft Belgische roots — het beroemde open-source-project Real-Time-Voice-Cloning komt van een Belgische ML-engineer, zoals je leest in ons portret van [de Nederlandse en Belgische bouwers achter trending AI](/nieuws/nederlandse-belgische-bouwers-trending-ai).
+
 ## Stap 4: exporteer en synchroniseer met video
 
 Download de audio als MP3 (voor web en sociale media) of WAV (voor professionele productie). In ElevenLabs kun je ook direct een script uploaden en per alinea een andere stem kiezen — handig voor dialogen.

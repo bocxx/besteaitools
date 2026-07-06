@@ -49,7 +49,7 @@ Het idee erachter is scherp. In een codeersessie heb je zelden de omhaal nodig �
 
 Minder output-tokens betekent twee dingen: lagere kosten (je betaalt per token) en snellere antwoorden (minder tekst om te genereren). Bij lange sessies of repetitieve klussen tikt dat aan. Reken alleen niet blind op die 65% — dat is de winst bij verbose taken. Bij antwoorden die toch al kort waren, is het verschil klein.
 
-Een prettige eigenschap voor wie op privacy let: Caveman heeft naar eigen zeggen geen telemetrie, geen account en geen backend. Na installatie zijn er geen netwerkcalls; de skill is een prompt met lokale scripts. Met ruim 80.000 sterren op GitHub is het een van de populairste agent-skills van dit moment.
+Een prettige eigenschap voor wie op privacy let: Caveman heeft naar eigen zeggen geen telemetrie, geen account en geen backend. Na installatie zijn er geen netwerkcalls; de skill is een prompt met lokale scripts. Met ruim 80.000 sterren op GitHub is het een van de populairste agent-skills van dit moment — gebouwd door een Nederlandse ontwikkelaar bovendien, zoals we laten zien in ons portret van [de Nederlandse en Belgische bouwers achter trending AI](/nieuws/nederlandse-belgische-bouwers-trending-ai).
 
 Installeren gaat zoals bij elke andere skill; werk je nog niet met skills, lees dan eerst onze uitleg over [Claude Code-skills instellen](/nieuws/claude-code-skills-instellen). Wie z'n Claude-sessies verder wil opschalen, vindt in [meerdere parallelle agents in Claude Code desktop](/nieuws/claude-code-desktop-parallelle-sessies) een logische volgende stap.
 
