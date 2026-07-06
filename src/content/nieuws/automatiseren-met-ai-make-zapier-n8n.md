@@ -38,7 +38,7 @@ faq:
     a: "Populaire toepassingen: (1) inkomende e-mails samenvatten en als taak in Notion zetten, (2) nieuwe Typeform-inzendingen laten analyseren door AI en antwoord automatisch sturen, (3) social media-berichten monitoren op sentiment en alert sturen als het negatief is, (4) facturen uitlezen via AI en in een spreadsheet zetten."
 ---
 
-Hoeveel uur per week doe je dingen die altijd hetzelfde zijn? E-mails doorsturen, data kopiëren van de ene tool naar de andere, notificaties sturen als iets klaar is. AI-automatiseringstools nemen dat van je over. Dit is hoe je er in twintig minuten mee begint. Naast automatiseren kun je met no-code ook complete webapps bouwen — wil je daarbij je eigen code in handen houden, lees dan [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github).
+Hoeveel uur per week doe je dingen die altijd hetzelfde zijn? E-mails doorsturen, data kopiëren van de ene tool naar de andere, notificaties sturen als iets klaar is. AI-automatiseringstools nemen dat van je over. Dit is hoe je er in twintig minuten mee begint. Naast automatiseren kun je met no-code ook complete webapps bouwen — wil je daarbij je eigen code in handen houden, lees dan [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github). Wil je een AI juist rechtstreeks je website laten beheren? Zie [Claude aan je WordPress-site koppelen via MCP](/nieuws/claude-wordpress-verbinden-mcp).
 
 ## Welke tool voor jou?
 

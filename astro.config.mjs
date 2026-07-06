@@ -62,6 +62,17 @@ export default defineConfig({
         page.replace(/\/$/, '').replace(/^https?:\/\/[^/]+/, '') !== '/ai-tools',
       serialize(item) {
         item.lastmod = new Date().toISOString();
+        // Zonder trailing slash: matcht de canonical/og:url uit Layout.astro
+        // én alle interne links op de site. Zonder deze stap wijst de sitemap
+        // naar de mét-slash-vorm terwijl de site zelf overal naar de
+        // zonder-slash-vorm linkt — een sitewide canonical-conflict die
+        // vermoedelijk de organische terugval van juni/juli 2026 verklaart
+        // (zie ook de normalisatie in Layout.astro).
+        const url = new URL(item.url);
+        if (url.pathname !== '/') {
+          url.pathname = url.pathname.replace(/\/+$/, '');
+        }
+        item.url = url.toString();
         return item;
       },
     }),

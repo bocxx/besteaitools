@@ -42,7 +42,7 @@ Notion's autonome agents zijn in 2026 het werkpaard waar veel teams op leunen vo
 - Toegang tot de werkruimte waar je analyses wilt opslaan
 - Optioneel: gekoppelde Google Drive of Slack voor extra context
 
-Heb je nog geen Business-tier? Een week proef-periode is meestal genoeg om te testen of het voor jouw workflow werkt. Zo'n korte, bewust geplande proefweek is sowieso het patroon bij agent-tools geworden — bij Lindy zelfs de enige instap, sinds [het gratis plan daar is geschrapt](/nieuws/lindy-schrapt-gratis-plan).
+Heb je nog geen Business-tier? Een week proef-periode is meestal genoeg om te testen of het voor jouw workflow werkt. Zo'n korte, bewust geplande proefweek is sowieso het patroon bij agent-tools geworden — bij Lindy zelfs de enige instap, sinds [het gratis plan daar is geschrapt](/nieuws/lindy-schrapt-gratis-plan). Wil je een agent niet in Notion maar direct op je eigen site loslaten? Lees [Claude aan je WordPress-site koppelen via MCP](/nieuws/claude-wordpress-verbinden-mcp).
 
 > **💡 Beginner-tip:** Een agent is geen betere zoekbalk. Je geeft hem een doel, hij bedenkt zelf welke deelstappen daarvoor nodig zijn. Hoe scherper je doel, hoe beter het resultaat.
 

@@ -41,7 +41,7 @@ Er gaat een simpele grap rond in de wereld van AI-coding: *"why use many token w
 
 Caveman is een instructie-laag die je aan Claude Code (en volgens de maker 30+ andere agents zoals Cursor, Cline en Copilot) toevoegt. De boodschap aan het model: schrap lidwoorden, opvulzinnen, beleefdheden en hedging, en antwoord in korte fragmenten. Wat onaangeroerd blijft: code, commando's, foutmeldingen en symbolen blijven byte-voor-byte exact ([Bron: GitHub — JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)).
 
-Het idee erachter is scherp. In een codeersessie heb je zelden de omhaal nodig — "Great question! Let me help you with that. Here's a clear explanation..." — maar wél de technische substantie. Caveman gooit het eerste weg en houdt het tweede.
+Het idee erachter is scherp. In een codeersessie heb je zelden de omhaal nodig — "Great question! Let me help you with that. Here's a clear explanation..." — maar wél de technische substantie. Caveman gooit het eerste weg en houdt het tweede. Wil je een agent juist scherper aansturen in plaats van korter laten antwoorden? Zie [betere prompts voor AI-agents schrijven](/nieuws/betere-prompts-ai-agents-make).
 
 > **De meetlat:** de maker rapporteert een gemiddelde outputreductie van 65% over tien prompts, met een spreiding van 22% tot 87%, gemeten tegen de standaard uitgebreide antwoorden.
 

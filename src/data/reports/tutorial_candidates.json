@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-06T05:35:36.172704",
+  "generated_at": "2026-07-06T17:35:23.095443",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 19,
+    "for_tools": 17,
     "for_news": 15,
-    "rejected_lang": 138,
+    "rejected_lang": 146,
     "already_covered": 0,
-    "total_scanned": 4377
+    "total_scanned": 4376
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
+        "tutorial",
         "how to",
-        "tutorial"
+        "step-by-step"
       ],
       "matched_tools": [
         "gemini",
@@ -74,8 +74,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "breakdown",
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -126,8 +126,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -192,8 +192,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "build your",
-        "how to"
+        "how to",
+        "build your"
       ],
       "matched_tools": [
         "langchain",
@@ -245,8 +245,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "build an"
+        "build an",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -294,8 +294,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -829,72 +829,24 @@
       "id": "67bd84a16d5db4b6"
     },
     {
-      "source": "articles:The Practical Developer",
+      "source": "articles:Towards AI - Medium",
       "platform": "article",
-      "title": "Your Codebase Just Wrote Itself. Terrified Yet?",
-      "text": "<p>The digital world is abuzz, and a subtle tremor runs through the software development community. OmniCorp's \"Synthetica DevNet\" has emerged, not merely as an advanced coding assistant, but as a potential paradigm shift. Promising 80%+ autonomous feature development from concept to production, Synthetica isn't just generating snippets; it’s building entire microservices, APIs, and front-end components. This tutorial explores the capabilities of such a revolutionary AI agent, not as a how-to guide for a specific tool, but as a conceptual walkthrough to understand its implications and prepare ",
-      "url": "https://dev.to/prabashanadev/your-codebase-just-wrote-itself-terrified-yet-3i5j",
-      "date": "2026-07-05",
+      "title": "What Is Retrieval-Augmented Generation (RAG)? A Complete Guide for Businesses",
+      "text": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*O4lEhDU-U9byg1vIhZpbFw.png\"><figcaption>RAG Image</figcaption></figure><h4>How to get accurate, source-backed answers out of AI — instead of confident guesses.</h4><p>If you’ve spent any time with ChatGPT, Claude, or any large language model, you’ve probably run into this moment: you ask a specific question about your business, your industry, or a recent event, and the AI gives you an answer that sounds completely confident — and is completely wrong.</p><p>This isn’t a bug you can patch. It’s a structural limitation of how lar",
+      "url": "https://pub.towardsai.net/what-is-retrieval-augmented-generation-rag-a-complete-guide-for-businesses-eab6448e2c9a?source=rss----98111c9905da---4",
+      "date": "2026-07-06",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "walkthrough",
-        "how-to",
-        "tutorial",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je Your Codebase Just in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "5a9fba1bb6cb6c9e"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Build an Unblockable AI Agent for Browser Automation with JavaScript, Bright Data, Gemini, and Playwright",
-      "text": "<p><strong>In this full guide, you’ll learn:</strong></p>\n\n<ul>\n<li>  📛 Why <a href=\"https://medium.com/stackademic/how-to-bypass-anti-bot-walls-for-production-ready-apps-9bf799e34488\">most AI browser agents fail</a> on modern websites.</li>\n<li>  🧱 How browser fingerprinting and anti-bot systems work.</li>\n<li>  ⛑️ How to build an AI browser agent using JavaScript (Node.js) that combines Gemini, <a href=\"https://playwright.dev/\">Playwright</a>, and <a href=\"https://get.brightdata.com/bypass-antibot-walls\">Bright Data</a> to browse real websites, extract live data, analyze, reason, and generat",
-      "url": "https://dev.to/codewithshahan/how-to-build-a-production-ready-browser-automation-ai-agent-with-nodejs-bright-data-gemini-and-39ii",
-      "date": "2026-07-05",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build an",
-        "how-to",
+        "under the hood",
         "how to",
+        "complete guide",
         "guide"
       ],
       "matched_tools": [
-        "gemini"
+        "chatgpt",
+        "claude"
       ],
       "feature_update": false,
       "new_products": [],
@@ -923,28 +875,29 @@
         "media": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je gemini in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "644cac5689413221"
+      "id": "43edd79a52c06a30"
     },
     {
-      "source": "articles:The Practical Developer",
+      "source": "articles:Towards AI - Medium",
       "platform": "article",
-      "title": "How to Automate WhatsApp with Python in 2026 (No Selenium, No BS)",
-      "text": "<p>How to Automate WhatsApp with Python in 2026</p>\n\n<p>Every WhatsApp automation tutorial still recommends <code>selenium</code> with fragile XPath selectors that break every week. There's a better way.</p>\n\n<p>Why Playwright + <code>whatsplay</code>?</p>\n\n<p>Playwright is faster, more reliable, and <code>whatsplay</code> wraps the WhatsApp Web DOM with stable selectors (attribute-based instead of minified class names).</p>\n\n<p>What you'll build<br>\nA bot that monitors a price and sends an alert to your WhatsApp group.</p>\n\n<p>Install<br>\npip install whatsplay playwright<br>\nplaywright instal",
-      "url": "https://dev.to/markbusking/how-to-automate-whatsapp-with-python-in-2026-no-selenium-no-bs-1fb5",
-      "date": "2026-07-04",
+      "title": "How to Deploy AI in Your Business: A Step-by-Step Guide for Startups ＆ Enterprises",
+      "text": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*cuaa76mIe0XwW5QL8xra7Q.png\"></figure><p>From choosing the right LLM to shipping a production RAG pipeline — the practical path, not the demo-day version.</p><p>Building an AI demo takes an afternoon. Deploying AI that survives real users, real data, and real failure modes takes considerably more discipline. Most of the AI projects that stall inside a business don’t fail because the underlying model was weak — they fail because the gap between “it worked in my notebook” and “it works in production” was never properly planned fo",
+      "url": "https://pub.towardsai.net/how-to-deploy-ai-in-your-business-a-step-by-step-guide-for-startups-enterprises-a8879691e631?source=rss----98111c9905da---4",
+      "date": "2026-07-06",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
         "how to",
-        "use case"
+        "guide",
+        "step by step",
+        "step-by-step"
       ],
       "matched_tools": [],
-      "feature_update": false,
+      "feature_update": true,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
@@ -974,59 +927,7 @@
       "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "664d55ebc4a2a5fa"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "Building Your First AI Agent in 2026: A Complete Hands-On Guide",
-      "text": "<h2>\n  \n  \n  Let's Build an Agent Together\n</h2>\n\n<p>You've read the theory. You understand the concepts. Now it's time to get hands-on with building your first AI agent.</p>\n\n<p>This guide will walk you through creating a practical agent that can handle real-world tasks. Don't worry—you don't need to be an AI expert to follow along.</p>\n\n<h2>\n  \n  \n  What We're Building\n</h2>\n\n<p>A research assistant agent that can:</p>\n\n<ul>\n<li>Take a topic as input</li>\n<li>Search for information</li>\n<li>Synthesize findings</li>\n<li>Provide well-structured answers</li>\n</ul>\n\n<p>This agent will use LangCh",
-      "url": "https://dev.to/mzunain/building-your-first-ai-agent-in-2026-a-complete-hands-on-guide-2633",
-      "date": "2026-07-04",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build an",
-        "guide",
-        "hands-on"
-      ],
-      "matched_tools": [
-        "chatgpt",
-        "langchain",
-        "make"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "9a3bfb5cc6662238"
+      "id": "b5f97783093eb7f9"
     }
   ],
   "for_news": [
@@ -1131,9 +1032,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
         "how to",
-        "guide"
+        "guide",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -1184,9 +1085,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
+        "how to",
         "ultimate guide",
-        "how to"
+        "build a"
       ],
       "matched_tools": [
         "together ai"
@@ -1200,7 +1101,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "milesdeutscher",
-      "followers": 672283,
+      "followers": 672313,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1237,9 +1138,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
         "how to",
-        "guide"
+        "guide",
+        "build a"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1273,54 +1174,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "b47d50c579212729"
-    },
-    {
-      "source": "articles:Analytics Insight",
-      "platform": "article",
-      "title": "How to Build a Lead Machine for the AI Era",
-      "text": "<h2><strong>TL;DR</strong></h2><ul><li><p>Agentic lead generation structures replace legacy scraping workflows with automated intent-tracking and continuous waterfall enrichment pipelines.</p></li><li><p>Generative Engine Optimization establishes machine-readable data footprints to maximize brand citation share inside conversational search engines.</p></li><li><p>Implementing automated, full-stack booking portals eliminates scheduling friction and captures incoming transaction interest twenty-four hours a day.</p></li><li><p>Businesses must combine autonomous prospecting, semantic search visib",
-      "url": "https://www.analyticsinsight.net/artificial-intelligence/how-to-build-a-lead-machine-for-the-ai-era",
-      "date": "2026-07-02",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "how to",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "bbab15fec6883240"
     },
     {
       "source": "likes:@sairahul1",
@@ -1471,9 +1324,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
+        "hands-on",
         "build your",
-        "hands-on"
+        "build a"
       ],
       "matched_tools": [
         "claude",
@@ -1525,11 +1378,11 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
         "tutorial",
+        "from scratch",
+        "explained",
         "build a",
-        "how to",
-        "explained"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1667,8 +1520,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "build an",
-        "how-to",
-        "how to"
+        "how to",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1714,10 +1567,10 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "from scratch",
         "tutorial",
-        "hands-on"
+        "from scratch",
+        "hands-on",
+        "build a"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1751,6 +1604,54 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "611fc28f34e90101"
+    },
+    {
+      "source": "articles:Artificial Intelligence on Medium",
+      "platform": "article",
+      "title": "How to Build a One-Person AI Business in 30 Days",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@webalatisuradnja/how-to-build-a-one-person-ai-business-in-30-days-a9e17d968770?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/1536/1*UL6hS18KUhXpvjWBcM9JzA.png\" width=\"1536\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Starting a business used to require employees, office space, expensive software, and months of preparation.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://medium.com/@webalatisuradnja/how-to-build",
+      "url": "https://medium.com/@webalatisuradnja/how-to-build-a-one-person-ai-business-in-30-days-a9e17d968770?source=rss------artificial_intelligence-5",
+      "date": "2026-07-02",
+      "engagement": 36.75,
+      "source_weight": 0.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "how-to",
+        "build a"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 14.45,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.45,
+        "source_weight": 0.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "f440a0983bb4d3e6"
     }
   ]
 }

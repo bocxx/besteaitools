@@ -31,7 +31,18 @@ const {
   publishedTime,
   modifiedTime,
 } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
+// Normaliseer naar de non-trailing-slash-vorm: alle interne links op de site
+// wijzen al zonder trailing slash (zie bv. "Alternatieven voor X"-links), en
+// Cloudflare Workers Assets serveert prerendered pagina's op die vorm zonder
+// redirect. Zonder deze normalisatie berekent Astro tijdens prerendering
+// (build.format: 'directory') de pathname mét trailing slash, wat een
+// zichzelf tegensprekend canonical/og:url-signaal oplevert t.o.v. de
+// daadwerkelijk geserveerde URL en de interne links — bevestigd als oorzaak
+// van een sitewide organische terugval (juli 2026).
+const rawPathname = Astro.url.pathname;
+const normalizedPathname =
+  rawPathname !== '/' ? rawPathname.replace(/\/+$/, '') || '/' : rawPathname;
+const canonicalURL = new URL(normalizedPathname, siteConfig.url);
 // Default is PNG (niet WebP): LinkedIn accepteert geen WebP als og:image en
 // valt dan terug op een mini-thumbnail. Per-pagina kaarten in public/og/.
 // Een relatief pad (/og/...) wordt naar een absolute URL genormaliseerd zodat
