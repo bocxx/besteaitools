@@ -36,7 +36,7 @@ faq:
 
 Anthropic-CEO Dario Amodei haalde eind juni een discussie open die op r/LocalLLaMA scherp werd ontleed: open-weight is volgens hem geen echte open source, want je kunt niet "in het model kijken". Los van die semantiek is één ding onmiskenbaar: de open-weight modellen zelf worden razendsnel beter — en juni 2026 leverde een uitzonderlijk sterke lichting op.
 
-Dit is wat er staat, wat het verschil maakt en hoe je ze lokaal draait.
+Dit is wat er staat, wat het verschil maakt en hoe je ze lokaal draait. En omdat niet elk trending project die aandacht waard blijft: onze analyse van [het AI-tool-kerkhof](/nieuws/ai-tool-kerkhof-github-trending) laat zien hoe je de blijvers van de eendagsvliegen onderscheidt.
 
 ## Wat open-weight je geeft wat propriëtair niet geeft
 

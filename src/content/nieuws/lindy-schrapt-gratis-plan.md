@@ -48,7 +48,7 @@ Eerlijk is eerlijk: dat gratis plan was in de praktijk vooral een etalage. Vrijw
 
 **Gebruik je Lindy al betaald**, dan verandert er niets aan je workflows of je tarief; de plannen blijven maandelijks opzegbaar. **Zat je op het gratis plan**, dan is de boodschap simpeler: zonder upgrade houdt het op. **Overwoog je Lindy**, plan je proefweek dan bewust — bouw meteen de workflow die je echt wilt draaien, zodat je na zeven dagen weet of $49,99 per maand zich terugverdient. Voor een mailtriage-agent die dagelijks een half uur bespaart, is dat rekensommetje snel gemaakt; voor af en toe een experiment niet.
 
-De beweging past in een breder patroon: AI-agentbouwers stoppen hun rekenkosten steeds minder graag in gratis tiers, terwijl je die agents juist eerst wilt zien werken voordat je tekent. Wat zulke agents in de praktijk wel en niet waarmaken, legt onze zustersite uit in [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+De beweging past in een breder patroon: AI-agentbouwers stoppen hun rekenkosten steeds minder graag in gratis tiers, terwijl je die agents juist eerst wilt zien werken voordat je tekent. Hoe snel de aandacht rond AI-tools sowieso weer wegzakt, becijferden we in [het AI-tool-kerkhof: 59% van de Q1-hypes is alweer uit de schijnwerpers](/nieuws/ai-tool-kerkhof-github-trending). Wat zulke agents in de praktijk wel en niet waarmaken, legt onze zustersite uit in [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 ## Gratis beginnen kan nog — bij de buren
 
