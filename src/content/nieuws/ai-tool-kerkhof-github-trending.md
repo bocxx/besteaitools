@@ -40,6 +40,11 @@ Elke week schuiven er nieuwe AI-tools voorbij op GitHub-trending, en elke week v
 
 Sinds 10 februari 2026 leggen we dagelijks vast welke AI-gerelateerde repos in GitHub-trending verschijnen. Dat levert een cohort op van 852 repos die vóór 1 april voor het eerst opdoken. Peildatum 6 juli: 500 daarvan — 58,7% — zijn al 30 dagen of langer niet meer in trending gezien.
 
+<figure style="margin:2rem 0;">
+  <img src="/images/figures/ai-tool-kerkhof-waffle.svg" alt="Waffle-diagram van 852 blokjes, één per AI-repo die in Q1 2026 GitHub-trending haalde: 500 gedoofde blokjes (58,7%) zijn minstens 30 dagen niet meer in trending gezien, 352 coral-gekleurde blokjes staan nog in de schijnwerpers. Callout: de mediane zichtbaarheid van de verdwenen groep was 2 dagen." width="1200" height="675" loading="lazy" style="width:100%;height:auto;border-radius:12px;" />
+  <figcaption style="margin-top:0.5rem;font-size:0.85rem;color:var(--text-muted);">Elk blokje is één repo uit het Q1-cohort. Bron: eigen GitHub-trending-metingen, 10 feb – 31 mrt 2026, peildatum 6 juli.</figcaption>
+</figure>
+
 Het venster waarin ze schitterden, was kort. De mediaan van de verdwenen groep: 2 dagen tussen de eerste en de laatste keer dat we ze in trending zagen. 293 van de 500 haalden nog geen week. De typische Q1-hype was dus geen langzaam uitdovende ster, maar een flits.
 
 > **💡 Beginner-tip:** GitHub-trending is de dagelijkse etalage van GitHub — de repos die vandaag het hardst groeien in sterren. Het is een prima ontdekkingskanaal, maar geen kwaliteitskeurmerk. Hoe je open-source AI daarna zelf uitprobeert, lees je in onze gids over [open-weight modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien).
