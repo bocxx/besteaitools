@@ -1,0 +1,194 @@
+---
+/**
+ * 404 — custom not-found-pagina.
+ *
+ * Wordt door Cloudflare Workers Assets geserveerd via
+ * `not_found_handling = "404-page"` in wrangler.toml (dist/404.html).
+ * Naar model van hetlaatsteainieuws-v2/src/pages/404.astro: zoekknop +
+ * categorielinks i.p.v. de kale default "404: Not Found" zonder interne links.
+ */
+export const prerender = true;
+import Layout from '../layouts/Layout.astro';
+import { Search, ArrowRight } from '@lucide/astro';
+
+const categories = [
+  { label: 'Alle AI-tools', href: '/' },
+  { label: 'Vergelijkingen', href: '/vergelijk' },
+  { label: 'Tools-digests', href: '/digest' },
+  { label: 'Nieuws & tutorials', href: '/nieuws' },
+  { label: 'Gidsen per taak', href: '/gids' },
+  { label: 'Leren', href: '/leren' },
+];
+---
+
+<Layout
+  title="404 — niet gevonden · debesteaitools.nl"
+  description="Deze pagina bestaat niet (meer). Zoek een AI-tool of kies een categorie."
+  robots="noindex, follow"
+>
+  <main class="notfound">
+    <div class="notfound__inner">
+      <p class="notfound__code">404</p>
+      <h1 class="notfound__title">Deze pagina staat niet in onze catalogus.</h1>
+      <p class="notfound__lede">
+        Misschien een verkeerde link, een verhuisde tool-review, of typte je iets
+        verkeerd. Probeer een zoekopdracht of kies hieronder een ingang.
+      </p>
+
+      <button type="button" class="notfound__search" id="notfound-search-btn">
+        <Search size={16} stroke-width={1.75} aria-hidden="true" />
+        <span>Zoek in de AI-tools</span>
+        <kbd>⌘K</kbd>
+      </button>
+
+      <nav class="notfound__cats" aria-label="Categorieën">
+        {categories.map((cat) => (
+          <a class="notfound__cat" href={cat.href}>
+            <span class="notfound__cat-label">{cat.label}</span>
+            <ArrowRight size={14} stroke-width={1.75} aria-hidden="true" />
+          </a>
+        ))}
+      </nav>
+
+      <p class="notfound__home">
+        Of <a href="/">terug naar de homepage</a>.
+      </p>
+    </div>
+  </main>
+
+  {/* Zoekknop → SearchModal (die registreert window.__openSearch). */}
+  <script is:inline>
+    document.getElementById('notfound-search-btn')?.addEventListener('click', function () {
+      if (window.__openSearch) window.__openSearch();
+      else location.href = '/';
+    });
+  </script>
+
+  {/* 404-meting: log de niet-gevonden URL + waar de bezoeker vandaan kwam.
+      Vangt kapotte interne links en verkeerde route-prefixes live op. */}
+  <script is:inline>
+    (function () {
+      function fire() {
+        if (!(window.umami && window.umami.track)) return false;
+        window.umami.track('not-found', { path: location.pathname, ref: document.referrer || '' });
+        return true;
+      }
+      if (fire()) return;
+      var n = 0;
+      var iv = setInterval(function () { if (fire() || ++n > 100) clearInterval(iv); }, 50);
+    })();
+  </script>
+</Layout>
+
+<style>
+  .notfound {
+    display: grid;
+    place-items: center;
+    min-height: 70dvh;
+    padding: var(--space-12) var(--space-6);
+  }
+
+  .notfound__inner {
+    max-width: 56ch;
+    text-align: center;
+  }
+
+  .notfound__code {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    color: var(--primary-bright);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .notfound__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-5) 0;
+  }
+
+  .notfound__lede {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-8) 0;
+  }
+
+  .notfound__search {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    height: 40px;
+    padding: 0 var(--space-4);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    margin-bottom: var(--space-12);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .notfound__search:hover {
+    color: var(--primary-bright);
+    border-color: var(--primary-bright);
+  }
+  .notfound__search kbd {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    padding: 1px 4px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 3px;
+    color: var(--text-muted);
+  }
+
+  .notfound__cats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-8) 0;
+    text-align: left;
+  }
+  @media (min-width: 30em) {
+    .notfound__cats {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .notfound__cat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+  .notfound__cat:hover {
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+    transform: translateX(2px);
+  }
+
+  .notfound__home {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+  .notfound__home a { color: var(--primary-bright); text-decoration: none; }
+  .notfound__home a:hover { text-decoration: underline; }
+</style>
