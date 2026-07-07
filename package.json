@@ -15,7 +15,9 @@
     "deploy": "npm run build && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
     "fetch-ph-stats": "tsx scripts/fetch-ph-stats.ts",
-    "social": "node scripts/generate-social.mjs"
+    "social": "node scripts/generate-social.mjs",
+    "social:all": "node scripts/generate-social.mjs --all",
+    "social:upload": "node scripts/upload-social.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
