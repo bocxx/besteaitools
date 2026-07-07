@@ -13,9 +13,10 @@
 import Layout from '../layouts/Layout.astro';
 import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
+import ToolRow from '../components/molecules/ToolRow.astro';
 import { getAllTools } from '../lib/tools-engine';
-import { toolCategories } from '../lib/tools-schema';
-import { Search, Wand2 } from '@lucide/astro';
+import { toolCategories, pricingModels } from '../lib/tools-schema';
+import { Search, Wand2, List, LayoutGrid } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
@@ -30,6 +31,12 @@ const sortedCategories = Object.entries(toolCategories)
   .map(([slug, cat]) => ({ slug, cat, count: tools.filter(t => t.category === slug).length }))
   .filter(item => item.count > 0)
   .sort((a, b) => b.count - a.count);
+
+// Tellers voor de vind-balk (supportsDutchLanguage = actuele NL-flag, zelfde
+// veld dat de kaart-/regel-badge gebruikt → filter en teller lopen synchroon).
+const nlCount = tools.filter(t => t.supportsDutchLanguage).length;
+const gdprCount = tools.filter(t => t.gdprReady).length;
+const freeCount = tools.filter(t => t.pricingModel === 'free' || t.pricingModel === 'freemium').length;
 
 // WebSite structured data
 const websiteJsonLd = {
@@ -133,66 +140,89 @@ export const prerender = true;
         Zoek of filter en houd in seconden de tools over die écht bij je taak passen — geen account nodig.
       </p>
 
-      <form class="searchbar" action="/tools" method="get" role="search">
+      <!-- Vind-balk: live zoeken. Typen filtert de lijst er direct onder. -->
+      <div class="searchbar">
         <Search size={20} stroke-width={1.75} class="searchbar__icon" />
         <input
           type="search"
-          name="q"
+          id="q"
           class="searchbar__input"
-          placeholder="Zoek een tool of taak — bijv. ‘video’, ‘code’, ‘notuleren’…"
+          placeholder="Wat wil je doen? — bijv. ‘video’, ‘code’, ‘notuleren’…"
           autocomplete="off"
           spellcheck="false"
           aria-label="Zoek AI-tools op naam, taak of categorie"
         />
-        <button type="submit" class="searchbar__submit" aria-label="Zoeken">→</button>
-      </form>
+      </div>
+
+      <!-- Prijs + eigenschappen: live-filters (klik = aan/uit) -->
+      <div class="quick-row" role="group" aria-label="Snel filteren">
+        {Object.entries(pricingModels).map(([key, pm]) => (
+          <button type="button" class="quick-chip" data-facet="pricing" data-value={key}>{pm.label}</button>
+        ))}
+        <span class="quick-sep" aria-hidden="true"></span>
+        <button type="button" class="quick-chip" data-facet="toggle" data-value="nl">🇳🇱 Nederlandstalig <b>{nlCount}</b></button>
+        <button type="button" class="quick-chip" data-facet="toggle" data-value="gdpr">AVG-klaar <b>{gdprCount}</b></button>
+        <button type="button" class="quick-chip" data-facet="toggle" data-value="fast">⚡ Snel inzetbaar</button>
+      </div>
 
       <a href="/vind-je-beste-ai-tool" class="hero__guided">
         <Wand2 size={16} stroke-width={1.75} class="hero__guided-icon" />
         <span>Niet zeker wat je zoekt? <strong>Doe de tool-wizard</strong></span>
         <span class="hero__guided-arrow" aria-hidden="true">→</span>
       </a>
-
-      <p class="hero__hint">
-        {tools.length}+ tools · {sortedCategories.length} categorieën · prijs, AVG-status en gebruiksgemak per tool
-      </p>
-
-      <nav class="hero__taken" aria-label="Populaire taken">
-        <span class="hero__taken-label">Populaire taken:</span>
-        <a href="/ai-voor/logo-maken">Logo maken</a>
-        <a href="/ai-voor/cv-maken">CV maken</a>
-        <a href="/ai-voor/video-maken">Video maken</a>
-        <a href="/ai-voor/tekst-schrijven">Tekst schrijven</a>
-        <a href="/ai-voor/foto-bewerken">Foto bewerken</a>
-        <a href="/gratis-ai-tools">Gratis tools</a>
-        <a href="/beste-ai-tools" class="hero__taken-all">beste tools →</a>
-      </nav>
     </header>
 
-    <!-- Blader per categorie → deeplinkt naar de filterbare /tools -->
-    <nav class="cat-router" aria-label="Blader per categorie">
-      <h2 class="section-head">Blader per categorie</h2>
-      <div class="cat-grid">
-        <a class="cat-chip" href="/tools">Alle tools<span class="cat-chip__count">{tools.length}</span></a>
-        {sortedCategories.map(({ slug, cat, count }) => (
-          <a class="cat-chip" href={`/tools?cat=${slug}`} style={`--chip-color: ${cat.color}`}>
-            {cat.name}<span class="cat-chip__count">{count}</span>
-          </a>
-        ))}
-      </div>
+    <!-- Categorie-filterrij: klik een categorie om te filteren -->
+    <nav class="cats" aria-label="Filter op categorie">
+      <button type="button" class="cat-chip cat-chip--active" data-facet="cat" data-value="__all">
+        Alle<span class="cat-chip__count">{tools.length}</span>
+      </button>
+      {sortedCategories.map(({ slug, cat, count }) => (
+        <button type="button" class="cat-chip" data-facet="cat" data-value={slug} style={`--chip-color: ${cat.color}`}>
+          {cat.name}<span class="cat-chip__count">{count}</span>
+        </button>
+      ))}
     </nav>
 
-    <!-- Uitgelicht: een greep om te ontdekken, niet de hele muur. -->
-    <section class="showcase" aria-labelledby="showcase-head">
-      <div class="showcase__head">
-        <h2 id="showcase-head" class="section-head">Populair deze week</h2>
-        <a href="/tools" class="showcase__all">Bekijk & filter alle {tools.length} tools →</a>
+    <!-- Resultaatbalk: teller + weergave-toggle -->
+    <div class="resbar">
+      <p class="result-count" id="result-count" aria-live="polite">{tools.length} tools</p>
+      <div class="view-toggle" role="group" aria-label="Weergave">
+        <button type="button" class="view-btn view-btn--active" data-view="list" aria-pressed="true">
+          <List size={15} stroke-width={1.75} /> <span>Lijst</span>
+        </button>
+        <button type="button" class="view-btn" data-view="cards" aria-pressed="false">
+          <LayoutGrid size={15} stroke-width={1.75} /> <span>Kaarten</span>
+        </button>
       </div>
-      <div class="tool-grid">
-        {toolsSorted.slice(0, 12).map(tool => <ToolCard tool={tool} />)}
-      </div>
-      <a href="/tools" class="showcase__cta">Alle {tools.length} tools filteren →</a>
-    </section>
+    </div>
+
+    <!-- Lijstweergave (default) -->
+    <div class="tool-list" id="view-list">
+      {toolsSorted.map(tool => <ToolRow tool={tool} />)}
+    </div>
+
+    <!-- Kaartweergave -->
+    <div class="tool-grid" id="view-cards" hidden>
+      {toolsSorted.map(tool => <ToolCard tool={tool} />)}
+    </div>
+
+    <div class="grid-empty" id="grid-empty" hidden>
+      <p>Geen tools gevonden voor deze filters.</p>
+      <button type="button" class="btn btn-outline btn-sm" id="reset-filters">Alle filters wissen</button>
+    </div>
+
+    <!-- Populaire taken: snelle ingangen (interne links, SEO) -->
+    <nav class="hero__taken taken--footer" aria-label="Populaire taken">
+      <span class="hero__taken-label">Populaire taken:</span>
+      <a href="/ai-voor/logo-maken">Logo maken</a>
+      <a href="/ai-voor/cv-maken">CV maken</a>
+      <a href="/ai-voor/video-maken">Video maken</a>
+      <a href="/ai-voor/tekst-schrijven">Tekst schrijven</a>
+      <a href="/ai-voor/foto-bewerken">Foto bewerken</a>
+      <a href="/gratis-ai-tools">Gratis tools</a>
+      <a href="/beste-ai-tools" class="hero__taken-all">beste tools →</a>
+    </nav>
 
     <!-- FAQ — zichtbaar én als FAQPage structured data -->
     <section class="faq" aria-labelledby="faq-heading">
@@ -247,12 +277,12 @@ export const prerender = true;
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
     padding: var(--space-3) var(--space-4);
     background: var(--bg-elevated);
     border: 1px solid var(--border-strong);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-control);
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   }
   .searchbar:focus-within {
@@ -304,7 +334,7 @@ export const prerender = true;
     text-decoration: none;
     background: var(--bg-panel);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-pill);
     transition: all 0.15s ease;
   }
   .hero__guided :global(.hero__guided-icon) { color: var(--primary-bright); flex-shrink: 0; }
@@ -333,11 +363,16 @@ export const prerender = true;
     font-size: var(--text-sm);
   }
   .hero__taken-label { color: var(--text-muted); }
+  .taken--footer {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-subtle);
+  }
   .hero__taken a {
     color: var(--text-secondary);
     text-decoration: none;
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-pill);
     padding: 3px 12px;
     transition: all 0.15s ease;
   }
@@ -358,7 +393,7 @@ export const prerender = true;
     align-items: center;
     gap: var(--space-1-5);
     padding: var(--space-1-5) var(--space-3);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-pill);
     border: 1px solid var(--border-subtle);
     background: transparent;
     color: var(--text-muted);
@@ -379,6 +414,63 @@ export const prerender = true;
     color: var(--text-primary);
     font-weight: var(--font-semibold);
   }
+  .quick-chip b { font-weight: var(--font-semibold); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85em; }
+  .quick-chip--active b { color: inherit; }
+  .quick-sep { width: 1px; height: 18px; background: var(--border-subtle); margin: 0 var(--space-1); }
+
+  /* ── Categorie-filterrij ────────────────────────── */
+  .cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+  }
+
+  /* ── Resultaatbalk: teller + weergave-toggle ────── */
+  .resbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-4);
+  }
+  .resbar .result-count { margin: 0; color: var(--text-primary); font-weight: var(--font-semibold); }
+
+  .view-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-control);
+    overflow: hidden;
+  }
+  .view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-2) var(--space-3);
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+  .view-btn + .view-btn { border-left: 1px solid var(--border-subtle); }
+  .view-btn:hover { color: var(--text-primary); background: color-mix(in oklch, var(--text-primary) 5%, transparent); }
+  .view-btn--active,
+  .view-btn--active:hover {
+    background: var(--primary-bright);
+    color: var(--bg-base);
+  }
+
+  /* ── Lijstweergave ──────────────────────────────── */
+  .tool-list {
+    border-top: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+  /* De regels dragen zelf border-bottom; de bovenrand komt van de container. */
 
   /* ── Filter bar (categorieën + sorteren) ────────── */
   /* Categories wrap into rows on the left; Sorteer stays top-right. */
@@ -673,4 +765,122 @@ export const prerender = true;
     line-height: var(--leading-relaxed);
     color: var(--text-secondary);
   }
+
+  @media (max-width: 640px) {
+    .resbar { gap: var(--space-2); }
+    .hero__title { font-size: var(--text-4xl); }
+  }
 </style>
+
+<script>
+  // Find-first homepage: live filteren van lijst + kaarten met één bron van
+  // waarheid. Categorie = enkelvoudig (radio), prijs + eigenschappen = meervoud.
+  const q  = (s: string) => document.querySelector(s) as HTMLElement | null;
+  const qa = (s: string) => Array.from(document.querySelectorAll(s)) as HTMLElement[];
+
+  const searchInput = q('#q') as HTMLInputElement | null;
+  const resultCount = q('#result-count');
+  const emptyState  = q('#grid-empty');
+  const listView    = q('#view-list');
+  const cardsView   = q('#view-cards');
+
+  const rows  = qa('#view-list .tool-row');
+  const cards = qa('#view-cards .tool-card');
+
+  const state = { cat: '', pricing: new Set<string>(), toggle: new Set<string>() };
+  let search = '';
+  let view = 'list';
+
+  function matches(el: HTMLElement) {
+    const d = el.dataset;
+    if (state.cat && d.category !== state.cat) return false;
+    if (state.pricing.size && !state.pricing.has(d.pricing ?? '')) return false;
+    if (state.toggle.has('nl')   && d.nl   !== '1') return false;
+    if (state.toggle.has('gdpr') && d.gdpr !== '1') return false;
+    if (state.toggle.has('fast') && !['minutes', 'hours'].includes(d.ttfv ?? '')) return false;
+    if (search && !(d.search ?? '').includes(search)) return false;
+    return true;
+  }
+
+  function apply() {
+    let visible = 0;
+    const activeEls = view === 'list' ? rows : cards;
+    // Bereken zichtbaarheid één keer, pas op beide views toe (zelfde volgorde/aantal).
+    rows.forEach((r, i) => {
+      const ok = matches(r);
+      r.hidden = !ok;
+      if (cards[i]) cards[i].hidden = !ok;
+    });
+    activeEls.forEach((el) => { if (!el.hidden) visible++; });
+    if (resultCount) resultCount.textContent = `${visible} ${visible === 1 ? 'tool' : 'tools'}`;
+    if (emptyState) emptyState.hidden = visible !== 0;
+    if (listView)  listView.hidden  = view !== 'list' || visible === 0;
+    if (cardsView) cardsView.hidden = view !== 'cards' || visible === 0;
+  }
+
+  // Categorie-chips (radio): klik = exclusief; "Alle" of nogmaals klikken = reset.
+  qa('.cat-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const val = chip.dataset.value ?? '';
+      state.cat = (val === '__all' || state.cat === val) ? '' : val;
+      qa('.cat-chip').forEach((c) => {
+        const on = (state.cat === '' && c.dataset.value === '__all') || c.dataset.value === state.cat;
+        c.classList.toggle('cat-chip--active', on);
+      });
+      apply();
+    });
+  });
+
+  // Prijs + eigenschappen (meervoud): toggle aan/uit.
+  qa('.quick-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const facet = chip.dataset.facet as 'pricing' | 'toggle';
+      const val = chip.dataset.value ?? '';
+      const set = state[facet];
+      if (set.has(val)) { set.delete(val); chip.classList.remove('quick-chip--active'); }
+      else { set.add(val); chip.classList.add('quick-chip--active'); }
+      apply();
+    });
+  });
+
+  // Zoeken (live).
+  searchInput?.addEventListener('input', () => {
+    search = searchInput.value.trim().toLowerCase();
+    apply();
+  });
+
+  // Weergave-toggle (lijst / kaarten).
+  qa('.view-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      view = btn.dataset.view ?? 'list';
+      qa('.view-btn').forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle('view-btn--active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      apply();
+    });
+  });
+
+  // Reset vanuit de lege staat.
+  q('#reset-filters')?.addEventListener('click', () => {
+    state.cat = ''; state.pricing.clear(); state.toggle.clear();
+    search = ''; if (searchInput) searchInput.value = '';
+    qa('.cat-chip').forEach((c) => c.classList.toggle('cat-chip--active', c.dataset.value === '__all'));
+    qa('.quick-chip').forEach((c) => c.classList.remove('quick-chip--active'));
+    apply();
+  });
+
+  // Deeplinks vanuit interne links: ?q= en ?cat=.
+  (function initFromUrl() {
+    const params = new URLSearchParams(location.search);
+    const cat = params.get('cat');
+    if (cat) {
+      const chip = document.querySelector(`.cat-chip[data-value="${CSS.escape(cat)}"]`) as HTMLElement | null;
+      if (chip) { state.cat = cat; qa('.cat-chip').forEach((c) => c.classList.toggle('cat-chip--active', c.dataset.value === cat)); }
+    }
+    const query = params.get('q');
+    if (query && searchInput) { searchInput.value = query; search = query.trim().toLowerCase(); }
+    if (cat || query) apply();
+  })();
+</script>
