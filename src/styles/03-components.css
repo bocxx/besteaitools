@@ -552,4 +552,44 @@
     border-radius: var(--radius-xl);
     border: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
   }
+
+  /* ============================================
+     TOOL GRID
+     Gedeeld raster voor tool-kaarten. Voorheen alleen scoped in
+     index.astro/ToolDirectory.astro — waardoor /tools (tools.astro) géén
+     grid kreeg en de kaarten volle breedte stapelden. Nu één bron van
+     waarheid. Astro's (ongelaagde) scoped styles overrulen dit waar een
+     pagina bewust een ander raster wil.
+     ============================================ */
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 640px) {
+    .tool-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============================================
+     KICKER — editorial eyebrow-label
+     Mono-uppercase micro-kop boven een sectietitel. Gedeeld ritme
+     (overgenomen van ainieuwsradar) zodat elke pagina hetzelfde
+     redactionele signaal geeft.
+     ============================================ */
+
+  .kicker {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--secondary-bright);
+    margin: 0 0 var(--space-3);
+  }
+  .kicker--accent { color: var(--primary-bright); }
+  .kicker--warn { color: var(--color-warning); }
+  .kicker--muted { color: var(--text-muted); }
 }
