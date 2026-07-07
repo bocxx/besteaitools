@@ -15,7 +15,7 @@ import { siteConfig } from '../config/site';
 import ToolCard from '../components/molecules/ToolCard.astro';
 import { getAllTools } from '../lib/tools-engine';
 import { toolCategories } from '../lib/tools-schema';
-import { Search } from '@lucide/astro';
+import { Search, Wand2 } from '@lucide/astro';
 
 // ── Data ──────────────────────────────────────────────
 const tools = await getAllTools();
@@ -146,6 +146,12 @@ export const prerender = true;
         />
         <button type="button" class="searchbar__clear" id="search-clear" aria-label="Zoekopdracht wissen" hidden>✕</button>
       </div>
+
+      <a href="/vind-je-beste-ai-tool" class="hero__guided">
+        <Wand2 size={16} stroke-width={1.75} class="hero__guided-icon" />
+        <span>Niet zeker wat je zoekt? <strong>Doe de tool-wizard</strong></span>
+        <span class="hero__guided-arrow" aria-hidden="true">→</span>
+      </a>
 
       <p class="hero__hint">
         {tools.length}+ tools · {sortedCategories.length} categorieën · prijs, AVG-status en gebruiksgemak per tool
@@ -496,6 +502,29 @@ export const prerender = true;
     transition: color var(--transition-fast), background var(--transition-fast);
   }
   .searchbar__clear:hover { color: var(--text-primary); background: var(--bg-panel); }
+
+  .hero__guided {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: var(--space-3) auto 0;
+    padding: 8px 16px;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    transition: all 0.15s ease;
+  }
+  .hero__guided :global(.hero__guided-icon) { color: var(--primary-bright); flex-shrink: 0; }
+  .hero__guided strong { color: var(--text-primary); font-weight: var(--font-semibold); }
+  .hero__guided-arrow { color: var(--primary-bright); transition: transform 0.15s ease; }
+  .hero__guided:hover {
+    border-color: var(--primary-bright);
+    color: var(--text-primary);
+  }
+  .hero__guided:hover .hero__guided-arrow { transform: translateX(3px); }
 
   .hero__hint {
     text-align: center;
