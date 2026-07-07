@@ -1,9 +1,17 @@
 /**
- * Astro middleware — Agent-readiness headers
+ * Astro middleware — canonieke URL-vorm + agent-readiness headers
  *
+ * 0. 308-redirect: trailing-slash-varianten → canonieke no-slash-vorm
  * 1. /.well-known/api-catalog — RFC 9727, application/linkset+json
  * 2. Link headers (RFC 8288) op alle HTML-responses
  * 3. Markdown content negotiation (Accept: text/markdown → text/markdown response)
+ *
+ * LET OP (audit juli 2026): een Cloudflare-edge-cache-regel serveert HTML nu
+ * rechtstreeks uit de cache (cf-cache-status: HIT), waardoor deze Worker op
+ * gecachte pagina's helemaal niet draait — redirects, Link-headers en
+ * markdown-negotiation zijn dan live dood. De cache-regel moet in het
+ * Cloudflare-dashboard worden aangepast (Worker laten draaien, of minimaal
+ * cache-key laten variëren op Accept) + cache purgen. Dat is geen code-kwestie.
  */
 import { defineMiddleware } from 'astro:middleware';
 
@@ -66,8 +74,21 @@ Methodologie: ${SITE}/hoe-wij-beoordelen
 `;
 
 export const onRequest = defineMiddleware(async (context, next) => {
-  const { pathname } = new URL(context.request.url);
+  const url = new URL(context.request.url);
+  const { pathname } = url;
   const accept = context.request.headers.get('accept') ?? '';
+
+  // ── 0. Trailing slash → 308 naar de canonieke no-slash-vorm ─────────────
+  // De canonieke vorm is sitewide zónder trailing slash (root uitgezonderd):
+  // canonical/og:url in Layout.astro, de sitemap-serialize in astro.config.mjs
+  // en alle interne links gebruiken die vorm. Door `run_worker_first = true`
+  // doet Cloudflare's eigen asset-redirect dit niet meer, dus zonder deze stap
+  // geven béide slash-varianten 200 (duplicate serving, audit juli 2026).
+  // 308 (permanent, method-preserving) i.p.v. 301 zodat ook niet-GET veilig is.
+  if (pathname !== '/' && pathname.endsWith('/')) {
+    const canonicalPath = pathname.replace(/\/+$/, '') || '/';
+    return context.redirect(canonicalPath + url.search, 308);
+  }
 
   // ── 1. API Catalog (RFC 9727) ────────────────────────────────────────────
   // Inline serveren met application/linkset+json — static files krijgen
