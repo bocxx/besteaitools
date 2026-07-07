@@ -94,6 +94,8 @@ De eerste week na lancering: controleer dagelijks de uitvoer. Klopt de AI-samenv
 
 Na de eerste week hou je alleen een oog op de wekelijkse statistieken. Een goed geconfigureerde automatisering hoef je daarna maandenlang niet aan te raken.
 
+Werk je met code in plaats van kant-en-klare blokken? Dan is het equivalent van deze aanpak een agent die zichzelf aanstuurt: zo bouw je [je eerste agent-loop met Claude Code](/nieuws/je-eerste-agent-loop-claude-code).
+
 ## Checklist: ben je klaar?
 
 - [ ] Eerste kleine automatisering gekozen (niet te complex)
