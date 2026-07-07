@@ -10,7 +10,9 @@ const tools = defineCollection({
 });
 
 const nieuws = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/nieuws' }),
+  // Exclude `*.social.md`: losse social-post captions, bewust naast het
+  // artikel-bestand in src/content/nieuws/social/ geparkeerd (geen artikel-schema).
+  loader: glob({ pattern: ['**/*.md', '!**/*.social.md'], base: './src/content/nieuws' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
