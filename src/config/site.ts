@@ -25,12 +25,13 @@ export const siteConfig = {
   // NAVIGATION
   // ============================================
   navigation: {
-    // Top nav gefocust op tool-finding. De homepage (/) ís de finder.
-    // Radar-/buzz-oppervlakken (Ontdek, Modellen, Radar, Makers) zijn uit de
-    // navigatie gehaald — die data voedt nu het aparte ainieuwsradar.nl.
+    // Top nav gefocust op tool-finding. De homepage (/) is de router; de
+    // volledige, filterbare catalogus staat op /tools — daar wijst "AI-tools"
+    // naartoe. Radar-/buzz-oppervlakken (Ontdek, Modellen, Radar, Makers) zijn
+    // uit de navigatie gehaald — die data voedt nu het aparte ainieuwsradar.nl.
     // De pagina's bestaan nog (ongelinkt) en builden door.
     main: [
-      { label: "AI-tools", href: "/" },
+      { label: "AI-tools", href: "/tools" },
       { label: "Gidsen", href: "/gids" },
       { label: "Vergelijk", href: "/vergelijk" },
       { label: "Leren", href: "/leren" },

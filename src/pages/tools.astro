@@ -298,6 +298,19 @@ export const prerender = true;
     const open = q('#filters').classList.toggle('filters--open');
     filtersToggle.setAttribute('aria-expanded', String(open));
   });
+
+  // --- Deeplinks vanuit de homepage-router (?cat=, ?q=) ---
+  (function initFromUrl() {
+    const params = new URLSearchParams(location.search);
+    const cat = params.get('cat');
+    if (cat) {
+      const chip = document.querySelector(`.chip[data-facet="cat"][data-value="${CSS.escape(cat)}"]`);
+      if (chip) { active.cat.add(cat); chip.classList.add('chip--active'); }
+    }
+    const query = params.get('q');
+    if (query) { searchInput.value = query; search = query.trim().toLowerCase(); }
+    if (cat || query) apply();
+  })();
 </script>
 
 <style>
