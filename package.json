@@ -14,7 +14,8 @@
     "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
-    "fetch-ph-stats": "tsx scripts/fetch-ph-stats.ts"
+    "fetch-ph-stats": "tsx scripts/fetch-ph-stats.ts",
+    "social": "node scripts/generate-social.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
