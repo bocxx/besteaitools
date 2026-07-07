@@ -136,8 +136,7 @@ export const prerender = true;
         Vind de beste <span class="hero__accent">AI-tool</span> voor jouw taak
       </h1>
       <p class="hero__sub">
-        Ontdek wat <strong>{tools.length}+ AI-tools</strong> doen, hoe je ze gebruikt en wat ze kosten.
-        Zoek of filter en houd in seconden de tools over die écht bij je taak passen — geen account nodig.
+        Filter <strong>{tools.length}+ AI-tools</strong> op taak, prijs en AVG — en vind in seconden wat bij je past. Geen account nodig.
       </p>
 
       <!-- Vind-balk: live zoeken. Typen filtert de lijst er direct onder. -->
@@ -153,36 +152,48 @@ export const prerender = true;
           aria-label="Zoek AI-tools op naam, taak of categorie"
         />
       </div>
-
-      <!-- Prijs + eigenschappen: live-filters (klik = aan/uit) -->
-      <div class="quick-row" role="group" aria-label="Snel filteren">
-        {Object.entries(pricingModels).map(([key, pm]) => (
-          <button type="button" class="quick-chip" data-facet="pricing" data-value={key}>{pm.label}</button>
-        ))}
-        <span class="quick-sep" aria-hidden="true"></span>
-        <button type="button" class="quick-chip" data-facet="toggle" data-value="nl">🇳🇱 Nederlandstalig <b>{nlCount}</b></button>
-        <button type="button" class="quick-chip" data-facet="toggle" data-value="gdpr">AVG-klaar <b>{gdprCount}</b></button>
-        <button type="button" class="quick-chip" data-facet="toggle" data-value="fast">⚡ Snel inzetbaar</button>
-      </div>
-
-      <a href="/vind-je-beste-ai-tool" class="hero__guided">
-        <Wand2 size={16} stroke-width={1.75} class="hero__guided-icon" />
-        <span>Niet zeker wat je zoekt? <strong>Doe de tool-wizard</strong></span>
-        <span class="hero__guided-arrow" aria-hidden="true">→</span>
-      </a>
     </header>
 
-    <!-- Categorie-filterrij: klik een categorie om te filteren -->
-    <nav class="cats" aria-label="Filter op categorie">
-      <button type="button" class="cat-chip cat-chip--active" data-facet="cat" data-value="__all">
-        Alle<span class="cat-chip__count">{tools.length}</span>
-      </button>
-      {sortedCategories.map(({ slug, cat, count }) => (
-        <button type="button" class="cat-chip" data-facet="cat" data-value={slug} style={`--chip-color: ${cat.color}`}>
-          {cat.name}<span class="cat-chip__count">{count}</span>
-        </button>
-      ))}
-    </nav>
+    <!-- Eén rustig filterpaneel (stijl van /vergelijk): gelabelde rijen,
+         coral = actief. Klik filtert de lijst er direct onder. -->
+    <div class="lf" id="filters">
+      <div class="lf__group">
+        <span class="lf__label">Categorie</span>
+        <div class="lf__chips">
+          <button type="button" class="lf__chip lf__chip--on" data-facet="cat" data-value="__all">
+            Alle <span class="lf__n">{tools.length}</span>
+          </button>
+          {sortedCategories.map(({ slug, cat, count }) => (
+            <button type="button" class="lf__chip" data-facet="cat" data-value={slug}>
+              {cat.name} <span class="lf__n">{count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="lf__group">
+        <span class="lf__label">Prijs</span>
+        <div class="lf__chips">
+          {Object.entries(pricingModels).map(([key, pm]) => (
+            <button type="button" class="lf__chip" data-facet="pricing" data-value={key}>{pm.label}</button>
+          ))}
+        </div>
+      </div>
+
+      <div class="lf__group">
+        <span class="lf__label">Eigenschappen</span>
+        <div class="lf__chips">
+          <button type="button" class="lf__chip" data-facet="toggle" data-value="nl">🇳🇱 Nederlandstalig <span class="lf__n">{nlCount}</span></button>
+          <button type="button" class="lf__chip" data-facet="toggle" data-value="gdpr">AVG-klaar <span class="lf__n">{gdprCount}</span></button>
+          <button type="button" class="lf__chip" data-facet="toggle" data-value="fast">⚡ Snel inzetbaar</button>
+        </div>
+      </div>
+
+      <a href="/vind-je-beste-ai-tool" class="lf__wizard">
+        <Wand2 size={15} stroke-width={1.75} />
+        Niet zeker wat je zoekt? <strong>Doe de tool-wizard</strong> <span aria-hidden="true">→</span>
+      </a>
+    </div>
 
     <!-- Resultaatbalk: teller + weergave-toggle -->
     <div class="resbar">
@@ -418,6 +429,76 @@ export const prerender = true;
   .quick-chip--active b { color: inherit; }
   .quick-sep { width: 1px; height: 18px; background: var(--border-subtle); margin: 0 var(--space-1); }
 
+  /* ── Filterpaneel (stijl van /vergelijk, strak + hoog contrast) ── */
+  .lf {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    background: var(--bg-elevated);
+    margin: var(--space-6) 0 var(--space-5);
+  }
+  .lf__group {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    align-items: start;
+    gap: var(--space-2) var(--space-3);
+  }
+  .lf__group + .lf__group { border-top: 1px solid var(--border-subtle); padding-top: var(--space-3); }
+  .lf__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    padding-top: 6px;
+  }
+  .lf__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .lf__chip {
+    appearance: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    background: var(--bg-panel);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    padding: 5px 12px;
+    line-height: 1;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  }
+  .lf__chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
+  .lf__chip--on,
+  .lf__chip--on:hover {
+    color: var(--text-inverse);
+    background: var(--primary-bright);
+    border-color: var(--primary-bright);
+    font-weight: var(--font-semibold);
+  }
+  .lf__n { opacity: 0.65; font-family: var(--font-mono); font-size: 0.85em; }
+  .lf__wizard {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    align-self: start;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-top: var(--space-1);
+  }
+  .lf__wizard :global(svg) { color: var(--primary-bright); }
+  .lf__wizard strong { color: var(--text-primary); font-weight: var(--font-semibold); }
+  .lf__wizard:hover { color: var(--text-primary); }
+  .lf__wizard:hover strong { color: var(--primary-bright); }
+  @media (max-width: 560px) {
+    .lf { padding: var(--space-4); }
+    .lf__group { grid-template-columns: 1fr; gap: var(--space-1); }
+    .lf__label { padding-top: 0; }
+  }
+
   /* ── Categorie-filterrij ────────────────────────── */
   .cats {
     display: flex;
@@ -450,7 +531,7 @@ export const prerender = true;
     padding: var(--space-2) var(--space-3);
     border: none;
     background: transparent;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     cursor: pointer;
@@ -818,27 +899,26 @@ export const prerender = true;
     if (cardsView) cardsView.hidden = view !== 'cards' || visible === 0;
   }
 
-  // Categorie-chips (radio): klik = exclusief; "Alle" of nogmaals klikken = reset.
-  qa('.cat-chip').forEach((chip) => {
-    chip.addEventListener('click', () => {
-      const val = chip.dataset.value ?? '';
-      state.cat = (val === '__all' || state.cat === val) ? '' : val;
-      qa('.cat-chip').forEach((c) => {
-        const on = (state.cat === '' && c.dataset.value === '__all') || c.dataset.value === state.cat;
-        c.classList.toggle('cat-chip--active', on);
-      });
-      apply();
+  // Eén handler voor alle filter-chips. Categorie = enkelvoudig (radio),
+  // prijs + eigenschappen = meervoud (toggle). Actief = .lf__chip--on.
+  function syncCatChips() {
+    qa('.lf__chip[data-facet="cat"]').forEach((c) => {
+      const on = (state.cat === '' && c.dataset.value === '__all') || c.dataset.value === state.cat;
+      c.classList.toggle('lf__chip--on', on);
     });
-  });
-
-  // Prijs + eigenschappen (meervoud): toggle aan/uit.
-  qa('.quick-chip').forEach((chip) => {
+  }
+  qa('.lf__chip').forEach((chip) => {
     chip.addEventListener('click', () => {
-      const facet = chip.dataset.facet as 'pricing' | 'toggle';
+      const facet = chip.dataset.facet as 'cat' | 'pricing' | 'toggle';
       const val = chip.dataset.value ?? '';
-      const set = state[facet];
-      if (set.has(val)) { set.delete(val); chip.classList.remove('quick-chip--active'); }
-      else { set.add(val); chip.classList.add('quick-chip--active'); }
+      if (facet === 'cat') {
+        state.cat = (val === '__all' || state.cat === val) ? '' : val;
+        syncCatChips();
+      } else {
+        const set = state[facet];
+        if (set.has(val)) { set.delete(val); chip.classList.remove('lf__chip--on'); }
+        else { set.add(val); chip.classList.add('lf__chip--on'); }
+      }
       apply();
     });
   });
@@ -866,8 +946,8 @@ export const prerender = true;
   q('#reset-filters')?.addEventListener('click', () => {
     state.cat = ''; state.pricing.clear(); state.toggle.clear();
     search = ''; if (searchInput) searchInput.value = '';
-    qa('.cat-chip').forEach((c) => c.classList.toggle('cat-chip--active', c.dataset.value === '__all'));
-    qa('.quick-chip').forEach((c) => c.classList.remove('quick-chip--active'));
+    qa('.lf__chip').forEach((c) => c.classList.remove('lf__chip--on'));
+    syncCatChips();
     apply();
   });
 
@@ -876,8 +956,8 @@ export const prerender = true;
     const params = new URLSearchParams(location.search);
     const cat = params.get('cat');
     if (cat) {
-      const chip = document.querySelector(`.cat-chip[data-value="${CSS.escape(cat)}"]`) as HTMLElement | null;
-      if (chip) { state.cat = cat; qa('.cat-chip').forEach((c) => c.classList.toggle('cat-chip--active', c.dataset.value === cat)); }
+      const chip = document.querySelector(`.lf__chip[data-facet="cat"][data-value="${CSS.escape(cat)}"]`) as HTMLElement | null;
+      if (chip) { state.cat = cat; syncCatChips(); }
     }
     const query = params.get('q');
     if (query && searchInput) { searchInput.value = query; search = query.trim().toLowerCase(); }
