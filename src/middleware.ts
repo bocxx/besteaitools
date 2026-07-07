@@ -85,7 +85,16 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // doet Cloudflare's eigen asset-redirect dit niet meer, dus zonder deze stap
   // geven béide slash-varianten 200 (duplicate serving, audit juli 2026).
   // 308 (permanent, method-preserving) i.p.v. 301 zodat ook niet-GET veilig is.
-  if (pathname !== '/' && pathname.endsWith('/')) {
+  //
+  // KRITIEK: NIET tijdens de build-prerender uitvoeren. Astro draait deze
+  // middleware óók bij het prerenderen van elke `prerender = true`-pagina, en
+  // met `build.format: 'directory'` (default) gebeurt dat op het mét-slash-pad
+  // (`/tools/`, `/over/`, …). Zonder deze guard vangt de redirect dus elke
+  // pagina tijdens de build af en bakt Astro een "Redirecting…"-stub i.p.v. de
+  // echte inhoud — 676/677 pagina's kapot (audit juli 2026). `isPrerendered`
+  // is alleen `true` in die build-prerender-context; bij een echte runtime-
+  // request naar een asset-URL is het `false`, dus de redirect blijft live werken.
+  if (!context.isPrerendered && pathname !== '/' && pathname.endsWith('/')) {
     const canonicalPath = pathname.replace(/\/+$/, '') || '/';
     return context.redirect(canonicalPath + url.search, 308);
   }

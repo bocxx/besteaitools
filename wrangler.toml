@@ -19,6 +19,14 @@ routes = [
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
+# Trailing-slash-normalisatie op de ASSET-laag (niet in middleware!). De site
+# is sitewide canoniek zónder trailing slash; drop-trailing-slash serveert de
+# no-slash-vorm met 200 en 308't `/pad/` → `/pad`. Dit hoort hier thuis omdat
+# Workers Assets statische HTML rechtstreeks serveert — de Worker draait daar
+# (zeker met edge-cache HITs) niet betrouwbaar op, dus een redirect in de
+# middleware was zowel onbetrouwbaar runtime ALS fataal tijdens de build
+# (elke prerender kreeg de 308 en werd een "Redirecting…"-stub, juli 2026).
+html_handling = "drop-trailing-slash"
 # Worker draait vóór static assets — nodig voor Link headers en markdown
 # negotiation via middleware op prerendered (statische) pagina's.
 run_worker_first = true
