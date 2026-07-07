@@ -45,7 +45,7 @@ Vijftien tabbladen openhouden, links doorlezen, terugspringen naar de zoekresult
 | Gebruik | Beste tool | Waarom |
 |---|---|---|
 | Snelle feitenvragen | Perplexity (gratis) | Directe antwoorden met bronnen |
-| Je eigen documenten doorzoeken | NotebookLM (gratis) | Upload eigen bronnen, stel vragen |
+| Je eigen documenten doorzoeken | NotebookLM (gratis) of [ChatGPT Projects](/nieuws/rag-chatgpt-eigen-bedrijfsdata) | Upload eigen bronnen, stel vragen |
 | Uitgebreid rapport over een onderwerp | Perplexity Pro (Deep Research) | Meerdere bronnen, gestructureerd rapport |
 | Actuele nieuwsevents | Perplexity of ChatGPT met web | Webzoeking in real time |
 

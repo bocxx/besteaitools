@@ -53,7 +53,7 @@ Geheugen laat ChatGPT feiten over jou bewaren tussen gesprekken door: je vakgebi
 
 ## 4. Deep Research — laat het zelf de bronnen zoeken
 
-Voor een serieuze vraag is een losse prompt vaak te oppervlakkig. Deep Research stuurt ChatGPT op pad om zelfstandig meerdere bronnen te doorzoeken en daar een onderbouwd overzicht van te maken, mét verwijzingen. Je krijgt geen los antwoord maar een mini-rapport. Let op: het blijft AI, dus klik de aangehaalde bronnen na om te controleren of de claim er echt staat. Gebruik het als snelle eerste onderzoeksronde, niet als eindoordeel.
+Voor een serieuze vraag is een losse prompt vaak te oppervlakkig. Deep Research stuurt ChatGPT op pad om zelfstandig meerdere bronnen te doorzoeken en daar een onderbouwd overzicht van te maken, mét verwijzingen. Je krijgt geen los antwoord maar een mini-rapport. Let op: het blijft AI, dus klik de aangehaalde bronnen na om te controleren of de claim er echt staat. Gebruik het als snelle eerste onderzoeksronde, niet als eindoordeel. En gaan je vragen vooral over je éigen documenten in plaats van het open web, dan is [een Project met geüploade bestanden de betere route](/nieuws/rag-chatgpt-eigen-bedrijfsdata).
 
 ## 5. Spraakmodus — brainstorm hardop
 

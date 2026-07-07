@@ -95,7 +95,7 @@ Kies in de HeyGen-editor een achtergrond:
 - **Eigen achtergrond**: upload een afbeelding of gebruik een kleur
 - **Green screen-effect**: voor avatars die groen-scherm ondersteunen; monteer ze in je eigen video
 
-Voeg je logo en merkkleur toe via de template-opties. HeyGen heeft ook kant-en-klare templates voor LinkedIn-video's, productdemo's en e-learning-modules.
+Voeg je logo en merkkleur toe via de template-opties. HeyGen heeft ook kant-en-klare templates voor LinkedIn-video's, productdemo's en e-learning-modules. Gebruik je AI-video liever als bouwsteen voor je site in plaats van als losse post, dan laat [onze Claude Code + Higgsfield-workflow](/nieuws/claude-code-higgsfield-geanimeerde-website) zien hoe je video-assets in een geanimeerde website verwerkt.
 
 ## Checklist: ben je klaar?
 
