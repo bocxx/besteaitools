@@ -1,10 +1,29 @@
 ---
 import { siteConfig } from '../config/site';
 const { name, tagline, description, navigation, footer } = siteConfig;
+
+// Zichtbare netwerk-cross-links (audit juli 2026): de zustersites stonden
+// alleen in het trackingscript in Layout.astro en waren voor bezoekers en
+// crawlers onzichtbaar. Zelfde domeinen als de NET-lijst daar (excl. onszelf).
+const networkSites = [
+  { label: 'hetlaatsteainieuws.nl', href: 'https://hetlaatsteainieuws.nl', title: 'AI-nieuws en duiding' },
+  { label: 'aiplatformmkb.nl', href: 'https://aiplatformmkb.nl', title: 'AI-gidsen voor het MKB' },
+  { label: 'ainieuwsradar.nl', href: 'https://ainieuwsradar.nl', title: 'AI-trends en buzz-radar' },
+  { label: 'feedzz.online', href: 'https://feedzz.online', title: 'AI-launches, modellen en repos' },
+  { label: 'whotofollow.online', href: 'https://whotofollow.online', title: 'Wie te volgen in AI' },
+];
 ---
 
 <footer class="site-footer">
   <div class="footer-container">
+    <div class="footer-network">
+      <span class="footer-network__label">Meer van dit netwerk</span>
+      <nav class="footer-network__links" aria-label="Zustersites">
+        {networkSites.map((site) => (
+          <a href={site.href} title={site.title}>{site.label}</a>
+        ))}
+      </nav>
+    </div>
     <div class="footer-row">
       <span class="footer-brand">{name}</span>
       <nav class="footer-links">
@@ -37,6 +56,43 @@ const { name, tagline, description, navigation, footer } = siteConfig;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-4);
+  }
+
+  .footer-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    padding-bottom: var(--space-4);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .footer-network__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--text-muted);
+  }
+
+  .footer-network__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .footer-network__links a {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-network__links a:hover {
+    color: var(--primary-bright);
   }
 
   .footer-row {
