@@ -1,0 +1,398 @@
+---
+/**
+ * /tools — de filterbare browse-schil.
+ *
+ * Doel (redesign stap 2): haal de volledige 245-tool-catalogus van de
+ * homepage af naar een echte browse-pagina met blijvende filters. De
+ * homepage wordt daarmee router; deze pagina wordt de catalogus.
+ *
+ * Bewust herbruikbaar opgezet: dezelfde schil (sticky filters + live teller +
+ * kaart/tabel-toggle) draait later op de skills-directory met een andere
+ * dataset. Vandaar dat de filterlogica generiek op data-attributen werkt.
+ */
+import Layout from '../layouts/Layout.astro';
+import ToolCard from '../components/molecules/ToolCard.astro';
+import { getAllTools } from '../lib/tools-engine';
+import { toolCategories, pricingModels, difficultyLevels } from '../lib/tools-schema';
+import { Search, LayoutGrid, Table2, SlidersHorizontal } from '@lucide/astro';
+
+const tools = await getAllTools();
+
+const toolsSorted = [...tools]
+  .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0));
+
+const sortedCategories = Object.entries(toolCategories)
+  .map(([slug, cat]) => ({ slug, cat, count: tools.filter(t => t.category === slug).length }))
+  .filter(item => item.count > 0)
+  .sort((a, b) => b.count - a.count);
+
+const nlCount = tools.filter(t => t.nlSupport).length;
+const gdprCount = tools.filter(t => t.gdprReady).length;
+const freeCount = tools.filter(t => t.pricingModel === 'free' || t.pricingModel === 'freemium').length;
+
+export const prerender = true;
+---
+
+<Layout
+  title={`Alle AI-tools filteren — ${tools.length} tools op prijs, taak en AVG | debesteaitools.nl`}
+  description={`Blader door alle ${tools.length} AI-tools en filter op categorie, prijs, gebruiksgemak, Nederlandse ondersteuning en AVG. Wissel tussen kaarten en een compacte tabel.`}
+>
+  <main class="container container-wide browse">
+
+    <header class="browse__head">
+      <h1 class="browse__title">Alle AI-tools</h1>
+      <p class="browse__sub">
+        Filter <strong>{tools.length} tools</strong> op taak, prijs, gebruiksgemak, NL en AVG.
+        Wissel tussen kaarten om te kiezen en een tabel om te scannen.
+      </p>
+      <div class="searchbar">
+        <Search size={20} stroke-width={1.75} class="searchbar__icon" />
+        <input
+          type="search"
+          id="browse-search"
+          class="searchbar__input"
+          placeholder="Zoek een tool of taak — bijv. ‘video’, ‘code’, ‘notuleren’…"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Zoek AI-tools op naam, taak of categorie"
+        />
+      </div>
+    </header>
+
+    <!-- Toolbar: teller + weergave-toggle + filters-open (mobiel) -->
+    <div class="browse__bar">
+      <p class="result-count" id="result-count" aria-live="polite">{tools.length} tools</p>
+
+      <div class="browse__bar-right">
+        <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters">
+          <SlidersHorizontal size={16} stroke-width={1.75} />
+          Filters
+        </button>
+        <div class="view-toggle" role="group" aria-label="Weergave">
+          <button type="button" class="view-btn view-btn--active" data-view="cards" aria-pressed="true">
+            <LayoutGrid size={15} stroke-width={1.75} /> <span>🐣 Kaarten</span>
+          </button>
+          <button type="button" class="view-btn" data-view="table" aria-pressed="false">
+            <Table2 size={15} stroke-width={1.75} /> <span>⚡ Tabel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="browse__grid">
+      <!-- Sticky filterpaneel -->
+      <aside class="filters" id="filters" aria-label="Filters">
+        <div class="filters__scroll">
+
+          <section class="facet">
+            <h2 class="facet__title">Categorie</h2>
+            <div class="facet__chips">
+              {sortedCategories.map(({ slug, cat, count }) => (
+                <button class="chip" data-facet="cat" data-value={slug} style={`--chip-color: ${cat.color}`}>
+                  {cat.name}<span class="chip__count">{count}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <section class="facet">
+            <h2 class="facet__title">Prijs</h2>
+            <div class="facet__chips">
+              {Object.entries(pricingModels).map(([key, pm]) => (
+                <button class="chip" data-facet="pricing" data-value={key}>{pm.label}</button>
+              ))}
+            </div>
+          </section>
+
+          <section class="facet">
+            <h2 class="facet__title">Gebruiksgemak</h2>
+            <div class="facet__chips">
+              {Object.entries(difficultyLevels).map(([key, dl]) => (
+                <button class="chip" data-facet="difficulty" data-value={key}>{dl.label}</button>
+              ))}
+            </div>
+          </section>
+
+          <section class="facet">
+            <h2 class="facet__title">Snel filteren</h2>
+            <div class="facet__chips">
+              <button class="chip" data-facet="toggle" data-value="nl">🇳🇱 NL<span class="chip__count">{nlCount}</span></button>
+              <button class="chip" data-facet="toggle" data-value="gdpr">AVG<span class="chip__count">{gdprCount}</span></button>
+              <button class="chip" data-facet="toggle" data-value="free">Gratis<span class="chip__count">{freeCount}</span></button>
+              <button class="chip" data-facet="toggle" data-value="fast">Snel inzetbaar</button>
+            </div>
+          </section>
+
+          <button type="button" class="filters__reset" id="reset-filters">Alle filters wissen</button>
+        </div>
+      </aside>
+
+      <!-- Resultaten -->
+      <div class="browse__results">
+        <!-- 🐣 Kaartweergave -->
+        <div class="tool-grid" id="view-cards">
+          {toolsSorted.map(tool => <ToolCard tool={tool} />)}
+        </div>
+
+        <!-- ⚡ Tabelweergave -->
+        <div class="table-wrap" id="view-table" hidden>
+          <table class="tool-table">
+            <thead>
+              <tr>
+                <th scope="col">Tool</th>
+                <th scope="col" class="th-cat">Categorie</th>
+                <th scope="col">Prijs</th>
+                <th scope="col" class="th-num" data-sort="buzz" aria-sort="descending">
+                  <button type="button" class="th-sort th-sort--active">Buzz ↓</button>
+                </th>
+                <th scope="col" class="th-num" data-sort="velocity">
+                  <button type="button" class="th-sort">Groei/dag</button>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              {toolsSorted.map(tool => {
+                const cat = toolCategories[tool.category];
+                const pm = pricingModels[tool.pricingModel];
+                const dl = difficultyLevels[tool.difficulty ?? 'beginner'];
+                const buzz = tool.stats?.buzz_score ?? 0;
+                const velocity = tool.stats?.velocity ?? 0;
+                const hasFree = tool.pricingModel === 'free' || tool.pricingModel === 'freemium';
+                return (
+                  <tr
+                    class="tool-row"
+                    data-category={tool.category}
+                    data-pricing={tool.pricingModel}
+                    data-difficulty={tool.difficulty ?? 'beginner'}
+                    data-nl={tool.nlSupport ? '1' : '0'}
+                    data-gdpr={tool.gdprReady ? '1' : '0'}
+                    data-free={hasFree ? '1' : '0'}
+                    data-ttfv={tool.timeToFirstValue ?? ''}
+                    data-buzz={buzz}
+                    data-velocity={velocity}
+                    data-search={`${tool.name} ${cat?.name ?? ''} ${(tool.tags ?? []).join(' ')}`.toLowerCase()}
+                  >
+                    <td class="td-tool">
+                      <a href={`/ai-tools/${tool.slug}`}>{tool.name}</a>
+                      <span class="td-tool__ease" style={`--dot: ${dl.color}`}>{dl.label}</span>
+                    </td>
+                    <td class="th-cat">
+                      <span class="cat-dot" style={`--dot: ${cat?.color}`}></span>{cat?.name}
+                    </td>
+                    <td><span class="price-tag" style={`--pc: ${pm.color}`}>{pm.label}</span></td>
+                    <td class="th-num">{buzz.toFixed(0)}</td>
+                    <td class="th-num">{velocity > 0 ? `+${velocity.toFixed(1)}` : velocity.toFixed(1)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-empty" id="grid-empty" hidden>
+          <p>Geen tools gevonden voor deze filters.</p>
+          <button type="button" class="btn btn-ghost" id="reset-filters-2">Filters wissen</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  function q(sel) { return document.querySelector(sel); }
+  function qa(sel) { return Array.from(document.querySelectorAll(sel)); }
+
+  const searchInput = q('#browse-search');
+  const resultCount = q('#result-count');
+  const emptyState  = q('#grid-empty');
+  const cardsView   = q('#view-cards');
+  const tableView   = q('#view-table');
+  const tableBody   = q('#table-body');
+
+  const cards = qa('.tool-card');
+  const rows  = qa('.tool-row');
+
+  // Filterstaat: sets voor multi-select facetten, plus vrije zoekterm.
+  const active = { cat: new Set(), pricing: new Set(), difficulty: new Set(), toggle: new Set() };
+  let search = '';
+
+  function matches(el) {
+    const d = el.dataset;
+    if (active.cat.size && !active.cat.has(d.category ?? '')) return false;
+    if (active.pricing.size && !active.pricing.has(d.pricing ?? '')) return false;
+    if (active.difficulty.size && !active.difficulty.has(d.difficulty ?? '')) return false;
+    if (active.toggle.has('nl')   && d.nl   !== '1') return false;
+    if (active.toggle.has('gdpr') && d.gdpr !== '1') return false;
+    if (active.toggle.has('free') && d.free !== '1') return false;
+    if (active.toggle.has('fast') && !['minutes', 'hours'].includes(d.ttfv ?? '')) return false;
+    if (search && !(d.search ?? '').includes(search)) return false;
+    return true;
+  }
+
+  function apply() {
+    let visible = 0;
+    cards.forEach(c => { const ok = matches(c); c.hidden = !ok; if (ok) visible++; });
+    rows.forEach(r => { r.hidden = !matches(r); });
+    resultCount.textContent = `${visible} ${visible === 1 ? 'tool' : 'tools'}`;
+    emptyState.hidden = visible !== 0;
+  }
+
+  // --- Facet-chips (multi-select) ---
+  qa('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const facet = chip.dataset.facet;
+      const value = chip.dataset.value;
+      const set = active[facet];
+      if (set.has(value)) { set.delete(value); chip.classList.remove('chip--active'); }
+      else { set.add(value); chip.classList.add('chip--active'); }
+      apply();
+    });
+  });
+
+  // --- Zoeken ---
+  searchInput.addEventListener('input', () => { search = searchInput.value.trim().toLowerCase(); apply(); });
+
+  // --- Reset ---
+  function reset() {
+    Object.values(active).forEach(s => s.clear());
+    search = ''; searchInput.value = '';
+    qa('.chip').forEach(c => c.classList.remove('chip--active'));
+    apply();
+  }
+  q('#reset-filters').addEventListener('click', reset);
+  q('#reset-filters-2').addEventListener('click', reset);
+
+  // --- Weergave-toggle (kaarten / tabel) ---
+  qa('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.dataset.view;
+      qa('.view-btn').forEach(b => {
+        const on = b === btn;
+        b.classList.toggle('view-btn--active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      cardsView.hidden = view !== 'cards';
+      tableView.hidden = view !== 'table';
+    });
+  });
+
+  // --- Sorteren (tabelkoppen) ---
+  qa('th[data-sort]').forEach(th => {
+    th.querySelector('button').addEventListener('click', () => {
+      const key = th.dataset.sort;
+      const sorted = [...rows].sort((a, b) =>
+        parseFloat(b.dataset[key] || '0') - parseFloat(a.dataset[key] || '0'));
+      sorted.forEach(r => tableBody.appendChild(r));
+      qa('.th-sort').forEach(s => s.classList.remove('th-sort--active'));
+      const lbl = th.querySelector('.th-sort');
+      lbl.classList.add('th-sort--active');
+      lbl.textContent = (key === 'buzz' ? 'Buzz' : 'Groei/dag') + ' ↓';
+      qa('th[data-sort]').forEach(o => o.removeAttribute('aria-sort'));
+      th.setAttribute('aria-sort', 'descending');
+    });
+  });
+
+  // --- Filters open/dicht op mobiel ---
+  const filtersToggle = q('#filters-toggle');
+  filtersToggle.addEventListener('click', () => {
+    const open = q('#filters').classList.toggle('filters--open');
+    filtersToggle.setAttribute('aria-expanded', String(open));
+  });
+</script>
+
+<style>
+  .browse { padding-top: 80px; padding-bottom: var(--space-10); }
+
+  .browse__head { max-width: 720px; margin: var(--space-6) auto var(--space-6); text-align: center; }
+  .browse__title { font-size: var(--text-4xl); font-weight: var(--font-bold); margin: 0 0 var(--space-2); }
+  .browse__sub { color: var(--text-secondary); margin: 0 0 var(--space-5); }
+  .browse__sub strong { color: var(--text-primary); }
+
+  .searchbar {
+    display: flex; align-items: center; gap: var(--space-3);
+    max-width: 600px; margin: 0 auto;
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-elevated); border: 1px solid var(--border-strong);
+    border-radius: var(--radius-full); transition: border-color var(--transition-fast);
+  }
+  .searchbar:focus-within { border-color: var(--primary-bright); }
+  .searchbar :global(.searchbar__icon) { color: var(--text-muted); flex-shrink: 0; }
+  .searchbar__input {
+    flex: 1; border: none; background: none; outline: none;
+    color: var(--text-primary); font-size: var(--text-base);
+  }
+
+  /* Toolbar */
+  .browse__bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-4);
+  }
+  .result-count { font-weight: var(--font-semibold); color: var(--text-primary); margin: 0; }
+  .browse__bar-right { display: flex; align-items: center; gap: var(--space-2); }
+
+  .view-toggle { display: inline-flex; background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 3px; }
+  .view-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border: none; background: none; cursor: pointer;
+    border-radius: var(--radius-full); color: var(--text-secondary);
+    font-size: var(--text-sm); font-weight: var(--font-medium); transition: all 0.15s ease;
+  }
+  .view-btn--active { background: var(--bg-elevated); color: var(--text-primary); box-shadow: var(--shadow-xs); }
+
+  .filters-toggle {
+    display: none; align-items: center; gap: 6px;
+    padding: 6px 14px; background: var(--bg-panel);
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-full);
+    color: var(--text-secondary); font-size: var(--text-sm); font-weight: var(--font-medium); cursor: pointer;
+  }
+
+  /* Layout: filters links, resultaten rechts */
+  .browse__grid { display: grid; grid-template-columns: 240px 1fr; gap: var(--space-6); align-items: start; }
+
+  .filters { position: sticky; top: 80px; }
+  .filters__scroll { max-height: calc(100vh - 100px); overflow-y: auto; padding-right: 4px; }
+  .facet { margin-bottom: var(--space-5); }
+  .facet__title { font-size: var(--text-sm); font-weight: var(--font-semibold); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 var(--space-2); }
+  .facet__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 5px 12px; font-size: var(--text-sm);
+    color: var(--text-secondary); background: var(--bg-panel);
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-full);
+    cursor: pointer; transition: all 0.15s ease;
+  }
+  .chip:hover { border-color: var(--primary-bright); color: var(--text-primary); }
+  .chip--active { background: var(--primary-bright); border-color: var(--primary-bright); color: var(--bg-base); font-weight: var(--font-medium); }
+  .chip__count { font-size: var(--text-xs); opacity: 0.7; }
+
+  .filters__reset { width: 100%; margin-top: var(--space-2); padding: 8px; background: none; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); color: var(--text-muted); font-size: var(--text-sm); cursor: pointer; }
+  .filters__reset:hover { color: var(--text-primary); border-color: var(--border-strong); }
+
+  .grid-empty { text-align: center; padding: var(--space-8) 0; color: var(--text-muted); }
+
+  /* Tabel */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); }
+  .tool-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .tool-table th, .tool-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border-subtle); white-space: nowrap; }
+  .tool-table thead th { position: sticky; top: 0; background: var(--bg-elevated); color: var(--text-muted); font-weight: var(--font-semibold); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.04em; z-index: 1; }
+  .th-num { text-align: right; }
+  .th-sort { background: none; border: none; color: inherit; font: inherit; cursor: pointer; padding: 0; text-transform: inherit; letter-spacing: inherit; }
+  .th-sort--active { color: var(--primary-bright); }
+  .tool-row:hover { background: var(--bg-panel); }
+  .td-tool a { color: var(--text-primary); font-weight: var(--font-medium); text-decoration: none; }
+  .td-tool a:hover { color: var(--primary-bright); }
+  .td-tool__ease { display: block; font-size: var(--text-xs); color: var(--text-muted); }
+  .td-tool__ease::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--dot); margin-right: 5px; }
+  .cat-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--dot); margin-right: 6px; }
+  .price-tag { color: var(--pc); font-weight: var(--font-medium); }
+
+  /* Mobiel: filters worden een inklapbaar paneel bovenaan */
+  @media (max-width: 860px) {
+    .browse__grid { grid-template-columns: 1fr; }
+    .filters { position: static; display: none; }
+    .filters--open { display: block; }
+    .filters__scroll { max-height: none; }
+    .filters-toggle { display: inline-flex; }
+  }
+</style>
