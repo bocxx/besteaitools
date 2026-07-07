@@ -177,16 +177,26 @@ def flat_composition_for(seed: int) -> tuple[str, str]:
 # ── Frontmatter helpers ────────────────────────────────────────────────────
 
 def parse_field(text: str, field: str) -> Optional[str]:
-    m = re.search(rf'^{field}:\s*["\']?([^"\'\n]+)["\']?', text, re.MULTILINE)
-    return m.group(1).strip() if m else None
+    # Niet parsen met een character-class die beide quote-soorten uitsluit:
+    # dan kapt een titel met een apostrof ("Nvidia's ...") af op die apostrof
+    # (bug gefixt 7 jul 2026). Strip alleen echte omsluitende quotes.
+    m = re.search(rf'^{field}:[ \t]*(.+)$', text, re.MULTILINE)
+    if not m:
+        return None
+    raw = m.group(1).strip()
+    if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in ('"', "'"):
+        raw = raw[1:-1]
+    return raw.strip() or None
 
 
 def set_field(text: str, field: str, value: str) -> str:
     pattern = rf'^{field}:.*$'
     if re.search(pattern, text, re.MULTILINE):
-        return re.sub(pattern, f'{field}: "{value}"', text, flags=re.MULTILINE)
+        value = value.replace('\\', '\\\\').replace('"', '\\"')
+        return re.sub(pattern, lambda _m: f'{field}: "{value}"', text, flags=re.MULTILINE)
     # Insert na title-regel
-    return re.sub(r"^(title:.+)$", rf'\1\n{field}: "{value}"', text,
+    value = value.replace('\\', '\\\\').replace('"', '\\"')
+    return re.sub(r"^(title:.+)$", lambda m2: f'{m2.group(1)}\n{field}: "{value}"', text,
                   count=1, flags=re.MULTILINE)
 
 
