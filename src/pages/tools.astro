@@ -30,6 +30,23 @@ const nlCount = tools.filter(t => t.nlSupport).length;
 const gdprCount = tools.filter(t => t.gdprReady).length;
 const freeCount = tools.filter(t => t.pricingModel === 'free' || t.pricingModel === 'freemium').length;
 
+// SEO: CollectionPage + ItemList (top 30 op buzz) — voorheen had /tools geen schema.
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const collectionJsonLd = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage',
+  name: `Alle AI-tools (${tools.length})`,
+  description: `Filterbare catalogus van ${tools.length} AI-tools op categorie, prijs, gebruiksgemak, NL en AVG.`,
+  url: `${siteOrigin}/tools`,
+};
+const toolsItemListJsonLd = {
+  '@context': 'https://schema.org', '@type': 'ItemList',
+  name: `AI-tools op debesteaitools.nl`,
+  numberOfItems: tools.length,
+  itemListElement: toolsSorted.slice(0, 30).map((t, i) => ({
+    '@type': 'ListItem', position: i + 1, name: t.name, url: `${siteOrigin}/ai-tools/${t.slug}`,
+  })),
+};
+
 export const prerender = true;
 ---
 
@@ -37,6 +54,10 @@ export const prerender = true;
   title={`Alle AI-tools filteren — ${tools.length} tools op prijs, taak en AVG | debesteaitools.nl`}
   description={`Blader door alle ${tools.length} AI-tools en filter op categorie, prijs, gebruiksgemak, Nederlandse ondersteuning en AVG. Wissel tussen kaarten en een compacte tabel.`}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(collectionJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(toolsItemListJsonLd)} />
+  </Fragment>
   <main class="container container-wide browse">
 
     <header class="browse__head">

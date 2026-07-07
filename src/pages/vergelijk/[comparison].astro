@@ -52,6 +52,53 @@ function buildSparkline(tool: Tool, color: string, width = 200, height = 40): st
 const catA = toolCategories[toolA.category];
 const catB = toolCategories[toolB.category];
 
+// ── SEO structured data (voorheen ontbrak élke JSON-LD op deze 134 pagina's) ──
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const pageUrl = `${siteOrigin}/vergelijk/${pair.comparisonSlug}`;
+const pmA = pricingModels[toolA.pricingModel].label;
+const pmB = pricingModels[toolB.pricingModel].label;
+const buzzBetter = buzzWinner === 'a' ? toolA : buzzWinner === 'b' ? toolB : null;
+
+const itemListJsonLd = {
+  '@context': 'https://schema.org', '@type': 'ItemList',
+  name: `${toolA.name} vs ${toolB.name}`,
+  url: pageUrl,
+  numberOfItems: 2,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: toolA.name, url: `${siteOrigin}/ai-tools/${toolA.slug}` },
+    { '@type': 'ListItem', position: 2, name: toolB.name, url: `${siteOrigin}/ai-tools/${toolB.slug}` },
+  ],
+};
+
+const vsFaqs = [
+  {
+    q: `Wat is het verschil tussen ${toolA.name} en ${toolB.name}?`,
+    a: `${toolA.name} valt onder ${catA.name.toLowerCase()} (${pmA.toLowerCase()}), ${toolB.name} onder ${catB.name.toLowerCase()} (${pmB.toLowerCase()}). ${toolA.shortDescription} ${toolB.shortDescription} Hierboven staat een side-by-side vergelijking op buzz, groei en prijs.`,
+  },
+  {
+    q: `Is ${toolA.name} of ${toolB.name} beter?`,
+    a: buzzBetter
+      ? `Dat hangt af van je taak. Op dit moment heeft ${buzzBetter.name} de meeste buzz en groei van de twee — maar bekijk de sterke punten en beperkingen om te kiezen wat bij jóuw situatie past.`
+      : `Beide scoren vergelijkbaar op dit moment. Bekijk de sterke punten en beperkingen hierboven om te kiezen wat bij je past.`,
+  },
+  {
+    q: `Wat kost ${toolA.name} vergeleken met ${toolB.name}?`,
+    a: `${toolA.name} werkt met het prijsmodel ${pmA.toLowerCase()}, ${toolB.name} met ${pmB.toLowerCase()}. Bekijk de toolpagina voor actuele prijsdetails.`,
+  },
+];
+const vsFaqJsonLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: vsFaqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const vsBreadcrumbJsonLd = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteOrigin}/` },
+    { '@type': 'ListItem', position: 2, name: 'Vergelijken', item: `${siteOrigin}/vergelijk` },
+    { '@type': 'ListItem', position: 3, name: `${toolA.name} vs ${toolB.name}`, item: pageUrl },
+  ],
+};
+
 export const prerender = true;
 ---
 
@@ -59,6 +106,12 @@ export const prerender = true;
   title={comparisonMetaTitle(toolA.name, toolB.name)}
   description={comparisonMetaDescription(toolA.name, toolB.name)}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(vsFaqJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(vsBreadcrumbJsonLd)} />
+  </Fragment>
+
   <main class="container" style="padding-top: 80px; max-width: 900px;">
 
     <a href="/" class="back-link">
@@ -209,6 +262,24 @@ export const prerender = true;
         </div>
       </section>
     )}
+
+    <!-- FAQ (zichtbaar + FAQPage schema) -->
+    <section class="vs-faq" aria-labelledby="vs-faq-h">
+      <h2 id="vs-faq-h">Veelgestelde vragen</h2>
+      {vsFaqs.map((f) => (
+        <details class="vs-faq__q">
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </section>
+
+    <!-- Interne links: van eindpunt naar hubs -->
+    <nav class="vs-links" aria-label="Verder kijken">
+      <a href={`/top-10/${toolA.category}`}>Top 10 {catA.name.toLowerCase()}-tools →</a>
+      {toolB.category !== toolA.category && <a href={`/top-10/${toolB.category}`}>Top 10 {catB.name.toLowerCase()}-tools →</a>}
+      <a href="/vergelijk">Alle vergelijkingen →</a>
+    </nav>
 
   </main>
 </Layout>
@@ -419,6 +490,23 @@ export const prerender = true;
   }
   .pros li::before { content: '✓'; color: var(--color-success); }
   .cons li::before { content: '✕'; color: var(--color-error); }
+
+  /* FAQ */
+  .vs-faq { margin-bottom: var(--space-8); }
+  .vs-faq h2 { font-family: var(--font-logo); font-size: var(--text-2xl); font-weight: var(--font-regular); margin: 0 0 var(--space-4); }
+  .vs-faq__q { border-bottom: 1px solid var(--border-subtle); padding: var(--space-3) 0; }
+  .vs-faq__q summary {
+    cursor: pointer; font-weight: var(--font-semibold); color: var(--text-primary);
+    list-style: none; display: flex; justify-content: space-between; gap: var(--space-3);
+  }
+  .vs-faq__q summary::-webkit-details-marker { display: none; }
+  .vs-faq__q summary::after { content: '+'; color: var(--primary-bright); font-size: var(--text-xl); line-height: 1; }
+  .vs-faq__q[open] summary::after { content: '–'; }
+  .vs-faq__q p { margin: var(--space-3) 0 0; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); }
+
+  .vs-links { display: flex; flex-wrap: wrap; gap: var(--space-4); padding-top: var(--space-6); border-top: 1px solid var(--border-subtle); }
+  .vs-links a { color: var(--primary-bright); text-decoration: none; font-size: var(--text-sm); font-weight: var(--font-medium); }
+  .vs-links a:hover { text-decoration: underline; }
 
   @media (max-width: 640px) {
     .vs-grid {

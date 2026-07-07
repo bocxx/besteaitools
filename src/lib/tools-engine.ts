@@ -15,7 +15,7 @@ import type {
   LaunchRadarViewData,
 } from '../types/tools-domain';
 import type { ToolCategoryKey, BusinessFunctionKey } from './tools-schema';
-import { businessFunctions } from './tools-schema';
+import { businessFunctions, toolCategories } from './tools-schema';
 import { isExcludedTool } from '../config/excluded-tools';
 import { scrubStatsForRelevance } from './stats-relevance';
 
@@ -476,6 +476,92 @@ export async function getWeeklyHighlights(): Promise<WeeklyHighlights> {
     dalers,
     nieuwkomers: sections.nieuw.slice(0, 5),
     totalTools: tools.length,
+  };
+}
+
+// ============================================
+// TOP 10 LISTS (per categorie, wekelijks ververst)
+// ============================================
+
+export interface Top10List {
+  categoryKey: ToolCategoryKey;
+  name: string;
+  color: string;
+  description: string;
+  /** Top-N tools, gerankt op buzz_score (aflopend). */
+  tools: Tool[];
+  /** Totaal aantal tools in de categorie (voor "top 10 van N"). */
+  totalInCategory: number;
+}
+
+export interface Top10Data {
+  /** bv. "2026-w28" */
+  weekLabel: string;
+  weekNumber: number;
+  year: number;
+  /** ISO-timestamp van de radar-meting (peildatum-bron). */
+  generatedAt: string;
+  /** Nederlandse peildatum, bv. "7 juli 2026". */
+  peildatum: string;
+  lists: Top10List[];
+}
+
+/**
+ * Top-10 AI-tools per categorie, gerankt op buzz_score uit de 2×/dag
+ * ververste radar-data. Draagt een ISO-week-label + peildatum, zodat de
+ * pagina's zich als "Top 10 van week N" presenteren (én voldoen aan de
+ * claim-validatie-eis: elk gepubliceerd cijfer heeft een peildatum).
+ *
+ * Categorieën met te weinig tools voor een zinnige ranglijst worden
+ * overgeslagen (minTools). De lijsten zijn sorteerbaar geretourneerd op
+ * grootte (meest gevulde categorie eerst) voor de hub.
+ */
+export async function getTop10ByCategory(
+  opts?: { minTools?: number; limit?: number },
+): Promise<Top10Data> {
+  const min = opts?.minTools ?? 5;
+  const limit = opts?.limit ?? 10;
+  const [tools, radar] = await Promise.all([getAllTools(), getRadarData()]);
+
+  const genDate = radar?.generated_at ? new Date(radar.generated_at) : new Date();
+  const year = genDate.getFullYear();
+  const oneJan = new Date(year, 0, 1);
+  const weekNumber = Math.ceil(
+    ((genDate.getTime() - oneJan.getTime()) / 86400000 + oneJan.getDay() + 1) / 7,
+  );
+  const weekLabel = `${year}-w${String(weekNumber).padStart(2, '0')}`;
+  const peildatum = genDate.toLocaleDateString('nl-NL', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const lists: Top10List[] = [];
+  for (const [key, cat] of Object.entries(toolCategories)) {
+    const k = key as ToolCategoryKey;
+    const inCat = tools.filter((t) => t.category === k);
+    if (inCat.length < min) continue;
+    const ranked = [...inCat]
+      .sort((a, b) => (b.stats?.buzz_score ?? 0) - (a.stats?.buzz_score ?? 0))
+      .slice(0, limit);
+    lists.push({
+      categoryKey: k,
+      name: cat.name,
+      color: cat.color,
+      description: cat.description,
+      tools: ranked,
+      totalInCategory: inCat.length,
+    });
+  }
+  lists.sort((a, b) => b.totalInCategory - a.totalInCategory);
+
+  return {
+    weekLabel,
+    weekNumber,
+    year,
+    generatedAt: radar?.generated_at ?? new Date().toISOString(),
+    peildatum,
+    lists,
   };
 }
 
