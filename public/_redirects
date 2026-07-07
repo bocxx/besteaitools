@@ -14,15 +14,22 @@
 /ai-tools/sora / 301
 /ai-tools/sora/ / 301
 
-# Wizard-pagina verwijderd — redirect oud verkeer naar homepage.
-/vind-je-beste-ai-tool / 301
-/vind-je-beste-ai-tool/ / 301
-/match / 301
-/match/ / 301
-/zakelijk / 301
-/zakelijk/ / 301
-/beste-ai-tool / 301
-/beste-ai-tool/ / 301
+# /vind-je-beste-ai-tool is een LEVENDE SEO-finder-landingspagina
+# (src/pages/vind-je-beste-ai-tool.astro) én het doel van de hero-CTA + ~8
+# interne links. Die kreeg per ongeluk een 301 → / (comment "wizard verwijderd"
+# uit de fundament-commit), waardoor de pagina live de homepage serveerde.
+# Die redirect is verwijderd zodat de finder weer serveert.
+#
+# /match, /zakelijk en /beste-ai-tool zijn samengevoegd in de finder → stuur
+# oud verkeer dáárheen (niet naar de homepage).
+# LET OP: alleen exacte paden, GEEN /match/* — /match/tools.json voedt de
+# finder-wizard (src/pages/match/tools.json.ts) en moet blijven bestaan.
+/match /vind-je-beste-ai-tool 301
+/match/ /vind-je-beste-ai-tool 301
+/zakelijk /vind-je-beste-ai-tool 301
+/zakelijk/ /vind-je-beste-ai-tool 301
+/beste-ai-tool /vind-je-beste-ai-tool 301
+/beste-ai-tool/ /vind-je-beste-ai-tool 301
 
 # Oud/fout pad: /vergelijking/* was nooit een echte route (de route is
 # /vergelijk/*). Google heeft er nog een paar onthouden → map ze door.
