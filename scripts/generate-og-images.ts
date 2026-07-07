@@ -207,6 +207,7 @@ const FEATURE_PAGES: FeaturePage[] = [
   { key: 'modellen',  eyebrow: 'Modellen',        title: 'Trending AI-modellen',                 subtitle: 'Welke open modellen zitten nú in de lift — gerangschikt op momentum.', accent: '#a87ed4' },
   { key: 'doorbraak', eyebrow: 'Doorbraak-radar', title: 'Wat staat op punt te breken',          subtitle: 'Tools die dev en onderzoek al oppakt — vóór de pers volgt.', accent: '#df4d2c' },
   { key: 'makers',    eyebrow: 'Makers',          title: 'Wie bouwt de trending AI',             subtitle: 'De mensen & organisaties achter de tools die nu stijgen.', accent: '#44c490' },
+  { key: 'stijgers-dalers', eyebrow: 'Verkeer-radar', title: 'Stijgers & dalers',                subtitle: 'De grootste verkeersbewegers onder AI-tools — uit de RankmyAI-ranking.', accent: '#34d399' },
   { key: 'leren',     eyebrow: 'Leren',           title: 'Leer AI-tools — de beste bronnen',     subtitle: 'Gecureerde GitHub-repos, hands-on guides en video’s.', accent: '#e8cc2c' },
   { key: 'vergelijk', eyebrow: 'Vergelijk',       title: 'Vergelijk AI-tools',                   subtitle: 'Side-by-side op buzz, groei en functies.', accent: '#5ab0d8' },
   { key: 'functies',  eyebrow: 'Per functie',     title: 'AI-tools per bedrijfsfunctie',         subtitle: 'Van marketing tot legal — de beste tools voor jouw werk.', accent: '#b07820' },

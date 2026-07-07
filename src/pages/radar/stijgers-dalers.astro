@@ -1,0 +1,185 @@
+---
+/**
+ * /radar/stijgers-dalers — AI-tools die stijgen en dalen op webverkeer
+ *
+ * Gevoed door newsflux export_rankmyai_movers.py → src/data/rankmyai_movers.json.
+ * Bron: RankmyAI (maandelijkse traffic-ranking), CC BY 4.0 — bronvermelding +
+ * link verplicht. Toont rank-posities ("van 41 naar 12"), GEEN bezoekcijfers.
+ */
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import { ArrowLeft, TrendingUp, TrendingDown, ArrowUpRight, Sparkles, Zap } from '@lucide/astro';
+import DiscoverGrid from '../../components/DiscoverGrid.astro';
+import data from '../../data/rankmyai_movers.json';
+
+const risers = (data.risers ?? []) as any[];
+const fallers = (data.fallers ?? []) as any[];
+const month = data.ranking_month ?? null;
+const attribution = data.attribution ?? { source: 'RankmyAI', url: 'https://www.rankmyai.com', license: 'CC BY 4.0' };
+const discoveryCount = (data.discovery_candidates ?? []).length;
+
+const monthLabel = month
+  ? new Date(`${month}-01`).toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' })
+  : null;
+
+const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'AI-tools stijgers & dalers op webverkeer — debesteaitools.nl',
+  description: `De grootste stijgers en dalers in webverkeer onder AI-tools volgens de RankmyAI traffic-ranking (${monthLabel ?? 'actueel'}).`,
+  url: `${siteOrigin}/radar/stijgers-dalers`,
+  numberOfItems: risers.length + fallers.length,
+  itemListElement: risers.slice(0, 10).map((m, i) => ({
+    '@type': 'ListItem', position: i + 1, name: m.tool_name, url: m.rankmyai_url,
+  })),
+};
+---
+
+<Layout
+  title="Stijgers & dalers — AI-tools op webverkeer | debesteaitools.nl"
+  description={`Welke AI-tools stegen en daalden het hardst in webverkeer? De grootste bewegers uit de RankmyAI traffic-ranking${monthLabel ? ` (${monthLabel})` : ''} — rank-posities, niet in de pers gezien.`}
+  ogImage="/og/page-stijgers-dalers.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+  <main class="container md">
+    <a href="/radar" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar de radar</a>
+
+    <header class="md__head">
+      <p class="md__kicker"><TrendingUp size={13} stroke-width={1.75} /> Verkeer-radar</p>
+      <h1 class="md__title">Stijgers &amp; dalers</h1>
+      <p class="md__lede">
+        Welke AI-tools winnen en verliezen bezoekers? Dit zijn de grootste
+        bewegers in webverkeer volgens de onafhankelijke maandelijkse
+        traffic-ranking van RankmyAI. We tonen de <strong>positieverschuiving</strong>
+        (van&nbsp;X naar&nbsp;Y) — geen absolute bezoekersaantallen.
+      </p>
+      <div class="md__stats">
+        <span><strong>{risers.length}</strong> stijgers</span>
+        <span><strong>{fallers.length}</strong> dalers</span>
+        {discoveryCount > 0 && <span><strong>{discoveryCount}</strong> nog niet op debesteaitools</span>}
+        {monthLabel && <span>ranking {monthLabel}</span>}
+      </div>
+    </header>
+
+    <div class="movers">
+      <section class="movers__col">
+        <h2 class="movers__h movers__h--up"><TrendingUp size={18} stroke-width={2} /> Stijgers</h2>
+        <ol class="movers__list">
+          {risers.map((m) => (
+            <li class="mover">
+              <span class="mover__delta mover__delta--up">+{m.delta}</span>
+              <div class="mover__body">
+                <div class="mover__top">
+                  <a class="mover__name" href={m.rankmyai_url} target="_blank" rel="noopener nofollow">{m.tool_name}<ArrowUpRight size={13} stroke-width={2} /></a>
+                  {m.discovery_candidate && (
+                    <span class="badge badge--disc" title="Staat nog niet op debesteaitools.nl"><Sparkles size={10} stroke-width={2} /> nieuw voor ons</span>
+                  )}
+                </div>
+                <div class="mover__meta">
+                  <span class="mover__move">steeg van {m.prev_rank} naar {m.rank}</span>
+                  {m.pricing && <span class="mover__pill">{m.pricing}</span>}
+                  {m.country && <span>{m.country}</span>}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="movers__col">
+        <h2 class="movers__h movers__h--down"><TrendingDown size={18} stroke-width={2} /> Dalers</h2>
+        <ol class="movers__list">
+          {fallers.map((m) => (
+            <li class="mover">
+              <span class="mover__delta mover__delta--down">{m.delta}</span>
+              <div class="mover__body">
+                <div class="mover__top">
+                  <a class="mover__name" href={m.rankmyai_url} target="_blank" rel="noopener nofollow">{m.tool_name}<ArrowUpRight size={13} stroke-width={2} /></a>
+                </div>
+                <div class="mover__meta">
+                  <span class="mover__move">zakte van {m.prev_rank} naar {m.rank}</span>
+                  {m.pricing && <span class="mover__pill">{m.pricing}</span>}
+                  {m.country && <span>{m.country}</span>}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </div>
+
+    {discoveryCount > 0 && (
+      <aside class="disc-note">
+        <Zap size={15} stroke-width={2} />
+        <span>
+          <strong>{discoveryCount} stijger(s)</strong> staan nog niet in onze directory — ze zijn opgepikt
+          als discovery-kandidaat voor de redactie.
+        </span>
+      </aside>
+    )}
+
+    <section class="siblings" aria-label="Ontdek ook">
+      <h2 class="siblings__h">Ontdek ook</h2>
+      <DiscoverGrid variant="strip" only={['doorbraak', 'modellen', 'tools', 'nieuws']} />
+    </section>
+
+    <p class="md__source">
+      Bron: <a href={attribution.url} target="_blank" rel="noopener">{attribution.source}</a>
+      {monthLabel ? ` (traffic-ranking ${monthLabel})` : ''} ·
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener license"> {attribution.license}</a>.
+      RankmyAI publiceert rank-posities, geen absolute bezoekcijfers.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .md { padding-top: 80px; max-width: 960px; padding-bottom: var(--space-16, 4rem); }
+  .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
+  .back-link:hover { color: var(--primary-bright); }
+
+  .md__head { max-width: 64ch; margin-bottom: var(--space-8, 2rem); }
+  .md__kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono, monospace); font-size: var(--text-xs); color: var(--primary-bright); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 var(--space-3) 0; }
+  .md__title { font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem); font-weight: var(--font-regular); line-height: 1.1; margin: 0 0 var(--space-4) 0; }
+  .md__lede { color: var(--text-secondary); font-size: var(--text-lg, 1.125rem); line-height: 1.6; margin: 0 0 var(--space-5) 0; }
+  .md__stats { display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: var(--text-sm); color: var(--text-secondary); }
+  .md__stats strong { color: var(--text-primary); }
+
+  .movers { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .movers__h { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-base, 1rem); font-weight: var(--font-semibold); margin: 0 0 var(--space-4) 0; }
+  .movers__h--up { color: #34d399; }
+  .movers__h--down { color: #df6a4d; }
+  .movers__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+
+  .mover { display: grid; grid-template-columns: 3rem 1fr; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); background: var(--bg-glass, transparent); }
+  .mover__delta { font-family: var(--font-mono, monospace); font-size: var(--text-sm); font-weight: var(--font-semibold); text-align: center; }
+  .mover__delta--up { color: #34d399; }
+  .mover__delta--down { color: #df6a4d; }
+  .mover__body { min-width: 0; }
+  .mover__top { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+  .mover__name { display: inline-flex; align-items: center; gap: 3px; font-weight: var(--font-semibold); color: var(--text-primary); text-decoration: none; overflow-wrap: anywhere; }
+  .mover__name:hover { color: var(--primary-bright); }
+  .mover__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: 3px; font-size: var(--text-xs); color: var(--text-secondary); }
+  .mover__move { color: var(--text-secondary); }
+  .mover__pill { font-family: var(--font-mono, monospace); opacity: 0.75; text-transform: lowercase; }
+
+  .badge { display: inline-flex; align-items: center; gap: 3px; font-size: 0.65rem; font-family: var(--font-mono, monospace); text-transform: uppercase; letter-spacing: 0.04em; padding: 1px 6px; border-radius: var(--radius-full); white-space: nowrap; }
+  .badge--disc { background: color-mix(in oklab, var(--primary-bright) 18%, transparent); color: var(--primary-bright); }
+
+  .disc-note { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-6); padding: var(--space-3) var(--space-4); border: 1px solid color-mix(in oklab, var(--primary-bright) 30%, transparent); border-radius: var(--radius-lg, 12px); background: color-mix(in oklab, var(--primary-bright) 6%, transparent); font-size: var(--text-sm); color: var(--text-secondary); }
+  .disc-note :global(svg) { color: var(--primary-bright); flex-shrink: 0; }
+  .disc-note strong { color: var(--text-primary); }
+
+  .siblings { margin-top: var(--space-12, 3rem); }
+  .siblings__h { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin: 0 0 var(--space-4) 0; }
+
+  .md__source { margin-top: var(--space-8); font-size: var(--text-xs); color: var(--text-secondary); opacity: 0.75; }
+  .md__source a { color: var(--text-secondary); text-decoration: underline; }
+  .md__source a:hover { color: var(--primary-bright); }
+
+  @media (max-width: 640px) {
+    .movers { grid-template-columns: 1fr; gap: var(--space-8); }
+  }
+</style>
