@@ -32,6 +32,7 @@ export const siteConfig = {
     // De pagina's bestaan nog (ongelinkt) en builden door.
     main: [
       { label: "AI-tools", href: "/tools" },
+      { label: "Top 10", href: "/top-10" },
       { label: "Gidsen", href: "/gids" },
       { label: "Vergelijk", href: "/vergelijk" },
       { label: "Leren", href: "/leren" },
@@ -40,6 +41,7 @@ export const siteConfig = {
     footer: {
       platform: [
         { label: "AI Tools", href: "/" },
+        { label: "Top 10-lijsten", href: "/top-10" },
         { label: "Vergelijk", href: "/vergelijk" },
         { label: "Over deze site", href: "/over" },
       ],

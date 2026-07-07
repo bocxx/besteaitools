@@ -10,9 +10,9 @@ export async function GET(context: APIContext) {
   const tools = await getCollection('tools', ({ data }) => !data.draft);
 
   return rss({
-    title: 'nuchter.ai',
-    description: 'De nuchtere gids voor AI-tools, trends en routes.',
-    site: context.site ?? 'https://nuchter.ai',
+    title: 'debesteaitools.nl — AI-tools',
+    description: 'De onafhankelijke gids voor de beste AI-tools: reviews, vergelijkingen en wekelijkse top 10-lijsten.',
+    site: context.site ?? 'https://debesteaitools.nl',
     items: tools.map((tool) => ({
       title: tool.data.name,
       description: tool.data.shortDescription,
