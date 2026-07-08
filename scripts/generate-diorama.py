@@ -522,8 +522,40 @@ def process_article(md_path: Path, *, dry_run: bool, force: bool) -> str:
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
+
+# ── Zelftest: regressie-slot op de apostrof-bug (7 jul 2026) ────────────────
+# parse_field kapte titels af op de eerste apostrof; set_field kon YAML breken
+# op een dubbele quote. Deze test draait bij ELKE aanroep (kost <1ms) zodat een
+# herintroductie van de bug de run luid laat falen in plaats van stilletjes
+# afgekapte alt-teksten te schrijven. Los draaien: --self-test.
+def _self_test() -> None:
+    cases = [
+        ('title: "Nvidia\'s rack: dilemma\'s en training"',
+         "Nvidia's rack: dilemma's en training"),
+        ("title: 'Enkel gequote met \"aanhaling\"'",
+         'Enkel gequote met "aanhaling"'),
+        ('title: Ongequote titel', 'Ongequote titel'),
+        ('title: "Vraag? Met: leestekens — en méér"',
+         'Vraag? Met: leestekens — en méér'),
+    ]
+    for raw, expected in cases:
+        got = parse_field(raw, "title")
+        if got != expected:
+            raise SystemExit(
+                f"❌ zelftest parse_field FAALT: {raw!r} -> {got!r} (verwacht {expected!r}).\n"
+                "   De apostrof-bug is terug — zie commit 'fix(diorama)' van 7 jul 2026."
+            )
+    out = set_field('title: "X"\nheroImage: "/x.webp"\n', "heroImageAlt",
+                    'Alt met "quote" en \'apostrof\'')
+    line = [l for l in out.splitlines() if l.startswith("heroImageAlt:")][0]
+    if '\\"' not in line:
+        raise SystemExit("❌ zelftest set_field FAALT: dubbele quotes worden niet ge-escapet.")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Diorama hero-image generator (v2)")
+    parser.add_argument("--self-test", action="store_true",
+                        help="Draai alleen de parsing-zelftest (regressie-check) en stop")
     parser.add_argument("--slug", help="Verwerk alleen dit artikel (zoekt in CONTENT_DIR)")
     parser.add_argument("--file", metavar="PATH",
                         help="Verwerk één specifiek .md-bestand (ook buiten CONTENT_DIR)")
@@ -533,6 +565,11 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true",
                         help="Preview, geen API-aanroepen")
     args = parser.parse_args()
+
+    _self_test()  # regressie-slot — faalt luid als de apostrof-bug terugkeert
+    if args.self_test:
+        print("✅ diorama parsing-zelftest OK")
+        return
 
     if not args.slug and not args.all and not args.file:
         parser.print_help()

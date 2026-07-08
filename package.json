@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
+    "verify:diorama": "python3 scripts/generate-diorama.py --self-test",
     "postinstall": "node scripts/sync-native-binaries.mjs",
     "dev": "astro dev",
     "images:one": "scripts/diorama.sh --slug",
@@ -10,7 +11,7 @@
     "images:regen": "scripts/diorama.sh --force --slug",
     "generate-og": "tsx scripts/generate-og-images.ts",
     "generate-cheatsheet": "tsx scripts/generate-cheatsheet.ts",
-    "build": "npm run generate-og && node scripts/generate-responsive-images.mjs && node scripts/build-search-index.mjs && astro build",
+    "build": "npm run verify:diorama && npm run generate-og && node scripts/generate-responsive-images.mjs && node scripts/build-search-index.mjs && astro build",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
