@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-11T17:34:33.634906",
+  "generated_at": "2026-07-12T05:35:27.410616",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 17,
+    "for_tools": 19,
     "for_news": 15,
-    "rejected_lang": 138,
+    "rejected_lang": 145,
     "already_covered": 0,
-    "total_scanned": 4607
+    "total_scanned": 4608
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
         "how to",
+        "step-by-step",
         "tutorial"
       ],
       "matched_tools": [
@@ -75,8 +75,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "breakdown",
-        "how to"
+        "how to",
+        "breakdown"
       ],
       "matched_tools": [
         "claude"
@@ -128,8 +128,8 @@
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -195,8 +195,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "build an"
+        "build an",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -299,8 +299,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -896,6 +896,57 @@
       "id": "b49b738e8bae9386"
     },
     {
+      "source": "articles:Towards AI - Medium",
+      "platform": "article",
+      "title": "How AI Agent Memory Actually Works - And How to Build It",
+      "text": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*4MQPuB_Vf-9PnaN3PFFwhA.png\"></figure><p>Every call you make to a large language model is stateless. The model reads the text you send, generates a reply, and forgets everything the moment it finishes. That is fine for a one-off question and a disaster for an agent - a system that takes multi-step actions, learns from feedback, and picks up work across sessions. <strong>AI agent memory architecture</strong> is the layer you build on top of that stateless model to give it continuity: a way to remember what happened, what’s true,",
+      "url": "https://pub.towardsai.net/how-ai-agent-memory-actually-works-and-how-to-build-it-0d0874e913bc?source=rss----98111c9905da---4",
+      "date": "2026-07-12",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "ultimate guide",
+        "guide"
+      ],
+      "matched_tools": [
+        "make"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "92bba793611f077b"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "The Ultimate Claude Masterclass: 13 Power Features Changing the AI Game",
@@ -907,8 +958,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "masterclass",
-        "introduction to",
-        "guide"
+        "guide",
+        "introduction to"
       ],
       "matched_tools": [
         "claude"
@@ -945,6 +996,56 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "5e58c623252a0794"
+    },
+    {
+      "source": "articles:MarkTechPost",
+      "platform": "article",
+      "title": "How to Build a T4-Friendly Autonomous Data Science Agent with DeepAnalyze-8B, Sandboxed Code Execution, and Iterative Analysis",
+      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we build an autonomous data science agent around <a href=\"https://github.com/ruc-datalab/DeepAnalyze\"><strong>DeepAnalyze-8B</strong></a> and run it. We begin by preparing a stable runtime, installing the required machine-learning dependencies, and loading the DeepAnalyze tokenizer and model in 4-bit mode to keep the workflow practical on limited GPU memory. We then create a sandboxed execution environment that allows the model to generate Python code, execute it safely, observe the results, and continue its analysis in an agentic ",
+      "url": "https://www.marktechpost.com/2026/07/10/how-to-build-a-t4-friendly-autonomous-data-science-agent-with-deepanalyze-8b-sandboxed-code-execution-and-iterative-analysis/",
+      "date": "2026-07-10",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build an",
+        "how to",
+        "build a",
+        "tutorial"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "1bfc129cf521d690"
     }
   ],
   "for_news": [
@@ -1182,6 +1283,56 @@
       "id": "646e2325aaf84565"
     },
     {
+      "source": "articles:Towards AI - Medium",
+      "platform": "article",
+      "title": "Understand HNSW: Why Your Vector Search Returns Garbage (Build your own minimalist HNSW from…",
+      "text": "<h3>Understand HNSW: Why Your Vector Search Returns Garbage (Build your own minimalist HNSW from scratch)</h3><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*CMMte1i_Tqfyd431rcjIMA.png\"></figure><p>I still remember that query. Typed in “how to cancel my subscription”, and the result that came out was an article that explained how to reset a forgotten password. Well, that seems wrong, and that too, in a way that it made no sense given how obviously related those two concepts should have been in embedding space.</p><p>Blamed the embedding model first. Swapped it for a bigger ",
+      "url": "https://pub.towardsai.net/understand-hnsw-why-your-vector-search-returns-garbage-build-your-own-minimalist-hnsw-from-114415ddf28c?source=rss----98111c9905da---4",
+      "date": "2026-07-11",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build your",
+        "how to",
+        "from scratch",
+        "explained"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Understand HNSW in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "1f3c253ab6f8e95f"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "AI ＆ Machine Learning for Developers: A Hands-On Intro",
@@ -1192,11 +1343,11 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "introduction to",
+        "tutorial",
         "guide",
-        "build a",
         "hands-on",
-        "tutorial"
+        "build a",
+        "introduction to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1243,9 +1394,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
+        "how to",
         "build a",
-        "guide",
-        "how to"
+        "guide"
       ],
       "matched_tools": [
         "claude"
@@ -1297,9 +1448,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "ultimate guide",
+        "how to",
         "build a",
-        "how to"
+        "ultimate guide"
       ],
       "matched_tools": [
         "together ai"
@@ -1313,7 +1464,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "milesdeutscher",
-      "followers": 673638,
+      "followers": 673819,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1343,6 +1494,59 @@
     {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
+      "title": "This week's AI lineup ran from a build-it-yourself second brain to a math proof that your guardrails will fail.\n\n4 AI stories you should not miss:\n\n→ Build an A",
+      "text": "This week's AI lineup ran from a build-it-yourself second brain to a math proof that your guardrails will fail.\n\n4 AI stories you should not miss:\n\n→ Build an AI second brain: wire Claude and Obsidian together into a knowledge system that compounds instead of resetting every time you open a chat.\n\n→ ChatGPT goes deeper on health: OpenAI says GPT-5.5 Instant hits frontier-level health performance, free for everyone, with possible factuality errors down 71% in two months across billions of weekly messages.\n\n→ Your AI guardrails will be bypassed: a NIST proof extends Gödel's theorems to AI safety",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7475543262389374976/",
+      "date": "2026-07-12",
+      "engagement": 30.0,
+      "source_weight": 1.8,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "build an",
+        "complete guide",
+        "breakdown"
+      ],
+      "matched_tools": [
+        "chatgpt",
+        "claude",
+        "together ai"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "linkedin"
+      ],
+      "score": 15.45,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.15,
+        "source_weight": 1.8,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Waarom chatgpt er nu toe doet — en wat je ermee moet.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "93e4d186dbf4d018"
+    },
+    {
+      "source": "linkedin:GenAI Works",
+      "platform": "linkedin",
       "title": "People think learning Claude takes weeks. It doesn’t.\n\nWe gathered 12 free resources built by experts that teach it in hours:\n\nClaude starter course: https://ln",
       "text": "People think learning Claude takes weeks. It doesn’t.\n\nWe gathered 12 free resources built by experts that teach it in hours:\n\nClaude starter course: https://lnkd.in/eYWFx-GU\nWhat you can do with AI: https://lnkd.in/eispRqzD\nHow to stop hitting your Claude limit: https://lnkd.in/eHtyBPSz\nClaude guide to AI agents: https://lnkd.in/eAgkQUbH\nIntroduction to Claude Cowork: https://lnkd.in/e2iRJbQu\nClaude Code 101: https://lnkd.in/gtvk2RQM\nIntroduction to subagents: https://lnkd.in/enfSNpbq\nIntroduction to agent skills: https://lnkd.in/gNeJVefN\nIntroduction to Model Context Protocol (MCP): https://",
       "url": "https://www.linkedin.com/feed/update/urn:li:activity:7481289069361242112/",
@@ -1351,9 +1555,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "introduction to",
+        "how to",
         "guide",
-        "how to"
+        "introduction to"
       ],
       "matched_tools": [
         "claude",
@@ -1457,10 +1661,10 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "how to",
         "step-by-step",
         "build a",
-        "breakdown",
-        "how to"
+        "breakdown"
       ],
       "matched_tools": [
         "elevenlabs",
@@ -1510,9 +1714,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "walkthrough",
+        "how to",
         "breakdown",
-        "how to"
+        "walkthrough"
       ],
       "matched_tools": [
         "together ai"
@@ -1551,55 +1755,6 @@
       "id": "1f8806ee1ae57544"
     },
     {
-      "source": "linkedin:Eran Feit",
-      "platform": "linkedin",
-      "title": "YOLOX Object Detection without coding\n \nFor anyone studying computer vision and machine learning...\nThe core technical challenge this tutorial addresses is the ",
-      "text": "YOLOX Object Detection without coding\n \nFor anyone studying computer vision and machine learning...\nThe core technical challenge this tutorial addresses is the shift away from complex anchor-based object detection systems toward simpler, anchor-free architectures. Traditional models like early versions of YOLO rely on predefined anchor boxes and manually tuned hyperparameters to predict bounding locations, which complicates both training and edge deployment. YOLOX overcomes this by employing an anchor-free design alongside a decoupled detection head that processes classification and regression",
-      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7475604948123090945/",
-      "date": "2026-07-09",
-      "engagement": 30.0,
-      "source_weight": 1.8,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "walkthrough",
-        "how to",
-        "tutorial"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "linkedin"
-      ],
-      "score": 15.45,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.15,
-        "source_weight": 1.8,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je YOLOX Object Detection in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "181e982a859d171c"
-    },
-    {
       "source": "articles:Artificial Intelligence on Medium",
       "platform": "article",
       "title": "How to Hire a Data Scientist / ML Engineer in Nigeria (Python, TensorFlow ＆ AWS): A Guide for…",
@@ -1610,9 +1765,9 @@
       "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "how to",
         "how-to",
-        "guide",
-        "how to"
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1647,55 +1802,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "38bf00e4fe33a151"
-    },
-    {
-      "source": "articles:Artificial Intelligence on Medium",
-      "platform": "article",
-      "title": "How AI Forecasting Works: A Plain-English Guide to Machines That Predict the Future",
-      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@neuportalai/how-ai-forecasting-works-a-plain-english-guide-to-machines-that-predict-the-future-9a37fb42e3f7?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/1024/1*W8MClDIZxtjQBMDWMSTg_w.png\" width=\"1024\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">AI forecasting explained in plain English: how machines predict the future with probabilities, the main methods, and how to judge if a…</p><p data-sanitized-class=\"medium-feed-link\"><",
-      "url": "https://medium.com/@neuportalai/how-ai-forecasting-works-a-plain-english-guide-to-machines-that-predict-the-future-9a37fb42e3f7?source=rss------artificial_intelligence-5",
-      "date": "2026-07-10",
-      "engagement": 41.05,
-      "source_weight": 0.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "explained",
-        "guide",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": true,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 14.61,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.61,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "0ef38432b687c00a"
     }
   ]
 }
