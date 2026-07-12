@@ -45,6 +45,8 @@ Een gewone Claude-chat werkt in één richting: jij stelt een vraag, Claude antw
 
 Het verschil in de praktijk: een agent handelt een taak van drie uur af terwijl jij iets anders doet. Denk aan het dagelijks bijhouden van concurrentiewijzigingen, het samenvatten van klantenreviews of het controleren van productprijzen over meerdere sites. Wat een agent precies is en waar de grens met een chatbot ligt, legt [AI-agents in 2026: wat zijn ze en wat kun je er echt mee](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) rustig uit.
 
+**Goed om te weten:** agents zijn standaard stateless — elke sessie vergeet wat daarvóór gebeurde. Als je wilt dat je agent zich klanten of vorige interacties herinnert, moet je [geheugen zelf inbouwen](/nieuws/make-ai-agent-memory-bouwen). Dat patroon — lookup, classify, write — geldt voor agents in Make, Claude API, of welke platform dan ook.
+
 ## Managed Agents: infrastructuur van Anthropic, logica van jou
 
 Voor een productieklare agent moest je tot nu toe zelf een server opzetten, een agent-loop schrijven en omgaan met timeouts en state. Managed Agents neemt precies dat over: veilige sandboxing, langdurige sessies, tool-executie, scoped permissies en tracing draaien op Anthropic's infrastructuur ([Bron: Claude Platform Docs](https://platform.claude.com/docs/en/managed-agents/overview)). Jij definieert drie dingen:

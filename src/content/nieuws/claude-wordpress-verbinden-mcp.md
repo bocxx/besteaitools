@@ -41,6 +41,8 @@ Je vraagt Claude om hulp met je WordPress-site, krijgt een stuk code terug, plak
 
 MCP is een standaard waarmee een AI echte gereedschappen kan aanroepen. Een WordPress MCP-server ontvangt gestructureerde verzoeken van Claude, vertaalt die naar de WordPress REST-API, regelt de authenticatie en stuurt een net antwoord terug. Concreet: Claude kan eerst opvragen welke acties beschikbaar zijn en vervolgens de juiste actie uitvoeren, van een bericht plaatsen tot een taxonomie opschonen.
 
+Dit staat bekend als "tool use" — het vermogen van Claude om je eigen functies en systemen aan te roepen. [13 Claude-features die je team morgen kan gebruiken](/nieuws/claude-13-features-praktisch) gaat onder meer dieper in op tool use en andere mogelijkheden voor teams die Claude verder dan chatten willen inzetten.
+
 > **💡 Beginner-tip:** Je hoeft niet te weten hoe een REST-API werkt om dit te gebruiken. Zie MCP als een stekkerdoos: het zorgt dat Claude en WordPress dezelfde taal spreken. Jij typt gewone opdrachten, de verbinding doet de vertaling.
 
 ## Route 1 — de officiële WordPress.com-connector
