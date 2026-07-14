@@ -2,7 +2,7 @@
 title: "Hoe bouw je geheugen in AI-agents met Make"
 description: "Elke API-call verget jouw AI-agent alles. Leer een memory-laag inbouwen in Make zodat agents zich klanten, context en vorige interacties herinneren — praktische stappen met Scenarios en data stores."
 slug: "make-ai-agent-memory-bouwen"
-date: 2026-07-12
+publishedAt: 2026-07-12
 timeSlot: middag
 category: gids
 toolSlug: make

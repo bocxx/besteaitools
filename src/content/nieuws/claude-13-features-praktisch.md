@@ -7,7 +7,7 @@ niveau: beginner
 doelgroep: ["developer", "mkb"]
 artikeltype: tutorial
 published: true
-date: 2026-07-12
+publishedAt: 2026-07-12
 keyTakeaways:
   - "Claude gaat veel verder dan chatten: je kan afbeeldingen lezen, code genereren, documenten analyzeren en je systemen direct laten aansturen."
   - "Vision, Artifacts en 200k token-context zijn de must-haves voor teams — ze schelen echt tijd."
