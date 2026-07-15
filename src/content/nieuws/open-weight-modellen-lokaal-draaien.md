@@ -67,7 +67,7 @@ ollama run gemma4
 
 Ollama downloadt het model automatisch en start een lokale chat. Je kunt ook de lokale API aanroepen op `localhost:11434` — compatibel met de OpenAI API-structuur, waardoor tools die met ChatGPT werken direct kunnen overschakelen naar je lokale model.
 
-Met `ollama list` zie je welke modellen je hebt; `ollama rm <naam>` verwijdert ze. Downloadgroottes lopen van ~2 GB (kleine modellen) tot honderden GB's voor de grootste varianten — check [ollama.com/library](https://ollama.com/library) voor de exacte grootte en beschikbare varianten per model.
+Draait je eerste model, dan is de volgende trede een heel agent-team op je eigen machine: [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Met `ollama list` zie je welke modellen je hebt; `ollama rm <naam>` verwijdert ze. Downloadgroottes lopen van ~2 GB (kleine modellen) tot honderden GB's voor de grootste varianten — check [ollama.com/library](https://ollama.com/library) voor de exacte grootte en beschikbare varianten per model.
 
 > **⚡ Gevorderden:** liever een grafische interface dan de terminal? [LM Studio](/tools/lm-studio) doet hetzelfde werk met een GUI, inclusief GGUF-checkpoints voor de Gemma 4-familie. Voor wie wil begrijpen wat er onder de motorkap gebeurt: de uitleg [hoe een taalmodel van binnen werkt](https://hetlaatsteainieuws.nl/achtergrond/hoe-werkt-een-taalmodel-llm-uitleg-pytorch) op hetlaatsteainieuws.nl legt de basis.
 
@@ -75,7 +75,7 @@ Met `ollama list` zie je welke modellen je hebt; `ollama rm <naam>` verwijdert z
 
 Open-weight loont bij **privacy-gevoelige data** (documenten die je niet wilt uploaden), **kostenbeheer** (veel queries die via een API duur worden) en **offline gebruik**. Propriëtaire modellen zoals Claude blijven sterker bij complexe meerstaps-redenering en taken waar je de allerbeste kwaliteit nodig hebt zonder tijd om te testen en finetunen.
 
-De slimme aanpak: lokale modellen voor routinetaken, propriëtaire modellen voor het werk waar dat laatste beetje kwaliteit telt.
+De slimme aanpak: lokale modellen voor routinetaken, propriëtaire modellen voor het werk waar dat laatste beetje kwaliteit telt. Wil je scherper kiezen tussen al die modellen, dan helpt het te snappen welke architectuur eronder zit — ons mentale model van [CNN's, RNN's en transformers](/nieuws/cnn-rnn-transformers-huggingface-uitleg) geeft je dat kader.
 
 ## Checklist: ben je klaar?
 

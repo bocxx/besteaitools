@@ -117,7 +117,7 @@ Transformers.js detecteert automatisch of WebGPU beschikbaar is en valt terug op
 
 Als het model client-side draait, verlaat de data de browser niet. Dat is meer dan een privacyclaim in een cookiebanner — het is een technische eigenschap van de architectuur. Medische tekst, juridische documenten, vertrouwelijke notities: met Transformers.js in de browser heb je een garantie die geen cloud-API kan geven. Heb je zwaardere modellen nodig met dezelfde privacygarantie, dan is lokaal draaien de volgende trede — zie onze gids over [open-weight modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien).
 
-Voor de bredere context over waarom en wanneer browser-inferentie het juiste architectuurpatroon is — inclusief de beperkingen qua modelgrootte — lees de analyse op Het Laatste AI Nieuws: [AI in de browser zonder server](https://hetlaatsteainieuws.nl/ai-innovatie/ai-in-de-browser-zonder-server). ([Bron: Hugging Face](https://huggingface.co/docs/transformers.js/index))
+Voor de bredere context over waarom en wanneer browser-inferentie het juiste architectuurpatroon is — inclusief de beperkingen qua modelgrootte — lees de analyse op Het Laatste AI Nieuws: [AI in de browser zonder server](https://hetlaatsteainieuws.nl/ai-innovatie/ai-in-de-browser-zonder-server). ([Bron: Hugging Face](https://huggingface.co/docs/transformers.js/index)) En vraag je je af wat "transformer" in de naam eigenlijk betekent? Ons mentale model van [CNN's, RNN's en transformers](/nieuws/cnn-rnn-transformers-huggingface-uitleg) legt het zonder wiskunde uit.
 
 ## Checklist: ben je klaar?
 

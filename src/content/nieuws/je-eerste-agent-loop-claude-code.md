@@ -67,7 +67,7 @@ Wil je de theorie achter dit alles — harness engineering, loop engineering en 
 
 ## Waar het naartoe groeit
 
-Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecialiseerde agents parallel laten lopen met [Dynamic Workflows in Claude Code](/nieuws/claude-code-dynamic-workflows-gebruiken): eentje schrijft, eentje reviewt, eentje test. Begin klein. Een werkende loop over één afgebakende taak leert je meer dan een ambitieuze opzet die je niet kunt overzien.
+Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecialiseerde agents parallel laten lopen met [Dynamic Workflows in Claude Code](/nieuws/claude-code-dynamic-workflows-gebruiken): eentje schrijft, eentje reviewt, eentje test. Wil je hetzelfde patroon zonder API-kosten, dan kan dat ook volledig lokaal — zie [multi-agent AI bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Begin klein. Een werkende loop over één afgebakende taak leert je meer dan een ambitieuze opzet die je niet kunt overzien.
 
 ## Checklist: ben je klaar?
 

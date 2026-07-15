@@ -37,7 +37,7 @@ Wil je een AI die antwoordt op basis van jóuw documenten, en niet op basis van 
 
 ## Stap 1 — Knip je documenten in stukken
 
-Een taalmodel werkt niet met hele PDF's, maar met fragmenten. Splits je documenten in stukken van bijvoorbeeld 300 tot 500 woorden, met een kleine overlap zodat een zin niet halverwege wordt afgekapt. Bewaar bij elk stuk de bron (bestandsnaam, paginanummer), zodat je later kunt laten zien waar een antwoord vandaan komt.
+Een taalmodel werkt niet met hele PDF's, maar met fragmenten — dat volgt direct uit hoe transformers context verwerken (zie onze uitleg over [CNN's, RNN's en transformers](/nieuws/cnn-rnn-transformers-huggingface-uitleg)). Splits je documenten in stukken van bijvoorbeeld 300 tot 500 woorden, met een kleine overlap zodat een zin niet halverwege wordt afgekapt. Bewaar bij elk stuk de bron (bestandsnaam, paginanummer), zodat je later kunt laten zien waar een antwoord vandaan komt.
 
 ## Stap 2 — Zet twee zoekmachines naast elkaar
 

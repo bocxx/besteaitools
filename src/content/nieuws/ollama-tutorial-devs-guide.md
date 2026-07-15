@@ -488,7 +488,7 @@ Voor productie-setups: draai Ollama op meerdere machines / containers. Use case:
 ## Volgende stappen
 
 - **RAG (Retrieval Augmented Generation):** combineer Ollama met LangChain + vector DB (Chroma, Pinecone) voor documentzoeken
-- **Multi-agent systemen:** bouw samenwerkende AI-assistenten die elkaar roepen (zag je in die freeCodeCamp-tutorials)
+- **Multi-agent systemen:** bouw samenwerkende AI-assistenten die elkaar roepen — onze gids [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen) zet de basis op in vier stappen
 - **Cloudflare Workers:** publiceer je Ollama-API via Cloudflare voor remote access (zónder het internet in)
 - **Fine-tuning:** train Ollama-modellen op je eigen data (advanced)
 
