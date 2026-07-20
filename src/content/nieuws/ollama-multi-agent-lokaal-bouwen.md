@@ -77,7 +77,7 @@ Dezelfde graph werkt later ook met een cloudmodel — je wisselt alleen de LLM-r
 
 ## Stap 4: laat het team draaien en kijk mee
 
-Start je graph met een opdracht en log elke tussenstap naar de terminal. Juist lokaal is dat gratis kijkgenot: je ziet per agent wat er in en uit gaat, zonder dat elke iteratie geld kost. Itereer op de rolprompts — daar zit bij multi-agent-systemen vrijwel altijd de grootste winst, niet in de graph-structuur.
+Start je graph met een opdracht en log elke tussenstap naar de terminal. Juist lokaal is dat gratis kijkgenot: je ziet per agent wat er in en uit gaat, zonder dat elke iteratie geld kost. Itereer op de rolprompts — daar zit bij multi-agent-systemen vrijwel altijd de grootste winst, niet in de graph-structuur. En werkt het team eenmaal, borg dat dan met vaste testcases: onze gids [AI-agents evalueren met een LLM-as-a-judge](/nieuws/ai-agents-evalueren-llm-judge) bouwt zo'n testbank op dezelfde lokale Ollama-basis.
 
 Wil je eerst dieper in Ollama zelf duiken, pak dan onze gids [Ollama voor developers](/nieuws/ollama-tutorial-devs-guide) erbij, of lees [hoe je open-weight-modellen lokaal draait](/nieuws/open-weight-modellen-lokaal-draaien). Wat AI-agents nu wel en niet kunnen, legt hetlaatsteainieuws.nl uit in [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze)
 

@@ -51,7 +51,7 @@ Jij definieert dat doel één keer. Claude Code is hier geschikt voor omdat het 
 
 1. **Definieer het doel én de "klaar"-check.** Open of maak `CLAUDE.md` in je project-root. Schrijf hierin één concreet doel plus een meetbare controle waaraan de agent moet voldoen, bijvoorbeeld "alle tests in `npm test` slagen" of "de dev-server start binnen 800 milliseconden". Een vage instructie geeft een vage loop; een meetbare check geeft de agent een objectief eindpunt.
 
-2. **Geef de agent zijn feedbackbron via een hook.** Voeg in `.claude/settings.json` een `PostToolUse`-hook toe die na elke bestandswijziging je tests of linter draait. De output gaat automatisch terug als context naar de agent. In je terminal zie je na elke wijziging de testuitslag langskomen — dat is de lus die zichzelf sluit.
+2. **Geef de agent zijn feedbackbron via een hook.** Voeg in `.claude/settings.json` een `PostToolUse`-hook toe die na elke bestandswijziging je tests of linter draait. De output gaat automatisch terug als context naar de agent. In je terminal zie je na elke wijziging de testuitslag langskomen — dat is de lus die zichzelf sluit. (Nieuw met hooks? [Onze hooks-gids](/nieuws/claude-code-hooks-woordkeuze-aanpassen) begint met een onschuldig weergave-voorbeeld.)
 
 3. **Laat de loop draaien.** Geef het doel één keer als opdracht. Claude Code maakt een plan, wijzigt bestanden, draait via de hook je tests, leest de uitkomst en gaat door tot de check groen is. Jij typt niks meer tussendoor; je kijkt toe hoe rood langzaam groen wordt.
 
@@ -67,7 +67,7 @@ Wil je de theorie achter dit alles — harness engineering, loop engineering en 
 
 ## Waar het naartoe groeit
 
-Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecialiseerde agents parallel laten lopen met [Dynamic Workflows in Claude Code](/nieuws/claude-code-dynamic-workflows-gebruiken): eentje schrijft, eentje reviewt, eentje test. Wil je hetzelfde patroon zonder API-kosten, dan kan dat ook volledig lokaal — zie [multi-agent AI bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Begin klein. Een werkende loop over één afgebakende taak leert je meer dan een ambitieuze opzet die je niet kunt overzien.
+Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecialiseerde agents parallel laten lopen met [Dynamic Workflows in Claude Code](/nieuws/claude-code-dynamic-workflows-gebruiken): eentje schrijft, eentje reviewt, eentje test. Wil je hetzelfde patroon zonder API-kosten, dan kan dat ook volledig lokaal — zie [multi-agent AI bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Liever eerst het kale mechanisme onder de knie krijgen? [Je eerste AI-agent bouwen in Python](/nieuws/eerste-ai-agent-bouwen-python) doet het zonder frameworks, in zo'n zestig regels code. Begin klein. Een werkende loop over één afgebakende taak leert je meer dan een ambitieuze opzet die je niet kunt overzien.
 
 ## Checklist: ben je klaar?
 
@@ -78,6 +78,8 @@ Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecial
 - [ ] Een aparte subagent verifieert het eindresultaat
 - [ ] Je hebt de eerste loop op één kleine taak getest voor je opschaalt
 - [ ] Je houdt je tokenverbruik in de gaten
+
+Wil je die loop niet zelf draaien maar laten hosten, dan neemt een beheerde runtime het over: zie [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen).
 
 ## Bronnen
 
