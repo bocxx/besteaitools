@@ -55,7 +55,7 @@ Installeren gaat zoals bij elke andere skill; werk je nog niet met skills, lees 
 
 ## Wanneer je het beter uitzet
 
-De keerzijde van beknoptheid is dat uitleg verdwijnt. Leer je een nieuwe library, debug je iets waar je de redenering van het model bij wilt zien, of schrijf je documentatie? Dan werkt de oertaal tegen je. Zet Caveman gericht in voor de productieve klussen waarin je weet wat je doet, en schakel het uit zodra je de context nodig hebt. Je kunt het per sessie aan- en uitzetten. Juist bij [een agent-loop die zichzelf herhaalt](/nieuws/je-eerste-agent-loop-claude-code) tikt dat verbruik snel aan, dus daar loont beknoptheid het meest.
+De keerzijde van beknoptheid is dat uitleg verdwijnt. Leer je een nieuwe library, debug je iets waar je de redenering van het model bij wilt zien, of schrijf je documentatie? Dan werkt de oertaal tegen je. Zet Caveman gericht in voor de productieve klussen waarin je weet wat je doet, en schakel het uit zodra je de context nodig hebt. Je kunt het per sessie aan- en uitzetten. Juist bij [een agent-loop die zichzelf herhaalt](/nieuws/je-eerste-agent-loop-claude-code) tikt dat verbruik snel aan, dus daar loont beknoptheid het meest. Draai je meerdere van zulke agents tegelijk, dan is [Solo als overzichtsvenster](/nieuws/solo-terminal-agents-een-venster) een logische aanvulling.
 
 Wil je breder begrijpen waarom die tokens zoveel geld kosten — en hoe aanbieders daar stilletjes aan draaien? Lees dan onze duiding over [de AI-prijzenoorlog en wat het voor jou betekent](https://hetlaatsteainieuws.nl/nieuws/deepseek-v4-pro-prijsverlaging-75-procent) op hetlaatsteainieuws.nl.
 

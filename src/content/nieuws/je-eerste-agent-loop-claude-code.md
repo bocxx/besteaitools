@@ -67,7 +67,7 @@ Wil je de theorie achter dit alles — harness engineering, loop engineering en 
 
 ## Waar het naartoe groeit
 
-Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecialiseerde agents parallel laten lopen met [Dynamic Workflows in Claude Code](/nieuws/claude-code-dynamic-workflows-gebruiken): eentje schrijft, eentje reviewt, eentje test. Wil je hetzelfde patroon zonder API-kosten, dan kan dat ook volledig lokaal — zie [multi-agent AI bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Liever eerst het kale mechanisme onder de knie krijgen? [Je eerste AI-agent bouwen in Python](/nieuws/eerste-ai-agent-bouwen-python) doet het zonder frameworks, in zo'n zestig regels code. Begin klein. Een werkende loop over één afgebakende taak leert je meer dan een ambitieuze opzet die je niet kunt overzien.
+Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecialiseerde agents parallel laten lopen met [Dynamic Workflows in Claude Code](/nieuws/claude-code-dynamic-workflows-gebruiken): eentje schrijft, eentje reviewt, eentje test. Draai je die agents in losse terminals, dan houdt [Solo ze samen met je dev-stack in één venster in de gaten](/nieuws/solo-terminal-agents-een-venster). Wil je hetzelfde patroon zonder API-kosten, dan kan dat ook volledig lokaal — zie [multi-agent AI bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Liever eerst het kale mechanisme onder de knie krijgen? [Je eerste AI-agent bouwen in Python](/nieuws/eerste-ai-agent-bouwen-python) doet het zonder frameworks, in zo'n zestig regels code. Begin klein. Een werkende loop over één afgebakende taak leert je meer dan een ambitieuze opzet die je niet kunt overzien.
 
 ## Checklist: ben je klaar?
 

@@ -75,7 +75,7 @@ Voor een productieklare agent moest je tot nu toe zelf een server opzetten, een 
 
 Agents lonen bij taken die **herhaalbaar**, **voorspelbaar** en **tijdrovend** zijn: dagelijkse rapportages, monitoring, dataverzameling. Taken waarbij je tussendoor wilt meesturen of die veel creatief oordeel vragen, zijn minder geschikt voor volledig autonoom draaien.
 
-En niet iedereen hoeft de API in: wil je gewoon een wekelijkse samenvatting of terugkerend klusje automatiseren zonder code, dan is [Claude Cowork](/nieuws/claude-cowork-lancering) met scheduled tasks de laagdrempelige route. Managed Agents is er voor wie agents in productie wil draaien — betrouwbaar, schaalbaar en zonder eigen backend.
+En niet iedereen hoeft de API in: wil je gewoon een wekelijkse samenvatting of terugkerend klusje automatiseren zonder code, dan is [Claude Cowork](/nieuws/claude-cowork-lancering) met scheduled tasks de laagdrempelige route. Managed Agents is er voor wie agents in productie wil draaien — betrouwbaar, schaalbaar en zonder eigen backend. Geef je zo'n agent eigen tools via het Model Context Protocol, lees dan ook [de nieuwe stateless MCP-spec van 28 juli](/nieuws/mcp-stateless-spec-voorbereiden): die maakt remote servers een stuk simpeler te hosten.
 
 ## Checklist: ben je klaar?
 
