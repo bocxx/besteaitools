@@ -65,4 +65,6 @@ Developers die al werken met Azure AI Studio of Copilot Studio kunnen Claude nu 
 
 Ga naar [Microsoft Foundry in de Azure Portal](https://ai.azure.com) en zoek op "Claude" in de modelcatalogus. Je vindt daar Opus 4.8 en Haiku 4.5. Koppel een deployment aan je project en gebruik de standaard Messages API — [dezelfde structuur als op api.anthropic.com](https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry).
 
+Wil je binnen datzelfde Foundry-project niet alleen een model aanroepen maar een echte agent draaien, dan loopt dat via Agent Service: die route beschrijven we stap voor stap in [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen).
+
 Meer weten over Claude zelf? Zie het [Claude-overzicht op debesteaitools.nl](/tools/claude).

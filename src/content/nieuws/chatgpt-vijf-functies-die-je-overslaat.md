@@ -63,6 +63,8 @@ Tikken is niet altijd handig. Met spraakmodus voer je een gewoon gesprek met Cha
 
 Je hoeft deze vijf niet allemaal vandaag in te zetten. Kies er één — Projecten of aangepaste instructies zijn de makkelijkste winst — en bouw het in je routine. Wil je breder vergelijken wat AI-assistenten voor je kunnen doen, lees dan ons stuk over [open AI-modellen versus ChatGPT en Claude](https://hetlaatsteainieuws.nl/nieuws/open-ai-modellen-overstappen) op Het Laatste AI Nieuws.
 
+Een concrete klus om mee te oefenen: [je cv laten afstemmen op een vacature](/nieuws/chatgpt-cv-afstemmen-op-vacature) — daar komen aangepaste instructies en herschrijfrondes samen.
+
 > **⚡ Gevorderden:** Combineer de functies: zet je vaste werkwijze in aangepaste instructies, bundel een project in Projecten, en laat Deep Research binnen dat project zoeken. De context stapelt dan op en je antwoorden worden merkbaar scherper.
 
 ChatGPT-prijzen en plan-indeling wijzigen geregeld; controleer de actuele tiers en limieten op [chatgpt.com/pricing](https://chatgpt.com/pricing/) voordat je een abonnement kiest.

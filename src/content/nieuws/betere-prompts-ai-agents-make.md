@@ -67,6 +67,8 @@ Merk je dat een agent net naast het doel zit, dan hoef je de hoofdprompt niet me
 
 De grootste fout is een agent meteen te veel taken tegelijk geven. Begin met één afgebakende taak, controleer met het reasoning-paneel of het gedrag klopt, en breid pas uit als je 'm vertrouwt. Een agent die één ding betrouwbaar doet, is meer waard dan een agent die tien dingen half doet. Groei je uit meerdere losse agents, dan is de volgende stap ze te laten samenwerken — dat kan zelfs gratis op je eigen machine, zie [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen).
 
+Werk je liever in code dan in een no-code canvas? Dan is [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen) de programmeur-variant van dit verhaal, met SDK's voor Python, C# en TypeScript.
+
 Wil je eerst het bredere plaatje snappen van wat AI-agents wél en niet zelfstandig aankunnen, en waar jouw controle nodig blijft? Onze duiding op hetlaatsteainieuws.nl over [hoe AI het werk splitst in uitvoeren en meedenken](https://hetlaatsteainieuws.nl/nieuws/ai-freelance-werk-uitvoerder-adviseur) helpt je die grens scherp te krijgen.
 
 ## Bronnen

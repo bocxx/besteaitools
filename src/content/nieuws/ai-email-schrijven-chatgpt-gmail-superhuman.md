@@ -92,6 +92,8 @@ Als je ChatGPT dagelijks gebruikt voor e-mail, stel dan Custom Instructions in z
 - [ ] Elk AI-concept gelezen en aangepast vóór het verzenden
 - [ ] Gevoelige informatie niet onnodig in AI-prompts gezet
 
+Schrijf je een sollicitatiemail? Stem dan meteen je cv af op dezelfde vacature: [zo doe je dat in vier stappen](/nieuws/chatgpt-cv-afstemmen-op-vacature).
+
 ## Bronnen
 
 - [Gmail — Help with writing in Gmail](https://support.google.com/mail/answer/13384820)

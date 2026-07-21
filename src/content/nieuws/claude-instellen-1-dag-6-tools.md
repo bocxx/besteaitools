@@ -261,7 +261,7 @@ Een skill (of plugin — de termen lopen door elkaar) is een vooraf geschreven i
 
 **Belangrijk:** je hoeft hier niet meteen mee te beginnen. Werk eerst een paar weken met Cowork voor je begint met skills. Zo weet je welke taken écht repetitief zijn en welke je gevoelsmatig herhaalt maar feitelijk maar één keer per kwartaal doet. Wil je naast inrichten ook de basis stevig onder de knie krijgen? Anthropic biedt daarvoor [gratis cursussen met certificaat aan op Anthropic Academy](/nieuws/anthropic-academy-gratis-ai-cursussen).
 
-Werk je liever vanuit de terminal met Claude Code? Daar zit hetzelfde idee, maar dan filesystem-gebaseerd: in [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) zie je in vier stappen waar het `SKILL.md`-bestand hoort en hoe Claude het automatisch oppakt.
+Werk je liever vanuit de terminal met Claude Code? Daar zit hetzelfde idee, maar dan filesystem-gebaseerd: in [Claude Code skills instellen](/nieuws/claude-code-skills-instellen) zie je in vier stappen waar het `SKILL.md`-bestand hoort en hoe Claude het automatisch oppakt. Een mooi eerste praktijkproject: [je aanmeldflow automatisch laten testen met Playwright en een lokale mailserver](/nieuws/claude-code-signupflow-testen-playwright).
 
 <!-- VIDEO-IDEE 5: 60-sec screencast — een bestaande plugin downloaden uit de GitHub-repo en activeren in Cowork. -->
 

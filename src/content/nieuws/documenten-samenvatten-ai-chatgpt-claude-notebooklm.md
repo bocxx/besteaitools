@@ -96,6 +96,8 @@ Staan je documenten al in Notion? Dan hoef je niets te uploaden: [zo laat je Not
 - [ ] Gevraagd om bronvermelding voor claims die je niet direct herkent
 - [ ] Voor gevoelige documenten: privacy-instelling gecontroleerd en zakelijk plan of verwerkersovereenkomst aanwezig
 
+Diezelfde ontleed-reflex gebruik je bij een vacaturetekst: in [ChatGPT je cv afstemmen op een vacature](/nieuws/chatgpt-cv-afstemmen-op-vacature) laat je het model eerst de tien belangrijkste selectietermen eruit halen.
+
 ## Bronnen
 
 - [Google NotebookLM — Officiële pagina](https://notebooklm.google.com)

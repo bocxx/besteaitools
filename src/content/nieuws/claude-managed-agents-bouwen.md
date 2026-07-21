@@ -86,6 +86,8 @@ En niet iedereen hoeft de API in: wil je gewoon een wekelijkse samenvatting of t
 - [ ] Handmatige testrun gedraaid en tracing bekeken
 - [ ] Kostenverbruik gecheckt vóór je het schema aanzet
 
+Zit je organisatie op Azure in plaats van bij Anthropic? Dan is het Microsoft-equivalent van dit verhaal [je eerste agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen) — zelfde principe, andere runtime.
+
 ## Bronnen
 
 - [Anthropic — Claude Managed Agents: get to production 10x faster](https://claude.com/blog/claude-managed-agents)

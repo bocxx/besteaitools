@@ -88,6 +88,8 @@ Voor wie offerte-werk wil koppelen aan factuur-werk en boekhouding: lees onze [v
 - Data controls gecheckt: training-gebruik uit (Settings → Data controls)
 - Voor één type aanvraag (bv. eerste consult-offerte) heb je nu een herhaalbare workflow
 
+Dezelfde template-aanpak werkt bij werving en sollicitatie: zie [ChatGPT je cv laten afstemmen op een vacature](/nieuws/chatgpt-cv-afstemmen-op-vacature).
+
 ## Bronnen
 
 - [OpenAI Help Center — Using Projects in ChatGPT](https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt)

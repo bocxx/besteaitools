@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-15T05:40:34.411413",
+  "generated_at": "2026-07-21T05:35:33.885940",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 20,
-    "for_news": 15,
-    "rejected_lang": 149,
+    "for_tools": 19,
+    "for_news": 13,
+    "rejected_lang": 127,
     "already_covered": 0,
-    "total_scanned": 4612
+    "total_scanned": 4587
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
         "how to",
-        "tutorial"
+        "tutorial",
+        "step-by-step"
       ],
       "matched_tools": [
         "gemini",
@@ -65,28 +65,24 @@
       "id": "ad1a50d9ad542378"
     },
     {
-      "source": "reddit:r/ClaudeAI",
-      "platform": "reddit",
-      "title": "Anthropic officially launched 13+ FREE AI courses with certificates (Including Agentic AI and Claude Code!)",
-      "text": "Just found out about this and had to share because almost nobody is talking about it yet.\n\nIf you are tired of paying for AI courses or getting hit with paywalls just to get a certificate, Anthropic (the creators of Claude) quietly dropped a massive library of completely free, official training modules.\n\nYes, they actually give you an official certificate of completion directly from Anthropic once you finish.\n\nHere is the breakdown of what is available and exactly how to get it without spending a dime.\n\nWhat is in the course catalog?\n\nThey have split the training into a few different paths dep",
-      "url": "https://reddit.com/r/ClaudeAI/comments/1tjpfh8/anthropic_officially_launched_13_free_ai_courses/",
-      "date": "2026-05-21",
-      "engagement": 1626.0,
-      "source_weight": 2.0,
-      "ai_relevant": false,
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "How to stop Claude from saying load-bearing",
+      "text": "How to stop Claude from saying load-bearing",
+      "url": "https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing",
+      "date": "2026-07-14",
+      "engagement": 1212.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "breakdown"
+        "how to"
       ],
       "matched_tools": [
         "claude"
       ],
-      "feature_update": true,
-      "new_products": [
-        "FREE AI",
-        "Including Agentic"
-      ],
-      "new_product": true,
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
       "version_bump": false,
       "paywall": false,
       "video": null,
@@ -94,15 +90,15 @@
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "reddit"
+        "hackernews"
       ],
-      "score": 18.59,
+      "score": 18.15,
       "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 11.09,
-        "source_weight": 2.0,
+        "pattern_hits": 1,
+        "engagement_log": 10.65,
+        "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.0,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -115,7 +111,7 @@
       "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "573d2cc78d445c69"
+      "id": "aa62b50d1863d008"
     },
     {
       "source": "reddit:r/ClaudeAI",
@@ -232,8 +228,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -394,74 +390,59 @@
       "id": "62ba44f1e00feb0c"
     },
     {
-      "source": "github:Python",
-      "platform": "github",
-      "title": "chopratejas/headroom — Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-      "text": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-      "url": "https://github.com/chopratejas/headroom",
-      "date": "2026-06-19",
-      "engagement": 3938.0,
-      "source_weight": 2.5,
-      "ai_relevant": true,
-      "pattern_hits": [],
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "Building Your First AI Agent with .NET and Azure AI Foundry",
+      "text": "<p>If you're a .NET developer looking to break into AI engineering, agents are the single best place to start. They're the point where \"calling an LLM API\" turns into \"building a system that reasons, uses tools, and takes action\" — and Azure AI Foundry Agent Service, paired with .NET, makes this surprisingly approachable.</p>\n\n<p>In this post, I'll walk through exactly how to stand up your first agent end-to-end — from the Azure side setup to the actual C# code — and share the full walkthrough in video form as well.</p>\n\n<p>🎥 <strong>Watch the full hands-on video here:</strong> <a href=\"https:",
+      "url": "https://dev.to/ziya_abbas_e1e5d8bbcc5c3b/building-your-first-ai-agent-with-net-and-azure-ai-foundry-13pl",
+      "date": "2026-07-19",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "walkthrough",
+        "hands-on"
+      ],
       "matched_tools": [
-        "mcp"
+        "invideo",
+        "microsoft-foundry"
       ],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
       "paywall": false,
-      "video": null,
+      "video": {
+        "platform": "youtube",
+        "url": "https://youtu.be/mrsEsculrNg"
+      },
       "lang": "en",
-      "total_stars": 37633,
-      "topics": [
-        "agent",
-        "ai",
-        "anthropic",
-        "claude-code",
-        "compression",
-        "context-engineering",
-        "context-window",
-        "cursor",
-        "fastapi",
-        "langchain",
-        "llm",
-        "mcp",
-        "openai",
-        "prompt-engineering",
-        "proxy",
-        "python",
-        "rag",
-        "token-optimization",
-        "tokens",
-        "typescript"
-      ],
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "github"
+        "article"
       ],
-      "score": 16.92,
+      "score": 16.9,
       "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 12.42,
-        "source_weight": 2.5,
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
         "author": 0.0,
         "materialised": 0.0,
-        "media": 0.0,
+        "media": 1.0,
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "mcp versus de alternatieven — welke past bij jou?",
+      "suggested_angle_nl": "Zo gebruik je invideo in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "c7f7c9d65f0f3e0b"
+      "id": "af388b92507d67bd"
     },
     {
       "source": "github:Python",
@@ -641,6 +622,76 @@
     {
       "source": "github:Python",
       "platform": "github",
+      "title": "chopratejas/headroom — Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+      "text": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+      "url": "https://github.com/chopratejas/headroom",
+      "date": "2026-06-19",
+      "engagement": 3938.0,
+      "source_weight": 2.5,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "mcp"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "total_stars": 37633,
+      "topics": [
+        "agent",
+        "ai",
+        "anthropic",
+        "claude-code",
+        "compression",
+        "context-engineering",
+        "context-window",
+        "cursor",
+        "fastapi",
+        "langchain",
+        "llm",
+        "mcp",
+        "openai",
+        "prompt-engineering",
+        "proxy",
+        "python",
+        "rag",
+        "token-optimization",
+        "tokens",
+        "typescript"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "github"
+      ],
+      "score": 16.42,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 12.42,
+        "source_weight": 2.5,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "mcp versus de alternatieven — welke past bij jou?",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "c7f7c9d65f0f3e0b"
+    },
+    {
+      "source": "github:Python",
+      "platform": "github",
       "title": "usestrix/strix — Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
       "text": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
       "url": "https://github.com/usestrix/strix",
@@ -709,100 +760,6 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "text": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
-      "date": "2026-05-20",
-      "engagement": 2448.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.21,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.71,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "67bd84a16d5db4b6"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
-      "text": "SpaceX to buy Cursor AI coding agent operator Anysphere for $60B",
-      "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
-      "date": "2026-06-16",
-      "engagement": 1680.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "cursor"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.14,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.14,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: cursor inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "b49b738e8bae9386"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
       "title": "Semgrep: GLM 5.2 beats Claude in our Cyber Benchmarks",
       "text": "Semgrep: GLM 5.2 beats Claude in our Cyber Benchmarks",
       "url": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
@@ -849,26 +806,128 @@
       "id": "866ab6fcb26f9cba"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Open source AI must win",
+      "text": "Open source AI must win",
+      "url": "https://opensourceaimustwin.com/?share=v2",
+      "date": "2026-06-13",
+      "engagement": 2059.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 15.95,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.45,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Nieuw in Open: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "f28db91fc980dfce"
+    },
+    {
+      "source": "articles:Towards AI - Medium",
       "platform": "article",
-      "title": "How to Build Your First Multi-Agent AI System in Python and LangGraph",
-      "text": "<p>In this tutorial, I'll show you how to build a multi-agent AI system in Python with no orchestration framework. We'll also implement this in LangGraph with nodes, edges, and shared state.</p>\n<p>The point of building both versions is to show you the difference between doing it with and without a framework.</p>\n<p>The simple Python version shows how little code you actually need to build a multi-agent system. The LangGraph version shows what a workflow framework enables for building such systems.</p>\n<p>The agents run locally with Ollama and Qwen so you'll have no API costs.</p>\n<h2 data-san",
-      "url": "https://www.freecodecamp.org/news/how-to-build-your-first-multi-agent-ai-system-in-python-and-langgraph/",
-      "date": "2026-07-14",
+      "title": "The MCP 2026–07–28 Spec Just Dropped — Here’s How to Build a Production-Ready MCP Server with…",
+      "text": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*Ok4n9_vfPrypIi0xlGdFow.png\"></figure><h3>The MCP 2026–07–28 Spec Just Dropped — Here’s How to Build a Production-Ready MCP Server with Express.js</h3><h4><em>The largest revision of the Model Context Protocol since launch is here. Sessions are dead. Stateless HTTP is in. Here’s a hands-on guide to building an MCP server that’s ready for the new world — using the Express.js stack you already know.</em></h4><p>If you’ve been building AI-powered applications in 2026, you’ve felt the gravitational pull of the Model Context Protoco",
+      "url": "https://pub.towardsai.net/the-mcp-2026-07-28-spec-just-dropped-heres-how-to-build-a-production-ready-mcp-server-with-1c720f176ae0?source=rss----98111c9905da---4",
+      "date": "2026-07-21",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "build your",
-        "tutorial",
         "build a",
-        "how-to"
+        "guide",
+        "hands-on"
       ],
       "matched_tools": [
-        "ollama",
-        "qwen"
+        "chatgpt",
+        "claude",
+        "cursor",
+        "mcp"
       ],
+      "feature_update": true,
+      "new_products": [
+        "The MCP",
+        "Spec Just",
+        "Ready MCP",
+        "Model Context",
+        "Stateless HTTP",
+        "VS Code"
+      ],
+      "new_product": true,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "59d517c6aeaf7527"
+    },
+    {
+      "source": "articles:freeCodeCamp.org News",
+      "platform": "article",
+      "title": "How to Use Apple’s Foundation Models in a Web App with a macOS Companion",
+      "text": "<p>Not every AI feature needs a cloud model, with its per-token bills, network round-trips, and private data leaving your machine. If you're on a modern Mac, a capable language model is already on your disk.</p>\n<p><strong>Foundation Models</strong> is Apple's Swift framework for working with large language models. It's the on-device model behind Apple Intelligence, Apple's Private Cloud Compute, or another provider's server model.</p>\n<p>This tutorial targets the on-device model: you send it a prompt and it runs entirely on the Mac's own hardware locally, free-per-call, and offline-friendly.<",
+      "url": "https://www.freecodecamp.org/news/how-to-use-apple-s-foundation-models-in-a-web-app-with-a-macos-companion/",
+      "date": "2026-07-20",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "tutorial",
+        "how-to"
+      ],
+      "matched_tools": [],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
@@ -897,25 +956,25 @@
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je ollama in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "8a38d5a730b854f7"
+      "id": "217ebfc00835d022"
     },
     {
-      "source": "articles:freeCodeCamp.org News",
+      "source": "articles:Analytics Insight",
       "platform": "article",
-      "title": "CNNs, RNNs, and Transformers Explained: A Mental Model for Key Deep Learning Concepts",
-      "text": "<p>Okay, pop quiz: What is a neural network? What is deep learning? Does anything come to mind?</p>\n<p>I know that feeling – yes, that thing you’re feeling now. It’s either confidence that you know what I’m asking, or the lack of it. Worry not, buddy: I’ve got you.</p>\n<p>In this tutorial, I’ll explain all you need to know about deep learning, neural networks, and why I think you need to know about a fancy tool called Keras.</p>\n<h3 data-sanitized-id=\"heading-prerequisites\">Prerequisites:</h3>\n<p>This is a conceptual article, so you don't need any deep learning background to follow along. That",
-      "url": "https://www.freecodecamp.org/news/cnns-rnns-and-transformers-explained-a-mental-model-for-key-deep-learning-concepts/",
-      "date": "2026-07-14",
+      "title": "How to Write a Data Scientist Resume in 2026: Complete Guide",
+      "text": "<h3><strong>Overview</strong></h3><ul><li><p>Build a compelling resume highlighting measurable achievements, technical expertise and real-world project experience effectively today.</p></li><li><p>Optimize your resume for ATS by using relevant keywords and clean formatting throughout every section.</p></li><li><p>Tailor each application carefully to match employer requirements, improving interview chances and recruiter attention significantly.</p></li></ul><p>There is stiffer competition in the field of data science. With AI changing hiring practices and businesses relying so heavily on Applic",
+      "url": "https://www.analyticsinsight.net/data-science/how-to-write-a-data-scientist-resume-in-2026-complete-guide",
+      "date": "2026-07-19",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "hands-on",
-        "tutorial",
-        "explained"
+        "how to",
+        "build a",
+        "complete guide"
       ],
       "matched_tools": [
         "make"
@@ -951,76 +1010,28 @@
       "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "c9d8321923a82d61"
+      "id": "fd1f04f0b8dbaac7"
     },
     {
-      "source": "articles:freeCodeCamp.org News",
+      "source": "articles:Towards AI - Medium",
       "platform": "article",
-      "title": "How to Build and Schedule Local AI Assistants for Daily Tasks",
-      "text": "<p>Most AI agents are reactive as they wait for us to ask something. In this tutorial, I'll show you how to build local AI assistants that run on a schedule, handle the tasks you care about, and generate daily digests for it. Each Assistant is an AI agent and the goal is to automate repetitive work with a cron-driven setup that saves you time.</p>\n<p>We'll use Python to create a simple local scheduler, a directory of agents, and Ollama running the model locally so you avoid per-call API charges and keep inference on your own machine.</p>\n<h2 data-sanitized-id=\"heading-table-of-contents\">Table ",
-      "url": "https://www.freecodecamp.org/news/how-to-build-and-schedule-local-ai-assistants-for-daily-tasks/",
-      "date": "2026-07-13",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how-to",
-        "how to",
-        "tutorial"
-      ],
-      "matched_tools": [
-        "ollama"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je ollama in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8744cf4d2a34a3b7"
-    },
-    {
-      "source": "articles:Neil Patel",
-      "platform": "article",
-      "title": "How to Do an SEO Audit: A Step-by-Step Website Audit Guide",
-      "text": "<h2 data-sanitized-id=\"key-takeaways%25c2%25a0\" data-sanitized-class=\"wp-block-heading\"><strong>Key Takeaways</strong> </h2>\n\n\n\n<ul data-sanitized-class=\"wp-block-list\">\n<li>An SEO audit is a comprehensive analysis of your site’s technical health, content, backlinks, and AI search visibility. It shows you what’s holding back your rankings and how to fix it.  </li>\n\n\n\n<li>Audit timing depends on scope: Small sites might take a few hours, while larger or more complex sites take a week or more.  </li>\n\n\n\n<li>A complete audit covers technical SEO (e.g., site speed, indexing), on-page elements (e.g",
-      "url": "https://neilpatel.com/blog/seo-website-audit/",
-      "date": "2026-07-13",
+      "title": "How to Build Your First AI Agent\nWithout Writing a Single Line of Code — AI Practical Guide: Day 1…",
+      "text": "<h3>How to Build Your First AI Agent<br>Without Writing a Single Line of Code — AI Practical Guide: Day 1 of 10</h3><h4>A step-by-step guide to setting up an autonomous AI workflow — and using it to create real income as a solo creator.</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/691/1*bkQMNvesLBmSZOX6owpCaQ.png\"></figure><p>In 2026, the barrier to building an AI agent is not Python, JavaScript, or any programming language. It’s knowing what you want the agent to <em>do</em> — and understanding the handful of no-code tools that will do the heavy lifting for you.</p><p>I’ve",
+      "url": "https://pub.towardsai.net/how-to-build-your-first-ai-agent-without-writing-a-single-line-of-code-ai-practical-guide-day-1-6d932827f004?source=rss----98111c9905da---4",
+      "date": "2026-07-19",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
         "step-by-step",
+        "use case",
+        "build your",
         "how to",
+        "practical guide",
         "guide"
       ],
       "matched_tools": [
-        "make"
+        "soloterm"
       ],
       "feature_update": false,
       "new_products": [],
@@ -1050,61 +1061,10 @@
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "Zo gebruik je soloterm in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "55e4e739ede8ec70"
-    },
-    {
-      "source": "articles:Analytics Insight",
-      "platform": "article",
-      "title": "How to Become a Data Engineer in 2026: Complete Career Transition Guide",
-      "text": "<h3><strong>Overview:</strong></h3><ul><li><p>Data engineers build and maintain the infrastructure that powers analytics, AI, and business intelligence across industries.</p></li><li><p>Success requires SQL, Python, cloud platforms, ETL pipelines, Spark, data modeling, and hands-on project experience.</p></li><li><p>Competitive salaries, rising demand, and expanding AI adoption make data engineering a future-proof technology career.</p></li></ul><p>Artificial intelligence may be grabbing headlines, but behind every successful AI model is a well-built data infrastructure. That's where data engi",
-      "url": "https://www.analyticsinsight.net/courses/how-to-become-a-data-engineer-in-2026-complete-career-transition-guide",
-      "date": "2026-07-12",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "guide",
-        "how to",
-        "hands-on"
-      ],
-      "matched_tools": [
-        "make"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "013cf9b95347a725"
+      "id": "1bf1024a3804739a"
     }
   ],
   "for_news": [
@@ -1158,16 +1118,14 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "For first time, a cell built from scratch grows and divides",
-      "text": "For first time, a cell built from scratch grows and divides",
-      "url": "https://www.quantamagazine.org/for-the-first-time-a-cell-built-from-scratch-grows-and-divides-20260701/",
-      "date": "2026-07-01",
-      "engagement": 1245.0,
+      "title": "China's open-weights AI strategy is winning",
+      "text": "China's open-weights AI strategy is winning",
+      "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/",
+      "date": "2026-07-20",
+      "engagement": 1840.0,
       "source_weight": 3.0,
       "ai_relevant": true,
-      "pattern_hits": [
-        "from scratch"
-      ],
+      "pattern_hits": [],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -1181,13 +1139,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.69,
+      "score": 16.78,
       "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 10.69,
+        "pattern_hits": 0,
+        "engagement_log": 11.28,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1197,24 +1155,76 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Wat For betekent voor de Nederlandse AI-markt.",
+      "suggested_angle_nl": "China: de context die de internationale pers mist.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "12f29ff59389bf37"
+      "id": "dbac2f9dd347f1d1"
+    },
+    {
+      "source": "tweets:@JayBisen473370",
+      "platform": "tweet",
+      "title": "🚨 Harvard just made its AI course free.\n\nNo tuition.\nNo application.\nJust world-class AI education.\n\nHarvard University just released 6 high-quality lectures on",
+      "text": "🚨 Harvard just made its AI course free.\n\nNo tuition.\nNo application.\nJust world-class AI education.\n\nHarvard University just released 6 high-quality lectures on AI + Prompt Engineering— and anyone can access them.\n\nIf you're serious about AI in 2026, start here:\n\n🎓 Harvard University LECTURES\n\n1. Introduction to Generative AI\nA step-by-step guide to how GenAI actually works.\nLink: https://t.co/KvRFUSHAUM\n\n2. Prompt Engineering\nReal tips for improving output quality from any LLM.\nLink: https://t.co/yPyl78h6mh\n\n3. Beyond Chatbots: System Prompts, RAG\nMove past surface use cases into scalable app",
+      "url": "https://twitter.com/JayBisen473370/status/2078436961656987916",
+      "date": "2026-07-20",
+      "engagement": 998.0,
+      "source_weight": 0.5,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "step-by-step",
+        "how to",
+        "guide",
+        "introduction to",
+        "ai act"
+      ],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "_author_bonus": 1.0,
+      "author": "JayBisen473370",
+      "followers": 26634,
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "tweet"
+      ],
+      "score": 16.0,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 6.0,
+        "source_weight": 0.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 1.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Harvard in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "92215a24412bf82f"
     },
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Jamesob's guide to running SOTA LLMs locally",
-      "text": "Jamesob's guide to running SOTA LLMs locally",
-      "url": "https://github.com/jamesob/local-llm",
-      "date": "2026-07-03",
-      "engagement": 590.0,
+      "title": "What AI did to stackoverflow in a graph",
+      "text": "What AI did to stackoverflow in a graph",
+      "url": "https://data.stackexchange.com/stackoverflow/query/1953768#graph",
+      "date": "2026-07-18",
+      "engagement": 1051.0,
       "source_weight": 3.0,
       "ai_relevant": true,
-      "pattern_hits": [
-        "guide"
-      ],
+      "pattern_hits": [],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -1228,13 +1238,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.57,
+      "score": 15.94,
       "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 9.57,
+        "pattern_hits": 0,
+        "engagement_log": 10.44,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1244,10 +1254,55 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Waarom Jamesob er nu toe doet — en wat je ermee moet.",
+      "suggested_angle_nl": "Wat dit betekent voor de Nederlandse AI-markt.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "9901c87f1f8a88fe"
+      "id": "3d13fa7cd96c2717"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Bonsai 27B: A 27B-Class Model that runs on a phone",
+      "text": "Bonsai 27B: A 27B-Class Model that runs on a phone",
+      "url": "https://prismml.com/news/bonsai-27b",
+      "date": "2026-07-14",
+      "engagement": 946.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 15.78,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.28,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Waarom Bonsai er nu toe doet — en wat je ermee moet.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "9fc462d60f0fb897"
     },
     {
       "source": "hn",
@@ -1273,13 +1328,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.22,
+      "score": 15.72,
       "score_breakdown": {
         "pattern_hits": 0,
         "engagement_log": 10.72,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1305,9 +1360,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
         "how to",
-        "build a"
+        "build a",
+        "guide"
       ],
       "matched_tools": [
         "claude"
@@ -1321,19 +1376,19 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "Dipanshu_AI",
-      "followers": 14006,
+      "followers": 16801,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
         "tweet"
       ],
-      "score": 16.0,
+      "score": 15.5,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 6.0,
         "source_weight": 0.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1349,228 +1404,23 @@
       "id": "f6b77cc25fb6bc86"
     },
     {
-      "source": "articles:Towards AI - Medium",
-      "platform": "article",
-      "title": "Understand HNSW: Why Your Vector Search Returns Garbage (Build your own minimalist HNSW from…",
-      "text": "<h3>Understand HNSW: Why Your Vector Search Returns Garbage (Build your own minimalist HNSW from scratch)</h3><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*CMMte1i_Tqfyd431rcjIMA.png\"></figure><p>I still remember that query. Typed in “how to cancel my subscription”, and the result that came out was an article that explained how to reset a forgotten password. Well, that seems wrong, and that too, in a way that it made no sense given how obviously related those two concepts should have been in embedding space.</p><p>Blamed the embedding model first. Swapped it for a bigger ",
-      "url": "https://pub.towardsai.net/understand-hnsw-why-your-vector-search-returns-garbage-build-your-own-minimalist-hnsw-from-114415ddf28c?source=rss----98111c9905da---4",
-      "date": "2026-07-11",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "explained",
-        "from scratch",
-        "build your"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Understand HNSW in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "1f3c253ab6f8e95f"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Introduction to Compilers and Language Design",
-      "text": "Introduction to Compilers and Language Design",
-      "url": "https://dthain.github.io/books/compiler/",
-      "date": "2026-07-05",
-      "engagement": 373.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "introduction to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.89,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 8.89,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Introduction uitgelegd voor Nederlandse teams — zonder de hype.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8ad0f4a63d0fb41d"
-    },
-    {
-      "source": "tweets:@s_mohinii",
-      "platform": "tweet",
-      "title": "🚨 Claude just changed the game.\n\nAll you need is:\n\n-A laptop\n-Internet connection\n-60 minutes a day\n\nThat’s enough to build a $7,200/month online income stream ",
-      "text": "🚨 Claude just changed the game.\n\nAll you need is:\n\n-A laptop\n-Internet connection\n-60 minutes a day\n\nThat’s enough to build a $7,200/month online income stream using AI.\n\nNo coding.\nNo expensive setup.\nNo years of experience.\n\nInside you'll discover:\n\n✅ The exact asset\n✅ My full workflow\n✅ The Claude prompts I personally use\n✅ How to scale to $15K/month\n✅ How beginners can start fast\n\nMost people still use AI for fun…\n\nBut smart creators are quietly using Claude to:\n\n• Create digital products\n• Offer AI services\n• Write viral content\n• Automate work\n• Build online income streams\n\nUsually, I se",
-      "url": "https://twitter.com/s_mohinii/status/2072015924656554304",
-      "date": "2026-07-01",
-      "engagement": 1554.0,
-      "source_weight": 0.5,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "guide",
-        "how to",
-        "build a"
-      ],
-      "matched_tools": [
-        "claude"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "_author_bonus": 1.0,
-      "author": "s_mohinii",
-      "followers": 44652,
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "tweet"
-      ],
-      "score": 15.5,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 6.0,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 1.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "db79191c5ba89e6a"
-    },
-    {
-      "source": "tweets:@milesdeutscher",
-      "platform": "tweet",
-      "title": "The re-release of Fable 5 is probably the greatest thing to ever happen in AI.\n\nI spent the last few hours putting together an ultimate guide to help you master",
-      "text": "The re-release of Fable 5 is probably the greatest thing to ever happen in AI.\n\nI spent the last few hours putting together an ultimate guide to help you master Fable.\n\nKey model differences, loop engineering 101, Fable + Skills, how to build a context memory system &amp; more: https://t.co/ucXmHudBnp",
-      "url": "https://twitter.com/milesdeutscher/status/2072430047370350929",
-      "date": "2026-07-02",
-      "engagement": 633.0,
-      "source_weight": 0.5,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "ultimate guide",
-        "how to",
-        "build a"
-      ],
-      "matched_tools": [
-        "together ai"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": true,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "_author_bonus": 1.0,
-      "author": "milesdeutscher",
-      "followers": 673809,
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "tweet"
-      ],
-      "score": 15.5,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 6.0,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 1.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je together ai in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "126480c3d66c7dce"
-    },
-    {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
-      "title": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build so",
-      "text": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build something clever nobody needs.\n\nThen write a tight system prompt (goals, persona, instructions, guardrails),  since that's where the agent's judgment lives.\n\nChoose your model based on context window, latency and cost.\n\nAdd tools and integrations.\n\nGive it memory so it keeps context between sessions.\n\nAnd build orchestration that routes tasks and handles errors.\n\nTesting never really stops: unit tests, latency checks, quality metrics, ong",
-      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7482071277462089728/",
-      "date": "2026-07-13",
+      "title": "AI won't take your job. The intern with Claude will, unless you watch these free courses.\n\nFunny until you check what interns are shipping these days.\n\nThe diff",
+      "text": "AI won't take your job. The intern with Claude will, unless you watch these free courses.\n\nFunny until you check what interns are shipping these days.\n\nThe difference between pulling the cart and driving the train is knowing how to actually work with AI.\n\nWe gathered 12 free resources built by experts that teach it in hours:\n\nClaude starter course: https://lnkd.in/eB6-NQrK\nWhat you can do with AI: https://lnkd.in/envXK3-X\nHow to stop hitting your Claude limit: https://lnkd.in/eANYA4Rx\nClaude guide to AI agents: https://lnkd.in/eiAzs-TC\nIntroduction to Claude Cowork: https://lnkd.in/e2iRJbQu\nCl",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7483520846980968449/",
+      "date": "2026-07-17",
       "engagement": 30.0,
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
         "how to",
-        "step by step",
-        "build an",
-        "use case"
+        "guide",
+        "introduction to"
       ],
       "matched_tools": [
-        "claude"
+        "claude",
+        "mcp"
       ],
       "feature_update": true,
       "new_products": [],
@@ -1591,6 +1441,111 @@
         "source_weight": 1.8,
         "ai_relevance": 1.5,
         "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "b64076ae655a7f0f"
+    },
+    {
+      "source": "articles:Arindam Majumder",
+      "platform": "article",
+      "title": "How to Change Your Gmail ID ( Simple Trick)",
+      "text": "\n<figure class=\"enclosure\"><p><img class=\"enclosure-thumbnail\" src=\"https://i4.ytimg.com/vi/k0201s8I0Rg/hqdefault.jpg\" alt=\"\" title=\"How to Change Your Gmail ID ( Simple Trick)\" /></p><p class=\"enclosure-content\"><a download=\"\" href=\"https://www.youtube.com/v/k0201s8I0Rg?version=3\" data-type=\"application/x-shockwave-flash\" title=\"How to Change Your Gmail ID ( Simple Trick)\">💾</a></p><figcaption class=\"enclosure-description\">Learn how to change your Gmail username in India with this simple step-by-step guide.<br />\n<br />\nUpdating your email ID is often necessary for professional or personal re",
+      "url": "https://www.youtube.com/shorts/k0201s8I0Rg",
+      "date": "2026-07-20",
+      "engagement": 45.8,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "step-by-step",
+        "guide",
+        "walkthrough"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/shorts/k0201s8I0Rg"
+      },
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.27,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.77,
+        "source_weight": 1.5,
+        "ai_relevance": 0.0,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 1.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e1acbc4eac9a782c"
+    },
+    {
+      "source": "linkedin:GenAI Works",
+      "platform": "linkedin",
+      "title": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build so",
+      "text": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build something clever nobody needs.\n\nThen write a tight system prompt (goals, persona, instructions, guardrails),  since that's where the agent's judgment lives.\n\nChoose your model based on context window, latency and cost.\n\nAdd tools and integrations.\n\nGive it memory so it keeps context between sessions.\n\nAnd build orchestration that routes tasks and handles errors.\n\nTesting never really stops: unit tests, latency checks, quality metrics, ong",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7482071277462089728/",
+      "date": "2026-07-13",
+      "engagement": 30.0,
+      "source_weight": 1.8,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "how to",
+        "build an",
+        "use case",
+        "step by step"
+      ],
+      "matched_tools": [
+        "claude"
+      ],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "linkedin"
+      ],
+      "score": 14.95,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.15,
+        "source_weight": 1.8,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1616,8 +1571,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build an",
         "breakdown",
+        "build an",
         "complete guide"
       ],
       "matched_tools": [
@@ -1637,13 +1592,13 @@
       "consensus_sources": [
         "linkedin"
       ],
-      "score": 15.45,
+      "score": 14.95,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.15,
         "source_weight": 1.8,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1669,8 +1624,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
         "how to",
+        "guide",
         "introduction to"
       ],
       "matched_tools": [
@@ -1689,13 +1644,13 @@
       "consensus_sources": [
         "linkedin"
       ],
-      "score": 15.45,
+      "score": 14.95,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.15,
         "source_weight": 1.8,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1721,9 +1676,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "hands-on",
+        "how to",
         "build an",
-        "how to"
+        "hands-on"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1743,13 +1698,13 @@
       "consensus_sources": [
         "linkedin"
       ],
-      "score": 15.45,
+      "score": 14.95,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.15,
         "source_weight": 1.8,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1763,108 +1718,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "714fa96fb68a9ca8"
-    },
-    {
-      "source": "linkedin:Muhammad Shazim Mahmood",
-      "platform": "linkedin",
-      "title": "Even after working with these tools every day, turning a completely static image into a breathing, talking character still feels like absolute magic. 🤯✨\n​Welcom",
-      "text": "Even after working with these tools every day, turning a completely static image into a breathing, talking character still feels like absolute magic. 🤯✨\n​Welcome to Day 09 of our daily series. The old barriers to video production are officially gone. You no longer need to buy an expensive camera setup, hire professional actors, or even show your own face to build a massive online presence. This exact pipeline is how faceless automation channels are scaling to millions of views right now.\n​The stack is incredibly lean:\n​🖼️ Take One Image: Use high-quality AI generation to create a unique, sharp",
-      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7479579699212578816/",
-      "date": "2026-07-09",
-      "engagement": 30.0,
-      "source_weight": 1.8,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "step-by-step",
-        "how to",
-        "breakdown",
-        "build a"
-      ],
-      "matched_tools": [
-        "elevenlabs",
-        "kling"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "linkedin"
-      ],
-      "score": 15.45,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.15,
-        "source_weight": 1.8,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je elevenlabs in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "9141c8936364a463"
-    },
-    {
-      "source": "articles:Artificial Intelligence – SAS Blogs",
-      "platform": "article",
-      "title": "How to build an AI ready data foundation",
-      "text": "<p>Many AI initiatives don’t stall because of the models – they stall because of the data behind them. Teams can build promising prototypes, but moving those models into production is where progress slows down. Data is spread across systems, pipelines are difficult to maintain and governance often lags behind how [...]</p>\n<p>The post <a href=\"https://blogs.sas.com/content/sascom/2026/07/14/how-to-build-an-ai-ready-data-foundation/\">How to build an AI ready data foundation</a> appeared first on <a href=\"https://blogs.sas.com/content\">SAS Blogs</a>.</p>\n<figure class=\"enclosure\"><p class=\"enclo",
-      "url": "https://blogs.sas.com/content/sascom/2026/07/14/how-to-build-an-ai-ready-data-foundation/",
-      "date": "2026-07-14",
-      "engagement": 36.4,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how-to",
-        "how to",
-        "build an"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.43,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.43,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c04e2e0c00abbcf3"
     }
   ]
 }

@@ -76,7 +76,7 @@ Eerlijk: onze eerste dynamic-workflow-poging was een 50-file refactor met de pro
 - [ ] `/deep-research` zichtbaar in slash-menu
 - [ ] Eerste test-workflow gedraaid op kleine scope (max 50 subagents)
 - [ ] `/workflows`-view geopend om tokens en duur te checken
-- [ ] Test-suite gedraaid op de output voor je het mergt
+- [ ] Test-suite gedraaid op de output voor je het mergt — nog geen e2e-tests? [Laat Claude Code je signup-flow testen met Playwright](/nieuws/claude-code-signupflow-testen-playwright)
 - [ ] Voor wie planning automatisch wil: `/effort ultracode` geprobeerd
 
 ## Bronnen

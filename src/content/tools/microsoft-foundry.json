@@ -1,0 +1,149 @@
+{
+  "name": "Microsoft Foundry",
+  "category": "agents",
+  "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+  "shortDescription": "Microsofts platform om AI-agents te bouwen en beheerd te draaien op Azure",
+  "headlineValueProp": "Beheerde agent-runtime op Azure met SDK's voor Python, C# en TypeScript — geen eigen orkestratie-loop meer bouwen",
+  "longDescription": "Microsoft Foundry (tot eind 2025 Azure AI Foundry) is Microsofts platform voor het bouwen, deployen en beheren van AI-toepassingen op Azure. Het onderdeel dat er voor bouwers het meest toe doet is Foundry Agent Service: een beheerde runtime waarin je een agent definieert met een model, instructies en tools, waarna Microsoft de redeneer-lus, tool-aanroepen, het gespreksgeheugen en de tracing afhandelt. Er zijn officiële SDK's voor Python, C# en TypeScript, wat het voor .NET-teams de laagdrempeligste route naar een productie-agent maakt. Daarnaast biedt Foundry een modelcatalogus (OpenAI-modellen plus open modellen), evaluatie- en tracing-tooling en enterprise-voorzieningen als private networking, managed identity en audit logs. Het losse, open-source Microsoft Agent Framework — de opvolger die Semantic Kernel en AutoGen samenbrengt — kan Foundry als backend gebruiken en zit in public preview.",
+  "lastUpdated": "2026-07-20",
+  "bestFor": "Microsoft Foundry is het meest waardevol voor teams die al op Azure draaien en een AI-agent naar productie willen brengen zonder zelf orkestratie, logging en schaling te bouwen.",
+  "useCases": [
+    "AI-agents bouwen die tools en interne data gebruiken",
+    "Bestaande .NET- of Python-applicaties uitbreiden met AI",
+    "Modellen vergelijken en evalueren binnen één platform"
+  ],
+  "strengths": [
+    "Beheerde agent-runtime: geen eigen redeneer-lus en state-beheer nodig",
+    "Officiële SDK's voor Python, C# en TypeScript",
+    "Diepe Azure-integratie: managed identity, private networking, audit logs",
+    "Ingebouwde tracing per run, zodat je ziet welke tools de agent aanriep"
+  ],
+  "limitations": [
+    "Vereist een Azure-abonnement en Azure-kennis — geen no-code instap",
+    "Kosten zijn lastig vooraf in te schatten: je betaalt per token plus losse tools en resources",
+    "Snel bewegend product met hernoemingen (Azure AI Foundry → Microsoft Foundry); documentatie en tutorials lopen achter",
+    "Het Microsoft Agent Framework is nog public preview, dus API-wijzigingen zijn te verwachten"
+  ],
+  "pricing": "Geen aparte licentie voor het aanmaken of draaien van Foundry-native agents. Je betaalt het tokenverbruik van het gekozen model via Foundry Models, plus eventuele losse Foundry Tools, IQ-connecties en Azure-resources (opslag, zoekindexen, netwerk). Prijzen per model verschillen sterk; controleer de actuele Azure-prijspagina.",
+  "openSource": false,
+  "pricingModel": "paid",
+  "difficulty": "advanced",
+  "tags": [
+    "ai-agents",
+    "azure",
+    "microsoft",
+    "dotnet",
+    "agent-framework"
+  ],
+  "mentionAliases": [
+    "Azure AI Foundry",
+    "Foundry Agent Service",
+    "Azure AI Agent Service",
+    "Microsoft Foundry Agent Service"
+  ],
+  "businessFunctions": [
+    "development",
+    "operations",
+    "data"
+  ],
+  "draft": false,
+  "deploymentType": "saas",
+  "dataResidency": "eu",
+  "targetAudience": [
+    "mkb",
+    "enterprise"
+  ],
+  "nlSupport": true,
+  "integrations": [
+    "Azure",
+    "Microsoft 365",
+    "GitHub",
+    "Visual Studio"
+  ],
+  "fundingStage": "public",
+  "timeToFirstValue": "days",
+  "setupComplexity": "high",
+  "requiresDeveloper": true,
+  "freeTrialAvailable": true,
+  "pilotFriendly": true,
+  "gdprReady": true,
+  "euHostingAvailable": true,
+  "dpaAvailable": true,
+  "soc2": true,
+  "sso": true,
+  "auditLogs": true,
+  "easeOfUseScore": 5,
+  "learningCurve": "high",
+  "documentationQuality": "adequate",
+  "supportQuality": "good",
+  "primaryJobsToBeDone": [
+    "Een AI-agent bouwen die tools aanroept en meerstaps-taken afhandelt",
+    "AI toevoegen aan een bestaande .NET- of Python-applicatie",
+    "Modellen en prompts evalueren voordat ze naar productie gaan"
+  ],
+  "companySizeFit": [
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "bestUseCaseStage": "team-rollout",
+  "antiUseCases": [
+    "Wanneer je zonder ontwikkelaar een agent wilt opzetten — hiervoor heb je code en Azure-kennis nodig",
+    "Wanneer je niet op Azure zit en dat ook niet wilt: de waarde zit juist in de Azure-integratie",
+    "Wanneer je alleen wilt chatten met een model — dan is een gewone assistent goedkoper en simpeler"
+  ],
+  "replacementFor": [
+    "Zelfgebouwde agent-orkestratie op basis van losse LLM-API-aanroepen"
+  ],
+  "testedByEditor": false,
+  "verdict": "Microsoft Foundry is de logische keuze als je organisatie al op Azure draait en je een AI-agent naar productie wilt brengen: de beheerde runtime scheelt je het hele orkestratie- en logging-bouwwerk. Daarbuiten is het zware kost — je hebt een ontwikkelaar, Azure-kennis en budgetbewaking nodig, en de naamgeving verandert sneller dan de documentatie bijhoudt. Begin met één agent, één tool en een budgetalert.",
+  "bestAlternative": "claude-code",
+  "whyListed": "Foundry is Microsofts antwoord op de vraag hoe je AI-agents productieklaar maakt, en daarmee voor veel Nederlandse organisaties met een Microsoft-stack de standaardroute. Als een van de weinige platforms biedt het een officiële C#-SDK, wat het relevant maakt voor de grote groep .NET-teams in het Nederlandse bedrijfsleven.",
+  "keyFeatures": [
+    {
+      "title": "Foundry Agent Service",
+      "description": "Beheerde runtime die de redeneer-lus, tool-aanroepen en het gespreksgeheugen van je agent afhandelt.",
+      "group": "core"
+    },
+    {
+      "title": "SDK's voor Python, C# en TypeScript",
+      "description": "Officiële clients voor drie ecosystemen; voor .NET-teams de kortste weg naar een werkende agent.",
+      "group": "core"
+    },
+    {
+      "title": "Modelcatalogus",
+      "description": "Deploy OpenAI-modellen en open modellen binnen hetzelfde project en wissel zonder je code te herschrijven.",
+      "group": "core"
+    },
+    {
+      "title": "Ingebouwde tools",
+      "description": "Kant-en-klare capabilities zoals file search en code interpreter, naast je eigen functions.",
+      "group": "core"
+    },
+    {
+      "title": "Tracing en evaluatie",
+      "description": "Per run zie je welke tools de agent aanriep en waarom — onmisbaar bij het debuggen van tool-lussen.",
+      "group": "output"
+    },
+    {
+      "title": "Enterprise-voorzieningen",
+      "description": "Managed identity, private networking, SSO en audit logs via de Azure-infrastructuur.",
+      "group": "enterprise"
+    }
+  ],
+  "setupTime": "over_1hour",
+  "matchSegments": [
+    "mkb_middel",
+    "enterprise",
+    "overheid_klein"
+  ],
+  "idealTeamSize": {
+    "min": 3,
+    "max": 100000
+  },
+  "controlledIntegrations": [
+    "microsoft_365"
+  ],
+  "verenigingSuitable": false,
+  "outputLanguageQualityNl": "good"
+}
