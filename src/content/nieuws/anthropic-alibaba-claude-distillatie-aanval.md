@@ -62,7 +62,7 @@ Dit is niet de eerste keer in 2026 dat Anthropic dit soort beschuldigingen maakt
 
 ## Wat distillatie is — en waarom het zo effectief is
 
-Distillatie is op zichzelf een volstrekt legitieme AI-techniek. De kern: je traint een kleiner of goedkoper model op de uitvoer van een groter model. Het kleinere model leert de patronen van het grotere na te bootsen, zonder dat je het volledige trainingsproces opnieuw hoeft te doorlopen. OpenAI zelf gebruikt varianten van distillatie voor haar kleinere GPT-modellen; Meta paste het toe bij vroegere Llama-versies.
+Distillatie is op zichzelf een volstrekt legitieme AI-techniek. De kern: je traint een kleiner of goedkoper model op de uitvoer van een groter model. Het kleinere model leert de patronen van het grotere na te bootsen, zonder dat je het volledige trainingsproces opnieuw hoeft te doorlopen. OpenAI zelf gebruikt varianten van distillatie voor haar kleinere GPT-modellen; Meta paste het toe bij vroegere Llama-versies. Modelbeveiliging speelt trouwens ook aan gebruikerskant: haal je open modellen van Hugging Face, loop dan onze [5 veiligheidschecks](/nieuws/huggingface-modellen-veilig-downloaden) langs.
 
 Het probleem is de schaal en de methode hier. In plaats van legitiem gebruik van een model, waarbij je antwoorden krijgt op vragen die je daadwerkelijk hebt, gaat het om systematisch miljoenen specifieke queries sturen — gericht op de capaciteiten die je wilt kopiëren — en alle antwoorden direct als trainingsdata te gebruiken. Dat is in strijd met Anthropic's gebruiksvoorwaarden, en specifiek gericht op het ondermijnen van het concurrentievoordeel dat in Anthropic's model is opgebouwd.
 

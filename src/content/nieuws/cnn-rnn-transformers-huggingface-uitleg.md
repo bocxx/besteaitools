@@ -45,7 +45,7 @@ Het mentale model uit de freeCodeCamp-uitleg komt hierop neer. Een **CNN** (conv
 
 ## Stap 2: snap waarom de transformer won
 
-De transformer komt uit het Google-paper *Attention Is All You Need* (2017). De doorbraak zat in schaal: doordat een transformer invoer parallel verwerkt in plaats van stap voor stap zoals een RNN, kon er op veel grotere datasets getraind worden. Vrijwel elk groot taalmodel dat je vandaag gebruikt — ChatGPT, Claude, Gemini, de open Qwen- en Llama-families — is een transformer-variant. Kom je in een productbeschrijving "transformer-based" tegen, dan weet je nu wat er onder de motorkap zit.
+De transformer komt uit het Google-paper *Attention Is All You Need* (2017). De doorbraak zat in schaal: doordat een transformer invoer parallel verwerkt in plaats van stap voor stap zoals een RNN, kon er op veel grotere datasets getraind worden. Vrijwel elk groot taalmodel dat je vandaag gebruikt — ChatGPT, Claude, Gemini, de open Qwen- en Llama-families — is een transformer-variant. Kom je in een productbeschrijving "transformer-based" tegen, dan weet je nu wat er onder de motorkap zit. Wil je zo'n model zelf van Hugging Face halen en draaien? Doe dat veilig met onze [5 checks voordat je een model draait](/nieuws/huggingface-modellen-veilig-downloaden).
 
 ## Stap 3: verken de architecturen op Hugging Face
 

@@ -39,7 +39,7 @@ faq:
 
 Als je AI-agents gebruikt om code te schrijven, codebases door te zoeken of RAG-systemen te draaien, kent het probleem je al: het context-venster loopt vol, de kosten klimmen, en je stuurt gigantische lappen tekst naar de LLM die je maar voor 10% echt nodig hebt.
 
-**Headroom** pakt dat probleem aan vóór het de LLM bereikt. De open-source tool comprimeert alles wat normaal in het context-venster belandt — tool-outputs, logs, bestanden, RAG-chunks — en claimt daarmee 60 tot 95% minder tokens te verbruiken, met behoud van antwoordkwaliteit.
+**Headroom** pakt dat probleem aan vóór het de LLM bereikt. De open-source tool comprimeert alles wat normaal in het context-venster belandt — tool-outputs, logs, bestanden, RAG-chunks — en claimt daarmee 60 tot 95% minder tokens te verbruiken, met behoud van antwoordkwaliteit. Draai je zelf open modellen die je van Hugging Face haalt? Doe dat veilig met onze [5 checks voordat je een model draait](/nieuws/huggingface-modellen-veilig-downloaden).
 
 Met 9.000+ GitHub-sterren in de eerste weken is het duidelijk dat dit pijn raakt die veel developers kennen.
 
