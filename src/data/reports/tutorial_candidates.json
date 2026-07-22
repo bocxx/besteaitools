@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-21T05:35:33.885940",
+  "generated_at": "2026-07-22T17:46:26.504278",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 19,
-    "for_news": 13,
-    "rejected_lang": 127,
+    "for_news": 15,
+    "rejected_lang": 146,
     "already_covered": 0,
-    "total_scanned": 4587
+    "total_scanned": 4598
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "tutorial",
-        "step-by-step"
+        "step-by-step",
+        "how to"
       ],
       "matched_tools": [
         "gemini",
@@ -67,6 +67,57 @@
     {
       "source": "hn",
       "platform": "hackernews",
+      "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+      "text": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+      "url": "https://ykdojo.github.io/claude-controls-mac/",
+      "date": "2026-07-18",
+      "engagement": 445.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "step-by-step",
+        "guide"
+      ],
+      "matched_tools": [
+        "claude",
+        "claude code"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 18.65,
+      "score_breakdown": {
+        "pattern_hits": 2,
+        "engagement_log": 9.15,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "955421e38eed25f2"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
       "title": "How to stop Claude from saying load-bearing",
       "text": "How to stop Claude from saying load-bearing",
       "url": "https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing",
@@ -92,13 +143,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 18.15,
+      "score": 17.65,
       "score_breakdown": {
         "pattern_hits": 1,
         "engagement_log": 10.65,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -124,8 +175,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build an",
-        "build a"
+        "build a",
+        "build an"
       ],
       "matched_tools": [
         "claude"
@@ -164,6 +215,66 @@
       "id": "eaac30f84f0344d6"
     },
     {
+      "source": "github:TypeScript",
+      "platform": "github",
+      "title": "koala73/worldmonitor — Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "text": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "url": "https://github.com/koala73/worldmonitor",
+      "date": "2026-07-22",
+      "engagement": 4131.0,
+      "source_weight": 2.5,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "total_stars": 68251,
+      "topics": [
+        "agent",
+        "ai",
+        "dashboard",
+        "geopolitics",
+        "mcp",
+        "mcp-server",
+        "monitoring",
+        "news",
+        "opensource",
+        "osint",
+        "palantir",
+        "situation"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "github"
+      ],
+      "score": 17.49,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 12.49,
+        "source_weight": 2.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: Real inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e96bcbdcd4af796f"
+    },
+    {
       "source": "likes:@ai_explorer25",
       "platform": "twitter_likes",
       "title": "Confused by all the AI hype? These people make it easy to understand and they teach you how to actually build your own AI tools Agents & frameworks @hwchase17 â",
@@ -174,8 +285,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "build your"
+        "build your",
+        "how to"
       ],
       "matched_tools": [
         "langchain",
@@ -228,8 +339,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
-        "step by step"
+        "step by step",
+        "tutorial"
       ],
       "matched_tools": [
         "chatgpt",
@@ -269,6 +380,54 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "bfa2169f3f633b46"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "OpenAI and Hugging Face address security incident during model evaluation",
+      "text": "OpenAI and Hugging Face address security incident during model evaluation",
+      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "date": "2026-07-21",
+      "engagement": 2510.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt",
+        "huggingface"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 17.24,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.74,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Wat kan chatgpt écht? Een eerlijke test voor NL-gebruikers.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "52f777227666c44e"
     },
     {
       "source": "hn",
@@ -400,9 +559,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "hands-on",
         "walkthrough",
-        "hands-on"
+        "how to"
       ],
       "matched_tools": [
         "invideo",
@@ -514,11 +673,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "U.S. government will decide who gets to use GPT-5.6",
-      "text": "U.S. government will decide who gets to use GPT-5.6",
-      "url": "https://www.washingtonpost.com/technology/2026/06/26/openai-says-us-government-will-vet-users-its-latest-ai-model/",
-      "date": "2026-06-26",
-      "engagement": 2408.0,
+      "title": "GPT-5.6",
+      "text": "GPT-5.6",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "date": "2026-07-09",
+      "engagement": 2642.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -532,15 +691,16 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "newsletter_count": 0,
+      "newsletter_count": 1,
       "competitor_count": 0,
       "consensus_sources": [
-        "hackernews"
+        "hackernews",
+        "newsletter"
       ],
-      "score": 16.68,
+      "score": 16.82,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.68,
+        "engagement_log": 11.82,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 0.5,
@@ -553,10 +713,10 @@
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "chatgpt versus de alternatieven — welke past bij jou?",
+      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "cebb5a1ee0647ac4"
+      "id": "566714050a703447"
     },
     {
       "source": "github:JavaScript",
@@ -620,157 +780,24 @@
       "id": "455c94b96d18b49c"
     },
     {
-      "source": "github:Python",
+      "source": "github:TypeScript",
       "platform": "github",
-      "title": "chopratejas/headroom — Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-      "text": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
-      "url": "https://github.com/chopratejas/headroom",
-      "date": "2026-06-19",
-      "engagement": 3938.0,
+      "title": "diegosouzapw/OmniRoute — Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50+ free), 500+ models — Claude, GPT, Gemini, Kimi K3, GLM, DeepSeek. Works with Claude Code, Codex, Cursor, Cline & Copilot. Quota-aware auto-fa",
+      "text": "Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50+ free), 500+ models — Claude, GPT, Gemini, Kimi K3, GLM, DeepSeek. Works with Claude Code, Codex, Cursor, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, multimodal, Desktop/PWA. Built by 500+ contributors.",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "date": "2026-07-21",
+      "engagement": 2040.0,
       "source_weight": 2.5,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "mcp"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "total_stars": 37633,
-      "topics": [
-        "agent",
-        "ai",
-        "anthropic",
-        "claude-code",
-        "compression",
-        "context-engineering",
-        "context-window",
-        "cursor",
-        "fastapi",
-        "langchain",
-        "llm",
-        "mcp",
-        "openai",
-        "prompt-engineering",
-        "proxy",
-        "python",
-        "rag",
-        "token-optimization",
-        "tokens",
-        "typescript"
-      ],
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "github"
-      ],
-      "score": 16.42,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 12.42,
-        "source_weight": 2.5,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "mcp versus de alternatieven — welke past bij jou?",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c7f7c9d65f0f3e0b"
-    },
-    {
-      "source": "github:Python",
-      "platform": "github",
-      "title": "usestrix/strix — Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
-      "text": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
-      "url": "https://github.com/usestrix/strix",
-      "date": "2026-07-03",
-      "engagement": 2804.0,
-      "source_weight": 2.5,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "total_stars": 34115,
-      "topics": [
-        "agents",
-        "ai-hacking",
-        "ai-penetration-testing",
-        "ai-pentesting",
-        "ai-security",
-        "artificial-intelligence",
-        "bug-bounty",
-        "code-quality",
-        "ctf-tools",
-        "cybersecurity",
-        "cybersecurity-tools",
-        "ethical-hacking",
-        "hacking",
-        "llm-security",
-        "offensive-security",
-        "penetration-testing",
-        "pentesting-tools",
-        "red-teaming",
-        "security",
-        "security-automation"
-      ],
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "github"
-      ],
-      "score": 16.41,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.91,
-        "source_weight": 2.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Nieuw in Open: wat de update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e9d2b33f061faacd"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Semgrep: GLM 5.2 beats Claude in our Cyber Benchmarks",
-      "text": "Semgrep: GLM 5.2 beats Claude in our Cyber Benchmarks",
-      "url": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
-      "date": "2026-06-28",
-      "engagement": 1614.0,
-      "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
       "matched_tools": [
         "claude",
-        "z-ai"
+        "claude code",
+        "cline",
+        "cursor",
+        "deepseek",
+        "gemini",
+        "kimi"
       ],
       "feature_update": false,
       "new_products": [],
@@ -779,18 +806,41 @@
       "paywall": false,
       "video": null,
       "lang": "en",
+      "total_stars": 23101,
+      "topics": [
+        "a2a",
+        "ai-agents",
+        "ai-gateway",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "cline",
+        "codex",
+        "copilot",
+        "cursor",
+        "deepseek",
+        "free-ai",
+        "gemini",
+        "kimi",
+        "llm-gateway",
+        "mcp",
+        "openai",
+        "openai-proxy",
+        "qwen",
+        "token-saver"
+      ],
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "hackernews"
+        "github"
       ],
-      "score": 16.08,
+      "score": 16.43,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.08,
-        "source_weight": 3.0,
+        "engagement_log": 11.43,
+        "source_weight": 2.5,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -800,55 +850,10 @@
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: claude inzetten in je workflow.",
+      "suggested_angle_nl": "claude versus de alternatieven — welke past bij jou?",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "866ab6fcb26f9cba"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Open source AI must win",
-      "text": "Open source AI must win",
-      "url": "https://opensourceaimustwin.com/?share=v2",
-      "date": "2026-06-13",
-      "engagement": 2059.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.95,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.45,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Nieuw in Open: wat de update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "f28db91fc980dfce"
+      "id": "674627eda8741f3f"
     },
     {
       "source": "articles:Towards AI - Medium",
@@ -861,10 +866,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "build a",
+        "hands-on",
         "guide",
-        "hands-on"
+        "how to"
       ],
       "matched_tools": [
         "chatgpt",
@@ -915,6 +920,59 @@
     {
       "source": "articles:freeCodeCamp.org News",
       "platform": "article",
+      "title": "How to Serve a Multi-User AI Agent with FastAPI and Streamlit",
+      "text": "<p>In this tutorial, I’ll show you how to serve a multi-user local AI agent as a REST API using FastAPI, then add a lightweight Streamlit UI on top.</p>\n<p>Instead of interacting with the agent through a terminal, we’ll expose it over HTTP so multiple users can access it through a chat-style frontend interface. Each session will maintain its own conversation history and streamed responses.</p>\n<p>The local AI agent will be built with LangChain v1, Ollama, Qwen, and Python, running on your own machine and ready to plug into larger applications without any per-call model API charges.</p>\n<h2 dat",
+      "url": "https://www.freecodecamp.org/news/how-to-serve-a-multi-user-ai-agent-with-fastapi-and-streamlit/",
+      "date": "2026-07-21",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "tutorial",
+        "how-to",
+        "how to"
+      ],
+      "matched_tools": [
+        "langchain",
+        "ollama",
+        "qwen"
+      ],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je langchain in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e84e1a1bb85f3b0a"
+    },
+    {
+      "source": "articles:freeCodeCamp",
+      "platform": "article",
       "title": "How to Use Apple’s Foundation Models in a Web App with a macOS Companion",
       "text": "<p>Not every AI feature needs a cloud model, with its per-token bills, network round-trips, and private data leaving your machine. If you're on a modern Mac, a capable language model is already on your disk.</p>\n<p><strong>Foundation Models</strong> is Apple's Swift framework for working with large language models. It's the on-device model behind Apple Intelligence, Apple's Private Cloud Compute, or another provider's server model.</p>\n<p>This tutorial targets the on-device model: you send it a prompt and it runs entirely on the Mac's own hardware locally, free-per-call, and offline-friendly.<",
       "url": "https://www.freecodecamp.org/news/how-to-use-apple-s-foundation-models-in-a-web-app-with-a-macos-companion/",
@@ -923,9 +981,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "tutorial",
-        "how-to"
+        "how-to",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -972,9 +1030,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "build a",
-        "complete guide"
+        "complete guide",
+        "how to"
       ],
       "matched_tools": [
         "make"
@@ -1011,110 +1069,9 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "fd1f04f0b8dbaac7"
-    },
-    {
-      "source": "articles:Towards AI - Medium",
-      "platform": "article",
-      "title": "How to Build Your First AI Agent\nWithout Writing a Single Line of Code — AI Practical Guide: Day 1…",
-      "text": "<h3>How to Build Your First AI Agent<br>Without Writing a Single Line of Code — AI Practical Guide: Day 1 of 10</h3><h4>A step-by-step guide to setting up an autonomous AI workflow — and using it to create real income as a solo creator.</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/691/1*bkQMNvesLBmSZOX6owpCaQ.png\"></figure><p>In 2026, the barrier to building an AI agent is not Python, JavaScript, or any programming language. It’s knowing what you want the agent to <em>do</em> — and understanding the handful of no-code tools that will do the heavy lifting for you.</p><p>I’ve",
-      "url": "https://pub.towardsai.net/how-to-build-your-first-ai-agent-without-writing-a-single-line-of-code-ai-practical-guide-day-1-6d932827f004?source=rss----98111c9905da---4",
-      "date": "2026-07-19",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "step-by-step",
-        "use case",
-        "build your",
-        "how to",
-        "practical guide",
-        "guide"
-      ],
-      "matched_tools": [
-        "soloterm"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je soloterm in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "1bf1024a3804739a"
     }
   ],
   "for_news": [
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Chat Control 1.0 and 2.0 Explained",
-      "text": "Chat Control 1.0 and 2.0 Explained",
-      "url": "https://fightchatcontrol.eu/chat-control-overview",
-      "date": "2026-07-07",
-      "engagement": 1254.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "explained"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 17.7,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 10.7,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Chat Control uitgelegd voor Nederlandse teams — zonder de hype.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "571f8893d536b27d"
-    },
     {
       "source": "hn",
       "platform": "hackernews",
@@ -1122,7 +1079,7 @@
       "text": "China's open-weights AI strategy is winning",
       "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/",
       "date": "2026-07-20",
-      "engagement": 1840.0,
+      "engagement": 2154.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1139,10 +1096,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.78,
+      "score": 17.01,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.28,
+        "engagement_log": 11.51,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1171,11 +1128,11 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
-        "how to",
         "guide",
-        "introduction to",
-        "ai act"
+        "how to",
+        "ai act",
+        "step-by-step",
+        "introduction to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1221,7 +1178,7 @@
       "text": "What AI did to stackoverflow in a graph",
       "url": "https://data.stackexchange.com/stackoverflow/query/1953768#graph",
       "date": "2026-07-18",
-      "engagement": 1051.0,
+      "engagement": 1053.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1260,16 +1217,20 @@
       "id": "3d13fa7cd96c2717"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Bonsai 27B: A 27B-Class Model that runs on a phone",
-      "text": "Bonsai 27B: A 27B-Class Model that runs on a phone",
-      "url": "https://prismml.com/news/bonsai-27b",
-      "date": "2026-07-14",
-      "engagement": 946.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
+      "source": "articles:HackerNoon",
+      "platform": "article",
+      "title": "Shopify Plus SEO Is a Systems Problem: A Technical Buyer’s Guide to 25 Agencies",
+      "text": "<h2 data-sanitized-id=\"h-\"><br></h2><h2 data-sanitized-id=\"h-how-to-evaluate-shopify-plus-seo-partners-across-architecture-migration-safety-content-systems-core-web-vitals-internationalization-and-ai-search\">How to evaluate Shopify Plus SEO partners across architecture, migration safety, content systems, Core Web Vitals, internationalization and AI search.</h2><p>Most Shopify Plus SEO proposals are difficult to compare because they are not selling the same thing.</p><p>One firm is selling editorial production. Another is selling a new theme. Another is proposing digital PR. A systems integrato",
+      "url": "https://hackernoon.com/shopify-plus-seo-is-a-systems-problem-a-technical-buyers-guide-to-25-agencies?source=rss",
+      "date": "2026-07-22",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how-to",
+        "guide",
+        "how to"
+      ],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -1281,13 +1242,13 @@
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "hackernews"
+        "article"
       ],
-      "score": 15.78,
+      "score": 15.9,
       "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 10.28,
-        "source_weight": 3.0,
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
         "editorial": 0.0,
@@ -1299,10 +1260,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Waarom Bonsai er nu toe doet — en wat je ermee moet.",
+      "suggested_angle_nl": "Zo gebruik je Shopify Plus SEO in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "9fc462d60f0fb897"
+      "id": "72ff81098c9bc28d"
     },
     {
       "source": "hn",
@@ -1350,6 +1311,51 @@
       "id": "646e2325aaf84565"
     },
     {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Mayor Mamdani Says Landlords Can't Use AI Images to Advertise",
+      "text": "Mayor Mamdani Says Landlords Can't Use AI Images to Advertise",
+      "url": "https://petapixel.com/2026/07/16/mayor-mamdani-says-landlords-cant-secretly-use-ai-images-to-advertise-properties/",
+      "date": "2026-07-19",
+      "engagement": 856.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 15.63,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.13,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Wat Mayor Mamdani Says betekent voor de Nederlandse AI-markt.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "45742381a23db208"
+    },
+    {
       "source": "tweets:@Dipanshu_AI",
       "platform": "tweet",
       "title": "🚨 Claude just changed the game.\n\nAll you need is:\n\n💻 A laptop or Mobile \n🌐 Internet connection\n⏰ 60 minutes a day\n\nThat’s enough to build a $7,200/month online ",
@@ -1360,9 +1366,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "build a",
-        "guide"
+        "guide",
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1376,7 +1382,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "Dipanshu_AI",
-      "followers": 16801,
+      "followers": 16873,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1414,9 +1420,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "introduction to",
         "guide",
-        "introduction to"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1456,6 +1462,51 @@
       "id": "b64076ae655a7f0f"
     },
     {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "AI Mania Is Eviscerating Global Decision-Making",
+      "text": "AI Mania Is Eviscerating Global Decision-Making",
+      "url": "https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making/#fnref:3",
+      "date": "2026-07-19",
+      "engagement": 733.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 9.9,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "AI Mania Is: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "8e03a65ff4891d5a"
+    },
+    {
       "source": "articles:Arindam Majumder",
       "platform": "article",
       "title": "How to Change Your Gmail ID ( Simple Trick)",
@@ -1466,10 +1517,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "walkthrough",
         "step-by-step",
         "guide",
-        "walkthrough"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1509,6 +1560,59 @@
       "id": "e1acbc4eac9a782c"
     },
     {
+      "source": "articles:Towards Data Science - Medium",
+      "platform": "article",
+      "title": "How To Build Your Own LLM Runtime From Scratch",
+      "text": "<p>If you have ever wanted to actually build an LLM inference runtime yourself — pack your own weights, own every barrier, capture your own CUDA graphs — this is what that journey looks like on an H100. A step-by-step tour of a small runtime called annotated-llm-runtime, and the three bugs that produced most of the annotations.</p>\n<p>The post <a href=\"https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/\">How To Build Your Own LLM Runtime From Scratch</a> appeared first on <a href=\"https://towardsdatascience.com/\">Towards Data Science</a>.</p>",
+      "url": "https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/",
+      "date": "2026-07-22",
+      "engagement": 28.75,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "from scratch",
+        "how-to",
+        "build an",
+        "build your",
+        "how to",
+        "step-by-step"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 1,
+      "consensus_sources": [
+        "article",
+        "competitor"
+      ],
+      "score": 15.09,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.09,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "6abed9b28987bbf7"
+    },
+    {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
       "title": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build so",
@@ -1519,10 +1623,10 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "step by step",
         "build an",
         "use case",
-        "step by step"
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1624,9 +1728,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "introduction to",
         "guide",
-        "introduction to"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1676,9 +1780,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "build an",
-        "hands-on"
+        "hands-on",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
