@@ -65,7 +65,7 @@ Merk je dat een agent net naast het doel zit, dan hoef je de hoofdprompt niet me
 
 ## Klein beginnen, dan uitbreiden
 
-De grootste fout is een agent meteen te veel taken tegelijk geven. Begin met één afgebakende taak, controleer met het reasoning-paneel of het gedrag klopt, en breid pas uit als je 'm vertrouwt. Een agent die één ding betrouwbaar doet, is meer waard dan een agent die tien dingen half doet. Groei je uit meerdere losse agents, dan is de volgende stap ze te laten samenwerken — dat kan zelfs gratis op je eigen machine, zie [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen).
+De grootste fout is een agent meteen te veel taken tegelijk geven. Begin met één afgebakende taak, controleer met het reasoning-paneel of het gedrag klopt, en breid pas uit als je 'm vertrouwt. Een agent die één ding betrouwbaar doet, is meer waard dan een agent die tien dingen half doet. En om te zien wáárom een agent een verkeerde afslag nam, helpt tracing: [zo monitor je elke stap van je agent met LangSmith](/nieuws/langsmith-ai-agents-monitoren). Groei je uit meerdere losse agents, dan is de volgende stap ze te laten samenwerken — dat kan zelfs gratis op je eigen machine, zie [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen).
 
 Werk je liever in code dan in een no-code canvas? Dan is [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen) de programmeur-variant van dit verhaal, met SDK's voor Python, C# en TypeScript.
 
