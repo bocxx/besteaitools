@@ -44,6 +44,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2 # HEAD^ nodig voor de IndexNow-diff
 
       - uses: actions/setup-node@v6
         with:
@@ -59,3 +61,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           # Account-ID is geen credential (staat ook in de deploy-output).
           CLOUDFLARE_ACCOUNT_ID: "0a23a74af77e5ac37af0ffa04ba46059"
+
+      - name: IndexNow — ping Bing na deploy
+        run: SINCE_REF=HEAD^..HEAD node scripts/indexnow.mjs
+        continue-on-error: true
