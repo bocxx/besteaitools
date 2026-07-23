@@ -3,7 +3,7 @@
   "category": "agents",
   "websiteUrl": "https://claude.ai",
   "shortDescription": "Anthropic's desktop-agent waarmee niet-developers Claude langlopende taken laat uitvoeren via bestanden, bash-commando's en connectoren",
-  "longDescription": "Claude Cowork is een modus in de Claude desktop-app waarin Claude zelfstandig meerstaps-taken uitvoert op je computer in plaats van alleen te chatten. Claude krijgt een werkmap, kan bestanden lezen en aanmaken, shell-commando's draaien in een filesystem- en netwerk-geïsoleerde sandbox, en via connectoren werken met apps als Gmail, Google Drive en CRM-systemen. Het gebruikt dezelfde agent-architectuur als Claude Code, maar zonder terminal en gericht op kenniswerkers — marketeers, recruiters, consultants, ondernemers. Sinds februari 2026 draait het op macOS én Windows voor alle betaalde Claude-plannen. Plugins bundelen skills, connectoren en slash-commando's per rol, en 'live artifacts' geven dashboards die automatisch ververen met actuele data uit je apps.",
+  "longDescription": "Claude Cowork is een modus in de Claude desktop-app waarin Claude zelfstandig meerstaps-taken uitvoert op je computer in plaats van alleen te chatten. Claude krijgt een werkmap, kan bestanden lezen en aanmaken, shell-commando's draaien in een filesystem- en netwerk-geïsoleerde sandbox, en via connectoren werken met apps als Gmail, Google Drive en CRM-systemen. Het gebruikt dezelfde agent-architectuur als Claude Code, maar zonder terminal en gericht op kenniswerkers — marketeers, recruiters, consultants, ondernemers. Sinds februari 2026 draait het op macOS én Windows voor alle betaalde Claude-plannen. Plugins bundelen skills, connectoren en slash-commando's per rol, en 'live artifacts' geven dashboards die automatisch ververen met actuele data uit je apps. Sinds 22 juli 2026 kun je Claude ook een taak aanleren via 'Record a Skill': je neemt je scherm op terwijl je de taak voordoet en praat mee, en Cowork zet dat om in een herbruikbare skill (Pro/Max/Team).",
   "pricingModel": "paid",
   "difficulty": "beginner",
   "tags": [
@@ -53,6 +53,11 @@
       "group": "core"
     },
     {
+      "title": "Record a Skill (schermopname)",
+      "description": "Leer Claude een terugkerende taak door je scherm op te nemen en mee te praten; Cowork maakt er een herbruikbare skill van — toegevoegd 22 juli 2026, voor Pro-, Max- en Team-abonnees.",
+      "group": "core"
+    },
+    {
       "title": "Plugins per rol",
       "description": "Bundels van skills, connectoren en slash-commando's voor marketing, sales, finance, legal, HR, engineering en design.",
       "group": "integration"
@@ -91,7 +96,7 @@
   ],
   "nlSupport": true,
   "outputLanguageQualityNl": "native",
-  "lastUpdated": "2026-06-06",
+  "lastUpdated": "2026-07-23",
   "lastReviewedAt": "2026-06-06",
   "supportsDutchLanguage": true
 }
