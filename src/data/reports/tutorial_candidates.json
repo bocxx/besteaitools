@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-23T05:34:01.585341",
+  "generated_at": "2026-07-23T17:41:18.424588",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 19,
     "for_news": 17,
-    "rejected_lang": 152,
+    "rejected_lang": 156,
     "already_covered": 0,
-    "total_scanned": 4601
+    "total_scanned": 4606
   },
   "for_tools": [
     {
@@ -170,8 +170,8 @@
       "title": "koala73/worldmonitor — Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
       "text": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
       "url": "https://github.com/koala73/worldmonitor",
-      "date": "2026-07-23",
-      "engagement": 4139.0,
+      "date": "2026-07-22",
+      "engagement": 4131.0,
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -183,7 +183,7 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "total_stars": 69543,
+      "total_stars": 68251,
       "topics": [
         "agent",
         "ai",
@@ -338,7 +338,7 @@
       "text": "OpenAI and Hugging Face address security incident during model evaluation",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
       "date": "2026-07-21",
-      "engagement": 2657.0,
+      "engagement": 2722.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -358,10 +358,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.33,
+      "score": 17.36,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.83,
+        "engagement_log": 11.86,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -390,8 +390,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "build an"
+        "build an",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -802,6 +802,57 @@
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
+      "title": "What 67 Dev.to Posts in Three Months Taught Me About Writing for Developers",
+      "text": "<p>Since the middle of April 2026 I have published 67 posts on dev.to. My best one has 576 views. That is not a humble brag, it is the honest ceiling of a security developer who decided to write in public and hit publish every day for three months. I want to lay out what actually happened, with the real numbers I have, because most \"how to blog\" advice comes from people who skip the unglamorous middle.</p>\n\n<h2>\n  \n  \n  The number that surprised me\n</h2>\n\n<p>My top performer is a practical Ollama guide. A how-to. Run this model locally, here is the command, here is the gotcha on WSL2. 576 view",
+      "url": "https://dev.to/pavelespitia/what-67-devto-posts-in-three-months-taught-me-about-writing-for-developers-2j62",
+      "date": "2026-07-23",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "how to",
+        "how-to"
+      ],
+      "matched_tools": [
+        "ollama"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je ollama in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "534b115c24b3ff8c"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
       "title": "How to Build a Price Monitoring Agent with Pydantic AI and ZenRows",
       "text": "<p>Most price monitoring systems look simple on paper: point a scraper at a product page, ask an LLM to extract the price, and store the result in a database. The problem arises when the same workflow runs continuously against heavily protected targets such as Amazon and Walmart. At scale, reliability becomes the real challenge. The why comes down to two failures that happen quietly: retrieval and extraction. Retrieval fails when a protected site returns a blank JavaScript shell, incomplete data, and a block page instead of the product data. Extraction fails when the LLM returns a field in a d",
       "url": "https://dev.to/zenrows/how-to-build-a-price-monitoring-agent-with-pydantic-ai-and-zenrows-3183",
@@ -810,9 +861,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
         "tutorial",
-        "how to"
+        "how to",
+        "build a"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -849,7 +900,7 @@
       "id": "84d962140140c227"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "How to Trace and Monitor AI Agents with LangSmith",
       "text": "<p>In this tutorial, I'll show you how to trace and monitor a local AI agent with LangSmith. We'll build a small local AI agent and then enable LangSmith tracing for it so that we can inspect model calls, tool usage, and request latency in a web UI.</p>\n<p>We'll be using LangChain v1, Ollama, Qwen, and Python. Everything runs on your own machine except the observability layer, so the agent itself has no model API costs.</p>\n<h2 data-sanitized-id=\"heading-table-of-contents\">Table of Contents</h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-trace-and-monitor-ai-agents-with-lang",
@@ -860,9 +911,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "tutorial",
-        "how-to",
+        "how to",
         "build a",
-        "how to"
+        "how-to"
       ],
       "matched_tools": [
         "langchain",
@@ -913,10 +964,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
         "build an",
-        "practical guide",
-        "how to"
+        "tutorial",
+        "how to",
+        "practical guide"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -953,7 +1004,7 @@
       "id": "2ece018afe97c5cc"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "How to Evaluate AI Code Quality: A Practical Guide for Engineers",
       "text": "<p>You asked the AI to write a function. It gave you something that looks right. It even runs. But is it actually good?</p>\n<p>Most engineers stop there. They see green and move on. That habit will quietly cause you problems.</p>\n<p>AI coding tools like <a href=\"https://github.com/features/copilot\">GitHub Copilot</a>, <a href=\"https://www.cursor.com/\">Cursor</a>, and Claude are genuinely useful. But they're non-deterministic, meaning the same prompt can produce different outputs on different days.</p>\n<p>They can produce code that's plausible-looking but subtly wrong, or code that works for th",
@@ -1002,68 +1053,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "e2463608576d9224"
-    },
-    {
-      "source": "articles:Towards AI - Medium",
-      "platform": "article",
-      "title": "The MCP 2026–07–28 Spec Just Dropped — Here’s How to Build a Production-Ready MCP Server with…",
-      "text": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*Ok4n9_vfPrypIi0xlGdFow.png\"></figure><h3>The MCP 2026–07–28 Spec Just Dropped — Here’s How to Build a Production-Ready MCP Server with Express.js</h3><h4><em>The largest revision of the Model Context Protocol since launch is here. Sessions are dead. Stateless HTTP is in. Here’s a hands-on guide to building an MCP server that’s ready for the new world — using the Express.js stack you already know.</em></h4><p>If you’ve been building AI-powered applications in 2026, you’ve felt the gravitational pull of the Model Context Protoco",
-      "url": "https://pub.towardsai.net/the-mcp-2026-07-28-spec-just-dropped-heres-how-to-build-a-production-ready-mcp-server-with-1c720f176ae0?source=rss----98111c9905da---4",
-      "date": "2026-07-21",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "guide",
-        "hands-on",
-        "how to"
-      ],
-      "matched_tools": [
-        "chatgpt",
-        "claude",
-        "cursor",
-        "mcp"
-      ],
-      "feature_update": true,
-      "new_products": [
-        "The MCP",
-        "Spec Just",
-        "Ready MCP",
-        "Model Context",
-        "Stateless HTTP",
-        "VS Code"
-      ],
-      "new_product": true,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "59d517c6aeaf7527"
     }
   ],
   "for_news": [
@@ -1074,7 +1063,7 @@
       "text": "China's open-weights AI strategy is winning",
       "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/",
       "date": "2026-07-20",
-      "engagement": 2161.0,
+      "engagement": 2165.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1123,11 +1112,11 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
+        "guide",
         "introduction to",
         "step-by-step",
-        "guide",
-        "ai act",
-        "how to"
+        "how to",
+        "ai act"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1212,6 +1201,55 @@
       "id": "3d13fa7cd96c2717"
     },
     {
+      "source": "articles:freeCodeCamp",
+      "platform": "article",
+      "title": "How to Build Kubernetes Networking Without Kubernetes: Do What the CNI Does By Hand",
+      "text": "<p>In this article, you'll build an accurate mental model of what a Container Network Interface (CNI) actually does. Not by reading YAML, but by doing every single step it does by hand with raw Linux kernel primitives.</p>\n<p>The Container Network Interface (CNI) is one of the great black boxes of Kubernetes. Most people who run clusters every day have never once looked inside it. They know the <em>name</em> of their CNI (\"we run Calico,\" \"we're on Cilium\") the way you know the brand of the alternator in your car: as a label, not as a thing you actually understand.</p>\n<p>It lives at the very ",
+      "url": "https://www.freecodecamp.org/news/how-to-build-kubernetes-networking-without-kubernetes-do-what-the-cni-does-by-hand/",
+      "date": "2026-07-23",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build an",
+        "how to",
+        "from scratch"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "f9ab990fb04af090"
+    },
+    {
       "source": "articles:Towards AI - Medium",
       "platform": "article",
       "title": "Every LangGraph Pattern You’ll Actually Use : Explained Properly",
@@ -1222,9 +1260,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "guide",
         "explained",
-        "how to",
-        "guide"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1261,7 +1299,7 @@
       "id": "6f96f56a783a6a17"
     },
     {
-      "source": "articles:freeCodeCamp.org News",
+      "source": "articles:freeCodeCamp",
       "platform": "article",
       "title": "How to Train a Tumor Segmentation Model on Ultrasound Data with MONAI",
       "text": "<p>Most segmentation tutorials begin by choosing a model, feeding images into it, and tuning hyperparameters until the metric improves. But this skips the step that often matters most: understanding the data.</p>\n<p>In this tutorial we’ll profile the dataset first, then let those observations drive every design decision in a MONAI segmentation pipeline.</p>\n<h2 data-sanitized-id=\"heading-what-well-cover\">What We'll Cover:</h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-train-a-tumor-segmentation-model-on-ultrasound-data-with-monai/#heading-who-is-this-for\">Who is This For?</",
@@ -1272,8 +1310,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "tutorial",
-        "how-to",
-        "how to"
+        "how to",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1320,9 +1358,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how-to",
+        "guide",
         "how to",
-        "guide"
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1414,9 +1452,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
+        "guide",
         "how to",
-        "guide"
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -1469,8 +1507,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "guide",
-        "introduction to",
-        "how to"
+        "how to",
+        "introduction to"
       ],
       "matched_tools": [
         "claude",
@@ -1557,11 +1595,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Bonsai 27B: A 27B-Class Model that runs on a phone",
-      "text": "Bonsai 27B: A 27B-Class Model that runs on a phone",
-      "url": "https://prismml.com/news/bonsai-27b",
-      "date": "2026-07-14",
-      "engagement": 946.0,
+      "title": "Quality non-fiction books are the antithesis of AI slop",
+      "text": "Quality non-fiction books are the antithesis of AI slop",
+      "url": "https://resobscura.substack.com/p/quality-non-fiction-books-are-the",
+      "date": "2026-07-22",
+      "engagement": 689.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1578,13 +1616,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 15.28,
+      "score": 15.31,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.28,
+        "engagement_log": 9.81,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1594,10 +1632,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Waarom Bonsai er nu toe doet — en wat je ermee moet.",
+      "suggested_angle_nl": "Waarom Quality er nu toe doet — en wat je ermee moet.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "9fc462d60f0fb897"
+      "id": "f0b977fccef0294c"
     },
     {
       "source": "articles:Arindam Majumder",
@@ -1611,9 +1649,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "step-by-step",
-        "guide",
+        "how to",
         "walkthrough",
-        "how to"
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1653,59 +1691,6 @@
       "id": "e1acbc4eac9a782c"
     },
     {
-      "source": "articles:Towards Data Science - Medium",
-      "platform": "article",
-      "title": "How To Build Your Own LLM Runtime From Scratch",
-      "text": "<p>If you have ever wanted to actually build an LLM inference runtime yourself — pack your own weights, own every barrier, capture your own CUDA graphs — this is what that journey looks like on an H100. A step-by-step tour of a small runtime called annotated-llm-runtime, and the three bugs that produced most of the annotations.</p>\n<p>The post <a href=\"https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/\">How To Build Your Own LLM Runtime From Scratch</a> appeared first on <a href=\"https://towardsdatascience.com/\">Towards Data Science</a>.</p>",
-      "url": "https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/",
-      "date": "2026-07-22",
-      "engagement": 28.75,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "from scratch",
-        "build your",
-        "how to",
-        "step-by-step",
-        "how-to",
-        "build an"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": true,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 1,
-      "consensus_sources": [
-        "article",
-        "competitor"
-      ],
-      "score": 15.09,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.09,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "6abed9b28987bbf7"
-    },
-    {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
       "title": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build so",
@@ -1717,9 +1702,9 @@
       "ai_relevant": true,
       "pattern_hits": [
         "build an",
-        "step by step",
         "use case",
-        "how to"
+        "how to",
+        "step by step"
       ],
       "matched_tools": [
         "claude"
@@ -1822,8 +1807,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "guide",
-        "introduction to",
-        "how to"
+        "how to",
+        "introduction to"
       ],
       "matched_tools": [
         "claude",
