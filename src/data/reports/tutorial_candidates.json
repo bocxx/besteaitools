@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-24T05:31:17.677762",
+  "generated_at": "2026-07-24T17:36:37.782245",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 19,
+    "for_tools": 17,
     "for_news": 17,
-    "rejected_lang": 153,
+    "rejected_lang": 157,
     "already_covered": 0,
-    "total_scanned": 4609
+    "total_scanned": 4624
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
         "step-by-step",
-        "how to"
+        "how to",
+        "tutorial"
       ],
       "matched_tools": [
         "gemini",
@@ -289,8 +289,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
-        "step by step"
+        "step by step",
+        "tutorial"
       ],
       "matched_tools": [
         "chatgpt",
@@ -338,7 +338,7 @@
       "text": "OpenAI and Hugging Face address security incident during model evaluation",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
       "date": "2026-07-21",
-      "engagement": 2740.0,
+      "engagement": 2760.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -358,10 +358,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.37,
+      "score": 17.39,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.87,
+        "engagement_log": 11.89,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -390,8 +390,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "build an"
+        "build an",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -800,6 +800,56 @@
       "id": "674627eda8741f3f"
     },
     {
+      "source": "articles:MarkTechPost",
+      "platform": "article",
+      "title": "How to Build an End-to-End OCR Pipeline with Baidu’s Unlimited-OCR for High-Resolution Images and Multi-Page PDF Parsing",
+      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we build a complete workflow for running<a href=\"https://huggingface.co/baidu/Unlimited-OCR\"> <strong>Baidu’s Unlimited-OCR</strong></a> model on document images and multi-page PDFs. We configure the GPU environment, install the required dependencies, load the 3B-parameter vision-language model with automatic selection of bfloat16 or float16, and generate structured sample documents for testing. We then evaluate both the tiled Gundam inference mode and the faster Base mode for single-page OCR before extending the pipeline to multi-",
+      "url": "https://www.marktechpost.com/2026/07/23/how-to-build-an-end-to-end-ocr-pipeline-with-baidus-unlimited-ocr-for-high-resolution-images-and-multi-page-pdf-parsing/",
+      "date": "2026-07-24",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build an",
+        "how to",
+        "build a",
+        "tutorial"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "81295177a330bf46"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "Claude Cowork on Windows and Linux: How to Run It in 2026",
@@ -811,8 +861,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "guide",
-        "use case",
-        "how to"
+        "how to",
+        "use case"
       ],
       "matched_tools": [
         "claude",
@@ -863,9 +913,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "how-to",
         "guide",
-        "how to",
-        "how-to"
+        "how to"
       ],
       "matched_tools": [
         "ollama"
@@ -902,159 +952,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "534b115c24b3ff8c"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Build a Price Monitoring Agent with Pydantic AI and ZenRows",
-      "text": "<p>Most price monitoring systems look simple on paper: point a scraper at a product page, ask an LLM to extract the price, and store the result in a database. The problem arises when the same workflow runs continuously against heavily protected targets such as Amazon and Walmart. At scale, reliability becomes the real challenge. The why comes down to two failures that happen quietly: retrieval and extraction. Retrieval fails when a protected site returns a blank JavaScript shell, incomplete data, and a block page instead of the product data. Extraction fails when the LLM returns a field in a d",
-      "url": "https://dev.to/zenrows/how-to-build-a-price-monitoring-agent-with-pydantic-ai-and-zenrows-3183",
-      "date": "2026-07-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "tutorial",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "84d962140140c227"
-    },
-    {
-      "source": "articles:freeCodeCamp",
-      "platform": "article",
-      "title": "How to Trace and Monitor AI Agents with LangSmith",
-      "text": "<p>In this tutorial, I'll show you how to trace and monitor a local AI agent with LangSmith. We'll build a small local AI agent and then enable LangSmith tracing for it so that we can inspect model calls, tool usage, and request latency in a web UI.</p>\n<p>We'll be using LangChain v1, Ollama, Qwen, and Python. Everything runs on your own machine except the observability layer, so the agent itself has no model API costs.</p>\n<h2 data-sanitized-id=\"heading-table-of-contents\">Table of Contents</h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-trace-and-monitor-ai-agents-with-lang",
-      "url": "https://www.freecodecamp.org/news/how-to-trace-and-monitor-ai-agents-with-langsmith/",
-      "date": "2026-07-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "tutorial",
-        "build a",
-        "how to",
-        "how-to"
-      ],
-      "matched_tools": [
-        "langchain",
-        "ollama",
-        "qwen"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je langchain in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "52fe26fe02538f35"
-    },
-    {
-      "source": "articles:freeCodeCamp.org News",
-      "platform": "article",
-      "title": "How to Build an AI Feature With Gemini: A Practical Guide to Prompt Engineering for Developers",
-      "text": "<p>Most prompt engineering tutorials follow the same shape. Install the SDK, paste your API key, call <code>generateContent</code>, and print the response. The model says something plausible and the tutorial ends.</p>\n<p>Then you try to ship it, and you discover the actual work hasn't started.</p>\n<p>The gap between \"the API returned text\" and \"this feature is good enough that a real user trusts it\" is where almost all of the effort lives.</p>\n<p>That gap is full of unglamorous problems: the model sounds like every other chatbot, it invents things the user never said, it returns JSON with a ma",
-      "url": "https://www.freecodecamp.org/news/how-to-build-an-ai-feature-with-gemini-a-practical-guide-to-prompt-engineering-for-developers/",
-      "date": "2026-07-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "tutorial",
-        "practical guide",
-        "build an",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "2ece018afe97c5cc"
     }
   ],
   "for_news": [
@@ -1110,7 +1007,7 @@
       "text": "Startup founders urge Trump not to shut off Chinese open weight AI",
       "url": "https://www.politico.com/news/2026/07/22/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai-01008992",
       "date": "2026-07-23",
-      "engagement": 1515.0,
+      "engagement": 1865.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1127,10 +1024,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.49,
+      "score": 16.8,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.99,
+        "engagement_log": 11.3,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1159,11 +1056,11 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
         "step-by-step",
         "introduction to",
-        "how to",
-        "ai act"
+        "ai act",
+        "guide",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1175,7 +1072,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "JayBisen473370",
-      "followers": 26980,
+      "followers": 27078,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1258,8 +1155,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build your",
         "how to",
+        "build your",
         "breakdown"
       ],
       "matched_tools": [],
@@ -1307,9 +1204,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "how to",
         "guide",
         "practical guide",
-        "how to",
         "explained"
       ],
       "matched_tools": [],
@@ -1455,9 +1352,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
+        "how-to",
         "how to",
-        "how-to"
+        "tutorial"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1500,7 +1397,7 @@
       "text": "AI Companies Are Trying to Hide a Staggering Amount of Debt",
       "url": "https://futurism.com/artificial-intelligence/ai-companies-hide-debt-off-balance-sheet",
       "date": "2026-07-23",
-      "engagement": 951.0,
+      "engagement": 1025.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1517,10 +1414,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 15.79,
+      "score": 15.9,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.29,
+        "engagement_log": 10.4,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1541,11 +1438,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Mayor Mamdani Says Landlords Can't Use AI Images to Advertise",
-      "text": "Mayor Mamdani Says Landlords Can't Use AI Images to Advertise",
-      "url": "https://petapixel.com/2026/07/16/mayor-mamdani-says-landlords-cant-secretly-use-ai-images-to-advertise-properties/",
-      "date": "2026-07-19",
-      "engagement": 856.0,
+      "title": "Are AI Labs Pelicanmaxxing?",
+      "text": "Are AI Labs Pelicanmaxxing?",
+      "url": "https://dylancastillo.co/posts/pelicanmaxxing.html",
+      "date": "2026-07-22",
+      "engagement": 916.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1562,10 +1459,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 15.63,
+      "score": 15.73,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.13,
+        "engagement_log": 10.23,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1578,10 +1475,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Wat Mayor Mamdani Says betekent voor de Nederlandse AI-markt.",
+      "suggested_angle_nl": "Wat Are AI Labs betekent voor de Nederlandse AI-markt.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "45742381a23db208"
+      "id": "324be2df6a68e1e2"
     },
     {
       "source": "tweets:@Dipanshu_AI",
@@ -1594,9 +1491,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
         "guide",
-        "how to"
+        "how to",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -1700,10 +1597,10 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "use case",
-        "step by step",
         "build an",
-        "how to"
+        "how to",
+        "step by step",
+        "use case"
       ],
       "matched_tools": [
         "claude"
@@ -1752,9 +1649,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "complete guide",
         "build an",
-        "breakdown",
-        "complete guide"
+        "breakdown"
       ],
       "matched_tools": [
         "chatgpt",

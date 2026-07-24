@@ -1,12 +1,252 @@
 {
-  "generated_at": "2026-07-24T07:26:58.088100",
+  "generated_at": "2026-07-24T19:32:15.126585",
   "window_days": 7,
   "week": "2026-w30",
-  "total_candidates_scanned": 1120,
-  "total_after_dedup": 1094,
-  "total_feature_updates": 130,
+  "total_candidates_scanned": 1133,
+  "total_after_dedup": 1100,
+  "total_feature_updates": 141,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Managed Agents",
+      "summary_nl": "Claude heeft een nieuwe functie gelanceerd waarmee je agents in de cloud kunt laten draaien met ingebouwde sandboxing en tools. Daarmee kunnen ontwikkelaars AI-taken beter automatiseren via de API.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        },
+        {
+          "url": "https://twitter.com/igus_ai/status/2077846880633983259",
+          "title": "El CEO de Anthropic viendo como China lanza un nuevo modelo de IA que supera a Claude Opus 4.8 en TODO, iguala a Fable 5 costando 8 VECES ME",
+          "platform": "twitter",
+          "source": "@igus_ai"
+        },
+        {
+          "url": "https://twitter.com/enzo_gte/status/2078102070482153717",
+          "title": "I've been using Kimi K3 for ~16 hours now.\n\nThe model is clearly good at a lot of different things (especially frontend), but non obvious re",
+          "platform": "twitter",
+          "source": "@enzo_gte"
+        },
+        {
+          "url": "https://twitter.com/Tesla/status/2080021924072366329",
+          "title": "Q2 Shareholder Update → https://t.co/u0UcDOuMNa\n\nHighlights\n– Cybercab began production at Gigafactory Texas\n\n– Tesla Semi remains on track ",
+          "platform": "twitter",
+          "source": "@Tesla"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Scheduled Agents",
+      "summary_nl": "Claude Managed Agents kunnen nu op een vast schema worden uitgevoerd. Dat maakt het makkelijker om terugkerende taken automatisch te laten draaien.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/GmmtvShop/status/2078098642649686120",
+          "title": "PRE-ORDER NOW! GEMINI OFFICIAL LIGHT STICK ON GMMTV SHOP\n\nสั่งซื้อที่นี่ / Order Here\nGEMINI OFFICIAL LIGHT STICK\nhttps://t.co/7YXmbgc7NS\n\nP",
+          "platform": "twitter",
+          "source": "@GmmtvShop"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Authenticated Tool Access",
+      "summary_nl": "Claude Managed Agents kunnen nu veilig verbinding maken met CLI-tools en andere gekoppelde diensten waarvoor inloggen nodig is. Daardoor kunnen agents ook werken met privé-systemen en externe workflows.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/GmmtvShop/status/2078098642649686120",
+          "title": "PRE-ORDER NOW! GEMINI OFFICIAL LIGHT STICK ON GMMTV SHOP\n\nสั่งซื้อที่นี่ / Order Here\nGEMINI OFFICIAL LIGHT STICK\nhttps://t.co/7YXmbgc7NS\n\nP",
+          "platform": "twitter",
+          "source": "@GmmtvShop"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Self-Hosted Sandboxes",
+      "summary_nl": "Claude Managed Agents ondersteunen nu sandbox-omgevingen die je zelf beheert. Dit geeft organisaties meer controle over waar code draait en hoe data wordt afgeschermd.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "MCP Tunnels",
+      "summary_nl": "Claude Managed Agents kunnen nu via MCP-tunnels verbinding maken met private Model Context Protocol-servers. Dat helpt om interne tools en systemen veilig aan agents te koppelen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Cache Diagnostics",
+      "summary_nl": "Claude heeft een beta-functie toegevoegd die uitlegt waarom een prompt-cache niet hitte. Dat kan developers helpen om API-verzoeken beter te debuggen en te optimaliseren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Tesla/status/2080021924072366329",
+          "title": "Q2 Shareholder Update → https://t.co/u0UcDOuMNa\n\nHighlights\n– Cybercab began production at Gigafactory Texas\n\n– Tesla Semi remains on track ",
+          "platform": "twitter",
+          "source": "@Tesla"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Dreaming Preview",
+      "summary_nl": "Claude voegde een research preview toe waarmee agents eerdere sessies analyseren om patronen te vinden en herinneringen te verbeteren. Dit moet agents slimmer maken in terugkerende taken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        },
+        {
+          "url": "https://twitter.com/ArtificialAnlys/status/2077832874183860404",
+          "title": "Kimi K3 scores 57 on the Artificial Analysis Intelligence Index. Its intelligence is comparable to Opus 4.8 and GPT-5.5 but remains behind F",
+          "platform": "twitter",
+          "source": "@ArtificialAnlys"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Outcomes Definition",
+      "summary_nl": "Met deze nieuwe functie kunnen gebruikers aangeven wanneer een agent-resultaat als geslaagd telt. Dat maakt agentgedrag gerichter en beter te beoordelen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Multiagent Orchestration",
+      "summary_nl": "Claude Managed Agents krijgt nu ondersteuning voor het opsplitsen van werk over meerdere gespecialiseerde agents. Een hoofdagent kan taken verdelen en laten uitvoeren door andere agents met eigen tools en prompts.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Model Router",
+      "summary_nl": "Cursor introduceert een intelligente router die automatisch het beste model voor een taak kiest. Daardoor hoeft de gebruiker minder zelf te beslissen welk model het meest geschikt is.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "Multimodal Model",
+      "summary_nl": "FLUX 3 is een nieuw multimodaal model voor beeld, video, audio en actievoorspelling. Daarmee breidt de tool zijn mogelijkheden uit naar meerdere soorten content en interactie.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "New Flash Models",
+      "summary_nl": "Google lanceert drie nieuwe Gemini-modellen: Gemini 3.6 Flash, Gemini 3.5 Flash-Lite en Gemini 3.5 Flash Cyber. Dit is een duidelijke productupdate voor het modelaanbod.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
+          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -1622,30 +1862,6 @@
           "title": "Claude Desktop is now available on Linux (Ubuntu and Debian) in beta.\n\nAlongside the browser and terminal, you now get a first-class desktop",
           "platform": "twitter",
           "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-07-07",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agents",
-      "summary_nl": "Claude ondersteunt nu managed agents waarmee organisaties kunnen samenwerken met de overheid op het gebied van modeltest en veiligheidsmaatregelen. Dit omvat pre-release toegang tot modellen en informatie over ontsnappingen en misbruik.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/AnthropicAI/status/2072106151890809341",
-          "title": "We’ve received notice that the Department of Commerce has lifted export controls on Claude Fable 5 and Mythos 5.\n\nWe'll begin restoring acce",
-          "platform": "twitter",
-          "source": "@AnthropicAI"
-        },
-        {
-          "url": "https://twitter.com/AnthropicAI/status/2072163884430229756",
-          "title": "Claude Fable 5 will be available again globally tomorrow.\n\nAfter a series of productive conversations with the US government, we're redeploy",
-          "platform": "twitter",
-          "source": "@AnthropicAI"
         }
       ],
       "detected_at": "2026-07-07",
