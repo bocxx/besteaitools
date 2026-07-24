@@ -46,7 +46,7 @@ Spreadsheets bouwen met AI was tot eind 2025 vooral teleurstellend — vage form
 
 Download de Claude Desktop-app via [claude.com/download](https://claude.com/download). Cowork zit alleen op betaalde plannen — Pro kost 20 dollar per maand, voldoende voor weken aan experimenten. Open de app, klik op de **Cowork**-tab bovenaan (tussen Chat en Code), en koppel een lokale map waarin Claude bestanden mag maken. Selecteer **Claude Opus 4.8** als model en zet Adaptive Thinking aan ([Bron: Anthropic Support](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)).
 
-Wie nooit eerder met Cowork werkte, leest eerst onze [zes-tools-setup voor Claude in één dag](/nieuws/claude-instellen-1-dag-6-tools). De brain-file en een vaste startprompt schelen later veel mis-aannames in je modellen.
+Wie nooit eerder met Cowork werkte, leest eerst onze [zes-tools-setup voor Claude in één dag](/nieuws/claude-instellen-1-dag-6-tools). De brain-file en een vaste startprompt schelen later veel mis-aannames in je modellen. Twijfel je of Cowork op jouw systeem draait? Zie [op welke systemen Cowork werkt (Windows, macOS, Linux)](/nieuws/claude-cowork-windows-linux-draaien).
 
 ## Stap 2: Koppel Google Drive (of OneDrive) als connector
 

@@ -59,7 +59,7 @@ Een model als Claude of GPT-5 draait op de servers van Anthropic of OpenAI: je d
 
 ## Lokaal draaien via Ollama
 
-Installeer Ollama via `ollama.com`, open een terminal en typ:
+Installeer Ollama via `ollama.com` — stap voor stap in onze [Ollama-installatiegids](/nieuws/ollama-lokale-ai-modellen-draaien) — open een terminal en typ:
 
 ```bash
 ollama run gemma4

@@ -39,7 +39,7 @@ Een team van AI-agents dat samen een taak oplost, klinkt als iets waarvoor je ee
 
 ## Stap 1: installeer Ollama en haal een model binnen
 
-Download Ollama voor macOS, Windows of Linux vanaf [ollama.com](https://ollama.com). Daarna haal je in de terminal een model binnen:
+Download Ollama voor macOS, Windows of Linux vanaf [ollama.com](https://ollama.com). Nieuw met Ollama? Onze [installatiegids voor lokale modellen](/nieuws/ollama-lokale-ai-modellen-draaien) loopt de basis stap voor stap door. Daarna haal je in de terminal een model binnen:
 
 ```bash
 ollama pull qwen3:8b

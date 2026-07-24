@@ -161,7 +161,7 @@ claude "schrijf een Python-script dat CSV's mergt"
 
 ### 12. Cowork (Claude on Desktop)
 
-Desktop-app waar Claude je lokale projecten ziet. Code-wijzigingen, bestandsstructuur — Claude snapt je context zonder copy-paste.
+Desktop-app waar Claude je lokale projecten ziet. Code-wijzigingen, bestandsstructuur — Claude snapt je context zonder copy-paste. Werkt het op jouw systeem? Zie [waar Cowork draait op Windows en Linux](/nieuws/claude-cowork-windows-linux-draaien).
 
 **Sneller dan web-chat + API-calls combi.**
 
