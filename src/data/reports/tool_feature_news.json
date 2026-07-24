@@ -1,12 +1,126 @@
 {
-  "generated_at": "2026-07-23T19:36:51.117809",
+  "generated_at": "2026-07-24T07:26:58.088100",
   "window_days": 7,
   "week": "2026-w30",
-  "total_candidates_scanned": 1148,
-  "total_after_dedup": 1115,
-  "total_feature_updates": 126,
+  "total_candidates_scanned": 1120,
+  "total_after_dedup": 1094,
+  "total_feature_updates": 130,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Console Agent Editor Panel",
+      "summary_nl": "Claude heeft nu een agent-editor die in een paneel direct naast je gesprek in de console opent, zodat je agents kunt bekijken en aanpassen zonder van scherm te wisselen. Deze functie is beschikbaar in publieke bèta en maakt het bouwen en beheren van managed agents eenvoudiger voor gebruikers.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 Model Preview",
+      "summary_nl": "Alibaba heeft het Qwen3.8-model in preview live gezet, waarbij de nieuwste versie dagelijks wordt verbeterd en merkbare vooruitgang boekt, vooral voor webfrontend-taken. Het model gaat open-weight worden, wat betekent dat ontwikkelaars breder toegang krijgen tot de modelgewichten.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        },
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Cursor Router",
+      "summary_nl": "Cursor heeft Cursor Router geïntroduceerd, een intelligente router die automatisch het juiste AI-model kiest voor de taak die je uitvoert in de IDE. Dit vermindert handmatig modelbeheer en kan de prestaties en kostenoptimalisatie voor ontwikkelaars aanzienlijk verbeteren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "FLUX 3 Multimodal Model",
+      "summary_nl": "FLUX 3 is gelanceerd als één multimodaal AI‑model dat afbeeldingen, video, audio en actievoorspelling in één systeem ondersteunt. Hierdoor kunnen makers levensechter content genereren over meerdere media zonder verschillende modellen te hoeven combineren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "New Gemini Flash Models",
+      "summary_nl": "Google heeft drie nieuwe Gemini‑modellen uitgebracht: Gemini 3.6 Flash, Gemini 3.5 Flash‑Lite en Gemini 3.5 Flash Cyber. Deze varianten richten zich op snellere, lichtere en beveiligingsgerichte toepassingen, waardoor gebruikers meer keuze krijgen voor uiteenlopende workloads.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
+          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Tesla UI Feature Updates",
+      "summary_nl": "Tesla heeft meerdere interface‑updates uitgerold, waaronder het instellen van een voorkeurszoomniveau voor de self‑driving‑visualisatie, browserondersteuning voor camera en microfoon en nieuwe intro‑animaties voor de Model 3 en Y. Deze verbeteringen vergroten de gebruikservaring en functionaliteit van het in‑car systeem.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SawyerMerritt/status/2079585456518312089",
+          "title": "Tesla's Summer 2026 software update has officially been unveiled.\n\nHere's what's new:\n• Navigation now prioritizes routes that you've taken ",
+          "platform": "twitter",
+          "source": "@SawyerMerritt"
+        }
+      ],
+      "detected_at": "2026-07-24",
+      "week": "2026-w30"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -56,42 +170,6 @@
           "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
           "platform": "twitter",
           "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-23",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Cursor Router",
-      "summary_nl": "Cursor introduceert Cursor Router, een intelligente modelrouter die automatisch het best passende model kiest voor elke taak. Dit helpt ontwikkelaars om betere prestaties en lagere kosten te bereiken zonder handmatig te switchen tussen modellen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-23",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "FLUX 3 is gelanceerd als één multimodaal model dat beeld, video, audio en actievoorspelling in één systeem ondersteunt. Creaties worden hiermee natuurgetrouwer en complexere multimodale toepassingen worden eenvoudiger te bouwen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
-          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
-          "platform": "twitter",
-          "source": "@bfl_ai"
         }
       ],
       "detected_at": "2026-07-23",

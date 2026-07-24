@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-23T17:41:18.424588",
+  "generated_at": "2026-07-24T05:31:17.677762",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 19,
     "for_news": 17,
-    "rejected_lang": 156,
+    "rejected_lang": 153,
     "already_covered": 0,
-    "total_scanned": 4606
+    "total_scanned": 4609
   },
   "for_tools": [
     {
@@ -75,8 +75,8 @@
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
-        "guide"
+        "guide",
+        "step-by-step"
       ],
       "matched_tools": [
         "claude",
@@ -338,7 +338,7 @@
       "text": "OpenAI and Hugging Face address security incident during model evaluation",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
       "date": "2026-07-21",
-      "engagement": 2722.0,
+      "engagement": 2740.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -358,10 +358,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.36,
+      "score": 17.37,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.86,
+        "engagement_log": 11.87,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -390,8 +390,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build an",
-        "build a"
+        "build a",
+        "build an"
       ],
       "matched_tools": [
         "claude"
@@ -802,6 +802,59 @@
     {
       "source": "articles:The Practical Developer",
       "platform": "article",
+      "title": "Claude Cowork on Windows and Linux: How to Run It in 2026",
+      "text": "<p>You bought a Max subscription on the strength of a Claude Cowork demo: a desktop agent quietly working through a folder of spreadsheets, drafting a deck, organizing receipts while you did something else. You install Claude Desktop on your Windows laptop, sign in, and start looking for the feature. Or you are on Ubuntu, you go to download the app, and there is no Linux build at all. The question underneath both moments is the same one: where does Cowork actually run, and what do you do if your machine is not on the list.</p>\n\n<p>This guide answers the platform question directly. It covers Cl",
+      "url": "https://dev.to/stravukarl/claude-cowork-on-windows-and-linux-how-to-run-it-in-2026-lon",
+      "date": "2026-07-23",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "use case",
+        "how to"
+      ],
+      "matched_tools": [
+        "claude",
+        "claude desktop",
+        "claude-cowork"
+      ],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "c1f77093402c39b0"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
       "title": "What 67 Dev.to Posts in Three Months Taught Me About Writing for Developers",
       "text": "<p>Since the middle of April 2026 I have published 67 posts on dev.to. My best one has 576 views. That is not a humble brag, it is the honest ceiling of a security developer who decided to write in public and hit publish every day for three months. I want to lay out what actually happened, with the real numbers I have, because most \"how to blog\" advice comes from people who skip the unglamorous middle.</p>\n\n<h2>\n  \n  \n  The number that surprised me\n</h2>\n\n<p>My top performer is a practical Ollama guide. A how-to. Run this model locally, here is the command, here is the gotcha on WSL2. 576 view",
       "url": "https://dev.to/pavelespitia/what-67-devto-posts-in-three-months-taught-me-about-writing-for-developers-2j62",
@@ -861,9 +914,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "build a",
         "tutorial",
-        "how to",
-        "build a"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -900,7 +953,7 @@
       "id": "84d962140140c227"
     },
     {
-      "source": "articles:freeCodeCamp.org News",
+      "source": "articles:freeCodeCamp",
       "platform": "article",
       "title": "How to Trace and Monitor AI Agents with LangSmith",
       "text": "<p>In this tutorial, I'll show you how to trace and monitor a local AI agent with LangSmith. We'll build a small local AI agent and then enable LangSmith tracing for it so that we can inspect model calls, tool usage, and request latency in a web UI.</p>\n<p>We'll be using LangChain v1, Ollama, Qwen, and Python. Everything runs on your own machine except the observability layer, so the agent itself has no model API costs.</p>\n<h2 data-sanitized-id=\"heading-table-of-contents\">Table of Contents</h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-trace-and-monitor-ai-agents-with-lang",
@@ -911,8 +964,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "tutorial",
-        "how to",
         "build a",
+        "how to",
         "how-to"
       ],
       "matched_tools": [
@@ -964,10 +1017,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build an",
         "tutorial",
-        "how to",
-        "practical guide"
+        "practical guide",
+        "build an",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1002,57 +1055,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "2ece018afe97c5cc"
-    },
-    {
-      "source": "articles:freeCodeCamp.org News",
-      "platform": "article",
-      "title": "How to Evaluate AI Code Quality: A Practical Guide for Engineers",
-      "text": "<p>You asked the AI to write a function. It gave you something that looks right. It even runs. But is it actually good?</p>\n<p>Most engineers stop there. They see green and move on. That habit will quietly cause you problems.</p>\n<p>AI coding tools like <a href=\"https://github.com/features/copilot\">GitHub Copilot</a>, <a href=\"https://www.cursor.com/\">Cursor</a>, and Claude are genuinely useful. But they're non-deterministic, meaning the same prompt can produce different outputs on different days.</p>\n<p>They can produce code that's plausible-looking but subtly wrong, or code that works for th",
-      "url": "https://www.freecodecamp.org/news/how-to-evaluate-ai-code-quality-a-practical-guide-for-engineers/",
-      "date": "2026-07-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "practical guide",
-        "guide",
-        "how to"
-      ],
-      "matched_tools": [
-        "claude"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e2463608576d9224"
     }
   ],
   "for_news": [
@@ -1102,6 +1104,51 @@
       "id": "dbac2f9dd347f1d1"
     },
     {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Startup founders urge Trump not to shut off Chinese open weight AI",
+      "text": "Startup founders urge Trump not to shut off Chinese open weight AI",
+      "url": "https://www.politico.com/news/2026/07/22/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai-01008992",
+      "date": "2026-07-23",
+      "engagement": 1515.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.49,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.99,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Wat Startup betekent voor de Nederlandse AI-markt.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "deb7843ba6a638df"
+    },
+    {
       "source": "tweets:@JayBisen473370",
       "platform": "tweet",
       "title": "🚨 Harvard just made its AI course free.\n\nNo tuition.\nNo application.\nJust world-class AI education.\n\nHarvard University just released 6 high-quality lectures on",
@@ -1113,8 +1160,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "guide",
-        "introduction to",
         "step-by-step",
+        "introduction to",
         "how to",
         "ai act"
       ],
@@ -1128,7 +1175,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "JayBisen473370",
-      "followers": 26634,
+      "followers": 26980,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1201,7 +1248,106 @@
       "id": "3d13fa7cd96c2717"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:OpenAI API Community Forum - Latest posts",
+      "platform": "article",
+      "title": "Image Generation Policy Limits My Creative Freedom – Request for Clarification and Support",
+      "text": "<p>This is the exact breakdown of how AI filters operate and how to bypass them by changing how you describe your concepts.</p>\n<p>The core problem is that AI safety systems do not actually understand what you mean. They operate on <strong>String Matching</strong>. If a global filter sees a specific sequence of letters (a keyword), it automatically triggers a block, regardless of the context.</p>\n<p>To build your images without constantly hitting these blind walls, you have to stop using labels and start describing the <strong>Visual DNA</strong> of the object.</p>\n<p>Here is exactly how to tr",
+      "url": "https://community.openai.com/t/image-generation-policy-limits-my-creative-freedom-request-for-clarification-and-support/1153938?page=4#post_79",
+      "date": "2026-07-24",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build your",
+        "how to",
+        "breakdown"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Image Generation Policy in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "ab3da6df87878aeb"
+    },
+    {
+      "source": "articles:Artificial Intelligence – The Data Scientist",
+      "platform": "article",
+      "title": "A Practical Guide to Faster Freight Dispatch With AI-Powered TMS",
+      "text": "<p data-sanitized-class=\"wp-block-paragraph\">Dispatch speed is one of the few levers a carrier or broker can improve without adding trucks. When a load moves from a broker email to a confirmed driver in minutes instead of an hour of phone tag, capacity gets used better and drivers spend less time waiting. That is the practical promise behind AI dispatch software: fewer clicks, faster assignments, and less manual re-entry.</p>\n\n\n\n<p data-sanitized-class=\"wp-block-paragraph\">A faster suggestion is only useful if it respects the driver’s hours, the equipment available, and the road ahead. This gu",
+      "url": "https://thedatascientist.com/a-practical-guide-to-faster-freight-dispatch-with-ai-powered-tms/?utm_source=rss&utm_medium=rss&utm_campaign=a-practical-guide-to-faster-freight-dispatch-with-ai-powered-tms",
+      "date": "2026-07-23",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "practical guide",
+        "how to",
+        "explained"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Practical Guide in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "646005cee643fdbf"
+    },
+    {
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "How to Build Kubernetes Networking Without Kubernetes: Do What the CNI Does By Hand",
       "text": "<p>In this article, you'll build an accurate mental model of what a Container Network Interface (CNI) actually does. Not by reading YAML, but by doing every single step it does by hand with raw Linux kernel primitives.</p>\n<p>The Container Network Interface (CNI) is one of the great black boxes of Kubernetes. Most people who run clusters every day have never once looked inside it. They know the <em>name</em> of their CNI (\"we run Calico,\" \"we're on Cilium\") the way you know the brand of the alternator in your car: as a label, not as a thing you actually understand.</p>\n<p>It lives at the very ",
@@ -1211,9 +1357,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "from scratch",
         "build an",
-        "how to",
-        "from scratch"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1261,8 +1407,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "guide",
-        "explained",
-        "how to"
+        "how to",
+        "explained"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1299,7 +1445,7 @@
       "id": "6f96f56a783a6a17"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "How to Train a Tumor Segmentation Model on Ultrasound Data with MONAI",
       "text": "<p>Most segmentation tutorials begin by choosing a model, feeding images into it, and tuning hyperparameters until the metric improves. But this skips the step that often matters most: understanding the data.</p>\n<p>In this tutorial we’ll profile the dataset first, then let those observations drive every design decision in a MONAI segmentation pipeline.</p>\n<h2 data-sanitized-id=\"heading-what-well-cover\">What We'll Cover:</h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-train-a-tumor-segmentation-model-on-ultrasound-data-with-monai/#heading-who-is-this-for\">Who is This For?</",
@@ -1348,20 +1494,16 @@
       "id": "5ac7df83141221ba"
     },
     {
-      "source": "articles:HackerNoon",
-      "platform": "article",
-      "title": "Shopify Plus SEO Is a Systems Problem: A Technical Buyer’s Guide to 25 Agencies",
-      "text": "<h2 data-sanitized-id=\"h-\"><br></h2><h2 data-sanitized-id=\"h-how-to-evaluate-shopify-plus-seo-partners-across-architecture-migration-safety-content-systems-core-web-vitals-internationalization-and-ai-search\">How to evaluate Shopify Plus SEO partners across architecture, migration safety, content systems, Core Web Vitals, internationalization and AI search.</h2><p>Most Shopify Plus SEO proposals are difficult to compare because they are not selling the same thing.</p><p>One firm is selling editorial production. Another is selling a new theme. Another is proposing digital PR. A systems integrato",
-      "url": "https://hackernoon.com/shopify-plus-seo-is-a-systems-problem-a-technical-buyers-guide-to-25-agencies?source=rss",
-      "date": "2026-07-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "guide",
-        "how to",
-        "how-to"
-      ],
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "AI Companies Are Trying to Hide a Staggering Amount of Debt",
+      "text": "AI Companies Are Trying to Hide a Staggering Amount of Debt",
+      "url": "https://futurism.com/artificial-intelligence/ai-companies-hide-debt-off-balance-sheet",
+      "date": "2026-07-23",
+      "engagement": 951.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -1373,13 +1515,13 @@
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "article"
+        "hackernews"
       ],
-      "score": 15.9,
+      "score": 15.79,
       "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
+        "pattern_hits": 0,
+        "engagement_log": 10.29,
+        "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
         "editorial": 0.0,
@@ -1391,10 +1533,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Shopify Plus SEO in 5 stappen — een Nederlandse walkthrough.",
+      "suggested_angle_nl": "Wat AI Companies Are betekent voor de Nederlandse AI-markt.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "72ff81098c9bc28d"
+      "id": "ea8048f00fa65918"
     },
     {
       "source": "hn",
@@ -1452,9 +1594,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
+        "build a",
         "guide",
-        "how to",
-        "build a"
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1507,8 +1649,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "guide",
-        "how to",
-        "introduction to"
+        "introduction to",
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1548,149 +1690,6 @@
       "id": "b64076ae655a7f0f"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "AI Mania Is Eviscerating Global Decision-Making",
-      "text": "AI Mania Is Eviscerating Global Decision-Making",
-      "url": "https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making/#fnref:3",
-      "date": "2026-07-19",
-      "engagement": 733.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.4,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 9.9,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "AI Mania Is: de context die de internationale pers mist.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8e03a65ff4891d5a"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Quality non-fiction books are the antithesis of AI slop",
-      "text": "Quality non-fiction books are the antithesis of AI slop",
-      "url": "https://resobscura.substack.com/p/quality-non-fiction-books-are-the",
-      "date": "2026-07-22",
-      "engagement": 689.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.31,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 9.81,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom Quality er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "f0b977fccef0294c"
-    },
-    {
-      "source": "articles:Arindam Majumder",
-      "platform": "article",
-      "title": "How to Change Your Gmail ID ( Simple Trick)",
-      "text": "\n<figure class=\"enclosure\"><p><img class=\"enclosure-thumbnail\" src=\"https://i4.ytimg.com/vi/k0201s8I0Rg/hqdefault.jpg\" alt=\"\" title=\"How to Change Your Gmail ID ( Simple Trick)\" /></p><p class=\"enclosure-content\"><a download=\"\" href=\"https://www.youtube.com/v/k0201s8I0Rg?version=3\" data-type=\"application/x-shockwave-flash\" title=\"How to Change Your Gmail ID ( Simple Trick)\">💾</a></p><figcaption class=\"enclosure-description\">Learn how to change your Gmail username in India with this simple step-by-step guide.<br />\n<br />\nUpdating your email ID is often necessary for professional or personal re",
-      "url": "https://www.youtube.com/shorts/k0201s8I0Rg",
-      "date": "2026-07-20",
-      "engagement": 45.8,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "step-by-step",
-        "how to",
-        "walkthrough",
-        "guide"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/shorts/k0201s8I0Rg"
-      },
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.27,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.77,
-        "source_weight": 1.5,
-        "ai_relevance": 0.0,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 1.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e1acbc4eac9a782c"
-    },
-    {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
       "title": "How to build an AI agent?\n\nStart by getting specific: the use case, the user + what success looks like, before you touch a model.\n\nSkip that and you'll build so",
@@ -1701,10 +1700,10 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build an",
         "use case",
-        "how to",
-        "step by step"
+        "step by step",
+        "build an",
+        "how to"
       ],
       "matched_tools": [
         "claude"
@@ -1754,8 +1753,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "build an",
-        "complete guide",
-        "breakdown"
+        "breakdown",
+        "complete guide"
       ],
       "matched_tools": [
         "chatgpt",
@@ -1807,8 +1806,8 @@
       "ai_relevant": true,
       "pattern_hits": [
         "guide",
-        "how to",
-        "introduction to"
+        "introduction to",
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1858,8 +1857,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build an",
         "hands-on",
+        "build an",
         "how to"
       ],
       "matched_tools": [],
