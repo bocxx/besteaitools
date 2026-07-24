@@ -1,0 +1,91 @@
+{
+  "name": "Notul.ai",
+  "category": "meeting-notes",
+  "websiteUrl": "https://notul.ai",
+  "shortDescription": "Nederlandse AI-notulist die je meeting-opnames verwerkt met context uit je eigen kennisbank, in plaats van generieke samenvattingen.",
+  "headlineValueProp": "Van ruwe opname naar notities in jouw stijl, met de juiste namen, projecten en besluiten uit je eigen kennisbank",
+  "longDescription": "Notul.ai is een Nederlandse AI-notulist voor mensen die veel meetings hebben en een kennisbank bijhouden. Je uploadt een audiobestand (mp3, wav, m4a) en krijgt een transcript plus samenvatting, actiepunten en besluiten terug. Het onderscheid zit in de kennisbank: Notul.ai doorzoekt je eerdere namen, projecten en besluiten om de verwerking te sturen, en schrijft na afloop nieuwe inzichten terug, zodat elke volgende meeting beter wordt verwerkt. Het is een upload-tool, geen bot die in je Teams- of Zoom-call meekijkt. Export kan naar Obsidian-Markdown met YAML-frontmatter, rechtstreeks naar Notion, Google Drive, PDF of klembord, en er is een REST API. Data staat op een eigen server in Duitsland, audio wordt na transcriptie verwijderd en je data wordt niet voor modeltraining gebruikt. Gemaakt in de Bollenstreek door 4AT Media.",
+  "verdict": "Notul.ai kiest bewust voor één ding dat de grote notulisten missen: een kennisbank die meegroeit, zodat notities kloppen met jouw namen, projecten en stijl. Sterk voor solo-professionals die veel terugkerende gesprekken met dezelfde context voeren. De keerzijde is dat het een upload-tool is — geen live bot in de call — dus voor wie realtime meeschrijven tijdens Teams/Zoom wil, is het niet de juiste vorm.",
+  "whyListed": "Nederlandse AI-notulist met EU-hosting (Duitsland), AVG-verwerkersovereenkomst en een onderscheidende kennisbank-aanpak. Een relevante NL-optie naast Fireflies en Otter voor zzp'ers en kleine teams die privacy en context belangrijk vinden.",
+  "bestFor": "Nederlandse zzp'ers, coaches en consultants die veel meetings hebben en een kennisbank willen die zichzelf verbetert.",
+  "primaryJobsToBeDone": [
+    "Meeting-opnames omzetten in samenvatting, actiepunten en besluiten in jouw eigen stijl",
+    "Namen, projecten en eerdere besluiten automatisch koppelen via een meegroeiende kennisbank",
+    "Notities exporteren naar Obsidian, Notion, Google Drive of PDF zonder over te typen"
+  ],
+  "antiUseCases": [
+    "Wie een bot wil die live meeschrijft in Teams of Zoom — Notul.ai werkt op basis van geüploade opnames",
+    "Losse, eenmalige gesprekken zonder terugkerende context — dan blijft de kennisbank-meerwaarde onbenut",
+    "Organisaties die per se een grote enterprise-suite met SSO en uitgebreide admin willen"
+  ],
+  "useCases": [
+    "Klantintakes en adviesgesprekken van een zzp'er verwerken zonder zelf te typen",
+    "Coachingsessies samenvatten met eerdere trajecten als context",
+    "Projectoverleg van consultants met de juiste namen en besluiten op een rij"
+  ],
+  "strengths": [
+    "Kennisbank die na elke meeting nieuwe inzichten terugschrijft en zo de volgende verwerking verbetert",
+    "Privacy-first: EU-hosting in Duitsland, audio na transcriptie verwijderd, geen modeltraining op jouw data",
+    "Flexibele export naar Obsidian-Markdown met YAML-frontmatter, Notion, Google Drive, PDF en een REST API"
+  ],
+  "limitations": [
+    "Werkt met geüploade opnames, niet als live bot in de call",
+    "Gericht op solo-professionals en kleine teams, minder op grote organisaties",
+    "Exacte prijstiers staan achter een dynamische prijspagina"
+  ],
+  "bestAlternative": "recapai",
+  "whenToChoose": "Kies Notul.ai boven RecapAI, Fireflies of Otter wanneer de kennisbank-context (consistente namen, projecten, stijl) en EU-privacy zwaarder wegen dan een live meeting-bot of een groot integratie-ecosysteem.",
+  "mentionAliases": ["notul", "notul.ai", "notul ai"],
+  "pricing": "Gratis account om te proberen; betaalde abonnementen met actuele tarieven op notul.ai/pricing.",
+  "pricingModel": "freemium",
+  "difficulty": "beginner",
+  "openSource": false,
+  "deploymentType": "saas",
+  "dataResidency": "eu",
+  "targetAudience": ["zzp", "solo", "freelancer", "mkb_klein"],
+  "businessFunctions": ["operations"],
+  "integrations": ["Notion", "Obsidian", "Google Drive", "REST API"],
+  "mainCompetitors": ["recapai", "fireflies-ai", "otter-ai", "talkmark"],
+  "gdprReady": true,
+  "euHostingAvailable": true,
+  "dataUsedForTraining": "no",
+  "supportsDutchLanguage": true,
+  "hasDutchUI": true,
+  "offersDutchSupport": true,
+  "outputLanguageQualityNl": "native",
+  "nlSupport": true,
+  "hasFreePlan": true,
+  "freeTrialAvailable": true,
+  "keyFeatures": [
+    {
+      "title": "Kennisbank die meegroeit",
+      "description": "Schrijft na elke meeting nieuwe namen, besluiten en projecten terug, zodat de volgende verwerking beter wordt.",
+      "group": "core"
+    },
+    {
+      "title": "Context-bewuste verwerking",
+      "description": "Doorzoekt je kennisbank voor relevante namen, projecten en eerdere besluiten in plaats van een generieke samenvatting.",
+      "group": "core"
+    },
+    {
+      "title": "Agenda-matching",
+      "description": "Koppelt de opname aan je agenda voor meeting-titel en deelnemers.",
+      "group": "input"
+    },
+    {
+      "title": "Flexibele export",
+      "description": "Obsidian-Markdown met YAML-frontmatter, Notion via de API, Google Drive, PDF of klembord.",
+      "group": "output"
+    },
+    {
+      "title": "REST API",
+      "description": "Integreer de verwerking in eigen tooling.",
+      "group": "integration"
+    }
+  ],
+  "tags": ["notulen", "ai-notulist", "meetings", "zzp", "kennisbank", "nederlands"],
+  "testedByEditor": false,
+  "reviewMethod": "desk_research",
+  "lastUpdated": "2026-07-24",
+  "draft": false
+}
