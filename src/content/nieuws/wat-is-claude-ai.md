@@ -4,7 +4,7 @@ heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Wat is Claude AI? De c
 heroImage: "/images/nieuws/wat-is-claude-ai.webp"
 description: "Claude is de AI-assistent van Anthropic: sterk in lange documenten, schrijven en code, en sinds 2026 ook de motor achter agents als Cowork. Wat het kan, wat het kost en waar je op let met bedrijfsdata."
 publishedAt: 2026-06-10
-updatedAt: 2026-07-03
+updatedAt: 2026-07-26
 author: "Redactie"
 category: "gids"
 tags:
@@ -41,7 +41,7 @@ faq:
     a: "Anders. Claude is sterker in lange documenten, genuanceerd schrijfwerk en code; ChatGPT heeft een breder ecosysteem met beeldgeneratie en een ruimere gratis versie. Veel professionals gebruiken beide naast elkaar. Onze uitgebreide vergelijking zet de verschillen per taak op een rij."
 ---
 
-> **ℹ️ Update 3 juli 2026:** Anthropic bracht op 30 juni Claude Sonnet 5 uit — inmiddels het standaard-werkpaardmodel (voorheen Sonnet 4.6). Claude Pro is hier genoteerd als €18 p/m (excl. btw); in de VS is dat $20.
+> **ℹ️ Update 26 juli 2026:** Anthropic bracht op 24 juli Claude Opus 5 uit — het nieuwe krachtigste model (opvolger van Opus 4.8), dat op benchmarks zelfs het grotere Fable 5 verslaat tegen de helft van de prijs. Voor dagelijks werk blijft Sonnet 5 het standaard-werkpaardmodel. Claude Pro is hier genoteerd als €18 p/m (excl. btw); in de VS is dat $20.
 
 Claude is de AI-assistent van Anthropic en het belangrijkste alternatief voor ChatGPT. Het verwerkt complete contracten en rapporten in één keer, schrijft genuanceerd Nederlands en is sinds 2026 ook de motor achter agents die zelfstandig taken afwerken op je computer. Deze gids legt uit wat Claude is, wat het kost en waar je als ondernemer op moet letten.
 

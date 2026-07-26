@@ -1,12 +1,246 @@
 {
-  "generated_at": "2026-07-25T07:30:14.169772",
+  "generated_at": "2026-07-26T07:46:39.686208",
   "window_days": 7,
   "week": "2026-w30",
-  "total_candidates_scanned": 1067,
-  "total_after_dedup": 1032,
-  "total_feature_updates": 148,
+  "total_candidates_scanned": 1036,
+  "total_after_dedup": 1001,
+  "total_feature_updates": 156,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Inline Code Editor",
+      "summary_nl": "Claude introduceert een inline code-editor die in een paneel direct naast je gesprek opent, zodat je tijdens het chatten code kunt bekijken en aanpassen zonder van omgeving te wisselen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 Model Launch",
+      "summary_nl": "Alibaba lanceert Qwen3.8, een nieuw grootschalig taalmodel met 2,4 biljoen parameters dat binnenkort als open-weight beschikbaar komt en continu wordt doorontwikkeld.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Cursor Router",
+      "summary_nl": "Cursor introduceert Cursor Router, een slimme router die automatisch het meest geschikte AI-model kiest voor elke taak om prestaties en kosten te optimaliseren binnen de IDE.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 in Cursor",
+      "summary_nl": "Claude Opus 5 is nu geïntegreerd in Cursor, waar het vergelijkbare benchmarkprestaties levert als Fable 5 tegen de helft van de prijs en breder inzetbaar is doordat het ook buiten Cursor beschikbaar is.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "FLUX 3 Multimodal Model",
+      "summary_nl": "FLUX 3 is een nieuw multimodaal AI-model dat met één model afbeeldingen, video, audio en actievoorspellingen ondersteunt, waardoor creaties realistischer worden over verschillende media heen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 Launch",
+      "summary_nl": "Anthropic introduceert Claude Opus 5 als nieuwe topklasse Claude-model, ontworpen voor complexere taken en betere kwaliteit antwoorden dan eerdere generaties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
+          "title": "Introducing Claude Opus 5",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.x Flash Models",
+      "summary_nl": "Google lanceert drie nieuwe Gemini-varianten: Gemini 3.6 Flash, 3.5 Flash-Lite en 3.5 Flash Cyber, gericht op snellere, lichtere en beveiligingsgerichte AI-toepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
+          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Browser Camera Support",
+      "summary_nl": "De ingebouwde browser krijgt ondersteuning voor camera en microfoon, waardoor gebruikers direct video- en audio-invoer kunnen gebruiken binnen de toepassing.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SawyerMerritt/status/2079585456518312089",
+          "title": "Tesla's Summer 2026 software update has officially been unveiled.\n\nHere's what's new:\n• Navigation now prioritizes routes that you've taken ",
+          "platform": "twitter",
+          "source": "@SawyerMerritt"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Self-Driving Zoom Control",
+      "summary_nl": "Gebruikers kunnen nu hun voorkeurszoomniveau instellen voor de visualisatie van zelfrijdende functies, wat de weergave van de rijomgeving persoonlijker en duidelijker maakt.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/SawyerMerritt/status/2079585456518312089",
+          "title": "Tesla's Summer 2026 software update has officially been unveiled.\n\nHere's what's new:\n• Navigation now prioritizes routes that you've taken ",
+          "platform": "twitter",
+          "source": "@SawyerMerritt"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Model 3/Y Intro Animations",
+      "summary_nl": "Er zijn nieuwe introductie-animaties toegevoegd voor de Model 3 en Model Y, waarmee de gebruikersinterface visueel wordt opgefrist bij het tonen van deze voertuigen.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/SawyerMerritt/status/2079585456518312089",
+          "title": "Tesla's Summer 2026 software update has officially been unveiled.\n\nHere's what's new:\n• Navigation now prioritizes routes that you've taken ",
+          "platform": "twitter",
+          "source": "@SawyerMerritt"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Console panel viewer",
+      "summary_nl": "Claude introduceert een nieuwe editor die in een paneel direct naast je gesprek opent, zodat je code, documenten of andere content kunt bekijken en bewerken zonder van scherm te wisselen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-07-25",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 open-weight model",
+      "summary_nl": "Alibaba lanceert Qwen3.8, een enorm taalmodel met 2,4 biljoen parameters dat binnenkort als open-weight beschikbaar komt, waardoor ontwikkelaars het model vrijer kunnen inzetten en integreren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-25",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 preview updates",
+      "summary_nl": "De preview-versie van Qwen3.8 krijgt doorlopende verbeteringen, waaronder brede kwaliteitswinst en grote vooruitgang op webfrontend-taken, en de nieuwste versie staat nu live.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-25",
+      "week": "2026-w30"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -38,24 +272,6 @@
           "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
           "platform": "twitter",
           "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-25",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Cursor Router",
-      "summary_nl": "Cursor lanceert Cursor Router, een intelligente router die automatisch het meest geschikte AI-model kiest voor elke taak. Hierdoor krijgen gebruikers betere prestaties en lagere kosten zonder zelf handmatig tussen modellen te hoeven schakelen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
         }
       ],
       "detected_at": "2026-07-25",
@@ -458,24 +674,6 @@
       "week": "2026-w30"
     },
     {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "FLUX 3 is gelanceerd als één multimodaal AI‑model dat afbeeldingen, video, audio en actievoorspelling in één systeem ondersteunt. Hierdoor kunnen makers levensechter content genereren over meerdere media zonder verschillende modellen te hoeven combineren.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
-          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
-          "platform": "twitter",
-          "source": "@bfl_ai"
-        }
-      ],
-      "detected_at": "2026-07-24",
-      "week": "2026-w30"
-    },
-    {
       "tool_slug": "gemini",
       "tool_name": "Gemini",
       "tool_category": "tekst",
@@ -524,42 +722,6 @@
           "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
           "platform": "twitter",
           "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-07-23",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8 Model Launch",
-      "summary_nl": "Alibaba heeft het Qwen3.8-model gelanceerd, een groot open-weights taalmodel met 2,4 biljoen parameters dat continu wordt doorontwikkeld. Dit vergroot de beschikbaarheid van krachtige, open modellen voor ontwikkelaars en bedrijven.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
-          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-23",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8 Preview Updates",
-      "summary_nl": "De preview-versie van Qwen3.8 wordt dagelijks verbeterd en de nieuwste versie is nu live met brede kwaliteitswinst en een grote sprong in webfrontend-taken. Gebruikers krijgen zo merkbaar betere prestaties zonder hun integratie aan te passen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
-          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
         }
       ],
       "detected_at": "2026-07-23",
@@ -1025,24 +1187,6 @@
         }
       ],
       "detected_at": "2026-07-22",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8 Open-Weight Model",
-      "summary_nl": "Qwen3.8 is aangekondigd als een nieuw groot taalmodel met 2,4 biljoen parameters dat binnenkort open-weight beschikbaar komt. Dit betekent dat ontwikkelaars het model vrij kunnen downloaden en inzetten in eigen infrastructuur.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
-          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-21",
       "week": "2026-w30"
     },
     {
