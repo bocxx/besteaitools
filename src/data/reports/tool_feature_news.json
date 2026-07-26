@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-26T07:46:39.686208",
+  "generated_at": "2026-07-26T19:29:04.567584",
   "window_days": 7,
   "week": "2026-w30",
-  "total_candidates_scanned": 1036,
-  "total_after_dedup": 1001,
-  "total_feature_updates": 156,
+  "total_candidates_scanned": 1046,
+  "total_after_dedup": 1012,
+  "total_feature_updates": 158,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Inline Code Editor",
-      "summary_nl": "Claude introduceert een inline code-editor die in een paneel direct naast je gesprek opent, zodat je tijdens het chatten code kunt bekijken en aanpassen zonder van omgeving te wisselen.",
+      "summary_nl": "Claude krijgt een ingebouwde code‑editor die in een paneel direct naast je gesprek opent, zodat je code kunt bekijken en aanpassen zonder de chat te verlaten. Dit maakt het werken aan code met Claude een stuk sneller en overzichtelijker.",
       "impact": "medium",
       "sources": [
         {
@@ -30,7 +30,7 @@
       "tool_name": "Qwen",
       "tool_category": "tekst",
       "feature_title": "Qwen3.8 Model Launch",
-      "summary_nl": "Alibaba lanceert Qwen3.8, een nieuw grootschalig taalmodel met 2,4 biljoen parameters dat binnenkort als open-weight beschikbaar komt en continu wordt doorontwikkeld.",
+      "summary_nl": "Alibaba introduceert Qwen3.8, een nieuw taalmodel met 2,4 biljoen parameters dat binnenkort als open‑weight model beschikbaar komt. Het model wordt continu verbeterd en richt zich op krachtige, brede AI‑toepassingen.",
       "impact": "high",
       "sources": [
         {
@@ -48,14 +48,86 @@
       "tool_name": "Cursor",
       "tool_category": "coding",
       "feature_title": "Cursor Router",
-      "summary_nl": "Cursor introduceert Cursor Router, een slimme router die automatisch het meest geschikte AI-model kiest voor elke taak om prestaties en kosten te optimaliseren binnen de IDE.",
-      "impact": "high",
+      "summary_nl": "Cursor lanceert Cursor Router, een slimme router die automatisch het meest geschikte AI‑model kiest voor elke taak. Dit moet de prestaties verbeteren en kosten optimaliseren zonder dat gebruikers zelf modellen hoeven te wisselen.",
+      "impact": "medium",
       "sources": [
         {
           "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
           "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
           "platform": "twitter",
           "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 Preview Upgrade",
+      "summary_nl": "De previewversie van Qwen3.8 is geüpdatet met brede kwaliteitsverbeteringen, waaronder een grote sprong voor web‑frontend taken. Gebruikers profiteren hiermee van een merkbaar betere modelprestatie tijdens de previewfase.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "FLUX 3 Multimodal Model",
+      "summary_nl": "FLUX 3 is een nieuw multimodaal model dat beelden, video, audio en actie‑voorspelling in één systeem combineert. De output moet levensechter worden voor uiteenlopende creatieve en interactieve toepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 Model",
+      "summary_nl": "Anthropic introduceert Claude Opus 5 als nieuw topmodel in de Claude‑lijn. Het model is ontworpen voor zwaardere en complexere taken met hogere kwaliteit dan eerdere versies.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
+          "title": "Introducing Claude Opus 5",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-07-26",
+      "week": "2026-w30"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "New Gemini Flash Models",
+      "summary_nl": "Google brengt drie nieuwe Gemini‑modellen uit: Gemini 3.6 Flash, 3.5 Flash‑Lite en 3.5 Flash Cyber. Deze varianten richten zich op snelle, lichte en mogelijk beveiligings‑/cybergerichte AI‑toepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
+          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
         }
       ],
       "detected_at": "2026-07-26",
@@ -74,24 +146,6 @@
           "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
           "platform": "twitter",
           "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-26",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "FLUX 3 is een nieuw multimodaal AI-model dat met één model afbeeldingen, video, audio en actievoorspellingen ondersteunt, waardoor creaties realistischer worden over verschillende media heen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
-          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
-          "platform": "twitter",
-          "source": "@bfl_ai"
         }
       ],
       "detected_at": "2026-07-26",
@@ -668,24 +722,6 @@
           "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
           "platform": "twitter",
           "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-24",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "New Gemini Flash Models",
-      "summary_nl": "Google heeft drie nieuwe Gemini‑modellen uitgebracht: Gemini 3.6 Flash, Gemini 3.5 Flash‑Lite en Gemini 3.5 Flash Cyber. Deze varianten richten zich op snellere, lichtere en beveiligingsgerichte toepassingen, waardoor gebruikers meer keuze krijgen voor uiteenlopende workloads.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
-          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
-          "platform": "twitter",
-          "source": "@WatcherGuru"
         }
       ],
       "detected_at": "2026-07-24",
