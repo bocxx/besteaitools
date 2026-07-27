@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-27T07:26:26.002771",
+  "generated_at": "2026-07-27T19:38:40.385441",
   "window_days": 7,
   "week": "2026-w31",
-  "total_candidates_scanned": 1082,
-  "total_after_dedup": 1048,
-  "total_feature_updates": 121,
+  "total_candidates_scanned": 1119,
+  "total_after_dedup": 1085,
+  "total_feature_updates": 124,
   "llm_curated": true,
   "features": [
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Inline Artifact Editor",
-      "summary_nl": "Claude introduceert een inline artifact-editor die in een paneel direct naast je gesprek opent, zodat je documenten, apps of andere artifacts kunt bewerken zonder je chat te verlaten.",
+      "feature_title": "Sidebar Artifact Editor",
+      "summary_nl": "Claude introduceert een nieuwe artifact-editor die in een paneel direct naast je gesprek opent, waardoor je content en apps kunt bewerken zonder de chat te verlaten. Deze functie is nu beschikbaar in publieke bèta.",
       "impact": "medium",
       "sources": [
         {
@@ -26,11 +26,29 @@
       "week": "2026-w31"
     },
     {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 Weights Release",
+      "summary_nl": "Kimi publiceert de modelgewichten en een technisch rapport van Kimi K3, een 2,8T MoE-model met native multimodale ondersteuning. Dit maakt het model toegankelijker voor onderzoek en eigen implementaties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        }
+      ],
+      "detected_at": "2026-07-27",
+      "week": "2026-w31"
+    },
+    {
       "tool_slug": "cursor",
       "tool_name": "Cursor",
       "tool_category": "coding",
       "feature_title": "Cursor Router",
-      "summary_nl": "Cursor Router is een nieuwe intelligente router die automatisch het beste AI‑model kiest voor de taak, zodat ontwikkelaars minder handmatig hoeven te wisselen tussen modellen.",
+      "summary_nl": "Cursor lanceert Cursor Router, een intelligente router die automatisch het meest geschikte AI-model voor elke taak kiest. Dit moet de prestaties en kosten van AI-ontwikkelwerk in de editor optimaliseren.",
       "impact": "medium",
       "sources": [
         {
@@ -48,8 +66,8 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Claude Opus 5 in Cursor",
-      "summary_nl": "Claude Opus 5 is nu beschikbaar in Cursor, met vergelijkbare prestaties als Fable 5 op CursorBench tegen lagere kosten en met extra mogelijkheden zoals toolgebruik.",
-      "impact": "high",
+      "summary_nl": "Claude Opus 5 is nu beschikbaar als model binnen Cursor en haalt vergelijkbare scores als Fable 5 op CursorBench tegen lagere kosten. Hierdoor krijgen Cursor-gebruikers toegang tot een krachtig maar goedkoper Claude-model.",
+      "impact": "medium",
       "sources": [
         {
           "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
@@ -66,7 +84,7 @@
       "tool_name": "Qwen",
       "tool_category": "tekst",
       "feature_title": "Qwen3.8 Frontend Upgrade",
-      "summary_nl": "De nieuwste preview‑versie van Qwen3.8 is live met brede kwaliteitsverbeteringen en een grote stap vooruit voor web‑frontend taken.",
+      "summary_nl": "De nieuwste previewversie van Qwen3.8 is live met brede kwaliteitsverbeteringen en een grote sprong in webfrontend-capaciteiten. Het model wordt hierdoor beter inzetbaar voor webgerelateerde taken.",
       "impact": "medium",
       "sources": [
         {
@@ -84,7 +102,7 @@
       "tool_name": "Flux",
       "tool_category": "beeld",
       "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "FLUX 3 is een nieuwe multimodale AI‑model dat één enkel model biedt voor beeld, video, audio en actie‑voorspelling, met levensechter en consistente creaties.",
+      "summary_nl": "FLUX introduceert FLUX 3, één multimodaal model dat beeld, video, audio en actievoorspelling ondersteunt. Creaties zouden hiermee levensechter en veelzijdiger worden voor creatieve en interactieve toepassingen.",
       "impact": "high",
       "sources": [
         {
@@ -102,7 +120,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Claude Opus 5 Model",
-      "summary_nl": "Claude Opus 5 is een nieuwe topmodelversie van Claude, gepositioneerd als een krachtige opvolger binnen de Claude‑modelreeks.",
+      "summary_nl": "Anthropic introduceert Claude Opus 5 als nieuwe topklasse taalmodel in de Claude-reeks. Het model is ontworpen om betere prestaties en kwaliteit te leveren in complexe taken.",
       "impact": "high",
       "sources": [
         {
@@ -120,7 +138,7 @@
       "tool_name": "Gemini",
       "tool_category": "tekst",
       "feature_title": "Gemini 3.x Flash Models",
-      "summary_nl": "Google heeft drie nieuwe Gemini‑modellen gelanceerd: Gemini 3.6 Flash, Gemini 3.5 Flash‑Lite en Gemini 3.5 Flash Cyber, die snelle en gespecialiseerde AI‑mogelijkheden bieden.",
+      "summary_nl": "Google lanceert drie nieuwe Gemini-modellen: Gemini 3.6 Flash, 3.5 Flash-Lite en 3.5 Flash Cyber. Deze varianten richten zich op snellere, lichtere en beveiligingsgerichte AI-toepassingen.",
       "impact": "high",
       "sources": [
         {
@@ -128,6 +146,42 @@
           "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
           "platform": "twitter",
           "source": "@WatcherGuru"
+        }
+      ],
+      "detected_at": "2026-07-27",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "Self-Driving UI Updates",
+      "summary_nl": "De software krijgt nieuwe functies zoals een batterijbereik-schatter, instelbaar zoomniveau voor de self-driving visualisatie, browserondersteuning voor camera en microfoon en introductie-animaties voor de nieuwe Model 3 en Y. Dit verbetert de gebruikerservaring van de ingebouwde interface.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SawyerMerritt/status/2079585456518312089",
+          "title": "Tesla's Summer 2026 software update has officially been unveiled.\n\nHere's what's new:\n• Navigation now prioritizes routes that you've taken ",
+          "platform": "twitter",
+          "source": "@SawyerMerritt"
+        }
+      ],
+      "detected_at": "2026-07-27",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Inline Artifact Editor",
+      "summary_nl": "Claude introduceert een inline artifact-editor die in een paneel direct naast je gesprek opent, zodat je documenten, apps of andere artifacts kunt bewerken zonder je chat te verlaten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
         }
       ],
       "detected_at": "2026-07-27",

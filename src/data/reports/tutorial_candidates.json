@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-27T05:30:26.814513",
+  "generated_at": "2026-07-27T17:42:47.301186",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 20,
     "for_news": 15,
-    "rejected_lang": 149,
+    "rejected_lang": 154,
     "already_covered": 0,
-    "total_scanned": 4598
+    "total_scanned": 4605
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "tutorial",
+        "how to",
         "step-by-step"
       ],
       "matched_tools": [
@@ -235,8 +235,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "build your"
+        "build your",
+        "how to"
       ],
       "matched_tools": [
         "langchain",
@@ -289,8 +289,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "tutorial"
+        "tutorial",
+        "step by step"
       ],
       "matched_tools": [
         "chatgpt",
@@ -807,20 +807,20 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "U.S. government will decide who gets to use GPT-5.6",
-      "text": "U.S. government will decide who gets to use GPT-5.6",
-      "url": "https://www.washingtonpost.com/technology/2026/06/26/openai-says-us-government-will-vet-users-its-latest-ai-model/",
-      "date": "2026-06-26",
-      "engagement": 2408.0,
+      "title": "Kimi-K3 Releases on HuggingFace 7/27",
+      "text": "Kimi-K3 Releases on HuggingFace 7/27",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "date": "2026-07-27",
+      "engagement": 1358.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt"
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [
+        "K3 Releases"
       ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
+      "new_product": true,
       "version_bump": false,
       "paywall": false,
       "video": null,
@@ -830,13 +830,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.18,
+      "score": 16.32,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.68,
+        "engagement_log": 10.82,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.0,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -846,10 +846,72 @@
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "chatgpt versus de alternatieven — welke past bij jou?",
+      "suggested_angle_nl": "Nieuw in K3 Releases: wat de update concreet voor je werk betekent.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "cebb5a1ee0647ac4"
+      "id": "f94e1f25b4ba0eee"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "🏢 Building Enterprise-Ready AI Agents 🤖 — A Practical Field Guide 📚",
+      "text": "<blockquote>\n<p>How to design, ship, and operate an AI agent that is <strong>reliable, efficient, performant, scalable, and secure</strong> enough to serve real companies — from a 5-person startup to a 50,000-person enterprise.</p>\n\n<p>This guide distills hard-won lessons from production agents (Claude Code, OpenHands, SWE-agent, GoClaw, Hermes, nanobot, PicoClaw, ZeroClaw, Multica, Paperclip) and grounds them in current engineering guidance from Anthropic and OpenAI plus the security and compliance standards you'll actually be audited against (OWASP Top 10 for Agentic Applications, NIST AI RM",
+      "url": "https://dev.to/truongpx396/building-enterprise-ready-ai-agents-a-practical-field-guide-441p",
+      "date": "2026-07-27",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "ai act",
+        "how to",
+        "guide"
+      ],
+      "matched_tools": [
+        "chatgpt",
+        "claude",
+        "picoclaw"
+      ],
+      "feature_update": true,
+      "new_products": [
+        "Building Enterprise",
+        "Ready AI",
+        "Practical Field",
+        "OWASP Top",
+        "Agentic Applications",
+        "NIST AI",
+        "EU AI",
+        "Read Parts"
+      ],
+      "new_product": true,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "58c67f628056e1b8"
     },
     {
       "source": "articles:The Practical Developer",
@@ -862,9 +924,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
+        "tutorial",
         "build an",
-        "tutorial"
+        "guide"
       ],
       "matched_tools": [
         "llamaindex"
@@ -914,9 +976,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "build an",
+        "how to",
         "build a",
-        "tutorial",
-        "how to"
+        "tutorial"
       ],
       "matched_tools": [
         "n8n"
@@ -965,10 +1027,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "deep dive",
         "from scratch",
-        "under the hood",
-        "how to"
+        "deep dive",
+        "how to",
+        "under the hood"
       ],
       "matched_tools": [
         "claude"
@@ -1017,9 +1079,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "tutorial",
         "how to",
-        "build a",
-        "tutorial"
+        "build a"
       ],
       "matched_tools": [
         "together ai"
@@ -1056,60 +1118,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "0b4c6005692f3d81"
-    },
-    {
-      "source": "articles:freeCodeCamp",
-      "platform": "article",
-      "title": "How to Use Prompt Engineering and Context Engineering for AI Agents",
-      "text": "<p>In this tutorial, I’ll show you how prompt engineering and context engineering can improve an AI agent's performance.</p>\n<p>We’ll build a simple local agent, start with a baseline input, then improve it with a better prompt and stronger context so you can see how each change affects the final output.</p>\n<p>We'll be using LangChain v1, Ollama, Qwen, and Python. Everything runs on your own machine, so you'll have no API costs.</p>\n<h2 data-sanitized-id=\"heading-table-of-contents\">Table of Contents</h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-use-prompt-engineering-and-",
-      "url": "https://www.freecodecamp.org/news/how-to-use-prompt-engineering-and-context-engineering-for-ai-agents/",
-      "date": "2026-07-24",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "build a",
-        "tutorial",
-        "how-to"
-      ],
-      "matched_tools": [
-        "langchain",
-        "ollama",
-        "qwen"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je langchain in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "24eece846ebb0810"
     }
   ],
   "for_news": [
@@ -1261,11 +1269,11 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
+        "guide",
+        "ai act",
         "how to",
         "introduction to",
-        "guide",
-        "ai act"
+        "step-by-step"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1360,9 +1368,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "tutorial",
         "how to",
-        "build a",
-        "tutorial"
+        "build a"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1459,8 +1467,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
         "walkthrough",
+        "guide",
         "step-by-step"
       ],
       "matched_tools": [],
@@ -1557,9 +1565,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
-        "how to",
         "practical guide",
+        "how to",
+        "guide",
         "explained"
       ],
       "matched_tools": [],
@@ -1599,11 +1607,56 @@
     {
       "source": "hn",
       "platform": "hackernews",
+      "title": "AI companies are shredding rare books",
+      "text": "AI companies are shredding rare books",
+      "url": "https://xcancel.com/HedgieMarkets/status/2081534588485296565",
+      "date": "2026-07-27",
+      "engagement": 1005.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 15.87,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.37,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Waarom AI er nu toe doet — en wat je ermee moet.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e3b48668cd64185f"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
       "title": "Microsoft – Open Weights and American AI Leadership",
       "text": "Microsoft – Open Weights and American AI Leadership",
       "url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/",
       "date": "2026-07-24",
-      "engagement": 966.0,
+      "engagement": 967.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1640,51 +1693,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "c6816f1fede853cc"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Are AI Labs Pelicanmaxxing?",
-      "text": "Are AI Labs Pelicanmaxxing?",
-      "url": "https://dylancastillo.co/posts/pelicanmaxxing.html",
-      "date": "2026-07-22",
-      "engagement": 922.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.74,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 10.24,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat Are AI Labs betekent voor de Nederlandse AI-markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "324be2df6a68e1e2"
     },
     {
       "source": "tweets:@Dipanshu_AI",
@@ -1751,8 +1759,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
         "how to",
+        "guide",
         "introduction to"
       ],
       "matched_tools": [
@@ -1803,10 +1811,10 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "how to",
         "build an",
-        "use case"
+        "step by step",
+        "use case",
+        "how to"
       ],
       "matched_tools": [
         "claude"
