@@ -73,7 +73,7 @@ Draait je eerste model, dan is de volgende trede een heel agent-team op je eigen
 
 ## Wanneer open-weight, wanneer propriëtair?
 
-Open-weight loont bij **privacy-gevoelige data** (documenten die je niet wilt uploaden), **kostenbeheer** (veel queries die via een API duur worden) en **offline gebruik**. Propriëtaire modellen zoals Claude blijven sterker bij complexe meerstaps-redenering en taken waar je de allerbeste kwaliteit nodig hebt zonder tijd om te testen en finetunen.
+Open-weight loont bij **privacy-gevoelige data** (documenten die je niet wilt uploaden), **kostenbeheer** (veel queries die via een API duur worden) en **offline gebruik**. Wil je zo'n lokaal model vragen laten beantwoorden over je eigen documenten, dan koppel je het via RAG — bijvoorbeeld [met LlamaIndex](/nieuws/llamaindex-rag-eigen-documenten). Propriëtaire modellen zoals Claude blijven sterker bij complexe meerstaps-redenering en taken waar je de allerbeste kwaliteit nodig hebt zonder tijd om te testen en finetunen.
 
 De slimme aanpak: lokale modellen voor routinetaken, propriëtaire modellen voor het werk waar dat laatste beetje kwaliteit telt. Wil je scherper kiezen tussen al die modellen, dan helpt het te snappen welke architectuur eronder zit — ons mentale model van [CNN's, RNN's en transformers](/nieuws/cnn-rnn-transformers-huggingface-uitleg) geeft je dat kader.
 

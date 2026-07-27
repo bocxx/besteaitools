@@ -65,7 +65,7 @@ Eén ding om te weten: claude.ai kent geen wachtwoorden. Je logt altijd in via j
 
 ## Wat kun je met een gratis account?
 
-Meer dan je misschien verwacht. Het gratis plan geeft je het volledige chatvenster in de browser, de iOS- en Android-apps en de desktop-app, inclusief webzoeken, bestandsuploads, code uitvoeren en het geheugen dat eerdere gesprekken onthoudt ([Bron: Claude pricing](https://claude.com/pricing)). Je chat met het standaardmodel — ruim voldoende voor mails, samenvattingen en denkwerk.
+Meer dan je misschien verwacht. Het gratis plan geeft je het volledige chatvenster in de browser, de iOS- en Android-apps en de desktop-app, inclusief webzoeken, bestandsuploads, code uitvoeren en het geheugen dat eerdere gesprekken onthoudt ([Bron: Claude pricing](https://claude.com/pricing)). Je chat met het standaardmodel — ruim voldoende voor mails, samenvattingen en denkwerk. Een concreet gratis klusje: [laat Claude een onduidelijke rekening of factuur controleren](/nieuws/claude-rekening-factuur-controleren).
 
 De beperking zit in volume: het aantal berichten per dag is begrensd en die grens beweegt mee met de drukte. Voor af en toe een vraag is dat geen probleem; wie er dagelijks mee werkt, loopt er tegenaan. Wat je op het gratis plan ook mist: Claude Code (de codeer-agent voor de terminal), Cowork (de agentmodus in de desktop-app) en de zwaardere modellen.
 

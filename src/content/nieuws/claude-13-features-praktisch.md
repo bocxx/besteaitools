@@ -223,5 +223,6 @@ Geen grote inzet, geen lange training. Eén test per rol, 15 minuten.
 - [Anthropic API docs](https://docs.anthropic.com/claude/reference/getting-started-with-the-api) — de officiële features
 - Dev.to artikel (bron hierboven) — diepere dive in alle 13
 - Claude.ai — zelf uitproberen, gratis en zonder setup
+- [Zo laat je Claude een onduidelijke rekening controleren](/nieuws/claude-rekening-factuur-controleren) — deze features in een concrete klus
 
 Claude evolueert snel. Deze 13 features zijn nu beschikbaar, maar volgende maand kan er meer bij. Wat je team nu inzet is de basis — de rest volgt.

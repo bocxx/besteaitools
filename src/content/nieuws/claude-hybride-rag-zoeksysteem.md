@@ -33,7 +33,7 @@ faq:
     a: "Het kan ook zonder, maar LangGraph maakt de flow overzichtelijk: je definieert losse stappen (ophalen, samenvoegen, antwoorden) als knopen in een graaf. Dat is prettig zodra je logica complexer wordt, bijvoorbeeld als je wilt herproberen of bronnen wilt filteren. Voor een eerste prototype mag je het ook houden bij een simpel script."
 ---
 
-Wil je een AI die antwoordt op basis van jóuw documenten, en niet op basis van wat hij toevallig geleerd heeft? Dan bouw je een RAG-app — al kun je [de simpelste variant tegenwoordig zonder code opzetten in ChatGPT](/nieuws/rag-chatgpt-eigen-bedrijfsdata). In deze gids zetten we een hybride variant op: betekenis-zoeken én trefwoord-zoeken gecombineerd, met Claude die het antwoord schrijft. Vijf stappen, één werkende opzet.
+Wil je een AI die antwoordt op basis van jóuw documenten, en niet op basis van wat hij toevallig geleerd heeft? Dan bouw je een RAG-app — al kun je [de simpelste variant tegenwoordig zonder code opzetten in ChatGPT](/nieuws/rag-chatgpt-eigen-bedrijfsdata) of het juist in code bouwen [met LlamaIndex](/nieuws/llamaindex-rag-eigen-documenten). In deze gids zetten we een hybride variant op: betekenis-zoeken én trefwoord-zoeken gecombineerd, met Claude die het antwoord schrijft. Vijf stappen, één werkende opzet.
 
 ## Stap 1 — Knip je documenten in stukken
 

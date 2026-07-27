@@ -98,6 +98,7 @@ Wat de add-in goed kan: tabs samenvatten, pivot-tabellen direct aanpassen, celle
 - Je het modelwerk niet wilt uitbesteden maar wel de routine kwijt wilt
 - Je een board, klant of investeerder een schoon model moet laten zien zonder dagen kwijt te zijn
 - Je vergader-output ook wilt automatiseren — zoals onze gids [Granola voor MKB: vergader-notulen in vijf minuten](/nieuws/granola-notuleren-mkb-5-minuten) laat zien voor het "wat is besproken"-deel
+- Je losse administratie wilt uitpluizen — zoals [een onduidelijke rekening door Claude laten controleren](/nieuws/claude-rekening-factuur-controleren)
 
 **Niet (nog) nodig als:**
 
