@@ -17,7 +17,7 @@ draft: false
 readingTime: 4
 heroScene: "A small chrome robot chooses between three glowing orbs — a bright sun, a green globe, and a pale moon — on a wooden workbench"
 heroImage: "/images/articles/diorama-gpt-5-6-in-chatgpt-gebruiken.webp"
-heroImageAlt: "Miniatuur diorama-illustratie: robot kiest tussen drie modellen Sol, Terra en Luna"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'GPT-5.6 in ChatGPT: zo kies je tussen Sol, Terra en Luna'"
 keyTakeaways:
   - "GPT-5.6 is sinds 9 juli 2026 algemeen beschikbaar in ChatGPT, Codex en de API. Het komt in drie varianten: Sol (topmodel), Terra (dagelijks werk) en Luna (snel en goedkoop)."
   - "In ChatGPT kiezen betaalde gebruikers zelf tussen Sol, Terra en Luna plus een effort-stand. Gratis- en Go-gebruikers werken met Terra."
