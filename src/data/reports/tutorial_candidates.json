@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-28T05:42:32.868897",
+  "generated_at": "2026-07-28T17:39:34.442910",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 20,
     "for_news": 14,
-    "rejected_lang": 150,
+    "rejected_lang": 151,
     "already_covered": 0,
-    "total_scanned": 4605
+    "total_scanned": 4597
   },
   "for_tools": [
     {
@@ -21,9 +21,9 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
         "how to",
-        "step-by-step"
+        "step-by-step",
+        "tutorial"
       ],
       "matched_tools": [
         "gemini",
@@ -289,8 +289,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "tutorial",
-        "step by step"
+        "step by step",
+        "tutorial"
       ],
       "matched_tools": [
         "chatgpt",
@@ -390,8 +390,8 @@
       "source_weight": 2.0,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
-        "build an"
+        "build an",
+        "build a"
       ],
       "matched_tools": [
         "claude"
@@ -436,7 +436,7 @@
       "text": "Kimi-K3 Releases on HuggingFace 7/27",
       "url": "https://huggingface.co/moonshotai/Kimi-K3",
       "date": "2026-07-27",
-      "engagement": 1852.0,
+      "engagement": 1894.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -455,10 +455,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.79,
+      "score": 16.82,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.29,
+        "engagement_log": 11.32,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -850,7 +850,58 @@
       "id": "e9d2b33f061faacd"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "Moonshot API Complete Guide: From Kimi K2 to K3 and Beyond",
+      "text": "<p>Moonshot AI has rapidly evolved from a promising Chinese AI lab into one of the most important model providers in the global market. With the release of Kimi K3 in July 2026 -- a 2.8-trillion-parameter open-weight model leading on agentic benchmarks -- understanding the Moonshot API ecosystem has become essential for any developer working with AI.</p>\n\n<p>This guide covers everything you need to know: the evolution from K2 to K3, API setup and authentication, model selection, pricing, rate limits, code examples, and how to integrate Moonshot models into your application.</p>\n\n\n\n\n<h2>\n  \n  \n",
+      "url": "https://dev.to/bri_whitmore_88/moonshot-api-complete-guide-from-kimi-k2-to-k3-and-beyond-57bm",
+      "date": "2026-07-28",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "guide",
+        "complete guide"
+      ],
+      "matched_tools": [
+        "kimi"
+      ],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je kimi in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "fcefc18848d07b04"
+    },
+    {
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "How to Build an Automated Workload Model for Peak Readiness",
       "text": "<p>If you’ve ever spent two days pulling data out of an APM tool just to answer “how many virtual users should I run in my load test?”, this tutorial is for you.</p>\n<p>By the end, you’ll know how to derive every number in your workload model directly from production telemetry, in under five minutes, with nothing left to estimate.</p>\n<h3 data-sanitized-id=\"heading-our-use-case\">Our Use Case:</h3>\n<p>Every year, a few weeks before Black Friday, performance engineers and SREs face the same problem: someone needs a workload model for the peak-season load test, and the clock is ticking.</p>\n<p>Th",
@@ -860,10 +911,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
-        "use case",
+        "how to",
         "build an",
-        "how to"
+        "tutorial",
+        "use case"
       ],
       "matched_tools": [
         "make"
@@ -974,9 +1025,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
+        "guide",
         "build an",
-        "guide"
+        "tutorial"
       ],
       "matched_tools": [
         "llamaindex"
@@ -1025,10 +1076,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
-        "build a",
+        "how to",
         "build an",
-        "how to"
+        "tutorial",
+        "build a"
       ],
       "matched_tools": [
         "n8n"
@@ -1065,26 +1116,21 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "17159c84a78bb6db"
-    },
+    }
+  ],
+  "for_news": [
     {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "A Deep Dive into Amazon Bedrock Prompt Caching for Claude 4.6",
-      "text": "<p>Have you ever noticed that your GenAI applications are spending massive amounts of time and money re-reading the exact same setup text?<br>\nEvery time a user asks a short question in a chatbot, the Large Language Model (LLM) must re-read your entire 2,000-word corporate playbook, your agent's system rules, and the full chat history from scratch. <br>\nThis phase is called the pre-fill math phase, and it drives up both your cloud bill and your user latency (Time-to-First-Token).With Amazon Bedrock Prompt Caching for Claude 4.6 (both Sonnet 4.6 and Opus 4.6), this problem is completely solved.",
-      "url": "https://dev.to/nitheesh_gaddam_e36ec4aa4/a-deep-dive-into-amazon-bedrock-prompt-caching-for-claude-46-28ob",
-      "date": "2026-07-26",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "deep dive",
-        "from scratch",
-        "under the hood"
-      ],
-      "matched_tools": [
-        "claude"
-      ],
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Our position on open-weights models",
+      "text": "Our position on open-weights models",
+      "url": "https://www.anthropic.com/news/position-open-weights-models",
+      "date": "2026-07-28",
+      "engagement": 2737.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
@@ -1095,13 +1141,13 @@
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "article"
+        "hackernews"
       ],
-      "score": 15.9,
+      "score": 17.37,
       "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
+        "pattern_hits": 0,
+        "engagement_log": 11.87,
+        "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
         "editorial": 0.0,
@@ -1112,14 +1158,12 @@
         "media": 0.0,
         "official": 0.0
       },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
+      "bucket": "news",
+      "suggested_angle_nl": "Wat Our betekent voor de Nederlandse AI-markt.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "c2324827ba604e22"
-    }
-  ],
-  "for_news": [
+      "id": "87f50ae3471a4261"
+    },
     {
       "source": "reddit:r/ChatGPT",
       "platform": "reddit",
@@ -1260,56 +1304,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Our position on open-weights models",
-      "text": "Our position on open-weights models",
-      "url": "https://www.anthropic.com/news/position-open-weights-models",
-      "date": "2026-07-28",
-      "engagement": 1555.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 16.52,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.02,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat Our betekent voor de Nederlandse AI-markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "87f50ae3471a4261"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
       "title": "AI companies are shredding rare books",
       "text": "AI companies are shredding rare books",
       "url": "https://xcancel.com/HedgieMarkets/status/2081534588485296565",
       "date": "2026-07-27",
-      "engagement": 1227.0,
+      "engagement": 1268.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1326,10 +1325,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.17,
+      "score": 16.22,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.67,
+        "engagement_log": 10.72,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1374,7 +1373,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "TommiPedruzzi",
-      "followers": 134165,
+      "followers": 134341,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1447,6 +1446,55 @@
       "id": "ea8048f00fa65918"
     },
     {
+      "source": "articles:Latest from TechRadar US in News，opinion",
+      "platform": "article",
+      "title": "\"Vibe-coding a landing page from scratch is completely pointless\": How will vibe coding really impact the future of website building?",
+      "text": "<article>\n                                <p>Vibe coding lets you create everything from one-page websites to complex applications simply by explaining what you want in plain English. <br><br>This relatively new technology is an undeniable game-changer, tearing down barriers, helping small businesses and entrepreneurs build tools that just would not have been accessible before. <br><br>But is <a href=\"https://www.techradar.com/pro/vibe-coding-guide-how-to-transition-from-ai-generation-to-live-deployment\">vibe coding</a> really all it is made out to be? <br><br>I caught up with Nikita Obukhov, ",
+      "url": "https://www.techradar.com/pro/vibe-coding-a-landing-page-from-scratch-is-completely-pointless-how-will-vibe-coding-really-impact-the-future-of-website-building",
+      "date": "2026-07-28",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "from scratch",
+        "how-to",
+        "guide"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Vibe: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "6c60f4deaca776e3"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "Privacy-First Vision AI: Running Quantized ViT Models in the Browser with WebAssembly 🚀",
@@ -1457,9 +1505,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "how to",
         "tutorial",
-        "build a",
-        "how to"
+        "build a"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1506,10 +1554,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "explained",
         "how to",
         "step-by-step",
-        "under the hood",
-        "explained"
+        "under the hood"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1556,9 +1604,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "walkthrough",
         "step-by-step",
-        "guide",
-        "walkthrough"
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1595,105 +1643,6 @@
       "id": "edf69528d09a695f"
     },
     {
-      "source": "articles:OpenAI API Community Forum - Latest posts",
-      "platform": "article",
-      "title": "Image Generation Policy Limits My Creative Freedom – Request for Clarification and Support",
-      "text": "<p>This is the exact breakdown of how AI filters operate and how to bypass them by changing how you describe your concepts.</p>\n<p>The core problem is that AI safety systems do not actually understand what you mean. They operate on <strong>String Matching</strong>. If a global filter sees a specific sequence of letters (a keyword), it automatically triggers a block, regardless of the context.</p>\n<p>To build your images without constantly hitting these blind walls, you have to stop using labels and start describing the <strong>Visual DNA</strong> of the object.</p>\n<p>Here is exactly how to tr",
-      "url": "https://community.openai.com/t/image-generation-policy-limits-my-creative-freedom-request-for-clarification-and-support/1153938?page=4#post_79",
-      "date": "2026-07-24",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "breakdown",
-        "build your"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Image Generation Policy in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "ab3da6df87878aeb"
-    },
-    {
-      "source": "articles:Artificial Intelligence – The Data Scientist",
-      "platform": "article",
-      "title": "A Practical Guide to Faster Freight Dispatch With AI-Powered TMS",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">Dispatch speed is one of the few levers a carrier or broker can improve without adding trucks. When a load moves from a broker email to a confirmed driver in minutes instead of an hour of phone tag, capacity gets used better and drivers spend less time waiting. That is the practical promise behind AI dispatch software: fewer clicks, faster assignments, and less manual re-entry.</p>\n\n\n\n<p data-sanitized-class=\"wp-block-paragraph\">A faster suggestion is only useful if it respects the driver’s hours, the equipment available, and the road ahead. This gu",
-      "url": "https://thedatascientist.com/a-practical-guide-to-faster-freight-dispatch-with-ai-powered-tms/?utm_source=rss&utm_medium=rss&utm_campaign=a-practical-guide-to-faster-freight-dispatch-with-ai-powered-tms",
-      "date": "2026-07-23",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to",
-        "practical guide",
-        "guide",
-        "explained"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Practical Guide in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "646005cee643fdbf"
-    },
-    {
       "source": "tweets:@JayBisen473370",
       "platform": "tweet",
       "title": "🚨 Harvard just made its AI course free.\n\nNo tuition.\nNo application.\nJust world-class AI education.\n\nHarvard University just released 6 high-quality lectures on",
@@ -1704,10 +1653,10 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "introduction to",
-        "step-by-step",
-        "ai act",
         "how to",
+        "ai act",
+        "step-by-step",
+        "introduction to",
         "guide"
       ],
       "matched_tools": [],
@@ -1720,7 +1669,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "JayBisen473370",
-      "followers": 27078,
+      "followers": 27208,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1748,6 +1697,55 @@
       "id": "92215a24412bf82f"
     },
     {
+      "source": "articles:Towards AI - Medium",
+      "platform": "article",
+      "title": "Why AI Sometimes Sounds So Confidently Wrong (And How to Fix It)",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://pub.towardsai.net/why-llms-hallucinate-and-sound-confidently-wrong-how-to-fix-it-32949d8ef081?source=rss----98111c9905da---4\"><img src=\"https://cdn-images-1.medium.com/max/2600/1*jpFX34lMN810tM7Iru92BA.png\" width=\"2816\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">A peek under the hood at next-token prediction, RLHF, and the practical prompt engineering tricks to bridge the confidence gap</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://pub.towardsai.net/why-llms-hal",
+      "url": "https://pub.towardsai.net/why-llms-hallucinate-and-sound-confidently-wrong-how-to-fix-it-32949d8ef081?source=rss----98111c9905da---4",
+      "date": "2026-07-27",
+      "engagement": 37.1,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "under the hood",
+        "how-to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.46,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.46,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "9cae48c950c3176a"
+    },
+    {
       "source": "linkedin:GenAI Works",
       "platform": "linkedin",
       "title": "AI won't take your job. The intern with Claude will, unless you watch these free courses.\n\nFunny until you check what interns are shipping these days.\n\nThe diff",
@@ -1758,8 +1756,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "introduction to",
         "how to",
+        "introduction to",
         "guide"
       ],
       "matched_tools": [

@@ -1,12 +1,240 @@
 {
-  "generated_at": "2026-07-28T07:38:29.888517",
+  "generated_at": "2026-07-28T19:35:30.991551",
   "window_days": 7,
   "week": "2026-w31",
-  "total_candidates_scanned": 1096,
-  "total_after_dedup": 1063,
-  "total_feature_updates": 125,
+  "total_candidates_scanned": 1213,
+  "total_after_dedup": 1174,
+  "total_feature_updates": 130,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Managed Agents",
+      "summary_nl": "Anthropic heeft Claude Managed Agents gelanceerd: een nieuwe suite van API’s om cloud-gehoste, autonome AI-agents te bouwen en te draaien, inclusief sandboxing, state management en credentials. Deze dienst is beschikbaar als public beta op het Claude Platform en richt zich op productieklare agents op schaal.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        },
+        {
+          "url": "https://twitter.com/WallStreetApes/status/2081726298498437309",
+          "title": "The Pentagon is awarding $10 million to the Mike Rowe Works Foundation with the goal of getting more young Americans trained to help build a",
+          "platform": "twitter",
+          "source": "@WallStreetApes"
+        },
+        {
+          "url": "https://twitter.com/Tesla/status/2080021924072366329",
+          "title": "Q2 Shareholder Update → https://t.co/u0UcDOuMNa\n\nHighlights\n– Cybercab began production at Gigafactory Texas\n\n– Tesla Semi remains on track ",
+          "platform": "twitter",
+          "source": "@Tesla"
+        },
+        {
+          "url": "https://twitter.com/om_patel5/status/2081494782396747779",
+          "title": "UPDATE, ITS WORSE THAN THE CHATS\n\nthe same thing is happening with shared artifacts. every app, doc, dashboard and tool people published fro",
+          "platform": "twitter",
+          "source": "@om_patel5"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 Open Weights",
+      "summary_nl": "Moonshot AI brengt de modelgewichten en het technische rapport van Kimi K3 uit, een 2,8T Mixture-of-Experts model met native multimodale mogelijkheden. Dit maakt het model openbaar beschikbaar voor de community om te testen, finetunen en integreren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1358↑, 536 comments)"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 Release",
+      "summary_nl": "Grok 4.6 wordt rond 7 augustus uitgebracht als een 1,5T model met aanzienlijk verbeterde supervised fine-tuning en reinforcement learning. De update richt zich op betere kwaliteit en betrouwbaarheid van de antwoorden.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.7 Upgrade",
+      "summary_nl": "Na Grok 4.6 volgt Grok 4.7 als een 2,1T model, waarmee de capaciteit en vermoedelijk prestaties verder worden verhoogd. Dit vormt een belangrijke stap in de schaalvergroting van het Grok-modelaanbod.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Cursor Router",
+      "summary_nl": "Cursor introduceert Cursor Router, een slimme router die automatisch het meest geschikte AI-model voor een specifieke taak kiest. Dit moet ontwikkelaars helpen om betere resultaten te krijgen zonder handmatig tussen modellen te wisselen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Opus 5 in Cursor",
+      "summary_nl": "Claude Opus 5 is nu beschikbaar binnen Cursor en haalt vergelijkbare benchmarkresultaten als Fable 5 tegen de helft van de prijs. Hierdoor krijgen Cursor-gebruikers toegang tot een krachtig Claude-model direct in hun ontwikkelomgeving.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 Preview Update",
+      "summary_nl": "De previewversie van Qwen3.8 is geüpdatet en ‘wordt elke dag beter’, met brede verbeteringen en een grote sprong vooruit in web frontend-taken. Gebruikers krijgen hiermee een merkbaar krachtigere versie van het model.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Cursor Start India Plan",
+      "summary_nl": "Cursor lanceert het ‘Cursor Start’ abonnement in India, dat ontwikkelaars ruim toegang geeft tot Grok 4.5 en Composer voor een lagere maandprijs. Hierdoor wordt experimenteer- en ontwikkelwerk met Grok in India financieel toegankelijker.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2081978255004053560",
+          "title": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 Launch",
+      "summary_nl": "Claude Opus 5 is geïntroduceerd als een nieuwe topklasse Claude-modelvariant. Het model richt zich op hogere kwaliteit en capaciteiten en wordt gepositioneerd als opvolger in de Opus-reeks.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
+          "title": "Introducing Claude Opus 5",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        },
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "FLUX 3 Multimodal Model",
+      "summary_nl": "FLUX 3 is geïntroduceerd als één multimodaal model dat afbeeldingen, video, audio en action-prediction aankan. De output moet ‘meer levensecht’ zijn, waardoor creatieve en interactieve toepassingen breder mogelijk worden.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Three New Gemini Models",
+      "summary_nl": "Google lanceert drie nieuwe Gemini-varianten: Gemini 3.6 Flash, Gemini 3.5 Flash-Lite en Gemini 3.5 Flash Cyber. Deze modellen breiden het aanbod uit met snellere, lichtere en mogelijk beveiligingsgerichte configuraties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
+          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -50,42 +278,6 @@
       "week": "2026-w31"
     },
     {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Cursor Router",
-      "summary_nl": "Cursor introduceert Cursor Router, een intelligente router die automatisch het meest geschikte AI-model kiest voor elke taak binnen de ontwikkelomgeving.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-28",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "Flux lanceert FLUX 3, één multimodaal model dat beelden, video, audio en actievoorspelling ondersteunt voor levensechter generaties.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
-          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
-          "platform": "twitter",
-          "source": "@bfl_ai"
-        }
-      ],
-      "detected_at": "2026-07-28",
-      "week": "2026-w31"
-    },
-    {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
@@ -98,24 +290,6 @@
           "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
           "platform": "twitter",
           "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-28",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8 Preview Update",
-      "summary_nl": "De nieuwste preview-versie van Qwen3.8 is live, met brede kwaliteitsverbeteringen en een grote stap vooruit voor webfrontend-taken.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
-          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
         }
       ],
       "detected_at": "2026-07-28",
@@ -302,24 +476,6 @@
       "week": "2026-w30"
     },
     {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Opus 5 Launch",
-      "summary_nl": "Anthropic introduceert Claude Opus 5 als nieuwe topklasse Claude-model, ontworpen voor complexere taken en betere kwaliteit antwoorden dan eerdere generaties.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
-          "title": "Introducing Claude Opus 5",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-07-26",
-      "week": "2026-w30"
-    },
-    {
       "tool_slug": "make",
       "tool_name": "Make",
       "tool_category": "automatisering",
@@ -464,24 +620,6 @@
       "week": "2026-w30"
     },
     {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Opus 5 in Cursor",
-      "summary_nl": "Claude Opus 5 is nu geïntegreerd in Cursor als keuze voor ontwikkelaars, met vergelijkbare benchmarkprestaties als Fable 5 tegen ongeveer de halve prijs. Dit maakt een krachtig Claude-model direct beschikbaar in de Cursor IDE-omgeving.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
-          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-25",
-      "week": "2026-w30"
-    },
-    {
       "tool_slug": "flux",
       "tool_name": "Flux",
       "tool_category": "beeld",
@@ -575,42 +713,6 @@
         }
       ],
       "detected_at": "2026-07-25",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agents",
-      "summary_nl": "Claude heeft een nieuwe functie gelanceerd waarmee je agents in de cloud kunt laten draaien met ingebouwde sandboxing en tools. Daarmee kunnen ontwikkelaars AI-taken beter automatiseren via de API.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
-          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        },
-        {
-          "url": "https://twitter.com/igus_ai/status/2077846880633983259",
-          "title": "El CEO de Anthropic viendo como China lanza un nuevo modelo de IA que supera a Claude Opus 4.8 en TODO, iguala a Fable 5 costando 8 VECES ME",
-          "platform": "twitter",
-          "source": "@igus_ai"
-        },
-        {
-          "url": "https://twitter.com/enzo_gte/status/2078102070482153717",
-          "title": "I've been using Kimi K3 for ~16 hours now.\n\nThe model is clearly good at a lot of different things (especially frontend), but non obvious re",
-          "platform": "twitter",
-          "source": "@enzo_gte"
-        },
-        {
-          "url": "https://twitter.com/Tesla/status/2080021924072366329",
-          "title": "Q2 Shareholder Update → https://t.co/u0UcDOuMNa\n\nHighlights\n– Cybercab began production at Gigafactory Texas\n\n– Tesla Semi remains on track ",
-          "platform": "twitter",
-          "source": "@Tesla"
-        }
-      ],
-      "detected_at": "2026-07-24",
       "week": "2026-w30"
     },
     {
