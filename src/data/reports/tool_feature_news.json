@@ -1,12 +1,162 @@
 {
-  "generated_at": "2026-07-27T19:38:40.385441",
+  "generated_at": "2026-07-28T07:38:29.888517",
   "window_days": 7,
   "week": "2026-w31",
-  "total_candidates_scanned": 1119,
-  "total_after_dedup": 1085,
-  "total_feature_updates": 124,
+  "total_candidates_scanned": 1096,
+  "total_after_dedup": 1063,
+  "total_feature_updates": 125,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Inline Artifact Editor",
+      "summary_nl": "Claude heeft nu een inline artifact-editor die in een paneel direct naast je gesprek opent, zodat je documenten, apps of dashboards kunt bewerken zonder de chat te verlaten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 Weights Release",
+      "summary_nl": "Kimi publiceert de modelgewichten en een technisch rapport van Kimi K3, een zeer krachtige 2,8T MoE-modelvariant met native multimodale mogelijkheden.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1325↑, 527 comments)"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Cursor Router",
+      "summary_nl": "Cursor introduceert Cursor Router, een intelligente router die automatisch het meest geschikte AI-model kiest voor elke taak binnen de ontwikkelomgeving.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "FLUX 3 Multimodal Model",
+      "summary_nl": "Flux lanceert FLUX 3, één multimodaal model dat beelden, video, audio en actievoorspelling ondersteunt voor levensechter generaties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 in Cursor",
+      "summary_nl": "Claude Opus 5 is nu beschikbaar als modeloptie in Cursor en biedt vergelijkbare prestaties als Fable 5 op CursorBench tegen ongeveer de helft van de prijs.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 Preview Update",
+      "summary_nl": "De nieuwste preview-versie van Qwen3.8 is live, met brede kwaliteitsverbeteringen en een grote stap vooruit voor webfrontend-taken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 Release",
+      "summary_nl": "Anthropic introduceert Claude Opus 5 als nieuw topmodel in de Claude-familie, bedoeld als krachtige algemene AI-assistent voor complexe taken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
+          "title": "Introducing Claude Opus 5",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "New Gemini Flash Models",
+      "summary_nl": "Google introduceert drie nieuwe AI-modellen: Gemini 3.6 Flash, Gemini 3.5 Flash-Lite en Gemini 3.5 Flash Cyber, gericht op snellere en gespecialiseerde toepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
+          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
+          "platform": "twitter",
+          "source": "@WatcherGuru"
+        }
+      ],
+      "detected_at": "2026-07-28",
+      "week": "2026-w31"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -26,60 +176,6 @@
       "week": "2026-w31"
     },
     {
-      "tool_slug": "kimi",
-      "tool_name": "Kimi",
-      "tool_category": "tekst",
-      "feature_title": "Kimi K3 Weights Release",
-      "summary_nl": "Kimi publiceert de modelgewichten en een technisch rapport van Kimi K3, een 2,8T MoE-model met native multimodale ondersteuning. Dit maakt het model toegankelijker voor onderzoek en eigen implementaties.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
-          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
-          "platform": "twitter",
-          "source": "@Kimi_Moonshot"
-        }
-      ],
-      "detected_at": "2026-07-27",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Cursor Router",
-      "summary_nl": "Cursor lanceert Cursor Router, een intelligente router die automatisch het meest geschikte AI-model voor elke taak kiest. Dit moet de prestaties en kosten van AI-ontwikkelwerk in de editor optimaliseren.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-27",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Opus 5 in Cursor",
-      "summary_nl": "Claude Opus 5 is nu beschikbaar als model binnen Cursor en haalt vergelijkbare scores als Fable 5 op CursorBench tegen lagere kosten. Hierdoor krijgen Cursor-gebruikers toegang tot een krachtig maar goedkoper Claude-model.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
-          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-27",
-      "week": "2026-w31"
-    },
-    {
       "tool_slug": "qwen",
       "tool_name": "Qwen",
       "tool_category": "tekst",
@@ -92,24 +188,6 @@
           "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
           "platform": "twitter",
           "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-27",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "FLUX introduceert FLUX 3, één multimodaal model dat beeld, video, audio en actievoorspelling ondersteunt. Creaties zouden hiermee levensechter en veelzijdiger worden voor creatieve en interactieve toepassingen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
-          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
-          "platform": "twitter",
-          "source": "@bfl_ai"
         }
       ],
       "detected_at": "2026-07-27",
@@ -173,24 +251,6 @@
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Inline Artifact Editor",
-      "summary_nl": "Claude introduceert een inline artifact-editor die in een paneel direct naast je gesprek opent, zodat je documenten, apps of andere artifacts kunt bewerken zonder je chat te verlaten.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
-          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-07-27",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
       "feature_title": "Inline Code Editor",
       "summary_nl": "Claude krijgt een ingebouwde code‑editor die in een paneel direct naast je gesprek opent, zodat je code kunt bekijken en aanpassen zonder de chat te verlaten. Dit maakt het werken aan code met Claude een stuk sneller en overzichtelijker.",
       "impact": "medium",
@@ -236,24 +296,6 @@
           "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
           "platform": "twitter",
           "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-26",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "New Gemini Flash Models",
-      "summary_nl": "Google brengt drie nieuwe Gemini‑modellen uit: Gemini 3.6 Flash, 3.5 Flash‑Lite en 3.5 Flash Cyber. Deze varianten richten zich op snelle, lichte en mogelijk beveiligings‑/cybergerichte AI‑toepassingen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/WatcherGuru/status/2079584862487409027",
-          "title": "JUST IN: Google $GOOGL launches three new AI models \n\n• Gemini 3.6 Flash\n• Gemini 3.5 Flash-Lite \n• Gemini 3.5 Flash Cyber https://t.co/27ac",
-          "platform": "twitter",
-          "source": "@WatcherGuru"
         }
       ],
       "detected_at": "2026-07-26",
@@ -882,24 +924,6 @@
         {
           "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
           "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-23",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8 Preview Update",
-      "summary_nl": "De preview-versie van Qwen3.8 is bijgewerkt met brede kwaliteitsverbeteringen, waaronder een duidelijke stap vooruit op het gebied van webfrontend-taken. Gebruikers profiteren direct van betere prestaties terwijl het model nog in ontwikkeling is.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
-          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
           "platform": "twitter",
           "source": "@Alibaba_Qwen"
         }
