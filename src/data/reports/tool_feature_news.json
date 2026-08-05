@@ -1,18 +1,1980 @@
 {
-  "generated_at": "2026-07-29T07:30:50.337093",
+  "generated_at": "2026-08-05T19:31:04.259406",
   "window_days": 7,
-  "week": "2026-w31",
-  "total_candidates_scanned": 1197,
-  "total_after_dedup": 1159,
-  "total_feature_updates": 135,
+  "week": "2026-w32",
+  "total_candidates_scanned": 1159,
+  "total_after_dedup": 1128,
+  "total_feature_updates": 206,
   "llm_curated": true,
   "features": [
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Contextual Editor Panel",
-      "summary_nl": "Claude introduceert een nieuwe editor die in een paneel direct naast je gesprek opent, zodat je tijdens het chatten documenten, code of artifacts kunt bewerken zonder van scherm te wisselen. Dit maakt workflows met Claude overzichtelijker en sneller, vooral bij complexere projecten.",
+      "feature_title": "Managed Agents Public Beta",
+      "summary_nl": "Claude Managed Agents is nu beschikbaar in public beta. Het is een volledig beheerde omgeving waarmee je Claude als autonome agent kunt laten draaien met beveiligde sandboxing, ingebouwde tools en sessies die doorlopen via de API.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        },
+        {
+          "url": "https://twitter.com/moonpay/status/2082825370277908501",
+          "title": "24 hours ago, MoonPay launched PayBox \n\n224,000 people have signed up at https://t.co/isCEzCNoC6\n\nit’s the most viral Crypto x AI product of",
+          "platform": "twitter",
+          "source": "@moonpay"
+        },
+        {
+          "url": "https://twitter.com/JeffDean/status/2085034604172603724",
+          "title": "Announcing Discovery Loop! \n\nI am very excited to announce that, along with my longtime friends and collaborators @Sanjay_Ghemawat, @OriolVi",
+          "platform": "twitter",
+          "source": "@JeffDean"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Session Event Deltas",
+      "summary_nl": "Claude Managed Agents ondersteunt nu event-deltas in sessiestreams. Daardoor kun je agent-tekst al zien verschijnen terwijl die wordt gegenereerd, in plaats van pas aan het eind van het volledige bericht.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Backward Pagination",
+      "summary_nl": "Het opvragen van Managed Agents-sessies ondersteunt nu backward pagination. Dit maakt het eenvoudiger om terug te bladeren naar eerdere pagina's van sessies.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Session Overrides",
+      "summary_nl": "Bij het aanmaken van een sessie kun je nu de agentconfiguratie voor die ene sessie overschrijven. Je kunt daarbij onder meer het model, de system prompt, tools, MCP-servers of skills aanpassen zonder de agent zelf te wijzigen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Vault Injection Location",
+      "summary_nl": "Claude Managed Agents-vaults hebben nu een instelling om te bepalen waar omgevingsvariabelen worden ingevoegd. Daarmee kun je kiezen of een credential in request-headers, in de request-body of in beide wordt geplaatst.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Lifecycle Webhooks",
+      "summary_nl": "Er zijn nu webhooks voor de lifecycle van agents, deployments en deployment runs. Daardoor kun je reageren op gebeurtenissen zoals een nieuwe versie, een gepauzeerde deployment of een mislukte geplande run zonder te pollen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Scheduled Deployments",
+      "summary_nl": "Claude Managed Agents ondersteunt nu scheduled deployments. Je kunt sessies voortaan automatisch op een cron-schema laten draaien zonder eigen scheduler te beheren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Dreaming Preview",
+      "summary_nl": "Dreaming is toegevoegd als research preview voor Claude Managed Agents. Deze functie gebruikt eerdere sessies om patronen te vinden en agents zichzelf te laten verbeteren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceX/status/2084737174709403899",
+          "title": "We posted our second quarter 2026 financial and operational results → https://t.co/YCRzq6gSV3\n\nQ2 highlights:\n- Demonstrated the power of ex",
+          "platform": "twitter",
+          "source": "@SpaceX"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Outcome Definitions",
+      "summary_nl": "Met outcomes kun je nu vastleggen wat een succesvolle uitkomst voor een agent betekent. Dat geeft de agent een duidelijker doel om naartoe te werken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceX/status/2084737174709403899",
+          "title": "We posted our second quarter 2026 financial and operational results → https://t.co/YCRzq6gSV3\n\nQ2 highlights:\n- Demonstrated the power of ex",
+          "platform": "twitter",
+          "source": "@SpaceX"
+        },
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Multiagent Orchestration",
+      "summary_nl": "Claude Managed Agents kan nu een hoofdagent laten opdelen in taken en die delegeren aan gespecialiseerde subagents. Dat maakt parallel werken aan complexe taken mogelijk.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceX/status/2084737174709403899",
+          "title": "We posted our second quarter 2026 financial and operational results → https://t.co/YCRzq6gSV3\n\nQ2 highlights:\n- Demonstrated the power of ex",
+          "platform": "twitter",
+          "source": "@SpaceX"
+        },
+        {
+          "url": "https://twitter.com/shiri_shh/status/2082156794978435536",
+          "title": "If you're a dev paying ElevenLabs $100 per million characters, stop.\n\nFish Audio does it ~70% cheaper. \n\nopen source, self-hostable, 83+ lan",
+          "platform": "twitter",
+          "source": "@shiri_shh"
+        },
+        {
+          "url": "https://twitter.com/moonpay/status/2082825370277908501",
+          "title": "24 hours ago, MoonPay launched PayBox \n\n224,000 people have signed up at https://t.co/isCEzCNoC6\n\nit’s the most viral Crypto x AI product of",
+          "platform": "twitter",
+          "source": "@moonpay"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Self-Hosted Sandboxes",
+      "summary_nl": "Claude Managed Agents kan nu draaien in een sandbox die je zelf beheert. Dat geeft organisaties meer controle over de uitvoeringsomgeving.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/GavinSBaker/status/2082166566280642676",
+          "title": "Market is overreacting to hyperscale credit spreads widening from my perspective. TL;DR Spot pricing for renting GPU compute materially abov",
+          "platform": "twitter",
+          "source": "@GavinSBaker"
+        },
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "MCP Tunnels",
+      "summary_nl": "Claude Managed Agents kan nu verbinden met private MCP-servers. Daarmee koppel je eigen tools en databronnen via hetzelfde protocol dat Claude Code intern gebruikt.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/GavinSBaker/status/2082166566280642676",
+          "title": "Market is overreacting to hyperscale credit spreads widening from my perspective. TL;DR Spot pricing for renting GPU compute materially abov",
+          "platform": "twitter",
+          "source": "@GavinSBaker"
+        },
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Effort Levels",
+      "summary_nl": "Je kunt nu per agent een inspanningsniveau instellen. Daarmee stem je de reken- en redeneerkracht af op de taak, van lichte routing tot zwaardere analyse.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        },
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        },
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Seeded Sessions",
+      "summary_nl": "Nieuwe sessies kunnen nu direct worden gestart met vooraf geladen events. Dit vermindert opstartvertraging en maakt het eenvoudiger om een sessie meteen in de juiste context te zetten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        },
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        },
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Expanded Skills Limit",
+      "summary_nl": "Het aantal skills dat in een sessie kan worden gebruikt is verhoogd tot 500. Daardoor kunnen agents met veel meer taak-specifieke instructies tegelijk werken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        },
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Subagent Streaming",
+      "summary_nl": "De realtime eventstream is uitgebreid naar subagents en threads. Je kunt daardoor beter volgen wat afzonderlijke subagents doen terwijl ze hun werk uitvoeren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        },
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        },
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Agent Version Field",
+      "summary_nl": "Het versieveld bij agent-updates is nu optioneel. Dat maakt updates eenvoudiger voor workflows waarin versiebeheer niet apart nodig is.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        },
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!",
+      "summary_nl": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2083084415157022911",
+          "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "📢Meet Qwen3.8-Max",
+      "summary_nl": "...ost capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also going open-weights to meet you all!🎉\n\nQwen3.8-Max, a new bar for coding and cowork ",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "elevenlabs",
+      "tool_name": "ElevenLabs",
+      "tool_category": "spraak",
+      "feature_title": "If you're a dev paying ElevenLabs $100 per million characters, stop.",
+      "summary_nl": "...evenLabs $100 per million characters, stop.\n\nFish Audio does it ~70% cheaper. \n\nopen source, self-hostable, 83+ languages, voice cloning from 15 sec of audio.\n\nthe entire voice AI pricing model is ",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/shiri_shh/status/2082156794978435536",
+          "title": "If you're a dev paying ElevenLabs $100 per million characters, stop.\n\nFish Audio does it ~70% cheaper. \n\nopen source, self-hostable, 83+ lan",
+          "platform": "twitter",
+          "source": "@shiri_shh"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Hello people of Sol!",
+      "summary_nl": "...usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage limits.\n\nOver the past few weeks, many of you have told us that Sol was using your Codex l",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "New Anthropic research: Discovering cryptographic weaknesses with…",
+      "summary_nl": "...opic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses in cryptographic algorithms—the mathematical methods that are used",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "SPACEX: According to local reports, the final stages of a deal are in…",
+      "summary_nl": "...ozen environmental laws for launch licenses.\n\nThe location will support orbital launches and is the perfect spot for SpaceX to launch Starmind AI Datacenters to sun-synch orbit.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SERobinsonJr/status/2083988612841132117",
+          "title": "SPACEX: According to local reports, the final stages of a deal are in place for SpaceX to build the new spaceport on Pecan Island in Vermili",
+          "platform": "twitter",
+          "source": "@SERobinsonJr"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model…",
+      "summary_nl": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conv...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Market is overreacting to hyperscale credit spreads widening from my…",
+      "summary_nl": "...thiness as well given their FCF profiles.\n \nOpenAI, Cursor/Grok and the various Open Source inference clouds have accelerated materially over the last two months per public data and Anthropic conti",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/GavinSBaker/status/2082166566280642676",
+          "title": "Market is overreacting to hyperscale credit spreads widening from my perspective. TL;DR Spot pricing for renting GPU compute materially abov",
+          "platform": "twitter",
+          "source": "@GavinSBaker"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "24 hours ago, MoonPay launched PayBox 224,000 people have signed up…",
+      "summary_nl": "24 hours ago, MoonPay launched PayBox \n\n224,000 people have signed up at https://t.co/isCEzCNoC6\n\nit’s the most viral Crypto x AI product of all-time...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/moonpay/status/2082825370277908501",
+          "title": "24 hours ago, MoonPay launched PayBox \n\n224,000 people have signed up at https://t.co/isCEzCNoC6\n\nit’s the most viral Crypto x AI product of",
+          "platform": "twitter",
+          "source": "@moonpay"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Apple's product pages have that scroll effect.",
+      "summary_nl": "...edance on Monid\n- Renders a native 9:16 portrait chain for mobile, not a crop\n- Ships a vanilla JS scrub engine with blob-seek, lazy load, and seam crossfade\n- Installs into Claude Code as a plugin",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/heynavtoor/status/2083221614595051602",
+          "title": "Apple's product pages have that scroll effect. The camera flies through a 3D world. Products float. Scenes transition. No cuts. One continuo",
+          "platform": "twitter",
+          "source": "@heynavtoor"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "“Do you ever miss being on the pit wall?” I’ve been asked that…",
+      "summary_nl": "...And in that moment, as I gathered myself to calmly give the next race situation update on the other end of my radio panel, I realised something.\n\nIt felt like coming home.\n\nJust as a better version",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/RuthBuscombe/status/2082914112389226980",
+          "title": "“Do you ever miss being on the pit wall?”\n\nI’ve been asked that question more times than I can count.\n\nMy answer has always been:\n\nYes… but ",
+          "platform": "twitter",
+          "source": "@RuthBuscombe"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "At the core of our mission is working through how to ensure…",
+      "summary_nl": "...to contribute to work led by the U.S. government, alongside other labs and the open-source community, to develop the tools and mechanisms that could make that possible.\n\nhttps://t.co/pMCtiQjMoo",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OpenAI/status/2082208694142730340",
+          "title": "At the core of our mission is working through how to ensure increasingly powerful AI benefits everyone. \n\nWe believe that, at some point in ",
+          "platform": "twitter",
+          "source": "@OpenAI"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Good news for anyone with too many tabs: ChatGPT is getting better…",
+      "summary_nl": "...ns as you type, revisit your browser history, and choose how it’s managed.    \n\nRolling out today.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "🚨 DeepSeek Code Is Coming > DeepSeek is building a dedicated AI…",
+      "summary_nl": "...ide long-running agent workflows with memory and repository awareness\n\n> Recent V4-Flash benchmarks were already evaluated using DeepSeek Harness, signaling it’s a core part of DeepSeek’s roadmap\n\n",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Priyannkaaaa/status/2083851157324046649",
+          "title": "🚨 DeepSeek Code Is Coming\n\n> DeepSeek is building a dedicated AI coding agent powered by its new Harness framework\n> The project is designed",
+          "platform": "twitter",
+          "source": "@Priyannkaaaa"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "seedance",
+      "tool_name": "Seedance",
+      "tool_category": "video",
+      "feature_title": "🎬 Global Launch: Dreamina Seedance 2.5 is now live!",
+      "summary_nl": "...er, built for film-grade production pipelines\n· Up to 50 multimodal references, now with support for 3D white models and green-screen footage — bringing AI generation into real production workflows",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/dreamina_ai/status/2083056471147958714",
+          "title": "🎬 Global Launch: Dreamina Seedance 2.5 is now live!\n\nOur most cinematic video model yet has arrived, and Dreamina AI is your official platfo",
+          "platform": "twitter",
+          "source": "@dreamina_ai"
+        }
+      ],
+      "detected_at": "2026-08-05",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek-V4-Flash API",
+      "summary_nl": "DeepSeek heeft de officiële API voor het V4-Flash model gelanceerd in een publieke bèta, waardoor ontwikkelaars het snelle agent-model direct in hun eigen applicaties kunnen integreren. Dit maakt geavanceerde agentfunctionaliteit en hogere benchmarks breder toegankelijk.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2083084415157022911",
+          "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8-Max Open Weights",
+      "summary_nl": "Alibaba Qwen kondigt aan dat de open weights van het nieuwe Qwen3.8-Max model en Qwen3.8-27B volgende week worden vrijgegeven. Daarmee kunnen ontwikkelaars de krachtige modellen zelf hosten en finetunen voor code en samenwerkingstaken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 Release",
+      "summary_nl": "Grok 4.6 wordt rond 7 augustus uitgebracht als een 1,5T-model met significant verbeterde supervised fine-tuning (SFT) en reinforcement learning (RL). Dit moet de algehele kwaliteit en betrouwbaarheid van het model merkbaar verhogen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok Voice Think Fast 2.0",
+      "summary_nl": "SpaceXAI introduceert Grok Voice Think Fast 2.0, een nieuwe generatie spraakmodel met verbeterde intelligentie, transcriptienauwkeurigheid en conversatiekwaliteit. Hierdoor worden spraakgestuurde Grok-ervaringen vloeiender en betrouwbaarder.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Work Usage Limit Update",
+      "summary_nl": "Voor ChatGPT Work- en Codex-gebruikers zijn de gebruikslimieten aangepast, inclusief een update rond GPT-5.6 Sol zodat het verbruik van Codex-limieten beter wordt beheerd. Dit verandert hoe intensief teams deze modellen kunnen inzetten binnen hun abonnement.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos Cryptography Research",
+      "summary_nl": "Anthropic laat zien dat Claude Mythos Preview gebruikt wordt om zwakheden in cryptografische algoritmen op te sporen bij topic research. Het benadrukt nieuwe onderzoeks- en analysecapaciteiten van deze Claude-variant voor beveiligingsvraagstukken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Monid Scrub Plugin",
+      "summary_nl": "Er is een nieuwe Monid-chain die een native 9:16-portrait render levert, een vanilla JS scrub-engine met blob-seek en lazy load, en naadloos als plugin in Claude Code installeert. Dit maakt het eenvoudiger om tijdlijnen en media-inhoud binnen Claude Code te scrubben en te bekijken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/heynavtoor/status/2083221614595051602",
+          "title": "Apple's product pages have that scroll effect. The camera flies through a 3D world. Products float. Scenes transition. No cuts. One continuo",
+          "platform": "twitter",
+          "source": "@heynavtoor"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "seedance",
+      "tool_name": "Seedance",
+      "tool_category": "video",
+      "feature_title": "Film-Grade Pipeline Support",
+      "summary_nl": "Seedance ondersteunt nu tot 50 multimodale referenties, inclusief 3D white models en green-screen footage, specifiek gericht op film-grade productiepipelines. Hierdoor kan AI-generatie beter worden ingebed in professionele film- en video-workflows.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/dreamina_ai/status/2083056471147958714",
+          "title": "🎬 Global Launch: Dreamina Seedance 2.5 is now live!\n\nOur most cinematic video model yet has arrived, and Dreamina AI is your official platfo",
+          "platform": "twitter",
+          "source": "@dreamina_ai"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "durable",
+      "tool_name": "Durable",
+      "tool_category": "website",
+      "feature_title": "Open-Source Agentic CRM",
+      "summary_nl": "Durable heeft zijn intern ontwikkelde, agentic-first CRM open source gemaakt, ontworpen rond duurzame onderzoeksagents. Dit geeft teams toegang tot een gratis, uitbreidbare CRM die sterk leunt op AI-agents voor onderzoekstaken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/lewiscarhart/status/2083610805069611230",
+          "title": "We've decided to open-source the CRM we built for ourselves at Comp AI.\n\nIt's agentic-first, which we mean literally: durable research agent",
+          "platform": "twitter",
+          "source": "@lewiscarhart"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini Robotics 2",
+      "summary_nl": "Google DeepMind lanceert Gemini Robotics 2, een nieuw fysiek AI-systeem dat ‘één brein voor elke robot’ biedt met full-body intelligentie en geavanceerde motoriek. Hierdoor kunnen humanoïde robots complexere handelingen en interacties uitvoeren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/GoogleDeepMind/status/2082844162928381956",
+          "title": "One brain. For any robot. 🤖\n\nWe’re launching Gemini Robotics 2: our next-generation physical AI bringing full body intelligence to humanoids",
+          "platform": "twitter",
+          "source": "@GoogleDeepMind"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "T3 Code Mobile Control",
+      "summary_nl": "T3 Code is nu beschikbaar op iOS en Android, zodat je via “npx t3 connect” Claude en Codex vanaf je smartphone kunt aansturen. Dit maakt het mogelijk om mobiele apparaten als interface te gebruiken voor het beheren van AI-agents en code-workflows.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/theo/status/2082613200441524514",
+          "title": "T3 Code is now available on iOS and Android.\n\nRun “npx t3 connect” in your terminal, install the app, and now you can control Claude and Cod",
+          "platform": "twitter",
+          "source": "@theo"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "openrouter",
+      "tool_name": "OpenRouter",
+      "tool_category": "infra",
+      "feature_title": "The Looking Glass Engine",
+      "summary_nl": "OpenRouter introduceert The Looking Glass, een spatiotemporele AI-engine voor beeld- en videogeneratie. Gebruikers kunnen hiermee door tijd en ruimte in gegenereerde media ‘reizen’ en complexe visuele scènes verkennen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elder_plinius/status/2083294017492816192",
+          "title": "🎉 INTRODUCING: https://t.co/LrmIeRF4RG! 🪞\n\nwelcome to The Looking Glass: a spatiotemporal ai image + video engine! \n\ntraverse the history of",
+          "platform": "twitter",
+          "source": "@elder_plinius"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "V4-Flash Public API",
+      "summary_nl": "DeepSeek heeft de officiële API voor het V4-Flash model gelanceerd in een publieke bèta, met sterk verbeterde agent-capaciteiten. Dit maakt het voor ontwikkelaars eenvoudiger om krachtige, snellere AI-agents in hun eigen toepassingen te integreren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2083084415157022911",
+          "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Voice Think Fast 2.0",
+      "summary_nl": "Grok introduceert Voice Think Fast 2.0, een nieuwe generatie spraakmodel met verbeterde intelligentie, transcriptienauwkeurigheid en conversatiecapaciteiten. Hierdoor worden voice-first toepassingen met Grok merkbaar beter en bruikbaarder.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Work Usage Limits Update",
+      "summary_nl": "Voor ChatGPT Work- en Codex-gebruikers zijn de gebruikslimieten aangepast, inclusief een update rond het gebruik van GPT-5.6 Sol binnen Codex-limieten. Dit beïnvloedt hoeveel intensieve modelruns teams kunnen doen binnen hun bestaande abonnement.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Browser History Controls",
+      "summary_nl": "ChatGPT rolt nieuwe instellingen uit waarmee je suggesties tijdens het typen krijgt, je browsergeschiedenis kunt herbekijken en zelf kunt kiezen hoe die wordt beheerd. Dat geeft gebruikers meer controle over hun interacties en privacy in de ingebouwde browser.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "seedance",
+      "tool_name": "Seedance",
+      "tool_category": "video",
+      "feature_title": "50 Multimodal References",
+      "summary_nl": "Seedance breidt zijn film-grade productiepipeline uit met ondersteuning voor tot 50 multimodale referenties, inclusief 3D white models en green-screen footage. Daarmee wordt AI-generatie beter integreerbaar in professionele film- en video-workflows.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/dreamina_ai/status/2083056471147958714",
+          "title": "🎬 Global Launch: Dreamina Seedance 2.5 is now live!\n\nOur most cinematic video model yet has arrived, and Dreamina AI is your official platfo",
+          "platform": "twitter",
+          "source": "@dreamina_ai"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "T3 Code Mobile Apps",
+      "summary_nl": "T3 Code is nu beschikbaar op iOS en Android, zodat je via het commando “npx t3 connect” Claude en Codex vanaf je telefoon kunt bedienen. Dit maakt het mogelijk om agent-workflows en code-assistentie mobiel te beheren en te triggeren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/theo/status/2082613200441524514",
+          "title": "T3 Code is now available on iOS and Android.\n\nRun “npx t3 connect” in your terminal, install the app, and now you can control Claude and Cod",
+          "platform": "twitter",
+          "source": "@theo"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Moonpay Paybox Integration",
+      "summary_nl": "Moonpay lanceert Paybox, een AI shopping wallet die zelf-custodial crypto-betalingen combineert met een AI-assistent zoals ChatGPT of Claude die voor echte goederen kan betalen. Dat brengt naadloze AI-gestuurde betalingen dichter bij dagelijks gebruik.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/mztacat/status/2082508447984038182",
+          "title": "Moonpay launches Paybox (AI Shopping Wallet) \nA self-custodial wallet that lets an AI assistant like ChatGPT or Claude pay for real goods an",
+          "platform": "twitter",
+          "source": "@mztacat"
+        }
+      ],
+      "detected_at": "2026-08-04",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 weights release",
+      "summary_nl": "Kimi brengt de modelgewichten en een technisch rapport van Kimi K3 uit, een krachtig 2,8T MoE-model met native visuele mogelijkheden. Dit maakt het model openbaar beschikbaar voor ontwikkelaars en onderzoekers om zelf te draaien en te evalueren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1375↑, 544 comments)"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek V4-Flash public beta",
+      "summary_nl": "DeepSeek lanceert de officiële API voor DeepSeek-V4-Flash in een publieke bèta, met sterk verbeterde agent-capaciteiten en hogere benchmarkscores. Hiermee kunnen ontwikkelaars geavanceerde, snellere agent-workflows integreren in hun eigen toepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2083084415157022911",
+          "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        },
+        {
+          "url": "https://twitter.com/Priyannkaaaa/status/2083851157324046649",
+          "title": "🚨 DeepSeek Code Is Coming\n\n> DeepSeek is building a dedicated AI coding agent powered by its new Harness framework\n> The project is designed",
+          "platform": "twitter",
+          "source": "@Priyannkaaaa"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 open weights",
+      "summary_nl": "Qwen kondigt aan dat de open gewichten van Qwen3.8-Max en Qwen3.8-27B worden uitgebracht, met sterk verbeterde mogelijkheden voor coderen en samenwerken. Dit geeft de community toegang tot krachtige nieuwe modellen voor eigen hosting en fine-tuning.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 and 4.7 release",
+      "summary_nl": "Grok 4.6 wordt rond 7 augustus uitgebracht als een 1,5T-model met aanzienlijk verbeterde SFT- en RL-training, gevolgd door Grok 4.7 als 2,1T-model. Deze nieuwe generaties moeten de kwaliteit en mogelijkheden van Grok merkbaar verhogen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Work and Codex usage update",
+      "summary_nl": "Er komt een update van de gebruikslimieten voor ChatGPT Work- en Codex-gebruikers, inclusief een aanpassing voor het gebruik van GPT-5.6 Sol binnen Codex-limieten. Dit verandert hoe teams hun beschikbare capaciteit en kosten kunnen plannen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos cryptography preview",
+      "summary_nl": "Anthropic laat zien dat Claude Mythos Preview wordt gebruikt om cryptografische zwaktes in algoritmen te ontdekken, als deel van gericht onderzoekswerk. Dit onderstreept nieuwe onderzoeksmogelijkheden met Claude rond beveiliging en cryptografie.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Monid scrub engine plugin",
+      "summary_nl": "Er is een nieuwe Monid-tool die een native 9:16-keten rendert, een vanilla JS scrub engine levert en als plugin in Claude Code kan worden geïnstalleerd. Dit breidt Claude Code uit met betere video- en tijdlijnnavigatie voor ontwikkelaars.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/heynavtoor/status/2083221614595051602",
+          "title": "Apple's product pages have that scroll effect. The camera flies through a 3D world. Products float. Scenes transition. No cuts. One continuo",
+          "platform": "twitter",
+          "source": "@heynavtoor"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini Robotics 2 launch",
+      "summary_nl": "Google DeepMind lanceert Gemini Robotics 2, een nieuwe generatie fysieke AI met volledige lichaamsintelligentie voor humanoïde robots en geavanceerde behendigheid. Dit is een grote stap om één AI-brein voor verschillende robots mogelijk te maken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/GoogleDeepMind/status/2082844162928381956",
+          "title": "One brain. For any robot. 🤖\n\nWe’re launching Gemini Robotics 2: our next-generation physical AI bringing full body intelligence to humanoids",
+          "platform": "twitter",
+          "source": "@GoogleDeepMind"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 open weights",
+      "summary_nl": "Kimi brengt de gewichten en een technisch rapport van het Kimi K3-model uit, een krachtig 2,8T Mixture-of-Experts model met native visuele mogelijkheden. Dit maakt het model vrij beschikbaar voor ontwikkelaars om zelf te hosten en verder te bouwen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1375↑, 544 comments)"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek-V4-Flash API beta",
+      "summary_nl": "DeepSeek lanceert de officiële API voor DeepSeek-V4-Flash in publieke bèta. De agent-capaciteiten zijn sterk opgewaardeerd, met hogere benchmark-scores en ondersteuning voor complexere workflows.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2083084415157022911",
+          "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 and 4.7",
+      "summary_nl": "Grok introduceert Grok 4.6, een 1,5T model met significant verbeterde fine-tuning (SFT) en reinforcement learning, gevolgd door Grok 4.7 als 2,1T model. Deze releases richten zich op merkbaar betere intelligentie en prestaties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Sol usage limits update",
+      "summary_nl": "OpenAI past de gebruikslimieten aan voor ChatGPT Work- en Codex-gebruikers, inclusief een update voor GPT-5.6 Sol. Het doel is om te voorkomen dat Sol onbedoeld de Codex-limieten van teams opslokt.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Live typing suggestions",
+      "summary_nl": "ChatGPT rolt een functie uit die tijdens het typen voorstellen doet en gebruikers laat hun browsergeschiedenis bekijken en beheren. Deze update geeft gebruikers meer controle over hoe hun interacties worden opgeslagen en gebruikt.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-03",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 and 4.7 models",
+      "summary_nl": "Grok 4.6 en 4.7 worden aangekondigd als nieuwe grote modellen met respectievelijk 1,5T en 2,1T parameters en aanzienlijk verbeterde SFT en RL. Dit belooft merkbaar betere kwaliteit en redenering in toekomstige releases.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Cursor Start India plan",
+      "summary_nl": "Cursor lanceert het Start-abonnement in India, met toegang tot Grok 4.5 en Composer voor een lagere maandprijs. Dit vergroot de beschikbaarheid van Grok voor ontwikkelaars in deze regio.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2081978255004053560",
+          "title": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Work and Codex usage limits update",
+      "summary_nl": "ChatGPT past de gebruikslimieten aan voor ChatGPT Work- en Codex-gebruikers, inclusief updates rond GPT-5.6 Sol-verbruik. Dit beïnvloedt hoeveel taken teams binnen deze producten kunnen uitvoeren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "History management controls",
+      "summary_nl": "ChatGPT rolt nieuwe opties uit om je browsergeschiedenis te beheren, zoals suggesties tijdens het typen, het opnieuw bekijken van je geschiedenis en het kiezen hoe die wordt beheerd. Gebruikers krijgen zo meer controle over hun data en context.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Monid video plugin",
+      "summary_nl": "Monid biedt nu een native 9:16 videoketen, een JS scrub-engine en installatie als plugin in Claude Code. Hiermee kunnen ontwikkelaars geavanceerde video-workflows direct binnen Claude Code integreren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/heynavtoor/status/2083221614595051602",
+          "title": "Apple's product pages have that scroll effect. The camera flies through a 3D world. Products float. Scenes transition. No cuts. One continuo",
+          "platform": "twitter",
+          "source": "@heynavtoor"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek-V4-Flash public API",
+      "summary_nl": "DeepSeek lanceert de officiële publieke bètaversie van de API voor DeepSeek-V4-Flash, met sterk verbeterde agent-capaciteiten en hogere benchmarkscores. Hiermee kunnen ontwikkelaars de nieuwe modelvariant direct in hun toepassingen integreren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2083084415157022911",
+          "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 and 4.7 roadmap",
+      "summary_nl": "Er wordt een releasepad aangekondigd voor Grok 4.6 (1,5T model met verbeterde SFT en RL) en Grok 4.7 (2,1T model), beide significante upgrades van de onderliggende modellen. Dit wijst op komende grote kwaliteitsverbeteringen in Grok.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "huggingface",
+      "tool_name": "Hugging Face",
+      "tool_category": "infra",
+      "feature_title": "Kimi-K3 on HuggingFace",
+      "summary_nl": "Kimi-K3 wordt officieel uitgebracht op Hugging Face, waardoor het model via het HF-ecosysteem eenvoudig te testen en te integreren is. Dit verlaagt de drempel voor gebruik door de bredere AI-community.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1375↑, 544 comments)"
+        }
+      ],
+      "detected_at": "2026-08-02",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Releasing the model weights and technical report of Kimi K3.",
+      "summary_nl": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native vis...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "make",
+      "tool_name": "Make",
+      "tool_category": "automatisering",
+      "feature_title": "The Pentagon is awarding $10 million to the Mike Rowe Works…",
+      "summary_nl": "...with the goal of getting more young Americans trained to help build and repair ships, aircraft and munitions\n\nMike Rowe has been advocating for America  to make investments in the futures of young ",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/WallStreetApes/status/2081726298498437309",
+          "title": "The Pentagon is awarding $10 million to the Mike Rowe Works Foundation with the goal of getting more young Americans trained to help build a",
+          "platform": "twitter",
+          "source": "@WallStreetApes"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Very happy to support this on behalf of Google.",
+      "summary_nl": "Very happy to support this on behalf of Google. We have long benefited from open source, are big contributors to open source and in fact have consistently made open weights models with Gemma available",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/sundarpichai/status/2081026488158040181",
+          "title": "Very happy to support this on behalf of Google. We have long benefited from open source, are big contributors to open source and in fact hav",
+          "platform": "twitter",
+          "source": "@sundarpichai"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Interesting.",
+      "summary_nl": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.1T model rel...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "UPDATE, ITS WORSE THAN THE CHATS the same thing is happening with…",
+      "summary_nl": "UPDATE, ITS WORSE THAN THE CHATS\n\nthe same thing is happening with shared artifacts. every app, doc, dashboard and tool people...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/om_patel5/status/2081494782396747779",
+          "title": "UPDATE, ITS WORSE THAN THE CHATS\n\nthe same thing is happening with shared artifacts. every app, doc, dashboard and tool people published fro",
+          "platform": "twitter",
+          "source": "@om_patel5"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 is now available in Cursor!",
+      "summary_nl": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fable, it's al...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Today we're launching Cursor Start, a new ₹649/month plan for…",
+      "summary_nl": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,...",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2081978255004053560",
+          "title": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 weights",
+      "summary_nl": "Moonshot AI publiceert nu de modelgewichten en een technisch rapport van Kimi K3, hun meest krachtige 2,8T MoE-model. Dit maakt het model direct inzetbaar en analyseerbaar voor ontwikkelaars en onderzoekers.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1375↑, 544 comments)"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.7 roadmap",
+      "summary_nl": "Grok 4.7 staat gepland als een 2,1T-model, een verdere schaalvergroting ten opzichte van 4.6. Deze roadmap-update wijst op een komende sprong in capaciteit en mogelijke kwaliteitsverbeteringen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 in Cursor",
+      "summary_nl": "Claude Opus 5 is nu geïntegreerd in Cursor en beschikbaar voor gebruikers van die IDE. De integratie biedt vergelijkbare benchmarks als Fable 5 tegen een lagere prijs, wat ontwikkelaars meer keuze geeft binnen Cursor.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Usage limits update",
+      "summary_nl": "Er is een update doorgevoerd in de gebruikslimieten voor ChatGPT Work- en Codex-gebruikers, inclusief aanpassingen voor GPT-5.6 Sol. Gebruikers rapporteren dat Sol eerder hun Codex-limieten opslokte en dat dit nu wordt gecorrigeerd.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-01",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Cryptography research use",
+      "summary_nl": "Anthropic laat zien dat Claude Mythos Preview wordt gebruikt om cryptografische zwaktes in algoritmen op te sporen. Het bevestigt nieuwe onderzoeks‑use‑cases voor Claude, maar introduceert geen aparte eindgebruikersfeature.",
+      "impact": "low",
+      "sources": [
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Opus 5 launch",
+      "summary_nl": "Anthropic introduceert Claude Opus 5 als nieuwe vlaggenschip‑modelvariant. Dit model biedt verbeterde redeneercapaciteiten en prestaties ten opzichte van eerdere Claude‑versies.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
+          "title": "Introducing Claude Opus 5",
+          "platform": "reddit",
+          "source": "r/ClaudeAI"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "kimi",
+      "tool_name": "Kimi",
+      "tool_category": "tekst",
+      "feature_title": "Kimi K3 on Hugging Face",
+      "summary_nl": "Kimi‑K3 wordt uitgebracht op Hugging Face, waardoor het model eenvoudig te gebruiken en te integreren is via het populaire open‑source AI‑platform. Dit vergroot de toegankelijkheid voor ontwikkelaars wereldwijd.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/item?id=49065752",
+          "title": "Kimi-K3 Releases on HuggingFace 7/27",
+          "platform": "hackernews",
+          "source": "HN (1375↑, 544 comments)"
+        },
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "History and suggestions",
+      "summary_nl": "ChatGPT rolt een update uit waarmee je suggesties krijgt tijdens het typen, je browsergeschiedenis kunt herbekijken en beheren. Deze functies geven gebruikers meer controle en een soepelere schrijfervaring in ChatGPT.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6/4.7 models",
+      "summary_nl": "Grok 4.6 en 4.7 zijn aangekondigd als nieuwe grootschalige modellen met respectievelijk 1,5T en 2,1T parameters en sterk verbeterde fine-tuning en reinforcement learning. Deze release moet de nauwkeurigheid en mogelijkheden van Grok aanzienlijk vergroten.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
+          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "platform": "twitter",
+          "source": "@elonmusk"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Mythos Preview crypto",
+      "summary_nl": "Anthropic heeft Claude Mythos Preview ingezet voor onderzoek naar cryptografische zwaktes, waarbij Claude helpt kwetsbaarheden in versleutelingsalgoritmen te ontdekken. Dit is een nieuwe gespecialiseerde onderzoeksmodus voor hoogrisico-veiligheidstoepassingen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/AnthropicAI/status/2082153297670992134",
+          "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
+          "platform": "twitter",
+          "source": "@AnthropicAI"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Opus 5 in Cursor",
+      "summary_nl": "Claude Opus 5 is nu beschikbaar in de Cursor-ontwikkelomgeving en haalt vergelijkbare scores als Fable 5 op CursorBench tegen ongeveer de halve prijs. Dit biedt ontwikkelaars een krachtig maar betaalbaarder AI-model direct in hun IDE.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
+          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Managed Agents launch",
+      "summary_nl": "Anthropic heeft Claude Managed Agents in public beta gelanceerd, een volledig beheerde runtime en API-suite voor het bouwen en draaien van autonome AI-agenten in de cloud. Ontwikkelaars hoeven zo minder eigen infrastructuur, agentloops en sandboxing te bouwen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://twitter.com/shiri_shh/status/2082156794978435536",
+          "title": "If you're a dev paying ElevenLabs $100 per million characters, stop.\n\nFish Audio does it ~70% cheaper. \n\nopen source, self-hostable, 83+ lan",
+          "platform": "twitter",
+          "source": "@shiri_shh"
+        },
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2082529280341553209",
+          "title": "Announcing Grok Voice Think Fast 2.0, our next-generation voice model with improved intelligence, transcription accuracy, and conversational",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        },
+        {
+          "url": "https://twitter.com/cursor_ai/status/2081978255004053560",
+          "title": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        },
+        {
+          "url": "https://twitter.com/ChatGPT/status/2082970812584432115",
+          "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-07-31",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Cursor Router",
+      "summary_nl": "Cursor introduceert Router, een slimme modelrouter die automatisch het meest geschikte AI-model voor elke taak kiest. Dit kan ontwikkelaars helpen om betere prestaties en lagere kosten te behalen zonder handmatig modelbeheer.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Work and Codex limits update",
+      "summary_nl": "OpenAI past gebruikslimieten aan voor ChatGPT Work- en Codex-gebruikers, inclusief een update van de limieten voor GPT-5.6 Sol. Dit beïnvloedt hoeveel intensief modelgebruik professionele gebruikers kunnen afnemen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
+          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8 Preview upgrade",
+      "summary_nl": "De previewversie van Qwen3.8 is geüpdatet met brede kwaliteitsverbeteringen en een grote stap vooruit in webfrontend-taken. Gebruikers profiteren van een merkbaar betere prestaties bij ontwikkeling en webgerelateerde workflows.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "flux",
+      "tool_name": "Flux",
+      "tool_category": "beeld",
+      "feature_title": "FLUX 3 multimodal model",
+      "summary_nl": "FLUX 3 wordt geïntroduceerd als één multimodaal model voor beeld, video, audio en actievoorspelling, met realistischer creaties. Hierdoor kunnen makers verschillende mediavormen met één geïntegreerd AI-model genereren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
+          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
+          "platform": "twitter",
+          "source": "@bfl_ai"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Vault Environment Variables",
+      "summary_nl": "Claude Managed Agents kunnen nu omgevingsvariabelen veilig opslaan in vaults, zodat CLI-tools en andere gekoppelde diensten geauthenticeerde verzoeken kunnen doen. Dat maakt het makkelijker om agents met externe systemen te laten werken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/sundarpichai/status/2081026488158040181",
+          "title": "Very happy to support this on behalf of Google. We have long benefited from open source, are big contributors to open source and in fact hav",
+          "platform": "twitter",
+          "source": "@sundarpichai"
+        },
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Event Deltas Streaming",
+      "summary_nl": "Claude Managed Agents ondersteunen nu event deltas in event streams, waardoor je tekst al ziet terwijl die wordt gegenereerd. Dit geeft sneller inzicht in wat een agent aan het doen is, nog vóór het eindresultaat klaar is.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Managed Agents Webhooks",
+      "summary_nl": "Claude Managed Agents heeft nu uitgebreidere webhooks voor de levenscyclus van agents, deployments en deployment runs. Daardoor kunnen systemen automatisch reageren op gebeurtenissen zoals een gepubliceerde versie of een mislukte geplande run.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Dreaming",
+      "summary_nl": "Claude voegde 'dreaming' toe, een functie die eerdere agent-sessies en geheugenstores analyseert om patronen te vinden en herinneringen te verbeteren. Daardoor kunnen agents zich na verloop van tijd beter aanpassen aan terugkerende taken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://twitter.com/om_patel5/status/2081494782396747779",
+          "title": "UPDATE, ITS WORSE THAN THE CHATS\n\nthe same thing is happening with shared artifacts. every app, doc, dashboard and tool people published fro",
+          "platform": "twitter",
+          "source": "@om_patel5"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Outcome Definition",
+      "summary_nl": "Met outcomes kun je nu vooraf aangeven wanneer een taak voor de agent als geslaagd geldt. Dat helpt de agent om beter gefocust te blijven op het gewenste resultaat.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "platform": "twitter",
+          "source": "@Kimi_Moonshot"
+        },
+        {
+          "url": "https://twitter.com/om_patel5/status/2081494782396747779",
+          "title": "UPDATE, ITS WORSE THAN THE CHATS\n\nthe same thing is happening with shared artifacts. every app, doc, dashboard and tool people published fro",
+          "platform": "twitter",
+          "source": "@om_patel5"
+        }
+      ],
+      "detected_at": "2026-07-30",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Claude Code on desktop now works with the iOS simulator.",
+      "summary_nl": "...tor opens in a panel right next to your conversation. Available today in public beta. https://t.co/su4IguzPVb",
       "impact": "medium",
       "sources": [
         {
@@ -26,24 +1988,36 @@
       "week": "2026-w31"
     },
     {
-      "tool_slug": "kimi",
-      "tool_name": "Kimi",
-      "tool_category": "tekst",
-      "feature_title": "Kimi K3 Open Weights",
-      "summary_nl": "Kimi brengt de modelgewichten en een technisch rapport van Kimi K3 uit, een 2,8T MoE-model dat hun meest capabele model tot nu toe is. Hierdoor kunnen ontwikkelaars en onderzoekers het model zelf draaien en analyseren, wat de open AI–ecosystemen versterkt.",
-      "impact": "high",
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Introducing Cursor Router, our intelligent model router that selects…",
+      "summary_nl": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontie...",
+      "impact": "medium",
       "sources": [
         {
-          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
-          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
+          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
+          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
           "platform": "twitter",
-          "source": "@Kimi_Moonshot"
-        },
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-07-29",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Um...",
+      "summary_nl": "Um... why isn't EVERY media outlet talking about this???\n\nOpenAI just announced that an experiment on two of its AI models just went HORRIBLY wrong. They basically locked the AIs in a room with no in.",
+      "impact": "medium",
+      "sources": [
         {
-          "url": "https://news.ycombinator.com/item?id=49065752",
-          "title": "Kimi-K3 Releases on HuggingFace 7/27",
-          "platform": "hackernews",
-          "source": "HN (1368↑, 538 comments)"
+          "url": "https://twitter.com/glennbeck/status/2080396229067034971",
+          "title": "Um... why isn't EVERY media outlet talking about this???\n\nOpenAI just announced that an experiment on two of its AI models just went HORRIBL",
+          "platform": "twitter",
+          "source": "@glennbeck"
         }
       ],
       "detected_at": "2026-07-29",
@@ -53,15 +2027,51 @@
       "tool_slug": "grok",
       "tool_name": "Grok",
       "tool_category": "tekst",
-      "feature_title": "Grok 4.6 Release",
-      "summary_nl": "Grok 4.6 wordt rond 7 augustus uitgebracht als een 1,5T-model met aanzienlijk verbeterde fine-tuning (SFT) en reinforcement learning. Gebruikers mogen hierdoor merkbaar betere antwoorden en gedrag verwachten in vergelijking met eerdere versies.",
-      "impact": "high",
+      "feature_title": "Q2 Shareholder Update → Highlights",
+      "summary_nl": "...Taiwan, Thailand, Portugal, the Philippines, Chile, Slovenia & Lithuania\n\n– We launched the Model YL in the US in July and have seen a positive response from customers\n\nEnergy generation and storag",
+      "impact": "medium",
       "sources": [
         {
-          "url": "https://twitter.com/elonmusk/status/2082123925283041545",
-          "title": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT & RL.\n\nGrok 4.7 will be the 2.",
+          "url": "https://twitter.com/Tesla/status/2080021924072366329",
+          "title": "Q2 Shareholder Update → https://t.co/u0UcDOuMNa\n\nHighlights\n– Cybercab began production at Gigafactory Texas\n\n– Tesla Semi remains on track ",
           "platform": "twitter",
-          "source": "@elonmusk"
+          "source": "@Tesla"
+        }
+      ],
+      "detected_at": "2026-07-29",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "During Preview, Qwen3.8 is getting better by the day.",
+      "summary_nl": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend....",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-07-29",
+      "week": "2026-w31"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Contextual Editor Panel",
+      "summary_nl": "Claude introduceert een nieuwe editor die in een paneel direct naast je gesprek opent, zodat je tijdens het chatten documenten, code of artifacts kunt bewerken zonder van scherm te wisselen. Dit maakt workflows met Claude overzichtelijker en sneller, vooral bij complexere projecten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
+          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
         }
       ],
       "detected_at": "2026-07-29",
@@ -89,60 +2099,6 @@
       "tool_slug": "cursor",
       "tool_name": "Cursor",
       "tool_category": "coding",
-      "feature_title": "Cursor Router",
-      "summary_nl": "Cursor introduceert Cursor Router, een slimme router die automatisch het beste AI‑model kiest voor de taak die je uitvoert. Dit helpt ontwikkelaars om zonder handmatig schakelen steeds een passende balans tussen kwaliteit, snelheid en kosten te krijgen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-29",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Work Usage Limits Update",
-      "summary_nl": "Voor ChatGPT Work en Codex‑gebruikers zijn de gebruikslimieten aangepast, inclusief een snelle update van de GPT‑5.6 Sol‑limieten. Dit heeft direct invloed op hoeveel intensieve AI‑taken teams kunnen uitvoeren binnen hun bestaande abonnement.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/thsottiaux/status/2082317452755751098",
-          "title": "Hello people of Sol! I've reset usage limits for all ChatGPT Work and Codex users. Together with that, a quick update on GPT-5.6 Sol usage l",
-          "platform": "twitter",
-          "source": "@thsottiaux"
-        }
-      ],
-      "detected_at": "2026-07-29",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8 Preview Upgrade",
-      "summary_nl": "Tijdens de previewfase krijgt Qwen3.8 continu verbeteringen, en de nieuwste versie is nu live met brede kwaliteitswinst en een grote stap vooruit op web‑frontend taken. Gebruikers merken vooral betere prestaties bij UI‑ontwikkeling en webapplicaties.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2079172722161299801",
-          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-29",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
       "feature_title": "Cursor Start India Plan",
       "summary_nl": "Cursor Start is een nieuw ontwikkelaarsabonnement in India voor ₹649 per maand, met royale toegang tot Grok 4.5 en Composer. Hierdoor wordt geavanceerde AI‑ontwikkeling betaalbaarder en toegankelijker voor een groot segment van Indiase developers.",
       "impact": "low",
@@ -152,24 +2108,6 @@
           "title": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,",
           "platform": "twitter",
           "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-29",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "flux",
-      "tool_name": "Flux",
-      "tool_category": "beeld",
-      "feature_title": "FLUX 3 Multimodal Model",
-      "summary_nl": "FLUX 3 wordt geïntroduceerd als één multimodaal model dat beeld, video, audio en actievoorspelling ondersteunt. Creaties worden daarmee realistischer en het wordt eenvoudiger om uiteenlopende media‑taken met één AI‑systeem af te handelen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/bfl_ai/status/2080308988961554582",
-          "title": "Introducing FLUX 3.\n\nOne multi-modal model for Image, Video, Audio and Action-Prediction. Creations are truer to life in every kind of style",
-          "platform": "twitter",
-          "source": "@bfl_ai"
         }
       ],
       "detected_at": "2026-07-29",
@@ -188,54 +2126,6 @@
           "title": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses ",
           "platform": "twitter",
           "source": "@AnthropicAI"
-        }
-      ],
-      "detected_at": "2026-07-29",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Opus 5 in Cursor",
-      "summary_nl": "Claude Opus 5 is nu beschikbaar in Cursor en haalt vergelijkbare scores als Fable 5 op CursorBench, maar tegen de helft van de prijs. Voor Cursor‑gebruikers betekent dit toegang tot een topmodel met sterkere prestaties bij lagere kosten.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
-          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        },
-        {
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
-          "title": "Introducing Claude Opus 5",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-07-29",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Opus 5 Launch",
-      "summary_nl": "Claude Opus 5 wordt officieel geïntroduceerd als nieuwe top‑versie van het Opus‑model. Deze release biedt betere redeneercapaciteiten en prestaties dan eerdere generaties voor zware kennis- en codeerwerkzaamheden.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/",
-          "title": "Introducing Claude Opus 5",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        },
-        {
-          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
-          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
-          "platform": "twitter",
-          "source": "@cursor_ai"
         }
       ],
       "detected_at": "2026-07-29",
@@ -314,24 +2204,6 @@
       "week": "2026-w31"
     },
     {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Cursor Start India Plan",
-      "summary_nl": "Cursor lanceert het ‘Cursor Start’ abonnement in India, dat ontwikkelaars ruim toegang geeft tot Grok 4.5 en Composer voor een lagere maandprijs. Hierdoor wordt experimenteer- en ontwikkelwerk met Grok in India financieel toegankelijker.",
-      "impact": "low",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2081978255004053560",
-          "title": "Today we're launching Cursor Start, a new ₹649/month plan for developers in India.\n\nStart includes generous access to Grok 4.5 and Composer,",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-28",
-      "week": "2026-w31"
-    },
-    {
       "tool_slug": "gemini",
       "tool_name": "Gemini",
       "tool_category": "tekst",
@@ -362,48 +2234,6 @@
           "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
           "platform": "twitter",
           "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-07-28",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "kimi",
-      "tool_name": "Kimi",
-      "tool_category": "tekst",
-      "feature_title": "Kimi K3 Weights Release",
-      "summary_nl": "Kimi publiceert de modelgewichten en een technisch rapport van Kimi K3, een zeer krachtige 2,8T MoE-modelvariant met native multimodale mogelijkheden.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Kimi_Moonshot/status/2081760186235289764",
-          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual underst",
-          "platform": "twitter",
-          "source": "@Kimi_Moonshot"
-        },
-        {
-          "url": "https://news.ycombinator.com/item?id=49065752",
-          "title": "Kimi-K3 Releases on HuggingFace 7/27",
-          "platform": "hackernews",
-          "source": "HN (1325↑, 527 comments)"
-        }
-      ],
-      "detected_at": "2026-07-28",
-      "week": "2026-w31"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Opus 5 in Cursor",
-      "summary_nl": "Claude Opus 5 is nu beschikbaar als modeloptie in Cursor en biedt vergelijkbare prestaties als Fable 5 op CursorBench tegen ongeveer de helft van de prijs.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2080700479940759919",
-          "title": "Claude Opus 5 is now available in Cursor!\n\nIt matches Fable 5 on CursorBench (66.7 vs 66.5 at default effort) at half the price. Unlike Fabl",
-          "platform": "twitter",
-          "source": "@cursor_ai"
         }
       ],
       "detected_at": "2026-07-28",
@@ -851,42 +2681,6 @@
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Self-Hosted Sandboxes",
-      "summary_nl": "Claude Managed Agents ondersteunen nu sandbox-omgevingen die je zelf beheert. Dit geeft organisaties meer controle over waar code draait en hoe data wordt afgeschermd.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-24",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "MCP Tunnels",
-      "summary_nl": "Claude Managed Agents kunnen nu via MCP-tunnels verbinding maken met private Model Context Protocol-servers. Dat helpt om interne tools en systemen veilig aan agents te koppelen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2079993729532989500",
-          "title": "Introducing Cursor Router, our intelligent model router that selects the right model for the task at hand.\n\nRouter delivers frontier-quality",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-07-24",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
       "feature_title": "Cache Diagnostics",
       "summary_nl": "Claude heeft een beta-functie toegevoegd die uitlegt waarom een prompt-cache niet hitte. Dat kan developers helpen om API-verzoeken beter te debuggen en te optimaliseren.",
       "impact": "medium",
@@ -905,51 +2699,9 @@
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Dreaming Preview",
-      "summary_nl": "Claude voegde een research preview toe waarmee agents eerdere sessies analyseren om patronen te vinden en herinneringen te verbeteren. Dit moet agents slimmer maken in terugkerende taken.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
-          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        },
-        {
-          "url": "https://twitter.com/ArtificialAnlys/status/2077832874183860404",
-          "title": "Kimi K3 scores 57 on the Artificial Analysis Intelligence Index. Its intelligence is comparable to Opus 4.8 and GPT-5.5 but remains behind F",
-          "platform": "twitter",
-          "source": "@ArtificialAnlys"
-        }
-      ],
-      "detected_at": "2026-07-24",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
       "feature_title": "Outcomes Definition",
       "summary_nl": "Met deze nieuwe functie kunnen gebruikers aangeven wanneer een agent-resultaat als geslaagd telt. Dat maakt agentgedrag gerichter en beter te beoordelen.",
       "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
-          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-24",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Multiagent Orchestration",
-      "summary_nl": "Claude Managed Agents krijgt nu ondersteuning voor het opsplitsen van werk over meerdere gespecialiseerde agents. Een hoofdagent kan taken verdelen en laten uitvoeren door andere agents met eigen tools en prompts.",
-      "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
@@ -1169,24 +2921,6 @@
       "tool_slug": "qwen",
       "tool_name": "Qwen",
       "tool_category": "tekst",
-      "feature_title": "Qwen3.8 open-weights",
-      "summary_nl": "Alibaba kondigt Qwen3.8 aan, een nieuw groot taalmodel met 2,4 biljoen parameters dat binnenkort als open-weights model beschikbaar komt. Hiermee kunnen ontwikkelaars het model vrij downloaden en zelf hosten in plaats van alleen via een API te gebruiken.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2078759124914098291",
-          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one ",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-07-22",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
       "feature_title": "Bonsai 27B mobile",
       "summary_nl": "PrismML introduceert Bonsai 27B, een multimodaal 27B-parameter model dat als eerste in zijn klasse op een telefoon kan draaien. Dit maakt het mogelijk om krachtige AI-functionaliteit lokaal op mobiele apparaten te gebruiken zonder cloud-connectie.",
       "impact": "high",
@@ -1262,24 +2996,6 @@
           "title": "ICYMI, you can now build and ship full web apps with ChatGPT. \n\n@coreyching shows you how. https://t.co/H3ji9cHNq2",
           "platform": "twitter",
           "source": "@ChatGPTapp"
-        }
-      ],
-      "detected_at": "2026-07-22",
-      "week": "2026-w30"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Code on desktop now works with the iOS simulator.",
-      "summary_nl": "...tor opens in a panel right next to your conversation. Available today in public beta. https://t.co/su4IguzPVb",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2079674432038248611",
-          "title": "Claude Code on desktop now works with the iOS simulator.\n\nBuild and run your iOS app, and the simulator opens in a panel right next to your ",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
         }
       ],
       "detected_at": "2026-07-22",
@@ -2226,330 +3942,12 @@
       ],
       "detected_at": "2026-07-13",
       "week": "2026-w29"
-    },
-    {
-      "tool_slug": "llama",
-      "tool_name": "Llama",
-      "tool_category": "tekst",
-      "feature_title": "Muse Image and Muse Video",
-      "summary_nl": "Llama introduceert Muse Image en Muse Video, de eerste media generatie modellen ontwikkeld door Meta Superintelligence Labs.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/AIatMeta/status/2074577662840832382",
-          "title": "Introducing Muse Image and Muse Video, the first media generation models developed by Meta Superintelligence Labs.\n\nMuse Image is our most a",
-          "platform": "twitter",
-          "source": "@AIatMeta"
-        },
-        {
-          "url": "https://twitter.com/alexandr_wang/status/2074555909347369105",
-          "title": "1/ releasing muse image today — the first image generation model from MSL. it's agentic: pairs with muse spark to reason through your prompt",
-          "platform": "twitter",
-          "source": "@alexandr_wang"
-        }
-      ],
-      "detected_at": "2026-07-12",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Global Expansion of ChatGPT Preview",
-      "summary_nl": "Het ChatGPT-voorvertoningsprogramma wordt nu wereldwijd uitgerold, waardoor meer gebruikers toegang krijgen tot de dienst.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2074704958419792299",
-          "title": "GPT-5.6 Sol, along with Terra and Luna, will launch publicly this Thursday.\n\nWe’re expanding preview access globally now. https://t.co/Uk5Hc",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        }
-      ],
-      "detected_at": "2026-07-11",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Mobile Continuation",
-      "summary_nl": "Claude ondersteunt nu mobiele voortzetting, waardoor gebruikers hun werk kunnen voortzetten vanaf hun telefoon, ook als ze de laptop sluiten.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2074525815820169320",
-          "title": "Claude Cowork is coming to mobile and web.\n\nHand Claude a task at your desk and pick up the finished work from your phone. Close the laptop ",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-07-11",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "llama",
-      "tool_name": "Llama",
-      "tool_category": "tekst",
-      "feature_title": "Muse Spark 1.1 and Meta Model API",
-      "summary_nl": "Llama lanceert een publieke voorvertoning van de nieuwe Meta Model API, waarmee ontwikkelaars toegang krijgen tot de Muse Spark 1.1-modellen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/AIatMeta/status/2075221088821518394",
-          "title": "We’re excited to introduce Muse Spark 1.1, a significant upgrade from the first Muse Spark model we released earlier this year.\n\nAlong with ",
-          "platform": "twitter",
-          "source": "@AIatMeta"
-        }
-      ],
-      "detected_at": "2026-07-11",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "llama",
-      "tool_name": "Llama",
-      "tool_category": "tekst",
-      "feature_title": "Muse Spark 1.1 Release",
-      "summary_nl": "Llama lanceert een publieke preview van de nieuwe Meta Model API waar ontwikkelaars toegang kunnen krijgen tot Muse Spark 1.1.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/AIatMeta/status/2075221088821518394",
-          "title": "We’re excited to introduce Muse Spark 1.1, a significant upgrade from the first Muse Spark model we released earlier this year.\n\nAlong with ",
-          "platform": "twitter",
-          "source": "@AIatMeta"
-        }
-      ],
-      "detected_at": "2026-07-10",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "pi",
-      "tool_name": "Pi",
-      "tool_category": "tekst",
-      "feature_title": "Pi2Day Ecosystem Quest",
-      "summary_nl": "Pi lanceert de Pi2Day Ecosystem Quest om nieuwe feature releases te vieren en een speciale in-app badge te ontvangen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/PiCoreTeam/status/2072781398050844713",
-          "title": "Take on the Pi2Day Ecosystem Quest to celebrate new feature releases and receive a special in-app badge!\n\nThe Ecosystem Quest guides Pioneer",
-          "platform": "twitter",
-          "source": "@PiCoreTeam"
-        }
-      ],
-      "detected_at": "2026-07-10",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Grok 4.5 AI Model",
-      "summary_nl": "Grok heeft een nieuwe versie 4.5 van hun AI model gelanceerd, speciaal getraind voor codering en agenten. Het model is ontwikkeld in samenwerking met Cursor en biedt geavanceerde mogelijkheden.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/SpaceXAI/status/2074915721684086811",
-          "title": "Announcing Grok 4.5, our first model trained specifically for coding and agents. It was trained with Cursor and offers frontier intelligence",
-          "platform": "twitter",
-          "source": "@SpaceXAI"
-        },
-        {
-          "url": "https://twitter.com/WatcherGuru/status/2074916445541036277",
-          "title": "JUST IN: Elon Musk's SpaceXAI officially launches new 'Grok 4.5' AI model. https://t.co/ERgs2zMo4W",
-          "platform": "twitter",
-          "source": "@WatcherGuru"
-        }
-      ],
-      "detected_at": "2026-07-10",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Hackathon for Life Sciences",
-      "summary_nl": "Anthropic organiseert een wereldwijde virtuele hackathon met Gladstone Institute om onderzoek te doen en oplossingen te ontwikkelen voor uitdagingen in de levenswetenschappen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2072681853971001849",
-          "title": "Announcing Built with Claude: Life Sciences, a global virtual hackathon.\n\nJoin us and @GladstoneInst for a week of researching and building ",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-07-08",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "make",
-      "tool_name": "Make",
-      "tool_category": "automatisering",
-      "feature_title": "GeneBench-Pro Benchmark",
-      "summary_nl": "OpenAI introduceert GeneBench-Pro, een benchmark op onderzoeksniveau voor het beoordelen van hoe goed AI-agenten kunnen navigeren in rommelige biologische omgevingen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2072004836674167294",
-          "title": "We’re introducing GeneBench-Pro, a research-level benchmark for a harder kind of AI progress: how well agents can navigate messy biological ",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        }
-      ],
-      "detected_at": "2026-07-08",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Life Sciences Hackathon",
-      "summary_nl": "Anthropic organiseert een wereldwijde virtuele hackathon, 'Built with Claude: Life Sciences', in samenwerking met Gladstone Institutes, om onderzoek te doen en oplossingen te ontwikkelen voor uitdagingen in de levenswetenschappen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2072681853971001849",
-          "title": "Announcing Built with Claude: Life Sciences, a global virtual hackathon.\n\nJoin us and @GladstoneInst for a week of researching and building ",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-07-08",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Voice Agent Builder",
-      "summary_nl": "Grok introduceert Voice Agent Builder, een no-code platform om mensachtige spraakagenten te creëren met Grok Voice, beschikbaar tegen $0,05 per gesprek.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/xai/status/2072342803787702422",
-          "title": "Introducing Voice Agent Builder: a no-code platform to create human-like voice agents with Grok Voice.\n\nAvailable today at $0.05 / min.\n\nhtt",
-          "platform": "twitter",
-          "source": "@SpaceXAI"
-        }
-      ],
-      "detected_at": "2026-07-08",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "pi",
-      "tool_name": "Pi",
-      "tool_category": "tekst",
-      "feature_title": "SoloHost for Pi Nodes",
-      "summary_nl": "Pi Nodes kunnen nu worden gebruikt om lokale apps, AI-toepassingen en meer te draaien, naast het valideren van de blockchain.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/PiCoreTeam/status/2071731788230090793",
-          "title": "SoloHost expands the utility of Pi Nodes beyond just blockchain validation.\n\nReleased in Beta on Pi2Day 2026, SoloHost on Pi Desktop gives P",
-          "platform": "twitter",
-          "source": "@PiCoreTeam"
-        }
-      ],
-      "detected_at": "2026-07-07",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Sonnet 5 Release",
-      "summary_nl": "Claude Sonnet 5 is de meest agentische versie van de Sonnet-serie tot nu toe.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1ujwggp/introducing_claude_sonnet_5_our_most_agentic/",
-          "title": "Introducing Claude Sonnet 5, our most agentic Sonnet yet.",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-07-07",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude-code",
-      "tool_name": "Claude-Code",
-      "tool_category": "tekst",
-      "feature_title": "Linux Desktop Support",
-      "summary_nl": "Claude Code is nu beschikbaar op Linux (Ubuntu en Debian) in bèta, naast de browser- en terminalversies.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2071988881717871065",
-          "title": "Claude Desktop is now available on Linux (Ubuntu and Debian) in beta.\n\nAlongside the browser and terminal, you now get a first-class desktop",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-07-07",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Sonnet 5",
-      "summary_nl": "Claude Sonnet 5 is de meest agentische Sonnet-versie tot nu toe.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1ujwggp/introducing_claude_sonnet_5_our_most_agentic/",
-          "title": "Introducing Claude Sonnet 5, our most agentic Sonnet yet.",
-          "platform": "reddit",
-          "source": "r/ClaudeAI"
-        }
-      ],
-      "detected_at": "2026-07-07",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "pi",
-      "tool_name": "Pi",
-      "tool_category": "tekst",
-      "feature_title": "SoloHost on Pi Desktop",
-      "summary_nl": "Pi Network heeft SoloHost gelanceerd, een nieuwe functie op Pi Desktop waarmee Pioneers hun computers kunnen gebruiken om lokale apps, AI-toepassingen en andere diensten te draaien.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/PiCoreTeam/status/2071731788230090793",
-          "title": "SoloHost expands the utility of Pi Nodes beyond just blockchain validation.\n\nReleased in Beta on Pi2Day 2026, SoloHost on Pi Desktop gives P",
-          "platform": "twitter",
-          "source": "@PiCoreTeam"
-        }
-      ],
-      "detected_at": "2026-07-06",
-      "week": "2026-w28"
-    },
-    {
-      "tool_slug": "claude-code",
-      "tool_name": "Claude-Code",
-      "tool_category": "tekst",
-      "feature_title": "Linux Desktop App",
-      "summary_nl": "Claude Code is nu beschikbaar als desktop-app voor Linux (Ubuntu en Debian), naast de bestaande browser- en terminalversies.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2071988881717871065",
-          "title": "Claude Desktop is now available on Linux (Ubuntu and Debian) in beta.\n\nAlongside the browser and terminal, you now get a first-class desktop",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-07-06",
-      "week": "2026-w28"
     }
   ],
   "weeks_kept": [
+    "2026-w32",
     "2026-w31",
     "2026-w30",
-    "2026-w29",
-    "2026-w28"
+    "2026-w29"
   ]
 }
