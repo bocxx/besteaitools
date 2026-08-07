@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-07T07:25:25.110043",
+  "generated_at": "2026-08-07T19:26:23.123061",
   "window_days": 7,
   "week": "2026-w32",
-  "total_candidates_scanned": 1078,
-  "total_after_dedup": 1054,
-  "total_feature_updates": 226,
+  "total_candidates_scanned": 1081,
+  "total_after_dedup": 1057,
+  "total_feature_updates": 231,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "DeepSeek",
       "tool_category": "tekst",
       "feature_title": "DeepSeek-V4-Flash Official API",
-      "summary_nl": "DeepSeek heeft de officiële API van versie V4-Flash gelanceerd in publieke bèta. De agent-mogelijkheden zijn enorm verbeterd en de benchmark-scores zijn indrukwekkend.",
+      "summary_nl": "DeepSeek heeft de Agent-mogelijkheden van hun DeepSeek-V4-Flash API enorm verbeterd, waardoor de benchmark-scores aanzienlijk zijn gestegen.",
       "impact": "high",
       "sources": [
         {
@@ -20,12 +20,6 @@
           "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
           "platform": "twitter",
           "source": "@deepseek_ai"
-        },
-        {
-          "url": "https://news.ycombinator.com/item?id=49119559",
-          "title": "DeepSeek-V4-Flash Update",
-          "platform": "hackernews",
-          "source": "HN (737↑, 345 comments)"
         }
       ],
       "detected_at": "2026-08-07",
@@ -36,7 +30,7 @@
       "tool_name": "Qwen",
       "tool_category": "tekst",
       "feature_title": "Qwen3.8-Max and Qwen3.8-27B",
-      "summary_nl": "Qwen heeft een nieuwe, krachtigere modelversie Qwen3.8-Max gelanceerd, en ook Qwen3.8-27B wordt open-source beschikbaar gemaakt. Dit biedt gebruikers toegang tot de meest geavanceerde Qwen-modellen tot nu toe.",
+      "summary_nl": "Qwen heeft hun meest krachtige AI-model tot nu toe gelanceerd, Qwen3.8-Max, en zal ook de open weights van Qwen3.8-27B vrijgeven.",
       "impact": "high",
       "sources": [
         {
@@ -54,7 +48,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Fable 5 Biology Safeguards",
-      "summary_nl": "Claude heeft de biologische veiligheidsfuncties in Fable 5 verbeterd, waardoor het aantal foutpositieven met ongeveer 85% is verminderd. Hierdoor kan Fable een bredere reeks taken ondersteunen.",
+      "summary_nl": "Claude heeft de biologische veiligheidsmaatregelen van Fable 5 verbeterd, waardoor het aantal false positives met ongeveer 85% is verminderd.",
       "impact": "medium",
       "sources": [
         {
@@ -71,8 +65,80 @@
       "tool_slug": "chatgpt",
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
+      "feature_title": "Long-running Agent Workflows",
+      "summary_nl": "ChatGPT ondersteunt nu lange workflows met geheugen- en opslagbewustzijn.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Priyannkaaaa/status/2083851157324046649",
+          "title": "🚨 DeepSeek Code Is Coming\n\n> DeepSeek is building a dedicated AI coding agent powered by its new Harness framework\n> The project is designed",
+          "platform": "twitter",
+          "source": "@Priyannkaaaa"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "seedance",
+      "tool_name": "Seedance",
+      "tool_category": "video",
+      "feature_title": "Multimodal References and Production Pipelines",
+      "summary_nl": "Seedance heeft ondersteuning toegevoegd voor tot 50 multimodale referenties, waaronder 3D-witte modellen en green-screen footage, waardoor AI-generatie in echte productiestromen kan worden geïntegreerd.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/dreamina_ai/status/2083056471147958714",
+          "title": "🎬 Global Launch: Dreamina Seedance 2.5 is now live!\n\nOur most cinematic video model yet has arrived, and Dreamina AI is your official platfo",
+          "platform": "twitter",
+          "source": "@dreamina_ai"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "durable",
+      "tool_name": "Durable",
+      "tool_category": "website",
+      "feature_title": "Open-source CRM with Agentic Research",
+      "summary_nl": "Durable heeft besloten om het CRM-systeem dat ze voor zichzelf hebben gebouwd open te stellen. Het is ontworpen met agentschappen als centraal uitgangspunt.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/lewiscarhart/status/2083610805069611230",
+          "title": "We've decided to open-source the CRM we built for ourselves at Comp AI.\n\nIt's agentic-first, which we mean literally: durable research agent",
+          "platform": "twitter",
+          "source": "@lewiscarhart"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "openrouter",
+      "tool_name": "OpenRouter",
+      "tool_category": "infra",
+      "feature_title": "The Looking Glass Spatiotemporal AI Engine",
+      "summary_nl": "OpenRouter heeft een nieuwe spatiotemporele AI-engine genaamd 'The Looking Glass' geïntroduceerd, waarmee gebruikers door de geschiedenis van beelden en video's kunnen navigeren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/elder_plinius/status/2083294017492816192",
+          "title": "🎉 INTRODUCING: https://t.co/LrmIeRF4RG! 🪞\n\nwelcome to The Looking Glass: a spatiotemporal ai image + video engine! \n\ntraverse the history of",
+          "platform": "twitter",
+          "source": "@elder_plinius"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
       "feature_title": "Hark Handoff",
-      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is gevalideerd als het beste model ooit gebouwd voor internetgebruik, met betere prestaties dan ChatGPT zelf.",
+      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is geverifieerd als het beste internet-gebruik model ooit gebouwd, en dat ChatGPT overtreft.",
       "impact": "high",
       "sources": [
         {
@@ -80,6 +146,42 @@
           "title": "Today we're introducing Hark Handoff\n\nHandoff has been independently verified as the best internet-use model ever built, outperforming ChatG",
           "platform": "twitter",
           "source": "@adcock_brett"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "LFM2.5-2.6B On-device Agentic Model",
+      "summary_nl": "Gemini heeft een agentic model genaamd LFM2.5-2.6B gelanceerd, dat volledig on-device kan draaien. Het kan plannen maken, tools aanroepen en meertraps taken uitvoeren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/liquidai/status/2084640701669613906",
+          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
+          "platform": "twitter",
+          "source": "@liquidai"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Maple-Preview 20B-A1B Ternary-weight Reasoning…",
+      "summary_nl": "Gemini heeft Maple-Preview gelanceerd, een open-source 20B-A1B ternary-weight reasoning LLM dat toonaangevend is in zijn gewichtsklasse en IMO-niveau problemen kan oplossen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepgrove_ai/status/2084727154928189783",
+          "title": "We introduce Maple-Preview, an open-source 20B-A1B ternary-weight reasoning LLM, SOTA in its weight class.\n\nIt solves IMO-level problems and",
+          "platform": "twitter",
+          "source": "@deepgrove_ai"
         }
       ],
       "detected_at": "2026-08-07",
@@ -206,24 +308,6 @@
           "title": "Good news for anyone with too many tabs: ChatGPT is getting better around the web.    \n\n🧩 Chrome extension: In Side Chat, ask about a YouTub",
           "platform": "twitter",
           "source": "@ChatGPT"
-        }
-      ],
-      "detected_at": "2026-08-06",
-      "week": "2026-w32"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Long-Running Agent Workflows",
-      "summary_nl": "ChatGPT voegt ondersteuning toe voor langlopende agent-workflows met geheugen- en opslagbewustzijn.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Priyannkaaaa/status/2083851157324046649",
-          "title": "🚨 DeepSeek Code Is Coming\n\n> DeepSeek is building a dedicated AI coding agent powered by its new Harness framework\n> The project is designed",
-          "platform": "twitter",
-          "source": "@Priyannkaaaa"
         }
       ],
       "detected_at": "2026-08-06",
