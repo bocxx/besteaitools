@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-06T19:37:17.120011",
+  "generated_at": "2026-08-07T07:25:25.110043",
   "window_days": 7,
   "week": "2026-w32",
-  "total_candidates_scanned": 1142,
-  "total_after_dedup": 1117,
-  "total_feature_updates": 221,
+  "total_candidates_scanned": 1078,
+  "total_after_dedup": 1054,
+  "total_feature_updates": 226,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "DeepSeek",
       "tool_category": "tekst",
       "feature_title": "DeepSeek-V4-Flash Official API",
-      "summary_nl": "DeepSeek heeft zijn Agent-mogelijkheden enorm verbeterd en de benchmark-scores zijn aanzienlijk gestegen.",
+      "summary_nl": "DeepSeek heeft de officiële API van versie V4-Flash gelanceerd in publieke bèta. De agent-mogelijkheden zijn enorm verbeterd en de benchmark-scores zijn indrukwekkend.",
       "impact": "high",
       "sources": [
         {
@@ -20,9 +20,105 @@
           "title": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far",
           "platform": "twitter",
           "source": "@deepseek_ai"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49119559",
+          "title": "DeepSeek-V4-Flash Update",
+          "platform": "hackernews",
+          "source": "HN (737↑, 345 comments)"
         }
       ],
-      "detected_at": "2026-08-06",
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8-Max and Qwen3.8-27B",
+      "summary_nl": "Qwen heeft een nieuwe, krachtigere modelversie Qwen3.8-Max gelanceerd, en ook Qwen3.8-27B wordt open-source beschikbaar gemaakt. Dit biedt gebruikers toegang tot de meest geavanceerde Qwen-modellen tot nu toe.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2084100707423289643",
+          "title": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also g",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Fable 5 Biology Safeguards",
+      "summary_nl": "Claude heeft de biologische veiligheidsfuncties in Fable 5 verbeterd, waardoor het aantal foutpositieven met ongeveer 85% is verminderd. Hierdoor kan Fable een bredere reeks taken ondersteunen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2085563808773189680",
+          "title": "We’re updating Claude Fable 5’s biology safeguards to reduce false positives. In our testing, this update reduced biology-related fallbacks ",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Hark Handoff",
+      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is gevalideerd als het beste model ooit gebouwd voor internetgebruik, met betere prestaties dan ChatGPT zelf.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/adcock_brett/status/2085018697312383349",
+          "title": "Today we're introducing Hark Handoff\n\nHandoff has been independently verified as the best internet-use model ever built, outperforming ChatG",
+          "platform": "twitter",
+          "source": "@adcock_brett"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "LFM2.5-2.6B On-Device Model",
+      "summary_nl": "Gemini lanceert LFM2.5-2.6B, een agentisch model dat volledig op het apparaat zelf draait. Het kan plannen maken, tools aanroepen en meersterentaken uitvoeren.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/liquidai/status/2084640701669613906",
+          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
+          "platform": "twitter",
+          "source": "@liquidai"
+        }
+      ],
+      "detected_at": "2026-08-07",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Maple-Preview 20B-A1B Reasoning LLM",
+      "summary_nl": "Gemini introduceert Maple-Preview, een open-source 20B-A1B ternaire-gewicht redenerings-LLM die toonaangevend is in zijn gewichtsklasse en IMO-niveau problemen kan oplossen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepgrove_ai/status/2084727154928189783",
+          "title": "We introduce Maple-Preview, an open-source 20B-A1B ternary-weight reasoning LLM, SOTA in its weight class.\n\nIt solves IMO-level problems and",
+          "platform": "twitter",
+          "source": "@deepgrove_ai"
+        }
+      ],
+      "detected_at": "2026-08-07",
       "week": "2026-w32"
     },
     {
