@@ -1,12 +1,108 @@
 {
-  "generated_at": "2026-08-07T19:26:23.123061",
+  "generated_at": "2026-08-08T07:25:49.345416",
   "window_days": 7,
   "week": "2026-w32",
-  "total_candidates_scanned": 1081,
-  "total_after_dedup": 1057,
-  "total_feature_updates": 231,
+  "total_candidates_scanned": 951,
+  "total_after_dedup": 930,
+  "total_feature_updates": 234,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Fable 5's biology safeguards",
+      "summary_nl": "Claude heeft updates aangebracht aan Fable 5 om de biologische veiligheidsmaatregelen te verbeteren en het aantal fout-positieven te verminderen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2085563808773189680",
+          "title": "We’re updating Claude Fable 5’s biology safeguards to reduce false positives. In our testing, this update reduced biology-related fallbacks ",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Managed Agents budget",
+      "summary_nl": "Claude heeft updates aangebracht aan Managed Agents waarmee je nu een budget kunt instellen om de uitgaven voorspelbaar te houden.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2085853169930957158",
+          "title": "We shipped four updates to Claude Managed Agents this week.\n\nFirst, you can now set a budget for sessions to keep spend predictable. Session",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Hark Handoff",
+      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is geverifieerd als het beste model ooit gebouwd voor internetgebruik, beter dan ChatGPT zelf.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/adcock_brett/status/2085018697312383349",
+          "title": "Today we're introducing Hark Handoff\n\nHandoff has been independently verified as the best internet-use model ever built, outperforming ChatG",
+          "platform": "twitter",
+          "source": "@adcock_brett"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Agent Plugins",
+      "summary_nl": "Cursor ondersteunt nu Agent Plugins, een open standaard voor het bundelen van vaardigheden en MCP-servers voor gebruik in verschillende agents.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2085464617694777762",
+          "title": "Cursor now supports Agent Plugins, an open standard for bundling skills and MCP servers for use across agents.\n\nhttps://t.co/avJch1Kblq",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        },
+        {
+          "url": "https://twitter.com/OpenAIDevs/status/2085398373511918022",
+          "title": "Build a plugin once and use it across compatible agent clients.\n\nIntroducing Agent Plugins, an open standard developed with @awsdevelopers, ",
+          "platform": "twitter",
+          "source": "@OpenAIDevs"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "LFM2.5-2.6B on-device model",
+      "summary_nl": "Gemini lanceert LFM2.5-2.6B, een agentisch model dat volledig op het apparaat draait. Het plant, roept tools aan en werkt door meerstaps taken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/liquidai/status/2084640701669613906",
+          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
+          "platform": "twitter",
+          "source": "@liquidai"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
     {
       "tool_slug": "deepseek",
       "tool_name": "DeepSeek",
@@ -134,24 +230,6 @@
       "week": "2026-w32"
     },
     {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Hark Handoff",
-      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is geverifieerd als het beste internet-gebruik model ooit gebouwd, en dat ChatGPT overtreft.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/adcock_brett/status/2085018697312383349",
-          "title": "Today we're introducing Hark Handoff\n\nHandoff has been independently verified as the best internet-use model ever built, outperforming ChatG",
-          "platform": "twitter",
-          "source": "@adcock_brett"
-        }
-      ],
-      "detected_at": "2026-08-07",
-      "week": "2026-w32"
-    },
-    {
       "tool_slug": "gemini",
       "tool_name": "Gemini",
       "tool_category": "tekst",
@@ -182,24 +260,6 @@
           "title": "We introduce Maple-Preview, an open-source 20B-A1B ternary-weight reasoning LLM, SOTA in its weight class.\n\nIt solves IMO-level problems and",
           "platform": "twitter",
           "source": "@deepgrove_ai"
-        }
-      ],
-      "detected_at": "2026-08-07",
-      "week": "2026-w32"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "LFM2.5-2.6B On-Device Model",
-      "summary_nl": "Gemini lanceert LFM2.5-2.6B, een agentisch model dat volledig op het apparaat zelf draait. Het kan plannen maken, tools aanroepen en meersterentaken uitvoeren.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/liquidai/status/2084640701669613906",
-          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
-          "platform": "twitter",
-          "source": "@liquidai"
         }
       ],
       "detected_at": "2026-08-07",
