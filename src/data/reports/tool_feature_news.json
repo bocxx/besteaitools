@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-08T07:25:49.345416",
+  "generated_at": "2026-08-08T19:26:01.323132",
   "window_days": 7,
   "week": "2026-w32",
-  "total_candidates_scanned": 951,
-  "total_after_dedup": 930,
-  "total_feature_updates": 234,
+  "total_candidates_scanned": 954,
+  "total_after_dedup": 933,
+  "total_feature_updates": 235,
   "llm_curated": true,
   "features": [
     {
@@ -12,8 +12,8 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Fable 5's biology safeguards",
-      "summary_nl": "Claude heeft updates aangebracht aan Fable 5 om de biologische veiligheidsmaatregelen te verbeteren en het aantal fout-positieven te verminderen.",
-      "impact": "medium",
+      "summary_nl": "Claude heeft de biologische veiligheidsmaatregelen van Fable 5 verbeterd, waardoor het aantal foutpositieven met ongeveer 85% is verminderd.",
+      "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/claudeai/status/2085563808773189680",
@@ -30,7 +30,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Managed Agents budget",
-      "summary_nl": "Claude heeft updates aangebracht aan Managed Agents waarmee je nu een budget kunt instellen om de uitgaven voorspelbaar te houden.",
+      "summary_nl": "Claude Managed Agents ondersteunt nu het instellen van een budget voor sessies om de uitgaven voorspelbaar te houden.",
       "impact": "medium",
       "sources": [
         {
@@ -47,8 +47,26 @@
       "tool_slug": "chatgpt",
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
+      "feature_title": "Long-running agent workflows",
+      "summary_nl": "ChatGPT ondersteunt nu lange workflows met geheugen en repository-bewustzijn.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Priyannkaaaa/status/2083851157324046649",
+          "title": "🚨 DeepSeek Code Is Coming\n\n> DeepSeek is building a dedicated AI coding agent powered by its new Harness framework\n> The project is designed",
+          "platform": "twitter",
+          "source": "@Priyannkaaaa"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
       "feature_title": "Hark Handoff",
-      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is geverifieerd als het beste model ooit gebouwd voor internetgebruik, beter dan ChatGPT zelf.",
+      "summary_nl": "ChatGPT introduceert Hark Handoff, een model dat onafhankelijk is geverifieerd als het beste internet-gebruik model ooit gebouwd.",
       "impact": "high",
       "sources": [
         {
@@ -56,6 +74,42 @@
           "title": "Today we're introducing Hark Handoff\n\nHandoff has been independently verified as the best internet-use model ever built, outperforming ChatG",
           "platform": "twitter",
           "source": "@adcock_brett"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "LFM2.5-2.6B on-device model",
+      "summary_nl": "Gemini heeft een agentic model genaamd LFM2.5-2.6B uitgebracht dat volledig on-device draait en in staat is tot planning, tool-gebruik en het uitvoeren van meerstaps-taken.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/liquidai/status/2084640701669613906",
+          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
+          "platform": "twitter",
+          "source": "@liquidai"
+        }
+      ],
+      "detected_at": "2026-08-08",
+      "week": "2026-w32"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Maple-Preview 20B-A1B LLM",
+      "summary_nl": "Gemini heeft Maple-Preview uitgebracht, een open-source 20B-A1B ternary-weight reasoning LLM die toonaangevend is in zijn gewichtsklasse en in staat is om IMO-niveau problemen op te lossen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepgrove_ai/status/2084727154928189783",
+          "title": "We introduce Maple-Preview, an open-source 20B-A1B ternary-weight reasoning LLM, SOTA in its weight class.\n\nIt solves IMO-level problems and",
+          "platform": "twitter",
+          "source": "@deepgrove_ai"
         }
       ],
       "detected_at": "2026-08-08",
@@ -80,24 +134,6 @@
           "title": "Build a plugin once and use it across compatible agent clients.\n\nIntroducing Agent Plugins, an open standard developed with @awsdevelopers, ",
           "platform": "twitter",
           "source": "@OpenAIDevs"
-        }
-      ],
-      "detected_at": "2026-08-08",
-      "week": "2026-w32"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "LFM2.5-2.6B on-device model",
-      "summary_nl": "Gemini lanceert LFM2.5-2.6B, een agentisch model dat volledig op het apparaat draait. Het plant, roept tools aan en werkt door meerstaps taken.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/liquidai/status/2084640701669613906",
-          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
-          "platform": "twitter",
-          "source": "@liquidai"
         }
       ],
       "detected_at": "2026-08-08",
@@ -152,24 +188,6 @@
           "title": "We’re updating Claude Fable 5’s biology safeguards to reduce false positives. In our testing, this update reduced biology-related fallbacks ",
           "platform": "twitter",
           "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-08-07",
-      "week": "2026-w32"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Long-running Agent Workflows",
-      "summary_nl": "ChatGPT ondersteunt nu lange workflows met geheugen- en opslagbewustzijn.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Priyannkaaaa/status/2083851157324046649",
-          "title": "🚨 DeepSeek Code Is Coming\n\n> DeepSeek is building a dedicated AI coding agent powered by its new Harness framework\n> The project is designed",
-          "platform": "twitter",
-          "source": "@Priyannkaaaa"
         }
       ],
       "detected_at": "2026-08-07",
