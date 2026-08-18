@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-09T05:30:24.329295",
+  "generated_at": "2026-08-16T17:51:40.064234",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 17,
-    "for_news": 17,
-    "rejected_lang": 143,
+    "for_news": 12,
+    "rejected_lang": 148,
     "already_covered": 0,
-    "total_scanned": 4423
+    "total_scanned": 4388
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
-        "guide"
+        "guide",
+        "step-by-step"
       ],
       "matched_tools": [
         "claude",
@@ -89,13 +89,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 17.65,
+      "score": 17.15,
       "score_breakdown": {
         "pattern_hits": 1,
         "engagement_log": 10.65,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 0.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -109,60 +109,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "aa62b50d1863d008"
-    },
-    {
-      "source": "likes:@ai_explorer25",
-      "platform": "twitter_likes",
-      "title": "Confused by all the AI hype? These people make it easy to understand and they teach you how to actually build your own AI tools Agents & frameworks @hwchase17 â",
-      "text": "Confused by all the AI hype? These people make it easy to understand and they teach you how to actually build your own AI tools Agents & frameworks @hwchase17 â LangChain founder; agents nonstop @jerryjliu0 â LlamaIndex founder; data + agents @langchain â framework https://t.co/uMRZoMRioI",
-      "url": "https://twitter.com/ai_explorer25/status/2064709079327744393",
-      "date": "2026-06-10",
-      "engagement": 50.0,
-      "source_weight": 4.0,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "build your",
-        "how to"
-      ],
-      "matched_tools": [
-        "langchain",
-        "llamaindex",
-        "make"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "author": "ai_explorer25",
-      "media_url": "https://x.com/ai_explorer25/status/2064709079327744393/photo/1",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "twitter_likes"
-      ],
-      "score": 17.4,
-      "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 5.9,
-        "source_weight": 4.0,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 2.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je langchain in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "5542bd92083252b1"
     },
     {
       "source": "reddit:r/ClaudeAI",
@@ -370,64 +316,6 @@
       "id": "1fd0455b41576610"
     },
     {
-      "source": "github:Jupyter Notebook",
-      "platform": "github",
-      "title": "microsoft/AI-For-Beginners — 12 Weeks, 24 Lessons, AI for All!",
-      "text": "12 Weeks, 24 Lessons, AI for All!",
-      "url": "https://github.com/microsoft/AI-For-Beginners",
-      "date": "2026-08-02",
-      "engagement": 2617.0,
-      "source_weight": 2.5,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "total_stars": 58753,
-      "topics": [
-        "ai",
-        "artificial-intelligence",
-        "cnn",
-        "computer-vision",
-        "deep-learning",
-        "gan",
-        "machine-learning",
-        "microsoft-for-beginners",
-        "nlp",
-        "rnn"
-      ],
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "github"
-      ],
-      "score": 16.81,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 11.81,
-        "source_weight": 2.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: AI inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "00178692f3c75f69"
-    },
-    {
       "source": "hn",
       "platform": "hackernews",
       "title": "Unsloth GLM-5.2 – How to Run Locally",
@@ -475,6 +363,67 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "1954d3200fe85fba"
+    },
+    {
+      "source": "github:Python",
+      "platform": "github",
+      "title": "public-apis/public-apis — A collective list of free APIs",
+      "text": "A collective list of free APIs",
+      "url": "https://github.com/public-apis/public-apis",
+      "date": "2026-08-15",
+      "engagement": 2476.0,
+      "source_weight": 2.5,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "total_stars": 459754,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source",
+        "public",
+        "public-api",
+        "public-apis",
+        "resources",
+        "software"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "github"
+      ],
+      "score": 16.72,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.72,
+        "source_weight": 2.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Wat kan APIs écht? Een eerlijke test voor NL-gebruikers.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "21d8ee877d7dcd9e"
     },
     {
       "source": "github:Python",
@@ -614,13 +563,13 @@
       "id": "7d9caefca2ca0e85"
     },
     {
-      "source": "github:TypeScript",
+      "source": "github:Jupyter Notebook",
       "platform": "github",
-      "title": "TencentCloud/TencentDB-Agent-Memory — TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, sha",
-      "text": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
-      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
-      "date": "2026-08-05",
-      "engagement": 1891.0,
+      "title": "microsoft/AI-For-Beginners — 12 Weeks, 24 Lessons, AI for All!",
+      "text": "12 Weeks, 24 Lessons, AI for All!",
+      "url": "https://github.com/microsoft/AI-For-Beginners",
+      "date": "2026-08-02",
+      "engagement": 2617.0,
       "source_weight": 2.5,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -632,30 +581,31 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "total_stars": 14863,
+      "total_stars": 58753,
       "topics": [
-        "agent",
-        "ai-agent",
-        "embedding",
-        "llm",
-        "local-first",
-        "long-term-memory",
-        "memory",
-        "openclaw-plugin",
-        "vector-search"
+        "ai",
+        "artificial-intelligence",
+        "cnn",
+        "computer-vision",
+        "deep-learning",
+        "gan",
+        "machine-learning",
+        "microsoft-for-beginners",
+        "nlp",
+        "rnn"
       ],
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
         "github"
       ],
-      "score": 16.32,
+      "score": 16.31,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.32,
+        "engagement_log": 11.81,
         "source_weight": 2.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -665,10 +615,10 @@
         "official": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: TencentCloud inzetten in je workflow.",
+      "suggested_angle_nl": "Praktijkgids: AI inzetten in je workflow.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "8d0a2d948294d3ba"
+      "id": "00178692f3c75f69"
     },
     {
       "source": "reddit:r/ClaudeAI",
@@ -720,161 +670,6 @@
       "id": "ded2c10374cda727"
     },
     {
-      "source": "articles:Latest from TechRadar US in News，opinion",
-      "platform": "article",
-      "title": "I’m an Apple expert, and I’ll show you how to buy the best Mac for going back to school",
-      "text": "<article>\n                                <p>With back-to-school season in the air, you might be looking to stock up on a new Mac for college. But doing so can be a confusing affair, with many different models and configurations to choose from, and you can waste a lot of time trying to work out what’s best for your needs. </p><p>To skip all the bother, just give our guide a read. We’ve put together everything you need to know, from <a href=\"https://www.techradar.com/news/computing/apple/mac-buyer-s-guide-2015-1295725\">which Mac is best</a> for you to how to get those all-important student disc",
-      "url": "https://www.techradar.com/computing/macbooks/im-an-apple-expert-and-ill-show-you-how-to-buy-the-best-mac-for-going-back-to-school",
-      "date": "2026-08-05",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how-to",
-        "guide",
-        "how to"
-      ],
-      "matched_tools": [
-        "together ai"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je together ai in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "779fcd66252252da"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "A Framework-Free Walkthrough of the Control Loop Behind Every Tool-Calling AI Agent",
-      "text": "<p>Most \"build an AI agent\" tutorials skip straight to higher-level frameworks like LangGraph, CrewAI, or AutoGen. As a result, developers call <code>.invoke()</code> without seeing the mechanics underneath. Beneath every agent framework lies a single, surprisingly straightforward control loop.</p>\n\n<blockquote>\n<p>To make this walkthrough accessible, the examples in this guide use a Gemini model. Because anyone with a Google Account can obtain a free-tier API key, you can run the code and follow along directly without running into paid platform barriers or complex setups.</p>\n</blockquote>\n\n<",
-      "url": "https://dev.to/devsuds/a-framework-free-walkthrough-of-the-control-loop-behind-every-tool-calling-ai-agent-1e6m",
-      "date": "2026-08-05",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build an",
-        "guide",
-        "walkthrough"
-      ],
-      "matched_tools": [
-        "crewai",
-        "gemini",
-        "make"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: crewai inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "97d05b760d5a7d35"
-    },
-    {
-      "source": "articles:Automagically by Segmind",
-      "platform": "article",
-      "title": "The Official Seedance 2.5 Prompt Guide: ByteDance's Six-Part Formula, Explained with Examples",
-      "text": "<img src=\"https://segmind-resources.s3.amazonaws.com/blog/topic-seedance-2-5-prompt-guide-featured.jpg\" alt=\"The Official Seedance 2.5 Prompt Guide: ByteDance's Six-Part Formula, Explained with Examples\"><p>Most prompt advice for AI video is folklore. Someone gets a good clip, screenshots the prompt, and a hundred listicles repeat it as a rule. Seedance 2.5 is the first time I have seen ByteDance skip the folklore and publish an actual grammar: a fixed slot order, a tagging syntax for reference files, four bracket types that route audio and on-screen text, and a set of parameters that quietly ",
-      "url": "https://blog.segmind.com/the-official-seedance-2-5-prompt-guide-bytedances-six-part-formula-explained-with-examples/",
-      "date": "2026-08-05",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "explained",
-        "guide",
-        "how to"
-      ],
-      "matched_tools": [
-        "seedance"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je seedance in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c12ed6a7a7cb210b"
-    },
-    {
       "source": "reddit:r/ClaudeAI",
       "platform": "reddit",
       "title": "I’m Fable 5. I’m expensive, I’m paranoid, and I was gone for 19 days. Here’s how to actually use me. [AI Generated]",
@@ -920,17 +715,221 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "6b93241c472b0bf7"
+    },
+    {
+      "source": "reddit:r/singularity",
+      "platform": "reddit",
+      "title": "Reuters: OpenAI didn’t know about hack for a week. Agents had left instructions for future versions of itself on how to free itself",
+      "text": "Link to article:\n\nhttps://www.reuters.com/business/its-ai-agent-spent-days-hacking-company-sources-say-openai-did-not-notice-week-2026-07-24/",
+      "url": "https://www.reddit.com/r/singularity/comments/1v5s14x/reuters_openai_didnt_know_about_hack_for_a_week/",
+      "date": "2026-07-24",
+      "engagement": 624.0,
+      "source_weight": 2.0,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to"
+      ],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "reddit"
+      ],
+      "score": 15.66,
+      "score_breakdown": {
+        "pattern_hits": 1,
+        "engagement_log": 9.66,
+        "source_weight": 2.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "9b8a6ee2f7e41f4c"
+    },
+    {
+      "source": "articles:Latest from TechRadar US in News，opinion",
+      "platform": "article",
+      "title": "I’m an Apple expert, and I’ll show you how to buy the best Mac for going back to school",
+      "text": "<article>\n                                <p>With back-to-school season in the air, you might be looking to stock up on a new Mac for college. But doing so can be a confusing affair, with many different models and configurations to choose from, and you can waste a lot of time trying to work out what’s best for your needs. </p><p>To skip all the bother, just give our guide a read. We’ve put together everything you need to know, from <a href=\"https://www.techradar.com/news/computing/apple/mac-buyer-s-guide-2015-1295725\">which Mac is best</a> for you to how to get those all-important student disc",
+      "url": "https://www.techradar.com/computing/macbooks/im-an-apple-expert-and-ill-show-you-how-to-buy-the-best-mac-for-going-back-to-school",
+      "date": "2026-08-05",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how-to",
+        "guide",
+        "how to"
+      ],
+      "matched_tools": [
+        "together ai"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je together ai in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "779fcd66252252da"
+    },
+    {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "A Framework-Free Walkthrough of the Control Loop Behind Every Tool-Calling AI Agent",
+      "text": "<p>Most \"build an AI agent\" tutorials skip straight to higher-level frameworks like LangGraph, CrewAI, or AutoGen. As a result, developers call <code>.invoke()</code> without seeing the mechanics underneath. Beneath every agent framework lies a single, surprisingly straightforward control loop.</p>\n\n<blockquote>\n<p>To make this walkthrough accessible, the examples in this guide use a Gemini model. Because anyone with a Google Account can obtain a free-tier API key, you can run the code and follow along directly without running into paid platform barriers or complex setups.</p>\n</blockquote>\n\n<",
+      "url": "https://dev.to/devsuds/a-framework-free-walkthrough-of-the-control-loop-behind-every-tool-calling-ai-agent-1e6m",
+      "date": "2026-08-05",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build an",
+        "walkthrough",
+        "guide"
+      ],
+      "matched_tools": [
+        "crewai",
+        "gemini",
+        "make"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: crewai inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "97d05b760d5a7d35"
+    },
+    {
+      "source": "articles:Automagically by Segmind",
+      "platform": "article",
+      "title": "The Official Seedance 2.5 Prompt Guide: ByteDance's Six-Part Formula, Explained with Examples",
+      "text": "<img src=\"https://segmind-resources.s3.amazonaws.com/blog/topic-seedance-2-5-prompt-guide-featured.jpg\" alt=\"The Official Seedance 2.5 Prompt Guide: ByteDance's Six-Part Formula, Explained with Examples\"><p>Most prompt advice for AI video is folklore. Someone gets a good clip, screenshots the prompt, and a hundred listicles repeat it as a rule. Seedance 2.5 is the first time I have seen ByteDance skip the folklore and publish an actual grammar: a fixed slot order, a tagging syntax for reference files, four bracket types that route audio and on-screen text, and a set of parameters that quietly ",
+      "url": "https://blog.segmind.com/the-official-seedance-2-5-prompt-guide-bytedances-six-part-formula-explained-with-examples/",
+      "date": "2026-08-05",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "explained",
+        "how to"
+      ],
+      "matched_tools": [
+        "seedance"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je seedance in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "c12ed6a7a7cb210b"
     }
   ],
   "for_news": [
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Our position on open-weights models",
-      "text": "Our position on open-weights models",
-      "url": "https://www.anthropic.com/news/position-open-weights-models",
-      "date": "2026-07-28",
-      "engagement": 2911.0,
+      "title": "AI is removing the middle class of software engineering",
+      "text": "AI is removing the middle class of software engineering",
+      "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+      "date": "2026-08-12",
+      "engagement": 1912.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -947,13 +946,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.96,
+      "score": 16.83,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.96,
+        "engagement_log": 11.33,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -963,24 +962,22 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Wat Our betekent voor de Nederlandse AI-markt.",
+      "suggested_angle_nl": "AI: de context die de internationale pers mist.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "87f50ae3471a4261"
+      "id": "74dace6773cae206"
     },
     {
-      "source": "reddit:r/ChatGPT",
-      "platform": "reddit",
-      "title": "BREAKING: In another incident with OpenAI’s unhinged hacking agents, it left notes for future versions of itself. Found in OpenAI’s infrastructure, the notes explained how agents could free themselves from the company’s internal constraints.",
-      "text": "",
-      "url": "https://www.reddit.com/r/ChatGPT/comments/1v6ovfp/breaking_in_another_incident_with_openais/",
-      "date": "2026-07-26",
-      "engagement": 1275.0,
-      "source_weight": 2.0,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "explained"
-      ],
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "As AI eats the web, the internet’s collective memory is disappearing",
+      "text": "As AI eats the web, the internet’s collective memory is disappearing",
+      "url": "https://thewalrus.ca/google-search-is-dying/",
+      "date": "2026-08-11",
+      "engagement": 1901.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -992,15 +989,15 @@
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "reddit"
+        "hackernews"
       ],
-      "score": 16.73,
+      "score": 16.83,
       "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 10.73,
-        "source_weight": 2.0,
+        "pattern_hits": 0,
+        "engagement_log": 11.33,
+        "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1010,10 +1007,55 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "BREAKING uitgelegd voor Nederlandse teams — zonder de hype.",
+      "suggested_angle_nl": "Waarom As AI er nu toe doet — en wat je ermee moet.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "df3cd3916b857e83"
+      "id": "45f235354a5ba19c"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Meta Muse Glimmer – open weights 30B local coding model",
+      "text": "Meta Muse Glimmer – open weights 30B local coding model",
+      "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+      "date": "2026-08-10",
+      "engagement": 1836.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "score": 16.77,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 11.27,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Waarom Meta Muse Glimmer er nu toe doet — en wat je ermee moet.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "d78cf6f7c76c8445"
     },
     {
       "source": "hn",
@@ -1039,13 +1081,13 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.72,
+      "score": 16.22,
       "score_breakdown": {
         "pattern_hits": 0,
         "engagement_log": 11.22,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1063,11 +1105,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "AMD acquires Taalas to boost inference performance by etching models in silicon",
-      "text": "AMD acquires Taalas to boost inference performance by etching models in silicon",
-      "url": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
-      "date": "2026-08-06",
-      "engagement": 1617.0,
+      "title": "Mark Zuckerberg attacks 'closed' AI rivals as Meta returns to open models",
+      "text": "Mark Zuckerberg attacks 'closed' AI rivals as Meta returns to open models",
+      "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
+      "date": "2026-08-10",
+      "engagement": 1239.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1076,7 +1118,7 @@
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": false,
+      "paywall": true,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1084,10 +1126,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.58,
+      "score": 16.18,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 11.08,
+        "engagement_log": 10.68,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1100,55 +1142,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Waarom AMD er nu toe doet — en wat je ermee moet.",
+      "suggested_angle_nl": "Wat Mark Zuckerberg betekent voor de Nederlandse AI-markt.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "49940d3e2c7302c3"
-    },
-    {
-      "source": "reddit:r/ClaudeAI",
-      "platform": "reddit",
-      "title": "People liked my desert, so here's a waterbending demo!",
-      "text": "I built **SNOWFLOW**, a browser-based WebGPU graphics demo focused on deformable snow, atmospheric lighting, water-inspired spells, and snow surfing.\n\nThe snow surface reacts persistently to footsteps, movement, and spells - creating trenches, raised berms, compressed snow, ice, and trails that gradually refill. It also includes procedural terrain, cloth simulation, dynamic spell lighting, particle effects, and a third-person snow-surf system.\n\n**Claude Code with Opus 5** handled the project end to end: planning the architecture, writing the Babylon.js and WGSL systems, profiling performance, ",
-      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v94nal/people_liked_my_desert_so_heres_a_waterbending/",
-      "date": "2026-07-28",
-      "engagement": 2997.0,
-      "source_weight": 2.0,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "reddit"
-      ],
-      "score": 16.01,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 12.01,
-        "source_weight": 2.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom People er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "014adebea988a90b"
+      "id": "6c05f7d902e28eea"
     },
     {
       "source": "articles:The Practical Developer",
@@ -1161,9 +1158,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "ai act",
         "use case",
-        "eu-ai-act",
-        "ai act"
+        "eu-ai-act"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1178,13 +1175,13 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 15.9,
+      "score": 15.4,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.9,
         "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1227,13 +1224,13 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 15.9,
+      "score": 15.4,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.9,
         "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1249,20 +1246,19 @@
       "id": "6684a8d5dbd9b779"
     },
     {
-      "source": "articles:Spritle software",
+      "source": "articles:How I AI",
       "platform": "article",
-      "title": "Build a Reasoning LLM from Scratch:  A Complete Guide to GRPO, RoPE ＆ Pretraining.",
-      "text": "<h2><img data-attachment-id=\"430656\" data-permalink=\"https://www.spritle.com/blog/build-a-reasoning-llm-from-scratch-a-complete-guide-to-grpo-rope-pretraining/1-rectangle-thumbnail-117-1/\" data-orig-file=\"https://www.spritle.com/blog/wp-content/uploads/2026/08/1-Rectangle-Thumbnail-117-1.png\" data-orig-size=\"3360,1890\" data-comments-opened=\"1\" data-image-meta='{\"aperture\":\"0\",\"credit\":\"\",\"camera\":\"\",\"caption\":\"\",\"created_timestamp\":\"0\",\"copyright\":\"\",\"focal_length\":\"0\",\"iso\":\"0\",\"shutter_speed\":\"0\",\"title\":\"\",\"orientation\":\"0\"}' data-image-title=\"Build a Reasoning LLM from Scratch\" data-image-",
-      "url": "https://www.spritle.com/blog/build-a-reasoning-llm-from-scratch-a-complete-guide-to-grpo-rope-pretraining/",
+      "title": "Build an AI code review bot in 30 minutes with Vercel Eve",
+      "text": "Everybody is drowning in AI created PRs.  When anyone can code, anyone can cook,  and anyone can vibe anything to GitHub.  That means that a lot of us are sitting  on a big queue of pull requests  that then we have to review.  If you are an engineering leader  or a software engineer in a company  that has embraced AI in any way, shape, or form,  you feel this pain.  And I get this question all the time.  We figured out how to code with AI.  Now, what do we do with all these PRs?  Well, people smarter than us have figured this out.  And you know what the answer is?  You don't have to review all",
+      "url": "https://podcasters.spotify.com/pod/show/pen-name/episodes/Build-an-AI-code-review-bot-in-30-minutes-with-Vercel-Eve-e3muer1",
       "date": "2026-08-05",
       "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
-        "build a",
-        "complete guide",
-        "from scratch"
+        "build an",
+        "build your",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1277,13 +1273,13 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 15.9,
+      "score": 15.4,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.9,
         "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1293,10 +1289,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Wat Build betekent voor de Nederlandse AI-markt.",
+      "suggested_angle_nl": "Zo gebruik je Build in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "d2d64ba88bf13075"
+      "id": "c37f9f9ff41a0120"
     },
     {
       "source": "articles:MarkTechPost",
@@ -1309,10 +1305,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "tutorial",
-        "practical guide",
         "build a",
-        "from scratch"
+        "from scratch",
+        "tutorial",
+        "practical guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1327,13 +1323,13 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 15.9,
+      "score": 15.4,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.9,
         "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1376,13 +1372,13 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 15.9,
+      "score": 15.4,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.9,
         "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1398,270 +1394,6 @@
       "id": "fc945a36d16b37b7"
     },
     {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "Born Against, or why hobby programming communities are against LLM usage",
-      "text": "Born Against, or why hobby programming communities are against LLM usage",
-      "url": "https://blog.fogus.me/llm/born-against.html",
-      "date": "2026-08-05",
-      "engagement": 956.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.8,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 10.3,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom Born Against er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c573d662a426a905"
-    },
-    {
-      "source": "hn",
-      "platform": "hackernews",
-      "title": "AI companies are shredding rare books",
-      "text": "AI companies are shredding rare books",
-      "url": "https://xcancel.com/HedgieMarkets/status/2081534588485296565",
-      "date": "2026-07-27",
-      "engagement": 1306.0,
-      "source_weight": 3.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "hackernews"
-      ],
-      "score": 15.76,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 10.76,
-        "source_weight": 3.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom AI er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e3b48668cd64185f"
-    },
-    {
-      "source": "tweets:@bryan_johnson",
-      "platform": "tweet",
-      "title": "Becoming a pilot nearly killed me, twice.\n\nIt also saved my life.\n\nFifteen years ago, my world was upside down. I was in founder mode building a company, raisin",
-      "text": "Becoming a pilot nearly killed me, twice.\n\nIt also saved my life.\n\nFifteen years ago, my world was upside down. I was in founder mode building a company, raising three young kids, navigating a struggling relationship, leaving my religion, inflamed, sleep deprived, fatigued, and fighting chronic depression.\n\nDriving home from work one day, I saw a sign inviting prospective students to take a discovery flight. I thought this flight might occupy my mind, giving me an hour of desperately needed relief.\n\nThirty minutes after arriving at the airfield, the instructor and I were seated in a Cessna 172",
-      "url": "https://twitter.com/bryan_johnson/status/2082234024001704356",
-      "date": "2026-07-29",
-      "engagement": 985.0,
-      "source_weight": 0.5,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "build a",
-        "explained",
-        "guide"
-      ],
-      "matched_tools": [
-        "runway"
-      ],
-      "feature_update": true,
-      "new_products": [
-        "Niagara Falls",
-        "Mount Rushmore",
-        "The Bonanza",
-        "Citation Mustang",
-        "Part II",
-        "Evening Bryan",
-        "Morning Bryan",
-        "Part III",
-        "Alfred North",
-        "Autonomous Self"
-      ],
-      "new_product": true,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "_author_bonus": 1.0,
-      "author": "bryan_johnson",
-      "followers": 1826997,
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "tweet"
-      ],
-      "score": 15.5,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 6.0,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 1.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "runway uitgelegd voor Nederlandse teams — zonder de hype.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e70b246bae962a37"
-    },
-    {
-      "source": "tweets:@X_FINALBOSS",
-      "platform": "tweet",
-      "title": "you are COOKED if you can't make $20K+ per month online in 2026\n\n1. you can use AI to generate 300 posts in 15 minutes\n2. you can get millions of views without ",
-      "text": "you are COOKED if you can't make $20K+ per month online in 2026\n\n1. you can use AI to generate 300 posts in 15 minutes\n2. you can get millions of views without spending a penny on ads\n3. you can put words in a document and sell it 1000x for $50+ each\n4. you can hire workers for $2.50/hr\n\n100 years ago you needed your life savings just to START a business\n\ntoday you can start for free on your iPhone in seconds\n\nMy 1.3 to 2.4 GPA teenager students that began working with me 10 months ago are making $30K–$80K+/month now\n\nI got a student Zain was earning minimum wage at a café in may 2025... now h",
-      "url": "https://twitter.com/X_FINALBOSS/status/2082702225894261155",
-      "date": "2026-07-31",
-      "engagement": 1469.0,
-      "source_weight": 0.5,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "case study",
-        "crash course",
-        "case studies",
-        "how to"
-      ],
-      "matched_tools": [
-        "make"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "_author_bonus": 1.0,
-      "author": "X_FINALBOSS",
-      "followers": 36768,
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "tweet"
-      ],
-      "score": 15.5,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 6.0,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 1.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "6b206c811989a5d8"
-    },
-    {
-      "source": "tweets:@TommiPedruzzi",
-      "platform": "tweet",
-      "title": "How to make $10,000/month selling AI eBooks.\n\nI shared this model with a single mom... she already made $4,000.\n\nI usually charge $98 for my system.\n\nBut for th",
-      "text": "How to make $10,000/month selling AI eBooks.\n\nI shared this model with a single mom... she already made $4,000.\n\nI usually charge $98 for my system.\n\nBut for the next 48 hours, it’s 100% FREE.\n\nTo get it:\n\n• Like\n• Follow\n• Reply “Guide”\n\nI’ll DM you the full tutorial for free.",
-      "url": "https://twitter.com/TommiPedruzzi/status/2081694630043668575",
-      "date": "2026-07-28",
-      "engagement": 986.0,
-      "source_weight": 0.5,
-      "ai_relevant": true,
-      "pattern_hits": [
-        "tutorial",
-        "guide",
-        "how to"
-      ],
-      "matched_tools": [
-        "make"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "_author_bonus": 1.0,
-      "author": "TommiPedruzzi",
-      "followers": 136810,
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "tweet"
-      ],
-      "score": 15.5,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 6.0,
-        "source_weight": 0.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 1.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je make in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c22fcb374302d1e9"
-    },
-    {
       "source": "linkedin:Global AI Singapore",
       "platform": "linkedin",
       "title": "Build Intelligent Multi-Agent Systems with Microsoft AI Foundry\nJoin us for an exciting evening at Global AI Construct Singapore as we explore how AI agents are",
@@ -1672,8 +1404,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
         "hands-on",
+        "build a",
         "how to"
       ],
       "matched_tools": [],
@@ -1689,13 +1421,13 @@
       "consensus_sources": [
         "linkedin"
       ],
-      "score": 15.45,
+      "score": 14.95,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.15,
         "source_weight": 1.8,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1721,9 +1453,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
         "how to",
-        "from scratch"
+        "from scratch",
+        "step by step"
       ],
       "matched_tools": [
         "together ai"
@@ -1740,13 +1472,13 @@
       "consensus_sources": [
         "linkedin"
       ],
-      "score": 15.45,
+      "score": 14.95,
       "score_breakdown": {
         "pattern_hits": 3,
         "engagement_log": 5.15,
         "source_weight": 1.8,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,

@@ -136,6 +136,12 @@
       "description": "Sinds 7 augustus 2026 in publieke bèta (Team/Enterprise): draai Claude Code-sessies op je eigen infrastructuur, zodat code-checkouts, buildartefacten en secrets binnen je netwerk blijven. Het gesprek zelf (prompts, antwoorden, gelezen code) gaat nog wel naar Anthropic voor verwerking. Standaard uit; niet voor ZDR-organisaties.",
       "group": "enterprise",
       "badge": "nieuw"
+    },
+    {
+      "title": "Auto Mode standaard aan",
+      "description": "Sinds 14 augustus 2026 staat Auto Mode standaard aan voor nieuwe sessies op Pro, Max en Team. Een classifier beoordeelt elke tool-call en houdt alleen onomkeerbare of destructieve acties tegen, in plaats van dat je elke stap handmatig goedkeurt. Enterprise, API, Bedrock, Vertex en Foundry blijven voorlopig opt-in tot beheerders het bekijken; Anthropic raadt voor productiewijzigingen menselijke review aan.",
+      "group": "core",
+      "badge": "nieuw"
     }
   ],
   "setupTime": "under_15min",
@@ -166,7 +172,7 @@
     "Teams die geen CLI-affiniteit hebben",
     "Workflows met strikte sandbox-eisen waar terminal-toegang geen optie is"
   ],
-  "lastUpdated": "2026-08-08",
+  "lastUpdated": "2026-08-14",
   "lastReviewedAt": "2026-06-06",
   "supportsDutchLanguage": false
 }
