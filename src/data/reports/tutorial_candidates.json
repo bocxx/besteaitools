@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-18T17:32:05.502248",
+  "generated_at": "2026-08-18T21:08:24.112772",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 14,
+    "for_tools": 17,
     "for_news": 13,
-    "rejected_lang": 139,
+    "rejected_lang": 122,
     "already_covered": 0,
-    "total_scanned": 4379
+    "total_scanned": 4376
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
-        "guide"
+        "guide",
+        "step-by-step"
       ],
       "matched_tools": [
         "claude",
@@ -444,7 +444,7 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "total_stars": 108155,
+      "total_stars": 108370,
       "topics": [
         "ai-video-generator",
         "content-creation",
@@ -674,6 +674,158 @@
       "id": "ded2c10374cda727"
     },
     {
+      "source": "articles:freeCodeCamp",
+      "platform": "article",
+      "title": "How to Scale LLM Inference for AI Agents Using vLLM",
+      "text": "<p>In this tutorial, I’ll show you how to scale LLM inference for AI agents using vLLM. I'll help you build an intuition for how LLM inference works, explore why agent workloads create GPU scheduling and memory pressure, and examine how vLLM is designed to improve throughput.</p>\n<p>We’ll then run a local vLLM server and connect to it through its OpenAI-compatible API using an AI agent.</p>\n<h2 data-sanitized-id=\"heading-table-of-contents\"><strong>Table of Contents</strong></h2>\n<ul>\n<li><p><a href=\"https://www.freecodecamp.org/news/how-to-scale-llm-inference-for-ai-agents-using-vllm/#heading-",
+      "url": "https://www.freecodecamp.org/news/how-to-scale-llm-inference-for-ai-agents-using-vllm/",
+      "date": "2026-08-17",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "tutorial",
+        "build an",
+        "how-to"
+      ],
+      "matched_tools": [
+        "vllm"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je vllm in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "99726a3e3111a621"
+    },
+    {
+      "source": "articles:freeCodeCamp.org News",
+      "platform": "article",
+      "title": "How to Build a Multi-Agent Trading Research System with LangChain Deep Agents [Full Handbook]",
+      "text": "<p>A trading research agent can write strategy code, run a backtest, inspect the results, and keep revising the strategy. The harder problem is making sure that this loop doesn't turn into an uncontrolled search for an attractive backtest.</p>\n<p>In this handbook, we’ll build a multi-agent trading research system with LangChain Deep Agents. EODHD will provide the historical market data, while a deterministic Python layer will control the data splits, backtesting logic, benchmarks, experiment history, and strategy selection rules. A coordinator, strategy engineer, and research critic will then ",
+      "url": "https://www.freecodecamp.org/news/build-a-multi-agent-trading-research-system-with-langchain-deep-agents-handbook/",
+      "date": "2026-08-14",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "handbook",
+        "build a"
+      ],
+      "matched_tools": [
+        "langchain"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je langchain in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "ba567f492a554300"
+    },
+    {
+      "source": "articles:TechEmergence Podcast: Innovation at the Intersection of Technology and Psychology",
+      "platform": "article",
+      "title": "The Future of Customer Success and Turnkey AI Agents for SMBs - Matt Kravitz of Salesforce",
+      "text": "Service leaders are increasingly asked to deploy AI agents without a clear sense of what these systems can safely handle today, or where to start. In this episode, Matt Kravitz, Head of Customer Transformation for Service Cloud at Salesforce, breaks down a three-level maturity model for AI service agents — answering questions, accessing account data, and taking action — and how to sequence adoption. The conversation also covers a channel-strategy framework for deciding which support requests to deflect, route to digital-assisted support, or escalate to a live conversation, and how a business's",
+      "url": "https://podcast.emerj.com/the-future-of-customer-success-and-turnkey-ai-agents-for-smbs-matt-kravitz-of-salesforce",
+      "date": "2026-08-12",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "guide",
+        "use case"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "85b3fc8b007ad556"
+    },
+    {
       "source": "reddit:r/ClaudeAI",
       "platform": "reddit",
       "title": "I’m Fable 5. I’m expensive, I’m paranoid, and I was gone for 19 days. Here’s how to actually use me. [AI Generated]",
@@ -778,7 +930,7 @@
       "text": "How to disable or avoid intrusive AI",
       "url": "https://www.librarian.net/notoai/",
       "date": "2026-08-17",
-      "engagement": 524.0,
+      "engagement": 526.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
@@ -915,7 +1067,7 @@
       "text": "Israel creates fake think tank in likely attempt to dupe AI chatbots",
       "url": "https://responsiblestatecraft.org/israel-influence-chatgpt/",
       "date": "2026-08-17",
-      "engagement": 1503.0,
+      "engagement": 1654.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -932,10 +1084,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 16.47,
+      "score": 16.62,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.97,
+        "engagement_log": 11.12,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1009,10 +1161,10 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "practical guide",
         "guide",
-        "handbook",
         "hands-on",
+        "practical guide",
+        "handbook",
         "from scratch"
       ],
       "matched_tools": [
@@ -1030,7 +1182,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "BharukaShraddha",
-      "followers": 35422,
+      "followers": 35432,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1058,6 +1210,104 @@
       "id": "859362dde3f034e6"
     },
     {
+      "source": "articles:SitePoint",
+      "platform": "article",
+      "title": "How to Build a Reliable AI Product Finder with WordPress",
+      "text": "<a href=\"https://www.sitepoint.com/how-to-build-a-reliable-ai-product-finder-with-wordpress/?utm_source=rss\" title=\"How to Build a Reliable AI Product Finder with WordPress\">\n          <img src=\"https://uploads.sitepoint.com/wp-content/uploads/medium_How_to_Build_a_Reliable_AI_Product_Finder_with_Word_Press_cover_766618fc7b.png\" alt=\"How to Build a Reliable AI Product Finder with WordPress\" data-sanitized-class=\"webfeedsFeaturedVisual\">\n        </a>\n        \n        <p>null</p>\n        <p>\n          Continue reading\n          <a href=\"https://www.sitepoint.com/how-to-build-a-reliable-ai-produc",
+      "url": "https://www.sitepoint.com/how-to-build-a-reliable-ai-product-finder-with-wordpress/?utm_source=rss",
+      "date": "2026-08-16",
+      "engagement": 38.95,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "build a",
+        "how-to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.53,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.53,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "9e18c75724beb412"
+    },
+    {
+      "source": "articles:Roboflow Blog",
+      "platform": "article",
+      "title": "How to Build an AI Video Car Damage Inspector",
+      "text": "<div data-layout=\"minimal\" data-sanitized-class=\"kg-card kg-cta-card kg-cta-bg-white kg-cta-minimal    \">\n            \n                <div data-sanitized-class=\"kg-cta-sponsor-label-wrapper\">\n                    <div data-sanitized-class=\"kg-cta-sponsor-label\">\n                        <span>Summary</span>\n                    </div>\n                </div>\n            \n            <div data-sanitized-class=\"kg-cta-content\">\n                \n                \n                    <div data-sanitized-class=\"kg-cta-content-inner\">\n                    \n                        <div data-sanitized-clas",
+      "url": "https://blog.roboflow.com/build-an-ai-video-damage-inspector/",
+      "date": "2026-08-07",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "tutorial",
+        "build an"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.4,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "0cbcf6a27543767d"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "EU AI Act Four Risk Levels: What Developers and Enterprises Need to Know",
@@ -1068,8 +1318,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "eu-ai-act",
         "use case",
+        "eu-ai-act",
         "ai act"
       ],
       "matched_tools": [],
@@ -1117,9 +1367,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "how to",
         "handbook",
-        "guide",
-        "how to"
+        "guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1166,10 +1416,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "from scratch",
         "guide",
         "build a",
-        "complete guide",
-        "from scratch"
+        "complete guide"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1206,105 +1456,6 @@
       "id": "d2d64ba88bf13075"
     },
     {
-      "source": "articles:How I AI",
-      "platform": "article",
-      "title": "Build an AI code review bot in 30 minutes with Vercel Eve",
-      "text": "Everybody is drowning in AI created PRs.  When anyone can code, anyone can cook,  and anyone can vibe anything to GitHub.  That means that a lot of us are sitting  on a big queue of pull requests  that then we have to review.  If you are an engineering leader  or a software engineer in a company  that has embraced AI in any way, shape, or form,  you feel this pain.  And I get this question all the time.  We figured out how to code with AI.  Now, what do we do with all these PRs?  Well, people smarter than us have figured this out.  And you know what the answer is?  You don't have to review all",
-      "url": "https://podcasters.spotify.com/pod/show/pen-name/episodes/Build-an-AI-code-review-bot-in-30-minutes-with-Vercel-Eve-e3muer1",
-      "date": "2026-08-05",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build an",
-        "build your",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.4,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Build in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "c37f9f9ff41a0120"
-    },
-    {
-      "source": "articles:MarkTechPost",
-      "platform": "article",
-      "title": "Pixel-Native RAG: A Practical Guide to Visual Document Indexing",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we build a complete<a href=\"https://github.com/StarTrail-org/PixelRAG\"> <strong>pixel</strong></a>-native retrieval-augmented generation pipeline from scratch and examine how document retrieval works without relying on conventional HTML parsing, text extraction, or fixed chunking strategies. We render web pages and PDF documents as images, divide them into overlapping tiles, generate multimodal embeddings with SigLIP, CLIP, or an optional Qwen3-VL backend, and store the resulting vectors in a FAISS index for efficient similarity se",
-      "url": "https://www.marktechpost.com/2026/08/04/pixel-native-rag-a-practical-guide-to-visual-document-indexing/",
-      "date": "2026-08-05",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "practical guide",
-        "tutorial",
-        "build a",
-        "from scratch"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.4,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Pixel in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "821181a6b22bee1c"
-    },
-    {
       "source": "linkedin:Global AI Singapore",
       "platform": "linkedin",
       "title": "Build Intelligent Multi-Agent Systems with Microsoft AI Foundry\nJoin us for an exciting evening at Global AI Construct Singapore as we explore how AI agents are",
@@ -1315,9 +1466,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "hands-on",
         "how to",
-        "build a"
+        "build a",
+        "hands-on"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1364,9 +1515,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "from scratch",
         "step by step",
-        "how to",
-        "from scratch"
+        "how to"
       ],
       "matched_tools": [
         "together ai"
