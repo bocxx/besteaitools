@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-19T07:23:48.327979",
+  "generated_at": "2026-08-19T19:30:10.267436",
   "window_days": 7,
   "week": "2026-w34",
-  "total_candidates_scanned": 777,
-  "total_after_dedup": 762,
-  "total_feature_updates": 184,
+  "total_candidates_scanned": 820,
+  "total_after_dedup": 793,
+  "total_feature_updates": 187,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "Ultrafast Mode",
-      "summary_nl": "ChatGPT lanceert een nieuwe ultrasnelle modus die gebruik maakt van GPT-5.6 Sol en tot 14 keer sneller is.",
+      "summary_nl": "ChatGPT lanceert een nieuwe ultrasnelle modus die gebruik maakt van GPT-5.6 Sol en tot 14 keer sneller is dan de standaardmodus.",
       "impact": "high",
       "sources": [
         {
@@ -30,7 +30,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Design Workflow in CLI and Desktop",
-      "summary_nl": "Claude Code kan nu ontwerpen met een nieuwe /design skill die de artboard workflow van Claude Design beschikbaar maakt in de CLI en Desktop.",
+      "summary_nl": "Claude Code kan nu ontwerpen. De nieuwe /design-functie brengt de ontwerpwerkstroom van Claude Design naar de CLI en desktop, gebaseerd op artefacten.",
       "impact": "medium",
       "sources": [
         {
@@ -48,7 +48,7 @@
       "tool_name": "Gemini",
       "tool_category": "tekst",
       "feature_title": "Gemini 3.7 Flash Release",
-      "summary_nl": "Gemini lanceert versie 3.7 Flash, een snellere en goedkopere versie van hun workhorse model voor codering en agentschappen.",
+      "summary_nl": "Gemini lanceert versie 3.7 Flash, een snellere en goedkopere versie van hun workhorse model voor codering en agentische workflows.",
       "impact": "medium",
       "sources": [
         {
@@ -74,12 +74,102 @@
       "week": "2026-w34"
     },
     {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen 3.8 Open Weights Release",
+      "summary_nl": "Alibaba heeft de open weights voor Qwen 3.8-2.4T-A95B (Max-level) vrijgegeven, waardoor gebruikers kunnen bouwen met zowel lichtgewicht als krachtige Qwen-modellen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2088280182356611304",
+          "title": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters,",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-19",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Reduced Risks for Destructive Actions",
+      "summary_nl": "ChatGPT heeft recent updates doorgevoerd die het risico op potentieel destructieve acties verder hebben verminderd.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/thsottiaux/status/2089891927659585918",
+          "title": "Hi!\n\nRecapping some changes we have rolled out over the last couple of weeks that have further reduced the risk associated to potentially de",
+          "platform": "twitter",
+          "source": "@thsottiaux"
+        }
+      ],
+      "detected_at": "2026-08-19",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Ornith-1.5 LLM Family Release",
+      "summary_nl": "Ornith heeft een familie van open-source LLMs gelanceerd, variërend van 9B Dense tot 397B MoE, getraind met zelf-verbeterende strategieën.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/ornith_/status/2090074077084127302",
+          "title": "Aloha! 🌺Introducing Ornith-1.5, a family of open-source LLMs spanning 9B Dense, 35B MoE, and 397B MoE, trained with self-improving strategie",
+          "platform": "twitter",
+          "source": "@ornith_"
+        }
+      ],
+      "detected_at": "2026-08-19",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Grok 4.6 Release",
+      "summary_nl": "Grok 4.6 is nu beschikbaar in Devin en biedt een significante verbetering ten opzichte van Grok 4.5, met prestaties die alleen worden overtroffen door Opus 5 en Fable.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cognition/status/2087579582492987881",
+          "title": "Grok 4.6 is now available in Devin.\n\nGrok 4.6 marks a significant improvement over Grok 4.5, surpassing GPT-5.6 Sol, behind only Opus 5 and ",
+          "platform": "twitter",
+          "source": "@cognition"
+        }
+      ],
+      "detected_at": "2026-08-19",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Integrated Workspace",
+      "summary_nl": "ChatGPT introduceert een geïntegreerde werkruimte waarmee gebruikers binnen ChatGPT kunnen werken zonder van tabblad te hoeven wisselen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2088044956091089281",
+          "title": "You probably hate tab switching. Understandable.\n\nYou can now open any @googledrive Doc, Sheet, or Slide right inside ChatGPT and work side ",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-19",
+      "week": "2026-w34"
+    },
+    {
       "tool_slug": "deepseek",
       "tool_name": "DeepSeek",
       "tool_category": "tekst",
       "feature_title": "DeepSeek V4 Pro Release",
-      "summary_nl": "DeepSeek lanceert een nieuwe versie van hun V4 Pro model met verbeterde agent-functies en prestaties.",
-      "impact": "medium",
+      "summary_nl": "DeepSeek heeft versie 4 Pro van hun model gelanceerd, met belangrijke upgrades aan de agent en verbeterde productiviteit.",
+      "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/deepseek_ai/status/2087864585504305397",
@@ -98,18 +188,6 @@
           "title": "There's been a week of hype for DeepSeek Flash\n\nSo good time to announce that the newest DeepSeek V4 Pro is now available in OpenCode Go",
           "platform": "twitter",
           "source": "@opencode"
-        },
-        {
-          "url": "https://twitter.com/TheAhmadOsman/status/2089091789344960583",
-          "title": "People need to know that Qwen 3.8 27B &amp; DeepSeek V4 Flash 0731 mean that the permanent underclass semi-joke is now cancelled btw\n\nA coup",
-          "platform": "twitter",
-          "source": "@TheAhmadOsman"
-        },
-        {
-          "url": "https://twitter.com/jackyk02/status/2089421448784023553",
-          "title": "Scaling self-verification with DeepSeek V4 Flash beats Claude Fable 5 on Terminal-Bench 2.1, while being 11x cheaper 💰\n\nAs open-source model",
-          "platform": "twitter",
-          "source": "@jackyk02"
         }
       ],
       "detected_at": "2026-08-19",
@@ -260,24 +338,6 @@
       "week": "2026-w33"
     },
     {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Integrated Workspace",
-      "summary_nl": "ChatGPT krijgt een geïntegreerde werkruimte waarmee gebruikers naadloos kunnen samenwerken zonder van tabblad te wisselen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ChatGPT/status/2088044956091089281",
-          "title": "You probably hate tab switching. Understandable.\n\nYou can now open any @googledrive Doc, Sheet, or Slide right inside ChatGPT and work side ",
-          "platform": "twitter",
-          "source": "@ChatGPT"
-        }
-      ],
-      "detected_at": "2026-08-16",
-      "week": "2026-w33"
-    },
-    {
       "tool_slug": "qwen",
       "tool_name": "Qwen",
       "tool_category": "tekst",
@@ -362,24 +422,6 @@
           "title": "We're releasing a new model (GPT-5.6-Cyber), and expanding Daybreak to help put frontier intelligence in defenders hands: https://t.co/cgqlz",
           "platform": "twitter",
           "source": "@gdb"
-        }
-      ],
-      "detected_at": "2026-08-16",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen 3.8 open weights release",
-      "summary_nl": "Alibaba heeft de open weights voor Qwen 3.8-2.4T-A95B (Max-level) vrijgegeven, waardoor ontwikkelaars geavanceerde toepassingen kunnen bouwen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2088280182356611304",
-          "title": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters,",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
         }
       ],
       "detected_at": "2026-08-16",
