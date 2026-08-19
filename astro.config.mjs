@@ -103,6 +103,10 @@ function lastmodFor(pathname) {
 }
 
 export default defineConfig({
+  // Astro 7.2: dit project gebruikt nergens `Astro.session`, dus het
+  // session-runtime + de unstorage KV-driver blijven uit de SSR-bundle.
+  session: false,
+
   site: 'https://debesteaitools.nl',
   // 'server' mode so /api/* routes run at request time. Every existing
   // page opts back into prerendering via `export const prerender = true`
