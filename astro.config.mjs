@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import rehypeExternalLinks from 'rehype-external-links';
+import { unified } from '@astrojs/markdown-remark';
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -184,10 +185,16 @@ export default defineConfig({
       },
     }),
   ],
+  // Astro 7.2: plugins gaan via `processor: unified({...})` i.p.v. de directe
+  // `remarkPlugins`/`rehypePlugins`/`remarkRehype` keys (die zijn deprecated).
+  // `syntaxHighlight`/`shikiConfig` horen NIET in unified() — die accepteert
+  // alleen remarkPlugins/rehypePlugins/remarkRehype/gfm/smartypants.
   markdown: {
-    rehypePlugins: [
-      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
-    ],
+    processor: unified({
+      rehypePlugins: [
+        [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+      ],
+    }),
   },
   build: {
     assets: 'assets'
