@@ -1,36 +1,18 @@
 {
-  "generated_at": "2026-08-20T07:25:21.351656",
+  "generated_at": "2026-08-20T19:29:47.198610",
   "window_days": 7,
   "week": "2026-w34",
-  "total_candidates_scanned": 853,
-  "total_after_dedup": 831,
-  "total_feature_updates": 191,
+  "total_candidates_scanned": 888,
+  "total_after_dedup": 860,
+  "total_feature_updates": 193,
   "llm_curated": true,
   "features": [
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Ultrafast mode: GPT-5.6 Sol",
-      "summary_nl": "ChatGPT lanceert een ultrasnelle modus die gebruik maakt van GPT-5.6 Sol, tot 14 keer sneller dan de standaard ChatGPT.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2087947721936359705",
-          "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14x the speed.\n\nLaunching first in the OpenAI API to a select group of customers with expand",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        }
-      ],
-      "detected_at": "2026-08-20",
-      "week": "2026-w34"
-    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
-      "feature_title": "Design skill in CLI and Desktop",
-      "summary_nl": "Claude krijgt een nieuwe /design skill waarmee gebruikers vanuit de CLI en Desktop een artboard workflow kunnen gebruiken, gebaseerd op artifacts.",
+      "feature_title": "Claude Code can design now",
+      "summary_nl": "De nieuwe /design skill (research preview) brengt het artboard workflow van Claude Design naar de CLI en Desktop, gebouwd op artifacts.",
       "impact": "medium",
       "sources": [
         {
@@ -47,9 +29,9 @@
       "tool_slug": "gemini",
       "tool_name": "Gemini",
       "tool_category": "tekst",
-      "feature_title": "Gemini 3.7 Flash release",
-      "summary_nl": "Gemini lanceert versie 3.7 Flash, een snellere en goedkopere versie van hun model voor codering en agentschappen.",
-      "impact": "medium",
+      "feature_title": "Gemini 3.7 Flash Release",
+      "summary_nl": "Gemini lanceert versie 3.7 Flash, met 50% lagere prijzen dan 3.6 Flash (tot eind van het jaar) en een sterke intelligentieverbetering.",
+      "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/OfficialLoganK/status/2087948481721962669",
@@ -74,18 +56,18 @@
       "week": "2026-w34"
     },
     {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
       "tool_category": "tekst",
-      "feature_title": "Qwen 3.8 model releases",
-      "summary_nl": "Alibaba lanceert nieuwe versies van hun Qwen 3.8 modellen, waaronder een 2.4T-A95B Max-level model met open weights.",
-      "impact": "medium",
+      "feature_title": "Ultrafast mode: GPT-5.6 Sol",
+      "summary_nl": "ChatGPT lanceert een Ultrafast mode, gebaseerd op GPT-5.6 Sol, met tot 14x de snelheid.",
+      "impact": "high",
       "sources": [
         {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2088280182356611304",
-          "title": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters,",
+          "url": "https://twitter.com/OpenAI/status/2087947721936359705",
+          "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14x the speed.\n\nLaunching first in the OpenAI API to a select group of customers with expand",
           "platform": "twitter",
-          "source": "@Alibaba_Qwen"
+          "source": "@OpenAI"
         }
       ],
       "detected_at": "2026-08-20",
@@ -95,9 +77,9 @@
       "tool_slug": "deepseek",
       "tool_name": "DeepSeek",
       "tool_category": "tekst",
-      "feature_title": "DeepSeek V4 Flash release",
-      "summary_nl": "DeepSeek lanceert een nieuwe V4 Flash versie van hun model, met verbeteringen in prestaties en kosten ten opzichte van concurrerende modellen.",
-      "impact": "medium",
+      "feature_title": "DeepSeek V4 Flash Release",
+      "summary_nl": "DeepSeek lanceert versie V4 Flash, met significante verbeteringen in de agent-prestaties en lagere kosten dan concurrerende modellen.",
+      "impact": "high",
       "sources": [
         {
           "url": "https://twitter.com/deepseek_ai/status/2087864585504305397",
@@ -125,8 +107,8 @@
       "tool_slug": "chatgpt",
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
-      "feature_title": "Computer History integration",
-      "summary_nl": "ChatGPT kan nu leren van alles wat je op je computer doet, om beter te begrijpen hoe je computer werkt.",
+      "feature_title": "Computer History Integration",
+      "summary_nl": "ChatGPT kan nu leren van alles wat je op je computer doet, om beter te begrijpen hoe je werkt.",
       "impact": "medium",
       "sources": [
         {
@@ -134,6 +116,60 @@
           "title": "Today we're releasing Computer History in ChatGPT.\n\nIt lets ChatGPT learn from everything you do on your computer, so it can better understa",
           "platform": "twitter",
           "source": "@AriX"
+        }
+      ],
+      "detected_at": "2026-08-20",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "cursor",
+      "tool_name": "Cursor",
+      "tool_category": "coding",
+      "feature_title": "Cursor launches Origin",
+      "summary_nl": "Cursor lanceert Origin, een alternatief voor GitHub.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://news.ycombinator.com/item?id=49334209",
+          "title": "Cursor launches Origin, GitHub alternative",
+          "platform": "hackernews",
+          "source": "HN (585↑, 441 comments)"
+        }
+      ],
+      "detected_at": "2026-08-20",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Design skill in CLI and Desktop",
+      "summary_nl": "Claude krijgt een nieuwe /design skill waarmee gebruikers vanuit de CLI en Desktop een artboard workflow kunnen gebruiken, gebaseerd op artifacts.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2089471692762673408",
+          "title": "Claude Code can design now. The new /design skill (research preview) brings Claude Design's artboard workflow into the CLI and Desktop, buil",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-08-20",
+      "week": "2026-w34"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen 3.8 model releases",
+      "summary_nl": "Alibaba lanceert nieuwe versies van hun Qwen 3.8 modellen, waaronder een 2.4T-A95B Max-level model met open weights.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2088280182356611304",
+          "title": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters,",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
         }
       ],
       "detected_at": "2026-08-20",
