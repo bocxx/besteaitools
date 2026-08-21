@@ -75,4 +75,4 @@ Voor Llama 4 loopt het meestal via een provider. Dan betaal je per token in plaa
 
 Meta heeft aangekondigd dat ook de gewichten van het gesloten Muse Spark 1.2 openbaar worden. Per 13 augustus 2026 was dat nog niet gebeurd. Reken er dus niet op in je planning.
 
-Kort samengevat: EU-bedrijf dat iets commercieel uitrolt op eigen hardware, pak Muse Glimmer. Draai je al op Llama met een werkende pijplijn, blijf dan zitten tot je een concrete reden hebt om te wisselen.
+Kort samengevat: EU-bedrijf dat iets commercieel uitrolt op eigen hardware, pak Muse Glimmer. Draai je al op Llama met een werkende pijplijn, blijf dan zitten tot je een concrete reden hebt om te wisselen. Weegt meertaligheid zwaar en wil je niet zelf hosten, dan is [Qwen via het Anthropic-compatibele endpoint](/nieuws/qwen-anthropic-sdk-koppelen) het derde spoor.

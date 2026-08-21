@@ -436,7 +436,7 @@ Loop deze lijst af. Heb je alles afgevinkt, dan ben je klaar voor productie:
 - [ ] Eerste echte taak uitgevoerd en de output beoordeeld
 - [ ] (Optioneel) Project aangemaakt op claude.ai voor team-werk
 
-Lukt iets niet? De [officiële setup-handleiding van Anthropic](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) loopt elk struikelblok los na.
+Lukt iets niet? De [officiële setup-handleiding van Anthropic](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) loopt elk struikelblok los na. En wil je deze opzet uitbreiden zonder elke koppeling apart te configureren, dan doe je dat met [plugins uit de officiële marketplace](/nieuws/claude-code-plugins-installeren).
 
 ## Samenvatting — de 5-minuten-versie
 

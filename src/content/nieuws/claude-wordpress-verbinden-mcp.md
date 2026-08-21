@@ -65,7 +65,7 @@ Bij elke route geldt dezelfde voorzichtigheid. Gebruik Application Passwords voo
 
 ## Is dit iets voor jou?
 
-Beheer je één simpele blog die je af en toe bijwerkt, dan is de handmatige route prima en voegt een AI-koppeling weinig toe. Beheer je meerdere sites, veel content of terugkerend onderhoud, dan bespaart een MCP-verbinding met Claude echt tijd — vooral bij taxonomie-opschoonwerk en het in bulk klaarzetten van berichten. Bouw of beheer je zelf zo'n MCP-koppeling, houd dan de nieuwe spec-revisie in de gaten: [MCP wordt stateless: zo bereid je je server voor](/nieuws/mcp-stateless-spec-voorbereiden).
+Beheer je één simpele blog die je af en toe bijwerkt, dan is de handmatige route prima en voegt een AI-koppeling weinig toe. Beheer je meerdere sites, veel content of terugkerend onderhoud, dan bespaart een MCP-verbinding met Claude echt tijd — vooral bij taxonomie-opschoonwerk en het in bulk klaarzetten van berichten. Bouw of beheer je zelf zo'n MCP-koppeling, houd dan de nieuwe spec-revisie in de gaten: [MCP wordt stateless: zo bereid je je server voor](/nieuws/mcp-stateless-spec-voorbereiden). Voor gangbare diensten hoef je overigens niets zelf op te zetten: kant-en-klare MCP-servers voor GitHub, Notion of Slack [installeer je als plugin in één commando](/nieuws/claude-code-plugins-installeren).
 
 Wil je eerst een gevoel krijgen bij wat een AI wél en niet betrouwbaar met tekst doet voordat je 'm op je site zet? Lees dan onze duiding op hetlaatsteainieuws.nl over [realistisch verdienen en werken met Claude](https://hetlaatsteainieuws.nl/nieuws/geld-verdienen-claude-ai-realistisch). Dat helpt je inschatten waar de AI je werk versnelt en waar jouw controle onmisbaar blijft.
 
