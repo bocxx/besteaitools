@@ -146,7 +146,7 @@ export const prerender = true;
           type="search"
           id="q"
           class="searchbar__input"
-          placeholder="Wat wil je doen? — bijv. ‘video’, ‘code’, ‘notuleren’…"
+          placeholder="Wat wil je doen? bijv. video, code…"
           autocomplete="off"
           spellcheck="false"
           aria-label="Zoek AI-tools op naam, taak of categorie"
@@ -159,15 +159,19 @@ export const prerender = true;
     <div class="lf" id="filters">
       <div class="lf__group">
         <span class="lf__label">Categorie</span>
-        <div class="lf__chips">
+        <div class="lf__chips" id="lf-cats">
           <button type="button" class="lf__chip lf__chip--on" data-facet="cat" data-value="__all">
             Alle <span class="lf__n">{tools.length}</span>
           </button>
-          {sortedCategories.map(({ slug, cat, count }) => (
-            <button type="button" class="lf__chip" data-facet="cat" data-value={slug}>
+          {sortedCategories.map(({ slug, cat, count }, i) => (
+            <button type="button" class:list={['lf__chip', { 'lf__chip--overflow': i >= 6 }]} data-facet="cat" data-value={slug}>
               {cat.name} <span class="lf__n">{count}</span>
             </button>
           ))}
+          {/* Mobiel: categorieën voorbij de top 6 zitten achter deze knop (CSS/JS). */}
+          <button type="button" class="lf__more" id="lf-cats-more" aria-expanded="false" aria-controls="lf-cats">
+            <span class="lf__more-label">Meer</span><span class="lf__more-n"> +{Math.max(0, sortedCategories.length - 6)}</span>
+          </button>
         </div>
       </div>
 
@@ -493,10 +497,28 @@ export const prerender = true;
   .lf__wizard strong { color: var(--text-primary); font-weight: var(--font-semibold); }
   .lf__wizard:hover { color: var(--text-primary); }
   .lf__wizard:hover strong { color: var(--primary-bright); }
+  /* "Meer"-knop voor de categorie-overflow — standaard verborgen (desktop toont
+     alle chips); alleen op mobiel zichtbaar via de media-query hieronder. */
+  .lf__more {
+    appearance: none; cursor: pointer; font: inherit;
+    font-size: var(--text-xs); font-weight: var(--font-semibold);
+    color: var(--primary-bright);
+    background: transparent;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-pill);
+    padding: 5px 12px; line-height: 1;
+    display: none;
+    align-items: center;
+  }
+  .lf__more:hover { border-color: var(--primary-bright); }
+  .lf__more-n { opacity: 0.7; font-family: var(--font-mono); font-size: 0.85em; }
   @media (max-width: 560px) {
     .lf { padding: var(--space-4); }
     .lf__group { grid-template-columns: 1fr; gap: var(--space-1); }
     .lf__label { padding-top: 0; }
+    /* Categorie-chips voorbij de top 6 inklappen tot "Meer" wordt getikt. */
+    #lf-cats:not(.is-expanded) .lf__chip--overflow { display: none; }
+    #lf-cats .lf__more { display: inline-flex; }
   }
 
   /* ── Categorie-filterrij ────────────────────────── */
@@ -951,13 +973,33 @@ export const prerender = true;
     apply();
   });
 
+  // Mobiel: categorie-overflow in-/uitklappen ("Meer" ↔ "Minder").
+  const catChips = q('#lf-cats');
+  const catMore  = q('#lf-cats-more');
+  function setCatsExpanded(expanded: boolean) {
+    catChips?.classList.toggle('is-expanded', expanded);
+    catMore?.setAttribute('aria-expanded', String(expanded));
+    const lbl = catMore?.querySelector('.lf__more-label');
+    const n   = catMore?.querySelector('.lf__more-n') as HTMLElement | null;
+    if (lbl) lbl.textContent = expanded ? 'Minder' : 'Meer';
+    if (n) n.style.display = expanded ? 'none' : '';
+  }
+  catMore?.addEventListener('click', () => {
+    setCatsExpanded(!catChips?.classList.contains('is-expanded'));
+  });
+
   // Deeplinks vanuit interne links: ?q= en ?cat=.
   (function initFromUrl() {
     const params = new URLSearchParams(location.search);
     const cat = params.get('cat');
     if (cat) {
       const chip = document.querySelector(`.lf__chip[data-facet="cat"][data-value="${CSS.escape(cat)}"]`) as HTMLElement | null;
-      if (chip) { state.cat = cat; syncCatChips(); }
+      if (chip) {
+        state.cat = cat; syncCatChips();
+        // Zit de gekozen categorie in de mobiele overflow? Dan uitklappen zodat
+        // de actieve chip zichtbaar is.
+        if (chip.classList.contains('lf__chip--overflow')) setCatsExpanded(true);
+      }
     }
     const query = params.get('q');
     if (query && searchInput) { searchInput.value = query; search = query.trim().toLowerCase(); }

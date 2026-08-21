@@ -61,12 +61,13 @@ export const prerender = true;
   <main class="container container-wide browse">
 
     <header class="browse__head">
-      <p class="kicker kicker--accent browse__kicker">AI-toolgids · onafhankelijk getest</p>
+      <p class="kicker kicker--accent browse__kicker">Volledige catalogus · scannen &amp; vergelijken</p>
       <h1 class="browse__title">Alle AI-tools</h1>
       <p class="browse__sub">
-        Filter <strong>{tools.length} tools</strong> op taak, prijs, gebruiksgemak, NL en AVG.
-        Wissel tussen kaarten om te kiezen en een tabel om te scannen.
+        De complete catalogus om te <strong>scannen en vergelijken</strong>: sorteer alle {tools.length} tools
+        op buzz en groei, filter op gebruiksgemak, prijs, NL en AVG.
       </p>
+      <a href="/" class="browse__crosslink">Liever snel de juiste tool vinden? → Start op de homepage</a>
       <div class="searchbar">
         <Search size={20} stroke-width={1.75} class="searchbar__icon" />
         <input
@@ -97,10 +98,10 @@ export const prerender = true;
           Filters
         </button>
         <div class="view-toggle" role="group" aria-label="Weergave">
-          <button type="button" class="view-btn view-btn--active" data-view="cards" aria-pressed="true">
+          <button type="button" class="view-btn" data-view="cards" aria-pressed="false">
             <LayoutGrid size={15} stroke-width={1.75} /> <span>Kaarten</span>
           </button>
-          <button type="button" class="view-btn" data-view="table" aria-pressed="false">
+          <button type="button" class="view-btn view-btn--active" data-view="table" aria-pressed="true">
             <Table2 size={15} stroke-width={1.75} /> <span>Tabel</span>
           </button>
         </div>
@@ -157,13 +158,13 @@ export const prerender = true;
 
       <!-- Resultaten -->
       <div class="browse__results">
-        <!-- 🐣 Kaartweergave -->
-        <div class="tool-grid" id="view-cards">
+        <!-- 🐣 Kaartweergave — secundair op /tools (via toggle "Kaarten"). -->
+        <div class="tool-grid" id="view-cards" hidden>
           {toolsSorted.map(tool => <ToolCard tool={tool} />)}
         </div>
 
-        <!-- ⚡ Tabelweergave -->
-        <div class="table-wrap" id="view-table" hidden>
+        <!-- ⚡ Tabelweergave — default op /tools: scan- & vergelijk-modus. -->
+        <div class="table-wrap" id="view-table">
           <table class="tool-table">
             <thead>
               <tr>
@@ -347,8 +348,16 @@ export const prerender = true;
   .browse__head { max-width: 720px; margin: var(--space-6) auto var(--space-8); text-align: center; }
   .browse__kicker { margin-bottom: var(--space-3); }
   .browse__title { font-size: var(--text-4xl); font-weight: var(--font-bold); margin: 0 0 var(--space-3); letter-spacing: var(--tracking-tight); }
-  .browse__sub { color: var(--text-secondary); margin: 0 0 var(--space-5); }
+  .browse__sub { color: var(--text-secondary); margin: 0 0 var(--space-3); }
   .browse__sub strong { color: var(--text-primary); }
+  .browse__crosslink {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--primary-bright);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+  .browse__crosslink:hover { opacity: 0.8; text-decoration: underline; }
 
   /* Stat-band — autoriteit in één oogopslag (ritme van ainieuwsradar) */
   .browse__stats {
@@ -433,6 +442,10 @@ export const prerender = true;
 
   /* Tabel */
   .table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); }
+  /* [hidden] afdwingen: de globale `.tool-grid { display:grid }` overschrijft
+     anders het hidden-attribuut, waardoor de niet-actieve weergave (kaarten of
+     tabel) zichtbaar door de andere heen lekt bij het wisselen. */
+  #view-cards[hidden], #view-table[hidden] { display: none !important; }
   .tool-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
   .tool-table th, .tool-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border-subtle); white-space: nowrap; }
   .tool-table thead th { position: sticky; top: 0; background: var(--bg-elevated); color: var(--text-muted); font-weight: var(--font-semibold); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.04em; z-index: 1; }
