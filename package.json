@@ -13,13 +13,14 @@
     "generate-cheatsheet": "tsx scripts/generate-cheatsheet.ts",
     "build": "npm run tools:verify && npm run verify:diorama && npm run generate-og && node scripts/generate-responsive-images.mjs && node scripts/build-search-index.mjs && astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && npm run audit:html && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
     "tools:verify": "tsx scripts/validate-tools.impl.mts",
     "fetch-ph-stats": "tsx scripts/fetch-ph-stats.ts",
     "social": "node scripts/generate-social.mjs",
     "social:all": "node scripts/generate-social.mjs --all",
-    "social:upload": "node scripts/upload-social.mjs"
+    "social:upload": "node scripts/upload-social.mjs",
+    "audit:html": "node scripts/check-html-complete.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
