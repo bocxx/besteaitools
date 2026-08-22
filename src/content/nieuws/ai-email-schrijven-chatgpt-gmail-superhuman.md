@@ -17,7 +17,7 @@ toolSlug: "chatgpt"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/ai-email-schrijven-chatgpt-gmail-superhuman.webp"
+heroImage: "/images/articles/diorama-ai-email-schrijven-chatgpt-gmail-superhuman.webp"
 heroScene: "A miniature wooden desk with a tiny laptop showing an inbox, small glowing envelope icons floating above, a pen-shaped light beam composing text, warm amber office lighting"
 keyTakeaways:
   - "Gmail AI (Gemini) zit al ingebakken in je Gmail — klik op het sterretje en je hebt een concepte-mail in seconden, gratis."

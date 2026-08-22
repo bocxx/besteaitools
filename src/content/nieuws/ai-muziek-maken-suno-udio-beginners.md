@@ -17,7 +17,7 @@ toolSlug: "suno"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/ai-muziek-maken-suno-udio-beginners.webp"
+heroImage: "/images/articles/diorama-ai-muziek-maken-suno-udio-beginners.webp"
 heroScene: "A tiny wooden stage with miniature musical instruments — a small guitar, piano keys, and floating music notes — glowing softly in studio lighting, with a translucent waveform above"
 keyTakeaways:
   - "Suno v4 is de standaard voor complete nummers met vocalen — je beschrijft een stijl en de AI schrijft én zingt het nummer."

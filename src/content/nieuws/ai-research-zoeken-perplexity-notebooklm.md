@@ -17,7 +17,7 @@ toolSlug: "perplexity"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/ai-research-zoeken-perplexity-notebooklm.webp"
+heroImage: "/images/articles/diorama-ai-research-zoeken-perplexity-notebooklm.webp"
 heroScene: "A miniature library desk with tiny books, a glowing search bar floating above, small magnifying glass hovering over open pages, citation footnote flags sticking out of documents, warm reading lamp light"
 keyTakeaways:
   - "Perplexity is de snelste voor directe vragen met bronvermeldingen — ideaal als je snel een feit of overzicht wilt."

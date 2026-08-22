@@ -17,7 +17,7 @@ toolSlug: "gamma"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/ai-presentaties-maken-gamma-beautiful.webp"
+heroImage: "/images/articles/diorama-ai-presentaties-maken-gamma-beautiful.webp"
 heroScene: "A tiny wooden desk with miniature slide cards arranged in a fan, a small glowing projector casting a colorful presentation onto a white screen, pastel geometric shapes floating around, warm studio lighting"
 keyTakeaways:
   - "Gamma maakt in één prompt een complete deck met tekst, opmaak én afbeeldingen — het snelst van de drie en gratis te proberen."

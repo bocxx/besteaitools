@@ -17,7 +17,7 @@ toolSlug: "chatgpt"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/nieuws/ai-social-media-content-buffer-chatgpt-jasper.webp"
+heroImage: "/images/articles/diorama-ai-social-media-content-buffer-chatgpt-jasper.webp"
 heroScene: "A miniature social media content studio with tiny phone screens showing different platforms, floating post cards with text and images, a small calendar with scheduled dates, colorful confetti-like engagement icons"
 keyTakeaways:
   - "De meest effectieve aanpak: gebruik ChatGPT voor de tekst, Canva AI voor de visual, Buffer voor de planning — drie gratis tools."

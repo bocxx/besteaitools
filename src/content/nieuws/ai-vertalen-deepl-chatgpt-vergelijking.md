@@ -17,7 +17,7 @@ toolSlug: "deepl"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/ai-vertalen-deepl-chatgpt-vergelijking.webp"
+heroImage: "/images/articles/diorama-ai-vertalen-deepl-chatgpt-vergelijking.webp"
 heroScene: "A miniature globe on a wooden desk with tiny flags from different countries, small speech bubbles in different languages floating above, a translucent arrow showing translation direction, warm desk lamp lighting"
 keyTakeaways:
   - "DeepL geeft de meest vloeiende vertaling voor Europese talen — de beste keuze voor directe documenten, e-mails en zakelijke teksten."

@@ -17,7 +17,7 @@ toolSlug: "elevenlabs"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/ai-voiceover-stemklonen-elevenlabs-murf.webp"
+heroImage: "/images/articles/diorama-ai-voiceover-stemklonen-elevenlabs-murf.webp"
 heroScene: "A miniature wooden recording studio desk with a tiny microphone, glowing waveforms on a small screen, sound waves floating in the air, warm amber studio lighting"
 keyTakeaways:
   - "ElevenLabs is de standaard voor realisme en emotie — de beste keuze als kwaliteit voorop staat."

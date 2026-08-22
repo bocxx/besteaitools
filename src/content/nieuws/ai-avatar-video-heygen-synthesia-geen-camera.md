@@ -17,7 +17,7 @@ toolSlug: "heygen"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/nieuws/ai-avatar-video-heygen-synthesia-geen-camera.webp"
+heroImage: "/images/articles/diorama-ai-avatar-video-heygen-synthesia-geen-camera.webp"
 heroScene: "A miniature film set with a tiny avatar figure standing before a green screen, small film lights around it, a clapperboard in the corner, floating subtitles above, warm studio lighting"
 keyTakeaways:
   - "HeyGen is de meest gebruikte tool voor AI-avatar video's — breed scala aan avatars, sterke lip-sync en Nederlandse ondersteuning."

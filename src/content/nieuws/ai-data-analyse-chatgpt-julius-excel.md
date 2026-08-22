@@ -17,7 +17,7 @@ toolSlug: "chatgpt"
 featured: false
 draft: false
 readingTime: 5
-heroImage: "/images/nieuws/ai-data-analyse-chatgpt-julius-excel.webp"
+heroImage: "/images/articles/diorama-ai-data-analyse-chatgpt-julius-excel.webp"
 heroScene: "A miniature data lab with tiny bar charts and line graphs floating above a wooden desk, small spreadsheet grids glowing on a screen, a tiny magnifying glass over a data point, cool blue analytical lighting"
 keyTakeaways:
   - "ChatGPT Advanced Data Analysis (ADA) schrijft en draait automatisch Python-code op jouw data — je ziet de uitkomst, niet de code."
