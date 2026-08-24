@@ -3,7 +3,7 @@
   "category": "chatbots",
   "websiteUrl": "https://qwenlm.github.io",
   "shortDescription": "Alibaba's open-source taalmodel met sterke meertalige prestaties",
-  "headlineValueProp": "Open-source LLM-familie van Alibaba met sterke meertalige prestaties — concurrerend met Llama en Mistral",
+  "headlineValueProp": "Open-weight LLM-familie van Alibaba — Qwen3.8-27B draait multimodaal op één GPU onder Apache 2.0",
   "pricingModel": "freemium",
   "difficulty": "intermediate",
   "tags": [
@@ -14,33 +14,35 @@
     "chatbots"
   ],
   "draft": false,
-  "longDescription": "Qwen is Alibaba's LLM-familie met een open en een proprietary spoor. Open-weight (Apache 2.0): de Qwen3-lijn, met Qwen3.5 (februari 2026, 397B totaal / 17B actief, 201 talen) als sterkste open release. Proprietary via Alibaba Cloud: Qwen3.7-Max (mei 2026, tekst-vlaggenschip met 1M-token context en native ondersteuning voor het Anthropic API-protocol) en het goedkopere multimodale Qwen3.7-Plus. Self-hosting kan via Ollama, vLLM en Hugging Face; daarnaast is er de gratis Qwen Chat-app.",
+  "longDescription": "Qwen is Alibaba's LLM-familie met een open en een proprietary spoor. De Qwen3.8-lijn (augustus 2026) is de huidige generatie. Qwen3.8-Max verscheen op 3 augustus als vlaggenschip: een mixture-of-experts van 2,4 biljoen parameters met circa 95 miljard actieve, tekst-only, met open weights vanaf 12 augustus onder een eigen Alibaba-licentie. Qwen3.8-27B volgde op 14 augustus en is het model dat de meeste teams daadwerkelijk kunnen draaien: een dens multimodaal model van 27 miljard parameters onder Apache 2.0, met 262.144 tokens context (via YaRN op te rekken naar 1 miljoen) dat tekst, beeld en video als invoer neemt. Er is ook een FP8-variant die het geheugenbeslag ruwweg halveert. Self-hosting via vLLM, SGLang, Ollama en Hugging Face; daarnaast de gratis Qwen Chat-app.",
   "primaryJobsToBeDone": [
-    "Een sterk open-source LLM zelf hosten voor data-soevereiniteit",
+    "Een sterk open-weight LLM zelf hosten voor data-soevereiniteit",
     "Meertalige toepassingen bouwen die ook Aziatische talen goed beheersen",
     "Token-kosten verlagen door over te stappen van proprietary modellen naar open weights"
   ],
   "antiUseCases": [
     "Use cases die maximale Nederlands-talige nuance vereisen — westerse modellen (Mistral, Claude) zijn daar sterker",
     "Teams die liever bij een westerse vendor blijven om geopolitieke redenen",
-    "Productie-deploys zonder zelf-hosting-capaciteit"
+    "Productie-deploys zonder zelf-hosting-capaciteit of GPU-budget"
   ],
-  "bestFor": "Qwen is vooral waardevol voor teams die een sterk open-weight model willen self-hosten, meertalige toepassingen bouwen of goedkope agentic API-modellen zoeken.",
+  "bestFor": "Qwen is vooral waardevol voor teams die een sterk open-weight model willen self-hosten, meertalige of multimodale toepassingen bouwen, of goedkope agentic API-modellen zoeken.",
   "useCases": [
     "Open-weight LLM self-hosten voor data-soevereiniteit",
-    "Meertalige toepassingen (201 talen in Qwen3.5)",
-    "Agentic workflows via de goedkope Qwen3.7-API"
+    "Multimodale verwerking van documenten, schermafbeeldingen en video met Qwen3.8-27B",
+    "Agentic workflows via de Qwen3.8-Max-API"
   ],
   "strengths": [
-    "Sterkste open-weight familie op meertalige benchmarks",
-    "Apache 2.0-licentie zonder gebruikslimieten",
-    "Qwen3.7-Max werkt native met tools gebouwd voor het Anthropic API-protocol"
+    "Qwen3.8-27B is multimodaal én Apache 2.0 — commercieel gebruik zonder afdracht, bevestigd in het licentiebestand",
+    "Past op één high-end consumenten- of workstation-GPU, zeker in de FP8-variant",
+    "Sterkste open-weight familie op meertalige benchmarks"
   ],
   "limitations": [
-    "Chinese herkomst kan een compliance-overweging zijn",
-    "Topmodellen (3.7-Max/Plus) zijn alleen via Alibaba Cloud-API beschikbaar, niet open"
+    "Chinese herkomst kan een compliance-overweging zijn, en op politiek gevoelige onderwerpen wijken antwoorden af",
+    "De gepubliceerde benchmarkscores komen uit Alibaba's eigen tests, deels op een door Alibaba aangepaste testset; twee gebruikte benchmarks zijn niet openbaar",
+    "Qwen3.8-Max heeft een eigen licentie, geen Apache 2.0 — check per checkpoint",
+    "Voor Qwen3.8-27B is er nog geen first-party gehoste dienst; Qwen Cloud staat aangekondigd maar is nog niet live"
   ],
-  "pricing": "Open Qwen3-modellen gratis (Apache 2.0, eigen hosting); Qwen Chat gratis; API via Alibaba Cloud: Qwen3.7-Max $2,50/$7,50 per miljoen tokens, Qwen3.7-Plus circa een zesde daarvan",
+  "pricing": "Qwen3.8-27B gratis onder Apache 2.0 (eigen hosting); Qwen Chat gratis. Gehost endpoint voor de 27B loopt vooralsnog via OpenRouter: $0,45 in / $3,20 uit per miljoen tokens. Qwen3.8-Max via Alibaba Cloud: circa $2,00 in / $6,00 uit per miljoen tokens op het internationale (Singapore) endpoint; het endpoint in China is fors goedkoper.",
   "openSource": false,
   "businessFunctions": [
     "development",
@@ -69,8 +71,8 @@
     "enterprise"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Qwen van Alibaba levert sterke meertalige modellen met name voor Aziatische talen. De open-source versies zijn competitief met westerse modellen en gratis te gebruiken.",
-  "whyListed": "Qwen groeide snel tot een van de sterkste open-source LLM-families voor meertalig gebruik, met name populair na Qwen2.5 dat westerse modellen evenaarde.",
+  "verdict": "Qwen van Alibaba levert sterke meertalige modellen, met name voor Aziatische talen. Met Qwen3.8-27B is er sinds augustus 2026 een multimodaal open-weight model onder Apache 2.0 dat op één GPU past — voor wie gevoelige data binnen de eigen muren wil houden is dat het serieuste alternatief tot nu toe.",
+  "whyListed": "Qwen groeide uit tot een van de sterkste open-weight LLM-families voor meertalig gebruik. Qwen3.8-27B werd in het eerste weekend na de release meer dan drie miljoen keer gedownload.",
   "bestAlternative": "llama",
   "setupTime": "days",
   "matchSegments": [
@@ -90,15 +92,25 @@
   "vendorLockInRisk": "low",
   "keyFeatures": [
     {
-      "title": "Qwen3.5 open weights",
-      "description": "Sterkste open release (feb 2026): 397B totaal / 17B actieve parameters onder Apache 2.0.",
+      "title": "Qwen3.8-27B open weights",
+      "description": "Dens multimodaal model van 27 miljard parameters (14 augustus 2026) onder Apache 2.0, inclusief FP8-variant.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Qwen3.8-Max",
+      "description": "Vlaggenschip (3 augustus 2026): mixture-of-experts van 2,4 biljoen parameters, circa 95 miljard actief, tekst-only.",
       "group": "core"
     },
     {
-      "title": "Qwen3.7-Max",
-      "description": "Proprietary vlaggenschip (mei 2026) met 1M-token context en sterke agentic prestaties.",
-      "group": "core",
-      "badge": "nieuw"
+      "title": "Beeld en video als invoer",
+      "description": "Qwen3.8-27B is een native vision language model: tekst, afbeeldingen en video erin, tekst eruit.",
+      "group": "input"
+    },
+    {
+      "title": "262K context, tot 1M via YaRN",
+      "description": "Native venster van 262.144 tokens; de uitbreiding naar een miljoen kan op korte invoer nauwkeurigheid kosten.",
+      "group": "core"
     },
     {
       "title": "201 talen",
@@ -106,27 +118,17 @@
       "group": "core"
     },
     {
-      "title": "1M-token context",
-      "description": "Verwerkt complete codebases of documentsets in één prompt (3.7-generatie).",
-      "group": "core"
-    },
-    {
-      "title": "Multimodale Plus-variant",
-      "description": "Qwen3.7-Plus begrijpt beeld en video tegen circa een zesde van de Max-prijs.",
-      "group": "input"
-    },
-    {
-      "title": "Anthropic API-compatibel",
-      "description": "Qwen3.7-Max werkt direct met tooling die voor Claude is gebouwd.",
+      "title": "Draait op één GPU",
+      "description": "Past volgens Alibaba op één high-end consumenten- of workstation-GPU; FP8 halveert het geheugenbeslag ruwweg.",
       "group": "integration"
     },
     {
       "title": "Self-hosting",
-      "description": "Open modellen draaien via Ollama, vLLM en Hugging Face op eigen hardware.",
+      "description": "Serveerrecepten gepubliceerd voor vLLM en SGLang; weights op Hugging Face en ModelScope.",
       "group": "integration"
     }
   ],
-  "lastUpdated": "2026-06-06",
-  "lastReviewedAt": "2026-06-06",
+  "lastUpdated": "2026-08-24",
+  "lastReviewedAt": "2026-08-24",
   "supportsDutchLanguage": false
 }
