@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-23T17:25:15.280558",
+  "generated_at": "2026-08-24T05:31:25.368648",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 18,
-    "for_news": 13,
-    "rejected_lang": 119,
+    "for_news": 15,
+    "rejected_lang": 117,
     "already_covered": 0,
-    "total_scanned": 4363
+    "total_scanned": 4360
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step-by-step",
-        "guide"
+        "guide",
+        "step-by-step"
       ],
       "matched_tools": [
         "claude",
@@ -109,6 +109,56 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "aa62b50d1863d008"
+    },
+    {
+      "source": "reddit:r/LocalLLaMA",
+      "platform": "reddit",
+      "title": "Qwen 3.8 27B is a game changer.",
+      "text": "Our devs got their hands on it a few days ago. One wired it into Codex to compare with GPT Luna, our usual workhorse right now for its cost effectiveness. Another tried it out on one of our OCR pipelines. \n\n  \nIt's comparable to Luna for coding and \\*\\*\\*OCR quality appears to be better than Gemini 3.5 Flash Lite\\*\\*\\*. That's huge. We pay a ton of money for OCR. \n\n  \nThis is the first local model that feels like more than a toy. It's truly as capable as the frontier models from a year ago. For the first time ever there's serious discussions about buying our own hardware. With estimates that s",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/",
+      "date": "2026-08-23",
+      "engagement": 1201.0,
+      "source_weight": 2.0,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "hands on"
+      ],
+      "matched_tools": [
+        "gemini",
+        "qwen"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "reddit"
+      ],
+      "score": 17.14,
+      "score_breakdown": {
+        "pattern_hits": 1,
+        "engagement_log": 10.64,
+        "source_weight": 2.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: gemini inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "bb669606ee371497"
     },
     {
       "source": "github:Python",
@@ -375,73 +425,6 @@
       "id": "f94e1f25b4ba0eee"
     },
     {
-      "source": "github:Python",
-      "platform": "github",
-      "title": "calesthio/OpenMontage — World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
-      "text": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
-      "url": "https://github.com/calesthio/OpenMontage",
-      "date": "2026-06-24",
-      "engagement": 3703.0,
-      "source_weight": 2.5,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": true,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "total_stars": 18556,
-      "topics": [
-        "agent",
-        "agentic-ai",
-        "ai",
-        "claude",
-        "copilot",
-        "cursor",
-        "elevenlabs",
-        "ffmpeg",
-        "flux",
-        "image-generation",
-        "open-source",
-        "openai",
-        "python",
-        "remotion",
-        "stable-diffusion",
-        "text-to-speech",
-        "text-to-video",
-        "video-generation",
-        "video-production"
-      ],
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "github"
-      ],
-      "score": 16.33,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 12.33,
-        "source_weight": 2.5,
-        "ai_relevance": 1.5,
-        "recency": 0.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Nieuw in OpenMontage: wat de update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "7d9caefca2ca0e85"
-    },
-    {
       "source": "github:Jupyter Notebook",
       "platform": "github",
       "title": "microsoft/AI-For-Beginners — 12 Weeks, 24 Lessons, AI for All!",
@@ -498,6 +481,73 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "00178692f3c75f69"
+    },
+    {
+      "source": "github:Python",
+      "platform": "github",
+      "title": "calesthio/OpenMontage — World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+      "text": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "date": "2026-06-25",
+      "engagement": 3553.0,
+      "source_weight": 2.5,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "total_stars": 21685,
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "ai",
+        "claude",
+        "copilot",
+        "cursor",
+        "elevenlabs",
+        "ffmpeg",
+        "flux",
+        "image-generation",
+        "open-source",
+        "openai",
+        "python",
+        "remotion",
+        "stable-diffusion",
+        "text-to-speech",
+        "text-to-video",
+        "video-generation",
+        "video-production"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "github"
+      ],
+      "score": 16.26,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 12.26,
+        "source_weight": 2.5,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Nieuw in OpenMontage: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "7d9caefca2ca0e85"
     },
     {
       "source": "github:Python",
@@ -620,9 +670,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
         "tutorial",
-        "build a"
+        "build a",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -669,9 +719,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "guide",
         "practical guide",
-        "guide"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -718,9 +768,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "explained",
         "tutorial",
-        "explained"
+        "how to"
       ],
       "matched_tools": [
         "make"
@@ -769,9 +819,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "guide",
         "build an",
-        "guide"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -808,7 +858,7 @@
       "id": "cb2db064c6e5a50e"
     },
     {
-      "source": "articles:freeCodeCamp",
+      "source": "articles:freeCodeCamp.org News",
       "platform": "article",
       "title": "The AI Agent Engineer's Guide: 60 Patterns for Building Autonomous Systems [Full Book]",
       "text": "<p>This book is a capability-led field guide to the architectures that make modern AI agents actually work. It includes code, failure modes, and illustrative composite case studies for every pattern.</p>\n<h2 data-sanitized-id=\"heading-about-this-book\">About This Book</h2>\n<p>The first wave of agent literature was organized by domain. It told you how to build a healthcare agent, a finance agent, or a coding agent, as if the discipline were a set of vertical recipes.</p>\n<p>That framing was useful while the field was young. But it can now be misleading. The healthcare agent and the coding agent,",
@@ -818,10 +868,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
+        "guide",
         "build a",
         "case studies",
-        "guide"
+        "how to"
       ],
       "matched_tools": [
         "make"
@@ -905,55 +955,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "6b93241c472b0bf7"
-    },
-    {
-      "source": "reddit:r/singularity",
-      "platform": "reddit",
-      "title": "Reuters: OpenAI didn’t know about hack for a week. Agents had left instructions for future versions of itself on how to free itself",
-      "text": "Link to article:\n\nhttps://www.reuters.com/business/its-ai-agent-spent-days-hacking-company-sources-say-openai-did-not-notice-week-2026-07-24/",
-      "url": "https://www.reddit.com/r/singularity/comments/1v5s14x/reuters_openai_didnt_know_about_hack_for_a_week/",
-      "date": "2026-07-24",
-      "engagement": 624.0,
-      "source_weight": 2.0,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "how to"
-      ],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "reddit"
-      ],
-      "score": 15.66,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 9.66,
-        "source_weight": 2.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "9b8a6ee2f7e41f4c"
     }
   ],
   "for_news": [
@@ -1242,9 +1243,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "hands on",
+        "from scratch",
         "how to",
-        "from scratch"
+        "hands on"
       ],
       "matched_tools": [
         "make"
@@ -1286,6 +1287,58 @@
       "id": "c1b02782ee8df034"
     },
     {
+      "source": "tweets:@barrald",
+      "platform": "tweet",
+      "title": "ok, hear me out: we should build a ton of AI data center capacity in northern Alaska\n\nI think about this a weird amount, because I’ve actually spent time there ",
+      "text": "ok, hear me out: we should build a ton of AI data center capacity in northern Alaska\n\nI think about this a weird amount, because I’ve actually spent time there for work (I believe I hold the record for northern-most deployment in Palantir history?)\n\nPrudhoe Bay sits on the very northern coast of Alaska, and was once the largest oil field in America. It still pumps 180k barrels of crude oil per day from over 800 wells, with 2k people working up there.\n\nIt also produces 8 billion cubic ft of natural gas/day. While in most oil fields it’d be exported and sold, in Alaska natural gas is re-injected",
+      "url": "https://twitter.com/barrald/status/2091584842895065102",
+      "date": "2026-08-24",
+      "engagement": 1450.0,
+      "source_weight": 0.5,
+      "ai_relevant": true,
+      "pattern_hits": [
+        "build an",
+        "build a",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "_author_bonus": 1.0,
+      "author": "barrald",
+      "followers": 4218,
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "tweet"
+      ],
+      "score": 16.0,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 6.0,
+        "source_weight": 0.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 1.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je AI in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "529c111807e3d8fa"
+    },
+    {
       "source": "tweets:@BharukaShraddha",
       "platform": "tweet",
       "title": "Stop wasting hours trying to learn AI. 📘📚\n\nI have already done it for you.\n\nWith one list. Zero confusion. And no fluff\n\n📹 Videos:\n\n1. LLM Introduction: https:/",
@@ -1296,11 +1349,11 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
-        "handbook",
         "hands-on",
+        "from scratch",
         "practical guide",
-        "from scratch"
+        "guide",
+        "handbook"
       ],
       "matched_tools": [
         "chatgpt",
@@ -1317,7 +1370,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "BharukaShraddha",
-      "followers": 35471,
+      "followers": 35458,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1345,6 +1398,55 @@
       "id": "859362dde3f034e6"
     },
     {
+      "source": "articles:The Practical Developer",
+      "platform": "article",
+      "title": "Your Data, Your Privacy: Building a Collaborative Allergy Predictor with Federated Learning",
+      "text": "<p>We live in an era where our smartphones know more about our health than we do. From heart rate variability to sleep patterns, personal devices are goldmines for predictive health models. However, the \"Health Data Paradox\" remains: we want smarter AI to predict things like <strong>allergy triggers</strong>, but we don't want to upload our intimate medical logs to a centralized cloud. </p>\n\n<p>This is where <strong>Federated Learning</strong> and <strong>Privacy-Preserving AI</strong> come to the rescue. By leveraging <strong>Decentralized Machine Learning</strong> techniques, we can train po",
+      "url": "https://dev.to/beck_moulton/your-data-your-privacy-building-a-collaborative-allergy-predictor-with-federated-learning-2khd",
+      "date": "2026-08-24",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide",
+        "build a",
+        "how to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je Your Data in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "5e90aeccb9b254cd"
+    },
+    {
       "source": "articles:MarkTechPost",
       "platform": "article",
       "title": "The Developer’s Guide to NeMo Guardrails for Enterprise AI Safety",
@@ -1355,9 +1457,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build an",
+        "guide",
         "tutorial",
-        "guide"
+        "build an"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1453,9 +1555,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
         "hands-on",
-        "build a"
+        "build a",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1502,9 +1604,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "guide",
         "introduction to",
-        "guide"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1544,26 +1646,26 @@
       "id": "961289ceac045cb2"
     },
     {
-      "source": "articles:Search Engine Journal",
+      "source": "articles:Artificial Intelligence on Medium",
       "platform": "article",
-      "title": "How To Track Google AI Mode Traffic In Search Console via @sejournal, @suganthan",
-      "text": "<p>Search Console hides AI Mode query data by default. This breakdown compares four extraction methods, including a free ML-powered tool.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/how-to-track-google-ai-mode-traffic-in-search-console/586194/\">How To Track Google AI Mode Traffic In Search Console</a> appeared first on <a href=\"https://www.searchenginejournal.com/\">Search Engine Journal</a>.</p>",
-      "url": "https://www.searchenginejournal.com/how-to-track-google-ai-mode-traffic-in-search-console/586194/",
-      "date": "2026-08-19",
-      "engagement": 20.75,
-      "source_weight": 1.5,
+      "title": "Vibe Coding Is Not for Production: How to Build Your First AI SDLC",
+      "text": "<div data-sanitized-class=\"medium-feed-item\"><p data-sanitized-class=\"medium-feed-image\"><a href=\"https://medium.com/@zoltan.sipkai/vibe-coding-is-not-for-production-how-to-build-your-first-ai-sdlc-1e75f928556a?source=rss------artificial_intelligence-5\"><img src=\"https://cdn-images-1.medium.com/max/2600/1*NoL5cHzaFPGKN4bxl9Jdaw.png\" width=\"3200\"></a></p><p data-sanitized-class=\"medium-feed-snippet\">Turn AI chats into a seven-stage development pipeline, with a public starter kit you can adapt to any new or existing repository.</p><p data-sanitized-class=\"medium-feed-link\"><a href=\"https://mediu",
+      "url": "https://medium.com/@zoltan.sipkai/vibe-coding-is-not-for-production-how-to-build-your-first-ai-sdlc-1e75f928556a?source=rss------artificial_intelligence-5",
+      "date": "2026-08-20",
+      "engagement": 39.25,
+      "source_weight": 0.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
-        "breakdown",
-        "how-to"
+        "build your",
+        "how-to",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
       "version_bump": false,
-      "paywall": false,
+      "paywall": true,
       "video": null,
       "lang": "en",
       "newsletter_count": 0,
@@ -1571,11 +1673,11 @@
       "consensus_sources": [
         "article"
       ],
-      "score": 14.62,
+      "score": 14.54,
       "score_breakdown": {
         "pattern_hits": 3,
-        "engagement_log": 4.62,
-        "source_weight": 1.5,
+        "engagement_log": 5.54,
+        "source_weight": 0.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
         "editorial": 0.0,
@@ -1587,10 +1689,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Zo gebruik je Vibe Coding Is in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "d6fde4ec08fff2bb"
+      "id": "5af5ddce7ab9580a"
     }
   ]
 }
