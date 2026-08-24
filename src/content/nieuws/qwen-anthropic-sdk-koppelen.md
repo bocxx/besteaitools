@@ -1,5 +1,5 @@
 ---
-title: "Qwen 3.7-Max gebruiken met je bestaande Anthropic-SDK: zo zet je het om"
+title: "Qwen 3.7-Max met je bestaande Anthropic-SDK: zo zet je het om"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Qwen 3.7-Max gebruiken met je bestaande Anthropic-SDK: zo zet je het om'"
 description: "Qwen 3.7-Max spreekt zowel de OpenAI- als de Anthropic-API. Zo laat je code die voor Claude is geschreven op Alibaba's model draaien, zonder herschrijven."
 publishedAt: 2026-08-21

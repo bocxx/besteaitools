@@ -1,5 +1,5 @@
 ---
-title: "Zo krijg je razendsnelle AI-antwoorden met Groq — gratis, zonder creditcard"
+title: "Razendsnelle AI-antwoorden met Groq — gratis, zonder creditcard"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Zo krijg je razendsnelle AI-antwoorden met Groq — gratis, zonder creditcard'"
 description: "Groq draait open AI-modellen op eigen chips, tot 10x sneller dan de rest. Zo maak je een gratis account en je eerste API-call in een paar minuten."
 publishedAt: 2026-08-01

@@ -1,5 +1,5 @@
 ---
-title: "Een AI-agent draaien die je data nooit verlaat: zo doe je het met Ollama"
+title: "Een AI-agent die je data nooit verlaat: zo doe je het met Ollama"
 heroImageAlt: "Miniatuur diorama-illustratie bij tutorial over een lokale AI-agent met Ollama"
 description: "Wil je AI inzetten op gevoelige gegevens zonder ze naar de cloud te sturen? Met Ollama draai je een model volledig op je eigen machine. Zo koppel je er een agent aan vast."
 publishedAt: 2026-07-29

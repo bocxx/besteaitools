@@ -1,5 +1,5 @@
 ---
-title: "Krea's Realtime Canvas gebruiken: stuur een AI-beeld terwijl het ontstaat"
+title: "Krea Realtime Canvas: stuur een AI-beeld terwijl het ontstaat"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Krea's Realtime Canvas gebruiken: stuur een AI-beeld terwijl het ontstaat'"
 heroImage: "/images/articles/diorama-krea-realtime-canvas-gebruiken.webp"
 description: "Krea genereert je beeld live terwijl je schetst, in minder dan een tiende seconde. Zo start je met de Realtime Canvas en houd je je gratis tegoed in de hand."

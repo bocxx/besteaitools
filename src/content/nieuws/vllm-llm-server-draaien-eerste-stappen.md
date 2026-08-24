@@ -1,5 +1,5 @@
 ---
-title: "vLLM in 4 stappen: draai een eigen LLM-server die praat als de OpenAI API"
+title: "vLLM in vier stappen: je eigen LLM-server, OpenAI-compatibel"
 description: "Ollama loopt vast zodra meerdere gebruikers tegelijk vragen stellen. Met vLLM zet je een GPU-server op die dezelfde API spreekt als OpenAI — in vier stappen."
 publishedAt: 2026-08-19
 updatedAt: 2026-08-19

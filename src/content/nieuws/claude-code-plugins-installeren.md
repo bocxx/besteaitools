@@ -1,5 +1,5 @@
 ---
-title: "Claude Code plugins installeren: skills, MCP's en agents in één commando"
+title: "Claude Code-plugins: skills, MCP's en agents in één commando"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude Code plugins installeren: skills, MCP's en agents in één commando'"
 description: "Met /plugin haal je kant-en-klare skills, agents en MCP-servers binnen in Claude Code. Zo voeg je een marketplace toe en installeer je je eerste plugin."
 publishedAt: 2026-08-21

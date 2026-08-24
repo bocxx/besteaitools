@@ -1,5 +1,5 @@
 ---
-title: "Zo bouw je met LlamaIndex een RAG-chatbot over je eigen documenten"
+title: "Bouw met LlamaIndex een RAG-chatbot over je eigen documenten"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Zo bouw je met LlamaIndex een RAG-chatbot over je eigen documenten'"
 description: "LlamaIndex verbindt een taalmodel met je eigen bestanden. In vijf stappen bouw je een RAG-chatbot die antwoordt op basis van jouw documenten, inclusief bronvermelding."
 publishedAt: 2026-07-27

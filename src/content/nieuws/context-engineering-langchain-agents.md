@@ -1,5 +1,5 @@
 ---
-title: "Context engineering: zo geef je een LangChain-agent alleen wat hij nodig heeft"
+title: "Context engineering: geef je LangChain-agent alleen wat nodig is"
 description: "Een prompt schrijf je één keer; context stuur je bij elke stap. Zo bepaal je met LangChain wélke informatie je agent ziet — en waarom dat betrouwbaardere antwoorden geeft dan een langere prompt."
 publishedAt: 2026-07-25
 updatedAt: 2026-07-25

@@ -1,5 +1,5 @@
 ---
-title: "Prompt caching bij Claude: zo betaal je tot 90% minder voor herhaalde context"
+title: "Prompt caching bij Claude: tot 90% minder betalen voor context"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Prompt caching bij Claude: zo betaal je tot 90% minder voor herhaalde context'"
 description: "Stuur je bij elke vraag dezelfde lange instructies mee, dan betaal je die telkens opnieuw. Met prompt caching lees je ze uit cache. Zo stel je het in."
 publishedAt: 2026-07-28

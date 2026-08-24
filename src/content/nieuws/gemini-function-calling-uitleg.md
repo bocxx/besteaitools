@@ -1,5 +1,5 @@
 ---
-title: "Function calling in Gemini: zo laat je de AI zelf jouw functies aanroepen"
+title: "Function calling in Gemini: laat AI zelf je functies aanroepen"
 description: "Met function calling laat je Gemini niet alleen praten, maar ook echt iets ophalen of doen — een bestelstatus, een berekening, een API. Zo werkt de lus in vier stappen, met een concreet voorbeeld."
 publishedAt: 2026-07-25
 updatedAt: 2026-07-25

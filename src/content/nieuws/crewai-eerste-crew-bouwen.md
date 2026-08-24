@@ -1,5 +1,5 @@
 ---
-title: "CrewAI voor beginners: bouw je eerste multi-agent-crew in vijf stappen"
+title: "CrewAI voor beginners: je eerste multi-agent-crew in vijf stappen"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'CrewAI voor beginners: bouw je eerste multi-agent-crew in vijf stappen'"
 heroImage: "/images/articles/diorama-crewai-eerste-crew-bouwen.webp"
 description: "CrewAI laat meerdere AI-agents samenwerken aan één taak. Zo installeer je het en draai je je eerste onderzoek-crew, zonder framework-ervaring vooraf."

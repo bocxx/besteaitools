@@ -1,5 +1,5 @@
 ---
-title: "Zo werkt de tool-calling-loop achter elke AI-agent (met gratis Gemini)"
+title: "De tool-calling-loop achter elke AI-agent, met gratis Gemini"
 heroImage: "/images/articles/diorama-gemini-function-calling-agent-loop.webp"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Zo werkt de tool-calling-loop achter elke AI-agent (met gratis Gemini)'"
 heroScene: "A miniature relay track where a small robot passes a labelled baton to a tool station and receives a result card back, running in a loop"

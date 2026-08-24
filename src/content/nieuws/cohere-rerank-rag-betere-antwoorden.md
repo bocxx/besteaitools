@@ -1,5 +1,5 @@
 ---
-title: "Cohere Rerank toevoegen aan je RAG: betere antwoorden, lagere tokenkosten"
+title: "Cohere Rerank in je RAG: betere antwoorden, lagere tokenkosten"
 heroImage: "/images/articles/diorama-cohere-rerank-rag-betere-antwoorden.webp"
 description: "Je RAG haalt de juiste passage wel op, maar op plek acht. Met een rerank-stap zet je hem bovenaan — en stuur je minder tekst naar je taalmodel."
 publishedAt: 2026-08-20

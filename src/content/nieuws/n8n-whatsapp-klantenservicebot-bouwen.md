@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp-klantenservicebot bouwen met n8n: van trigger tot automatisch antwoord"
+title: "WhatsApp-klantenservicebot bouwen met n8n, stap voor stap"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'WhatsApp-klantenservicebot bouwen met n8n: van trigger tot automatisch antwoord'"
 description: "Een AI-bot die je WhatsApp Business 24/7 beantwoordt en doorschakelt bij twijfel. Zo zet je hem in n8n op met vier nodes, zonder code."
 publishedAt: 2026-07-28
