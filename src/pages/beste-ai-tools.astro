@@ -12,6 +12,7 @@ export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import { getAllTools } from '../lib/tools-engine';
+import { kortePrijs, gratisTeProberen } from '../lib/pricing-display';
 import { ArrowLeft, Trophy, ShieldCheck, ArrowRight, Star, ExternalLink } from '@lucide/astro';
 
 const year = new Date().getFullYear();
@@ -141,27 +142,8 @@ const verrijkt = groepen.map((g) => ({
 
 const totaalPicks = verrijkt.reduce((n, g) => n + g.items.length, 0);
 
-// ── Afgeleide velden voor de snelkeuze-tabel ────────────────────────────────
-// De tool-data heeft geen losse prijs-/gratis-velden (hasFreePlan en
-// startingPriceMonthly zijn vrijwel overal leeg), dus leiden we ze af uit de
-// redactionele `pricing`-string. Die is op 245/246 tools ingevuld en wordt bij
-// elke review-ronde geverifieerd — betrouwbaarder dan een half gevuld boolean.
-
-/** Eerste genoemde bedrag uit de prijs-string, bv. "$20/mnd" of "€7,49/mnd". */
-function kortePrijs(pricing?: string): string {
-  if (!pricing) return '—';
-  const m = pricing.match(/([€$])\s?(\d+(?:[.,]\d+)?)/);
-  if (!m) return /gratis|open source/i.test(pricing) ? 'Gratis' : '—';
-  return `vanaf ${m[1]}${m[2]}`;
-}
-
-/** Kun je zonder betalen aan de slag? "Geen gratis tier" wint van "gratis". */
-function gratisTeProberen(tool: { pricing?: string; pricingModel?: string }): boolean {
-  const t = tool.pricing ?? '';
-  if (/geen gratis|no free/i.test(t)) return false;
-  if (tool.pricingModel === 'free') return true;
-  return /gratis|free tier|free plan/i.test(t);
-}
+// Prijs-/gratis-afleiding staat in lib/pricing-display.ts — gedeeld met de
+// gids-pagina's, zodat beide dezelfde regels hanteren.
 
 const slugify = (t: string) => t.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
 
@@ -174,7 +156,7 @@ const snelkeuze = verrijkt.map((g) => {
     id: slugify(g.titel),
     naam: top.tool!.name,
     slug: top.slug,
-    prijs: kortePrijs(top.tool!.pricing),
+    prijs: kortePrijs(top.tool!),
     gratis: gratisTeProberen(top.tool!),
     nl: top.tool!.supportsDutchLanguage === true,
   };
@@ -267,7 +249,7 @@ const faqJsonLd = {
             <tr>
               <th scope="col">Taak</th>
               <th scope="col">Onze keuze</th>
-              <th scope="col">Prijs</th>
+              <th scope="col">Betaald vanaf</th>
               <th scope="col">Gratis te proberen</th>
               <th scope="col">Nederlands</th>
             </tr>
@@ -286,8 +268,9 @@ const faqJsonLd = {
         </table>
       </div>
       <p class="bt__snel-note">
-        Prijzen zijn de laagste betaalde instap per gebruiker per maand, exclusief
-        btw en zonder jaarkorting. "Beperkt" bij Nederlands betekent dat de tool
+        "Betaald vanaf" is het goedkoopste betaalde niveau per gebruiker per maand,
+        exclusief btw en zonder jaarkorting — ook als de tool daarnaast een gratis
+        niveau heeft (dat staat in de kolom ernaast). "Beperkt" bij Nederlands betekent dat de tool
         wel Nederlandse invoer accepteert, maar dat wij de kwaliteit niet
         gelijkwaardig aan het Engels beoordelen.
       </p>

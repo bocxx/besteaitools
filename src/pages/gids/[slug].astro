@@ -11,6 +11,7 @@ import ToolCard from '../../components/molecules/ToolCard.astro';
 import SubscribeAnchor from '../../components/SubscribeAnchor.astro';
 import { getAllTools } from '../../lib/tools-engine';
 import { taskPages } from '../../lib/task-content';
+import { kortePrijs, gratisTeProberen } from '../../lib/pricing-display';
 import { buildFaqPageLd } from '../../lib/seo-helpers';
 import { siteConfig } from '../../config/site';
 import { Sparkles, ArrowRight, Gift } from '@lucide/astro';
@@ -27,6 +28,14 @@ export async function getStaticPaths() {
 
 const { task, tools } = Astro.props;
 const year = new Date().getFullYear();
+
+// Vergelijkingstabel: alleen de slugs die de redactie expliciet noemt, in die
+// volgorde. Een slug die niet (meer) in de directory zit valt stil weg — beter
+// een rij minder dan een build die breekt op een hernoemde tool.
+const perSlug = new Map(tools.map((t) => [t.slug, t]));
+const vergelijking = (task.comparison?.slugs ?? [])
+  .map((s) => perSlug.get(s))
+  .filter((t): t is NonNullable<typeof t> => Boolean(t));
 const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
 const pageUrl = `${siteOrigin}/gids/${task.slug}`;
 
@@ -79,6 +88,37 @@ const breadcrumbJsonLd = {
       <p class="gids__free"><Gift size={14} stroke-width={1.75} aria-hidden="true" /> {task.freeNote}</p>
     </header>
 
+    {vergelijking.length > 0 && (
+      <section class="gids__compare" aria-labelledby="vergelijk-h2">
+        <h2 id="vergelijk-h2" class="gids__h2">In één oogopslag</h2>
+        {task.comparison?.intro && <p class="gids__compare-intro">{task.comparison.intro}</p>}
+        <div class="gids__table-wrap">
+          <table class="gids__table">
+            <thead>
+              <tr>
+                <th scope="col">Tool</th>
+                <th scope="col">Betaald vanaf</th>
+                <th scope="col">Gratis te proberen</th>
+                <th scope="col">Nederlands</th>
+                <th scope="col">EU-hosting</th>
+              </tr>
+            </thead>
+            <tbody>
+              {vergelijking.map((t) => (
+                <tr>
+                  <th scope="row"><a href={`/ai-tools/${t.slug}`}>{t.name}</a></th>
+                  <td class="gids__td-num">{kortePrijs(t)}</td>
+                  <td>{gratisTeProberen(t) ? <span class="gids__ja">Ja</span> : <span class="gids__nee">Nee</span>}</td>
+                  <td>{t.supportsDutchLanguage ? <span class="gids__ja">Ja</span> : <span class="gids__nee">Beperkt</span>}</td>
+                  <td>{t.euHostingAvailable ? <span class="gids__ja">Ja</span> : <span class="gids__nee">Onbekend</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
     <section aria-label={`Tools voor ${task.h1}`}>
       <p class="gids__count">{tools.length} tools</p>
       {tools.length > 0 ? (
@@ -89,6 +129,13 @@ const breadcrumbJsonLd = {
         <p class="gids__empty">Nog geen tools in deze categorie — <a href="/">bekijk de hele directory</a>.</p>
       )}
     </section>
+
+    {(task.sections ?? []).map((sec) => (
+      <section class="gids__prose">
+        <h2 class="gids__h2">{sec.h2}</h2>
+        {sec.paragraphs.map((p) => <p>{p}</p>)}
+      </section>
+    ))}
 
     {task.faqs.length > 0 && (
       <section class="gids__faq" aria-labelledby="faq-h2">
@@ -167,4 +214,28 @@ const breadcrumbJsonLd = {
     font-weight: var(--font-medium); transition: border-color var(--transition-fast), color var(--transition-fast);
   }
   .gids__related-link:hover { border-color: var(--primary-bright); color: var(--primary-bright); }
+
+  /* ── Vergelijkingstabel ─────────────────────────────────────────────── */
+  .gids__compare { margin: var(--space-8) 0; }
+  .gids__compare-intro { color: var(--text-secondary); line-height: 1.65; margin: 0 0 var(--space-4); max-width: 68ch; }
+  /* De tabel scrollt zelf; de pagina nooit horizontaal. */
+  .gids__table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); }
+  .gids__table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); min-width: 36rem; }
+  .gids__table th, .gids__table td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  .gids__table thead th { font-family: var(--font-mono, monospace); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-weight: var(--font-regular); white-space: nowrap; }
+  .gids__table tbody tr:last-child th, .gids__table tbody tr:last-child td { border-bottom: 0; }
+  .gids__table tbody th { font-weight: var(--font-semibold); }
+  .gids__table tbody th a { color: var(--primary-bright); text-decoration: none; }
+  .gids__table tbody th a:hover { text-decoration: underline; }
+  .gids__td-num { font-family: var(--font-mono, monospace); white-space: nowrap; }
+  .gids__ja { color: var(--color-success, #4ade80); }
+  .gids__nee { color: var(--text-secondary); }
+
+  /* ── Redactionele secties ───────────────────────────────────────────── */
+  .gids__prose { margin: var(--space-10) 0; max-width: 68ch; }
+  .gids__prose p { color: var(--text-secondary); line-height: 1.7; margin: 0 0 var(--space-4); }
+
+  @media (max-width: 640px) {
+    .gids__table th, .gids__table td { padding: var(--space-2) var(--space-3); }
+  }
 </style>

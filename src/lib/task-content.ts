@@ -25,6 +25,22 @@ export interface TaskPage {
   /** Korte "gratis"-notitie (vangt de gratis-modifier) */
   freeNote: string;
   faqs: { q: string; a: string }[];
+  /**
+   * Optionele vergelijkingstabel bovenaan, gevoed uit de tool-data.
+   * Kolommen: prijs, gratis te proberen, Nederlands, EU-hosting — precies de
+   * assen waarop NL-zoekers kiezen. Weglaten = geen tabel.
+   */
+  comparison?: {
+    intro?: string;
+    /** Tool-slugs, in de volgorde waarin ze in de tabel moeten staan. */
+    slugs: string[];
+  };
+  /**
+   * Optionele redactionele secties, gerenderd ná de tool-lijst en vóór de FAQ.
+   * Bedoeld om de zoekintenties te beantwoorden die de kale directory-lijst
+   * niet dekt ("wat kost het", "is het veilig", "werkt het in het Nederlands").
+   */
+  sections?: { h2: string; paragraphs: string[] }[];
 }
 
 export const taskPages: TaskPage[] = [
@@ -59,30 +75,84 @@ export const taskPages: TaskPage[] = [
   },
   {
     slug: 'notuleren-met-ai',
-    h1: 'Notuleren met AI: de beste tools',
+    h1: 'Automatisch notuleren met AI: de beste notuleer-apps',
     kicker: 'Notuleren',
-    metaTitle: 'Notuleren met AI — de beste AI-notulisten ({year}) | debesteaitools.nl',
+    // Woordkeuze volgt de GSC-data van 22 mei – 22 aug 2026: "automatisch
+    // notuleren" (147 impressies), "notuleren met ai" (88), "ai notuleren"
+    // (60), "veilig notuleren" (54), "notuleer app" (38), "notuleer software"
+    // (30). De pagina stond op positie 74 met 565 impressies en 1 click —
+    // de vraag was er, de woorden op de pagina niet.
+    metaTitle: 'Automatisch notuleren met AI — de beste notuleer-apps ({year}) | debesteaitools.nl',
     metaDescription:
-      'AI-notulisten nemen je vergadering op, transcriberen en vatten samen met actiepunten. Vergelijk de beste tools voor notuleren met AI — wat ze kunnen en wat ze kosten.',
+      'Automatisch notuleren met AI: welke notuleer-app neemt je vergadering op, transcribeert en levert actiepunten? Vergelijk 10 tools op prijs, Nederlands en EU-hosting.',
     intro: [
-      'Een AI-notulist luistert mee in je (online) vergadering, zet het gesprek om in tekst en levert een samenvatting met besluiten en actiepunten. Schelt je het handmatige uitwerken.',
-      'Hieronder de notuleer-tools uit onze directory. Let op of een tool Nederlands goed aankan en hoe ’ie omgaat met je data — die info staat bij elke tool.',
+      'Automatisch notuleren betekent dat een AI-notulist meeluistert in je vergadering — live in de zaal of in Teams, Zoom of Meet — het gesprek omzet in tekst en er een samenvatting met besluiten en actiepunten van maakt. Wat vroeger een uur uitwerken kostte, staat nu binnen enkele minuten klaar.',
+      'De verschillen tussen notuleer-apps zitten op drie punten: hoe goed ze Nederlands verstaan, waar je opnames verwerkt worden, en of er een bot zichtbaar meedraait in je call. Hieronder alle notuleersoftware uit onze directory, met per tool die drie punten erbij.',
     ],
     categories: ['meeting-notes'],
+    comparison: {
+      intro:
+        'De snelle vergelijking. "Gratis te proberen" betekent een gratis niveau of proefperiode zonder creditcard; EU-hosting betekent dat wij hebben kunnen vaststellen dat opnames binnen de EU verwerkt worden.',
+      slugs: ['fathom', 'granola', 'notizy', 'talkmark', 'fireflies-ai', 'notul-ai', 'tldv', 'otter-ai', 'sembly-ai', 'recapai'],
+    },
     freeNote:
-      'Sommige AI-notulisten bieden een gratis startplan met een beperkt aantal minuten of meetings per maand.',
+      'Veel notuleer-apps hebben een gratis niveau met een beperkt aantal minuten of meetings per maand — genoeg om te testen of de tool jouw vergadering goed verstaat.',
+    sections: [
+      {
+        h2: 'Wat kost automatisch notuleren?',
+        paragraphs: [
+          'De meeste notuleer-apps zitten tussen de €10 en €25 per gebruiker per maand. Daaronder vind je gratis niveaus met een minuten- of meetinglimiet; daarboven zitten vooral zakelijke pakketten met SSO, gedeelde werkruimtes en langere bewaartermijnen.',
+          'Let bij het vergelijken op wát er wordt afgerekend. Sommige tools rekenen per gebruiker, andere per opgenomen minuut. Vergader je twee keer per week een uur, dan is een minutenbundel vaak goedkoper; zit je de hele dag in overleg, dan loont een vast bedrag per gebruiker. Reken het één keer door voor je eigen agenda — het scheelt in de praktijk meer dan de verschillen in de prijslijst suggereren.',
+        ],
+      },
+      {
+        h2: 'Veilig notuleren: waar moet je op letten?',
+        paragraphs: [
+          'Een notuleer-app luistert mee met precies die gesprekken waarin het gevoeligste wordt gezegd: personeelszaken, klantafspraken, cijfers. Voor de AVG maakt het uit waar die opname wordt verwerkt en hoe lang hij blijft staan. Drie dingen om te checken voordat je een tool op een echte vergadering loslaat.',
+          'Ten eerste: is er een verwerkersovereenkomst (DPA)? Zonder dat papier mag je er formeel geen persoonsgegevens doorheen halen. Ten tweede: staat de verwerking in de EU? Een Amerikaanse aanbieder kan prima werken, maar dan heb je een extra doorgifte-onderbouwing nodig. Ten derde: hoe lang worden opnames bewaard, en kun je dat zelf instellen of een gesprek achteraf wissen?',
+          'In de tabel hierboven zie je per tool of wij EU-hosting hebben kunnen vaststellen. Vergader je over personeelsdossiers of klantgegevens, begin dan bij die kolom — niet bij de prijs.',
+        ],
+      },
+      {
+        h2: 'Werkt AI-notuleren goed in het Nederlands?',
+        paragraphs: [
+          'Beter dan de meeste mensen verwachten, maar niet overal gelijk. Nederlandse transcriptie is inmiddels sterk; de samenvatting is de plek waar je het verschil merkt. Tools die vooral op Engels zijn afgestemd, leveren een correcte maar wat vlakke Nederlandse samenvatting, en missen soms de nuance tussen "we gaan dit doen" en "we kijken ernaar".',
+          'Twee dingen blijven lastig, ongeacht de tool: gesprekken waarin mensen door elkaar praten, en vakjargon of eigennamen die niet in het model zitten. Een korte woordenlijst met namen van collega\'s, klanten en projecten — als de tool die optie heeft — verbetert het resultaat meer dan overstappen naar een duurdere app.',
+          'Test het met één echte vergadering voordat je een abonnement neemt. Niet met een testgesprek, maar met een overleg zoals je dat normaal voert: mét onderbrekingen, jargon en iemand met een slechte microfoon.',
+        ],
+      },
+      {
+        h2: 'Notuleren in Teams, Zoom of Google Meet',
+        paragraphs: [
+          'De meeste notuleer-apps koppelen aan alle drie, maar op twee verschillende manieren. Bij de ene schuift er een zichtbare bot als deelnemer je vergadering binnen; bij de andere neemt de app lokaal op je eigen apparaat op, zonder dat de anderen iets zien.',
+          'Dat verschil is minder technisch dan het lijkt. Een zichtbare bot is transparanter — iedereen ziet dat er wordt opgenomen — maar valt bij klantgesprekken soms verkeerd. Lokaal opnemen is discreter, maar dan ligt de plicht om toestemming te vragen volledig bij jou. In beide gevallen geldt: meld het aan het begin van het gesprek. Dat is niet alleen netjes, het is onder de AVG ook gewoon verplicht.',
+        ],
+      },
+    ],
     faqs: [
       {
-        q: 'Wat is de beste tool om te notuleren met AI?',
-        a: 'Dat hangt af van je vergaderplatform (Teams, Zoom, Meet), of je Nederlandse transcriptie nodig hebt en je eisen rond databeveiliging. Vergelijk de tools hieronder op die punten.',
+        q: 'Wat is de beste app om automatisch te notuleren?',
+        a: 'Dat hangt af van drie dingen: je vergaderplatform (Teams, Zoom of Meet), of je Nederlandse samenvattingen nodig hebt, en je eisen rond dataverwerking. Wil je gratis beginnen, dan zijn Fathom en tl;dv de gulste. Moet de verwerking in de EU blijven, kijk dan naar de tools met EU-hosting in de tabel hierboven.',
       },
       {
         q: 'Kan AI in het Nederlands notuleren?',
-        a: 'Ja, meerdere tools ondersteunen Nederlandse transcriptie en samenvatting. Filter op de homepage op “Nederlandstalig” om die snel te vinden.',
+        a: 'Ja. Van de tien notuleer-apps in onze directory verstaan er negen aantoonbaar Nederlands. De transcriptie is inmiddels sterk; het verschil zit vooral in de kwaliteit van de Nederlandse samenvatting. Bij elke tool staat vermeld hoe wij die beoordelen.',
       },
       {
-        q: 'Is notuleren met AI veilig en AVG-proof?',
-        a: 'Dat verschilt per aanbieder. Let op waar je opnames worden verwerkt en opgeslagen; bij elke tool geven we de data-/AVG-status aan waar bekend.',
+        q: 'Is automatisch notuleren veilig en AVG-proof?',
+        a: 'Dat verschilt sterk per aanbieder en is niet af te leiden uit de bekendheid van de naam. Let op drie dingen: is er een verwerkersovereenkomst, wordt de opname binnen de EU verwerkt, en hoe lang blijft hij bewaard? Bij elke tool geven we aan wat wij hebben kunnen vaststellen.',
+      },
+      {
+        q: 'Moet ik toestemming vragen voordat ik een vergadering opneem?',
+        a: 'Ja. Onder de AVG moet je deelnemers vooraf informeren dat er wordt opgenomen en waarvoor de opname wordt gebruikt. Meld het aan het begin van het gesprek — ook als de tool lokaal opneemt en er geen bot zichtbaar is.',
+      },
+      {
+        q: 'Werkt een notuleer-app ook bij een vergadering in de zaal?',
+        a: 'Meerdere tools nemen ook via de microfoon van je laptop of telefoon op, dus zonder online vergadering. De kwaliteit hangt dan sterk af van de akoestiek en van hoeveel mensen door elkaar praten. Zet het apparaat midden op tafel en laat mensen om de beurt spreken.',
+      },
+      {
+        q: 'Wat kost automatisch notuleren per maand?',
+        a: 'De meeste notuleersoftware zit tussen de €10 en €25 per gebruiker per maand. Er zijn gratis niveaus met een minuten- of meetinglimiet, en zakelijke pakketten die daarboven uitkomen. In de tabel hierboven staat per tool de instapprijs.',
       },
     ],
   },
