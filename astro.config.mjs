@@ -204,6 +204,16 @@ export default defineConfig({
     defaultStrategy: 'hover'
   },
   vite: {
+    // Bouwjaar als compile-time constante. Nodig omdat `new Date()` op
+    // MODULE-niveau onder de Cloudflare-adapter de Unix-epoch (1970) oplevert:
+    // workerd bevriest de klok buiten een request-context, en de prerender-stap
+    // initialiseert die modules daar. Gevolg vóór deze fix: 407 van de 848
+    // pagina's droegen "(1970)" in hun title — alle 243 tool-reviews en alle
+    // 149 vergelijkingen (zie src/lib/seo-helpers.ts en src/lib/taak-content.ts).
+    // astro.config.mjs draait in Node, dus hier klopt de klok wél.
+    define: {
+      __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
+    },
     // Sandbox-build (CI / agent-omgeving): de gedeelde node_modules/.vite-cache
     // is door de host (macOS) aangemaakt en kan in een Linux-sandbox niet
     // worden ge-unlinkt (EPERM op mount). Met SANDBOX_BUILD=1 schrijft Vite zijn

@@ -29,7 +29,10 @@ export interface TaakContent {
   faqs: { question: string; answer: string }[];
 }
 
-const year = new Date().getFullYear();
+// Zie seo-helpers.ts: module-level `new Date()` geeft 1970 onder de
+// Cloudflare-adapter. Compile-time constante uit astro.config.mjs.
+declare const __BUILD_YEAR__: number;
+const year = __BUILD_YEAR__;
 
 export const taakContent: Record<string, TaakContent> = {
   'afbeelding-maken': {

@@ -17,7 +17,11 @@ import type { ToolCategoryKey } from './tools-schema';
 // META TITLE / DESCRIPTION
 // ============================================
 
-const CURRENT_YEAR = new Date().getFullYear();
+// Compile-time constante uit astro.config.mjs (vite.define). NIET vervangen
+// door `new Date().getFullYear()` op module-niveau: dat geeft onder de
+// Cloudflare-adapter 1970 (workerd bevriest de klok buiten een request).
+declare const __BUILD_YEAR__: number;
+const CURRENT_YEAR = __BUILD_YEAR__;
 
 /** Tool detail page meta title.
  *  Front-load tool-naam + commerciële modifiers (prijzen/alternatieven) die
