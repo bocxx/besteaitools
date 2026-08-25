@@ -185,8 +185,28 @@ export function buildSoftwareApplicationLd(tool: Tool, _siteUrl: string): Record
     inLanguage: 'nl',
   };
 
-  // Offers — structured pricing when available
-  if (tool.startingPriceMonthly != null) {
+  // Offers — structured pricing when available.
+  // Zijn er echte tiers, dan is AggregateOffer nauwkeuriger dan één losse
+  // Offer met alleen de instapprijs: het geeft de hele bandbreedte door.
+  // Dat is precies wat prijs-zoekopdrachten vragen ("moneybird prijzen",
+  // "wat kost X") — die zijn goed voor honderden impressies per tool.
+  const tiers = tool.priceTiers ?? [];
+  if (tiers.length > 0) {
+    const prijzen = tiers.map((t) => t.eurPerMonth);
+    ld.offers = {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      lowPrice: String(Math.min(...prijzen)),
+      highPrice: String(Math.max(...prijzen)),
+      offerCount: String(tiers.length),
+      offers: tiers.map((t) => ({
+        '@type': 'Offer',
+        name: t.name,
+        price: String(t.eurPerMonth),
+        priceCurrency: 'EUR',
+      })),
+    };
+  } else if (tool.startingPriceMonthly != null) {
     const curr = (tool.pricingCurrency ?? 'eur').toUpperCase();
     ld.offers = {
       '@type': 'Offer',
