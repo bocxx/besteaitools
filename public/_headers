@@ -26,9 +26,25 @@
 # img-src staat bewust op `https:`: tool-logo's komen van de favicon-service
 # van Google. connect-src/script-src laten cloud.umami.is toe zodat analytics
 # werkt zodra PUBLIC_UMAMI_WEBSITE_ID in de CI-build gezet is.
+#
+# ── Over HSTS ───────────────────────────────────────────────────────────────
+# includeSubDomains + preload is een BEWUSTE keuze (25 aug 2026), genomen met
+# de onomkeerbaarheid op tafel. Voorwaarden gecheckt op dat moment: alleen
+# `www` resolvet, geen MX-records (dus geen mail op dit domein), alles loopt
+# via Cloudflare op HTTPS.
+#
+# LET OP: deze header zet het domein niet vanzelf op de preloadlijst — dat
+# vereist een eenmalige aanmelding op https://hstspreload.org. Zonder die
+# aanmelding is `preload` slechts een intentieverklaring en verandert er
+# functioneel niets. Verwijdering van de lijst duurt daarna maanden.
+#
+# Consequentie zodra het preloaden actief is: ELK subdomein van
+# debesteaitools.nl moet voor altijd over HTTPS. Een nieuw subdomein dat niet
+# via Cloudflare loopt, is dan onbereikbaar totdat het een geldig certificaat
+# heeft. Houd daar rekening mee bij nieuwe diensten op dit domein.
 
 /*
-  Strict-Transport-Security: max-age=31536000
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
