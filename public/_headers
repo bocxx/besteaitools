@@ -1,0 +1,32 @@
+# Security headers voor debesteaitools.nl (Cloudflare Workers Assets).
+#
+# Live geverifieerd 25 aug 2026: dit bestand wérkt op deze site — de
+# /assets/*-regel hieronder levert aantoonbaar `cache-control: ...immutable`
+# op productie. Vóór deze commit stond er géén enkele security header op de
+# site (HSTS, CSP, X-Frame-Options, nosniff, Referrer-Policy: alle afwezig).
+#
+# LET OP bij het aanscherpen van de CSP: de zoekfunctie gebruikt Pagefind, en
+# dat vraagt drie dingen die een standaard-CSP blokkeert:
+#   1. WebAssembly            → 'wasm-unsafe-eval'
+#   2. een Web Worker         → worker-src 'self'
+#   3. `new Function(...)`    → 'unsafe-eval'
+# Die derde komt uit onze eigen code (src/components/SearchModal.astro:121),
+# waar new Function wordt gebruikt om de bundler van de dynamische import af
+# te houden. Zolang die constructie er staat kan script-src niet strak; los
+# dat eerst op, anders breekt ⌘K sitewide.
+#
+# De CSP staat daarom bewust op Report-Only: violations verschijnen in de
+# browserconsole zonder iets te blokkeren. Kijk een week mee, en zet hem dan
+# om naar `Content-Security-Policy` als de console schoon blijft.
+
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://cloud.umami.is; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://cloud.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
