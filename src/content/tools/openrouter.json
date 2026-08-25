@@ -128,5 +128,19 @@
   "nlSupport": false,
   "lastUpdated": "2026-06-06",
   "lastReviewedAt": "2026-06-06",
-  "supportsDutchLanguage": false
+  "supportsDutchLanguage": false,
+  "gettingStarted": [
+    "Maak een account op openrouter.ai en waardeer krediet op — er is geen maandabonnement, je betaalt per gebruik plus circa 5,5% platform-fee bij het opwaarderen.",
+    "Wil je eerst gratis testen: kies een van de 25+ gratis modellen. Die hebben daglimieten, maar zijn genoeg om de API te leren kennen.",
+    "Vervang in je bestaande OpenAI-code de base-URL door die van OpenRouter en zet je OpenRouter-sleutel als API-key. De API is OpenAI-compatibel, dus de rest van je code blijft hetzelfde.",
+    "Kies een model via de model-string (bijvoorbeeld `anthropic/claude-opus-5`). In het dashboard zie je per model de actuele prijs per miljoen tokens.",
+    "Zet routing-voorkeuren: sorteer providers op prijs, latency of throughput, en schakel fallback in zodat je bij downtime automatisch naar een andere provider gaat.",
+    "Draait het naar wens en heb je al eigen provider-accounts? Zet BYOK aan — de eerste miljoen requests per maand zijn dan gratis, daarna geldt 5% fee."
+  ],
+  "whenToChoose": "Als je snel tussen modellen wilt kunnen wisselen, of meerdere providers wilt aanspreken zonder per provider een account en facturatie te regelen. Draait het om productie met gevoelige data, dan is een self-hosted gateway als LiteLLM de veiligere keuze — dan blijft de datastroom volledig in eigen hand.",
+  "mainCompetitors": [
+    "LiteLLM",
+    "Together AI",
+    "Groq"
+  ]
 }
