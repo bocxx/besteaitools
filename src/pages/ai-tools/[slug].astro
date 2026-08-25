@@ -185,12 +185,12 @@ const priceTiers = tool.priceTiers ?? [];
 const hasPriceTiers = priceTiers.length > 0;
 const currencySymbol = tool.pricingCurrency === 'usd' ? '$' : '€';
 const fmtTierPrice = (n: number) =>
-  n === 0 ? 'Gratis' : `${currencySymbol}${Number.isInteger(n) ? n : n.toFixed(2)}`;
+  n === 0 ? 'Gratis' : `${currencySymbol}${Number.isInteger(n) ? n : n.toFixed(2).replace('.', ',')}`;
 const freeTierLimits = Object.entries(parseFreeTierLimits(tool.freeTierLimits));
 const pricingSignals: string[] = [];
 if (tool.hasFreePlan || tool.pricingModel === 'free' || tool.pricingModel === 'freemium') pricingSignals.push('Gratis versie');
 if (tool.freeTrialAvailable) pricingSignals.push('Gratis proefperiode');
-if (tool.startingPriceMonthly != null && tool.startingPriceMonthly > 0) pricingSignals.push(`Vanaf ${currencySymbol}${tool.startingPriceMonthly}/mnd`);
+if (tool.startingPriceMonthly != null && tool.startingPriceMonthly > 0) pricingSignals.push(`Vanaf ${currencySymbol}${String(tool.startingPriceMonthly).replace('.', ',')}/mnd`);
 const hasPricing = hasPriceTiers || !!tool.pricing;
 
 // ── "Zo gebruik je" (getting started) ────────────────────────────────────
