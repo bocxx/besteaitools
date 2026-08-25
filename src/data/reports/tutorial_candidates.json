@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-25T05:25:50.030354",
+  "generated_at": "2026-08-25T15:35:10.180183",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 20,
     "for_news": 18,
-    "rejected_lang": 159,
+    "rejected_lang": 169,
     "already_covered": 0,
-    "total_scanned": 4904
+    "total_scanned": 4906
   },
   "for_tools": [
     {
@@ -21,8 +21,8 @@
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
-        "step-by-step"
+        "step-by-step",
+        "guide"
       ],
       "matched_tools": [
         "claude",
@@ -805,6 +805,111 @@
       "id": "455c94b96d18b49c"
     },
     {
+      "source": "articles:Latest from TechRadar US in News，opinion",
+      "platform": "article",
+      "title": "How to self-host n8n",
+      "text": "<article>\n                                <p>Frustrated by workflow limits and token-based billing on AI automation platforms? n8n is a “fair-code” automation platform that you can host on your own device or servers, free from the usage restrictions that plague cloud-based platforms. </p><p>We’ve covered n8n on TechRadar before, so head over to our <a href=\"https://www.techradar.com/pro/website-hosting/how-to-use-n8n\">first-time user guide</a> and list of <a href=\"https://www.techradar.com/pro/website-hosting/best-n8n-hosting\">compatible hosting solutions</a> if you’re looking for more informa",
+      "url": "https://www.techradar.com/pro/how-to-self-host-n8n",
+      "date": "2026-08-25",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how-to",
+        "step-by-step",
+        "guide",
+        "how to"
+      ],
+      "matched_tools": [
+        "n8n"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je n8n in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "873de57c4a4c62ff"
+    },
+    {
+      "source": "articles:HackerNoon",
+      "platform": "article",
+      "title": "How to Connect Claude AI to Cisco ACI Using MCP: A Step-by-Step Guide",
+      "text": "<p>Most AI solutions can explain Cisco ACI. You can ask any of them how EPGs, Bridge Domains, and Contracts relate to each other, and you will get a solid answer. Ask one to actually create a tenant on your fabric, verify it landed correctly, and tell you if anything’s structurally broken, but in this case it can’t, because it has no way to reach your APIC controller at all. </p><p><br></p><p>The gap is what MCP(Model Context Protocol) closes. This is the full, reproducible walkthrough of how I built a strong working MCP server for Cisco ACI, and from the first API call to real bug I found and",
+      "url": "https://hackernoon.com/how-to-connect-claude-ai-to-cisco-aci-using-mcp-a-step-by-step-guide?source=rss",
+      "date": "2026-08-25",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "walkthrough",
+        "step-by-step",
+        "guide",
+        "how to"
+      ],
+      "matched_tools": [
+        "claude",
+        "mcp"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "d69b1cc97a906381"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "LLM Memory vs Context Window: The Gap Nobody Explains",
@@ -816,8 +921,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "build a",
-        "how to",
-        "tutorial"
+        "tutorial",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -854,7 +959,7 @@
       "id": "ef41eeedfeda90be"
     },
     {
-      "source": "articles:freeCodeCamp.org News",
+      "source": "articles:freeCodeCamp",
       "platform": "article",
       "title": "How to Build Referral-Aware Split Payment Flows in Django",
       "text": "<p>When a product has a single checkout, payment logic is usually simple: charge the user, mark the order as paid, and move on.</p>\n<p>But once the business model includes a deposit now, a balance later, and referral or coupon attribution in between, the problem changes completely.</p>\n<p>At that point, you're not just collecting money. You're managing a payment workflow.</p>\n<p>In this tutorial, I’ll show you how to build a referral-aware split payment flow in Django that:</p>\n<ul>\n<li><p>tracks Step 2 deposit and balance separately</p>\n</li>\n<li><p>supports coupon and partner linkage</p>\n</l",
@@ -865,8 +970,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "build a",
-        "how to",
-        "tutorial"
+        "tutorial",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -914,8 +1019,8 @@
       "ai_relevant": false,
       "pattern_hits": [
         "build a",
-        "how to",
-        "tutorial"
+        "tutorial",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -950,104 +1055,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "32ae18fe83b2df63"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "How to Add AI to Your Existing SaaS Application: A Practical Guide for 2026",
-      "text": "<p>\"Should we add AI to our product?\" isn't really the right question anymore. Most SaaS founders and product teams have moved past whether to add AI and are stuck on how — how to do it without a six-month rebuild, a runaway API bill, or a feature that looks impressive in a demo but nobody actually uses.</p>\n\n<p>At Softication Technology Pvt. Ltd., we've worked with SaaS teams integrating AI into products ranging from CRMs to internal tooling to customer support platforms. This guide lays out the practical, engineering-first approach we use — the decisions that actually matter, and the ones th",
-      "url": "https://dev.to/amar74/how-to-add-ai-to-your-existing-saas-application-a-practical-guide-for-2026-22ej",
-      "date": "2026-08-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "guide",
-        "how to",
-        "practical guide"
-      ],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": true,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "42cdc6b944e98542"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "From Pixels to Prescriptions: Building a Smart Pill Reminder with YOLOv8 and Raspberry Pi",
-      "text": "<p>Taking the right medication at the right time is more than just a routine—it's a critical part of healthcare. However, for the elderly or those with complex prescriptions, \"pill fatigue\" is real. Mistakes happen. </p>\n\n<p>In this tutorial, we are diving deep into <strong>Computer Vision</strong>, <strong>Edge AI</strong>, and <strong>IoT</strong> to build a real-time pill identification and reminder system. We will leverage <strong>YOLOv8</strong> for multi-pill detection and semantic segmentation, deploy it on a <strong>Raspberry Pi</strong>, and use <strong>MQTT</strong> to trigger physic",
-      "url": "https://dev.to/beck_moulton/from-pixels-to-prescriptions-building-a-smart-pill-reminder-with-yolov8-and-raspberry-pi-3f9a",
-      "date": "2026-08-22",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "guide",
-        "tutorial"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Zo gebruik je From Pixels in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "b39691fdc3cb4233"
     }
   ],
   "for_news": [
@@ -1291,9 +1298,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "hands on",
         "from scratch",
-        "how to"
+        "how to",
+        "hands on"
       ],
       "matched_tools": [
         "make"
@@ -1345,9 +1352,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
+        "build an",
         "build a",
-        "how to",
-        "build an"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1397,11 +1404,11 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "handbook",
-        "practical guide",
-        "guide",
         "from scratch",
-        "hands-on"
+        "hands-on",
+        "guide",
+        "practical guide",
+        "handbook"
       ],
       "matched_tools": [
         "chatgpt",
@@ -1448,11 +1455,11 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "Google buys crashed airline Spirit's data at auction, because AI",
-      "text": "Google buys crashed airline Spirit's data at auction, because AI",
-      "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-      "date": "2026-08-18",
-      "engagement": 1033.0,
+      "title": "Coding expertise is going to collapse from AI reliance",
+      "text": "Coding expertise is going to collapse from AI reliance",
+      "url": "https://larsfaye.com/articles/ai-coding-will-prevent-expertise",
+      "date": "2026-08-24",
+      "engagement": 1046.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1469,10 +1476,10 @@
       "consensus_sources": [
         "hackernews"
       ],
-      "score": 15.91,
+      "score": 15.93,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.41,
+        "engagement_log": 10.43,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1485,10 +1492,10 @@
         "official": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Wat Google betekent voor de Nederlandse AI-markt.",
+      "suggested_angle_nl": "Coding: de context die de internationale pers mist.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "0a0d055aba5c84a0"
+      "id": "8c1393751501a7a2"
     },
     {
       "source": "articles:The Practical Developer",
@@ -1501,9 +1508,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
+        "deep dive",
         "anatomy of",
-        "how to",
-        "deep dive"
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1589,6 +1596,55 @@
       "id": "5e90aeccb9b254cd"
     },
     {
+      "source": "articles:MarkTechPost",
+      "platform": "article",
+      "title": "The Developer’s Guide to NeMo Guardrails for Enterprise AI Safety",
+      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we build an in-depth <a href=\"https://github.com/NVIDIA-NeMo/Guardrails\"><strong>NeMo Guardrails</strong></a> pipeline that demonstrates how layered guardrails can control an LLM-based financial assistant across the full request lifecycle. We combine deterministic PII detection and redaction, LLM-based input and output self-checks, retrieval filtering, account-number masking, topical restrictions, and policy-based tool gating. We also implement stateful multi-turn interactions, detailed rail activation tracing, token accounting, an",
+      "url": "https://www.marktechpost.com/2026/08/22/the-developers-guide-to-nemo-guardrails-for-enterprise-ai-safety/",
+      "date": "2026-08-23",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build an",
+        "tutorial",
+        "guide"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "score": 15.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "f03abf619ee66020"
+    },
+    {
       "source": "articles:The Practical Developer",
       "platform": "article",
       "title": "Build a Human-Approved AI Opportunity Bulletin in Tencent RTC Community Chat",
@@ -1599,8 +1655,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "build a",
         "build an",
+        "build a",
         "tutorial"
       ],
       "matched_tools": [],
@@ -1648,9 +1704,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
         "how-to",
         "step-by-step",
+        "guide",
         "how to"
       ],
       "matched_tools": [],
@@ -1688,55 +1744,6 @@
       "id": "d9084d1e4534b5ac"
     },
     {
-      "source": "articles:DesignBeep",
-      "platform": "article",
-      "title": "Best Places to Scuba Dive: World-Class Destinations Explained",
-      "text": "<h2 dir=\"ltr\" data-sourcepos=\"1:1-1:64;0-63\" data-sanitized-class=\"mt-3 -mb-1 text-[1.375rem] font-bold\">Best Places to Scuba Dive: World-Class Destinations Explained</h2>\n<p dir=\"ltr\" data-sourcepos=\"5:1-5:552;244-795\" data-sanitized-class=\"font-claude-response-body break-words whitespace-normal\">Divers tend to keep a mental list of places they intend to reach eventually, and the list is remarkably consistent from one person to the next. A handful of destinations have earned genuine legendary status through some combination of visibility, marine density, dramatic topography, or the near-guara",
-      "url": "https://designbeep.com/2026/08/21/best-places-to-scuba-dive/",
-      "date": "2026-08-21",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "explained",
-        "guide",
-        "how to"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "score": 15.9,
-      "score_breakdown": {
-        "pattern_hits": 3,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Best Places in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "07dd5c488ff5489a"
-    },
-    {
       "source": "tweets:@SirAlexanderrr",
       "platform": "tweet",
       "title": "Why are you focused on just Outlier and Handshake? There are other platforms you can earn from right now without needing your Uncle abroad to register for you.\n",
@@ -1747,9 +1754,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
+        "study",
         "step-by-step",
-        "study"
+        "guide"
       ],
       "matched_tools": [
         "grok"
@@ -1801,8 +1808,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "guide",
         "evidence that",
+        "guide",
         "how to"
       ],
       "matched_tools": [],
@@ -1902,9 +1909,9 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
+        "introduction to",
         "guide",
-        "how to",
-        "introduction to"
+        "how to"
       ],
       "matched_tools": [
         "claude",
