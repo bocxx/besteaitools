@@ -28,23 +28,21 @@
 # werkt zodra PUBLIC_UMAMI_WEBSITE_ID in de CI-build gezet is.
 #
 # ── Over HSTS ───────────────────────────────────────────────────────────────
-# includeSubDomains + preload is een BEWUSTE keuze (25 aug 2026), genomen met
-# de onomkeerbaarheid op tafel. Voorwaarden gecheckt op dat moment: alleen
-# `www` resolvet, geen MX-records (dus geen mail op dit domein), alles loopt
-# via Cloudflare op HTTPS.
+# includeSubDomains staat aan, `preload` BEWUST NIET (besloten 25 aug 2026).
 #
-# LET OP: deze header zet het domein niet vanzelf op de preloadlijst — dat
-# vereist een eenmalige aanmelding op https://hstspreload.org. Zonder die
-# aanmelding is `preload` slechts een intentieverklaring en verandert er
-# functioneel niets. Verwijdering van de lijst duurt daarna maanden.
+# Voorwaarden voor includeSubDomains zijn gecheckt: alleen `www` resolvet, geen
+# MX-records (dus geen mail op dit domein), alles loopt via Cloudflare op
+# HTTPS. Terug te draaien binnen de max-age van een jaar.
 #
-# Consequentie zodra het preloaden actief is: ELK subdomein van
-# debesteaitools.nl moet voor altijd over HTTPS. Een nieuw subdomein dat niet
-# via Cloudflare loopt, is dan onbereikbaar totdat het een geldig certificaat
-# heeft. Houd daar rekening mee bij nieuwe diensten op dit domein.
+# `preload` is er bewust uit gelaten. Die vlag doet pas iets ná een eenmalige
+# aanmelding op hstspreload.org, en die aanmelding is niet gedaan — verwijdering
+# van die lijst duurt maanden en bindt élk toekomstig subdomein voor altijd aan
+# HTTPS. De vlag laten staan zonder aanmelding is een claim die nergens op
+# slaat, dus hij hoort hier niet. Wil je het alsnog: eerst aanmelden, dan pas
+# `; preload` toevoegen.
 
 /*
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
