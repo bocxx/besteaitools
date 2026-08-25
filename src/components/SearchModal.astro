@@ -118,7 +118,15 @@ const toolCount = Math.floor((await getAllTools()).length / 10) * 10;
   async function loadPagefind() {
     if (pagefind) return;
     try {
-      pagefind = await (new Function('return import("/pagefind/pagefind.js")'))();
+      // pagefind.js bestaat pas ná de build, dus Vite mag hem niet proberen
+      // mee te bundelen — vandaar `/* @vite-ignore */`.
+      //
+      // Bewust GEEN `new Function('return import(...)')` meer (de vorm die hier
+      // tot 25 aug 2026 stond): die deed functioneel hetzelfde, maar dwong
+      // `'unsafe-eval'` in de CSP af en hield daarmee de hele script-src slap.
+      // Met deze vorm draait de zoekfunctie onder een CSP zonder unsafe-eval —
+      // geverifieerd met een enforced CSP tegen de productiebuild.
+      pagefind = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
       if (pagefind) await pagefind.init();
     } catch (e) {
       console.warn('Pagefind not available — run `npm run build` first.', e);

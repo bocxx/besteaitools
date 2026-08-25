@@ -1,23 +1,31 @@
 # Security headers voor debesteaitools.nl (Cloudflare Workers Assets).
 #
-# Live geverifieerd 25 aug 2026: dit bestand wérkt op deze site — de
-# /assets/*-regel hieronder levert aantoonbaar `cache-control: ...immutable`
-# op productie. Vóór deze commit stond er géén enkele security header op de
-# site (HSTS, CSP, X-Frame-Options, nosniff, Referrer-Policy: alle afwezig).
+# Vóór 25 aug 2026 stond er geen enkele security header op deze site.
+# Dit bestand werkt aantoonbaar: alle headers hieronder komen terug uit
+# `astro preview` (wrangler) én van productie.
 #
-# LET OP bij het aanscherpen van de CSP: de zoekfunctie gebruikt Pagefind, en
-# dat vraagt drie dingen die een standaard-CSP blokkeert:
-#   1. WebAssembly            → 'wasm-unsafe-eval'
-#   2. een Web Worker         → worker-src 'self'
-#   3. `new Function(...)`    → 'unsafe-eval'
-# Die derde komt uit onze eigen code (src/components/SearchModal.astro:121),
-# waar new Function wordt gebruikt om de bundler van de dynamische import af
-# te houden. Zolang die constructie er staat kan script-src niet strak; los
-# dat eerst op, anders breekt ⌘K sitewide.
+# ── Over de CSP ─────────────────────────────────────────────────────────────
+# Enforced, niet Report-Only. Getest tegen de productiebuild op homepage,
+# /beste-ai-tools, tool-review, vergelijking, /stack-check, /tools,
+# /vind-je-beste-ai-tool, /top-10 en /nieuwsbrief: nul violations, en de
+# zoekfunctie (het risicovolste onderdeel) levert gewoon resultaten.
 #
-# De CSP staat daarom bewust op Report-Only: violations verschijnen in de
-# browserconsole zonder iets te blokkeren. Kijk een week mee, en zet hem dan
-# om naar `Content-Security-Policy` als de console schoon blijft.
+# Wat de zoekfunctie nodig heeft — niet weghalen:
+#   'wasm-unsafe-eval'   Pagefind draait op WebAssembly
+#   worker-src 'self'    Pagefind start een Web Worker
+#
+# 'unsafe-eval' is er bewust NIET meer: dat was alleen nodig voor de
+# `new Function('return import(...)')`-constructie in SearchModal.astro, die
+# op 25 aug 2026 is vervangen door een gewone dynamische import.
+#
+# 'unsafe-inline' in script-src blijft nodig zolang de inline scripts in
+# Layout.astro (thema-flash-preventie, leesdiepte-tracking) geen nonce kunnen
+# krijgen — prerendered pagina's hebben geen per-request nonce. Wie dat wil
+# oplossen, moet die scripts naar externe bestanden verplaatsen.
+#
+# img-src staat bewust op `https:`: tool-logo's komen van de favicon-service
+# van Google. connect-src/script-src laten cloud.umami.is toe zodat analytics
+# werkt zodra PUBLIC_UMAMI_WEBSITE_ID in de CI-build gezet is.
 
 /*
   Strict-Transport-Security: max-age=31536000
@@ -26,7 +34,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://cloud.umami.is; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://cloud.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cloud.umami.is; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://cloud.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

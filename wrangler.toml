@@ -27,8 +27,22 @@ not_found_handling = "404-page"
 # middleware was zowel onbetrouwbaar runtime ALS fataal tijdens de build
 # (elke prerender kreeg de 308 en werd een "Redirecting…"-stub, juli 2026).
 html_handling = "drop-trailing-slash"
-# Worker draait vóór static assets — nodig voor Link headers en markdown
-# negotiation via middleware op prerendered (statische) pagina's.
+# Worker draait vóór static assets. Oorspronkelijk aangezet voor Link headers
+# en markdown-negotiation via middleware op prerendered pagina's.
+#
+# GEMETEN 25 aug 2026 — dat werkt niet, en de oorzaak is niet de edge-cache
+# (zoals de juli-audit vermoedde) maar Astro zelf: middleware draait per
+# ontwerp NIET op request-tijd voor prerendered pagina's. Live bevestigd:
+# geen Link-header op /beste-ai-tools, `Accept: text/markdown` op
+# /ai-tools/chatgpt geeft gewoon HTML, /.well-known/api-catalog komt zonder
+# Content-Type terug.
+#
+# Uitzetten is geprobeerd en gemeten (wrangler dev reproduceert productie
+# 1-op-1: /radar/ 308, /ai-tools/chatgpt/ 200, in beide omgevingen gelijk).
+# Resultaat: exact hetzelfde gedrag — /tools/ blijft 200, _redirects blijft
+# rewriten, SSR-routes blijven werken. Deze vlag doet dus feitelijk niets.
+# Bewust laten staan: omzetten is een productie-routingwijziging zonder
+# gemeten voordeel. Niet opnieuw uitproberen zonder nieuwe aanleiding.
 run_worker_first = true
 
 [observability]

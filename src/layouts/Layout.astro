@@ -294,6 +294,40 @@ const modifiedIso = toIsoString(modifiedTime);
           requestAnimationFrame(function () { checkDepth(); ticking = false; });
         }, { passive: true });
         checkDepth();
+
+        // ── Client-side fouten zichtbaar maken ────────────────────────────
+        // Zonder dit zie je nul van wat er bij bezoekers stukgaat. Geen extra
+        // dienst of script: het gaat via dezelfde Umami-events als de rest,
+        // dus het kost niets en werkt zodra PUBLIC_UMAMI_WEBSITE_ID gezet is.
+        // Maximaal 3 meldingen per paginaweergave — één kapotte listener in
+        // een scroll-handler kan anders honderden events afvuren.
+        (function () {
+          var gemeld = 0;
+          function meld(type, bericht, bron) {
+            if (gemeld >= 3) return;
+            gemeld++;
+            trackReady('js-error', {
+              type: type,
+              message: String(bericht || '').slice(0, 200),
+              source: String(bron || '').slice(0, 120),
+              path: location.pathname
+            });
+          }
+          window.addEventListener('error', function (e) {
+            // Faalt een <img> of <script> met laden, dan is e.error leeg en is
+            // het doelwit het element zelf — apart labelen, want dat is een
+            // ontbrekende resource en geen exception.
+            if (e.target && e.target !== window && e.target.tagName) {
+              meld('resource', e.target.tagName.toLowerCase(), e.target.currentSrc || e.target.src || e.target.href);
+              return;
+            }
+            meld('error', e.message, (e.filename || '') + ':' + (e.lineno || 0));
+          }, true);
+          window.addEventListener('unhandledrejection', function (e) {
+            var r = e.reason;
+            meld('unhandledrejection', r && r.message ? r.message : r, r && r.stack ? String(r.stack).split('\n')[1] : '');
+          });
+        })();
       })();
     </script>
   </body>
