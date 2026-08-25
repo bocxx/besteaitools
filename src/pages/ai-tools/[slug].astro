@@ -853,7 +853,9 @@ export const prerender = true;
             <h2 class="task-links__title">Waarvoor gebruik je {tool.name}?</h2>
             <p class="task-links__intro">
               {tool.name} is een van onze aanraders voor deze taken. Bekijk de
-              complete vergelijking met alternatieven en wat gratis kan.
+              complete vergelijking met alternatieven en wat gratis kan, of ga
+              direct naar onze redactionele keuze voor de{' '}
+              <a href="/beste-ai-tools">beste AI-tools per taak</a>.
             </p>
             <div class="task-links__grid">
               {taakLinks.map((t) => (
@@ -873,7 +875,8 @@ export const prerender = true;
             <h2 class="related-tools__title">Alternatieven voor {tool.name} in {cat.name}</h2>
             <p class="related-tools__intro">
               Vergelijkbare {cat.name.toLowerCase()}-tools die we volgen op buzz, groei en functies.
-              Bekijk de details of zet ze naast elkaar.
+              Bekijk de details of zet ze naast elkaar — of lees welke{' '}
+              <a href="/beste-ai-tools">tool wij binnen {cat.name.toLowerCase()} als beste kiezen</a>.
             </p>
             <div class="related-tools__grid">
               {related.map(rt => (

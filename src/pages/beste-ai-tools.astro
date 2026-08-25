@@ -140,6 +140,54 @@ const verrijkt = groepen.map((g) => ({
 })).filter((g) => g.items.length > 0);
 
 const totaalPicks = verrijkt.reduce((n, g) => n + g.items.length, 0);
+
+// ── Afgeleide velden voor de snelkeuze-tabel ────────────────────────────────
+// De tool-data heeft geen losse prijs-/gratis-velden (hasFreePlan en
+// startingPriceMonthly zijn vrijwel overal leeg), dus leiden we ze af uit de
+// redactionele `pricing`-string. Die is op 245/246 tools ingevuld en wordt bij
+// elke review-ronde geverifieerd — betrouwbaarder dan een half gevuld boolean.
+
+/** Eerste genoemde bedrag uit de prijs-string, bv. "$20/mnd" of "€7,49/mnd". */
+function kortePrijs(pricing?: string): string {
+  if (!pricing) return '—';
+  const m = pricing.match(/([€$])\s?(\d+(?:[.,]\d+)?)/);
+  if (!m) return /gratis|open source/i.test(pricing) ? 'Gratis' : '—';
+  return `vanaf ${m[1]}${m[2]}`;
+}
+
+/** Kun je zonder betalen aan de slag? "Geen gratis tier" wint van "gratis". */
+function gratisTeProberen(tool: { pricing?: string; pricingModel?: string }): boolean {
+  const t = tool.pricing ?? '';
+  if (/geen gratis|no free/i.test(t)) return false;
+  if (tool.pricingModel === 'free') return true;
+  return /gratis|free tier|free plan/i.test(t);
+}
+
+const slugify = (t: string) => t.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+
+// Eén rij per taak: de nummer-1-keuze, zodat de tabel bovenaan de hele lijst
+// samenvat voor wie niet doorscrollt (en voor featured snippets).
+const snelkeuze = verrijkt.map((g) => {
+  const top = g.items[0];
+  return {
+    taak: g.titel,
+    id: slugify(g.titel),
+    naam: top.tool!.name,
+    slug: top.slug,
+    prijs: kortePrijs(top.tool!.pricing),
+    gratis: gratisTeProberen(top.tool!),
+    nl: top.tool!.supportsDutchLanguage === true,
+  };
+});
+
+const aantalGratis = snelkeuze.filter((r) => r.gratis).length;
+const aantalNl = snelkeuze.filter((r) => r.nl).length;
+
+// Tellingen over de hele database — bewust "wat wij hebben kunnen vaststellen",
+// want een leeg veld betekent niet dat de tool de eigenschap mist.
+const dbNl = tools.filter((t) => t.supportsDutchLanguage).length;
+const dbEu = tools.filter((t) => t.euHostingAvailable).length;
+const dbDpa = tools.filter((t) => t.gdprReady).length;
 const lastVerified = tools.map((t) => t.lastReviewedAt).filter(Boolean).sort().at(-1);
 const lastVerifiedLabel = lastVerified
   ? new Date(lastVerified as string).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -164,6 +212,10 @@ const faqs = [
   { q: 'Wat is de beste gratis AI-tool?', a: 'ChatGPT, Claude en Gemini hebben sterke gratis plannen voor tekst. Voor beeld is Gemini gratis, voor notuleren Fathom (onbeperkt gratis), en voor achtergrond verwijderen remove.bg. Per toolpagina zie je precies wat gratis kan.' },
   { q: 'Hoe kiezen jullie de beste tools — is dit te koop?', a: 'Nee. Onze keuze is redactioneel en niet te koop: er zijn geen betaalde posities of affiliate-deals die de volgorde bepalen. We verifiëren prijzen en functies tegen primaire bronnen. Lees hoe wij beoordelen.' },
   { q: `Werken deze AI-tools in het Nederlands?`, a: 'Veel wel, maar niet alle — en dat checken we per tool. In ons overzicht kun je filteren op tools die aantoonbaar in het Nederlands werken, en bij elke tool staat de NL-taalkwaliteit vermeld.' },
+  { q: 'Hoeveel AI-tools heb je eigenlijk nodig?', a: 'Voor de meeste mensen zijn er twee genoeg: één brede allrounder (ChatGPT, Claude of Gemini) voor tekst, denkwerk en research, plus één specialist voor de taak die je het vaakst doet — notuleren, beeld, presentaties of code. Meer tools betekent vooral meer abonnementen en meer wisselen, niet meer resultaat. Begin met één, en voeg pas een tweede toe als je merkt waar de eerste tekortschiet.' },
+  { q: `Wat kosten AI-tools per maand?`, a: 'De meeste serieuze tools zitten tussen de $8 en $25 per maand per gebruiker. De grote allrounders zitten rond $20 (ChatGPT Plus, Claude Pro), specialisten zoals Gamma of DeepL beginnen lager, en video- en avatar-tools lopen sneller op. Vrijwel alles heeft een gratis niveau waarmee je eerst kunt testen — check per tool wat daar precies in zit voordat je betaalt.' },
+  { q: 'Zijn deze AI-tools AVG-proof?', a: 'Dat verschilt sterk per tool en is niet af te leiden uit de bekendheid van de naam. We noteren per tool of er een verwerkersovereenkomst is, of er EU-hosting beschikbaar is en waar data staat. Voor werk met persoonsgegevens — klantdata, personeelsdossiers, medische informatie — kijk je naar tools met aantoonbare EU-hosting en een DPA, niet naar de populairste optie.' },
+  { q: `Hoe vaak wordt deze lijst met beste AI-tools bijgewerkt?`, a: `We verifiëren prijzen, functies en gratis niveaus doorlopend en werken de lijst bij zodra er iets verandert dat de keuze beïnvloedt — een nieuw model, een prijswijziging of een tool die zijn gratis niveau schrapt. De datum van de laatste verificatie staat bovenaan deze pagina.` },
 ];
 const faqJsonLd = {
   '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -200,14 +252,55 @@ const faqJsonLd = {
       )}
     </header>
 
+    <section class="bt__snel" aria-labelledby="snelkeuze">
+      <h2 id="snelkeuze">Snelkeuze: de beste AI-tool per taak</h2>
+      <p class="bt__snel-intro">
+        Wie geen zin heeft in scrollen: dit is per taak onze nummer 1, met de
+        instapprijs, of je gratis kunt beginnen en of de tool het Nederlands
+        aankan. Van deze {snelkeuze.length} koplopers kun je er{' '}
+        {aantalGratis} zonder betalen uitproberen en werken er {aantalNl}{' '}
+        aantoonbaar in het Nederlands.
+      </p>
+      <div class="bt__table-wrap">
+        <table class="bt__table">
+          <thead>
+            <tr>
+              <th scope="col">Taak</th>
+              <th scope="col">Onze keuze</th>
+              <th scope="col">Prijs</th>
+              <th scope="col">Gratis te proberen</th>
+              <th scope="col">Nederlands</th>
+            </tr>
+          </thead>
+          <tbody>
+            {snelkeuze.map((r) => (
+              <tr>
+                <th scope="row"><a href={`#${r.id}`}>{r.taak}</a></th>
+                <td><a href={`/ai-tools/${r.slug}`}>{r.naam}</a></td>
+                <td class="bt__td-num">{r.prijs}</td>
+                <td>{r.gratis ? <span class="bt__ja">Ja</span> : <span class="bt__nee">Nee</span>}</td>
+                <td>{r.nl ? <span class="bt__ja">Ja</span> : <span class="bt__nee">Beperkt</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="bt__snel-note">
+        Prijzen zijn de laagste betaalde instap per gebruiker per maand, exclusief
+        btw en zonder jaarkorting. "Beperkt" bij Nederlands betekent dat de tool
+        wel Nederlandse invoer accepteert, maar dat wij de kwaliteit niet
+        gelijkwaardig aan het Engels beoordelen.
+      </p>
+    </section>
+
     <nav class="bt__toc" aria-label="Inhoud">
       {verrijkt.map((g) => (
-        <a href={`#${g.titel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '')}`}>{g.titel}</a>
+        <a href={`#${slugify(g.titel)}`}>{g.titel}</a>
       ))}
     </nav>
 
     {verrijkt.map((g) => {
-      const id = g.titel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+      const id = slugify(g.titel);
       return (
         <section class="bt__group" id={id}>
           <div class="bt__group-head">
@@ -226,7 +319,22 @@ const faqJsonLd = {
                     <span class="bt__price">{p.tool!.pricing ?? ''}</span>
                   </div>
                   <p class="bt__reden">{p.reden}</p>
+                  <ul class="bt__badges">
+                    <li class={gratisTeProberen(p.tool!) ? 'is-ja' : 'is-nee'}>
+                      {gratisTeProberen(p.tool!) ? 'Gratis te proberen' : 'Direct betaald'}
+                    </li>
+                    <li class={p.tool!.supportsDutchLanguage ? 'is-ja' : ''}>
+                      {p.tool!.supportsDutchLanguage ? 'Werkt in het Nederlands' : 'Vooral Engels'}
+                    </li>
+                    {p.tool!.euHostingAvailable && <li class="is-ja">EU-hosting</li>}
+                    {p.tool!.gdprReady && <li class="is-ja">AVG-verwerkersovereenkomst</li>}
+                    {p.tool!.openSource && <li>Open source</li>}
+                  </ul>
                   {p.tool!.verdict && <p class="bt__verdict">{p.tool!.verdict}</p>}
+                  {p.tool!.bestFor && <p class="bt__bestfor"><strong>Het sterkst voor:</strong> {p.tool!.bestFor}</p>}
+                  {p.tool!.antiUseCases?.[0] && (
+                    <p class="bt__anti"><strong>Minder geschikt voor:</strong> {p.tool!.antiUseCases[0]}</p>
+                  )}
                   <div class="bt__pick-cta">
                     <a href={`/ai-tools/${p.slug}`}>Lees onze review →</a>
                     {p.tool!.websiteUrl && <a href={p.tool!.websiteUrl} target="_blank" rel="noopener nofollow">Naar {p.tool!.name} <ExternalLink size={11} stroke-width={2} /></a>}
@@ -238,6 +346,81 @@ const faqJsonLd = {
         </section>
       );
     })}
+
+    <section class="bt__prose" aria-labelledby="veranderd">
+      <h2 id="veranderd">Wat er in {year} veranderde aan de beste AI-tools</h2>
+      <p>
+        De belangrijkste verschuiving van dit jaar is dat de vraag "welke AI-tool
+        is de beste" grotendeels heeft afgedaan. De grote allrounders — ChatGPT,
+        Claude en Gemini — zijn op de taken die de meeste mensen dagelijks doen
+        zo dicht bij elkaar gekomen dat het verschil in een blinde test nauwelijks
+        te merken is. De keuze gaat daardoor niet meer over wie de hoogste
+        benchmarkscore haalt, maar over waar je al werkt: zit je de hele dag in
+        Google Workspace, dan wint Gemini op praktische gronden; schrijf je lange
+        stukken, dan merk je Claude's toon; wil je de breedste verzameling
+        extra's, dan is ChatGPT nog altijd het rijkst.
+      </p>
+      <p>
+        Tegelijk zijn de gratis niveaus krapper geworden. Waar een gratis account
+        in 2024 nog een volwaardige werkplek was, gelden er nu strakkere
+        berichtenlimieten, kleinere modellen en — bij ChatGPT sinds eind augustus
+        {year} — advertenties op de gratis en goedkoopste plannen. Dat maakt het
+        gratis niveau nog steeds prima om te testen, maar minder geschikt om echt
+        op te leunen. In de tabel hierboven zie je per taak of je zonder betalen
+        kunt beginnen.
+      </p>
+      <p>
+        De derde verschuiving is minder zichtbaar maar voor Nederlandse gebruikers
+        de belangrijkste: privacy is van bijzaak een selectiecriterium geworden.
+        Van de {tools.length} tools in onze database konden we bij {dbDpa} een
+        verwerkersovereenkomst vaststellen en bij {dbEu} aantoonbare EU-hosting;
+        bij {dbNl} beoordeelden we het Nederlands als werkbaar. Wie met klant- of
+        personeelsgegevens werkt, kiest daarom steeds vaker een net iets minder
+        bekende tool die wél EU-data-residency en een DPA op orde heeft — en dat
+        is precies waarom deze lijst niet simpelweg de populairste namen van boven
+        naar beneden zet.
+      </p>
+    </section>
+
+    <section class="bt__prose bt__method" aria-labelledby="methode">
+      <h2 id="methode">Hoe wij tot deze keuze komen</h2>
+      <p>
+        Een "beste AI-tools"-lijst is alleen iets waard als je weet hoe hij tot
+        stand komt. De onze werkt zo:
+      </p>
+      <ul>
+        <li>
+          <strong>Per taak, niet per populariteit.</strong> We rangschikken niet
+          één lijst van 1 tot 50, maar kiezen per taak één tot drie aanraders.
+          Een tool die de beste is in vertalen hoort niet te concurreren met een
+          tool die video maakt.
+        </li>
+        <li>
+          <strong>Feiten uit primaire bronnen.</strong> Prijzen, limieten en
+          functies halen we van de leverancier zelf en verifiëren we opnieuw bij
+          elke reviewronde — niet uit andermans overzichten. De datum van de
+          laatste verificatie staat bovenaan deze pagina.
+        </li>
+        <li>
+          <strong>Nederlandse context weegt mee.</strong> Werkt de tool in het
+          Nederlands, staat data in de EU, is er een verwerkersovereenkomst? Voor
+          een Nederlandse gebruiker is dat vaak doorslaggevender dan een paar
+          procent beter presteren op een Engelstalige benchmark.
+        </li>
+        <li>
+          <strong>De volgorde is niet te koop.</strong> Er zijn geen betaalde
+          posities en geen affiliate-deals die bepalen wie bovenaan staat. Waar
+          we wel geld verdienen en hoe we dat scheiden van de redactie, staat in
+          onze <a href="/disclosure">transparantieverklaring</a>.
+        </li>
+      </ul>
+      <p>
+        De volledige criteria — inclusief wanneer we een tool juist níét
+        aanbevelen — staan in <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a>.
+        Vind je dat we ernaast zitten, dan horen we dat graag: een lijst die
+        nooit verandert, klopt bijna zeker niet meer.
+      </p>
+    </section>
 
     <section class="bt__faq" aria-label="Veelgestelde vragen">
       <h2>Veelgestelde vragen</h2>
@@ -302,4 +485,45 @@ const faqJsonLd = {
 
   .bt__foot { color: var(--text-secondary); font-size: var(--text-sm); }
   .bt__foot a { color: var(--primary-bright); }
+
+  /* ── Snelkeuze-tabel ─────────────────────────────────────────────────── */
+  .bt__snel { margin: var(--space-8) 0 var(--space-10); }
+  .bt__snel h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-2); }
+  .bt__snel-intro { color: var(--text-secondary); line-height: 1.65; margin: 0 0 var(--space-4); max-width: 66ch; }
+  .bt__snel-note { color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.6; margin: var(--space-3) 0 0; max-width: 72ch; }
+  /* Tabellen mogen zelf scrollen; de pagina nooit horizontaal. */
+  .bt__table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 12px); }
+  .bt__table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); min-width: 34rem; }
+  .bt__table th, .bt__table td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  .bt__table thead th { font-family: var(--font-mono, monospace); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-weight: var(--font-regular); white-space: nowrap; }
+  .bt__table tbody tr:last-child th, .bt__table tbody tr:last-child td { border-bottom: 0; }
+  .bt__table tbody th { font-weight: var(--font-semibold); }
+  .bt__table a { color: var(--text-primary); text-decoration: none; }
+  .bt__table tbody td a { color: var(--primary-bright); }
+  .bt__table a:hover { text-decoration: underline; }
+  .bt__td-num { font-family: var(--font-mono, monospace); white-space: nowrap; }
+  .bt__ja { color: var(--color-success, #4ade80); }
+  .bt__nee { color: var(--text-secondary); }
+
+  /* ── Badges op de pick-kaarten ───────────────────────────────────────── */
+  .bt__badges { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0 0; padding: 0; }
+  .bt__badges li { font-size: var(--text-xs); color: var(--text-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 2px 10px; }
+  .bt__badges li.is-ja { color: var(--color-success, #4ade80); border-color: color-mix(in oklab, var(--color-success, #4ade80) 40%, transparent); }
+  .bt__badges li.is-nee { color: var(--text-secondary); }
+
+  .bt__bestfor, .bt__anti { margin: var(--space-2) 0 0; font-size: var(--text-sm); line-height: 1.55; color: var(--text-secondary); }
+  .bt__bestfor strong, .bt__anti strong { color: var(--text-primary); font-weight: var(--font-semibold); }
+
+  /* ── Redactionele secties ────────────────────────────────────────────── */
+  .bt__prose { margin: var(--space-10) 0; max-width: 68ch; }
+  .bt__prose h2 { font-size: var(--text-xl); font-weight: var(--font-semibold); margin: 0 0 var(--space-4); }
+  .bt__prose p { color: var(--text-secondary); line-height: 1.7; margin: 0 0 var(--space-4); }
+  .bt__prose a { color: var(--primary-bright); }
+  .bt__method ul { margin: 0 0 var(--space-4); padding-left: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+  .bt__method li { color: var(--text-secondary); line-height: 1.65; }
+  .bt__method li strong { color: var(--text-primary); font-weight: var(--font-semibold); }
+
+  @media (max-width: 640px) {
+    .bt__table th, .bt__table td { padding: var(--space-2) var(--space-3); }
+  }
 </style>

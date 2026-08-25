@@ -118,8 +118,8 @@ export const prerender = true;
 ---
 
 <Layout
-  title={`Vind de beste AI-tool voor jouw taak — ${tools.length}+ tools | debesteaitools.nl`}
-  description={`Ontdek, vergelijk en leer werken met ${tools.length}+ AI-tools: wat ze doen, hoe je ze gebruikt en wat ze kosten. Zoek of filter op taak, prijs en AVG en vind in seconden de beste match.`}
+  title={`AI-tools vergelijken — ${tools.length}+ tools per taak, prijs en AVG | debesteaitools.nl`}
+  description={`Vergelijk ${tools.length}+ AI-tools: wat ze doen, hoe je ze gebruikt en wat ze kosten. Filter op taak, prijs en AVG-status, of bekijk onze redactionele keuze per taak.`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
@@ -133,10 +133,11 @@ export const prerender = true;
     <header class="hero">
       <p class="kicker kicker--accent hero__kicker">AI-toolgids · onafhankelijk getest</p>
       <h1 class="hero__title">
-        Vind de beste <span class="hero__accent">AI-tool</span> voor jouw taak
+        Welke <span class="hero__accent">AI-tool</span> past bij jouw taak?
       </h1>
       <p class="hero__sub">
         Filter <strong>{tools.length}+ AI-tools</strong> op taak, prijs en AVG — en vind in seconden wat bij je past. Geen account nodig.
+        Al gekozen voor je: <a href="/beste-ai-tools">de beste AI-tools van 2026 per taak</a>.
       </p>
 
       <!-- Vind-balk: live zoeken. Typen filtert de lijst er direct onder. -->
