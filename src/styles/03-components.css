@@ -607,7 +607,7 @@
 
   .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
     gap: var(--space-3);
     margin: var(--space-8) 0;
   }
@@ -631,6 +631,12 @@
     color: var(--text-muted);
     margin-top: var(--space-2);
     line-height: var(--leading-snug);
+    /* Nederlandse samenstellingen als "verwerkersovereenkomst" passen niet in
+       een smalle kaart en braken midden in het woord af. Met hyphens:auto en
+       lang="nl" op <html> breekt de browser op lettergrepen. */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   .method-note {
