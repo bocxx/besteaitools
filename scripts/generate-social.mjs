@@ -126,7 +126,7 @@ function logoLockup(size) {
 function takeawayCard(idx, body, fs) {
   return h('div', {
     style: {
-      display: 'flex', flexDirection: 'column', flexBasis: '0', flexGrow: 1,
+      display: 'flex', flexDirection: 'column', flexBasis: '0', flexGrow: 1, minWidth: 0,
       border: `1px solid ${C.border}`, borderRadius: '14px',
       backgroundColor: C.panel, padding: `${fs.pad}px`,
       justifyContent: 'flex-start',
@@ -167,6 +167,7 @@ function buildWideCard(data, fmt) {
   const inner = W - 2 * P;
   const colGap = Math.round(inner * 0.04);
   const leftW = Math.round(inner * 0.52);
+  const rightW = inner - leftW - 1 - Math.round(inner * 0.04);
 
   return h('div', {
     style: {
@@ -212,9 +213,9 @@ function buildWideCard(data, fmt) {
       ),
       h('div', { style: { display: 'flex', width: '1px', backgroundColor: C.border, alignSelf: 'stretch' } }),
       h('div', {
-        style: { display: 'flex', flexDirection: 'column', flexGrow: 1, gap: `${fmt.gap}px`, justifyContent: 'center' },
+        style: { display: 'flex', flexDirection: 'column', width: `${rightW}px`, gap: `${fmt.gap}px`, justifyContent: 'center' },
       },
-        ...data.takeaways.slice(0, 2).map((t, i) => takeawayCard(i, condense(t, 80), fmt.card)),
+        ...data.takeaways.slice(0, 2).map((t, i) => takeawayCard(i, condense(t, 155), fmt.card)),
       ),
     ),
     h('div', { style: { display: 'flex', flexDirection: 'column', marginTop: `${fmt.gap}px` } },
