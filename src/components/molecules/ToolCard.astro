@@ -139,6 +139,15 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
   .tool-card:hover .tool-card__more {
     color: var(--secondary-bright);
   }
+  /* Het pijltje schuift een paar pixels mee. Klein gebaar, maar het is het
+     detail dat de kaarten op hetlaatsteainieuws.nl levend laat aanvoelen. */
+  .tool-card__more::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    transition: width var(--transition-fast);
+  }
+  .tool-card:hover .tool-card__more::after { width: 3px; }
   .tool-card:focus-visible {
     outline: 2px solid var(--primary-bright);
     outline-offset: 2px;
@@ -197,7 +206,11 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     letter-spacing: normal;
     color: var(--text-primary);
     margin: 0;
+    transition: color var(--transition-fast);
   }
+  /* De naam kleurt mee bij hover — zo weet je dat de héle kaart klikbaar is,
+     niet alleen de "Lees meer"-regel. Patroon uit MensenCard. */
+  .tool-card:hover .tool-card__name { color: var(--primary-bright); }
   .tool-card__desc {
     font-size: var(--text-sm);
     color: var(--text-secondary);
@@ -226,9 +239,12 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     align-items: center;
     gap: 3px;
     padding: 2px var(--space-2);
-    border-radius: var(--radius-pill);
-    font-size: 10px;
-    font-weight: var(--font-medium);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-weight: var(--font-regular);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
     white-space: nowrap;
