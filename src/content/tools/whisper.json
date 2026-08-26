@@ -32,11 +32,15 @@
     "Automatische vertaling van gesproken taal"
   ],
   "strengths": [
-    "Hoge nauwkeurigheid in spraakherkenning",
-    "Ondersteuning voor meerdere talen"
+    "Hoge nauwkeurigheid in spraakherkenning, ook in het Nederlands",
+    "Ondersteuning voor zo'n 99 talen, plus directe vertaling naar het Engels",
+    "MIT-licentie: vrij te gebruiken, ook commercieel en in eigen producten",
+    "Draait volledig lokaal — audio hoeft je eigen machine niet te verlaten"
   ],
   "limitations": [
-    "Vereist een krachtige GPU voor optimale prestaties"
+    "Vereist een krachtige GPU voor optimale prestaties; op CPU wordt het traag",
+    "Herkent geen sprekers — diarisatie vraagt een extra laag",
+    "Geen kant-en-klare interface: je bouwt zelf de workflow eromheen"
   ],
   "pricing": "Gratis en open-source",
   "openSource": true,
@@ -126,5 +130,19 @@
   "vendorLockInRisk": "low",
   "lastUpdated": "2026-06-06",
   "lastReviewedAt": "2026-06-06",
-  "supportsDutchLanguage": true
+  "supportsDutchLanguage": true,
+  "gettingStarted": [
+    "Kies je variant: large-v3 voor maximale nauwkeurigheid, of large-v3-turbo als snelheid telt — die haalt met minder decoder-lagen bijna dezelfde kwaliteit.",
+    "Bepaal waar het draait. Lokaal met een GPU is het snelst en houdt audio op je eigen machine; zonder GPU wordt het traag en is een gehoste dienst realistischer.",
+    "Voor lokaal gebruik zijn faster-whisper en whisper.cpp de praktische runtimes — die zijn flink geoptimaliseerd ten opzichte van de referentie-implementatie.",
+    "Geef bij Nederlandse audio de taal expliciet mee in plaats van automatische detectie. Dat scheelt fouten bij korte fragmenten en bij opnames waarin ook Engels voorkomt.",
+    "Moet je weten wie wat zegt, plan dan een extra diarisatie-stap in. Whisper zelf herkent geen sprekers.",
+    "Test met een échte opname voordat je het in een workflow zet: meerdere sprekers door elkaar en een matige microfoon zijn de omstandigheden waarin het verschil zichtbaar wordt."
+  ],
+  "whenToChoose": "Als je transcriptie in eigen hand wilt houden — omdat audio je machine niet mag verlaten, omdat je het in een eigen product bouwt, of omdat het volume een abonnement te duur maakt. Wil je gewoon een vergadering laten uitwerken zonder technische setup, kies dan een kant-en-klare notuleer-app.",
+  "mainCompetitors": [
+    "AmberScript",
+    "Otter.ai",
+    "Deepgram"
+  ]
 }

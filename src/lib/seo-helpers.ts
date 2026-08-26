@@ -193,9 +193,13 @@ export function buildSoftwareApplicationLd(tool: Tool, _siteUrl: string): Record
   const tiers = tool.priceTiers ?? [];
   if (tiers.length > 0) {
     const prijzen = tiers.map((t) => t.eurPerMonth);
+    // Let op: het veld heet `eurPerMonth`, maar de valuta volgt `pricingCurrency`
+    // — de tool-pagina rendert het bedrag ook met dat symbool. Hier hardcoderen
+    // op EUR zou bij een dollar-tool een verkeerde prijs aan Google doorgeven.
+    const valuta = (tool.pricingCurrency ?? 'eur').toUpperCase();
     ld.offers = {
       '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
+      priceCurrency: valuta,
       lowPrice: String(Math.min(...prijzen)),
       highPrice: String(Math.max(...prijzen)),
       offerCount: String(tiers.length),
@@ -203,7 +207,7 @@ export function buildSoftwareApplicationLd(tool: Tool, _siteUrl: string): Record
         '@type': 'Offer',
         name: t.name,
         price: String(t.eurPerMonth),
-        priceCurrency: 'EUR',
+        priceCurrency: valuta,
       })),
     };
   } else if (tool.startingPriceMonthly != null) {

@@ -11,9 +11,11 @@ import { ExternalLink, Zap, Shield, BadgeCheck } from '@lucide/astro';
 
 interface Props {
   tool: Tool;
+  /** Server-side verbergen (homepage toont standaard de eerste 30 treffers). */
+  hidden?: boolean;
 }
 
-const { tool } = Astro.props;
+const { tool, hidden } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const pricing = pricingModels[tool.pricingModel];
@@ -54,7 +56,7 @@ try { domain = new URL(tool.websiteUrl).hostname; } catch { domain = ''; }
 const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
-<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-pricing={tool.pricingModel} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-free={hasFreeTier ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
+<a href={`/ai-tools/${tool.slug}`} hidden={hidden} class="tool-card" data-category={tool.category} data-pricing={tool.pricingModel} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-free={hasFreeTier ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
   <div class="tool-card__inner">
 
     <!-- Header: category + logo -->
@@ -101,14 +103,29 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     border: 1px solid var(--border-subtle);
     transition: border-color var(--transition-fast), background var(--transition-fast);
     overflow: hidden;
-    /* Skip rendering for off-screen cards (CWV: reduces INP + paint cost) */
-    content-visibility: auto;
-    contain-intrinsic-size: 0 190px;
+    /* Zie ToolRow: content-visibility hoort niet op de kaarten die bij het
+       laden in beeld staan. Verplaatst naar de nth-child-regel verderop. */
   }
   .tool-card:hover {
     border-color: var(--border-strong);
     background: var(--bg-panel);
   }
+  /* Het `hidden`-attribuut moet winnen van de display-regel hierboven.
+     Zonder deze regel verslaat `display:block` de UA-regel
+     `[hidden] { display: none }`, en blijft het element zichtbaar terwijl de
+     JS het al als verborgen beschouwt. Gevolg vóór 26 aug 2026: het
+     homepage-filter zette wél `hidden` op 216 van de 243 rijen en de teller
+     sprong naar "27 tools", maar de bezoeker bleef alle 243 zien. */
+  .tool-card[hidden] { display: none; }
+
+  /* Zie ToolRow. De kaartweergave is een grid van drie kolommen, dus de
+     eerste zes kaarten kunnen in beeld staan; vanaf de 7e stellen we uit.
+     236px is de gemeten kaarthoogte. */
+  .tool-card:nth-child(n + 7) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 236px;
+  }
+
   .tool-card__more {
     display: block;
     padding: var(--space-2) var(--space-4) var(--space-3);

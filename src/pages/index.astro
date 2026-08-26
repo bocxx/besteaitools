@@ -157,6 +157,10 @@ export const prerender = true;
 
     <!-- Eén rustig filterpaneel (stijl van /vergelijk): gelabelde rijen,
          coral = actief. Klik filtert de lijst er direct onder. -->
+    <!-- De pagina had één h2 op 243 h3's; zonder tussenlaag is hij voor een
+         screenreader niet te navigeren en ziet Google geen secties. Visueel
+         verborgen omdat het ontwerp de koppen niet nodig heeft. -->
+    <h2 class="sr-only">Filter AI-tools op taak, prijs en AVG</h2>
     <div class="lf" id="filters">
       <div class="lf__group">
         <span class="lf__label">Categorie</span>
@@ -200,6 +204,8 @@ export const prerender = true;
       </a>
     </div>
 
+    <h2 class="sr-only">Alle AI-tools</h2>
+
     <!-- Resultaatbalk: teller + weergave-toggle -->
     <div class="resbar">
       <p class="result-count" id="result-count" aria-live="polite">{tools.length} tools</p>
@@ -215,12 +221,21 @@ export const prerender = true;
 
     <!-- Lijstweergave (default) -->
     <div class="tool-list" id="view-list">
-      {toolsSorted.map(tool => <ToolRow tool={tool} />)}
+      {toolsSorted.map((tool, i) => <ToolRow tool={tool} hidden={i >= 30} />)}
     </div>
 
     <!-- Kaartweergave -->
     <div class="tool-grid" id="view-cards" hidden>
-      {toolsSorted.map(tool => <ToolCard tool={tool} />)}
+      {toolsSorted.map((tool, i) => <ToolCard tool={tool} hidden={i >= 30} />)}
+    </div>
+
+    <!-- Standaard tonen we de eerste 30 treffers. De overige rijen blijven in
+         de HTML staan (links blijven crawlbaar), maar zijn verborgen tot de
+         bezoeker doorklikt — 243 rijen ineens was 30 schermen scrollen. -->
+    <div class="show-more" id="show-more">
+      <button type="button" class="btn btn-outline" id="show-more-btn">
+        <span id="show-more-label">Toon de overige {Math.max(0, tools.length - 30)} tools</span>
+      </button>
     </div>
 
     <div class="grid-empty" id="grid-empty" hidden>
@@ -473,6 +488,13 @@ export const prerender = true;
     border-radius: var(--radius-pill);
     padding: 5px 12px;
     line-height: 1;
+    /* WCAG 2.2 SC 2.5.8 eist 24x24 CSS-px. Met padding + line-height alleen
+       kwam de chip op 23px uit — één pixel tekort. min-height garandeert het
+       ongeacht de fontmetriek; inline-flex houdt label en telling gecentreerd. */
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
   }
   .lf__chip:hover { color: var(--text-primary); border-color: var(--primary-bright); }
@@ -509,6 +531,9 @@ export const prerender = true;
     border-radius: var(--radius-pill);
     padding: 5px 12px; line-height: 1;
     display: none;
+    align-items: center;
+      min-height: 24px;
+    display: inline-flex;
     align-items: center;
   }
   .lf__more:hover { border-color: var(--primary-bright); }
@@ -789,6 +814,15 @@ export const prerender = true;
     margin: 0 0 var(--space-4) var(--space-1);
   }
 
+  .show-more { display: flex; justify-content: center; margin-top: var(--space-5); }
+  .show-more[hidden] { display: none; }
+
+  /* Zie ToolRow/ToolCard: `[hidden]` moet winnen van de display-regels.
+     `.tool-grid` heeft `display:grid`, dus zonder deze guard bleef de
+     kaartweergave altijd zichtbaar en stond élke tool twee keer op de
+     homepage — 16.832px extra pagina, 243 dubbele h3's. */
+  .tool-grid[hidden], .tool-list[hidden] { display: none; }
+
   /* ── Tool grid ──────────────────────────────────── */
   .tool-grid {
     display: grid;
@@ -891,6 +925,13 @@ export const prerender = true;
   const rows  = qa('#view-list .tool-row');
   const cards = qa('#view-cards .tool-card');
 
+  const showMore      = q('#show-more');
+  const showMoreBtn   = q('#show-more-btn');
+  const showMoreLabel = q('#show-more-label');
+
+  const CAP = 30;
+  let expanded = false;
+
   const state = { cat: '', pricing: new Set<string>(), toggle: new Set<string>() };
   let search = '';
   let view = 'list';
@@ -907,19 +948,26 @@ export const prerender = true;
   }
 
   function apply() {
-    let visible = 0;
-    const activeEls = view === 'list' ? rows : cards;
-    // Bereken zichtbaarheid één keer, pas op beide views toe (zelfde volgorde/aantal).
+    // `treffers` telt alles wat aan de filters voldoet (dat toont de teller);
+    // `CAP` bepaalt hoeveel daarvan we daadwerkelijk laten zien.
+    let treffers = 0;
     rows.forEach((r, i) => {
       const ok = matches(r);
-      r.hidden = !ok;
-      if (cards[i]) cards[i].hidden = !ok;
+      if (ok) treffers++;
+      const toon = ok && (expanded || treffers <= CAP);
+      r.hidden = !toon;
+      if (cards[i]) cards[i].hidden = !toon;
     });
-    activeEls.forEach((el) => { if (!el.hidden) visible++; });
-    if (resultCount) resultCount.textContent = `${visible} ${visible === 1 ? 'tool' : 'tools'}`;
-    if (emptyState) emptyState.hidden = visible !== 0;
-    if (listView)  listView.hidden  = view !== 'list' || visible === 0;
-    if (cardsView) cardsView.hidden = view !== 'cards' || visible === 0;
+    if (resultCount) resultCount.textContent = `${treffers} ${treffers === 1 ? 'tool' : 'tools'}`;
+    if (emptyState) emptyState.hidden = treffers !== 0;
+    if (listView)  listView.hidden  = view !== 'list' || treffers === 0;
+    if (cardsView) cardsView.hidden = view !== 'cards' || treffers === 0;
+
+    const rest = treffers - CAP;
+    if (showMore) showMore.hidden = expanded || rest <= 0;
+    if (showMoreLabel && rest > 0) {
+      showMoreLabel.textContent = `Toon de overige ${rest} ${rest === 1 ? 'tool' : 'tools'}`;
+    }
   }
 
   // Eén handler voor alle filter-chips. Categorie = enkelvoudig (radio),
@@ -942,6 +990,7 @@ export const prerender = true;
         if (set.has(val)) { set.delete(val); chip.classList.remove('lf__chip--on'); }
         else { set.add(val); chip.classList.add('lf__chip--on'); }
       }
+      expanded = false;
       apply();
     });
   });
@@ -949,7 +998,25 @@ export const prerender = true;
   // Zoeken (live).
   searchInput?.addEventListener('input', () => {
     search = searchInput.value.trim().toLowerCase();
+    expanded = false;
     apply();
+  });
+
+  // Uitklappen. Focus naar de eerste nieuw getoonde rij, zodat wie met het
+  // toetsenbord werkt niet terug naar boven wordt gegooid.
+  showMoreBtn?.addEventListener('click', () => {
+    const container = view === 'list' ? listView : cardsView;
+    const zichtbaarVoor = container
+      ? Array.from(container.children).filter((el) => !(el as HTMLElement).hidden).length
+      : 0;
+    expanded = true;
+    apply();
+    const eersteNieuwe = container?.children[zichtbaarVoor] as HTMLElement | undefined;
+    if (eersteNieuwe) {
+      eersteNieuwe.setAttribute('tabindex', '-1');
+      eersteNieuwe.focus({ preventScroll: true });
+      eersteNieuwe.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
   });
 
   // Weergave-toggle (lijst / kaarten).

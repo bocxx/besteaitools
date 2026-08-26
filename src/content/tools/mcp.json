@@ -141,5 +141,19 @@
   ],
   "lastUpdated": "2026-06-06",
   "lastReviewedAt": "2026-06-06",
-  "supportsDutchLanguage": false
+  "supportsDutchLanguage": false,
+  "gettingStarted": [
+    "Bepaal eerst of je een MCP-server nodig hebt of alleen een bestaande wilt gebruiken. Voor het tweede hoef je niets te bouwen: er staan er zo'n 10.000 in het officiële register.",
+    "Wil je een bestaande server gebruiken, koppel hem dan in je client — Claude, ChatGPT, Cursor en VS Code ondersteunen MCP allemaal. Eén configuratie, en de tools verschijnen in je gesprek.",
+    "Audit een community-server vóór productiegebruik. De kwaliteit en veiligheid wisselen sterk; lees wat de server met je data doet en welke rechten hij vraagt.",
+    "Bouw je zelf een server, pak dan de officiële SDK in je eigen taal. Begin met één tool die één ding goed doet, en test hem lokaal tegen een client.",
+    "Beschrijf je tools precies: naam, wat ze doen en welke parameters ze nemen. Het model kiest op basis van die beschrijving, dus een vage omschrijving levert verkeerde aanroepen op.",
+    "Wil je de server remote draaien, houd dan rekening met de open punten: authenticatie en autorisatie voor enterprise-gebruik zijn nog in ontwikkeling, en load balancing over sessies vraagt nu nog eigen workarounds."
+  ],
+  "whenToChoose": "Als je AI-agents wilt koppelen aan eigen tools, data of systemen zonder vast te zitten aan één leverancier: dezelfde server werkt in elke MCP-compatibele client. Bouw je geen agent-architectuur, dan is MCP overkill — voor gestandaardiseerde no-code koppelingen zijn Zapier of Make directer.",
+  "mainCompetitors": [
+    "OpenAI function calling",
+    "LangChain Tools",
+    "Zapier"
+  ]
 }
