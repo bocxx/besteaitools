@@ -789,6 +789,12 @@ export const prerender = true;
     margin: 0 0 var(--space-4) var(--space-1);
   }
 
+  /* Zie ToolRow/ToolCard: `[hidden]` moet winnen van de display-regels.
+     `.tool-grid` heeft `display:grid`, dus zonder deze guard bleef de
+     kaartweergave altijd zichtbaar en stond élke tool twee keer op de
+     homepage — 16.832px extra pagina, 243 dubbele h3's. */
+  .tool-grid[hidden], .tool-list[hidden] { display: none; }
+
   /* ── Tool grid ──────────────────────────────────── */
   .tool-grid {
     display: grid;

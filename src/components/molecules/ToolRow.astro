@@ -97,6 +97,14 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
   /* Naadloze lijst: eerste regel krijgt de bovenrand + ronde hoeken via de lijst. */
   .tool-row:hover { background: var(--bg-panel); }
   .tool-row:focus-visible { outline: 2px solid var(--primary-bright); outline-offset: -2px; }
+  /* Het `hidden`-attribuut moet winnen van de display-regel hierboven.
+     Zonder deze regel verslaat `display:flex` de UA-regel
+     `[hidden] { display: none }`, en blijft het element zichtbaar terwijl de
+     JS het al als verborgen beschouwt. Gevolg vóór 26 aug 2026: het
+     homepage-filter zette wél `hidden` op 216 van de 243 rijen en de teller
+     sprong naar "27 tools", maar de bezoeker bleef alle 243 zien. */
+  .tool-row[hidden] { display: none; }
+
 
   .tool-row__rank {
     flex-shrink: 0;
