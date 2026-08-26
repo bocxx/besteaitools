@@ -91,7 +91,7 @@ export const prerender = true;
     <script type="application/ld+json" set:html={JSON.stringify(newsArticleJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
   </Fragment>
-  <main class="container container-wide" style="padding-top: 80px;">
+  <main class="container container-wide" style="padding-top: var(--space-8, 2rem);">
 
     <a href="/nieuws" class="back-link">
       <ArrowLeft size={16} stroke-width={1.5} />

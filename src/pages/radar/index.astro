@@ -35,7 +35,7 @@ const description = view === 'rankings'
 ---
 
 <Layout title={title} description={description} ogImage="/og/page-radar.png">
-  <main class="container" style="padding-top: 80px; max-width: 960px;">
+  <main class="container" style="padding-top: var(--space-8, 2rem); max-width: 960px;">
 
     <a href="/" class="back-link">
       <ArrowLeft size={16} stroke-width={1.5} />
@@ -94,8 +94,8 @@ const description = view === 'rankings'
     gap: 4px;
     padding: 4px;
     background: var(--bg-glass);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);

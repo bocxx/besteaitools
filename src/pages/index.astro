@@ -127,7 +127,7 @@ export const prerender = true;
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
   </Fragment>
-  <main class="container container-wide" style="padding-top: 80px;">
+  <main class="container container-wide" style="padding-top: var(--space-8, 2rem);">
 
     <!-- Hero + zoekbalk -->
     <header class="hero">
@@ -868,8 +868,8 @@ export const prerender = true;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     background: var(--bg-glass);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     overflow: hidden;
   }
   .faq__question {
