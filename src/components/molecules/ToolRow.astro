@@ -94,8 +94,10 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     border-top: none;
     background: var(--bg-elevated);
     transition: background var(--transition-fast), border-color var(--transition-fast);
-    content-visibility: auto;
-    contain-intrinsic-size: 0 68px;
+    /* content-visibility staat NIET hier: het stond op élke rij, ook de
+       bovenste. De richtlijn is expliciet dat dat de laadtijd juist vertraagt,
+       omdat de browser de zichtbaarheidsgrens moet uitrekenen vóór de eerste
+       render. Zie de nth-child-regel verderop. */
   }
   /* Naadloze lijst: eerste regel krijgt de bovenrand + ronde hoeken via de lijst. */
   .tool-row:hover { background: var(--bg-panel); }
@@ -107,6 +109,21 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
      homepage-filter zette wél `hidden` op 216 van de 243 rijen en de teller
      sprong naar "27 tools", maar de bezoeker bleef alle 243 zien. */
   .tool-row[hidden] { display: none; }
+
+  /* Rendering uitstellen voor rijen die bij het laden buiten beeld vallen.
+     Vanaf de 9e rij — de eerste acht kunnen op een groot scherm nog zichtbaar
+     zijn, en de richtlijn is expliciet: pas dit NIET toe binnen de eerste
+     viewport, want dan kost het juist tijd.
+
+     contain-intrinsic-size is verplicht bij content-visibility: auto. Zonder
+     die maat klapt de rij buiten beeld naar 0px en springt de scrollbalk.
+     68px is de gemeten desktop-rijhoogte (mobiel 93px); het `auto`-sleutelwoord
+     laat de browser de échte maat onthouden zodra de rij één keer gerenderd is,
+     dus de schatting telt alleen bij de eerste render. */
+  .tool-row:nth-child(n + 9) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 68px;
+  }
 
 
   .tool-row__rank {

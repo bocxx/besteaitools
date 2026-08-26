@@ -103,9 +103,8 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     border: 1px solid var(--border-subtle);
     transition: border-color var(--transition-fast), background var(--transition-fast);
     overflow: hidden;
-    /* Skip rendering for off-screen cards (CWV: reduces INP + paint cost) */
-    content-visibility: auto;
-    contain-intrinsic-size: 0 190px;
+    /* Zie ToolRow: content-visibility hoort niet op de kaarten die bij het
+       laden in beeld staan. Verplaatst naar de nth-child-regel verderop. */
   }
   .tool-card:hover {
     border-color: var(--border-strong);
@@ -118,6 +117,14 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
      homepage-filter zette wél `hidden` op 216 van de 243 rijen en de teller
      sprong naar "27 tools", maar de bezoeker bleef alle 243 zien. */
   .tool-card[hidden] { display: none; }
+
+  /* Zie ToolRow. De kaartweergave is een grid van drie kolommen, dus de
+     eerste zes kaarten kunnen in beeld staan; vanaf de 7e stellen we uit.
+     236px is de gemeten kaarthoogte. */
+  .tool-card:nth-child(n + 7) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 236px;
+  }
 
   .tool-card__more {
     display: block;
