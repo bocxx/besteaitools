@@ -11,9 +11,11 @@ import { ExternalLink, Zap, Shield, BadgeCheck } from '@lucide/astro';
 
 interface Props {
   tool: Tool;
+  /** Server-side verbergen (homepage toont standaard de eerste 30 treffers). */
+  hidden?: boolean;
 }
 
-const { tool } = Astro.props;
+const { tool, hidden } = Astro.props;
 const cat = toolCategories[tool.category];
 const stats = tool.stats;
 const pricing = pricingModels[tool.pricingModel];
@@ -54,7 +56,7 @@ try { domain = new URL(tool.websiteUrl).hostname; } catch { domain = ''; }
 const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
-<a href={`/ai-tools/${tool.slug}`} class="tool-card" data-category={tool.category} data-pricing={tool.pricingModel} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-free={hasFreeTier ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
+<a href={`/ai-tools/${tool.slug}`} hidden={hidden} class="tool-card" data-category={tool.category} data-pricing={tool.pricingModel} data-search={searchText} data-buzz={stats?.buzz_score ?? 0} data-velocity={stats?.velocity ?? 0} data-name={tool.name.toLowerCase()} data-deployment={tool.deploymentType ?? ''} data-audience={audience.join(' ')} data-difficulty={tool.difficulty ?? ''} data-ttfv={tool.timeToFirstValue ?? ''} data-ttv-score={scores?.timeToValueScore ?? 0} data-nl={hasNl ? '1' : '0'} data-gdpr={hasGdpr ? '1' : '0'} data-editor-tested={isEditorTested ? '1' : '0'} data-requires-dev={tool.requiresDeveloper ? '1' : '0'} data-free-trial={tool.freeTrialAvailable ? '1' : '0'} data-free={hasFreeTier ? '1' : '0'} data-proven={scores?.provenScore ?? 0} data-brs={scores?.businessReadinessScore ?? 0} data-company-size={tool.companySizeFit?.join(' ') ?? ''}>
   <div class="tool-card__inner">
 
     <!-- Header: category + logo -->

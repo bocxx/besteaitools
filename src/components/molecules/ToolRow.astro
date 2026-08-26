@@ -12,9 +12,11 @@ import { Shield, BadgeCheck, Zap } from '@lucide/astro';
 interface Props {
   tool: Tool;
   rank?: number;
+  /** Server-side verbergen (homepage toont standaard de eerste 30 treffers). */
+  hidden?: boolean;
 }
 
-const { tool, rank } = Astro.props;
+const { tool, rank, hidden } = Astro.props;
 const cat = toolCategories[tool.category];
 const pricing = pricingModels[tool.pricingModel];
 const stats = tool.stats;
@@ -43,6 +45,7 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 ---
 
 <a
+  hidden={hidden}
   href={`/ai-tools/${tool.slug}`}
   class="tool-row"
   data-category={tool.category}
