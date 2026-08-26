@@ -16,6 +16,11 @@ import { ArrowLeft, ShieldCheck, Scale, CheckCircle2, XCircle, Activity, PenTool
 const tools = await getAllTools();
 const toolCount = tools.length;
 const verifiedCount = tools.filter(t => t.lastReviewedAt).length;
+// Tellingen voor de stat-cards. Bewust "wat wij hebben kunnen vaststellen":
+// een leeg veld betekent niet dat de tool de eigenschap mist.
+const nlCount = tools.filter(t => t.supportsDutchLanguage).length;
+const euCount = tools.filter(t => t.euHostingAvailable).length;
+const dpaCount = tools.filter(t => t.gdprReady).length;
 const lastVerified = tools
   .map(t => t.lastReviewedAt)
   .filter(Boolean)
@@ -83,6 +88,33 @@ const jsonLd = {
       )}
     </header>
 
+    <div class="stats">
+      <div class="stat">
+        <p class="stat__num">{toolCount}</p>
+        <p class="stat__lbl">tools gepubliceerd</p>
+      </div>
+      <div class="stat">
+        <p class="stat__num">{verifiedCount}</p>
+        <p class="stat__lbl">met verificatiedatum</p>
+      </div>
+      <div class="stat">
+        <p class="stat__num">{nlCount}</p>
+        <p class="stat__lbl">werken in het Nederlands</p>
+      </div>
+      <div class="stat">
+        <p class="stat__num">{dpaCount}</p>
+        <p class="stat__lbl">met verwerkersovereenkomst</p>
+      </div>
+    </div>
+
+    <p class="method-note">
+      Meetwijze: elk cijfer hierboven telt wat wij per tool hebben kunnen
+      vaststellen tegen een primaire bron — de site van de leverancier zelf, niet
+      andermans overzicht. Een tool zonder vinkje heeft de eigenschap dus niet
+      per se niet; wij konden het alleen niet bevestigen. Buzz-cijfers ververst de
+      pipeline dagelijks; redactionele feiten opnieuw bij elke verificatieronde.
+    </p>
+
     <section class="hwb__section">
       <h2><Activity size={18} stroke-width={1.75} /> Het proces</h2>
       <ol class="hwb__steps">
@@ -110,6 +142,22 @@ const jsonLd = {
         ))}
       </ul>
     </section>
+
+    <div class="verdict verdict--warn">
+      <p class="verdict__title">En waar deze methode ophoudt</p>
+      <p>
+        Een verificatie is een momentopname. Prijzen en gratis niveaus veranderen
+        soms binnen weken — bij elke tool staat daarom de datum van de laatste
+        controle, zodat je zelf kunt zien hoe vers het oordeel is.
+      </p>
+      <p>
+        En verifiëren tegen primaire bronnen is iets anders dan elke tool
+        maandenlang zelf draaien. Waar een oordeel op de eerste soort rust,
+        schrijven we dat er zo bij. Van de {toolCount} tools konden we bij{' '}
+        {toolCount - euCount} niet vaststellen of de verwerking binnen de EU
+        plaatsvindt — dat blijft dus een open vraag, geen "nee".
+      </p>
+    </div>
 
     <section class="hwb__section">
       <h2><BadgeEuro size={18} stroke-width={1.75} /> Wat wij principieel niet doen</h2>
