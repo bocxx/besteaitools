@@ -267,6 +267,25 @@ const faqJsonLd = {
           </tbody>
         </table>
       </div>
+      <div class="stats">
+        <div class="stat">
+          <p class="stat__num">{tools.length}</p>
+          <p class="stat__lbl">tools beoordeeld</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num">{dbNl}</p>
+          <p class="stat__lbl">werken in het Nederlands</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num">{dbDpa}</p>
+          <p class="stat__lbl">met verwerkersovereenkomst</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num">{dbEu}</p>
+          <p class="stat__lbl">met aantoonbare EU-hosting</p>
+        </div>
+      </div>
+
       <p class="bt__snel-note">
         "Betaald vanaf" is het goedkoopste betaalde niveau per gebruiker per maand,
         exclusief btw en zonder jaarkorting — ook als de tool daarnaast een gratis
@@ -397,6 +416,27 @@ const faqJsonLd = {
           onze <a href="/disclosure">transparantieverklaring</a>.
         </li>
       </ul>
+      <div class="verdict verdict--warn">
+        <p class="verdict__title">Waar deze lijst ophoudt</p>
+        <p>
+          Een leeg veld is geen bewijs van afwezigheid. Staat er bij een tool geen
+          EU-hosting of verwerkersovereenkomst, dan betekent dat dat wíj het niet
+          hebben kunnen vaststellen — niet dat de leverancier het niet heeft. Bij{' '}
+          {tools.length - dbEu} van de {tools.length} tools konden we EU-hosting niet
+          bevestigen.
+        </p>
+        <p>
+          En let op wat we wél en niet controleren. Prijzen, functies en limieten
+          verifiëren we vóór publicatie tegen primaire bronnen — de site van de
+          leverancier zelf, niet andermans overzicht. Dat is iets anders dan elke tool
+          maandenlang in de praktijk draaien. Waar ons oordeel op zo'n verificatie rust
+          en niet op langdurig eigen gebruik, is dat precies wat er staat.
+        </p>
+        <p class="verdict__small">
+          Zie je iets dat niet klopt? Dan horen we dat liever vandaag dan volgende maand.
+        </p>
+      </div>
+
       <p>
         De volledige criteria — inclusief wanneer we een tool juist níét
         aanbevelen — staan in <a href="/hoe-wij-beoordelen">hoe wij beoordelen</a>.
@@ -424,7 +464,7 @@ const faqJsonLd = {
 </Layout>
 
 <style>
-  .best { padding-top: 80px; max-width: 880px; padding-bottom: var(--space-16, 4rem); }
+  .best { padding-top: var(--space-8, 2rem); max-width: 880px; padding-bottom: var(--space-16, 4rem); }
   .back-link { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; margin-bottom: var(--space-6); }
   .back-link:hover { color: var(--primary-bright); }
 

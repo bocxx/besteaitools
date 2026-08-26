@@ -75,7 +75,7 @@ const breadcrumbJsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
   </Fragment>
 
-  <main class="container container-wide gids" style="padding-top: 80px;">
+  <main class="container container-wide gids" style="padding-top: var(--space-8, 2rem);">
     <nav class="gids__crumbs" aria-label="Kruimelpad">
       <a href="/">Home</a> <span aria-hidden="true">/</span>
       <span class="gids__crumb-current">{task.h1}</span>

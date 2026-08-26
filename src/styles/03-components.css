@@ -170,8 +170,8 @@
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-subtle);
     background: var(--card-bg, var(--bg-glass));
-    backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
     
     /* Effects */
     box-shadow: var(--shadow-sm);
@@ -547,8 +547,8 @@
   
   .surface-glass {
     background: var(--bg-glass);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     border-radius: var(--radius-xl);
     border: 1px solid color-mix(in oklch, var(--text-primary) 8%, transparent);
   }
@@ -592,4 +592,83 @@
   .kicker--accent { color: var(--primary-bright); }
   .kicker--warn { color: var(--color-warning); }
   .kicker--muted { color: var(--text-muted); }
+
+  /* ── Meet-primitieven ────────────────────────────────────────────────
+     Overgenomen van ainieuwsradar.nl/track-record. Drie bouwstenen die daar
+     samen het "wij meten en laten zien hoe" gevoel maken:
+
+       .stat        groot getal + klein mono-onderschrift
+       .method-note methodiek in monospace achter een verticale streep
+       .verdict     conclusie- of eerlijkheids-callout met accentrand links
+
+     De laatste is de belangrijkste: op ainieuwsradar staat daar letterlijk
+     "nog niet aantoonbaar beter dan toeval". Een zichtbare grens aan je eigen
+     claim is het sterkste vertrouwenssignaal dat je hebt. */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+    gap: var(--space-3);
+    margin: var(--space-8) 0;
+  }
+  .stat {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+  }
+  .stat__num {
+    font-family: var(--font-logo);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-regular);
+    line-height: 1;
+    letter-spacing: var(--tracking-tight);
+    font-variant-numeric: tabular-nums;
+    color: var(--text-primary);
+  }
+  .stat__lbl {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: var(--space-2);
+    line-height: var(--leading-snug);
+    /* Nederlandse samenstellingen als "verwerkersovereenkomst" passen niet in
+       een smalle kaart en braken midden in het woord af. Met hyphens:auto en
+       lang="nl" op <html> breekt de browser op lettergrepen. */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  .method-note {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    max-width: 64ch;
+    line-height: var(--leading-relaxed);
+    border-left: 2px solid var(--border-strong);
+    padding-left: var(--space-3);
+    margin: var(--space-4) 0;
+  }
+
+  .verdict {
+    max-width: 66ch;
+    margin: var(--space-8) 0;
+    padding: var(--space-5) var(--space-6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface);
+  }
+  .verdict--warn { border-left: 3px solid var(--color-warning); }
+  .verdict--ok   { border-left: 3px solid var(--primary-bright); }
+  .verdict__title {
+    font-family: var(--font-logo);
+    font-weight: var(--font-regular);
+    font-size: var(--text-xl);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-2);
+    color: var(--text-primary);
+  }
+  .verdict p { color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0; }
+  .verdict p + p { margin-top: var(--space-3); }
+  .verdict__small { font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-3); }
 }
