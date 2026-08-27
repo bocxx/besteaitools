@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-26T19:33:17.815605",
+  "generated_at": "2026-08-27T07:26:42.104455",
   "window_days": 7,
   "week": "2026-w35",
-  "total_candidates_scanned": 1041,
-  "total_after_dedup": 989,
-  "total_feature_updates": 192,
+  "total_candidates_scanned": 1021,
+  "total_after_dedup": 971,
+  "total_feature_updates": 193,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "Z.ai",
       "tool_category": "tekst",
       "feature_title": "GLM-5.3-Flash",
-      "summary_nl": "Z.ai introduceert GLM-5.3-Flash, een model met toonaangevende mogelijkheden tegen een zeer concurrerende prijs. Het is van nature multimodaal met een context window van 1 miljoen tokens.",
+      "summary_nl": "Z.ai introduceert een nieuwe versie van hun GLM-model, GLM-5.3-Flash, met verbeterde prestaties tegen een zeer concurrerende prijs. Het model is van nature multimodaal en heeft een context venster van 1 miljoen tokens.",
       "impact": "high",
       "sources": [
         {
@@ -20,9 +20,15 @@
           "title": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320",
           "platform": "twitter",
           "source": "@Zai_org"
+        },
+        {
+          "url": "https://twitter.com/Zai_org/status/2092814169263218860",
+          "title": "More good news: GLM-5.3’s weights will be released tomorrow.\n\nhttps://t.co/v1IbWMXxg4",
+          "platform": "twitter",
+          "source": "@Zai_org"
         }
       ],
-      "detected_at": "2026-08-26",
+      "detected_at": "2026-08-27",
       "week": "2026-w35"
     },
     {
@@ -30,7 +36,7 @@
       "tool_name": "Qwen",
       "tool_category": "tekst",
       "feature_title": "Qwen3.8-Flash-Next",
-      "summary_nl": "Qwen lanceert Qwen3.8-Flash-Next, een nieuwe architectuur voor de Qwen-modellen met een context van 262K tokens, uitbreidbaar tot 1 miljoen met YaRN.",
+      "summary_nl": "Qwen kondigt de release aan van Qwen3.8-Flash-Next, een nieuwe architectuur voor hun Qwen-model, met een native context van 262K tokens die uitbreidbaar is tot 1M met YaRN.",
       "impact": "high",
       "sources": [
         {
@@ -40,7 +46,103 @@
           "source": "@Alibaba_Qwen"
         }
       ],
-      "detected_at": "2026-08-26",
+      "detected_at": "2026-08-27",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Built-in Browser in Cowork",
+      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork, waardoor taken die een website vereisen eenvoudiger kunnen worden uitgevoerd.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2092755571455758427",
+          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-08-27",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.5 Transcribe",
+      "summary_nl": "Gemini introduceert Gemini 3.5 Transcribe, een nieuwe spraak-naar-tekst model met slimme transcriptie, functie-aanroepen en nauwkeurigere transcripten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OfficialLoganK/status/2092660925509890397",
+          "title": "Introducing Gemini 3.5 Transcribe, our new speech to text model with smart transcription, function calling, more precise transcription (lowe",
+          "platform": "twitter",
+          "source": "@OfficialLoganK"
+        }
+      ],
+      "detected_at": "2026-08-27",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "ChatGPT Business Premium Seats",
+      "summary_nl": "OpenAI introduceert ChatGPT Business Premium Seats, een nieuwe betaalde versie voor kleine bedrijven en startups die extra functionaliteit biedt.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OpenAI/status/2092335305366069305",
+          "title": "Introducing ChatGPT Business Premium Seats\n\nThe new $100 Premium seat is a game changer for small businesses and startups—giving lean teams ",
+          "platform": "twitter",
+          "source": "@OpenAI"
+        },
+        {
+          "url": "https://twitter.com/ChatGPT/status/2092366556584153249",
+          "title": "Basically: if it’s something you’d normally have to open a browser and click through yourself, try asking ChatGPT Work to do it.\n\nLogging in",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-27",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "ChatGPT Images",
+      "summary_nl": "ChatGPT introduceert ChatGPT Images, waarmee gebruikers foto's, ideeën of inside jokes kunnen omzetten in aangepaste stickerpakketten met transparante achtergronden.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2091996384954069032",
+          "title": "Stickers. Stickers? Stickers!\n\nTurn any photo, idea, or inside joke into a custom sticker pack with ChatGPT Images—now with transparent back",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-27",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "perplexity",
+      "tool_name": "Perplexity",
+      "tool_category": "zoeken",
+      "feature_title": "Portable Computer on NVIDIA DGX Spark",
+      "summary_nl": "Perplexity lanceert Portable Computer, een volledig lokale versie van Perplexity Computer, die draait op NVIDIA DGX Spark.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/perplexity_ai/status/2092268362386780270",
+          "title": "Today we’re launching Portable Computer on @NVIDIA DGX Spark.\n\nPortable Computer is a fully local version of Perplexity Computer, where the ",
+          "platform": "twitter",
+          "source": "@perplexity_ai"
+        }
+      ],
+      "detected_at": "2026-08-27",
       "week": "2026-w35"
     },
     {
@@ -56,24 +158,6 @@
           "title": "DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! 🚀\n\n🔹 This experimental multimodal model matches DeepSeek-V4-Flash on ",
           "platform": "twitter",
           "source": "@deepseek_ai"
-        }
-      ],
-      "detected_at": "2026-08-26",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "ChatGPT Business Premium Seats",
-      "summary_nl": "ChatGPT introduceert een nieuw $100 Premium abonnement voor kleine bedrijven en startups, met verbeterde mogelijkheden.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2092335305366069305",
-          "title": "Introducing ChatGPT Business Premium Seats\n\nThe new $100 Premium seat is a game changer for small businesses and startups—giving lean teams ",
-          "platform": "twitter",
-          "source": "@OpenAI"
         }
       ],
       "detected_at": "2026-08-26",
@@ -152,24 +236,6 @@
       "week": "2026-w35"
     },
     {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen3.8-Flash-Next",
-      "summary_nl": "Qwen heeft Qwen3.8-Flash-Next gelanceerd, een 6B-active open model dat beter presteert dan Claude Opus 4.6 Max op 8 van de 9 vergelijkbare benchmarks.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/kimmonismus/status/2092593917543780735",
-          "title": "Qwen 3.8 Flash-Next official released: A 6B-active open model just beat Claude Opus 4.6 Max across 8 of 9 comparable benchmarks!\n\nQwen3.8-Fl",
-          "platform": "twitter",
-          "source": "@kimmonismus"
-        }
-      ],
-      "detected_at": "2026-08-26",
-      "week": "2026-w35"
-    },
-    {
       "tool_slug": "deepseek",
       "tool_name": "DeepSeek",
       "tool_category": "tekst",
@@ -206,24 +272,6 @@
           "title": "We shipped three updates to Claude Managed Agents.\n\nFirst, we made it easier to use memory with Self-Hosted Sandboxes.\n \nAny work done in a ",
           "platform": "twitter",
           "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-08-26",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "ChatGPT Images",
-      "summary_nl": "ChatGPT heeft een nieuwe functie gelanceerd waarmee je foto's, ideeën of inside jokes kunt omzetten in aangepaste stickerpakketten met transparante achtergronden.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ChatGPT/status/2091996384954069032",
-          "title": "Stickers. Stickers? Stickers!\n\nTurn any photo, idea, or inside joke into a custom sticker pack with ChatGPT Images—now with transparent back",
-          "platform": "twitter",
-          "source": "@ChatGPT"
         }
       ],
       "detected_at": "2026-08-26",
@@ -350,24 +398,6 @@
           "title": "Stickers. Stickers? Stickers!\n\nTurn any photo, idea, or inside joke into a custom sticker pack with ChatGPT Images—now with transparent back",
           "platform": "twitter",
           "source": "@ChatGPT"
-        }
-      ],
-      "detected_at": "2026-08-25",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "perplexity",
-      "tool_name": "Perplexity",
-      "tool_category": "zoeken",
-      "feature_title": "Portable Computer on NVIDIA DGX Spark",
-      "summary_nl": "Portable Computer is een volledig lokale versie van Perplexity Computer, die draait op NVIDIA DGX Spark.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/perplexity_ai/status/2092268362386780270",
-          "title": "Today we’re launching Portable Computer on @NVIDIA DGX Spark.\n\nPortable Computer is a fully local version of Perplexity Computer, where the ",
-          "platform": "twitter",
-          "source": "@perplexity_ai"
         }
       ],
       "detected_at": "2026-08-25",
