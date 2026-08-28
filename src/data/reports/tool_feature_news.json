@@ -1,12 +1,198 @@
 {
-  "generated_at": "2026-08-27T19:24:51.213888",
+  "generated_at": "2026-08-28T07:22:21.846776",
   "window_days": 7,
   "week": "2026-w35",
-  "total_candidates_scanned": 1027,
-  "total_after_dedup": 977,
-  "total_feature_updates": 193,
+  "total_candidates_scanned": 955,
+  "total_after_dedup": 908,
+  "total_feature_updates": 199,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "z-ai",
+      "tool_name": "Z.ai",
+      "tool_category": "tekst",
+      "feature_title": "GLM-5.3-Flash Release",
+      "summary_nl": "Z.ai introduceert GLM-5.3-Flash, een kleinere en goedkopere versie van GLM-5.3 met 320B totale parameters en slechts 18B actieve parameters.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Zai_org/status/2092616204787626030",
+          "title": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320",
+          "platform": "twitter",
+          "source": "@Zai_org"
+        },
+        {
+          "url": "https://twitter.com/Zai_org/status/2092814169263218860",
+          "title": "More good news: GLM-5.3’s weights will be released tomorrow.\n\nhttps://t.co/v1IbWMXxg4",
+          "platform": "twitter",
+          "source": "@Zai_org"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen3.8-Flash-Next Architecture",
+      "summary_nl": "Qwen kondigt de release aan van de gewichten voor Qwen3.8-Flash-Next, een nieuwe architectuur die ze aan het verkennen zijn voor Qwen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2092591393424515114",
+          "title": "⚡Meet Qwen3.8-Flash, a multimodal MoE and an early preview of the Qwen4 architecture, now open-weight!\n\nThe production version Qwen3.8-Flash",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Built-in Browser in Cowork",
+      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork, waardoor taken die een website vereisen eenvoudiger kunnen worden uitgevoerd.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2092755571455758427",
+          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek-v4-Flash-Vision-Exp Model",
+      "summary_nl": "DeepSeek heeft een nieuwe model genaamd 'deepseek-v4-flash-vision-exp' uitgebracht, ondersteund door de nieuwste versie van DeepSeek Harness.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2090730032574631962",
+          "title": "DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! 🚀\n\n🔹 This experimental multimodal model matches DeepSeek-V4-Flash on ",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "ChatGPT Business Premium Seats",
+      "summary_nl": "OpenAI introduceert ChatGPT Business Premium Seats, een nieuwe betaalde versie voor kleine bedrijven en startups met extra functies.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OpenAI/status/2092335305366069305",
+          "title": "Introducing ChatGPT Business Premium Seats\n\nThe new $100 Premium seat is a game changer for small businesses and startups—giving lean teams ",
+          "platform": "twitter",
+          "source": "@OpenAI"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.5 Transcribe",
+      "summary_nl": "Gemini heeft versie 3.5 van hun spraak-naar-tekst model 'Gemini Transcribe' uitgebracht, met verbeterde functies zoals slimme transcriptie en functie-aanroepen.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OfficialLoganK/status/2092660925509890397",
+          "title": "Introducing Gemini 3.5 Transcribe, our new speech to text model with smart transcription, function calling, more precise transcription (lowe",
+          "platform": "twitter",
+          "source": "@OfficialLoganK"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "ChatGPT Images with Transparent Backgrounds",
+      "summary_nl": "ChatGPT Images kan nu afbeeldingen, ideeën of inside jokes omzetten in aangepaste stickerpakketten met transparante achtergronden.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2091996384954069032",
+          "title": "Stickers. Stickers? Stickers!\n\nTurn any photo, idea, or inside joke into a custom sticker pack with ChatGPT Images—now with transparent back",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "perplexity",
+      "tool_name": "Perplexity",
+      "tool_category": "zoeken",
+      "feature_title": "Portable Computer on NVIDIA DGX Spark",
+      "summary_nl": "Perplexity lanceert Portable Computer, een volledig lokale versie van Perplexity Computer, die draait op NVIDIA DGX Spark.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/perplexity_ai/status/2092268362386780270",
+          "title": "Today we’re launching Portable Computer on @NVIDIA DGX Spark.\n\nPortable Computer is a fully local version of Perplexity Computer, where the ",
+          "platform": "twitter",
+          "source": "@perplexity_ai"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "ChatGPT Work Logging into Websites",
+      "summary_nl": "ChatGPT Work krijgt de functie om in te loggen op websites, die nu wordt uitgerold voor Plus, Pro en Business gebruikers.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ChatGPT/status/2092366556584153249",
+          "title": "Basically: if it’s something you’d normally have to open a browser and click through yourself, try asking ChatGPT Work to do it.\n\nLogging in",
+          "platform": "twitter",
+          "source": "@ChatGPT"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "GPT-5.6 Sol Pricing Update",
+      "summary_nl": "OpenAI heeft de prijzen voor GPT-5.6 Sol verlaagd met 20% en 33% voor respectievelijk input- en output-tokens.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/MatthewBerman/status/2091948325226660135",
+          "title": "GPT-5.6 Sol pricing just dropped. \n\n$4/$10 per million input/output tokens.\n\n20% and 33% price drop. https://t.co/JdcICzcsKu",
+          "platform": "twitter",
+          "source": "@MatthewBerman"
+        }
+      ],
+      "detected_at": "2026-08-28",
+      "week": "2026-w35"
+    },
     {
       "tool_slug": "z-ai",
       "tool_name": "Z.ai",
@@ -50,84 +236,6 @@
       "week": "2026-w35"
     },
     {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Built-in Browser in Cowork",
-      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork, waardoor taken die een website vereisen eenvoudiger kunnen worden uitgevoerd.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2092755571455758427",
-          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-08-27",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Gemini 3.5 Transcribe",
-      "summary_nl": "Gemini introduceert Gemini 3.5 Transcribe, een nieuwe spraak-naar-tekst model met slimme transcriptie, functie-aanroepen en nauwkeurigere transcripten.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/OfficialLoganK/status/2092660925509890397",
-          "title": "Introducing Gemini 3.5 Transcribe, our new speech to text model with smart transcription, function calling, more precise transcription (lowe",
-          "platform": "twitter",
-          "source": "@OfficialLoganK"
-        }
-      ],
-      "detected_at": "2026-08-27",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "ChatGPT Business Premium Seats",
-      "summary_nl": "OpenAI introduceert ChatGPT Business Premium Seats, een nieuwe betaalde versie voor kleine bedrijven en startups die extra mogelijkheden biedt.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2092335305366069305",
-          "title": "Introducing ChatGPT Business Premium Seats\n\nThe new $100 Premium seat is a game changer for small businesses and startups—giving lean teams ",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        },
-        {
-          "url": "https://twitter.com/ArtificialAnlys/status/2092663573021606119",
-          "title": "GLM-5.3-Flash scores 57 on the Artificial Analysis Intelligence Index. At $0.09 Cost per Task, it sits comfortably on the Intelligence vs. C",
-          "platform": "twitter",
-          "source": "@ArtificialAnlys"
-        },
-        {
-          "url": "https://twitter.com/ChatGPT/status/2092366556584153249",
-          "title": "Basically: if it’s something you’d normally have to open a browser and click through yourself, try asking ChatGPT Work to do it.\n\nLogging in",
-          "platform": "twitter",
-          "source": "@ChatGPT"
-        },
-        {
-          "url": "https://twitter.com/IntCyberDigest/status/2091857198334840911",
-          "title": "❗️Xiaomi just fit a 120-billion-parameter AI model into a small desktop box, the class of model people normally rent from the cloud.\n\nDeepSe",
-          "platform": "twitter",
-          "source": "@IntCyberDigest"
-        },
-        {
-          "url": "https://twitter.com/MatthewBerman/status/2091948325226660135",
-          "title": "GPT-5.6 Sol pricing just dropped. \n\n$4/$10 per million input/output tokens.\n\n20% and 33% price drop. https://t.co/JdcICzcsKu",
-          "platform": "twitter",
-          "source": "@MatthewBerman"
-        }
-      ],
-      "detected_at": "2026-08-27",
-      "week": "2026-w35"
-    },
-    {
       "tool_slug": "chatgpt",
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
@@ -140,24 +248,6 @@
           "title": "Stickers. Stickers? Stickers!\n\nTurn any photo, idea, or inside joke into a custom sticker pack with ChatGPT Images—now with transparent back",
           "platform": "twitter",
           "source": "@ChatGPT"
-        }
-      ],
-      "detected_at": "2026-08-27",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "perplexity",
-      "tool_name": "Perplexity",
-      "tool_category": "zoeken",
-      "feature_title": "Portable Computer on NVIDIA DGX Spark",
-      "summary_nl": "Perplexity lanceert Portable Computer, een volledig lokale versie van Perplexity Computer, die draait op NVIDIA DGX Spark.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/perplexity_ai/status/2092268362386780270",
-          "title": "Today we’re launching Portable Computer on @NVIDIA DGX Spark.\n\nPortable Computer is a fully local version of Perplexity Computer, where the ",
-          "platform": "twitter",
-          "source": "@perplexity_ai"
         }
       ],
       "detected_at": "2026-08-27",
