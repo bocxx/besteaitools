@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-30T19:26:20.528145",
+  "generated_at": "2026-08-31T07:26:00.376880",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 15,
     "for_news": 29,
-    "rejected_lang": 284,
+    "rejected_lang": 288,
     "already_covered": 0,
-    "total_scanned": 9606
+    "total_scanned": 9611
   },
   "for_tools": [
     {
@@ -337,10 +337,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "step-by-step",
-        "how to",
+        "guide",
         "how-to",
-        "guide"
+        "how to",
+        "step-by-step"
       ],
       "matched_tools": [
         "n8n"
@@ -393,9 +393,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how-to",
+        "study",
         "how to",
-        "explained",
-        "study"
+        "explained"
       ],
       "matched_tools": [
         "chatgpt"
@@ -699,59 +699,6 @@
       "id": "094d85f0759f9462"
     },
     {
-      "source": "reddit:r/LocalLLaMA",
-      "platform": "reddit",
-      "title": "Qwen 3.8 27B is a game changer.",
-      "text": "Our devs got their hands on it a few days ago. One wired it into Codex to compare with GPT Luna, our usual workhorse right now for its cost effectiveness. Another tried it out on one of our OCR pipelines. \n\n  \nIt's comparable to Luna for coding and \\*\\*\\*OCR quality appears to be better than Gemini 3.5 Flash Lite\\*\\*\\*. That's huge. We pay a ton of money for OCR. \n\n  \nThis is the first local model that feels like more than a toy. It's truly as capable as the frontier models from a year ago. For the first time ever there's serious discussions about buying our own hardware. With estimates that s",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/",
-      "date": "2026-08-23",
-      "engagement": 1201.0,
-      "source_weight": 2.0,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "hands on"
-      ],
-      "matched_tools": [
-        "gemini",
-        "qwen"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "reddit"
-      ],
-      "bron_tier": "",
-      "score": 17.14,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 10.64,
-        "source_weight": 2.0,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 0.0,
-        "uitgever": 0.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: gemini inzetten in je workflow.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "bb669606ee371497"
-    },
-    {
       "source": "consensus:8 bronnen",
       "platform": "article",
       "title": "'You're giving ballistic ⁠missiles to individuals with Mythos': JPMorgan CEO Jamie Dimon says Anthropic's AI model poses some serious risks",
@@ -784,7 +731,7 @@
         "Latest from TechRadar US in News，opinion",
         "Quartz"
       ],
-      "cluster_size": 12,
+      "cluster_size": 11,
       "consensus_sources": [
         "\"AI Nederland\" - Google Nieuws",
         "All Content from Business Insider",
@@ -820,6 +767,68 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "dd3c5b5d1030f0e9"
+    },
+    {
+      "source": "consensus:4 bronnen",
+      "platform": "article",
+      "title": "Ben Bernanke Joins Anthropic Oversight Trust",
+      "text": "<a href=\"https://news.ycombinator.com/item?id=48855112\">Comments</a>",
+      "url": "https://www.anthropic.com/news/ben-bernanke",
+      "date": "2026-07-10",
+      "engagement": 40.0,
+      "source_weight": 2.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "claude"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "bron": "consensus",
+      "consensus_source_count": 4,
+      "consensus_source_names": [
+        "Bloomberg Technology",
+        "Hacker News",
+        "Quartz",
+        "The Information"
+      ],
+      "cluster_size": 5,
+      "consensus_sources": [
+        "Bloomberg Technology",
+        "Hacker News",
+        "Quartz",
+        "The Information"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "bron_tier": "primair",
+      "score": 17.07,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.57,
+        "source_weight": 2.0,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 2.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 6.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Wat kan claude écht? Een eerlijke test voor NL-gebruikers.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "770e8ca0f5eca554"
     },
     {
       "source": "reddit:r/ClaudeAI",
@@ -882,7 +891,7 @@
       "text": "Our decision on Cursor following its acquisition by SpaceX",
       "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/",
       "date": "2026-08-29",
-      "engagement": 1341.0,
+      "engagement": 1359.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -902,10 +911,10 @@
         "hackernews"
       ],
       "bron_tier": "primair",
-      "score": 26.3,
+      "score": 26.32,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 10.8,
+        "engagement_log": 10.82,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -984,8 +993,8 @@
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "from scratch"
+        "from scratch",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1001,13 +1010,13 @@
         "hackernews"
       ],
       "bron_tier": "",
-      "score": 20.24,
+      "score": 19.74,
       "score_breakdown": {
         "pattern_hits": 2,
         "engagement_log": 10.74,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 1.0,
+        "recency": 0.5,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1089,9 +1098,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "step-by-step",
         "guide",
-        "study"
+        "study",
+        "step-by-step"
       ],
       "matched_tools": [
         "chatgpt"
@@ -1145,7 +1154,7 @@
       "text": "Good Culture Is the Biggest Productivity Hack, Not AI",
       "url": "https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity",
       "date": "2026-08-29",
-      "engagement": 534.0,
+      "engagement": 567.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1163,10 +1172,10 @@
         "hackernews"
       ],
       "bron_tier": "",
-      "score": 18.92,
+      "score": 19.01,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 9.42,
+        "engagement_log": 9.51,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -1242,21 +1251,19 @@
     {
       "source": "hn",
       "platform": "hackernews",
-      "title": "GPT 5.6 Sol is the best \"vision\" model OpenAI ever released",
-      "text": "GPT 5.6 Sol is the best \"vision\" model OpenAI ever released",
-      "url": "https://blog.roboflow.com/openai-gpt-5-6/",
-      "date": "2026-08-17",
-      "engagement": 531.0,
+      "title": "METR and Redwood Offer Holy %^ Postmortem of the HuggingFace Hack",
+      "text": "METR and Redwood Offer Holy %^ Postmortem of the HuggingFace Hack",
+      "url": "https://thezvi.wordpress.com/2026/08/29/metr-and-redwood-offer-holy-postmortem-of-the-huggingface-hack/",
+      "date": "2026-08-30",
+      "engagement": 426.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": true,
+      "matched_tools": [],
+      "feature_update": false,
       "new_products": [],
       "new_product": false,
-      "version_bump": true,
+      "version_bump": false,
       "paywall": false,
       "video": null,
       "lang": "en",
@@ -1266,13 +1273,13 @@
         "hackernews"
       ],
       "bron_tier": "",
-      "score": 18.41,
+      "score": 18.59,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 9.41,
+        "engagement_log": 9.09,
         "source_weight": 3.0,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -1284,10 +1291,10 @@
         "uitgever": 0.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Nieuw in chatgpt: wat de update concreet voor je werk betekent.",
+      "suggested_angle_nl": "METR: de context die de internationale pers mist.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "1ec5133e2fda199f"
+      "id": "531724beafcce630"
     },
     {
       "source": "articles:Tom's Hardware",
@@ -1452,8 +1459,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "case study",
-        "study"
+        "study",
+        "case study"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1503,8 +1510,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how to",
-        "study"
+        "study",
+        "how to"
       ],
       "matched_tools": [
         "chatgpt"
@@ -2118,56 +2125,6 @@
       "id": "138ac51d65cbf3e8"
     },
     {
-      "source": "articles:The Register",
-      "platform": "article",
-      "title": "Slop factory bans Russians for using slop factory to create slop",
-      "text": "ChatGPT may spew a lot of digital garbage onto the internet, but the same bots that output the trash can be used to stop it. The company draws the line at influence operations that want to slop in the name of love . . . of mother Russia. OpenAI said in a Tuesday blog post that it had identified a cluster of accounts originating from Russia using ChatGPT to produce social media posts and comments directing internet denizens to what appears to be a fake Israeli think tank critical of the west and supportive of Russia. “What began as an investigation into AI-generated social media posts led us to",
-      "url": "https://www.theregister.com/ai-and-ml/2026/08/25/slop-factory-bans-russians-for-using-slop-factory-to-create-slop/5292297",
-      "date": "2026-08-25",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat chatgpt betekent voor de Nederlandse AI-markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "51a507386afa8d55"
-    },
-    {
       "source": "articles:Tom's Hardware",
       "platform": "article",
       "title": "Hot Chips 2026: Nvidia breaks down 88-core Vera CPU — spatial multithreading benchmarked, 1.2 TB/s SOCAMM2 memory, agentic workloads detailed, and more",
@@ -2216,7 +2173,7 @@
       "id": "0d870a079d8c1088"
     },
     {
-      "source": "articles:The Verge -  Artificial Intelligences",
+      "source": "articles:The Verge -  All Posts",
       "platform": "article",
       "title": "OpenAI subpoenaed by Alabama AG over Hugging Face hack",
       "text": "<figure>\n\n<img alt=\"\" data-caption=\"\" data-portal-copyright=\"Image: The Verge\" data-has-syndication-rights=\"1\" src=\"https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/STK155_OPEN_AI_CVirginia_C-1.jpg?quality=90&amp;strip=all&amp;crop=0,0,100,100\">\n\t<figcaption>\n\t\t</figcaption>\n</figure>\n<p data-sanitized-class=\"wp-block-paragraph\">Alabama's attorney general <a href=\"https://www.alabamaag.gov/attorney-general-marshall-launches-investigation-into-openai-and-sam-altman-for-massive-artificial-intelligence-data-breach/\">issued a subpoena</a> to OpenAI on Monday as part of an investiga",
@@ -2268,6 +2225,57 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "9265dcffddd99b4a"
+    },
+    {
+      "source": "articles:The Register",
+      "platform": "article",
+      "title": "What Nvidia's first Groq 3 LPU benchmarks do and don't tell us about its $20B gamble",
+      "text": "Nvidia’s $20 billion bet on Groq’s LPU tech sure looks like it was a good one. On Monday, the GPU giant offered the first glimpse of just how big a speedup its Groq 3-based LPX racks will provide. In an independent benchmark conducted by Artificial Analysis, Nvidia’s LPX rack systems managed to churn out 3,400 tokens a second (tok/s) with a 100,000-token input sequence in Google’s Gemma 4 31B model. According to Nvidia, this makes it 4x faster than the nearest alternative platform, which going off Artificial Analysis’ leaderboard would be a direct dig at Cerebras, which managed a still impress",
+      "url": "https://www.theregister.com/systems/2026/08/24/what-nvidias-first-groq-3-lpu-benchmarks-do-and-dont-tell-us-about-its-20b-gamble/5291880",
+      "date": "2026-08-24",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [
+        "gemini",
+        "groq"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 16.9,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Wat gemini betekent voor de Nederlandse AI-markt.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "d27cbc2c7e3799c0"
     },
     {
       "source": "articles:Tom's Hardware",
