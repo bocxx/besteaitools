@@ -1,12 +1,78 @@
 {
-  "generated_at": "2026-08-31T19:39:12.405438",
+  "generated_at": "2026-09-01T07:24:20.437160",
   "window_days": 7,
   "week": "2026-w36",
-  "total_candidates_scanned": 1007,
-  "total_after_dedup": 948,
+  "total_candidates_scanned": 1070,
+  "total_after_dedup": 1020,
   "total_feature_updates": 137,
-  "llm_curated": false,
+  "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Built-in Browser",
+      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork. Wanneer je een taak uitvoert die een website vereist, wordt er een browser geopend in het zijpaneel van Cowork, en Claude kan de website direct binnen Cowork gebruiken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2092755571455758427",
+          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-09-01",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.5 Transcribe",
+      "summary_nl": "Gemini heeft een nieuwe spraak-naar-tekst model genaamd Gemini 3.5 Transcribe, met slimme transcriptie, functie-aanroepen en nauwkeurigere transcripten.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OfficialLoganK/status/2092660925509890397",
+          "title": "Introducing Gemini 3.5 Transcribe, our new speech to text model with smart transcription, function calling, more precise transcription (lowe",
+          "platform": "twitter",
+          "source": "@OfficialLoganK"
+        }
+      ],
+      "detected_at": "2026-09-01",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "z-ai",
+      "tool_name": "Z.ai",
+      "tool_category": "tekst",
+      "feature_title": "GLM-5.3-Flash Release",
+      "summary_nl": "Z.ai heeft GLM-5.3-Flash uitgebracht, een kleinere en goedkopere versie van GLM-5.3 met 320B totale parameters en slechts 18B actieve parameters.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Zai_org/status/2092616204787626030",
+          "title": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320",
+          "platform": "twitter",
+          "source": "@Zai_org"
+        },
+        {
+          "url": "https://twitter.com/Zai_org/status/2093354097122455713",
+          "title": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\n",
+          "platform": "twitter",
+          "source": "@Zai_org"
+        },
+        {
+          "url": "https://twitter.com/ArtificialAnlys/status/2092663573021606119",
+          "title": "GLM-5.3-Flash scores 57 on the Artificial Analysis Intelligence Index. At $0.09 Cost per Task, it sits comfortably on the Intelligence vs. C",
+          "platform": "twitter",
+          "source": "@ArtificialAnlys"
+        }
+      ],
+      "detected_at": "2026-09-01",
+      "week": "2026-w36"
+    },
     {
       "tool_slug": "make",
       "tool_name": "Make",
@@ -278,42 +344,6 @@
       "week": "2026-w36"
     },
     {
-      "tool_slug": "z-ai",
-      "tool_name": "Z.ai",
-      "tool_category": "tekst",
-      "feature_title": "GLM-5.3-Flash Release",
-      "summary_nl": "Z.ai heeft GLM-5.3-Flash gelanceerd, een kleinere en goedkopere versie van GLM-5.3 met 320B totale parameters en slechts 18B actieve parameters.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Zai_org/status/2092616204787626030",
-          "title": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320",
-          "platform": "twitter",
-          "source": "@Zai_org"
-        },
-        {
-          "url": "https://twitter.com/Zai_org/status/2093354097122455713",
-          "title": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\n",
-          "platform": "twitter",
-          "source": "@Zai_org"
-        },
-        {
-          "url": "https://twitter.com/ArtificialAnlys/status/2092663573021606119",
-          "title": "GLM-5.3-Flash scores 57 on the Artificial Analysis Intelligence Index. At $0.09 Cost per Task, it sits comfortably on the Intelligence vs. C",
-          "platform": "twitter",
-          "source": "@ArtificialAnlys"
-        },
-        {
-          "url": "https://twitter.com/Zai_org/status/2092814169263218860",
-          "title": "More good news: GLM-5.3’s weights will be released tomorrow.\n\nhttps://t.co/v1IbWMXxg4",
-          "platform": "twitter",
-          "source": "@Zai_org"
-        }
-      ],
-      "detected_at": "2026-08-31",
-      "week": "2026-w36"
-    },
-    {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
@@ -368,42 +398,6 @@
           "title": "GLM-5.3-Flash scores 57 on the Artificial Analysis Intelligence Index. At $0.09 Cost per Task, it sits comfortably on the Intelligence vs. C",
           "platform": "twitter",
           "source": "@ArtificialAnlys"
-        }
-      ],
-      "detected_at": "2026-08-30",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Gemini 3.5 Transcribe",
-      "summary_nl": "Gemini heeft Gemini 3.5 Transcribe geïntroduceerd, een nieuwe spraak-naar-tekst model met slimme transcriptie, functie-aanroepen en nauwkeurigere transcripten.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/OfficialLoganK/status/2092660925509890397",
-          "title": "Introducing Gemini 3.5 Transcribe, our new speech to text model with smart transcription, function calling, more precise transcription (lowe",
-          "platform": "twitter",
-          "source": "@OfficialLoganK"
-        }
-      ],
-      "detected_at": "2026-08-30",
-      "week": "2026-w35"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Built-in Browser",
-      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork. Wanneer je een taak uitvoert die een website vereist, opent er een browser in het zijpaneel van Cowork, waardoor Claude direct toegang heeft tot de website.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2092755571455758427",
-          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
-          "platform": "twitter",
-          "source": "@claudeai"
         }
       ],
       "detected_at": "2026-08-30",
