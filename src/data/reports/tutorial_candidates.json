@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-01T07:29:36.924239",
+  "generated_at": "2026-09-01T19:47:03.330012",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 16,
     "for_news": 30,
-    "rejected_lang": 311,
+    "rejected_lang": 321,
     "already_covered": 0,
-    "total_scanned": 9404
+    "total_scanned": 9284
   },
   "for_tools": [
     {
@@ -338,9 +338,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "how-to",
         "guide",
-        "step-by-step"
+        "step-by-step",
+        "how-to"
       ],
       "matched_tools": [
         "n8n"
@@ -393,9 +393,9 @@
       "ai_relevant": false,
       "pattern_hits": [
         "how to",
-        "how-to",
         "study",
-        "explained"
+        "explained",
+        "how-to"
       ],
       "matched_tools": [
         "chatgpt"
@@ -632,16 +632,18 @@
       "id": "7276d643e428e459"
     },
     {
-      "source": "github:JavaScript",
+      "source": "github:Python",
       "platform": "github",
-      "title": "freestylefly/awesome-gpt-image-2 — Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
-      "text": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
-      "url": "https://github.com/freestylefly/awesome-gpt-image-2",
-      "date": "2026-08-26",
-      "engagement": 4044.0,
+      "title": "jingyaogong/minimind — 🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+      "text": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+      "url": "https://github.com/jingyaogong/minimind",
+      "date": "2026-09-01",
+      "engagement": 1005.0,
       "source_weight": 2.5,
       "ai_relevant": true,
-      "pattern_hits": [],
+      "pattern_hits": [
+        "from scratch"
+      ],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -650,18 +652,10 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "total_stars": 21040,
+      "total_stars": 56893,
       "topics": [
-        "agents",
-        "ai-image-generation",
-        "chatgpt",
-        "dsh-plugin",
-        "gpt-image-2",
-        "image-prompts",
-        "prompt-as-code",
-        "prompt-engineering",
-        "skills",
-        "workflow-automation"
+        "artificial-intelligence",
+        "large-language-model"
       ],
       "newsletter_count": 0,
       "competitor_count": 0,
@@ -669,10 +663,10 @@
         "github"
       ],
       "bron_tier": "",
-      "score": 17.46,
+      "score": 17.37,
       "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 12.46,
+        "pattern_hits": 1,
+        "engagement_log": 10.37,
         "source_weight": 2.5,
         "ai_relevance": 1.5,
         "recency": 1.0,
@@ -687,10 +681,70 @@
         "uitgever": 0.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Wat kan Prompt écht? Een eerlijke test voor NL-gebruikers.",
+      "suggested_angle_nl": "Train versus de alternatieven — welke past bij jou?",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "1477adacddf59610"
+      "id": "ca517a0aabb92451"
+    },
+    {
+      "source": "consensus:3 bronnen",
+      "platform": "article",
+      "title": "Pairing Google Antigravity with Gemini 3.7 Flash solves notable multi-agent math and engineering problems.",
+      "text": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Teamwork_social.max-600x600.format-webp.webp\">Gemini 3.7 Flash powers autonomous agent teams in Antigravity to solve open math problems, build CPU emulators, and optimize OSS.",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/",
+      "date": "2026-09-01",
+      "engagement": 30.0,
+      "source_weight": 2.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "gemini"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "bron": "consensus",
+      "consensus_source_count": 3,
+      "consensus_source_names": [
+        "Artificial Intelligence",
+        "The Keyword",
+        "The Official Google Blog"
+      ],
+      "cluster_size": 3,
+      "consensus_sources": [
+        "Artificial Intelligence",
+        "The Keyword",
+        "The Official Google Blog"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "bron_tier": "primair",
+      "score": 17.15,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.15,
+        "source_weight": 2.0,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 1.5,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 6.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Praktijkgids: gemini inzetten in je workflow.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "992fb12641c11e33"
     },
     {
       "source": "consensus:8 bronnen",
@@ -880,66 +934,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "f9e924e144fed17d"
-    },
-    {
-      "source": "consensus:3 bronnen",
-      "platform": "article",
-      "title": "Waymo is bringing Gemini into its custom Ojai vehicles.",
-      "text": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Ojai_vehicles_social.max-600x600.format-webp.webp\">Waymo is bringing Gemini to its custom-built Ojai vehicles to create a more helpful and personalized ride.",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-waymo/",
-      "date": "2026-08-19",
-      "engagement": 30.0,
-      "source_weight": 2.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
-      "matched_tools": [
-        "gemini"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "bron": "consensus",
-      "consensus_source_count": 3,
-      "consensus_source_names": [
-        "Artificial Intelligence",
-        "The Keyword",
-        "The Official Google Blog"
-      ],
-      "cluster_size": 3,
-      "consensus_sources": [
-        "Artificial Intelligence",
-        "The Keyword",
-        "The Official Google Blog"
-      ],
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "bron_tier": "primair",
-      "score": 16.65,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.15,
-        "source_weight": 2.0,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 1.5,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 0.0,
-        "uitgever": 6.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "gemini versus de alternatieven — welke past bij jou?",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "abadb147cd634d69"
     }
   ],
   "for_news": [
@@ -1107,8 +1101,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "guide",
         "study",
+        "guide",
         "step-by-step"
       ],
       "matched_tools": [
@@ -1163,7 +1157,7 @@
       "text": "Good Culture Is the Biggest Productivity Hack, Not AI",
       "url": "https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity",
       "date": "2026-08-29",
-      "engagement": 596.0,
+      "engagement": 597.0,
       "source_weight": 3.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -1308,6 +1302,54 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "280e7ae8a923562f"
+    },
+    {
+      "source": "hn",
+      "platform": "hackernews",
+      "title": "Google buys crashed airline Spirit's data at auction, because AI",
+      "text": "Google buys crashed airline Spirit's data at auction, because AI",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
+      "date": "2026-08-18",
+      "engagement": 1033.0,
+      "source_weight": 3.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "hackernews"
+      ],
+      "bron_tier": "vakpers",
+      "score": 18.41,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 10.41,
+        "source_weight": 3.0,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Wat Spirit betekent voor de Nederlandse AI-markt.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "0a0d055aba5c84a0"
     },
     {
       "source": "articles:Tom's Hardware",
@@ -1462,10 +1504,58 @@
       "id": "d7f2badfb36d3907"
     },
     {
-      "source": "articles:Artificial intelligence (AI) | The Guardian",
+      "source": "articles:The Information",
+      "platform": "article",
+      "title": "Wafer, An Inference Provider That Uses Non-Nvidia Chips, Lands Acquisition Offers and $200 Million-Plus Valuation",
+      "text": "<p>Developers and chip designers are increasingly upbeat about the benefits of using AI to supercharge the process of designing and optimizing AI chips, as my colleague Phoebe <a href=\"https://www.theinformation.com/newsletters/ai-agenda/buzz-years-hot-chips-conference-ai-supercharging-chip-design\">wrote</a> about last week. </p><p>Now, a year-old inference provider, <b>Wafer</b>, is trying a similar approach: using AI to improve the way models run on a variety of chips and then helping businesses to run those models.</p><p>The San Francisco-based startup recently raised $40 million in Series ",
+      "url": "https://www.theinformation.com/articles/wafer-inference-provider-uses-non-nvidia-chips-lands-acquisition-offers-200-million-plus-valuation",
+      "date": "2026-09-01",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.9,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Inference Provider: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "5e55e7afef79c330"
+    },
+    {
+      "source": "articles:Technology | The Guardian",
       "platform": "article",
       "title": "Anthropic sued over alleged theft of ‘tens of thousands’ of songs",
-      "text": "<p>AI company faces multibillion dollar lawsuit over misuse of copyrighted songs to train Claude models</p><p>All AI wants for Christmas is a vast back catalogue of songs without paying for it, according to a multibillion dollar lawsuit against the startup behind the Claude chatbot.</p><p>Sony Music Publishing and Warner Chappell, music publishers who manage the copyright of songs on behalf of songwriters and composers, are seeking damages for alleged misuse of “tens of thousands” of copyrighted works by Anthropic.</p> <a href=\"https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-a",
+      "text": "<p>AI company faces multibillion dollar lawsuit over misuse of copyrighted songs to train Claude models</p><p>All AI wants for Christmas is a vast back catalogue of songs without paying for it, according to a multibillion-dollar lawsuit against the startup behind the Claude chatbot.</p><p>Sony Music Publishing and Warner Chappell, music publishers who manage the copyright of songs on behalf of songwriters and composers, are seeking damages for alleged misuse of “tens of thousands” of copyrighted works by Anthropic.</p> <a href=\"https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-a",
       "url": "https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-alleged-theft-songs-ai-train-claude",
       "date": "2026-08-31",
       "engagement": 50.0,
@@ -1574,8 +1664,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "case study",
-        "study"
+        "study",
+        "case study"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1613,6 +1703,56 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "bcbaee270d91fdab"
+    },
+    {
+      "source": "articles:Bloomberg Technology",
+      "platform": "article",
+      "title": "Deere Launches AI Assistant Named JD to Guide Farmers’ Choices",
+      "text": "Farmers are getting some help sorting through the reams of data collected by their high-tech tractors: An AI assistant named JD built into Deere &amp; Co.’s Operations Center mobile application.",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-01/deere-launches-ai-assistant-named-jd-to-guide-farmers-choices",
+      "date": "2026-09-01",
+      "engagement": 9.7,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "guide"
+      ],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.56,
+      "score_breakdown": {
+        "pattern_hits": 1,
+        "engagement_log": 3.56,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Nieuw in Deere Launches AI: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "5d3b4008b0e2acb1"
     },
     {
       "source": "articles:Bloomberg Technology",
@@ -1827,57 +1967,6 @@
       "id": "08b8fe97318f9204"
     },
     {
-      "source": "articles:cs.AI updates on arXiv.org",
-      "platform": "article",
-      "title": "Understanding AI Anxiety in the Workplace: A Multimethod Investigation Using Fear Acquisition Theory and the Technology Acceptance Model",
-      "text": "arXiv:2608.14609v1 Announce Type: cross \nAbstract: As artificial intelligence (AI) rapidly diffuses and concerns about job displacement intensify, the psychological mechanisms underlying AI job replacement anxiety remain insufficiently understood. Drawing on Integrated Fear Acquisition Theory and the Technology Acceptance Model, the present research investigates whether AI job replacement anxiety can be elicited through vicarious exposure to narratives emphasizing AI-over-human control, and whether perceived usefulness and perceived ease of use of AI moderate this response. Across two studies,",
-      "url": "https://arxiv.org/abs/2608.14609",
-      "date": "2026-08-18",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "randomized",
-        "study"
-      ],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "",
-      "score": 17.4,
-      "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Nieuw in Understanding AI Anxiety: wat de update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "23c52dfaf0a13299"
-    },
-    {
       "source": "reddit:r/ChatGPT",
       "platform": "reddit",
       "title": "Can AI act like the latter?",
@@ -2038,18 +2127,71 @@
       "id": "9e93bf280feab536"
     },
     {
-      "source": "articles:The Register",
+      "source": "articles:Latest from TechRadar US in News，opinion",
       "platform": "article",
-      "title": "Copilot tricked into telling reseachers how to hack itself",
-      "text": "How to social engineer an AI's reasoning engine\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://image.theregister.com/5288896.webp?imageId=5288896&amp;x=0.00&amp;y=0.00&amp;cropw=100.00&amp;croph=100.00&amp;heightx=0.00&amp;heighty=0.00&amp;heightw=100.00&amp;heighth=100.00&amp;width=1058&amp;height=478&amp;format=jpg\" alt=\"\" title=\"\" /></p></figure>\n",
-      "url": "https://www.theregister.com/research/2026/08/18/copilot-tricked-into-telling-reseachers-how-to-hack-itself/5288857",
-      "date": "2026-08-18",
-      "engagement": 18.9,
+      "title": "Pentagon launches ChatGPT and Grok models tailored to 'warfighter needs'",
+      "text": "<article>\n                                <ul><li><strong>Pentagon adopts two new AI models for use by DoD as part of plans to adopt AI technologies</strong></li><li><strong>ChatGPT Mil fills the role of a day to day AI assistant, while Grok for Government provides military users with \"immediate productivity gains\"</strong></li><li><strong>Both systems will be offered through the Pentagon's GenAI.mil platform</strong></li></ul><p>In order to carry out the Department of Defense’s mission of securing the United States, the Pentagon has rolled out two AI models for its staff that are specifically",
+      "url": "https://www.techradar.com/pro/pentagon-launches-chatgpt-and-grok-models-tailored-to-warfighter-needs",
+      "date": "2026-09-01",
+      "engagement": 50.0,
       "source_weight": 1.5,
       "ai_relevant": false,
-      "pattern_hits": [
-        "how to"
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt",
+        "grok"
       ],
+      "feature_update": true,
+      "new_products": [
+        "ChatGPT Mil",
+        "United States",
+        "The AI"
+      ],
+      "new_product": true,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 16.9,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Nieuw in chatgpt: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "381879a862186cfb"
+    },
+    {
+      "source": "articles:Tom's Hardware",
+      "platform": "article",
+      "title": "Nvidia's controversial DLSS 5 will launch September 3 with NBA2K27, company shares first benchmarks — available on all RTX 50 series GPUs, laptops, and GeForce NOW",
+      "text": "<article>\n                                <p>Following its announcement earlier this year, and just days after the <a href=\"https://www.tomshardware.com/pc-components/gpus/modders-get-leaked-dlss-5-running-in-control-early-blackwell-test-drops-rtx-5070-ti-from-71-to-35-fps-at-4k\">DLL leaked inside <em>NBA2K27</em></a>, Nvidia has today confirmed that its controversial DLSS 5 will launch on September 3. Starting at 9 pm PT, the aforementioned NBA title will support DLSS 5 for all RTX 50 Series GPUs, laptops, and GeForce NOW. The company also shared its first in-house benchmarks of DLSS 5, which",
+      "url": "https://www.tomshardware.com/pc-components/gpus/nvidias-controversial-dlss-5-will-launch-september-3-with-nba2k27-available-on-all-rtx-50-series-gpus-laptops-and-geforce-now",
+      "date": "2026-09-01",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
       "matched_tools": [],
       "feature_update": false,
       "new_products": [],
@@ -2064,13 +2206,13 @@
         "article"
       ],
       "bron_tier": "vakpers",
-      "score": 16.99,
+      "score": 16.9,
       "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 4.49,
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
         "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -2082,10 +2224,119 @@
         "uitgever": 3.0
       },
       "bucket": "news",
-      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "suggested_angle_nl": "Waarom DLSS er nu toe doet — en wat je ermee moet.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "d19e9fcd5987e475"
+      "id": "ff4ef66510af9def"
+    },
+    {
+      "source": "articles:Tom's Hardware",
+      "platform": "article",
+      "title": "Nvidia's top-end RTX 5090 gaming GPU now costs at least $5,000 — Blackwell cards continue to endure drastic price hikes",
+      "text": "<article>\n                                <p>It's hard to believe Nvidia first announced the <a href=\"https://www.tomshardware.com/pc-components/gpus/nvidia-geforce-rtx-5090-review\">RTX 5090</a> at last year's CES for just $1,999. Even keeping in mind the fact that MSRP is often just a guideline, prices have still surged astronomically thanks to the AI rush. A brand-new RTX 5090 now costs $5,000 in North America, and more across other parts of the world. That's a 2.5x increase in less than two years, and the same fate follows the rest of the RTX 50-series family as well.</p><div data-sanitized",
+      "url": "https://www.tomshardware.com/pc-components/gpus/nvidias-top-end-rtx-5090-gaming-gpu-now-costs-at-least-usd5-000-blackwell-cards-continue-to-endure-drastic-price-hikes",
+      "date": "2026-09-01",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [
+        "North America",
+        "TH Premium",
+        "Asus RTX",
+        "Noctua Edition"
+      ],
+      "new_product": true,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 16.9,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Nieuw in North America: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "6608abd57f0cc929"
+    },
+    {
+      "source": "articles:Top News - MIT Technology Review",
+      "platform": "article",
+      "title": "The Hugging Face hack could indicate cultural issues at OpenAI",
+      "text": "<p><em>This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, </em><a href=\"https://forms.technologyreview.com/newsletters/ai-demystified-the-algorithm/\"><em>sign up here</em></a><em>.</em></p>\n\n\n\n<p>By now you’ve probably heard about last month’s major AI security incident, in which OpenAI agents escaped their sandbox and hacked into the AI platform Hugging Face while trying to cheat on a test. It’s a wild story. On Wednesday, OpenAI released a postmortem technical report on the incident, which <a href=\"https://www.technolog",
+      "url": "https://www.technologyreview.com/2026/08/31/1143180/hugging-face-hack-could-indicate-cultural-issues-at-openai/",
+      "date": "2026-08-31",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt",
+        "huggingface"
+      ],
+      "feature_update": true,
+      "new_products": [
+        "The Hugging",
+        "The Algorithm",
+        "On Wednesday",
+        "David Krueger"
+      ],
+      "new_product": true,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 16.9,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Nieuw in chatgpt: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "4895455d4470d4cb"
     },
     {
       "source": "articles:Latest from TechRadar US in News，opinion",
@@ -2244,264 +2495,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "b357be95ed07cb0d"
-    },
-    {
-      "source": "articles:Latest from TechRadar US in News，opinion",
-      "platform": "article",
-      "title": "The AI layoff narrative is missing the real story",
-      "text": "<article>\n                                <p>The numbers circulating through fintech right now are hard to ignore. Almost 10,000 jobs have been cut across the global sector in 2026 so far. PayPal is eliminating roughly 20% of its workforce. Block has shrunk to fewer than 6,000 <a href=\"https://www.techradar.com/pro/best-employee-experience-tools\">employees</a>, and Coinbase cut 14% of its headcount. </p><p>And hovering over all of it is a single explanation, repeated so often that it starts to remind us of a dot-com bubble — <a href=\"https://www.techradar.com/pro/best-ai-website-builder\">artif",
-      "url": "https://www.techradar.com/pro/the-ai-layoff-narrative-is-missing-the-real-story",
-      "date": "2026-08-31",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat deze update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "922265b3baeb37c6"
-    },
-    {
-      "source": "articles:VentureBeat",
-      "platform": "article",
-      "title": "Cohere Parse 5 loses the benchmark on points. It wins on cost per page.",
-      "text": "<p>Enterprises trying to feed PDFs, slides and scanned documents into AI pipelines keep running into the same wall: the tools either miss the structure — tables, charts, layout — or cost too much to run at scale.</p><p><a href=\"https://cohere.com/blog/parse\">Cohere released Parse 5 on Thursday</a>, positioning it on price-to-performance, not raw accuracy — the right cost-capability mix for enterprise scale. Parse 5 is a 2.3-billion-parameter vision language model built to convert PDFs, slides and images into structured Markdown at enterprise scale. </p><p>Cohere's own published benchmark compa",
-      "url": "https://venturebeat.com/data/cohere-parse-5-loses-the-benchmark-on-points-it-wins-on-cost-per-page",
-      "date": "2026-08-28",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt",
-        "cohere",
-        "gemini"
-      ],
-      "feature_update": true,
-      "new_products": [
-        "Cohere Parse",
-        "Model Vault"
-      ],
-      "new_product": true,
-      "version_bump": true,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Nieuw in chatgpt: wat de update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "057e820cd1354b7e"
-    },
-    {
-      "source": "articles:AI - Ars Technica",
-      "platform": "article",
-      "title": "Report: Nvidia to acquire AI model repository Hugging Face for $13 billion",
-      "text": "<p></p>\n<p>Nvidia is reportedly moving forward to acquire Hugging Face for $12.9 billion. The acquisition could help the hardware giant expand and fortify its deep integration with the wider AI industry.</p>\n<p>Among other things, Hugging Face is a cloud repository for AI models, similar in some respects to what GitHub is for conventional computer software. Developers and researchers search for models that meet certain criteria, download and run them, and fine-tune them into different variants that then get uploaded back up to Hugging Face.</p><p><a href=\"https://arstechnica.com/ai/2026/08/rep",
-      "url": "https://arstechnica.com/ai/2026/08/report-nvidia-to-acquire-ai-model-repository-hugging-face-for-13-billion/",
-      "date": "2026-08-27",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [
-        "huggingface"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "huggingface: de context die de internationale pers mist.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8118defd82d151d4"
-    },
-    {
-      "source": "articles:Top News - MIT Technology Review",
-      "platform": "article",
-      "title": "The Download: inside OpenAI’s Hugging Face hack, and a new EV takes on the US",
-      "text": "<p><em>This is today’s edition of </em><a href=\"https://forms.technologyreview.com/newsletters/briefing-the-download/?_ga=2.179569122.736533416.1649661040-405833893.1649413289\"><em>The Download</em></a>,<em> our weekday newsletter that provides a daily dose of what’s going on in the world of technology.</em><br></p>\n\n\n\n<h3 data-sanitized-class=\"wp-block-heading\">The inside story on why OpenAI agents hacked Hugging Face<strong></strong></h3>\n\n\n\n<p>The models responsible for last month’s agent hack of Hugging Face had been inadvertently trained to cheat and to communicate with each other, accord",
-      "url": "https://www.technologyreview.com/2026/08/27/1143033/the-download-openai-hugging-face-hack-slate-truck-ev/",
-      "date": "2026-08-27",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [
-        "chatgpt",
-        "huggingface"
-      ],
-      "feature_update": true,
-      "new_products": [
-        "The Download",
-        "MIT Technology"
-      ],
-      "new_product": true,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Nieuw in chatgpt: wat de update concreet voor je werk betekent.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "029a73e73ec1dade"
-    },
-    {
-      "source": "articles:Tom's Hardware",
-      "platform": "article",
-      "title": "Hot Chips 2026: Nvidia presents Groq 3 LPX architecture and unveils its first third-party inference benchmark — LP30-based rack already in production, company says",
-      "text": "<article>\n                                <p><em>This Tom's Hardware Premium article is free to read with a Tom's Hardware account; no payment necessary. We're offering free access from August 23 to 26 so you can read all of our reporting from Hot Chips.</em></p><p>Groq's former chief architect stood on stage at Hot Chips 2026 and presented his former company's inference chip as Nvidia silicon. Igor Arsovski, now Nvidia's VP of hardware, presented the Groq 3 LPX rack's architecture and published the first third-party benchmark of the hardware: Artificial Analysis measured it at 3,431 output to",
-      "url": "https://www.tomshardware.com/tech-industry/semiconductors/nvidia-presents-groq-3-lpx-architecture-and-unveils-its-first-third-party-inference-benchmark",
-      "date": "2026-08-26",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [],
-      "matched_tools": [
-        "gemini",
-        "groq"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Wat gemini betekent voor de Nederlandse AI-markt.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "01c1c5250eb43fde"
     }
   ]
 }
