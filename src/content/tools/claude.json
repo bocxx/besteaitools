@@ -4,8 +4,8 @@
   "websiteUrl": "https://claude.ai",
   "shortDescription": "Anthropic's AI-assistent met focus op veiligheid en lange context",
   "headlineValueProp": "Anthropics AI-assistent op Opus 5 — de sterkste keuze voor lange documenten, code en zorgvuldige, eerlijke antwoorden, nu met inzichten in je werkpatroon",
-  "lastUpdated": "2026-08-29",
-  "longDescription": "Claude is Anthropic's AI-assistent voor schrijven, onderzoek en code. Sinds 24 juli 2026 draait Claude op Opus 5 — het nieuwe vlaggenschipmodel dat op meerdere benchmarks zelfs het grotere Fable 5 verslaat, tegen de helft van de prijs ($5/$25 per miljoen tokens, gelijk aan Opus 4.8). Opus 5 heeft 1M context, denkt standaard na vóór een antwoord en is vooral beter geworden in het controleren en bijschaven van eigen werk; de veiligheidsfilters grijpen bovendien zo'n 85% minder vaak in dan bij Fable 5. De lineup omvat Opus 5 voor zware taken, Sonnet 5 voor productiewerk met 1M-context en Haiku 4.5 voor goedkope routine. Beschikbaar via claude.ai, de desktop-app (Cowork voor agentic workflows op je bestanden), Claude Code voor developers en de Anthropic API, plus Amazon Bedrock, Google Cloud en Microsoft Foundry.",
+  "lastUpdated": "2026-09-02",
+  "longDescription": "Claude is Anthropic's AI-assistent voor schrijven, onderzoek en code. Sinds 24 juli 2026 draait Claude op Opus 5 — het nieuwe vlaggenschipmodel dat op meerdere benchmarks zelfs het grotere Fable 5 verslaat, tegen de helft van de prijs ($5/$25 per miljoen tokens, gelijk aan Opus 4.8). Opus 5 heeft 1M context, denkt standaard na vóór een antwoord en is vooral beter geworden in het controleren en bijschaven van eigen werk; de veiligheidsfilters grijpen bovendien zo'n 85% minder vaak in dan bij Fable 5. Sinds 1 september 2026 is daar Fable 5.1 bij: het nieuwe topmodel, dat op onderzoeks- en agent-benchmarks duidelijk boven Opus 5 uitkomt en waarvan de cache reads 75% goedkoper werden ($0,25 per miljoen tokens), zodat een typische werklast zo'n 25% minder kost. De lineup omvat Fable 5.1 voor het zwaarste werk, Opus 5 voor zware taken, Sonnet 5 voor productiewerk met 1M-context en Haiku 4.5 voor goedkope routine. Beschikbaar via claude.ai, de desktop-app (Cowork voor agentic workflows op je bestanden), Claude Code voor developers en de Anthropic API, plus Amazon Bedrock, Google Cloud en Microsoft Foundry.",
   "bestFor": "Claude is het meest waardevol voor professionals, studenten en hobbyisten die efficiënt en creatief willen werken met behulp van geavanceerde AI-technologie.",
   "useCases": [
     "Tekstgeneratie",
@@ -99,6 +99,12 @@
   "bestAlternative": "chatgpt",
   "whyListed": "Claude is de veiligheidsgerichte tegenhanger van ChatGPT, gebouwd voor enterprise-gebruik. Met zijn grote contextvenster en Constitutional AI is het de beste keuze voor gereguleerde sectoren.",
   "keyFeatures": [
+    {
+      "title": "Claude Fable 5.1 (nieuw topmodel)",
+      "description": "Sinds 1 september 2026 is Fable 5.1 op alle platformen beschikbaar (API-naam claude-fable-5-1, ook via AWS, Google Cloud en Microsoft Azure). Op de wetenschappelijke agent-benchmark Terminal-Bench-Science scoort het 52,6% tegen 24,7% voor Fable 5 en 29,0% voor Opus 5; op Terminal-Bench 4.0 55,8%. De prijs per token blijft $10 in en $50 uit, maar cache reads kosten 75% minder ($0,25 per miljoen tokens) — voor een gemiddelde werklast scheelt dat ongeveer 25%, voor zwaar agentisch werk tot zo'n 45%. Fable 5.1 mag nu ook meezoeken naar kwetsbaarheden in software (geen exploits), waardoor Claude Code-gebruikers gemiddeld zo'n 60% minder onderbrekingen krijgen van de cyberfilters. Mythos 5.1 is hetzelfde model met soepelere filters, alleen voor geverifieerde cyberdefenders en life-sciences-onderzoekers.",
+      "group": "core",
+      "badge": "nieuw"
+    },
     {
       "title": "Claude in Chrome (algemeen beschikbaar)",
       "description": "Sinds 26 augustus 2026 is de Chrome-extensie uit de beperkte uitrol en beschikbaar op elk betaald abonnement. Claude leest de pagina waar je op zit en kan tekst typen, links aanklikken, doorklikken en formulieren invullen met jouw bestaande logins — ook op interne dashboards, oude systemen en leveranciersportalen die geen koppeling met Claude hebben. Nieuw is dat hij een taak zelfstandig afwerkt in plaats van per stap toestemming te vragen; vóór elke handeling controleert een veiligheidsclassifier of die veilig is en bij je vraag past. Anthropic zegt de weerbaarheid tegen prompt injection (instructies verstopt in een website, e-mail of document) te hebben verstevigd. Geef hem alleen toegang tot omgevingen waarin je accepteert dat hij met jouw rechten handelt.",
