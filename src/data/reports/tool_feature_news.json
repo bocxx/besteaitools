@@ -1,12 +1,144 @@
 {
-  "generated_at": "2026-09-03T07:30:15.817742",
+  "generated_at": "2026-09-03T19:29:31.102915",
   "window_days": 7,
   "week": "2026-w36",
-  "total_candidates_scanned": 954,
-  "total_after_dedup": 904,
-  "total_feature_updates": 152,
+  "total_candidates_scanned": 983,
+  "total_after_dedup": 939,
+  "total_feature_updates": 155,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Fable 5.1 in Cursor",
+      "summary_nl": "Claude Fable 5.1 is nu beschikbaar in de Cursor IDE en biedt daar betere redeneer- en codeerprestaties via CursorBench. Dit maakt het voor ontwikkelaars eenvoudiger om de nieuwste Claude-mogelijkheden direct in hun ontwikkelomgeving te gebruiken.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2094852929282879596",
+          "title": "Claude Fable 5.1 is now available in Cursor!\n\nIt's the most capable model we’ve run on CursorBench 3.2, scoring 73.4% at max effort.\n\nWe fou",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Built-in Cowork Browser",
+      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork, die automatisch opent in een zijpaneel wanneer een taak een website vereist. Hierdoor kan Claude webpagina’s direct binnen Cowork bezoeken en gebruiken, wat online onderzoek en taken rond websites versnelt.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/claudeai/status/2092755571455758427",
+          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
+          "platform": "twitter",
+          "source": "@claudeai"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.8 Release",
+      "summary_nl": "Google introduceert Gemini 3.8 als een nieuwe generatie model met verbeterde redeneer- en codeercapaciteiten. Door gebruik te maken van langlopende agentische loops kan het complexere taken uitvoeren en ontwikkelaars beter ondersteunen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Google/status/2095175518068904380",
+          "title": "Introducing Gemini 3.8, our best reasoning & coding model yet.\n\nBy leveraging long-running agentic loops, we’re building on the momentum of ",
+          "platform": "twitter",
+          "source": "@Google"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.8 Flash",
+      "summary_nl": "Gemini 3.8 Flash is een bijgewerkte, snellere variant van Gemini met een sterke focus op agentische en codeertaken. Het biedt hoge prestaties tegen lagere kosten en vormt de derde grote Flash-update in korte tijd.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/OfficialLoganK/status/2095175881690173885",
+          "title": "Introducing Gemini 3.8 Flash, another jump in Gemini's agentic + coding capabilities, and our 3rd updated Flash model in only 6 weeks...\n\nTh",
+          "platform": "twitter",
+          "source": "@OfficialLoganK"
+        },
+        {
+          "url": "https://twitter.com/synthwavedd/status/2095166019010494891",
+          "title": "Google have, dare I say... RELEASED A GOOD MODEL 🥹\n\nGemini 3.8 Flash provides ~Opus 5 performance at much lower cost, while being super fast",
+          "platform": "twitter",
+          "source": "@synthwavedd"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "z-ai",
+      "tool_name": "Z.ai",
+      "tool_category": "tekst",
+      "feature_title": "Open-weight Cyber Model",
+      "summary_nl": "Z.ai heeft zijn meest capabele model voor agentische coding en cyber defense als open-weight beschikbaar gemaakt, zodat het kan worden gedownload, lokaal gedraaid en aangepast. Dit geeft organisaties meer controle en flexibiliteit bij beveiligings- en automatiseringstoepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Zai_org/status/2093354097122455713",
+          "title": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\n",
+          "platform": "twitter",
+          "source": "@Zai_org"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "huggingface",
+      "tool_name": "Hugging Face",
+      "tool_category": "infra",
+      "feature_title": "Hy4 Preview Release",
+      "summary_nl": "De Hy4-preview is uitgebracht als een open source frontier-model met 770B parameters, 49B actief en een context van 1M tokens, gericht op productiviteit. Het combineert hoge capaciteit met consistente, betaalbare inzetmogelijkheden voor uiteenlopende AI-toepassingen.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/TencentHunyuan/status/2093222928720761009",
+          "title": "🚀 Hy4 preview is here.\n\n770B, 49B active, 1M context.\nBuilt for productivity.\nOpen source frontier.\nConsistent affordable price.\nUse it. Tel",
+          "platform": "twitter",
+          "source": "@TencentHunyuan"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Celeris-1 Magnus Model",
+      "summary_nl": "Celeris-1 Magnus is geïntroduceerd als een model dat specifiek is gebouwd voor agentisch werk, zoals complexe banktaken op τ³-bench. Het richt zich op hoge nauwkeurigheid in praktische workflows met een relatief korte responstijd.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Celeris_ai/status/2094626639842078755",
+          "title": "Introducing Celeris-1 Magnus. A model built for agentic work.\n\nOn τ³-bench banking, Magnus delivers 41.2% at a 55-second median, against GPT",
+          "platform": "twitter",
+          "source": "@Celeris_ai"
+        }
+      ],
+      "detected_at": "2026-09-03",
+      "week": "2026-w36"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -44,48 +176,6 @@
       "week": "2026-w36"
     },
     {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Gemini 3.8 Flash",
-      "summary_nl": "Gemini 3.8 Flash is gelanceerd als een nieuwe, snellere variant met verbeterde agentic en coding-capaciteiten, en is al de derde Flash-update in korte tijd.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OfficialLoganK/status/2095175881690173885",
-          "title": "Introducing Gemini 3.8 Flash, another jump in Gemini's agentic + coding capabilities, and our 3rd updated Flash model in only 6 weeks...\n\nTh",
-          "platform": "twitter",
-          "source": "@OfficialLoganK"
-        },
-        {
-          "url": "https://twitter.com/synthwavedd/status/2095166019010494891",
-          "title": "Google have, dare I say... RELEASED A GOOD MODEL 🥹\n\nGemini 3.8 Flash provides ~Opus 5 performance at much lower cost, while being super fast",
-          "platform": "twitter",
-          "source": "@synthwavedd"
-        }
-      ],
-      "detected_at": "2026-09-03",
-      "week": "2026-w36"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Built-in Cowork browser",
-      "summary_nl": "Claude heeft nu een ingebouwde browser in Cowork, zodat bij taken met websites automatisch een browserpaneel opent en Claude direct met webcontent kan werken.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2092755571455758427",
-          "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-09-03",
-      "week": "2026-w36"
-    },
-    {
       "tool_slug": "z-ai",
       "tool_name": "Z.ai",
       "tool_category": "tekst",
@@ -104,24 +194,6 @@
       "week": "2026-w36"
     },
     {
-      "tool_slug": "huggingface",
-      "tool_name": "Hugging Face",
-      "tool_category": "infra",
-      "feature_title": "Hy4 preview release",
-      "summary_nl": "De Hy4-preview is gelanceerd: een 770B-model met 49B actieve parameters en een contextvenster van 1M tokens, gericht op productiviteit en als open-source frontier-model.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/TencentHunyuan/status/2093222928720761009",
-          "title": "🚀 Hy4 preview is here.\n\n770B, 49B active, 1M context.\nBuilt for productivity.\nOpen source frontier.\nConsistent affordable price.\nUse it. Tel",
-          "platform": "twitter",
-          "source": "@TencentHunyuan"
-        }
-      ],
-      "detected_at": "2026-09-03",
-      "week": "2026-w36"
-    },
-    {
       "tool_slug": "grok",
       "tool_name": "Grok",
       "tool_category": "tekst",
@@ -134,24 +206,6 @@
           "title": "Grok Bot now has improved support for X!\n\nWhen you connect your X profile, a developer account will be automatically created with some inclu",
           "platform": "twitter",
           "source": "@bot"
-        }
-      ],
-      "detected_at": "2026-09-03",
-      "week": "2026-w36"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Celeris-1 Magnus model",
-      "summary_nl": "Celeris-1 Magnus is geïntroduceerd als een model dat speciaal is gebouwd voor agentic werk en sterke prestaties levert op benchmarks zoals τ³-bench banking.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Celeris_ai/status/2094626639842078755",
-          "title": "Introducing Celeris-1 Magnus. A model built for agentic work.\n\nOn τ³-bench banking, Magnus delivers 41.2% at a 55-second median, against GPT",
-          "platform": "twitter",
-          "source": "@Celeris_ai"
         }
       ],
       "detected_at": "2026-09-03",
