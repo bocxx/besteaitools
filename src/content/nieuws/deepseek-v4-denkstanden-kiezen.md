@@ -16,7 +16,7 @@ featured: false
 draft: false
 readingTime: 4
 heroImage: "/images/articles/diorama-deepseek-v4-denkstanden-kiezen.webp"
-heroImageAlt: "Miniatuur diorama-illustratie bij tutorial over de denkstanden van DeepSeek V4"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'DeepSeek V4 heeft drie denkstanden — zo kies je de juiste'"
 heroScene: "A tiny three-position lever on a workbench, each notch labelled with a differently sized stack of paper, and a small robot deciding which to pull"
 keyTakeaways:
   - "DeepSeek V4-Pro en V4-Flash hebben drie denkstanden: Non-think, Think High en Think Max. Je kiest ze per verzoek."
