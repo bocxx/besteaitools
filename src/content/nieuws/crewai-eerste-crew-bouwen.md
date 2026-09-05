@@ -54,7 +54,7 @@ Dit is een tool voor wie in Python werkt en workflows wil automatiseren die uit 
 
 4. **Beschrijf je agents en taken.** Open `agents.yaml` en geef elke agent een rol, een doel en een achtergrond in gewone taal. In `tasks.yaml` beschrijf je wat er precies moet gebeuren en welke agent dat doet. Houd het klein: begin met twee agents (een onderzoeker en een schrijver) en één taak elk.
 
-5. **Draai de crew.** Terug in de terminal draai je `crewai run`. Je ziet in de output live voorbijkomen welke agent aan de beurt is en wat die produceert. Aan het eind krijg je het samengevoegde resultaat — bij een onderzoek-crew is dat bijvoorbeeld een kant-en-klare samenvatting.
+5. **Draai de crew.** Terug in de terminal draai je `crewai run`. Je ziet in de output live voorbijkomen welke agent aan de beurt is en wat die produceert. Aan het eind krijg je het samengevoegde resultaat — bij een onderzoek-crew is dat bijvoorbeeld een kant-en-klare samenvatting. Wil je die crew op actuele webinformatie laten werken, dan koppel je er een zoek-API aan: zie [Exa instellen voor agents en RAG](/nieuws/exa-zoek-api-agent-koppelen).
 
 > **⚡ Gevorderden:** De volgorde waarin taken draaien bepaal je met het proces-type. `sequential` is het makkelijkst te volgen; `hierarchical` laat een manager-agent het werk verdelen, maar dat kost meer tokens en is lastiger te debuggen. Begin sequentieel.
 

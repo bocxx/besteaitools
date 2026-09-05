@@ -63,3 +63,5 @@ Dat is alles. Geen magie, wel een strak ritme van "model vraagt, code doet, mode
 ## Waarom dit de moeite waard is
 
 Zodra je deze vijf stappen één keer met de hand hebt gedraaid, lezen frameworks anders. Wat CrewAI een "tool" noemt, is jouw function declaration. Wat LangGraph als een "node" tekent, is een ronde door deze lus. Je hoeft het wiel niet elke keer opnieuw uit te vinden — maar je weet nu wél wat er draait als je op start drukt. En dat is het verschil tussen een tool gebruiken en een tool begrijpen.
+
+De eerste tool die de meeste mensen aan zo'n lus hangen is webzoeken. Hoe je dat aansluit zonder zelf te scrapen, staat in [Exa instellen: een zoek-API die je agent leesbare webtekst teruggeeft](/nieuws/exa-zoek-api-agent-koppelen).

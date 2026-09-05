@@ -57,7 +57,7 @@ Dit is de aanpassing in je bestaande code. Waar je nu de top vijf ophaalt uit je
 
 Dat voelt verkeerd, maar het is het hele punt: de reranker kan alleen goede passages naar boven halen als ze in de lijst zitten. Haal je er vijf op, dan herordent hij vijf middelmatige.
 
-Houd wel de facturering in de gaten. Eén search bij Cohere is één query met maximaal honderd documenten, en documenten langer dan 500 tokens worden automatisch in stukken geknipt waarbij elk stuk apart meetelt. Werk je met lange documenten, knip ze dan zelf al in passages van redelijke lengte, dan houd je zowel je kosten als je resultaten voorspelbaar.
+Houd wel de facturering in de gaten. Eén search bij Cohere is één query met maximaal honderd documenten, en documenten langer dan 500 tokens worden automatisch in stukken geknipt waarbij elk stuk apart meetelt. Haal je die documenten van het web, dan kun je dat knipwerk uitbesteden: [Exa levert highlights in plaats van hele pagina's](/nieuws/exa-zoek-api-agent-koppelen), wat je reranker een stuk minder te verhapstukken geeft. Werk je met lange documenten, knip ze dan zelf al in passages van redelijke lengte, dan houd je zowel je kosten als je resultaten voorspelbaar.
 
 ## Stap 3: zet de rerank-aanroep ertussen
 

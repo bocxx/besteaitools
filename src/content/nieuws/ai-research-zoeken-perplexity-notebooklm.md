@@ -89,7 +89,7 @@ AI-zoektools zijn betrouwbaarder dan pure chatbots, maar niet onfeilbaar. Volg d
 3. **Zoek een tweede bron** — als slechts één bron een claim ondersteunt, vraag dan door: *"Zijn er andere bronnen die dit bevestigen?"*
 4. **Wees alert op circulaire referenties** — AI-tools kunnen soms naar AI-gegenereerde content verwijzen als bron
 
-Ditzelfde protocol werkt voor elke actuele vraag. Wil je het toegepast zien op een concreet voorbeeld, lees dan hoe je [een voetbalwedstrijd laat analyseren met Perplexity](/nieuws/ai-voetbalwedstrijd-voorspellen) — inclusief het aanklikken van de bronnen. Wil je hele webpagina's als bron aan een eigen AI-model voeren in plaats van ze handmatig door te lezen, dan zet [Firecrawl een website om in schone markdown voor je AI](/nieuws/firecrawl-website-naar-ai-databron).
+Ditzelfde protocol werkt voor elke actuele vraag. Wil je het toegepast zien op een concreet voorbeeld, lees dan hoe je [een voetbalwedstrijd laat analyseren met Perplexity](/nieuws/ai-voetbalwedstrijd-voorspellen) — inclusief het aanklikken van de bronnen. Wil je hele webpagina's als bron aan een eigen AI-model voeren in plaats van ze handmatig door te lezen, dan zet [Firecrawl een website om in schone markdown voor je AI](/nieuws/firecrawl-website-naar-ai-databron). En bouw je liever zelf een agent die het zoeken doet, dan levert [Exa de zoekresultaten mét opgeschoonde paginatekst in één aanroep](/nieuws/exa-zoek-api-agent-koppelen).
 
 ## Checklist: ben je klaar?
 
