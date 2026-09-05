@@ -1,0 +1,106 @@
+{
+  "name": "Exa",
+  "category": "search",
+  "websiteUrl": "https://exa.ai",
+  "shortDescription": "Semantische zoek-API gebouwd voor AI-agents en RAG-pipelines",
+  "headlineValueProp": "Zoekresultaten mét opgeschoonde paginatekst in één antwoord — je agent hoeft niet zelf te scrapen",
+  "longDescription": "Exa is een zoekmachine die niet voor mensen maar voor AI is gebouwd. Twee dingen onderscheiden hem van een klassieke zoek-API. Ten eerste zoekt Exa semantisch: je beschrijft in gewone taal wat je zoekt en het systeem matcht op betekenis in plaats van op trefwoorden. Ten tweede levert Exa in hetzelfde antwoord de opgeschoonde tekst van de gevonden pagina's — als volledige tekst of als highlights, korte fragmenten met alleen de relevante passages. Dat scheelt een eigen scraper plus de HTML-opschoonstap die daarbij hoort. Met het veld type kies je per aanroep de afweging tussen snelheid en diepte, van instant (~250 ms) voor realtime chat en spraak tot deep-reasoning (12-40 seconden) voor zwaardere onderzoeksvragen. Naast het open web heeft Exa eigen indexen voor bedrijven, personen, wetenschappelijke publicaties, nieuws, persoonlijke sites en financiële rapportages. Er zijn SDK's voor Python en JavaScript, en wie geen code wil schrijven kan Exa via de MCP-server, een Claude-connector of een ChatGPT-plugin aan een assistent hangen.",
+  "verdict": "Exa is de scherpste keuze wanneer je een AI-agent of RAG-pipeline bouwt die actuele webinformatie nodig heeft en je niet zelf een scrape- en opschoonlaag wilt onderhouden: de highlights-optie scheelt fors in tokens, en de instelbare latency van 250 ms tot 40 seconden dekt zowel een spraakbot als een onderzoeksagent. De nuance zit in de prijs per resultaat — de basisprijs dekt tien resultaten, elk resultaat daarboven kost extra, dus een agent die per gebruikersvraag meerdere keren breed zoekt loopt sneller op dan je ruwe schatting. Voor eenvoudige trefwoord-lookups op een handvol vaste bronnen is Exa overkill.",
+  "whyListed": "Een van de weinige zoek-API's die expliciet voor LLM-agents is ontworpen in plaats van voor menselijke gebruikers, en de standaardkeuze in veel RAG- en agent-stacks — onder meer Cursor gebruikt Exa om actuele documentatie op te halen.",
+  "bestFor": "Developers die een AI-agent, chatbot of RAG-pipeline bouwen die actuele, opgeschoonde webinformatie nodig heeft.",
+  "primaryJobsToBeDone": [
+    "Een AI-agent realtime laten zoeken op het web zonder zelf een scraper te bouwen",
+    "Een RAG-pipeline voeden met token-efficiënte fragmenten in plaats van hele webpagina's",
+    "Bedrijven, personen of wetenschappelijke publicaties opzoeken en verrijken via aparte indexen",
+    "Zoekresultaten laten synthetiseren tot gestructureerde JSON met bronvermelding"
+  ],
+  "antiUseCases": [
+    "Simpele trefwoord-lookups op een handvol vaste bronnen — een gewone site-zoekfunctie of RSS is daar goedkoper",
+    "Niet-programmeurs die gewoon iets willen opzoeken — kies dan Perplexity of Kagi in plaats van een API",
+    "Hoogvolume zoekopdrachten met veel resultaten per vraag, waar de kosten per extra resultaat hard oplopen"
+  ],
+  "useCases": [
+    "Coding-agents die actuele documentatie, repos en changelogs ophalen tijdens het genereren van code",
+    "Chatbots die vragen beantwoorden over gebeurtenissen van na de trainingsdatum van het model",
+    "Onderzoeksassistenten die meerdere bronnen combineren tot een gestructureerd antwoord met citaten"
+  ],
+  "strengths": [
+    "Zoekresultaat én opgeschoonde paginatekst in één aanroep — geen aparte scrape-stap nodig",
+    "Highlights leveren alleen de relevante passages, wat fors scheelt in tokenkosten",
+    "Instelbare latency van ~250 ms tot 40 seconden, dus geschikt voor zowel spraakbots als diep onderzoek",
+    "Eigen indexen voor bedrijven, personen, publicaties, nieuws en financiële rapportages",
+    "Gratis te proberen: 20 dollar startcredits plus 10 dollar per maand, zonder betaalmethode"
+  ],
+  "limitations": [
+    "Prijs per verzoek dekt tien resultaten; elk resultaat daarboven kost extra, wat bij brede zoekopdrachten oploopt",
+    "Geen grafische interface voor de API — je schrijft code of gebruikt de MCP-server",
+    "Diepe zoekmodi kosten 12 tot 40 seconden, te traag voor interactieve toepassingen"
+  ],
+  "bestAlternative": "Tavily is het dichtstbijzijnde alternatief met hetzelfde uitgangspunt (zoek-API voor LLM-agents) en een simpeler prijsmodel; Exa wint op contentvormen en de aparte indexen. Voor gebruik zonder code is Perplexity de betere keuze.",
+  "mentionAliases": [
+    "exa ai",
+    "exa labs"
+  ],
+  "pricing": "Gratis Starter met 20 dollar startcredits en 10 dollar per maand, zonder betaalmethode. Daarna pay-as-you-go: Search 7 dollar per 1.000 verzoeken (tot 10 resultaten), Deep Search 12 dollar, deep-reasoning 15 dollar, Answer 5 dollar per 1.000 en Contents 1 dollar per 1.000 pagina's per contenttype. Elk resultaat boven de tiende kost 1 dollar extra per 1.000 verzoeken.",
+  "pricingModel": "freemium",
+  "difficulty": "intermediate",
+  "openSource": false,
+  "tags": [
+    "zoek-api",
+    "rag",
+    "agents",
+    "semantisch-zoeken",
+    "developer-tools"
+  ],
+  "draft": false,
+  "businessFunctions": [
+    "development",
+    "data"
+  ],
+  "keyFeatures": [
+    {
+      "title": "Semantisch zoeken",
+      "description": "Matcht op betekenis in plaats van trefwoorden, zodat je een zoekvraag in gewone taal kunt stellen.",
+      "group": "core"
+    },
+    {
+      "title": "Contents in hetzelfde antwoord",
+      "description": "Levert opgeschoonde paginatekst of highlights mee, zodat je geen eigen scraper nodig hebt.",
+      "group": "output"
+    },
+    {
+      "title": "Instelbare latency",
+      "description": "Zes search types van instant (~250 ms) tot deep-reasoning (12-40 seconden).",
+      "group": "core"
+    },
+    {
+      "title": "Gestructureerde output",
+      "description": "Met output_schema krijg je JSON-velden terug in plaats van losse tekst, met bronvermelding.",
+      "group": "output"
+    },
+    {
+      "title": "Categorie-indexen",
+      "description": "Aparte indexen voor bedrijven, personen, wetenschappelijke publicaties, nieuws en financiële rapportages.",
+      "group": "input"
+    },
+    {
+      "title": "Domeinfilters",
+      "description": "include_domains en exclude_domains accepteren padvoorvoegsels en subdomein-jokers.",
+      "group": "input"
+    },
+    {
+      "title": "MCP-server en connectors",
+      "description": "Koppel Exa zonder code aan Claude of ChatGPT via de MCP-server, connector of plugin.",
+      "group": "integration"
+    },
+    {
+      "title": "Python- en JavaScript-SDK",
+      "description": "exa-py en exa-js voor integratie in een eigen agent of pipeline.",
+      "group": "integration"
+    }
+  ],
+  "nlSupport": false,
+  "lastUpdated": "2026-09-05",
+  "lastReviewedAt": "2026-09-05",
+  "supportsDutchLanguage": false
+}
