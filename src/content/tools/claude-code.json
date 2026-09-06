@@ -67,6 +67,10 @@
   "bestAlternative": "cursor",
   "keyFeatures": [
     {
+      "title": "Skill-diagnose (/skill-doctor)",
+      "description": "Sinds versie 2.1.261 (4 september 2026) laat /skill-doctor zien welke van je geladen skills ongebruikt blijven en hoeveel context ze kosten, zodat je kunt opruimen wat alleen tokens verbruikt. In dezelfde release: de instellingen bashOutputMaxChars en taskOutputMaxChars bepalen hoeveel commando- en achtergrondtaak-uitvoer inline in het gesprek blijft voordat die naar een bestand gaat (tot 128K tekens), /status en claude doctor melden voortaan waarom het beleid van je organisatie niet geladen kon worden, en in VS Code voeg je MCP-servers toe of verwijder je ze zonder de editor te verlaten (en staat \"Sessie archiveren\" nu ook in het rechtermuisknopmenu van de sessielijst)."
+    },
+    {
       "title": "Diff-paneel (/diff)",
       "description": "Sinds versie 2.1.260 (4 september 2026) klapt er in fullscreen een diff-paneel open naast het gesprek dat live laat zien welke regels Claude in je bestanden verandert, zolang die nog niet gecommit zijn. Aan- en uitzetten met /diff. In dezelfde release: /cost noemt voortaan de waarschijnlijke reden waarom je prompt-cache miste (gewijzigde tool-definities of systeemprompt, of te lang stilgestaan), /reload-plugins werkt nu ook in headless sessies en /advisor kreeg een tekstvorm voor de desktop-app, Remote Control en SDK-sessies."
     },
@@ -176,7 +180,7 @@
     "Teams die geen CLI-affiniteit hebben",
     "Workflows met strikte sandbox-eisen waar terminal-toegang geen optie is"
   ],
-  "lastUpdated": "2026-09-05",
+  "lastUpdated": "2026-09-06",
   "lastReviewedAt": "2026-06-06",
   "supportsDutchLanguage": false
 }
