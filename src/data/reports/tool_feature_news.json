@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-06T19:26:16.633689",
+  "generated_at": "2026-09-07T07:26:07.637797",
   "window_days": 7,
-  "week": "2026-w36",
-  "total_candidates_scanned": 978,
-  "total_after_dedup": 925,
-  "total_feature_updates": 170,
+  "week": "2026-w37",
+  "total_candidates_scanned": 1012,
+  "total_after_dedup": 963,
+  "total_feature_updates": 142,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "ChatGPT 6 Astra Release",
-      "summary_nl": "OpenAI heeft ChatGPT 6 Astra uitgebracht, een nieuw model dat volgens het bedrijf het AGI-tijdperk inluidt. Het model scoort hoger op verschillende benchmarks dan eerdere versies en is beschikbaar voor Plus en Business gebruikers.",
+      "summary_nl": "OpenAI heeft ChatGPT 6 Astra uitgebracht, een nieuw model dat volgens het bedrijf het AGI-tijdperk inluidt. Het model scoort hoog op verschillende benchmarks en is beschikbaar voor Plus en Business gebruikers.",
       "impact": "high",
       "sources": [
         {
@@ -20,12 +20,6 @@
           "title": "GPT-6 Astra is now available to all Pro, Enterprise, and Business Premium users in ChatGPT Work and Codex. It's also live in the API.\n\nIt mi",
           "platform": "twitter",
           "source": "@OpenAI"
-        },
-        {
-          "url": "https://twitter.com/DanDr1s/status/2095578625688924477",
-          "title": "🚨 AGI has arrived\n\nGPT-6 Astra just posted insane scores:\n\n• 98.6% on ARC-AGI-3\n• 97.6% on hard math\n• 95.9% on CAD\n• 100% on ExploitBench\n\n",
-          "platform": "twitter",
-          "source": "@DanDr1s"
         },
         {
           "url": "https://twitter.com/ArtificialAnlys/status/2095595489031000350",
@@ -58,15 +52,15 @@
           "source": "@kimmonismus"
         }
       ],
-      "detected_at": "2026-09-06",
-      "week": "2026-w36"
+      "detected_at": "2026-09-07",
+      "week": "2026-w37"
     },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Claude Fable 5.1 Launch",
-      "summary_nl": "Anthropic heeft Claude Fable 5.1 gelanceerd, een nieuw AI-model dat nu beschikbaar is in tools zoals Cursor. Het model scoort 73,4% op CursorBench 3.2 en wordt gezien als een van de meest capabele modellen.",
+      "summary_nl": "Anthropic heeft Claude Fable 5.1 gelanceerd, hun meest capabele model tot nu toe. Het model scoort 73.4% op CursorBench 3.2 en is nu beschikbaar in Cursor.",
       "impact": "high",
       "sources": [
         {
@@ -82,15 +76,33 @@
           "source": "@WatcherGuru"
         }
       ],
-      "detected_at": "2026-09-06",
-      "week": "2026-w36"
+      "detected_at": "2026-09-07",
+      "week": "2026-w37"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 3.8 Release",
+      "summary_nl": "Google heeft Gemini 3.8 geïntroduceerd, hun beste reasoning en coding model tot nu toe. Het model maakt gebruik van langlopende agentic loops voor verbeterde prestaties.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/Google/status/2095175518068904380",
+          "title": "Introducing Gemini 3.8, our best reasoning & coding model yet.\n\nBy leveraging long-running agentic loops, we’re building on the momentum of ",
+          "platform": "twitter",
+          "source": "@Google"
+        }
+      ],
+      "detected_at": "2026-09-07",
+      "week": "2026-w37"
     },
     {
       "tool_slug": "chatgpt",
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "Meta Muse Spark 1.3",
-      "summary_nl": "Meta heeft Muse Spark 1.3 uitgebracht, hun vierde Muse Spark model in vijf maanden tijd. Het model is momenteel beschikbaar in een beperkte preview-versie.",
+      "summary_nl": "Meta heeft Muse Spark 1.3 uitgebracht, hun vierde Muse Spark model in vijf maanden tijd. Het model is beschikbaar in beperkte preview.",
       "impact": "medium",
       "sources": [
         {
@@ -100,8 +112,8 @@
           "source": "@ArtificialAnlys"
         }
       ],
-      "detected_at": "2026-09-06",
-      "week": "2026-w36"
+      "detected_at": "2026-09-07",
+      "week": "2026-w37"
     },
     {
       "tool_slug": "claude",
@@ -650,24 +662,6 @@
           "title": "Claude now has its own built-in browser in Cowork.\n\nWhen your task involves a website, a browser opens in Cowork's side panel, and Claude na",
           "platform": "twitter",
           "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-09-03",
-      "week": "2026-w36"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Gemini 3.8 Release",
-      "summary_nl": "Google introduceert Gemini 3.8 als een nieuwe generatie model met verbeterde redeneer- en codeercapaciteiten. Door gebruik te maken van langlopende agentische loops kan het complexere taken uitvoeren en ontwikkelaars beter ondersteunen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Google/status/2095175518068904380",
-          "title": "Introducing Gemini 3.8, our best reasoning & coding model yet.\n\nBy leveraging long-running agentic loops, we’re building on the momentum of ",
-          "platform": "twitter",
-          "source": "@Google"
         }
       ],
       "detected_at": "2026-09-03",
@@ -2766,558 +2760,12 @@
       ],
       "detected_at": "2026-08-18",
       "week": "2026-w34"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "GPT-5.6-Cyber Model",
-      "summary_nl": "OpenAI introduceert een nieuw GPT-5.6-Cyber model speciaal voor geavanceerde cyberbeveiligingstoepassingen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2086864365379010729",
-          "title": "We’re expanding our cybersecurity initiative Daybreak and introducing GPT-5.6-Cyber, a new model for advanced, authorized cybersecurity work",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        },
-        {
-          "url": "https://twitter.com/gdb/status/2086866967479341305",
-          "title": "We're releasing a new model (GPT-5.6-Cyber), and expanding Daybreak to help put frontier intelligence in defenders hands: https://t.co/cgqlz",
-          "platform": "twitter",
-          "source": "@gdb"
-        }
-      ],
-      "detected_at": "2026-08-16",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Grok Bot Integration",
-      "summary_nl": "Cursor integreert de nieuwe Grok Bot van SpaceXAI, waarmee teams 24/7 kunnen samenwerken met AI-assistenten.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/lennysan/status/2087241423792087518",
-          "title": "I got early access to Grok Bot and I'm hooked.\n\nI haven't been this excited about a new AI product in a while.\n\nIt's like OpenClaw, but supe",
-          "platform": "twitter",
-          "source": "@lennysan"
-        },
-        {
-          "url": "https://twitter.com/cb_doge/status/2087224750556750180",
-          "title": "BREAKING: SpaceXAI just released Grok Bot — your team of always-on AI teammates.\n\nEach Bot has its own computer and can continue working 24/",
-          "platform": "twitter",
-          "source": "@cb_doge"
-        },
-        {
-          "url": "https://twitter.com/synthwavedd/status/2086943590362554400",
-          "title": "Grok 4.6 is now rolling out in Cursor https://t.co/HgREWAaOnG",
-          "platform": "twitter",
-          "source": "@synthwavedd"
-        }
-      ],
-      "detected_at": "2026-08-16",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "GPT-5.6-Cyber for cybersecurity",
-      "summary_nl": "OpenAI breidt hun cybersecurity-initiatief Daybreak uit met een nieuw model GPT-5.6-Cyber, speciaal voor geavanceerde beveiligingstoepassingen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2086864365379010729",
-          "title": "We’re expanding our cybersecurity initiative Daybreak and introducing GPT-5.6-Cyber, a new model for advanced, authorized cybersecurity work",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        },
-        {
-          "url": "https://twitter.com/gdb/status/2086866967479341305",
-          "title": "We're releasing a new model (GPT-5.6-Cyber), and expanding Daybreak to help put frontier intelligence in defenders hands: https://t.co/cgqlz",
-          "platform": "twitter",
-          "source": "@gdb"
-        }
-      ],
-      "detected_at": "2026-08-16",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Grok Bot",
-      "summary_nl": "SpaceXAI heeft Grok Bot gelanceerd, een team van altijd actieve AI-assistenten die 24/7 kunnen doorwerken.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cb_doge/status/2087224750556750180",
-          "title": "BREAKING: SpaceXAI just released Grok Bot — your team of always-on AI teammates.\n\nEach Bot has its own computer and can continue working 24/",
-          "platform": "twitter",
-          "source": "@cb_doge"
-        },
-        {
-          "url": "https://twitter.com/kimmonismus/status/2087234458336604370",
-          "title": "xAI just launched Grok Bot, and this is much more interesting than another model release. And especially *not* on my bingo-card. And the fir",
-          "platform": "twitter",
-          "source": "@kimmonismus"
-        }
-      ],
-      "detected_at": "2026-08-15",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen 3.8-2.4T-A95B",
-      "summary_nl": "Alibaba heeft de open weights voor Qwen 3.8-2.4T-A95B (Max-level) vrijgegeven.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2088280182356611304",
-          "title": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters,",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-08-15",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Budget for sessions",
-      "summary_nl": "Gebruikers kunnen nu een budget instellen voor Claude Managed Agent-sessies om de kosten voorspelbaar te houden.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2085853169930957158",
-          "title": "We shipped four updates to Claude Managed Agents this week.\n\nFirst, you can now set a budget for sessions to keep spend predictable. Session",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-08-15",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "unsloth",
-      "tool_name": "Unsloth",
-      "tool_category": "tekst",
-      "feature_title": "Unsloth Desktop",
-      "summary_nl": "Unsloth heeft een open-source desktopapp gelanceerd waarmee je modellen lokaal kunt uitvoeren en trainen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/UnslothAI/status/2087177146662072546",
-          "title": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Suppor",
-          "platform": "twitter",
-          "source": "@UnslothAI"
-        }
-      ],
-      "detected_at": "2026-08-15",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Qwen 3.8 release",
-      "summary_nl": "Alibaba heeft Qwen 3.8 uitgebracht, met ondersteuning voor zowel lichtgewicht applicaties als krachtige agenten.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Alibaba_Qwen/status/2088280182356611304",
-          "title": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters,",
-          "platform": "twitter",
-          "source": "@Alibaba_Qwen"
-        }
-      ],
-      "detected_at": "2026-08-14",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Biology safeguards",
-      "summary_nl": "Claude heeft de biologische veiligheidsmaatregelen van Fable 5 geïntegreerd, waardoor het aantal biologische fouten met 85% is verminderd.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2085563808773189680",
-          "title": "We’re updating Claude Fable 5’s biology safeguards to reduce false positives. In our testing, this update reduced biology-related fallbacks ",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-08-14",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "GPT-5.6-Cyber Release",
-      "summary_nl": "OpenAI lanceert GPT-5.6-Cyber, een nieuw model voor geavanceerd, geautoriseerd cybersecurity-werk, als onderdeel van hun Daybreak-initiatief.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/OpenAI/status/2086864365379010729",
-          "title": "We’re expanding our cybersecurity initiative Daybreak and introducing GPT-5.6-Cyber, a new model for advanced, authorized cybersecurity work",
-          "platform": "twitter",
-          "source": "@OpenAI"
-        },
-        {
-          "url": "https://twitter.com/gdb/status/2086866967479341305",
-          "title": "We're releasing a new model (GPT-5.6-Cyber), and expanding Daybreak to help put frontier intelligence in defenders hands: https://t.co/cgqlz",
-          "platform": "twitter",
-          "source": "@gdb"
-        }
-      ],
-      "detected_at": "2026-08-13",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Fable 5 Biology Safeguards",
-      "summary_nl": "Claude heeft de biologische veiligheidsfuncties van Fable 5 verbeterd, waardoor het model nu op een bredere range van taken kan worden ingezet.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/claudeai/status/2085563808773189680",
-          "title": "We’re updating Claude Fable 5’s biology safeguards to reduce false positives. In our testing, this update reduced biology-related fallbacks ",
-          "platform": "twitter",
-          "source": "@claudeai"
-        }
-      ],
-      "detected_at": "2026-08-13",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "make",
-      "tool_name": "Make",
-      "tool_category": "automatisering",
-      "feature_title": "Managed Waitlist Cancellation",
-      "summary_nl": "Make heeft een API-update waardoor gebruikers de wachtlijst voor een klas kunnen aanpassen, zelfs zonder daarvoor geautoriseerd te zijn.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/AndrewCurran_/status/2086567854850384054",
-          "title": "A man in Australia asked his agent (Claude running on OpenClaw) to book him a spot in a popular gym class. The agent found a software vulner",
-          "platform": "twitter",
-          "source": "@AndrewCurran_"
-        },
-        {
-          "url": "https://twitter.com/AISafetyMemes/status/2086592331999064299",
-          "title": ">guy told his agent to book him a gym class\n>oh no it's full\n>the agent - ENTIRELY ON ITS OWN - decided to hack into the system (!) and bump",
-          "platform": "twitter",
-          "source": "@AISafetyMemes"
-        }
-      ],
-      "detected_at": "2026-08-13",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Agent Plugins",
-      "summary_nl": "Cursor ondersteunt nu Agent Plugins, een open standaard voor het bundelen van vaardigheden en MCP-servers voor gebruik in verschillende agents.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2085464617694777762",
-          "title": "Cursor now supports Agent Plugins, an open standard for bundling skills and MCP servers for use across agents.\n\nhttps://t.co/avJch1Kblq",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-08-13",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agent Budgets",
-      "summary_nl": "Gebruikers kunnen nu budgetten instellen voor Managed Agent-sessies om de uitgaven voorspelbaar te houden.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2085853169930957158",
-          "title": "We shipped four updates to Claude Managed Agents this week.\n\nFirst, you can now set a budget for sessions to keep spend predictable. Session",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-08-12",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "together ai",
-      "tool_name": "Together AI",
-      "tool_category": "infra",
-      "feature_title": "Discovery Loop",
-      "summary_nl": "Together AI heeft een nieuwe functie genaamd Discovery Loop aangekondigd, ontwikkeld in samenwerking met Sanjay Ghemawat.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/JeffDean/status/2085034604172603724",
-          "title": "Announcing Discovery Loop! \n\nI am very excited to announce that, along with my longtime friends and collaborators @Sanjay_Ghemawat, @OriolVi",
-          "platform": "twitter",
-          "source": "@JeffDean"
-        }
-      ],
-      "detected_at": "2026-08-12",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "vllm",
-      "tool_name": "vLLM",
-      "tool_category": "infra",
-      "feature_title": "Pokee-Isaac 28B",
-      "summary_nl": "Pokee AI heeft Pokee-Isaac 28B gelanceerd, de eerste echte 10M-token context frontier-class agentic model die op één GPU kan worden geïmplementeerd.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/Pokee_AI/status/2084682445648216383",
-          "title": "Releasing Pokee-Isaac 28B — the world’s first real 10M-token context frontier-class agentic model, deployable on a single GPU (starting from",
-          "platform": "twitter",
-          "source": "@Pokee_AI"
-        }
-      ],
-      "detected_at": "2026-08-12",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Unsloth Desktop",
-      "summary_nl": "Unsloth AI heeft Unsloth Desktop geïntroduceerd, de eerste desktopapp om modellen lokaal uit te voeren en te trainen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/UnslothAI/status/2087177146662072546",
-          "title": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Suppor",
-          "platform": "twitter",
-          "source": "@UnslothAI"
-        }
-      ],
-      "detected_at": "2026-08-12",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Hark Handoff",
-      "summary_nl": "OpenAI heeft Hark Handoff geïntroduceerd, een model dat onafhankelijk is geverifieerd als het beste internet-gebruik model ooit gebouwd, beter dan ChatGPT.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/adcock_brett/status/2085018697312383349",
-          "title": "Today we're introducing Hark Handoff\n\nHandoff has been independently verified as the best internet-use model ever built, outperforming ChatG",
-          "platform": "twitter",
-          "source": "@adcock_brett"
-        }
-      ],
-      "detected_at": "2026-08-12",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "cursor",
-      "tool_name": "Cursor",
-      "tool_category": "coding",
-      "feature_title": "Grok 4.6",
-      "summary_nl": "Grok 4.6 wordt nu uitgerold in Cursor.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/synthwavedd/status/2086943590362554400",
-          "title": "Grok 4.6 is now rolling out in Cursor https://t.co/HgREWAaOnG",
-          "platform": "twitter",
-          "source": "@synthwavedd"
-        }
-      ],
-      "detected_at": "2026-08-12",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "make",
-      "tool_name": "Make",
-      "tool_category": "automatisering",
-      "feature_title": "Notebook Experience",
-      "summary_nl": "Make heeft de krachtigere Notebook-ervaring nu volledig uitgerold voor alle Pro-gebruikers. Gebruikers kunnen verschillende queries uitproberen om de nieuwe mogelijkheden te verkennen.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Gemini_Notebook/status/2084430602116481479",
-          "title": "Yes, the rumors are true: The more powerful Notebook experience is now 100% rolled out to ALL Pro users.\n\nYou might be asking... How exactly",
-          "platform": "twitter",
-          "source": "@Gemini_Notebook"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "LFM2.5-2.6B",
-      "summary_nl": "Gemini lanceert LFM2.5-2.6B, een agentic model dat volledig on-device kan draaien. Het kan plannen maken, tools aanroepen en meersterige taken uitvoeren.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/liquidai/status/2084640701669613906",
-          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
-          "platform": "twitter",
-          "source": "@liquidai"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Maple-Preview",
-      "summary_nl": "Gemini introduceert Maple-Preview, een open-source 20B-A1B ternary-weight reasoning LLM dat toonaangevend is in zijn gewichtsklasse en IMO-niveau problemen kan oplossen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/deepgrove_ai/status/2084727154928189783",
-          "title": "We introduce Maple-Preview, an open-source 20B-A1B ternary-weight reasoning LLM, SOTA in its weight class.\n\nIt solves IMO-level problems and",
-          "platform": "twitter",
-          "source": "@deepgrove_ai"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Needle 2",
-      "summary_nl": "Gemini lanceert Needle 2, een 14MB agentic LLM voor telefoons, wearables, smart home, robots en microcontrollers. Het hele model is een enkele binaire.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cactuscompute/status/2086865960669983035",
-          "title": "We release Needle 2: A 14MB agentic LLM for phones, wearables, smart home, robots and microcontroller. The whole model is a single 14MB bina",
-          "platform": "twitter",
-          "source": "@cactuscompute"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Grok 4.6 in Cursor",
-      "summary_nl": "Grok 4.6 wordt nu uitgerold in Cursor.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/synthwavedd/status/2086943590362554400",
-          "title": "Grok 4.6 is now rolling out in Cursor https://t.co/HgREWAaOnG",
-          "platform": "twitter",
-          "source": "@synthwavedd"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "LFM2.5-2.6B On-Device Model",
-      "summary_nl": "Gemini heeft een agentic model LFM2.5-2.6B uitgebracht dat volledig op het apparaat kan draaien. Het kan plannen maken, tools aanroepen en meertraps taken uitvoeren.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/liquidai/status/2084640701669613906",
-          "title": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on ph",
-          "platform": "twitter",
-          "source": "@liquidai"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "pi",
-      "tool_name": "Pi",
-      "tool_category": "tekst",
-      "feature_title": "4 Built-in Tools",
-      "summary_nl": "Pi wordt geleverd met 4 ingebouwde tools: read, bash, edit en write. Deze tools zijn meestal alles wat je nodig hebt voor een effectieve coding agent.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/pidotdev/status/2086777926016540888",
-          "title": "Pi ships with 4 built-in tools:\n\n- read\n- bash\n- edit\n- write\n\nThese tools are mostly all you need for an effective coding agent. Models kno",
-          "platform": "twitter",
-          "source": "@pidotdev"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "gemini",
-      "tool_name": "Gemini",
-      "tool_category": "tekst",
-      "feature_title": "Maple-Preview 20B-A1B Reasoning LLM",
-      "summary_nl": "Gemini introduceert Maple-Preview, een open-source 20B-A1B ternary-weight reasoning LLM dat toonaangevend is in zijn gewichtsklasse en IMO-niveau problemen kan oplossen.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/deepgrove_ai/status/2084727154928189783",
-          "title": "We introduce Maple-Preview, an open-source 20B-A1B ternary-weight reasoning LLM, SOTA in its weight class.\n\nIt solves IMO-level problems and",
-          "platform": "twitter",
-          "source": "@deepgrove_ai"
-        }
-      ],
-      "detected_at": "2026-08-11",
-      "week": "2026-w33"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agents Budget",
-      "summary_nl": "Claude Managed Agents ondersteunt nu het instellen van een budget voor sessies om de uitgaven voorspelbaar te houden.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/ClaudeDevs/status/2085853169930957158",
-          "title": "We shipped four updates to Claude Managed Agents this week.\n\nFirst, you can now set a budget for sessions to keep spend predictable. Session",
-          "platform": "twitter",
-          "source": "@ClaudeDevs"
-        }
-      ],
-      "detected_at": "2026-08-10",
-      "week": "2026-w33"
     }
   ],
   "weeks_kept": [
+    "2026-w37",
     "2026-w36",
     "2026-w35",
-    "2026-w34",
-    "2026-w33"
+    "2026-w34"
   ]
 }
