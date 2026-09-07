@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-07T07:31:25.218061",
+  "generated_at": "2026-09-07T19:33:43.598471",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 13,
+    "for_tools": 14,
     "for_news": 30,
-    "rejected_lang": 340,
+    "rejected_lang": 341,
     "already_covered": 0,
-    "total_scanned": 9579
+    "total_scanned": 9307
   },
   "for_tools": [
     {
@@ -389,10 +389,10 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "step-by-step",
-        "guide",
+        "how-to",
         "how to",
-        "how-to"
+        "step-by-step",
+        "guide"
       ],
       "matched_tools": [
         "n8n"
@@ -560,8 +560,8 @@
       "source": "consensus:3 bronnen",
       "platform": "article",
       "title": "Pairing Google Antigravity with Gemini 3.7 Flash solves notable multi-agent math and engineering problems.",
-      "text": "In Google Antigravity, we recently launched a number of updates to Teamwork, a framework that allows autonomous teams of AI agents to collaborate, …\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Teamwork_social.max-1440x810.png\" alt=\"\" title=\"\" /></p></figure>\n",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/?utm_source=flipboard&utm_content=topic/technology",
+      "text": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Teamwork_social.max-600x600.format-webp.webp\">Gemini 3.7 Flash powers autonomous agent teams in Antigravity to solve open math problems, build CPU emulators, and optimize OSS.",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/",
       "date": "2026-09-01",
       "engagement": 30.0,
       "source_weight": 2.0,
@@ -570,13 +570,10 @@
       "matched_tools": [
         "gemini"
       ],
-      "feature_update": true,
-      "new_products": [
-        "Pairing Google",
-        "In Google"
-      ],
-      "new_product": true,
-      "version_bump": true,
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
       "paywall": false,
       "video": null,
       "lang": "en",
@@ -614,7 +611,7 @@
         "uitgever": 6.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Nieuw in gemini: wat de update concreet voor je werk betekent.",
+      "suggested_angle_nl": "Praktijkgids: gemini inzetten in je workflow.",
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "992fb12641c11e33"
@@ -740,6 +737,58 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "b7f2b9502c27b639"
+    },
+    {
+      "source": "reddit:r/ClaudeAI",
+      "platform": "reddit",
+      "title": "Used Claude to fight a $1,200 medical bill. It drafted the letter. The bill got cut to $180.",
+      "text": "I'm not American originally so the medical billing thing genuinely broke my brain. Got a bill that made no sense, itemized codes I couldn't read, an amount I was sure was wrong. Instead of paying it out of confusion, I pasted the whole thing into Claude and asked it to explain each line and whether any of it looked incorrect or negotiable. It flagged two duplicate charges, explained what a good-faith dispute letter should say, and wrote one citing the specific codes. I sent it basically as-is. The bill came back at $180. I know this is the boring, unsexy use, but it saved me a thousand dollars",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v6zx6v/used_claude_to_fight_a_1200_medical_bill_it/",
+      "date": "2026-07-26",
+      "engagement": 2147.0,
+      "source_weight": 2.0,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "explained"
+      ],
+      "matched_tools": [
+        "claude"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "reddit"
+      ],
+      "bron_tier": "",
+      "score": 17.01,
+      "score_breakdown": {
+        "pattern_hits": 1,
+        "engagement_log": 11.51,
+        "source_weight": 2.0,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "claude uitgelegd voor Nederlandse teams — zonder de hype.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "ded2c10374cda727"
     }
   ],
   "for_news": [
@@ -1072,9 +1121,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "step-by-step",
+        "breakdown",
         "explained",
-        "breakdown"
+        "step-by-step"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -1162,58 +1211,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "b3a3066ba9b716eb"
-    },
-    {
-      "source": "articles:Latest from TechRadar US in News，opinion",
-      "platform": "article",
-      "title": "OpenAI warns about how good Astra model is at cracking cybersecurity, releases it anyway because it took 'years of research and big bets'",
-      "text": "<article>\n                                <ul><li><strong>OpenAI rolled out GPT‑6 Astra, its most advanced AI, with “critical” cyber capabilities</strong></li><li><strong>Astra can autonomously find and exploit unknown flaws; release limited to vetted Daybreak participants</strong></li><li><strong>Staggered rollout sparked user frustration; Altman apologized, promising broader access soon</strong></li></ul><p>OpenAI has begun rolling out <a href=\"https://www.techradar.com/best/best-ai-tools\">GPT-6 Astra</a>, its latest and most capable artificial intelligence model. </p><p>In an announcement p",
-      "url": "https://www.techradar.com/pro/security/openai-warns-about-how-good-astra-model-is-at-cracking-cybersecurity-releases-it-anyway-because-it-took-years-of-research-and-big-bets",
-      "date": "2026-09-04",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "explained"
-      ],
-      "matched_tools": [
-        "chatgpt"
-      ],
-      "feature_update": true,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 18.9,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "chatgpt uitgelegd voor Nederlandse teams — zonder de hype.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "6e9b632de91e5ea9"
     },
     {
       "source": "articles:VentureBeat",
@@ -1418,7 +1415,7 @@
       "id": "f781240d605b62cb"
     },
     {
-      "source": "articles:Ars Technica",
+      "source": "articles:AI - Ars Technica",
       "platform": "article",
       "title": "Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
       "text": "<p>xAI has now been accused of training Grok on child sex abuse materials (CSAM), as regulators and courts continue to probe <a href=\"https://arstechnica.com/tech-policy/2026/03/elon-musks-xai-sued-for-turning-three-girls-real-photos-into-ai-csam/\">how far the problem goes,</a> and some <a href=\"https://arstechnica.com/tech-policy/2026/07/elon-musks-xai-is-trying-to-sue-its-way-out-of-a-grok-reckoning/\">Grok users have been arrested</a>.</p>\n<p>In a <a href=\"https://cdn.arstechnica.net/wp-content/uploads/2026/08/Doe-v-X-Corp-Complaint-8-27-26.pdf\">complaint</a> filed on Wednesday, a plaintiff ",
@@ -1480,8 +1477,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "build a",
-        "build your"
+        "build your",
+        "build a"
       ],
       "matched_tools": [
         "claude",
@@ -1775,10 +1772,10 @@
       "id": "5e55e7afef79c330"
     },
     {
-      "source": "articles:Artificial intelligence (AI) | The Guardian",
+      "source": "articles:Technology | The Guardian",
       "platform": "article",
       "title": "Anthropic sued over alleged theft of ‘tens of thousands’ of songs",
-      "text": "<p>AI company faces multibillion dollar lawsuit over misuse of copyrighted songs to train Claude models</p><p>All AI wants for Christmas is a vast back catalogue of songs without paying for it, according to a multibillion dollar lawsuit against the startup behind the Claude chatbot.</p><p>Sony Music Publishing and Warner Chappell, music publishers who manage the copyright of songs on behalf of songwriters and composers, are seeking damages for alleged misuse of “tens of thousands” of copyrighted works by Anthropic.</p> <a href=\"https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-a",
+      "text": "<p>AI company faces multibillion dollar lawsuit over misuse of copyrighted songs to train Claude models</p><p>All AI wants for Christmas is a vast back catalogue of songs without paying for it, according to a multibillion-dollar lawsuit against the startup behind the Claude chatbot.</p><p>Sony Music Publishing and Warner Chappell, music publishers who manage the copyright of songs on behalf of songwriters and composers, are seeking damages for alleged misuse of “tens of thousands” of copyrighted works by Anthropic.</p> <a href=\"https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-a",
       "url": "https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-alleged-theft-songs-ai-train-claude",
       "date": "2026-08-31",
       "engagement": 50.0,
@@ -1887,8 +1884,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "anatomy of",
-        "guide"
+        "guide",
+        "anatomy of"
       ],
       "matched_tools": [
         "claude"
@@ -2201,8 +2198,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "case study",
-        "study"
+        "study",
+        "case study"
       ],
       "matched_tools": [],
       "feature_update": true,
@@ -2290,6 +2287,56 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "3a44ef53580655ff"
+    },
+    {
+      "source": "articles:Technology readings",
+      "platform": "article",
+      "title": "Trump administration sides with OpenAI in lawsuit against New York Times",
+      "text": "The Times and many companies are accusing OpenAI of misusing their material to train AI systems without compensation\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://i.guim.co.uk/img/media/a607777885d72961d611a824d4848337e9a4d787/768_0_5438_4351/master/5438.jpg?width=1200&amp;height=630&amp;quality=85&amp;auto=format&amp;fit=crop&amp;precrop=40:21,offset-x50,offset-y0&amp;overlay-align=bottom%2Cleft&amp;overlay-width=100p&amp;overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&amp;enable=upscale&amp;s=d171336e969d2c7478a378f4147c7fe7\" alt=\"\" title=\"\" /></p></",
+      "url": "https://www.theguardian.com/technology/2026/sep/02/trump-new-york-times-lawsuit-ai?utm_source=flipboard&utm_content=edans%2Fmagazine%2FTechnology+readings",
+      "date": "2026-09-03",
+      "engagement": 30.4,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.17,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.17,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Waarom chatgpt er nu toe doet — en wat je ermee moet.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "d0ef0a1d59117ff2"
     }
   ]
 }
