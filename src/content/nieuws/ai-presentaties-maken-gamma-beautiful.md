@@ -3,7 +3,7 @@ title: "AI-presentaties maken: van prompt naar deck in 5 minuten"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI-presentaties maken: van prompt naar deck in 5 minuten'"
 description: "Gamma, Beautiful.ai en Canva AI zetten een prompt of document om in een complete, opgemaakte presentatie. Dit is hoe je in vijf minuten een deck maakt dat er professioneel uitziet — zonder designer."
 publishedAt: 2026-06-09
-updatedAt: 2026-06-09
+updatedAt: 2026-09-08
 author: "Redactie"
 category: "gids"
 tags:
@@ -27,7 +27,7 @@ keyTakeaways:
   - "Geef de AI je doel mee (pitchen, informeren, trainen), je doelgroep en het gewenste aantal slides voor het beste resultaat."
 faq:
   - q: "Is Gamma echt gratis?"
-    a: "Ja, Gamma heeft een gratis plan waarmee je presentaties kunt maken en delen. Het gratis plan geeft je 400 AI-credits (genoeg voor meerdere decks) en gebruik van de basistemplates. Voor ongelimiteerde credits en aangepaste huisstijl betaal je $10/maand (Plus) of $20/maand (Pro)."
+    a: "Ja, Gamma heeft een gratis plan waarmee je presentaties kunt maken en delen. Let op twee dingen: op het gratis plan verschijnt Gamma-branding op wat je deelt of exporteert, en credits zijn eindig — vrijwel elke AI-actie verbruikt ze, ook het genereren zelf (per kaart en per afbeelding). Betaalde plannen geven meer credits, halen de branding weg en ontsluiten de brand kit. Prijzen en plan-indeling wijzigen geregeld; controleer de actuele tarieven op gamma.app/pricing."
   - q: "Kan ik een AI-presentatie exporteren naar PowerPoint?"
     a: "Gamma exporteert naar PowerPoint (.pptx) op het betaalde plan. Beautiful.ai exporteert ook naar PowerPoint. Canva exporteert naar PowerPoint op alle plannen. Check in de tool zelf altijd de actuele exportopties voor jouw abonnement."
   - q: "Hoe goed zijn Nederlandse slides?"
@@ -46,7 +46,7 @@ Een presentatie maken kost normaal een uur: outline bedenken, slides opbouwen, o
 |---|---|---|---|
 | Beste voor | Snelste resultaat, prototypes | Automatische layout, zakelijk gebruik | Merkgebonden content, social |
 | Gratis plan | Ja (400 credits) | Nee (proefperiode) | Ja |
-| Betaald | $10–20/maand | $12/maand | $15/maand (Pro) |
+| Betaald | zie gamma.app/pricing | zie beautiful.ai/pricing | zie canva.com/pricing |
 | Export PowerPoint | Ja (betaald) | Ja | Ja (alle plannen) |
 | Eigen huisstijl | Ja (betaald) | Ja | Ja (via Brand Kit) |
 

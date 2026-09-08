@@ -48,7 +48,7 @@ Een jingle voor een podcast, achtergrondmuziek voor een video of gewoon curiosit
 |---|---|---|
 | Beste voor | Complete nummers met vocalen, downloadbaar | Instrumentale tracks; alleen binnen het platform (geen download) |
 | Gratis plan | 50 credits/dag (~10 nummers) | 10 tracks/dag |
-| Betaald | $8/maand (Pro, 2.500 credits) | $10/maand (Standard, 1.200 credits) |
+| Betaald | zie suno.com/pricing | zie udio.com/pricing |
 | Stijl-bereik | Zeer breed (pop tot metal tot klassiek) | Breed, sterk in jazz, elektronisch |
 | Custom tekst | Ja (Custom Mode) | Ja |
 | Commercieel gebruik | Betaald plan vereist | Betaald plan vereist |
@@ -113,4 +113,4 @@ Udio laat je ook kleine aanpassingen doen aan de audio nadat het is gegenereerd 
 
 - [Suno — Terms of Service en licentie-informatie](https://suno.com/terms)
 - [Udio — Pricing en licenties](https://www.udio.com/pricing)
-- [The Verge — AI music generators 2026 review](https://www.theverge.com)
+- [Changes associated with the Universal Music Group ("UMG") partnership](https://help.udio.com/en/articles/12683565-changes-associated-with-the-universal-music-group-umg-partnership) — Udio Help Center over het uitschakelen van downloads
