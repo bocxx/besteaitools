@@ -41,8 +41,6 @@ faq:
     a: "Dat hangt af van je doel. Om te leren hoe promptgestuurde muziekgeneratie werkt, om genres te verkennen of om een muzikaal idee hoorbaar te maken voordat je de studio in gaat, is Udio nog steeds bruikbaar. Voor productiewerk waarbij het bestand het eindproduct is, niet. Kort gezegd: geschikt om te denken, ongeschikt om te leveren."
 ---
 
-# Udio downloaden kan niet meer — zo gebruik je het tóch zinvol
-
 Je maakt een nummer in Udio, het klinkt precies goed, en dan zoek je de downloadknop. Die is er niet. Sinds de schikking met Universal Music Group is Udio een gesloten platform: je genereert en luistert binnen de app, en dat is het. Dit is wat er nog wél kan.
 
 ## Wat er precies is veranderd

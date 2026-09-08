@@ -41,8 +41,6 @@ faq:
     a: "Geef een corrigerende vervolgopdracht in plaats van handmatig alles terug te zetten, bijvoorbeeld 'houd de vorige typografie maar gebruik een rustiger achtergrond'. Werk daarnaast op een kopie als het om een deck gaat dat af is: dupliceer het, laat de Agent los op de kopie en vergelijk. Dat kost één extra handeling en scheelt je een reconstructie."
 ---
 
-# Gamma Agent gebruiken: je hele deck herstijlen met één opdracht
-
 Je hebt een presentatie die inhoudelijk klopt maar er rommelig uitziet. Twintig kaarten met drie verschillende lettergroottes, en je hebt geen zin om ze stuk voor stuk recht te trekken. Daar is de Gamma Agent voor: één opdracht in gewone taal, en de stijl gaat over het hele deck.
 
 ## Wat de Agent anders doet dan gewone generatie
