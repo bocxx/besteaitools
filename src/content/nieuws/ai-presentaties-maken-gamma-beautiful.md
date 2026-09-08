@@ -85,7 +85,7 @@ Selecteer een stuk tekst en klik het potloodpictogram voor AI-bewerkingen: korte
 
 ## Stap 4: toepassen van je huisstijl
 
-Ga in Gamma naar **Brand** (linkerkolom) en stel je kleuren, lettertypen en logo in. De tool past dit direct toe op alle slides. Voor Canva: zorg dat je Brand Kit is ingesteld (in Canva Pro of Teams), dan past de AI automatisch jouw huisstijlkleuren toe.
+Ga in Gamma naar **Brand** (linkerkolom) en stel je kleuren, lettertypen en logo in. De tool past dit direct toe op alle slides. Wil je een deck dat er al staat in één opdracht omzetten naar die huisstijl, lees dan [hoe je met de Gamma Agent je hele deck herstijlt](/nieuws/gamma-agent-deck-herstijlen). Voor Canva: zorg dat je Brand Kit is ingesteld (in Canva Pro of Teams), dan past de AI automatisch jouw huisstijlkleuren toe.
 
 ## Stap 5: exporteren en delen
 

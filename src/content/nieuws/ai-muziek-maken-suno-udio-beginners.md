@@ -3,7 +3,7 @@ title: "AI-muziek maken met Suno en Udio: van tekstprompt naar nummer"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI-muziek maken met Suno en Udio: van tekstprompt naar nummer'"
 description: "Met Suno en Udio genereer je originele muziek met een tekstprompt — van achtergrondmuziek tot complete nummers met vocalen. Dit is hoe je begint, welke stijlen werken en wanneer je welke tool kiest."
 publishedAt: 2026-06-09
-updatedAt: 2026-06-09
+updatedAt: 2026-09-08
 author: "Redactie"
 category: "gids"
 tags:
@@ -21,13 +21,13 @@ heroImage: "/images/articles/diorama-ai-muziek-maken-suno-udio-beginners.webp"
 heroScene: "A tiny wooden stage with miniature musical instruments — a small guitar, piano keys, and floating music notes — glowing softly in studio lighting, with a translucent waveform above"
 keyTakeaways:
   - "Suno v4 is de standaard voor complete nummers met vocalen — je beschrijft een stijl en de AI schrijft én zingt het nummer."
-  - "Udio blinkt uit in instrumentale muziek en geeft meer controle over het geluid en de structuur."
+  - "Udio blinkt uit in instrumentale muziek, maar downloaden kan sinds de UMG-deal niet meer — het resultaat blijft binnen het platform."
   - "Beide tools hebben gratis plans met een beperkt aantal nummers per maand — genoeg om te testen."
   - "Commercieel gebruik vereist een betaald plan bij beide tools; check de licentievoorwaarden voor jouw gebruik."
   - "De promptformule 'stijl + instrument + tempo + sfeer' geeft consistent betere resultaten dan een vage beschrijving."
 faq:
   - q: "Mag je AI-muziek van Suno of Udio gebruiken in een YouTube-video?"
-    a: "Op het gratis plan van Suno en Udio is gebruik beperkt tot niet-commercieel. Voor gebruik in YouTube-video's met monetisatie heb je een betaald plan nodig (Suno Pro: $8/maand, Udio Standard: $10/maand). Controleer altijd de actuele licentievoorwaarden van de tool — die worden geregeld bijgewerkt."
+    a: "Bij Suno geldt: op het gratis plan is gebruik beperkt tot niet-commercieel, en voor YouTube-video's met monetisatie heb je een betaald plan nodig. Bij Udio is dit sinds de licentiedeal met Universal Music Group niet meer aan de orde: downloaden van audio, video en stems is uitgeschakeld, dus je krijgt het bestand hoe dan ook niet uit het platform. Controleer altijd de actuele licentievoorwaarden en tarieven van de tool — die worden geregeld bijgewerkt."
   - q: "Kan Suno ook Nederlandse liedjes maken?"
     a: "Ja. Voeg in je prompt toe 'lyrics in Dutch' of schrijf de songtekst zelf in het Nederlands in het 'Custom Mode' en laat Suno die zingen. De uitspraak is redelijk, maar voor perfecte uitspraak van dialectwoorden of complexe klanken is Engels nog wat sterker."
   - q: "Hoe lang kan een AI-nummer zijn?"
@@ -40,11 +40,13 @@ faq:
 
 Een jingle voor een podcast, achtergrondmuziek voor een video of gewoon curiositeit — AI-muziek is inmiddels goed genoeg dat je het écht kunt gebruiken. Geen muzikale kennis nodig. Dit is hoe je begint.
 
+> **⚠️ Update september 2026 — Udio:** sinds de licentiedeal met Universal Music Group kun je in Udio gegenereerde nummers **niet meer downloaden**. Audio, video en stems zijn uitgeschakeld tijdens de overgang naar een gelicentieerd platform. Alles hieronder over Udio geldt dus binnen het platform; wil je het bestand gebruiken in een video of podcast, gebruik dan Suno of een andere generator die export toestaat. Wat er nog wél kan met Udio staat in [Udio downloaden kan niet meer — zo gebruik je het tóch zinvol](/nieuws/udio-downloaden-kan-niet-meer).
+
 ## Suno vs. Udio: wanneer gebruik je welke?
 
 | | **Suno v4** | **Udio** |
 |---|---|---|
-| Beste voor | Complete nummers met vocalen | Instrumentale tracks, meer controle |
+| Beste voor | Complete nummers met vocalen, downloadbaar | Instrumentale tracks; alleen binnen het platform (geen download) |
 | Gratis plan | 50 credits/dag (~10 nummers) | 10 tracks/dag |
 | Betaald | $8/maand (Pro, 2.500 credits) | $10/maand (Standard, 1.200 credits) |
 | Stijl-bereik | Zeer breed (pop tot metal tot klassiek) | Breed, sterk in jazz, elektronisch |
@@ -90,7 +92,7 @@ Wil je een bestaand nummer in een andere stijl? Gebruik **Cover** of **Remix** o
 
 ## Stap 3: instrumentale achtergrondmuziek in Udio
 
-Voor video-achtergronden, podcasts of presentaties is Udio vaak de betere keuze omdat je meer controle hebt over het geluid zonder vocalen.
+Udio geeft je veel controle over instrumentaal geluid zonder vocalen. Let op de update bovenaan: je kunt het resultaat sinds de UMG-deal niet meer downloaden, dus voor muziek die daadwerkelijk ónder je video of podcast moet komen, is Suno op dit moment de werkbare keuze. Voor het uitproberen van een richting binnen Udio werkt onderstaande nog prima.
 
 1. Ga naar [udio.com](https://udio.com)
 2. Typ je prompt (stijl, instrumenten, sfeer)
@@ -105,7 +107,7 @@ Udio laat je ook kleine aanpassingen doen aan de audio nadat het is gegenereerd 
 - [ ] Prompt gebruikt met: genre + instrumenten + tempo + sfeer
 - [ ] Twee gegenereerde versies vergeleken en de beste gekozen
 - [ ] Voor commercieel gebruik: betaald plan geactiveerd en licentievoorwaarden gelezen
-- [ ] Nummer gedownload in het gewenste formaat (MP3/WAV)
+- [ ] Nummer gedownload in het gewenste formaat (MP3/WAV) — bij Udio kan dit sinds de UMG-deal niet meer
 
 ## Bronnen
 

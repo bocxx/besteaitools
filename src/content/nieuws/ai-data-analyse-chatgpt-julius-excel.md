@@ -98,7 +98,7 @@ AI-data-analyse bevat soms fouten. Doe altijd dit:
 - **Vraag de AI om de methode uit te leggen**: *"Hoe heb je dit berekend?"* — als de uitleg niet klopt, klopt de uitkomst ook niet
 - **Vergelijk totalen**: kloppen de subtotalen op met het eindtotaal?
 
-Hetzelfde wantrouwen tegen mooie-maar-onbewezen cijfers geldt buiten spreadsheets. Zie hoe je AI [een voetbalwedstrijd laat analyseren zonder verzonnen statistieken](/nieuws/ai-voetbalwedstrijd-voorspellen).
+Hetzelfde wantrouwen tegen mooie-maar-onbewezen cijfers geldt buiten spreadsheets. Zie hoe je AI [een voetbalwedstrijd laat analyseren zonder verzonnen statistieken](/nieuws/ai-voetbalwedstrijd-voorspellen). En moet je analyse straks in een presentatie: [de Gamma Agent herstijlt je hele deck in één opdracht](/nieuws/gamma-agent-deck-herstijlen), zodat je aan de cijfers kunt blijven werken in plaats van aan de opmaak.
 
 ## Checklist: ben je klaar?
 

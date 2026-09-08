@@ -89,6 +89,8 @@ Gebruik **Text to Image** voor een unieke achtergrondafbeelding, of **Magic Writ
 
 Voor een maand content: plan één zitting per maand van een uur om alle posts in te plannen. Daarna gaat alles automatisch.
 
+Heb je bij die zitting ook beeldmateriaal of een deck nodig, dan scheelt [je hele presentatie herstijlen met de Gamma Agent](/nieuws/gamma-agent-deck-herstijlen) je het slide-voor-slide opmaakwerk. Voor achtergrondmuziek geldt één waarschuwing vooraf: [bij Udio kun je het resultaat niet meer downloaden](/nieuws/udio-downloaden-kan-niet-meer).
+
 ## Checklist: ben je klaar?
 
 - [ ] 30 post-ideeën gegenereerd, 12-16 gekozen voor de maand

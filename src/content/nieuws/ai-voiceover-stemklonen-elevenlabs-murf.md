@@ -89,7 +89,7 @@ Leuk detail: de technologie die stemklonen groot maakte, heeft Belgische roots �
 
 ## Stap 4: exporteer en synchroniseer met video
 
-Download de audio als MP3 (voor web en sociale media) of WAV (voor professionele productie). In ElevenLabs kun je ook direct een script uploaden en per alinea een andere stem kiezen — handig voor dialogen.
+Download de audio als MP3 (voor web en sociale media) of WAV (voor professionele productie). Dat downloaden is niet vanzelfsprekend meer bij elke audiotool: bij Udio kan het sinds de licentiedeal met UMG niet meer, zoals we beschrijven in [Udio downloaden kan niet meer](/nieuws/udio-downloaden-kan-niet-meer). In ElevenLabs kun je ook direct een script uploaden en per alinea een andere stem kiezen — handig voor dialogen.
 
 Zet de audio in je video-editor (Premiere Pro, DaVinci Resolve, CapCut) op de audiotijdlijn en synchroniseer met beeld. AI-voiceovers hebben weinig "ademhaling" en pauzes — voeg handmatig een korte stilte toe aan het begin en einde voor een naturalere montage.
 
