@@ -2,7 +2,7 @@
 title: "Claude-account aanmaken: gratis starten op claude.ai in vijf stappen"
 description: "Een Claude-account aanmaken kost vijf minuten: e-mail of Google, sms-verificatie en klaar. Wat er gratis kan, en wanneer Pro (€18 p/m) de moeite loont."
 publishedAt: 2026-07-05
-updatedAt: 2026-07-05
+updatedAt: 2026-09-08
 author: "Redactie"
 category: "gids"
 tags:
@@ -75,7 +75,7 @@ Nog een nuchtere noot voor Nederlands gebruik: Claude spreekt uitstekend Nederla
 
 Begin gewoon gratis — een week met echte taken uit je werk zegt meer dan elke vergelijkingstabel. Loop je tegen de daglimiet aan of wil je Cowork en Claude Code gebruiken, dan is Pro de logische stap: €18 per maand (excl. btw), in de VS $20. De Max-plannen ($100 tot $200 per maand) zijn er voor wie agents structureel laat draaien; als je die vraag niet herkent, heb je Max niet nodig. Neem je Pro, dan is [Claude instellen op één dag](/nieuws/claude-instellen-1-dag-6-tools) een goed vervolg.
 
-## Stand van zaken — bijgewerkt 2026-07-05
+## Stand van zaken — bijgewerkt 2026-09-08
 
 De uitleg hierboven blijft staan; de cijfers hieronder zijn de bederfelijke laag. Alle bedragen excl. btw ([Bron: Claude pricing](https://claude.com/pricing)).
 
@@ -85,7 +85,7 @@ De uitleg hierboven blijft staan; de cijfers hieronder zijn de bederfelijke laag
 | Pro | €18 p/m (excl. btw), $20 in de VS; jaarbetaling $17 p/m |
 | Max | 5x: vanaf $100 p/m · 20x: vanaf $200 p/m |
 | Pro geeft extra | Claude Code, Cowork, Claude Design, hogere limieten, extra modellen |
-| Standaardmodel | Claude Sonnet 5 (sinds 30 juni 2026); vlaggenschip: Claude Fable 5 |
+| Standaardmodel | Claude Sonnet 5 (sinds 30 juni 2026); vlaggenschip: Claude Fable 5.1 (sinds 1 september 2026) |
 | Sms-verificatie | Verplicht, geen uitzondering; nummer later niet wijzigbaar |
 
 ## Checklist: ben je klaar?

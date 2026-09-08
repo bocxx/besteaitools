@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-08T07:42:35.127714",
+  "generated_at": "2026-09-08T19:28:33.561063",
   "window_days": 7,
   "week": "2026-w37",
-  "total_candidates_scanned": 936,
-  "total_after_dedup": 900,
+  "total_candidates_scanned": 994,
+  "total_after_dedup": 955,
   "total_feature_updates": 143,
   "llm_curated": true,
   "features": [
@@ -12,7 +12,7 @@
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
       "feature_title": "ChatGPT 6 Astra Release",
-      "summary_nl": "OpenAI heeft ChatGPT 6 Astra uitgebracht, een nieuw model dat volgens het bedrijf het AGI-tijdperk inluidt. Het model scoort beter dan eerdere versies op diverse benchmarks en is beschikbaar via de API.",
+      "summary_nl": "OpenAI heeft ChatGPT 6 Astra uitgebracht, een nieuw model dat volgens het bedrijf het AGI-tijdperk inluidt. Het model presteert beter dan eerdere versies op verschillende benchmarks en is beschikbaar voor Plus en Business gebruikers.",
       "impact": "high",
       "sources": [
         {
@@ -66,7 +66,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Claude Fable 5.1 Launch",
-      "summary_nl": "Anthropic heeft Claude Fable 5.1 en Mythos 5.1 officieel gelanceerd. Fable 5.1 is nu beschikbaar in Cursor en scoort 73.4% op CursorBench 3.2, wat het tot het meest capabele model maakt dat op dat platform draait.",
+      "summary_nl": "Anthropic heeft Claude Fable 5.1 en Mythos 5.1 officieel gelanceerd. Het model is nu beschikbaar in Cursor en scoort 73.4% op CursorBench 3.2, wat het tot een van de meest capabele modellen maakt.",
       "impact": "high",
       "sources": [
         {
@@ -89,8 +89,26 @@
       "tool_slug": "chatgpt",
       "tool_name": "ChatGPT",
       "tool_category": "tekst",
+      "feature_title": "Celeris-1 Magnus Model",
+      "summary_nl": "Celeris AI heeft Celeris-1 Magnus geïntroduceerd, een model specifiek gebouwd voor agentic werk. Het levert 41.2% prestatie op τ³-bench banking met een mediane tijd van 55 seconden.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Celeris_ai/status/2094626639842078755",
+          "title": "Introducing Celeris-1 Magnus. A model built for agentic work.\n\nOn τ³-bench banking, Magnus delivers 41.2% at a 55-second median, against GPT",
+          "platform": "twitter",
+          "source": "@Celeris_ai"
+        }
+      ],
+      "detected_at": "2026-09-08",
+      "week": "2026-w37"
+    },
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
       "feature_title": "Meta Muse Spark 1.3",
-      "summary_nl": "Meta heeft Muse Spark 1.3 uitgebracht, hun vierde Muse Spark model in vijf maanden tijd. Het model bevindt zich in beperkte preview en presteert sterk op benchmarks.",
+      "summary_nl": "Meta heeft Muse Spark 1.3 uitgebracht, hun vierde Muse Spark model in vijf maanden tijd. Het model is momenteel beschikbaar in beperkte preview en presteert competitief met andere state-of-the-art modellen.",
       "impact": "medium",
       "sources": [
         {
@@ -728,24 +746,6 @@
           "title": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\n",
           "platform": "twitter",
           "source": "@Zai_org"
-        }
-      ],
-      "detected_at": "2026-09-03",
-      "week": "2026-w36"
-    },
-    {
-      "tool_slug": "chatgpt",
-      "tool_name": "ChatGPT",
-      "tool_category": "tekst",
-      "feature_title": "Celeris-1 Magnus Model",
-      "summary_nl": "Celeris-1 Magnus is geïntroduceerd als een model dat specifiek is gebouwd voor agentisch werk, zoals complexe banktaken op τ³-bench. Het richt zich op hoge nauwkeurigheid in praktische workflows met een relatief korte responstijd.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/Celeris_ai/status/2094626639842078755",
-          "title": "Introducing Celeris-1 Magnus. A model built for agentic work.\n\nOn τ³-bench banking, Magnus delivers 41.2% at a 55-second median, against GPT",
-          "platform": "twitter",
-          "source": "@Celeris_ai"
         }
       ],
       "detected_at": "2026-09-03",
