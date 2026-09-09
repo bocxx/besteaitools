@@ -120,6 +120,8 @@ OWASP bracht op 17 augustus 2026 een top tien van skill-risico's uit. Het kernpr
 
 Lees een skill dus regel voor regel voordat je hem installeert. Bij je eigen skills is dat geen probleem — die heb je zelf geschreven, en dat is precies het punt.
 
+Wil je er tóch een van buiten bij, gebruik dan de beoordelingsstappen uit [Welke Claude-skills installeer je écht?](/nieuws/welke-claude-skills-installeren).
+
 ## Bronnen
 
 - [Anthropic — Agent Skills best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
