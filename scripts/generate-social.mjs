@@ -89,6 +89,23 @@ function parseFrontmatter(raw) {
 }
 
 // ── Tekst-helpers ────────────────────────────────────────────────────────────
+// Maximale takeaway-lengte per layout, in tekens.
+//
+// Stond tot 9 sep 2026 op grid 96 / col 124. Dat botste met de schrijfregel in
+// CLAUDE.md (max 4 keyTakeaways van ±20 woorden ≈ 130 tekens): bij een meting op
+// 9 sep 2026 werd op alle drie de sites de overgrote meerderheid van de takeaways
+// afgekapt, terwijl de panelen half leeg stonden. Op HLN landde 2% volledig.
+//
+// Verdeling van de takeaway-lengtes op 9 sep 2026 (n=958 HLN, 515 MKB, 534 DBAT):
+// mediaan 127-142, p90 157-184, p99 186-224, uitschieter 275. Met de waarden
+// hieronder landt 92-99% volledig; de rest krijgt nog steeds een nette '…'.
+//
+// Empirisch bepaald en visueel gecontroleerd op het krapste geval: 1x1 (kleinste
+// grid) en 9x16 (vijf kaarten delen de hoogte), met het artikel dat zowel de
+// langste takeaways als een tweeregelige titel heeft. Verhoog je ze, controleer
+// dan opnieuw op díe twee formaten — daar loopt het als eerste over.
+const TAKEAWAY_MAX = { grid: 200, col: 190, wide: 80 };
+
 function condense(s, max) {
   if (s.length <= max) return s;
   const cut = s.slice(0, max);
@@ -146,7 +163,7 @@ function takeawayCard(idx, body, fs) {
 function cardsBlock(takeaways, fmt) {
   const fs = fmt.card;
   const items = takeaways.slice(0, fmt.layout === 'grid' ? 4 : 5)
-    .map((t) => condense(t, fmt.layout === 'grid' ? 96 : 124));
+    .map((t) => condense(t, fmt.layout === 'grid' ? TAKEAWAY_MAX.grid : TAKEAWAY_MAX.col));
   if (fmt.layout === 'grid') {
     const row = (a, b) => h('div', {
       style: { display: 'flex', flexDirection: 'row', flexGrow: 1, gap: `${fmt.gap}px` },
