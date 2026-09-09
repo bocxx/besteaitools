@@ -21,7 +21,7 @@ launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- OpenAI brengt ChatGPT 6 Astra uit, een model dat volgens het bedrijf het AGI-tijdperk inluidt.
+- OpenAI rolt GPT-6 Astra uit naar alle Pro-, Enterprise- en Business Premium-gebruikers in ChatGPT Work en Codex, en in de API.
 - Anthropic lanceert Claude Fable 5.1 met een score van 73,4% op CursorBench 3.2.
 - Safari-extensie Weedout verbergt YouTube-video's die door AI zijn gelabeld.
 launches:
@@ -95,7 +95,7 @@ updates:
 - tool_name: ChatGPT
   tool_slug: chatgpt
   feature_title: GPT-6 Astra Release
-  summary_nl: OpenAI brengt GPT-6 Astra uit, een model dat presteert tussen Opus 4.7 en Fable 5.
+  summary_nl: GPT-6 Astra scoort in de Artificial Analysis Coding Agent Index gelijk aan Fable 5, tegen lagere kosten.
   impact: hoog
   url: https://twitter.com/ArtificialAnlys/status/2095595489031000350
   source_type: x
@@ -106,8 +106,8 @@ updates:
   key: chatgpt::GPT-6 Astra Release
 - tool_name: ChatGPT
   tool_slug: chatgpt
-  feature_title: ChatGPT 6 Astra Release
-  summary_nl: ChatGPT 6 Astra is beschikbaar voor Plus- en Business-gebruikers met verbeterde prestaties op benchmarks.
+  feature_title: GPT-6 Astra breed beschikbaar
+  summary_nl: GPT-6 Astra is nu beschikbaar voor alle Pro-, Enterprise- en Business Premium-gebruikers in ChatGPT Work en Codex, en live in de API.
   impact: hoog
   url: https://twitter.com/OpenAI/status/2095968413646737608
   source_type: x
@@ -115,7 +115,7 @@ updates:
   confidence: laag
   platforms:
   - twitter
-  key: chatgpt::ChatGPT 6 Astra Release
+  key: chatgpt::GPT-6 Astra breed beschikbaar
 - tool_name: Claude
   tool_slug: claude
   feature_title: Claude Fable 5.1 Launch
@@ -168,7 +168,7 @@ deepDives:
 slotLabel: Ochtend
 ---
 
-Vandaag domineren twee grote modellanceringen: OpenAI positioneert ChatGPT 6 Astra als AGI-doorbraak, terwijl Anthropic Claude Fable 5.1 uitrolt met sterke benchmarkresultaten in Cursor. Tegelijk zien we een tegenbeweging: tools zoals Weedout en TERMy richten zich juist op het filteren of vermijden van AI-gegenereerde content. De spanning tussen steeds krachtigere modellen en groeiende AI-moeheid tekent zich scherp af in de data van deze week.
+Vandaag domineren twee grote modellanceringen: OpenAI rolt GPT-6 Astra breed uit, terwijl Anthropic Claude Fable 5.1 uitrolt met sterke benchmarkresultaten in Cursor. Tegelijk zien we een tegenbeweging: tools zoals Weedout en TERMy richten zich juist op het filteren of vermijden van AI-gegenereerde content. De spanning tussen steeds krachtigere modellen en groeiende AI-moeheid tekent zich scherp af in de data van deze week.
 
 ---
 
