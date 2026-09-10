@@ -61,6 +61,7 @@ function zonderCode(body) {
 
 const files = walk(DIR);
 let ok = 0;
+let zonderHero = 0;
 const failures = [];
 
 for (const file of files) {
@@ -142,8 +143,17 @@ for (const file of files) {
   // Beide valideren en leveren een gebroken afbeelding op.
   //
   // Alleen bestáán wordt afgedwongen, niet de naamvorm: 22 artikelen gebruiken
-  // een oudere, geldige conventie (/images/nieuws/…) die gewoon werkt. Zonder
-  // `heroImage` is toegestaan (12 artikelen).
+  // een oudere, geldige conventie (/images/nieuws/…) die gewoon werkt.
+  //
+  // Zónder `heroImage` is toegestaan — en dat is precies de blinde vlek achter
+  // de blinde vlek: een poort op een optioneel veld ziet alleen de artikelen
+  // die het invullen. Twaalf artikelen stonden zo zonder og:image live zonder
+  // dat één check aansloeg. Ze zijn allemaal voorzien (10 sep 2026), en de
+  // regel onderaan telt voortaan hoeveel er buiten deze poort vielen, zodat
+  // hetzelfde gat niet opnieuw kan groeien zonder dat iemand het ziet.
+  if (!data || typeof data.heroImage !== 'string' || data.heroImage.trim() === '') {
+    zonderHero++;
+  }
   if (data && typeof data.heroImage === 'string' && data.heroImage.trim() !== '') {
     if (!existsSync(join(PUBLIC, data.heroImage.replace(/^\//, '')))) {
       failures.push({
@@ -198,6 +208,11 @@ for (const file of files) {
 }
 
 console.log(`Gecontroleerd: ${files.length} artikelen`);
+console.log(
+  zonderHero === 0
+    ? '✅ Elk artikel heeft een heroImage.'
+    : `⚠ ${zonderHero} artikel(en) zonder heroImage — die delen zonder og:image.`
+);
 console.log(`✅ Geldig: ${ok}`);
 
 if (failures.length) {
