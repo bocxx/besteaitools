@@ -5,7 +5,6 @@ publishedAt: 2026-06-10
 updatedAt: 2026-06-10
 author: "Redactie"
 category: "gids"
-toolSlug: "headroom"
 tags:
   - "headroom"
   - "token-compressie"

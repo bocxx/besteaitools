@@ -10,11 +10,19 @@
 // bestond. Op de twee andere sites ving de poort dat soort fouten al vóór de
 // commit — hier bestond die poort niet.
 //
-// Vier controles, in deze volgorde:
+// Vijf controles, in deze volgorde:
 //   1. titelbudget      — blokkeert >72 vanaf de poortdatum, waarschuwt >65
 //   2. werk-in-uitvoering — WIP-marker in de body van een publiceerbaar artikel
 //   3. hero-bestaan     — `heroImage` moet naar een bestaand bestand wijzen
-//   4. Zod-schema       — exact wat Astro tijdens de build zou afkeuren
+//   4. toolSlug-bestaan — `toolSlug` moet naar een bestaande tool-JSON wijzen
+//   5. Zod-schema       — exact wat Astro tijdens de build zou afkeuren
+//
+// Waarschuwingen gelden alleen vanaf de poortdatum. Zonder die grens gaf deze
+// check 83 waarschuwingen per run over een archief waar niemand iets aan doet
+// (61 titels boven de richtlijn, 22 hero-paden in de oudere conventie) — en
+// output waar je doorheen leert te scrollen is erger dan geen output. Zie
+// newsflux/CLAUDE.md, "Herhaling escaleert": de DBAT-build lag vier dagen om
+// achter precies zo'n weggelezen regel.
 //
 // Gebruik: node --experimental-strip-types scripts/verify-content-schema.mjs
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
@@ -92,7 +100,7 @@ for (const file of files) {
     });
     continue;
   }
-  if (data && typeof data.title === 'string' && data.title.length > 65) {
+  if (onderDePoort && data && typeof data.title === 'string' && data.title.length > 65) {
     console.log(`  ⚠ ${rel}: titel ${data.title.length} tekens (richtlijn ≤65)`);
   }
 
@@ -150,12 +158,34 @@ for (const file of files) {
     }
     const slug = basename(rel).replace(/\.mdx?$/, '');
     const conventie = `/images/articles/diorama-${slug}.webp`;
-    if (data.heroImage !== conventie) {
+    if (onderDePoort && data.heroImage !== conventie) {
       console.log(`  ⚠ ${rel}: heroImage wijkt af van de conventie (${conventie})`);
     }
   }
 
-  // 4. Het schema zelf.
+  // 4. toolSlug-bestaan. Dezelfde foutklasse als de hero hierboven: het schema
+  // keurt `toolSlug` goed als string en kijkt niet of tools/<slug>.json bestaat.
+  // Een dangling toolSlug levert een tool-koppeling op die nergens heen gaat.
+  // Toen deze check voor het eerst liep stond er één zo live sinds 10 juni:
+  // headroom-token-compressie-llm verwees naar tools/headroom.json, dat nooit is
+  // aangemaakt — de loop uit newsflux/docs/TOOL_DISCOVERY.md (discovery →
+  // taxonomie → tool-pagina) was daar blijven steken na het schrijven van de
+  // tutorial. Blokkerend, want een kapotte koppeling repareer je of je haalt 'm
+  // weg; er is geen derde optie waarin hij mag blijven staan.
+  if (data && typeof data.toolSlug === 'string' && data.toolSlug.trim() !== '') {
+    if (!existsSync(join(ROOT, 'src/content/tools', `${data.toolSlug}.json`))) {
+      failures.push({
+        rel,
+        errors: [
+          `toolSlug verwijst naar een tool die niet bestaat: src/content/tools/${data.toolSlug}.json — ` +
+          'maak de tool-pagina aan (zie src/content/tools/_TEMPLATE.md), of haal het veld weg',
+        ],
+      });
+      continue;
+    }
+  }
+
+  // 5. Het schema zelf.
   const result = nieuwsArtikelSchema.safeParse(data);
   if (result.success) {
     ok++;
