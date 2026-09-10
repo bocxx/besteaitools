@@ -16,7 +16,8 @@ toolSlug: "browser-use"
 featured: false
 draft: false
 readingTime: 4
-heroImageAlt: "Miniatuur diorama-illustratie bij tutorial over het gebruik van Browser Use"
+heroImage: "/images/articles/diorama-browser-use-agent-website-automatiseren.webp"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Browser Use gebruiken: een AI-agent die zelf websites bedient'"
 heroScene: "A tiny robot arm holding a magnifying glass over a miniature laptop screen showing a web form, with a small notebook of instructions instead of a wiring diagram beside it"
 keyTakeaways:
   - "Browser Use is een open-source Python-library (MIT) waarmee een AI-agent een echte browser bedient op basis van een taakomschrijving in gewone taal."

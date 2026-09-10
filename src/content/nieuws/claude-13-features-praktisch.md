@@ -1,5 +1,8 @@
 ---
 title: "13 Claude-features die je team morgen kan gebruiken"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel '13 Claude-features die je team morgen kan gebruiken'"
+heroImage: "/images/articles/diorama-claude-13-features-praktisch.webp"
+heroScene: "A miniature workbench with thirteen small labelled drawers pulled open, each holding a different tiny tool"
 description: "Praktische gids: van Vision tot Code Interpreter. Dit zijn de Claude-features die je team rechttoe-rechtaan kan toepassen — niet theoretisch, maar nu."
 category: gids
 toolSlug: claude

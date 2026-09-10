@@ -1,5 +1,7 @@
 ---
 title: "Multi-agent AI lokaal bouwen met Ollama: je eerste agent-team zonder API-kosten"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Multi-agent AI lokaal bouwen met Ollama: je eerste agent-team zonder API-kosten'"
+heroImage: "/images/articles/diorama-ollama-multi-agent-lokaal-bouwen.webp"
 description: "Met Ollama en een open Qwen-model draai je een multi-agent-systeem volledig op je eigen machine. Zo zet je 'm op in vijf stappen, zonder cloudkosten."
 publishedAt: 2026-07-15
 updatedAt: 2026-07-15

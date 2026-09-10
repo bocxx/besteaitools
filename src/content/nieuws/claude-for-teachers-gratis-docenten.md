@@ -1,5 +1,8 @@
 ---
 title: "Claude for Teachers: Anthropic geeft Amerikaanse K-12-docenten gratis premium-toegang"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude for Teachers: Anthropic geeft Amerikaanse K-12-docenten gratis premium-toegang'"
+heroImage: "/images/articles/diorama-claude-for-teachers-gratis-docenten.webp"
+heroScene: "A miniature classroom desk with a small free-pass ticket on it, a globe beside it turned to show only one continent lit"
 description: "Anthropic lanceert Claude for Teachers: gratis premium Claude voor geverifieerde K-12-docenten in de VS, met les-skills en curriculum-koppelingen. Nog niet in Nederland — dit is wat het betekent."
 publishedAt: 2026-07-15
 updatedAt: 2026-07-15

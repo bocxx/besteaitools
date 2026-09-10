@@ -1,5 +1,8 @@
 ---
 title: "Google lanceert Gemini 3.6 Flash: sneller, zuiniger en goedkoper dan 3.5 Flash"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Google lanceert Gemini 3.6 Flash: sneller, zuiniger en goedkoper dan 3.5 Flash'"
+heroImage: "/images/articles/diorama-gemini-3-6-flash-nieuwe-flash-modellen.webp"
+heroScene: "Three tiny sprinters of different builds on a miniature starting block, a small stopwatch and coin stack beside the track"
 description: "Google DeepMind bracht op 21 juli drie nieuwe Flash-modellen uit: Gemini 3.6 Flash, 3.5 Flash-Lite en 3.5 Flash Cyber. Dit betekenen ze voor jou als Gemini-gebruiker."
 publishedAt: 2026-07-22
 updatedAt: 2026-07-22

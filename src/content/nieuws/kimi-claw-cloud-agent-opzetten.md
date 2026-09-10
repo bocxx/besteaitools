@@ -16,7 +16,8 @@ toolSlug: "kimi"
 featured: false
 draft: false
 readingTime: 5
-heroImageAlt: "Miniatuur diorama-illustratie bij tutorial over het opzetten van Kimi Claw"
+heroImage: "/images/articles/diorama-kimi-claw-cloud-agent-opzetten.webp"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Kimi Claw opzetten: een cloud-agent zonder eigen server'"
 heroScene: "A small robot working alone inside a lit miniature office at night while a tiny taximeter on the desk quietly ticks upward beside it"
 keyTakeaways:
   - "Kimi Claw is Moonshots cloud-versie van OpenClaw: de agent draait in een sandbox op kimi.com, dus je hebt geen eigen server of Docker nodig."

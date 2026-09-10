@@ -17,7 +17,7 @@ featured: false
 draft: false
 readingTime: 5
 heroImage: "/images/articles/diorama-context-engineering-langchain-agents.webp"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Context engineering met een LangChain-agent'"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Context engineering: geef je LangChain-agent alleen wat nodig is'"
 heroScene: "A miniature paper-craft diorama of a small robot at a desk with a funnel above it, only a few labeled cards dropping through the narrow opening while a big pile of papers is held back, warm studio lighting"
 keyTakeaways:
   - "Context engineering gaat over wélke informatie in het venster van het model belandt — niet over één slimme prompt, maar over elke stap van je agent."

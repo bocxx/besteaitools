@@ -1,5 +1,7 @@
 ---
 title: "CNN, RNN of transformer? Zo begrijp je de drie AI-architecturen — met Hugging Face als speeltuin"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'CNN, RNN of transformer? Zo begrijp je de drie AI-architecturen — met Hugging Face als speeltuin'"
+heroImage: "/images/articles/diorama-cnn-rnn-transformers-huggingface-uitleg.webp"
 description: "CNN's zien beelden, RNN's lezen reeksen, transformers wegen context. Dit mentale model helpt je AI-tools kiezen — en op Hugging Face test je het meteen."
 publishedAt: 2026-07-15
 updatedAt: 2026-07-15

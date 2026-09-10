@@ -1,5 +1,6 @@
 ---
 title: "GLM Coding Plan koppelen aan Claude Code: twee regels in je settings"
+heroImage: "/images/articles/diorama-z-ai-glm-coding-plan-claude-code-koppelen.webp"
 description: "Z.ai laat je Claude Code op GLM-modellen draaien via een eigen Anthropic-endpoint. Zo stel je het in — en dit is wat de overstap naar credits en een weeklimiet betekent."
 publishedAt: 2026-08-30
 updatedAt: 2026-08-30

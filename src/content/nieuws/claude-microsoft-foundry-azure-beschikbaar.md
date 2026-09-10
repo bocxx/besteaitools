@@ -1,5 +1,8 @@
 ---
 title: "Claude in Microsoft Foundry: nu beschikbaar op Azure zonder apart Anthropic-account"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude in Microsoft Foundry: nu beschikbaar op Azure zonder apart Anthropic-account'"
+heroImage: "/images/articles/diorama-claude-microsoft-foundry-azure-beschikbaar.webp"
+heroScene: "A small machine slotted into an existing factory line, sharing the same power rail and meter as its neighbours"
 description: "Claude Opus 4.8 en Haiku 4.5 zijn vanaf 29 juni algemeen beschikbaar in Microsoft Foundry. Gebruik Claude via je bestaande Azure-omgeving — met dezelfde authenticatie, facturering en compliance."
 publishedAt: 2026-06-30
 updatedAt: 2026-06-30

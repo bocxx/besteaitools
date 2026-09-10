@@ -17,7 +17,7 @@ featured: false
 draft: false
 readingTime: 5
 heroImage: "/images/articles/diorama-gemini-function-calling-uitleg.webp"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Function calling in Gemini'"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Function calling in Gemini: laat AI zelf je functies aanroepen'"
 heroScene: "A miniature paper-craft diorama of a small robot handing a labeled request card through a window to a set of tiny machine levers, which hand a result card back, warm studio lighting, muted tones"
 keyTakeaways:
   - "Function calling laat Gemini bepalen wélke functie nodig is en met welke waarden — maar jouw code voert de functie zélf uit."

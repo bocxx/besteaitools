@@ -1,5 +1,6 @@
 ---
 title: "Cursor Cloud Agents: een taak wegzetten en je laptop dichtklappen"
+heroImage: "/images/articles/diorama-cursor-cloud-agents-taak-uitbesteden.webp"
 description: "Een Cloud Agent draait je taak in een eigen cloud-VM en opent zelf een pull request. Zo start je er een, en zo beoordeel je het resultaat zonder de branch uit te checken."
 publishedAt: 2026-08-30
 updatedAt: 2026-08-30

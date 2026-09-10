@@ -1,5 +1,8 @@
 ---
 title: "Hoe bouw je geheugen in AI-agents met Make"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Hoe bouw je geheugen in AI-agents met Make'"
+heroImage: "/images/articles/diorama-make-ai-agent-memory-bouwen.webp"
+heroScene: "A tiny robot at a desk with a card-index box open beside it, one card half-pulled out and a stack of blanks behind"
 description: "Elke API-call verget jouw AI-agent alles. Leer een memory-laag inbouwen in Make zodat agents zich klanten, context en vorige interacties herinneren — praktische stappen met Scenarios en data stores."
 slug: "make-ai-agent-memory-bouwen"
 publishedAt: 2026-07-12
