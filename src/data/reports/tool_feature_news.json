@@ -1,12 +1,42 @@
 {
-  "generated_at": "2026-09-10T07:41:23.001434",
+  "generated_at": "2026-09-10T19:30:09.570973",
   "window_days": 7,
   "week": "2026-w37",
-  "total_candidates_scanned": 1097,
-  "total_after_dedup": 1057,
-  "total_feature_updates": 144,
-  "llm_curated": false,
+  "total_candidates_scanned": 1125,
+  "total_after_dedup": 1083,
+  "total_feature_updates": 145,
+  "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "deepseek",
+      "tool_name": "DeepSeek",
+      "tool_category": "tekst",
+      "feature_title": "DeepSeek-V4.1-Flash",
+      "summary_nl": "DeepSeek introduceert een nieuwe versie van hun model, DeepSeek-V4.1-Flash, dat slimmer, sneller en efficiënter is.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/deepseek_ai/status/2097930608790167907",
+          "title": "🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.\n\n🔹 Introducing the smallest model in our new architecture family, with n",
+          "platform": "twitter",
+          "source": "@deepseek_ai"
+        },
+        {
+          "url": "https://twitter.com/opencode/status/2097920653386981569",
+          "title": "DeepSeek Flash v4.1 is now available in OpenCode Go https://t.co/bg7RQzxu4s",
+          "platform": "twitter",
+          "source": "@opencode"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49639090",
+          "title": "DeepSeek v4.1 Flash",
+          "platform": "hackernews",
+          "source": "HN (772↑, 413 comments)"
+        }
+      ],
+      "detected_at": "2026-09-10",
+      "week": "2026-w37"
+    },
     {
       "tool_slug": "claude",
       "tool_name": "Claude",
@@ -2827,6 +2857,5 @@
     "2026-w36",
     "2026-w35",
     "2026-w34"
-  ],
-  "opmerking": "De 15 ongecureerde kandidaten van 10 sep 07:41 zijn verwijderd: de curator viel om (OpenRouter 402, Perplexity 401) en de code viel terug op rauwe kandidaten. Die terugval staat sindsdien uit."
+  ]
 }
