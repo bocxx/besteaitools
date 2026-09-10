@@ -11,7 +11,7 @@
     "images:regen": "scripts/diorama.sh --force --slug",
     "generate-og": "tsx scripts/generate-og-images.ts",
     "generate-cheatsheet": "tsx scripts/generate-cheatsheet.ts",
-    "build": "npm run tools:verify && npm run verify:diorama && npm run generate-og && node scripts/generate-responsive-images.mjs && node scripts/build-search-index.mjs && astro build",
+    "build": "npm run tools:verify && npm run verify:diorama && npm run hero:verify && npm run generate-og && node scripts/generate-responsive-images.mjs && node scripts/build-search-index.mjs && astro build",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy",
     "sync-tools": "tsx scripts/sync-tools-content.ts",
@@ -21,7 +21,8 @@
     "social:all": "node scripts/generate-social.mjs --all",
     "social:upload": "node scripts/upload-social.mjs",
     "audit:html": "node scripts/check-html-complete.mjs",
-    "postbuild": "node scripts/check-html-complete.mjs"
+    "postbuild": "node scripts/check-html-complete.mjs",
+    "hero:verify": "node scripts/verify-hero-images.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
