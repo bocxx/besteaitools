@@ -1,6 +1,6 @@
 ---
-title: "LangChain: zet een goedkeurknop voor je agent met HumanInTheLoopMiddleware"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'LangChain: zet een goedkeurknop voor je agent met HumanInTheLoopMiddleware'"
+title: "HumanInTheLoopMiddleware: een goedkeurknop voor je LangChain-agent"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'HumanInTheLoopMiddleware: een goedkeurknop voor je LangChain-agent'"
 description: "Je agent wil een mail versturen of een DELETE draaien. Met één middleware pauzeert LangChain daarvoor en wacht op jouw akkoord. Zo stel je het in."
 publishedAt: 2026-09-10
 updatedAt: 2026-09-10
@@ -38,7 +38,7 @@ faq:
     a: "Ja, met het when-predicaat in de InterruptOnConfig van een tool. Dat predicaat krijgt een ToolCallRequest en geeft True terug om te onderbreken of False om automatisch goed te keuren. Zo laat je een SELECT-query gewoon lopen en pauzeer je alleen bij een DELETE of UPDATE, of pauzeer je alleen bij schrijfacties buiten je werkmap. Aanroepen die op False uitkomen belanden nooit in de interrupt-batch, dus je reviewer ziet alleen wat een besluit nodig heeft. Deze optie vereist langchain 1.3.3 of hoger."
 ---
 
-# LangChain: zet een goedkeurknop voor je agent met HumanInTheLoopMiddleware
+# HumanInTheLoopMiddleware: een goedkeurknop voor je LangChain-agent
 
 Een agent die zelfstandig mailtjes verstuurt of SQL uitvoert, is precies zo nuttig als hij eng is. Je wilt hem laten werken, maar niet blind. LangChain heeft daar een kant-en-klaar antwoord voor: `HumanInTheLoopMiddleware` pauzeert de agent vlak voordat een risicovolle tool draait en wacht op jouw besluit.
 

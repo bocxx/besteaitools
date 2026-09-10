@@ -25,3 +25,29 @@ export const nieuwsCategoryConfig: Record<NieuwsCategory, { label: string; color
   nieuws:       { label: 'Nieuws',       color: 'var(--tertiary-bright)' },
   digest:       { label: 'Dag-digest',   color: 'var(--color-info)' },
 };
+
+// Het artikelschema van de `nieuws`-collectie. Stond tot 10 sep 2026 inline in
+// content.config.ts; hier gelicht zodat scripts/verify-content-schema.mjs
+// dezelfde definitie kan valideren als de build. Zonder die gedeelde bron zou
+// het verify-script een kopie zijn die na de eerste schemawijziging afdrijft.
+//
+// content.config.ts importeert dit en voegt alleen de loader toe.
+export const nieuwsArtikelSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  publishedAt: z.coerce.date(),
+  updatedAt: z.coerce.date().optional(),
+  author: z.string().default('Redactie'),
+  category: nieuwsCategorySchema.default('nieuws'),
+  tags: z.array(z.string()).default([]),
+  toolSlug: z.string().optional(),
+  featured: z.boolean().default(false),
+  draft: z.boolean().default(false),
+  heroImage: z.string().optional(),
+  readingTime: z.number().optional(),
+  keyTakeaways: z.array(z.string()).optional(),
+  faq: z.array(z.object({
+    q: z.string(),
+    a: z.string(),
+  })).optional(),
+});

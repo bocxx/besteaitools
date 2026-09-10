@@ -1,6 +1,6 @@
 ---
-title: "Comet gebruiken voor onderzoek: laat je open tabbladen elkaar vergelijken"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Comet gebruiken voor onderzoek: laat je open tabbladen elkaar vergelijken'"
+title: "Comet voor onderzoek: laat je open tabbladen elkaar vergelijken"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Comet voor onderzoek: laat je open tabbladen elkaar vergelijken'"
 heroImage: "/images/articles/diorama-comet-tabbladen-vergelijken-onderzoek.webp"
 description: "Comet is de gratis AI-browser van Perplexity. Zo laat je de assistent over je open tabbladen heen redeneren, met de @tab-truc en de privacyknoppen."
 publishedAt: 2026-09-10
