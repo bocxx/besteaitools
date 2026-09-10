@@ -119,6 +119,8 @@ Als het model client-side draait, verlaat de data de browser niet. Dat is meer d
 
 Voor de bredere context over waarom en wanneer browser-inferentie het juiste architectuurpatroon is — inclusief de beperkingen qua modelgrootte — lees de analyse op Het Laatste AI Nieuws: [AI in de browser zonder server](https://hetlaatsteainieuws.nl/ai-innovatie/ai-in-de-browser-zonder-server). ([Bron: Hugging Face](https://huggingface.co/docs/transformers.js/index)) En vraag je je af wat "transformer" in de naam eigenlijk betekent? Ons mentale model van [CNN's, RNN's en transformers](/nieuws/cnn-rnn-transformers-huggingface-uitleg) legt het zonder wiskunde uit.
 
+Liever AI ín je browser gebruiken in plaats van erin bouwen: [laat Comet je open tabbladen vergelijken](/nieuws/comet-tabbladen-vergelijken-onderzoek).
+
 ## Checklist: ben je klaar?
 
 - [ ] `npm install @xenova/transformers` gedaan

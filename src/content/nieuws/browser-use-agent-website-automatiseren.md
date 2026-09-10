@@ -121,7 +121,7 @@ async def production_task(browser: Browser):
 - [ ] Ingeschat wat een run aan tokens kost vóór je hem inplant
 - [ ] Voor taken achter een login: sandbox-route bekeken
 
-Wil je eerst begrijpen wat een agent nu eigenlijk is voordat je er een bouwt, dan is [AI-agents in 2026: wat zijn ze precies?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl een goede opstap. En wie liever met een eigen loop begint in plaats van een library: [Je eerste agent-loop met Claude Code](/nieuws/je-eerste-agent-loop-claude-code).
+Wil je eerst begrijpen wat een agent nu eigenlijk is voordat je er een bouwt, dan is [AI-agents in 2026: wat zijn ze precies?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl een goede opstap. En wie liever met een eigen loop begint in plaats van een library: [Je eerste agent-loop met Claude Code](/nieuws/je-eerste-agent-loop-claude-code). Laat je zo'n agent formulieren invullen, bouw er dan een goedkeurstap in: [HumanInTheLoopMiddleware in LangChain](/nieuws/langchain-human-in-the-loop-middleware). Zoek je iets lichters voor onderzoek in plaats van automatisering: [Comet vergelijkt je open tabbladen](/nieuws/comet-tabbladen-vergelijken-onderzoek).
 
 ## Stand van zaken — bijgewerkt 2026-08-30
 

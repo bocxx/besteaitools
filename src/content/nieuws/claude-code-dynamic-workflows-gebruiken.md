@@ -68,6 +68,8 @@ Drie dingen die je in de eerste week tegenkomt. Eén: het cap van 1000 subagents
 
 Eerlijk: onze eerste dynamic-workflow-poging was een 50-file refactor met de prompt "fix alle deprecated APIs". Claude koos zelf voor 80 subagents, de run kostte 12 minuten en het resultaat was 90% correct — maar die laatste 10% bevatte één breaking change die we pas door de tests opvingen. Les: behandel een workflow-output als een grote pull request, niet als een gegarandeerd correct resultaat. Test draaien en review hoort erbij. Voor wie naast Claude Code ook Cursor of GitHub Copilot gebruikt, blijft onze [Claude-vs-ChatGPT-vergelijking](/nieuws/claude-vs-chatgpt-vergelijking-2026) een handige context-check voor model-keuze per taak. Werk je in een onbekende codebase voordat je zo'n grote workflow loslaat? Dan helpt [Understand-Anything om je codebase eerst als kennisgraaf in kaart te brengen](/nieuws/understand-anything-codebase-kennisgraaf). En wil je meerdere van die workflows tegelijk volgen, dan laat de [herontworpen desktop-app meerdere agents parallel draaien](/nieuws/claude-code-desktop-parallelle-sessies), elk in een eigen git-worktree.
 
+Let op wat je daarmee níet kunt terugdraaien: [rewind herstelt geen subagent-edits](/nieuws/claude-code-rewind-checkpoints).
+
 ## Checklist: ben je klaar?
 
 - [ ] Claude Code v2.1.154 of nieuwer geïnstalleerd (`claude --version`)

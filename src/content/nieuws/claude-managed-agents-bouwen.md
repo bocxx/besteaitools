@@ -86,7 +86,7 @@ En niet iedereen hoeft de API in: wil je gewoon een wekelijkse samenvatting of t
 - [ ] Handmatige testrun gedraaid en tracing bekeken
 - [ ] Kostenverbruik gecheckt vóór je het schema aanzet
 
-Zit je organisatie op Azure in plaats van bij Anthropic? Dan is het Microsoft-equivalent van dit verhaal [je eerste agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen) — zelfde principe, andere runtime.
+Zit je organisatie op Azure in plaats van bij Anthropic? Dan is het Microsoft-equivalent van dit verhaal [je eerste agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen) — zelfde principe, andere runtime. Wil je een agent die je vanaf je telefoon aanstuurt: [OpenClaw installeren en aan Telegram koppelen](/nieuws/openclaw-installeren-telegram-koppelen).
 
 ## Bronnen
 

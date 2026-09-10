@@ -72,6 +72,8 @@ Datzelfde blok accepteert ook `tags` en `metadata` (bijvoorbeeld een user-id of 
 
 Open een trace en loop de boom van boven naar beneden door: klopt de system-prompt die het model kreeg? Koos de agent de juiste tool, met de juiste argumenten? Waar zit de meeste latency? De meeste agent-bugs blijken geen modelproblemen maar aansturing: een tool-beschrijving die het model op het verkeerde been zet, of een tussenresultaat dat niet in de vervolgprompt belandt. Dat zie je alleen met een trace — en het is dezelfde discipline die we eerder aanraadden in [AI-agents evalueren met een LLM-judge](/nieuws/ai-agents-evalueren-llm-judge) en [betere prompts voor AI-agents](/nieuws/betere-prompts-ai-agents-make). Waarom dit zicht geen luxe is, laat Gartners voorspelling zien dat veel bedrijven hun agents zonder goede governance weer terugschroeven — lees het bij [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/ai-agent-governance-gartner-40-procent).
 
+Monitoren is de ene helft; de andere is ingrijpen vóórdat iets onomkeerbaars gebeurt: [een goedkeurknop voor je agent](/nieuws/langchain-human-in-the-loop-middleware).
+
 > **⚡ Gevorderden:** wil je selectief tracen in productie (bijvoorbeeld alleen 1 op de N runs, of alleen bepaalde endpoints), gebruik dan `ls.tracing_context(enabled=True)` rond specifieke aanroepen in plaats van de globale variabele. Zo houd je je trace-budget onder controle.
 
 ## Checklist: ben je klaar?

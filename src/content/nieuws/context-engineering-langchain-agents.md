@@ -64,3 +64,5 @@ LangChain vat context engineering samen in vier bewegingen. Ze zijn nuttig als c
 De grootste denkfout is dat een voller contextvenster een slimmere agent oplevert. Het tegendeel klopt vaak: hoe meer je meegeeft, hoe groter de kans dat het model het belangrijke detail mist of afdwaalt. En elk token dat je meestuurt, kost geld en tijd. Bewust weglaten is daarmee geen bezuiniging op kwaliteit, maar juist de weg ernaartoe.
 
 Begin klein. Kijk bij een agent die de mist ingaat niet meteen naar de prompt, maar naar wat hij op dat moment aan informatie zag. Negen van de tien keer zit daar de oorzaak — en de oplossing. Wil je een agent helemaal lokaal en zonder API-kosten uitproberen, dan kun je dit oefenen met [modellen die je zelf op je machine draait via Ollama](/nieuws/ollama-lokale-ai-modellen-draaien).
+
+Staat er straks een tool in je agent die iets onomkeerbaars doet, zet er dan een goedkeurstap voor: [HumanInTheLoopMiddleware](/nieuws/langchain-human-in-the-loop-middleware).

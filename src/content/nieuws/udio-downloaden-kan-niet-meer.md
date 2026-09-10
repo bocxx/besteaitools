@@ -87,6 +87,8 @@ Peildatum van de bronnen: Udio's helpartikel over de UMG-overgang dateert van fe
 
 Wie wil begrijpen hoe deze licentiedeals de rest van de creatieve sector raken, kan het stuk over [afspraken tussen AI-bedrijven en de Nederlandse boekenwereld](https://hetlaatsteainieuws.nl/nieuws/bookpact-ai-nederlandse-boekenwereld) op hetlaatsteainieuws.nl erbij pakken.
 
+Werk je met video in plaats van muziek, dan is [nasynchroniseren met ElevenLabs Dubbing](/nieuws/video-nasynchroniseren-elevenlabs-dubbing) wél gewoon exporteerbaar.
+
 ## Checklist: ben je klaar?
 
 - [ ] Je weet dat je gegenereerde nummers niet uit Udio kunt halen.

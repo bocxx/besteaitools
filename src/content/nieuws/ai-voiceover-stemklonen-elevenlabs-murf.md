@@ -93,6 +93,8 @@ Download de audio als MP3 (voor web en sociale media) of WAV (voor professionele
 
 Zet de audio in je video-editor (Premiere Pro, DaVinci Resolve, CapCut) op de audiotijdlijn en synchroniseer met beeld. AI-voiceovers hebben weinig "ademhaling" en pauzes — voeg handmatig een korte stilte toe aan het begin en einde voor een naturalere montage.
 
+Heb je al een video in een andere taal? Dan hoef je niets opnieuw in te spreken: [nasynchroniseren naar het Nederlands met ElevenLabs Dubbing](/nieuws/video-nasynchroniseren-elevenlabs-dubbing).
+
 ## Checklist: ben je klaar?
 
 - [ ] Stem gekozen en getest met eigen tekst (niet de preview-tekst)

@@ -60,7 +60,7 @@ Sta hier even stil bij privacy: koppel geen mappen met persoonsgegevens of contr
 
 ## Stap 3 — Weet wanneer je moet gaan bouwen
 
-De kant-en-klare route heeft grenzen. Duizenden documenten, toegangsrechten per afdeling, antwoorden die in je eigen product moeten verschijnen, of data die het huis niet uit mag: dan beland je bij een eigen RAG-pijplijn met een vector-database en embeddings. Dat is een serieus bouwproject; in Python bouw je zo'n pijplijn bijvoorbeeld [met LlamaIndex](/nieuws/llamaindex-rag-eigen-documenten). Hoe zoiets eruitziet, lees je in onze gids over [een hybride RAG-zoeksysteem met Claude](/nieuws/claude-hybride-rag-zoeksysteem) — en wie vooral onderzoek doet in plaats van bedrijfsdocumenten bevraagt, kijkt eerst naar [Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm).
+De kant-en-klare route heeft grenzen. Duizenden documenten, toegangsrechten per afdeling, antwoorden die in je eigen product moeten verschijnen, of data die het huis niet uit mag: dan beland je bij een eigen RAG-pijplijn met een vector-database en embeddings. Dat is een serieus bouwproject; in Python bouw je zo'n pijplijn bijvoorbeeld [met LlamaIndex](/nieuws/llamaindex-rag-eigen-documenten). Hoe zoiets eruitziet, lees je in onze gids over [een hybride RAG-zoeksysteem met Claude](/nieuws/claude-hybride-rag-zoeksysteem) — en wie vooral onderzoek doet in plaats van bedrijfsdocumenten bevraagt, kijkt eerst naar [Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm). Werk je met Codex in een eigen repo, leg de conventies dan vast in [AGENTS.md](/nieuws/codex-agents-md-projectregels).
 
 ## Checklist: ben je klaar?
 

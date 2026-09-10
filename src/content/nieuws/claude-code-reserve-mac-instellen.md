@@ -64,6 +64,8 @@ Met `claude remote-control` start je een server waarmee je vanuit de Claude-app 
 
 Wie Claude Code nog moet leren kennen, begint beter bij onze [complete installatiegids](/nieuws/claude-instellen-1-dag-6-tools) of bij [Claude Code-skills instellen](/nieuws/claude-code-skills-instellen). En draai je straks meerdere sessies naast elkaar op die reserve-Mac, dan is [parallelle sessies in Claude Code desktop](/nieuws/claude-code-desktop-parallelle-sessies) de logische volgende stap. Wat er in de bredere Claude Code-desktopupdate zit, lees je bij [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/claude-code-desktop-grote-update).
 
+Draait er iets mis op die reserve-Mac, dan draai je de sessie terug met [/rewind en checkpoints](/nieuws/claude-code-rewind-checkpoints).
+
 ## Checklist: ben je klaar?
 
 - [ ] Reserve-Mac gewist en vers lokaal account zonder Apple ID aangemaakt

@@ -113,6 +113,8 @@ Stel je een vraag zonder weer-component ("wat is de hoofdstad van Frankrijk?"), 
 
 Vervang de weer-API door je eigen data (agenda, voorraad, database) en je hebt een assistent op maat. Pas als je meerdere tools, geheugen of complexe ketens combineert, wordt een framework zoals LangChain interessant; hoe je agents daarmee vervolgens test, lees je in onze gids over [AI-agents evalueren met een LLM-as-a-judge](/nieuws/ai-agents-evalueren-llm-judge). Wil je je tools als herbruikbare server aan meerdere agents aanbieden, dan is MCP de standaard — [en die wordt op 28 juli stateless](/nieuws/mcp-stateless-spec-voorbereiden). Wat er ondertussen in de bredere agent-wereld gebeurt, volgt hetlaatsteainieuws.nl dagelijks in het [AI-nieuwsoverzicht](https://hetlaatsteainieuws.nl/radar).
 
+Een kant-en-klaar alternatief dat je in vijf minuten draaiend hebt: [OpenClaw installeren en aan Telegram koppelen](/nieuws/openclaw-installeren-telegram-koppelen).
+
 ## Checklist: ben je klaar?
 
 - [ ] Python 3.10+ geïnstalleerd en `pip install openai requests` gedraaid

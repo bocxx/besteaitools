@@ -83,6 +83,8 @@ Modelrouting is geen bug maar een ontwerpkeuze: ChatGPT stuurt verzoeken naar he
 
 Het wordt pas een probleem wanneer je expliciet iets zwaarders kiest en toch het lichte model krijgt. Wie regelmatig op ChatGPT leunt voor werk waar kwaliteit telt, doet er goed aan die check af en toe te doen, ook als er niets aan de hand lijkt. Twee minuten per maand is een lage prijs voor de zekerheid dat je abonnement doet wat het belooft.
 
+Werk je met OpenAI's Codex, dan scheelt het bovendien tijd om je projectregels vast te leggen: [AGENTS.md instellen](/nieuws/codex-agents-md-projectregels). En voor onderzoekswerk waarbij je meerdere bronnen naast elkaar legt: [Comet vergelijkt je open tabbladen](/nieuws/comet-tabbladen-vergelijken-onderzoek).
+
 ## Bronnen
 
 - [OpenAI Developer Community — I need to report a model routing issue / silent downgrade](https://community.openai.com/t/i-need-to-report-a-model-routing-issue-silent-downgrade/1391776) (22 augustus 2026)

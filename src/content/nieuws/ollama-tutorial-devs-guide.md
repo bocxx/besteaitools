@@ -497,4 +497,6 @@ Voor productie-setups: draai Ollama op meerdere machines / containers. Use case:
 
 Ollama geeft je volledige controle: geen facturering per token, geen data naar de cloud, volledige privacy, 24/7 offline beschikbaar. Het kost je alleen eenmalig een model te downloaden en — afhankelijk van je model-keuze — wat hardware. Voor developers die lokale AI willen, is dit de standaard geworden in 2026.
 
+Werk je aan video in plaats van tekst, dan is [nasynchroniseren met ElevenLabs Dubbing](/nieuws/video-nasynchroniseren-elevenlabs-dubbing) de snelste route naar een Nederlandse versie.
+
 Begin vandaag: `ollama run mistral` en je bent in 30 seconden klaar.

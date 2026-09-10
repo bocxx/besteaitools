@@ -106,6 +106,8 @@ Anthropic is er in de documentatie expliciet over: plugins en marketplaces zijn 
 
 De community-marketplace (`/plugin marketplace add anthropics/claude-plugins-community`) heeft geautomatiseerde validatie en veiligheidsscreening doorlopen en pint elke plugin op een specifieke commit-SHA. Dat is beter dan niets, maar het blijft code van derden. Wie wil begrijpen waarom dat bij agents extra zwaar weegt, kan onze duiding op hetlaatsteainieuws.nl erbij pakken: [AI-agents in 2026: wat ze zijn en wat ze echt kunnen](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
+Gebruik je Codex ernaast, dan werkt daar hetzelfde idee via [AGENTS.md](/nieuws/codex-agents-md-projectregels).
+
 Welke plugins en skills de moeite waard zijn, en hoe je dat zelf toetst, staat in [Welke Claude-skills installeer je écht?](/nieuws/welke-claude-skills-installeren).
 
 > **💡 Beginner-tip:** Begin met één plugin uit de officiële catalogus en werk er een week mee. Vijf plugins tegelijk installeren maakt het lastig te zien welke je context opeet en welke je daadwerkelijk gebruikt.
