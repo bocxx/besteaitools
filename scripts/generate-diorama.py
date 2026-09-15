@@ -40,6 +40,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 from pathlib import Path
 from typing import Optional
@@ -397,7 +398,10 @@ def poll_generation(gen_id: str, max_wait: int = 180) -> Optional[str]:
 
 def download_and_optimize(url: str, dest: Path) -> bool:
     import requests
-    tmp = dest.with_suffix(".tmp.jpg")
+    # tmp in de systeem-tempmap: naast dest schrijven mag niet op elke mount
+    # (Cowork-sandbox blokkeert dat), waardoor de optimalisatie stil terugviel
+    # op de ruwe JPEG onder de .webp-naam. Zie CLAUDE.md.
+    tmp = Path(tempfile.gettempdir()) / f"{dest.stem}.tmp.jpg"
     try:
         resp = requests.get(url, timeout=60, stream=True)
         resp.raise_for_status()
