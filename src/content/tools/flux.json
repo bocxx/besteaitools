@@ -7,7 +7,7 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Flux is de beeldmodel-familie van het Duitse Black Forest Labs, opgericht door de oorspronkelijke Stable Diffusion-onderzoekers. De actuele generatie is FLUX.2 (november 2025): een 32-miljard-parameter model met een Mistral-gebaseerde vision-language-component, sterk in prompt-trouw, fotorealisme en tekst in beeld. Naast de commerciële API-varianten (FLUX.2 [pro] en [flex]) verscheen in januari 2026 FLUX.2 [klein] als open-weight model dat je zelf kunt draaien — daarmee blijft Flux het referentiepunt voor open beeldgeneratie. Je gebruikt Flux via de eigen API (credit-systeem, ongeveer $0,015-0,03 per beeld), via platforms als Replicate en OpenRouter, of self-hosted in ComfyUI. Flux-modellen zitten ook als partner-model in Adobe Firefly.",
+  "longDescription": "Flux is de beeldmodel-familie van het Duitse Black Forest Labs, opgericht door de oorspronkelijke Stable Diffusion-onderzoekers. De actuele generatie voor beeld is FLUX.2 (november 2025): een 32-miljard-parameter model met een Mistral-gebaseerde vision-language-component, sterk in prompt-trouw, fotorealisme en tekst in beeld. Naast de commerciële API-varianten (FLUX.2 [pro] en [flex]) verscheen in januari 2026 FLUX.2 [klein] als open-weight model dat je zelf kunt draaien — daarmee blijft Flux het referentiepunt voor open beeldgeneratie. Je gebruikt Flux via de eigen API (credit-systeem, ongeveer $0,015-0,03 per beeld), via platforms als Replicate en OpenRouter, of self-hosted in ComfyUI. Flux-modellen zitten ook als partner-model in Adobe Firefly. Op 23 juli 2026 kondigde Black Forest Labs FLUX 3 aan, een multimodaal model dat beeld, video en audio in één architectuur combineert. Dat rolt gefaseerd uit: FLUX 3 Video is sinds 4 augustus 2026 beschikbaar, maar voor beeldgeneratie is er medio september 2026 nog geen publiek endpoint. Wil je nu stilstaand beeld maken, dan is FLUX.2 het model waar je mee werkt.",
   "bestFor": "Flux is vooral waardevol voor creatieve professionals, zoals grafisch ontwerpers, marketeers en kunstenaars, die op zoek zijn naar een efficiënte manier om beeldmateriaal te produceren.",
   "useCases": [
     "Genereren van unieke afbeeldingen",
@@ -48,8 +48,8 @@
     "medium"
   ],
   "bestUseCaseStage": "team-rollout",
-  "verdict": "Flux van Black Forest Labs levert de beste open beeldkwaliteit beschikbaar. FLUX.2 [pro] is competitief met Midjourney; het open-weight FLUX.2 [klein] is de sterkste gratis self-hosted optie.",
-  "whyListed": "Flux verving Stable Diffusion als standaard voor open beeldgeneratie en is met de FLUX.2-generatie (eind 2025) ook commercieel een topspeler — tot in Adobe Firefly als partner-model.",
+  "verdict": "Flux van Black Forest Labs levert de beste open beeldkwaliteit beschikbaar. FLUX.2 [pro] is competitief met Midjourney; het open-weight FLUX.2 [klein] is de sterkste gratis self-hosted optie. Opvolger FLUX 3 is aangekondigd maar levert voorlopig alleen video — voor beeld blijft FLUX.2 de keuze.",
+  "whyListed": "Flux verving Stable Diffusion als standaard voor open beeldgeneratie en is met de FLUX.2-generatie (eind 2025) ook commercieel een topspeler — tot in Adobe Firefly als partner-model. Met FLUX 3 (juli 2026) zet het lab de stap naar multimodaal beeld, video en audio.",
   "keyFeatures": [
     {
       "title": "FLUX.2 [pro]",
@@ -75,6 +75,11 @@
       "title": "Beschikbaar op alle grote platforms",
       "description": "Naast de eigen BFL-API ook via Replicate, OpenRouter, fal.ai en als partner-model in Adobe Firefly",
       "group": "integration"
+    },
+    {
+      "title": "FLUX 3 (video, in uitrol)",
+      "description": "Multimodaal opvolgermodel sinds juli 2026: video tot 20 seconden met gesynchroniseerd geluid. Beeldgeneratie volgt nog",
+      "group": "core"
     }
   ],
   "bestAlternative": "stable-diffusion",

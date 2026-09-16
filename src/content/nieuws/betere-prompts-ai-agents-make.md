@@ -71,7 +71,7 @@ Werk je liever in code dan in een no-code canvas? Dan is [Je eerste AI-agent bou
 
 Wil je eerst het bredere plaatje snappen van wat AI-agents wél en niet zelfstandig aankunnen, en waar jouw controle nodig blijft? Onze duiding op hetlaatsteainieuws.nl over [hoe AI het werk splitst in uitvoeren en meedenken](https://hetlaatsteainieuws.nl/nieuws/ai-freelance-werk-uitvoerder-adviseur) helpt je die grens scherp te krijgen.
 
-Wil je zo'n agent vanaf je telefoon aansturen: [OpenClaw installeren en aan Telegram koppelen](/nieuws/openclaw-installeren-telegram-koppelen).
+Wil je zo'n agent vanaf je telefoon aansturen: [OpenClaw installeren en aan Telegram koppelen](/nieuws/openclaw-installeren-telegram-koppelen). Liever een kant-en-klare agent die je mail en agenda al kent, op Europese infrastructuur: [Mistral Vibe Work Mode](/nieuws/mistral-vibe-work-mode-eerste-taak).
 
 ## Bronnen
 

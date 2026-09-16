@@ -89,6 +89,8 @@ Ga in Gamma naar **Brand** (linkerkolom) en stel je kleuren, lettertypen en logo
 
 ## Stap 5: exporteren en delen
 
+Wil je een titelbeeld met echte, leesbare tekst erin, dan maak je dat apart: [zo prompt je FLUX.2 voor tekst in beeld](/nieuws/flux-2-tekst-in-beeld-prompten), inclusief je merkkleur als hexcode.
+
 Gamma laat je het deck delen via een link (ook gratis) of exporteren naar PDF of PowerPoint (betaald plan). Voor een presentatie aan klanten is de link-optie handig: de kijker ziet een interactieve versie en je kunt na de vergadering nog aanpassingen doen.
 
 ## Checklist: ben je klaar?

@@ -89,7 +89,7 @@ Gebruik **Text to Image** voor een unieke achtergrondafbeelding, of **Magic Writ
 
 Voor een maand content: plan één zitting per maand van een uur om alle posts in te plannen. Daarna gaat alles automatisch.
 
-Heb je bij die zitting ook beeldmateriaal of een deck nodig, dan scheelt [je hele presentatie herstijlen met de Gamma Agent](/nieuws/gamma-agent-deck-herstijlen) je het slide-voor-slide opmaakwerk.
+Heb je bij die zitting ook beeldmateriaal of een deck nodig, dan scheelt [je hele presentatie herstijlen met de Gamma Agent](/nieuws/gamma-agent-deck-herstijlen) je het slide-voor-slide opmaakwerk. Moet er tekst in je social-beeld staan, in je eigen merkkleur, dan werkt [FLUX.2 met de juiste prompt](/nieuws/flux-2-tekst-in-beeld-prompten).
 
 ## Checklist: ben je klaar?
 

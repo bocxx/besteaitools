@@ -131,6 +131,8 @@ Wil je eerst begrijpen wat een agent nu eigenlijk is voordat je er een bouwt, da
 - Nieuwe accounts: 15 dollar aan eenmalige credits voor ChatBrowserUse.
 - Library-licentie: MIT, gratis. Browser Use Cloud (sandboxes, proxies) is betaald.
 
+Wil je geen code schrijven maar wél een agent die meerstapstaken afwerkt over je mail, agenda en documenten? Dan is [Mistral Vibe Work Mode](/nieuws/mistral-vibe-work-mode-eerste-taak) de kant-en-klare route.
+
 ## Bronnen
 
 - [Browser Use — Human Quickstart (documentatie)](https://docs.browser-use.com/quickstart)
