@@ -1,5 +1,20 @@
 /ai-tools / 301
 /sitemap.xml /sitemap-index.xml 301
+
+# Umami-week 10-17 sep 2026: /contact (3×), /colofon, /about, /samenwerken en
+# /over-ons kwamen als 404 binnen — bezoekers zoeken een over/contact-pagina.
+# /over heeft daadwerkelijk een contact-sectie (line 247-256 in over.astro) met
+# social-links en response-belofte. Redirect deze zoekpaden dáárheen.
+/contact       /over  301
+/contact/      /over  301
+/colofon       /over  301
+/colofon/      /over  301
+/about         /over  301
+/about/        /over  301
+/samenwerken   /over  301
+/samenwerken/  /over  301
+/over-ons      /over  301
+/over-ons/     /over  301
 /ai-tools/fireflies /ai-tools/fireflies-ai 301
 /ai-tools/fireflies/ /ai-tools/fireflies-ai/ 301
 
