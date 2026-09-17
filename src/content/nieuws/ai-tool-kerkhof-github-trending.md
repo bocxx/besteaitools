@@ -22,7 +22,6 @@ keyTakeaways:
   - "De mediaan is hard: wie verdween, was hooguit 2 dagen zichtbaar. 293 van de 500 verdwenen repos haalden nog geen week tussen eerste en laatste trending-notering."
   - "Uit trending verdwijnen betekent niet dood: Microsoft's MarkItDown (163.000 sterren) en wifi-densepose draaien gewoon door met verse releases — trending meet momentum, geen leven."
   - "Bouw je workflow niet op een tool omdat die déze week trending is; kijk naar onderhoud, releases en wie erachter zit."
-  - "We werken aan een bestendigheidsscore per tool op basis van deze data, zodat je dit signaal straks per tool-pagina terugziet."
 faq:
   - q: "Betekent uit GitHub-trending verdwijnen dat een tool dood is?"
     a: "Nee. Trending meet de groei van vandaag, niet de gezondheid van een project. Een volwassen project met een stabiele gebruikersgroep verdwijnt vanzelf uit trending, ook als het wekelijks releases doet. Microsoft's MarkItDown is het schoolvoorbeeld: sinds begin juni niet meer in trending gezien, maar met 163.000 sterren en een release in mei 2026 springlevend. Verdwijnen uit trending zegt alleen dat de aandachtspiek voorbij is."
@@ -73,8 +72,6 @@ Het mooiste contrast zit in één naamfamilie. MoneyPrinterV2 verdween eind maar
 De les is niet "negeer trending", maar: bouw je workflow niet op iets *omdat* het deze week trending is. Zes op de tien Q1-hypes waren binnen een paar maanden uit beeld, en de mediaan-hype duurde twee dagen. Wie in de flits-week instapte met een experiment, verloor niets; wie er een vast proces omheen bouwde, zit nu mogelijk met een tool waar niemand meer naar omkijkt.
 
 Kijk daarom naar tekenen van bestendigheid voordat een tool een vast onderdeel van je werk wordt: recente commits en releases, een team of bedrijf erachter met belang bij continuïteit, en aandacht die terugkeert in plaats van één keer piekt. Wie er achter die trending repos zitten, is trouwens dichterbij dan je denkt: we portretteerden [de Nederlandse en Belgische bouwers achter trending AI](/nieuws/nederlandse-belgische-bouwers-trending-ai) uit onze eigen meetdata. Hetzelfde patroon zagen we eerder bij [Lindy, dat zijn gratis plan schrapte](/nieuws/lindy-schrapt-gratis-plan): de tool waarop je leunt, kan sneller veranderen dan je plan. Een tool hoeft niet eens te verdwijnen om je workflow te breken — [Udio schakelde na de UMG-deal simpelweg het downloaden uit](/nieuws/udio-downloaden-kan-niet-meer), en daarmee de reden waarom de meeste mensen het gebruikten. Dat hype en realiteit vaker uit elkaar lopen, laat onze zustersite zien in de [Beloftecheck: wat kwam er terecht van de AI-funding-beloftes van Q1?](https://www.hetlaatsteainieuws.nl/achtergrond/beloftecheck-ai-funding-q1-2026) — zelfde familie, ander speelveld.
-
-We gaan hier zelf ook iets mee doen: op basis van deze meetdata werken we aan een bestendigheidsscore per tool, zodat je dit signaal straks direct op de tool-pagina's terugziet.
 
 ## Checklist: voordat je bouwt op een trending tool
 
