@@ -72,7 +72,10 @@ const trendingRepos = [...repoMap.values()]
   .sort((a, b) => b.stars_today - a.stars_today)
   .slice(0, 3);
 
-// ─── 3. Recent launches (launchradar.json) ───────────────────────────
+// ─── 3. Recent launches (launch_radar.json) ──────────────────────────
+// Was `launchradar.json` (oude naam, sinds april 2026 niet meer geschreven
+// door newsflux — de widget toonde stille 5-maand-oude launches). 17 sep 2026
+// hersteld: dezelfde structuur (keys byte-identiek gecheckt).
 type Launch = {
   name: string;
   url?: string;
@@ -86,7 +89,7 @@ type Launch = {
 
 let recentLaunches: Launch[] = [];
 try {
-  const raw = await import('../../data/reports/launchradar.json');
+  const raw = await import('../../data/reports/launch_radar.json');
   const launches: any = raw.default ?? raw;
   const list: Launch[] = launches.launches ?? launches ?? [];
   recentLaunches = list

@@ -641,42 +641,18 @@ export interface LaunchRadarData {
   launches: LaunchItem[];
 }
 
-/** Extract product slug from a PH product URL */
-function extractPhProductSlug(url: string): string | null {
-  const match = url.match(/producthunt\.com\/products\/([^/?#]+)/);
-  return match ? match[1] : null;
-}
-
-/** Load ph_launch_stats.json sidecar */
-async function loadPhLaunchStats(): Promise<Record<string, ProductHuntStats>> {
-  try {
-    const raw = await import('../data/reports/ph_launch_stats.json');
-    return (raw.default ?? raw) as Record<string, ProductHuntStats>;
-  } catch {
-    return {};
-  }
-}
-
-/** Load launch_radar.json and merge PH stats */
+/** Load launch_radar.json — PH-stats zijn sinds jul 2026 al ingebakken in het
+ * hoofdbestand (fields `product_hunt_enriched` + `stats` per launch). De oude
+ * `ph_launch_stats.json`-sidecar wordt sinds april 2026 niet meer geschreven
+ * door newsflux; op 17 sep 2026 verwijderd om dead-code te sluiten. */
 export async function getLaunchRadar(): Promise<LaunchRadarData | null> {
   try {
-    const [raw, phStats] = await Promise.all([
-      import('../data/reports/launch_radar.json'),
-      loadPhLaunchStats(),
-    ]);
+    const raw = await import('../data/reports/launch_radar.json');
     const data = (raw.default ?? raw) as LaunchRadarData;
 
-    // Merge PH stats into launch items
-    if (Object.keys(phStats).length > 0) {
-      data.launches = data.launches.map((launch) => {
-        if (launch.source !== 'product_hunt') return launch;
-        const slug = extractPhProductSlug(launch.url);
-        if (slug && phStats[slug]) {
-          return { ...launch, ph: phStats[slug] };
-        }
-        return launch;
-      });
-    }
+    // (Voormalige merge-loop met ph_launch_stats-sidecar was hier — verwijderd
+    // 17 sep 2026 samen met het bestand. launch_radar.json.launches[*].stats
+    // bevat inmiddels dezelfde PH-cijfers direct.)
 
     return data;
   } catch {
