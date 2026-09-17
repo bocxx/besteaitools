@@ -45,6 +45,13 @@ const addPair = (metaPkg, names) => {
 };
 
 addPair('rollup', ['@rollup/rollup-darwin-arm64', '@rollup/rollup-linux-arm64-gnu']);
+// rolldown (17 sep 2026) — Astro 7 bundelt via rolldown-vite, niet meer via
+// rollup alleen. Deze ontbrak, en daardoor faalde élke `astro sync`/`astro
+// build` in de Linux-sandbox op "Cannot find module
+// './rolldown-binding.linux-arm64-gnu.node'" — precies het probleem waar dit
+// script voor bestaat. De binding-pakketten lopen in lockstep met de
+// rolldown-versie (napi-conventie), dus versionOf('rolldown') klopt.
+addPair('rolldown', ['@rolldown/binding-darwin-arm64', '@rolldown/binding-linux-arm64-gnu']);
 addPair('workerd', ['@cloudflare/workerd-darwin-arm64', '@cloudflare/workerd-linux-arm64']);
 addPair('@resvg/resvg-js', ['@resvg/resvg-js-darwin-arm64', '@resvg/resvg-js-linux-arm64-gnu']);
 addPair('esbuild', ['@esbuild/darwin-arm64', '@esbuild/linux-arm64']);
