@@ -303,8 +303,14 @@ const modifiedIso = toIsoString(modifiedTime);
         // een scroll-handler kan anders honderden events afvuren.
         (function () {
           var gemeld = 0;
+          // Externe trackers die soms falen te laden maar géén site-regressie
+          // zijn: skip om ze niet als "eigen js-error" te tellen (17 sep 2026:
+          // Cloudflare's beacon.min.js faalde 16× in 7 dagen; alleen bij DBAT
+          // omdat CF Web Analytics daar aanstaat, andere sites hebben 0 errors).
+          var EXTERNE_TRACKER_NOISE = /cloudflareinsights\.com|googletagmanager\.com|google-analytics\.com|doubleclick\.net|hotjar|fullstory/i;
           function meld(type, bericht, bron) {
             if (gemeld >= 3) return;
+            if (bron && EXTERNE_TRACKER_NOISE.test(bron)) return;
             gemeld++;
             trackReady('js-error', {
               type: type,
