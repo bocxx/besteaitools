@@ -59,7 +59,7 @@ toolSlug: "cursor"
 featured: false
 draft: false
 readingTime: 4
-heroImage: "/images/nieuws/cursor-bugbot-instellen.webp"
+heroImage: "/images/articles/diorama-cursor-bugbot-instellen.webp"
 keyTakeaways:
   - "BugBot is een AI-code-reviewer in Cursor 1.0 die pull requests automatisch scant op bugs en suggesties als comments achterlaat."
   - "De setup is drie klikken in Cursor → Settings → Integrations, plus een GitHub-OAuth-flow van ongeveer 30 seconden."
@@ -152,7 +152,9 @@ Zie `seo.md` stap 4 voor patronen.
 
 ### `heroImage` (optioneel maar aangeraden)
 
-- Pad: `/images/nieuws/<slug>.webp`
+- Pad: `/images/articles/diorama-<slug>.webp` — gegenereerd met `npm run images:one -- <slug>`.
+- `/images/nieuws/<slug>.webp` is de **oude** conventie. Die staat nog onder 22 van de 129 artikelen; nieuwe stukken gebruiken 'm niet meer.
+- `heroImageAlt`: `"Miniatuur diorama-illustratie bij artikel '<exacte titel>'"`. Let op: `heroImageAlt` en `heroScene` staan (nog) niet in het Zod-schema — Zod laat onbekende velden vallen, dus ze breken niets, maar ze worden ook niet gevalideerd.
 - Bestand hoeft niet meteen te bestaan — DBAT genereert dynamisch een OG-image als fallback
 - Bij echte hero-image: lever apart aan, of laat de OG-generator hem maken via build
 

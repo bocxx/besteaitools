@@ -142,7 +142,7 @@ Cross-domain naar hetlaatsteainieuws.nl idem: beschrijvende anchor.
 
 ## Stap 9: Hero-image alt-tekst
 
-`heroImage` verwijst naar een webp in `/images/nieuws/<slug>.webp`. Alt-tekst (waar van toepassing — vaak in `heroImageAlt`-veld) bevat een sterk-verkort versie van de title plus het hoofdzoekwoord.
+`heroImage` verwijst naar een webp in `/images/articles/diorama-<slug>.webp` (de oude `/images/nieuws/`-conventie is verlaten). Alt-tekst (waar van toepassing — vaak in `heroImageAlt`-veld) bevat een sterk-verkort versie van de title plus het hoofdzoekwoord.
 
 **Goed:** `"Cursor BugBot instellen — pull request review met AI"`
 
