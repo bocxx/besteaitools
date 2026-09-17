@@ -37,6 +37,11 @@ faq:
     a: "Mac en Windows zijn beschikbaar; Linux komt eraan (peildatum juli 2026). Solo is een Tauri-app die de native webview van je systeem gebruikt, dus de download is klein en het geheugengebruik laag — minder RAM dan een enkele Chrome-tab, aldus de maker."
   - q: "Kunnen meerdere AI-agents samenwerken in Solo?"
     a: "Ja, dat is de kern van de MCP-laag. Agents delen todo's, markdown-scratchpads, een key-value store, timers en locks. Eén agent kan werk opsplitsen, een tweede agent spawnen, die een todo toewijzen en via een lock voorkomen dat ze elkaars bestanden raken. Subagents verschijnen genest onder hun ouder in de zijbalk, en gekoppelde git-worktrees delen dezelfde takenlijst."
+sources:
+  - label: "Solo docs"
+    url: "https://soloterm.com/docs"
+  - label: "Solo vs Warp — vergelijking door de maker"
+    url: "https://soloterm.com/solo-vs-warp"
 ---
 
 Claude Code in de ene tab, Codex in de andere, en de queue worker die twintig minuten geleden stilletjes crashte. Wie met meerdere terminal-agents werkt, kent de tab-roulette. [Solo](/tools/soloterm) — van Aaron Francis, bekend van faster.dev — lost precies dat op: één venster waarin je agents én dev-stack draaien, met een statusoverzicht dat vertelt wie er op jou wacht. Zo zet je het op.

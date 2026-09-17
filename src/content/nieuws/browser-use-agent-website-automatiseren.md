@@ -35,6 +35,11 @@ faq:
     a: "Bij hoogvolume scraping van één stabiele website. Elke stap van de agent kost tokens en tijd, dus een hard gecodeerd Playwright-script is daar sneller en goedkoper per run. Ook bij taken die elke keer exact identiek moeten verlopen — denk aan compliance-controles — is Browser Use minder geschikt, omdat een taalmodel niet deterministisch is en dezelfde opdracht per run net anders kan uitpakken."
   - q: "Wat kost Browser Use?"
     a: "De library zelf is gratis en staat onder MIT-licentie. Je betaalt alleen voor het taalmodel dat de agent aanstuurt. Nieuwe accounts bij Browser Use krijgen volgens de documentatie 15 dollar aan eenmalige credits om ChatBrowserUse uit te proberen. Wil je in productie draaien zonder zelf browsers en sessies te beheren, dan is er Browser Use Cloud met sandboxes; die is betaald. Zie de Stand van zaken-box onderaan voor de peildatum."
+sources:
+  - label: "Browser Use — Human Quickstart (documentatie)"
+    url: "https://docs.browser-use.com/quickstart"
+  - label: "browser-use/browser-use op GitHub"
+    url: "https://github.com/browser-use/browser-use"
 ---
 
 Je wilt dat een script inlogt op een portaal, drie formulieren doorloopt en de uitkomst terugkoppelt. In Playwright schrijf je daarvoor selectors die breken zodra de site een knop verplaatst. Browser Use draait dat om: je beschrijft de taak, en de agent zoekt zelf uit welke knop hij moet hebben. Hieronder in vijf stappen van niets naar een draaiende agent.

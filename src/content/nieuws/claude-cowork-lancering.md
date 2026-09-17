@@ -36,6 +36,21 @@ faq:
   - q: "Mag Claude Cowork ook echt iets kapot maken op mijn computer?"
     a: "De bash-sandbox is filesystem- en netwerk-geïsoleerd, dus scripts kunnen niet buiten de werkmap lezen of schrijven en netwerk loopt via een proxy. De Read-, Edit- en Write-tools vragen voor acties buiten die map expliciet toestemming. Vertrouwen blijft een keuze: geef Cowork toegang tot een map met productie-data alleen als je de stappen zou vertrouwen aan een nieuwe collega."
 heroImage: "/images/nieuws/claude-cowork-lancering.webp"
+sources:
+  - label: "Anthropic — Cowork productpagina"
+    url: "https://claude.com/product/cowork"
+  - label: "Anthropic — Plugins"
+    url: "https://claude.com/plugins"
+  - label: "Anthropic — Connectoren"
+    url: "https://claude.com/connectors"
+  - label: "Claude Help Center — Get started with Cowork"
+    url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork"
+  - label: "Simon Willison — First impressions (12 januari 2026)"
+    url: "https://simonwillison.net/2026/Jan/12/claude-cowork/"
+  - label: "TechRadar — Cowork GA + enterprise controls"
+    url: "https://www.techradar.com/pro/claude-cowork-is-now-available-for-enterprise-use-adds-analytics-access-controls-and-more"
+  - label: "AI Insider — Live artifacts update"
+    url: "https://aiinsider.nl/nieuws/claude-cowork-krijgt-live-artifacts-dashboards-met-actuele-data/"
 ---
 
 Anthropic bracht Cowork op 12 januari 2026 uit als research preview, en inmiddels is het label weg: Claude Cowork draait op macOS én Windows, voor alle betaalde plannen, met connectoren, plugins en sinds deze week live dashboards. Voor Nederlandse kenniswerkers die tot nu toe naar Claude chatten betekent dat iets nieuws — Claude mag nu ook daadwerkelijk iets doen. Aan de bouw-kant zie je dezelfde verschuiving bij no-code: Lovable genereert een complete webapp uit een beschrijving, en je kunt [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github) om de code zelf te bezitten.

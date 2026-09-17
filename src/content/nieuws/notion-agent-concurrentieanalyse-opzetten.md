@@ -32,6 +32,13 @@ faq:
     a: "Ja. De agent gebruikt webresearch als ingebouwde tool. Geef in je prompt expliciet de namen of URL's van de concurrenten, of laat de agent ze zelf identificeren op basis van een marktbeschrijving."
   - q: "Moet ik de database vooraf maken?"
     a: "Niet strikt nodig — de agent kan zelf een database aanmaken. Maar als je vooraf een 'Market Research'-database opzet met de juiste kolommen (naam, positionering, prijs, sterkten, zwakten), krijg je consistenter resultaat dat past in je bestaande workflow."
+sources:
+  - label: "Notion — Meet your AI team (productpagina)"
+    url: "https://www.notion.com/product/ai"
+  - label: "TechCrunch — Notion just turned its workspace into a hub for AI agents"
+    url: "https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/"
+  - label: "GHRC LLP — How Notion AI Is Changing Productivity in 2026"
+    url: "https://globalhrcommunity.com/how-notion-ai-is-changing-productivity-in-2026/"
 ---
 
 Notion's autonome agents zijn in 2026 het werkpaard waar veel teams op leunen voor research-taken die je vroeger zelf een halve dag kostten. Een **concurrentieanalyse** is daar een klassieker voorbeeld van: vergelijkbare positionering, gestructureerde data, herhaalbare workflow. In deze gids zet je in 5 stappen een Notion Agent in om binnen 20 minuten een complete analyse op te leveren.

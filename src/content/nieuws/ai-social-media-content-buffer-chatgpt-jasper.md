@@ -36,6 +36,13 @@ faq:
     a: "ChatGPT is sterk voor LinkedIn-artikelen en langere posts. Shield of Taplio zijn gespecialiseerde LinkedIn-tools met AI die ook analytics geven over wat werkt. Voor beginners: ChatGPT + handmatige aanpassing is een prima startpunt."
   - q: "Kan ik AI ook gebruiken voor TikTok-scripts?"
     a: "Ja. Geef in je prompt het TikTok-format aan: haak in de eerste 3 seconden, kern van het verhaal in max 30 seconden, call to action op het einde. ChatGPT en Claude schrijven uitstekende TikTok-scripts als je het format expliciet beschrijft."
+sources:
+  - label: "Buffer — AI features en pricing"
+    url: "https://buffer.com/ai-assistant"
+  - label: "Canva — Magic Studio AI tools"
+    url: "https://www.canva.com/magic-studio/"
+  - label: "Shield App — LinkedIn analytics"
+    url: "https://shieldapp.ai"
 ---
 
 Iedere dag iets bedenken voor social media kost meer energie dan het lijkt. Met AI schrijf je een maand content in een ochtend. Dit is het systeem dat werkt — inclusief promptformules per platform.

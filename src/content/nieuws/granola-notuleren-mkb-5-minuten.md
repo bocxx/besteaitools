@@ -36,6 +36,15 @@ faq:
     a: "Granola ondersteunt meerdere talen op alle plannen, inclusief Nederlands. Voor de meeste MKB-vergaderingen werkt de Nederlandse transcriptie goed; bij sterk dialect of veel afkortingen kun je in de instellingen een woordenlijst toevoegen om herkenning te verbeteren."
   - q: "Wat zijn goede alternatieven als Granola niet bevalt?"
     a: "Voor wie liever een tool zoekt die wél een bot in de call zet en achteraf een opname levert: Fireflies, Otter en Fathom. Voor Microsoft 365-huishoudens is Copilot Recap in Teams direct ingebouwd. Voor een vergelijking met de zwaardere agent-aanpak: lees onze [achtergrond over Claude Cowork voor Excel](/nieuws/claude-cowork-excel-bouwen) — andere tool, maar zelfde patroon van 'AI doet het zware werk, jij valideert'."
+sources:
+  - label: "Granola — Security, privacy, and how it all works"
+    url: "https://www.granola.ai/security"
+  - label: "Granola Pricing — Basic, Business, Enterprise"
+    url: "https://www.granola.ai/pricing"
+  - label: "Granola — AI notetaker privacy compliance (SOC 2 & GDPR)"
+    url: "https://www.granola.ai/blog/ai-notetaker-privacy-compliance-soc2-gdpr"
+  - label: "Granola Help Center — Integrations"
+    url: "https://docs.granola.ai/help-center/sharing/integrations/integrations-with-granola"
 ---
 
 Notulen schrijven kost een ondernemer al snel een halfuur per overleg — en dan zijn ze meestal nog niet eens netjes. Granola lost dat op zonder dat je een rare AI-deelnemer in je call hoeft te zetten: de app draait op je laptop, luistert mee via de microfoon, en geeft je vijf minuten na het overleg een complete samenvatting plus actiepunten. Geen opname-bestand, geen "AI Notetaker" die klanten in de wenkbrauwen doet fronsen. Dit is precies hoe je 'm opzet en de eerste vergadering laat draaien.

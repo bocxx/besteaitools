@@ -32,6 +32,13 @@ faq:
     a: "Je voegt in je API-aanvraag een markering cache_control met type ephemeral toe aan het content-blok dat je wilt cachen — bijvoorbeeld je systeemprompt of een document. Alles vóór dat breekpunt wordt gecached. Je mag tot vier breekpunten zetten. Er is geen aparte knop of instelling in de interface; het is een veld in de API-call, dus dit is werk voor wie via code of een tool als n8n met de Claude-API praat."
   - q: "Hoe lang blijft de cache geldig?"
     a: "De standaard levensduur is vijf minuten, en die timer schuift op bij elk gebruik. Blijf je binnen vijf minuten dezelfde context hergebruiken, dan blijft de cache warm. Voor context die je met langere tussenpozen herhaalt is er een optionele cache van één uur, tegen een hogere schrijfprijs. Kies vijf minuten voor actieve gesprekken en het uur alleen als je gebruikspatroon daar echt om vraagt."
+sources:
+  - label: "Claude Platform Docs — Pricing"
+    url: "https://platform.claude.com/docs/en/about-claude/pricing"
+  - label: "Anthropic — Prompt caching (API-documentatie)"
+    url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
+  - label: "The Practical Developer — Deep Dive into Prompt Caching for Claude"
+    url: "https://dev.to/nitheesh_gaddam_e36ec4aa4/a-deep-dive-into-amazon-bedrock-prompt-caching-for-claude-46-28ob"
 ---
 
 Bouw je een chatbot of agent op de Claude-API, dan stuur je bij elke vraag vaak hetzelfde mee: een lang systeemprompt, een handleiding, een set voorbeelden. Claude leest die context telkens opnieuw in — en je betaalt er telkens opnieuw voor. Prompt caching lost dat op: je bewaart de vaste stukken en leest ze uit cache tegen een fractie van de prijs. Hieronder zie je wat het is, wat het kost en hoe je het aanzet.

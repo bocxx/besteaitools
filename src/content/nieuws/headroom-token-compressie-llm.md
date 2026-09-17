@@ -34,6 +34,17 @@ faq:
     a: "Headroom claimt antwoordkwaliteit te behouden via reversibele compressie: originelen worden lokaal opgeslagen, de LLM kan ze opvragen als dat nodig is. Onafhankelijke benchmarks variëren — verwacht 60-80% token-reductie bij praktijkgebruik."
   - q: "Is Headroom gratis?"
     a: "Ja, volledig open source op GitHub (chopratejas/headroom) onder MIT-licentie. Geen API-kosten, geen cloud-vereiste."
+sources:
+  - label: "GitHub: chopratejas/headroom"
+    url: "https://github.com/chopratejas/headroom"
+  - label: "PyPI: headroom-ai"
+    url: "https://pypi.org/project/headroom-ai/"
+  - label: "Headroom Complete Guide 2026 — Dashen Tech"
+    url: "https://dashen-tech.com/en/dev-tools/headroom-llm-token-compression/"
+  - label: "Benchmark: Headroom in praktijk — Miya-Gadget"
+    url: "https://miyagadget.page/en/blog/2026/06/03/headroom-ai-context-compression-benchmark-en/"
+  - label: "Headroom: Cut LLM Token Usage by 95% — DEV Community"
+    url: "https://dev.to/arshtechpro/headroom-cut-your-llm-token-usage-by-up-to-95-without-changing-your-answers-5g06"
 ---
 
 Als je AI-agents gebruikt om code te schrijven, codebases door te zoeken of RAG-systemen te draaien, kent het probleem je al: het context-venster loopt vol, de kosten klimmen, en je stuurt gigantische lappen tekst naar de LLM die je maar voor 10% echt nodig hebt.

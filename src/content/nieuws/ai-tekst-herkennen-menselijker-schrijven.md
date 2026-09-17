@@ -35,6 +35,19 @@ faq:
   - q: "Is alle AI-tekst slecht? Wanneer is de standaard-stem juist OK?"
     a: "Voor neutrale samenvattingen, productbeschrijvingen, juridische standaardteksten en SEO-geoptimaliseerde listicles werkt de standaard-stem prima — en valt hij vaak minder op dan in opiniestukken of persoonlijke posts. De vraag is niet of je AI gebruikt, maar of de tekst de toon heeft die jij voor dit specifieke stuk wilt. Bewust kiezen scheelt — soms zet je het anti-AI-bestand uit omdat de neutrale toon nu juist past."
 heroImage: "/images/articles/diorama-ai-tekst-herkennen-menselijker-schrijven.webp"
+sources:
+  - label: "Wikipedia — Signs of AI writing"
+    url: "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing"
+  - label: "TechCrunch — Best guide to spotting AI writing comes from Wikipedia"
+    url: "https://techcrunch.com/2025/11/20/the-best-guide-to-spotting-ai-writing-comes-from-wikipedia/"
+  - label: "NPR — Wikipedia editors publish guide to detect AI entries"
+    url: "https://www.npr.org/2025/09/04/nx-s1-5519267/wikipedia-editors-publish-new-guide-to-help-readers-detect-entries-written-by-ai"
+  - label: "Ruben Hassid — Anti-AI writing style guide (LinkedIn)"
+    url: "https://www.linkedin.com/posts/ruben-hassid_how-to-finally-stop-writing-like-ai-activity-7432031562076135424-HH9f"
+  - label: "Ruben Hassid — How to AI"
+    url: "https://how-to-ai.guide"
+  - label: "Wikipedia — WikiProject AI Cleanup"
+    url: "https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup"
 ---
 
 Lezers spotten AI-tekst tegenwoordig binnen drie zinnen. Niet omdat ze tools draaien, maar omdat ze de patronen herkennen: dezelfde overdrachtelijke woorden, dezelfde holle bijzinnen, hetzelfde ritme. Wikipedia bundelde de bekendste tells in een artikel 'Signs of AI writing', en AI-schrijver Ruben Hassid bouwde er een prompt-workflow omheen die Claude weer laat klinken zoals jij. Zo werkt het — en zo bouw je hem zelf in een paar minuten.

@@ -36,6 +36,13 @@ faq:
     a: "Alle drie ondersteunen de meest gebruikte talen: Python, JavaScript, TypeScript, Java, C#, Go, Rust, PHP en meer. Cursor en Copilot zijn het sterkst bij populaire talen met veel trainingsdata."
   - q: "Is mijn code veilig bij deze tools?"
     a: "Cursor biedt een 'Privacy Mode' waarbij je code niet wordt gebruikt voor modeltraining. GitHub Copilot Business en Enterprise geven organisaties vergelijkbare garanties. Replit verwerkt code op hun servers; voor gevoelige bedrijfscode check je hun verwerkersovereenkomst."
+sources:
+  - label: "Cursor — Getting Started"
+    url: "https://docs.cursor.com/get-started/introduction"
+  - label: "GitHub Copilot Free — Officiële aankondiging"
+    url: "https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/"
+  - label: "Replit — AI features overzicht"
+    url: "https://replit.com/ai"
 ---
 
 Drie jaar geleden was auto-complete het hoogtepunt van AI in je editor. Nu schrijft AI complete functies, legt het bestaande code uit, stelt refactorings voor en debugt mee terwijl je typt. Dit zijn de drie tools waarmee je direct aan de slag kunt — en wanneer je welke kiest. Ben je eenmaal op weg en wil je bestaande code veilig opschonen, lees dan ook [code refactoren met Cursor zonder rommel](/nieuws/cursor-code-refactoren).

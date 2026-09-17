@@ -36,6 +36,15 @@ faq:
     a: "Black Forest Labs geeft drie bereiken. Kort (10 tot 30 woorden) voor snelle concepten en het verkennen van een stijl. Middellang (30 tot 80 woorden) is volgens de documentatie meestal het beste voor gewoon werk. Lang (80 woorden en meer) gebruik je voor complexe scènes met veel specificaties. Belangrijker dan de lengte is de volgorde: het model let het zwaarst op wat vooraan staat, dus begin met je hoofdonderwerp."
   - q: "Welke afmetingen kan FLUX.2 aan?"
     a: "Minimaal 64 bij 64 pixels, maximaal 4 megapixels — dus bijvoorbeeld 2048 bij 2048. De afmetingen moeten deelbaar zijn door 16. De documentatie raadt voor de meeste toepassingen tot 2 megapixels aan. Handige standaardformaten zijn 1024 bij 1024 voor social en productfoto's, 1920 bij 1080 voor breedbeeld, en 1080 bij 1920 voor mobiel. Zie de Stand van zaken-box onderaan voor de peildatum."
+sources:
+  - label: "Prompting Guide — FLUX.2 pro & max, Black Forest Labs"
+    url: "https://docs.bfl.ml/guides/prompting_guide_flux2"
+  - label: "FLUX.2: Frontier Visual Intelligence — Black Forest Labs"
+    url: "https://bfl.ai/blog/flux-2"
+  - label: "Release Notes — Black Forest Labs"
+    url: "https://docs.bfl.ml/release-notes"
+  - label: "black-forest-labs/FLUX.2-klein-4B — Hugging Face"
+    url: "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B"
 ---
 
 Je wilt een poster met een kop die klopt, in de kleur van je huisstijl. Beeldgeneratoren maakten daar jarenlang letterbrij van. FLUX.2 kan het wél, alleen vraagt het om een andere manier van prompten dan je gewend bent uit het Stable Diffusion-tijdperk. Zes regels uit de officiële gids van Black Forest Labs.

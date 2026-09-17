@@ -33,6 +33,13 @@ faq:
     a: "Leg 'klaar' meetbaar vast: bijvoorbeeld 'alle tests groen' of 'build start binnen 800 milliseconden'. Zet die definitie in je CLAUDE.md zodat de agent weet wanneer hij mag stoppen. Spreek daarnaast een maximum aantal pogingen af. Zonder harde stopregel blijft een agent proberen en verbrandt hij onnodig tokens aan een probleem dat hij niet kan oplossen."
   - q: "Wat doet een PostToolUse-hook in Claude Code?"
     a: "Een PostToolUse-hook is een shell-commando dat automatisch afvuurt nadat Claude Code een bestand heeft gewijzigd. Je gebruikt hem om je tests of linter te draaien; de output wordt daarna als context teruggegeven aan de agent. Zo ontstaat de feedback-lus: de agent ziet meteen of zijn wijziging slaagde of faalde, en past zijn volgende stap daarop aan, zonder dat jij iets hoeft te typen."
+sources:
+  - label: "Claude Code — Automate actions with hooks"
+    url: "https://code.claude.com/docs/en/hooks-guide"
+  - label: "Addy Osmani — Loop Engineering"
+    url: "https://addyosmani.com/blog/loop-engineering/"
+  - label: "Mitchell Hashimoto — My AI Adoption Journey"
+    url: "https://mitchellh.com/writing/my-ai-adoption-journey"
 ---
 
 # Je eerste agent-loop bouwen met Claude Code

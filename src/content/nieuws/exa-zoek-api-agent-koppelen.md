@@ -35,6 +35,13 @@ faq:
     a: "Met include_domains en exclude_domains. Beide accepteren behalve kale domeinen ook padvoorvoegsels zoals exa.ai/blog en subdomein-jokers zoals *.substack.com. Exa raadt aan die filters te gebruiken in plaats van een site:-operator in je zoekopdracht te zetten: het filter hoort in het veld, niet in de query. Handig als je een agent alleen op je eigen documentatie of op een handvol vakbronnen wilt laten zoeken."
   - q: "Kan ik Exa gebruiken zonder te programmeren?"
     a: "Ja. Exa biedt een MCP-server aan, plus een kant-en-klare connector voor Claude en een plugin voor ChatGPT. Daarmee koppel je Exa als zoekhulpmiddel aan je AI-assistent zonder zelf code te schrijven. Die route is prima om het te proberen; ga je Exa in een eigen toepassing gebruiken — bijvoorbeeld in een RAG-pijplijn — dan wil je alsnog de API met de Python- of JavaScript-SDK, omdat je daar controle hebt over search type, contentvorm en filters."
+sources:
+  - label: "Exa — Search API guide (documentatie)"
+    url: "https://exa.ai/docs/reference/search-api-guide"
+  - label: "Exa — API pricing"
+    url: "https://exa.ai/pricing"
+  - label: "Exa — MCP-server"
+    url: "https://exa.ai/mcp"
 ---
 
 Je bouwt een agent die actuele informatie nodig heeft. De klassieke route: een zoek-API aanroepen, de links eruit vissen, elke pagina zelf ophalen, HTML opschonen en dan pas iets aan je taalmodel voeren. Exa slaat die drie middelste stappen over: je krijgt de gevonden pagina's mét bruikbare tekst in één antwoord terug. Hieronder in vier stappen van aanmelden naar een werkende call.

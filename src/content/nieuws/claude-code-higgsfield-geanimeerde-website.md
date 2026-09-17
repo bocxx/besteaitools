@@ -35,6 +35,15 @@ faq:
     a: "Deels. Wat webstudio's duur maakt is niet alleen de code: het is concept, merk, copy, revisierondes en aansprakelijkheid. De techniek — scroll-animaties, video-hero's, custom interacties — kun je met deze workflow inderdaad voor een fractie bouwen. Maar het bedrag in zulke posts is marketing; lees het als 'studio-look voor hobbybudget', niet als één-op-één vervanging."
   - q: "Heb ik programmeerkennis nodig voor deze workflow?"
     a: "Basiskennis helpt enorm. Claude Code schrijft de code, maar jij moet kunnen beoordelen of het resultaat deugt, een dev-server kunnen starten en een foutmelding kunnen terugkoppelen. Wie nog nooit met een terminal werkte, begint beter met een visuele sitebouwer en komt later terug voor deze route."
+sources:
+  - label: "Higgsfield — Pricing"
+    url: "https://higgsfield.ai/pricing"
+  - label: "GSAP — nu volledig gratis"
+    url: "https://gsap.com/"
+  - label: "Lenis — darkroom.engineering (GitHub)"
+    url: "https://github.com/darkroomengineering/lenis"
+  - label: "Oorspronkelijke post @zeuuss_01 (X)"
+    url: "https://twitter.com/zeuuss_01/status/2073529429838696592"
 ---
 Een post die begin juli rondging op X claimt dat Claude Code plus Higgsfield in één agentic sessie een geanimeerde website van 35.000 dollar bouwt, voor ongeveer 12 dollar aan credits ([Bron: @zeuuss_01](https://twitter.com/zeuuss_01/status/2073529429838696592)). Het bedrag is marketing, de workflow eronder is echt en leerzaam. Dit is hoe je hem zelf draait, en waar de kleine lettertjes zitten.
 

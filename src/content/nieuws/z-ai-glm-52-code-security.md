@@ -33,6 +33,13 @@ faq:
     a: "Via OpenRouter betaal je $1,40 per miljoen input-tokens en $4,40 per miljoen output-tokens, met een contextvenster van 1 miljoen tokens. Z.ai biedt daarnaast een eigen API en een GLM Coding Plan-abonnement; check z.ai voor de actuele tarieven. In Semgrep's test kwam een IDOR-detectie neer op zo'n $0,17 per gevonden kwetsbaarheid."
   - q: "Kan ik GLM 5.2 zelf hosten?"
     a: "Ja, de gewichten staan onder MIT-licentie op Hugging Face (zai-org/GLM-5.2) en zijn vrij commercieel te gebruiken. Maar het is een MoE-model van ruwweg 750 miljard parameters — daarvoor heb je serieuze GPU-capaciteit nodig. Voor de meeste teams is de API de praktische keuze."
+sources:
+  - label: "Semgrep — We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks"
+    url: "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/"
+  - label: "OpenRouter — Z.ai GLM 5.2: API pricing & benchmarks"
+    url: "https://openrouter.ai/z-ai/glm-5.2"
+  - label: "Hugging Face — zai-org/GLM-5.2"
+    url: "https://huggingface.co/zai-org/GLM-5.2"
 ---
 
 Op 28 juni publiceerde Semgrep een benchmark die veel developers deed opkijken: GLM 5.2 — het open-weight model van Z.ai — scoorde hoger dan Claude Code op IDOR-detectie: 39% F1, tegenover 37% voor Claude Code met Opus 4.6 en 28% met Opus 4.8 ([Bron: Semgrep](https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/)). En dat voor een fractie van de prijs. Wat is IDOR, hoe zet je GLM 5.2 ervoor in, en wanneer is het de moeite waard?

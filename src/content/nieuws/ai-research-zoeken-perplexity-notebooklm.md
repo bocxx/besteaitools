@@ -36,6 +36,13 @@ faq:
     a: "Google AI Overviews zijn samenvattingen bovenaan zoekresultaten, primair gericht op consumenten. Perplexity is een volwaardige research-tool met mogelijkheid tot doorvragen, bronbeheer en exporteren. Voor diepgaander onderzoek biedt Perplexity meer controle."
   - q: "Hoe gebruik ik AI voor wetenschappelijk onderzoek?"
     a: "Gebruik Perplexity met de 'Academic'-focusmodus, of specialistische tools als Elicit (voor papers) en Consensus (voor wetenschappelijke consensus). Citeer altijd de originele papers, nooit de AI-samenvatting. AI is een uitstekend startpunt maar geen citeerbare bron."
+sources:
+  - label: "Perplexity AI — How it works"
+    url: "https://www.perplexity.ai/hub/faq"
+  - label: "Google NotebookLM — Getting started"
+    url: "https://notebooklm.google.com"
+  - label: "Elicit — AI research assistant voor wetenschappelijke papers"
+    url: "https://elicit.com"
 ---
 
 Vijftien tabbladen openhouden, links doorlezen, terugspringen naar de zoekresultaten — research via Google kost tijd. AI-zoektools geven je het antwoord direct, met de bronnen erbij. Dit is hoe je ze slim inzet.

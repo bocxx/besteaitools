@@ -32,6 +32,11 @@ faq:
     a: "Het framework zelf is gratis en open source. De kosten zitten in het taalmodel dat je eronder hangt: draai je op een betaalde API zoals OpenAI, dan betaal je per verwerkt token. Wil je gratis draaien, dan kun je een lokaal model via Ollama koppelen. Daarnaast biedt CrewAI een aparte betaalde cloud-omgeving voor teams die crews in productie willen zetten."
   - q: "Wat is het verschil tussen CrewAI en één grote prompt in ChatGPT?"
     a: "Bij één grote prompt doet één model alles tegelijk, en het resultaat wordt vaak rommelig zodra de taak meerdere stappen heeft. CrewAI splitst het werk op in rollen: een onderzoeker verzamelt, een schrijver vat samen, een controleur checkt. Elke agent heeft een afgebakende taak, en de output is daardoor gestructureerder en beter herhaalbaar."
+sources:
+  - label: "CrewAI — Build your First Crew (officiële blog)"
+    url: "https://blog.crewai.com/getting-started-with-crewai-build-your-first-crew/"
+  - label: "DigitalOcean — CrewAI: A Practical Guide to Role-Based Agent Orchestration"
+    url: "https://www.digitalocean.com/community/tutorials/crewai-crash-course-role-based-agent-orchestration"
 ---
 
 Een grote taak in één prompt proppen levert bijna altijd een rommelig antwoord op: half onderzoek, half mening, geen structuur. CrewAI pakt dat anders aan. Je verdeelt het werk over meerdere AI-agents die elk één rol spelen en elkaars output doorgeven. Hieronder installeer je het framework en draai je binnen een kwartier je eerste crew, met wat je per stap op je scherm zou moeten zien.

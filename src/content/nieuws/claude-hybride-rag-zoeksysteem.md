@@ -31,6 +31,13 @@ faq:
     a: "Voor de antwoord-stap is Claude Sonnet 4.6 een goede keuze: sterk in redeneren over lange context en relatief betaalbaar. Het API-model heet claude-sonnet-4-6 en kost ongeveer 3 dollar per miljoen invoer-tokens en 15 dollar per miljoen uitvoer-tokens. Voor zwaardere taken kun je later naar een groter model schakelen."
   - q: "Heb je LangGraph nodig of kan het ook zonder?"
     a: "Het kan ook zonder, maar LangGraph maakt de flow overzichtelijk: je definieert losse stappen (ophalen, samenvoegen, antwoorden) als knopen in een graaf. Dat is prettig zodra je logica complexer wordt, bijvoorbeeld als je wilt herproberen of bronnen wilt filteren. Voor een eerste prototype mag je het ook houden bij een simpel script."
+sources:
+  - label: "Introducing Sonnet 4.6 — Anthropic"
+    url: "https://www.anthropic.com/news/claude-sonnet-4-6"
+  - label: "Claude Sonnet 4.6 — Amazon Bedrock model card"
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html"
+  - label: "Build a Hybrid RAG System with FAISS, BM25, LangGraph and Claude — Towards AI (aanleiding)"
+    url: "https://pub.towardsai.net/build-a-hybrid-rag-system-with-faiss-bm25-langgraph-and-claude-sonnet-model-39ba3c6755bc"
 ---
 
 Wil je een AI die antwoordt op basis van jóuw documenten, en niet op basis van wat hij toevallig geleerd heeft? Dan bouw je een RAG-app — al kun je [de simpelste variant tegenwoordig zonder code opzetten in ChatGPT](/nieuws/rag-chatgpt-eigen-bedrijfsdata) of het juist in code bouwen [met LlamaIndex](/nieuws/llamaindex-rag-eigen-documenten). In deze gids zetten we een hybride variant op: betekenis-zoeken én trefwoord-zoeken gecombineerd, met Claude die het antwoord schrijft. Vijf stappen, één werkende opzet.

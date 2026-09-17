@@ -32,6 +32,11 @@ faq:
     a: "Taalmodellen hebben herkenbare lievelingsfrases die door training zijn ingesleten; bij Claude vallen 'load-bearing', 'seam' en het gretige 'you're absolutely right' op. Op de GitHub-tracker van Claude Code klagen gebruikers er al langer over. Een systeeminstructie helpt maar werkt niet waterdicht; een weergave-hook filtert de frases gegarandeerd uit beeld, want die knipt gewoon in de schermtekst."
   - q: "Hoe installeer ik een hook-script in Claude Code?"
     a: "Zet het script in ~/.claude/hooks/, maak het uitvoerbaar met chmod +x, en verwijs ernaar in ~/.claude/settings.json onder hooks met een command-entry. Start daarna een nieuwe sessie; hooks laden bij het opstarten. Werkt het niet, check dan of het pad klopt en of het script zelfstandig draait als je er JSON in pipet."
+sources:
+  - label: "Claude Code documentatie — Hooks reference"
+    url: "https://code.claude.com/docs/en/hooks"
+  - label: "Hacker News-discussie"
+    url: "https://news.ycombinator.com/item?id=48905248"
 ---
 
 Wie veel met [Claude Code](/tools/claude-code) werkt, kent de tics: alles is ineens "load-bearing", elke tegenwerping opent met "you're absolutely right". Developer Johanna Larsson schreef er op 14 juli een knipoog-tutorial over die prompt viraal ging op Hacker News ([Bron: jola.dev](https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing)). Haar oplossing is serieus bruikbaar: een weergave-hook die stopwoordjes automatisch vervangt. Zo zet je hem zelf op.

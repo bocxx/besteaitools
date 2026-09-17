@@ -36,6 +36,13 @@ faq:
     a: "CLAUDE.md is altijd actief: alles erin zit continu in Claudes context en telt dus steeds mee. Een skill laadt pas wanneer hij wordt gebruikt. Daardoor kun je lange, gedetailleerde procedures in een skill kwijt zonder dat ze elke chat belasten. Vuistregel van Anthropic: een feit hoort in CLAUDE.md, een uitgegroeide procedure of checklist verhuis je naar een skill."
   - q: "Kan ik skills delen met mijn team?"
     a: "Ja. Zet de skill in .claude/skills/ in je projectmap en commit die naar git — iedereen die het project uitcheckt heeft hem dan. Voor breder gebruik kun je skills bundelen in een Claude Code-plugin of (in organisaties) centraal uitrollen via managed settings. Let op: project-skills uit een repo van iemand anders kunnen tools vooraf goedkeuren, dus bekijk ze voor je een onbekende repo vertrouwt."
+sources:
+  - label: "Claude Code docs — Extend Claude with skills"
+    url: "https://code.claude.com/docs/en/skills"
+  - label: "Anthropic — Agent Skills (overview)"
+    url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
+  - label: "Anthropic — Equipping agents for the real world with Agent Skills"
+    url: "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
 ---
 
 Claude Code kreeg er de afgelopen maanden een handige laag bij: **skills**. Kort gezegd is een skill een mapje met instructies dat Claude automatisch oppakt zodra je vraag erbij past. Geen upload, geen account-instelling — je maakt een map aan en klaar. Hieronder zie je in vier stappen hoe je je eerste skill opzet, en waar het bestand precies hoort te staan.

@@ -36,6 +36,13 @@ faq:
     a: "Meestal wel. Het installatie-overzicht meldt Plugin is now active als de plugin direct actief is. Staat er Run /reload-plugins to activate, dan draai je dat commando; waarschuwt Claude Code dat de reload de prompt-cache ongeldig maakt, dan herhaal je het als /reload-plugins --force. Verschijnen skills daarna nog steeds niet, verwijder dan de cache met rm -rf ~/.claude/plugins/cache en herstart Claude Code."
   - q: "Hoe verwijder ik een plugin die ik niet meer gebruik?"
     a: "Met /plugin uninstall naam@marketplace-naam, of via het Installed-tabblad in /plugin. Wil je hem tijdelijk uitzetten zonder te verwijderen, gebruik dan /plugin disable. Claude Code helpt je opruimen: plugins die je minstens twee weken en tien sessies niet gebruikte, verschijnen onder een kopje Not used recently, met een Last used-regel in het detailscherm."
+sources:
+  - label: "Claude Code Docs — Discover and install prebuilt plugins through marketplaces"
+    url: "https://code.claude.com/docs/en/discover-plugins"
+  - label: "Anthropic — Customize Claude Code with plugins"
+    url: "https://claude.com/blog/claude-code-plugins"
+  - label: "claude.com/plugins"
+    url: "https://claude.com/plugins"
 ---
 
 # Claude Code plugins installeren: skills, MCP's en agents in één commando

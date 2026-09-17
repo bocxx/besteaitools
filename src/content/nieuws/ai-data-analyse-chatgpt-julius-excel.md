@@ -36,6 +36,13 @@ faq:
     a: "ChatGPT ADA werkt comfortabel tot ~100MB bestanden. Claude kan tot 200.000 tokens verwerken, wat overeenkomt met grote spreadsheets. Julius heeft vergelijkbare limieten. Voor datasets groter dan een paar honderd duizend rijen heb je een echte database-oplossing nodig."
   - q: "Zijn mijn bedrijfsdata veilig als ik ze upload?"
     a: "Check het privacybeleid en gebruik zakelijke plannen voor gevoelige data. ChatGPT Team en Enterprise gebruiken je uploads niet voor training. Julius biedt ook een zakelijk plan. Voor intern gevoelige data is zelfgehoste analyse (via Claude API of een lokaal model) de veiligste keuze."
+sources:
+  - label: "Julius AI — Getting started"
+    url: "https://julius.ai/resources"
+  - label: "OpenAI — ChatGPT Advanced Data Analysis"
+    url: "https://help.openai.com/en/articles/8437071-advanced-data-analysis"
+  - label: "Anthropic Claude — Document and data analysis"
+    url: "https://docs.anthropic.com"
 ---
 
 Je hebt een Excel-sheet met verkoopcijfers, maar je hebt geen idee hoe je een draaitabel maakt of welke formule je nodig hebt. Met AI vertel je wat je wilt weten en het doet de analyse. Dit is hoe.

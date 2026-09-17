@@ -36,6 +36,13 @@ faq:
     a: "Ja. Gamma laat je een merkprofiel instellen met je kleuren, lettertypen en logo. Canva AI gebruikt automatisch je Brand Kit als je die hebt opgezet. Beautiful.ai heeft brand-templates. Dit werkt het best op betaalde plannen."
   - q: "Wat als ik al een document of outline heb?"
     a: "Alle drie de tools kunnen een bestaand document of tekstoutline als input gebruiken. In Gamma upload je een document of plak je je outline in het promptveld. De AI gebruikt jouw inhoud als basis en voegt opmaak en structuur toe."
+sources:
+  - label: "Gamma — How it works"
+    url: "https://gamma.app/docs"
+  - label: "Beautiful.ai — AI presentation features"
+    url: "https://www.beautiful.ai/ai-presentation-maker"
+  - label: "Canva — Magic Design voor presentaties"
+    url: "https://www.canva.com/magic-write/"
 ---
 
 Een presentatie maken kost normaal een uur: outline bedenken, slides opbouwen, opmaak fixen, afbeeldingen zoeken. Met AI doe je dat in vijf minuten. Dit is hoe je het aanpakt — en wanneer je welke tool kiest.

@@ -32,6 +32,15 @@ faq:
     a: "Dat hangt af van model en hardware. Kleine en MoE-modellen (zoals Gemma 4 12B of 26B A4B) draaien op een moderne laptop met 16-32 GB RAM. Giganten zoals GLM-5.2 (~750 miljard parameters) hebben een server of GPU-cluster nodig. Via Ollama test je eenvoudig wat op jouw machine past."
   - q: "Zijn open-weight modellen net zo goed als Claude of GPT-5?"
     a: "Op specifieke taken komen de beste open-weight modellen dicht in de buurt — GLM-5.2 scoort 51 op de Artificial Analysis Intelligence Index en won zelfs een security-benchmark van Claude Code. Maar voor de meest complexe redeneertaken en lange context met veel detail hebben propriëtaire frontier-modellen doorgaans nog een voorsprong."
+sources:
+  - label: "Artificial Analysis — GLM-5.2 is the new leading open weights model"
+    url: "https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index"
+  - label: "Google AI for Developers — Gemma 4 model overview"
+    url: "https://ai.google.dev/gemma/docs/core"
+  - label: "OpenRouter — The Open Weight Models that Matter: June 2026"
+    url: "https://openrouter.ai/blog/insights/the-open-weight-models-that-matter-june-2026/"
+  - label: "Ollama — modellen-bibliotheek"
+    url: "https://ollama.com/library"
 ---
 
 Anthropic-CEO Dario Amodei haalde eind juni een discussie open die op r/LocalLLaMA scherp werd ontleed: open-weight is volgens hem geen echte open source, want je kunt niet "in het model kijken". Los van die semantiek is één ding onmiskenbaar: de open-weight modellen zelf worden razendsnel beter — en juni 2026 leverde een uitzonderlijk sterke lichting op.

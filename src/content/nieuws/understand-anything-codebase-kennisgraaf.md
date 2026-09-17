@@ -32,6 +32,13 @@ faq:
     a: "Vijf kerncommando's: /understand-chat om vragen over de codebase te stellen, /understand-diff om de impact van wijzigingen te analyseren, /understand-explain om in te zoomen op een specifiek bestand of functie, /understand-onboard om een onboarding-gids te genereren, en /understand-domain om de zakelijke domeinkennis uit de code te halen."
   - q: "Is Understand-Anything gratis?"
     a: "De code is open source en publiek beschikbaar op GitHub (Lum1104/Understand-Anything). Houd er rekening mee dat het werkt bovenop een AI-coding-assistent zoals Claude Code; de kosten van die onderliggende tool en de modelaanroepen vallen dus buiten de tool zelf. Controleer altijd de actuele voorwaarden in de repository en bij je gekozen platform vóór gebruik in productie."
+sources:
+  - label: "Lum1104/Understand-Anything — GitHub-repository"
+    url: "https://github.com/Lum1104/Understand-Anything"
+  - label: "Understand-Anything README"
+    url: "https://github.com/Lum1104/Understand-Anything/blob/main/README.md"
+  - label: "Understand Anything: Turn Any Codebase Into an Interactive Knowledge Graph — DEV Community"
+    url: "https://dev.to/arshtechpro/understand-anything-turn-any-codebase-into-an-interactive-knowledge-graph-37ed"
 ---
 
 Een onbekende codebase begrijpen is vaak het traagste deel van het werk. Understand-Anything pakt dat probleem aan: het zet elke codebase, kennisbank of documentatie om in een interactieve kennisgraaf die je kunt verkennen, doorzoeken en bevragen — en het werkt native met Claude Code. In deze gids zie je hoe je het installeert en de vijf commando's inzet. Heb je de codebase eenmaal doorgrond, dan is opschonen vaak de logische volgende stap: zie [code refactoren met Cursor zonder rommel](/nieuws/cursor-code-refactoren).

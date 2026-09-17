@@ -33,6 +33,15 @@ faq:
     a: "Alleen op betaalde plannen. Bij Team, Max en Enterprise staat de feature standaard aan; op Pro moet je hem zelf aanzetten via de Dynamic workflows-regel in `/config`. Het gratis Claude-abonnement heeft geen toegang. Reden: dynamic workflows verbranden veel meer tokens dan een normale sessie, dus Anthropic gat dat in op de betaalde tiers."
   - q: "Hoe weet ik wat een workflow kost?"
     a: "Tijdens en na de run kun je `/workflows` openen, je run selecteren, en zien hoeveel subagents elke fase heeft gebruikt plus de totale tokens en tijd. Per subagent draait kort een Opus-call, dus 1000 subagents = duizend Opus-aanroepen. Voor losse workflows tot een paar honderd subagents praat je over centen tot enkele euro's; codebase-brede migraties met de cap volgepompt kunnen flink oplopen — start met kleine scope en schaal pas op als de output klopt."
+sources:
+  - label: "Anthropic — Orchestrate subagents at scale with dynamic workflows"
+    url: "https://code.claude.com/docs/en/workflows"
+  - label: "Anthropic — Introducing dynamic workflows in Claude Code"
+    url: "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code"
+  - label: "Anthropic — Introducing Claude Opus 4.8"
+    url: "https://www.anthropic.com/news/claude-opus-4-8"
+  - label: "MarkTechPost — Workflows capped at 1000 subagents"
+    url: "https://www.marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents/"
 ---
 
 Anthropic bracht eind mei 2026 Claude Opus 4.8 uit, en de bijbehorende dynamic workflows-feature in Claude Code is sindsdien beschikbaar. In drie minuten weet je hoe je je eerste workflow draait, welke commando's je nodig hebt, en hoe je voorkomt dat de tokens-meter ongezien doorloopt.

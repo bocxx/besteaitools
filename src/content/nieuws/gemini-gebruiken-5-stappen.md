@@ -42,6 +42,13 @@ faq:
     a: "Ja. Gemini begrijpt en antwoordt vloeiend in het Nederlands. Je typt je vraag gewoon in het Nederlands en krijgt een Nederlands antwoord. Je kunt ook documenten of e-mails in het Nederlands erbij plakken en vragen om een samenvatting of een herschrijving. Het niveau is goed genoeg voor zakelijk gebruik, al loont het altijd om het resultaat even na te lezen voor je het verstuurt."
   - q: "Kan Gemini foto's en documenten lezen?"
     a: "Ja. Gemini is multimodaal: je kunt een foto, schermafdruk, PDF of ander document toevoegen aan je vraag. Klik op het plus- of paperclip-icoon in het tekstvak, kies je bestand en stel je vraag erbij — bijvoorbeeld 'wat staat er op deze foto' of 'vat dit rapport samen'. Handig om snel door een lange PDF of een onleesbare schermafdruk te komen zonder zelf alles over te typen."
+sources:
+  - label: "Google — Gemini Apps release notes"
+    url: "https://gemini.google/release-notes/"
+  - label: "TechStartups — Google launches Gemini 3.5 Flash at I/O 2026"
+    url: "https://techstartups.com/2026/05/20/google-launches-gemini-3-5-flash-and-omni-world-model-at-i-o-2026-as-ai-race-with-openai-heats-up/"
+  - label: "ScreenApp — Gemini Pricing 2026"
+    url: "https://screenapp.io/blog/gemini-pricing"
 ---
 
 Google Gemini is de AI-chatbot van Google: je stelt een vraag in gewone taal en krijgt een antwoord terug, alsof je chat met een collega die alles even heeft opgezocht. Je hebt er geen account voor nodig dat je nog niet hebt, geen installatie en geen creditcard. In vijf stappen ga je hieronder van nul naar je eerste bruikbare antwoord — in een minuut of vijf, zonder technische voorkennis.

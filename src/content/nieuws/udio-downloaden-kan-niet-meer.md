@@ -39,6 +39,19 @@ faq:
     a: "Een walled garden is een platform waarin je wel kunt maken en luisteren, maar niets naar buiten kunt halen. Bij Udio betekent dit dat je nummers binnen de app blijven: je kunt ze afspelen en delen met andere gebruikers, maar niet exporteren of uploaden naar streamingdiensten. Het model is bedoeld om rechten en vergoedingen beheersbaar te houden nu de trainingsdata gelicentieerd is."
   - q: "Is Udio nog de moeite waard zonder downloads?"
     a: "Dat hangt af van je doel. Om te leren hoe promptgestuurde muziekgeneratie werkt, om genres te verkennen of om een muzikaal idee hoorbaar te maken voordat je de studio in gaat, is Udio nog steeds bruikbaar. Voor productiewerk waarbij het bestand het eindproduct is, niet. Kort gezegd: geschikt om te denken, ongeschikt om te leveren."
+sources:
+  - label: "Changes associated with the Universal Music Group (\"UMG\") partnership"
+    url: "https://help.udio.com/en/articles/12683565-changes-associated-with-the-universal-music-group-umg-partnership"
+  - label: "Udio opens up downloads for 48 hours to stem its user revolt"
+    url: "https://musically.com/2025/11/03/udio-opens-up-downloads-for-48-hours-to-stem-its-user-revolt/"
+  - label: "Udio Says Users Can Download AI Songs for 48 Hours After Backlash to UMG Legal Settlement"
+    url: "https://www.billboard.com/pro/udio-deal-backlash-ai-users-download-ai-songs-48-hours/"
+  - label: "After Universal, Warner, and Merlin deals, now Udio inks licensing agreement with Kobalt"
+    url: "https://www.musicbusinessworldwide.com/after-universal-warner-and-merlin-deals-now-udio-inks-licensing-agreement-with-kobalt/"
+  - label: "Sony Music files new lawsuit against Udio over 30,000+ sound recordings"
+    url: "https://www.musicbusinessworldwide.com/sony-music-files-new-lawsuit-against-ai-platform-udio-asserting-over-30000-sound-recordings-a-judge-barred-it-from-adding-to-its-original-case/"
+  - label: "Changelog (What's new with Udio)"
+    url: "https://help.udio.com/en/articles/10748731-changelog-what-s-new-with-udio"
 ---
 
 Je maakt een nummer in Udio, het klinkt precies goed, en dan zoek je de downloadknop. Die is er niet. Sinds de schikking met Universal Music Group is Udio een gesloten platform: je genereert en luistert binnen de app, en dat is het. Dit is wat er nog wél kan.

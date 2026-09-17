@@ -39,6 +39,15 @@ faq:
     a: "Ja, maar niet op elk plan. Eigen lettertypen vallen bij Gamma onder 'custom branding & fonts' en zitten vanaf het Pro-plan. Een brand kit met je eigen kleuren en logo's kun je op de betaalde plannen opzetten; op het gratis plan is er geen brand kit, dus daar beschrijf je je kleuren telkens opnieuw in de prompt. Staat de brand kit eenmaal goed, dan past de Agent hem in één opdracht toe over het hele deck. Controleer de prijspagina, want Gamma wijzigt de plan-indeling geregeld."
   - q: "Wat doe ik als de Agent mijn deck slechter maakt?"
     a: "Geef een corrigerende vervolgopdracht in plaats van handmatig alles terug te zetten, bijvoorbeeld 'houd de vorige typografie maar gebruik een rustiger achtergrond'. Werk daarnaast op een kopie als het om een deck gaat dat af is: dupliceer het, laat de Agent los op de kopie en vergelijk. Dat kost één extra handeling en scheelt je een reconstructie."
+sources:
+  - label: "Introducing Gamma 3.0: the new era of human communication"
+    url: "https://gamma.app/insights/introducing-gamma-3-0"
+  - label: "Instant Deck Restyling Across Entire Presentations with AI"
+    url: "https://gamma.app/explore/content/guides/instant-deck-restyling-across-the-entire-presentation"
+  - label: "How do credits work in Gamma?"
+    url: "https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma"
+  - label: "Plans and pricing"
+    url: "https://gamma.app/pricing"
 ---
 
 Je hebt een presentatie die inhoudelijk klopt maar er rommelig uitziet. Twintig kaarten met drie verschillende lettergroottes, en je hebt geen zin om ze stuk voor stuk recht te trekken. Daar is de Gamma Agent voor: één opdracht in gewone taal, en de stijl gaat over het hele deck.

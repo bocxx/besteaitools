@@ -33,6 +33,17 @@ faq:
     a: "Anthropic adviseert de body van SKILL.md onder de 500 regels te houden, met een richtlijn van minder dan 5.000 tokens. Wordt het meer, splits dan naar aparte referentiebestanden. Belangrijk: verwijs maximaal één niveau diep. Bij geneste verwijzingen leest het model bestanden vaak maar gedeeltelijk in, en dan krijg je incomplete informatie zonder dat je het merkt. Referentiebestanden boven de 100 regels krijgen een inhoudsopgave bovenaan."
   - q: "Waar zet ik de skill neer?"
     a: "In Claude Code: `~/.claude/skills/` voor persoonlijke skills, `.claude/skills/` in de projectmap voor projectspecifieke. Op claude.ai upload je een zip via Settings, Features — let op dat dat per gebruiker geldt, er is geen centraal beheer voor een hele organisatie. Via de API gebruik je de `/v1/skills`-endpoints, wat de code-execution-tool vereist en workspace-breed werkt. Skills syncen niet tussen deze drie: wat je naar claude.ai uploadt, is niet beschikbaar via de API."
+sources:
+  - label: "Anthropic — Agent Skills best practices"
+    url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices"
+  - label: "Anthropic — Agent Skills overview"
+    url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
+  - label: "SkillsBench — arXiv 2602.12670"
+    url: "https://arxiv.org/abs/2602.12670"
+  - label: "Snyk — ToxicSkills (5 februari 2026)"
+    url: "https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/"
+  - label: "OWASP — Agentic Skills Top 10 (17 augustus 2026)"
+    url: "https://owasp.org/www-project-agentic-skills-top-10/"
 ---
 
 Je legt dezelfde werkwijze voor de derde keer uit in een nieuw gesprek. Dat is het moment waarop een skill zinvol wordt.

@@ -35,6 +35,13 @@ faq:
     a: "De reden die voor Nederlandse en Europese organisaties het zwaarst weegt is herkomst en hosting: Mistral is een Frans bedrijf met Europese infrastructuur, wat AVG-vraagstukken en datasoevereiniteit eenvoudiger maakt. Daar staat tegenover dat het ecosysteem rond Mistral kleiner is dan dat van ChatGPT of Gemini, met minder kant-en-klare integraties. Is EU-hosting geen harde eis, dan is de keuze vooral een kwestie van uitproberen."
   - q: "Kan Work Mode dingen doen die ik niet wil?"
     a: "Vibe maakt eerst een plan en vraagt jouw akkoord voordat het begint. Tijdens de uitvoering is elke stap zichtbaar: je kunt elke tool-aanroep en redeneerketen openklappen om de invoer en uitvoer te zien. Voor organisaties komt daar rechtenbeheer op adminniveau bij, waarmee je bepaalt welke bronnen de agent überhaupt mag benaderen. Begin desondanks met een taak die alleen leest en samenvat, voordat je er een laat die iets verstuurt."
+sources:
+  - label: "Vibe gets to work — Mistral AI"
+    url: "https://mistral.ai/news/vibe-agent/"
+  - label: "Remote agents in Vibe, powered by Mistral Medium 3.5 — Mistral AI"
+    url: "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/"
+  - label: "Le Chat is now Vibe — Mistral Help Center"
+    url: "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe"
 ---
 
 Mistral heeft Le Chat omgedoopt tot Vibe en er een agent-modus in gebouwd die zelfstandig door je mail, agenda en documenten werkt. Voor Europese organisaties is dat interessant: een agent die dit soort werk doet, en die op Franse bodem draait. Hieronder zet je in vijf stappen je eerste taak op.

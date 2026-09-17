@@ -36,6 +36,13 @@ faq:
     a: "Gedeeltelijk. Als je PDF tekstlagen heeft (zoals de meeste digitale PDF's), werkt het perfect. Gescande PDF's zonder OCR-laag zijn voor de meeste AI-tools niet leesbaar. Gebruik dan eerst een OCR-tool (zoals Adobe Acrobat of Google Drive's ingebouwde OCR) om de tekst leesbaar te maken."
   - q: "Kan ik vragen stellen over een document in plaats van een samenvatting vragen?"
     a: "Ja — en dat is vaak nuttiger. Upload het document en stel specifieke vragen: 'Wat zijn de drie belangrijkste risico's in dit contract?' of 'Welke deadlines worden in dit rapport genoemd?' Je krijgt gerichtere antwoorden dan met een open samenvattingsverzoek."
+sources:
+  - label: "Google NotebookLM — Officiële pagina"
+    url: "https://notebooklm.google.com"
+  - label: "Anthropic Claude — Document upload documentatie"
+    url: "https://docs.anthropic.com/claude/docs/vision"
+  - label: "OpenAI ChatGPT — File uploads in ChatGPT"
+    url: "https://help.openai.com/en/articles/8555545-file-uploads-faq"
 ---
 
 Een rapport van honderd pagina's lezen terwijl je eigenlijk de kernpunten en de aanbevelingen nodig hebt — AI lost dat op. Upload het document, stel de juiste vragen, en je hebt in minder dan een minuut wat je zoekt. Dit is hoe je dat het best aanpakt.

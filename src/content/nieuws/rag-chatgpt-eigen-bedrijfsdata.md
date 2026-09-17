@@ -35,6 +35,15 @@ faq:
     a: "Apps (tot december 2025 'connectors' geheten) koppelen ChatGPT rechtstreeks aan diensten als Google Drive, SharePoint, Dropbox en Gmail, zodat het daar kan zoeken zonder dat jij bestanden hoeft te uploaden. Op Business-, Enterprise- en Edu-plannen komt daar 'company knowledge' bij: één antwoordlaag die over al je gekoppelde bronnen tegelijk kijkt."
   - q: "Wanneer moet ik zelf een RAG-systeem bouwen in plaats van ChatGPT gebruiken?"
     a: "Als je tegen de grenzen van de kant-en-klare route aanloopt: duizenden documenten, fijnmazige toegangsrechten per medewerker, antwoorden die in je eigen product of website moeten verschijnen, of data die je contractueel niet naar een Amerikaanse clouddienst mag sturen. Dan kom je uit bij een eigen pijplijn met een vector-database — een serieus bouwproject, geen middagklusje."
+sources:
+  - label: "OpenAI Help — Projects in ChatGPT"
+    url: "https://help.openai.com/en/articles/10169521-projects-in-chatgpt"
+  - label: "OpenAI — Introducing company knowledge"
+    url: "https://openai.com/index/introducing-company-knowledge/"
+  - label: "OpenAI Help — Apps in ChatGPT"
+    url: "https://help.openai.com/en/articles/11487775-connectors-in-chatgpt"
+  - label: "Towards AI — What Is Retrieval-Augmented Generation (RAG)?"
+    url: "https://pub.towardsai.net/what-is-retrieval-augmented-generation-rag-a-complete-guide-for-businesses-eab6448e2c9a"
 ---
 Vraag ChatGPT iets over je eigen bedrijf — je leveringsvoorwaarden, je prijsafspraken met die ene klant — en je krijgt een antwoord dat zelfverzekerd klinkt en nergens op slaat. Logisch: het model kent jouw documenten niet. RAG (retrieval-augmented generation) lost precies dat op, en de simpelste versie hoef je niet te bouwen. Die zit al in ChatGPT.
 

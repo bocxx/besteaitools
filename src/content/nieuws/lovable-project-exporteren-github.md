@@ -33,6 +33,13 @@ faq:
     a: "Volgens Lovable's terms of service heb je volledige eigendom van de naar GitHub geëxporteerde code. Je mag die commercieel gebruiken, aanpassen en overal hosten. Dat is precies waarom de export-route waardevol is: je gebruikt Lovable voor de snelheid van het bouwen, maar zit niet vast aan het platform voor het bezit van je product."
   - q: "Wat is de grootste valkuil bij het exporteren van Lovable naar GitHub?"
     a: "Lovable werkt andersom dan veel tools: het behandelt zijn eigen interne editor als de bron-van-waarheid en pusht code naar buiten bij sync. Verplaats je die repository — bijvoorbeeld van je persoonlijke account naar een organisatie — terwijl de Lovable-sync nog actief is, dan breek je die sync waarschijnlijk permanent. Ontkoppel of plan zo'n verhuizing dus bewust, niet terloops."
+sources:
+  - label: "Lovable Documentation — Connect to GitHub"
+    url: "https://docs.lovable.dev/integrations/github"
+  - label: "Encited — How to Export Your Lovable Project to GitHub (2026)"
+    url: "https://encited.com/blog/lovable-export-to-github"
+  - label: "Rapid Dev — Can I Export Lovable? Step-by-Step Guide"
+    url: "https://www.rapidevelopers.com/blog/can-i-export-lovable-step-by-step-guide-to-getting-your-code-out"
 ---
 
 Je hebt iets tastbaars gebouwd met Lovable, misschien al gedemood aan je eerste gebruikers. En dan loop je tegen een grens aan: je wacht op een feature uit de roadmap, of je wilt hosting-flexibiliteit die het platform niet biedt. Het goede nieuws is dat je niet opnieuw hoeft te beginnen. Lovable exporteert schone, production-ready code die je zelf bezit en overal kunt deployen. Zo doe je dat — en zo vermijd je de sync-val die veel mensen pas te laat ontdekken.

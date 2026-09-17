@@ -35,6 +35,13 @@ faq:
     a: "Voor dagelijks gebruik niet. Maar een globaal mentaal model helpt je wél betere keuzes maken: je begrijpt waarom een beeldherkennings-API iets anders is dan een taalmodel, waarom lange documenten context-limieten raken, en wat een leverancier bedoelt met termen als 'transformer-based'. Een paar uur conceptueel lezen bespaart later verkeerde tool-keuzes."
   - q: "Wat is Keras en heb ik het nodig?"
     a: "Keras is een Python-bibliotheek die het bouwen van neurale netwerken sterk vereenvoudigt: in enkele regels definieer je lagen en train je een model. De freeCodeCamp-uitleg gebruikt Keras als laagdrempelige kennismaking. Wil je alleen bestaande modellen gebruiken in plaats van zelf trainen, dan kom je verder met de kant-en-klare modellen en API's op Hugging Face."
+sources:
+  - label: "freeCodeCamp — CNNs, RNNs, and Transformers Explained (14 juli 2026)"
+    url: "https://www.freecodecamp.org/news/cnns-rnns-and-transformers-explained-a-mental-model-for-key-deep-learning-concepts/"
+  - label: "Hugging Face — Models hub"
+    url: "https://huggingface.co/models"
+  - label: "Vaswani et al. — Attention Is All You Need (2017, arXiv)"
+    url: "https://arxiv.org/abs/1706.03762"
 ---
 
 Pop-quiz van freeCodeCamp, 14 juli 2026: wat is een neuraal netwerk eigenlijk? De site publiceerde een conceptuele uitleg die CNN's, RNN's en transformers terugbrengt tot één bruikbaar mentaal model — zonder dat je code hoeft te schrijven ([Bron: freeCodeCamp](https://www.freecodecamp.org/news/cnns-rnns-and-transformers-explained-a-mental-model-for-key-deep-learning-concepts/)). In deze gids vatten we dat model samen en koppelen we er een praktische stap aan: zelf rondkijken op [Hugging Face](https://huggingface.co/models), de grootste openbare modellenbibliotheek.

@@ -34,6 +34,15 @@ faq:
     a: "Grok Bot is sinds 11 augustus 2026 beschikbaar en is xAI's variant op een AI-collega die blijft bestaan tussen gesprekken door. Hij draait op een blijvende cloudcomputer en werkt met berichten, goedkeuringen, connectors en routines. Waar een gewone chat na afloop leeg is, houdt een Grok Bot zijn werkomgeving en context vast, zodat je hem terugkerende taken kunt geven. xAI heeft er aparte documentatie voor: de Grok Bot-overzichtspagina en Get started."
   - q: "Wanneer gebruik je xhigh reasoning effort?"
     a: "Alleen als medium en high tekortschieten. De effort-stand bepaalt hoeveel denkstappen het model mag nemen voordat het antwoordt, en meer denkstappen kosten meer outputtokens. Voor de meeste taken is high (de standaard) prima. Zet xhigh in bij taken waar een fout duur is en het antwoord over veel stappen loopt: een lastige bug uitpluizen, een complex contract nalopen, een meerdelige analyse. Kijk daarna in je kostenoverzicht wat het verschil je opleverde."
+sources:
+  - label: "xAI Release Notes"
+    url: "https://docs.x.ai/developers/release-notes"
+  - label: "Grok 4.6 overzicht"
+    url: "https://docs.x.ai/developers/grok-4-6"
+  - label: "Grok Bot overzicht"
+    url: "https://docs.x.ai/grok-bot/overview"
+  - label: "xAI pricing"
+    url: "https://docs.x.ai/developers/pricing"
 ---
 
 xAI schoof in twee dagen tijd twee dingen naar buiten: Grok Bot op 11 augustus en Grok 4.6 op 12 augustus. Het eerste is een nieuwe manier om Grok werk te laten doen, het tweede is het model eronder. Deze gids loopt langs wat je moet weten voordat je iets omzet.

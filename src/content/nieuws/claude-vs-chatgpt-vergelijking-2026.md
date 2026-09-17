@@ -32,6 +32,15 @@ faq:
   - q: "Wie wint op coding in 2026?"
     a: "Claude Opus 4.8 leidt op SWE-Bench Pro (agentic coding) met 69,2%; GPT-5.5 leidt op Terminal-Bench 2.0 met 82,7%. Anthropic claimt dat Opus 4.8 vier keer minder vaak dan Opus 4.7 code-fouten ongemerkt doorlaat. In de praktijk: voor lange refactors en code-review kiezen veel teams Claude; voor brede ecosysteem-integratie en goedkopere API-runs is GPT-5.5 vaak praktischer."
 heroImage: "/images/nieuws/claude-vs-chatgpt-vergelijking-2026.webp"
+sources:
+  - label: "Anthropic — Introducing Claude Opus 4.8"
+    url: "https://www.anthropic.com/news/claude-opus-4-8"
+  - label: "OpenAI — Introducing GPT-5.5"
+    url: "https://openai.com/index/introducing-gpt-5-5/"
+  - label: "Simon Willison — Claude Opus 4.8: een bescheiden maar tastbare verbetering"
+    url: "https://simonwillison.net/2026/May/28/claude-opus-4-8/"
+  - label: "Anthropic — Claude API Release notes"
+    url: "https://platform.claude.com/docs/en/release-notes/overview"
 ---
 
 ## Twee koplopers, verschillende sterktes (juni 2026)

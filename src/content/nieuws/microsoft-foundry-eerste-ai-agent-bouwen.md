@@ -33,6 +33,13 @@ faq:
     a: "Ja. Foundry draait op Azure, dus je hebt een Azure-account nodig en je maakt een Foundry-project aan in de portal. Nieuwe Azure-accounts krijgen doorgaans starttegoed, wat voor de eerste agent-experimenten ruimschoots volstaat. Zonder Azure-account kun je de concepten wel verkennen via de gratis workshops en de lessenreeks AI Agents for Beginners van Microsoft."
   - q: "Wat is het verschil tussen Foundry Agent Service en het Microsoft Agent Framework?"
     a: "Agent Service is de beheerde clouddienst: jouw agent draait bij Microsoft en jij praat ertegen via de SDK. Het Microsoft Agent Framework is een open-source SDK waarmee je agents in je eigen .NET- of Python-code orkestreert, en die Foundry desgewenst als backend gebruikt. Het framework brengt Semantic Kernel en AutoGen samen en zit in public preview. Beginnen doe je het makkelijkst met Agent Service; het framework wordt interessant zodra je meerdere agents wilt laten samenwerken."
+sources:
+  - label: "Microsoft Learn — What is Microsoft Foundry Agent Service?"
+    url: "https://learn.microsoft.com/en-us/azure/foundry/agents/overview"
+  - label: "Microsoft Azure — Foundry Agent Service (product- en prijspagina)"
+    url: "https://azure.microsoft.com/en-us/products/ai-foundry/agent-service/"
+  - label: "Microsoft DevBlogs — Build and run agents at scale with Microsoft Foundry (Build 2026)"
+    url: "https://devblogs.microsoft.com/foundry/agent-service-build2026/"
 ---
 
 Een taalmodel aanroepen kan inmiddels iedereen. Het interessante begint zodra dat model zelf tools gebruikt: documenten doorzoeken, code draaien, een API bevragen. Precies dat bouwwerk neemt Microsoft Foundry Agent Service je uit handen. Deze gids zet je in vijf stappen van niets naar een werkende eerste agent.

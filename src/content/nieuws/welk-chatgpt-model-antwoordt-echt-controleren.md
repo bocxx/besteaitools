@@ -33,6 +33,9 @@ faq:
     a: "Maak eerst een screenshot van het model_slug-veld naast je modelkeuze in de interface. Probeer daarna een andere browser: gebruikers melden dat dezelfde account in Chrome naar GPT-5.5-mini viel terwijl Edge wel op GPT-5.6 bleef. Helpt dat niet, dien dan een supportmelding in via help.openai.com met je screenshot, je plan en de datum. Vraag om een casenummer, zodat je iets in handen hebt als het maanden aansleept."
   - q: "Is dit een officieel bevestigde storing?"
     a: "Nee. Op het moment van schrijven, 22 augustus 2026, gaat het om meldingen van gebruikers op het OpenAI Developer Community-forum en losse berichten op X en Reddit. OpenAI heeft geen publieke verklaring afgegeven en de statuspagina toont geen bijbehorende storing. De meldingen zijn wel talrijk, lopen sinds ongeveer half juli en komen van betalende Plus-, Pro- en Business-gebruikers. Behandel het dus als een reëel signaal om zelf te controleren, niet als vaststaand feit."
+sources:
+  - label: "OpenAI Developer Community — 5.6 pro model has been automatically downgraded and routed to the 5.5 mini model since its release"
+    url: "https://community.openai.com/t/5-6-pro-model-has-been-automatically-downgraded-and-routed-to-the-5-5-mini-model-since-its-release/1387941"
 ---
 
 Sinds ongeveer half juli lopen op het OpenAI-forum meldingen binnen van betalende ChatGPT-gebruikers die zeggen dat ze niet krijgen waarvoor ze betalen. Ze kiezen GPT-5.6 Pro of GPT-5.6 Thinking, en het antwoord blijkt van GPT-5.5-mini te komen.

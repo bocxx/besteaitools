@@ -35,6 +35,11 @@ faq:
     a: "Cursor Router is per 22 juli 2026 beschikbaar voor klanten op de Teams- en Enterprise-abonnementen, over alle platforms: desktop, web, iOS, de command-line (CLI) en de SDK. Het is dus vooral gericht op teams en grotere organisaties die veel AI-coding-verzoeken draaien en hun kosten willen beheersen. Voor individuele Hobby-gebruikers is de router op dit moment niet aangekondigd."
   - q: "Hoe is Cursor Router getraind?"
     a: "Cursor Router is in de kern een classifier, getraind op meer dan 600.000 live-verzoeken en geëvalueerd in een online A/B-test over miljoenen echte verzoeken, geoptimaliseerd op gebruikerstevredenheid. De router is cache-bewust: de gerapporteerde besparingen zijn inclusief de extra kosten van cache-misses die ontstaan als er tussen modellen wordt gewisseld. Cursor houdt de router bewust makkelijk bij te werken, zodat nieuwe modellen snel in de routing kunnen worden opgenomen."
+sources:
+  - label: "Introducing Cursor Router — officiële aankondiging (22 juli 2026)"
+    url: "https://cursor.com/blog/router"
+  - label: "Cursor Router — documentatie"
+    url: "https://cursor.com/docs/cursor-router"
 ---
 Ongeveer 60 procent van de Cursor-gebruikers kiest één model als vaste dagelijkse motor — en draait daarmee ook het simpelste routinewerk op frontier-prijzen. Precies dat gat vult Cursor Router, de model-router die Cursor op 22 juli 2026 lanceerde ([Bron: Cursor](https://cursor.com/blog/router)). In plaats van dat jij per taak nadenkt over welk model het beste is, doet de router dat per verzoek — en dat scheelt fors in de rekening.
 

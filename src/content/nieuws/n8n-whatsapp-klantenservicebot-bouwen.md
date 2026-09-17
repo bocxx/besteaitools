@@ -32,6 +32,13 @@ faq:
     a: "Ja, en dat is aan te raden. Voeg na de AI Agent een node toe die jou een melding stuurt — bijvoorbeeld via Telegram of e-mail — zodra de bot geen goed antwoord heeft of een klant vraagt om een mens. Zo blijft de klant niet in een lus hangen. Je bepaalt zelf de drempel: bij een klacht, bij een concrete offerte-aanvraag, of gewoon buiten kantooruren."
   - q: "Is n8n gratis voor dit soort automatiseringen?"
     a: "n8n heeft een gratis, zelf-gehoste versie die je op je eigen server of lokaal draait; daar betaal je alleen je eigen hosting. De gehoste n8n Cloud is betaald en rekent per uitvoering. De AI-modellen (OpenAI, Anthropic) reken je apart af per token. Voor een kleine bot blijven die kosten laag, maar houd ze in de gaten zodra het aantal gesprekken groeit."
+sources:
+  - label: "n8n — Building your first WhatsApp chatbot (workflow-template)"
+    url: "https://n8n.io/workflows/2465-building-your-first-whatsapp-chatbot/"
+  - label: "n8n — Complete business WhatsApp AI-powered RAG chatbot"
+    url: "https://n8n.io/workflows/2845-complete-business-whatsapp-ai-powered-rag-chatbot-using-openai/"
+  - label: "The Practical Developer — Build an AI WhatsApp Customer Service Bot with n8n"
+    url: "https://dev.to/agoraintelligence/build-an-ai-whatsapp-customer-service-bot-with-n8n-no-code-30-minutes-404d"
 ---
 
 Je WhatsApp Business krijgt om 23:00 een bericht van een potentiële klant. Zie je het pas de volgende ochtend, dan is die klant vaak al bij een concurrent. Een AI-bot in [n8n](/tools/n8n) vangt dat gat op: hij leest binnenkomende berichten, antwoordt zelf en tikt jou op de schouder als het spannend wordt. Hieronder bouw je hem in vier nodes, zonder een regel code.

@@ -36,6 +36,13 @@ faq:
     a: "De open-weight modellen wel, de topmodellen niet. De Qwen3-lijn staat onder Apache 2.0 en draai je zelf via Ollama, vLLM of Hugging Face. Qwen3.7-Max en Qwen3.7-Plus zijn proprietary en alleen via de Alibaba Cloud-API beschikbaar. Wil je data-soevereiniteit, kies dan een open-weight model; wil je de sterkste prestaties, dan zit je aan de API vast."
   - q: "Is Qwen geschikt voor Nederlandstalige toepassingen?"
     a: "Deels. De Qwen-familie scoort sterk op meertalige benchmarks en Qwen3.5 ondersteunt 201 talen, maar voor taken die maximale Nederlandse nuance vragen zijn westerse modellen zoals Mistral en Claude doorgaans sterker. Voor code, gestructureerde extractie en vertaalwerk is Qwen vaak ruim voldoende. Test op je eigen materiaal voordat je overstapt."
+sources:
+  - label: "OpenRouter — Qwen3.7 Max: pricing en specificaties"
+    url: "https://openrouter.ai/qwen/qwen3.7-max"
+  - label: "Qwen — officiële modelblog"
+    url: "https://qwenlm.github.io"
+  - label: "Alibaba Cloud Model Studio"
+    url: "https://www.alibabacloud.com/product/modelstudio"
 ---
 
 # Qwen 3.7-Max gebruiken met je bestaande Anthropic-SDK: zo zet je het om

@@ -33,6 +33,13 @@ faq:
     a: "Deels. Een judge-model heeft eigen biases: het beoordeelt bijvoorbeeld lange antwoorden vaak milder. Daarom combineer je hem met regelgebaseerde checks voor alles wat hard te toetsen is (bevat het antwoord dit getal, roept de agent de juiste tool aan). De judge doet alleen wat regels niet kunnen. Steekproefsgewijs zelf meelezen blijft verstandig."
   - q: "Heb ik LangChain nodig voor een evaluatie-harness?"
     a: "Nee, het patroon (testcases → agent draaien → checks → rapport) is framework-onafhankelijk. LangChain v1 is hier praktisch omdat create_agent tool-calling regelt en de harness de agent als black box aanroept. Bouw je je agent met de kale OpenAI API, dan werkt exact dezelfde harness-opzet."
+sources:
+  - label: "freeCodeCamp — How to Evaluate AI Agents with an LLM-as-a-Judge Harness in Python"
+    url: "https://www.freecodecamp.org/news/how-to-evaluate-ai-agents-with-an-llm-as-a-judge-harness-in-python"
+  - label: "LangChain — Agents-documentatie"
+    url: "https://docs.langchain.com/oss/python/langchain/agents"
+  - label: "Ollama"
+    url: "https://ollama.com"
 ---
 
 Je agent werkt vandaag. Maar werkt hij nog na je volgende prompt-aanpassing, model-update of nieuwe tool? Wie dat op gevoel beoordeelt, ziet regressies pas als gebruikers klagen. In deze gids bouw je een evaluatie-harness: een script dat je agent langs vaste testcases draait en een helder slaag/faal-overzicht print. Lokaal, met LangChain, Ollama en Qwen, dus zonder API-kosten.

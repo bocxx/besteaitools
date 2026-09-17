@@ -33,6 +33,13 @@ faq:
     a: "Voor de officiële WordPress.com-connector of een beheerde dienst zoals InstaWP niet: die regel je met een paar klikken en een toggle. De zelf-gehoste route via de MCP Adapter-plugin vraagt meer technische kennis, omdat je zelf de server, authenticatie en updates beheert. Begin met de kant-en-klare route als je twijfelt."
   - q: "Wat kan Claude doen zodra de verbinding staat?"
     a: "Claude kan berichten en pagina's aanmaken en bewerken, uitgelichte afbeeldingen instellen, categorieën en tags opschonen, en meehelpen met pluginbeheer. Vooral repeterend bulkwerk wordt sneller: je kunt bijvoorbeeld in één opdracht meerdere concepten laten aanmaken met de juiste categorie. De AI werkt daarbij op je echte site, dus met je werkelijke thema en content."
+sources:
+  - label: "WordPress.com has a Claude Connector"
+    url: "https://wordpress.com/blog/2026/02/05/claude-connector/"
+  - label: "From Abilities to AI Agents: Introducing the WordPress MCP Adapter"
+    url: "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/"
+  - label: "Connect Claude to WordPress with MCP"
+    url: "https://instawp.com/connect-claude-with-wordpress/"
 ---
 
 Je vraagt Claude om hulp met je WordPress-site, krijgt een stuk code terug, plakt het erin, en de helft van de tijd breekt er iets omdat de AI je thema en instellingen niet kende. Herkenbaar? Dat kan anders. Sinds WordPress het Model Context Protocol (MCP) ondersteunt, kun je Claude rechtstreeks aan je site koppelen. De AI leest dan je echte bestanden, bewerkt je thema en beheert content vanuit hetzelfde chatvenster — op je werkelijke site in plaats van een hypothetische.

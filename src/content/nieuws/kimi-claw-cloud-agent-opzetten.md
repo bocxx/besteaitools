@@ -35,6 +35,13 @@ faq:
     a: "Ja. Moonshot noemt dat BYOC, kort voor Bring Your Own Claw: je verbindt een OpenClaw-omgeving die je lokaal of bij een andere hoster draait met de interface op kimi.com. Je behoudt je eigen configuratie en gebruikt Kimi alleen als bedieningslaag. Handig als je je agent liever op eigen infrastructuur houdt maar wel het gemak van de webinterface wilt."
   - q: "Delen alle Kimi-functies dezelfde credits?"
     a: "Ja, en dat is de belangrijkste valkuil. Website-publicatie, Deep Research, PPT, Kimi Code, Kimi Work, Kimi Claw, K3 en K3 Agent Swarm putten allemaal uit één creditpot, afgerekend op werkelijk tokenverbruik. Raakt die pot leeg door een enthousiaste Claw-agent, dan staan je andere functies ook stil. Kimi Code heeft daarnaast een eigen limiet van vijf uur per week, die alleen voor Kimi Code geldt."
+sources:
+  - label: "Kimi Help Center — Membership Pricing and Plan Overview"
+    url: "https://www.kimi.com/en/help/membership/membership-pricing"
+  - label: "Kimi Help Center — Membership Subscription Service Benefits"
+    url: "https://www.kimi.com/en/help/membership/membership-overview"
+  - label: "MarkTechPost — Moonshot AI Launches Kimi Claw (15 februari 2026)"
+    url: "https://www.marktechpost.com/2026/02/15/moonshot-ai-launches-kimi-claw-native-openclaw-on-kimi-com-with-5000-community-skills-and-40gb-cloud-storage-now/"
 ---
 
 OpenClaw zelf draaien betekent normaal een VPS huren, Docker leren en zelf updaten. Kimi Claw haalt die drempel weg: Moonshot draait het framework voor je in de cloud, bereikbaar vanuit een browsertab op kimi.com. Handig — mits je weet hoe de afrekening werkt, want daar zit een addertje dat je pas na een week ziet.

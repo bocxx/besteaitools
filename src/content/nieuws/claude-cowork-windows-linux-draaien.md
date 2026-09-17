@@ -32,6 +32,13 @@ faq:
     a: "Drie dingen. Ten eerste hardware-virtualisatie (KVM) — meestal aan, soms uitgeschakeld in je BIOS/UEFI. Ten tweede permissie: voeg jezelf toe aan de KVM-groep met `sudo usermod -aG kvm $USER` en log daarna opnieuw in. Ten derde QEMU en bijbehorende pakketten; installeer je Claude via apt, dan komen die automatisch mee. Reken op ongeveer 25 GB vrije schijfruimte en minstens 8 GB RAM."
   - q: "Is mijn data veilig als Cowork op mijn computer draait?"
     a: "Cowork draait code in een geïsoleerde virtuele machine op je eigen computer. Het lezen en schrijven van bestanden blijft beperkt tot de mappen die je zelf koppelt, en netwerktoegang volgt je egress-instellingen. Je geeft dus per taak aan waar Cowork bij mag — het krijgt geen vrije toegang tot je hele schijf."
+sources:
+  - label: "Anthropic Support — Install Claude Desktop"
+    url: "https://support.claude.com/en/articles/10065433-install-claude-desktop"
+  - label: "Anthropic Support — Get started with Cowork"
+    url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
+  - label: "Anthropic Support — Use Claude Cowork on web, desktop, and mobile"
+    url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
 ---
 
 # Claude Cowork op Windows en Linux draaien: waar het werkt en wat je nodig hebt

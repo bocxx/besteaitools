@@ -36,6 +36,15 @@ faq:
   - q: "Werkt deze workflow ook op een Mac met M1/M2/M3?"
     a: "Ja. Claude Desktop draait native op zowel Intel- als Apple-silicon-Macs. Voor de Cowork-shell-sandbox heb je geen Rosetta nodig; de container draait Linux ARM64. Op Windows-laptops is Cowork sinds februari 2026 algemeen beschikbaar — Linux-ondersteuning staat nog niet op de roadmap."
 heroImage: "/images/nieuws/claude-cowork-excel-bouwen.webp"
+sources:
+  - label: "Anthropic Support — Get started with Claude Cowork"
+    url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork"
+  - label: "Anthropic Support — Use Claude for Excel"
+    url: "https://support.claude.com/en/articles/12650343-use-claude-for-excel"
+  - label: "Anthropic — Introducing Claude Opus 4.8"
+    url: "https://www.anthropic.com/news/claude-opus-4-8"
+  - label: "Microsoft Marketplace — Claude by Anthropic for Excel"
+    url: "https://marketplace.microsoft.com/en-us/product/saas/wa200009404"
 ---
 
 Spreadsheets bouwen met AI was tot eind 2025 vooral teleurstellend — vage formules, kapotte tabs, één keer "wow" en daarna terug naar Excel. Vanaf het tweede kwartaal van 2026 is dat veranderd. Met [Claude Cowork](/nieuws/claude-cowork-lancering) bouw je in onder een uur een werkende .xlsx met zes tabs, dashboards en scenario-toggles. Dit is precies hoe — inclusief de prompt-truc die het verschil maakt tussen "wat staat hier nou" en "dit kan zo naar de board". Wil je geen spreadsheet maar een complete webapp bouwen zonder code? Dan is Lovable de no-code route — en als je later je eigen code wilt bezitten, lees [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github).

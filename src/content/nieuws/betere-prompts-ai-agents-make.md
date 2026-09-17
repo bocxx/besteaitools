@@ -33,6 +33,13 @@ faq:
     a: "Je kiest zelf het model dat bij je taak past; Make ondersteunt onder meer OpenAI-compatibele modellen. Voor eenvoudige, gestructureerde taken kun je een lichter model kiezen, voor complexer redeneerwerk een zwaarder model. Houd er rekening mee dat een krachtiger model doorgaans meer kost per taak. Test welk model de beste verhouding tussen kwaliteit en prijs geeft."
   - q: "Hoe voorkom ik dat een AI-agent onvoorspelbaar wordt?"
     a: "Geef strakke grenzen in de systeemprompt: benoem expliciet wat de agent niet mag doen en wat hij moet terugvragen bij twijfel. Gebruik Make's reasoning-paneel om stap voor stap te zien welke keuzes de agent maakt en welke gereedschappen hij aanroept. Bouw klein op: begin met één taak, controleer het gedrag, en breid pas uit als de agent betrouwbaar doet wat je bedoelt."
+sources:
+  - label: "Make AI Agents — productpagina"
+    url: "https://www.make.com/en/ai-agents"
+  - label: "Make AI Agents — Help Center"
+    url: "https://help.make.com/make-ai-agents"
+  - label: "Introducing Make AI Agents: The next step in automation"
+    url: "https://www.make.com/en/blog/make-ai-agents"
 ---
 
 Een chatbot wacht op jouw volgende vraag. Een AI-agent niet: die krijgt een doel en gaat zelfstandig aan de slag, roept onderweg gereedschappen aan en neemt beslissingen zonder dat jij bij elke stap meekijkt. Dat maakt agents krachtig, en tegelijk risicovoller. Want alles wat je vooraf niet duidelijk hebt gemaakt, vult de agent zelf in. De kwaliteit van je instructie bepaalt daarmee de kwaliteit van het werk.

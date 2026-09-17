@@ -36,6 +36,13 @@ faq:
     a: "Laat ChatGPT in de eerste reactie altijd eerst een samenvatting maken van wat je hebt aangeleverd: scope, deliverables, prijs, voorwaarden. Pas als die samenvatting klopt, geef je 'akkoord, schrijf nu de offerte uit'. Deze tussenstap kost dertig seconden en vangt fouten op die je later in een verstuurde offerte écht niet wilt vinden."
   - q: "Werkt dit ook met Claude of Gemini?"
     a: "Ja, het patroon is identiek. Claude heeft Projects (vergelijkbaar met ChatGPT) waar je dezelfde bestanden in kunt zetten; Gemini gebruikt Gems voor hetzelfde concept. Voor wie sterk in tekst-toon en lange documenten zit, gebruiken veel MKB'ers Claude vanwege de natuurlijkere Nederlandse schrijfstijl. Lees onze [vergelijking van ChatGPT, Claude, Gemini en Copilot](https://hetlaatsteainieuws.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) voor de keuze die bij jouw werk past."
+sources:
+  - label: "OpenAI Help Center — Using Projects in ChatGPT"
+    url: "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt"
+  - label: "Engadget — OpenAI rolls out ChatGPT Projects to free users"
+    url: "https://www.engadget.com/ai/openai-rolls-out-chatgpt-projects-to-free-users-215027802.html"
+  - label: "ChatGPT Pricing — Free, Go, Plus, Pro, Business, Enterprise"
+    url: "https://chatgpt.com/pricing/"
 ---
 
 Een offerte schrijven kost gemiddeld 45 tot 90 minuten, en voor de meeste ondernemers is het een klusje dat blijft hangen. ChatGPT kan dat versnellen — maar alleen als je 'm goed instelt. Een ruwe vraag als "schrijf een offerte voor klant X" levert generieke tekst op die niet klinkt als jouw bedrijf en die je alsnog moet herschrijven. Met een ChatGPT-Project en een prompt-template van vijf zinnen krijg je een offerte die wél leesbaar, gepersonaliseerd én feitelijk klopt. Dit is precies hoe je 'm eenmalig opzet.

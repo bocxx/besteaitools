@@ -36,6 +36,13 @@ faq:
     a: "Met moeite. DeepL heeft een woordenlijst-functie waarbij je zelf vakjargon kunt specificeren. ChatGPT kun je instrueren: 'vertaal dit medisch document en behoud de medische terminologie nauwkeurig'. Beide zijn een goed startpunt, maar laat vakspecifieke teksten altijd nalopen door een expert."
   - q: "Kan ik AI gebruiken voor ondertitels in video's?"
     a: "Ja. Upload de SRT-bestand (ondertitels) naar DeepL of in een ChatGPT-prompt en vraag om vertaling. DeepL behoudt de tijdcodes; ChatGPT ook als je dat expliciet vraagt. Controleer altijd of de tijdcodes en regelafbrekingen correct zijn gebleven."
+sources:
+  - label: "DeepL — Features en ondersteunde talen"
+    url: "https://www.deepl.com/nl/features"
+  - label: "DeepL — Woordenlijst aanmaken"
+    url: "https://support.deepl.com/hc/nl/articles/360021634540"
+  - label: "Google Translate — Ondersteunde talen"
+    url: "https://cloud.google.com/translate/docs/languages"
 ---
 
 Vertalen was vroeger duur en langzaam. Nu is het gratis en in seconden klaar — maar niet alle AI-vertalers zijn gelijk. Dit is wanneer je welke kiest.

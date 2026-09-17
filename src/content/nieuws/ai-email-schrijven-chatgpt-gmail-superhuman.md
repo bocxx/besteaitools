@@ -36,6 +36,13 @@ faq:
     a: "ChatGPT en Claude produceren goede Nederlandse zakelijke e-mails. Geef expliciet mee: 'schrijf een formele Nederlandse zakelijke e-mail' of 'schrijf een vriendelijke maar professionele Nederlandse e-mail'. Gmail AI werkt ook in het Nederlands maar is iets minder verfijnd."
   - q: "Kan AI ook e-mails samenvatten?"
     a: "Ja. Gmail AI toont automatisch een samenvatting van lange e-mailthreads. In ChatGPT kun je een e-mailthread plakken en vragen: 'Vat dit gesprek samen in 3 punten en geef aan wat van mij wordt verwacht.' Zeer handig voor cc-mails of lange discussies."
+sources:
+  - label: "Gmail — Help with writing in Gmail"
+    url: "https://support.google.com/mail/answer/13384820"
+  - label: "ChatGPT — Custom Instructions"
+    url: "https://openai.com/blog/custom-instructions-for-chatgpt"
+  - label: "Superhuman — AI features"
+    url: "https://superhuman.com/ai"
 ---
 
 Gemiddeld besteden professionals 2-3 uur per dag aan e-mail. Met AI kun je die tijd halveren — niet door e-mails te negeren, maar door sneller te schrijven, slimmer samen te vatten en minder te starten met een leeg scherm. Dit is hoe.

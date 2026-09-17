@@ -35,6 +35,13 @@ faq:
     a: "Zet de DM-policy van het kanaal op pairing. Een onbekende afzender krijgt dan een code van acht tekens en zijn bericht wordt niet verwerkt tot jij goedkeurt, via Settings → Channels → DM access requests in de Control UI of met openclaw pairing approve telegram CODE. Codes verlopen na een uur en er staan er maximaal drie tegelijk open per kanaalaccount."
   - q: "Wat doe ik als de installatie niet lukt?"
     a: "Draai openclaw triage. Dat voert read-only health checks uit en schrijft een geschoonde diagnose die je kunt doorgeven aan een coding agent op je machine, of gewoon zelf kunt lezen. Wil je alleen de bevindingen, gebruik dan openclaw doctor. Secrets, tokens en ruwe logs blijven buiten de diagnose en er gaat niets van je machine af tot je daar zelf voor kiest."
+sources:
+  - label: "OpenClaw Docs — Getting started"
+    url: "https://docs.openclaw.ai/start/getting-started"
+  - label: "OpenClaw Docs — Pairing"
+    url: "https://docs.openclaw.ai/channels/pairing"
+  - label: "OpenClaw Docs — Install"
+    url: "https://docs.openclaw.ai/install"
 ---
 
 OpenClaw stond deze week weer bovenaan de doorbraak-radar, en dat komt door Microsoft: Scout draait op ditzelfde framework. Wil je de open-source versie zelf proberen, dan ben je met één installatiecommando en een Telegram-bot binnen vijf minuten aan het chatten. Hieronder de vijf stappen, plus de instelling die de meeste mensen overslaan.

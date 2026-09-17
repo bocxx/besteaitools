@@ -33,6 +33,13 @@ faq:
     a: "Cursor heeft een gratis tier met een beperkt aantal requests. Daarboven is er Pro ($20/maand), Pro+ ($60) en Ultra ($200). Prompts naar de zwaarste modellen verbruiken credits in een metered model. Voor incidenteel refactoren kom je vaak met de gratis of Pro-tier uit; intensief dagelijks gebruik tikt sneller aan. Check de actuele tiers op cursor.com, want de prijsstructuur wijzigt geregeld."
   - q: "Moet ik bestaande code-patronen aan Cursor uitleggen?"
     a: "Ja, en dat is de grootste kwaliteitswinst. Composer is veel beter in het kopiëren van een bestaand patroon dan in het verzinnen van een nieuw. Wijs het naar een bestand dat het al goed doet ('volg de structuur van services/user.ts') en de refactor sluit veel beter aan op de rest van je codebase."
+sources:
+  - label: "Vibe Coder Blog — Cursor Composer Multi-File Editing in 2026"
+    url: "https://blog.vibecoder.me/cursor-composer-multi-file-editing-mastery"
+  - label: "DeployHQ — Cursor 2026: Composer, Agent Mode, MCP & Background Agent"
+    url: "https://www.deployhq.com/guides/cursor"
+  - label: "Cursor — officiële site (pricing & versies)"
+    url: "https://cursor.com"
 ---
 
 AI beloofde dat ontwikkelaars sneller schonere code zouden schrijven. In de praktijk gebeurt soms het omgekeerde: teams refactoren mínder en duplicaat-code stapelt zich op, omdat AI-suggesties vaak op functie-niveau blijven hangen — los van hoe de rest van het project in elkaar zit. Goed nieuws: dat ligt niet aan de tool maar aan de aanpak. Met Cursor's Composer refactor je juist over je hele projectstructuur heen, in vijf overzichtelijke stappen. Ben je nog niet eerder met een AI-editor begonnen, lees dan eerst [coderen met AI: Cursor, Copilot of Replit](/nieuws/coderen-met-ai-cursor-copilot-beginners); wil je weten waar Cursor nu staat, zie [Cursor 1.0 en de weg naar 3.6](/nieuws/cursor-1-0-lancering).

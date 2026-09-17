@@ -33,6 +33,13 @@ faq:
     a: "In de meeste gevallen wel. De Groq-API is opgezet om compatibel te zijn met die van OpenAI. Je wisselt de basis-URL naar die van Groq, vult je Groq-sleutel in en kiest een van de modellen uit de Groq-catalogus. De rest van je code — de manier waarop je berichten stuurt en antwoorden terugleest — blijft doorgaans hetzelfde. Let op dat de modelnamen verschillen, want Groq draait andere modellen dan OpenAI."
   - q: "Welke modellen draait Groq?"
     a: "Uitsluitend open-weight modellen. Denk aan de Llama-familie van Meta, Qwen, GPT-OSS en Whisper voor spraak, plus grotere open modellen die de markt oppikt. Wat je er niet vindt zijn de gesloten modellen GPT-4, Claude en Gemini — die worden alleen door hun eigen makers aangeboden. Kies Groq dus als snelheid en open modellen je doel zijn; heb je juist een specifiek gesloten model nodig, dan ben je bij de betreffende aanbieder."
+sources:
+  - label: "Groq — officiële site en console"
+    url: "https://groq.com"
+  - label: "Groq Free Tier 2026: Fastest LLM Inference API — Get AI Perks"
+    url: "https://www.getaiperks.com/en/ai/groq-free-tier-2026"
+  - label: "Groq API Pricing 2026 — TokenMix"
+    url: "https://tokenmix.ai/blog/groq-api-pricing"
 ---
 
 Groq is geen chatbot maar een motor eronder: het draait open AI-modellen op eigen chips en levert antwoorden merkbaar sneller dan de meeste aanbieders. Wil je zelf iets bouwen dat snel moet reageren — een chat, een spraak-agent, een stroom tekst die live binnenkomt — dan is dit een van de snelste plekken om te beginnen. Hieronder maak je in een paar minuten een gratis account en je eerste aanroep.

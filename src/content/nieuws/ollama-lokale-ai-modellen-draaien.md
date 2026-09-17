@@ -32,6 +32,13 @@ faq:
     a: "Ja. Ollama zelf is gratis en open source, en de modellen die je downloadt draaien op je eigen hardware. Je invoer verlaat je computer niet — dat is precies waarom mensen het gebruiken voor gevoelige documenten of werk waar cloud-AI niet mag. Je betaalt alleen in schijfruimte en stroom, niet per gebruik."
   - q: "Hoe verwijder ik een model dat te veel ruimte inneemt?"
     a: "Modellen kunnen al snel enkele gigabytes kosten. Bekijk wat je hebt staan met `ollama list`, en verwijder er een met `ollama rm <modelnaam>`. Zo houd je alleen de modellen die je echt gebruikt, en krijg je je schijfruimte meteen terug."
+sources:
+  - label: "Ollama — Download"
+    url: "https://ollama.com/download"
+  - label: "Ollama — Model library"
+    url: "https://ollama.com/library"
+  - label: "Ollama — GitHub"
+    url: "https://github.com/ollama/ollama"
 ---
 
 # Ollama installeren: een AI-model lokaal draaien op je eigen computer

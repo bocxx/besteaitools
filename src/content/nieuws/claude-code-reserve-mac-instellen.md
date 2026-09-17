@@ -34,6 +34,13 @@ faq:
     a: "Ja. Claude Code heeft een Remote Control-functie: met het commando claude remote-control start je een server op de machine, waarna je vanuit de Claude-app op je telefoon nieuwe sessies kunt starten of bestaande kunt overnemen. Binnen een lopende sessie werkt ook /remote-control (kort: /rc). Buiten je eigen netwerk werkt dit via Anthropic; voor SSH en schermdeling van afstand gebruikt de gids Tailscale."
   - q: "Is een virtuele machine of container niet veiliger dan een aparte Mac?"
     a: "Een container is een goed alternatief en de gids-auteur bouwde er zelf een omgeving voor. Maar een container draait nog steeds op je hoofdmachine (netwerkverkeer loopt via jou) en kan geen Mac-only apps draaien of aansturen via computer use. Een fysieke reserve-Mac geeft volledige app-toegang én volledige scheiding. Kies wat bij je risico-inschatting past."
+sources:
+  - label: "claude-controls-mac — de volledige 16-stappengids"
+    url: "https://ykdojo.github.io/claude-controls-mac/"
+  - label: "GitHub-repo van de gids"
+    url: "https://github.com/ykdojo/claude-controls-mac"
+  - label: "Hacker News-discussie"
+    url: "https://news.ycombinator.com/item?id=48959392"
 ---
 
 Een oude MacBook in de kast en zin om Claude Code écht los te laten? Ontwikkelaar ykdojo publiceerde een 16-stappengids die een reserve-Mac ombouwt tot altijd-aan machine die Claude Code volledig bestuurt — inclusief muis, toetsenbord en schermopnames. De gids stond op 18 juli hoog op Hacker News. Dit is de kern, in vijf stappen.

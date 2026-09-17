@@ -35,6 +35,17 @@ faq:
   - q: "Wat doe ik als Claude mijn brain file niet leest?"
     a: "Negen van de tien problemen zitten in één van drie dingen. Een: staat about-me.md in de exacte Cowork-werkmap die je hebt geselecteerd, en niet in een submap? Twee: heet het bestand letterlijk 'about-me.md' met kleine letters en de juiste .md-extensie? Drie: heb je je vaste startprompt gebruikt waarin je Claude expliciet vraagt eerst de bestanden te lezen voor hij iets doet? Lukt het na controle nog niet, dan helpt het opnieuw selecteren van de werkmap in de Cowork-instellingen meestal direct."
 heroImage: "/images/nieuws/claude-instellen-1-dag-6-tools.webp"
+sources:
+  - label: "Anthropic — Cowork productpagina"
+    url: "https://claude.com/product/cowork"
+  - label: "Anthropic — Get started with Claude Cowork"
+    url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork"
+  - label: "Anthropic — Connectoren"
+    url: "https://claude.com/connectors"
+  - label: "Anthropic — Knowledge work plugins (GitHub)"
+    url: "https://github.com/anthropics/knowledge-work-plugins"
+  - label: "Ruben Hassid — Cowork-uitleg op Substack"
+    url: "https://ruben.substack.com/p/claude-cowork"
 ---
 
 Claude instellen voelt voor veel mensen overweldigend — je downloadt de app, je begint te chatten, en het stopt daar. Maar wie het stap voor stap aanpakt en zes simpele bouwstenen op de juiste plek zet, heeft geen chatbot meer; die heeft een digitale collega die jou kent. Hieronder loop je elke bouwsteen langs, met per stap precies wat je moet doen, in welke volgorde, en wat je daarna op je scherm zou moeten zien. Wil je vervolgens zelf een werkende webapp bouwen zonder code, dan is Lovable een laagdrempelige route — en [je Lovable-project exporteren naar GitHub](/nieuws/lovable-project-exporteren-github) laat zien hoe je die code daarna zelf in handen houdt.

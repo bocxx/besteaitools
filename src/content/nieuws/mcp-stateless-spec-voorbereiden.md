@@ -34,6 +34,9 @@ faq:
     a: "De release candidate ligt sinds 21 mei 2026 vast en de definitieve spec verschijnt op 28 juli 2026. Officiële Tier 1-SDK's leveren binnen dat venster ondersteuning. Er is geen harde deadline voor servers: clients blijven oudere protocol-versies doorgaans nog even spreken. Maar hoe eerder je stateless bent, hoe simpeler je infrastructuur — geen sticky sessions, geen gedeelde session-store."
   - q: "Wat betekent stateless MCP voor hosting en schaling?"
     a: "Elk verzoek kan op elke serverinstantie landen, dus horizontaal schalen wordt triviaal: een gewone round-robin load balancer volstaat. Gateways kunnen routeren op de nieuwe Mcp-Method-header zonder de body te inspecteren, en tools/list-antwoorden zijn cachebaar via ttlMs. Serverless platforms (Workers, Lambda) passen hierdoor ineens veel natuurlijker bij MCP."
+sources:
+  - label: "Draft-specificatie + changelog — modelcontextprotocol.io"
+    url: "https://modelcontextprotocol.io/specification/draft"
 ---
 
 De grootste revisie van het [Model Context Protocol](/tools/mcp) sinds de lancering is aangekondigd: op 28 juli 2026 wordt specificatie `2026-07-28` definitief. De kern: MCP wordt stateless. Sessies en de initialize-handshake verdwijnen, en daarmee ook de infrastructuur-hoofdpijn van sticky sessions. Bouw of beheer jij een MCP-server? Dan wil je deze wijzigingen nu alvast doorlopen — het is een breaking release.

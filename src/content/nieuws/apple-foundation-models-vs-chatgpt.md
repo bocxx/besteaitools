@@ -31,6 +31,13 @@ faq:
     a: "Kies een cloud-model als ChatGPT wanneer je taak zwaarder is dan het kleine on-device model aankan: complex redeneren, lange documenten analyseren, code schrijven of actuele informatie ophalen. Apple's model van zo'n 3 miljard parameters is gemaakt voor snelle, afgebakende taken op het toestel. Voor diepgang en breedte zijn de grote cloud-modellen voorlopig sterker."
   - q: "Blijft mijn data privé bij on-device AI?"
     a: "Bij Apple's Foundation Models wel: alle invoer en uitvoer blijven op je toestel, want het model draait lokaal en werkt zelfs offline. Er gaat geen tekst naar een externe server. Bij een cloud-model zoals ChatGPT stuur je je vraag wél naar de servers van de aanbieder, dus daar speelt het privacy-vraagstuk wél. Voor gevoelige gegevens is on-device daarom de veiligere keuze."
+sources:
+  - label: "Foundation Models — Apple Developer Documentation"
+    url: "https://developer.apple.com/documentation/FoundationModels"
+  - label: "Meet the Foundation Models framework — WWDC25 (Apple)"
+    url: "https://developer.apple.com/videos/play/wwdc2025/286/"
+  - label: "A Developer's Guide to Apple's Foundation Models Framework in iOS 26 — HackerNoon (aanleiding)"
+    url: "https://hackernoon.com/a-developers-guide-to-apples-foundation-models-framework-in-ios-26"
 ---
 
 Sinds iOS 26 zit er een AI-model ín je iPhone dat gratis en offline werkt. Geen abonnement, geen data die naar een server reist. Klinkt goed — maar betekent dat het einde van ChatGPT op je telefoon? Niet helemaal. We leggen uit wat Apple's Foundation Models wél en níét kunnen, en wanneer je beter naar de cloud grijpt.

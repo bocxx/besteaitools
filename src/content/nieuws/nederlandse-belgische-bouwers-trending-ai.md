@@ -33,6 +33,11 @@ faq:
     a: "Nee, nadrukkelijk niet. We zien alleen bouwers die (a) GitHub-trending haalden sinds 10 februari 2026 en (b) een locatie in hun publieke profiel hebben ingevuld. Wie dat veld leeg laat — en dat zijn er veel — valt buiten beeld. Zie dit als een ondergrens die laat zien dat er hier gebouwd wordt, niet als een ranglijst van wie het beste is."
   - q: "Waar vind ik meer makers achter trending AI-tools?"
     a: "Op onze makers-pagina staat de dagelijks ververste lijst van mensen en organisaties achter de AI-repos die nú trending zijn, met bio, locatie en momentum. En wil je AI-bouwers en -uitleggers volgen op social media, dan is whotofollow.online een goed startpunt."
+sources:
+  - label: "GitHub — JuliusBrussee/caveman"
+    url: "https://github.com/JuliusBrussee/caveman"
+  - label: "GitHub — CorentinJ/Real-Time-Voice-Cloning"
+    url: "https://github.com/CorentinJ/Real-Time-Voice-Cloning"
 ---
 
 GitHub-trending voelt vaak als een wedstrijd tussen San Francisco en Shenzhen. Maar wie onze dagelijkse metingen doorzoekt op herkomst, vindt gewoon bouwers uit Helmond, Amsterdam, Luik en Gent tussen de hyperprojecten. Dit zijn de zes die we konden verifiëren — en waarom hun werk opvalt.

@@ -35,6 +35,17 @@ faq:
     a: "Ja, geen geografische restrictie. De agent draait waar jij draait, en zero.xyz routeert vanaf de cloud. Aandachtspunt: voor compliance onder de EU AI Act blijft jouw organisatie verantwoordelijk voor wat de agent doet, ook als de tool zelf in de VS draait. Praktisch: log welke tools je agents via zero.xyz gebruiken; dat is je audit-trail."
   - q: "Hoe verhoudt dit zich tot OpenRouter en Composio?"
     a: "OpenRouter routeert LLM-calls, niet tools — andere laag. Composio biedt vooraf-gebouwde MCP-integraties met SaaS-tools (Salesforce, Notion, etc.) op basis van OAuth en API-keys die jij beheert. zero.xyz vult dat aan met het 'agentic web' van x402-tools, vaak nieuwere of niche-services die je niet snel zelf zou configureren. Veel teams gaan straks beide gebruiken: Composio voor de 20 grote SaaS-systemen, zero.xyz voor de long-tail."
+sources:
+  - label: "Product Hunt — zero.xyz"
+    url: "https://www.producthunt.com/products/zero-xyz"
+  - label: "x402 Specification"
+    url: "https://x402agentic.ai/docs/"
+  - label: "Coinbase Developer Platform — x402"
+    url: "https://www.coinbase.com/developer-platform/discover/launches/x402"
+  - label: "Anthropic — Model Context Protocol"
+    url: "https://modelcontextprotocol.io/"
+  - label: "Composio — MCP integrations"
+    url: "https://composio.dev/"
 ---
 
 ## Wat zero.xyz precies oplost

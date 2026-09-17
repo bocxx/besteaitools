@@ -41,6 +41,15 @@ faq:
     a: "Claude Pro kost €18 per maand (excl. btw); in de VS is dat $20. Met jaarbetaling ligt het maandbedrag iets lager. Pro geeft je fors hogere limieten en toegang tot Claude Code, Cowork en extra modellen. Prijzen veranderen soms — de actuele stand staat in de Stand van zaken-box in deze gids."
   - q: "Waarom vraagt Claude geen wachtwoord?"
     a: "Anthropic gebruikt bewust geen wachtwoorden voor claude.ai-accounts. Je logt in via je Google-account of via een beveiligde inloglink die je per e-mail ontvangt. Dat voorkomt zwakke of gelekte wachtwoorden. Open je de link op een ander apparaat dan waar je hem aanvroeg, dan krijg je een verificatiecode te zien die je overtypt."
+sources:
+  - label: "Claude Help Center — Log in to your Claude account"
+    url: "https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account"
+  - label: "Claude Help Center — Verify your phone number"
+    url: "https://support.claude.com/en/articles/8287232-verify-your-phone-number"
+  - label: "Claude — Plans & Pricing"
+    url: "https://claude.com/pricing"
+  - label: "Claude Help Center — Age assurance on Claude"
+    url: "https://support.claude.com/en/articles/15171100-age-assurance-on-claude"
 ---
 
 Een Claude-account aanmaken is gratis en duurt een minuut of vijf. Je hebt alleen een e-mailadres en een mobiel nummer nodig. Hieronder loop je de aanmelding stap voor stap door, inclusief de sms-verificatie waar de meeste vragen over gaan — en daarna zie je wat je met een gratis account wél en niet kunt.

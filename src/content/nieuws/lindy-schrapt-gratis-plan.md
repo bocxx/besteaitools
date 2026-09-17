@@ -32,6 +32,11 @@ faq:
     a: "Gumloop is het meest verwante alternatief: ook een visuele workflow-builder met AI-stappen, en het houdt een gratis plan aan waarmee je echte workflows kunt testen. Make heeft een gratis plan met 1.000 credits per maand en is sterk in koppelingen tussen apps. Beide missen wel Lindy's kant-en-klare 'AI-medewerker'-templates voor mail en agenda."
   - q: "Blijft mijn bestaande Lindy-workflow werken na deze wijziging?"
     a: "Op een lopend betaald abonnement verandert er niets aan je workflows. De wijziging raakt vooral wie op het gratis plan zat of Lindy nog wilde uitproberen: zonder betaald abonnement is er na de proefperiode van 7 dagen geen niveau meer waarop je agents blijven draaien."
+sources:
+  - label: "Lindy — Pricing"
+    url: "https://www.lindy.ai/pricing"
+  - label: "CloudTalk — Lindy AI Pricing & Plans"
+    url: "https://www.cloudtalk.io/blog/lindy-ai-pricing/"
 ---
 
 Lindy, een van de bekendste no-code-bouwers voor AI-agents, heeft zijn gratis plan geschrapt. Wie de tool nu wil proberen, krijgt 7 dagen volledige toegang tot de Plus-functies — zonder creditcard — en betaalt daarna minimaal $49,99 per maand ([Bron: Lindy pricing](https://www.lindy.ai/pricing)). Begin 2026 kon je nog blijvend gratis werken met 400 credits per maand.

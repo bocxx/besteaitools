@@ -35,6 +35,17 @@ faq:
     a: "Ja. In de Claude-desktopapp zie je Opus 4.8 sinds 28 mei 2026 als modelkeuze in het rechter zijpaneel. De setup van [Claude in één dag instellen](/nieuws/claude-instellen-1-dag-6-tools) verandert niet — je kiest alleen een ander model in de dropdown."
   - q: "Voor welke taken is Opus 4.8 minder geschikt?"
     a: "Voor brainstorms en creatieve generatie waarbij je juist *meer* hypothesen wilt zien, kan de hedging-modus storend voelen. Sonnet 4.6 of Opus 4.7 zijn dan vaak prettiger. Voor klantcontact, juridische teksten, financiële beslissingen en code-review is Opus 4.8 vanaf dag één de logische keuze."
+sources:
+  - label: "Anthropic — Introducing Claude Opus 4.8"
+    url: "https://www.anthropic.com/news/claude-opus-4-8"
+  - label: "Anthropic — Series H financieringsronde"
+    url: "https://www.anthropic.com/news/series-h"
+  - label: "TechCrunch — Anthropic releases Opus 4.8 with new Dynamic Workflow tool (28 mei 2026)"
+    url: "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/"
+  - label: "VentureBeat — Anthropic's Claude Opus 4.8 is here with 3X cheaper fast mode and near-Mythos level alignment"
+    url: "https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment"
+  - label: "9to5Mac — Anthropic upgrades Claude with new Opus 4.8 model"
+    url: "https://9to5mac.com/2026/05/28/anthropic-upgrades-claude-with-new-opus-4-8-model-heres-whats-new/"
 ---
 
 Anthropic kondigde op 28 mei 2026 Claude Opus 4.8 aan — slechts 41 dagen na Opus 4.7, en op dezelfde dag dat het bedrijf een [Series H-financiering van 65 miljard dollar](https://www.anthropic.com/news/series-h) ophaalde tegen een waardering van bijna één biljoen. Het opvallendste aan het nieuwe model is geen prestatiesprong — het is een *karakterverandering*. Opus 4.8 zegt vaker "ik weet het niet" en is volgens Anthropic vier keer minder vaak dan zijn voorganger geneigd onopgemerkte code-fouten te laten passeren ([Bron: Anthropic — Introducing Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8)).

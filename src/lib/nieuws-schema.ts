@@ -50,4 +50,19 @@ export const nieuwsArtikelSchema = z.object({
     q: z.string(),
     a: z.string(),
   })).optional(),
+  // Bronnen als gestructureerde metadata — de inline `## Bronnen`-sectie in de
+  // body blijft de menselijke weergave; dit veld voedt schema.org/citation en
+  // AEO-signalen (17 sep 2026, audit D-DBAT-sources-backfill). Tot die datum
+  // stond `sources:` alleen op ~10 handgeschreven artikelen; migratie-script
+  // (newsflux/scripts/backfill_dbat_sources.py) trekt de `## Bronnen`-lijsten
+  // van 119 artikelen naar dit veld, zonder de body te wijzigen. Zodra het
+  // ratio flipt begint `verify-redactie.mjs` op de resterende sources-loze
+  // artikelen te flaggen — self-calibrating check.
+  sources: z.array(z.object({
+    label: z.string(),
+    url: z.string(),
+    title: z.string().optional(),
+    author: z.string().optional(),
+    publishedAt: z.coerce.date().optional(),
+  })).optional(),
 });

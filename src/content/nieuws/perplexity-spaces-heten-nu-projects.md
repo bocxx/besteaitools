@@ -35,6 +35,11 @@ faq:
     a: "Buiten Enterprise voeg je maximaal vijf medewerkers toe; op een Enterprise-project ligt dat maximum op 9.999. Er zijn drie rollen. Owner heeft volledige controle. Can edit mag context, bestanden, connectors, skills en mensen aanpassen. Can view leest mee. Een project staat standaard op Restricted, dus alleen wie je uitnodigt komt erin."
   - q: "Kan ik een lopend gesprek omzetten naar een project?"
     a: "Ja. Perplexity kan een project starten vanuit een bestaande sessie en stelt dan zelf een titel, beschrijving en instructies voor op basis van wat je al besproken hebt. In een Computer-taak heet die knop Convert session to project, en je bestanden en artefacten gaan mee. Je kunt het ook gewoon vragen: laat Computer een project maken van deze sessie."
+sources:
+  - label: "What are Projects? — Perplexity Help Center"
+    url: "https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces"
+  - label: "Perplexity"
+    url: "https://www.perplexity.ai"
 ---
 
 # Perplexity Spaces heten nu Projects: zo stel je er een in

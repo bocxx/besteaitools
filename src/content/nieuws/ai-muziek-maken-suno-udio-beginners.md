@@ -36,6 +36,13 @@ faq:
     a: "Suno en Udio werken primair met tekst-prompts. Voor meer muzikale controle — zoals een eigen MIDI-bestand of een specifiek akkoordenschema — zijn tools als Stable Audio of Udio's geavanceerde modus beter geschikt."
   - q: "Zijn er alternatieven voor Suno en Udio?"
     a: "Ja: Mubert is goed voor royalty-vrije achtergrondmuziek op basis van stijl en stemming. ElevenLabs heeft ook muziek-functies. Stable Audio van Stability AI is open-source vriendelijker en geeft meer technische controle."
+sources:
+  - label: "Suno — Terms of Service en licentie-informatie"
+    url: "https://suno.com/terms"
+  - label: "Udio — Pricing en licenties"
+    url: "https://www.udio.com/pricing"
+  - label: "Changes associated with the Universal Music Group (\"UMG\") partnership"
+    url: "https://help.udio.com/en/articles/12683565-changes-associated-with-the-universal-music-group-umg-partnership"
 ---
 
 Een jingle voor een podcast, achtergrondmuziek voor een video of gewoon curiositeit — AI-muziek is inmiddels goed genoeg dat je het écht kunt gebruiken. Geen muzikale kennis nodig. Dit is hoe je begint.

@@ -33,6 +33,13 @@ faq:
     a: "Verwijder je adres, telefoonnummer, geboortedatum, BSN en andere identificerende nummers voordat je je cv plakt. Voor het afstemmen op een vacature zijn alleen je functies, taken, resultaten en vaardigheden relevant. Wil je extra voorzichtig zijn, zet dan in de instellingen van ChatGPT het gebruik van je gesprekken voor modelverbetering uit."
   - q: "Werkt dit ook met de gratis versie van ChatGPT?"
     a: "Ja. Voor tekstwerk als dit volstaat de gratis versie prima: vacature plakken, cv plakken, herschrijfrondes draaien. Een betaald abonnement geeft vooral ruimere limieten en sterkere modellen, wat handig is als je veel vacatures tegelijk verwerkt. Voor één sollicitatie is gratis genoeg."
+sources:
+  - label: "Novoresume — How to Tailor Your Resume to a Job Description with ChatGPT"
+    url: "https://novoresume.com/career-blog/tailor-resume-to-job-with-chatgpt"
+  - label: "Jobright — How to Use ChatGPT to Tailor Resume to Job Description"
+    url: "https://jobright.ai/blog/chatgpt-tailor-resume-job-description-2026/"
+  - label: "Analytics Insight — How to Write a Data Scientist Resume in 2026: Complete Guide"
+    url: "https://www.analyticsinsight.net/data-science/how-to-write-a-data-scientist-resume-in-2026-complete-guide"
 ---
 
 Twee kandidaten met dezelfde ervaring, en toch komt er maar één door de eerste selectie. Vaak zit het verschil niet in wat ze kunnen, maar in de woorden waarmee het op papier staat: recruiters en hun software (ATS) zoeken op de taal van de vacature. Met ChatGPT stem je jouw cv daar in vier stappen op af, zonder ook maar iets te verzinnen.

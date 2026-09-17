@@ -32,6 +32,9 @@ faq:
     a: "Uit onze eigen database: sinds 10 februari 2026 leggen we dagelijks vast welke AI-gerelateerde repos in GitHub-trending staan. Voor deze analyse namen we alle 852 repos die vóór 1 april voor het eerst opdoken, en telden we hoeveel daarvan op 6 juli minstens 30 dagen niet meer gezien waren: 500, oftewel 58,7%."
   - q: "Is het erg om een tool te gebruiken die uit trending is verdwenen?"
     a: "Helemaal niet — vaak is dat juist prima. De vraag is niet of een tool trending is, maar of hij onderhouden wordt en of jouw workflow ervan afhangt. Voor een experiment maakt het weinig uit. Zodra een tool een vast onderdeel van je werk wordt, wil je tekenen van bestendigheid zien: actieve maintainers, regelmatige releases en een duidelijke partij erachter."
+sources:
+  - label: "Microsoft — MarkItDown"
+    url: "https://github.com/microsoft/markitdown"
 ---
 
 Elke week schuiven er nieuwe AI-tools voorbij op GitHub-trending, en elke week voelt het alsof je iets mist als je niet meteen instapt. Onze eigen meetdata zegt: rustig aan. Van de 852 AI-repos die in het eerste kwartaal trending haalden, is 58,7% inmiddels al minstens een maand uit de schijnwerpers verdwenen.

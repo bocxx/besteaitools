@@ -34,6 +34,15 @@ faq:
     a: "Op basis van een tekstprompt kan Spark nieuwe ontwerpen genereren, varianten maken (verschillende kleurschema's, formaten), bestaande bestanden bewerken (tekst aanpassen, elementen verplaatsen) en gegenereerd materiaal direct in een Canva-projectmap zetten."
   - q: "Welke andere apps werken nu al met Spark?"
     a: "Bij de lancering noemde Google Canva, OpenTable en Instacart als eerste MCP-partners. De lijst wordt de komende maanden uitgebreid. Voor de actuele lijst kijk je op Google's Gemini-connected-apps-pagina."
+sources:
+  - label: "Google Blog — The next evolution of the Gemini app"
+    url: "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/"
+  - label: "TechCrunch — Google introduces Gemini Spark"
+    url: "https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/"
+  - label: "9to5Google — Gemini Spark Ultra US rollout"
+    url: "https://9to5google.com/2026/05/29/gemini-spark-ultra-us/"
+  - label: "Anthropic — Model Context Protocol introduction"
+    url: "https://www.anthropic.com/news/model-context-protocol"
 ---
 
 Sinds 19 mei 2026 koppelt **Gemini Spark** via Model Context Protocol direct met **Canva**. Voor wie ontwerpwerk regelmatig in zijn workflow heeft is dat een sprong: in plaats van zelf Canva openen, prompts intypen, exporteren en delen, geef je Spark de opdracht en het resultaat verschijnt in jouw projectmap. In deze gids zet je de koppeling in 5 stappen op.

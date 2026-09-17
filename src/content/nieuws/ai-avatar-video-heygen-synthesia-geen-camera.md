@@ -36,6 +36,13 @@ faq:
     a: "Ja, dat is een van de krachtigste functies van HeyGen. Upload je video, kies de doeltaal, en HeyGen genereert een vertaalde versie waarbij de lippen van de spreker synchroon bewegen met de vertaalde tekst. Dit heet 'Video Translation'."
   - q: "Is een AI-avatar video herkenbaar als AI?"
     a: "Dat verschilt sterk per avatar-kwaliteit. Hoge-kwaliteit custom avatars zijn bij vluchtige kijk bijna niet te onderscheiden van echt. Standaard stock-avatars zien er realistischer uit dan een paar jaar geleden, maar een opgeleide blik herkent ze nog wel. Transparantie over het gebruik van AI is aan te raden."
+sources:
+  - label: "HeyGen — How to create your first avatar video"
+    url: "https://help.heygen.com"
+  - label: "HeyGen — Pricing 2026"
+    url: "https://www.heygen.com/pricing"
+  - label: "Synthesia — Platform overview"
+    url: "https://www.synthesia.io/features"
 ---
 
 Stel je voor: een productvideo maken in vijf talen, zonder filmset, zonder spreker en zonder nabewerking. Dat is precies wat AI-avatar tools doen. Dit is hoe je begint en waar je op moet letten.

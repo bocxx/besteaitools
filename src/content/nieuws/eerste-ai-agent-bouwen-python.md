@@ -32,6 +32,13 @@ faq:
     a: "Je betaalt per token aan OpenAI; een klein model (mini-variant) is voor dit soort agents ruim voldoende en kost fracties van centen per vraag. De weerdata van Open-Meteo is gratis en vereist geen API-key voor niet-commercieel gebruik. Reken voor het hele experiment op hooguit een paar cent. Actuele tokenprijzen staan op platform.openai.com."
   - q: "Welke OpenAI API gebruik ik voor agents: Chat Completions of Responses?"
     a: "OpenAI raadt voor nieuwe projecten de Responses API aan. Die behandelt de agent-loop (model roept tool aan, krijgt resultaat, beslist de volgende stap) als eersteklas concept, waar je dat bij Chat Completions zelf aan elkaar moest knopen. Chat Completions blijft ondersteund, maar geldt inmiddels als de oude route."
+sources:
+  - label: "OpenAI — Migrate to the Responses API"
+    url: "https://platform.openai.com/docs/guides/migrate-to-responses"
+  - label: "Open-Meteo — gratis weer-API"
+    url: "https://open-meteo.com"
+  - label: "The Practical Developer — Building Your First AI Agent with Python"
+    url: "https://dev.to/oviawe_nosa_78bf57cb51e41/building-your-first-ai-agent-with-python-a-beginners-guide-fe9"
 ---
 
 AI-agents klinken als iets voor grote teams, maar het kernidee past in één Python-bestand: een model dat zelf beslist wanneer het een tool aanroept. In deze gids bouw je een weer-assistent die vragen als "moet ik morgen een paraplu mee naar Utrecht?" beantwoordt met échte, live weerdata. Geen frameworks, alleen de officiële OpenAI-library.

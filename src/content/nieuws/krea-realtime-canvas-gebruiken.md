@@ -32,6 +32,11 @@ faq:
     a: "De betaalde plannen lopen van ongeveer $9 tot $200 per maand. Het Basic-plan van $9 per maand en hoger bevatten een commerciële licentie op wat je maakt. Hoe hoger het plan, hoe meer compute-eenheden en hoe minder je tegen daglimieten aanloopt."
   - q: "Waarvoor is Krea het sterkst?"
     a: "De realtime-feedbackloop is Krea's onderscheidende kracht: je ziet meteen wat een penseelstreek of promptwoord met het beeld doet, wat schetsen en concept-werk snel maakt. De Enhancer geldt daarnaast als een van de betere upscalers. De videokant is vooral een verzamelplaats van modellen van anderen; daarvoor is Krea handig, maar niet uniek."
+sources:
+  - label: "ToolJunction — Krea AI Review 2026"
+    url: "https://www.tooljunction.io/ai-tools/krea"
+  - label: "Judy AI Lab — Krea AI Realtime Creative Studio"
+    url: "https://judyailab.com/en/posts/krea-ai-realtime-creative-studio/"
 ---
 
 De meeste AI-beeldtools werken in cycli: prompt typen, wachten, opnieuw. Krea's Realtime Canvas breekt dat ritme. Je schetst of typt, en het beeld rechts werkt live mee, doorgaans binnen 50 milliseconden. Hieronder start je met de canvas, en zie je hoe je je gratis tegoed niet in vijf minuten opbrandt.

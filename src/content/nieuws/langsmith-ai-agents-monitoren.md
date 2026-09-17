@@ -34,6 +34,15 @@ faq:
     a: "Ja, er is een gratis Developer-plan met 1 seat en 5.000 base traces per maand, met 14 dagen dataretentie (stand juli 2026). Zonder creditcard blijft je organisatie op die 5.000 traces gecapt; daarboven kost het $2,50 per 1.000 extra traces. Voor lokale experimenten en kleine agents is het gratis plan ruim voldoende. Let op: prijzen en limieten wijzigen geregeld — check de actuele pricing-pagina van LangChain."
   - q: "Kun je LangSmith gebruiken met een lokaal model via Ollama?"
     a: "Ja, en dat is juist een sterke combinatie. Je agent draait dan volledig lokaal — bijvoorbeeld met een Qwen-model via Ollama — terwijl alleen de tracing-data naar LangSmith gaat. Je betaalt zo niets voor modelcalls en houdt toch volledig zicht op wat je agent doet. Alleen de observability-laag staat in de cloud; wil je ook die lokaal, dan zijn er open-source alternatieven zoals Langfuse."
+sources:
+  - label: "LangSmith Observability — officiële LangChain-documentatie"
+    url: "https://docs.langchain.com/oss/python/langchain/observability"
+  - label: "LangSmith-platform"
+    url: "https://www.langchain.com/langsmith/observability"
+  - label: "How to Trace and Monitor AI Agents with LangSmith"
+    url: "https://www.freecodecamp.org/news/how-to-trace-and-monitor-ai-agents-with-langsmith/"
+  - label: "LangSmith Pricing Explained (2026)"
+    url: "https://inference.net/content/langsmith-pricing/"
 ---
 
 Je agent geeft een raar antwoord en je hebt geen idee waarom: was het de prompt, een tool die faalde, of het model zelf? Precies dat gat vult LangSmith, het observability-platform van LangChain. Een verse freeCodeCamp-tutorial (22 juli) liet zien hoe je er een lokale agent mee doorlicht; dit is de aanpak in vier stappen, geverifieerd tegen de LangChain-documentatie.

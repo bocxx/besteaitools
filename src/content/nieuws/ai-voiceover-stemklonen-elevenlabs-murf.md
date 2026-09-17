@@ -36,6 +36,13 @@ faq:
     a: "Je eigen stem klonen is volledig legaal. De stem van iemand anders klonen zonder toestemming is dat niet — en in veel gevallen een schending van het portretrecht of auteursrecht. Gebruik altijd toestemming bij stemmen van anderen."
   - q: "Welke tool is het beste voor Nederlandse voiceovers?"
     a: "ElevenLabs heeft goede Nederlandse stemmen, maar kwaliteit varieert per geselecteerde stem. Test altijd een paar stemmen uit je tekst voor je kiest. Murf heeft minder Nederlandse stemopties maar die zijn wel consistent van kwaliteit."
+sources:
+  - label: "ElevenLabs — Voice cloning guide"
+    url: "https://elevenlabs.io/docs/voices/voice-cloning"
+  - label: "ElevenLabs — Pricing"
+    url: "https://elevenlabs.io/pricing"
+  - label: "Murf AI — Features overzicht"
+    url: "https://murf.ai/features"
 ---
 
 Een professionele voiceover laten maken kost normaal €100–500 per minuut audio. Met AI doe je hetzelfde in seconden, voor een fractie van de prijs. Dit is hoe je een voiceover maakt die goed genoeg is voor videos, e-learning en podcasts.

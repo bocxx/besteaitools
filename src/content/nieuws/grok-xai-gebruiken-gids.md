@@ -35,6 +35,15 @@ faq:
     a: "Ja, via de xAI API. De documentatie is op docs.x.ai beschikbaar. Het API-ecosystem is jonger dan dat van OpenAI of Anthropic, maar groeit snel. Check de actuele pricing en rate limits voor productiegebruik."
   - q: "Waarom betaalt Google $920 miljoen per maand aan SpaceX voor xAI-compute?"
     a: "Google huurde via SpaceX 110.000 Nvidia GPU's in de xAI-datacenters voor bridgecapaciteit om de vraag naar Gemini Enterprise op te vangen. Het is geen samenwerking op model-niveau — Google gebruikt de hardware, niet Grok zelf."
+sources:
+  - label: "Google will pay SpaceX $920M per month for compute — TechCrunch"
+    url: "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/"
+  - label: "Google to pay SpaceX $920M monthly for xAI compute — Techzine"
+    url: "https://www.techzine.eu/news/infrastructure/141896/google-to-pay-spacex-920m-every-month-for-xai-compute/"
+  - label: "SpaceX locks Google into $920M/month compute deal — WCCFTech"
+    url: "https://wccftech.com/spacex-locks-google-into-a-920-million-per-month-compute-deal-after-anthropic-as-xai-abandons-colossus-1s-messy-gpu-mix/"
+  - label: "xAI API documentatie"
+    url: "https://docs.x.ai"
 ---
 
 Dat Google bereid is $920 miljoen per maand aan SpaceX te betalen voor toegang tot de xAI-datacenterinfrastructuur, zegt iets. Niet per se over Grok — Google gebruikt de hardware voor Gemini, niet voor Musk's modellen — maar over de schaal waarop de xAI-infrastructuur inmiddels draait.

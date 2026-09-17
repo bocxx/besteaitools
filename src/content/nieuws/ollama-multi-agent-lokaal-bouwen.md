@@ -35,6 +35,13 @@ faq:
     a: "Eén agent krijgt één rol en één opdracht. In een multi-agent-systeem verdeel je het werk over gespecialiseerde agents — bijvoorbeeld een onderzoeker, een schrijver en een redacteur — die elkaars output doorgeven. Dat levert vaak betere resultaten dan één model dat alles tegelijk moet doen, omdat elke prompt scherper kan zijn."
   - q: "Hoeveel geheugen heb ik nodig om Qwen3 lokaal te draaien?"
     a: "Als vuistregel: qwen3:8b draait op een GPU met 8 GB VRAM of een Mac met 16 GB unified memory, qwen3:14b wil 16 GB VRAM, en qwen3:32b of de 30b-a3b MoE-variant vraagt 24 GB. Te weinig geheugen betekent dat Ollama naar CPU terugvalt — het werkt dan nog, maar merkbaar trager."
+sources:
+  - label: "freeCodeCamp — How to Build Your First Multi-Agent AI System in Python and LangGraph (14 juli 2026)"
+    url: "https://www.freecodecamp.org/news/how-to-build-your-first-multi-agent-ai-system-in-python-and-langgraph/"
+  - label: "Ollama — Qwen3 model library"
+    url: "https://ollama.com/library/qwen3"
+  - label: "LangChain docs — Ollama-integraties"
+    url: "https://docs.langchain.com/oss/python/integrations/providers/ollama"
 ---
 
 Een team van AI-agents dat samen een taak oplost, klinkt als iets waarvoor je een cloudabonnement en een creditcard nodig hebt. Dat hoeft niet: freeCodeCamp publiceerde op 14 juli 2026 een tutorial die een multi-agent-systeem twee keer bouwt — eerst in kale Python, daarna in LangGraph — en alles draait lokaal via [Ollama](https://ollama.com) met een Qwen-model, dus zonder API-kosten ([Bron: freeCodeCamp](https://www.freecodecamp.org/news/how-to-build-your-first-multi-agent-ai-system-in-python-and-langgraph/)). In deze gids zet je diezelfde basis op.

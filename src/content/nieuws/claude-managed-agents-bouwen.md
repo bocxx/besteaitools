@@ -33,6 +33,15 @@ faq:
     a: "Je betaalt op verbruik: de standaard Claude-tokenprijzen, plus $0,08 per sessie-uur actieve runtime. Web-zoekopdrachten van de agent kosten $10 per 1.000 zoekacties. Langdurige agents die veel data verwerken kunnen dus flink duurder uitvallen dan een normaal gesprek — begin met een korte testrun en bekijk het verbruik voordat je een agent dagelijks laat draaien."
   - q: "Kan een Managed Agent andere agents aansturen?"
     a: "Ja, maar die multi-agent-coördinatie zit nog in research preview: je moet er apart toegang voor aanvragen. Daarmee kan een hoofdagent subagents opstarten en aansturen om complex werk te parallelliseren."
+sources:
+  - label: "Anthropic — Claude Managed Agents: get to production 10x faster"
+    url: "https://claude.com/blog/claude-managed-agents"
+  - label: "Claude Platform Docs — Managed Agents overview & quickstart"
+    url: "https://platform.claude.com/docs/en/managed-agents/overview"
+  - label: "The New Stack — With Claude Managed Agents, Anthropic wants to run your AI agents for you"
+    url: "https://thenewstack.io/with-claude-managed-agents-anthropic-wants-to-run-your-ai-agents-for-you/"
+  - label: "Creator Economy — Inside Anthropic's Bet on Claude Agents (Jess Yan)"
+    url: "https://creatoreconomy.so/p/inside-anthropics-bet-on-claude-agents-jess-yan"
 ---
 
 Jess Yan, productlead bij Anthropic, vatte het onlangs zo samen: we gaan van prompts naar agents die 's nachts werken terwijl jij slaapt. In een demo bouwde ze een analytics-agent die dagelijks klantenreviews verzamelt, groepeert op thema en een samenvatting naar een Slack-kanaal stuurt ([Bron: Creator Economy](https://creatoreconomy.so/p/inside-anthropics-bet-on-claude-agents-jess-yan)). Geen servers opzetten, geen orchestratie-code — alleen een taakomschrijving, tools en grenzen.
