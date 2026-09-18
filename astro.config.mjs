@@ -108,6 +108,9 @@ function lastmodFor(pathname) {
  *  `noindex, follow`, en dan hoort hij ook niet in de sitemap. */
 const DIGEST_INDEX_MAX_AGE_DAYS = 14;
 
+/** Routes die alleen `Astro.redirect()` doen (zie src/pages/<route>/index.astro). */
+const REDIRECT_ONLY_PAGES = new Set(['/digest', '/launch-radar', '/weekradar']);
+
 function isNoindexDigest(pathname) {
   if (!/^\/digest\/[^/]+$/.test(pathname)) return false;
   const date = sitemapPathDates.get(pathname);
@@ -186,6 +189,9 @@ export default defineConfig({
         if (page.includes('/og/')) return false;
         if (pathname === '/ai-tools') return false;
         if (isNoindexDigest(pathname)) return false;
+        // Pagina's die zelf alleen een 301 geven (Astro.redirect) horen niet
+        // in de sitemap — GSC telt ze als "Pagina met omleiding".
+        if (REDIRECT_ONLY_PAGES.has(pathname)) return false;
         return true;
       },
       serialize(item) {

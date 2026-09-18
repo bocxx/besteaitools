@@ -111,10 +111,10 @@ export const prerender = false;
             <a href="/nieuws/" class:list={['lf__chip', { 'lf__chip--on': !activeType && !activeCat }]}>
               Alles <span class="lf__n">{sorted.length}</span>
             </a>
-            <a href="/nieuws/?type=articles" class:list={['lf__chip', { 'lf__chip--on': activeType === 'articles' }]}>
+            <a href="/nieuws?type=articles" class:list={['lf__chip', { 'lf__chip--on': activeType === 'articles' }]}>
               Artikelen <span class="lf__n">{articleCount}</span>
             </a>
-            <a href="/nieuws/?type=digests" class:list={['lf__chip', { 'lf__chip--on': activeType === 'digests' }]}>
+            <a href="/nieuws?type=digests" class:list={['lf__chip', { 'lf__chip--on': activeType === 'digests' }]}>
               Dag-digests <span class="lf__n">{digestCount}</span>
             </a>
           </div>
@@ -130,7 +130,7 @@ export const prerender = false;
               {Object.entries(nieuwsCategoryConfig).map(([key, cfg]) =>
                 key !== 'digest' && categoryCounts[key as NieuwsCategory] > 0 && (
                   <a
-                    href={`/nieuws/?cat=${key}`}
+                    href={`/nieuws?cat=${key}`}
                     class:list={['lf__chip', { 'lf__chip--on': activeCat === key }]}
                     style={activeCat === key ? `--chip-accent: ${cfg.color}` : undefined}
                   >
