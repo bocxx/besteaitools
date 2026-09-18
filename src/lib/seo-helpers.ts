@@ -6,6 +6,7 @@
  */
 
 import type { Tool } from '../types/tools-domain';
+import { resolveAuthor, personJsonLd } from './authors';
 import {
   toolCategories, pricingModels, pricingCurrencies,
   setupComplexityLevels, timeToFirstValueOptions,
@@ -250,7 +251,8 @@ export function buildSoftwareApplicationLd(tool: Tool, _siteUrl: string): Record
   if (tool.verdict || tool.easeOfUseScore) {
     const review: Record<string, unknown> = {
       '@type': 'Review',
-      author: { '@type': 'Organization', name: 'debesteaitools.nl' },
+      // Redactionele review door een echte auteur (E-E-A-T), niet de organisatie.
+      author: personJsonLd(resolveAuthor(), 'https://debesteaitools.nl'),
     };
     if (tool.easeOfUseScore) {
       review.reviewRating = {

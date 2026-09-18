@@ -37,7 +37,7 @@ export const nieuwsArtikelSchema = z.object({
   description: z.string(),
   publishedAt: z.coerce.date(),
   updatedAt: z.coerce.date().optional(),
-  author: z.string().default('Redactie'),
+  author: z.string().default('Cirsten Kot'),
   category: nieuwsCategorySchema.default('nieuws'),
   tags: z.array(z.string()).default([]),
   toolSlug: z.string().optional(),

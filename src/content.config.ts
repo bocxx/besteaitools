@@ -73,7 +73,7 @@ const digest = defineCollection({
     date: z.coerce.date(),
     timeSlot: z.string().default('tools-digest'),
     slotLabel: z.string().optional(),
-    author: z.string().default('debesteaitools.nl Redactie'),
+    author: z.string().default('Cirsten Kot'),
     tags: z.array(z.string()).default([]),
     topics: z.array(z.string()).optional(),
     heroImage: z.string().optional(),

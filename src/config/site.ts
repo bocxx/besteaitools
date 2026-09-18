@@ -76,9 +76,10 @@ export const siteConfig = {
   // ============================================
   authors: {
     redactie: {
-      name: "nuchter.ai Redactie",
-      handle: "@nuchterai",
-      bio: "Nuchter over AI — trends, tools en routes.",
+      // Restant uit het template; de echte auteursdata staat in src/lib/authors.ts.
+      name: "Cirsten Kot",
+      handle: "@cirstenkot",
+      bio: "Oprichter & hoofdredacteur van debesteaitools.nl.",
     },
   },
   

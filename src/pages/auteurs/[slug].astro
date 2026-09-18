@@ -1,0 +1,112 @@
+---
+/**
+ * /auteurs/[slug] — auteurspagina (E-E-A-T). Zie src/lib/authors.ts.
+ */
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { authors, resolveAuthor, personJsonLd, authorUrl } from '../../lib/authors';
+import { siteConfig } from '../../config/site';
+import { isNoindexPath } from '../../lib/seo-index.mjs';
+
+export function getStaticPaths() {
+  return Object.values(authors).map((author) => ({ params: { slug: author.slug }, props: { author } }));
+}
+
+const { author } = Astro.props;
+const origin = siteConfig.url.replace(/\/$/, '');
+
+
+const articles = (await getCollection('nieuws', ({ data }) => !data.draft))
+  .filter((e) => resolveAuthor(e.data.author).slug === author.slug)
+  .filter((e) => !isNoindexPath(`/nieuws/${e.id}`))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const initials = author.name.split(' ').map((p) => p[0]).slice(0, 2).join('');
+const personLd = {
+  '@context': 'https://schema.org',
+  ...personJsonLd(author, origin),
+  description: author.bio,
+  worksFor: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+    { '@type': 'ListItem', position: 2, name: author.name, item: `${origin}${authorUrl(author)}` },
+  ],
+};
+const fmt = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Layout
+  title={`${author.name} — ${author.jobTitle}`}
+  description={`Artikelen en tool-reviews van ${author.name}, ${author.jobTitle}. ${author.specialties.join(', ')}.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <main id="main" class="author">
+    <header class="author__header">
+      {author.image
+        ? <img class="author__photo" src={author.image} alt={`Portretfoto van ${author.name}`} width="96" height="96" loading="eager" decoding="async" />
+        : <span class="author__avatar" aria-hidden="true">{initials}</span>}
+      <div>
+        <p class="author__kicker">Auteur</p>
+        <h1 class="author__name">{author.name}</h1>
+        <p class="author__role">{author.jobTitle}</p>
+      </div>
+    </header>
+
+    {author.bio.split('\n\n').map((p) => <p class="author__bio">{p}</p>)}
+
+    <ul class="author__tags" aria-label="Specialiteiten">
+      {author.specialties.map((s) => <li>{s}</li>)}
+    </ul>
+
+    <p class="author__links">
+      {author.sameAs.map((url) => (
+        <a href={url} target="_blank" rel="noopener noreferrer me">
+          {url.includes('linkedin') ? 'LinkedIn' : url.includes('x.com') ? 'X' : 'AI Platform MKB'}
+        </a>
+      ))}
+      <a href="/hoe-wij-beoordelen">Hoe wij beoordelen</a>
+    </p>
+
+    {articles.length > 0 && (
+      <section class="author__articles">
+        <h2>Artikelen van {author.name.split(' ')[0]}</h2>
+        <ul>
+          {articles.map((a) => (
+            <li>
+              <a href={`/nieuws/${a.id}`}>{a.data.title}</a>
+              <span class="author__date">{fmt(a.data.publishedAt)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </main>
+</Layout>
+
+<style>
+  .author { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  .author__header { display: flex; gap: 1.25rem; align-items: center; margin-bottom: 1.5rem; }
+  .author__photo, .author__avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .author__avatar { display: grid; place-items: center; background: var(--color-surface-2, #1f2937); font-weight: 700; font-size: 1.75rem; }
+  .author__kicker { text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; opacity: .7; margin: 0; }
+  .author__name { margin: .15rem 0; font-size: clamp(1.75rem, 4vw, 2.25rem); }
+  .author__role { margin: 0; opacity: .8; }
+  .author__bio { line-height: 1.65; margin: 0 0 1rem; }
+  .author__tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 1.25rem 0; }
+  .author__tags li { border: 1px solid currentColor; opacity: .8; border-radius: 999px; padding: .2rem .7rem; font-size: .85rem; }
+  .author__links { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 2.5rem; }
+  .author__articles h2 { font-size: 1.25rem; margin-bottom: .75rem; }
+  .author__articles ul { list-style: none; padding: 0; margin: 0; }
+  .author__articles li { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid rgba(127,127,127,.2); }
+  .author__date { opacity: .65; font-size: .85rem; white-space: nowrap; }
+</style>

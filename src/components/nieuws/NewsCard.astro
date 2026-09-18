@@ -1,4 +1,5 @@
 ---
+import { resolveAuthor } from '../../lib/authors';
 import Badge from '../atoms/Badge.astro';
 import { nieuwsCategoryConfig, type NieuwsCategory } from '../../lib/nieuws-schema';
 import { BookOpen, Clock } from '@lucide/astro';
@@ -88,7 +89,7 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
       <footer class="news-card__footer">
         <span class="news-card__author">
           <BookOpen size={12} stroke-width={1.5} />
-          {author}
+          {resolveAuthor(author).name}
         </span>
         {readingTime && (
           <span class="news-card__reading-time">
