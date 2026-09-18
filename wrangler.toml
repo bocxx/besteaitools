@@ -6,6 +6,10 @@
 # Elk contact krijgt sowieso property signup_site = "debesteaitools.nl".
 # ─────────────────────────────────────────────────────────────────────────────
 name = "debesteaitools"
+# Eigen entry vóór Astro: past public/_redirects toe als échte redirects
+# (via de Astro-handler + ASSETS-binding kwamen ze terug als 200-rewrite of
+# 404 — zie de uitleg bovenin src/worker.ts). Gemeten 18 sep 2026.
+main = "./src/worker.ts"
 compatibility_date = "2026-03-27"
 compatibility_flags = [ "nodejs_compat" ]
 workers_dev = true
