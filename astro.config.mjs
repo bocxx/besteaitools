@@ -7,6 +7,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 import { unified } from '@astrojs/markdown-remark';
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { isNoindexPath } from './src/lib/seo-index.mjs';
 
 const isDev = process.argv.includes('dev');
 
@@ -192,6 +193,9 @@ export default defineConfig({
         // Pagina's die zelf alleen een 301 geven (Astro.redirect) horen niet
         // in de sitemap — GSC telt ze als "Pagina met omleiding".
         if (REDIRECT_ONLY_PAGES.has(pathname)) return false;
+        // Snoeilijst + niet-gewhiteliste vergelijkpagina's (src/lib/seo-index.mjs):
+        // die dragen `noindex`, dus ook niet in de sitemap.
+        if (isNoindexPath(pathname)) return false;
         return true;
       },
       serialize(item) {

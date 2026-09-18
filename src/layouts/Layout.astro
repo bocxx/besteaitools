@@ -1,4 +1,5 @@
 ---
+import { isNoindexPath, NOINDEX_ROBOTS } from '../lib/seo-index.mjs';
 import { Font } from 'astro:assets';
 import '../styles/main.css';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -43,6 +44,9 @@ const rawPathname = Astro.url.pathname;
 const normalizedPathname =
   rawPathname !== '/' ? rawPathname.replace(/\/+$/, '') || '/' : rawPathname;
 const canonicalURL = new URL(normalizedPathname, siteConfig.url);
+// Centrale indexeerregels (snoeilijst + vergelijk-whitelist): wint van de
+// robots-prop, zodat een pagina op de snoeilijst nooit per ongeluk index krijgt.
+const effectiveRobots = isNoindexPath(normalizedPathname) ? NOINDEX_ROBOTS : robots;
 // Default is PNG (niet WebP): LinkedIn accepteert geen WebP als og:image en
 // valt dan terug op een mini-thumbnail. Per-pagina kaarten in public/og/.
 // Een relatief pad (/og/...) wordt naar een absolute URL genormaliseerd zodat
@@ -68,7 +72,7 @@ const modifiedIso = toIsoString(modifiedTime);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="color-scheme" content="dark" />
-    <meta name="robots" content={robots} />
+    <meta name="robots" content={effectiveRobots} />
     <meta name="theme-color" content="#0f0e0d" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
