@@ -39,7 +39,7 @@ sources:
     author: "Hugging Face"
 ---
 
-Je hebt een rapport van vijf pagina's dat voor de lunch tot een alinea moet krimpen. Je kunt gaan lezen en strepen, of je laat een model het zware werk doen. Met [Hugging Face](/tools/huggingface) bouw je in een paar regels Python een tekst-samenvatter die gratis is, open, en volledig op je eigen machine draait. Geen abonnement, geen API-sleutel, en je tekst verlaat je computer niet.
+Je hebt een rapport van vijf pagina's dat voor de lunch tot een alinea moet krimpen. Je kunt gaan lezen en strepen, of je laat een model het zware werk doen. Met [Hugging Face](/ai-tools/huggingface) bouw je in een paar regels Python een tekst-samenvatter die gratis is, open, en volledig op je eigen machine draait. Geen abonnement, geen API-sleutel, en je tekst verlaat je computer niet.
 
 Hieronder zet je er in vijf stappen een op.
 

@@ -51,7 +51,7 @@ Dit is wat er staat, wat het verschil maakt en hoe je ze lokaal draait. Haal je 
 
 Een model als Claude of GPT-5 draait op de servers van Anthropic of OpenAI: je data gaat naar hun systemen en je betaalt per token. Open-weight modellen werken anders. De gewichten — het "brein" van het model — download je zelf en draai je op eigen hardware. Je data verlaat je machine niet, je betaalt geen token-kosten, en finetunen op eigen data kan.
 
-> **💡 Beginner-tip:** je hoeft geen programmeur te zijn om een lokaal model te draaien. [Ollama](/tools/ollama) (gratis, open source) regelt de installatie en start modellen met één commando. Denk eraan als een lokale ChatGPT die je zelf beheert.
+> **💡 Beginner-tip:** je hoeft geen programmeur te zijn om een lokaal model te draaien. [Ollama](/ai-tools/ollama) (gratis, open source) regelt de installatie en start modellen met één commando. Denk eraan als een lokale ChatGPT die je zelf beheert.
 
 ## De lichting van deze zomer
 
@@ -78,7 +78,7 @@ Ollama downloadt het model automatisch en start een lokale chat. Je kunt ook de 
 
 Draait je eerste model, dan is de volgende trede een heel agent-team op je eigen machine: [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Met `ollama list` zie je welke modellen je hebt; `ollama rm <naam>` verwijdert ze. Downloadgroottes lopen van ~2 GB (kleine modellen) tot honderden GB's voor de grootste varianten — check [ollama.com/library](https://ollama.com/library) voor de exacte grootte en beschikbare varianten per model.
 
-> **⚡ Gevorderden:** liever een grafische interface dan de terminal? [LM Studio](/tools/lm-studio) doet hetzelfde werk met een GUI, inclusief GGUF-checkpoints voor de Gemma 4-familie. Voor wie wil begrijpen wat er onder de motorkap gebeurt: de uitleg [hoe een taalmodel van binnen werkt](https://hetlaatsteainieuws.nl/achtergrond/hoe-werkt-een-taalmodel-llm-uitleg-pytorch) op hetlaatsteainieuws.nl legt de basis.
+> **⚡ Gevorderden:** liever een grafische interface dan de terminal? [LM Studio](/ai-tools/lm-studio) doet hetzelfde werk met een GUI, inclusief GGUF-checkpoints voor de Gemma 4-familie. Voor wie wil begrijpen wat er onder de motorkap gebeurt: de uitleg [hoe een taalmodel van binnen werkt](https://hetlaatsteainieuws.nl/achtergrond/hoe-werkt-een-taalmodel-llm-uitleg-pytorch) op hetlaatsteainieuws.nl legt de basis.
 
 ## Wanneer open-weight, wanneer propriëtair?
 

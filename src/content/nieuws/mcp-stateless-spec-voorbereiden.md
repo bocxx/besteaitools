@@ -39,7 +39,7 @@ sources:
     url: "https://modelcontextprotocol.io/specification/draft"
 ---
 
-De grootste revisie van het [Model Context Protocol](/tools/mcp) sinds de lancering is aangekondigd: op 28 juli 2026 wordt specificatie `2026-07-28` definitief. De kern: MCP wordt stateless. Sessies en de initialize-handshake verdwijnen, en daarmee ook de infrastructuur-hoofdpijn van sticky sessions. Bouw of beheer jij een MCP-server? Dan wil je deze wijzigingen nu alvast doorlopen — het is een breaking release.
+De grootste revisie van het [Model Context Protocol](/ai-tools/mcp) sinds de lancering is aangekondigd: op 28 juli 2026 wordt specificatie `2026-07-28` definitief. De kern: MCP wordt stateless. Sessies en de initialize-handshake verdwijnen, en daarmee ook de infrastructuur-hoofdpijn van sticky sessions. Bouw of beheer jij een MCP-server? Dan wil je deze wijzigingen nu alvast doorlopen — het is een breaking release.
 
 ## Wat verandert er precies?
 

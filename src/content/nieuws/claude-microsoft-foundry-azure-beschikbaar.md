@@ -70,4 +70,4 @@ Ga naar [Microsoft Foundry in de Azure Portal](https://ai.azure.com) en zoek op 
 
 Wil je binnen datzelfde Foundry-project niet alleen een model aanroepen maar een echte agent draaien, dan loopt dat via Agent Service: die route beschrijven we stap voor stap in [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen).
 
-Meer weten over Claude zelf? Zie het [Claude-overzicht op debesteaitools.nl](/tools/claude).
+Meer weten over Claude zelf? Zie het [Claude-overzicht op debesteaitools.nl](/ai-tools/claude).

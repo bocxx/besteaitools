@@ -41,7 +41,7 @@ sources:
     url: "https://dev.to/agoraintelligence/build-an-ai-whatsapp-customer-service-bot-with-n8n-no-code-30-minutes-404d"
 ---
 
-Je WhatsApp Business krijgt om 23:00 een bericht van een potentiële klant. Zie je het pas de volgende ochtend, dan is die klant vaak al bij een concurrent. Een AI-bot in [n8n](/tools/n8n) vangt dat gat op: hij leest binnenkomende berichten, antwoordt zelf en tikt jou op de schouder als het spannend wordt. Hieronder bouw je hem in vier nodes, zonder een regel code.
+Je WhatsApp Business krijgt om 23:00 een bericht van een potentiële klant. Zie je het pas de volgende ochtend, dan is die klant vaak al bij een concurrent. Een AI-bot in [n8n](/ai-tools/n8n) vangt dat gat op: hij leest binnenkomende berichten, antwoordt zelf en tikt jou op de schouder als het spannend wordt. Hieronder bouw je hem in vier nodes, zonder een regel code.
 
 ## Wat je nodig hebt
 

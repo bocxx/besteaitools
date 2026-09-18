@@ -60,7 +60,7 @@ Drie dingen: een e-mailadres of Google-account, een mobiel nummer dat sms kan on
 
 Eén ding om te weten: claude.ai kent geen wachtwoorden. Je logt altijd in via je Google-account of via een inloglink die je per e-mail krijgt ([Bron: Claude Help Center](https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account)). Niets te onthouden dus, maar zorg wel dat je bij je mailbox kunt.
 
-> **💡 Beginner-tip:** Twijfel je nog of Claude überhaupt de juiste keuze is voor jouw werk? Onze gids [Wat is Claude AI?](/nieuws/wat-is-claude-ai) legt in tien minuten uit waar Claude in uitblinkt — en onze [vergelijking met ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) helpt bij de keuze.
+> **💡 Beginner-tip:** Twijfel je nog of Claude überhaupt de juiste keuze is voor jouw werk? Onze gids [Wat is Claude AI?](/nieuws/wat-is-claude-ai) legt in tien minuten uit waar Claude in uitblinkt — en onze [vergelijking met ChatGPT](https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) helpt bij de keuze.
 
 ## Claude-account aanmaken in vijf stappen
 

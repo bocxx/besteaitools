@@ -39,7 +39,7 @@ sources:
     url: "https://news.ycombinator.com/item?id=48905248"
 ---
 
-Wie veel met [Claude Code](/tools/claude-code) werkt, kent de tics: alles is ineens "load-bearing", elke tegenwerping opent met "you're absolutely right". Developer Johanna Larsson schreef er op 14 juli een knipoog-tutorial over die prompt viraal ging op Hacker News ([Bron: jola.dev](https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing)). Haar oplossing is serieus bruikbaar: een weergave-hook die stopwoordjes automatisch vervangt. Zo zet je hem zelf op.
+Wie veel met [Claude Code](/ai-tools/claude-code) werkt, kent de tics: alles is ineens "load-bearing", elke tegenwerping opent met "you're absolutely right". Developer Johanna Larsson schreef er op 14 juli een knipoog-tutorial over die prompt viraal ging op Hacker News ([Bron: jola.dev](https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing)). Haar oplossing is serieus bruikbaar: een weergave-hook die stopwoordjes automatisch vervangt. Zo zet je hem zelf op.
 
 ## Wat doet een MessageDisplay-hook?
 

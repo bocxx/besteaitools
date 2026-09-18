@@ -44,6 +44,6 @@ Anthropic hanteert aparte K-12-voorwaarden: docentdata wordt niet gebruikt voor 
 
 Voorlopig niets concreets: het aanbod is VS-only en Anthropic zegt niets over Europa. Wel is de richting duidelijk — na [Claude for Nonprofits](https://claude.com/solutions/nonprofits) is dit de tweede gratis sectorversie met eigen skills en voorwaarden. Werk je in het Nederlandse onderwijs of in edtech, houd dit dan in de gaten; de open-source [teaching skills op GitHub](https://github.com/anthropics/k12-teacher-skills) zijn nu al vrij te gebruiken en te vertalen.
 
-Meer weten over wat Claude standaard kan? Lees onze [review van Claude](/tools/claude) of de gids [wat is Claude AI](/nieuws/wat-is-claude-ai).
+Meer weten over wat Claude standaard kan? Lees onze [review van Claude](/ai-tools/claude) of de gids [wat is Claude AI](/nieuws/wat-is-claude-ai).
 
 **Bron:** [Anthropic — Introducing Claude for Teachers](https://www.anthropic.com/news/claude-for-teachers)

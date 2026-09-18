@@ -34,7 +34,7 @@ faq:
     a: "Moonshot rekent ongeveer 3 dollar per miljoen input-tokens en 15 dollar per miljoen output-tokens, en die prijs blijft gelijk over het volledige contextvenster. Stuur je telkens dezelfde grote context mee — een lang systeemprompt of een vast document — dan is de prijs voor die herhaalde tokens uit cache aanzienlijk lager. Voor wie veel met vaste context werkt, scheelt dat flink."
 ---
 
-Moonshot AI, een Chinese AI-onderneming, bracht in juli 2026 [Kimi K3](/tools/kimi) uit: een model van 2,8 biljoen parameters met een context van 1 miljoen tokens. Daarmee is het volgens Moonshot het grootste open-weights-model tot nu toe, met prestaties die in benchmarks in de buurt komen van de sterkste gesloten modellen. In deze korte gids zie je hoe je het uitprobeert — eerst zonder code, daarna via de API.
+Moonshot AI, een Chinese AI-onderneming, bracht in juli 2026 [Kimi K3](/ai-tools/kimi) uit: een model van 2,8 biljoen parameters met een context van 1 miljoen tokens. Daarmee is het volgens Moonshot het grootste open-weights-model tot nu toe, met prestaties die in benchmarks in de buurt komen van de sterkste gesloten modellen. In deze korte gids zie je hoe je het uitprobeert — eerst zonder code, daarna via de API.
 
 ## Zonder code: de chat
 

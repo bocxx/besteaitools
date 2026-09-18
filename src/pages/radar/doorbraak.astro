@@ -17,6 +17,7 @@ import Layout from '../../layouts/Layout.astro';
 import { ArrowLeft, Rocket, TrendingUp, Zap, FlaskConical, Wrench, Newspaper, ArrowUpRight } from '@lucide/astro';
 import DiscoverGrid from '../../components/DiscoverGrid.astro';
 import data from '../../data/tool_breakthrough.json';
+import { getAllTools } from '../../lib/tools-engine';
 
 const funnel = (data as any).funnel ?? {};
 const counts = (data as any).funnel_counts ?? {};
@@ -39,7 +40,15 @@ const CLASS_LABEL: Record<string, string> = {
 const totalAbout = counts.about_to_break ?? 0;
 const totalShown = STAGES.reduce((n, s) => n + (counts[s.key] ?? 0), 0);
 const gapPct = (g: number) => Math.round((g ?? 0) * 100);
-const toolHref = (slug: string) => `/ai-tools/${slug}`;
+// Radar-slugs komen uit de pipeline en zijn soms rauwe namen ("stable diffusion",
+// "together ai"). Normaliseren en alleen linken als de toolpagina echt bestaat —
+// anders ontstaat een interne 404 (linkcheck 18 sep 2026).
+const knownToolSlugs = new Set((await getAllTools()).map((t) => t.slug));
+const normalizeSlug = (slug: string) => slug.trim().toLowerCase().replace(/\s+/g, '-');
+const toolHref = (slug: string): string | null => {
+  const normalized = normalizeSlug(slug);
+  return knownToolSlugs.has(normalized) ? `/ai-tools/${normalized}` : null;
+};
 
 const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? Astro.url.origin;
 const jsonLd = {
@@ -70,8 +79,8 @@ const jsonLd = {
     <a href="/" class="back-link"><ArrowLeft size={16} stroke-width={1.5} /> Terug naar overzicht</a>
 
     <nav class="radar-tabs" aria-label="Radar weergave">
-      <a href="/radar/?view=launches" class="radar-tab"><Rocket size={14} stroke-width={1.7} /> Launches</a>
-      <a href="/radar/?view=rankings" class="radar-tab"><TrendingUp size={14} stroke-width={1.7} /> Rankings</a>
+      <a href="/radar?view=launches" class="radar-tab"><Rocket size={14} stroke-width={1.7} /> Launches</a>
+      <a href="/radar?view=rankings" class="radar-tab"><TrendingUp size={14} stroke-width={1.7} /> Rankings</a>
       <a href="/radar/doorbraak" class="radar-tab radar-tab--active" aria-current="page"><Zap size={14} stroke-width={1.7} /> Doorbraak</a>
     </nav>
 
@@ -154,7 +163,7 @@ const jsonLd = {
                         {s.days_active ? ` · ${s.days_active}d actief` : ''}
                       </p>
                       <div class="sig__links">
-                        {s.slug && <a class="sig__toollink" href={toolHref(s.slug)}>Bekijk tool</a>}
+                        {s.slug && toolHref(s.slug) && <a class="sig__toollink" href={toolHref(s.slug)}>Bekijk tool</a>}
                         {s.url && <a class="sig__ext" href={s.url} target="_blank" rel="noopener nofollow">Website <ArrowUpRight size={12} stroke-width={2} /></a>}
                       </div>
                     </div>
@@ -208,8 +217,8 @@ const jsonLd = {
       <p class="db__honest">
         Geen cherry-picking: dit is de volledige, gecureerde set van tools met
         spreiding over minstens twee bronklassen. Zoek je puur wie deze week
-        stijgt? Bekijk de <a href="/radar/?view=rankings">rankings</a>. Op zoek
-        naar net gelanceerde tools? Zie de <a href="/radar/?view=launches">launches</a>.
+        stijgt? Bekijk de <a href="/radar?view=rankings">rankings</a>. Op zoek
+        naar net gelanceerde tools? Zie de <a href="/radar?view=launches">launches</a>.
       </p>
     </section>
   </main>

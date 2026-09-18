@@ -71,7 +71,7 @@ Je selecteert Auto in de model-picker en kiest daar je stand. Beheerders bepalen
 
 ## Voor wie en vanaf wanneer
 
-Cursor Router is per 22 juli 2026 beschikbaar voor Teams- en Enterprise-abonnementen, op desktop, web, iOS, de CLI en de SDK. Het is dus vooral iets voor teams en organisaties die veel coding-verzoeken draaien en grip op hun kosten willen. Voor wie Cursor overweegt of vergelijkt: de [tool-pagina van Cursor](/tools/cursor) zet de bredere sterke en zwakke punten op een rij.
+Cursor Router is per 22 juli 2026 beschikbaar voor Teams- en Enterprise-abonnementen, op desktop, web, iOS, de CLI en de SDK. Het is dus vooral iets voor teams en organisaties die veel coding-verzoeken draaien en grip op hun kosten willen. Voor wie Cursor overweegt of vergelijkt: de [tool-pagina van Cursor](/ai-tools/cursor) zet de bredere sterke en zwakke punten op een rij.
 
 ## Checklist: is Cursor Router iets voor jou?
 

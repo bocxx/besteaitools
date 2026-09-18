@@ -44,7 +44,7 @@ sources:
     url: "https://soloterm.com/solo-vs-warp"
 ---
 
-Claude Code in de ene tab, Codex in de andere, en de queue worker die twintig minuten geleden stilletjes crashte. Wie met meerdere terminal-agents werkt, kent de tab-roulette. [Solo](/tools/soloterm) — van Aaron Francis, bekend van faster.dev — lost precies dat op: één venster waarin je agents én dev-stack draaien, met een statusoverzicht dat vertelt wie er op jou wacht. Zo zet je het op.
+Claude Code in de ene tab, Codex in de andere, en de queue worker die twintig minuten geleden stilletjes crashte. Wie met meerdere terminal-agents werkt, kent de tab-roulette. [Solo](/ai-tools/soloterm) — van Aaron Francis, bekend van faster.dev — lost precies dat op: één venster waarin je agents én dev-stack draaien, met een statusoverzicht dat vertelt wie er op jou wacht. Zo zet je het op.
 
 ## Stap 1: download en installeer Solo
 

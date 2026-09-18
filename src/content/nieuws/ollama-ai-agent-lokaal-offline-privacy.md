@@ -34,7 +34,7 @@ faq:
     a: "Voor de kleinere modellen niet per se; die draaien op een moderne laptop met voldoende werkgeheugen. Naarmate het model groter wordt, stijgt de eis aan geheugen en bij voorkeur een aparte grafische kaart. Een praktische aanpak: begin met een klein model om je opzet werkend te krijgen, en schaal pas op naar een groter model als je merkt dat de kwaliteit tekortschiet."
 ---
 
-Wil je AI inzetten op gegevens die je liever niet de deur uit stuurt — klantdossiers, interne documenten, gevoelige aanvragen — dan is een cloud-dienst niet altijd de juiste keuze. Met [Ollama](/tools/ollama) draai je een taalmodel volledig op je eigen computer of server. De data blijft binnen je netwerk, en je betaalt geen tokens per aanvraag. In deze korte gids zie je hoe je er een simpele agent op laat draaien.
+Wil je AI inzetten op gegevens die je liever niet de deur uit stuurt — klantdossiers, interne documenten, gevoelige aanvragen — dan is een cloud-dienst niet altijd de juiste keuze. Met [Ollama](/ai-tools/ollama) draai je een taalmodel volledig op je eigen computer of server. De data blijft binnen je netwerk, en je betaalt geen tokens per aanvraag. In deze korte gids zie je hoe je er een simpele agent op laat draaien.
 
 ## Wat Ollama doet
 

@@ -38,7 +38,7 @@ faq:
     a: "Meta heeft aangekondigd de gewichten van het gesloten Muse Spark 1.2 open te maken, maar per 13 augustus 2026 waren die nog niet uitgebracht. Bouw je planning dus niet op die belofte. Werk met wat er nu staat en behandel Spark als een mogelijke bonus."
 ---
 
-Meta heeft sinds 10 augustus twee open modellenlijnen naast elkaar staan, en dat maakt de keuze onnodig verwarrend. [Llama](/tools/llama) is het bekende fundament van de open-source AI-wereld. Muse Glimmer is de nieuwkomer die op je eigen laptop moet draaien. In deze gids kies je in drie stappen welke van de twee je download.
+Meta heeft sinds 10 augustus twee open modellenlijnen naast elkaar staan, en dat maakt de keuze onnodig verwarrend. [Llama](/ai-tools/llama) is het bekende fundament van de open-source AI-wereld. Muse Glimmer is de nieuwkomer die op je eigen laptop moet draaien. In deze gids kies je in drie stappen welke van de twee je download.
 
 ## Stap 1: check eerst de licentie, niet de benchmark
 
@@ -56,11 +56,11 @@ Muse Glimmer is een dense model van 30 miljard parameters. Rond 4-bit gekwantise
 
 Llama 4 werkt anders. Scout en Maverick zijn mixture-of-experts-modellen: 17 miljard actieve parameters, maar tot 400 miljard in totaal. Alleen de actieve experts rekenen mee per token, maar het hele model moet wel ergens staan. In de praktijk betekent dat serverhardware, of een provider die het voor je host.
 
-Vuistregel: wil je het op je eigen machine, begin bij Glimmer. Wil je maximale kwaliteit en huur je toch capaciteit in, dan is Llama 4 via [Ollama](/tools/ollama), [vLLM](/tools/vllm) of een API-aanbieder nog steeds een prima route.
+Vuistregel: wil je het op je eigen machine, begin bij Glimmer. Wil je maximale kwaliteit en huur je toch capaciteit in, dan is Llama 4 via [Ollama](/ai-tools/ollama), [vLLM](/ai-tools/vllm) of een API-aanbieder nog steeds een prima route.
 
 ## Stap 3: haal het model binnen
 
-Voor Glimmer staan de gewichten ongated op Hugging Face, dus je kunt ze rechtstreeks ophalen. Wil je het via [Ollama](/tools/ollama) draaien, zoek dan in de modelbibliotheek op de naam en kopieer het tag dat daar staat:
+Voor Glimmer staan de gewichten ongated op Hugging Face, dus je kunt ze rechtstreeks ophalen. Wil je het via [Ollama](/ai-tools/ollama) draaien, zoek dan in de modelbibliotheek op de naam en kopieer het tag dat daar staat:
 
 ```bash
 ollama pull <tag-uit-de-ollama-bibliotheek>

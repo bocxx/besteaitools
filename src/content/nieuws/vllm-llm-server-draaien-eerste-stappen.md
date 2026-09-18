@@ -35,7 +35,7 @@ faq:
     a: "De software zelf is gratis en open source onder Apache 2.0. De echte kostenpost is de GPU: je betaalt voor de kaart of voor de uren die je hem huurt, ongeacht hoeveel tokens je erdoorheen jaagt. Daar zit meteen de rekensom: pas als je genoeg volume hebt om de kaart bezet te houden, wordt zelf draaien goedkoper dan tokens afrekenen bij een aanbieder."
 ---
 
-Je hebt een open model lokaal draaien en dat werkt prima — tot je collega's het ook gaan gebruiken. Dan zakt het in. Ollama is gebouwd voor één gebruiker; zodra tien mensen tegelijk een vraag stellen, staan negen ervan te wachten. Dat is precies het gat dat [vLLM](/tools/vllm) vult. In deze gids zet je in vier stappen een eigen inference-server op die dezelfde API spreekt als OpenAI.
+Je hebt een open model lokaal draaien en dat werkt prima — tot je collega's het ook gaan gebruiken. Dan zakt het in. Ollama is gebouwd voor één gebruiker; zodra tien mensen tegelijk een vraag stellen, staan negen ervan te wachten. Dat is precies het gat dat [vLLM](/ai-tools/vllm) vult. In deze gids zet je in vier stappen een eigen inference-server op die dezelfde API spreekt als OpenAI.
 
 ## Stap 1: controleer of je de hardware hebt
 

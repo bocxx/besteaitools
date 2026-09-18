@@ -50,7 +50,7 @@ sources:
 
 Op 24 juni 2026 bracht Reuters een verhaal naar buiten dat in de AI-wereld meteen sterk de aandacht trok: Anthropic beschuldigt Alibaba en haar AI-lab van "de grootste bekende distillatieaanval" op Claude tot nu toe. Het is geen technisch steekje maar een serieuze beschuldiging aan het adres van een van de grootste technologiebedrijven ter wereld — en het roept een fundamentele vraag op over hoe bedrijven hun AI-modellen beschermen ([Bron: Reuters](https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)).
 
-> **💡 Beginner-tip:** Nog niet bekend met Claude zelf? Bekijk de [Claude-pagina op debesteaitools.nl](/tools/claude) voor een overzicht van wat het model kan en voor wie het geschikt is. Het begrijpen van deze aanval heeft weinig waarde zonder te weten waarom Claude interessant genoeg is om aan te vallen.
+> **💡 Beginner-tip:** Nog niet bekend met Claude zelf? Bekijk de [Claude-pagina op debesteaitools.nl](/ai-tools/claude) voor een overzicht van wat het model kan en voor wie het geschikt is. Het begrijpen van deze aanval heeft weinig waarde zonder te weten waarom Claude interessant genoeg is om aan te vallen.
 
 ## Wat er precies gebeurde
 

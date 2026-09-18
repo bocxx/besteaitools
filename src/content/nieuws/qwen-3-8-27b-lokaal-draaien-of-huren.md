@@ -51,7 +51,7 @@ Twee checkpoints staan op Hugging Face en ModelScope:
 | `Qwen/Qwen3.8-27B` | BF16 | Je hebt geheugen over en wilt geen enkele kwantisatie-twijfel |
 | `Qwen/Qwen3.8-27B-FP8` | FP8, blokgrootte 128 | Standaardkeuze: ruwweg halve geheugenlast, volgens Alibaba nagenoeg gelijke kwaliteit |
 
-Serveerrecepten zijn gepubliceerd voor vLLM en SGLang. Voor een eerste kennismaking zonder infrastructuur is [Ollama](/tools/ollama) of [LM Studio](/tools/lm-studio) de kortste route, mits daar een geschikte quant beschikbaar is.
+Serveerrecepten zijn gepubliceerd voor vLLM en SGLang. Voor een eerste kennismaking zonder infrastructuur is [Ollama](/ai-tools/ollama) of [LM Studio](/ai-tools/lm-studio) de kortste route, mits daar een geschikte quant beschikbaar is.
 
 ## De afweging in drie vragen
 

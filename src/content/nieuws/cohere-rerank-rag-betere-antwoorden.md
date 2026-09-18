@@ -39,7 +39,7 @@ faq:
 
 Je RAG-systeem vindt de juiste passage wel. Alleen staat hij op plek acht, en je stuurt alleen de top vijf door. Het antwoord dat je gebruiker krijgt is daardoor net verkeerd, terwijl de informatie gewoon in je documenten stond.
 
-Dat is het probleem waar een reranker voor bestaat. In deze gids zet je er in drie stappen een van [Cohere](/tools/cohere) tussen.
+Dat is het probleem waar een reranker voor bestaat. In deze gids zet je er in drie stappen een van [Cohere](/ai-tools/cohere) tussen.
 
 ## Stap 1: begrijp waar de stap zit
 

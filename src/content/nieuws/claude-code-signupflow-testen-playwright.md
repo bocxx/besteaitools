@@ -44,7 +44,7 @@ sources:
     publishedAt: 2026-07-16
 ---
 
-Je bouwt een aanmeldflow, schrijft er netjes een test voor, en dan strandt alles op dezelfde muur: "check je e-mail om je account te bevestigen". Vanaf dat punt zit er een mens in je "geautomatiseerde" test die een inbox opent en een link kopieert. In deze gids laat je [Claude Code](/tools/claude-code) een Playwright-test bouwen die ook die stap zelf afhandelt — voor je eigen app, met een lokale testmailserver.
+Je bouwt een aanmeldflow, schrijft er netjes een test voor, en dan strandt alles op dezelfde muur: "check je e-mail om je account te bevestigen". Vanaf dat punt zit er een mens in je "geautomatiseerde" test die een inbox opent en een link kopieert. In deze gids laat je [Claude Code](/ai-tools/claude-code) een Playwright-test bouwen die ook die stap zelf afhandelt — voor je eigen app, met een lokale testmailserver.
 
 Eén afbakening vooraf: dit is een QA-recept voor je éigen signup-flow. Bots die accounts aanmaken bij diensten van anderen schenden vrijwel altijd de gebruiksvoorwaarden — dat terrein blijft hier bewust buiten beeld.
 

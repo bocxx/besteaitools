@@ -64,4 +64,4 @@ Fable 5 is Anthropics krachtigste model voor complexe redeneerwerk, lange agenti
 
 > **Tip**: Werk je al met Claude in je dagelijkse workflow? Lees dan ook hoe je [Claude instelt in één dag via 6 tools](/nieuws/claude-instellen-1-dag-6-tools) om direct meer uit Fable 5 te halen.
 
-Meer weten over Claude als tool? Zie het [Claude-overzicht op debesteaitools.nl](/tools/claude).
+Meer weten over Claude als tool? Zie het [Claude-overzicht op debesteaitools.nl](/ai-tools/claude).

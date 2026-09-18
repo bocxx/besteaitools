@@ -61,7 +61,7 @@ Claude Cowork is een modus binnen de Claude desktop-app waarin Claude zelfstandi
 
 De eerste release was macOS-only en alleen voor Max-abonnees. Vier dagen later ([op 16 januari 2026](https://simonwillison.net/2026/Jan/12/claude-cowork/)) kwam Pro erbij, in februari kwam Windows, en rond dezelfde tijd verdween het "research preview"-label voor alle betaalde plannen ([Bron: TechRadar](https://www.techradar.com/pro/claude-cowork-is-now-available-for-enterprise-use-adds-analytics-access-controls-and-more)). Dat is een snel tempo voor een feature die Anthropic naar eigen zeggen in minder dan twee weken heeft gebouwd — grotendeels met Claude Code zelf.
 
-> **💡 Beginner-tip:** Nog nooit met Claude gewerkt? Onze [vergelijking tussen Claude en ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) geeft een goed startpunt voor wie tussen de twee grote assistenten kiest.
+> **💡 Beginner-tip:** Nog nooit met Claude gewerkt? Onze [vergelijking tussen Claude en ChatGPT](https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) geeft een goed startpunt voor wie tussen de twee grote assistenten kiest.
 
 ## Wat Claude concreet doet in Cowork
 
