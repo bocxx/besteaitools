@@ -21,7 +21,8 @@
     "social:all": "node scripts/generate-social.mjs --all",
     "social:upload": "node scripts/upload-social.mjs",
     "audit:html": "node scripts/check-html-complete.mjs",
-    "postbuild": "node scripts/check-html-complete.mjs",
+    "postbuild": "node scripts/check-html-complete.mjs && node scripts/seo-guard.mjs",
+    "seo:guard": "node scripts/seo-guard.mjs",
     "hero:verify": "node scripts/verify-hero-images.mjs",
     "content:verify": "node --experimental-strip-types scripts/verify-content-schema.mjs",
     "redactie:verify": "node scripts/verify-redactie.mjs"
