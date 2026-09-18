@@ -86,7 +86,7 @@ Eén loop met tests is het startpunt. Zodra dit werkt, kun je meerdere gespecial
 - [ ] Je hebt de eerste loop op één kleine taak getest voor je opschaalt
 - [ ] Je houdt je tokenverbruik in de gaten
 
-Wil je die loop niet zelf draaien maar laten hosten, dan neemt een beheerde runtime het over: zie [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen).
+Wil je die loop niet zelf draaien maar laten hosten, dan neemt een beheerde runtime het over: zie [Je eerste AI-agent bouwen met Microsoft Foundry](/nieuws/microsoft-foundry-eerste-ai-agent-bouwen). Draai je hem wel zelf op een open model, leg dan vast welk model de agent mag aanroepen: [LiteLLM instellen zodat je agent niet bij de gewichten kan](/nieuws/litellm-agent-modelgewichten-afschermen).
 
 ## Bronnen
 
