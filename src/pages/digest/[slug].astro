@@ -58,6 +58,7 @@ const publishedAt = entry.data.date;
 const ageDays =
   (Date.now() - publishedAt.getTime()) / (1000 * 60 * 60 * 24);
 
+// Houd gelijk met DIGEST_INDEX_MAX_AGE_DAYS in astro.config.mjs (sitemap-filter).
 const INDEX_MAX_AGE_DAYS = 14;
 const robots =
   ageDays > INDEX_MAX_AGE_DAYS

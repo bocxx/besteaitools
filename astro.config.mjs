@@ -103,6 +103,21 @@ function lastmodFor(pathname) {
   return null;
 }
 
+/** Moet exact gelijk lopen met INDEX_MAX_AGE_DAYS in
+ *  src/pages/digest/[slug].astro — daar krijgt een oudere digest
+ *  `noindex, follow`, en dan hoort hij ook niet in de sitemap. */
+const DIGEST_INDEX_MAX_AGE_DAYS = 14;
+
+function isNoindexDigest(pathname) {
+  if (!/^\/digest\/[^/]+$/.test(pathname)) return false;
+  const date = sitemapPathDates.get(pathname);
+  // Geen datum gevonden → de pagina rekent dan met Invalid Date en valt ook
+  // niet onder noindex; zelfde uitkomst hier: laten staan.
+  if (!date) return false;
+  const ageDays = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
+  return ageDays > DIGEST_INDEX_MAX_AGE_DAYS;
+}
+
 export default defineConfig({
   // Astro 7.2: dit project gebruikt nergens `Astro.session`, dus het
   // session-runtime + de unstorage KV-driver blijven uit de SSR-bundle.
@@ -157,9 +172,22 @@ export default defineConfig({
       // Sluit OG-image routes uit, en de /ai-tools redirect-stub: die 301't
       // naar / (zie public/_redirects), dus in de sitemap zou hij als
       // "Pagina met omleiding" in GSC verschijnen.
-      filter: (page) =>
-        !page.includes('/og/') &&
-        page.replace(/\/$/, '').replace(/^https?:\/\/[^/]+/, '') !== '/ai-tools',
+      //
+      // Ook uit: digests met `noindex` (ouder dan DIGEST_INDEX_MAX_AGE_DAYS,
+      // zelfde regel als src/pages/digest/[slug].astro). Stonden ze erin, dan
+      // zei de sitemap "crawl dit" terwijl de pagina "negeer mij" zei — in
+      // sep 2026 ging het om 298 van de 907 sitemap-URL's (GSC: 90× "Uitgesloten
+      // door tag noindex"), verspild crawlbudget op een site die Google al
+      // weinig crawlt.
+      filter: (page) => {
+        const pathname = page
+          .replace(/^https?:\/\/[^/]+/, '')
+          .replace(/\/+$/, '') || '/';
+        if (page.includes('/og/')) return false;
+        if (pathname === '/ai-tools') return false;
+        if (isNoindexDigest(pathname)) return false;
+        return true;
+      },
       serialize(item) {
         // Zonder trailing slash: matcht de canonical/og:url uit Layout.astro
         // én alle interne links op de site. Zonder deze stap wijst de sitemap
