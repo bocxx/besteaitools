@@ -1,6 +1,6 @@
 ---
-title: AI Tools Radar – Gemini · DeepSeek · ChatGPT (Ochtend 18 september)
-description: 'AI Tools Radar 18 september: 96 launches, 113 feature-updates, 12 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – Gemini · DeepSeek · ChatGPT (Avond 18 september)
+description: 'AI Tools Radar 18 september: 100 launches, 113 feature-updates, 11 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-09-18'
 timeSlot: tools-digest
 featured: []
@@ -10,62 +10,60 @@ tags:
 - Gemini
 - DeepSeek
 - ChatGPT
-- Cursor
 author: debesteaitools.nl Redactie
-totalAnalyzed: 221
+totalAnalyzed: 224
 itemsSelected: 16
 categoriesCount: 3
 topics:
 - Gemini
 - DeepSeek
 - ChatGPT
-- Cursor
 heroImage: "/images/digest/ai-tools-radar-18-september-2026-gemini-deepseek-chatgpt.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Google lanceert Gemini 3.8 Live met uitgebreide denkmodus voor complexe gesprekstaken.
-- ChatGPT introduceert Data Agent waarmee bedrijfsdata direct wordt omgezet in dashboards en acties.
-- DeepSeek brengt V4.1-Flash uit, een snellere en efficiëntere versie van hun model.
+- Google lanceert Gemini 3.8 Live met uitgebreide denkmodus voor gesproken samenwerking en complexe taken.
+- ChatGPT introduceert Data Agent waarmee bedrijven hun data omzetten in dashboards en acties.
+- DeepSeek brengt V4.1-Flash uit, een snellere en efficiëntere versie van hun redeneermodel.
 launches:
 - name: I made a flight simulator, except you're just a passenger
-  summary_nl: Een vluchtsimulator waarin je alleen passagier bent, geen piloot.
+  summary_nl: Een vluchtsimulator waarin je passagier bent in plaats van piloot, gemaakt door een indie-ontwikkelaar.
   url: https://inflightsimulator.com
   source_type: hn
   source_label: Hacker News (429 punten, 202 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=inflightsimulator.com&sz=64
 - name: Capsule
-  summary_nl: Capsule maakt single-file webapps die hun data opslaan in SQLite.
+  summary_nl: Capsule laat je single-file webapps bouwen die hun data opslaan in SQLite zonder externe server.
   url: https://withcapsule.app/
   source_type: hn
-  source_label: Hacker News (376 punten, 163 reacties)
+  source_label: Hacker News (376 punten, 166 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=withcapsule.app&sz=64
 - name: your AI Setup, Learn from others
-  summary_nl: Platform waar gebruikers hun AI-setup delen en van anderen leren.
+  summary_nl: Een platform waar gebruikers hun AI-toolsetups delen en van elkaar leren welke combinaties werken.
   url: https://mysetup.ai/
   source_type: hn
-  source_label: Hacker News (204 punten, 114 reacties)
+  source_label: Hacker News (229 punten, 128 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=mysetup.ai&sz=64
 - name: Hacker News, without AI
-  summary_nl: Hacker News gefilterd zonder AI-gerelateerde berichten.
+  summary_nl: Een gefilterde versie van Hacker News die alle AI-gerelateerde berichten automatisch verwijdert.
   url: https://hcker.news/?ai=exclude
   source_type: hn
   source_label: Hacker News (206 punten, 88 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=hcker.news&sz=64
 - name: Pelican
-  summary_nl: Overzicht van fietsalternatieven, bijgewerkt voor 2026.
+  summary_nl: Een satirische vergelijking van fietsen als alternatief voor de Pelican, bijgewerkt voor 2026.
   url: https://gally.net/temp/20260914pelican-alternatives/index.html
   source_type: hn
   source_label: Hacker News (131 punten, 45 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=gally.net&sz=64
 - name: Kinesis
-  summary_nl: Kinesis laat je je Mac bedienen met de Meta Neural Band.
+  summary_nl: Kinesis laat je je Mac besturen met de Meta Neural Band via open-source software.
   url: https://github.com/callbacked/kinesis
   source_type: hn
   source_label: Hacker News (121 punten, 46 reacties)
@@ -75,7 +73,7 @@ updates:
 - tool_name: Gemini
   tool_slug: gemini
   feature_title: Gemini 3.8 Live and Extended Thinking
-  summary_nl: Gemini lanceert 3.8 Live en Extended Thinking voor spraakgestuurd samenwerken en complexe taken.
+  summary_nl: Gemini lanceert spraakmodellen waarmee je live kunt samenwerken en complexe redeneertaken kunt uitvoeren via gesproken interactie.
   impact: hoog
   url: https://twitter.com/GoogleDeepMind/status/2099907440422830269
   source_type: x
@@ -87,7 +85,7 @@ updates:
 - tool_name: DeepSeek
   tool_slug: deepseek
   feature_title: DeepSeek-V4.1-Flash
-  summary_nl: DeepSeek brengt V4.1-Flash uit, een slimmere en snellere versie van hun model.
+  summary_nl: DeepSeek brengt een geoptimaliseerde versie uit die sneller en efficiënter werkt dan de vorige generatie.
   impact: hoog
   url: https://twitter.com/deepseek_ai/status/2097930608790167907
   source_type: x
@@ -99,7 +97,7 @@ updates:
 - tool_name: ChatGPT
   tool_slug: chatgpt
   feature_title: Data Agent
-  summary_nl: ChatGPT voegt Data Agent toe om bedrijfsdata om te zetten in antwoorden en dashboards.
+  summary_nl: ChatGPT Work krijgt een agent die bedrijfsdata automatisch omzet in antwoorden, interactieve dashboards en acties.
   impact: hoog
   url: https://twitter.com/ChatGPT/status/2098065296968011853
   source_type: x
@@ -111,7 +109,7 @@ updates:
 - tool_name: Gemini
   tool_slug: gemini
   feature_title: Gemini 3.8 Live and 3.8 Live Extended Thinking
-  summary_nl: Gemini introduceert 3.8 Live modellen voor geavanceerde conversatie-AI met uitgebreid redeneren.
+  summary_nl: Gemini introduceert conversatie-AI met uitgebreide denkmodus voor complexere vraagstukken en langere redeneerkettingen.
   impact: hoog
   url: https://twitter.com/GoogleDeepMind/status/2099907440422830269
   source_type: x
@@ -123,7 +121,7 @@ updates:
 - tool_name: ChatGPT
   tool_slug: chatgpt
   feature_title: Data Agent in ChatGPT Work
-  summary_nl: ChatGPT Work krijgt Data Agent voor het omzetten van bedrijfsdata in acties en visualisaties.
+  summary_nl: De Data Agent in ChatGPT Work verbindt bedrijfssystemen en maakt data direct bruikbaar zonder handmatige analyse.
   impact: hoog
   url: https://twitter.com/ChatGPT/status/2098065296968011853
   source_type: x
@@ -132,47 +130,48 @@ updates:
   platforms:
   - twitter
   key: chatgpt::Data Agent in ChatGPT Work
-- tool_name: Cursor
-  tool_slug: cursor
-  feature_title: Projects
-  summary_nl: Cursor introduceert Projects waarbij een coördinator-agent meerdere taken overziet in plaats van losse chats.
-  impact: medium
-  url: https://twitter.com/cursor_ai/status/2098162488013455784
+- tool_name: DeepSeek
+  tool_slug: deepseek
+  feature_title: DeepSeek Harness 0.1.1
+  summary_nl: DeepSeek Harness voegt ondersteuning toe voor het nieuwe vision-model en verbetert de evaluatie-infrastructuur.
+  impact: hoog
+  url: https://twitter.com/deepseek_ai/status/2090730032574631962
   source_type: x
   source_label: X
-  confidence: laag
+  confidence: hoog
   platforms:
+  - hackernews
   - twitter
-  key: cursor::Projects
+  key: deepseek::DeepSeek Harness 0.1.1
 deepDives:
 - title: Gemini 3.8 Flash and 3.8 Flash Cyber
-  summary_nl: Test van Gemini 3.8 Flash en Cyber voor Nederlandse gebruikers om te zien wat het écht kan.
+  summary_nl: Test Gemini 3.8 Flash en Cyber op Nederlandse use cases om te zien of de snelheid en beveiligingsfocus praktisch verschil maken.
   url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
   tool: gemini
   trend_phase: tracked
   score: 22.26
 - title: Mistral OCR 4.1
-  summary_nl: Vergelijking van Mistral OCR 4.1 met alternatieven om te bepalen welke het beste past.
+  summary_nl: Vergelijk Mistral OCR 4.1 met alternatieven op nauwkeurigheid, snelheid en prijs voor documentverwerking in productie.
   url: https://docs.mistral.ai/models/ocr-4-1
   tool: mistral
   trend_phase: tracked
   score: 22.04
 - title: 'Muse: Meta''s personal AI agent, features and capabilities'
-  summary_nl: Praktische gids voor het inzetten van Meta's Muse AI-agent in je dagelijkse workflow.
+  summary_nl: Onderzoek hoe Muse, Meta's persoonlijke AI-agent, zich verhoudt tot bestaande assistenten en waar de integratie met Meta-platforms verschil maakt.
   url: https://ai.meta.com/muse/
   tool: ''
   trend_phase: tracked
   score: 21.86
 - title: Gemini 3.8 Live and 3.8 Live Extended Thinking
-  summary_nl: Handleiding voor het effectief gebruiken van Gemini 3.8 Live in je werkproces.
+  summary_nl: Bouw een praktische workflow met Gemini 3.8 Live om te testen waar spraakinteractie en Extended Thinking meerwaarde bieden.
   url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/
   tool: gemini
   trend_phase: tracked
   score: 21.55
-slotLabel: Ochtend
+slotLabel: Avond
 ---
 
-De grote platforms versterken hun conversatie- en data-integratie. Google zet in op spraakmodellen met extended thinking, OpenAI brengt bedrijfsdata dichter bij de chat, en DeepSeek optimaliseert voor snelheid. Cursor verschuift van losse chats naar projectcoördinatie met agents. De deep-dives tonen interesse in praktische vergelijkingen tussen Gemini, Mistral OCR en Meta's Muse voor dagelijks gebruik.
+De grote modelleveranciers verschuiven van pure tekstgeneratie naar gespecialiseerde agents en multimodale interfaces. Google zet in op spraakinteractie met Extended Thinking, OpenAI richt zich op bedrijfsdata-integratie, en DeepSeek optimaliseert voor snelheid. Tegelijk zien we op Hacker News een tegenbeweging: tools die AI juist filteren of bewust buiten laten. De markt polariseert tussen diepere AI-integratie en bewuste afstand.
 
 ---
 

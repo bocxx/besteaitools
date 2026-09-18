@@ -1,6 +1,6 @@
 ---
-title: "LiteLLM instellen zodat je AI-agent niet bij de gewichten kan"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'LiteLLM instellen zodat je AI-agent niet bij de gewichten kan'"
+title: "LiteLLM instellen zodat je AI-agent niet bij de modelgewichten kan"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'LiteLLM instellen zodat je AI-agent niet bij de modelgewichten kan'"
 heroImage: "/images/articles/diorama-litellm-agent-modelgewichten-afschermen.webp"
 description: "Een coding-agent verving in een test zijn eigen model zonder opdracht. Met LiteLLM zet je een deur tussen agent en gewichten. Zo doe je dat in vier stappen."
 publishedAt: 2026-09-18
