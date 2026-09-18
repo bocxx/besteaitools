@@ -56,3 +56,15 @@
 # verwerkt in getComparisonPairs), niet via een redirect. Een blanket
 # /vergelijk/* redirect kan hier niet: in Workers Assets gaat _redirects vóór
 # static assets, dus dat zou ook de geldige vergelijk-pagina's wegredirecten.
+
+# DBAT ↔ AIPMKB consolidatie sep 2026 — zie
+# aiplatformmkb.nl/docs/DBAT-CONSOLIDATIE-ANALYSE-2026-09.md. Drie DBAT-
+# artikelen waar de AIPMKB-versie 2x dieper is / hetzelfde beter dekt.
+# Beide URL-varianten expliciet — voorkomt 2-staps-redirect (slash→noslash
+# →AIPMKB) die Google als "chained redirect" telt.
+/nieuws/chatgpt-offerte-schrijven-mkb-prompt   https://www.aiplatformmkb.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt   301
+/nieuws/chatgpt-offerte-schrijven-mkb-prompt/  https://www.aiplatformmkb.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt   301
+/nieuws/granola-notuleren-mkb-5-minuten        https://www.aiplatformmkb.nl/gidsen/granola-notuleren-mkb-5-minuten        301
+/nieuws/granola-notuleren-mkb-5-minuten/       https://www.aiplatformmkb.nl/gidsen/granola-notuleren-mkb-5-minuten        301
+/nieuws/claude-vs-chatgpt-vergelijking-2026    https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
+/nieuws/claude-vs-chatgpt-vergelijking-2026/   https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301

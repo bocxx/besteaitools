@@ -107,7 +107,7 @@ Drie praktische vuistregels. Leg intern vast welke informatie er wel en niet in 
 
 ## Claude of toch ChatGPT?
 
-De vraag die elke ondernemer stelt. Het korte antwoord: Claude wint op lange documenten, genuanceerd schrijfwerk en code; ChatGPT wint op breedte, met beeldgeneratie, een ruimere gratis versie en een groter ecosysteem aan koppelingen. Veel professionals gebruiken beide naast elkaar en kiezen per taak. Onze [uitgebreide vergelijking Claude vs ChatGPT](/nieuws/claude-vs-chatgpt-vergelijking-2026) zet de verschillen per gebruikssituatie op een rij.
+De vraag die elke ondernemer stelt. Het korte antwoord: Claude wint op lange documenten, genuanceerd schrijfwerk en code; ChatGPT wint op breedte, met beeldgeneratie, een ruimere gratis versie en een groter ecosysteem aan koppelingen. Veel professionals gebruiken beide naast elkaar en kiezen per taak. Onze [uitgebreide vergelijking Claude vs ChatGPT](https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) zet de verschillen per gebruikssituatie op een rij.
 
 ## Zo begin je
 

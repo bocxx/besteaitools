@@ -64,7 +64,7 @@ Dat "verzin niets" is geen beleefdheidsfrase. ChatGPT vult gaten graag op met pl
 
 Vraag ChatGPT tot slot: *"Welke termen uit de vacature ontbreken nog in mijn cv, en welke daarvan kan ik eerlijk claimen?"* Loop de output daarna woord voor woord na. Klopt elke claim? Herken je jezelf in de toon? Lever het cv aan als eenvoudig opgemaakt document zonder tabellen, kolommen of tekst in afbeeldingen, want dat parseert recruitmentsoftware het betrouwbaarst.
 
-> **⚡ Gevorderden:** solliciteer je op meerdere functies tegelijk, maak dan één "moeder-cv" met ál je ervaring in detail, en laat ChatGPT daar per vacature een toegespitste variant uit destilleren. Zo blijft de bron waar en volledig, en is elke variant een selectie in plaats van een verzinsel. Hetzelfde template-denken gebruiken ondernemers voor [offertes schrijven met ChatGPT](/nieuws/chatgpt-offerte-schrijven-mkb-prompt).
+> **⚡ Gevorderden:** solliciteer je op meerdere functies tegelijk, maak dan één "moeder-cv" met ál je ervaring in detail, en laat ChatGPT daar per vacature een toegespitste variant uit destilleren. Zo blijft de bron waar en volledig, en is elke variant een selectie in plaats van een verzinsel. Hetzelfde template-denken gebruiken ondernemers voor [offertes schrijven met ChatGPT](https://www.aiplatformmkb.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt).
 
 ## Checklist: ben je klaar?
 

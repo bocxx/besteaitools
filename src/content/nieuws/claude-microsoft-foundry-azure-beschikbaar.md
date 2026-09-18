@@ -62,7 +62,7 @@ Primair voor organisaties die al stevig in het Microsoft-ecosysteem zitten: grot
 
 Developers die al werken met Azure AI Studio of Copilot Studio kunnen Claude nu ook inzetten via de vertrouwde Foundry-workflow.
 
-> **Tip**: Wil je weten of Claude beter past bij jouw use case dan GPT-modellen? Lees onze [Claude vs. ChatGPT vergelijking 2026](/nieuws/claude-vs-chatgpt-vergelijking-2026) voor een praktijkgerichte afweging.
+> **Tip**: Wil je weten of Claude beter past bij jouw use case dan GPT-modellen? Lees onze [Claude vs. ChatGPT vergelijking 2026](https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) voor een praktijkgerichte afweging.
 
 ## Aan de slag
 
