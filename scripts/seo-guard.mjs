@@ -17,17 +17,27 @@
  *   - interne link naar een URL uit public/_redirects (onnodige redirect-hop)
  *
  * Gebruik: node scripts/seo-guard.mjs [--dist dist/client]
+ *
+ * Per site in te stellen via seo-guard.config.json in de projectroot (optioneel):
+ *   { "ssrRoutes": ["/nieuws"], "ssrPrefixes": ["/api/"] }
+ * = routes met `prerender = false`, die alleen on-demand bestaan en dus geen
+ * bestand in dist hebben. Het domein wordt uit de sitemap afgeleid.
+ *
+ * Bron van waarheid: astro-starter/scripts/seo-guard.mjs. Sites kopiëren hem
+ * ongewijzigd; site-specifieke instellingen alleen in seo-guard.config.json.
  */
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
 const argDist = process.argv.indexOf('--dist');
 const DIST = argDist > -1 ? process.argv[argDist + 1] : 'dist/client';
-const SITE = 'https://debesteaitools.nl';
-
+let guardConfig = {};
+try {
+  guardConfig = JSON.parse(readFileSync('seo-guard.config.json', 'utf-8'));
+} catch { /* geen config: alleen standaardwaarden */ }
 // Routes met `prerender = false`: bestaan alleen on-demand, niet als bestand.
-const SSR_ROUTES = new Set(['/nieuws', '/radar', '/digest', '/launch-radar', '/weekradar']);
-const SSR_PREFIXES = ['/api/'];
+const SSR_ROUTES = new Set(guardConfig.ssrRoutes ?? []);
+const SSR_PREFIXES = guardConfig.ssrPrefixes ?? ['/api/'];
 
 if (!existsSync(join(DIST, 'sitemap-0.xml'))) {
   console.error(`seo-guard: ${DIST}/sitemap-0.xml ontbreekt — draai eerst astro build.`);
@@ -76,6 +86,7 @@ const sitemapXml = readdirSync(DIST)
   .map((f) => readFileSync(join(DIST, f), 'utf-8'))
   .join('\n');
 const locs = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+const SITE = locs.length ? new URL(locs[0]).origin : '';
 for (const loc of locs) {
   const p = norm(loc.replace(SITE, '') || '/');
   if (isRedirect(p)) { errors.push(`sitemap bevat redirect-URL: ${p}`); continue; }
