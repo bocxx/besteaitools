@@ -376,22 +376,11 @@ export async function getComparisonPairs(): Promise<ComparisonPair[]> {
     }
   }
 
-  // Same-category pairs within top 20
-  for (let i = 0; i < top20.length; i++) {
-    for (let j = i + 1; j < top20.length; j++) {
-      if (top20[i].category === top20[j].category) {
-        addPair(top20[i], top20[j]);
-      }
-    }
-  }
-
-  // Cross-category pairs for top 10
-  const top10 = top20.slice(0, 10);
-  for (let i = 0; i < top10.length; i++) {
-    for (let j = i + 1; j < top10.length; j++) {
-      addPair(top10[i], top10[j]);
-    }
-  }
+  // Bevroren sinds 18 sep 2026: geen automatisch bijgemaakte paren meer op
+  // basis van actuele buzz. Die kwamen en gingen met elke build, en elk paar
+  // dat uit de top viel werd een 404 (GSC: 134 stuks). Alleen de vaste lijst
+  // hieronder telt. `top20`/`addPair` blijven voor de floor.
+  void top20;
 
   // Stable floor: always (re)generate previously-published comparison slugs
   // so live-buzz churn in the top-20 above never turns an indexed
