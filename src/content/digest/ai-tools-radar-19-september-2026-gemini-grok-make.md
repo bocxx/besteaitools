@@ -1,6 +1,6 @@
 ---
-title: AI Tools Radar – Gemini · Grok · Make (Ochtend 19 september)
-description: 'AI Tools Radar 19 september: 102 launches, 116 feature-updates, 12 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – Gemini · Grok · Make (Avond 19 september)
+description: 'AI Tools Radar 19 september: 101 launches, 117 feature-updates, 13 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-09-19'
 timeSlot: tools-digest
 featured: []
@@ -10,26 +10,24 @@ tags:
 - Gemini
 - Grok
 - Make
-- Together AI
 - DeepSeek
 author: debesteaitools.nl Redactie
-totalAnalyzed: 230
+totalAnalyzed: 231
 itemsSelected: 16
 categoriesCount: 3
 topics:
 - Gemini
 - Grok
 - Make
-- Together AI
 - DeepSeek
 heroImage: "/images/digest/ai-tools-radar-19-september-2026-gemini-grok-make.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Google lanceert Gemini 3.8 Live met spraak en uitgebreid redeneren, DeepSeek brengt V4.1-Flash uit.
-- Cactus Needle 3 claimt dat 8-29MB automatiseringsmodellen DeepSeek V4 Flash kunnen evenaren.
-- Mistral OCR 4.1 en Meta's Muse-agent verschijnen als deep-dive-kandidaten naast Gemini-updates.
+- Gemini lanceert spraakmodellen 3.8 Live en Extended Thinking voor conversatie en taakuitvoering.
+- DeepSeek brengt V4.1-Flash uit, Cactus Needle 3 claimt vergelijkbare prestaties met 8-29MB modellen.
+- 'Capsule en Kinesis tonen experimentele richting: SQLite-apps en Mac-bediening via Meta Neural Band.'
 launches:
 - name: I made a flight simulator, except you're just a passenger
   summary_nl: Een vluchtsimulator waarin je alleen passagier bent, geen piloot.
@@ -39,7 +37,7 @@ launches:
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=inflightsimulator.com&sz=64
 - name: Capsule
-  summary_nl: Capsule maakt single-file webapps die hun data opslaan in SQLite.
+  summary_nl: Single-file web-apps die hun data opslaan in SQLite, voor lokale en draagbare applicaties.
   url: https://withcapsule.app/
   source_type: hn
   source_label: Hacker News (376 punten, 166 reacties)
@@ -49,25 +47,25 @@ launches:
   summary_nl: Platform waar gebruikers hun AI-setup delen en van anderen leren.
   url: https://mysetup.ai/
   source_type: hn
-  source_label: Hacker News (231 punten, 135 reacties)
+  source_label: Hacker News (236 punten, 136 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=mysetup.ai&sz=64
 - name: Cactus Needle 3
-  summary_nl: Cactus Needle 3 biedt 8-29MB automatiseringsmodellen die DeepSeek V4 Flash zouden evenaren.
+  summary_nl: Automatiseringsmodellen van 8-29MB die volgens Cactus vergelijkbare prestaties leveren als DeepSeek V4 Flash.
   url: https://cactuscompute.com/needle
   source_type: hn
-  source_label: Hacker News (182 punten, 81 reacties)
+  source_label: Hacker News (216 punten, 89 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=cactuscompute.com&sz=64
 - name: Pelican
-  summary_nl: Pelican toont fietsen als alternatief voor auto's, bijgewerkt voor 2026.
+  summary_nl: Overzicht van fietsen als alternatief voor Pelican, bijgewerkt voor 2026.
   url: https://gally.net/temp/20260914pelican-alternatives/index.html
   source_type: hn
   source_label: Hacker News (131 punten, 45 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=gally.net&sz=64
 - name: Kinesis
-  summary_nl: Kinesis laat je je Mac bedienen met de Meta Neural Band.
+  summary_nl: Bedien je Mac met de Meta Neural Band via deze open-source tool.
   url: https://github.com/callbacked/kinesis
   source_type: hn
   source_label: Hacker News (121 punten, 46 reacties)
@@ -76,8 +74,20 @@ launches:
 updates:
 - tool_name: Gemini
   tool_slug: gemini
+  feature_title: Advanced Conversational AI
+  summary_nl: Gemini introduceert modellen 3.8 Live en Extended Thinking voor geavanceerde gesprekken en taakuitvoering.
+  impact: hoog
+  url: https://twitter.com/GoogleDeepMind/status/2099907440422830269
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: gemini::Advanced Conversational AI
+- tool_name: Gemini
+  tool_slug: gemini
   feature_title: Gemini 3.8 Live and 3.8 Live Extended Thinking
-  summary_nl: Gemini 3.8 Live combineert spraak, samenwerking en taakuitvoering met uitgebreid redeneren voor complexe vragen.
+  summary_nl: Nieuwe conversatie-AI modellen van Gemini die kunnen praten, denken en taken uitvoeren op geavanceerd niveau.
   impact: hoog
   url: https://twitter.com/GoogleDeepMind/status/2099907440422830269
   source_type: x
@@ -89,7 +99,7 @@ updates:
 - tool_name: Grok
   tool_slug: grok
   feature_title: Grok Voice Transcribe 2.0
-  summary_nl: Grok Voice Transcribe 2.0 claimt het nauwkeurigste spraaktranscriptiemodel ter wereld te zijn.
+  summary_nl: Grok lanceert Voice Transcribe 2.0, gepresenteerd als meest nauwkeurige spraaktranscriptie-model wereldwijd.
   impact: hoog
   url: https://twitter.com/SpaceXAI/status/2101005248311726387
   source_type: x
@@ -101,7 +111,7 @@ updates:
 - tool_name: Make
   tool_slug: make
   feature_title: 'Sherpa: Advanced Fiction Writing AI'
-  summary_nl: Sherpa is een geavanceerde AI voor fictie-schrijven die de omzet van Make heeft verdubbeld.
+  summary_nl: Make introduceert Sherpa, een AI voor fictie-schrijven die omzet heeft helpen verdubbelen.
   impact: hoog
   url: https://twitter.com/RohanNayak2/status/2101019876269973593
   source_type: x
@@ -110,22 +120,10 @@ updates:
   platforms:
   - twitter
   key: 'make::Sherpa: Advanced Fiction Writing AI'
-- tool_name: Together AI
-  tool_slug: together ai
-  feature_title: Satoshi AI Beta
-  summary_nl: Satoshi AI Beta is getraind op Satoshi Nakamoto's whitepaper, e-mails en forumberichten over Bitcoin.
-  impact: hoog
-  url: https://twitter.com/1096361BTC/status/2100873000652521557
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: together ai::Satoshi AI Beta
 - tool_name: Gemini
   tool_slug: gemini
   feature_title: Gemini 3.8 Live and Extended Thinking
-  summary_nl: Gemini introduceert hun meest geavanceerde spraakmodellen tot nu toe, Gemini 3.8 Live en 3.8 Live Extended Thinking, waarmee je kunt spreken, samenwerken en taken uitvoeren.
+  summary_nl: Gemini brengt spraakmodellen uit waarmee gebruikers kunnen spreken, samenwerken en taken uitvoeren.
   impact: hoog
   url: https://twitter.com/GoogleDeepMind/status/2099907440422830269
   source_type: x
@@ -137,7 +135,7 @@ updates:
 - tool_name: DeepSeek
   tool_slug: deepseek
   feature_title: DeepSeek-V4.1-Flash
-  summary_nl: DeepSeek-V4.1-Flash is een snellere en efficiëntere versie van het bestaande model.
+  summary_nl: DeepSeek lanceert V4.1-Flash, een slimmere, snellere en efficiëntere versie van hun model.
   impact: hoog
   url: https://twitter.com/deepseek_ai/status/2097930608790167907
   source_type: x
@@ -148,33 +146,33 @@ updates:
   key: deepseek::DeepSeek-V4.1-Flash
 deepDives:
 - title: Gemini 3.8 Flash and 3.8 Flash Cyber
-  summary_nl: Test Gemini 3.8 Flash en Cyber-variant op realistische Nederlandse use cases om te zien of de claims kloppen.
+  summary_nl: Test van Gemini 3.8 Flash en Cyber-variant voor Nederlandse gebruikers, relevant door recente modelupdates.
   url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
   tool: gemini
   trend_phase: tracked
   score: 22.26
 - title: Mistral OCR 4.1
-  summary_nl: Vergelijk Mistral OCR 4.1 met alternatieven op nauwkeurigheid, snelheid en prijs voor documentverwerking.
+  summary_nl: Vergelijking Mistral OCR 4.1 met alternatieven, nuttig voor keuze tussen OCR-oplossingen in productieomgevingen.
   url: https://docs.mistral.ai/models/ocr-4-1
   tool: mistral
   trend_phase: tracked
   score: 22.04
 - title: 'Muse: Meta''s personal AI agent, features and capabilities'
-  summary_nl: Onderzoek hoe Meta's Muse-agent zich verhoudt tot bestaande assistenten en waar het in workflows past.
+  summary_nl: Praktische handleiding voor Muse, Meta's persoonlijke AI-agent, met focus op workflow-integratie.
   url: https://ai.meta.com/muse/
   tool: ''
   trend_phase: tracked
   score: 21.86
 - title: Gemini 3.8 Live and 3.8 Live Extended Thinking
-  summary_nl: Integreer Gemini 3.8 Live in bestaande workflows en test de meerwaarde van Extended Thinking.
+  summary_nl: Implementatiegids voor Gemini 3.8 Live-modellen in dagelijkse werkprocessen, aansluitend bij spraakmodel-lancering.
   url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/
   tool: gemini
   trend_phase: tracked
   score: 21.55
-slotLabel: Ochtend
+slotLabel: Avond
 ---
 
-De focus ligt deze week op conversatie-AI en compacte modellen. Google positioneert Gemini 3.8 Live als geavanceerd spraakmodel, terwijl DeepSeek V4.1-Flash snelheid en efficiëntie belooft. Tegelijk claimt Cactus Needle dat extreem kleine modellen vergelijkbare prestaties leveren. Daarnaast duiken tools op voor niche-toepassingen: Grok Voice Transcribe 2.0 voor spraaktranscriptie, Sherpa voor fictie-schrijven en Satoshi AI gebaseerd op Bitcoin-archieven.
+De focus ligt op conversatie-AI en efficiëntie: Gemini breidt spraakmodellen uit, DeepSeek optimaliseert snelheid, en Cactus Needle 3 test hoe klein automatiseringsmodellen kunnen zijn. Daarnaast verschijnen tools die lokale data en hardware-integratie centraal stellen, zoals Capsule voor single-file web-apps en Kinesis voor neurale bandsturing. De deep-dives richten zich op praktische implementatie van Gemini en Mistral OCR, wat aansluit bij de vraag hoe deze modellen in Nederlandse workflows passen.
 
 ---
 
