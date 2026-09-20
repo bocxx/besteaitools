@@ -1,18 +1,50 @@
 {
-  "generated_at": "2026-09-20T07:31:09",
+  "generated_at": "2026-09-20T19:32:16",
   "snapshot_window_days": 14,
   "total_tools_scanned": 170,
-  "total_signals": 35,
+  "total_signals": 34,
   "funnel_counts": {
-    "research": 0,
-    "adoption": 4,
-    "about_to_break": 8,
+    "research": 1,
+    "adoption": 3,
+    "about_to_break": 6,
     "breaking": 10,
     "mainstream": 10,
-    "fading": 3
+    "fading": 4
   },
   "funnel": {
-    "research": [],
+    "research": [
+      {
+        "slug": "flux",
+        "name": "Flux",
+        "category": "beeld",
+        "description_nl": "Snelle open-source beeldgenerator van Black Forest Labs",
+        "url": "https://blackforestlabs.ai",
+        "funnel_position": "research",
+        "velocity": 0.1,
+        "acceleration": -5.0,
+        "trend_direction": "stable",
+        "phase": "sustained",
+        "expert_ratio": 0.76,
+        "corroboration": 3,
+        "source_classes": [
+          "science",
+          "press",
+          "social"
+        ],
+        "mainstream_gap": 0.5,
+        "breakdown": {
+          "science": 6.0,
+          "dev": 1.0,
+          "product": 0.0,
+          "press": 7.0,
+          "social": 9.0
+        },
+        "total_mentions": 23,
+        "buzz_score": 49,
+        "days_active": 15,
+        "github_stars": 0
+      }
+    ],
     "adoption": [
       {
         "slug": "higgsfield",
@@ -42,7 +74,7 @@
         "total_mentions": 68,
         "buzz_score": 59,
         "days_active": 15,
-        "github_stars": 807
+        "github_stars": 1072
       },
       {
         "slug": "browser-use",
@@ -72,37 +104,7 @@
         "total_mentions": 18,
         "buzz_score": 57,
         "days_active": 15,
-        "github_stars": 2756
-      },
-      {
-        "slug": "devin",
-        "name": "Devin",
-        "category": "coding",
-        "description_nl": "Autonome AI-developer die zelfstandig taken uitvoert",
-        "url": "https://devin.ai",
-        "funnel_position": "adoption",
-        "velocity": -0.6,
-        "acceleration": 1.0,
-        "trend_direction": "stable",
-        "phase": "sustained",
-        "expert_ratio": 0.31,
-        "corroboration": 2,
-        "source_classes": [
-          "dev",
-          "social"
-        ],
-        "mainstream_gap": 0.67,
-        "breakdown": {
-          "science": 0.0,
-          "dev": 5.0,
-          "product": 1.0,
-          "press": 3.0,
-          "social": 5.0
-        },
-        "total_mentions": 14,
-        "buzz_score": 39,
-        "days_active": 13,
-        "github_stars": 0
+        "github_stars": 2842
       },
       {
         "slug": "midjourney",
@@ -111,8 +113,8 @@
         "description_nl": "Populairste AI-beeldgenerator voor creatieve professionals",
         "url": "https://midjourney.com",
         "funnel_position": "adoption",
-        "velocity": 0.7,
-        "acceleration": -3.0,
+        "velocity": -0.2,
+        "acceleration": -6.0,
         "trend_direction": "stable",
         "phase": "sustained",
         "expert_ratio": 0.93,
@@ -121,21 +123,53 @@
           "dev",
           "social"
         ],
-        "mainstream_gap": 0.71,
+        "mainstream_gap": 0.67,
         "breakdown": {
           "science": 0.0,
-          "dev": 5.0,
+          "dev": 4.0,
           "product": 0.0,
           "press": 2.0,
           "social": 6.0
         },
-        "total_mentions": 13,
-        "buzz_score": 62,
+        "total_mentions": 12,
+        "buzz_score": 59,
         "days_active": 15,
         "github_stars": 543
       }
     ],
     "about_to_break": [
+      {
+        "slug": "qwen",
+        "name": "Qwen",
+        "category": "tekst",
+        "description_nl": "Alibaba's open-source taalmodel met sterke meertalige prestaties",
+        "url": "https://qwenlm.github.io",
+        "funnel_position": "about_to_break",
+        "velocity": 5.6,
+        "acceleration": 24.0,
+        "trend_direction": "rising",
+        "phase": "accelerating",
+        "expert_ratio": 0.96,
+        "corroboration": 4,
+        "source_classes": [
+          "science",
+          "dev",
+          "press",
+          "social"
+        ],
+        "mainstream_gap": 0.83,
+        "breakdown": {
+          "science": 239.0,
+          "dev": 29.0,
+          "product": 0.0,
+          "press": 53.0,
+          "social": 42.0
+        },
+        "total_mentions": 363,
+        "buzz_score": 78,
+        "days_active": 15,
+        "github_stars": 0
+      },
       {
         "slug": "deepseek",
         "name": "DeepSeek",
@@ -143,8 +177,8 @@
         "description_nl": "Chinese open-source AI met sterke reasoning-prestaties",
         "url": "https://www.deepseek.com",
         "funnel_position": "about_to_break",
-        "velocity": -6.1,
-        "acceleration": 3.0,
+        "velocity": -6.4,
+        "acceleration": 2.0,
         "trend_direction": "declining",
         "phase": "declining",
         "expert_ratio": 0.95,
@@ -155,12 +189,12 @@
           "press",
           "social"
         ],
-        "mainstream_gap": 0.59,
+        "mainstream_gap": 0.58,
         "breakdown": {
           "science": 45.0,
-          "dev": 61.0,
+          "dev": 60.0,
           "product": 0.0,
-          "press": 74.0,
+          "press": 75.0,
           "social": 217.0
         },
         "total_mentions": 397,
@@ -169,47 +203,15 @@
         "github_stars": 8171
       },
       {
-        "slug": "qwen",
-        "name": "Qwen",
-        "category": "tekst",
-        "description_nl": "Alibaba's open-source taalmodel met sterke meertalige prestaties",
-        "url": "https://qwenlm.github.io",
-        "funnel_position": "about_to_break",
-        "velocity": -1.1,
-        "acceleration": 2.0,
-        "trend_direction": "declining",
-        "phase": "sustained",
-        "expert_ratio": 0.97,
-        "corroboration": 4,
-        "source_classes": [
-          "science",
-          "dev",
-          "press",
-          "social"
-        ],
-        "mainstream_gap": 0.84,
-        "breakdown": {
-          "science": 239.0,
-          "dev": 27.0,
-          "product": 0.0,
-          "press": 51.0,
-          "social": 39.0
-        },
-        "total_mentions": 356,
-        "buzz_score": 58,
-        "days_active": 15,
-        "github_stars": 0
-      },
-      {
         "slug": "mistral",
         "name": "Mistral",
         "category": "tekst",
         "description_nl": "Frans open-source AI-lab met efficiënte modellen",
         "url": "https://mistral.ai",
         "funnel_position": "about_to_break",
-        "velocity": 1.5,
-        "acceleration": 9.0,
-        "trend_direction": "rising",
+        "velocity": 0.6,
+        "acceleration": 6.0,
+        "trend_direction": "stable",
         "phase": "sustained",
         "expert_ratio": 0.78,
         "corroboration": 4,
@@ -225,44 +227,12 @@
           "dev": 16.0,
           "product": 0.0,
           "press": 22.0,
-          "social": 64.0
+          "social": 63.0
         },
-        "total_mentions": 118,
-        "buzz_score": 75,
+        "total_mentions": 117,
+        "buzz_score": 71,
         "days_active": 15,
         "github_stars": 1750
-      },
-      {
-        "slug": "openrouter",
-        "name": "OpenRouter",
-        "category": "infra",
-        "description_nl": "Unified API-gateway voor alle grote AI-modellen — vergelijk en switch",
-        "url": "https://openrouter.ai",
-        "funnel_position": "about_to_break",
-        "velocity": -0.5,
-        "acceleration": -1.0,
-        "trend_direction": "stable",
-        "phase": "sustained",
-        "expert_ratio": 0.66,
-        "corroboration": 4,
-        "source_classes": [
-          "science",
-          "dev",
-          "press",
-          "social"
-        ],
-        "mainstream_gap": 0.66,
-        "breakdown": {
-          "science": 5.0,
-          "dev": 14.0,
-          "product": 0.0,
-          "press": 10.0,
-          "social": 5.0
-        },
-        "total_mentions": 34,
-        "buzz_score": 48,
-        "days_active": 15,
-        "github_stars": 0
       },
       {
         "slug": "vllm",
@@ -327,37 +297,6 @@
         "github_stars": 51
       },
       {
-        "slug": "flux",
-        "name": "Flux",
-        "category": "beeld",
-        "description_nl": "Snelle open-source beeldgenerator van Black Forest Labs",
-        "url": "https://blackforestlabs.ai",
-        "funnel_position": "about_to_break",
-        "velocity": 0.4,
-        "acceleration": -4.0,
-        "trend_direction": "stable",
-        "phase": "sustained",
-        "expert_ratio": 0.76,
-        "corroboration": 3,
-        "source_classes": [
-          "science",
-          "press",
-          "social"
-        ],
-        "mainstream_gap": 0.5,
-        "breakdown": {
-          "science": 6.0,
-          "dev": 1.0,
-          "product": 0.0,
-          "press": 7.0,
-          "social": 10.0
-        },
-        "total_mentions": 24,
-        "buzz_score": 50,
-        "days_active": 15,
-        "github_stars": 0
-      },
-      {
         "slug": "hailuo",
         "name": "Hailuo AI",
         "category": "video",
@@ -396,8 +335,8 @@
         "description_nl": "OpenAI's chatbot — de meest gebruikte AI-tool ter wereld",
         "url": "https://chat.openai.com",
         "funnel_position": "breaking",
-        "velocity": 40.4,
-        "acceleration": 67.0,
+        "velocity": 20.5,
+        "acceleration": 1.0,
         "trend_direction": "rising",
         "phase": "accelerating",
         "expert_ratio": 0.7,
@@ -413,45 +352,13 @@
           "science": 242.0,
           "dev": 436.0,
           "product": 1.0,
-          "press": 1386.0,
-          "social": 2404.0
+          "press": 1380.0,
+          "social": 2391.0
         },
-        "total_mentions": 4469,
+        "total_mentions": 4450,
         "buzz_score": 95,
         "days_active": 15,
-        "github_stars": 28791
-      },
-      {
-        "slug": "claude",
-        "name": "Claude",
-        "category": "tekst",
-        "description_nl": "Anthropic's AI-assistent met focus op veiligheid en lange context",
-        "url": "https://claude.ai",
-        "funnel_position": "breaking",
-        "velocity": -15.7,
-        "acceleration": 14.0,
-        "trend_direction": "declining",
-        "phase": "declining",
-        "expert_ratio": 0.8,
-        "corroboration": 4,
-        "source_classes": [
-          "science",
-          "dev",
-          "press",
-          "social"
-        ],
-        "mainstream_gap": 0.38,
-        "breakdown": {
-          "science": 164.0,
-          "dev": 442.0,
-          "product": 1.0,
-          "press": 1009.0,
-          "social": 1439.0
-        },
-        "total_mentions": 3055,
-        "buzz_score": 76,
-        "days_active": 15,
-        "github_stars": 58495
+        "github_stars": 29156
       },
       {
         "slug": "gemini",
@@ -460,8 +367,8 @@
         "description_nl": "Google's multimodale AI-model en chatbot",
         "url": "https://gemini.google.com",
         "funnel_position": "breaking",
-        "velocity": 12.3,
-        "acceleration": -25.0,
+        "velocity": 16.2,
+        "acceleration": -12.0,
         "trend_direction": "rising",
         "phase": "emerging",
         "expert_ratio": 0.66,
@@ -475,47 +382,15 @@
         "mainstream_gap": 0.49,
         "breakdown": {
           "science": 182.0,
-          "dev": 71.0,
+          "dev": 72.0,
           "product": 1.0,
-          "press": 261.0,
-          "social": 634.0
+          "press": 263.0,
+          "social": 637.0
         },
-        "total_mentions": 1149,
+        "total_mentions": 1155,
         "buzz_score": 95,
         "days_active": 15,
-        "github_stars": 11487
-      },
-      {
-        "slug": "mcp",
-        "name": "MCP",
-        "category": "infra",
-        "description_nl": "Model Context Protocol — standaard voor AI-tool integraties",
-        "url": "https://modelcontextprotocol.io",
-        "funnel_position": "breaking",
-        "velocity": 8.5,
-        "acceleration": -3.0,
-        "trend_direction": "rising",
-        "phase": "emerging",
-        "expert_ratio": 0.4,
-        "corroboration": 4,
-        "source_classes": [
-          "science",
-          "dev",
-          "press",
-          "social"
-        ],
-        "mainstream_gap": 0.4,
-        "breakdown": {
-          "science": 27.0,
-          "dev": 143.0,
-          "product": 1.0,
-          "press": 257.0,
-          "social": 298.0
-        },
-        "total_mentions": 726,
-        "buzz_score": 94,
-        "days_active": 15,
-        "github_stars": 44426
+        "github_stars": 11825
       },
       {
         "slug": "grok",
@@ -524,11 +399,11 @@
         "description_nl": "xAI's chatbot met realtime toegang tot X/Twitter",
         "url": "https://grok.x.ai",
         "funnel_position": "breaking",
-        "velocity": 0.5,
-        "acceleration": -3.0,
-        "trend_direction": "stable",
-        "phase": "sustained",
-        "expert_ratio": 0.48,
+        "velocity": 2.3,
+        "acceleration": 3.0,
+        "trend_direction": "rising",
+        "phase": "accelerating",
+        "expert_ratio": 0.47,
         "corroboration": 4,
         "source_classes": [
           "science",
@@ -536,17 +411,49 @@
           "press",
           "social"
         ],
-        "mainstream_gap": 0.46,
+        "mainstream_gap": 0.45,
         "breakdown": {
           "science": 27.0,
           "dev": 9.0,
           "product": 0.0,
-          "press": 43.0,
-          "social": 472.0
+          "press": 44.0,
+          "social": 477.0
         },
-        "total_mentions": 551,
-        "buzz_score": 59,
+        "total_mentions": 557,
+        "buzz_score": 66,
         "days_active": 15,
+        "github_stars": 0
+      },
+      {
+        "slug": "pi",
+        "name": "Pi",
+        "category": "tekst",
+        "description_nl": "Inflection AI's empathische chatbot met natuurlijke gespreksstijl",
+        "url": "https://pi.ai",
+        "funnel_position": "breaking",
+        "velocity": -0.8,
+        "acceleration": 5.0,
+        "trend_direction": "stable",
+        "phase": "sustained",
+        "expert_ratio": 0.87,
+        "corroboration": 4,
+        "source_classes": [
+          "science",
+          "product",
+          "press",
+          "social"
+        ],
+        "mainstream_gap": 0.04,
+        "breakdown": {
+          "science": 6.0,
+          "dev": 0.0,
+          "product": 7.0,
+          "press": 319.0,
+          "social": 142.0
+        },
+        "total_mentions": 474,
+        "buzz_score": 42,
+        "days_active": 14,
         "github_stars": 0
       },
       {
@@ -556,10 +463,10 @@
         "description_nl": "GitHub's AI-codecompletie — marktleider met 1.8M+ gebruikers",
         "url": "https://github.com/features/copilot",
         "funnel_position": "breaking",
-        "velocity": -1.4,
-        "acceleration": 23.0,
+        "velocity": -2.3,
+        "acceleration": 20.0,
         "trend_direction": "declining",
-        "phase": "sustained",
+        "phase": "declining",
         "expert_ratio": 0.49,
         "corroboration": 4,
         "source_classes": [
@@ -571,13 +478,13 @@
         "mainstream_gap": 0.15,
         "breakdown": {
           "science": 4.0,
-          "dev": 35.0,
+          "dev": 36.0,
           "product": 0.0,
-          "press": 224.0,
+          "press": 225.0,
           "social": 55.0
         },
-        "total_mentions": 318,
-        "buzz_score": 64,
+        "total_mentions": 320,
+        "buzz_score": 66,
         "days_active": 15,
         "github_stars": 12241
       },
@@ -588,8 +495,8 @@
         "description_nl": "Het GitHub van AI — modellen, datasets en spaces",
         "url": "https://huggingface.co",
         "funnel_position": "breaking",
-        "velocity": -2.4,
-        "acceleration": 8.0,
+        "velocity": -3.3,
+        "acceleration": 5.0,
         "trend_direction": "declining",
         "phase": "declining",
         "expert_ratio": 0.82,
@@ -603,15 +510,15 @@
         "mainstream_gap": 0.45,
         "breakdown": {
           "science": 8.0,
-          "dev": 49.0,
+          "dev": 50.0,
           "product": 0.0,
-          "press": 71.0,
-          "social": 140.0
+          "press": 70.0,
+          "social": 138.0
         },
-        "total_mentions": 268,
+        "total_mentions": 266,
         "buzz_score": 69,
         "days_active": 15,
-        "github_stars": 16054
+        "github_stars": 16067
       },
       {
         "slug": "claude code",
@@ -620,10 +527,10 @@
         "description_nl": "Anthropic's terminal-based coding assistant met agentic taken en autonome code-uitvoering",
         "url": "https://docs.anthropic.com/en/docs/claude-code",
         "funnel_position": "breaking",
-        "velocity": 3.5,
-        "acceleration": 64.0,
+        "velocity": 2.0,
+        "acceleration": 59.0,
         "trend_direction": "rising",
-        "phase": "accelerating",
+        "phase": "emerging",
         "expert_ratio": 0.0,
         "corroboration": 3,
         "source_classes": [
@@ -631,16 +538,16 @@
           "press",
           "social"
         ],
-        "mainstream_gap": 0.36,
+        "mainstream_gap": 0.37,
         "breakdown": {
           "science": 0.0,
-          "dev": 53.0,
+          "dev": 54.0,
           "product": 0.0,
-          "press": 94.0,
+          "press": 91.0,
           "social": 423.0
         },
-        "total_mentions": 570,
-        "buzz_score": 69,
+        "total_mentions": 568,
+        "buzz_score": 63,
         "days_active": 15,
         "github_stars": 0
       },
@@ -682,8 +589,8 @@
         "description_nl": "AI-native IDE — de snelst groeiende code-editor",
         "url": "https://cursor.com",
         "funnel_position": "breaking",
-        "velocity": -2.2,
-        "acceleration": 6.0,
+        "velocity": -4.0,
+        "acceleration": 0.0,
         "trend_direction": "declining",
         "phase": "declining",
         "expert_ratio": 0.35,
@@ -693,52 +600,115 @@
           "press",
           "social"
         ],
-        "mainstream_gap": 0.62,
+        "mainstream_gap": 0.61,
         "breakdown": {
           "science": 0.0,
-          "dev": 52.0,
+          "dev": 51.0,
           "product": 1.0,
           "press": 33.0,
-          "social": 44.0
+          "social": 43.0
         },
-        "total_mentions": 130,
+        "total_mentions": 128,
         "buzz_score": 68,
         "days_active": 15,
         "github_stars": 29933
+      },
+      {
+        "slug": "claude-cowork",
+        "name": "Claude Cowork",
+        "category": "productiviteit",
+        "description_nl": "Anthropic's desktop-agentmodus voor kenniswerkers — taken op bestanden en apps zonder terminal",
+        "url": "https://claude.ai",
+        "funnel_position": "breaking",
+        "velocity": 2.1,
+        "acceleration": -1.0,
+        "trend_direction": "rising",
+        "phase": "emerging",
+        "expert_ratio": 0.0,
+        "corroboration": 3,
+        "source_classes": [
+          "dev",
+          "press",
+          "social"
+        ],
+        "mainstream_gap": 0.32,
+        "breakdown": {
+          "science": 0.0,
+          "dev": 10.0,
+          "product": 0.0,
+          "press": 21.0,
+          "social": 70.0
+        },
+        "total_mentions": 101,
+        "buzz_score": 59,
+        "days_active": 15,
+        "github_stars": 0
       }
     ],
     "mainstream": [
       {
-        "slug": "pi",
-        "name": "Pi",
+        "slug": "claude",
+        "name": "Claude",
         "category": "tekst",
-        "description_nl": "Inflection AI's empathische chatbot met natuurlijke gespreksstijl",
-        "url": "https://pi.ai",
+        "description_nl": "Anthropic's AI-assistent met focus op veiligheid en lange context",
+        "url": "https://claude.ai",
         "funnel_position": "mainstream",
-        "velocity": -1.2,
-        "acceleration": -9.0,
+        "velocity": -22.3,
+        "acceleration": -8.0,
         "trend_direction": "declining",
-        "phase": "sustained",
-        "expert_ratio": 0.91,
+        "phase": "declining",
+        "expert_ratio": 0.8,
         "corroboration": 4,
         "source_classes": [
           "science",
-          "product",
+          "dev",
           "press",
           "social"
         ],
-        "mainstream_gap": 0.03,
+        "mainstream_gap": 0.38,
         "breakdown": {
-          "science": 6.0,
-          "dev": 0.0,
-          "product": 5.0,
-          "press": 312.0,
-          "social": 142.0
+          "science": 164.0,
+          "dev": 439.0,
+          "product": 1.0,
+          "press": 1000.0,
+          "social": 1439.0
         },
-        "total_mentions": 465,
-        "buzz_score": 42,
-        "days_active": 11,
-        "github_stars": 0
+        "total_mentions": 3043,
+        "buzz_score": 76,
+        "days_active": 15,
+        "github_stars": 58772
+      },
+      {
+        "slug": "mcp",
+        "name": "MCP",
+        "category": "infra",
+        "description_nl": "Model Context Protocol — standaard voor AI-tool integraties",
+        "url": "https://modelcontextprotocol.io",
+        "funnel_position": "mainstream",
+        "velocity": -2.1,
+        "acceleration": -38.0,
+        "trend_direction": "declining",
+        "phase": "declining",
+        "expert_ratio": 0.39,
+        "corroboration": 4,
+        "source_classes": [
+          "science",
+          "dev",
+          "press",
+          "social"
+        ],
+        "mainstream_gap": 0.4,
+        "breakdown": {
+          "science": 27.0,
+          "dev": 138.0,
+          "product": 1.0,
+          "press": 246.0,
+          "social": 293.0
+        },
+        "total_mentions": 705,
+        "buzz_score": 74,
+        "days_active": 15,
+        "github_stars": 44457
       },
       {
         "slug": "perplexity",
@@ -747,8 +717,8 @@
         "description_nl": "AI-zoekmachine met bronvermelding en follow-up vragen",
         "url": "https://www.perplexity.ai",
         "funnel_position": "mainstream",
-        "velocity": -2.4,
-        "acceleration": -1.0,
+        "velocity": -3.0,
+        "acceleration": -3.0,
         "trend_direction": "declining",
         "phase": "declining",
         "expert_ratio": 0.69,
@@ -765,9 +735,9 @@
           "dev": 7.0,
           "product": 1.0,
           "press": 91.0,
-          "social": 42.0
+          "social": 40.0
         },
-        "total_mentions": 172,
+        "total_mentions": 170,
         "buzz_score": 56,
         "days_active": 15,
         "github_stars": 0
@@ -779,8 +749,8 @@
         "description_nl": "Moonshot AI's assistent met open K-modellen en Kimi Claw",
         "url": "https://www.kimi.com",
         "funnel_position": "mainstream",
-        "velocity": -1.0,
-        "acceleration": -6.0,
+        "velocity": -1.3,
+        "acceleration": -7.0,
         "trend_direction": "declining",
         "phase": "sustained",
         "expert_ratio": 0.0,
@@ -790,15 +760,15 @@
           "press",
           "social"
         ],
-        "mainstream_gap": 0.42,
+        "mainstream_gap": 0.44,
         "breakdown": {
           "science": 0.0,
           "dev": 11.0,
           "product": 0.0,
-          "press": 15.0,
+          "press": 14.0,
           "social": 130.0
         },
-        "total_mentions": 156,
+        "total_mentions": 155,
         "buzz_score": 47,
         "days_active": 15,
         "github_stars": 0
@@ -810,27 +780,27 @@
         "description_nl": "AI-videotools voor filmmakers en creators",
         "url": "https://runwayml.com",
         "funnel_position": "mainstream",
-        "velocity": -0.3,
-        "acceleration": -5.0,
+        "velocity": -0.0,
+        "acceleration": -4.0,
         "trend_direction": "stable",
         "phase": "sustained",
-        "expert_ratio": 0.23,
+        "expert_ratio": 0.26,
         "corroboration": 3,
         "source_classes": [
           "dev",
           "press",
           "social"
         ],
-        "mainstream_gap": 0.22,
+        "mainstream_gap": 0.21,
         "breakdown": {
           "science": 0.0,
           "dev": 5.0,
           "product": 0.0,
-          "press": 18.0,
-          "social": 22.0
+          "press": 19.0,
+          "social": 21.0
         },
         "total_mentions": 45,
-        "buzz_score": 42,
+        "buzz_score": 43,
         "days_active": 15,
         "github_stars": 0
       },
@@ -841,8 +811,8 @@
         "description_nl": "Cloud-platform voor het draaien van open-source AI-modellen via API",
         "url": "https://replicate.com",
         "funnel_position": "mainstream",
-        "velocity": -0.7,
-        "acceleration": -1.0,
+        "velocity": -0.4,
+        "acceleration": 0.0,
         "trend_direction": "stable",
         "phase": "sustained",
         "expert_ratio": 0.0,
@@ -851,16 +821,16 @@
           "press",
           "social"
         ],
-        "mainstream_gap": 0.0,
+        "mainstream_gap": 0.09,
         "breakdown": {
           "science": 0.0,
-          "dev": 0.0,
+          "dev": 1.0,
           "product": 0.0,
-          "press": 9.0,
+          "press": 10.0,
           "social": 58.0
         },
-        "total_mentions": 67,
-        "buzz_score": 42,
+        "total_mentions": 69,
+        "buzz_score": 43,
         "days_active": 15,
         "github_stars": 0
       },
@@ -925,36 +895,6 @@
         "github_stars": 0
       },
       {
-        "slug": "hermes-agent",
-        "name": "Hermes Agent",
-        "category": "automatisering",
-        "description_nl": "Self-improving agent met persistent memory van Nous Research",
-        "url": "https://github.com/NousResearch/hermes-agent",
-        "funnel_position": "mainstream",
-        "velocity": -0.5,
-        "acceleration": 0.0,
-        "trend_direction": "stable",
-        "phase": "sustained",
-        "expert_ratio": 0.19,
-        "corroboration": 2,
-        "source_classes": [
-          "press",
-          "social"
-        ],
-        "mainstream_gap": 0.12,
-        "breakdown": {
-          "science": 0.0,
-          "dev": 3.0,
-          "product": 0.0,
-          "press": 22.0,
-          "social": 17.0
-        },
-        "total_mentions": 42,
-        "buzz_score": 49,
-        "days_active": 15,
-        "github_stars": 1823
-      },
-      {
         "slug": "udio",
         "name": "Udio",
         "category": "muziek",
@@ -976,10 +916,10 @@
           "science": 0.0,
           "dev": 0.0,
           "product": 1.0,
-          "press": 11.0,
+          "press": 12.0,
           "social": 27.0
         },
-        "total_mentions": 39,
+        "total_mentions": 40,
         "buzz_score": 20,
         "days_active": 1,
         "github_stars": 0
@@ -1023,8 +963,8 @@
         "description_nl": "Meta's open-source taalmodel — populairste open model",
         "url": "https://llama.meta.com",
         "funnel_position": "fading",
-        "velocity": -2.9,
-        "acceleration": -9.0,
+        "velocity": -5.0,
+        "acceleration": -16.0,
         "trend_direction": "declining",
         "phase": "declining",
         "expert_ratio": 0.93,
@@ -1038,15 +978,47 @@
         "mainstream_gap": 0.66,
         "breakdown": {
           "science": 130.0,
-          "dev": 28.0,
+          "dev": 26.0,
           "product": 0.0,
           "press": 81.0,
           "social": 26.0
         },
-        "total_mentions": 265,
+        "total_mentions": 263,
         "buzz_score": 71,
         "days_active": 15,
-        "github_stars": 5077
+        "github_stars": 5342
+      },
+      {
+        "slug": "openrouter",
+        "name": "OpenRouter",
+        "category": "infra",
+        "description_nl": "Unified API-gateway voor alle grote AI-modellen — vergelijk en switch",
+        "url": "https://openrouter.ai",
+        "funnel_position": "fading",
+        "velocity": -1.4,
+        "acceleration": -4.0,
+        "trend_direction": "declining",
+        "phase": "sustained",
+        "expert_ratio": 0.65,
+        "corroboration": 4,
+        "source_classes": [
+          "science",
+          "dev",
+          "press",
+          "social"
+        ],
+        "mainstream_gap": 0.64,
+        "breakdown": {
+          "science": 5.0,
+          "dev": 13.0,
+          "product": 0.0,
+          "press": 10.0,
+          "social": 5.0
+        },
+        "total_mentions": 33,
+        "buzz_score": 48,
+        "days_active": 15,
+        "github_stars": 0
       },
       {
         "slug": "comet",
@@ -1085,8 +1057,8 @@
         "description_nl": "OpenAI's open-source spraakherkenning",
         "url": "https://openai.com/research/whisper",
         "funnel_position": "fading",
-        "velocity": -0.9,
-        "acceleration": -3.0,
+        "velocity": -0.7,
+        "acceleration": -2.0,
         "trend_direction": "stable",
         "phase": "sustained",
         "expert_ratio": 0.41,
@@ -1104,13 +1076,44 @@
           "social": 0.0
         },
         "total_mentions": 19,
-        "buzz_score": 43,
+        "buzz_score": 42,
         "days_active": 15,
         "github_stars": 182
       }
     ]
   },
   "tools": [
+    {
+      "slug": "flux",
+      "name": "Flux",
+      "category": "beeld",
+      "description_nl": "Snelle open-source beeldgenerator van Black Forest Labs",
+      "url": "https://blackforestlabs.ai",
+      "funnel_position": "research",
+      "velocity": 0.1,
+      "acceleration": -5.0,
+      "trend_direction": "stable",
+      "phase": "sustained",
+      "expert_ratio": 0.76,
+      "corroboration": 3,
+      "source_classes": [
+        "science",
+        "press",
+        "social"
+      ],
+      "mainstream_gap": 0.5,
+      "breakdown": {
+        "science": 6.0,
+        "dev": 1.0,
+        "product": 0.0,
+        "press": 7.0,
+        "social": 9.0
+      },
+      "total_mentions": 23,
+      "buzz_score": 49,
+      "days_active": 15,
+      "github_stars": 0
+    },
     {
       "slug": "higgsfield",
       "name": "Higgsfield",
@@ -1139,7 +1142,7 @@
       "total_mentions": 68,
       "buzz_score": 59,
       "days_active": 15,
-      "github_stars": 807
+      "github_stars": 1072
     },
     {
       "slug": "browser-use",
@@ -1169,37 +1172,7 @@
       "total_mentions": 18,
       "buzz_score": 57,
       "days_active": 15,
-      "github_stars": 2756
-    },
-    {
-      "slug": "devin",
-      "name": "Devin",
-      "category": "coding",
-      "description_nl": "Autonome AI-developer die zelfstandig taken uitvoert",
-      "url": "https://devin.ai",
-      "funnel_position": "adoption",
-      "velocity": -0.6,
-      "acceleration": 1.0,
-      "trend_direction": "stable",
-      "phase": "sustained",
-      "expert_ratio": 0.31,
-      "corroboration": 2,
-      "source_classes": [
-        "dev",
-        "social"
-      ],
-      "mainstream_gap": 0.67,
-      "breakdown": {
-        "science": 0.0,
-        "dev": 5.0,
-        "product": 1.0,
-        "press": 3.0,
-        "social": 5.0
-      },
-      "total_mentions": 14,
-      "buzz_score": 39,
-      "days_active": 13,
-      "github_stars": 0
+      "github_stars": 2842
     },
     {
       "slug": "midjourney",
@@ -1208,8 +1181,8 @@
       "description_nl": "Populairste AI-beeldgenerator voor creatieve professionals",
       "url": "https://midjourney.com",
       "funnel_position": "adoption",
-      "velocity": 0.7,
-      "acceleration": -3.0,
+      "velocity": -0.2,
+      "acceleration": -6.0,
       "trend_direction": "stable",
       "phase": "sustained",
       "expert_ratio": 0.93,
@@ -1218,18 +1191,50 @@
         "dev",
         "social"
       ],
-      "mainstream_gap": 0.71,
+      "mainstream_gap": 0.67,
       "breakdown": {
         "science": 0.0,
-        "dev": 5.0,
+        "dev": 4.0,
         "product": 0.0,
         "press": 2.0,
         "social": 6.0
       },
-      "total_mentions": 13,
-      "buzz_score": 62,
+      "total_mentions": 12,
+      "buzz_score": 59,
       "days_active": 15,
       "github_stars": 543
+    },
+    {
+      "slug": "qwen",
+      "name": "Qwen",
+      "category": "tekst",
+      "description_nl": "Alibaba's open-source taalmodel met sterke meertalige prestaties",
+      "url": "https://qwenlm.github.io",
+      "funnel_position": "about_to_break",
+      "velocity": 5.6,
+      "acceleration": 24.0,
+      "trend_direction": "rising",
+      "phase": "accelerating",
+      "expert_ratio": 0.96,
+      "corroboration": 4,
+      "source_classes": [
+        "science",
+        "dev",
+        "press",
+        "social"
+      ],
+      "mainstream_gap": 0.83,
+      "breakdown": {
+        "science": 239.0,
+        "dev": 29.0,
+        "product": 0.0,
+        "press": 53.0,
+        "social": 42.0
+      },
+      "total_mentions": 363,
+      "buzz_score": 78,
+      "days_active": 15,
+      "github_stars": 0
     },
     {
       "slug": "deepseek",
@@ -1238,8 +1243,8 @@
       "description_nl": "Chinese open-source AI met sterke reasoning-prestaties",
       "url": "https://www.deepseek.com",
       "funnel_position": "about_to_break",
-      "velocity": -6.1,
-      "acceleration": 3.0,
+      "velocity": -6.4,
+      "acceleration": 2.0,
       "trend_direction": "declining",
       "phase": "declining",
       "expert_ratio": 0.95,
@@ -1250,12 +1255,12 @@
         "press",
         "social"
       ],
-      "mainstream_gap": 0.59,
+      "mainstream_gap": 0.58,
       "breakdown": {
         "science": 45.0,
-        "dev": 61.0,
+        "dev": 60.0,
         "product": 0.0,
-        "press": 74.0,
+        "press": 75.0,
         "social": 217.0
       },
       "total_mentions": 397,
@@ -1264,47 +1269,15 @@
       "github_stars": 8171
     },
     {
-      "slug": "qwen",
-      "name": "Qwen",
-      "category": "tekst",
-      "description_nl": "Alibaba's open-source taalmodel met sterke meertalige prestaties",
-      "url": "https://qwenlm.github.io",
-      "funnel_position": "about_to_break",
-      "velocity": -1.1,
-      "acceleration": 2.0,
-      "trend_direction": "declining",
-      "phase": "sustained",
-      "expert_ratio": 0.97,
-      "corroboration": 4,
-      "source_classes": [
-        "science",
-        "dev",
-        "press",
-        "social"
-      ],
-      "mainstream_gap": 0.84,
-      "breakdown": {
-        "science": 239.0,
-        "dev": 27.0,
-        "product": 0.0,
-        "press": 51.0,
-        "social": 39.0
-      },
-      "total_mentions": 356,
-      "buzz_score": 58,
-      "days_active": 15,
-      "github_stars": 0
-    },
-    {
       "slug": "mistral",
       "name": "Mistral",
       "category": "tekst",
       "description_nl": "Frans open-source AI-lab met efficiënte modellen",
       "url": "https://mistral.ai",
       "funnel_position": "about_to_break",
-      "velocity": 1.5,
-      "acceleration": 9.0,
-      "trend_direction": "rising",
+      "velocity": 0.6,
+      "acceleration": 6.0,
+      "trend_direction": "stable",
       "phase": "sustained",
       "expert_ratio": 0.78,
       "corroboration": 4,
@@ -1320,44 +1293,12 @@
         "dev": 16.0,
         "product": 0.0,
         "press": 22.0,
-        "social": 64.0
+        "social": 63.0
       },
-      "total_mentions": 118,
-      "buzz_score": 75,
+      "total_mentions": 117,
+      "buzz_score": 71,
       "days_active": 15,
       "github_stars": 1750
-    },
-    {
-      "slug": "openrouter",
-      "name": "OpenRouter",
-      "category": "infra",
-      "description_nl": "Unified API-gateway voor alle grote AI-modellen — vergelijk en switch",
-      "url": "https://openrouter.ai",
-      "funnel_position": "about_to_break",
-      "velocity": -0.5,
-      "acceleration": -1.0,
-      "trend_direction": "stable",
-      "phase": "sustained",
-      "expert_ratio": 0.66,
-      "corroboration": 4,
-      "source_classes": [
-        "science",
-        "dev",
-        "press",
-        "social"
-      ],
-      "mainstream_gap": 0.66,
-      "breakdown": {
-        "science": 5.0,
-        "dev": 14.0,
-        "product": 0.0,
-        "press": 10.0,
-        "social": 5.0
-      },
-      "total_mentions": 34,
-      "buzz_score": 48,
-      "days_active": 15,
-      "github_stars": 0
     },
     {
       "slug": "vllm",
@@ -1422,37 +1363,6 @@
       "github_stars": 51
     },
     {
-      "slug": "flux",
-      "name": "Flux",
-      "category": "beeld",
-      "description_nl": "Snelle open-source beeldgenerator van Black Forest Labs",
-      "url": "https://blackforestlabs.ai",
-      "funnel_position": "about_to_break",
-      "velocity": 0.4,
-      "acceleration": -4.0,
-      "trend_direction": "stable",
-      "phase": "sustained",
-      "expert_ratio": 0.76,
-      "corroboration": 3,
-      "source_classes": [
-        "science",
-        "press",
-        "social"
-      ],
-      "mainstream_gap": 0.5,
-      "breakdown": {
-        "science": 6.0,
-        "dev": 1.0,
-        "product": 0.0,
-        "press": 7.0,
-        "social": 10.0
-      },
-      "total_mentions": 24,
-      "buzz_score": 50,
-      "days_active": 15,
-      "github_stars": 0
-    },
-    {
       "slug": "hailuo",
       "name": "Hailuo AI",
       "category": "video",
@@ -1489,8 +1399,8 @@
       "description_nl": "OpenAI's chatbot — de meest gebruikte AI-tool ter wereld",
       "url": "https://chat.openai.com",
       "funnel_position": "breaking",
-      "velocity": 40.4,
-      "acceleration": 67.0,
+      "velocity": 20.5,
+      "acceleration": 1.0,
       "trend_direction": "rising",
       "phase": "accelerating",
       "expert_ratio": 0.7,
@@ -1506,45 +1416,13 @@
         "science": 242.0,
         "dev": 436.0,
         "product": 1.0,
-        "press": 1386.0,
-        "social": 2404.0
+        "press": 1380.0,
+        "social": 2391.0
       },
-      "total_mentions": 4469,
+      "total_mentions": 4450,
       "buzz_score": 95,
       "days_active": 15,
-      "github_stars": 28791
-    },
-    {
-      "slug": "claude",
-      "name": "Claude",
-      "category": "tekst",
-      "description_nl": "Anthropic's AI-assistent met focus op veiligheid en lange context",
-      "url": "https://claude.ai",
-      "funnel_position": "breaking",
-      "velocity": -15.7,
-      "acceleration": 14.0,
-      "trend_direction": "declining",
-      "phase": "declining",
-      "expert_ratio": 0.8,
-      "corroboration": 4,
-      "source_classes": [
-        "science",
-        "dev",
-        "press",
-        "social"
-      ],
-      "mainstream_gap": 0.38,
-      "breakdown": {
-        "science": 164.0,
-        "dev": 442.0,
-        "product": 1.0,
-        "press": 1009.0,
-        "social": 1439.0
-      },
-      "total_mentions": 3055,
-      "buzz_score": 76,
-      "days_active": 15,
-      "github_stars": 58495
+      "github_stars": 29156
     },
     {
       "slug": "gemini",
@@ -1553,8 +1431,8 @@
       "description_nl": "Google's multimodale AI-model en chatbot",
       "url": "https://gemini.google.com",
       "funnel_position": "breaking",
-      "velocity": 12.3,
-      "acceleration": -25.0,
+      "velocity": 16.2,
+      "acceleration": -12.0,
       "trend_direction": "rising",
       "phase": "emerging",
       "expert_ratio": 0.66,
@@ -1568,47 +1446,15 @@
       "mainstream_gap": 0.49,
       "breakdown": {
         "science": 182.0,
-        "dev": 71.0,
+        "dev": 72.0,
         "product": 1.0,
-        "press": 261.0,
-        "social": 634.0
+        "press": 263.0,
+        "social": 637.0
       },
-      "total_mentions": 1149,
+      "total_mentions": 1155,
       "buzz_score": 95,
       "days_active": 15,
-      "github_stars": 11487
-    },
-    {
-      "slug": "mcp",
-      "name": "MCP",
-      "category": "infra",
-      "description_nl": "Model Context Protocol — standaard voor AI-tool integraties",
-      "url": "https://modelcontextprotocol.io",
-      "funnel_position": "breaking",
-      "velocity": 8.5,
-      "acceleration": -3.0,
-      "trend_direction": "rising",
-      "phase": "emerging",
-      "expert_ratio": 0.4,
-      "corroboration": 4,
-      "source_classes": [
-        "science",
-        "dev",
-        "press",
-        "social"
-      ],
-      "mainstream_gap": 0.4,
-      "breakdown": {
-        "science": 27.0,
-        "dev": 143.0,
-        "product": 1.0,
-        "press": 257.0,
-        "social": 298.0
-      },
-      "total_mentions": 726,
-      "buzz_score": 94,
-      "days_active": 15,
-      "github_stars": 44426
+      "github_stars": 11825
     },
     {
       "slug": "grok",
@@ -1617,11 +1463,11 @@
       "description_nl": "xAI's chatbot met realtime toegang tot X/Twitter",
       "url": "https://grok.x.ai",
       "funnel_position": "breaking",
-      "velocity": 0.5,
-      "acceleration": -3.0,
-      "trend_direction": "stable",
-      "phase": "sustained",
-      "expert_ratio": 0.48,
+      "velocity": 2.3,
+      "acceleration": 3.0,
+      "trend_direction": "rising",
+      "phase": "accelerating",
+      "expert_ratio": 0.47,
       "corroboration": 4,
       "source_classes": [
         "science",
@@ -1629,17 +1475,49 @@
         "press",
         "social"
       ],
-      "mainstream_gap": 0.46,
+      "mainstream_gap": 0.45,
       "breakdown": {
         "science": 27.0,
         "dev": 9.0,
         "product": 0.0,
-        "press": 43.0,
-        "social": 472.0
+        "press": 44.0,
+        "social": 477.0
       },
-      "total_mentions": 551,
-      "buzz_score": 59,
+      "total_mentions": 557,
+      "buzz_score": 66,
       "days_active": 15,
+      "github_stars": 0
+    },
+    {
+      "slug": "pi",
+      "name": "Pi",
+      "category": "tekst",
+      "description_nl": "Inflection AI's empathische chatbot met natuurlijke gespreksstijl",
+      "url": "https://pi.ai",
+      "funnel_position": "breaking",
+      "velocity": -0.8,
+      "acceleration": 5.0,
+      "trend_direction": "stable",
+      "phase": "sustained",
+      "expert_ratio": 0.87,
+      "corroboration": 4,
+      "source_classes": [
+        "science",
+        "product",
+        "press",
+        "social"
+      ],
+      "mainstream_gap": 0.04,
+      "breakdown": {
+        "science": 6.0,
+        "dev": 0.0,
+        "product": 7.0,
+        "press": 319.0,
+        "social": 142.0
+      },
+      "total_mentions": 474,
+      "buzz_score": 42,
+      "days_active": 14,
       "github_stars": 0
     },
     {
@@ -1649,10 +1527,10 @@
       "description_nl": "GitHub's AI-codecompletie — marktleider met 1.8M+ gebruikers",
       "url": "https://github.com/features/copilot",
       "funnel_position": "breaking",
-      "velocity": -1.4,
-      "acceleration": 23.0,
+      "velocity": -2.3,
+      "acceleration": 20.0,
       "trend_direction": "declining",
-      "phase": "sustained",
+      "phase": "declining",
       "expert_ratio": 0.49,
       "corroboration": 4,
       "source_classes": [
@@ -1664,13 +1542,13 @@
       "mainstream_gap": 0.15,
       "breakdown": {
         "science": 4.0,
-        "dev": 35.0,
+        "dev": 36.0,
         "product": 0.0,
-        "press": 224.0,
+        "press": 225.0,
         "social": 55.0
       },
-      "total_mentions": 318,
-      "buzz_score": 64,
+      "total_mentions": 320,
+      "buzz_score": 66,
       "days_active": 15,
       "github_stars": 12241
     },
@@ -1681,8 +1559,8 @@
       "description_nl": "Het GitHub van AI — modellen, datasets en spaces",
       "url": "https://huggingface.co",
       "funnel_position": "breaking",
-      "velocity": -2.4,
-      "acceleration": 8.0,
+      "velocity": -3.3,
+      "acceleration": 5.0,
       "trend_direction": "declining",
       "phase": "declining",
       "expert_ratio": 0.82,
@@ -1696,15 +1574,15 @@
       "mainstream_gap": 0.45,
       "breakdown": {
         "science": 8.0,
-        "dev": 49.0,
+        "dev": 50.0,
         "product": 0.0,
-        "press": 71.0,
-        "social": 140.0
+        "press": 70.0,
+        "social": 138.0
       },
-      "total_mentions": 268,
+      "total_mentions": 266,
       "buzz_score": 69,
       "days_active": 15,
-      "github_stars": 16054
+      "github_stars": 16067
     },
     {
       "slug": "claude code",
@@ -1713,10 +1591,10 @@
       "description_nl": "Anthropic's terminal-based coding assistant met agentic taken en autonome code-uitvoering",
       "url": "https://docs.anthropic.com/en/docs/claude-code",
       "funnel_position": "breaking",
-      "velocity": 3.5,
-      "acceleration": 64.0,
+      "velocity": 2.0,
+      "acceleration": 59.0,
       "trend_direction": "rising",
-      "phase": "accelerating",
+      "phase": "emerging",
       "expert_ratio": 0.0,
       "corroboration": 3,
       "source_classes": [
@@ -1724,16 +1602,16 @@
         "press",
         "social"
       ],
-      "mainstream_gap": 0.36,
+      "mainstream_gap": 0.37,
       "breakdown": {
         "science": 0.0,
-        "dev": 53.0,
+        "dev": 54.0,
         "product": 0.0,
-        "press": 94.0,
+        "press": 91.0,
         "social": 423.0
       },
-      "total_mentions": 570,
-      "buzz_score": 69,
+      "total_mentions": 568,
+      "buzz_score": 63,
       "days_active": 15,
       "github_stars": 0
     },
@@ -1775,8 +1653,8 @@
       "description_nl": "AI-native IDE — de snelst groeiende code-editor",
       "url": "https://cursor.com",
       "funnel_position": "breaking",
-      "velocity": -2.2,
-      "acceleration": 6.0,
+      "velocity": -4.0,
+      "acceleration": 0.0,
       "trend_direction": "declining",
       "phase": "declining",
       "expert_ratio": 0.35,
@@ -1786,50 +1664,113 @@
         "press",
         "social"
       ],
-      "mainstream_gap": 0.62,
+      "mainstream_gap": 0.61,
       "breakdown": {
         "science": 0.0,
-        "dev": 52.0,
+        "dev": 51.0,
         "product": 1.0,
         "press": 33.0,
-        "social": 44.0
+        "social": 43.0
       },
-      "total_mentions": 130,
+      "total_mentions": 128,
       "buzz_score": 68,
       "days_active": 15,
       "github_stars": 29933
     },
     {
-      "slug": "pi",
-      "name": "Pi",
-      "category": "tekst",
-      "description_nl": "Inflection AI's empathische chatbot met natuurlijke gespreksstijl",
-      "url": "https://pi.ai",
-      "funnel_position": "mainstream",
-      "velocity": -1.2,
-      "acceleration": -9.0,
-      "trend_direction": "declining",
-      "phase": "sustained",
-      "expert_ratio": 0.91,
-      "corroboration": 4,
+      "slug": "claude-cowork",
+      "name": "Claude Cowork",
+      "category": "productiviteit",
+      "description_nl": "Anthropic's desktop-agentmodus voor kenniswerkers — taken op bestanden en apps zonder terminal",
+      "url": "https://claude.ai",
+      "funnel_position": "breaking",
+      "velocity": 2.1,
+      "acceleration": -1.0,
+      "trend_direction": "rising",
+      "phase": "emerging",
+      "expert_ratio": 0.0,
+      "corroboration": 3,
       "source_classes": [
-        "science",
-        "product",
+        "dev",
         "press",
         "social"
       ],
-      "mainstream_gap": 0.03,
+      "mainstream_gap": 0.32,
       "breakdown": {
-        "science": 6.0,
-        "dev": 0.0,
-        "product": 5.0,
-        "press": 312.0,
-        "social": 142.0
+        "science": 0.0,
+        "dev": 10.0,
+        "product": 0.0,
+        "press": 21.0,
+        "social": 70.0
       },
-      "total_mentions": 465,
-      "buzz_score": 42,
-      "days_active": 11,
+      "total_mentions": 101,
+      "buzz_score": 59,
+      "days_active": 15,
       "github_stars": 0
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "category": "tekst",
+      "description_nl": "Anthropic's AI-assistent met focus op veiligheid en lange context",
+      "url": "https://claude.ai",
+      "funnel_position": "mainstream",
+      "velocity": -22.3,
+      "acceleration": -8.0,
+      "trend_direction": "declining",
+      "phase": "declining",
+      "expert_ratio": 0.8,
+      "corroboration": 4,
+      "source_classes": [
+        "science",
+        "dev",
+        "press",
+        "social"
+      ],
+      "mainstream_gap": 0.38,
+      "breakdown": {
+        "science": 164.0,
+        "dev": 439.0,
+        "product": 1.0,
+        "press": 1000.0,
+        "social": 1439.0
+      },
+      "total_mentions": 3043,
+      "buzz_score": 76,
+      "days_active": 15,
+      "github_stars": 58772
+    },
+    {
+      "slug": "mcp",
+      "name": "MCP",
+      "category": "infra",
+      "description_nl": "Model Context Protocol — standaard voor AI-tool integraties",
+      "url": "https://modelcontextprotocol.io",
+      "funnel_position": "mainstream",
+      "velocity": -2.1,
+      "acceleration": -38.0,
+      "trend_direction": "declining",
+      "phase": "declining",
+      "expert_ratio": 0.39,
+      "corroboration": 4,
+      "source_classes": [
+        "science",
+        "dev",
+        "press",
+        "social"
+      ],
+      "mainstream_gap": 0.4,
+      "breakdown": {
+        "science": 27.0,
+        "dev": 138.0,
+        "product": 1.0,
+        "press": 246.0,
+        "social": 293.0
+      },
+      "total_mentions": 705,
+      "buzz_score": 74,
+      "days_active": 15,
+      "github_stars": 44457
     },
     {
       "slug": "perplexity",
@@ -1838,8 +1779,8 @@
       "description_nl": "AI-zoekmachine met bronvermelding en follow-up vragen",
       "url": "https://www.perplexity.ai",
       "funnel_position": "mainstream",
-      "velocity": -2.4,
-      "acceleration": -1.0,
+      "velocity": -3.0,
+      "acceleration": -3.0,
       "trend_direction": "declining",
       "phase": "declining",
       "expert_ratio": 0.69,
@@ -1856,9 +1797,9 @@
         "dev": 7.0,
         "product": 1.0,
         "press": 91.0,
-        "social": 42.0
+        "social": 40.0
       },
-      "total_mentions": 172,
+      "total_mentions": 170,
       "buzz_score": 56,
       "days_active": 15,
       "github_stars": 0
@@ -1870,8 +1811,8 @@
       "description_nl": "Moonshot AI's assistent met open K-modellen en Kimi Claw",
       "url": "https://www.kimi.com",
       "funnel_position": "mainstream",
-      "velocity": -1.0,
-      "acceleration": -6.0,
+      "velocity": -1.3,
+      "acceleration": -7.0,
       "trend_direction": "declining",
       "phase": "sustained",
       "expert_ratio": 0.0,
@@ -1881,15 +1822,15 @@
         "press",
         "social"
       ],
-      "mainstream_gap": 0.42,
+      "mainstream_gap": 0.44,
       "breakdown": {
         "science": 0.0,
         "dev": 11.0,
         "product": 0.0,
-        "press": 15.0,
+        "press": 14.0,
         "social": 130.0
       },
-      "total_mentions": 156,
+      "total_mentions": 155,
       "buzz_score": 47,
       "days_active": 15,
       "github_stars": 0
@@ -1901,27 +1842,27 @@
       "description_nl": "AI-videotools voor filmmakers en creators",
       "url": "https://runwayml.com",
       "funnel_position": "mainstream",
-      "velocity": -0.3,
-      "acceleration": -5.0,
+      "velocity": -0.0,
+      "acceleration": -4.0,
       "trend_direction": "stable",
       "phase": "sustained",
-      "expert_ratio": 0.23,
+      "expert_ratio": 0.26,
       "corroboration": 3,
       "source_classes": [
         "dev",
         "press",
         "social"
       ],
-      "mainstream_gap": 0.22,
+      "mainstream_gap": 0.21,
       "breakdown": {
         "science": 0.0,
         "dev": 5.0,
         "product": 0.0,
-        "press": 18.0,
-        "social": 22.0
+        "press": 19.0,
+        "social": 21.0
       },
       "total_mentions": 45,
-      "buzz_score": 42,
+      "buzz_score": 43,
       "days_active": 15,
       "github_stars": 0
     },
@@ -1932,8 +1873,8 @@
       "description_nl": "Cloud-platform voor het draaien van open-source AI-modellen via API",
       "url": "https://replicate.com",
       "funnel_position": "mainstream",
-      "velocity": -0.7,
-      "acceleration": -1.0,
+      "velocity": -0.4,
+      "acceleration": 0.0,
       "trend_direction": "stable",
       "phase": "sustained",
       "expert_ratio": 0.0,
@@ -1942,16 +1883,16 @@
         "press",
         "social"
       ],
-      "mainstream_gap": 0.0,
+      "mainstream_gap": 0.09,
       "breakdown": {
         "science": 0.0,
-        "dev": 0.0,
+        "dev": 1.0,
         "product": 0.0,
-        "press": 9.0,
+        "press": 10.0,
         "social": 58.0
       },
-      "total_mentions": 67,
-      "buzz_score": 42,
+      "total_mentions": 69,
+      "buzz_score": 43,
       "days_active": 15,
       "github_stars": 0
     },
@@ -2016,36 +1957,6 @@
       "github_stars": 0
     },
     {
-      "slug": "hermes-agent",
-      "name": "Hermes Agent",
-      "category": "automatisering",
-      "description_nl": "Self-improving agent met persistent memory van Nous Research",
-      "url": "https://github.com/NousResearch/hermes-agent",
-      "funnel_position": "mainstream",
-      "velocity": -0.5,
-      "acceleration": 0.0,
-      "trend_direction": "stable",
-      "phase": "sustained",
-      "expert_ratio": 0.19,
-      "corroboration": 2,
-      "source_classes": [
-        "press",
-        "social"
-      ],
-      "mainstream_gap": 0.12,
-      "breakdown": {
-        "science": 0.0,
-        "dev": 3.0,
-        "product": 0.0,
-        "press": 22.0,
-        "social": 17.0
-      },
-      "total_mentions": 42,
-      "buzz_score": 49,
-      "days_active": 15,
-      "github_stars": 1823
-    },
-    {
       "slug": "udio",
       "name": "Udio",
       "category": "muziek",
@@ -2067,10 +1978,10 @@
         "science": 0.0,
         "dev": 0.0,
         "product": 1.0,
-        "press": 11.0,
+        "press": 12.0,
         "social": 27.0
       },
-      "total_mentions": 39,
+      "total_mentions": 40,
       "buzz_score": 20,
       "days_active": 1,
       "github_stars": 0
@@ -2112,8 +2023,8 @@
       "description_nl": "Meta's open-source taalmodel — populairste open model",
       "url": "https://llama.meta.com",
       "funnel_position": "fading",
-      "velocity": -2.9,
-      "acceleration": -9.0,
+      "velocity": -5.0,
+      "acceleration": -16.0,
       "trend_direction": "declining",
       "phase": "declining",
       "expert_ratio": 0.93,
@@ -2127,15 +2038,47 @@
       "mainstream_gap": 0.66,
       "breakdown": {
         "science": 130.0,
-        "dev": 28.0,
+        "dev": 26.0,
         "product": 0.0,
         "press": 81.0,
         "social": 26.0
       },
-      "total_mentions": 265,
+      "total_mentions": 263,
       "buzz_score": 71,
       "days_active": 15,
-      "github_stars": 5077
+      "github_stars": 5342
+    },
+    {
+      "slug": "openrouter",
+      "name": "OpenRouter",
+      "category": "infra",
+      "description_nl": "Unified API-gateway voor alle grote AI-modellen — vergelijk en switch",
+      "url": "https://openrouter.ai",
+      "funnel_position": "fading",
+      "velocity": -1.4,
+      "acceleration": -4.0,
+      "trend_direction": "declining",
+      "phase": "sustained",
+      "expert_ratio": 0.65,
+      "corroboration": 4,
+      "source_classes": [
+        "science",
+        "dev",
+        "press",
+        "social"
+      ],
+      "mainstream_gap": 0.64,
+      "breakdown": {
+        "science": 5.0,
+        "dev": 13.0,
+        "product": 0.0,
+        "press": 10.0,
+        "social": 5.0
+      },
+      "total_mentions": 33,
+      "buzz_score": 48,
+      "days_active": 15,
+      "github_stars": 0
     },
     {
       "slug": "comet",
@@ -2174,8 +2117,8 @@
       "description_nl": "OpenAI's open-source spraakherkenning",
       "url": "https://openai.com/research/whisper",
       "funnel_position": "fading",
-      "velocity": -0.9,
-      "acceleration": -3.0,
+      "velocity": -0.7,
+      "acceleration": -2.0,
       "trend_direction": "stable",
       "phase": "sustained",
       "expert_ratio": 0.41,
@@ -2193,7 +2136,7 @@
         "social": 0.0
       },
       "total_mentions": 19,
-      "buzz_score": 43,
+      "buzz_score": 42,
       "days_active": 15,
       "github_stars": 182
     }
