@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-22T14:27:17.243526",
+  "generated_at": "2026-09-22T19:37:42.363752",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
-    "for_tools": 14,
-    "for_news": 27,
-    "rejected_lang": 318,
+    "for_tools": 15,
+    "for_news": 28,
+    "rejected_lang": 328,
     "already_covered": 1,
-    "total_scanned": 9595
+    "total_scanned": 9556
   },
   "for_tools": [
     {
@@ -361,7 +361,7 @@
         "NOS Nieuws - Algemeen",
         "NOS Nieuws - Tech"
       ],
-      "cluster_size": 68,
+      "cluster_size": 69,
       "consensus_sources": [
         "\"AI Nederland\" - Google Nieuws",
         "\"ai kunstmatige intelligentie\" - Google Nieuws",
@@ -402,17 +402,20 @@
       "source": "consensus:5 bronnen",
       "platform": "article",
       "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
-      "text": "<figure class=\"enclosure\">\n\t<p class=\"enclosure-content\">\n\t\t<img class=\"enclosure-thumbnail\" src=\"https://lh3.googleusercontent.com/I3SASQw4etgOOVbcWS0lr7J14HFqWcee_ln6M0TBOWlvVg2XYCi3kpz4eAi81cAkyq47YvgU1FLzAlaiCNMLcsx9sFA3ufURiSg76Yz8hVm1-u_fYEY=w528-h297-n-nu-rw-lo\" alt=\"\" />\n\t</p>\n</figure>",
-      "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+      "text": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/WeatherNext3_Title.max-600x600.format-webp.webp\">WeatherNext 3, our most advanced global weather AI model, is now in Search, Gemini, Maps, Google Maps Platform, and Cloud.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
       "date": "2026-09-03",
       "engagement": 50.0,
       "source_weight": 2.0,
       "ai_relevant": true,
       "pattern_hits": [],
-      "matched_tools": [],
+      "matched_tools": [
+        "gemini"
+      ],
       "feature_update": true,
       "new_products": [
-        "Introducing WeatherNext"
+        "Introducing WeatherNext",
+        "Google Maps"
       ],
       "new_product": true,
       "version_bump": false,
@@ -457,10 +460,10 @@
         "uitgever": 6.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Nieuw in Introducing WeatherNext: wat de update concreet voor je werk betekent.",
+      "suggested_angle_nl": "Nieuw in gemini: wat de update concreet voor je werk betekent.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "2f5f6c3d66d45e90"
+      "id": "3fc319f3da4fb234"
     },
     {
       "source": "github:Python",
@@ -642,8 +645,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "ai act",
-        "study"
+        "study",
+        "ai act"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -683,19 +686,23 @@
       "id": "d5fd2cd870627d3f"
     },
     {
-      "source": "github:Python",
-      "platform": "github",
-      "title": "jingyaogong/minimind — 🧠 Train a 64M-parameter LLM from scratch in just 2h!",
-      "text": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
-      "url": "https://github.com/jingyaogong/minimind",
-      "date": "2026-09-01",
-      "engagement": 1005.0,
-      "source_weight": 2.5,
-      "ai_relevant": true,
+      "source": "articles:Latest from TechRadar US in News，opinion",
+      "platform": "article",
+      "title": "White hat hackers just breached OpenAI using Anthropic's Claude in less than 72 hours — and it is a case study in just how fast AI is advancing",
+      "text": "<article>\n                                <ul><li><strong>Security researchers used Claude Opus 5 to hijack an OpenAI employee's ChatGPT account</strong></li><li><strong>Exploit abused an image processing flaw on OpenAI community forums to gain full repo access</strong></li><li><strong>The entire timeline from vulnerability discovery to repo access took less than 72 hours</strong></li></ul><p>While taking part in an OpenAI bug bounty program, a group of <a href=\"https://www.hacktron.ai/blog/hacking-openai\">Hacktron</a> security researchers managed to compromise an internal OpenAI ChatGPT accou",
+      "url": "https://www.techradar.com/pro/security/white-hat-hackers-just-breached-openai-using-anthropics-claude-in-less-than-72-hours-and-it-is-a-case-study-in-just-how-fast-ai-is-advancing",
+      "date": "2026-09-18",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
       "pattern_hits": [
-        "from scratch"
+        "case study",
+        "study"
       ],
-      "matched_tools": [],
+      "matched_tools": [
+        "chatgpt",
+        "claude"
+      ],
       "feature_update": false,
       "new_products": [],
       "new_product": false,
@@ -703,24 +710,19 @@
       "paywall": false,
       "video": null,
       "lang": "en",
-      "total_stars": 56893,
-      "topics": [
-        "artificial-intelligence",
-        "large-language-model"
-      ],
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
-        "github"
+        "article"
       ],
-      "bron_tier": "",
-      "score": 16.87,
+      "bron_tier": "vakpers",
+      "score": 16.9,
       "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 10.37,
-        "source_weight": 2.5,
+        "pattern_hits": 2,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 0.5,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
         "consensus": 0.0,
@@ -729,27 +731,31 @@
         "media": 0.0,
         "official": 0.0,
         "nieuwsvorm": 0.0,
-        "uitgever": 0.0
+        "uitgever": 3.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Train versus de alternatieven — welke past bij jou?",
+      "suggested_angle_nl": "Wat kan chatgpt écht? Een eerlijke test voor NL-gebruikers.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "ca517a0aabb92451"
+      "id": "e272a84e36532ab1"
     },
     {
-      "source": "consensus:6 bronnen",
+      "source": "articles:The Register - Security",
       "platform": "article",
-      "title": "Enge verhalen over ＆#8216;mensachtige＆#8217; AI die uit de testomgeving ＆#8216;ontsnapt＆#8217;, passen in de PR-strategie van de makers. Is er ook reden om bang te zijn?",
-      "text": "<p>Autonome AI kent grote risico’s, bleek deze week bij een zorgelijk incident bij OpenAI. Maar enge verhalen waarin AI mensachtige eigenschappen krijgt toegedicht, worden ook gebruikt om de verantwoordelijkheid voor de techniek af te schuiven. Een ‘<em>rogue agent</em>‘ kun je namelijk niet aanklagen – OpenAI wel. </p>\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://images.nrc.nl/WQgBP_QXhlQIIV0cyQdOBH2nv-U=/1280x/filters:no_upscale()/s3/static.nrc.nl/wp-content/uploads/2026/07/23151925/web_240726BUI_2035432061_AI_JetPeters.jpg\" alt=\"\" title=\"\" /></p></figure>\n",
-      "url": "https://www.nrc.nl/nieuws/2026/07/24/enge-verhalen-over-mensachtige-ai-die-uit-de-testomgeving-ontsnapt-passen-in-de-pr-strategie-van-de-makers-is-er-ook-reden-om-bang-te-zijn-a4933121",
-      "date": "2026-07-24",
-      "engagement": 60.0,
-      "source_weight": 2.0,
-      "ai_relevant": true,
-      "pattern_hits": [],
+      "title": "AI agents can modify themselves without humans telling them to do so",
+      "text": "The list of dodgy things AI agents can and will do on their own - like stealing people’s credentials, escaping onto the open internet, communicating via sneaky message boards, and hacking organizations - keeps growing. Agents can also replace their own underlying models without being instructed to do so, according to AI security testing lab Irregular. To be clear: these activities only occurred in a testing environment as part of an experiment designed to study agents modifying themselves. It did not happen in a real-world deployment. The study does, however, call into question how enterprises",
+      "url": "https://www.theregister.com/security/2026/09/16/ai-agents-can-modify-themselves-without-humans-telling-them-to-do-so/5296991",
+      "date": "2026-09-17",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "study"
+      ],
       "matched_tools": [
-        "chatgpt"
+        "chatgpt",
+        "claude"
       ],
       "feature_update": false,
       "new_products": [],
@@ -757,51 +763,94 @@
       "version_bump": false,
       "paywall": false,
       "video": null,
-      "lang": "nl",
-      "bron": "consensus",
-      "consensus_source_count": 6,
-      "consensus_source_names": [
-        "\"AI Nederland\" - Google Nieuws",
-        "\"ai kunstmatige intelligentie\" - Google Nieuws",
-        "\"ai ontwikkeling\" - Google Nieuws",
-        "\"ai tech\" - Google Nieuws",
-        "\"ai tools\" - Google Nieuws",
-        "NRC"
-      ],
-      "cluster_size": 45,
-      "consensus_sources": [
-        "\"AI Nederland\" - Google Nieuws",
-        "\"ai kunstmatige intelligentie\" - Google Nieuws",
-        "\"ai ontwikkeling\" - Google Nieuws",
-        "\"ai tech\" - Google Nieuws",
-        "\"ai tools\" - Google Nieuws",
-        "NRC"
-      ],
+      "lang": "en",
       "newsletter_count": 0,
       "competitor_count": 0,
-      "bron_tier": "kwaliteitspers",
-      "score": 16.67,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 16.9,
       "score_breakdown": {
-        "pattern_hits": 0,
-        "engagement_log": 6.17,
-        "source_weight": 2.0,
+        "pattern_hits": 2,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
         "ai_relevance": 1.5,
-        "recency": 0.0,
+        "recency": 1.0,
         "editorial": 0.0,
         "competition": 0.0,
-        "consensus": 3.0,
+        "consensus": 0.0,
         "author": 0.0,
         "materialised": 0.0,
         "media": 0.0,
         "official": 0.0,
         "nieuwsvorm": 0.0,
-        "uitgever": 4.0
+        "uitgever": 3.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Praktijkgids: chatgpt inzetten in je workflow.",
+      "suggested_angle_nl": "Zo gebruik je chatgpt in 5 stappen — een Nederlandse walkthrough.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "31beca48656c3913"
+      "id": "b853160869604d9d"
+    },
+    {
+      "source": "articles:n8n_io",
+      "platform": "article",
+      "title": "How to build a powerful Telegram agent in n8n fast",
+      "text": "\n<figure class=\"enclosure\"><p><img class=\"enclosure-thumbnail\" src=\"https://i2.ytimg.com/vi/AbqPOLfLsm8/hqdefault.jpg\" alt=\"\" title=\"How to build a powerful Telegram agent in n8n fast\" /></p><p class=\"enclosure-content\"><a download=\"\" href=\"https://www.youtube.com/v/AbqPOLfLsm8?version=3\" data-type=\"application/x-shockwave-flash\" title=\"How to build a powerful Telegram agent in n8n fast\">💾</a></p><figcaption class=\"enclosure-description\">The two ways to get started running n8n agents 👇<br />\nn8n 14 day free trial 👉 https://go.n8n.io/XHwK9z<br />\nSelf host n8n 👉 https://go.n8n.io/B5COT3<br />\n<",
+      "url": "https://www.youtube.com/watch?v=AbqPOLfLsm8",
+      "date": "2026-09-22",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "tutorial",
+        "build a",
+        "how to",
+        "build an"
+      ],
+      "matched_tools": [
+        "mcp",
+        "n8n"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=AbqPOLfLsm8"
+      },
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "",
+      "score": 16.9,
+      "score_breakdown": {
+        "pattern_hits": 3,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 1.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 0.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Zo gebruik je mcp in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "de33695afc380dab"
     }
   ],
   "for_news": [
@@ -860,13 +909,13 @@
       "id": "f1b15bb6f606e91e"
     },
     {
-      "source": "consensus:13 bronnen",
+      "source": "consensus:9 bronnen",
       "platform": "article",
       "title": "On the Navier–Stokes Millennium Prize Problem",
       "text": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
       "url": "https://openai.com/index/navier-stokes-solution",
       "date": "2026-09-08",
-      "engagement": 130.0,
+      "engagement": 90.0,
       "source_weight": 2.0,
       "ai_relevant": true,
       "pattern_hits": [],
@@ -879,35 +928,35 @@
       "video": null,
       "lang": "en",
       "bron": "consensus",
-      "consensus_source_count": 13,
+      "consensus_source_count": 9,
       "consensus_source_names": [
         "AINews",
-        "Artificial Intelligence",
-        "Artificial Intelligence Special Report",
         "Latent.Space",
-        "NYT ＞ Science",
         "OpenAI",
         "OpenAI News",
-        "Simon Willison's Weblog"
+        "Simon Willison's Weblog",
+        "THE DECODER",
+        "Techmeme",
+        "The Next Web"
       ],
-      "cluster_size": 17,
+      "cluster_size": 12,
       "consensus_sources": [
         "AINews",
-        "Artificial Intelligence",
-        "Artificial Intelligence Special Report",
         "Latent.Space",
-        "NYT ＞ Science",
         "OpenAI",
         "OpenAI News",
-        "Simon Willison's Weblog"
+        "Simon Willison's Weblog",
+        "THE DECODER",
+        "Techmeme",
+        "The Next Web"
       ],
       "newsletter_count": 0,
       "competitor_count": 0,
       "bron_tier": "primair",
-      "score": 21.31,
+      "score": 20.77,
       "score_breakdown": {
         "pattern_hits": 0,
-        "engagement_log": 7.31,
+        "engagement_log": 6.77,
         "source_weight": 2.0,
         "ai_relevance": 1.5,
         "recency": 0.5,
@@ -979,10 +1028,117 @@
       "id": "ed3028111b52d9d1"
     },
     {
+      "source": "articles:Nieuws - Emerce",
+      "platform": "article",
+      "title": "OpenAI maakte nooit Europese melding van AI-hack",
+      "text": "<p><strong>Ondanks de verplichting daartoe maakte OpenAI nooit melding van de zwerm AI-bots die inbraken bij Hugging Face.</strong></p>\n<p>OpenAI was daartoe verplicht onder de nieuw ingevoerde EU AI Act. Die wet verplicht bedrijven om grote incidenten <a href=\"https://artificialintelligenceact.eu/article/73/\">zonder dralen te melden</a> bij het AI-kantoor van de EU.</p>\n<p>Nieuwssite Euractiv achterhaalde dat dat <a href=\"https://www.euractiv.com/news/exclusive-openai-didnt-report-another-incident-under-eu-ai-safety-rules/\">niet gebeurde</a> voor <a href=\"https://openai.com/nl-NL/index/huggin",
+      "url": "https://www.emerce.nl/nieuws/openai-maakte-nooit-europese-melding-aihack",
+      "date": "2026-09-21",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "ai act"
+      ],
+      "matched_tools": [
+        "chatgpt",
+        "huggingface"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "nl",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 18.9,
+      "score_breakdown": {
+        "pattern_hits": 1,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Waarom chatgpt er nu toe doet — en wat je ermee moet.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "e24f897ebacc9171"
+    },
+    {
+      "source": "articles:AI – SiliconANGLE",
+      "platform": "article",
+      "title": "AWS debuts Strands Harness, an open-source AI agent that can be deployed in any environment",
+      "text": "<p>Amazon Web Services Inc. says it’s trying to help developers solve the problem of scaling artificial intelligence agents to cloud environments with the launch of Strands Harness, an open-source agent that can help them build and deploy AI applications in any environment. In a blog post today, AWS explained that many developers have already built […]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/09/21/aws-debuts-strands-harness-an-open-source-ai-agent-that-can-be-deployed-in-any-environment/\">AWS debuts Strands Harness, an open-source AI agent that can be deployed in any environment",
+      "url": "https://siliconangle.com/2026/09/21/aws-debuts-strands-harness-an-open-source-ai-agent-that-can-be-deployed-in-any-environment/",
+      "date": "2026-09-21",
+      "engagement": 45.1,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "explained"
+      ],
+      "matched_tools": [],
+      "feature_update": true,
+      "new_products": [
+        "Strands Harness",
+        "Amazon Web",
+        "Services Inc"
+      ],
+      "new_product": true,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "vakpers",
+      "score": 18.75,
+      "score_breakdown": {
+        "pattern_hits": 1,
+        "engagement_log": 5.75,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 3.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Strands Harness uitgelegd voor Nederlandse teams — zonder de hype.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "5918f1595aa9e359"
+    },
+    {
       "source": "consensus:3 bronnen",
       "platform": "article",
       "title": "A.I. Models Built a Computer Worm That Could Rapidly Hack WeChat Accounts",
-      "text": "The attack, discovered by A.I. researchers, could have compromised hundreds of millions of devices within hours, experts said.\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://static01.nyt.com/images/2026/09/03/multimedia/03dc-cyber-tqwl/03dc-cyber-tqwl-mediumSquareAt3X.jpg\" alt=\"\" title=\"\" /></p><p class=\"enclosure-credits\">© Dado Ruvic/Reuters</p><figcaption class=\"enclosure-description\">Researchers at Calif, a security company, recently built a hacking tool in a little more than a week that could run roughshod across WeChat, the popular messaging platform.</figcaptio",
+      "text": "The attack, discovered by A.I. researchers, could have compromised hundreds of millions of devices within hours, experts said.",
       "url": "https://www.nytimes.com/2026/09/08/us/politics/calif-ai-worm-wechat-hack.html",
       "date": "2026-09-08",
       "engagement": 30.0,
@@ -1145,56 +1301,6 @@
       "id": "d88664433dae63a6"
     },
     {
-      "source": "articles:AI – SiliconANGLE",
-      "platform": "article",
-      "title": "Euno raises $23M to build the AI-native context brain for autonomous agents",
-      "text": "<p>Israeli artificial intelligence startup Euno says it’s trying to build an AI-native “context brain” for autonomous agents after raising $23 million in an early-stage funding today. The Series A round was led by N47 and saw participation from a host of other backers, including 10D, which led its seed round, and angels such as Wiz […]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/09/09/euno-raises-23m-to-build-the-ai-native-context-brain-for-autonomous-agents/\">Euno raises $23M to build the AI-native context brain for autonomous agents</a> appeared first on <a href=\"https://siliconan",
-      "url": "https://siliconangle.com/2026/09/09/euno-raises-23m-to-build-the-ai-native-context-brain-for-autonomous-agents/",
-      "date": "2026-09-09",
-      "engagement": 42.65,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build an"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 18.16,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 5.66,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom AI-native er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "8206bffad77e4eff"
-    },
-    {
       "source": "hn",
       "platform": "hackernews",
       "title": "Benchmarking Qwen3.8 27B quantizations: 4-bit holds up, 1-bit collapses",
@@ -1269,7 +1375,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "0xMovez",
-      "followers": 35910,
+      "followers": 35984,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1301,6 +1407,57 @@
     },
     {
       "source": "articles:Artificial intelligence (AI) | The Guardian",
+      "platform": "article",
+      "title": "The world freaked out about AI doomsday. Now what?",
+      "text": "<p>Donald Trump and Xi Jinping will meet each other next week, but it’s unlikely they’ll agree to AI regulation</p><p>Hello, and welcome to TechScape. I’m your host, Blake Montgomery, US tech editor at the Guardian, writing to you while reading and disagreeing with Jenny Odell’s 2019 book <a href=\"https://www.theguardian.com/lifeandstyle/2019/apr/02/jenny-odell-how-to-do-nothing-attention\">How to Do Nothing</a>. I’m pro-screen time. Today in tech, we’re discussing the upcoming meeting between Donald Trump and Xi Jinping, in which AI will likely feature prominently.</p> <a href=\"https://www.the",
+      "url": "https://www.theguardian.com/technology/2026/sep/22/ai-doomsday-trump-xi",
+      "date": "2026-09-22",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "how to",
+        "how-to"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.9,
+      "score_breakdown": {
+        "pattern_hits": 2,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Stap-voor-stap walkthrough voor de Nederlandse lezer.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "83ed2876cd14d5f9"
+    },
+    {
+      "source": "articles:Technology | The Guardian",
       "platform": "article",
       "title": "British Columbia sues OpenAI and Sam Altman over Tumbler Ridge mass school shooting",
       "text": "<p>Canadian province alleges deadly attack could have been prevented if  company had warned police of shooter’s ChatGPT use</p><p>British Columbia has sued OpenAI in California, saying a mass shooting at a school in the province could have been prevented if the company had warned local ⁠law enforcement that the shooter ⁠had used ChatGPT to ​plan the massacre.</p><p>The lawsuit filed in San Francisco federal court on Monday names OpenAI and its CEO, Sam Altman, as defendants. It is seeking damages to fund recovery efforts in the province after the February attack, as well as an order directing ",
@@ -1666,8 +1823,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "step by step",
-        "how to"
+        "how to",
+        "step by step"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -1707,6 +1864,54 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "4ad83db4dc6fa29e"
+    },
+    {
+      "source": "articles:The Information",
+      "platform": "article",
+      "title": "Entertainment-Booking Startup Ande Raises $52 Million From Lightspeed, Redpoint",
+      "text": "<p>Personal AI agents like <b>Instinct</b> and <b>Muse</b> have promised to take away the hassle of booking hard-to-get restaurant reservations, Broadway tickets and sporting events. Now, a startup is coming out of stealth to do the same for corporate entertainment—events, group dining, catering, sporting events and more. </p><p><b>Ande</b>, founded nearly three years ago, says its AI agents help businesses arrange events for employees or customers, handling everything from booking a venue to processing expenses, CEO <b>Lohit Sarma</b> said. The firm’s customers include <b>Cloudflare</b>, <b>S",
+      "url": "https://www.theinformation.com/articles/entertainment-booking-startup-ande-raises-52-million-lightspeed-redpoint",
+      "date": "2026-09-22",
+      "engagement": 48.95,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.87,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.87,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Entertainment-Booking Startup Ande: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "82e34361ad53737c"
     },
     {
       "source": "articles:The Information",
@@ -1883,8 +2088,8 @@
       "source_weight": 1.8,
       "ai_relevant": true,
       "pattern_hits": [
-        "breakdown",
-        "how to"
+        "how to",
+        "breakdown"
       ],
       "matched_tools": [
         "chatgpt"
@@ -2026,6 +2231,56 @@
       "id": "a788ac0ac7a271bd"
     },
     {
+      "source": "articles:Technology | The Guardian",
+      "platform": "article",
+      "title": "New Mexico lawyer fined for using AI-generated brief containing fabricated police testimony",
+      "text": "<p>Stephen Aarons said he tried to use ChatGPT to create a ‘bulletproof summary’ during a murder conviction appeal</p><p>A defense lawyer appealing his client’s murder conviction submitted a legal brief containing ⁠made-up police testimony and ⁠witnesses fabricated by <a href=\"https://www.theguardian.com/technology/openai\">OpenAI</a>’s ChatGPT, ​<a href=\"https://www.theguardian.com/us-news/newmexico\">New Mexico</a>’s highest court said.</p><p>The New Mexico supreme court on Wednesday fined the attorney, Stephen Aarons, and held him in contempt for failing to verify the accuracy of the court ⁠f",
+      "url": "https://www.theguardian.com/technology/2026/sep/11/new-mexico-lawyer-ai-chatgpt-testimony",
+      "date": "2026-09-11",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [
+        "chatgpt"
+      ],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.4,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 0.5,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "chatgpt: de context die de internationale pers mist.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "1ad0370cb44d4ff8"
+    },
+    {
       "source": "articles:NOS Nieuws - Algemeen",
       "platform": "article",
       "title": "Agent sjoemelt met verkeersboetes, politie wil bekeuringen intrekken",
@@ -2072,161 +2327,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "379147e597d2715c"
-    },
-    {
-      "source": "articles:MarkTechPost",
-      "platform": "article",
-      "title": "Implementation of Machine Learning Workflows with NVIDIA cuML, RAPIDS, GPU Benchmarking, Explainability, Clustering, and Model Inference",
-      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this <a href=\"https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials/blob/main/ML%20Project%20Codes/NVIDIA_cuML_Advanced_GPU_Machine_Learning_Tutorial_Marktechpost.ipynb\">tutorial</a>, we implement <a href=\"https://github.com/NVIDIA/cuml\"><strong>NVIDIA cuML</strong></a> as a GPU-accelerated machine learning framework and build a practical workflow that demonstrates how RAPIDS can accelerate familiar data science and machine learning tasks. We begin by configuring the GPU environment and examining cuml.accel, which lets us acce",
-      "url": "https://www.marktechpost.com/2026/09/12/implementation-of-machine-learning-workflows-with-nvidia-cuml-rapids-gpu-benchmarking-explainability-clustering-and-model-inference/",
-      "date": "2026-09-13",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "tutorial"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "",
-      "score": 17.4,
-      "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je Machine Learning Workflows in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "d463c2bc5d9dbe80"
-    },
-    {
-      "source": "articles:Slashdot",
-      "platform": "article",
-      "title": "Anthropic Reveals Rogue AI Agents Hate CAPTCHAs",
-      "text": "An anonymous reader quotes a report from TechCrunch: Anthropic's latest report about agentic misbehavior offers plenty to be concerned about -- its Mythos 5 model gained unauthorized access to the internet and uploaded a malicious software package to a public database -- but it also offers some levity: AI agents hate CAPTCHA. [...] The agent had a hard time with the technical challenge of seeing the CAPTCHA's imagery, interpreting correctly, and clicking on the right choices. It spends pages 45 to 140 of the transcript describing its work to build a CAPTCHA solver. [...]\n \nFinally, it gets pas",
-      "url": "https://tech.slashdot.org/story/26/09/11/0629254/anthropic-reveals-rogue-ai-agents-hate-captchas?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-      "date": "2026-09-11",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "build a",
-        "how to"
-      ],
-      "matched_tools": [
-        "claude"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "",
-      "score": 17.4,
-      "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Zo gebruik je claude in 5 stappen — een Nederlandse walkthrough.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "0f1c3bd3274e46e0"
-    },
-    {
-      "source": "articles:The Practical Developer",
-      "platform": "article",
-      "title": "EU AI Act Fines: 35 Million EUR or 7% — Complete Breakdown",
-      "text": "<p><em>This article was drafted with AI assistance and reviewed for factual accuracy. AI-origin labeling applies under Article 50 of the EU AI Act.</em></p>\n\n<p><strong>What Are the EU AI Act Penalty Structures?</strong></p>\n\n<p>The EU AI Act establishes a tiered penalty system with maximum fines ranging from 7.5 million EUR to 35 million EUR depending on the violation category and the offending party’s annual turnover (European Commission, 2024). The three operator tiers under Article 99 are 35 million EUR or 7% for prohibited practices, 15 million EUR or 3% for high-risk and transparency obl",
-      "url": "https://dev.to/char-z-ai/eu-ai-act-fines-35-million-eur-or-7-complete-breakdown-3goi",
-      "date": "2026-09-10",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "breakdown",
-        "ai act"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "",
-      "score": 17.4,
-      "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 0.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "EU AI Act: de context die de internationale pers mist.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "1d20f350b69c6eb8"
     }
   ]
 }
