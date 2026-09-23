@@ -66,7 +66,7 @@ Voor productie ligt de ondergrens rond 4 GB, en met AI-nodes of meerdere gelijkt
 
 **4. Test met webhooks voordat je gaat bouwen.** Webhooks zijn het onderdeel dat het vaakst misgaat bij self-hosting, omdat n8n moet weten onder welke publieke URL hij bereikbaar is. Werkt een testwebhook van buitenaf, dan staat de rest meestal ook goed.
 
-Wil je eerst weten of self-hosting überhaupt bij je past, lees dan onze vergelijking [automatiseren met AI: Make, Zapier of n8n](/nieuws/automatiseren-met-ai-make-zapier-n8n) — de gehoste varianten zijn voor veel mensen de betere keuze.
+Wil je eerst weten of self-hosting überhaupt bij je past, lees dan onze vergelijking [automatiseren met AI: Make, Zapier of n8n](/nieuws/automatiseren-met-ai-make-zapier-n8n) — de gehoste varianten zijn voor veel mensen de betere keuze. Draait je workflow eenmaal, zorg dan dat hij een storing overleeft: [self-healing workflows bouwen met n8n](/nieuws/n8n-self-healing-workflows) legt de retry- en foutafhandelingslagen uit.
 
 ## Waar je op moet letten na de eerste week
 

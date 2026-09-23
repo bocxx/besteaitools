@@ -81,7 +81,7 @@ Wil je begrijpen waarom dit soort AI-agents nu overal opduiken en wat dat breder
 - [ ] Doorschakeling (Telegram/e-mail) actief voor twijfelgevallen
 - [ ] Workflow op "Active" gezet en met een echt testbericht gecontroleerd
 
-Draait deze bot straks op eigen infrastructuur in plaats van n8n Cloud, dan is [n8n zelf hosten met Docker](/nieuws/n8n-zelf-hosten-docker-stappenplan) de vervolgstap — inclusief wat de licentie wel en niet toestaat.
+Draait deze bot straks op eigen infrastructuur in plaats van n8n Cloud, dan is [n8n zelf hosten met Docker](/nieuws/n8n-zelf-hosten-docker-stappenplan) de vervolgstap — inclusief wat de licentie wel en niet toestaat. En laat 'm nooit stilvallen bij een gehikte WhatsApp-API: [self-healing workflows bouwen met n8n](/nieuws/n8n-self-healing-workflows) laat zien hoe je retries en een Error Trigger inricht.
 
 ## Bronnen
 
