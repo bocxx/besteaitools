@@ -104,6 +104,7 @@ De onderstaande feiten wijzigen het snelst; check ze bij twijfel op de officiël
 
 ## Bronnen
 
+- [Gemini uitzetten in Google Docs](/nieuws/gemini-uitzetten-google-docs) — wil je de ongevraagde AI-vakken in Docs juist liever kwijt, dan staat dat hier
 - [Google — Gemini Apps release notes](https://gemini.google/release-notes/) — officiële, doorlopend bijgewerkte lijst van functies en modelwijzigingen in de Gemini-app
 - [TechStartups — Google launches Gemini 3.5 Flash at I/O 2026](https://techstartups.com/2026/05/20/google-launches-gemini-3-5-flash-and-omni-world-model-at-i-o-2026-as-ai-race-with-openai-heats-up/) — modelaankondiging met datum (mei 2026)
 - [ScreenApp — Gemini Pricing 2026](https://screenapp.io/blog/gemini-pricing) — secundair overzicht van de actuele abonnementsprijzen (peildatum juni 2026)
