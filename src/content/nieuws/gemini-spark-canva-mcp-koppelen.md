@@ -123,3 +123,4 @@ Met die template hoef je per opdracht alleen de placeholders in te vullen. Een c
 - [TechCrunch — Google introduces Gemini Spark](https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/)
 - [9to5Google — Gemini Spark Ultra US rollout](https://9to5google.com/2026/05/29/gemini-spark-ultra-us/)
 - [Anthropic — Model Context Protocol introduction](https://www.anthropic.com/news/model-context-protocol)
+- [Je eerste MCP-server koppelen aan Claude Desktop](/nieuws/mcp-server-koppelen-claude-desktop) — hoe die koppeling er in Claude zelf uitziet

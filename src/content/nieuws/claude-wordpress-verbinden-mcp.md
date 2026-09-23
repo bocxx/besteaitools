@@ -78,6 +78,7 @@ Wil je eerst een gevoel krijgen bij wat een AI wél en niet betrouwbaar met teks
 
 ## Bronnen
 
+- [Je eerste MCP-server koppelen aan Claude Desktop](/nieuws/mcp-server-koppelen-claude-desktop) — de basisstappen als je nog nooit een lokale MCP-server hebt gekoppeld
 - [WordPress.com has a Claude Connector](https://wordpress.com/blog/2026/02/05/claude-connector/) — WordPress.com, 2026
 - [From Abilities to AI Agents: Introducing the WordPress MCP Adapter](https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/) — WordPress Developer Blog, 2026
 - [Connect Claude to WordPress with MCP](https://instawp.com/connect-claude-with-wordpress/) — InstaWP

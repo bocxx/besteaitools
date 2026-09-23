@@ -82,6 +82,8 @@ Werk je vooral mét MCP-tools in plaats van eraan? Dan hoef je weinig te doen: c
 - [ ] Deprecated features (roots, sampling, logging) op de migratielijst gezet
 - [ ] SDK-versie in de gaten: Tier 1-SDK's leveren support vóór 28 juli 2026
 
+Wil je eerst zien hoe een MCP-server er in de praktijk uitziet voordat je de specificatie induikt: [je eerste MCP-server koppelen aan Claude Desktop](/nieuws/mcp-server-koppelen-claude-desktop) laat de basis in vier stappen zien.
+
 ## Bronnen
 
 - [The 2026-07-28 MCP Specification Release Candidate — Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) (21 mei 2026)
