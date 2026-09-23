@@ -71,4 +71,6 @@ Je hoeft niet meteen tien Projecten op te zetten. Kies één terugkerende klus, 
 
 Claude-prijzen en plan-indeling wijzigen geregeld; controleer de actuele plannen en limieten op [claude.com](https://claude.com) voordat je upgradet.
 
+Projects is niet het enige waarmee Claude context vasthoudt: los daarvan bouwt hij ook automatisch geheugen op uit gewone chats — zie [Claude's geheugen instellen](/nieuws/claude-geheugen-instellen) voor wat dat wel en niet onthoudt.
+
 Wil je begrijpen waarom Anthropic zijn model zo strak bewaakt? In juni 2026 beschuldigde Anthropic Alibaba van 28,8 miljoen geautomatiseerde uitwisselingen via neppe accounts om Claude's agentic capaciteiten te kopiëren. Meer achtergrond: [Claude en de Alibaba-distillatieaanval](/nieuws/anthropic-alibaba-claude-distillatie-aanval).

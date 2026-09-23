@@ -111,4 +111,5 @@ De uitleg hierboven blijft staan; de cijfers hieronder zijn de bederfelijke laag
 - [Claude Help Center — Log in to your Claude account](https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account) — inlogmethodes en het wachtwoordloze ontwerp
 - [Claude Help Center — Verify your phone number](https://support.claude.com/en/articles/8287232-verify-your-phone-number) — sms-verificatie, geweigerde nummertypes, niet-wijzigbaar nummer
 - [Claude — Plans & Pricing](https://claude.com/pricing) — actuele plannen en wat elk plan bevat
+- [Claude's geheugen instellen](/nieuws/claude-geheugen-instellen) — wat je nieuwe account onthoudt zodra je begint te chatten
 - [Claude Help Center — Age assurance on Claude](https://support.claude.com/en/articles/15171100-age-assurance-on-claude) — de 18+-eis bij het aanmaken

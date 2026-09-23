@@ -84,7 +84,7 @@ Modellen zijn geen kleine bestanden — een enkel model kost al snel enkele giga
 - [ ] Model passend bij je RAM gekozen (niet te zwaar)
 - [ ] Weet hoe je met `ollama rm` ruimte terugwint
 
-Laat je een agent op zo'n lokaal model los, zet er dan een gateway tussen: [zo scherm je de modelgewichten af met LiteLLM](/nieuws/litellm-agent-modelgewichten-afschermen).
+Laat je een agent op zo'n lokaal model los, zet er dan een gateway tussen: [zo scherm je de modelgewichten af met LiteLLM](/nieuws/litellm-agent-modelgewichten-afschermen). Wil je liever een grafische interface dan de command line, dan is [Llama lokaal draaien met LM Studio](/nieuws/llama-lokaal-draaien-lm-studio) het alternatief zonder terminal.
 
 ## Bronnen
 

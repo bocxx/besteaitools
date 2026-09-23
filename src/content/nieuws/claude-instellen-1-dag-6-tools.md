@@ -463,6 +463,7 @@ Lukt iets niet? De [officiële setup-handleiding van Anthropic](https://support.
 
 - [Anthropic — Cowork productpagina](https://claude.com/product/cowork) — officiële beschrijving van features, plannen en ondersteunde platforms
 - [Anthropic — Get started with Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — setup-handleiding van Anthropic zelf
+- [Claude's geheugen instellen](/nieuws/claude-geheugen-instellen) — verdieping op de geheugen-instelling uit stap 4
 - [Anthropic — Connectoren](https://claude.com/connectors) — overzicht van connectoren voor Gmail, Drive en meer
 - [Anthropic — Knowledge work plugins (GitHub)](https://github.com/anthropics/knowledge-work-plugins) — open-source repository met plugins per rol
 - [Ruben Hassid — Cowork-uitleg op Substack](https://ruben.substack.com/p/claude-cowork) — uitgebreide Cowork-handleiding van een AI-schrijver wiens werkwijze deze gids mede inspireerde

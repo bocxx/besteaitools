@@ -94,6 +94,8 @@ De slimme aanpak: lokale modellen voor routinetaken, propriëtaire modellen voor
 - [ ] Lokale API geprobeerd op `localhost:11434` als je tools wilt koppelen
 - [ ] Bepaald welke taken lokaal blijven en welke naar een cloud-model gaan
 
+Wil je meteen concreet aan de slag met één van de bekendste open modellen, dan is [Llama lokaal draaien met LM Studio](/nieuws/llama-lokaal-draaien-lm-studio) een goed startpunt — inclusief welke modelmaat bij jouw hardware past.
+
 ## Bronnen
 
 - [Artificial Analysis — GLM-5.2 is the new leading open weights model](https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index)

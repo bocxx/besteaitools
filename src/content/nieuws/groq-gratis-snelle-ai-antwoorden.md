@@ -74,6 +74,8 @@ Wil je in plaats van een gehoste API liever een open model volledig op je eigen 
 - [ ] Een model getest in de Playground en het antwoord gezien
 - [ ] API-sleutel gegenereerd en veilig bewaard
 - [ ] Basis-URL, sleutel én modelnaam correct ingesteld in je code
+
+Liever de modellen zelf offline draaien in plaats van via Groq's API? Dan is [Llama lokaal draaien met LM Studio](/nieuws/llama-lokaal-draaien-lm-studio) de route zonder command line.
 - [ ] Een model gekozen dat past bij je taak (snelheid versus kwaliteit)
 
 ## Bronnen
