@@ -81,6 +81,8 @@ Wil je begrijpen waarom dit soort AI-agents nu overal opduiken en wat dat breder
 - [ ] Doorschakeling (Telegram/e-mail) actief voor twijfelgevallen
 - [ ] Workflow op "Active" gezet en met een echt testbericht gecontroleerd
 
+Draait deze bot straks op eigen infrastructuur in plaats van n8n Cloud, dan is [n8n zelf hosten met Docker](/nieuws/n8n-zelf-hosten-docker-stappenplan) de vervolgstap — inclusief wat de licentie wel en niet toestaat.
+
 ## Bronnen
 
 - [n8n — Building your first WhatsApp chatbot (workflow-template)](https://n8n.io/workflows/2465-building-your-first-whatsapp-chatbot/) — officiële n8n-template met de trigger- en send-nodes

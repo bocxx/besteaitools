@@ -115,6 +115,8 @@ Zoek je iets dat minder bouwwerk vraagt en gewoon je bestaande apps leest, dan i
 
 Dit sluit aan op een andere manier om API-afhankelijkheid te vermijden: ML-modellen die direct in de browser draaien. Lees [Transformers.js gebruiken: AI in de browser zonder server](/nieuws/transformers-js-ai-in-de-browser-gebruiken) voor de aanpak zonder backend én zonder automatiseringstool. Wil je in plaats daarvan je eigen kennis ontsluiten zonder workflow te bouwen, lees dan [hoe Notion AI je documenten als context gebruikt](/nieuws/notion-ai-eigen-documenten-context).
 
+Kies je voor n8n en wil je zelf hosten in plaats van de cloudversie: [n8n zelf hosten met Docker](/nieuws/n8n-zelf-hosten-docker-stappenplan) zet de licentie, de hardware-eisen en de setup op een rij.
+
 ## Bronnen
 
 - [Make — Getting started guide](https://www.make.com/en/help/home)
