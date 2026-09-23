@@ -104,6 +104,7 @@ Voor interne experimenten, code-taken en vertaalwerk is dat zelden een blokkade.
 
 ## Bronnen
 
+- [Prompt caching bij Claude](/nieuws/claude-prompt-caching-kosten-besparen) — bespaar tot 90% als je via deze SDK-koppeling herhaaldelijk dezelfde context meestuurt
 - [OpenRouter — Qwen3.7 Max: pricing en specificaties](https://openrouter.ai/qwen/qwen3.7-max) — contextvenster, maximale output en actuele tarieven
 - [Qwen — officiële modelblog](https://qwenlm.github.io) — releases, modelvarianten en licenties
 - [Alibaba Cloud Model Studio](https://www.alibabacloud.com/product/modelstudio) — endpoints, regio's en API-documentatie

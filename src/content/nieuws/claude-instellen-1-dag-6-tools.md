@@ -467,3 +467,4 @@ Lukt iets niet? De [officiële setup-handleiding van Anthropic](https://support.
 - [Anthropic — Connectoren](https://claude.com/connectors) — overzicht van connectoren voor Gmail, Drive en meer
 - [Anthropic — Knowledge work plugins (GitHub)](https://github.com/anthropics/knowledge-work-plugins) — open-source repository met plugins per rol
 - [Ruben Hassid — Cowork-uitleg op Substack](https://ruben.substack.com/p/claude-cowork) — uitgebreide Cowork-handleiding van een AI-schrijver wiens werkwijze deze gids mede inspireerde
+- [Prompt caching bij Claude](/nieuws/claude-prompt-caching-kosten-besparen) — bouw je zelf iets op de API, dan bespaart dit tot 90% op herhaalde context
