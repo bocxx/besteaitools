@@ -116,3 +116,4 @@ Wil je een stap verder en ML-inferentie direct in een webapplicatie inbouwen zon
 - [Cursor — Getting Started](https://docs.cursor.com/get-started/introduction)
 - [GitHub Copilot Free — Officiële aankondiging](https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/)
 - [Replit — AI features overzicht](https://replit.com/ai)
+- [Together AI gebruiken](/nieuws/together-ai-open-source-assistent) — een goedkoper open-source alternatief als je zelf met een AI-API wilt bouwen

@@ -122,3 +122,4 @@ Kies je voor n8n en wil je zelf hosten in plaats van de cloudversie: [n8n zelf h
 - [Make — Getting started guide](https://www.make.com/en/help/home)
 - [Zapier — Quick-start guide](https://zapier.com/learn/getting-started-guide)
 - [n8n — Self-hosting documentation](https://docs.n8n.io)
+- [Together AI gebruiken](/nieuws/together-ai-open-source-assistent) — voor wie liever open modellen dan een dure gesloten API draait onder de motorkap van zo'n automatisering
