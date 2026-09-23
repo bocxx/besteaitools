@@ -90,6 +90,7 @@ Werk je met OpenAI's Codex, dan scheelt het bovendien tijd om je projectregels v
 
 ## Bronnen
 
+- [ChatGPT kan je nu echt overhoren](/nieuws/chatgpt-interactieve-quiz-jezelf-overhoren) — een andere ChatGPT-functie die je makkelijk mist
 - [OpenAI Developer Community — I need to report a model routing issue / silent downgrade](https://community.openai.com/t/i-need-to-report-a-model-routing-issue-silent-downgrade/1391776) (22 augustus 2026)
 - [OpenAI Developer Community — 5.6 pro model has been automatically downgraded and routed to the 5.5 mini model since its release](https://community.openai.com/t/5-6-pro-model-has-been-automatically-downgraded-and-routed-to-the-5-5-mini-model-since-its-release/1387941)
 - [OpenAI Developer Community — Browser-specific GPT-5.6 routing mismatch: Chrome resolves to GPT-5.5-mini, Edge stays on GPT-5.6](https://community.openai.com/t/browser-specific-gpt-5-6-routing-mismatch-chrome-resolves-to-gpt-5-5-mini-edge-stays-on-gpt-5-6-case-13542447/1391598) (22 augustus 2026)

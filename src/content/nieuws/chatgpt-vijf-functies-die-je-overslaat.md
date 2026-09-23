@@ -67,4 +67,6 @@ Een concrete klus om mee te oefenen: [je cv laten afstemmen op een vacature](/ni
 
 > **⚡ Gevorderden:** Combineer de functies: zet je vaste werkwijze in aangepaste instructies, bundel een project in Projecten, en laat Deep Research binnen dat project zoeken. De context stapelt dan op en je antwoorden worden merkbaar scherper.
 
+Een zesde functie die veel mensen over het hoofd zien: [de interactieve quiz waarmee ChatGPT je overhoort](/nieuws/chatgpt-interactieve-quiz-jezelf-overhoren), met klikbare vragen en een score.
+
 ChatGPT-prijzen en plan-indeling wijzigen geregeld; controleer de actuele tiers en limieten op [chatgpt.com/pricing](https://chatgpt.com/pricing/) voordat je een abonnement kiest. Dat geldt breder: ook bij Gamma bepaalt je plan wat je krijgt, en [verbruiken vrijwel alle AI-acties credits](/nieuws/gamma-agent-deck-herstijlen).

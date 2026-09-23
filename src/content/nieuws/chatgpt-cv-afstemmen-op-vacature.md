@@ -80,5 +80,6 @@ Waarom werkgevers zelf ook massaal AI inzetten bij werving en wat dat met de arb
 ## Bronnen
 
 - [Novoresume — How to Tailor Your Resume to a Job Description with ChatGPT](https://novoresume.com/career-blog/tailor-resume-to-job-with-chatgpt)
+- [ChatGPT kan je nu echt overhoren](/nieuws/chatgpt-interactieve-quiz-jezelf-overhoren) — handig om jezelf te testen op sollicitatievragen voor je functie
 - [Jobright — How to Use ChatGPT to Tailor Resume to Job Description](https://jobright.ai/blog/chatgpt-tailor-resume-job-description-2026/)
 - [Analytics Insight — How to Write a Data Scientist Resume in 2026: Complete Guide](https://www.analyticsinsight.net/data-science/how-to-write-a-data-scientist-resume-in-2026-complete-guide)
