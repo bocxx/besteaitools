@@ -1,5 +1,7 @@
 ---
 title: "Hailuo (MiniMax H3) gebruiken: 2K-video's met 12 referenties"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Hailuo (MiniMax H3) gebruiken: 2K-video's met 12 referenties'"
+heroImage: "/images/articles/diorama-hailuo-minimax-h3-gebruiken.webp"
 description: "MiniMax H3 op Hailuo levert 2K-video met precisie-editing en tot 12 stuurbare referentiebestanden. Zo gebruik je het voor je eerste project."
 publishedAt: 2026-09-23
 updatedAt: 2026-09-23
@@ -82,5 +84,5 @@ MiniMax noemt geen exacte creditprijs, maar positioneert de prijs per seconde op
 - [Hailuo — MiniMax H3 toolpagina](https://hailuoai.video/tools/minimax-h3)
 - [Segmind — MiniMax H3: Release Date, Open Weights, and API Pricing Explained](https://blog.segmind.com/minimax-h3-release-date-open-weights-and-api-pricing-explained/)
 
-Meer over hoe MiniMax zich als AI-bedrijf ontwikkelt, lees je in [MiniMax M3: open-weights model, 1M context, 59% SWE-Bench Pro](https://hetlaatsteainieuws.nl/nieuws/minimax-m3-open-weights-frontier-model) op hetlaatsteainieuws.nl.
+Meer over hoe MiniMax zich als AI-bedrijf ontwikkelt, lees je in [MiniMax M3: open-weights model, 1M context, 59% SWE-Bench Pro](https://www.hetlaatsteainieuws.nl/nieuws/minimax-m3-open-weights-frontier-model) op hetlaatsteainieuws.nl.
 

@@ -67,7 +67,7 @@ Met LangGraph giet je de stappen in een overzichtelijke graaf: een knoop die oph
 
 De laatste stap: je stuurt de vraag plus de gevonden fragmenten naar Claude met een korte instructie ("beantwoord alleen op basis van de meegeleverde fragmenten, noem de bron, en zeg het als het antwoord er niet in staat"). Gebruik hiervoor Claude Sonnet 4.6 — het API-model heet `claude-sonnet-4-6` en kost ongeveer $3 per miljoen invoer-tokens en $15 per miljoen uitvoer-tokens ([Bron: Anthropic](https://www.anthropic.com/news/claude-sonnet-4-6)). Door de instructie "alleen op basis van de fragmenten" beperk je verzinsels en blijven de antwoorden controleerbaar.
 
-Wil je daarna dieper de privacy- en regelgevingskant in? Lees op hetlaatsteainieuws.nl onze duiding over [klantgegevens en AVG bij AI-tools](https://hetlaatsteainieuws.nl/ai-nieuws/ai-kloon-van-jezelf-voor-klanten).
+Wil je daarna dieper de privacy- en regelgevingskant in? Lees op hetlaatsteainieuws.nl onze duiding over [klantgegevens en AVG bij AI-tools](https://www.hetlaatsteainieuws.nl/nieuws/ai-kloon-van-jezelf-voor-klanten).
 
 ## Checklist: ben je klaar?
 

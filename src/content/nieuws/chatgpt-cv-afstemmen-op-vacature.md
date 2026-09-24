@@ -75,7 +75,7 @@ Vraag ChatGPT tot slot: *"Welke termen uit de vacature ontbreken nog in mijn cv,
 - [ ] Ontbrekende-termen-check gedaan
 - [ ] Simpele opmaak: geen tabellen, kolommen of tekst in beeld
 
-Waarom werkgevers zelf ook massaal AI inzetten bij werving en wat dat met de arbeidsmarkt doet, lees je bij [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/ai-vervangt-werknemers-niet-ceo-excuus).
+Waarom werkgevers zelf ook massaal AI inzetten bij werving en wat dat met de arbeidsmarkt doet, lees je bij [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/ai-vervangt-werknemers-niet-ceo-excuus).
 
 ## Bronnen
 

@@ -74,4 +74,4 @@ De verleiding is om na een geslaagde installatie meteen door te bouwen. Twee din
 
 Zet een back-up van je database in. Je workflows en inloggegevens zitten daarin; een server die omvalt zonder back-up betekent opnieuw beginnen. En ruim je uitvoeringsgeschiedenis op met een bewaartermijn, anders groeit je database ongemerkt door tot hij traag wordt.
 
-De rekensom is uiteindelijk simpel: geen licentiekosten, wel infrastructuurkosten en wel onderhoudstijd. Wie dat laatste niet meerekent, komt bedrogen uit — precies zoals bij elk ander stuk software dat je zelf draait. Meer context over waar automatisering nu heen beweegt lees je op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+De rekensom is uiteindelijk simpel: geen licentiekosten, wel infrastructuurkosten en wel onderhoudstijd. Wie dat laatste niet meerekent, komt bedrogen uit — precies zoals bij elk ander stuk software dat je zelf draait. Meer context over waar automatisering nu heen beweegt lees je op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).

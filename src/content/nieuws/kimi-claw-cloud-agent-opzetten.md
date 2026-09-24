@@ -56,7 +56,7 @@ Check dat dus vóór je een middag inruimt om iets op te zetten dat je plan niet
 
 Je hebt twee routes. De eenvoudige: laat Kimi een verse Claw-instantie uitrollen vanuit de interface op kimi.com. De andere: **BYOC**, Bring Your Own Claw, waarbij je een bestaande OpenClaw-omgeving op je eigen server of laptop koppelt aan de Kimi-interface. Die tweede route houdt je configuratie en je data waar ze nu staan, en gebruikt Kimi alleen als bedieningslaag ([Bron: MarkTechPost, 15 februari 2026](https://www.marktechpost.com/2026/02/15/moonshot-ai-launches-kimi-claw-native-openclaw-on-kimi-com-with-5000-community-skills-and-40gb-cloud-storage-now/)).
 
-> **💡 Beginner-tip:** Weet je niet wat OpenClaw is? Lees dan eerst [OpenClaw: de open-source AI-agent uitgelegd](https://hetlaatsteainieuws.nl/achtergrond/openclaw-open-source-ai-agent) op hetlaatsteainieuws.nl. Kimi Claw is niet een eigen agent-systeem, maar een gemakkelijke manier om dát framework te draaien.
+> **💡 Beginner-tip:** Weet je niet wat OpenClaw is? Lees dan eerst [OpenClaw: de open-source AI-agent uitgelegd](https://www.hetlaatsteainieuws.nl/achtergrond/openclaw-open-source-ai-agent) op hetlaatsteainieuws.nl. Kimi Claw is niet een eigen agent-systeem, maar een gemakkelijke manier om dát framework te draaien.
 
 ## Stap 3: inrichten via de chat
 

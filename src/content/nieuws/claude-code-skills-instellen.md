@@ -47,7 +47,7 @@ sources:
 
 Claude Code kreeg er de afgelopen maanden een handige laag bij: **skills**. Kort gezegd is een skill een mapje met instructies dat Claude automatisch oppakt zodra je vraag erbij past. Geen upload, geen account-instelling — je maakt een map aan en klaar. Hieronder zie je in vier stappen hoe je je eerste skill opzet, en waar het bestand precies hoort te staan.
 
-> **💡 Beginner-tip:** Nieuw met Claude Code zelf? Lees dan eerst rustig wat de tool doet en hoe agents werken in onze achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/ai-deep-dives/ai-agents-2026-wat-zijn-ze) Daarna heeft deze gids meteen meer context.
+> **💡 Beginner-tip:** Nieuw met Claude Code zelf? Lees dan eerst rustig wat de tool doet en hoe agents werken in onze achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) Daarna heeft deze gids meteen meer context.
 
 ## Wat een skill eigenlijk is
 

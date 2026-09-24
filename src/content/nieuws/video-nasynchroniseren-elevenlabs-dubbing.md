@@ -72,6 +72,8 @@ Eén kanttekening bij die route: ElevenLabs meldt in de documentatie dat Dubbing
 
 Nasynchroniseren met AI werkt goed voor uitlegvideo's, productdemo's, cursusmateriaal en podcastafleveringen. Het werkt minder goed voor drama, humor en alles waar timing en gezichtsuitdrukking het werk doen.
 
-Wil je eerst weten hoe stemklonen technisch in elkaar zit voordat je je eigen stem uploadt, lees dan onze gids over [AI-voiceover maken met ElevenLabs](/nieuws/ai-voiceover-stemklonen-elevenlabs-murf). En over de juridische kant van stemgebruik — wie eigenaar is van een gekloonde stem — schreven we op onze zustersite [Het Laatste AI Nieuws](https://hetlaatsteainieuws.nl/nieuws/stem-eigendom-wet-nederland-denemarken).
+Wil je eerst weten hoe stemklonen technisch in elkaar zit voordat je je eigen stem uploadt, lees dan onze gids over [AI-voiceover maken met ElevenLabs](/nieuws/ai-voiceover-stemklonen-elevenlabs-murf). En over de juridische kant van stemgebruik — wie eigenaar is van een gekloonde stem — schreven we op onze zustersite [Het Laatste AI Nieuws](https://www.hetlaatsteainieuws.nl/nieuws/stem-eigendom-wet-nederland-denemarken).
 
 Test altijd één minuut voordat je een uur inlevert. Dat kost je een paar cent en bespaart je de ontdekking dat de gekloonde stem in het Nederlands net even anders klinkt dan je had gehoopt.
+
+Wil je dit soort dubbing-workflows liever volledig lokaal draaien, zonder credits of cloud-verwerking van je audio, dan is [VoiceStudio](/nieuws/voicestudio-installeren-lokaal-alternatief) het gratis, open-source alternatief — inclusief eenzelfde transcribeer-vertaal-synthetiseer-pijplijn.

@@ -69,7 +69,7 @@ Een bot die vastloopt op een boze klant is erger dan geen bot. Bouw daarom een d
 
 De zelf-gehoste n8n is gratis; je betaalt alleen je eigen hosting. n8n Cloud rekent per uitvoering, en je AI-model reken je apart af per token. Voor een kleine klantenservice-stroom blijven die kosten bescheiden. Groeit het aantal gesprekken, kies dan bewust een goedkoop chatmodel en houd je tokenverbruik in de gaten — daar loopt de rekening het snelst op.
 
-Wil je begrijpen waarom dit soort AI-agents nu overal opduiken en wat dat breder betekent? Lees de duiding op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/).
+Wil je begrijpen waarom dit soort AI-agents nu overal opduiken en wat dat breder betekent? Lees de duiding op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/).
 
 ## Checklist: staat je bot?
 

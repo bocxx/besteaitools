@@ -154,4 +154,4 @@ Geeft het predicaat `False` terug, dan draait de aanroep gewoon door en belandt 
 
 Een goedkeurknop wordt vaak gezien als rem. In de praktijk is het vooral wat je nodig hebt om een agent überhaupt in productie te durven zetten: je zet het aan voor de drie tools die iets onomkeerbaars doen, en de rest draait vrij. Het scheelt ook tokens: een agent die pas na twintig stappen wordt teruggefloten, heeft die twintig stappen wel betaald. Wat je verder aan je agent kunt meegeven zonder hem te overladen, staat in [Context engineering: geef je LangChain-agent alleen wat nodig is](/nieuws/context-engineering-langchain-agents).
 
-Waar de discussie over zelfstandig opererende agents nu staat, lees je in de achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl.
+Waar de discussie over zelfstandig opererende agents nu staat, lees je in de achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl.

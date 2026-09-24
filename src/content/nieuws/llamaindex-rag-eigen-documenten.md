@@ -39,7 +39,7 @@ Een taalmodel kent de wereld tot zijn trainingsdatum, maar niet jouw handleiding
 
 ## Wat RAG doet, kort
 
-Bij RAG (Retrieval-Augmented Generation) zoekt het systeem eerst de relevante stukken uit jouw documenten op en geeft die als context mee aan het taalmodel. Het model antwoordt dan op basis van die stukken, niet uit zijn geheugen. Zo krijg je actuele, controleerbare antwoorden over informatie die het model nooit heeft gezien. De uitleg in gewone taal staat in onze cross-post [Wat is RAG?](https://hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg-2026) op hetlaatsteainieuws.nl.
+Bij RAG (Retrieval-Augmented Generation) zoekt het systeem eerst de relevante stukken uit jouw documenten op en geeft die als context mee aan het taalmodel. Het model antwoordt dan op basis van die stukken, niet uit zijn geheugen. Zo krijg je actuele, controleerbare antwoorden over informatie die het model nooit heeft gezien. De uitleg in gewone taal staat in onze cross-post [Wat is RAG?](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg-2026) op hetlaatsteainieuws.nl.
 
 ## Stap 1: installeren en documenten klaarzetten
 
@@ -99,4 +99,4 @@ Wie liever ziet hoe zo'n systeem er in de praktijk uitziet, kan onze stukken [RA
 
 - [LlamaIndex — officiële site](https://www.llamaindex.ai) (framework en documentatie)
 - [LlamaIndex Pricing Guide 2026](https://noizz.io/insights/llamaindex-pricing-guide) (LlamaParse-credits en gratis tier)
-- [Wat is RAG? — hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg-2026) (RAG in gewone taal)
+- [Wat is RAG? — hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg-2026) (RAG in gewone taal)

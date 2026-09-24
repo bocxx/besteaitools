@@ -69,7 +69,7 @@ Krea is op z'n sterkst als schets- en concepttool: de directe feedback maakt het
 
 Moet er leesbare tekst in je beeld staan, bijvoorbeeld een kop of je merknaam, dan is een ander model handiger: [zo prompt je FLUX.2 voor tekst in beeld](/nieuws/flux-2-tekst-in-beeld-prompten).
 
-AI-beeld dat niet van echt te onderscheiden is, roept ook vragen op over betrouwbaarheid en herkomst. Onze zustersite dook in hoe je AI-foto's leert herkennen: [Deepfake-detectie voor fotojournalistiek](https://hetlaatsteainieuws.nl/regelgeving/deepfake-detectie-fotojournalistiek-tools).
+AI-beeld dat niet van echt te onderscheiden is, roept ook vragen op over betrouwbaarheid en herkomst. Onze zustersite dook in hoe je AI-foto's leert herkennen: [Deepfake-detectie voor fotojournalistiek](https://www.hetlaatsteainieuws.nl/regelgeving/deepfake-detectie-fotojournalistiek-tools).
 
 ## Checklist: heb je de canvas onder de knie?
 

@@ -66,7 +66,7 @@ De koppeling werkt beide kanten op: edits in Lovable verschijnen in GitHub, en p
 
 ## Wanneer is exporteren het juiste moment?
 
-Exporteer zodra je tegen de grenzen van het platform aanloopt: een ontbrekende feature, hosting-eisen voor je prijsmodel, of de wens om met een eigen AI-coding-agent door te bouwen. Wil je vanaf daar verder sleutelen aan je geëxporteerde React-app, dan is [Cursor](/nieuws/cursor-code-refactoren) een logische volgende stap. Voor de bredere context over hoe vibe-coding-platforms zich verhouden tot zelf code bezitten, lees je de duiding op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/).
+Exporteer zodra je tegen de grenzen van het platform aanloopt: een ontbrekende feature, hosting-eisen voor je prijsmodel, of de wens om met een eigen AI-coding-agent door te bouwen. Wil je vanaf daar verder sleutelen aan je geëxporteerde React-app, dan is [Cursor](/nieuws/cursor-code-refactoren) een logische volgende stap. Voor de bredere context over hoe vibe-coding-platforms zich verhouden tot zelf code bezitten, lees je de duiding op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/).
 
 ## Checklist: ben je klaar?
 

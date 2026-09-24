@@ -87,7 +87,7 @@ Wil je helemaal geen API-kosten en accepteer je zwakkere prestaties, dan is de o
 
 ## De afweging die je bewust moet maken
 
-Chinese herkomst is voor veel Nederlandse organisaties een compliance-vraag, niet alleen een technische. Waar je data verwerkt wordt, welke jurisdictie daarop van toepassing is en of je opdrachtgever daarmee akkoord gaat: dat regel je vooraf, niet nadat je model in productie staat. Er speelt bovendien een politieke laag, waarover hetlaatsteainieuws.nl schreef in [Verbod op Chinese open AI-modellen in de VS](https://hetlaatsteainieuws.nl/nieuws/vs-verbod-chinese-open-ai-modellen).
+Chinese herkomst is voor veel Nederlandse organisaties een compliance-vraag, niet alleen een technische. Waar je data verwerkt wordt, welke jurisdictie daarop van toepassing is en of je opdrachtgever daarmee akkoord gaat: dat regel je vooraf, niet nadat je model in productie staat. Er speelt bovendien een politieke laag, waarover hetlaatsteainieuws.nl schreef in [Verbod op Chinese open AI-modellen in de VS](https://www.hetlaatsteainieuws.nl/nieuws/vs-verbod-chinese-open-ai-modellen).
 
 Voor interne experimenten, code-taken en vertaalwerk is dat zelden een blokkade. Voor klantdata in een gereguleerde sector wel. Maak die keuze aan het begin, want een model wisselen kost je bij deze opzet vijf minuten, en een compliance-traject terugdraaien niet.
 

@@ -137,7 +137,7 @@ Daarnaast kun je zoeken binnen een categorie in plaats van het hele web: `compan
 - [ ] Domeinfilters ingesteld als je agent maar een handvol bronnen mag raadplegen
 - [ ] Kosten per gebruikersvraag doorgerekend vóór je opschaalt
 
-Wil je eerst begrijpen wat zo'n agent nu eigenlijk is voordat je er een zoek-API aan hangt, dan is [AI-agents in 2026: wat zijn ze precies?](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl een goede opstap. Zoek je liever een kant-en-klare onderzoeksassistent in plaats van een API, kijk dan naar [Research doen met AI: Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm).
+Wil je eerst begrijpen wat zo'n agent nu eigenlijk is voordat je er een zoek-API aan hangt, dan is [AI-agents in 2026: wat zijn ze precies?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl een goede opstap. Zoek je liever een kant-en-klare onderzoeksassistent in plaats van een API, kijk dan naar [Research doen met AI: Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm).
 
 ## Stand van zaken — bijgewerkt 2026-09-05
 

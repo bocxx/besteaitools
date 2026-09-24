@@ -92,7 +92,7 @@ Terugkerende taken die zich hier goed voor lenen: een maandagochtend-overzicht v
 - [ ] Uitkomst gecontroleerd tegen de bron
 - [ ] Pas daarna op een cadans gezet
 
-Wil je eerst begrijpen wat een agent-loop nu eigenlijk doet voordat je er een aan je mailbox hangt, begin dan bij [Je eerste agent-loop met Claude Code](/nieuws/je-eerste-agent-loop-claude-code). Wie liever alles lokaal houdt, kan hetzelfde patroon bouwen met [een lokale agent via Ollama](/nieuws/ollama-ai-agent-lokaal-offline-privacy). En voor het bredere beeld van waar Europese AI-aanbieders staan is [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl) de plek om te volgen.
+Wil je eerst begrijpen wat een agent-loop nu eigenlijk doet voordat je er een aan je mailbox hangt, begin dan bij [Je eerste agent-loop met Claude Code](/nieuws/je-eerste-agent-loop-claude-code). Wie liever alles lokaal houdt, kan hetzelfde patroon bouwen met [een lokale agent via Ollama](/nieuws/ollama-ai-agent-lokaal-offline-privacy). En voor het bredere beeld van waar Europese AI-aanbieders staan is [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/) de plek om te volgen.
 
 ## Stand van zaken — bijgewerkt 2026-08-31
 

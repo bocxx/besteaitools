@@ -71,7 +71,7 @@ Negen van de tien startproblemen komen door twee dingen. Ten eerste de Python-ve
 
 Het framework zelf kost niets, maar elke agent-stap is een aanroep naar een taalmodel. Draai je een crew met vier agents op een betaalde API, dan tikt dat per run aan — zeker als je tijdens het bouwen vaak test. Houd je rekening in de gaten of schakel voor het experimenteren over op een lokaal model via Ollama. Voor teams die crews echt in productie willen draaien is er een aparte betaalde cloud-omgeving, maar die heb je om te leren niet nodig.
 
-Wil je eerst begrijpen wat AI-agents überhaupt zijn voordat je gaat bouwen, lees dan de uitleg op onze zustersite: [AI-agents in 2026: wat zijn ze en wat kun je ermee](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+Wil je eerst begrijpen wat AI-agents überhaupt zijn voordat je gaat bouwen, lees dan de uitleg op onze zustersite: [AI-agents in 2026: wat zijn ze en wat kun je ermee](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 ## Checklist: ben je klaar om te draaien?
 

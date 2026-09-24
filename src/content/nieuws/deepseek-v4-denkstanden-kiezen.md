@@ -94,6 +94,6 @@ Drie dingen om te weten voordat je begint:
 
 Draai je liever niet zelf, dan is het hosted alternatief er ook, maar houd dan de kanttekening bij DeepSeek in het achterhoofd: voor gevoelige bedrijfsdata weegt de Chinese herkomst van de hosted API mee in je afweging. Via een EU-provider of self-hosting speelt dat niet.
 
-Wil je weten hoe DeepSeek V4 zich verhoudt tot de rest van de open-weight lichting, lees dan [de beste open-weight AI-modellen van deze zomer](/nieuws/open-weight-modellen-lokaal-draaien). Voor de bredere context rond Chinese modellen en exportregels schreef hetlaatsteainieuws.nl over [China's antwoord op de exportban](https://hetlaatsteainieuws.nl/regelgeving/china-glm-5-2-antwoord-anthropic-exportban).
+Wil je weten hoe DeepSeek V4 zich verhoudt tot de rest van de open-weight lichting, lees dan [de beste open-weight AI-modellen van deze zomer](/nieuws/open-weight-modellen-lokaal-draaien). Voor de bredere context rond Chinese modellen en exportregels schreef hetlaatsteainieuws.nl over [China's antwoord op de exportban](https://www.hetlaatsteainieuws.nl/regelgeving/china-glm-5-2-antwoord-anthropic-exportban).
 
 > **Stand van zaken:** benchmarkscores, licentie en aanbevolen instellingen gecontroleerd op 4 september 2026 tegen de modelkaart van DeepSeek op Hugging Face. DeepSeek noemt de V4-serie daar zelf nog een preview-versie, dus reken op bijstellingen. Prijzen per token verschillen per provider en zijn hier bewust niet genoemd.

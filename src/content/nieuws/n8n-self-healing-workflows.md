@@ -64,7 +64,7 @@ Een echt zelf-herstellend recept ziet er dan zo uit: hoofdlogica draaien, bij ee
 
 Wil je het tot het uiterste doorvoeren, dan kun je een complete zelf-herstellende bouwstraat maken die GitHub, een taalmodel en n8n combineert. freeCodeCamp publiceerde daar een [gratis cursus](https://www.freecodecamp.org/news/build-a-self-healing-ci-cd-pipeline-with-ai/) over: van het opzetten van je omgeving tot een workflow die ook werkt als jij offline bent. Dat is developer-werk, maar het laat goed zien hoe ver het concept reikt.
 
-Wil je eerst begrijpen wat zo'n AI-aangedreven workflow nu eigenlijk "zelf" doet? Onze collega's bij hetlaatsteainieuws.nl leggen uit [wat AI-agents in 2026 zijn en wat je ermee kunt](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+Wil je eerst begrijpen wat zo'n AI-aangedreven workflow nu eigenlijk "zelf" doet? Onze collega's bij hetlaatsteainieuws.nl leggen uit [wat AI-agents in 2026 zijn en wat je ermee kunt](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 ## Kort samengevat
 

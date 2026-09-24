@@ -86,7 +86,7 @@ Er is geen aparte agent-fee: je betaalt het tokenverbruik van het onderliggende 
 - [ ] Getest in de playground en de tracing per run bekeken
 - [ ] Kosten na de eerste testdag gecontroleerd
 
-Draai je liever met Claude binnen dezelfde Azure-omgeving? Dat kan sinds kort ook: zie [Claude in Microsoft Foundry](/nieuws/claude-microsoft-foundry-azure-beschikbaar). En wie de bredere vraag heeft wat AI-agents in het Nederlandse bedrijfsleven doen, leest verder bij [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/ai-agents-2026-wat-zijn-ze).
+Draai je liever met Claude binnen dezelfde Azure-omgeving? Dat kan sinds kort ook: zie [Claude in Microsoft Foundry](/nieuws/claude-microsoft-foundry-azure-beschikbaar). En wie de bredere vraag heeft wat AI-agents in het Nederlandse bedrijfsleven doen, leest verder bij [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/ai-agents-2026-wat-zijn-ze).
 
 Liever iets dat je zelf host en vanaf je telefoon bedient? Dan is [OpenClaw met Telegram](/nieuws/openclaw-installeren-telegram-koppelen) een lichtere start.
 

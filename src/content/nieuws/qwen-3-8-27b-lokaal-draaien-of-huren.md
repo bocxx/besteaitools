@@ -74,4 +74,4 @@ Wat je daarbij meet is niet de benchmarkscore maar jouw taak. Alibaba's eigen ci
 - **Rekenen op een officiële API-prijs.** Die is er nog niet. Wie er een noemt, citeert iets dat Alibaba niet heeft gepubliceerd.
 - **BF16 kiezen zonder reden.** De FP8-variant is voor bijna iedereen de praktische keuze.
 
-Wil je eerst het bredere plaatje — waarom er in twee weken tijd twee gratis modellen van deze klasse verschenen — dan staat de duiding op [Het Laatste AI Nieuws](https://hetlaatsteainieuws.nl/nieuws/qwen-3-8-27b-gratis-model-eigen-computer). Draai je zo'n checkpoint zelf en laat je er een coding-agent bij, lees dan eerst [waarom je die agent beter niet bij de gewichten laat](/nieuws/litellm-agent-modelgewichten-afschermen).
+Wil je eerst het bredere plaatje — waarom er in twee weken tijd twee gratis modellen van deze klasse verschenen — dan staat de duiding op [Het Laatste AI Nieuws](https://www.hetlaatsteainieuws.nl/nieuws/qwen-3-8-27b-gratis-model-eigen-computer). Draai je zo'n checkpoint zelf en laat je er een coding-agent bij, lees dan eerst [waarom je die agent beter niet bij de gewichten laat](/nieuws/litellm-agent-modelgewichten-afschermen).

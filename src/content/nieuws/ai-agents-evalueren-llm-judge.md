@@ -88,7 +88,7 @@ De harness behandelt je agent als gesloten systeem: hij stopt er een vraag in en
 
 ## Stap 4: draai de harness bij elke wijziging
 
-Laat het script eindigen in een samenvatting: aantal cases, geslaagd, gefaald, en per gefaalde case de reden van de judge. Draai hem na elke prompt-wijziging, model-swap of nieuwe tool. Zo zie je in seconden of een "kleine verbetering" ergens anders iets sloopt — precies het soort borging waar in de agent-wereld steeds meer nadruk op ligt, zoals ook blijkt uit het bredere nieuws over AI-agents op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/radar).
+Laat het script eindigen in een samenvatting: aantal cases, geslaagd, gefaald, en per gefaalde case de reden van de judge. Draai hem na elke prompt-wijziging, model-swap of nieuwe tool. Zo zie je in seconden of een "kleine verbetering" ergens anders iets sloopt — precies het soort borging waar in de agent-wereld steeds meer nadruk op ligt, zoals ook blijkt uit het bredere nieuws over AI-agents op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/radar).
 
 ## Checklist: ben je klaar?
 

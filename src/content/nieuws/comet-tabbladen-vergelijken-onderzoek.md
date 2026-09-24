@@ -72,6 +72,6 @@ Ga naar **Settings → Privacy** en loop door wat de assistent mag gebruiken. Pe
 
 Comet is sterk in research met bronvermelding en in het vergelijken over tabbladen heen. Voor lange autonome taken die twintig minuten zelfstandig doorlopen, is hij bescheidener dan de agent-modus van concurrenten. En wie alleen antwoorden met bronnen wil zonder van browser te wisselen, is met de gewone Perplexity-app net zo goed uit.
 
-Wil je meer manieren om onderzoek te structureren, lees dan onze gids over [zoeken met Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm). Hoe Comet zich verhoudt tot de andere AI-browsers van dit moment, zetten we op onze zustersite uiteen in [AI-browsers vergeleken](https://hetlaatsteainieuws.nl/nieuws/ai-browsers-vergeleken-2026).
+Wil je meer manieren om onderzoek te structureren, lees dan onze gids over [zoeken met Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm). Hoe Comet zich verhoudt tot de andere AI-browsers van dit moment, zetten we op onze zustersite uiteen in [AI-browsers vergeleken](https://www.hetlaatsteainieuws.nl/nieuws/ai-browsers-vergeleken-2026).
 
 Begin klein: neem één vergelijking die je deze week toch moest maken, zet de bronnen in tabbladen en stel er één scherpe vraag over. Binnen tien minuten weet je of dit bij jouw manier van werken past.

@@ -53,7 +53,7 @@ Zonder RAG antwoordt een taalmodel uit z'n getrainde geheugen, en dat geheugen h
 
 > **💡 Beginner-tip:** denk aan een nieuwe collega. Slim, welbespraakt, maar dag één in jouw bedrijf. Zonder RAG beantwoordt die vragen uit algemene kennis en bluft bij de rest. Met RAG geef je diezelfde collega eerst de juiste map uit de kast. De collega is niet slimmer geworden — de antwoorden wel.
 
-Waarom een model überhaupt zo overtuigd kan klinken zonder iets te weten, legt hetlaatsteainieuws.nl uit in [wat er gebeurt als je ChatGPT iets vraagt](https://hetlaatsteainieuws.nl/achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts).
+Waarom een model überhaupt zo overtuigd kan klinken zonder iets te weten, legt hetlaatsteainieuws.nl uit in [wat er gebeurt als je ChatGPT iets vraagt](https://www.hetlaatsteainieuws.nl/achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts).
 
 ## Stap 1 — Begin met een Project
 

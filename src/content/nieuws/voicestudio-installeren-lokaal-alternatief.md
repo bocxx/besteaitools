@@ -1,5 +1,7 @@
 ---
 title: "VoiceStudio installeren: gratis, lokale ElevenLabs-vervanger"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'VoiceStudio installeren: gratis, lokale ElevenLabs-vervanger'"
+heroImage: "/images/articles/diorama-voicestudio-installeren-lokaal-alternatief.webp"
 description: "VoiceStudio kloont stemmen, dubt video's en transcribeert offline op je eigen computer, gratis en open source. Zo installeer en gebruik je het."
 publishedAt: 2026-09-23
 updatedAt: 2026-09-23
@@ -85,5 +87,5 @@ VoiceStudio zelf staat onder de AGPL-3.0-licentie, met bijna 29.500 sterren en 2
 - [GitHub — debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)
 - [GitHub — debpalash/VoiceStudio releases](https://github.com/debpalash/VoiceStudio/releases)
 
-Wil je weten hoe dit soort lokale, open-source AI-tools zich verhouden tot de grote gesloten modellen, lees dan [Open-source AI in 2026: Llama, Mistral, DeepSeek en Kimi](https://hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026) op hetlaatsteainieuws.nl.
+Wil je weten hoe dit soort lokale, open-source AI-tools zich verhouden tot de grote gesloten modellen, lees dan [Open-source AI in 2026: Llama, Mistral, DeepSeek en Kimi](https://www.hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026) op hetlaatsteainieuws.nl.
 

@@ -91,7 +91,7 @@ Geef het signaal: "Aannames akkoord, bouw nu". Cowork werkt vijf tot tien minute
 
 Vraag daarna: "Upload dit als Google Sheets naar mijn Drive in de map [X]". Open het bestand direct in Google Sheets via Drive — formules en formatting blijven werken.
 
-Wie deze workflow uitgebreider wil zien (inclusief de vergelijking met Copilot, Gemini en Shortcut.ai), kan ons [complete spreadsheet-playbook op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/tools/claude-cowork-spreadsheets-playbook) erbij pakken — daar staan de extra benchmarks en alternatieven.
+Wie deze workflow uitgebreider wil zien (inclusief de vergelijking met Copilot, Gemini en Shortcut.ai), kan ons [complete spreadsheet-playbook op hetlaatsteainieuws.nl](https://www.aiplatformmkb.nl/tools/claude-cowork-spreadsheets-playbook) erbij pakken — daar staan de extra benchmarks en alternatieven.
 
 ## Stap 5: Edits doen in de Claude-add-in voor Excel
 

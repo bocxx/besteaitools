@@ -82,7 +82,7 @@ Wil je geen losse scripts beheren, dan is de officiële **Firecrawl MCP-server**
 
 Firecrawl rekent op basis van credits. Er is een gratis tier om mee te prototypen, maar zwaardere bewerkingen — zeker AI-extractie naar JSON — kosten meer credits dan een gewone scrape, dus reken voor een serieuze workload even door wat je realistisch verbruikt ([Bron: Firecrawl pricing-overzicht, eesel AI](https://www.eesel.ai/blog/firecrawl-pricing)). En blijf binnen de regels van de site die je scrapet: respecteer `robots.txt`, rate limits en auteursrecht. Het web als databron is krachtig, maar het blijft andermans content.
 
-Wil je weten welke AI-tool het beste bij je past om die context vervolgens te verwerken? Op hetlaatsteainieuws.nl staat de achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/ai-deep-dives/ai-agents-2026-wat-zijn-ze), die uitlegt hoe agents externe bronnen inzetten.
+Wil je weten welke AI-tool het beste bij je past om die context vervolgens te verwerken? Op hetlaatsteainieuws.nl staat de achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze), die uitlegt hoe agents externe bronnen inzetten.
 
 ## Checklist: klaar om het web te voeren aan je AI?
 

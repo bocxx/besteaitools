@@ -76,3 +76,5 @@ Voor Llama 4 loopt het meestal via een provider. Dan betaal je per token in plaa
 Meta heeft aangekondigd dat ook de gewichten van het gesloten Muse Spark 1.2 openbaar worden. Per 13 augustus 2026 was dat nog niet gebeurd. Reken er dus niet op in je planning.
 
 Kort samengevat: EU-bedrijf dat iets commercieel uitrolt op eigen hardware, pak Muse Glimmer. Draai je al op Llama met een werkende pijplijn, blijf dan zitten tot je een concrete reden hebt om te wisselen. Wil je Llama zelf een keer proberen zonder terminal, dan laat [Llama lokaal draaien met LM Studio](/nieuws/llama-lokaal-draaien-lm-studio) zien hoe. Weegt meertaligheid zwaar en wil je niet zelf hosten, dan is [Qwen via het Anthropic-compatibele endpoint](/nieuws/qwen-anthropic-sdk-koppelen) het derde spoor.
+
+Draait jouw use case om video in plaats van tekst, dan is de modelkeuze anders: MiniMax H3 (via Hailuo) rankt volgens Artificial Analysis in de top-3 voor video-editing en text-to-video. Zie [Hailuo (MiniMax H3) gebruiken](/nieuws/hailuo-minimax-h3-gebruiken) voor de praktische workflow.

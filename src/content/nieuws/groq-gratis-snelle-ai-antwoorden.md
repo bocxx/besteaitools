@@ -50,7 +50,7 @@ Groq levert wat "inference" heet: het daadwerkelijk laten draaien van een getrai
 
 Belangrijk om te weten: Groq host alleen open-weight modellen, zoals Meta's Llama, Qwen en GPT-OSS. De gesloten modellen GPT, Claude en Gemini vind je er niet. Dit is dus de plek voor snelheid en open modellen, niet voor die drie namen.
 
-> **💡 Beginner-tip:** Je hebt hier geen dure hardware voor nodig. De modellen draaien op Groqs servers; jij hoeft je computer of de [cloud (inference)](https://hetlaatsteainieuws.nl/begrippen#inference) daar niet zelf voor in te richten. Je stuurt een vraag, je krijgt een antwoord.
+> **💡 Beginner-tip:** Je hebt hier geen dure hardware voor nodig. De modellen draaien op Groqs servers; jij hoeft je computer of de [cloud (inference)](https://www.hetlaatsteainieuws.nl/begrippen#inference) daar niet zelf voor in te richten. Je stuurt een vraag, je krijgt een antwoord.
 
 ## In vijf stappen aan de slag
 

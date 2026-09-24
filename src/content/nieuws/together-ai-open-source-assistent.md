@@ -68,7 +68,7 @@ Een "assistent" is in de kern een lus: je stuurt de vraag van de gebruiker plus 
 
 > **⚡ Gevorderden:** Together AI ondersteunt streaming, function calling en JSON-mode, en biedt naast serverless inference ook fine-tuning en dedicated endpoints. Draai je een model serieus in productie, dan houd je met dedicated endpoints de latency stabieler dan op de gedeelde serverless-route.
 
-Het zelf draaien van open modellen past in een bredere beweging om AI minder afhankelijk te maken van één partij en van de cloud. Waarom dat ertoe doet — en hoe ver het al gaat — beschrijft hetlaatsteainieuws.nl in [AI in de browser, zonder server](https://hetlaatsteainieuws.nl/ai-innovatie/ai-in-de-browser-zonder-server).
+Het zelf draaien van open modellen past in een bredere beweging om AI minder afhankelijk te maken van één partij en van de cloud. Waarom dat ertoe doet — en hoe ver het al gaat — beschrijft hetlaatsteainieuws.nl in [AI in de browser, zonder server](https://www.hetlaatsteainieuws.nl/achtergrond/ai-in-de-browser-zonder-server).
 
 ## Checklist: ben je klaar?
 

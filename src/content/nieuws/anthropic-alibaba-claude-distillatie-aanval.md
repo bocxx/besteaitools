@@ -72,7 +72,7 @@ Het probleem is de schaal en de methode hier. In plaats van legitiem gebruik van
 
 Anthropic publiceerde een eigen blogpost over haar aanpak voor het detecteren en voorkomen van distillatieaanvallen ([Bron: Anthropic](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks)). Die beschrijft hoe het bedrijf afwijkende gebruikspatronen detecteert: hoge query-volumes van recent aangemaakte accounts, geografische afwijkingen, specifieke query-samenstelling die op systematische extractie lijkt. Gedetecteerde accounts worden geblokkeerd.
 
-Het bedrijf pleit ook voor wettelijke maatregelen en exportcontroles, iets wat de Trump-administratie deels al heeft doorgevoerd: een exportbevel dat Anthropic's meest geavanceerde modellen (Fable 5 en Mythos 5) onbeschikbaar maakt voor niet-Amerikanen — een maatregel die ook gewone Europese gebruikers trof. Onze collega's bij hetlaatsteainieuws.nl schreven eerder al over de brede impact van dat exportbevel: zie [Claude Fable 5 geblokkeerd voor niet-Amerikanen: wat het exportbevel betekent](https://hetlaatsteainieuws.nl/ai-beleid/anthropic-claude-fable-geblokkeerd-export).
+Het bedrijf pleit ook voor wettelijke maatregelen en exportcontroles, iets wat de Trump-administratie deels al heeft doorgevoerd: een exportbevel dat Anthropic's meest geavanceerde modellen (Fable 5 en Mythos 5) onbeschikbaar maakt voor niet-Amerikanen — een maatregel die ook gewone Europese gebruikers trof. Onze collega's bij hetlaatsteainieuws.nl schreven eerder al over de brede impact van dat exportbevel: zie [Claude Fable 5 geblokkeerd voor niet-Amerikanen: wat het exportbevel betekent](https://www.hetlaatsteainieuws.nl/regelgeving/anthropic-claude-fable-geblokkeerd-export).
 
 Voor jou als Claude-gebruiker met een legitiem account verandert er niets. De detectiemaatregelen richten zich op de patroonkenmerken van misbruik — massa-volumes, neppe accounts, geblokkeerde regio's — niet op normaal gebruik. Dat is ook de reden dat Anthropic zo gedetailleerd communiceert over wat er is gebeurd: het bedrijf wil duidelijk maken dat dit een gerichte aanval was, geen aanleiding om legitiem gebruik te beperken.
 
@@ -81,6 +81,8 @@ Voor jou als Claude-gebruiker met een legitiem account verandert er niets. De de
 De distillatiezaken van 2026 laten zien hoe waardevol frontier AI-capaciteiten zijn geworden. De traditionele manier om een concurrent bij te houden — zelf een groter team, meer rekenkracht, meer trainingsdata — kost jaren en miljarden. Distillatie biedt een kortere route: als je de outputs van het beste model kunt gebruiken als trainingsdata, haal je de vruchten van jaren frontier-onderzoek in een paar weken binnen.
 
 Voor gebruikers en bedrijven die Claude evalueren is dit relevant als achtergrondcontext: Anthropic investeert aanzienlijk in het beschermen van de capaciteiten die haar modellen onderscheidend maken. Die bescherming is mede de reden dat Claude sterk blijft presteren op software-engineering en agentic taken — de domeinen waarop de aanval juist gericht was.
+
+Niet elk Chinees AI-bedrijf zoekt de confrontatie op dezelfde manier. MiniMax, bekend van de Hailuo-videogenerator, concurreert vooral op prijs en snelheid in een heel ander domein: het nieuwste MiniMax H3-model claimt een aanzienlijk lagere prijs per seconde video dan westerse concurrenten. Zie [Hailuo (MiniMax H3) gebruiken](/nieuws/hailuo-minimax-h3-gebruiken) voor hoe je dat model praktisch inzet.
 
 ---
 

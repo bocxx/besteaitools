@@ -84,7 +84,7 @@ Alles is omkeerbaar: wil je Gemini later terug, ga dan naar dezelfde plek en zet
 
 ## En als je Gemini juist wél wilt gebruiken?
 
-Niet iedereen wil het uitzetten — de functies kunnen handig zijn als je ze op jouw moment inzet in plaats van ongevraagd. Wil je leren hoe je Gemini doelgericht gebruikt in plaats van het te verjagen, lees dan onze [walkthrough: Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen). En wil je weten hoe deze ongevraagde AI-functies passen in de bredere trend van AI die overal opduikt, dan schreef onze nieuwszustersite daarover op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl).
+Niet iedereen wil het uitzetten — de functies kunnen handig zijn als je ze op jouw moment inzet in plaats van ongevraagd. Wil je leren hoe je Gemini doelgericht gebruikt in plaats van het te verjagen, lees dan onze [walkthrough: Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen). En wil je weten hoe deze ongevraagde AI-functies passen in de bredere trend van AI die overal opduikt, dan schreef onze nieuwszustersite daarover op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/).
 
 ## Bronnen
 

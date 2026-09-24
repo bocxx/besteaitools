@@ -84,7 +84,7 @@ Cijfers vertellen een verhaal. Een repo van drie dagen oud met 200.000 downloads
 
 Weet je het niet zeker? Draai het model dan in een geïsoleerde omgeving: een container zonder netwerktoegang en met een beperkt bestandssysteem. Blijkt de code kwaadaardig, dan kan ze geen data naar buiten sturen of bij je bestanden. Dit is de goedkoopste verzekering die er is.
 
-Wie deze vijf gewoontes aanhoudt, kan met een gerust hart uit het enorme aanbod van Hugging Face putten. Voor de bredere context van het beveiligingsincident, lees onze duiding op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/).
+Wie deze vijf gewoontes aanhoudt, kan met een gerust hart uit het enorme aanbod van Hugging Face putten. Voor de bredere context van het beveiligingsincident, lees onze duiding op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws).
 
 Werk je met Codex in een repo, leg je conventies dan vast zodat het model ze niet elke sessie opnieuw hoeft te raden: [AGENTS.md instellen](/nieuws/codex-agents-md-projectregels).
 

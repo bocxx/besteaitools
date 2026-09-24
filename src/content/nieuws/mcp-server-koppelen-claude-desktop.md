@@ -115,7 +115,7 @@ Schrijf je zelf een server, houd dan de spec-wijzigingen in de gaten. Die staan 
 - [ ] `filesystem` zichtbaar onder Manage connectors
 - [ ] Testopdracht gedaan en het goedkeuringsvenster gezien
 
-Wat je hier bouwt is de bouwsteen onder wat men AI-agents noemt: een model dat niet alleen praat maar ook handelt. Op onze zustersite staat daar een breder stuk over, inclusief de risico's: [AI-agents in 2026 — wat zijn ze en wat kun je er echt mee](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+Wat je hier bouwt is de bouwsteen onder wat men AI-agents noemt: een model dat niet alleen praat maar ook handelt. Op onze zustersite staat daar een breder stuk over, inclusief de risico's: [AI-agents in 2026 — wat zijn ze en wat kun je er echt mee](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 ## Bronnen
 

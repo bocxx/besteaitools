@@ -71,7 +71,7 @@ Wat Gemini onderscheidt, is de band met de rest van Google. Gebruik je al Gmail,
 
 5. **Bewaar of hergebruik wat werkt.** Kopieer het antwoord naar je e-mail of document, of begin een nieuw gesprek voor een ander onderwerp via *"Nieuwe chat"* links in beeld. Gebruik je iets vaker — bijvoorbeeld dezelfde soort offerte-tekst — dan kun je daar in een latere stap een vast "Gem" voor maken (zie hieronder).
 
-> **💡 Beginner-tip:** Het resultaat hangt sterk af van hoe je je vraag stelt. Geef context ("ik ben loodgieter en mail een klant terug"), zeg wat je wilt ("kort en vriendelijk"), en wees concreet. Nog nooit een AI-prompt geschreven? Onze zustersite legt de basis uit in [Goede prompts schrijven voor AI](https://hetlaatsteainieuws.nl/ai-tutorials/goede-prompts-schrijven-voor-ai) — een kwartier dat je daarna elke dag terugverdient.
+> **💡 Beginner-tip:** Het resultaat hangt sterk af van hoe je je vraag stelt. Geef context ("ik ben loodgieter en mail een klant terug"), zeg wat je wilt ("kort en vriendelijk"), en wees concreet. Nog nooit een AI-prompt geschreven? Onze zustersite legt de basis uit in [Goede prompts schrijven voor AI](https://www.hetlaatsteainieuws.nl/achtergrond/goede-prompts-schrijven-voor-ai) — een kwartier dat je daarna elke dag terugverdient.
 
 ## Drie functies die je niet meteen hoeft te snappen
 

@@ -7,7 +7,7 @@ Elk DBAT-tutorial bevat **één** verplichte cross-domain link naar `hetlaatstea
 Volledige URL met categorie-prefix (let op: dit verschilt van DBAT zelf):
 
 ```
-https://hetlaatsteainieuws.nl/<category>/<slug>
+https://www.hetlaatsteainieuws.nl/<category>/<slug>
 ```
 
 **Belangrijk verschil met interne DBAT-links:**
@@ -15,9 +15,9 @@ https://hetlaatsteainieuws.nl/<category>/<slug>
 - HLN-extern: `/<category>/<slug>` (mét categorie-prefix)
 
 Voorbeelden:
-- `https://hetlaatsteainieuws.nl/ai-tutorials/claude-voor-beginners-eerste-gesprek`
-- `https://hetlaatsteainieuws.nl/ai-tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou`
-- `https://hetlaatsteainieuws.nl/ai-deep-dives/ai-agents-2026-wat-zijn-ze`
+- `https://www.aiplatformmkb.nl/gidsen/claude-voor-beginners-eerste-gesprek`
+- `https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou`
+- `https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze`
 
 ## De zeven HLN-categorieën
 
@@ -98,26 +98,26 @@ Twee logische plekken:
 **Optie A — In een Beginner-tip blockquote (sterkst voor prerequisite-links):**
 
 ```markdown
-> **💡 Beginner-tip:** Nog nooit met Claude gewerkt? Begin dan eerst bij onze [vergelijking tussen Claude en ChatGPT](https://hetlaatsteainieuws.nl/ai-tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) om te zien of Claude bij jou past.
+> **💡 Beginner-tip:** Nog nooit met Claude gewerkt? Begin dan eerst bij onze [vergelijking tussen Claude en ChatGPT](https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou) om te zien of Claude bij jou past.
 ```
 
 **Optie B — In een context-paragraaf (sterkst voor "bredere achtergrond"-links):**
 
 ```markdown
-Voor de bredere context over hoe agents zich onderling verhouden, geeft onze deep-dive [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://hetlaatsteainieuws.nl/ai-deep-dives/ai-agents-2026-wat-zijn-ze) een werkbare landkaart.
+Voor de bredere context over hoe agents zich onderling verhouden, geeft onze deep-dive [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) een werkbare landkaart.
 ```
 
 **Optie C — Aan het einde, als vervolgactie:**
 
 ```markdown
-Wie deze tutorial heeft afgerond en het breder wil benutten, vindt in onze gids [AI-agents in de praktijk: vijf taken automatiseren](https://hetlaatsteainieuws.nl/ai-tutorials/ai-agents-praktijk-5-taken-automatiseren) een logische volgende stap.
+Wie deze tutorial heeft afgerond en het breder wil benutten, vindt in onze gids [AI-agents in de praktijk: vijf taken automatiseren](https://www.aiplatformmkb.nl/gidsen/ai-agents-praktijk-5-taken-automatiseren) een logische volgende stap.
 ```
 
 ## URL-format — checklist
 
 Voor elke cross-link, check:
 
-- [ ] Absolute URL `https://hetlaatsteainieuws.nl/...` (geen `//` of relatieve paden)
+- [ ] Absolute URL `https://www.hetlaatsteainieuws.nl/...` (geen `//` of relatieve paden)
 - [ ] Categorie-prefix klopt (`/ai-tutorials/`, niet `/tutorials/`)
 - [ ] Geen trailing slash op de URL (dus `/<slug>`, niet `/<slug>/`)
 - [ ] Anchor-tekst is beschrijvend (niet "lees meer", niet "klik hier")

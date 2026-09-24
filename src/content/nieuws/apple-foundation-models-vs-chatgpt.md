@@ -65,7 +65,7 @@ De afweging is dus eigenlijk simpel:
 
 Voor gevoelige gegevens kies je het lokale model. Voor diepgang en moeilijke vragen pak je de cloud. In de praktijk gebruik je ze naast elkaar, afhankelijk van wat een taak vraagt.
 
-Wil je weten wat je wettelijk moet regelen als je klantgegevens door een AI laat verwerken? Lees op hetlaatsteainieuws.nl onze duiding over [AVG en AI-tools voor zzp'ers](https://hetlaatsteainieuws.nl/ai-nieuws/ai-kloon-van-jezelf-voor-klanten).
+Wil je weten wat je wettelijk moet regelen als je klantgegevens door een AI laat verwerken? Lees op hetlaatsteainieuws.nl onze duiding over [AVG en AI-tools voor zzp'ers](https://www.hetlaatsteainieuws.nl/nieuws/ai-kloon-van-jezelf-voor-klanten).
 
 ## Checklist: welke kies je?
 

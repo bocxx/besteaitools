@@ -78,7 +78,7 @@ Meer dan je misschien verwacht. Het gratis plan geeft je het volledige chatvenst
 
 De beperking zit in volume: het aantal berichten per dag is begrensd en die grens beweegt mee met de drukte. Voor af en toe een vraag is dat geen probleem; wie er dagelijks mee werkt, loopt er tegenaan. Wat je op het gratis plan ook mist: Claude Code (de codeer-agent voor de terminal), Cowork (de agentmodus in de desktop-app) en de zwaardere modellen.
 
-Nog een nuchtere noot voor Nederlands gebruik: Claude spreekt uitstekend Nederlands, maar je data wordt in de VS verwerkt — er is geen EU-hosting. Voor privégebruik prima; zet er alleen niet klakkeloos klantgegevens in. Waarom dat zo is en wat het betekent, legt onze zustersite uit in [Is Claude Europees? Nee, en wat dat betekent voor je data](https://hetlaatsteainieuws.nl/nieuws/anthropic-claude-4-europa).
+Nog een nuchtere noot voor Nederlands gebruik: Claude spreekt uitstekend Nederlands, maar je data wordt in de VS verwerkt — er is geen EU-hosting. Voor privégebruik prima; zet er alleen niet klakkeloos klantgegevens in. Waarom dat zo is en wat het betekent, legt onze zustersite uit in [Is Claude Europees? Nee, en wat dat betekent voor je data](https://www.hetlaatsteainieuws.nl/nieuws/anthropic-claude-4-europa).
 
 ## Gratis, Pro of Max?
 

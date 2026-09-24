@@ -72,7 +72,7 @@ In je ChatGPT-abonnement betaal je niets extra: de GPT-5.6-modellen zitten inbeg
 
 Let op de nuance: OpenAI stelt dat GPT-5.6 meer werk uit elke token haalt, waardoor de kosten per afgeronde taak vaak lager uitvallen dan het tarief per token doet vermoeden. Voor een eerlijke vergelijking kijk je dus naar wat een hele klus kost, niet alleen naar de prijs per duizend tokens.
 
-Voor de bredere context rond ChatGPT-prijzen en waar je op let met bedrijfsdata: lees onze duiding op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/chatgpt-gpt-5-5-instant-memory-sources).
+Voor de bredere context rond ChatGPT-prijzen en waar je op let met bedrijfsdata: lees onze duiding op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/chatgpt-gpt-5-5-instant-memory-sources).
 
 ## Checklist: ben je klaar?
 

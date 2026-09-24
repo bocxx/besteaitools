@@ -56,7 +56,7 @@ Heb je de gewone Gemini-app nog nooit gebruikt? Loop dan eerst onze [Gemini gebr
 - Toegang tot de Gemini-app (web of mobiel)
 - VS-locatie voor je Google-account — Spark is buiten de VS nog niet officieel beschikbaar
 
-> **💡 Beginner-tip:** Heb je Spark zelf nog nooit gebruikt? Lees eerst onze [analyse van Gemini Spark op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/gemini-spark-24-7-ai-agent) — dan begrijp je waarom de MCP-koppeling met Canva niet "Gemini doet Canva" is, maar "een autonome agent doet wat jij eerder met de hand deed".
+> **💡 Beginner-tip:** Heb je Spark zelf nog nooit gebruikt? Lees eerst onze [analyse van Gemini Spark op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/gemini-spark-24-7-ai-agent) — dan begrijp je waarom de MCP-koppeling met Canva niet "Gemini doet Canva" is, maar "een autonome agent doet wat jij eerder met de hand deed".
 
 ## Stap 1: Open de Gemini-app en ga naar Connected Apps
 

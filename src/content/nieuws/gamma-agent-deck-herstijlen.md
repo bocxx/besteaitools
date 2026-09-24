@@ -86,7 +86,7 @@ Bevalt het resultaat half, geef dan een correctie in plaats van handmatig terug 
 
 Een herstijling kan tekst laten aflopen of een kaart te vol maken, zeker als je van een compacte naar een royale typografie gaat. Loop het deck één keer door op afgebroken zinnen en kaarten waar nu te veel op staat.
 
-En kijk kritisch naar wat er inhoudelijk staat. Een deck dat er strak uitziet maar niets zegt, kost je publiek meer tijd dan een lelijk deck met een punt — dat fenomeen heet inmiddels [workslop](https://hetlaatsteainieuws.nl/nieuws/workslop-ai-werk-collegas), en presentaties zijn de meest voorkomende vorm ervan.
+En kijk kritisch naar wat er inhoudelijk staat. Een deck dat er strak uitziet maar niets zegt, kost je publiek meer tijd dan een lelijk deck met een punt — dat fenomeen heet inmiddels [workslop](https://www.hetlaatsteainieuws.nl/nieuws/workslop-ai-werk-collegas), en presentaties zijn de meest voorkomende vorm ervan.
 
 ## Stand van zaken — bijgewerkt 2026-09-08
 

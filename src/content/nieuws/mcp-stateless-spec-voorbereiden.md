@@ -69,7 +69,7 @@ Dit is de beloning. Een remote MCP-server die eerst sticky sessions en een gedee
 
 > **⚡ Gevorderden:** de autorisatie is ook aangescherpt richting OAuth 2.0/OIDC-praktijk: clients moeten de `iss`-parameter valideren (RFC 9207) en declareren hun `application_type` bij Dynamic Client Registration. Bouw je een remote server met auth, lees die zes SEP's apart door.
 
-Werk je vooral mét MCP-tools in plaats van eraan? Dan hoef je weinig te doen: clients zoals Claude, Cursor en VS Code volgen via hun SDK-updates. Voor de bredere context over waar agents en tool-integraties heen bewegen is [ons overzicht van AI-agents in 2026 op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) een goed startpunt. En wie MCP praktisch wil proberen: onze gidsen [Claude aan WordPress koppelen via MCP](/nieuws/claude-wordpress-verbinden-mcp) en [Gemini Spark aan Canva koppelen](/nieuws/gemini-spark-canva-mcp-koppelen) laten zien hoe het er aan de gebruikskant uitziet.
+Werk je vooral mét MCP-tools in plaats van eraan? Dan hoef je weinig te doen: clients zoals Claude, Cursor en VS Code volgen via hun SDK-updates. Voor de bredere context over waar agents en tool-integraties heen bewegen is [ons overzicht van AI-agents in 2026 op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) een goed startpunt. En wie MCP praktisch wil proberen: onze gidsen [Claude aan WordPress koppelen via MCP](/nieuws/claude-wordpress-verbinden-mcp) en [Gemini Spark aan Canva koppelen](/nieuws/gemini-spark-canva-mcp-koppelen) laten zien hoe het er aan de gebruikskant uitziet.
 
 ## Checklist: ben je klaar?
 

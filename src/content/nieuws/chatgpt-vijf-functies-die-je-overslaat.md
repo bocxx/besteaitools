@@ -61,7 +61,7 @@ Tikken is niet altijd handig. Met spraakmodus voer je een gewoon gesprek met Cha
 
 ## Begin met één
 
-Je hoeft deze vijf niet allemaal vandaag in te zetten. Kies er één — Projecten of aangepaste instructies zijn de makkelijkste winst — en bouw het in je routine. Wil je breder vergelijken wat AI-assistenten voor je kunnen doen, lees dan ons stuk over [open AI-modellen versus ChatGPT en Claude](https://hetlaatsteainieuws.nl/nieuws/open-ai-modellen-overstappen) op Het Laatste AI Nieuws.
+Je hoeft deze vijf niet allemaal vandaag in te zetten. Kies er één — Projecten of aangepaste instructies zijn de makkelijkste winst — en bouw het in je routine. Wil je breder vergelijken wat AI-assistenten voor je kunnen doen, lees dan ons stuk over [open AI-modellen versus ChatGPT en Claude](https://www.hetlaatsteainieuws.nl/nieuws/open-ai-modellen-overstappen) op Het Laatste AI Nieuws.
 
 Een concrete klus om mee te oefenen: [je cv laten afstemmen op een vacature](/nieuws/chatgpt-cv-afstemmen-op-vacature) — daar komen aangepaste instructies en herschrijfrondes samen.
 

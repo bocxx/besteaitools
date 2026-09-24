@@ -86,4 +86,4 @@ Zinnig als je gevoelige documenten verwerkt en ze je machine niet uit wilt hebbe
 
 Minder zinnig als je het van Claude's sterkste modellen moet hebben voor lastig redeneerwerk. Een open model van 20 miljard parameters op je laptop is een ander gereedschap dan wat Anthropic in zijn eigen datacentra draait, en dat merk je bij complexe taken.
 
-Wil je eerst begrijpen wat Ollama precies is en wat lokaal draaien inhoudt, dan legt onze zustersite dat uit in [wat is Ollama](https://hetlaatsteainieuws.nl/achtergrond/wat-is-ollama-lokale-llm-uitleg-2026).
+Wil je eerst begrijpen wat Ollama precies is en wat lokaal draaien inhoudt, dan legt onze zustersite dat uit in [wat is Ollama](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-ollama-lokale-llm-uitleg-2026).

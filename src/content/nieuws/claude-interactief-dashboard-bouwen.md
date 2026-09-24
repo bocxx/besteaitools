@@ -49,7 +49,7 @@ Claude schrijft code. Dat is de kern. Als jij beschrijft wat je wilt bouwen, gen
 
 > **💡 Beginner-tip:** Je hebt alleen een teksteditor (Notepad, TextEdit of de gratis [VS Code](https://code.visualstudio.com/)) en een browser nodig. Maak een bestand `dashboard.html`, plak de code van Claude erin, open het bestand in Chrome of Firefox — klaar. Zo werkt het.
 
-De kracht van Claude Fable 5 — het model dat op 1 juli is teruggekeerd na een Amerikaans exportverbod, [lees hier de achtergrond](https://hetlaatsteainieuws.nl/ai-nieuws/claude-fable-5-terug-export-controle) — zit in hoe het omgaat met complexe, meerstaps-opdrachten. Eerder moest je Claude bij elke stap exact vertellen wat het moest doen. Fable 5 begint directer met uitvoering en houdt een groter deel van je project in zijn hoofd, wat minder heen-en-weer gepraat betekent.
+De kracht van Claude Fable 5 — het model dat op 1 juli is teruggekeerd na een Amerikaans exportverbod, [lees hier de achtergrond](https://www.hetlaatsteainieuws.nl/nieuws/claude-fable-5-terug-export-controle) — zit in hoe het omgaat met complexe, meerstaps-opdrachten. Eerder moest je Claude bij elke stap exact vertellen wat het moest doen. Fable 5 begint directer met uitvoering en houdt een groter deel van je project in zijn hoofd, wat minder heen-en-weer gepraat betekent.
 
 ## Stap 1: Begin met een scherpe startprompt
 

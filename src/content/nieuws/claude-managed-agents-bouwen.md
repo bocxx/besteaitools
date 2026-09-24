@@ -52,7 +52,7 @@ Dat is wat **Claude Managed Agents** mogelijk maakt. Het zit sinds 8 april 2026 
 
 Een gewone Claude-chat werkt in één richting: jij stelt een vraag, Claude antwoordt. Een agent werkt in een **agentic loop**: context verzamelen (documenten, API-data, eerdere outputs), een actie uitvoeren via een tool, het resultaat controleren — en herhalen tot de taak klaar is.
 
-Het verschil in de praktijk: een agent handelt een taak van drie uur af terwijl jij iets anders doet. Denk aan het dagelijks bijhouden van concurrentiewijzigingen, het samenvatten van klantenreviews of het controleren van productprijzen over meerdere sites. Wat een agent precies is en waar de grens met een chatbot ligt, legt [AI-agents in 2026: wat zijn ze en wat kun je er echt mee](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) rustig uit.
+Het verschil in de praktijk: een agent handelt een taak van drie uur af terwijl jij iets anders doet. Denk aan het dagelijks bijhouden van concurrentiewijzigingen, het samenvatten van klantenreviews of het controleren van productprijzen over meerdere sites. Wat een agent precies is en waar de grens met een chatbot ligt, legt [AI-agents in 2026: wat zijn ze en wat kun je er echt mee](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) rustig uit.
 
 **Goed om te weten:** agents zijn standaard stateless — elke sessie vergeet wat daarvóór gebeurde. Als je wilt dat je agent zich klanten of vorige interacties herinnert, moet je [geheugen zelf inbouwen](/nieuws/make-ai-agent-memory-bouwen). Dat patroon — lookup, classify, write — geldt voor agents in Make, Claude API, of welke platform dan ook.
 

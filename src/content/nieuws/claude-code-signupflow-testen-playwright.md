@@ -72,7 +72,7 @@ De kern van de test is een korte poll-lus: vraag de berichtenlijst op, filter op
 
 ## Stap 4 — Draaien, laten falen, laten fixen
 
-Draai `npx playwright test` — of vraag Claude Code dat te doen. Het sterke van die combinatie: faalt de test, dan leest Claude Code de foutmelding en het trace-bestand, en stelt het zelf een fix voor — een selector die net anders heet, een mailtemplate waarin de link toch nét anders is opgebouwd. Review wat het verandert; zeker bij testcode wil je begrijpen wát er gecontroleerd wordt. Wie meer van dit soort zelfstandig doorwerkende AI-workflows wil begrijpen, leest de uitleg over AI-agents op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+Draai `npx playwright test` — of vraag Claude Code dat te doen. Het sterke van die combinatie: faalt de test, dan leest Claude Code de foutmelding en het trace-bestand, en stelt het zelf een fix voor — een selector die net anders heet, een mailtemplate waarin de link toch nét anders is opgebouwd. Review wat het verandert; zeker bij testcode wil je begrijpen wát er gecontroleerd wordt. Wie meer van dit soort zelfstandig doorwerkende AI-workflows wil begrijpen, leest de uitleg over AI-agents op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 Dit sluit aan op wat we eerder schreven in [Claude Code-skills instellen](/nieuws/claude-code-skills-instellen) — zo'n test-recept leent zich goed voor een herbruikbare skill.
 

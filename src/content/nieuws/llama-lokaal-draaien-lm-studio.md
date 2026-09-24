@@ -70,6 +70,6 @@ Klik op het model van je keuze en LM Studio start de download. Is die klaar, dan
 
 Zodra het model geladen is, typ je gewoon een vraag in het chatvenster, precies zoals je dat bij ChatGPT of Claude zou doen. Het verschil merk je vooral aan de snelheid: op een MacBook zonder dedicated GPU reageert een 8B-model doorgaans binnen een paar seconden, terwijl een zwaarder model merkbaar meer tijd nodig heeft — en dat is precies waarom de modelkeuze in de vorige stap ertoe deed.
 
-Wil je eerst begrijpen waarom lokaal draaien voor sommige mensen zo belangrijk is, dan is [de uitleg over lokale LLM's op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/wat-is-ollama-lokale-llm-uitleg-2026) een goed startpunt.
+Wil je eerst begrijpen waarom lokaal draaien voor sommige mensen zo belangrijk is, dan is [de uitleg over lokale LLM's op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/wat-is-ollama-lokale-llm-uitleg-2026) een goed startpunt.
 
 Het andere verschil merk je niet, en dat is het punt: er gaat niets naar een server. Alles wat je hier typt en terugkrijgt, blijft op je eigen apparaat. Voor een snelle vraag maakt dat weinig uit, maar zodra je bedrijfsgegevens of klantinformatie in een prompt zou zetten, is dat een reëel verschil met een cloud-chatbot.

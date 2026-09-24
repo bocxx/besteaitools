@@ -64,7 +64,7 @@ Theorie beklijft pas als je ermee klikt. Op de [Hugging Face-modellenhub](https:
 
 ## Stap 4: gebruik het model bij je volgende tool-keuze
 
-Dit conceptuele laagje betaalt zich uit bij praktische keuzes: je begrijpt waarom een tool voor beeldherkenning andere limieten heeft dan een chatbot, en waarom "context window" een transformer-eigenschap is. Draai je liever modellen op eigen hardware, lees dan onze gids over [open-weight-modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien) of hoe je [transformers.js in de browser gebruikt](/nieuws/transformers-js-ai-in-de-browser-gebruiken). De bredere stand van open-source AI schetst hetlaatsteainieuws.nl in [Staat van open-source AI 2026](https://hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026).
+Dit conceptuele laagje betaalt zich uit bij praktische keuzes: je begrijpt waarom een tool voor beeldherkenning andere limieten heeft dan een chatbot, en waarom "context window" een transformer-eigenschap is. Draai je liever modellen op eigen hardware, lees dan onze gids over [open-weight-modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien) of hoe je [transformers.js in de browser gebruikt](/nieuws/transformers-js-ai-in-de-browser-gebruiken). De bredere stand van open-source AI schetst hetlaatsteainieuws.nl in [Staat van open-source AI 2026](https://www.hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026).
 
 ## Checklist: ben je klaar?
 

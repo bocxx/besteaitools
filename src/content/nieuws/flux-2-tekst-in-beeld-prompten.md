@@ -119,7 +119,7 @@ Minimaal 64 bij 64 pixels, maximaal 4 megapixels, en de afmetingen moeten deelba
 - [ ] Formaat deelbaar door 16 en onder 2 megapixels
 - [ ] Bij herhaalbaar werk: JSON in plaats van losse zin
 
-Werk je vaker met beeld in een vaste huisstijl, dan is [Krea Realtime Canvas](/nieuws/krea-realtime-canvas-gebruiken) een goede volgende stap voor het itereren zelf. En wie wil weten hoe de beeldmodellen zich onderling verhouden, vindt de actuele stand op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl).
+Werk je vaker met beeld in een vaste huisstijl, dan is [Krea Realtime Canvas](/nieuws/krea-realtime-canvas-gebruiken) een goede volgende stap voor het itereren zelf. En wie wil weten hoe de beeldmodellen zich onderling verhouden, vindt de actuele stand op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/).
 
 ## Stand van zaken — bijgewerkt 2026-09-16
 

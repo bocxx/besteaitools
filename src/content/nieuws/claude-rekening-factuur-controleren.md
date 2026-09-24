@@ -79,4 +79,4 @@ Wie eerst wil weten hoe Claude precies werkt en wat het kost, leest onze gids [W
 
 - [Claude — Anthropic](https://claude.ai) (functies en gebruik)
 - [Claude AI Pricing 2026](https://screenapp.io/blog/claude-ai-pricing) (prijzen en modellen, juli 2026)
-- Voor de privacykant: lees op hetlaatsteainieuws.nl [ChatGPT-beveiliging: wat deel je beter niet?](https://hetlaatsteainieuws.nl/nieuws/chatgpt-beveiliging-wat-je-erin-zet) — dezelfde voorzichtigheid geldt voor Claude.
+- Voor de privacykant: lees op hetlaatsteainieuws.nl [ChatGPT-beveiliging: wat deel je beter niet?](https://www.hetlaatsteainieuws.nl/nieuws/chatgpt-beveiliging-wat-je-erin-zet) — dezelfde voorzichtigheid geldt voor Claude.

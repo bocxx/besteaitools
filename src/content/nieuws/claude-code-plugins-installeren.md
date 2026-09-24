@@ -111,7 +111,7 @@ Dat stageert je wijzigingen, schrijft een commit-message en maakt de commit. Wil
 
 Anthropic is er in de documentatie expliciet over: plugins en marketplaces zijn zwaar vertrouwde onderdelen die willekeurige code kunnen uitvoeren met jouw gebruikersrechten. Anthropic controleert niet welke MCP-servers of bestanden in een plugin zitten ([Bron: Claude Code Docs](https://code.claude.com/docs/en/discover-plugins)).
 
-De community-marketplace (`/plugin marketplace add anthropics/claude-plugins-community`) heeft geautomatiseerde validatie en veiligheidsscreening doorlopen en pint elke plugin op een specifieke commit-SHA. Dat is beter dan niets, maar het blijft code van derden. Wie wil begrijpen waarom dat bij agents extra zwaar weegt, kan onze duiding op hetlaatsteainieuws.nl erbij pakken: [AI-agents in 2026: wat ze zijn en wat ze echt kunnen](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+De community-marketplace (`/plugin marketplace add anthropics/claude-plugins-community`) heeft geautomatiseerde validatie en veiligheidsscreening doorlopen en pint elke plugin op een specifieke commit-SHA. Dat is beter dan niets, maar het blijft code van derden. Wie wil begrijpen waarom dat bij agents extra zwaar weegt, kan onze duiding op hetlaatsteainieuws.nl erbij pakken: [AI-agents in 2026: wat ze zijn en wat ze echt kunnen](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 Gebruik je Codex ernaast, dan werkt daar hetzelfde idee via [AGENTS.md](/nieuws/codex-agents-md-projectregels).
 

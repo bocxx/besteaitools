@@ -79,7 +79,7 @@ Linux vraagt iets meer handwerk. Installeer Claude Desktop bij voorkeur via de a
 
 Negen van de tien keer zit het in de virtualisatie-laag, niet in Cowork zelf. Op Windows Home: geen Hyper-V. Op Linux: KVM uit in de firmware, of je bent nog niet opnieuw ingelogd na de `usermod`-stap. En op elk systeem: te weinig vrije schijfruimte voor de werk-image. Loop die drie langs voor je aan iets ingewikkelders denkt.
 
-Wil je eerst weten wat je überhaupt met zo'n desktop-agent kunt, lees dan het bredere [AI-nieuws over agent-tools](https://hetlaatsteainieuws.nl/nieuws) op hetlaatsteainieuws.nl.
+Wil je eerst weten wat je überhaupt met zo'n desktop-agent kunt, lees dan het bredere [AI-nieuws over agent-tools](https://www.hetlaatsteainieuws.nl/nieuws) op hetlaatsteainieuws.nl.
 
 ## Checklist: ben je klaar voor Cowork?
 

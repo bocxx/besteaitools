@@ -62,7 +62,7 @@ Voeg je CLI-agents toe zoals je elk ander proces toevoegt: Claude Code, Codex, G
 
 ## Stap 4: koppel de MCP-toolbelt
 
-Solo is zelf ook een MCP-server. Eén setup-commando (kant-en-klare snippets staan in Settings) en je agent krijgt gereedschap voor de hele werkplek: processen starten en herlezen (`restart_process`, `get_process_output`), gedeelde todo's, markdown-scratchpads voor plannen en overdracht, plus locks en timers zodat meerdere agents niet door elkaar heen werken. Een agent kan zelfs een tweede agent spawnen en die een todo toewijzen. Wat zulke samenwerkende agents in de praktijk kunnen, schetst [ons overzicht van AI-agents in 2026 op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+Solo is zelf ook een MCP-server. Eén setup-commando (kant-en-klare snippets staan in Settings) en je agent krijgt gereedschap voor de hele werkplek: processen starten en herlezen (`restart_process`, `get_process_output`), gedeelde todo's, markdown-scratchpads voor plannen en overdracht, plus locks en timers zodat meerdere agents niet door elkaar heen werken. Een agent kan zelfs een tweede agent spawnen en die een todo toewijzen. Wat zulke samenwerkende agents in de praktijk kunnen, schetst [ons overzicht van AI-agents in 2026 op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 ## Stap 5: deel de setup met je team
 

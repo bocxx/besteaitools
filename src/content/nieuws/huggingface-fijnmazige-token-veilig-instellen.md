@@ -37,7 +37,7 @@ faq:
     a: "Dan hoor je bij een organisatie op een Team- of Enterprise-plan die goedkeuring vereist voor tokens. Een fijnmazige token die je op die organisatie richt, komt automatisch in de wacht tot een beheerder hem goedkeurt; je ziet dan een oranje zandloper bij de token. Wordt hij afgewezen, dan werkt hij nog wel voor alles buiten die organisatie, en tegen organisatie-resources krijg je een 403."
 ---
 
-Een gelekte sleutel is nog altijd de saaiste en meest voorkomende manier waarop iemand ergens binnenkomt. Dat gold ook bij het [incident rond Hugging Face van afgelopen zomer](https://hetlaatsteainieuws.nl/nieuws/openai-veiligheidsmaatregelen-hugging-face-inbraak): inloggegevens die ergens rondslingerden, waren het eerste bruikbare houvast.
+Een gelekte sleutel is nog altijd de saaiste en meest voorkomende manier waarop iemand ergens binnenkomt. Dat gold ook bij het [incident rond Hugging Face van afgelopen zomer](https://www.hetlaatsteainieuws.nl/nieuws/openai-veiligheidsmaatregelen-hugging-face-inbraak): inloggegevens die ergens rondslingerden, waren het eerste bruikbare houvast.
 
 De rem daarop is niet ingewikkeld. Je zorgt dat elke token zo weinig mogelijk mag, en dat je er één kunt weggooien zonder de rest te breken. Hugging Face heeft daar een aparte tokensoort voor.
 

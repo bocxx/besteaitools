@@ -73,7 +73,7 @@ Een aparte GPU versnelt alles fors. Op de Mac benut Ollama de Apple-chip automat
 
 ## Let op je schijfruimte
 
-Modellen zijn geen kleine bestanden — een enkel model kost al snel enkele gigabytes, en voor je het weet staan er vijf. Houd overzicht met `ollama list` en ruim op met `ollama rm <modelnaam>`. Wil je dieper de wereld van vrij te draaien modellen in, lees dan onze uitleg over [open-weight modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien) en hoe je [modellen veilig downloadt](/nieuws/huggingface-modellen-veilig-downloaden). Voor de bredere context waaróm lokale, open modellen er juist nu toe doen, is er duiding in het [AI-nieuws op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws).
+Modellen zijn geen kleine bestanden — een enkel model kost al snel enkele gigabytes, en voor je het weet staan er vijf. Houd overzicht met `ollama list` en ruim op met `ollama rm <modelnaam>`. Wil je dieper de wereld van vrij te draaien modellen in, lees dan onze uitleg over [open-weight modellen lokaal draaien](/nieuws/open-weight-modellen-lokaal-draaien) en hoe je [modellen veilig downloadt](/nieuws/huggingface-modellen-veilig-downloaden). Voor de bredere context waaróm lokale, open modellen er juist nu toe doen, is er duiding in het [AI-nieuws op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws).
 
 ## Checklist: draait je lokale model?
 

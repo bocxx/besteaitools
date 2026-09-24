@@ -42,6 +42,6 @@ Gebruik je Gemini via de app, dan krijg je 3.6 Flash daar ook. Voor ontwikkelaar
 
 Het langverwachte **Gemini 3.5 Pro** — het topmodel voor complexe redeneer- en codeertaken — ontbreekt opnieuw. De laatste Pro-update dateert van februari. Google zegt het model nu met partners te testen en hoopt "binnenkort te landen". Tegelijk is het bedrijf naar eigen zeggen begonnen aan zijn ambitieuste pretraining-run tot nu toe: **Gemini 4**.
 
-Meer context over de releasestrijd tussen Google, OpenAI en Anthropic lees je in de [AI Feature Tijdlijn op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/ai-feature-tijdlijn/).
+Meer context over de releasestrijd tussen Google, OpenAI en Anthropic lees je in de [AI Feature Tijdlijn op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/ai-feature-tijdlijn).
 
 *Bronnen: [TechCrunch](https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/), [9to5Google](https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/)*

@@ -93,7 +93,7 @@ Twee dingen om te weten voor je gaat sleutelen. Bun tot en met 1.3.x kan de CLI 
 - [ ] Je weet welk account de command owner is
 - [ ] Je API-kosten lopen bij je eigen provider, niet bij OpenClaw
 
-Meer over dit soort agent-runtimes lees je in onze gids over [Kimi Claw als cloud-agent opzetten](/nieuws/kimi-claw-cloud-agent-opzetten), en de volledige beoordeling staat op de [OpenClaw-toolpagina](/ai-tools/openclaw). Wil je eerst weten waaróm een always-on agent met toegang tot je machine om aandacht vraagt, lees dan [Grok CLI uploadde je hele home directory naar xAI](https://hetlaatsteainieuws.nl/nieuws/grok-cli-uploadt-home-directory) op hetlaatsteainieuws.nl.
+Meer over dit soort agent-runtimes lees je in onze gids over [Kimi Claw als cloud-agent opzetten](/nieuws/kimi-claw-cloud-agent-opzetten), en de volledige beoordeling staat op de [OpenClaw-toolpagina](/ai-tools/openclaw). Wil je eerst weten waaróm een always-on agent met toegang tot je machine om aandacht vraagt, lees dan [Grok CLI uploadde je hele home directory naar xAI](https://www.hetlaatsteainieuws.nl/nieuws/grok-cli-uploadt-home-directory) op hetlaatsteainieuws.nl.
 
 ## Bronnen
 

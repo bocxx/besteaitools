@@ -108,7 +108,7 @@ Hooks laden bij het opstarten. Sluit je huidige Claude Code-sessie, start een ni
 
 > **⚡ Gevorderden:** het standaard-timeout voor dit event is 10 seconden. Houd het script dus licht — pure string-vervangingen zijn geen probleem, maar netwerk-calls of zware regexen op elk stream-fragment wel. En let op: `re.IGNORECASE` matcht ook binnen zinnen die je misschien wilt houden; test je patronen even los via een pipe met voorbeeld-JSON.
 
-Dat een grap-tutorial hierover viraal gaat, zegt intussen iets over hoe herkenbaar die AI-stopwoordjes zijn geworden — over dat bredere ongemak met AI-tekst schreef hetlaatsteainieuws.nl eerder in [De hype-curve van juli](https://hetlaatsteainieuws.nl/nieuws/ai-hype-curve-juli-2026). Meer uit Claude Code halen kan daarna met onze gids over [tokens besparen met caveman-prompts](/nieuws/caveman-claude-code-tokens-besparen).
+Dat een grap-tutorial hierover viraal gaat, zegt intussen iets over hoe herkenbaar die AI-stopwoordjes zijn geworden — over dat bredere ongemak met AI-tekst schreef hetlaatsteainieuws.nl eerder in [De hype-curve van juli](https://www.hetlaatsteainieuws.nl/nieuws/ai-hype-curve-juli-2026). Meer uit Claude Code halen kan daarna met onze gids over [tokens besparen met caveman-prompts](/nieuws/caveman-claude-code-tokens-besparen).
 
 ## Checklist: ben je klaar?
 

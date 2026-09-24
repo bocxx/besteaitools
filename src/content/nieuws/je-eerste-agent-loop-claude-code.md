@@ -70,7 +70,7 @@ Jij definieert dat doel één keer. Claude Code is hier geschikt voor omdat het 
 
 De grootste beginnersfout is een loop starten zonder harde grens. Een agent die niet weet wanneer hij klaar is, blijft proberen en verbrandt tokens aan een probleem dat hij niet kan kraken. Leg daarom altijd twee dingen vast: de meetbare "klaar"-definitie uit stap 1, en een maximum aantal pogingen. Merk je dat je loops veel tokens kosten, dan helpt onze gids [Claude Code tokens besparen](/nieuws/caveman-claude-code-tokens-besparen) om het verbruik te temmen.
 
-Wil je de theorie achter dit alles — harness engineering, loop engineering en waar een tool als Hermes Agent in past — dan legt onze zustersite het uit in [Loop engineering, harness engineering en Hermes uitgelegd](https://hetlaatsteainieuws.nl/achtergrond/loop-engineering-harness-hermes-uitleg).
+Wil je de theorie achter dit alles — harness engineering, loop engineering en waar een tool als Hermes Agent in past — dan legt onze zustersite het uit in [Loop engineering, harness engineering en Hermes uitgelegd](https://www.hetlaatsteainieuws.nl/achtergrond/loop-engineering-harness-hermes-uitleg).
 
 ## Waar het naartoe groeit
 

@@ -84,4 +84,4 @@ Twee dingen. De quiz bedenkt zijn eigen vragen én zijn eigen goede antwoorden, 
 
 En: een score van 10 uit 10 is geen bewijs dat je het beheerst, maar een aanwijzing dat je te makkelijke vragen hebt gekregen. Draai dezelfde quiz nog eens met "maak het duidelijk moeilijker" erbij en kijk wat er overblijft. Dat is oncomfortabeler en veel nuttiger.
 
-Meer van dit soort functies die je waarschijnlijk over het hoofd zag, staan in [vijf ChatGPT-functies die je overslaat](/nieuws/chatgpt-vijf-functies-die-je-overslaat). En hoe AI het onderwijs verder binnenkomt, lees je op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/chatgpt-voor-tieners-leeftijdscontrole).
+Meer van dit soort functies die je waarschijnlijk over het hoofd zag, staan in [vijf ChatGPT-functies die je overslaat](/nieuws/chatgpt-vijf-functies-die-je-overslaat). En hoe AI het onderwijs verder binnenkomt, lees je op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/chatgpt-voor-tieners-leeftijdscontrole).

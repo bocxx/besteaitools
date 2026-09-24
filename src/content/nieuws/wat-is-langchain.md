@@ -54,6 +54,6 @@ Praktisch betekent dat: je kunt op het hoge, eenvoudige niveau van LangChain bli
 
 LangChain is developer-gereedschap. Bouw je zelf AI-toepassingen in code en wil je niet elke koppeling opnieuw uitvinden, dan bespaart het je veel werk en is de community groot. Zoek je daarentegen een manier om zonder programmeren AI-taken te automatiseren, dan is dit niet het juiste startpunt — dan passen no-code-tools beter.
 
-Wil je eerst begrijpen wélke modellen je met een framework als LangChain kunt aansturen en waarom open modellen daarbij zo'n rol spelen, lees dan onze duiding over de [open-weights-discussie](https://hetlaatsteainieuws.nl/nieuws/open-weights-brief-tech-industrie-europa) op Het Laatste AI Nieuws.
+Wil je eerst begrijpen wélke modellen je met een framework als LangChain kunt aansturen en waarom open modellen daarbij zo'n rol spelen, lees dan onze duiding over de [open-weights-discussie](https://www.hetlaatsteainieuws.nl/nieuws/open-weights-brief-tech-industrie-europa) op Het Laatste AI Nieuws.
 
 Kort samengevat: LangChain is de lijm tussen een taalmodel en de rest van je applicatie. Sinds 1.0 is die lijm een stuk transparanter geworden — en dat maakt het framework toegankelijker voor wie serieus AI-apps wil bouwen.

@@ -79,7 +79,7 @@ Vooral `/understand-onboard` is waardevol: het verandert "lees de code maar door
 
 Een kennisgraaf is alleen nuttig zolang hij klopt. Genereer hem opnieuw na grotere wijzigingen, zodat nieuwe bestanden en afhankelijkheden meekomen. Zo blijft `/understand-chat` betrouwbare antwoorden geven in plaats van te leunen op een verouderd beeld. Wil je daarna nóg meer uit Claude Code halen, dan laten [dynamic workflows](/nieuws/claude-code-dynamic-workflows-gebruiken) je honderden subagents tegelijk op een grote taak los — en in de [herontworpen desktop-app](/nieuws/claude-code-desktop-parallelle-sessies) volg je meerdere van die sessies naast elkaar.
 
-Hoe deze tools passen in het bredere plaatje van AI-assistenten voor code, lees je in het overzicht [beste AI-coding-assistenten van 2026](https://hetlaatsteainieuws.nl/tools/beste-ai-coding-assistants-2026) op Het Laatste AI Nieuws.
+Hoe deze tools passen in het bredere plaatje van AI-assistenten voor code, lees je in het overzicht [beste AI-coding-assistenten van 2026](https://www.aiplatformmkb.nl/tools/beste-ai-coding-assistants-2026) op Het Laatste AI Nieuws.
 
 ## Checklist: ben je klaar?
 

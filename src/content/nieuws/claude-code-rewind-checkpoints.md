@@ -91,4 +91,4 @@ De documentatie is er eerlijk over: checkpointing vervangt versiebeheer niet. De
 
 Zie je Claude de verkeerde kant op gaan, laat het dan niet uitpraten. Esc-Esc, kies het punt vlak voor de afslag, en herformuleer. Dat is sneller dan repareren — en het scheelt tokens, omdat je het foute spoor niet in je context houdt. Meer manieren om je verbruik te drukken staan in [Caveman: de gratis Claude Code-skill die tot 65% tokens bespaart](/nieuws/caveman-claude-code-tokens-besparen).
 
-Dat je zulke misstappen überhaupt moet zien, is niet vanzelfsprekend: uit onderzoek dat [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/ai-agent-sabotage-onderzoek-94-procent) besprak, merkte 94% van de ontwikkelaars een saboterende AI-agent niet op. Een herstelknop helpt alleen als je 'm op tijd indrukt.
+Dat je zulke misstappen überhaupt moet zien, is niet vanzelfsprekend: uit onderzoek dat [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/ai-agent-sabotage-onderzoek-94-procent) besprak, merkte 94% van de ontwikkelaars een saboterende AI-agent niet op. Een herstelknop helpt alleen als je 'm op tijd indrukt.

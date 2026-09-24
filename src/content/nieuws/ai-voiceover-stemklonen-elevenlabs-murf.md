@@ -102,6 +102,8 @@ Zet de audio in je video-editor (Premiere Pro, DaVinci Resolve, CapCut) op de au
 
 Heb je al een video in een andere taal? Dan hoef je niets opnieuw in te spreken: [nasynchroniseren naar het Nederlands met ElevenLabs Dubbing](/nieuws/video-nasynchroniseren-elevenlabs-dubbing).
 
+Wil je stemklonen zonder abonnement en zonder dat audio de deur uitgaat, dan is er sinds kort een lokaal alternatief: [VoiceStudio](/nieuws/voicestudio-installeren-lokaal-alternatief) doet voice cloning, dubbing en transcriptie volledig op je eigen computer, gratis en open source.
+
 ## Checklist: ben je klaar?
 
 - [ ] Stem gekozen en getest met eigen tekst (niet de preview-tekst)

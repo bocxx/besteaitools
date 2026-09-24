@@ -68,7 +68,7 @@ Perplexity werkt anders. Het zoekt bij elke vraag live op het web, leest een ree
 
 Ook met live data blijft het een inschatting. AI kan je vertellen dat een ploeg favoriet is en waarom, maar één voetbalwedstrijd is te toevallig om hard te voorspellen — één rode kaart of afgekeurd doelpunt gooit het model omver. Gebruik de uitkomst dus als inzicht in de waarschijnlijkheid, niet als zekere tip.
 
-Hoe dat precies zit, en waarom zelfs de grote "supercomputers" geen winnaars voorspellen maar kansen rekenen, legt onze zustersite helder uit in [kan AI het WK voorspellen?](https://hetlaatsteainieuws.nl/achtergrond/kan-ai-het-wk-voorspellen). Het korte antwoord: een eerlijk percentage is waardevoller dan een stellige naam.
+Hoe dat precies zit, en waarom zelfs de grote "supercomputers" geen winnaars voorspellen maar kansen rekenen, legt onze zustersite helder uit in [kan AI het WK voorspellen?](https://www.hetlaatsteainieuws.nl/achtergrond/kan-ai-het-wk-voorspellen). Het korte antwoord: een eerlijk percentage is waardevoller dan een stellige naam.
 
 > **⚡ Gevorderden:** Wil je verder dan losse vragen, vraag Perplexity dan om een vergelijkende tabel ("zet vorm, ranking en onderlinge resultaten van beide ploegen naast elkaar") of gebruik de Pro-search voor een meerstaps analyse die dieper in de bronnen graaft. Voor een echte statistische voorspelling met kansmodellen kijk je niet naar een chatbot maar naar gespecialiseerde modellen zoals die van Opta.
 

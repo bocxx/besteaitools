@@ -98,7 +98,7 @@ Is het bestand je eindproduct — achtergrondmuziek onder een video, een jingle,
 
 Peildatum van de bronnen: Udio's helpartikel over de UMG-overgang dateert van februari 2026, de laatste licentiedeal van april 2026. Controleer bij twijfel de status in je eigen Udio-account voordat je op deze stand plant.
 
-Wie wil begrijpen hoe deze licentiedeals de rest van de creatieve sector raken, kan het stuk over [afspraken tussen AI-bedrijven en de Nederlandse boekenwereld](https://hetlaatsteainieuws.nl/nieuws/bookpact-ai-nederlandse-boekenwereld) op hetlaatsteainieuws.nl erbij pakken.
+Wie wil begrijpen hoe deze licentiedeals de rest van de creatieve sector raken, kan het stuk over [afspraken tussen AI-bedrijven en de Nederlandse boekenwereld](https://www.hetlaatsteainieuws.nl/nieuws/bookpact-ai-nederlandse-boekenwereld) op hetlaatsteainieuws.nl erbij pakken.
 
 Werk je met video in plaats van muziek, dan is [nasynchroniseren met ElevenLabs Dubbing](/nieuws/video-nasynchroniseren-elevenlabs-dubbing) wél gewoon exporteerbaar.
 
