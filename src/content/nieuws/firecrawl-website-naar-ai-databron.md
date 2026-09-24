@@ -74,7 +74,7 @@ Naast markdown kun je ook gestructureerde JSON opvragen, of een hele site aflope
 
 ## De makkelijkste route: via MCP naar je editor
 
-Wil je geen losse scripts beheren, dan is de officiële **Firecrawl MCP-server** de snelste weg. Die koppelt Firecrawl rechtstreeks aan AI-tools als [Cursor](https://debesteaitools.nl/tools/cursor/), Claude en VS Code, zodat je agent het web kan opvragen vanuit je gewone workflow ([Bron: Firecrawl Docs](https://docs.firecrawl.dev/introduction)). In de praktijk vraag je Cursor dan iets als "haal de API-documentatie van deze leverancier op en schrijf een client", en de agent gebruikt Firecrawl onder de motorkap om de juiste pagina's binnen te halen. Geen knip-en-plak-werk meer tussen je browser en je editor.
+Wil je geen losse scripts beheren, dan is de officiële **Firecrawl MCP-server** de snelste weg. Die koppelt Firecrawl rechtstreeks aan AI-tools als [Cursor](https://debesteaitools.nl/tools/cursor), Claude en VS Code, zodat je agent het web kan opvragen vanuit je gewone workflow ([Bron: Firecrawl Docs](https://docs.firecrawl.dev/introduction)). In de praktijk vraag je Cursor dan iets als "haal de API-documentatie van deze leverancier op en schrijf een client", en de agent gebruikt Firecrawl onder de motorkap om de juiste pagina's binnen te halen. Geen knip-en-plak-werk meer tussen je browser en je editor.
 
 > **💡 Beginner-tip:** MCP (Model Context Protocol) is een standaard waarmee AI-tools veilig met externe diensten praten. Je hoeft het protocol niet te begrijpen om het te gebruiken — je installeert de server één keer en je tool weet daarna dat Firecrawl beschikbaar is.
 

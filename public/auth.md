@@ -22,7 +22,7 @@ This site supports **anonymous** agent access only. No credentials, API keys, or
 All content is freely accessible without credentials:
 
 - **AI Tools Catalogue** (LLM-optimised): `GET https://debesteaitools.nl/llms.txt`
-- **Tool pages**: `GET https://debesteaitools.nl/ai-tools/{slug}`
+- **Tool pages**: `GET https://debesteaitools.nl/ai-tools/%7bslug}`
 - **Full site index**: `GET https://debesteaitools.nl/sitemap-index.xml`
 - **Agent Skills**: `GET https://debesteaitools.nl/.well-known/agent-skills/index.json`
 

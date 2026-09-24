@@ -38,7 +38,7 @@ faq:
     a: "Nee. Enterprise Search indexeert content op basis van jouw permissies. Vraag je iets, dan zoekt het alleen in pagina's, databases en gekoppelde bronnen waar jij rechten op hebt. Een collega met andere rechten krijgt dus andere bronnen te zien bij dezelfde vraag."
 ---
 
-De belofte van AI in een kennistool is simpel: een assistent die niet algemeen antwoordt, maar weet wat er in jóuw documenten staat. [Notion AI](https://debesteaitools.nl/tools/notion-ai/) maakt dat concreet. Het heeft context van je hele workspace — pagina's, databases, projecten — en van de apps die je eraan koppelt, en doorzoekt dat alles in gewone taal ([Bron: Notion Help — Enterprise Search](https://www.notion.com/help/enterprise-search)). In deze gids zie je hoe je dat inricht en hoe je het antwoord stuurt naar precies de juiste bron.
+De belofte van AI in een kennistool is simpel: een assistent die niet algemeen antwoordt, maar weet wat er in jóuw documenten staat. [Notion AI](https://debesteaitools.nl/tools/notion-ai) maakt dat concreet. Het heeft context van je hele workspace — pagina's, databases, projecten — en van de apps die je eraan koppelt, en doorzoekt dat alles in gewone taal ([Bron: Notion Help — Enterprise Search](https://www.notion.com/help/enterprise-search)). In deze gids zie je hoe je dat inricht en hoe je het antwoord stuurt naar precies de juiste bron.
 
 > **💡 Beginner-tip:** "Context" is de informatie die de AI naast je vraag meekrijgt. Bij Notion is dat standaard je eigen werkruimte, dus je hoeft niets te uploaden of in te plakken — het model kijkt al in je documenten. Jij bepaalt alleen hoe breed of smal die blik is.
 
@@ -64,7 +64,7 @@ Naast zoeken werkt Notion AI met **AI Meeting Notes**, die gesprekken transcribe
 
 ## Wat het kost en waar de grens ligt
 
-De volledige AI zit gebundeld in het **Business-plan** ($20 per gebruiker per maand bij jaarlijkse betaling, $24 maandelijks) en in Enterprise; de losse AI-add-on van $10 is voor nieuwe Free- en Plus-gebruikers vervallen ([Bron: eesel AI](https://www.eesel.ai/blog/notion-ai-review)). Custom Agents rekenen daarbovenop per credit-bundel. De eerlijke kanttekening: Notion AI is sterk bínnen Notion, maar als losse AI minder krachtig dan [ChatGPT](https://debesteaitools.nl/tools/chatgpt/) of Claude. Staat je team niet op Notion, dan is de context-truc nutteloos — dan zijn die andere tools de betere keuze.
+De volledige AI zit gebundeld in het **Business-plan** ($20 per gebruiker per maand bij jaarlijkse betaling, $24 maandelijks) en in Enterprise; de losse AI-add-on van $10 is voor nieuwe Free- en Plus-gebruikers vervallen ([Bron: eesel AI](https://www.eesel.ai/blog/notion-ai-review)). Custom Agents rekenen daarbovenop per credit-bundel. De eerlijke kanttekening: Notion AI is sterk bínnen Notion, maar als losse AI minder krachtig dan [ChatGPT](https://debesteaitools.nl/tools/chatgpt) of Claude. Staat je team niet op Notion, dan is de context-truc nutteloos — dan zijn die andere tools de betere keuze.
 
 Wil je weten hoe AI-assistenten je eigen documenten leren kennen, ook buiten Notion? Op hetlaatsteainieuws.nl legt de achtergrond [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) uit hoe agents externe kennis ophalen en gebruiken.
 

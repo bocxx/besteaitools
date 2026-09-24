@@ -36,7 +36,7 @@ faq:
     a: "Voor de instapcursussen niet. AI Fluency en de introductie tot Claude Cowork zijn bedoeld voor een breed publiek. De API- en agent-cursussen gaan dieper en gaan ervan uit dat je met code overweg kunt, maar je kunt prima beginnen bij de toegankelijke modules en later opschalen."
 ---
 
-Veel AI-cursussen die online rondzweven zijn betaald, of gratis tot je een certificaat wilt. Anthropic, de maker van [Claude](https://debesteaitools.nl/tools/claude/), pakt het anders aan: het bedrijf zet een hele bibliotheek aan officiële cursussen gratis online, certificaat inbegrepen. Hieronder zie je wat er is en hoe je in een paar stappen je eerste certificaat haalt.
+Veel AI-cursussen die online rondzweven zijn betaald, of gratis tot je een certificaat wilt. Anthropic, de maker van [Claude](https://debesteaitools.nl/tools/claude), pakt het anders aan: het bedrijf zet een hele bibliotheek aan officiële cursussen gratis online, certificaat inbegrepen. Hieronder zie je wat er is en hoe je in een paar stappen je eerste certificaat haalt.
 
 ## Wat is Anthropic Academy?
 

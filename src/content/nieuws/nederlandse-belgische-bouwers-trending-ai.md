@@ -82,7 +82,7 @@ Niet alles wat hier trending haalt, is AI — en dat is ook een verhaal. Het Bel
 
 ## Zelf verder kijken (of jezelf aanmelden)
 
-De zes profielen hierboven zijn een momentopname; de onderliggende data ververst dagelijks. Op [onze makers-pagina](https://www.debesteaitools.nl/makers) zie je doorlopend welke mensen en organisaties achter de trending AI-repos van dit moment zitten, met bio, locatie en momentum. Wil je AI-bouwers en -uitleggers ook op social media volgen, dan is [whotofollow.online](https://whotofollow.online) een goed startpunt.
+De zes profielen hierboven zijn een momentopname; de onderliggende data ververst dagelijks. Op [onze makers-pagina](https://debesteaitools.nl/makers) zie je doorlopend welke mensen en organisaties achter de trending AI-repos van dit moment zitten, met bio, locatie en momentum. Wil je AI-bouwers en -uitleggers ook op social media volgen, dan is [whotofollow.online](https://whotofollow.online) een goed startpunt.
 
 En bouw je zelf in Nederland of België aan AI, staat je locatie niet op je GitHub-profiel en missen we je hierdoor? Laat het ons weten via [X (@AInieuwsNL)](https://x.com/AInieuwsNL) of open een issue op [GitHub](https://github.com/bocxx) — we reageren binnen 48 uur.
 
