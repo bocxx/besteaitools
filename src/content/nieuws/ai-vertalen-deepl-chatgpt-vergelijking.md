@@ -98,6 +98,8 @@ Geen AI-vertaling is perfect. Doe voor belangrijke teksten altijd een snelle kwa
 1. **Terug-vertaling**: vertaal de output terug naar de originele taal en vergelijk. Grote afwijkingen wijzen op fouten.
 2. **Laat een native speaker het doorlezen**: niet om elke zin te verbeteren, maar om flagrante fouten en ongepaste toon op te vangen.
 
+Moet je eerst een gescande buitenlandse factuur of contract vertalen, dan haal je de tekst er handiger eerst uit met [Mistral OCR 4.1](/nieuws/mistral-ocr-documenten-verwerken) voordat je 'm door DeepL of ChatGPT haalt.
+
 ## Checklist: ben je klaar?
 
 - [ ] Juiste tool gekozen op basis van taalcombinatie en gebruik
