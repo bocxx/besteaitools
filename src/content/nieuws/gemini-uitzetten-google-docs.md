@@ -49,7 +49,7 @@ sources:
     url: "https://help.lafayette.edu/disabling-gemini-smart-features-in-google-workspace/"
 ---
 
-Je opent een Google Doc om snel iets te schrijven, en pats: een vak nodigt je uit om "met Gemini te schrijven". Geen knop om het weg te vegen, geen duidelijke uitweg. Je bent niet de enige die zich daaraan stoort — zelfs techredacteuren liepen erop vast ([Bron: TechCrunch](https://techcrunch.com/2026/06/18/how-to-turn-off-ai-in-your-google-docs/)). Het goede nieuws: je krijgt die [Gemini](/tools/gemini)-pop-ups weg, en het kost maar een paar klikken. Hieronder twee routes — een snelle voor één document, en een grondige voor je hele account.
+Je opent een Google Doc om snel iets te schrijven, en pats: een vak nodigt je uit om "met Gemini te schrijven". Geen knop om het weg te vegen, geen duidelijke uitweg. Je bent niet de enige die zich daaraan stoort — zelfs techredacteuren liepen erop vast ([Bron: TechCrunch](https://techcrunch.com/2026/06/18/how-to-turn-off-ai-in-your-google-docs/)). Het goede nieuws: je krijgt die [Gemini](/ai-tools/gemini)-pop-ups weg, en het kost maar een paar klikken. Hieronder twee routes — een snelle voor één document, en een grondige voor je hele account.
 
 ## Route 1: snel, per document
 
