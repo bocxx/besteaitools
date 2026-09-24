@@ -1,0 +1,71 @@
+{
+  "name": "VoiceStudio",
+  "category": "audio",
+  "websiteUrl": "https://github.com/debpalash/VoiceStudio",
+  "shortDescription": "Open-source, volledig lokale ElevenLabs-alternatief voor voice cloning en TTS",
+  "longDescription": "VoiceStudio is een open-source desktop-applicatie waarmee je stemmen kloont, stemmen ontwerpt, video's dubt, dicteert en transcribeert — volledig lokaal op je eigen computer, zonder cloud-abonnement. Het combineert 16 TTS-engines (waaronder het standaard OmniVoice-model met 600+ talen, plus CosyVoice 3 en GPT-SoVITS) en 11 ASR-engines (waaronder WhisperX) tot een cataloog van 646 ondersteunde talen. De app is Tauri-gebaseerd, draait op macOS, Windows en Linux, en biedt een lokale, OpenAI-compatibele API plus MCP-server-ondersteuning voor integratie in bestaande workflows.",
+  "bestFor": "Makers, ontwikkelaars en bedrijven die stemsynthese, dubbing of transcriptie willen zonder terugkerende cloud-kosten en zonder dat audio het eigen apparaat verlaat.",
+  "useCases": [
+    "Voice cloning vanaf een kort audiofragment (3-15 seconden)",
+    "Stemmen ontwerpen vanaf parameters zoals leeftijd, accent en toonhoogte",
+    "Video's dubben naar andere talen met behoud van sprekersidentiteit",
+    "Audioboeken maken met meerdere stemmen vanuit EPUB/PDF",
+    "Systeembrede dictatie met optionele lokale LLM-opschoning"
+  ],
+  "strengths": [
+    "Volledig gratis en open source (AGPL-3.0), geen abonnement",
+    "Draait volledig lokaal — audio verlaat nooit je eigen apparaat",
+    "Keuze uit 16 TTS- en 11 ASR-engines, samen 646 talen",
+    "OpenAI-compatibele lokale API en MCP-server voor integraties",
+    "Actief onderhouden: bijna 29.500 GitHub-sterren, 2.540+ commits"
+  ],
+  "limitations": [
+    "Stemkwaliteit haalt niet overal het niveau van ElevenLabs' Eleven v3",
+    "Vereist eigen hardware (idealiter een GPU) en installatie/onderhoud",
+    "Gedownloade modellen hebben elk hun eigen licentie — check die bij commercieel gebruik",
+    "Geen managed cloud-versie; support loopt via de open-source community, niet via een vendor"
+  ],
+  "pricing": "Gratis en open source (AGPL-3.0). Gedownloade modellen behouden hun eigen licentie (vaak CC-BY-NC of Apache 2.0) — check die bij commercieel gebruik.",
+  "openSource": true,
+  "pricingModel": "free",
+  "difficulty": "intermediate",
+  "tags": ["voice-cloning", "text-to-speech", "lokale-ai", "open-source", "video-dubbing", "transcriptie"],
+  "mentionAliases": ["voice studio"],
+  "businessFunctions": ["marketing", "operations"],
+  "draft": false,
+  "deploymentType": "self-hosted",
+  "targetAudience": ["solo", "freelancer", "zzp", "mkb_klein"],
+  "nlSupport": true,
+  "supportsDutchLanguage": true,
+  "integrations": ["API", "MCP"],
+  "setupComplexity": "medium",
+  "timeToFirstValue": "hours",
+  "requiresDeveloper": false,
+  "keyFeatures": [
+    {
+      "title": "Voice cloning",
+      "description": "Zero-shot stemkloning vanaf 3-15 seconden brongeluid",
+      "group": "core"
+    },
+    {
+      "title": "Voice design",
+      "description": "Stemmen samenstellen vanaf parameters zonder brongeluid",
+      "group": "input"
+    },
+    {
+      "title": "Video-dubbing",
+      "description": "Transcriberen, vertalen, sprekersidentiteit behouden en opnieuw synthetiseren in één workflow",
+      "group": "output"
+    },
+    {
+      "title": "Lokale OpenAI-compatibele API",
+      "description": "REST/SSE/WebSocket-API op localhost:3900, plus MCP-server-ondersteuning",
+      "group": "integration"
+    }
+  ],
+  "verdict": "VoiceStudio is het serieuze open-source antwoord op ElevenLabs voor wie liever lokaal draait dan een cloud-abonnement betaalt. De stemkwaliteit varieert per gekozen engine, maar de functiebreedte (cloning, dubbing, dictatie, audioboeken) is voor een gratis tool ongewoon compleet.",
+  "whyListed": "Snelgroeiend open-source project (28.700+ GitHub-sterren) dat zich expliciet positioneert als lokaal alternatief voor de marktleider ElevenLabs, met een compleet takenpakket in één applicatie.",
+  "bestAlternative": "elevenlabs",
+  "lastUpdated": "2026-09-23",
+  "lastReviewedAt": "2026-09-23"
+}
