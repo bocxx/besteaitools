@@ -56,7 +56,7 @@ Maak een project aan en definieer je processen: dev-server, queue worker, databa
 
 ## Stap 3: zet je agents ernaast
 
-Voeg je CLI-agents toe zoals je elk ander proces toevoegt: Claude Code, Codex, Gemini CLI, Amp, Aider — alles wat in een terminal draait, ook meerdere tegelijk. Solo raakt je API-keys of agent-config niet aan; de agents draaien exact zoals je ze al had ingesteld. De zijbalk toont per agent of hij werkt of op jou wacht, en met één sneltoets spring je naar degene die aandacht vraagt.
+Voeg je CLI-agents toe zoals je elk ander proces toevoegt: Claude Code, Codex, Gemini CLI, Amp, Aider — alles wat in een terminal draait, ook meerdere tegelijk. Solo raakt je API-keys of agent-config niet aan; de agents draaien exact zoals je ze al had ingesteld. De zijbalk toont per agent of hij werkt of op jou wacht, en met één sneltoets spring je naar degene die aandacht vraagt. Gebruik je liever een model-onafhankelijke, open-source agent in plaats van een van de bovenstaande, dan is [OpenCode](/nieuws/opencode-installeren-terminal-ai-agent) een van de populairste — en die draait net zo goed naast je andere agents in Solo.
 
 > **💡 Beginner-tip:** werk je nog niet met een terminal-agent? Begin dan eerst met onze gids [je eerste agent-loop in Claude Code](/nieuws/je-eerste-agent-loop-claude-code) — daarna snap je meteen waarom één venster voor meerdere agents handig is.
 
