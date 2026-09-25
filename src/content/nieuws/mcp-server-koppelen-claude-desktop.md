@@ -102,7 +102,7 @@ Test hem met een onschuldige opdracht: *"welke bestanden staan er in mijn Downlo
 
 Deze koppeling is het patroon voor alle andere. Wil je liever klikken dan JSON bewerken, kijk dan in Claude Desktop bij **Settings → Extensions → Browse extensions**: daar staan MCP-servers die je met één klik installeert. Voor cloud-diensten loopt het via remote MCP, zoals we lieten zien bij [Claude aan je WordPress-site koppelen](/nieuws/claude-wordpress-verbinden-mcp) en bij [Canva koppelen aan Gemini Spark](/nieuws/gemini-spark-canva-mcp-koppelen).
 
-Schrijf je zelf een server, houd dan de spec-wijzigingen in de gaten. Die staan beschreven in onze update over [de stateless MCP-spec](/nieuws/mcp-stateless-spec-voorbereiden).
+Schrijf je zelf een server, houd dan de spec-wijzigingen in de gaten. Die staan beschreven in onze update over [de stateless MCP-spec](/nieuws/mcp-stateless-spec-voorbereiden). Op zoek naar een MCP-server die meteen nuttig is voor code review? [Code Review Graph bespaart tot 63x tokens](/nieuws/code-review-graph-mcp-tokens-besparen) door alleen de relevante context van een wijziging te serveren.
 
 ## Checklist: ben je klaar?
 

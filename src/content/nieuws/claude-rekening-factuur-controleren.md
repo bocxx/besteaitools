@@ -63,7 +63,7 @@ Klopt er inderdaad iets niet, vraag dan: "Schrijf een zakelijke brief aan [afzen
 
 Lees die brief kritisch door. Controleer of alle bedragen en regelverwijzingen kloppen, of de toon past en of er geen aannames in staan die je niet kunt onderbouwen. Bij een echt juridisch geschil blijft eigen controle of professioneel advies nodig — Claude is geen jurist.
 
-Wie eerst wil weten hoe Claude precies werkt en wat het kost, leest onze gids [Wat is Claude AI?](/nieuws/wat-is-claude-ai). Nog geen account? Zie [Claude-account aanmaken](/nieuws/claude-account-aanmaken).
+Wie eerst wil weten hoe Claude precies werkt en wat het kost, leest onze gids [Wat is Claude AI?](/nieuws/wat-is-claude-ai). Nog geen account? Zie [Claude-account aanmaken](/nieuws/claude-account-aanmaken). Werk je met Claude Code, check dan ook of de [nieuwe, lagere weekly limiet sinds 14 september](/nieuws/claude-code-lagere-weekly-limiet-tips) je verbruikspatroon beïnvloedt voordat je een afwijkende rekening voor lief neemt.
 
 ## Checklist: ben je klaar?
 

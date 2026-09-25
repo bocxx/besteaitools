@@ -130,7 +130,7 @@ Als je Uber's situatie kent (AI-budgetten die in vier maanden leeg lopen door co
 
 ## Samenvatting
 
-Headroom is een open-source context-compressielaag voor LLM-applicaties die 60-95% minder tokens naar het model stuurt. Drie integratiemodi (library, proxy, MCP), volledig lokaal, reversibel. Meest relevant als je coding agents, RAG-pipelines of langlopende agentic workflows draait die dure context genereren.
+Headroom is een open-source context-compressielaag voor LLM-applicaties die 60-95% minder tokens naar het model stuurt. Drie integratiemodi (library, proxy, MCP), volledig lokaal, reversibel. Meest relevant als je coding agents, RAG-pipelines of langlopende agentic workflows draait die dure context genereren. Draai je vooral coding agents voor code review, dan is [Code Review Graph](/nieuws/code-review-graph-mcp-tokens-besparen) een gerichter alternatief — het comprimeert niet de hele context, maar berekent per wijziging precies welke bestanden relevant zijn.
 
 ## Bronnen
 

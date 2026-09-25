@@ -89,3 +89,5 @@ Buiten coding en agent-taken zijn ze minder onderscheidend. Voor het denkwerk wa
 Twee dingen om vooraf te beslissen. De MIT-licentie op de GLM-modellen is echt permissief: je mag ze downloaden, commercieel gebruiken en zelf hosten, wat een reële uitweg is als je later toch alles binnenshuis wilt. Maar de gemakkelijke route loopt via een Chinese aanbieder, dus kijk waar je code heen gaat voordat je er iets gevoeligs doorheen stuurt.
 
 Je kunt de switch trouwens gewoon uitproberen. Haal de twee env-velden weg en Claude Code praat weer met Anthropic, alsof er niets gebeurd is.
+
+Nog een reden om de switch te overwegen: sinds 14 september 2026 liggen de weekly limits in Claude Code zelf 17% lager dan deze zomer, nadat Anthropic de tijdelijke zomerboost verving door een kleinere permanente verhoging ([hoe je daarmee omgaat](/nieuws/claude-code-lagere-weekly-limiet-tips)) — een los GLM-abonnement voor het volumewerk ontlast dat budget meteen.
