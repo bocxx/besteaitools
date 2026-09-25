@@ -41,7 +41,7 @@ GitHub Copilot begon als autocomplete in je editor, maar het zwaartepunt ligt in
 
 ## Wat agent mode anders maakt dan gewone chat
 
-Copilot chat beantwoordt vragen en geeft codevoorstellen die jij zelf kopieert of toepast. Agent mode gaat verder: je geeft een taak in gewone taal, en de agent doorzoekt je codebase, past bestanden direct aan, kan terminalcommando's uitvoeren (met een `!` vooraf) en kan externe tools aanroepen via een gekoppelde MCP-server ([Bron: GitHub Docs — Copilot in VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)). Je blijft in controle: elke bestandswijziging verschijnt eerst als diff, die je bekijkt voor je hem accepteert. Voor een breder beeld van wat AI-agents in 2026 kunnen en waar de risico's zitten: [ons overzicht op hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
+Copilot chat beantwoordt vragen en geeft codevoorstellen die jij zelf kopieert of toepast. Agent mode gaat verder: je geeft een taak in gewone taal, en de agent doorzoekt je codebase, past bestanden direct aan, kan terminalcommando's uitvoeren (met een `!` vooraf) en kan externe tools aanroepen via een gekoppelde MCP-server ([Bron: GitHub Docs — Copilot in VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)). Je blijft in controle: elke bestandswijziging verschijnt eerst als diff, die je bekijkt voor je hem accepteert. Voor een breder beeld van wat AI-agents in 2026 kunnen en waar de risico's zitten: [ons overzicht op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze).
 
 ## Je eerste agent-taak, stap voor stap
 

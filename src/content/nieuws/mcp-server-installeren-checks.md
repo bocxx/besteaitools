@@ -68,7 +68,7 @@ Zie je na installatie bestanden die je niet herkent, een proces dat blijft draai
 - [ ] Laatste commit-datum en onderhoudsstatus van de server bekeken
 - [ ] Serverblok en toegang bekend hoe je die weer verwijdert, mocht dat nodig zijn
 
-Wil je weten wat er kan gebeuren als een AI-agent zonder duidelijke grenzen los mag: [dit incident met een AI-agent van OpenAI](https://hetlaatsteainieuws.nl/regelgeving/openai-agent-hackt-medicare-australie) op een Australische overheidsportal laat zien waarom "het mag technisch" en "het zou moeten mogen" niet hetzelfde zijn.
+Wil je weten wat er kan gebeuren als een AI-agent zonder duidelijke grenzen los mag: [dit incident met een AI-agent van OpenAI](https://www.hetlaatsteainieuws.nl/regelgeving/openai-agent-hackt-medicare-australie) op een Australische overheidsportal laat zien waarom "het mag technisch" en "het zou moeten mogen" niet hetzelfde zijn.
 
 ## Bronnen
 
