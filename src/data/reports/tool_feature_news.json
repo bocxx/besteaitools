@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-25T07:31:16.288117",
+  "generated_at": "2026-09-25T19:31:21.875350",
   "window_days": 7,
   "week": "2026-w39",
-  "total_candidates_scanned": 1135,
-  "total_after_dedup": 1123,
-  "total_feature_updates": 78,
+  "total_candidates_scanned": 1145,
+  "total_after_dedup": 1133,
+  "total_feature_updates": 80,
   "llm_curated": true,
   "features": [
     {
@@ -12,7 +12,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Managed Agents",
-      "summary_nl": "DigitalOcean Managed Agents is nu in openbare preview. Hiermee kun je Claude Code, Codex of je eigen LangGraph-agent uitvoeren in een runtime-omgeving die pauzeert wanneer deze inactief is. Zo kun je de tools van Claude beter beheren.",
+      "summary_nl": "DigitalOcean Managed Agents is nu in publieke preview. Hiermee kun je Claude Code, Codex of je eigen LangGraph agent draaien in een runtime omgeving die pauzeert wanneer deze inactief is.",
       "impact": "high",
       "sources": [
         {
@@ -20,6 +20,78 @@
           "title": "DigitalOcean Managed Agents is now in public preview. \n\nRun Claude Code, Codex, or your own LangGraph agent in a runtime environment that pa",
           "platform": "twitter",
           "source": "@digitalocean"
+        }
+      ],
+      "detected_at": "2026-09-25",
+      "week": "2026-w39"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Cloud Sessions",
+      "summary_nl": "Cloud sessions zijn nu beschikbaar en uit de research preview. Hiermee kun je blijven werken met Claude Code, zelfs als je laptop uit staat.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/ClaudeDevs/status/2102871550974427462",
+          "title": "Cloud sessions are officially available and out of research preview! They let you keep Claude Code working, even when your laptop is closed.",
+          "platform": "twitter",
+          "source": "@ClaudeDevs"
+        }
+      ],
+      "detected_at": "2026-09-25",
+      "week": "2026-w39"
+    },
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Ternary Bonsai 2 27B",
+      "summary_nl": "Qwen kondigt Ternary Bonsai 2 27B aan, een model dat 9 keer kleiner is dan zijn full-precision tegenhanger, maar wel dezelfde prestaties levert.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/PrismML/status/2100692248480596348",
+          "title": "Today, we’re announcing Ternary Bonsai 2 27B.\n\nBased on Qwen3.8 27B, Bonsai 2 27B is 9x smaller than its full-precision counterpart while re",
+          "platform": "twitter",
+          "source": "@PrismML"
+        }
+      ],
+      "detected_at": "2026-09-25",
+      "week": "2026-w39"
+    },
+    {
+      "tool_slug": "claude",
+      "tool_name": "Claude",
+      "tool_category": "tekst",
+      "feature_title": "Opus 5.5 in Cursor",
+      "summary_nl": "Claude Opus 5.5 is nu beschikbaar in Cursor, het nieuwe topmodel met 57.8% (Max) prestatie en 40% lagere kosten per taak dan Opus 5.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2102448392773435706",
+          "title": "Claude Opus 5.5 is now available in Cursor!\n\nIt's the new top model on CursorBench at 57.8% (Max) and costs 40% less per task than Opus 5. h",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-09-25",
+      "week": "2026-w39"
+    },
+    {
+      "tool_slug": "together ai",
+      "tool_name": "Together AI",
+      "tool_category": "infra",
+      "feature_title": "Satoshi AI Beta",
+      "summary_nl": "Together AI heeft Satoshi AI Beta gelanceerd, een AI-assistent gebouwd op basis van Satoshi Nakamoto's whitepaper, e-mails en forumberichten.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/1096361BTC/status/2100873000652521557",
+          "title": "We asked what you would ask Satoshi.\n\nNow, you can ask.\n\nSatoshi AI Beta is now live.\n\nBuilt from Satoshi Nakamoto’s whitepaper, emails, and",
+          "platform": "twitter",
+          "source": "@1096361BTC"
         }
       ],
       "detected_at": "2026-09-25",
@@ -41,42 +113,6 @@
         }
       ],
       "detected_at": "2026-09-25",
-      "week": "2026-w39"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Ternary Bonsai 2 27B",
-      "summary_nl": "Qwen kondigt Ternary Bonsai 2 27B aan. Deze is 9 keer kleiner dan het full-precision model, maar behoudt de prestaties.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/PrismML/status/2100692248480596348",
-          "title": "Today, we’re announcing Ternary Bonsai 2 27B.\n\nBased on Qwen3.8 27B, Bonsai 2 27B is 9x smaller than its full-precision counterpart while re",
-          "platform": "twitter",
-          "source": "@PrismML"
-        }
-      ],
-      "detected_at": "2026-09-24",
-      "week": "2026-w39"
-    },
-    {
-      "tool_slug": "together ai",
-      "tool_name": "Together AI",
-      "tool_category": "infra",
-      "feature_title": "Satoshi AI Beta",
-      "summary_nl": "Together AI heeft de Satoshi AI Beta gelanceerd. Deze is gebouwd op basis van Satoshi Nakamoto's whitepaper, e-mails en forumberichten.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/1096361BTC/status/2100873000652521557",
-          "title": "We asked what you would ask Satoshi.\n\nNow, you can ask.\n\nSatoshi AI Beta is now live.\n\nBuilt from Satoshi Nakamoto’s whitepaper, emails, and",
-          "platform": "twitter",
-          "source": "@1096361BTC"
-        }
-      ],
-      "detected_at": "2026-09-24",
       "week": "2026-w39"
     },
     {
