@@ -66,7 +66,7 @@ Wil je alles in eigen hand? De MCP Adapter is een officiële WordPress-plugin di
 
 ## Veilig inrichten — niet overslaan
 
-Bij elke route geldt dezelfde voorzichtigheid. Gebruik Application Passwords voor de authenticatie, nooit je gewone inloggegevens. Geef het gekoppelde account alleen de rechten die de taak echt nodig heeft. En test een nieuwe opzet eerst op een staging-omgeving voordat je 'm op je live-site loslaat. Een AI die een opdracht net verkeerd interpreteert, doet dat anders meteen op je echte content.
+Bij elke route geldt dezelfde voorzichtigheid — [dit zijn de vijf checks](/nieuws/mcp-server-installeren-checks) die daarbij horen. Gebruik Application Passwords voor de authenticatie, nooit je gewone inloggegevens. Geef het gekoppelde account alleen de rechten die de taak echt nodig heeft. En test een nieuwe opzet eerst op een staging-omgeving voordat je 'm op je live-site loslaat. Een AI die een opdracht net verkeerd interpreteert, doet dat anders meteen op je echte content.
 
 > **⚡ Gevorderden:** De kracht zit in bulk. Een opdracht als "maak concepten voor deze twaalf titels, wijs de juiste categorie toe en stel de uitgelichte afbeelding in vanaf deze URL's" is precies het soort repeterend werk waar de verbinding tijd wint. Houd wel een revisie-check aan: laat Claude concepten aanmaken, niet direct publiceren.
 

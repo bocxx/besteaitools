@@ -82,7 +82,7 @@ Werk je vooral mét MCP-tools in plaats van eraan? Dan hoef je weinig te doen: c
 - [ ] Deprecated features (roots, sampling, logging) op de migratielijst gezet
 - [ ] SDK-versie in de gaten: Tier 1-SDK's leveren support vóór 28 juli 2026
 
-Wil je eerst zien hoe een MCP-server er in de praktijk uitziet voordat je de specificatie induikt: [je eerste MCP-server koppelen aan Claude Desktop](/nieuws/mcp-server-koppelen-claude-desktop) laat de basis in vier stappen zien.
+Wil je eerst zien hoe een MCP-server er in de praktijk uitziet voordat je de specificatie induikt: [je eerste MCP-server koppelen aan Claude Desktop](/nieuws/mcp-server-koppelen-claude-desktop) laat de basis in vier stappen zien. En voor je een willekeurige server uit een groeiend register installeert: [vijf checks die je vooraf doet](/nieuws/mcp-server-installeren-checks) voorkomen de meeste ellende.
 
 ## Bronnen
 

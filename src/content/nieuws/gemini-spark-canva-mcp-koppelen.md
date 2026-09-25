@@ -105,7 +105,7 @@ Stijl: [adjectieven].
 Zet ze in mijn map "[naam]".
 ```
 
-Met die template hoef je per opdracht alleen de placeholders in te vullen. Een complete social-content-batch van 8 afbeeldingen kost je voortaan onder de 5 minuten actief werk. Benieuwd wat er onder de motorkap van zulke koppelingen verandert? Op 28 juli wordt het protocol stateless — zie [MCP wordt stateless](/nieuws/mcp-stateless-spec-voorbereiden).
+Koppel je naast Canva nog meer MCP-servers, check dan eerst [deze vijf punten](/nieuws/mcp-server-installeren-checks) — niet elke server in het register is even goed onderhouden. Met die template hoef je per opdracht alleen de placeholders in te vullen. Een complete social-content-batch van 8 afbeeldingen kost je voortaan onder de 5 minuten actief werk. Benieuwd wat er onder de motorkap van zulke koppelingen verandert? Op 28 juli wordt het protocol stateless — zie [MCP wordt stateless](/nieuws/mcp-stateless-spec-voorbereiden).
 
 ## Checklist: ben je klaar?
 
