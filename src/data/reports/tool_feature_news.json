@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-24T19:33:20.730769",
+  "generated_at": "2026-09-25T07:31:16.288117",
   "window_days": 7,
   "week": "2026-w39",
-  "total_candidates_scanned": 1178,
-  "total_after_dedup": 1164,
+  "total_candidates_scanned": 1135,
+  "total_after_dedup": 1123,
   "total_feature_updates": 78,
   "llm_curated": true,
   "features": [
@@ -12,7 +12,7 @@
       "tool_name": "Claude",
       "tool_category": "tekst",
       "feature_title": "Managed Agents",
-      "summary_nl": "DigitalOcean Managed Agents is nu in publieke preview. Hiermee kun je Claude Code, Codex of je eigen LangGraph agent draaien in een runtime omgeving die pauzeert wanneer deze inactief is.",
+      "summary_nl": "DigitalOcean Managed Agents is nu in openbare preview. Hiermee kun je Claude Code, Codex of je eigen LangGraph-agent uitvoeren in een runtime-omgeving die pauzeert wanneer deze inactief is. Zo kun je de tools van Claude beter beheren.",
       "impact": "high",
       "sources": [
         {
@@ -22,7 +22,25 @@
           "source": "@digitalocean"
         }
       ],
-      "detected_at": "2026-09-24",
+      "detected_at": "2026-09-25",
+      "week": "2026-w39"
+    },
+    {
+      "tool_slug": "grok",
+      "tool_name": "Grok",
+      "tool_category": "tekst",
+      "feature_title": "Voice Transcribe 2.0",
+      "summary_nl": "Grok heeft Grok Voice Transcribe 2.0 geïntroduceerd, de meest nauwkeurige spraaktranscriptiemodel ter wereld.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/SpaceXAI/status/2101005248311726387",
+          "title": "Introducing Grok Voice Transcribe 2.0. It’s the world’s most accurate speech transcription model. https://t.co/7iXVmAEFW2",
+          "platform": "twitter",
+          "source": "@SpaceXAI"
+        }
+      ],
+      "detected_at": "2026-09-25",
       "week": "2026-w39"
     },
     {
@@ -38,24 +56,6 @@
           "title": "Today, we’re announcing Ternary Bonsai 2 27B.\n\nBased on Qwen3.8 27B, Bonsai 2 27B is 9x smaller than its full-precision counterpart while re",
           "platform": "twitter",
           "source": "@PrismML"
-        }
-      ],
-      "detected_at": "2026-09-24",
-      "week": "2026-w39"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Voice Transcribe 2.0",
-      "summary_nl": "Grok introduceert Voice Transcribe 2.0, de nauwkeurigste spraaktranscriptie-model ter wereld.",
-      "impact": "medium",
-      "sources": [
-        {
-          "url": "https://twitter.com/SpaceXAI/status/2101005248311726387",
-          "title": "Introducing Grok Voice Transcribe 2.0. It’s the world’s most accurate speech transcription model. https://t.co/7iXVmAEFW2",
-          "platform": "twitter",
-          "source": "@SpaceXAI"
         }
       ],
       "detected_at": "2026-09-24",
