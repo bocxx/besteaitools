@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-26T07:37:38.617181",
+  "generated_at": "2026-09-26T19:38:39.645798",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 14,
-    "for_news": 27,
-    "rejected_lang": 351,
+    "for_news": 28,
+    "rejected_lang": 355,
     "already_covered": 1,
-    "total_scanned": 9859
+    "total_scanned": 9794
   },
   "for_tools": [
     {
@@ -291,7 +291,7 @@
         "AG Connect",
         "NOS Nieuws - Algemeen"
       ],
-      "cluster_size": 59,
+      "cluster_size": 61,
       "consensus_sources": [
         "\"AI Nederland\" - Google Nieuws",
         "\"ai kunstmatige intelligentie\" - Google Nieuws",
@@ -402,17 +402,20 @@
       "source": "consensus:5 bronnen",
       "platform": "article",
       "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
-      "text": "<figure class=\"enclosure\">\n\t<p class=\"enclosure-content\">\n\t\t<img class=\"enclosure-thumbnail\" src=\"https://lh3.googleusercontent.com/I3SASQw4etgOOVbcWS0lr7J14HFqWcee_ln6M0TBOWlvVg2XYCi3kpz4eAi81cAkyq47YvgU1FLzAlaiCNMLcsx9sFA3ufURiSg76Yz8hVm1-u_fYEY=w528-h297-n-nu-rw-lo\" alt=\"\" />\n\t</p>\n</figure>",
-      "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+      "text": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/WeatherNext3_Title.max-600x600.format-webp.webp\">WeatherNext 3, our most advanced global weather AI model, is now in Search, Gemini, Maps, Google Maps Platform, and Cloud.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
       "date": "2026-09-03",
       "engagement": 50.0,
       "source_weight": 2.0,
       "ai_relevant": true,
       "pattern_hits": [],
-      "matched_tools": [],
+      "matched_tools": [
+        "gemini"
+      ],
       "feature_update": true,
       "new_products": [
-        "Introducing WeatherNext"
+        "Introducing WeatherNext",
+        "Google Maps"
       ],
       "new_product": true,
       "version_bump": false,
@@ -457,10 +460,10 @@
         "uitgever": 6.0
       },
       "bucket": "tools",
-      "suggested_angle_nl": "Nieuw in Introducing WeatherNext: wat de update concreet voor je werk betekent.",
+      "suggested_angle_nl": "Nieuw in gemini: wat de update concreet voor je werk betekent.",
       "trend_phase": "tracked",
       "competitor_gap": false,
-      "id": "2f5f6c3d66d45e90"
+      "id": "3fc319f3da4fb234"
     },
     {
       "source": "articles:Artificial intelligence (AI) | The Guardian",
@@ -519,7 +522,7 @@
       "source": "consensus:7 bronnen",
       "platform": "article",
       "title": "Anthropic Says It Blocked Possible Efforts to Build Biological Weapons",
-      "text": "In a new report, the A.I. start-up added that it could not determine whether the research was legitimate or nefarious, leading the company to shut down the work.\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://static01.nyt.com/images/2026/09/10/multimedia/Dc-anthropic-zgkh/Dc-anthropic-zgkh-mediumSquareAt3X.jpg\" alt=\"\" title=\"\" /></p><p class=\"enclosure-credits\">© Marissa Leshnov for The New York Times</p><figcaption class=\"enclosure-description\">The report Anthropic published on Thursday cataloged a litany of misuses of its A.I. models, including the chatbot Claude, o",
+      "text": "In a new report, the A.I. start-up added that it could not determine if the research was legitimate or nefarious, leading the company to shut down the work.",
       "url": "https://www.nytimes.com/2026/09/10/us/politics/anthropic-ai-biological-weapons.html",
       "date": "2026-09-10",
       "engagement": 70.0,
@@ -837,9 +840,9 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
+        "guide",
         "build a",
-        "guide"
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1368,8 +1371,8 @@
       "source_weight": 0.5,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "guide"
+        "guide",
+        "how to"
       ],
       "matched_tools": [
         "claude",
@@ -1817,6 +1820,57 @@
       "id": "227adff09f1e44de"
     },
     {
+      "source": "articles:MarkTechPost",
+      "platform": "article",
+      "title": "End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch",
+      "text": "<p data-sanitized-class=\"wp-block-paragraph\">In this tutorial, we build a comprehensive multimodal augmentation and robustness workflow with <a href=\"https://github.com/facebookresearch/AugLy\"><strong>AugLy</strong></a> for images, text, and audio. We start by addressing modern dependency compatibility issues and generating deterministic synthetic datasets so the experiments remain self-contained and reproducible. We then explore AugLy’s functional and class-based APIs, metadata, and intensity tracking, probabilistic composition, bounding-box-aware transformations, and custom transforms. We ex",
+      "url": "https://www.marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch/",
+      "date": "2026-09-26",
+      "engagement": 50.0,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [
+        "build a",
+        "tutorial"
+      ],
+      "matched_tools": [],
+      "feature_update": false,
+      "new_products": [],
+      "new_product": false,
+      "version_bump": false,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "",
+      "score": 17.9,
+      "score_breakdown": {
+        "pattern_hits": 2,
+        "engagement_log": 5.9,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 0.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Zo gebruik je End-to-End Multimodal Data in 5 stappen — een Nederlandse walkthrough.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "2ff7d0855543c54a"
+    },
+    {
       "source": "likes:@viktoroddy",
       "platform": "twitter_likes",
       "title": "I have been designing for 15 years Astra is a better designer than me Just recorded a 11-minute explanation step by step how to build stunning designs with GPT ",
@@ -1827,8 +1881,8 @@
       "source_weight": 4.0,
       "ai_relevant": true,
       "pattern_hits": [
-        "how to",
-        "step by step"
+        "step by step",
+        "how to"
       ],
       "matched_tools": [],
       "feature_update": false,
