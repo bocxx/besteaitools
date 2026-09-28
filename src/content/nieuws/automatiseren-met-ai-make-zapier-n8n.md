@@ -3,7 +3,7 @@ title: "Automatiseren met AI: je eerste workflow in Make, Zapier of n8n"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Automatiseren met AI: je eerste workflow in Make, Zapier of n8n'"
 description: "Make, Zapier en n8n koppelen je apps aan elkaar en laten taken automatisch uitvoeren — zonder code. Dit is wanneer je welke tool kiest en hoe je in 20 minuten je eerste AI-workflow bouwt."
 publishedAt: 2026-06-09
-updatedAt: 2026-06-09
+updatedAt: 2026-09-28
 author: "Redactie"
 category: "gids"
 tags:
@@ -20,7 +20,7 @@ readingTime: 5
 heroImage: "/images/nieuws/automatiseren-met-ai-make-zapier-n8n.webp"
 heroScene: "A miniature conveyor belt with tiny gears and connectors between small app icons, glowing arrows showing data flow, a small robot arm placing items, warm workshop lighting"
 keyTakeaways:
-  - "Zapier is het makkelijkst voor beginners: lineaire workflows (als dit → dan dat) in een paar klikken, meer dan 7.000 app-koppelingen."
+  - "Zapier is het makkelijkst voor beginners: lineaire workflows (als dit → dan dat) in een paar klikken, meer dan 9.000 app-koppelingen."
   - "Make is visueler en krachtiger voor complexe, vertakkende scenarios — ideaal als je logica, filters en data-transformaties nodig hebt."
   - "n8n is open source en zelfhostbaar — de keuze als je geen data naar externe servers wilt sturen of maximale flexibiliteit wilt."
   - "AI-stappen zijn nu ingebakken in alle drie: je kunt ChatGPT, Claude of Gemini direct toevoegen aan een workflow."
@@ -53,9 +53,9 @@ Hoeveel uur per week doe je dingen die altijd hetzelfde zijn? E-mails doorsturen
 |---|---|---|---|
 | Moeilijkheidsgraad | ★☆☆ Makkelijkst | ★★☆ Gemiddeld | ★★★ Gevorderd |
 | Workflow-type | Lineair (trigger → actie) | Visueel, vertakkend | Visueel, code-optioneel |
-| App-koppelingen | 7.000+ | 1.800+ | 500+ (uitbreidbaar) |
+| App-koppelingen | 9.000+ | 3.000+ | 500+ (uitbreidbaar) |
 | Gratis plan | 100 taken/maand | 1.000 operaties/maand | Zelfhosten = gratis |
-| Betaald (starter) | $20/maand | $9/maand | €20/maand (cloud) |
+| Betaald (starter) | $20/maand | $12/maand | €20/maand (cloud) |
 | AI-stap ingebouwd | Ja (OpenAI, Claude) | Ja (OpenAI, Claude) | Ja (OpenAI, Claude) |
 | Data-privacy | Cloud (VS) | Cloud (EU-optie) | Zelfhostbaar |
 
