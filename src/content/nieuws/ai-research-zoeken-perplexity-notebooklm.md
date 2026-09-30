@@ -108,6 +108,8 @@ Zoek je liever in je eigen browser: [laat Comet je open tabbladen met elkaar ver
 - [ ] Cruciale cijfers en claims teruggezocht in de primaire bron
 - [ ] Voor wetenschappelijk gebruik: originele paper geciteerd, niet de AI-samenvatting
 
+Wie research doet met bestanden vol persoonsgegevens, kan op de Mac [Hybrid Compute aanzetten](/nieuws/perplexity-hybrid-compute-instellen): een privacy gate op het apparaat bepaalt dan wat er überhaupt naar de cloud mag.
+
 ## Bronnen
 
 - [Perplexity AI — How it works](https://www.perplexity.ai/hub/faq)

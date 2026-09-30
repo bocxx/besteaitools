@@ -91,6 +91,8 @@ Werk je al een tijdje in een gewoon gesprek en wil je dat alsnog vastleggen? Per
 
 Stel dezelfde vraag twee keer: één keer in een gewoon gesprek, één keer in je project. Krijg je in het project een antwoord waarin je context al is verwerkt, met je stad, je budget en de aanbieders die je hebt afgestreept, dan staan je instructies goed. Blijft het antwoord algemeen, dan zijn ze te vaag geformuleerd. Pin het project daarna vast, zodat het bovenaan je zijbalk blijft staan.
 
+Op de Mac gaat Perplexity nog een stap verder: met [Hybrid Compute](/nieuws/perplexity-hybrid-compute-instellen) blijft de gevoelige verwerking op je eigen apparaat.
+
 ## Bronnen
 
 - [What are Projects? — Perplexity Help Center](https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces) — officiële documentatie, laatst bijgewerkt op 30 juli 2026

@@ -75,3 +75,5 @@ Comet is sterk in research met bronvermelding en in het vergelijken over tabblad
 Wil je meer manieren om onderzoek te structureren, lees dan onze gids over [zoeken met Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm). Hoe Comet zich verhoudt tot de andere AI-browsers van dit moment, zetten we op onze zustersite uiteen in [AI-browsers vergeleken](https://www.hetlaatsteainieuws.nl/nieuws/ai-browsers-vergeleken-2026).
 
 Begin klein: neem één vergelijking die je deze week toch moest maken, zet de bronnen in tabbladen en stel er één scherpe vraag over. Binnen tien minuten weet je of dit bij jouw manier van werken past.
+
+Werk je met documenten die je liever niet naar de cloud stuurt, dan is [Hybrid Compute in de Mac-app](/nieuws/perplexity-hybrid-compute-instellen) de variant die juist die stappen lokaal houdt.

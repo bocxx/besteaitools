@@ -98,6 +98,8 @@ Voor video-generatie geldt een vergelijkbare afweging tussen zelf hosten en een 
 
 Wil je meteen concreet aan de slag met één van de bekendste open modellen, dan is [Llama lokaal draaien met LM Studio](/nieuws/llama-lokaal-draaien-lm-studio) een goed startpunt — inclusief welke modelmaat bij jouw hardware past.
 
+Open modellen als Gemma en Qwen duiken ook op als de lokale helft van [Perplexity's Hybrid Compute op de Mac](/nieuws/perplexity-hybrid-compute-instellen).
+
 ## Bronnen
 
 - [Artificial Analysis — GLM-5.2 is the new leading open weights model](https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index)
