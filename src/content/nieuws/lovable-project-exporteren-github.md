@@ -77,6 +77,8 @@ Exporteer zodra je tegen de grenzen van het platform aanloopt: een ontbrekende f
 - [ ] Je weet dat de sync twee kanten op werkt
 - [ ] Je weet dat een repo-verhuizing tijdens actieve sync die sync kan breken
 
+Lovable is niet de enige route van prompt naar werkende app met GitHub-sync: [v0 van Vercel](/nieuws/v0-eerste-react-pagina-prompt-gids) werkt op dezelfde manier, maar levert standaard een Next.js-project op.
+
 ## Bronnen
 
 - [Lovable Documentation — Connect to GitHub](https://docs.lovable.dev/integrations/github)

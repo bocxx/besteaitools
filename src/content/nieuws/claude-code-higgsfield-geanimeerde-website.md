@@ -79,6 +79,8 @@ De "12 dollar"-claim telt alleen de verbruikte credits. In werkelijkheid stapel 
 - [ ] Site getest op mobiel én desktop, scroll-performance gecheckt
 - [ ] Eigen review-ronde gedaan — de agent bouwt, jij beoordeelt
 
+Heb je geen agent nodig maar alleen een strak opgezette pagina om je animaties in te hangen, dan levert [v0 van Vercel](/nieuws/v0-eerste-react-pagina-prompt-gids) dat skelet in één prompt.
+
 ## Bronnen
 
 - [Higgsfield — Pricing](https://higgsfield.ai/pricing)

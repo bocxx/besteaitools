@@ -70,6 +70,8 @@ Elk betaald plan werkt sinds 1 juni 2026 met AI Credits: 1 credit staat gelijk a
 
 Werkt je agent met een MCP-server om externe tools aan te roepen? [Check eerst deze vijf punten](/nieuws/mcp-server-installeren-checks) voor je een nieuwe server toegang geeft — het register dat MCP-servers lijst controleert namelijk geen code, alleen eigenaarschap.
 
+Zoek je het andere uiterste — geen editor, maar een chat die de hele pagina voor je opzet — kijk dan naar [v0 van Vercel](/nieuws/v0-eerste-react-pagina-prompt-gids).
+
 ## Bronnen
 
 - [GitHub Docs — Copilot in VS Code (chat-interfaces en agent mode)](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) — officiële uitleg van de chat-interfaces en agent-mogelijkheden

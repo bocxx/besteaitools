@@ -97,6 +97,8 @@ De nieuwsglobe van de Reddit-maker was ambitieuzer dan dit — meerdere data-lag
 
 Wil je Claude uitproberen voor jouw eigen project? Start op [claude.ai](https://claude.ai) — gratis toegang is er voor eenvoudige projecten, Pro (€18/maand, excl. btw) voor de complexere bouw.
 
+Wil je hetzelfde soort resultaat maar meteen als deploybare pagina in plaats van een los HTML-bestand, dan is [v0 van Vercel](/nieuws/v0-eerste-react-pagina-prompt-gids) de tegenhanger van deze aanpak.
+
 ---
 
 *Fact-check (2 juli 2026): de nieuwsglobe van Reddit-gebruiker r/ClaudeAI is het directe bronproject. Leaflet.js, NewsAPI, Open-Meteo, CoinGecko en OpenSky Network zijn bestaande gratis API's — links en gratis tiers geverifieerd. Claude Fable 5's directe uitvoeringsstijl is geverifieerd via Anthropic's eigen modeldocumentatie en de AWS-blogpost over Fable 5.*
