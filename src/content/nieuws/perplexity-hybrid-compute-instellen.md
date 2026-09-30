@@ -36,6 +36,13 @@ faq:
     a: "De functie zit bij je bestaande abonnement in: beschikbaar voor Pro, Max en Enterprise. Op de gratis laag van Perplexity is Hybrid Compute niet beschikbaar."
   - q: "Welk lokaal model moet ik kiezen?"
     a: "Je kiest uit Gemma 4 E4B, Qwen3.6 35B-A3B of het eigen model van Perplexity. Perplexity publiceert geen geheugeneis per model, alleen de ondergrens van 24 GB voor de functie als geheel. Praktisch: begin met één model, kijk hoe je Mac het houdt bij een echte taak, en wissel pas als je tegen traagheid of geheugendruk aanloopt."
+sources:
+  - label: "Perplexity — Introducing Hybrid Compute on Mac"
+    url: "https://www.perplexity.ai/hub/blog/introducing-hybrid-compute-on-mac"
+  - label: "MarkTechPost — Perplexity Releases Hybrid Compute on Mac"
+    url: "https://www.marktechpost.com/2026/09/01/perplexity-releases-hybrid-compute-on-mac-cloud-agents-orchestrate-down-to-a-local-model-gated-on-device/"
+  - label: "9to5Mac — Perplexity launches privacy-minded hybrid compute AI feature for Mac"
+    url: "https://9to5mac.com/2026/09/01/perplexity-launches-privacy-minded-hybrid-compute-ai-feature-for-mac/"
 ---
 
 Je vraagt Perplexity's Computer-agent om je jaaroverzicht te controleren, maar dat bestand bevat je BSN, je adres en je rekeningnummer. Sinds 1 september 2026 hoef je dat niet meer naar de cloud te sturen: met Hybrid Compute op de Mac-app blijft dat soort verwerking op je eigen apparaat ([Bron: Perplexity](https://www.perplexity.ai/hub/blog/introducing-hybrid-compute-on-mac)).
