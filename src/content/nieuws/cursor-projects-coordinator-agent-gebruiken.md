@@ -35,6 +35,11 @@ faq:
     a: "De documentatie noemt geen aparte prijs of limiet voor Projects. Omdat Projects op Cloud Agents draaien, is de veilige aanname dat het gebruik meetelt in je abonnement of daarbuiten wordt bijgerekend. Zet daarom eerst een kleine klus neer en bekijk je verbruik."
   - q: "Wat zijn subscriptions in Cursor Projects?"
     a: "Met subscriptions laat je een Project reageren op gebeurtenissen: berichten in een Slack-kanaal, activiteit op pull requests, CI-runs of een vast schema. Boven het chatveld verschijnt dan een Listening-label; daarop klikken toont alle actieve abonnementen en laat je ze weer verwijderen."
+sources:
+  - label: "Cursor Changelog — Projects"
+    url: "https://cursor.com/changelog/projects"
+  - label: "Cursor Docs — Projects"
+    url: "https://cursor.com/docs/agent/projects"
 ---
 
 Een losse agent is prima voor een bugfix, maar een migratie over tientallen modules zet je niet in één opdracht weg. Cursor Projects probeert dat gat te dichten: je beschrijft het grote werk aan één coordinator, en die verdeelt het.
