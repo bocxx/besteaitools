@@ -56,7 +56,7 @@ GLM 5.2 rolde op 13 juni uit naar GLM Coding Plan-abonnees; de open gewichten vo
 
 - **1 miljoen token contextvenster** — groot genoeg om een flinke repository in één keer te verwerken
 - **MoE-architectuur** — ruwweg 750 miljard parameters totaal, maar ±40 miljard actief per token, wat de inferentiekosten drukt
-- **MIT-licentie op de gewichten** — vrij commercieel te gebruiken, ook zelf-gehost
+- **MIT-licentie op de gewichten** — vrij commercieel te gebruiken, ook zelf-gehost (let op: opvolger GLM-5.3 heeft [een eigen licentie](/nieuws/z-ai-glm-53-licentie-zelf-hosten))
 - **Prijs** — via OpenRouter $1,40 per miljoen input-tokens en $4,40 per miljoen output-tokens ([Bron: OpenRouter](https://openrouter.ai/z-ai/glm-5.2))
 
 Op Semgrep's benchmark kostte een detectie met GLM 5.2 gemiddeld $0,17 per gevonden kwetsbaarheid — aanzienlijk goedkoper dan Claude-gebaseerde workflows voor dezelfde taak.

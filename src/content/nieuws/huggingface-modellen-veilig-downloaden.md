@@ -76,7 +76,7 @@ Een model-repo kan na jouw download veranderen. Verwijs daarom nooit alleen naar
 
 ## 4. Lees de repo als een mens
 
-Cijfers vertellen een verhaal. Een repo van drie dagen oud met 200.000 downloads klopt niet. Let ook op modellen die zonder uitleg `trust_remote_code=True` eisen, en op een model dat tijdens het laden internetverbinding zoekt — legitieme modellen maken bij het inladen geen uitgaande verbindingen.
+Cijfers vertellen een verhaal. Een repo van drie dagen oud met 200.000 downloads klopt niet. Let ook op modellen die zonder uitleg `trust_remote_code=True` eisen, en op een model dat tijdens het laden internetverbinding zoekt — legitieme modellen maken bij het inladen geen uitgaande verbindingen. Bij een grote nieuwe release, zoals [GLM-5.3 van Z.ai](/nieuws/z-ai-glm-53-licentie-zelf-hosten), check je bovendien of de uitgever echt de officiële organisatie is.
 
 > **⚡ Gevorderden:** in een CI- of productiepijplijn kun je dit deels automatiseren: scan modelbestanden op pickle-imports, blokkeer `trust_remote_code` standaard, en sta het per model expliciet toe via een allowlist met een vastgepinde revisie. Zo wordt "vertrouwen" een bewuste beslissing in plaats van een vinkje.
 

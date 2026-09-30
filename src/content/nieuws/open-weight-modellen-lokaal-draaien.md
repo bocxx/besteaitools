@@ -55,7 +55,7 @@ Een model als Claude of GPT-5 draait op de servers van Anthropic of OpenAI: je d
 
 ## De lichting van deze zomer
 
-**GLM-5.2** (Z.ai) is de nieuwe koploper. Sinds de release van de gewichten op 16 juni staat het bovenaan de Artificial Analysis Intelligence Index voor open-weight modellen met een score van 51 — vóór MiniMax-M3 (44), DeepSeek V4 Pro (44) en Kimi K2.6 (43) ([Bron: Artificial Analysis](https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index)). Het is een MoE-model van ruwweg 750 miljard parameters (±40 miljard actief per token), MIT-gelicentieerd, met een contextvenster van 1 miljoen tokens. De keerzijde: lokaal draaien vraagt serieuze hardware; voor de meeste mensen is dit een API-model.
+**GLM-5.2** (Z.ai) is de nieuwe koploper. Sinds de release van de gewichten op 16 juni staat het bovenaan de Artificial Analysis Intelligence Index voor open-weight modellen met een score van 51 — vóór MiniMax-M3 (44), DeepSeek V4 Pro (44) en Kimi K2.6 (43) ([Bron: Artificial Analysis](https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index)). Het is een MoE-model van ruwweg 750 miljard parameters (±40 miljard actief per token), MIT-gelicentieerd, met een contextvenster van 1 miljoen tokens. De keerzijde: lokaal draaien vraagt serieuze hardware; voor de meeste mensen is dit een API-model. Opvolger GLM-5.3 staat sinds eind augustus ook online, maar [niet meer volledig onder MIT](/nieuws/z-ai-glm-53-licentie-zelf-hosten).
 
 **MiniMax M3** (juni 2026) combineert een 1-miljoen-token contextvenster met native multimodaliteit — handig voor grote documentensets of beeld-plus-tekst-analyse.
 

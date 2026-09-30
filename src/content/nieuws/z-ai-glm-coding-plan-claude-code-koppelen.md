@@ -36,7 +36,7 @@ faq:
   - q: "Ben ik mijn Claude-abonnement kwijt als ik dit doe?"
     a: "Nee. Je wijzigt alleen waar Claude Code zijn verzoeken heen stuurt. Zet je de twee env-velden terug of haal je ze weg, dan praat Claude Code weer met Anthropic. Sommigen houden twee profielen aan: het goedkope plan voor bulkwerk en refactors, het dure voor het denkwerk."
   - q: "Wat moet ik weten over de modellen zelf?"
-    a: "De GLM-reeks komt van het Chinese Zhipu en staat onder de MIT-licentie, dus je mag ze downloaden en commercieel gebruiken, ook zelf-gehost. Ze zijn nadrukkelijk gebouwd voor agentic werk: een groot doel opdelen en met tools uitvoeren. In coding-benchmarks komen ze in de buurt van Claude; buiten coding en agent-taken zijn ze minder onderscheidend. En als Chinese aanbieder geldt: kijk naar je datastroom voordat je er gevoelige code doorheen stuurt."
+    a: "De GLM-reeks komt van het Chinese Zhipu en staat grotendeels onder de MIT-licentie (het volledige GLM-5.3 heeft een eigen licentie), dus je mag ze downloaden en commercieel gebruiken, ook zelf-gehost. Ze zijn nadrukkelijk gebouwd voor agentic werk: een groot doel opdelen en met tools uitvoeren. In coding-benchmarks komen ze in de buurt van Claude; buiten coding en agent-taken zijn ze minder onderscheidend. En als Chinese aanbieder geldt: kijk naar je datastroom voordat je er gevoelige code doorheen stuurt."
 ---
 
 Claude Code is een prettige coding-agent en een dure gewoonte. Wie er dagelijks in werkt, ziet het verbruik oplopen — vooral bij het soort werk waar je geen frontier-model voor nodig hebt: een refactor doortrekken, tests bijschrijven, een migratie uitvoeren.
@@ -86,7 +86,7 @@ Het sterkst is dit voor het volumewerk: refactors, testdekking, migraties, boile
 
 Buiten coding en agent-taken zijn ze minder onderscheidend. Voor het denkwerk waarbij je de architectuur nog aan het uitvinden bent, is de goedkopere optie zelden de zuinige.
 
-Twee dingen om vooraf te beslissen. De MIT-licentie op de GLM-modellen is echt permissief: je mag ze downloaden, commercieel gebruiken en zelf hosten, wat een reële uitweg is als je later toch alles binnenshuis wilt. Maar de gemakkelijke route loopt via een Chinese aanbieder, dus kijk waar je code heen gaat voordat je er iets gevoeligs doorheen stuurt.
+Twee dingen om vooraf te beslissen. De MIT-licentie op de GLM-modellen is echt permissief: je mag ze downloaden, commercieel gebruiken en zelf hosten, wat een reële uitweg is als je later toch alles binnenshuis wilt. Dat geldt niet meer voor elk model: het volledige GLM-5.3 heeft een eigen licentie ([zo zit dat](/nieuws/z-ai-glm-53-licentie-zelf-hosten)). Maar de gemakkelijke route loopt via een Chinese aanbieder, dus kijk waar je code heen gaat voordat je er iets gevoeligs doorheen stuurt.
 
 Je kunt de switch trouwens gewoon uitproberen. Haal de twee env-velden weg en Claude Code praat weer met Anthropic, alsof er niets gebeurd is.
 
