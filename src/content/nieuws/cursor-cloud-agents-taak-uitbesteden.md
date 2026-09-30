@@ -78,3 +78,5 @@ Cloud Agents zijn op hun best bij klussen met een scherpe rand: een gereproducee
 Ze zijn slecht in werk waarbij de eisen ontstaan tijdens het maken. Een nieuw scherm ontwerpen, een architectuurkeuze uitwerken, iets waarbij je halverwege van gedachten verandert — daar wil je aan tafel zitten, niet een PR beoordelen die de verkeerde kant op ging.
 
 Begin daarom met één taak die je zelf al kunt oplossen maar niet leuk vindt. Dan weet je bij de review meteen of het antwoord deugt.
+
+Wordt één taak per agent te krap, dan zet [Cursor Projects er een coordinator boven](/nieuws/cursor-projects-coordinator-agent-gebruiken) die het werk zelf opdeelt en over meerdere cloud-agents verdeelt.

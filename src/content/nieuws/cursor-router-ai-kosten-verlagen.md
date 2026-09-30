@@ -81,6 +81,8 @@ Cursor Router is per 22 juli 2026 beschikbaar voor Teams- en Enterprise-abonneme
 - [ ] Je wilt per team kunnen sturen welke modellen zijn toegestaan
 - [ ] Je hebt een voorkeur bepaald: Intelligence, Balance of Cost als standaard
 
+Houd je verbruik extra in de gaten zodra je [Projects met een coordinator-agent](/nieuws/cursor-projects-coordinator-agent-gebruiken) gebruikt: die start zoveel agents parallel als het werk volgens hem vraagt.
+
 ## Bronnen
 
 - [Introducing Cursor Router — officiële aankondiging (22 juli 2026)](https://cursor.com/blog/router)

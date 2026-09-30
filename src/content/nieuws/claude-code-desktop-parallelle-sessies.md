@@ -77,3 +77,5 @@ Wil je dieper in het bredere Claude Code-platform? Lees dan onze gids over [dyna
 - [ ] Weergavemodus afgestemd: Verbose voor de actieve, Summary voor de achtergrond
 - [ ] Side chat geprobeerd (`Cmd + ;`) voor een tussenvraag
 - [ ] Wijzigingen bekeken in de diff-viewer vóór je commit
+
+Cursor lost hetzelfde probleem anders op: daar houdt [een coordinator-agent in Projects](/nieuws/cursor-projects-coordinator-agent-gebruiken) de regie over de parallelle agents in plaats van jij.

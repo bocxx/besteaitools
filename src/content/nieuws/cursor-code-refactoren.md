@@ -78,6 +78,8 @@ Werk je liever in VS Code dan in Cursor, dan vind je een vergelijkbare agentic-r
 - [ ] Je tests draaien groen na de refactor
 - [ ] Je weet dat je via checkpoints kunt terugrollen
 
+Loopt een refactor over tientallen bestanden in plaats van één, dan is [Cursor Projects met zijn coordinator-agent](/nieuws/cursor-projects-coordinator-agent-gebruiken) de werkvorm die daarbij hoort.
+
 ## Bronnen
 
 - [Vibe Coder Blog — Cursor Composer Multi-File Editing in 2026](https://blog.vibecoder.me/cursor-composer-multi-file-editing-mastery)
