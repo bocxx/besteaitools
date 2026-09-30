@@ -63,3 +63,5 @@ Publiek zoeken, bekijken en uitproberen is gratis. Ga je serieus modellen draaie
 De eerlijke kanttekening: Hugging Face is in de eerste plaats op ontwikkelaars gericht. Voor kennismaken en experimenteren heb je geen code nodig, maar zodra je een model écht in je werk wilt inbouwen, kom je bij Python en de transformers-bibliotheek uit. Wil je begrijpen waarom al die open modellen juist nu zo'n politiek strijdpunt zijn, lees dan onze duiding over de [open-weights-brief van de tech-industrie](https://www.hetlaatsteainieuws.nl/nieuws/open-weights-brief-tech-industrie-europa) op Het Laatste AI Nieuws.
 
 Voor wie de open-AI-wereld wil verkennen zonder meteen te investeren, is Hugging Face de logische eerste halte. Je hoeft niets te installeren om te beginnen — één account en een browser volstaan.
+
+Wil je een model draaien zonder het te downloaden of zelf een GPU te regelen, dan is de [Replicate-API](/nieuws/replicate-eerste-afbeelding-api-python) de kortste route van open-source model naar resultaat.

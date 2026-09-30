@@ -131,6 +131,8 @@ Een kant-en-klaar alternatief dat je in vijf minuten draaiend hebt: [OpenClaw in
 - [ ] Agent-loop getest met een weer-vraag én een niet-weer-vraag
 - [ ] Doorgedacht welke eigen data je als volgende tool aansluit
 
+Moet je agent ook beeld kunnen maken, dan haak je hem aan de [Replicate-API voor je eerste AI-afbeelding](/nieuws/replicate-eerste-afbeelding-api-python) — dezelfde aanpak met een token in een omgevingsvariabele als hierboven.
+
 ## Bronnen
 
 - [OpenAI — Migrate to the Responses API](https://platform.openai.com/docs/guides/migrate-to-responses)

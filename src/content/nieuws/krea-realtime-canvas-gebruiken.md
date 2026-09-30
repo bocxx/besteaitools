@@ -81,6 +81,8 @@ AI-beeld dat niet van echt te onderscheiden is, roept ook vragen op over betrouw
 - [ ] Zicht op je resterende compute-eenheden voor vandaag
 - [ ] Weet of je output commercieel mag (alleen vanaf Basic-plan)
 
+Is het canvas je eenmaal te klein en wil je reeksen in één keer draaien, dan roep je vergelijkbare modellen aan via de [Replicate-API in een Python-script](/nieuws/replicate-eerste-afbeelding-api-python).
+
 ## Bronnen
 
 - [ToolJunction — Krea AI Review 2026](https://www.tooljunction.io/ai-tools/krea) — modellenaanbod, prijzen en compute-eenheden

@@ -131,6 +131,8 @@ Werk je vaker met beeld in een vaste huisstijl, dan is [Krea Realtime Canvas](/n
 - Multi-referentie: 8 referentiebeelden bij [pro], 10 bij [flex], circa 6 bij [dev]. Bij [pro] hangt dat aantal samen met de 9MP-limiet op invoer plus uitvoer: 8 bij 1MP output, 7 bij 2MP.
 - De officiële promptgids geldt voor [pro] en [max]. De open-weight modellen [dev] en [klein] (4B en 9B) hebben eigen vuistregels.
 
+Wil je diezelfde FLUX-modellen vanuit een script aanroepen in plaats van vanuit een interface, dan loopt onze gids [je eerste afbeelding via de Replicate-API](/nieuws/replicate-eerste-afbeelding-api-python) dat af, inclusief wat een generatie per model kost.
+
 ## Bronnen
 
 - [Prompting Guide — FLUX.2 pro & max, Black Forest Labs](https://docs.bfl.ml/guides/prompting_guide_flux2)

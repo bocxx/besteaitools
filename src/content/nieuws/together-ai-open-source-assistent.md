@@ -86,6 +86,8 @@ Het zelf draaien van open modellen past in een bredere beweging om AI minder afh
 - **Catalogus:** 200+ open-source modellen (o.a. Llama, DeepSeek, Qwen, Mistral), plus beeld-, video- en spraakmodellen.
 - Prijzen, modellen en kredietregelingen wijzigen vaak. Bevestig actuele cijfers altijd op de officiële prijspagina van Together AI.
 
+Voor beeldmodellen werkt Replicate volgens hetzelfde principe als Together AI voor taalmodellen: [zo genereer je er je eerste afbeelding mee](/nieuws/replicate-eerste-afbeelding-api-python).
+
 ## Bronnen
 
 - [Together AI Pricing In 2026: Models, Costs, And How To Manage Your Bill — CloudZero](https://www.cloudzero.com/blog/together-ai-pricing/)
