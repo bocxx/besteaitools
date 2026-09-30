@@ -113,6 +113,8 @@ Voeg je logo en merkkleur toe via de template-opties. Heb je daar een stilstaand
 - [ ] Video geëxporteerd in het juiste formaat (MP4)
 - [ ] Transparantie: kijkers geïnformeerd dat het een AI-avatar betreft (aan te raden)
 
+Wil je geen pratende avatar maar een scène waarin dezelfde hoofdpersoon over meerdere clips terugkomt, dan werk je met [referentiebeelden in Seedance 2.0](/nieuws/seedance-referenties-video-dreamina).
+
 ## Bronnen
 
 - [HeyGen — How to create your first avatar video](https://help.heygen.com)

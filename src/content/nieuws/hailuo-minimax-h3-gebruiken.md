@@ -78,6 +78,8 @@ MiniMax noemt geen exacte creditprijs, maar positioneert de prijs per seconde op
 - Je hebt getest of precisie-editing werkt voor kleine correcties, voordat je een hele scène opnieuw genereert.
 - Je weet dat H3 een Chinese aanbieder is — weeg dat mee bij gevoelig bronmateriaal.
 
+ByteDance zet er een andere werkwijze tegenover: bij [Seedance 2.0 in Dreamina](/nieuws/seedance-referenties-video-dreamina) stuur je het model aan met eigen beelden, clips en audio via @-verwijzingen.
+
 ## Bronnen
 
 - [MiniMax — officiële MiniMax H3 aankondiging](https://www.minimax.io/blog/minimax-h3)

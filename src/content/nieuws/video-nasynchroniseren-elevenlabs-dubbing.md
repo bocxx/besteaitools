@@ -77,3 +77,5 @@ Wil je eerst weten hoe stemklonen technisch in elkaar zit voordat je je eigen st
 Test altijd één minuut voordat je een uur inlevert. Dat kost je een paar cent en bespaart je de ontdekking dat de gekloonde stem in het Nederlands net even anders klinkt dan je had gehoopt.
 
 Wil je dit soort dubbing-workflows liever volledig lokaal draaien, zonder credits of cloud-verwerking van je audio, dan is [VoiceStudio](/nieuws/voicestudio-installeren-lokaal-alternatief) het gratis, open-source alternatief — inclusief eenzelfde transcribeer-vertaal-synthetiseer-pijplijn.
+
+Maak je de video zelf met AI, dan kun je audio er meteen als referentie in meegeven: zo werkt dat bij [Seedance 2.0 in Dreamina](/nieuws/seedance-referenties-video-dreamina).

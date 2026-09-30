@@ -107,6 +107,8 @@ Heb je bij die zitting ook beeldmateriaal of een deck nodig, dan scheelt [je hel
 - [ ] Posts ingepland in Buffer of Hootsuite
 - [ ] Na 4 weken: analytics bekeken om te zien welk format het beste werkt
 
+Voor korte video bij je posts houd je één hoofdpersoon vast met [referentiebeelden in Seedance 2.0](/nieuws/seedance-referenties-video-dreamina).
+
 ## Bronnen
 
 - [Buffer — AI features en pricing](https://buffer.com/ai-assistant)

@@ -112,6 +112,8 @@ Wil je stemklonen zonder abonnement en zonder dat audio de deur uitgaat, dan is 
 - [ ] Audio gedownload in het juiste formaat (MP3 voor web, WAV voor productie)
 - [ ] Commercieel gebruik: betaald plan actief en licentievoorwaarden gelezen
 
+Werk je aan video, dan kun je zo'n audioclip ook als referentie aan het beeldmodel meegeven: [zo doe je dat in Seedance 2.0](/nieuws/seedance-referenties-video-dreamina).
+
 ## Bronnen
 
 - [ElevenLabs — Voice cloning guide](https://elevenlabs.io/docs/voices/voice-cloning)
