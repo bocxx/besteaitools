@@ -34,6 +34,13 @@ faq:
     a: "Nee. Het model draait op de GPU's van Replicate. Jij stuurt een verzoek via de API en krijgt het resultaat terug. Wil je juist lokaal werken, dan is een tool als Ollama een logischer route."
   - q: "Werkt Replicate nog na de overname door Cloudflare?"
     a: "Cloudflare kondigde de overname aan op 17 november 2025 en schrijft dat bestaande API's en workflows zonder onderbreking blijven werken, en dat de modelcatalogus ook naar Workers AI komt. Voor een eerste project verandert er niets; bouw je iets groters, houd dan de Replicate-documentatie in de gaten."
+sources:
+  - label: "Replicate — Python quickstart"
+    url: "https://replicate.com/docs/get-started/python"
+  - label: "Replicate — Pricing"
+    url: "https://replicate.com/pricing"
+  - label: "Cloudflare Blog — Replicate is joining Cloudflare"
+    url: "https://blog.cloudflare.com/replicate-joins-cloudflare/"
 ---
 
 Replicate is een platform waarop je open-source AI-modellen draait zonder ze zelf te installeren. Je kiest een model, stuurt een verzoek via de API en krijgt het resultaat terug. Deze mini-gids laat zien hoe je in een paar minuten je eerste afbeelding maakt met FLUX, het beeldmodel dat we eerder uitgebreid [leerden prompten](/nieuws/flux-2-tekst-in-beeld-prompten).
