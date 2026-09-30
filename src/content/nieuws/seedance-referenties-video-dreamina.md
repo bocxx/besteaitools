@@ -35,6 +35,11 @@ faq:
     a: "Dreamina rekent in credits, en wat een generatie kost verschilt per modelversie, lengte en resolutie. De actuele prijs zie je in de app voordat je genereert; controleer die eerst, zeker als je met de langere clips van 2.5 werkt."
   - q: "Kun je Seedance ook zonder referenties gebruiken?"
     a: "Ja. Je kunt met een tekstprompt beginnen, of met een eerste en laatste frame (single-frame mode) waartussen het model de beweging invult. Referenties zijn optioneel, maar ze zijn de enige manier om dezelfde hoofdpersoon over meerdere clips te houden."
+sources:
+  - label: "Dreamina — How To Use Seedance 2.0"
+    url: "https://dreamina.capcut.com/resource/how-to-use-seedance-2-0"
+  - label: "ByteDance Seed — Introducing Seedance 2.5"
+    url: "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5"
 ---
 
 Een prompt alleen geeft je zelden dezelfde hoofdpersoon in twee clips. Seedance 2.0 lost dat op door je eigen beelden, video en audio als referentie mee te nemen. Zo werkt dat in Dreamina, het creatieplatform van ByteDance.
