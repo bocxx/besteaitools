@@ -2,15 +2,15 @@
   "name": "Z.ai",
   "category": "chatbots",
   "websiteUrl": "https://z.ai",
-  "shortDescription": "Assistent en API van Zhipu op de MIT-gelicenseerde GLM-5-modellen — vooral sterk in agentic coding, met een goedkoop Coding Plan",
-  "headlineValueProp": "Frontier-niveau agentic coding op open MIT-modellen, vanaf zo'n $10 per maand",
-  "longDescription": "Z.ai is het internationale platform van het Chinese Zhipu AI rond de GLM-modelreeks. GLM-5 en het in 2026 verschenen GLM-5.1 zijn open-weight modellen onder de permissieve MIT-licentie — vrij te downloaden en commercieel te gebruiken, ook zelf-gehost. De modellen zijn nadrukkelijk gebouwd voor 'agentic engineering': zelfstandig een groot doel opdelen in subtaken en die met tools uitvoeren, met codeerprestaties die in benchmarks dicht bij Claude-niveau komen. Naast de gratis chat op chat.z.ai is het GLM Coding Plan het bekendste product: een abonnement vanaf zo'n $10 per maand dat GLM-5.1 aansluit op coding-agents en IDE's als Claude Code-vervanger, tegen een fractie van de prijs. De API rekent ongeveer $1 input / $3 output per miljoen tokens voor het topmodel.",
-  "verdict": "Z.ai is medio 2026 de prijsvechter onder de frontier-aanbieders: het GLM Coding Plan levert voor circa $10-30 per maand agentic coding die in de buurt komt van Claude, en de MIT-licentie maakt zelf hosten zonder juridische haken mogelijk. De nuance: buiten coding en agent-taken zijn de modellen minder onderscheidend, en als Chinese aanbieder geldt dezelfde data-afweging als bij DeepSeek en Kimi.",
-  "whyListed": "Zhipu is met de MIT-gelicenseerde GLM-5-reeks een van de drijvende krachten achter de open-source inhaalslag op westerse labs. Het GLM Coding Plan groeide uit tot het populairste budget-alternatief voor Claude Code.",
+  "shortDescription": "Assistent en API van Zhipu op de open GLM-5-modellen — vooral sterk in agentic coding, met een goedkoop Coding Plan",
+  "headlineValueProp": "Frontier-niveau agentic coding op open-weight modellen, vanaf zo'n $10 per maand",
+  "longDescription": "Z.ai is het internationale platform van het Chinese Zhipu AI rond de GLM-modelreeks. GLM-5 tot en met GLM-5.2 en het lichtere GLM-5.3-Flash zijn open-weight modellen onder de permissieve MIT-licentie — vrij te downloaden en commercieel te gebruiken, ook zelf-gehost. Het volledige GLM-5.3 (augustus 2026) staat wel als open weights online, maar onder een eigen 'GLM-5.3 License': bedrijven met meer dan $10 miljard jaaromzet moeten eerst door een beveiligingstoets van Z.ai. De modellen zijn nadrukkelijk gebouwd voor 'agentic engineering': zelfstandig een groot doel opdelen in subtaken en die met tools uitvoeren, met codeerprestaties die in benchmarks dicht bij Claude-niveau komen. Naast de gratis chat op chat.z.ai is het GLM Coding Plan het bekendste product: een abonnement vanaf zo'n $10 per maand dat GLM-5.1 aansluit op coding-agents en IDE's als Claude Code-vervanger, tegen een fractie van de prijs. De API rekent ongeveer $1 input / $3 output per miljoen tokens voor het topmodel.",
+  "verdict": "Z.ai is medio 2026 de prijsvechter onder de frontier-aanbieders: het GLM Coding Plan levert voor circa $10-30 per maand agentic coding die in de buurt komt van Claude, en de MIT-licentie op GLM-5.2 en GLM-5.3-Flash maakt zelf hosten zonder juridische haken mogelijk; voor het volledige GLM-5.3 geldt een eigen licentie met een drempel voor zeer grote bedrijven. De nuance: buiten coding en agent-taken zijn de modellen minder onderscheidend, en als Chinese aanbieder geldt dezelfde data-afweging als bij DeepSeek en Kimi.",
+  "whyListed": "Zhipu is met de open-weight GLM-5-reeks een van de drijvende krachten achter de open-source inhaalslag op westerse labs. Het GLM Coding Plan groeide uit tot het populairste budget-alternatief voor Claude Code.",
   "bestFor": "Developers en teams die agentic coding op frontier-niveau willen tegen lage kosten, of open modellen die ze zelf mogen hosten.",
   "primaryJobsToBeDone": [
     "Coding-agents en IDE's (Claude Code-achtige workflows) draaien op het GLM Coding Plan",
-    "GLM-5.1 zelf hosten onder MIT-licentie voor volledige datacontrole",
+    "GLM-5.2 of GLM-5.3-Flash zelf hosten onder MIT-licentie voor volledige datacontrole",
     "Documenten en presentaties laten genereren via de Agent Mode van GLM-5.1",
     "Goedkoop frontier-niveau tekst en code genereren via de Z.ai API"
   ],
@@ -26,7 +26,7 @@
     "Office-documenten genereren vanuit ruwe bronnen met Agent Mode"
   ],
   "strengths": [
-    "MIT-licentie op GLM-5 en GLM-5.1: echt vrij voor commercieel gebruik en zelf hosten",
+    "MIT-licentie op GLM-5 t/m GLM-5.2 en GLM-5.3-Flash: echt vrij voor commercieel gebruik en zelf hosten",
     "GLM Coding Plan vanaf ~$10/mnd — veruit het goedkoopste serieuze alternatief voor Claude Code",
     "Sterk gespecialiseerd in agentic engineering: doelen opdelen, tools aanroepen, lang doorwerken",
     "API-prijzen (±$1/$3 per miljoen tokens) ruim onder westerse frontier-tarieven"
@@ -34,7 +34,8 @@
   "limitations": [
     "Chinese aanbieder: voor AVG-gevoelige data alleen bruikbaar via zelf hosten",
     "Buiten coding en agent-taken minder onderscheidend dan ChatGPT, Claude of Gemini",
-    "Prijzen en plannen veranderen snel; promotietarieven verdwenen begin 2026 al"
+    "Prijzen en plannen veranderen snel; promotietarieven verdwenen begin 2026 al",
+    "Het volledige GLM-5.3 valt niet onder MIT maar onder een eigen licentie, met een beveiligingstoets voor bedrijven boven $10 miljard omzet"
   ],
   "bestAlternative": "qwen",
   "mentionAliases": [
@@ -43,9 +44,11 @@
     "glm-5",
     "glm 5.1",
     "glm coding plan",
-    "chatglm"
+    "chatglm",
+    "glm-5.3",
+    "glm 5.3"
   ],
-  "pricing": "Chat op chat.z.ai gratis. GLM Coding Plan per kwartaal: Lite $30 (~$10/mnd), Pro $90 (~$30/mnd), Max $240 (~$80/mnd), regelmatig met kwartaalkorting. API GLM-5.1: ±$0,98 input / $3,08 output per miljoen tokens. Modellen zelf hosten is gratis (MIT).",
+  "pricing": "Chat op chat.z.ai gratis. GLM Coding Plan per kwartaal: Lite $30 (~$10/mnd), Pro $90 (~$30/mnd), Max $240 (~$80/mnd), regelmatig met kwartaalkorting. API GLM-5.1: ±$0,98 input / $3,08 output per miljoen tokens. API GLM-5.3: ±$1,40 input / $4,40 output per miljoen tokens (GLM-5.3-Flash ±$0,15 / $0,47). Zelf hosten is gratis; MIT voor GLM-5.2 en GLM-5.3-Flash, eigen licentie voor het volledige GLM-5.3.",
   "pricingModel": "freemium",
   "difficulty": "intermediate",
   "openSource": true,
@@ -63,8 +66,8 @@
   ],
   "keyFeatures": [
     {
-      "title": "GLM-5.1 onder MIT-licentie",
-      "description": "Open-weight flagship-model, vrij te downloaden en commercieel te gebruiken — ook volledig zelf-gehost.",
+      "title": "Open weights, grotendeels onder MIT",
+      "description": "GLM-5 t/m GLM-5.2 en GLM-5.3-Flash zijn vrij te downloaden en commercieel te gebruiken onder MIT; het volledige GLM-5.3 heeft een eigen licentie met een toets voor zeer grote bedrijven.",
       "group": "core"
     },
     {
@@ -89,7 +92,7 @@
     }
   ],
   "nlSupport": false,
-  "lastUpdated": "2026-06-07",
+  "lastUpdated": "2026-09-30",
   "lastReviewedAt": "2026-06-07",
   "supportsDutchLanguage": false
 }
