@@ -34,6 +34,13 @@ faq:
     a: "Ja. Je exporteert de gegenereerde code en deployt hem elders, of je koppelt GitHub en synchroniseert in twee richtingen met je eigen repository. Publiceren met Publish to Production is de snelste route, maar geen verplichting."
   - q: "Voor wie is v0 niet geschikt?"
     a: "Voor projecten die niet op React draaien, zoals Vue, Svelte of native apps, en voor zware backend-logica of complexe autorisatie. Daar heb je een coding-agent of een backend-tool naast nodig."
+sources:
+  - label: "v0 Docs — FAQ"
+    url: "https://v0.app/docs/faqs"
+  - label: "v0 Pricing"
+    url: "https://v0.app/pricing"
+  - label: "Vercel — Introducing the new v0"
+    url: "https://vercel.com/blog/introducing-the-new-v0"
 ---
 
 Je hebt een idee voor een pagina, maar geen zin om een uur aan opmaak te besteden. v0 van Vercel neemt dat werk over: je beschrijft wat je wilt, en het levert werkende React-code met een live voorbeeld. In vijf stappen kom je van een lege chat naar een gepubliceerde pagina.
