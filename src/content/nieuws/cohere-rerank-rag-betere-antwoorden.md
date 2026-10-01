@@ -45,7 +45,7 @@ Dat is het probleem waar een reranker voor bestaat. In deze gids zet je er in dr
 
 Een gewone RAG-pijplijn doet dit: vraag omzetten naar een embedding, de meest gelijkende passages ophalen uit je vectordatabase, die passages in de prompt plakken, taalmodel laat antwoorden.
 
-De zwakke plek zit in stap twee. Vectorzoeken vergelijkt embeddings die los van elkaar zijn berekend. Dat is snel genoeg om over miljoenen passages te lopen, maar het meet gelijkenis, niet of een passage jouw vraag echt beantwoordt.
+De zwakke plek zit in stap twee. Vectorzoeken vergelijkt embeddings die los van elkaar zijn berekend. Dat is snel genoeg om over miljoenen passages te lopen, maar het meet gelijkenis, niet of een passage jouw vraag echt beantwoordt. Hoe je die embeddings voor Nederlandse tekst maakt, lees je in [onze Cohere Embed-gids](/nieuws/cohere-embed-meertalig-nederlandse-documenten).
 
 Een reranker doet dat wel. Die krijgt de vraag en de passage tegelijk te zien en beoordeelt de combinatie. Veel preciezer, en veel te duur om over je hele database te draaien. Vandaar de volgorde: haal er ruim op met vectorzoeken, laat de reranker de korte lijst herordenen.
 
