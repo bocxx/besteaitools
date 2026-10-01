@@ -1,6 +1,6 @@
 ---
-title: AI Tools Radar – Gemini · Claude · Qwen (Ochtend 1 oktober)
-description: 'AI Tools Radar 1 oktober: 117 launches, 45 feature-updates, 14 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – Gemini · ChatGPT · Claude (Avond 1 oktober)
+description: 'AI Tools Radar 1 oktober: 117 launches, 45 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-01'
 timeSlot: tools-digest
 featured: []
@@ -8,71 +8,73 @@ tags:
 - AI Tools Radar
 - AI Tools
 - Gemini
+- ChatGPT
 - Claude
 - Qwen
 author: debesteaitools.nl Redactie
-totalAnalyzed: 176
+totalAnalyzed: 177
 itemsSelected: 16
 categoriesCount: 3
 topics:
 - Gemini
+- ChatGPT
 - Claude
 - Qwen
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Google lanceert Gemini 4 Argon voor complexe workflows in softwareengineering en cyberdefense.
-- Claude introduceert Cloud Sessions waarmee code blijft draaien ook als je laptop dicht is.
-- Claude Opus 5.5 scoort hoogst op CursorBench en is 40% goedkoper per taak dan Opus 5.
+- Google lanceert Gemini 4 Argon voor complexe workflows in software engineering en cybersecurity.
+- 'ChatGPT en Claude breiden beide uit met praktische features: spraakgestuurde taken en cloud-sessies.'
+- 'Developer-tools domineren de launches: diagramtalen, IDE''s en uitvoerbare markdown-notities.'
 launches:
 - name: Reladraw
-  summary_nl: Een diagramtaal waarin je zelf bepaalt waar elementen worden geplaatst, relevant voor ontwikkelaars die visuele documentatie maken.
+  summary_nl: Een diagramtaal waarin je zelf bepaalt waar elementen worden geplaatst, relevant voor developers die visuele documentatie maken.
   url: https://github.com/reladraw/reladraw
   source_type: hn
   source_label: Hacker News (405 punten, 119 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: Whiteboard (YC W26)
-  summary_nl: Een open-source IDE voor doordacht softwareontwerp, gericht op ontwikkelaars die structuur zoeken in de ontwerpfase.
+  summary_nl: Een open-source IDE voor doordacht software-ontwerp, gericht op ontwikkelaars die structuur zoeken in de ontwerpfase.
   url: https://github.com/devdotfast/whiteboard
   source_type: hn
   source_label: Hacker News (413 punten, 141 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+- name: Ledge.sh
+  summary_nl: Uitvoerbare markdown-notities die code en documentatie combineren, handig voor technische documentatie en prototyping.
+  url: https://ledge.sh
+  source_type: hn
+  source_label: Hacker News (186 punten, 83 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=ledge.sh&sz=64
 - name: HN.watch
-  summary_nl: Een site die video's maakt van alle Hacker News-posts, handig voor wie liever kijkt dan leest.
+  summary_nl: Genereert automatisch video's van alle Hacker News-posts, nuttig voor wie liever kijkt dan leest.
   url: https://hn.watch/
   source_type: hn
-  source_label: Hacker News (215 punten, 97 reacties)
+  source_label: Hacker News (217 punten, 97 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=hn.watch&sz=64
 - name: Koi.rest
-  summary_nl: Een minimalistische site om naar vissen te kijken en tot rust te komen, bedoeld als digitale pauze.
+  summary_nl: Een minimalistische tool om even tot rust te komen door naar vissen te kijken.
   url: https://koi.rest
   source_type: hn
   source_label: Hacker News (226 punten, 65 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=koi.rest&sz=64
 - name: WSL for Linux
-  summary_nl: WSL voor Linux, een omgekeerde virtualisatielaag voor Linux-gebruikers die Windows-tools nodig hebben.
+  summary_nl: WSL voor Linux brengt Windows-subsysteem-functionaliteit naar Linux-omgevingen, interessant voor cross-platform ontwikkelaars.
   url: https://frostyard.github.io/nsl/
   source_type: hn
-  source_label: Hacker News (161 punten, 101 reacties)
+  source_label: Hacker News (162 punten, 107 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=frostyard.github.io&sz=64
-- name: PaperMono, e
-  summary_nl: Een e-ink koelkastmagneet met boodschappenlijst die synchroniseert via een mobiele webpagina.
-  url: https://github.com/seamusc/papermono-shopping-list
-  source_type: hn
-  source_label: Hacker News (149 punten, 62 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 updates:
 - tool_name: Gemini
   tool_slug: gemini
   feature_title: Gemini 4 Argon Model
-  summary_nl: Google brengt Gemini 4 Argon uit voor complexe workflows in softwareengineering en cyberdefense, eerst voor cyberdefenders.
+  summary_nl: Google introduceert Gemini 4 Argon voor complexe workflows in software engineering en cybersecurity, eerst beschikbaar voor security-professionals.
   impact: hoog
   url: https://twitter.com/GoogleDeepMind/status/2105388084154056939
   source_type: x
@@ -81,10 +83,22 @@ updates:
   platforms:
   - twitter
   key: gemini::Gemini 4 Argon Model
+- tool_name: ChatGPT
+  tool_slug: chatgpt
+  feature_title: Voice Tasks in Browser
+  summary_nl: ChatGPT laat gebruikers nu wereldwijd complexe taken in de browser uitvoeren via spraak, inclusief werken met afbeeldingen en spreadsheets.
+  impact: hoog
+  url: https://twitter.com/OpenAI/status/2102808325742322002
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: chatgpt::Voice Tasks in Browser
 - tool_name: Claude
   tool_slug: claude
   feature_title: Cloud Sessions Feature
-  summary_nl: Claude Cloud Sessions houden Claude Code actief zelfs wanneer je laptop dicht is, nu officieel uit onderzoeksfase.
+  summary_nl: Claude Cloud Sessions zijn uit onderzoeksfase en houden Claude Code actief, ook wanneer je laptop dicht is.
   impact: hoog
   url: https://twitter.com/ClaudeDevs/status/2102871550974427462
   source_type: x
@@ -96,7 +110,7 @@ updates:
 - tool_name: Claude
   tool_slug: claude
   feature_title: Cloud Sessions Available
-  summary_nl: Claude Cloud Sessions zijn beschikbaar en laten code doordraaien ongeacht de status van je laptop.
+  summary_nl: Claude Cloud Sessions zijn officieel beschikbaar en zorgen dat Claude Code doorwerkt, zelfs met een gesloten laptop.
   impact: hoog
   url: https://twitter.com/ClaudeDevs/status/2102871550974427462
   source_type: x
@@ -120,7 +134,7 @@ updates:
 - tool_name: Qwen
   tool_slug: qwen
   feature_title: Qwen Intelligence Agents
-  summary_nl: Qwen Intelligence lanceert drie agents waaronder een Mobile Planner die complexe taken plant en orkestreert.
+  summary_nl: Qwen Intelligence lanceert drie agents, waaronder een Mobile Planner Agent die complexe taken plant en orkestreert op mobiele apparaten.
   impact: hoog
   url: https://twitter.com/Alibaba_Qwen/status/2102727405198876753
   source_type: x
@@ -129,47 +143,35 @@ updates:
   platforms:
   - twitter
   key: qwen::Qwen Intelligence Agents
-- tool_name: Claude
-  tool_slug: claude
-  feature_title: Cloud Sessions
-  summary_nl: Claude Cloud Sessions zijn officieel live en houden Claude Code actief ook als je laptop uit staat.
-  impact: hoog
-  url: https://twitter.com/ClaudeDevs/status/2102871550974427462
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: claude::Cloud Sessions
 deepDives:
 - title: Gemini 3.8 Flash and 3.8 Flash Cyber
-  summary_nl: Een praktijktest van Gemini 3.8 Flash en 3.8 Flash Cyber voor Nederlandse gebruikers, relevant omdat het concrete prestaties toetst.
+  summary_nl: Een praktijktest van Gemini 3.8 Flash en de Cyber-variant laat zien hoe deze modellen presteren voor Nederlandse gebruikers in real-world scenario's.
   url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
   tool: gemini
   trend_phase: tracked
   score: 22.26
 - title: Mistral OCR 4.1
-  summary_nl: Een vergelijking van Mistral OCR 4.1 met alternatieven om te bepalen welke OCR-oplossing bij jouw use case past.
+  summary_nl: Een vergelijking van Mistral OCR 4.1 met alternatieven helpt developers kiezen welke OCR-oplossing past bij hun specifieke use case.
   url: https://docs.mistral.ai/models/ocr-4-1
   tool: mistral
   trend_phase: tracked
   score: 22.04
 - title: 'Muse: Meta''s personal AI agent, features and capabilities'
-  summary_nl: Een praktijkgids voor het inzetten van Meta's persoonlijke agent Muse in je dagelijkse workflow, interessant voor early adopters.
+  summary_nl: Een hands-on gids die laat zien hoe je Meta's persoonlijke AI-agent Muse integreert in je dagelijkse workflow.
   url: https://ai.meta.com/muse/
   tool: ''
   trend_phase: tracked
   score: 21.86
 - title: ChatGPT Images 2.5
-  summary_nl: Een vergelijking van ChatGPT Images 2.5 met concurrerende beeldgeneratoren om de juiste keuze te maken voor je project.
+  summary_nl: Een vergelijkende analyse van ChatGPT Images 2.5 met concurrerende beeldgeneratie-tools om te bepalen welke het beste aansluit bij jouw behoeften.
   url: https://openai.com/index/introducing-chatgpt-images-2-5/
   tool: chatgpt
   trend_phase: tracked
   score: 21.09
-slotLabel: Ochtend
+slotLabel: Avond
 ---
 
-De focus ligt deze week op productiviteit en persistentie: Google positioneert Gemini 4 Argon als frontier-model voor kenniswerk en cyberdefense, terwijl Anthropic met Cloud Sessions en Opus 5.5 in Cursor de ontwikkelaarservaring optimaliseert. Qwen Intelligence lanceert drie agents voor mobiele taakplanning. De deep-dive-kandidaten tonen interesse in praktische vergelijkingen tussen Gemini, Mistral en ChatGPT, en in Meta's persoonlijke agent Muse.
+De focus verschuift van modelverbeteringen naar praktische integratie. Google positioneert Gemini 4 Argon expliciet voor professionals in engineering en security, terwijl OpenAI en Anthropic hun bestaande modellen toegankelijker maken via spraak en cloud-sessies. Tegelijk zien we een golf aan open-source developer-tools die visueel denken en ontwerp centraal stellen. De deep-dive-kandidaten tonen dat gebruikers vooral behoefte hebben aan eerlijke vergelijkingen en praktische implementatiegidsen.
 
 ---
 
