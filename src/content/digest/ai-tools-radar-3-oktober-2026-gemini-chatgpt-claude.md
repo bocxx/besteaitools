@@ -1,0 +1,178 @@
+---
+title: AI Tools Radar – Gemini · ChatGPT · Claude (Ochtend 3 oktober)
+description: 'AI Tools Radar 3 oktober: 114 launches, 46 feature-updates, 14 deep-dive-kandidaten op debesteaitools.nl.'
+date: '2026-10-03'
+timeSlot: tools-digest
+featured: []
+tags:
+- AI Tools Radar
+- AI Tools
+- Gemini
+- ChatGPT
+- Claude
+- Qwen
+author: debesteaitools.nl Redactie
+totalAnalyzed: 174
+itemsSelected: 16
+categoriesCount: 3
+topics:
+- Gemini
+- ChatGPT
+- Claude
+- Qwen
+launchesCount: 6
+updatesCount: 6
+deepDivesCount: 4
+keySignals:
+- Google lanceert Gemini 4 Argon voor cyberverdediging en softwareontwikkeling, Claude Opus 5.5 scoort hoogst in Cursor.
+- OpenAI rolt spraakgestuurde browsertaken uit, Anthropic maakt Cloud Sessions algemeen beschikbaar voor persistente code-sessies.
+- Reladraw en Ledge.sh tonen interesse in developer-tools voor diagrammen en uitvoerbare markdown, HN.watch genereert video's van posts.
+launches:
+- name: Reladraw
+  summary_nl: Een diagramtaal waarin je zelf bepaalt waar elementen worden geplaatst, relevant voor developers die controle willen over visualisaties.
+  url: https://github.com/reladraw/reladraw
+  source_type: hn
+  source_label: Hacker News (405 punten, 119 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+- name: Giving Opus 5.5 a simulated paint canvas
+  summary_nl: Geeft Opus 5.5 een gesimuleerd schildercanvas, interessant voor creatieve toepassingen van large language models.
+  url: https://stillwet.art/
+  source_type: hn
+  source_label: Hacker News (234 punten, 76 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=stillwet.art&sz=64
+- name: Ledge.sh
+  summary_nl: Uitvoerbare markdown-notities voor developers die code en documentatie in één omgeving willen combineren.
+  url: https://ledge.sh
+  source_type: hn
+  source_label: Hacker News (202 punten, 88 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=ledge.sh&sz=64
+- name: HN.watch
+  summary_nl: Genereert automatisch video's van alle Hacker News-posts, nuttig voor wie content liever kijkt dan leest.
+  url: https://hn.watch/
+  source_type: hn
+  source_label: Hacker News (217 punten, 97 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=hn.watch&sz=64
+- name: WSL for Linux
+  summary_nl: WSL voor Linux, een omgekeerde virtualisatielaag voor ontwikkelaars die Windows-tools op Linux willen draaien.
+  url: https://frostyard.github.io/nsl/
+  source_type: hn
+  source_label: Hacker News (164 punten, 111 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=frostyard.github.io&sz=64
+- name: PaperMono, e
+  summary_nl: E-ink koelkastmagneet met boodschappenlijst en mobiele webpagina, voorbeeld van low-power embedded interfaces.
+  url: https://github.com/seamusc/papermono-shopping-list
+  source_type: hn
+  source_label: Hacker News (149 punten, 62 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+updates:
+- tool_name: Gemini
+  tool_slug: gemini
+  feature_title: Gemini 4 Argon model
+  summary_nl: Google introduceert Gemini 4 Argon voor complexe workflows zoals softwareontwikkeling en cyberverdediging, eerst voor cyber defenders, later breder.
+  impact: hoog
+  url: https://twitter.com/GoogleDeepMind/status/2105388084154056939
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: gemini::Gemini 4 Argon model
+- tool_name: ChatGPT
+  tool_slug: chatgpt
+  feature_title: Voice Tasks in Browser
+  summary_nl: ChatGPT laat gebruikers wereldwijd complexe browsertaken uitvoeren door te spreken, inclusief werken met afbeeldingen en spreadsheets.
+  impact: hoog
+  url: https://twitter.com/OpenAI/status/2102808325742322002
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: chatgpt::Voice Tasks in Browser
+- tool_name: Claude
+  tool_slug: claude
+  feature_title: Cloud Sessions Feature
+  summary_nl: Claude Cloud Sessions zijn officieel beschikbaar en houden Claude Code actief, ook wanneer de laptop gesloten is.
+  impact: hoog
+  url: https://twitter.com/ClaudeDevs/status/2102871550974427462
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: claude::Cloud Sessions Feature
+- tool_name: Claude
+  tool_slug: claude
+  feature_title: Cloud Sessions Available
+  summary_nl: Claude Cloud Sessions verlaten de onderzoeksfase en maken persistente code-sessies mogelijk, onafhankelijk van lokale hardware.
+  impact: hoog
+  url: https://twitter.com/ClaudeDevs/status/2102871550974427462
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: claude::Cloud Sessions Available
+- tool_name: Claude
+  tool_slug: claude
+  feature_title: Claude Opus 5.5 in Cursor
+  summary_nl: Claude Opus 5.5 scoort 57,8% op CursorBench en is 40% goedkoper per taak dan Opus 5.
+  impact: hoog
+  url: https://twitter.com/cursor_ai/status/2102448392773435706
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: claude::Claude Opus 5.5 in Cursor
+- tool_name: Qwen
+  tool_slug: qwen
+  feature_title: Qwen Intelligence Agents
+  summary_nl: Qwen Intelligence lanceert drie agents, waaronder een Mobile Planner Agent die complexe taken plant, ontleedt en orkestreert.
+  impact: hoog
+  url: https://twitter.com/Alibaba_Qwen/status/2102727405198876753
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: qwen::Qwen Intelligence Agents
+deepDives:
+- title: Mistral OCR 4.1
+  summary_nl: Mistral OCR 4.1 vergelijken met alternatieven om te bepalen welke OCR-oplossing het beste past bij specifieke use cases.
+  url: https://docs.mistral.ai/models/ocr-4-1
+  tool: mistral
+  trend_phase: tracked
+  score: 22.04
+- title: 'Muse: Meta''s personal AI agent, features and capabilities'
+  summary_nl: Praktische handleiding voor het integreren van Meta's persoonlijke AI-agent Muse in bestaande workflows en toolchains.
+  url: https://ai.meta.com/muse/
+  tool: ''
+  trend_phase: tracked
+  score: 21.86
+- title: Gemini 3.8 Flash and 3.8 Flash Cyber
+  summary_nl: Gemini 3.8 Flash en 3.8 Flash Cyber testen op realistische Nederlandse use cases om werkelijke prestaties te meten.
+  url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
+  tool: gemini
+  trend_phase: tracked
+  score: 21.76
+- title: ChatGPT Images 2.5
+  summary_nl: ChatGPT Images 2.5 afzetten tegen concurrenten om te zien welke beeldgeneratie-tool het beste presteert voor welke toepassing.
+  url: https://openai.com/index/introducing-chatgpt-images-2-5/
+  tool: chatgpt
+  trend_phase: tracked
+  score: 21.09
+slotLabel: Ochtend
+---
+
+De focus ligt deze week op productiviteitswinst voor developers: Google positioneert Gemini 4 Argon als frontier-model voor complexe workflows, terwijl Claude Opus 5.5 in Cursor 40% goedkoper werkt dan zijn voorganger en het beste scoort op CursorBench. OpenAI en Anthropic breiden beide de interactiemogelijkheden uit — spraakgestuurd werken in de browser en persistente cloud-sessies. Daarnaast valt op dat er ruimte blijft voor nichespelers: tools als Reladraw en Ledge.sh trekken aandacht met eenvoudige, uitvoerbare interfaces voor diagrammen en notities.
+
+---
+
+*Transparantie: het maken van deze editie kostte ±€0,03 aan AI-modelgebruik (7-daags gemiddelde per editie; de redactionele AI-samenvatting meegeteld).*
