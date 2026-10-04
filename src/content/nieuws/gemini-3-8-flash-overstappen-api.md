@@ -1,5 +1,5 @@
 ---
-title: "Gemini 3.8 Flash in de API: zo stap je over van 3.7 Flash in vier stappen"
+title: "Gemini 3.8 Flash in de API: overstappen van 3.7 in vier stappen"
 description: "Gemini 3.8 Flash vraagt andere instellingen dan 3.7 Flash. Zo wissel je de modelnaam, kies je een thinking level en reken je alvast met de prijs van 2027."
 publishedAt: 2026-10-03
 updatedAt: 2026-10-03
@@ -16,7 +16,7 @@ featured: false
 draft: false
 readingTime: 4
 heroImage: "/images/articles/diorama-gemini-3-8-flash-overstappen-api.webp"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Gemini 3.8 Flash in de API: zo stap je over van 3.7 Flash in vier stappen'"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Gemini 3.8 Flash in de API: overstappen van 3.7 in vier stappen'"
 heroScene: "A tiny railway switch on a workbench diverting a small toy train from an old track onto a freshly laid one"
 keyTakeaways:
   - "Gemini 3.8 Flash heet in de API gemini-3.8-flash, heeft een contextvenster van 1 miljoen tokens en maximaal 64.000 uitvoertokens."
@@ -33,6 +33,13 @@ faq:
     a: "Tot en met 31 december 2026 betaal je 0,75 dollar per miljoen invoertokens en 3,75 dollar per miljoen uitvoertokens. Vanaf 1 januari 2027 wordt dat 1,50 en 7,50 dollar. Via de Batch API krijg je 50 procent korting. Bouw je iets dat volgend jaar nog draait, reken dan nu al met de hogere tarieven."
   - q: "Kan ik Gemini 3.8 Flash gratis proberen?"
     a: "Ja. Op de gratis tier van de Gemini API en in Google AI Studio kun je 3.8 Flash zonder kosten gebruiken, binnen de limieten van die tier. Let op: wat je op de gratis tier invoert, mag Google gebruiken om zijn producten te verbeteren. Op de betaalde tier gebeurt dat niet. Voor klantdata of vertrouwelijke stukken is de betaalde tier dus de veilige keuze."
+sources:
+  - label: "Google — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber (2 sep. 2026)"
+    url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+  - label: "Gemini API-docs — What's new in Gemini 3.8 Flash"
+    url: "https://ai.google.dev/gemini-api/docs/generate-content/latest-model"
+  - label: "Gemini API — Prijzen"
+    url: "https://ai.google.dev/gemini-api/docs/pricing"
 ---
 
 Google zette Gemini 3.8 Flash op 2 september live, en wie de API gebruikt, merkt dat het niet bij een nieuwe modelnaam blijft. De thinking-instelling werkt anders, een paar vertrouwde parameters moeten eruit, en de lage prijs heeft een einddatum. Hieronder zet je je bestaande 3.7 Flash-aanroep in vier stappen om, en weet je daarna of overstappen voor jouw toepassing wel loont.
