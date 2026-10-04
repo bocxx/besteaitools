@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-04T09:00:34.467859",
+  "generated_at": "2026-10-04T19:29:40.169030",
   "window_days_tools": 60,
   "window_days_news": 14,
   "counts": {
     "for_tools": 17,
     "for_news": 30,
-    "rejected_lang": 353,
+    "rejected_lang": 347,
     "already_covered": 0,
-    "total_scanned": 10092
+    "total_scanned": 10096
   },
   "for_tools": [
     {
@@ -466,7 +466,7 @@
       "source": "consensus:7 bronnen",
       "platform": "article",
       "title": "Anthropic Says It Blocked Possible Efforts to Build Biological Weapons",
-      "text": "<a href=\"https://news.ycombinator.com/item?id=49646988\">Comments</a>",
+      "text": "In a new report, the A.I. start-up added that it could not determine whether the research was legitimate or nefarious, leading the company to shut down the work.\n<figure class=\"enclosure\"><p class=\"enclosure-content\"><img src=\"https://static01.nyt.com/images/2026/09/10/multimedia/Dc-anthropic-zgkh/Dc-anthropic-zgkh-mediumSquareAt3X.jpg\" alt=\"\" title=\"\" /></p><p class=\"enclosure-credits\">© Marissa Leshnov for The New York Times</p><figcaption class=\"enclosure-description\">The report Anthropic published on Thursday cataloged a litany of misuses of its A.I. models, including the chatbot Claude, o",
       "url": "https://www.nytimes.com/2026/09/10/us/politics/anthropic-ai-biological-weapons.html",
       "date": "2026-09-10",
       "engagement": 70.0,
@@ -614,9 +614,9 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "how-to",
         "how to",
-        "guide"
+        "guide",
+        "how-to"
       ],
       "matched_tools": [],
       "feature_update": false,
@@ -666,8 +666,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "ai act",
-        "breakdown"
+        "breakdown",
+        "ai act"
       ],
       "matched_tools": [
         "claude"
@@ -772,6 +772,81 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "d7e56a8cc093a8f3"
+    },
+    {
+      "source": "consensus:9 bronnen",
+      "platform": "article",
+      "title": "SpaceXAI will deploy standalone Nvidia Vera CPUs for Grok's agentic workloads — will use optimized Vera Rubin NVL72 in space with Starmind satellite",
+      "text": "<article>\n                                <p>Nvidia's 88-core Vera chip will be getting put to work for Elon Musk twice over, first and foremost as the standalone CPU orchestrating Grok's AI agents in SpaceXAI's data centers and, from the fourth quarter of 2027, inside the company's first Starmind satellite. Nvidia<a href=\"https://nvidianews.nvidia.com/news/spacexai-adopts-nvidia-vera-cpu-to-accelerate-agentic-ai-at-massive-scale\"> announced the deployment</a> yesterday, making SpaceXAI the second hyperscaler after Meta to commit to Vera outside full Vera Rubin racks, with Musk supplying the l",
+      "url": "https://www.tomshardware.com/tech-industry/big-tech/spacexai-will-deploy-standalone-nvidia-vera-cpus-for-groks-agentic-workloads",
+      "date": "2026-08-25",
+      "engagement": 90.0,
+      "source_weight": 2.0,
+      "ai_relevant": true,
+      "pattern_hits": [],
+      "matched_tools": [
+        "grok"
+      ],
+      "feature_update": true,
+      "new_products": [
+        "Nvidia Vera",
+        "Vera Rubin",
+        "Elon Musk",
+        "TH Premium"
+      ],
+      "new_product": true,
+      "version_bump": true,
+      "paywall": false,
+      "video": null,
+      "lang": "en",
+      "bron": "consensus",
+      "consensus_source_count": 9,
+      "consensus_source_names": [
+        "Articles on TechRepublic",
+        "Artificial Intelligence on TechRepublic",
+        "GIGAZINE",
+        "NVIDIA Developer Blog",
+        "THE ELEC， Korea Electronics Industry Media - 전체기사",
+        "Techmeme",
+        "Together AI Blog",
+        "Tom's Hardware"
+      ],
+      "cluster_size": 12,
+      "consensus_sources": [
+        "Articles on TechRepublic",
+        "Artificial Intelligence on TechRepublic",
+        "GIGAZINE",
+        "NVIDIA Developer Blog",
+        "THE ELEC， Korea Electronics Industry Media - 전체기사",
+        "Techmeme",
+        "Together AI Blog",
+        "Tom's Hardware"
+      ],
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "bron_tier": "vakpers",
+      "score": 17.27,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 6.77,
+        "source_weight": 2.0,
+        "ai_relevance": 1.5,
+        "recency": 0.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 4.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 0.0,
+        "uitgever": 3.0
+      },
+      "bucket": "tools",
+      "suggested_angle_nl": "Nieuw in grok: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "ffac5a82f52922f3"
     },
     {
       "source": "consensus:6 bronnen",
@@ -942,57 +1017,6 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "0786b5aad150757a"
-    },
-    {
-      "source": "articles:Latest from TechRadar US in News，opinion",
-      "platform": "article",
-      "title": "Over half of UK firms say an AI agent has gone rogue on them — and affected their business or their customers",
-      "text": "<article>\n                                <ul><li><strong>53% of British CIOs have seen at least one AI agent violate a policy and impact either the business or a customer</strong></li><li><strong>The global average for rogue AI actions is just 31%, raising questions on AI governance in the UK</strong></li><li><strong>CIOs are under increasing pressure to deliver value from AI investments, with a majority expecting budgets cuts and even unemployment if targets are not met</strong></li></ul><p>AI agents going rogue is a growing challenge for British businesses according to a new study which als",
-      "url": "https://www.techradar.com/pro/over-half-of-uk-firms-say-an-ai-agent-has-gone-rogue-on-them-and-affected-their-business-or-their-customers",
-      "date": "2026-09-27",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "study",
-        "ai act"
-      ],
-      "matched_tools": [],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "en",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 16.9,
-      "score_breakdown": {
-        "pattern_hits": 2,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 1.0,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 0.0,
-        "uitgever": 3.0
-      },
-      "bucket": "tools",
-      "suggested_angle_nl": "Vergelijking met de alternatieven — welke past bij jou?",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "05bd028547a1e367"
     }
   ],
   "for_news": [
@@ -1121,7 +1145,7 @@
       "lang": "en",
       "_author_bonus": 1.0,
       "author": "0xwhrrari",
-      "followers": 18090,
+      "followers": 18139,
       "newsletter_count": 0,
       "competitor_count": 0,
       "consensus_sources": [
@@ -1424,59 +1448,6 @@
       "id": "7c1d76c3d8ac3ae2"
     },
     {
-      "source": "articles:Nieuws - Emerce",
-      "platform": "article",
-      "title": "OpenAI maakte nooit Europese melding van AI-hack",
-      "text": "<p><strong>Ondanks de verplichting daartoe maakte OpenAI nooit melding van de zwerm AI-bots die inbraken bij Hugging Face.</strong></p>\n<p>OpenAI was daartoe verplicht onder de nieuw ingevoerde EU AI Act. Die wet verplicht bedrijven om grote incidenten <a href=\"https://artificialintelligenceact.eu/article/73/\">zonder dralen te melden</a> bij het AI-kantoor van de EU.</p>\n<p>Nieuwssite Euractiv achterhaalde dat dat <a href=\"https://www.euractiv.com/news/exclusive-openai-didnt-report-another-incident-under-eu-ai-safety-rules/\">niet gebeurde</a> voor <a href=\"https://openai.com/nl-NL/index/huggin",
-      "url": "https://www.emerce.nl/nieuws/openai-maakte-nooit-europese-melding-aihack",
-      "date": "2026-09-21",
-      "engagement": 50.0,
-      "source_weight": 1.5,
-      "ai_relevant": false,
-      "pattern_hits": [
-        "ai act"
-      ],
-      "matched_tools": [
-        "chatgpt",
-        "huggingface"
-      ],
-      "feature_update": false,
-      "new_products": [],
-      "new_product": false,
-      "version_bump": false,
-      "paywall": false,
-      "video": null,
-      "lang": "nl",
-      "newsletter_count": 0,
-      "competitor_count": 0,
-      "consensus_sources": [
-        "article"
-      ],
-      "bron_tier": "vakpers",
-      "score": 18.4,
-      "score_breakdown": {
-        "pattern_hits": 1,
-        "engagement_log": 5.9,
-        "source_weight": 1.5,
-        "ai_relevance": 1.5,
-        "recency": 0.5,
-        "editorial": 0.0,
-        "competition": 0.0,
-        "consensus": 0.0,
-        "author": 0.0,
-        "materialised": 0.0,
-        "media": 0.0,
-        "official": 0.0,
-        "nieuwsvorm": 4.0,
-        "uitgever": 3.0
-      },
-      "bucket": "news",
-      "suggested_angle_nl": "Waarom chatgpt er nu toe doet — en wat je ermee moet.",
-      "trend_phase": "tracked",
-      "competitor_gap": false,
-      "id": "e24f897ebacc9171"
-    },
-    {
       "source": "articles:The Next Web",
       "platform": "article",
       "title": "Ro Khanna plans a bill to ban self-improving AI, CNBC reports",
@@ -1679,7 +1650,7 @@
       "id": "3fc7a103fcb96a18"
     },
     {
-      "source": "articles:Technology | The Guardian",
+      "source": "articles:Artificial intelligence (AI) | The Guardian",
       "platform": "article",
       "title": "OpenAI announces ‘dots’ agent after scrapping launch of new AI model over safety concerns",
       "text": "<p>Company’s product comes weeks after Meta introduced its own artificially intelligent agent Muse</p><p>Less than 24 hours after OpenAI announced it would scrap the launch of an artificial intelligence model over safety concerns, the company debuted a whole new suite of AI tools.</p><p>During its annual showcase for developers in San Francisco on Tuesday, Sam Altman, OpenAI’s CEO, enthusiastically unveiled an AI agent called “dots” that he said was “more ambitious” than ChatGPT and a “whole new way to work with AI”.</p> <a href=\"https://www.theguardian.com/technology/2026/sep/29/openai-announ",
@@ -1733,7 +1704,7 @@
       "id": "52a21cb3174dc569"
     },
     {
-      "source": "articles:Artificial intelligence (AI) | The Guardian",
+      "source": "articles:Technology | The Guardian",
       "platform": "article",
       "title": "New campaign disclosures reveal how much American political campaigns spend on AI tools",
       "text": "<p>Though politicians are quiet about how they use AI, the book Rewiring Democracy examines how AI is starting to influence American politics </p><p>New campaign finance disclosure data shines a light on which US political campaigns are using AI tools and how much they are spending on them.</p><p>Candidates’, parties’, and committees’ <a href=\"https://github.com/nesanders/federal-campaign-disclosure-ai/tree/claude/campaign-ai-usage-dashboard-0pzili/data/processed\">spending</a> reveals that AI is fast becoming an essential tool of politics. The candidates themselves are quiet about how they are",
@@ -1781,7 +1752,7 @@
       "id": "455f2a57b13cf9e3"
     },
     {
-      "source": "articles:Technology | The Guardian",
+      "source": "articles:Artificial intelligence (AI) | The Guardian",
       "platform": "article",
       "title": "Anthropic ‘warns of existential AI risks to humanity’ in IPO document",
       "text": "<p>Reported admission to investors of AI’s ‘self-preserving behaviours’ comes as company prepares for a potential $2tn flotation</p><p>Anthropic is telling investors that advanced AI could pose “catastrophic or existential risks to humanity”, according to reports, as it prepares for a potential $2tn (£1.5tn) flotation.</p><p>The warning inside the startup’s IPO prospectus, which has yet to be made public, was reported by Reuters and the Financial Times. It follows the company’s <a href=\"https://www.theguardian.com/technology/2026/sep/12/we-must-slow-the-pace-ceo-of-anthropic-calls-for-an-ai-sl",
@@ -1931,7 +1902,7 @@
       "id": "f9792b75e6c028fe"
     },
     {
-      "source": "articles:Artificial intelligence (AI) | The Guardian",
+      "source": "articles:Technology | The Guardian",
       "platform": "article",
       "title": "Nvidia unveils security platform to rein in AI agents and $150bn stock buyback",
       "text": "<p>Chipmaker says new system was designed to prevent AI agents from going rogue amid incidents at top companies</p><p><a href=\"https://www.theguardian.com/technology/nvidia\">Nvidia</a> on Monday unveiled a new security platform that the chipmaker said can stop <a href=\"https://www.theguardian.com/technology/artificialintelligenceai\">artificial intelligence</a> agents from going rogue.</p><p>The company announced a $150bn stock buyback the same day.</p> <a href=\"https://www.theguardian.com/technology/2026/sep/28/nvidia-ai-agent-security-platform-stock-buyback\">Continue reading...</a>\n<figure cl",
@@ -1982,7 +1953,7 @@
       "id": "eb9fec6008870c16"
     },
     {
-      "source": "articles:Technology | The Guardian",
+      "source": "articles:Artificial intelligence (AI) | The Guardian",
       "platform": "article",
       "title": "Anthropic will not appear at Senate inquiry into AI and datacentres amid fallout from OpenAI hack",
       "text": "<p>Company behind Claude chatbot expected to attend separate Australian government hearing on AI next week</p><ul><li><p>Get our <a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\">new political email</a>, <a href=\"https://app.adjust.com/w4u7jx3\">free app</a> or <a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\">daily news podcast</a></p></li></ul><p>The chief executive of Anthropic will turn down an invitation to appear at a Senate committee hearing on AI this week, in the wake of the revelation that OpenAI agents had breached Australian gover",
@@ -2198,8 +2169,8 @@
       "source_weight": 1.5,
       "ai_relevant": false,
       "pattern_hits": [
-        "from scratch",
-        "guide"
+        "guide",
+        "from scratch"
       ],
       "matched_tools": [
         "augment code"
@@ -2536,6 +2507,68 @@
       "trend_phase": "tracked",
       "competitor_gap": false,
       "id": "06be3b590b727bf2"
+    },
+    {
+      "source": "articles:Bloomberg Technology",
+      "platform": "article",
+      "title": "Nike Slides on Job Cuts; Broadcom Gathers AI Chip Funding | Stock Movers",
+      "text": "On this episode of Stock Movers:\n\n- Nike (NKE) shares continue their slide as it is cutting jobs and overhauling its business as results deteriorate, with a restructuring plan to save $2.5 billion over the next five years. The company expects a high-single-digit revenue decline this year, which is worse than the 2.4% drop projected by analysts, and shares of Nike fell as much as 9.7% in New York on Friday.\n- Broadcom (AVGO) shares are moving on news the company's Wall Street syndicate are starting to gather $60 billion of fresh AI chip financing to benefit Anthropic and other companies.\n- Fair",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-02/nike-down-on-job-cuts-broadcom-gathers-ai-chip-funding-video",
+      "date": "2026-10-02",
+      "engagement": 42.8,
+      "source_weight": 1.5,
+      "ai_relevant": false,
+      "pattern_hits": [],
+      "matched_tools": [
+        "claude"
+      ],
+      "feature_update": true,
+      "new_products": [
+        "Nike Slides",
+        "Job Cuts",
+        "Broadcom Gathers",
+        "AI Chip",
+        "Stock Movers",
+        "New York",
+        "Wall Street",
+        "Fair Isaac",
+        "FICO Mortgage",
+        "Direct License",
+        "Bill Pulte"
+      ],
+      "new_product": true,
+      "version_bump": false,
+      "paywall": true,
+      "video": null,
+      "lang": "en",
+      "newsletter_count": 0,
+      "competitor_count": 0,
+      "consensus_sources": [
+        "article"
+      ],
+      "bron_tier": "kwaliteitspers",
+      "score": 17.67,
+      "score_breakdown": {
+        "pattern_hits": 0,
+        "engagement_log": 5.67,
+        "source_weight": 1.5,
+        "ai_relevance": 1.5,
+        "recency": 1.0,
+        "editorial": 0.0,
+        "competition": 0.0,
+        "consensus": 0.0,
+        "author": 0.0,
+        "materialised": 0.0,
+        "media": 0.0,
+        "official": 0.0,
+        "nieuwsvorm": 4.0,
+        "uitgever": 4.0
+      },
+      "bucket": "news",
+      "suggested_angle_nl": "Nieuw in claude: wat de update concreet voor je werk betekent.",
+      "trend_phase": "tracked",
+      "competitor_gap": false,
+      "id": "1c6eb83468e5f86b"
     }
   ]
 }

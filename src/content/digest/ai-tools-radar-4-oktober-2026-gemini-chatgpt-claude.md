@@ -1,175 +1,177 @@
 ---
-title: AI Tools Radar – Gemini · ChatGPT · Claude (Ochtend 4 oktober)
-description: 'AI Tools Radar 4 oktober: 114 launches, 48 feature-updates, 17 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – ChatGPT · Cursor · Claude (Avond 4 oktober)
+description: 'AI Tools Radar 4 oktober: 116 launches, 48 feature-updates, 17 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-04'
 timeSlot: tools-digest
 featured: []
 tags:
 - AI Tools Radar
 - AI Tools
-- Gemini
 - ChatGPT
+- Cursor
 - Claude
+- Qwen
 author: debesteaitools.nl Redactie
-totalAnalyzed: 179
+totalAnalyzed: 181
 itemsSelected: 16
 categoriesCount: 3
 topics:
-- Gemini
 - ChatGPT
+- Cursor
 - Claude
+- Qwen
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Google kondigt Gemini 4 Argon aan, eerst voor cyber defenders en later breder beschikbaar.
-- Claude brengt Cloud Sessions uit researchfase en Opus 5.5 verschijnt in Cursor.
-- Hacker News laadt hoge scores voor soevereine AI, browseragents en developer-tools.
+- OpenAI brengt GPT-6 Sol en Luna uit in ChatGPT Work en Codex voor zakelijke abonnementen.
+- Cursor voegt Sonnet 5.5 en GLM 5.3 toe, waarmee de modelkeuze in de editor verder groeit.
+- DigitalOcean opent publieke preview van Managed Agents voor Claude Code, Codex en LangGraph.
 launches:
-- name: Germany's new sovereign AI model Kolibri
-  summary_nl: Kolibri is een nieuw Duits soeverein AI-model, bedoeld voor organisaties die AI binnen de eigen jurisdictie willen houden.
-  url: https://tej.as/blog/aleph-alpha-kolibri
+- name: Pi pod
+  summary_nl: Pi pod laat je pi-coding-agent in sandboxes op je eigen server draaien, voor ontwikkelaars die controle over hun omgeving willen.
+  url: https://pipod.dev/
   source_type: hn
-  source_label: Hacker News (410 punten, 11 reacties)
+  source_label: Hacker News (109 punten, 41 reacties)
   confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=tej.as&sz=64
-- name: Giving Opus 5.5 a simulated paint canvas
-  summary_nl: Webexperiment dat Opus 5.5 een gesimuleerd verfcanvas geeft, voor wie modelgedrag buiten tekst wil bekijken.
-  url: https://stillwet.art/
+  favicon: https://www.google.com/s2/favicons?domain=pipod.dev&sz=64
+- name: 001 – An open-source 3D printable desktop robot
+  summary_nl: 001 is een opensource, 3D-printbare desktoprobot op basis van Arduino Uno Q, gericht op hobbyisten die zelf hardware bouwen.
+  url: https://projecthub.arduino.cc/syntheticaidata/jbr-001-a-desktop-companion-robot-powered-by-arduino-uno-q-b11c96
   source_type: hn
-  source_label: Hacker News (376 punten, 109 reacties)
+  source_label: Hacker News (131 punten, 31 reacties)
   confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=stillwet.art&sz=64
-- name: Ledge.sh
-  summary_nl: Ledge.sh voert Markdown-notities uit, gericht op developers die notities en code in één bestand willen combineren.
-  url: https://ledge.sh
+  favicon: https://www.google.com/s2/favicons?domain=projecthub.arduino.cc&sz=64
+- name: Open
+  summary_nl: Open is een router die coding agents naar het juiste model stuurt met prestaties op Astra-niveau.
+  url: https://news.ycombinator.com/item?id=49911500
   source_type: hn
-  source_label: Hacker News (202 punten, 88 reacties)
+  source_label: Hacker News (118 punten, 39 reacties)
   confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=ledge.sh&sz=64
-- name: HN.watch
-  summary_nl: HN.watch zet Hacker News-posts om in video's, handig voor wie het platform liever bekijkt of beluistert dan leest.
-  url: https://hn.watch/
+  favicon: https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=64
+- name: Pyxel
+  summary_nl: Pyxel is een retro game-engine in Python met ingebouwde editors voor graphics en geluid, voor wie snel kleine games wil maken.
+  url: https://github.com/kitao/pyxel
   source_type: hn
-  source_label: Hacker News (217 punten, 97 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=hn.watch&sz=64
-- name: Made an open
-  summary_nl: Open source generator die tekst omzet naar Lego-modellen via LDraw, voor bouwers en AI-developers.
-  url: https://github.com/anteloc/ldraw-nova
-  source_type: hn
-  source_label: Hacker News (145 punten, 49 reacties)
+  source_label: Hacker News (97 punten, 8 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
-- name: WSL for Linux
-  summary_nl: NSL brengt de WSL-ervaring naar Linux zelf, voor developers met hybride Windows- en Linux-workflows.
-  url: https://frostyard.github.io/nsl/
+- name: A working 3D model of an Enigma machine
+  summary_nl: Een werkend 3D-model van een Enigma-machine, interessant voor liefhebbers van cryptografie en mechanische simulaties.
+  url: https://enigma.design
   source_type: hn
-  source_label: Hacker News (164 punten, 111 reacties)
+  source_label: Hacker News (111 punten, 40 reacties)
   confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=frostyard.github.io&sz=64
+  favicon: https://www.google.com/s2/favicons?domain=enigma.design&sz=64
+- name: TinyAIArena watch AI agents battle it out
+  summary_nl: TinyAIArena laat je AI-agents live tegen elkaar strijden, bedoeld voor wie agentgedrag in de praktijk wil volgen.
+  url: https://tinyaiarena.com/
+  source_type: hn
+  source_label: Hacker News (120 punten, 45 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=tinyaiarena.com&sz=64
 updates:
-- tool_name: Gemini
-  tool_slug: gemini
-  feature_title: Gemini 4 Argon model
-  summary_nl: Google introduceert Gemini 4 Argon als frontier-model voor coding en kenniswerk, eerst voor cyber defenders en later breder.
-  impact: hoog
-  url: https://twitter.com/GoogleDeepMind/status/2105388084154056939
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: gemini::Gemini 4 Argon model
-- tool_name: Gemini
-  tool_slug: gemini
-  feature_title: Gemini 4 Argon
-  summary_nl: Het nieuwe frontier-model Gemini 4 Argon richt zich op complexe coding- en kennistaken en wordt stapsgewijs uitgerold.
-  impact: hoog
-  url: https://twitter.com/GoogleDeepMind/status/2105388084154056939
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: gemini::Gemini 4 Argon
 - tool_name: ChatGPT
   tool_slug: chatgpt
-  feature_title: Voice Tasks in Browser
-  summary_nl: ChatGPT voert nu wereldwijd complexe browsertaken uit op gesproken opdrachten, inclusief werken met afbeeldingen en spreadsheets.
+  feature_title: GPT-6 Sol and Luna
+  summary_nl: GPT-6 Sol en Luna zijn beschikbaar in ChatGPT Work en Codex voor Plus, Pro, Business, Enterprise en Edu.
   impact: hoog
-  url: https://twitter.com/OpenAI/status/2102808325742322002
+  url: https://twitter.com/OpenAI/status/2102460995180663204
   source_type: x
   source_label: X
   confidence: laag
   platforms:
   - twitter
-  key: chatgpt::Voice Tasks in Browser
+  key: chatgpt::GPT-6 Sol and Luna
+- tool_name: Cursor
+  tool_slug: cursor
+  feature_title: Sonnet 5.5 Model
+  summary_nl: Sonnet 5.5 is nu beschikbaar in Cursor en presteert in veel taken op het niveau van Opus.
+  impact: hoog
+  url: https://twitter.com/cursor_ai/status/2104666044220821594
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: cursor::Sonnet 5.5 Model
+- tool_name: Cursor
+  tool_slug: cursor
+  feature_title: GLM 5.3 models
+  summary_nl: Cursor voegt GLM 5.3 en GLM 5.3 Flash toe; GLM 5.3 Max scoort volgens Cursor het best onder open-weight modellen op CursorBench 4.0.
+  impact: medium
+  url: https://twitter.com/cursor_ai/status/2105787358557999585
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: cursor::GLM 5.3 models
+- tool_name: Cursor
+  tool_slug: cursor
+  feature_title: GLM 5.3 models available
+  summary_nl: Cursor biedt nu de open-weight modellen GLM 5.3 en GLM 5.3 Flash aan, met GLM 5.3 Max als beste score op CursorBench 4.0.
+  impact: medium
+  url: https://twitter.com/cursor_ai/status/2105787358557999585
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: cursor::GLM 5.3 models available
 - tool_name: Claude
   tool_slug: claude
-  feature_title: Cloud Sessions Feature
-  summary_nl: Claude Cloud Sessions zijn officieel beschikbaar, waardoor Claude Code actief blijft ook als de laptop gesloten is.
+  feature_title: Managed Agents
+  summary_nl: 'DigitalOcean Managed Agents is in publieke preview: draai Claude Code, Codex of je eigen LangGraph-agent in een runtime die pauzeert bij inactiviteit.'
   impact: hoog
-  url: https://twitter.com/ClaudeDevs/status/2102871550974427462
+  url: https://twitter.com/digitalocean/status/2102414817797550320
   source_type: x
   source_label: X
   confidence: laag
   platforms:
   - twitter
-  key: claude::Cloud Sessions Feature
-- tool_name: Claude
-  tool_slug: claude
-  feature_title: Cloud Sessions Available
-  summary_nl: Cloud Sessions verlaat de onderzoeksfase en houdt Claude Code draaiend zonder dat de laptop open hoeft te blijven.
+  key: claude::Managed Agents
+- tool_name: Qwen
+  tool_slug: qwen
+  feature_title: Ternary Bonsai 2 27B
+  summary_nl: 'Qwen kondigt Ternary Bonsai 2 27B aan: negen keer kleiner dan zijn full-precision tegenhanger, maar met dezelfde prestaties.'
   impact: hoog
-  url: https://twitter.com/ClaudeDevs/status/2102871550974427462
+  url: https://twitter.com/PrismML/status/2100692248480596348
   source_type: x
   source_label: X
   confidence: laag
   platforms:
   - twitter
-  key: claude::Cloud Sessions Available
-- tool_name: Claude
-  tool_slug: claude
-  feature_title: Claude Opus 5.5 in Cursor
-  summary_nl: Claude Opus 5.5 is beschikbaar in Cursor, scoort 57,8% op CursorBench en kost 40% minder per taak dan Opus 5.
-  impact: hoog
-  url: https://twitter.com/cursor_ai/status/2102448392773435706
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: claude::Claude Opus 5.5 in Cursor
+  key: qwen::Ternary Bonsai 2 27B
 deepDives:
-- title: Mistral OCR 4.1
-  summary_nl: Mistral OCR 4.1 naast de alternatieven leggen, zodat documentpijplijnen een onderbouwde OCR-keuze kunnen maken.
-  url: https://docs.mistral.ai/models/ocr-4-1
-  tool: mistral
-  trend_phase: tracked
-  score: 22.04
-- title: 'Muse: Meta''s personal AI agent, features and capabilities'
-  summary_nl: Praktijkgids voor Muse, Meta's persoonlijke AI-agent, met de vraag hoe je die daadwerkelijk in een workflow inzet.
-  url: https://ai.meta.com/muse/
-  tool: ''
-  trend_phase: tracked
-  score: 21.86
-- title: Gemini 3.8 Flash and 3.8 Flash Cyber
-  summary_nl: Eerlijke test van wat Gemini 3.8 Flash en 3.8 Flash Cyber in de praktijk opleveren voor Nederlandse gebruikers.
-  url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
+- title: Gemini 3.8 Live and 3.8 Live Extended Thinking
+  summary_nl: Google brengt Gemini 3.8 Live en 3.8 Live Extended Thinking uit; een artikel laat zien wat de uitgebreide denkmodus praktisch toevoegt aan je workflow.
+  url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/
   tool: gemini
   trend_phase: tracked
-  score: 21.76
-- title: ChatGPT Images 2.5
-  summary_nl: ChatGPT Images 2.5 vergelijken met de alternatieven, om te bepalen welke beeldgenerator bij welke taak past.
-  url: https://openai.com/index/introducing-chatgpt-images-2-5/
-  tool: chatgpt
+  score: 21.05
+- title: What to Know About Cargo Plane That Overran Its Runway, Killing 5 in Miami
+  summary_nl: Analyse van het vrachtvliegtuig dat in Miami van de baan raakte en vijf mensen doodde, met de bekende feiten over oorzaak en procedures.
+  url: https://www.nytimes.com/2026/09/06/us/miami-plane-crash-what-we-know.html
+  tool: runway
   trend_phase: tracked
-  score: 21.09
-slotLabel: Ochtend
+  score: 19.19
+- title: 'Anthropic-onderzoeker neemt ontslag: ‘OpenAI en Anthropic handelen onverantwoordelijk en gokken met ons leven’ - de Vol…'
+  summary_nl: Een Anthropic-onderzoeker stopt en beschuldigt OpenAI en Anthropic van onverantwoordelijk handelen; een deep-dive maakt de interne kritiek concreet.
+  url: https://www.volkskrant.nl/tech/anthropic-onderzoeker-neemt-ontslag-openai-en-anthropic-handelen-onverantwoordelijk-en-gokken-met-ons-leven~b1e5486a/
+  tool: claude
+  trend_phase: tracked
+  score: 18.92
+- title: Introducing WeatherNext 3, our most advanced and accurate global weather AI model
+  summary_nl: DeepMind introduceert WeatherNext 3 als zijn meest accurate wereldwijde weermodel; een artikel toetst wat dat betekent voor bestaande weerdata en workflows.
+  url: https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
+  tool: ''
+  trend_phase: tracked
+  score: 17.9
+slotLabel: Avond
 ---
 
-De modelwedloop verschuift deze week van ruwe benchmarks naar uitrolstrategie: Google zet Gemini 4 Argon eerst bij cyber defenders neer, Claude maakt Cloud Sessions algemeen beschikbaar en Opus 5.5 wordt via Cursor met prijs per taak gepositioneerd. Op Hacker News gaat de aandacht juist naar zelfbouw en soevereiniteit, met Kolibri als Duits alternatief en open source gereedschap zoals ldraw-nova en Ledge.sh. De deep-dive-kandidaten trekken die lijn door naar de praktijk: OCR, een persoonlijke agent en beeldgeneratie worden vooral op inzetbaarheid beoordeeld. Samen wijst dat op een markt waarin distributiekanalen en kosten per taak zwaarder wegen dan aankondigingen alleen.
+De modelrace in codeertools is deze week vooral een ronkwestie: Cursor zet Sonnet 5.5 en GLM 5.3 naast elkaar, terwijl OpenAI GPT-6 Sol en Luna uitrolt in ChatGPT Work en Codex. Op de achtergrond verschuift de aandacht naar de runtime eromheen: DigitalOcean opent een publieke preview van Managed Agents en Pi pod laat ontwikkelaars hun coding agent in eigen sandboxes draaien. De deep-dives mengen productnieuws van Google (Gemini 3.8 Live, WeatherNext 3) met kritiek van een voormalig Anthropic-onderzoeker op OpenAI en Anthropic. Het Hacker News-aanbod blijft speels en hardwarematig, van een 3D-geprinte Arduino-robot tot een werkend Enigma-model en TinyAIArena.
 
 ---
 
