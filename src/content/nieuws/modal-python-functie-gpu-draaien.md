@@ -112,7 +112,7 @@ Met `modal serve gpu_test.py` krijg je tijdens het ontwikkelen een tijdelijke pu
 
 > **⚡ Gevorderden:** die URL staat op het open internet. Zet er authenticatie op voordat je er een model achter hangt dat geld kost per aanroep.
 
-Twijfel je of je een model beter lokaal draait of huurt? Lees dan eerst [Qwen 3.8 27B draaien: zelf hosten of huren?](/nieuws/qwen-3-8-27b-lokaal-draaien-of-huren) en ons overzicht van [open-weight modellen die je zelf draait](/nieuws/open-weight-modellen-lokaal-draaien). Waarom open modellen zo hard terrein winnen, staat in de [staat van open-source AI](https://hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026) op hetlaatsteainieuws.nl.
+Twijfel je of je een model beter lokaal draait of huurt? Lees dan eerst [Qwen 3.8 27B draaien: zelf hosten of huren?](/nieuws/qwen-3-8-27b-lokaal-draaien-of-huren) en ons overzicht van [open-weight modellen die je zelf draait](/nieuws/open-weight-modellen-lokaal-draaien). Waarom open modellen zo hard terrein winnen, staat in de [staat van open-source AI](https://www.hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026) op hetlaatsteainieuws.nl.
 
 ## Checklist: ben je klaar?
 
