@@ -113,7 +113,7 @@ Voeg je logo en merkkleur toe via de template-opties. Heb je daar een stilstaand
 - [ ] Video geëxporteerd in het juiste formaat (MP4)
 - [ ] Transparantie: kijkers geïnformeerd dat het een AI-avatar betreft (aan te raden)
 
-Wil je geen pratende avatar maar een scène waarin dezelfde hoofdpersoon over meerdere clips terugkomt, dan werk je met [referentiebeelden in Seedance 2.0](/nieuws/seedance-referenties-video-dreamina).
+Wil je geen pratende avatar maar een scène waarin dezelfde hoofdpersoon over meerdere clips terugkomt, dan werk je met [referentiebeelden in Seedance 2.0](/nieuws/seedance-referenties-video-dreamina). Wil je juist de camerabeweging zelf regisseren, met presets als dolly, orbit of FPV, kijk dan bij [Higgsfield Motion Control](/nieuws/higgsfield-camera-presets-motion-control-gebruiken).
 
 ## Bronnen
 

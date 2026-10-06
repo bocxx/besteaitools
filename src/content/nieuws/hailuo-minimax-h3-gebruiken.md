@@ -78,7 +78,7 @@ MiniMax noemt geen exacte creditprijs, maar positioneert de prijs per seconde op
 - Je hebt getest of precisie-editing werkt voor kleine correcties, voordat je een hele scène opnieuw genereert.
 - Je weet dat H3 een Chinese aanbieder is — weeg dat mee bij gevoelig bronmateriaal.
 
-ByteDance zet er een andere werkwijze tegenover: bij [Seedance 2.0 in Dreamina](/nieuws/seedance-referenties-video-dreamina) stuur je het model aan met eigen beelden, clips en audio via @-verwijzingen.
+ByteDance zet er een andere werkwijze tegenover: bij [Seedance 2.0 in Dreamina](/nieuws/seedance-referenties-video-dreamina) stuur je het model aan met eigen beelden, clips en audio via @-verwijzingen. Bij Higgsfield ligt de nadruk weer op de camera: daar kies je de beweging als preset, zie [Higgsfield Motion Control met camera-presets](/nieuws/higgsfield-camera-presets-motion-control-gebruiken).
 
 ## Bronnen
 

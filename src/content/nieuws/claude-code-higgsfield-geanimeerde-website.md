@@ -57,7 +57,7 @@ Start Claude Code in een lege projectmap en schrijf een brief in plaats van een 
 
 ## Stap 2 — Genereer je assets in Higgsfield
 
-Terwijl Claude Code de structuur neerzet, maak je in Higgsfield de beelden: een hero-video van een paar seconden, sfeerbeelden per sectie, eventueel een korte loop als achtergrond. Higgsfield bundelt meerdere beeld- en videomodellen achter één credit-systeem; betaalde plannen beginnen rond de 15 dollar per maand en losse bundels kosten ongeveer 5 dollar per 100 credits, met een houdbaarheid van 90 dagen ([Bron: Higgsfield](https://higgsfield.ai/pricing)). Genereer varianten in één sessie, dan verspil je geen credits aan losse nabestellingen.
+Terwijl Claude Code de structuur neerzet, maak je in Higgsfield de beelden: een hero-video van een paar seconden, sfeerbeelden per sectie, eventueel een korte loop als achtergrond. Higgsfield bundelt meerdere beeld- en videomodellen achter één credit-systeem; betaalde plannen beginnen rond de 15 dollar per maand en losse bundels kosten ongeveer 5 dollar per 100 credits, met een houdbaarheid van 90 dagen ([Bron: Higgsfield](https://higgsfield.ai/pricing)). Genereer varianten in één sessie, dan verspil je geen credits aan losse nabestellingen. Wil je die hero-video een vaste camerabeweging geven, zoals een langzame dolly of een orbit, lees dan [hoe je Higgsfield Motion Control met camera-presets gebruikt](/nieuws/higgsfield-camera-presets-motion-control-gebruiken).
 
 > **⚡ Gevorderden:** laat Claude Code de video's door ffmpeg halen (compressie naar webm/mp4, poster-frame extractie) en Lenis aan GSAP's ScrollTrigger koppelen via de ticker. Dat zijn precies de klusjes die handmatig een middag kosten en die het model foutloos uit z'n mouw schudt — mits je er expliciet om vraagt.
 

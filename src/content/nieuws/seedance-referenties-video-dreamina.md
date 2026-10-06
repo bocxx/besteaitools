@@ -48,7 +48,7 @@ Een prompt alleen geeft je zelden dezelfde hoofdpersoon in twee clips. Seedance 
 
 Dreamina noemt maximaal 12 bestanden per project: 9 beelden, 3 video's en 3 audioclips, waarbij video en audio elk tot 15 seconden mogen zijn ([Bron: Dreamina](https://dreamina.capcut.com/resource/how-to-use-seedance-2-0)). Uitvoer is 1080p volgens dezelfde pagina.
 
-Er zijn twee manieren van werken: de single-frame mode, waarbij je een eerste en laatste frame aanlevert, en de multiframes mode, waarin je meerdere soorten input combineert ([Bron: Dreamina](https://dreamina.capcut.com/resource/how-to-use-seedance-2-0)).
+Er zijn twee manieren van werken: de single-frame mode, waarbij je een eerste en laatste frame aanlevert, en de multiframes mode, waarin je meerdere soorten input combineert ([Bron: Dreamina](https://dreamina.capcut.com/resource/how-to-use-seedance-2-0)). Wil je de camerabeweging liever als kant-en-klare preset kiezen dan via een referentieclip, dan biedt [Higgsfield Motion Control](/nieuws/higgsfield-camera-presets-motion-control-gebruiken) meer dan 50 presets.
 
 ## Stap voor stap
 
