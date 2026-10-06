@@ -1,5 +1,5 @@
 ---
-title: "Prompt caching bij Claude: zo betaal je veel minder voor herhaalde context"
+title: "Claude prompt caching: zo betaal je minder voor herhaalde context"
 description: "Stuur je bij elke API-call hetzelfde lange systeemprompt mee? Met prompt caching lees je dat uit cache tegen een fractie van de prijs. Zo stel je het in."
 publishedAt: 2026-10-06
 updatedAt: 2026-10-06
@@ -16,7 +16,7 @@ featured: false
 draft: false
 readingTime: 5
 heroImage: "/images/articles/diorama-claude-prompt-caching-kosten-besparen.webp"
-heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Prompt caching bij Claude: zo betaal je veel minder voor herhaalde context'"
+heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'Claude prompt caching: zo betaal je minder voor herhaalde context'"
 heroScene: "A small wooden filing cabinet with one drawer open, brass index cards sliding out onto a conveyor toward a chrome robot reader"
 keyTakeaways:
   - "Prompt caching bewaart vaste context, zoals je systeemprompt, documenten of tool-definities, zodat je die niet bij elke API-call volledig opnieuw betaalt."
