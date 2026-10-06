@@ -59,7 +59,7 @@ Serveerrecepten zijn gepubliceerd voor vLLM en SGLang. Voor een eerste kennismak
 
 **2. Hoeveel tokens verwerk je per maand?** OpenRouter rekent 0,45 dollar per miljoen ingaande en 3,20 dollar per miljoen uitgaande tokens. Onder de paar honderd miljoen tokens per maand haal je een GPU-investering er zelden uit. Daarboven kantelt het, zeker bij taken met veel invoer en weinig uitvoer — en dat is precies het profiel van documentverwerking en OCR.
 
-**3. Moet het altijd aan staan?** Een lokaal model dat 's nachts stilstaat kost evenveel als een lokaal model dat draait. Een endpoint kost niets als je niets vraagt. Bij bursty gebruik wint huren bijna altijd.
+**3. Moet het altijd aan staan?** Een lokaal model dat 's nachts stilstaat kost evenveel als een lokaal model dat draait. Een endpoint kost niets als je niets vraagt. Bij bursty gebruik wint huren bijna altijd. Wil je zo'n endpoint zelf neerzetten op een gehuurde GPU, dan laat onze gids [Modal gebruiken in vier stappen](/nieuws/modal-python-functie-gpu-draaien) zien hoe dat per seconde afgerekend werkt.
 
 ## Beginnen zonder iets te installeren
 

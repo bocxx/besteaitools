@@ -131,7 +131,7 @@ Een kant-en-klaar alternatief dat je in vijf minuten draaiend hebt: [OpenClaw in
 - [ ] Agent-loop getest met een weer-vraag én een niet-weer-vraag
 - [ ] Doorgedacht welke eigen data je als volgende tool aansluit
 
-Moet je agent ook beeld kunnen maken, dan haak je hem aan de [Replicate-API voor je eerste AI-afbeelding](/nieuws/replicate-eerste-afbeelding-api-python) — dezelfde aanpak met een token in een omgevingsvariabele als hierboven.
+Moet je agent ook beeld kunnen maken, dan haak je hem aan de [Replicate-API voor je eerste AI-afbeelding](/nieuws/replicate-eerste-afbeelding-api-python) — dezelfde aanpak met een token in een omgevingsvariabele als hierboven. Wil je een eigen model voor je agent op een GPU draaien, kijk dan naar [Modal](/nieuws/modal-python-functie-gpu-draaien): daar zet je een Python-functie met één decorator op een cloud-GPU.
 
 ## Bronnen
 

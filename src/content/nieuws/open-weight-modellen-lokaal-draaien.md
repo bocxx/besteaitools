@@ -49,7 +49,7 @@ Dit is wat er staat, wat het verschil maakt en hoe je ze lokaal draait. Haal je 
 
 ## Wat open-weight je geeft wat propriëtair niet geeft
 
-Een model als Claude of GPT-5 draait op de servers van Anthropic of OpenAI: je data gaat naar hun systemen en je betaalt per token. Open-weight modellen werken anders. De gewichten — het "brein" van het model — download je zelf en draai je op eigen hardware. Je data verlaat je machine niet, je betaalt geen token-kosten, en finetunen op eigen data kan.
+Een model als Claude of GPT-5 draait op de servers van Anthropic of OpenAI: je data gaat naar hun systemen en je betaalt per token. Open-weight modellen werken anders. De gewichten — het "brein" van het model — download je zelf en draai je op eigen hardware. Je data verlaat je machine niet, je betaalt geen token-kosten, en finetunen op eigen data kan. Is je eigen hardware te licht, dan kun je de GPU ook per seconde huren, bijvoorbeeld [met Modal](/nieuws/modal-python-functie-gpu-draaien), en draai je het model nog steeds zelf.
 
 > **💡 Beginner-tip:** je hoeft geen programmeur te zijn om een lokaal model te draaien. [Ollama](/ai-tools/ollama) (gratis, open source) regelt de installatie en start modellen met één commando. Denk eraan als een lokale ChatGPT die je zelf beheert.
 
