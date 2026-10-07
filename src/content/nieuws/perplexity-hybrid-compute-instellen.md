@@ -83,7 +83,7 @@ Open de model-selector, selecteer **hybrid**, en kies vervolgens welk cloudmodel
 - [ ] Pro-, Max- of Enterprise-abonnement actief (de gratis laag heeft geen toegang)
 - [ ] Eerste test gedaan met een bestand dat bewust persoonsgegevens bevat, om de maskering te zien werken
 
-Perplexity bouwt deze privacylaag onder een bredere agent-familie: eerder [hernoemde het bedrijf Spaces naar Projects](/nieuws/perplexity-spaces-heten-nu-projects), en in de browser doet [Comet het tabbladenwerk](/nieuws/comet-tabbladen-vergelijken-onderzoek). Hoe die browsers zich onderling verhouden, zette hetlaatsteainieuws.nl op een rij in [AI-browsers vergeleken](https://www.hetlaatsteainieuws.nl/nieuws/ai-browsers-vergeleken-2026).
+Perplexity bouwt deze privacylaag onder een bredere agent-familie: eerder [hernoemde het bedrijf Spaces naar Projects](/nieuws/perplexity-spaces-heten-nu-projects), en in de browser doet [Comet het tabbladenwerk](/nieuws/comet-tabbladen-vergelijken-onderzoek). Hoe die browsers zich onderling verhouden, zette hetlaatsteainieuws.nl op een rij in [AI-browsers vergeleken](https://www.hetlaatsteainieuws.nl///nieuws/ai-browsers-vergeleken-2026).
 
 Werk je op macOS met bestanden die je liever niet ongefilterd naar een cloud-AI stuurt — een jaaroverzicht, een contract, een dossier van een klant — dan is dit de eerste Perplexity-functie die dat verschil praktisch maakt in plaats van alleen in de voorwaarden.
 

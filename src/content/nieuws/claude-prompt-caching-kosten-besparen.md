@@ -74,7 +74,7 @@ Een rekenvoorbeeld met Opus 5.5: gewone input kost $4 per miljoen tokens, wegsch
 
 De cache mist zodra er iets wisselends vóór je breekpunt staat: een tijdstempel, een sessie-ID, de naam van de gebruiker. Eén veranderd teken bovenin je vaste blok en Claude ziet het als nieuwe inhoud, schrijft opnieuw naar cache en je bespaart niets. Houd alles boven het breekpunt letterlijk gelijk tussen calls en zet het variabele onderaan. Wil je ook in Claude Code op tokens letten, lees dan [hoe je met Caveman tokens bespaart](/nieuws/caveman-claude-code-tokens-besparen).
 
-Waarom elke token geld en stroom kost, legt hetlaatsteainieuws.nl uit in [wat er gebeurt als je een AI-model iets vraagt](https://hetlaatsteainieuws.nl/achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts).
+Waarom elke token geld en stroom kost, legt hetlaatsteainieuws.nl uit in [wat er gebeurt als je een AI-model iets vraagt](https://www.hetlaatsteainieuws.nl///achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts).
 
 ## Checklist: benut je de cache?
 

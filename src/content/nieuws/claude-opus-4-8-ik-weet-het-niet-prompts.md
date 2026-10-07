@@ -74,13 +74,13 @@ Voor wie zwaardere code-werk doet en parallelle subagents wil inzetten: Anthropi
 
 ## Prompt 3: klantantwoord dat geen schijnzekerheid wekt
 
-Voor klantcontact is overschattende AI een aansprakelijkheidsprobleem. Eigenlijk de wet, niet alleen ergerlijk: het [recente Aithos-onderzoek (27 mei 2026) liet zien dat Claude Opus 4.7 als enige boven de 50% EU-compliance kwam](https://www.hetlaatsteainieuws.nl/regelgeving/chatgpt-claude-gemini-overtreden-eu-wet-aithos-lara), terwijl Gemini 3.1 Pro op 10% bleef hangen. Opus 4.8 belooft hier nog scherper te zitten.
+Voor klantcontact is overschattende AI een aansprakelijkheidsprobleem. Eigenlijk de wet, niet alleen ergerlijk: het [recente Aithos-onderzoek (27 mei 2026) liet zien dat Claude Opus 4.7 als enige boven de 50% EU-compliance kwam](https://www.hetlaatsteainieuws.nl///regelgeving/chatgpt-claude-gemini-overtreden-eu-wet-aithos-lara), terwijl Gemini 3.1 Pro op 10% bleef hangen. Opus 4.8 belooft hier nog scherper te zitten.
 
 Gebruik deze opdracht voor klantmails of chatbot-antwoorden:
 
 > *"Schrijf een antwoord op deze klantvraag in Nederlandse zakelijke toon. Als de vraag een feit, prijs, beschikbaarheid of juridische claim raakt die ik moet verifiëren voor we hem versturen — zet dat onderaan in een blokje 'VERIFICATIE NODIG' met regelnummer-verwijzing naar het antwoord. Schrijf liever 'ik check dit voor je en kom erop terug' dan een zelfverzekerd antwoord waar je niet zeker van bent."*
 
-Resultaat: een werkbare conceptmail, plus een afzonderlijk lijstje met punten die jij of een collega moet bevestigen voor verzending. Dat is geen vertraging — het is precies de menselijke supervisie die de [EU AI Act op 2 augustus 2026 ook formeel verplicht](https://www.hetlaatsteainieuws.nl/regelgeving/eu-ai-act-mei-2026-governance-nederland) voor klantgerichte AI-toepassingen.
+Resultaat: een werkbare conceptmail, plus een afzonderlijk lijstje met punten die jij of een collega moet bevestigen voor verzending. Dat is geen vertraging — het is precies de menselijke supervisie die de [EU AI Act op 2 augustus 2026 ook formeel verplicht](https://www.hetlaatsteainieuws.nl///regelgeving/eu-ai-act-mei-2026-governance-nederland) voor klantgerichte AI-toepassingen.
 
 > **⚡ Gevorderden:** wie Opus 4.8 voor security- of auditwerk inzet, kan met [Strix als open-source AI-pentester](/nieuws/strix-open-source-ai-pentester) een tweede laag van adversarial testing toevoegen. De combinatie — Opus 4.8 voor het redeneren, Strix voor de proof-of-concept — vangt fouten die elk apart nog te makkelijk doorlaat.
 
@@ -95,7 +95,7 @@ Voor visueel werk — ontwerp, illustratie, layout-feedback — blijft [Claude D
 - Claude Opus 4.8 is sinds 28 mei 2026 beschikbaar, prijs gelijk aan Opus 4.7, met betere honesty en een 4x lagere kans op onopgemerkte code-fouten.
 - Drie concrete prompts maken het verschil zichtbaar: een research-prompt met **[onzeker]**-tags, een code-review-prompt die twijfels apart benoemt, en een klantantwoord-prompt die "VERIFICATIE NODIG"-blokken markeert.
 - Dynamic Workflows (research preview) draait honderden parallelle subagents in Claude Code voor zwaardere taken.
-- Voor klant- en compliance-werk sluit Opus 4.8 aan op de [Aithos LARA-meting](https://www.hetlaatsteainieuws.nl/regelgeving/chatgpt-claude-gemini-overtreden-eu-wet-aithos-lara) waarin Claude Opus 4.7 als enige boven 50% EU-compliance scoorde.
+- Voor klant- en compliance-werk sluit Opus 4.8 aan op de [Aithos LARA-meting](https://www.hetlaatsteainieuws.nl///regelgeving/chatgpt-claude-gemini-overtreden-eu-wet-aithos-lara) waarin Claude Opus 4.7 als enige boven 50% EU-compliance scoorde.
 
 ## Bronnen
 

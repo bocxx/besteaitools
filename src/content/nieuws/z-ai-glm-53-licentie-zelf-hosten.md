@@ -84,4 +84,4 @@ Wil je niet zelf hosten, dan blijft de API. Volgens The New Stack kost het volle
 - Je downloadt van `zai-org` en hebt de uitgever gecontroleerd.
 - Je hebt de prijzen op de Z.ai-site nagelopen als je de API gebruikt.
 
-Voor de bredere context, waarom Chinese open modellen zo hard groeien, lees [onze analyse op Het Laatste AI Nieuws](https://www.hetlaatsteainieuws.nl/regelgeving/china-glm-5-2-antwoord-anthropic-exportban).
+Voor de bredere context, waarom Chinese open modellen zo hard groeien, lees [onze analyse op Het Laatste AI Nieuws](https://www.hetlaatsteainieuws.nl///regelgeving/china-glm-5-2-antwoord-anthropic-exportban).

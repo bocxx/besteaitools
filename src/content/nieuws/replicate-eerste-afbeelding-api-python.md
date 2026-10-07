@@ -91,7 +91,7 @@ Wil je eerst zien wat een model doet? Elke modelpagina heeft een playground in d
 
 Cloudflare kondigde op 17 november 2025 aan Replicate over te nemen. Volgens [Cloudflare](https://blog.cloudflare.com/replicate-joins-cloudflare/) blijven bestaande API's en workflows zonder onderbreking werken en komt de modelcatalogus ook naar Workers AI. Voor een eerste project verandert er dus niets. Bouw je iets groters, houd dan de Replicate-documentatie in de gaten — de aankondiging is nog geen afgeronde integratie.
 
-Dat je hier per afbeelding of per GPU-seconde afrekent, is geen boekhoudkundig detail: hetlaatsteainieuws.nl legde uit [hoe AI-inferentie in 2026 van tokens naar watts rekent](https://www.hetlaatsteainieuws.nl/achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts), en dat is precies de rekening die je hier ziet.
+Dat je hier per afbeelding of per GPU-seconde afrekent, is geen boekhoudkundig detail: hetlaatsteainieuws.nl legde uit [hoe AI-inferentie in 2026 van tokens naar watts rekent](https://www.hetlaatsteainieuws.nl///achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts), en dat is precies de rekening die je hier ziet.
 
 ## Checklist: ben je klaar?
 

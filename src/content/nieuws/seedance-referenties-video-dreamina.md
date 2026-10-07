@@ -82,7 +82,7 @@ Twee dingen kosten de meeste herkansingen. De eerste: bestandsnamen die je in ee
 - [ ] Je hebt rechten op het beeld- en geluidsmateriaal dat je uploadt
 - [ ] Actuele credit-prijs in Dreamina gecontroleerd
 
-Wie zelf video maakt met referentiebeelden, snapt meteen waarom herkenning lastiger wordt: lees [hoe je nepvideo in 2026 herkent](https://www.hetlaatsteainieuws.nl/regelgeving/deepfakes-2026-nep-video-herkennen) op hetlaatsteainieuws.nl. Voor de geluidskant van je clip is onze gids over [nasynchroniseren met ElevenLabs](/nieuws/video-nasynchroniseren-elevenlabs-dubbing) het logische vervolg.
+Wie zelf video maakt met referentiebeelden, snapt meteen waarom herkenning lastiger wordt: lees [hoe je nepvideo in 2026 herkent](https://www.hetlaatsteainieuws.nl///regelgeving/deepfakes-2026-nep-video-herkennen) op hetlaatsteainieuws.nl. Voor de geluidskant van je clip is onze gids over [nasynchroniseren met ElevenLabs](/nieuws/video-nasynchroniseren-elevenlabs-dubbing) het logische vervolg.
 
 ## Bronnen
 

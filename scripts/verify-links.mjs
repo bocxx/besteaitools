@@ -22,7 +22,7 @@ const ROOT = new URL('..', import.meta.url).pathname;
 
 // ── Netwerk-site conventies ─────────────────────────────────────────────────
 const AIPLATFORM = 'https://www.aiplatformmkb.nl';
-const HLN = 'https://www.hetlaatsteainieuws.nl/';
+const HLN = 'https://www.hetlaatsteainieuws.nl//';
 
 // HLN's migration-redirects — 1:1 uit src/lib/migration-redirects.ts.
 const hlnCategoryPrefixRedirects = {

@@ -85,7 +85,7 @@ Higgsfield is sterk in losse, korte shots. Wil je een langere video, maak dan ee
 - Je hebt op de prijspagina gecontroleerd wat je plan nu bevat.
 - Je bouwt een langere video op uit korte shots en monteert die zelf.
 
-Wil je AI-video breder inzetten, bijvoorbeeld voor content zonder dat je zelf in beeld komt? Lees dan [faceless vlogging met AI op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/faceless-vlogging-ai-video). Wil je Higgsfield-beelden gebruiken op een eigen site, kijk dan bij [Claude Code en Higgsfield voor een geanimeerde website](/nieuws/claude-code-higgsfield-geanimeerde-website).
+Wil je AI-video breder inzetten, bijvoorbeeld voor content zonder dat je zelf in beeld komt? Lees dan [faceless vlogging met AI op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl///nieuws/faceless-vlogging-ai-video). Wil je Higgsfield-beelden gebruiken op een eigen site, kijk dan bij [Claude Code en Higgsfield voor een geanimeerde website](/nieuws/claude-code-higgsfield-geanimeerde-website).
 
 ## Bronnen
 

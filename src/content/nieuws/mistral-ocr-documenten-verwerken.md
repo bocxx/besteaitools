@@ -82,7 +82,7 @@ Moet je honderden of duizenden documenten verwerken, dan is losse aanroepen stur
 
 De documentatie noemt geen concrete verwerkingssnelheid, dus test zelf even hoe lang een batch van jouw typische documentgrootte duurt voordat je het in een tijdskritisch proces inbouwt. En reken de kosten door: bij $4 per 1.000 pagina's is een facturenstroom van een paar honderd stuks per maand goedkoop, maar bij tienduizenden pagina's per maand tikt dat wel aan — zeker als je de duurdere geannoteerde extractie gebruikt.
 
-Wil je weten hoe het bredere Mistral-ecosysteem zich verhoudt tot andere Europese AI-spelers, inclusief de vraag hoe "soeverein" die AI eigenlijk is? [Daar schreven we eerder over op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/mistral-3-miljard-samsung-soeverein). Gaat je bron niet over een document maar over een webpagina, dan is [Firecrawl het equivalent voor websites](/nieuws/firecrawl-website-naar-ai-databron).
+Wil je weten hoe het bredere Mistral-ecosysteem zich verhoudt tot andere Europese AI-spelers, inclusief de vraag hoe "soeverein" die AI eigenlijk is? [Daar schreven we eerder over op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl///nieuws/mistral-3-miljard-samsung-soeverein). Gaat je bron niet over een document maar over een webpagina, dan is [Firecrawl het equivalent voor websites](/nieuws/firecrawl-website-naar-ai-databron).
 
 ## Checklist: ben je klaar om te starten met Mistral OCR?
 

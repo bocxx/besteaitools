@@ -74,7 +74,7 @@ Claude draait op een familie van modellen. Je hoeft meestal niets te kiezen — 
 | **Sonnet 5** | Het werkpaard | Dagelijks gebruik, beste balans |
 | **Haiku 4.5** | Snel en goedkoop | Simpele taken, hoge volumes |
 
-Over Fable 5: Anthropic lanceerde het op 9 juni 2026 als het krachtigste algemeen beschikbare model tot nu toe. Tot en met 22 juni zit het zonder meerkosten in de betaalde abonnementen. Indrukwekkend, maar laat je er niet door opjagen: voor offertes, mails en samenvattingen merk je het verschil met Sonnet nauwelijks. De voorsprong zit in taken van uren, niet van minuten. Wie de details wil: [Het Laatste AI Nieuws zocht uit wat Fable 5 wél en niet kan](https://www.hetlaatsteainieuws.nl/nieuws/claude-fable-5-mythos-5).
+Over Fable 5: Anthropic lanceerde het op 9 juni 2026 als het krachtigste algemeen beschikbare model tot nu toe. Tot en met 22 juni zit het zonder meerkosten in de betaalde abonnementen. Indrukwekkend, maar laat je er niet door opjagen: voor offertes, mails en samenvattingen merk je het verschil met Sonnet nauwelijks. De voorsprong zit in taken van uren, niet van minuten. Wie de details wil: [Het Laatste AI Nieuws zocht uit wat Fable 5 wél en niet kan](https://www.hetlaatsteainieuws.nl///nieuws/claude-fable-5-mythos-5).
 
 ## Wat kost Claude?
 

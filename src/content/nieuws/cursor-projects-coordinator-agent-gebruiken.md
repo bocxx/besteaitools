@@ -81,7 +81,7 @@ Het staat als beta aangekondigd en rolt uit naar alle gebruikers ([Bron: Cursor 
 - [ ] Je weet wie de output beoordeelt voordat er iets gemerged wordt
 - [ ] Je hebt na de eerste run je verbruik bekeken
 
-Nieuwsgierig naar de zakelijke kant van Cursor? Lees [waarom SpaceX 60 miljard voor Cursor betaalt](https://www.hetlaatsteainieuws.nl/nieuws/spacex-koopt-cursor-60-miljard) op hetlaatsteainieuws.nl.
+Nieuwsgierig naar de zakelijke kant van Cursor? Lees [waarom SpaceX 60 miljard voor Cursor betaalt](https://www.hetlaatsteainieuws.nl///nieuws/spacex-koopt-cursor-60-miljard) op hetlaatsteainieuws.nl.
 
 ## Bronnen
 
