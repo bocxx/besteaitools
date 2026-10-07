@@ -1,4 +1,5 @@
 ---
+
 title: AI Tools Radar – Gemini · ChatGPT · Claude (Ochtend 7 oktober)
 description: 'AI Tools Radar 7 oktober: 123 launches, 33 feature-updates, 17 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-07'
@@ -18,7 +19,7 @@ topics:
 - Gemini
 - ChatGPT
 - Claude
-draft: true
+draft: false
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
@@ -170,7 +171,6 @@ deepDives:
 slotLabel: Ochtend
 heroImage: "/images/digest/ai-tools-radar-7-oktober-2026-gemini-chatgpt-claude.webp"
 ---
-
 De grote modelmakers kiezen deze week voor een gefaseerde uitrol: Google geeft Gemini 4 Argon eerst aan beveiligingsteams, terwijl Anthropic en OpenAI vooral bestaande tools uitbreiden. Claude Code werkt dankzij Cloud Sessions door op een server, en in ChatGPT kun je taken in de browser nu met je stem aansturen. Aan de onderkant van de markt valt op hoeveel nieuwe projecten AI-agents iets laten maken in een eigen omgeving, van Lego-bouwtekeningen tot olieverfschilderijen. Voor Europese organisaties is Kolibri van Aleph Alpha het concrete nieuws: een open model onder Apache 2.0 dat je op eigen servers kunt draaien.
 
 ---
