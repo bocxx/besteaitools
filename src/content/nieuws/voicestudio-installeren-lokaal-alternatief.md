@@ -87,5 +87,5 @@ VoiceStudio zelf staat onder de AGPL-3.0-licentie, met bijna 29.500 sterren en 2
 - [GitHub — debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)
 - [GitHub — debpalash/VoiceStudio releases](https://github.com/debpalash/VoiceStudio/releases)
 
-Wil je weten hoe dit soort lokale, open-source AI-tools zich verhouden tot de grote gesloten modellen, lees dan [Open-source AI in 2026: Llama, Mistral, DeepSeek en Kimi](https://www.hetlaatsteainieuws.nl////////achtergrond/staat-van-open-source-ai-2026) op hetlaatsteainieuws.nl.
+Wil je weten hoe dit soort lokale, open-source AI-tools zich verhouden tot de grote gesloten modellen, lees dan [Open-source AI in 2026: Llama, Mistral, DeepSeek en Kimi](https://www.hetlaatsteainieuws.nl/achtergrond/staat-van-open-source-ai-2026) op hetlaatsteainieuws.nl.
 

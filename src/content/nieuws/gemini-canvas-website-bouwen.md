@@ -74,7 +74,7 @@ Tevreden? Deel de link voor feedback. Wil je echt publiceren, met eigen hosting 
 
 > **⚡ Gevorderden:** oudere handleidingen noemen Firebase Studio als volgende stap. Gebruik dat niet meer: sinds 22 juni 2026 kun je er geen nieuwe werkruimtes aanmaken en op 22 maart 2027 sluit Google het platform. Google verwijst naar AI Studio en Antigravity ([Bron: Storyboard18](https://www.storyboard18.com/digital/google-to-shut-firebase-studio-in-2027-shifts-focus-to-ai-studio-and-antigravity-92922.htm)).
 
-Nieuw met Gemini? Begin bij [Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen). Bouw je liever in een andere app-builder, lees dan hoe je [een Lovable-project naar GitHub exporteert](/nieuws/lovable-project-exporteren-github). En wil je de basis van bouwen met AI goed onder de knie krijgen: Google zette het materiaal van zijn [vibe coding-cursus online](https://www.hetlaatsteainieuws.nl////////nieuws/google-vibe-coding-cursus-juni-2026), lees je op hetlaatsteainieuws.nl.
+Nieuw met Gemini? Begin bij [Gemini gebruiken in 5 stappen](/nieuws/gemini-gebruiken-5-stappen). Bouw je liever in een andere app-builder, lees dan hoe je [een Lovable-project naar GitHub exporteert](/nieuws/lovable-project-exporteren-github). En wil je de basis van bouwen met AI goed onder de knie krijgen: Google zette het materiaal van zijn [vibe coding-cursus online](https://www.hetlaatsteainieuws.nl/nieuws/google-vibe-coding-cursus-juni-2026), lees je op hetlaatsteainieuws.nl.
 
 ## Checklist: ben je klaar?
 

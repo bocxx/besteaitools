@@ -18,7 +18,7 @@ const APPLY = process.argv.includes('--apply');
 const VERBOSE = process.argv.includes('--verbose');
 
 const AIPLATFORM = 'https://www.aiplatformmkb.nl';
-const HLN = 'https://www.hetlaatsteainieuws.nl////';
+const HLN = 'https://www.' + 'hetlaatsteainieuws.nl';  // gesplitst: zo herschrijven de normalize-scripts deze constante nooit (7 okt 2026: slash-lus)
 const DBAT = 'https://debesteaitools.nl';  // DBAT gebruikt naakt-domein als canoniek (2 jul 2026)
 
 // HLN's migration-redirects — 1:1 kopie. Bij wijziging dáár, hier ook.
@@ -100,6 +100,7 @@ function canonicalize(originalUrl) {
   try { u = new URL(originalUrl); } catch { return null; }
   const target = TARGETS.find((t) => t.hostRe.test(u.hostname));
   if (!target) return null;
+  u.pathname = u.pathname.replace(/\/{2,}/g, '/');  // herstel '////'-paden (slash-lus, 7 okt 2026)
 
   const redirect = target.resolveRedirect(u.pathname);
   let base;
@@ -149,6 +150,7 @@ function* walk(dir) {
     if (st.isDirectory()) yield* walk(full);
     else if (st.isFile() && TEXT_EXT.test(name)) {
       if (GENERATED_FILES.has(relative(ROOT, full))) continue;
+      if (relative(ROOT, full).split(/[\\/]/)[0] === 'scripts') continue;  // scripts bevatten constanten, geen content
       yield full;
     }
   }

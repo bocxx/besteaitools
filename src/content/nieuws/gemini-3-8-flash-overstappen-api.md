@@ -93,7 +93,7 @@ De tarieven zijn introductieprijzen. Tot en met 31 december 2026 betaal je 0,75 
 
 Op de gratis tier probeer je 3.8 Flash zonder kosten, maar daar mag Google je invoer gebruiken om zijn producten te verbeteren. Voor klantgegevens hoort je toepassing op de betaalde tier.
 
-De bredere achtergrond bij deze release, inclusief de cyberversie die alleen naar overheden gaat, lees je op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl////////nieuws/gemini-3-8-flash-cyber-overheden). Wie zich afvraagt hoe snel Google nieuwe Flash-modellen uitbrengt: ons eerdere stuk over [Gemini 3.6 Flash](/nieuws/gemini-3-6-flash-nieuwe-flash-modellen) is pas tweeënhalve maand oud.
+De bredere achtergrond bij deze release, inclusief de cyberversie die alleen naar overheden gaat, lees je op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/gemini-3-8-flash-cyber-overheden). Wie zich afvraagt hoe snel Google nieuwe Flash-modellen uitbrengt: ons eerdere stuk over [Gemini 3.6 Flash](/nieuws/gemini-3-6-flash-nieuwe-flash-modellen) is pas tweeënhalve maand oud.
 
 ## Checklist: ben je klaar?
 

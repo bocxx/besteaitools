@@ -21,7 +21,7 @@ const VERBOSE = process.argv.includes('--verbose');
 // ── Redirect-tabellen — 1:1 kopie uit hetlaatsteainieuws-v2/src/lib/migration-redirects.ts.
 //    Bij wijziging dáár, ook hier aanpassen (kopie is bewust: cross-repo import kan niet).
 const AIPLATFORM = 'https://www.aiplatformmkb.nl';
-const HLN = 'https://www.hetlaatsteainieuws.nl///';
+const HLN = 'https://www.' + 'hetlaatsteainieuws.nl';  // gesplitst: zo herschrijven de normalize-scripts deze constante nooit (7 okt 2026: slash-lus)
 
 const categoryPrefixRedirects = {
   '/ai-nieuws':     '/nieuws',
@@ -79,6 +79,8 @@ function canonicalize(originalUrl) {
   let u;
   try { u = new URL(originalUrl); } catch { return null; }
   if (!/(^|\.)hetlaatsteainieuws\.nl$/.test(u.hostname)) return null;
+  u.pathname = u.pathname.replace(/\/{2,}/g, '/');  // herstel '////'-paden (slash-lus, 7 okt 2026)
+  if (u.pathname === '/' && !/^https?:\/\/[^/?#]+\//.test(originalUrl)) return HLN + u.search + u.hash;
 
   const redirectTarget = resolveRedirect(u.pathname);
   let targetBase;
@@ -132,6 +134,7 @@ function* walk(dir) {
     if (st.isDirectory()) yield* walk(full);
     else if (st.isFile() && TEXT_EXT.test(name)) {
       if (GENERATED_FILES.has(relative(ROOT, full))) continue;
+      if (relative(ROOT, full).split(/[\\/]/)[0] === 'scripts') continue;  // scripts bevatten constanten, geen content
       yield full;
     }
   }

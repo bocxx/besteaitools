@@ -33,7 +33,7 @@ faq:
     a: "Anthropic heeft de promotie niet verlengd na 13 september 2026 en heeft geen aankondiging gedaan over een nieuwe tijdelijke boost. De 25%-verhoging ten opzichte van de oude basislimiet is door Anthropic als permanent omschreven."
 ---
 
-Sinds 14 september 2026 werk je in Claude Code met een lagere weekly limiet dan de afgelopen zomer — ook al noemt Anthropic het zelf een "verhoging van 25%". De tijdelijke boost van 50% die van mei tot september gold, is namelijk komen te vervallen. Wat er precies verandert, voor wie, en hoe je met minder ruimte toch je workflow op peil houdt, lees je hieronder. Voor de bredere Claude Code-context: [wat Claude Code Desktop allemaal kan](https://www.hetlaatsteainieuws.nl////////nieuws/claude-code-desktop-grote-update).
+Sinds 14 september 2026 werk je in Claude Code met een lagere weekly limiet dan de afgelopen zomer — ook al noemt Anthropic het zelf een "verhoging van 25%". De tijdelijke boost van 50% die van mei tot september gold, is namelijk komen te vervallen. Wat er precies verandert, voor wie, en hoe je met minder ruimte toch je workflow op peil houdt, lees je hieronder. Voor de bredere Claude Code-context: [wat Claude Code Desktop allemaal kan](https://www.hetlaatsteainieuws.nl/nieuws/claude-code-desktop-grote-update).
 
 ## Wat er precies veranderde
 

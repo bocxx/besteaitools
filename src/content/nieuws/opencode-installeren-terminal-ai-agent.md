@@ -74,7 +74,7 @@ Het onderdeel dat OpenCode onderscheidt van een agent die gewoon meteen aan de s
 
 Ben je tevreden met het voorstel, schakel dan terug naar de normale modus en laat OpenCode het plan uitvoeren. Bevalt het niet, dan gebruik je `/undo` om wijzigingen ongedaan te maken, of `/redo` om ze terug te zetten.
 
-Andere agents die in de terminal draaien — zoals Anthropics eigen Claude Code, waarover we eerder schreven bij de [grote desktop-update](https://www.hetlaatsteainieuws.nl////////nieuws/claude-code-desktop-grote-update) — werken losser gekoppeld aan één model. Het verschil met OpenCode zit 'm precies in die modelvrijheid: dezelfde agent, wisselende motor onder de motorkap.
+Andere agents die in de terminal draaien — zoals Anthropics eigen Claude Code, waarover we eerder schreven bij de [grote desktop-update](https://www.hetlaatsteainieuws.nl/nieuws/claude-code-desktop-grote-update) — werken losser gekoppeld aan één model. Het verschil met OpenCode zit 'm precies in die modelvrijheid: dezelfde agent, wisselende motor onder de motorkap.
 
 ## Checklist: ben je klaar?
 

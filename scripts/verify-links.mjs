@@ -22,7 +22,7 @@ const ROOT = new URL('..', import.meta.url).pathname;
 
 // ── Netwerk-site conventies ─────────────────────────────────────────────────
 const AIPLATFORM = 'https://www.aiplatformmkb.nl';
-const HLN = 'https://www.hetlaatsteainieuws.nl////';
+const HLN = 'https://www.' + 'hetlaatsteainieuws.nl';  // gesplitst: zo herschrijven de normalize-scripts deze constante nooit (7 okt 2026: slash-lus)
 
 // HLN's migration-redirects — 1:1 uit src/lib/migration-redirects.ts.
 const hlnCategoryPrefixRedirects = {
@@ -80,6 +80,9 @@ function checkUrl(rawUrl) {
 
   // Fout 1: verkeerde host (naakt vs www).
   if (u.hostname !== site.wantHost) return `host moet ${site.wantHost} zijn`;
+
+  // Fout 1b: dubbele slashes in het pad (slash-lus van 7 okt 2026).
+  if (/\/{2,}/.test(rawUrl.replace(/^https?:\/\//, ''))) return `dubbele slash in pad — moet enkel`;
 
   // Fout 2: oude prefix / redirect-target.
   const redirect = site.resolveRedirect(u.pathname);
