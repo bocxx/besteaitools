@@ -50,8 +50,17 @@ try {
   table = { exact: new Map(), splats: [] };
 }
 
+// Apps en AI-tools die markdown verkeerd uitlezen plakken het afsluitende `)`
+// of de zinspunt aan de URL (`/ai-tools/foo)`, `/nieuws/foo.`) → 404. Geen
+// echt pad eindigt zo, dus 301 naar het pad zonder leestekens (Umami, okt 2026).
+const TRAILING_PUNCT = /(?:[).,;:!]|%29|%22|%27)+$/;
+
 function findRedirect(url: URL): Response | null {
   const { pathname, search } = url;
+  if (TRAILING_PUNCT.test(pathname)) {
+    const cleaned = new URL((pathname.replace(TRAILING_PUNCT, '') || '/') + search, url.origin);
+    return new Response(null, { status: 301, headers: { Location: cleaned.href } });
+  }
   let target: string | null = null;
   let status = 301;
 
