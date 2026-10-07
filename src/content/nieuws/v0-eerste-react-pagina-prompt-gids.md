@@ -83,7 +83,7 @@ Loop je tegen die zeven berichten per dag aan, dan is Plus de volgende stap: 30 
 
 Voor Vue, Svelte of native apps is v0 niet gebouwd. Zware backend-logica of complexe inlog vraagt een coding-agent zoals Cursor — zie onze gids over [Cursor 1.0](/nieuws/cursor-1-0-lancering). Voor een simpele site zonder code zit je beter bij een klassieke sitebouwer.
 
-Vibe coding is inmiddels ook lesmateriaal: Google heeft er [een gratis cursus](https://www.hetlaatsteainieuws.nl///nieuws/google-vibe-coding-cursus-juni-2026) van gemaakt, schreef hetlaatsteainieuws.nl.
+Vibe coding is inmiddels ook lesmateriaal: Google heeft er [een gratis cursus](https://www.hetlaatsteainieuws.nl////////nieuws/google-vibe-coding-cursus-juni-2026) van gemaakt, schreef hetlaatsteainieuws.nl.
 
 ## Checklist: ben je klaar?
 

@@ -4,7 +4,7 @@
 # Verzorgt alles wat de generator nodig heeft, zodat je nooit een pad naar
 # newsflux of een handmatige venv-setup hoeft te onthouden:
 #
-#   1. sourcet ./.env (voor LEONARDO_API_KEY)
+#   1. sourcet ./.env (ELEVENLABS_API_KEY; LEONARDO_API_KEY als terugval)
 #   2. maakt ./venv aan + installeert scripts/requirements.txt bij de
 #      eerste run (idempotent — daarna meteen door)
 #   3. roept generate-diorama.py aan met alle doorgegeven flags
@@ -32,14 +32,17 @@ GEN="$SCRIPT_DIR/generate-diorama.py"
 # ── 1. Env laden ────────────────────────────────────────────────────────────
 if [[ -f "$ROOT/.env" ]]; then
   while IFS= read -r line; do
-    [[ "$line" =~ ^LEONARDO_ ]] && export "$line"
+    [[ "$line" =~ ^(ELEVENLABS_|LEONARDO_|IMAGE_PROVIDER=) ]] && export "${line//\"/}"
   done < "$ROOT/.env"
 fi
 
-# --dry-run heeft geen key nodig; check alleen bij echte generatie.
-if [[ -z "${LEONARDO_API_KEY:-}" && ! " $* " == *" --dry-run "* ]]; then
-  echo "❌ LEONARDO_API_KEY niet gevonden." >&2
-  echo "   Zet 'm in $ROOT/.env  (zie .env.example → Leonardo-blok)." >&2
+# Provider: Leonardo (default noodgreep) of ElevenLabs (IMAGE_PROVIDER=elevenlabs). Canoniek: --import.
+# --dry-run en --import hebben geen key nodig; check alleen bij echte generatie.
+PROVIDER="${IMAGE_PROVIDER:-leonardo}"
+if [[ "$PROVIDER" == "leonardo" ]]; then KEYVAR="LEONARDO_API_KEY"; else KEYVAR="ELEVENLABS_API_KEY"; fi
+if [[ -z "${!KEYVAR:-}" && ! " $* " == *" --dry-run "* && ! " $* " == *" --import "* ]]; then
+  echo "❌ $KEYVAR niet gevonden (provider: $PROVIDER)." >&2
+  echo "   Zet 'm in $ROOT/.env  (zie .env.example)." >&2
   echo "   Of draai met --dry-run om alleen de prompt te previewen." >&2
   exit 1
 fi

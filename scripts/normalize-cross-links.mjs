@@ -18,7 +18,7 @@ const APPLY = process.argv.includes('--apply');
 const VERBOSE = process.argv.includes('--verbose');
 
 const AIPLATFORM = 'https://www.aiplatformmkb.nl';
-const HLN = 'https://www.hetlaatsteainieuws.nl//';
+const HLN = 'https://www.hetlaatsteainieuws.nl////';
 const DBAT = 'https://debesteaitools.nl';  // DBAT gebruikt naakt-domein als canoniek (2 jul 2026)
 
 // HLN's migration-redirects — 1:1 kopie. Bij wijziging dáár, hier ook.

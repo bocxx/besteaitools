@@ -86,5 +86,5 @@ ByteDance zet er een andere werkwijze tegenover: bij [Seedance 2.0 in Dreamina](
 - [Hailuo — MiniMax H3 toolpagina](https://hailuoai.video/tools/minimax-h3)
 - [Segmind — MiniMax H3: Release Date, Open Weights, and API Pricing Explained](https://blog.segmind.com/minimax-h3-release-date-open-weights-and-api-pricing-explained/)
 
-Meer over hoe MiniMax zich als AI-bedrijf ontwikkelt, lees je in [MiniMax M3: open-weights model, 1M context, 59% SWE-Bench Pro](https://www.hetlaatsteainieuws.nl///nieuws/minimax-m3-open-weights-frontier-model) op hetlaatsteainieuws.nl.
+Meer over hoe MiniMax zich als AI-bedrijf ontwikkelt, lees je in [MiniMax M3: open-weights model, 1M context, 59% SWE-Bench Pro](https://www.hetlaatsteainieuws.nl////////nieuws/minimax-m3-open-weights-frontier-model) op hetlaatsteainieuws.nl.
 

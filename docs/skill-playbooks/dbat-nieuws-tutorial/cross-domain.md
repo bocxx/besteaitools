@@ -7,7 +7,7 @@ Elk DBAT-tutorial bevat **één** verplichte cross-domain link naar `hetlaatstea
 Volledige URL met categorie-prefix (let op: dit verschilt van DBAT zelf):
 
 ```
-https://www.hetlaatsteainieuws.nl//<category>/<slug>
+https://www.hetlaatsteainieuws.nl////<category>/<slug>
 ```
 
 **Belangrijk verschil met interne DBAT-links:**
@@ -17,7 +17,7 @@ https://www.hetlaatsteainieuws.nl//<category>/<slug>
 Voorbeelden:
 - `https://www.aiplatformmkb.nl/gidsen/claude-voor-beginners-eerste-gesprek`
 - `https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou`
-- `https://www.hetlaatsteainieuws.nl///achtergrond/ai-agents-2026-wat-zijn-ze`
+- `https://www.hetlaatsteainieuws.nl////////achtergrond/ai-agents-2026-wat-zijn-ze`
 
 ## De zeven HLN-categorieën
 
@@ -104,7 +104,7 @@ Twee logische plekken:
 **Optie B — In een context-paragraaf (sterkst voor "bredere achtergrond"-links):**
 
 ```markdown
-Voor de bredere context over hoe agents zich onderling verhouden, geeft onze deep-dive [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl///achtergrond/ai-agents-2026-wat-zijn-ze) een werkbare landkaart.
+Voor de bredere context over hoe agents zich onderling verhouden, geeft onze deep-dive [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl////////achtergrond/ai-agents-2026-wat-zijn-ze) een werkbare landkaart.
 ```
 
 **Optie C — Aan het einde, als vervolgactie:**
@@ -117,7 +117,7 @@ Wie deze tutorial heeft afgerond en het breder wil benutten, vindt in onze gids 
 
 Voor elke cross-link, check:
 
-- [ ] Absolute URL `https://www.hetlaatsteainieuws.nl//...` (geen `//` of relatieve paden)
+- [ ] Absolute URL `https://www.hetlaatsteainieuws.nl////...` (geen `//` of relatieve paden)
 - [ ] Categorie-prefix klopt (`/ai-tutorials/`, niet `/tutorials/`)
 - [ ] Geen trailing slash op de URL (dus `/<slug>`, niet `/<slug>/`)
 - [ ] Anchor-tekst is beschrijvend (niet "lees meer", niet "klik hier")

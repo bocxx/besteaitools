@@ -78,7 +78,7 @@ Ollama downloadt het model automatisch en start een lokale chat. Je kunt ook de 
 
 Draait je eerste model, dan is de volgende trede een heel agent-team op je eigen machine: [multi-agent AI lokaal bouwen met Ollama](/nieuws/ollama-multi-agent-lokaal-bouwen). Met `ollama list` zie je welke modellen je hebt; `ollama rm <naam>` verwijdert ze. Downloadgroottes lopen van ~2 GB (kleine modellen) tot honderden GB's voor de grootste varianten — check [ollama.com/library](https://ollama.com/library) voor de exacte grootte en beschikbare varianten per model.
 
-> **⚡ Gevorderden:** liever een grafische interface dan de terminal? [LM Studio](/ai-tools/lm-studio) doet hetzelfde werk met een GUI, inclusief GGUF-checkpoints voor de Gemma 4-familie. Voor wie wil begrijpen wat er onder de motorkap gebeurt: de uitleg [hoe een taalmodel van binnen werkt](https://www.hetlaatsteainieuws.nl///achtergrond/hoe-werkt-een-taalmodel-llm-uitleg-pytorch) op hetlaatsteainieuws.nl legt de basis.
+> **⚡ Gevorderden:** liever een grafische interface dan de terminal? [LM Studio](/ai-tools/lm-studio) doet hetzelfde werk met een GUI, inclusief GGUF-checkpoints voor de Gemma 4-familie. Voor wie wil begrijpen wat er onder de motorkap gebeurt: de uitleg [hoe een taalmodel van binnen werkt](https://www.hetlaatsteainieuws.nl////////achtergrond/hoe-werkt-een-taalmodel-llm-uitleg-pytorch) op hetlaatsteainieuws.nl legt de basis.
 
 ## Wanneer open-weight, wanneer propriëtair?
 

@@ -19,9 +19,18 @@ dezelfde herkenbare look, maar krijgen ze zichtbaar andere composities.
 Werkt op v2 markdown in src/content/nieuws/, output naar
 public/images/articles/diorama-<slug>.webp.
 
+Canonieke route (sinds 26 sep 2026): het beeld wordt in de Claude-sessie gemaakt
+via de ElevenLabs-connector (zie skill-reference hero-image.md) en daarna hier
+geïmporteerd — dat doet bijsnijden (cover, 1216×752), webp, frontmatter en log:
+    python scripts/generate-diorama.py --slug <slug> --import pad/naar/beeld.png
+
+API-route via .env is een noodgreep, alleen bewust per keer:
+    IMAGE_PROVIDER=leonardo   (default) + LEONARDO_API_KEY
+    IMAGE_PROVIDER=elevenlabs + ELEVENLABS_API_KEY (vraagt ElevenLabs Pro of hoger;
+                              model via ELEVENLABS_IMAGE_MODEL, default seedream-5-lite)
+
 Vereist:
     pip install requests Pillow
-    export LEONARDO_API_KEY=xxxxxx
 
 Gebruik:
     python scripts/generate-diorama.py --all
@@ -59,6 +68,10 @@ LOG_PATH    = ROOT / "data" / "diorama-generation-log.json"
 # ── Leonardo Phoenix 1.0 ────────────────────────────────────────────────────
 
 LEONARDO_BASE  = "https://cloud.leonardo.ai/api/rest/v1"
+ELEVEN_BASE    = "https://api.elevenlabs.io/v1"
+IMAGE_PROVIDER = os.environ.get("IMAGE_PROVIDER", "leonardo").strip().lower()
+ELEVEN_MODEL   = os.environ.get("ELEVENLABS_IMAGE_MODEL", "bytedance-seedream-5-lite")
+ELEVEN_ASPECT  = "16:9"   # dichtstbij 1216×752; we snijden daarna 'cover' bij
 PHOENIX_MODEL  = "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3"
 IMAGE_WIDTH    = 1216  # ≥1200px breed: vereist voor Google Discover's grote preview-kaart
 IMAGE_HEIGHT   = 752   # multiple of 8; behoudt ~1.62-ratio (was 1024×632)
@@ -340,7 +353,7 @@ def get_headers() -> dict:
     }
 
 
-def start_generation(prompt: str, seed: int) -> Optional[str]:
+def _leonardo_start(prompt: str, seed: int) -> Optional[str]:
     import requests
     payload = {
         "prompt": prompt,
@@ -367,7 +380,7 @@ def start_generation(prompt: str, seed: int) -> Optional[str]:
     return gen_id
 
 
-def poll_generation(gen_id: str, max_wait: int = 180) -> Optional[str]:
+def _leonardo_poll(gen_id: str, max_wait: int = 180) -> Optional[str]:
     import requests
     deadline = time.time() + max_wait
     interval = 4
@@ -396,6 +409,76 @@ def poll_generation(gen_id: str, max_wait: int = 180) -> Optional[str]:
     return None
 
 
+# ── ElevenLabs Image API ───────────────────────────────────────────────────
+
+def _eleven_headers() -> dict:
+    api_key = os.environ.get("ELEVENLABS_API_KEY")
+    if not api_key:
+        raise RuntimeError("ELEVENLABS_API_KEY niet gezet")
+    return {"accept": "application/json", "content-type": "application/json",
+            "xi-api-key": api_key}
+
+
+def _eleven_start(prompt: str, seed: int) -> Optional[str]:
+    import requests
+    payload = {"model_id": ELEVEN_MODEL, "prompt": prompt,
+               "aspect_ratio": ELEVEN_ASPECT, "resolution": "2K"}
+    resp = requests.post(f"{ELEVEN_BASE}/flows/image", headers=_eleven_headers(),
+                         json=payload, timeout=60)
+    if not resp.ok:
+        print(f"   ❌ ElevenLabs API {resp.status_code}: {resp.text[:400]}")
+        if "paid_plan_required" in resp.text:
+            print("   ℹ️  De Image API vraagt ElevenLabs Pro of hoger. Alternatief: maak het")
+            print("      beeld via de ElevenLabs-connector in Claude en draai dan")
+            print("      --slug <slug> --import <beeld.png>.")
+        return None
+    gen_id = resp.json().get("id")
+    if not gen_id:
+        print(f"   ❌ Geen generation-id: {resp.text[:300]}")
+    return gen_id
+
+
+def _eleven_poll(gen_id: str, max_wait: int = 300) -> Optional[str]:
+    import requests
+    deadline = time.time() + max_wait
+    interval = 3  # docs: niet vaker dan eens per 2 s pollen
+    while time.time() < deadline:
+        time.sleep(interval)
+        resp = requests.get(f"{ELEVEN_BASE}/flows/image/{gen_id}",
+                            headers=_eleven_headers(), timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        status = data.get("status", "")
+        if status == "completed":
+            # signed URL: direct gebruiken, niet opslaan
+            return data.get("content_url")
+        if status == "failed":
+            print(f"   ❌ Generatie mislukt: {data.get('failure_reason')} {data.get('error_message')}")
+            return None
+        print(f"   ⏳ {status}…")
+        interval = min(interval + 2, 10)
+    print(f"   ❌ Timeout na {max_wait}s")
+    return None
+
+
+def provider_label() -> str:
+    if IMAGE_PROVIDER == "leonardo":
+        return "Leonardo Phoenix 1.0"
+    return f"ElevenLabs {ELEVEN_MODEL}"
+
+
+def start_generation(prompt: str, seed: int) -> Optional[str]:
+    if IMAGE_PROVIDER == "leonardo":
+        return _leonardo_start(prompt, seed)
+    return _eleven_start(prompt, seed)
+
+
+def poll_generation(gen_id: str) -> Optional[str]:
+    if IMAGE_PROVIDER == "leonardo":
+        return _leonardo_poll(gen_id)
+    return _eleven_poll(gen_id)
+
+
 def download_and_optimize(url: str, dest: Path) -> bool:
     import requests
     # tmp in de systeem-tempmap: naast dest schrijven mag niet op elke mount
@@ -412,17 +495,31 @@ def download_and_optimize(url: str, dest: Path) -> bool:
     except Exception as e:
         print(f"   ❌ Download mislukt: {e}")
         return False
+    return optimize_local(tmp, dest, remove_src=True)
+
+
+def optimize_local(tmp: Path, dest: Path, remove_src: bool = False) -> bool:
+    """Snijdt 'cover' bij naar IMAGE_WIDTH×IMAGE_HEIGHT en schrijft webp.
+
+    Elke provider levert een andere maat (ElevenLabs 16:9 = 1280×720,
+    Leonardo native 1216×752); cover-crop maakt ze allemaal gelijk.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    def _cleanup():
+        if remove_src:
+            tmp.unlink(missing_ok=True)
 
     # ImageMagick of cwebp voor compressie
     magick = shutil.which("magick") or shutil.which("convert")
     if magick:
         try:
             subprocess.run(
-                [magick, str(tmp), "-resize", f"{OPTIMIZE_WIDTH}x",
+                [magick, str(tmp), "-resize", f"{IMAGE_WIDTH}x{IMAGE_HEIGHT}^",
+                 "-gravity", "center", "-extent", f"{IMAGE_WIDTH}x{IMAGE_HEIGHT}",
                  "-quality", str(OPTIMIZE_QUALITY), "-strip", str(dest)],
                 check=True, capture_output=True, timeout=30,
             )
-            tmp.unlink(missing_ok=True)
+            _cleanup()
             size_kb = dest.stat().st_size / 1024
             print(f"   ✅ {dest.name} ({size_kb:.0f} KB)")
             return True
@@ -430,21 +527,21 @@ def download_and_optimize(url: str, dest: Path) -> bool:
             print(f"   ⚠️  ImageMagick mislukt ({e}), Pillow fallback")
 
     try:
-        from PIL import Image as PILImage
-        img = PILImage.open(tmp)
-        w, h = img.size
-        if w > OPTIMIZE_WIDTH:
-            new_h = int(h * OPTIMIZE_WIDTH / w)
-            img = img.resize((OPTIMIZE_WIDTH, new_h), PILImage.LANCZOS)
+        from PIL import Image as PILImage, ImageOps
+        img = PILImage.open(tmp).convert("RGB")
+        img = ImageOps.fit(img, (IMAGE_WIDTH, IMAGE_HEIGHT), PILImage.LANCZOS)
         img.save(dest, format="WEBP", quality=OPTIMIZE_QUALITY, method=6)
-        tmp.unlink(missing_ok=True)
+        _cleanup()
         size_kb = dest.stat().st_size / 1024
         print(f"   ✅ {dest.name} ({size_kb:.0f} KB via Pillow)")
         return True
     except Exception as e:
         print(f"   ⚠️  Pillow mislukt ({e}), bewaar zonder optimalisatie")
 
-    tmp.rename(dest)
+    if remove_src:
+        tmp.rename(dest)
+    else:
+        shutil.copyfile(tmp, dest)
     return True
 
 
@@ -476,7 +573,8 @@ def update_log(title: str, filename: str, web_path: str, alt_text: str,
 
 # ── Per-artikel verwerking ─────────────────────────────────────────────────
 
-def process_article(md_path: Path, *, dry_run: bool, force: bool) -> str:
+def process_article(md_path: Path, *, dry_run: bool, force: bool,
+                    import_path: Optional[Path] = None) -> str:
     slug = md_path.stem
     text = md_path.read_text(encoding="utf-8")
     title        = parse_field(text, "title") or slug
@@ -490,7 +588,7 @@ def process_article(md_path: Path, *, dry_run: bool, force: bool) -> str:
     web_path  = f"/images/articles/{filename}"
     dest_webp = IMAGES_DIR / filename
 
-    if dest_webp.exists() and current_hero == web_path and not force:
+    if dest_webp.exists() and current_hero == web_path and not force and not import_path:
         return "skip"
 
     prompt = build_prompt(title, tags, hero_scene, seed, category)
@@ -501,18 +599,23 @@ def process_article(md_path: Path, *, dry_run: bool, force: bool) -> str:
         print(f"   [dry-run] zou {filename} genereren voor '{title[:60]}'")
         return "done"
 
-    print(f"   📝 seed {seed} — {prompt[:80]}…")
-    gen_id = start_generation(prompt, seed)
-    if not gen_id:
-        return "error"
-    print(f"   🎨 Job {gen_id}")
+    if import_path:
+        print(f"   📥 Import {import_path}")
+        if not optimize_local(import_path, dest_webp):
+            return "error"
+    else:
+        print(f"   📝 seed {seed} — {prompt[:80]}…")
+        gen_id = start_generation(prompt, seed)
+        if not gen_id:
+            return "error"
+        print(f"   🎨 Job {gen_id}")
 
-    image_url = poll_generation(gen_id)
-    if not image_url:
-        return "error"
+        image_url = poll_generation(gen_id)
+        if not image_url:
+            return "error"
 
-    if not download_and_optimize(image_url, dest_webp):
-        return "error"
+        if not download_and_optimize(image_url, dest_webp):
+            return "error"
 
     alt = build_alt_text(title, category)
     new_text = set_field(text, "heroImage", web_path)
@@ -568,6 +671,9 @@ def main() -> None:
                         help="Overschrijf bestaande images")
     parser.add_argument("--dry-run", action="store_true",
                         help="Preview, geen API-aanroepen")
+    parser.add_argument("--import", dest="import_path", metavar="BEELD",
+                        help="Gebruik een al gemaakt beeld (png/jpg/webp) i.p.v. de API; "
+                             "alleen samen met --slug of --file")
     args = parser.parse_args()
 
     _self_test()  # regressie-slot — faalt luid als de apostrof-bug terugkeert
@@ -578,6 +684,16 @@ def main() -> None:
     if not args.slug and not args.all and not args.file:
         parser.print_help()
         sys.exit(1)
+
+    import_path = None
+    if args.import_path:
+        if args.all:
+            print("❌ --import werkt alleen met --slug of --file, niet met --all")
+            sys.exit(1)
+        import_path = Path(args.import_path).expanduser().resolve()
+        if not import_path.exists():
+            print(f"❌ Beeld niet gevonden: {import_path}")
+            sys.exit(1)
 
     if args.file:
         md_paths = [Path(args.file).resolve()]
@@ -600,13 +716,14 @@ def main() -> None:
 
     print(f"\n{'='*60}")
     print(f"{'[DRY RUN] ' if args.dry_run else ''}Diorama generatie — {len(md_paths)} artikel(en)")
-    print(f"Model: Phoenix 1.0 | {IMAGE_WIDTH}×{IMAGE_HEIGHT} | per-artikel seed")
+    print(f"Model: {'import (geen API)' if import_path else provider_label()} | {IMAGE_WIDTH}×{IMAGE_HEIGHT}")
     print(f"{'='*60}\n")
 
     stats: dict[str, int] = {"done": 0, "skip": 0, "error": 0}
     for md_path in md_paths:
         print(f"📄 {md_path.name}")
-        status = process_article(md_path, dry_run=args.dry_run, force=args.force)
+        status = process_article(md_path, dry_run=args.dry_run, force=args.force,
+                                 import_path=import_path)
         stats[status] = stats.get(status, 0) + 1
         if status == "skip":
             print("   ✓ Al up-to-date (skip)")

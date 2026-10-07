@@ -74,7 +74,7 @@ Elke Space heeft twee soorten omgevingsvariabelen: **Variables** zijn openbaar z
 - Je houdt rekening met een korte cold-start na inactiviteit, zeker bij een live demo.
 - Je weet wanneer betaalde hardware nodig is: permanente uptime of meer rekenkracht dan ZeroGPU biedt.
 
-Voor meer over hoe het bredere open-source AI-landschap rond Hugging Face zich in 2026 ontwikkelt, zie het [overzicht van open-source AI op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl///achtergrond/staat-van-open-source-ai-2026). Wil je eerst de basis van het platform zelf onder de knie krijgen, lees dan [Hugging Face voor beginners](/nieuws/hugging-face-voor-beginners) en, voor wie met tokens werkt, [fijnmazige tokens veilig instellen](/nieuws/huggingface-fijnmazige-token-veilig-instellen). Wil je meteen een eigen Space bouwen als oefening, dan is [een tekstsamenvatter bouwen met Hugging Face](/nieuws/dbat-tekst-samenvatter-bouwen-hugging-face) een goed vervolgproject.
+Voor meer over hoe het bredere open-source AI-landschap rond Hugging Face zich in 2026 ontwikkelt, zie het [overzicht van open-source AI op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl////////achtergrond/staat-van-open-source-ai-2026). Wil je eerst de basis van het platform zelf onder de knie krijgen, lees dan [Hugging Face voor beginners](/nieuws/hugging-face-voor-beginners) en, voor wie met tokens werkt, [fijnmazige tokens veilig instellen](/nieuws/huggingface-fijnmazige-token-veilig-instellen). Wil je meteen een eigen Space bouwen als oefening, dan is [een tekstsamenvatter bouwen met Hugging Face](/nieuws/dbat-tekst-samenvatter-bouwen-hugging-face) een goed vervolgproject.
 
 ## Bronnen
 

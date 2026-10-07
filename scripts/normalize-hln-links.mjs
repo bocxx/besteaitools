@@ -21,7 +21,7 @@ const VERBOSE = process.argv.includes('--verbose');
 // ── Redirect-tabellen — 1:1 kopie uit hetlaatsteainieuws-v2/src/lib/migration-redirects.ts.
 //    Bij wijziging dáár, ook hier aanpassen (kopie is bewust: cross-repo import kan niet).
 const AIPLATFORM = 'https://www.aiplatformmkb.nl';
-const HLN = 'https://www.hetlaatsteainieuws.nl/';
+const HLN = 'https://www.hetlaatsteainieuws.nl///';
 
 const categoryPrefixRedirects = {
   '/ai-nieuws':     '/nieuws',

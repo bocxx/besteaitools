@@ -69,7 +69,7 @@ Een snelle controle kost twee minuten. Loop de stapel één keer door met je aan
 
 Er is nog een nadeel. Zelf kaarten schrijven is óók leren: je moet de stof samenvatten en kiezen wat belangrijk is. Door dat uit te besteden win je tijd, maar sla je die stap over. Een middenweg: schrijf de lastigste tien kaarten zelf en laat de rest maken.
 
-Hoe je AI als studiehulp inzet zonder dat het spieken wordt, lees je in de achtergrond [AI als studiehulp op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl///achtergrond/ai-studiehulp-leren-met-ai). En wie wil weten welke andere handige functies vaak over het hoofd worden gezien: [vijf ChatGPT-functies die je waarschijnlijk overslaat](/nieuws/chatgpt-vijf-functies-die-je-overslaat).
+Hoe je AI als studiehulp inzet zonder dat het spieken wordt, lees je in de achtergrond [AI als studiehulp op hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl////////achtergrond/ai-studiehulp-leren-met-ai). En wie wil weten welke andere handige functies vaak over het hoofd worden gezien: [vijf ChatGPT-functies die je waarschijnlijk overslaat](/nieuws/chatgpt-vijf-functies-die-je-overslaat).
 
 ## Checklist: ben je klaar?
 
