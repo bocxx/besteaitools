@@ -84,7 +84,7 @@ De AI-functies zijn gratis; Premium gaat vooral over de bibliotheek. Je krijgt t
 
 Studeersnel biedt een proef van 7 dagen aan. Die gaat automatisch over in een betaald abonnement, tenzij je vooraf opzegt ([Bron: Studocu helpcentrum](https://help.studocu.com/hc/nl/articles/16738883185041-Waarom-ben-ik-na-de-proef-aangerekend)). Opzeggen kan op elk moment via je abonnementspagina; je verliest dan wel direct de Premium-toegang ([Bron: Studocu helpcentrum, proef stopzetten](https://help.studocu.com/hc/nl/articles/360019717092-Hoe-kan-ik-mijn-proef-abonnement-stopzetten)). Zet dus een herinnering op dag 6.
 
-> **⚡ Gevorderden:** Studocu noemt het gebruik van Studocu AI geen valsspelen, zolang je AI-tekst niet inlevert als eigen werk ([Bron: Studocu helpcentrum](https://help.studocu.com/hc/nl/articles/35967117343890-Wordt-het-gebruik-van-Studocu-AI-beschouwd-als-valsspelen)). Je opleiding beslist uiteindelijk wat mag. Wat Nederlandse instellingen daarover afspreken, lees je in [mag je AI gebruiken voor je scriptie?](https://hetlaatsteainieuws.nl/regelgeving/ai-gebruiken-voor-scriptie-regels-2026) op hetlaatsteainieuws.nl.
+> **⚡ Gevorderden:** Studocu noemt het gebruik van Studocu AI geen valsspelen, zolang je AI-tekst niet inlevert als eigen werk ([Bron: Studocu helpcentrum](https://help.studocu.com/hc/nl/articles/35967117343890-Wordt-het-gebruik-van-Studocu-AI-beschouwd-als-valsspelen)). Je opleiding beslist uiteindelijk wat mag. Wat Nederlandse instellingen daarover afspreken, lees je in [mag je AI gebruiken voor je scriptie?](https://www.hetlaatsteainieuws.nl/regelgeving/ai-gebruiken-voor-scriptie-regels-2026) op hetlaatsteainieuws.nl.
 
 ## Alternatieven voor wie geen Studocu-account wil
 
