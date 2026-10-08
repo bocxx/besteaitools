@@ -57,6 +57,18 @@ export const GET: APIRoute = async () => {
     lines.push('');
   }
 
+  // Netwerk: zelfde lijst als in de llms.txt van de zustersites.
+  lines.push("## Netwerk");
+  lines.push("");
+  lines.push("Zustersites, elk met een eigen rol:");
+  lines.push("");
+  lines.push("- [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/llms.txt): AI-nieuws met Nederlandse duiding, regelgeving en de dagelijkse AI Radar Nederland");
+  lines.push("- [aiplatformmkb.nl](https://www.aiplatformmkb.nl/llms.txt): praktijkgidsen, tool-reviews en begrippen voor het MKB");
+  lines.push("- [ainieuwsradar.nl](https://ainieuwsradar.nl/llms.txt): meetinstrument voor opkomende AI-trends, met een openbaar getoetst track record");
+  lines.push("- [feedzz.online](https://feedzz.online/llms.txt): doorlopende feed van nieuwe AI-modellen, launches en repositories");
+  lines.push("- [whotofollow.online](https://whotofollow.online/llms.txt): directory van AI-makers, onderzoekers en bedrijven om te volgen");
+  lines.push('');
+
   lines.push('## Optioneel');
   lines.push('');
   lines.push(`- [Over de data-pipeline](${SITE}/over): bronnen en buzz-score-methodiek`);

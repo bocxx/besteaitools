@@ -2,74 +2,37 @@
 # debesteaitools.nl — robots.txt
 # Doel: maximale zichtbaarheid in AI & zoektools
 # =============================================
+#
+# Eén groep voor alle crawlers. Let op bij uitbreiden: een eigen
+# "User-agent: X"-blok vervangt voor die bot de regels van "User-agent: *"
+# volledig (RFC 9309). Losse blokken met alleen "Allow: /" haalden daardoor
+# de Disallow-regels hieronder weg voor juist de AI-bots (gevonden 8 okt 2026).
+# Wil je een bot noemen: zet de regel hieronder in deze groep erbij.
 
-# Alle standaard crawlers
 User-agent: *
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: claude-web
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: meta-externalagent
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: DuckAssistBot
+User-agent: cohere-ai
 Allow: /
 Disallow: /api/
 Disallow: /*?utm_*
 Disallow: /*?ref=*
-
-# ——— OPENAI ———
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-# ——— ANTHROPIC (Claude) ———
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: claude-web
-Allow: /
-
-# ——— PERPLEXITY ———
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-# ——— GOOGLE (Gemini / Search) ———
-User-agent: Googlebot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-# ——— MICROSOFT (Bing / Copilot) ———
-User-agent: Bingbot
-Allow: /
-
-# ——— META ———
-User-agent: meta-externalagent
-Allow: /
-
-# ——— APPLE ———
-User-agent: Applebot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# ——— AMAZON / ALEXA ———
-User-agent: Amazonbot
-Allow: /
-
-# ——— DUCKDUCKGO ———
-User-agent: DuckAssistBot
-Allow: /
-
-# ——— COHERE ———
-User-agent: cohere-ai
-Allow: /
 
 # =============================================
 # Sitemaps

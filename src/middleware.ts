@@ -14,6 +14,7 @@
  * cache-key laten variëren op Accept) + cache purgen. Dat is geen code-kwestie.
  */
 import { defineMiddleware } from 'astro:middleware';
+import { htmlToMarkdown } from './lib/html-to-markdown';
 
 const SITE = 'https://debesteaitools.nl';
 
@@ -121,14 +122,32 @@ export const onRequest = defineMiddleware(async (context, next) => {
       !pathname.match(/\.(js|css|png|jpg|webp|svg|ico|xml|txt|json|woff2?)$/);
 
     if (isHtmlRoute) {
-      const markdown = pathname === '/'
-        ? HOMEPAGE_MARKDOWN
-        : `# debesteaitools.nl\n\nBekijk de volledige pagina op ${SITE}${pathname}\n\nMachine-leesbare catalogus: [${SITE}/llms.txt](${SITE}/llms.txt)\n`;
+      // Homepage: de handgeschreven samenvatting. Overige pagina's: de echte
+      // HTML ophalen en omzetten (zelfde converter als hetlaatsteainieuws.nl
+      // en aiplatformmkb.nl). Tot 8 okt 2026 gaf dit alleen een verwijzing
+      // naar de HTML-pagina terug.
+      if (pathname === '/') {
+        return new Response(HOMEPAGE_MARKDOWN, {
+          status: 200,
+          headers: {
+            'Content-Type': 'text/markdown; charset=utf-8',
+            'Link': LINK_HEADERS,
+            'Vary': 'Accept',
+          },
+        });
+      }
 
+      const htmlResponse = await next();
+      const contentType = htmlResponse.headers.get('content-type') ?? '';
+      if (!contentType.includes('text/html')) return htmlResponse;
+
+      const markdown = htmlToMarkdown(await htmlResponse.text(), { url: url.href });
       return new Response(markdown, {
-        status: 200,
+        status: htmlResponse.status,
         headers: {
           'Content-Type': 'text/markdown; charset=utf-8',
+          'X-Markdown-Tokens': String(Math.ceil(new TextEncoder().encode(markdown).length / 4)),
+          'Cache-Control': htmlResponse.headers.get('cache-control') ?? 'no-cache',
           'Link': LINK_HEADERS,
           'Vary': 'Accept',
         },
