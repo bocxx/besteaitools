@@ -17,6 +17,59 @@
  */
 import { handle } from '@astrojs/cloudflare/handler';
 import redirectsRaw from '../public/_redirects?raw';
+import { htmlToMarkdown } from './lib/html-to-markdown';
+
+// ── Agent-readiness: Markdown-negotiation + Link-headers ──────────────────
+// WAAROM HIER en niet (alleen) in src/middleware.ts (gemeten 8 okt 2026):
+// vrijwel alle pagina's zijn prerendered. Die serveert de Astro-handler
+// rechtstreeks uit de assets, zónder de middleware te draaien. Daardoor kwamen
+// Accept: text/markdown-verzoeken altijd als HTML terug en ontbraken de
+// Link-headers op elke pagina, ook de homepage. Er is géén cacheregel in het
+// dashboard die dit veroorzaakt (de auditnotitie in middleware.ts klopte niet).
+// Deze Worker draait wel bij elk verzoek (run_worker_first = true).
+const AGENT_LINK_HEADERS = [
+  '</.well-known/api-catalog>; rel="api-catalog"',
+  '</.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"',
+  '</llms.txt>; rel="service-doc"',
+  '</.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/skills-index"',
+].join(', ');
+
+function addVaryAccept(headers: Headers): void {
+  const vary = headers.get('Vary');
+  if (!vary) headers.set('Vary', 'Accept');
+  else if (!/\baccept\b/i.test(vary)) headers.set('Vary', `${vary}, Accept`);
+}
+
+async function withAgentReadiness(request: Request, response: Response): Promise<Response> {
+  const contentType = response.headers.get('content-type') ?? '';
+  if (!contentType.includes('text/html')) return response;
+
+  const accept = request.headers.get('accept') ?? '';
+  if (accept.includes('text/markdown') && request.method === 'GET') {
+    const html = await response.text();
+    try {
+      const markdown = htmlToMarkdown(html, { url: request.url });
+      const headers = new Headers({
+        'Content-Type': 'text/markdown; charset=utf-8',
+        'X-Markdown-Tokens': String(Math.ceil(new TextEncoder().encode(markdown).length / 4)),
+        'Cache-Control': response.headers.get('cache-control') ?? 'public, max-age=0, must-revalidate',
+        'Link': AGENT_LINK_HEADERS,
+        'Vary': 'Accept',
+      });
+      return new Response(markdown, { status: response.status, headers });
+    } catch {
+      // Converter faalt: liever de HTML dan een foutpagina.
+      const headers = new Headers(response.headers);
+      addVaryAccept(headers);
+      return new Response(html, { status: response.status, statusText: response.statusText, headers });
+    }
+  }
+
+  const headers = new Headers(response.headers);
+  if (!headers.has('Link')) headers.set('Link', AGENT_LINK_HEADERS);
+  addVaryAccept(headers);
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
 
 type Rule = { from: string; to: string; status: number; splat: boolean };
 
@@ -93,6 +146,7 @@ export default {
       const redirect = findRedirect(new URL(request.url));
       if (redirect) return redirect;
     }
-    return handle(request, env, ctx);
+    const response = await handle(request, env, ctx);
+    return withAgentReadiness(request, response);
   },
 };

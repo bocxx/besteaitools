@@ -6,12 +6,12 @@
  * 2. Link headers (RFC 8288) op alle HTML-responses
  * 3. Markdown content negotiation (Accept: text/markdown → text/markdown response)
  *
- * LET OP (audit juli 2026): een Cloudflare-edge-cache-regel serveert HTML nu
- * rechtstreeks uit de cache (cf-cache-status: HIT), waardoor deze Worker op
- * gecachte pagina's helemaal niet draait — redirects, Link-headers en
- * markdown-negotiation zijn dan live dood. De cache-regel moet in het
- * Cloudflare-dashboard worden aangepast (Worker laten draaien, of minimaal
- * cache-key laten variëren op Accept) + cache purgen. Dat is geen code-kwestie.
+ * LET OP (gecorrigeerd 8 okt 2026): deze middleware draait NIET voor
+ * prerendered pagina's (vrijwel de hele site); die serveert de Astro-handler
+ * direct uit de assets. De oude notitie hier wees een Cloudflare-cacheregel
+ * aan, maar het dashboard heeft geen Cache Rules of Page Rules. Markdown-
+ * negotiation en Link-headers voor alle pagina's zitten daarom in
+ * src/worker.ts; wat hieronder staat werkt alleen nog voor SSR-routes.
  */
 import { defineMiddleware } from 'astro:middleware';
 import { htmlToMarkdown } from './lib/html-to-markdown';
