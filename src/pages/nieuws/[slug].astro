@@ -64,7 +64,30 @@ const newsArticleJsonLd = {
   ...(heroImageAbs ? { image: [heroImageAbs] } : {}),
   ...(article.data.tags?.length ? { keywords: article.data.tags.join(', ') } : {}),
   articleSection: cat.label,
+  // GEO (8 okt 2026): bronnen uit de frontmatter als citation, zodat
+  // AI-zoekmachines zien waarop het stuk steunt.
+  ...(article.data.sources?.length
+    ? {
+        citation: article.data.sources
+          .filter((s) => /^https?:\/\//.test(s.url))
+          .map((s) => ({ '@type': 'CreativeWork', name: s.title ?? s.label, url: s.url })),
+      }
+    : {}),
 };
+
+// GEO (8 okt 2026): de FAQ stond wel op de pagina maar niet in de
+// gestructureerde data. Zelfde vorm als de FAQPage op de toolpagina's.
+const faqJsonLd = article.data.faq?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: article.data.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    }
+  : null;
 
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
@@ -90,6 +113,7 @@ export const prerender = true;
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(newsArticleJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+    {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
   </Fragment>
   <main class="container container-wide" style="padding-top: var(--space-8, 2rem);">
 
