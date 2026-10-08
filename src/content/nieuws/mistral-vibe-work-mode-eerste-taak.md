@@ -72,7 +72,7 @@ Vibe maakt daar eerst een plan van en vraagt jouw akkoord voordat hij begint. Le
 
 Tijdens de uitvoering is elke stap zichtbaar. Je kunt elke tool-aanroep en redeneerketen openklappen om te zien wat erin ging en wat eruit kwam. Handig als de uitkomst niet klopt: je ziet dan meestal meteen dat de agent in de verkeerde map zat.
 
-Het eindresultaat schrijft Vibe in Canvas, een documentweergave die je kunt bewerken en daarna naar Notion, SharePoint of je mailbox kunt duwen. Work Mode draait daarbij op Mistral Medium 3.5 ([Bron: Mistral](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/)).
+Het eindresultaat schrijft Vibe in Canvas, een documentweergave die je kunt bewerken en daarna naar Notion, SharePoint of je mailbox kunt duwen. Work Mode draait daarbij op Mistral Medium 3.5 ([Bron: Mistral](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/)). Wil je Mistrals nieuwste vlaggenschip zelf aanroepen, dan staat in [onze gids voor Mistral Large 4](/nieuws/mistral-large-4-api-eerste-aanroep) hoe je je eerste API-aanroep doet.
 
 ## Stap 5: zet hem op herhaling
 

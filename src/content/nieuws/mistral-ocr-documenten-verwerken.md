@@ -42,7 +42,7 @@ sources:
     url: "https://docs.mistral.ai/api/endpoint/ocr"
 ---
 
-Een PDF met tabellen overtypen in een spreadsheet is het soort werk waar niemand op zit te wachten. Mistral OCR 4.1, sinds 16 juli 2026 algemeen beschikbaar, doet dat voor je: het model zet documenten, scans en foto's om in schone, gestructureerde tekst — inclusief tabellen en betrouwbaarheidsscores per stukje herkende tekst ([Bron: Mistral AI Docs](https://docs.mistral.ai/models/ocr-4-1)).
+Een PDF met tabellen overtypen in een spreadsheet is het soort werk waar niemand op zit te wachten. Mistral OCR 4.1, sinds 16 juli 2026 algemeen beschikbaar, doet dat voor je: het model zet documenten, scans en foto's om in schone, gestructureerde tekst — inclusief tabellen en betrouwbaarheidsscores per stukje herkende tekst ([Bron: Mistral AI Docs](https://docs.mistral.ai/models/ocr-4-1)). Wil je de herkende tekst daarna laten samenvatten, dan kan dat met hetzelfde account via [Mistral Large 4](/nieuws/mistral-large-4-api-eerste-aanroep).
 
 > **💡 Beginner-tip:** OCR staat voor optical character recognition — tekst herkennen in een afbeelding of scan. Het verschil met een simpele OCR-tool is dat Mistral OCR de structuur van het document snapt: het weet dat een blok tekst een tabel is, een kop, of een alinea, in plaats van alleen losse letters te herkennen.
 

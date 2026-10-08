@@ -54,7 +54,7 @@ Ga naar together.ai en maak een account aan. Nieuwe gebruikers krijgen doorgaans
 
 ## Stap 2 — Kies een model uit de catalogus
 
-Together AI's kracht is de breedte: Llama, DeepSeek, Qwen, Mistral en tientallen andere ([Bron: Together AI](https://www.together.ai)). Begin klein. Een licht model is goedkoop en snel genoeg om mee te leren; een zwaarder model bewaar je voor taken waar kwaliteit echt telt. In het dashboard zie je per model de prijs per miljoen tokens, zodat je vooraf weet wat een keuze ongeveer kost.
+Together AI's kracht is de breedte: Llama, DeepSeek, Qwen, Mistral en tientallen andere ([Bron: Together AI](https://www.together.ai)). Begin klein. Een licht model is goedkoop en snel genoeg om mee te leren; een zwaarder model bewaar je voor taken waar kwaliteit echt telt. In het dashboard zie je per model de prijs per miljoen tokens, zodat je vooraf weet wat een keuze ongeveer kost. Wil je juist Mistrals nieuwste grote model proberen, dan doe je dat voorlopig via Mistral zelf; [zo maak je je eerste aanroep naar Mistral Large 4](/nieuws/mistral-large-4-api-eerste-aanroep).
 
 > **💡 Beginner-tip:** Twijfel je welk model? Pak voor je eerste test een klein, goedkoop taalmodel. Je leert er precies hetzelfde mee — de API werkt voor elk model gelijk — en je verbrandt geen krediet terwijl je nog aan het uitproberen bent.
 
