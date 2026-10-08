@@ -101,7 +101,7 @@ De gewichten wil Mistral eind oktober vrijgeven ([Bron: Mistral](https://mistral
 - [ ] `max_tokens` ingesteld om de uitvoerkosten te begrenzen
 - [ ] Begroting gemaakt met het normale tarief, niet de preview-korting
 
-Gebruik je liever een kant-en-klare app dan de API, dan is [Mistral Vibe Work Mode](/nieuws/mistral-vibe-work-mode-eerste-taak) de makkelijkere instap, en voor het verwerken van gescande documenten is er [Mistral OCR](/nieuws/mistral-ocr-documenten-verwerken). Hoe Large 4 zich verhoudt tot de Chinese open modellen, lees je op [hetlaatsteainieuws.nl](https://hetlaatsteainieuws.nl/nieuws/mistral-large-4-europees-open-model).
+Gebruik je liever een kant-en-klare app dan de API, dan is [Mistral Vibe Work Mode](/nieuws/mistral-vibe-work-mode-eerste-taak) de makkelijkere instap, en voor het verwerken van gescande documenten is er [Mistral OCR](/nieuws/mistral-ocr-documenten-verwerken). Hoe Large 4 zich verhoudt tot de Chinese open modellen, lees je op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/mistral-large-4-europees-open-model).
 
 ## Bronnen
 
