@@ -29,7 +29,7 @@ import { htmlToMarkdown } from './lib/html-to-markdown';
 // Deze Worker draait wel bij elk verzoek (run_worker_first = true).
 const AGENT_LINK_HEADERS = [
   '</.well-known/api-catalog>; rel="api-catalog"',
-  '</.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"',
+  '</.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
   '</llms.txt>; rel="service-doc"',
   '</.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/skills-index"',
 ].join(', ');

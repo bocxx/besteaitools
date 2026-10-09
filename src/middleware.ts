@@ -21,7 +21,7 @@ const SITE = 'https://debesteaitools.nl';
 // RFC 8288 Link headers — agent discovery
 const LINK_HEADERS = [
   '</.well-known/api-catalog>; rel="api-catalog"',
-  '</.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"',
+  '</.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
   '</llms.txt>; rel="service-doc"',
   '</.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/skills-index"',
 ].join(', ');
@@ -36,7 +36,7 @@ const API_CATALOG = {
         { href: SITE + '/llms.txt', type: 'text/plain' },
       ],
       describedby: [
-        { href: SITE + '/.well-known/mcp/server-card.json', type: 'application/json' },
+        { href: SITE + '/.well-known/ai-catalog.json', type: 'application/json' },
       ],
     },
     {
@@ -64,7 +64,7 @@ const HOMEPAGE_MARKDOWN = `# De Beste AI Tools — debesteaitools.nl
 ## Agent Discovery
 
 - API Catalog: ${SITE}/.well-known/api-catalog
-- MCP Server Card: ${SITE}/.well-known/mcp/server-card.json
+- AI-catalogus (ARD): ${SITE}/.well-known/ai-catalog.json
 - Agent Skills: ${SITE}/.well-known/agent-skills/index.json
 - Auth info: ${SITE}/auth.md (geen authenticatie vereist)
 
