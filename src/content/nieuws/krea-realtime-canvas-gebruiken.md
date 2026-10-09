@@ -43,7 +43,7 @@ De meeste AI-beeldtools werken in cycli: prompt typen, wachten, opnieuw. Krea's 
 
 ## Wat je nodig hebt om te beginnen
 
-Krea draait in de browser; je hebt alleen een account nodig. De gratis laag geeft je 100 compute-eenheden per dag zonder creditcard, genoeg om de Realtime Canvas te leren kennen. Elke generatie en elke upscale verbruikt eenheden, dus de teller loopt terwijl je speelt. Wil je het commercieel gebruiken, dan heb je minstens het Basic-plan ($9/maand) nodig; de gratis output mag je niet zakelijk inzetten.
+Krea draait in de browser; je hebt alleen een account nodig. De gratis laag geeft je 100 compute-eenheden per dag zonder creditcard, genoeg om de Realtime Canvas te leren kennen. Elke generatie en elke upscale verbruikt eenheden, dus de teller loopt terwijl je speelt. Wil je het commercieel gebruiken, dan heb je minstens het Basic-plan ($9/maand) nodig; de gratis output mag je niet zakelijk inzetten. Zoek je een gratis route zonder tegoed, dan kun je [Stable Diffusion 3.5 lokaal draaien met ComfyUI](/nieuws/stable-diffusion-lokaal-draaien-comfyui), wel met een vrij zware computer.
 
 > **💡 Beginner-tip:** Compute-eenheden zijn Krea's benzine, niet je aantal beelden. Realtime bijsturen tikt sneller aan dan je denkt, omdat elke aanpassing een nieuwe generatie is. Werk daarom in korte, gerichte sessies.
 

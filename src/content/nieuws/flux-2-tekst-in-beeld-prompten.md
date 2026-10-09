@@ -47,7 +47,7 @@ sources:
     url: "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B"
 ---
 
-Je wilt een poster met een kop die klopt, in de kleur van je huisstijl. Beeldgeneratoren maakten daar jarenlang letterbrij van. FLUX.2 kan het wél, alleen vraagt het om een andere manier van prompten dan je gewend bent uit het Stable Diffusion-tijdperk. Zes regels uit de officiële gids van Black Forest Labs.
+Je wilt een poster met een kop die klopt, in de kleur van je huisstijl. Beeldgeneratoren maakten daar jarenlang letterbrij van. FLUX.2 kan het wél, alleen vraagt het om een andere manier van prompten dan je gewend bent uit het Stable Diffusion-tijdperk. Zes regels uit de officiële gids van Black Forest Labs. Werk je liever met Stable Diffusion op je eigen pc, dan staat in [onze ComfyUI-gids](/nieuws/stable-diffusion-lokaal-draaien-comfyui) hoe je dat installeert.
 
 > **ℹ️ "Maar er is toch al een FLUX 3?"** Klopt, aangekondigd op 23 juli 2026. Alleen rolt die in fasen uit, en beeld is nog niet aan de beurt: sinds 4 augustus is er FLUX 3 Video, en alle updates daarna gingen over video. Een publiek endpoint voor FLUX 3-beeldgeneratie is er medio september nog steeds niet. Voor het maken van stilstaand beeld is FLUX.2 dus gewoon het actuele model, en de promptgids hieronder is de geldende gids. Komt FLUX 3-beeld uit, dan werken we dit stuk bij.
 

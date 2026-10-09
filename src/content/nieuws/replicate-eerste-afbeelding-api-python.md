@@ -83,7 +83,7 @@ Dit is het voorbeeld uit de [Python-quickstart van Replicate](https://replicate.
 
 ## Stap 4: test eerst in de browser
 
-Wil je eerst zien wat een model doet? Elke modelpagina heeft een playground in de browser, met een kostenschatting voordat je iets draait. Dat is de goedkoopste manier om prompts uit te proberen voordat je ze in code zet — en het scheelt je de rondgang van foutmeldingen over inputvelden die je nog niet kent.
+Wil je eerst zien wat een model doet? Elke modelpagina heeft een playground in de browser, met een kostenschatting voordat je iets draait. Dat is de goedkoopste manier om prompts uit te proberen voordat je ze in code zet — en het scheelt je de rondgang van foutmeldingen over inputvelden die je nog niet kent. Wil je helemaal niet per beeld betalen, dan kun je een open model ook op je eigen computer draaien, zoals in [onze ComfyUI-gids voor Stable Diffusion 3.5](/nieuws/stable-diffusion-lokaal-draaien-comfyui).
 
 > **Gevorderden:** Eigen modellen verpak je met het open-source hulpmiddel Cog en draai je op Replicate. Let op dat je bij private modellen ook betaalt voor opstart- en inactieve tijd; alleen bij fast booting fine-tunes reken je uitsluitend de actieve tijd af ([Bron: Replicate Pricing](https://replicate.com/pricing)).
 
