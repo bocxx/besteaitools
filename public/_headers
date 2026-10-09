@@ -24,7 +24,7 @@
 # oplossen, moet die scripts naar externe bestanden verplaatsen.
 #
 # img-src staat bewust op `https:`: tool-logo's komen van de favicon-service
-# van Google. connect-src/script-src laten cloud.umami.is toe zodat analytics
+# van Google. connect-src/script-src laten stats.feedzz.online (zelf gehoste Umami) toe zodat analytics
 # werkt zodra PUBLIC_UMAMI_WEBSITE_ID in de CI-build gezet is.
 #
 # ── Over HSTS ───────────────────────────────────────────────────────────────
@@ -48,7 +48,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cloud.umami.is; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://cloud.umami.is https://gateway.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://stats.feedzz.online; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://stats.feedzz.online; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

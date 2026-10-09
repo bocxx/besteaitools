@@ -144,12 +144,12 @@ const modifiedIso = toIsoString(modifiedTime);
     </script>
 
     <!-- Umami Analytics -->
-    <link rel="preconnect" href="https://cloud.umami.is" crossorigin />
-    <link rel="dns-prefetch" href="https://cloud.umami.is" />
+    <link rel="preconnect" href="https://stats.feedzz.online" crossorigin />
+    <link rel="dns-prefetch" href="https://stats.feedzz.online" />
     {import.meta.env.PUBLIC_UMAMI_WEBSITE_ID && (
       <script
         defer
-        src="https://cloud.umami.is/script.js"
+        src="https://stats.feedzz.online/stats.js"
         data-website-id={import.meta.env.PUBLIC_UMAMI_WEBSITE_ID}
       />
     )}
