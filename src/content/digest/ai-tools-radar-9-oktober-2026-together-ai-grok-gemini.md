@@ -1,4 +1,5 @@
 ---
+
 title: AI Tools Radar – Together AI · Grok · Gemini (Ochtend 9 oktober)
 description: 'AI Tools Radar 9 oktober: 122 launches, 21 feature-updates, 16 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-09'
@@ -20,7 +21,7 @@ topics:
 - Grok
 - Gemini
 - Cursor
-draft: true
+draft: false
 launchesCount: 6
 updatesCount: 4
 deepDivesCount: 4
@@ -148,7 +149,6 @@ deepDives:
 slotLabel: Ochtend
 heroImage: "/images/digest/ai-tools-radar-9-oktober-2026-together-ai-grok-gemini.webp"
 ---
-
 De updates van vandaag draaien om spraak en code. Grok en Gemini zetten allebei een stap in spraak, de een met transcriptie, de ander met live gesprekken waarin het model ook redeneert. Bij de launches valt op hoeveel ontwikkelaars de eigen Mac als bron voor AI willen gebruiken, van een zoekfunctie voor elk videoframe tot een tool die alles vastlegt als context. Offrun en de SimCity-kloon die door Opus 5.5 is gebouwd laten zien dat werken met meerdere coding agents tegelijk gewoon wordt.
 
 ---
