@@ -1,0 +1,61 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "debesteaitools.nl",
+    "identifier": "did:web:debesteaitools.nl",
+    "description": "Onafhankelijke Nederlandstalige gids voor AI-tools met prijzen, alternatieven en verdicts"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:debesteaitools.nl:docs:llms-txt",
+      "displayName": "debesteaitools.nl llms.txt",
+      "type": "text/plain",
+      "url": "https://debesteaitools.nl/llms.txt",
+      "representativeQueries": [
+        "beste AI-tool voor mijn taak",
+        "wat kost ChatGPT Plus in euro",
+        "alternatief voor Midjourney"
+      ]
+    },
+    {
+      "identifier": "urn:air:debesteaitools.nl:skills:index",
+      "displayName": "debesteaitools.nl agent skills",
+      "type": "application/json",
+      "url": "https://debesteaitools.nl/.well-known/agent-skills/index.json",
+      "representativeQueries": [
+        "hoe lees ik een artikel van debesteaitools.nl als Markdown",
+        "doorzoek debesteaitools.nl"
+      ]
+    },
+    {
+      "identifier": "urn:air:debesteaitools.nl:feed:rss",
+      "displayName": "debesteaitools.nl RSS-feed",
+      "type": "application/rss+xml",
+      "url": "https://debesteaitools.nl/rss.xml",
+      "representativeQueries": [
+        "nieuwste publicaties van debesteaitools.nl",
+        "volg debesteaitools.nl via RSS"
+      ]
+    },
+    {
+      "identifier": "urn:air:debesteaitools.nl:discovery:api-catalog",
+      "displayName": "debesteaitools.nl API-catalogus (RFC 9727)",
+      "type": "application/linkset+json",
+      "url": "https://debesteaitools.nl/.well-known/api-catalog",
+      "representativeQueries": [
+        "welke machine-leesbare bronnen heeft debesteaitools.nl",
+        "agent-discovery voor debesteaitools.nl"
+      ]
+    },
+    {
+      "identifier": "urn:air:debesteaitools.nl:index:sitemap",
+      "displayName": "debesteaitools.nl sitemap",
+      "type": "application/xml",
+      "url": "https://debesteaitools.nl/sitemap-index.xml",
+      "representativeQueries": [
+        "alle pagina's van debesteaitools.nl",
+        "overzicht van alle artikelen op debesteaitools.nl"
+      ]
+    }
+  ]
+}
