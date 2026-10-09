@@ -96,7 +96,7 @@ Tot 100.000 tokens per prompt betaal je 0,10 dollar per miljoen invoertokens en 
 
 Op de prijslijst is dat 90% minder, maar door de nieuwe tokenizer tel je meer tokens voor dezelfde tekst. Anthropic schat de besparing daarom op gemiddeld zo'n 75%. Meet het zelf: tel je prompts opnieuw met het model op `claude-haiku-5-5` in plaats van oude tellingen te hergebruiken.
 
-> **⚡ Gevorderden:** werk niet direct nodig, zoals nachtelijke verwerking van tickets, gaat via de Batch API voor de helft van de prijs. Lange vaste systeemprompts cache je: een cache-write van vijf minuten kost 0,125 dollar per miljoen tokens. Wat caching verder oplevert, lees je in de [kostengids van aiplatformmkb.nl](https://aiplatformmkb.nl/gidsen/ai-kosten-besparen-tokens-chatbots).
+> **⚡ Gevorderden:** werk niet direct nodig, zoals nachtelijke verwerking van tickets, gaat via de Batch API voor de helft van de prijs. Lange vaste systeemprompts cache je: een cache-write van vijf minuten kost 0,125 dollar per miljoen tokens. Wat caching verder oplevert, lees je in de [kostengids van aiplatformmkb.nl](https://www.aiplatformmkb.nl/gidsen/ai-kosten-besparen-tokens-chatbots).
 
 Wantrouw aanbieders die Claude nog veel goedkoper beloven; waarom, lees je in [goedkope AI-API's als valstrik](/nieuws/goedkope-ai-api-valstrik). Draai je via Azure, dan helpt [Claude in Microsoft Foundry](/nieuws/claude-microsoft-foundry-azure-beschikbaar) je op weg. Hoe Anthropic eerder Sonnet 5.5 goedkoper per taak maakte, lees je op [hetlaatsteainieuws.nl](https://www.hetlaatsteainieuws.nl/nieuws/claude-sonnet-5-5-prijs-per-taak).
 
