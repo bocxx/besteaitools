@@ -75,7 +75,7 @@ Klik op de papers die de meter vullen. Consensus geeft toe dat de classificatie 
 
 Het gratis plan geeft onbeperkt zoeken, plus per maand 10 Pro-berichten (AI-samenvattingen van tot 20 papers), 10 Study Snapshots en 3 Deep reviews. Pro kost 20 dollar per maand of 144 dollar per jaar en maakt berichten en Snapshots onbeperkt. Het Deep-plan kost 65 dollar per maand en geeft 200 Deep reviews ([Bron: Consensus Help Center](https://help.consensus.app/en/articles/10087865-subscription-plans)). Voor een paar checks per week is gratis ruim genoeg.
 
-Waarom die controle ertoe doet, laat het onderzoek naar [AI-hallucinaties in de wetenschappelijke literatuur](https://hetlaatsteainieuws.nl/regelgeving/ai-hallucinaties-wetenschappelijke-literatuur) op hetlaatsteainieuws.nl zien: verzonnen citaties duiken inmiddels ook in gepubliceerde papers op. Wil je juist breder zoeken, dan past [research doen met Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm) beter.
+Waarom die controle ertoe doet, laat het onderzoek naar [AI-hallucinaties in de wetenschappelijke literatuur](https://www.hetlaatsteainieuws.nl/regelgeving/ai-hallucinaties-wetenschappelijke-literatuur) op hetlaatsteainieuws.nl zien: verzonnen citaties duiken inmiddels ook in gepubliceerde papers op. Wil je juist breder zoeken, dan past [research doen met Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm) beter.
 
 ## Checklist: ben je klaar?
 
