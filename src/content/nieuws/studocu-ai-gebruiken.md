@@ -88,7 +88,7 @@ Studeersnel biedt een proef van 7 dagen aan. Die gaat automatisch over in een be
 
 ## Alternatieven voor wie geen Studocu-account wil
 
-Studocu AI is het sterkst als je vak al veel gedeeld materiaal heeft. Studeer je iets kleins of werk je vooral met je eigen bronnen, dan kom je ook ver met [flashcards maken in ChatGPT](/nieuws/chatgpt-flashcards-maken-zo-werkt-het) of met [de interactieve quiz van ChatGPT](/nieuws/chatgpt-interactieve-quiz-jezelf-overhoren). Voor een stapel papers met bronvermelding per antwoord is [NotebookLM](/ai-tools/notebooklm) sterker; onze [vergelijking van Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm) laat zien wanneer je welke pakt.
+Studocu AI is het sterkst als je vak al veel gedeeld materiaal heeft. Studeer je iets kleins of werk je vooral met je eigen bronnen, dan kom je ook ver met [flashcards maken in ChatGPT](/nieuws/chatgpt-flashcards-maken-zo-werkt-het) of met [de interactieve quiz van ChatGPT](/nieuws/chatgpt-interactieve-quiz-jezelf-overhoren). Voor een stapel papers met bronvermelding per antwoord is [NotebookLM](/ai-tools/notebooklm) sterker; onze [vergelijking van Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm) laat zien wanneer je welke pakt. Moet je voor een werkstuk weten wat peer-reviewed onderzoek over een stelling zegt, dan [check je dat met Consensus](/nieuws/consensus-gebruiken-wetenschap-checken).
 
 ## Checklist: ben je klaar?
 
