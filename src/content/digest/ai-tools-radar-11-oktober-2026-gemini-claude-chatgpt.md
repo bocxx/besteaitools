@@ -1,7 +1,6 @@
 ---
-
-title: AI Tools Radar – Gemini · Claude · ChatGPT (Ochtend 11 oktober)
-description: 'AI Tools Radar 11 oktober: 116 launches, 25 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – Gemini · Claude · ChatGPT (Avond 11 oktober)
+description: 'AI Tools Radar 11 oktober: 115 launches, 25 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-11'
 timeSlot: tools-digest
 featured: []
@@ -12,59 +11,59 @@ tags:
 - Claude
 - ChatGPT
 author: debesteaitools.nl Redactie
-totalAnalyzed: 156
+totalAnalyzed: 155
 itemsSelected: 16
 categoriesCount: 3
 topics:
 - Gemini
 - Claude
 - ChatGPT
-draft: false
+heroImage: "/images/digest/ai-tools-radar-11-oktober-2026-gemini-claude-chatgpt.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Google brengt Gemini 4 Argon uit voor programmeren en kenniswerk, eerst alleen voor cyberverdedigers.
-- Claude Code blijft met Cloud Sessions doorwerken als je laptop dicht is, en Projects staat open voor Pro en Max.
-- Op Hacker News trekt het Duitse open model Kolibri van Aleph Alpha de meeste aandacht.
+- Google lanceert Gemini 4 Argon voor complexe workflows, Claude Opus 5.5 scoort hoogst in Cursor met 40% lagere kosten.
+- ChatGPT voegt spraakgestuurde browsertaken toe, Claude rolt Cloud Sessions uit voor doorlopende code-assistentie.
+- Open-source AI-agents verschijnen op mobiele apparaten, van NanoMuse tot een Nokia 110-implementatie.
 launches:
-- name: Germany's new sovereign AI model Kolibri
-  summary_nl: Blogrecensie van Kolibri, het open Duits-Engelse taalmodel van Aleph Alpha, interessant voor Europese teams die een model zelf willen hosten.
-  url: https://tej.as/blog/aleph-alpha-kolibri
+- name: WallHop
+  summary_nl: WallHop is een vervanger voor 12ft.io om paywall-artikelen te lezen, gebouwd na het verdwijnen van de oorspronkelijke dienst.
+  url: https://wallhop.io/
   source_type: hn
-  source_label: Hacker News (420 punten, 12 reacties)
+  source_label: Hacker News (264 punten, 114 reacties)
   confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=tej.as&sz=64
+  favicon: https://www.google.com/s2/favicons?domain=wallhop.io&sz=64
 - name: I turned my iPhone and a $20 smart plug into an f
-  summary_nl: Darkplug is een iPhone-app die als donkere-kamertimer een vergroter aanstuurt via een Shelly-stekker, voor wie analoog afdrukt.
+  summary_nl: Een iPhone en slimme stekker van 20 dollar omgebouwd tot een stop-timer voor focussessies.
   url: https://peterszentkiralyi.eu/darkplug/
   source_type: hn
   source_label: Hacker News (85 punten, 39 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=peterszentkiralyi.eu&sz=64
 - name: NanoMuse
-  summary_nl: Open-source AI-agent voor telefoon en computer, voor wie een persoonlijke assistent zelf wil draaien en aanpassen.
+  summary_nl: NanoMuse is een open-source AI-agent die draait op telefoons en computers voor persoonlijke automatisering.
   url: https://github.com/nano-muse/nanoMuse
   source_type: hn
   source_label: Hacker News (65 punten, 22 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: Edi Life OS
-  summary_nl: Zelf te hosten persoonlijk dashboard met een MCP-server, zodat je AI-assistent je eigen gegevens kan raadplegen.
+  summary_nl: Edi Life OS is een zelf-gehost levensdashboard met een MCP-server voor AI-integratie en persoonlijke data-analyse.
   url: https://github.com/edrisranjbar/lifeos
   source_type: hn
   source_label: Hacker News (40 punten, 15 reacties)
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
 - name: TerrainSR
-  summary_nl: Model dat hoogtekaarten snel en realistisch naar een hogere resolutie schaalt, nuttig voor gamemakers en kaartbouwers.
+  summary_nl: TerrainSR is een snel model voor realistische upscaling van heightmaps, bruikbaar voor terrein- en kaartgeneratie.
   url: https://huggingface.co/joe-gibbs/terrainsr
   source_type: hn
   source_label: Hacker News (41 punten, 8 reacties)
   confidence: medium
   favicon: https://www.google.com/s2/favicons?domain=huggingface.co&sz=64
 - name: I Put an AI Agent on a Nokia 110
-  summary_nl: Experiment dat een eenvoudige Nokia 110 via mobiele data met een taalmodel laat praten, dat ook bellen en de wekker regelt.
+  summary_nl: Een AI-agent geïmplementeerd op een Nokia 110 feature phone als experiment in minimale hardware-vereisten.
   url: https://github.com/anupray95/AI-Agent-on-a-NOKIA
   source_type: hn
   source_label: Hacker News (33 punten, 14 reacties)
@@ -74,7 +73,7 @@ updates:
 - tool_name: Gemini
   tool_slug: gemini
   feature_title: Gemini 4 Argon model
-  summary_nl: Nieuw frontiermodel voor complexe taken als softwareontwikkeling en zakelijk kenniswerk, dat eerst naar cyberverdedigers gaat en daarna breder.
+  summary_nl: Google lanceert Gemini 4 Argon voor complexe workflows zoals softwareontwikkeling, eerst voor cyberbeveiliging en daarna breder beschikbaar.
   impact: hoog
   url: https://twitter.com/GoogleDeepMind/status/2105388084154056939
   source_type: x
@@ -86,7 +85,7 @@ updates:
 - tool_name: Claude
   tool_slug: claude
   feature_title: Claude Code Projects rollout
-  summary_nl: Alle Pro- en Max-gebruikers op de wachtlijst hebben nu toegang tot Projects in Claude Code.
+  summary_nl: Alle Pro- en Max-gebruikers op de wachtlijst hebben nu toegang tot Claude Code Projects gekregen.
   impact: medium
   url: https://twitter.com/ClaudeDevs/status/2108621476538781878
   source_type: x
@@ -98,7 +97,7 @@ updates:
 - tool_name: ChatGPT
   tool_slug: chatgpt
   feature_title: Voice Tasks in Browser
-  summary_nl: Je kunt ChatGPT nu wereldwijd met je stem browsertaken laten uitvoeren, ook met afbeeldingen en spreadsheets.
+  summary_nl: ChatGPT ondersteunt nu wereldwijd spraakgestuurde taken in de browser, inclusief werken met afbeeldingen en spreadsheets.
   impact: hoog
   url: https://twitter.com/OpenAI/status/2102808325742322002
   source_type: x
@@ -110,7 +109,7 @@ updates:
 - tool_name: Claude
   tool_slug: claude
   feature_title: Cloud Sessions Feature
-  summary_nl: 'Cloud Sessions zijn uit de testfase: Claude Code werkt door in de cloud terwijl je laptop dicht is.'
+  summary_nl: Claude Cloud Sessions zijn uit bèta en houden Claude Code actief, ook wanneer de laptop gesloten is.
   impact: hoog
   url: https://twitter.com/ClaudeDevs/status/2102871550974427462
   source_type: x
@@ -122,7 +121,7 @@ updates:
 - tool_name: Claude
   tool_slug: claude
   feature_title: Claude Opus 5.5 in Cursor
-  summary_nl: Opus 5.5 is te kiezen in Cursor, dat het model bovenaan CursorBench zet en 40 procent goedkoper per taak noemt dan Opus 5.
+  summary_nl: Claude Opus 5.5 scoort 57,8% op CursorBench en is 40% goedkoper per taak dan Opus 5.
   impact: hoog
   url: https://twitter.com/cursor_ai/status/2102448392773435706
   source_type: x
@@ -134,7 +133,7 @@ updates:
 - tool_name: ChatGPT
   tool_slug: chatgpt
   feature_title: Shared Notes in Desktop App
-  summary_nl: In de Mac-app van ChatGPT deel je notities met je team en laat je er een plan of follow-up van maken, in bèta voor Pro en Business.
+  summary_nl: ChatGPT-desktopapp voor macOS biedt gedeelde notities voor teams, beschikbaar in bèta voor Pro- en Business-gebruikers.
   impact: medium
   url: https://twitter.com/ChatGPT/status/2107567930557026653
   source_type: x
@@ -145,33 +144,33 @@ updates:
   key: chatgpt::Shared Notes in Desktop App
 deepDives:
 - title: Mistral OCR 4.1
-  summary_nl: Mistral OCR 4.1 naast de alternatieven leggen loont voor iedereen die stapels pdf's en scans automatisch wil laten uitlezen.
+  summary_nl: Mistral OCR 4.1 vergelijken met concurrenten om te bepalen welke OCR-oplossing het beste past bij Nederlandse workflows.
   url: https://docs.mistral.ai/models/ocr-4-1
   tool: mistral
   trend_phase: tracked
   score: 22.04
 - title: Gemini 3.8 Flash and 3.8 Flash Cyber
-  summary_nl: Een eerlijke test van Gemini 3.8 Flash en de Cyber-variant laat zien wat het snelle model voor Nederlandse gebruikers echt kan.
+  summary_nl: Gemini 3.8 Flash en Cyber-variant testen op praktische prestaties voor Nederlandstalige gebruikers en ontwikkelaars.
   url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
   tool: gemini
   trend_phase: tracked
   score: 21.76
 - title: 'Muse: Meta''s personal AI agent, features and capabilities'
-  summary_nl: Een praktijkgids voor Muse, de persoonlijke agent van Meta, helpt lezers bepalen of ze hem in hun werk durven in te zetten.
+  summary_nl: Muse van Meta integreren in dagelijkse workflows, met concrete voorbeelden voor productiviteit en automatisering.
   url: https://ai.meta.com/muse/
   tool: ''
   trend_phase: tracked
   score: 21.36
-- title: Anthropic Says It Blocked Possible Efforts to Build Biological Weapons
-  summary_nl: Hoe Anthropic pogingen tot hulp bij biowapens tegenhoudt, is een concrete ingang om Claude en de alternatieven op veiligheid te vergelijken.
-  url: https://www.nytimes.com/2026/09/10/us/politics/anthropic-ai-biological-weapons.html?utm_source=flipboard&utm_content=topic%2Fartificialintelligence
-  tool: claude
+- title: ChatGPT Images 2.5
+  summary_nl: ChatGPT Images 2.5 afzetten tegen alternatieven om te bepalen welke beeldgeneratie-tool het beste aansluit bij specifieke use cases.
+  url: https://openai.com/index/introducing-chatgpt-images-2-5/
+  tool: chatgpt
   trend_phase: tracked
-  score: 17.89
-slotLabel: Ochtend
-heroImage: "/images/digest/ai-tools-radar-11-oktober-2026-gemini-claude-chatgpt.webp"
+  score: 20.59
+slotLabel: Avond
 ---
-De updates van deze week gaan vooral over agents die langer zelfstandig doorwerken. Claude Code draait met Cloud Sessions door zonder dat je laptop openstaat, en ChatGPT voert browsertaken uit op basis van gesproken opdrachten. Google kiest met Gemini 4 Argon voor een voorzichtige uitrol via cyberverdedigers, in een week waarin de veiligheid van agents breed ter discussie staat. Tegelijk laat Kolibri van Aleph Alpha zien dat er in Europa open modellen bijkomen voor wie zijn AI zelf wil draaien.
+
+De focus verschuift van pure modelkracht naar praktische integratie: zowel Google als Anthropic richten zich op ontwikkelaarsworkflows, terwijl OpenAI inzet op spraakinteractie in de browser. Tegelijk experimenteren makers met lichtgewicht agents op mobiele hardware, van iPhones tot feature phones. De combinatie van krachtigere modellen in professionele omgevingen en toegankelijke open-source alternatieven op consumentenhardware tekent een markt die zowel omhoog als omlaag schaalt.
 
 ---
 
