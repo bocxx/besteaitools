@@ -55,7 +55,7 @@ Je wilt een poster met een kop die klopt, in de kleur van je huisstijl. Beeldgen
 
 De eerste gewoonte die eruit moet. FLUX.2 ondersteunt geen negatieve prompts ([Bron: Black Forest Labs](https://docs.bfl.ml/guides/prompting_guide_flux2)). "Geen mensen op de achtergrond" doet niets, of erger: het model pikt "mensen" op en zet ze erin.
 
-Draai het om. Wil je geen wazigheid? Schrijf "scherp door het hele beeld". Wil je geen mensen? Beschrijf een lege ruimte.
+Draai het om. Wil je geen wazigheid? Schrijf "scherp door het hele beeld". Wil je geen mensen? Beschrijf een lege ruimte. Moet er maar één stukje van een bestaand beeld anders, dan is [de selectietool in ChatGPT Images 2.5](/nieuws/chatgpt-images-2-5-gebruiken) vaak sneller dan opnieuw genereren.
 
 ## 2. Hou je aan de volgorde
 

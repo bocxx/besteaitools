@@ -84,7 +84,7 @@ Pas de outline aan en klik dan pas op **Continue**. Dit is het moment dat de mee
 
 ## Stap 3: pas toon, opmaak en beelden aan
 
-Gamma genereert automatisch afbeeldingen bij elke slide. Klik op een afbeelding om die te vervangen via de AI ("zoek een foto van een vergaderzaal in Nederland") of upload je eigen beelden.
+Gamma genereert automatisch afbeeldingen bij elke slide. Klik op een afbeelding om die te vervangen via de AI ("zoek een foto van een vergaderzaal in Nederland") of upload je eigen beelden. Wil je zelf eerst een titelbeeld uittekenen, dan schets je de compositie met [Sketch in ChatGPT Images 2.5](/nieuws/chatgpt-images-2-5-gebruiken) en vult ChatGPT de rest in.
 
 Selecteer een stuk tekst en klik het potloodpictogram voor AI-bewerkingen: korter maken, herschrijven als bulletpoints, formeler of vriendelijker maken.
 

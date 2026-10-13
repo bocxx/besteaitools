@@ -83,7 +83,7 @@ Je krijgt 30 ideeën. Kies er 12-16 uit die resoneren met jouw merk en doelgroep
 
 Ga naar [canva.com](https://canva.com), maak een post in het juiste formaat (1:1 voor Instagram, 1.91:1 voor LinkedIn), en klik op de **Magic Studio**-knop.
 
-Gebruik **Text to Image** voor een unieke achtergrondafbeelding, of **Magic Write** om tekstblokken te genereren. Pas altijd je merkkleur en lettertype toe via de Brand Kit.
+Gebruik **Text to Image** voor een unieke achtergrondafbeelding, of **Magic Write** om tekstblokken te genereren. Pas altijd je merkkleur en lettertype toe via de Brand Kit. Werk je liever helemaal in ChatGPT, dan maak je met [de templates van ChatGPT Images 2.5](/nieuws/chatgpt-images-2-5-gebruiken) een poster of social-beeld.
 
 > **⚡ Gevorderd:** Maak in Canva een **Brand Template** voor elke post-categorie (tip, quote, behind-the-scenes). Dan hoef je alleen de tekst te vervangen — de stijl blijft consistent. Dit scheelt bij 16 posts per maand al een uur werk.
 
