@@ -46,7 +46,7 @@ Een losse agent is prima voor een bugfix, maar een migratie over tientallen modu
 
 ## Wat een Project doet
 
-Een Project is bedoeld voor "substantieel werk" zoals een feature, migratie of complete applicatie, en je praat ermee via chat met een coordinator-agent ([Bron: Cursor Docs](https://cursor.com/docs/agent/projects)). De coordinator schrijft zelf geen code. Volgens de documentatie maakt en beheert hij agents namens jou, draait hij er zoveel parallel als het werk vraagt, en brengt hij het afgeronde werk naar jou terug om te controleren ([Bron: Cursor Docs](https://cursor.com/docs/agent/projects)).
+Een Project is bedoeld voor "substantieel werk" zoals een feature, migratie of complete applicatie, en je praat ermee via chat met een coordinator-agent ([Bron: Cursor Docs](https://cursor.com/docs/agent/projects)). De coordinator schrijft zelf geen code. Volgens de documentatie maakt en beheert hij agents namens jou, draait hij er zoveel parallel als het werk vraagt, en brengt hij het afgeronde werk naar jou terug om te controleren ([Bron: Cursor Docs](https://cursor.com/docs/agent/projects)). Google pakt het vergelijkbaar aan met [Teamwork in Antigravity](/nieuws/antigravity-teamwork-agentteam-gebruiken), waar aparte agents elke mijlpaal keuren.
 
 Het draait op de Cloud Agents-infrastructuur, dus het werk gaat door als je laptop dicht is ([Bron: Cursor Changelog](https://cursor.com/changelog/projects)). Meer over die onderlaag lees je in onze gids over [Cursor Cloud Agents](/nieuws/cursor-cloud-agents-taak-uitbesteden).
 

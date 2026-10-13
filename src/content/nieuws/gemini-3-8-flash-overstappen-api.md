@@ -46,7 +46,7 @@ Google zette Gemini 3.8 Flash op 2 september live, en wie de API gebruikt, merkt
 
 ## Wat er verandert met 3.8 Flash
 
-Gemini 3.8 Flash is het snelle werkpaardmodel van Google, beter dan 3.7 Flash in programmeren, agent-taken en redeneren over meerdere stappen ([Bron: Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/)). In de API heet het `gemini-3.8-flash`, met een contextvenster van 1 miljoen tokens en maximaal 64.000 uitvoertokens ([Bron: Gemini API-docs](https://ai.google.dev/gemini-api/docs/generate-content/latest-model)).
+Gemini 3.8 Flash is het snelle werkpaardmodel van Google, beter dan 3.7 Flash in programmeren, agent-taken en redeneren over meerdere stappen ([Bron: Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/)). In de API heet het `gemini-3.8-flash`, met een contextvenster van 1 miljoen tokens en maximaal 64.000 uitvoertokens ([Bron: Gemini API-docs](https://ai.google.dev/gemini-api/docs/generate-content/latest-model)). Met voorganger 3.7 Flash liet Google al hele agentteams samenwerken; lees [hoe je zo'n Teamwork-run in Antigravity start](/nieuws/antigravity-teamwork-agentteam-gebruiken).
 
 Die winst heeft een prijs in tokens. Op lastige taken zet het model extra redeneerstappen en roept het vaker tools aan. Voor zware klussen is dat precies wat je wilt, voor duizend korte classificaties per uur misschien niet.
 

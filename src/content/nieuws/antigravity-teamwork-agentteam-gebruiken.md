@@ -50,7 +50,7 @@ Een groot programmeerproject in één prompt weggeven, en een team AI-agents het
 
 Teamwork werkt in Antigravity 2.0 en in de Antigravity CLI, en alleen met een betaald abonnement ([Bron: Antigravity Docs](https://antigravity.google/docs/teamwork)). Het gratis instapplan heeft basislimieten; Pro en Ultra lopen via de Google AI-abonnementen en geven een flexibele pool AI-credits. Voor organisaties is er een Business-variant via Google Cloud vanaf $30 per gebruiker per maand ([Bron: Antigravity Pricing](https://antigravity.google/pricing)).
 
-> **💡 Beginner-tip:** een [AI-agent](https://hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) is een AI die zelf stappen zet, zoals bestanden lezen, code draaien en tests uitvoeren, in plaats van alleen te antwoorden. Teamwork zet er meerdere naast elkaar.
+> **💡 Beginner-tip:** een [AI-agent](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) is een AI die zelf stappen zet, zoals bestanden lezen, code draaien en tests uitvoeren, in plaats van alleen te antwoorden. Teamwork zet er meerdere naast elkaar.
 
 ## Zo start je een agentteam in vijf stappen
 
