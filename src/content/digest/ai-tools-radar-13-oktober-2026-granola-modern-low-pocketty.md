@@ -1,103 +1,180 @@
 ---
-
-title: AI Tools Radar – Pocketty · Pinrail · Kalypta (Ochtend 13 oktober)
-description: 'AI Tools Radar 13 oktober: 119 launches, 25 feature-updates, 17 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – Gemini · Claude · Grok (Avond 13 oktober)
+description: 'AI Tools Radar 13 oktober: 119 launches, 21 feature-updates, 17 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-13'
 timeSlot: tools-digest
 featured: []
 tags:
 - AI Tools Radar
 - AI Tools
-- Pocketty
-- Pinrail
+- Gemini
+- Claude
+- Grok
+- Together AI
+- ChatGPT
 author: debesteaitools.nl Redactie
-totalAnalyzed: 161
-itemsSelected: 11
+totalAnalyzed: 157
+itemsSelected: 16
 categoriesCount: 3
 topics:
-- Pocketty
-- Pinrail
-draft: false
+- Gemini
+- Claude
+- Grok
+- Together AI
+- ChatGPT
+heroImage: "/images/digest/ai-tools-radar-13-oktober-2026-granola-modern-low-pocketty.webp"
 launchesCount: 6
-updatesCount: 0
+updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- 'Pocketty en Pinrail richten zich op hetzelfde moment: de codeeragent die stilstaat en op jouw beslissing wacht.'
-- OpenAI voegt in de EU een onzichtbaar watermerk toe aan tekst uit ChatGPT en Codex.
-- Kalypta van Deveillance vervormt je microfoongeluid zodat AI-notulisten zoals Granola je slecht kunnen uitschrijven.
+- Model Context Protocol (MCP) duikt op in CAD-software en DAW-tools, wat wijst op bredere integratie buiten chatbots.
+- Gemini, Claude en Grok lanceren gelijktijdig werkagenten en dashboards voor zakelijke gebruikers.
+- OpenAI-abonnementen worden ingezet voor audiobook-generatie, een praktische toepassing van bestaande spraakmodellen.
 launches:
-- name: City 2026
-  summary_nl: Een stadsbouwspel in low-poly stijl naar het voorbeeld van SimCity 2000, volgens de maker gebouwd met Claude Opus 5.5.
-  url: https://dator.dev/city2026/
+- name: Use your OpenAI subscription to create audiobooks
+  summary_nl: Gebruik je OpenAI-abonnement om audioboeken te maken via PDF-naar-spraak-conversie.
+  url: https://pdftomp3.com/connect-ai/
   source_type: hn
-  source_label: Hacker News (37 punten, 31 reacties)
-  confidence: medium
-  favicon: https://www.google.com/s2/favicons?domain=dator.dev&sz=64
-- name: Pocketty
-  summary_nl: SSH-terminal voor de iPhone die je een melding stuurt zodra een codeeragent vastloopt en op invoer wacht.
-  url: https://pocketty.app/
+  source_label: Hacker News (130 punten, 64 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=pdftomp3.com&sz=64
+- name: SolidCraft
+  summary_nl: Open-source parametrische CAD-software geschreven in Rust met ondersteuning voor Model Context Protocol.
+  url: https://github.com/bherbruck/solidcraft
   source_type: hn
-  source_label: Hacker News (32 punten, 20 reacties)
-  confidence: medium
-  favicon: https://www.google.com/s2/favicons?domain=pocketty.app&sz=64
-- name: Pumpkins.sh
-  summary_nl: Speelse website waar je een digitale pompoen claimt, uitsnijdt en aan anderen laat zien; geen AI-tool, wel een Hacker News-favoriet.
-  url: https://pumpkins.sh/
-  source_type: hn
-  source_label: Hacker News (33 punten, 11 reacties)
-  confidence: medium
-  favicon: https://www.google.com/s2/favicons?domain=pumpkins.sh&sz=64
-- name: Pinrail
-  summary_nl: Open-source bureaubladinbox waarin codeeragenten hun werk klaarzetten tot jij het hebt beoordeeld.
-  url: https://github.com/forgeplane/pinrail
-  source_type: hn
-  source_label: Hacker News (27 punten, 9 reacties)
-  confidence: medium
+  source_label: Hacker News (119 punten, 32 reacties)
+  confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
-- name: AI SRE Arena, an Open Benchmark for AI SRE Agents on Kubernetes
-  summary_nl: Open benchmark van Edge Delta die meet hoe goed AI-agents storingen oplossen in Kubernetes-omgevingen, nuttig voor SRE- en platformteams.
-  url: https://github.com/edgedelta/project-arena
+- name: An experimental pattern
+  summary_nl: Eerste digitale audio workstation (DAW) die Model Context Protocol ondersteunt voor AI-integratie.
+  url: https://github.com/andrewfader/blokkily
   source_type: hn
-  source_label: Hacker News (24 punten, 9 reacties)
-  confidence: medium
+  source_label: Hacker News (81 punten, 32 reacties)
+  confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
-- name: Wordminos
-  summary_nl: Woordspel dat kruiswoordpuzzels combineert met dominostenen; geen AI-tool, wel gelanceerd via Hacker News.
-  url: https://wordminos.com/play-en.html
+- name: Brickbrag
+  summary_nl: Multiplayer bouwwereld in de browser waar gebruikers samen met blokken bouwen.
+  url: https://brickbrag.com/
   source_type: hn
-  source_label: Hacker News (23 punten, 9 reacties)
-  confidence: medium
-  favicon: https://www.google.com/s2/favicons?domain=wordminos.com&sz=64
-updates: []
+  source_label: Hacker News (71 punten, 40 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=brickbrag.com&sz=64
+- name: Jevman
+  summary_nl: Benchmark waarin AI-beslissingsmodellen Pac-Man spelen om redeneervaardigheden te testen.
+  url: https://opper.ai/jevman-benchmark/
+  source_type: hn
+  source_label: Hacker News (78 punten, 23 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=opper.ai&sz=64
+- name: Rgpu
+  summary_nl: PyTorch-device dat tensors op een externe GPU laat draaien voor gedistribueerde berekeningen.
+  url: https://github.com/ymcrcat/rgpu
+  source_type: hn
+  source_label: Hacker News (55 punten, 4 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+updates:
+- tool_name: Gemini
+  tool_slug: gemini
+  feature_title: Gemini agent for work
+  summary_nl: Gemini lanceert een universele werkagent die alle zakelijke context begrijpt en vragen beantwoordt tijdens Gemini at Work.
+  impact: hoog
+  url: https://twitter.com/sundarpichai/status/2108257472553386059
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: gemini::Gemini agent for work
+- tool_name: Claude
+  tool_slug: claude
+  feature_title: Claude Dashboards and Motion
+  summary_nl: Claude zet data om in live dashboards en ideeën in geanimeerde uitlegvideo's, momenteel beschikbaar in beta.
+  impact: hoog
+  url: https://twitter.com/claudeai/status/2108271552991252810
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: claude::Claude Dashboards and Motion
+- tool_name: Grok
+  tool_slug: grok
+  feature_title: The X Subscription
+  summary_nl: Grok, Cursor en X Premium worden samengevoegd tot één gezamenlijk abonnement genaamd The X Subscription.
+  impact: medium
+  url: https://twitter.com/SpaceXSI/status/2109783335296008414
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: grok::The X Subscription
+- tool_name: Together AI
+  tool_slug: together ai
+  feature_title: Satoshi AI Beta
+  summary_nl: Together AI bouwt een AI-assistent gebaseerd op Satoshi Nakamoto's whitepaper, e-mails en forumberichten.
+  impact: hoog
+  url: https://twitter.com/1096361BTC/status/2100873000652521557
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: together ai::Satoshi AI Beta
+- tool_name: Grok
+  tool_slug: grok
+  feature_title: Voice Transcribe 2.0
+  summary_nl: Grok introduceert Voice Transcribe 2.0, dat wordt gepresenteerd als het nauwkeurigste spraaktranscriptiemodel wereldwijd.
+  impact: hoog
+  url: https://twitter.com/SpaceXAI/status/2101005248311726387
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: grok::Voice Transcribe 2.0
+- tool_name: ChatGPT
+  tool_slug: chatgpt
+  feature_title: College Planner preview
+  summary_nl: ChatGPT test College Planner en studietools, naast ChatGPT for Teens voor gebruikers onder de 18 jaar.
+  impact: medium
+  url: https://twitter.com/OpenAI/status/2107909792945832070
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: chatgpt::College Planner preview
 deepDives:
-- title: Building with Strapi MCP ＆ Vercel AI SDK
-  summary_nl: Korte demo van Strapi MCP met de Vercel AI SDK, handig voor wie zijn CMS-content via een AI-assistent wil laten beheren.
-  url: https://www.youtube.com/shorts/eX5WbRx_OY0
-  tool: claude
+- title: Amazon Cargo Plane Overshoots Runway, Closing Miami Airport
+  summary_nl: 'Runway versus alternatieven: welke video-AI past bij jouw workflow en budget voor productie-omgevingen.'
+  url: https://www.bloomberg.com/news/videos/2026-09-06/amazon-plane-overshoots-runway-closing-miami-airport-video
+  tool: runway
   trend_phase: tracked
-  score: 16.4
-- title: jingyaogong/minimind — 🧠 Train a 64M-parameter LLM from scratch in just 2h!
-  summary_nl: MiniMind laat zien hoe je in ongeveer twee uur zelf een taalmodel van 64 miljoen parameters traint, ideaal om te leren hoe training werkt.
-  url: https://github.com/jingyaogong/minimind
+  score: 18.27
+- title: 'Pres. Trump on AI: Accord signed today is ''morally binding'''
+  summary_nl: 'Trump tekent AI-akkoord dat moreel bindend is: wat dit betekent voor regelgeving en ontwikkeling in de praktijk.'
+  url: https://www.cnbc.com/video/2026/09/29/pres-trump-on-ai-accord-signed-today-is-morally-binding.html?__source=flipboard
   tool: ''
   trend_phase: tracked
-  score: 16.37
-- title: OpenAI starts watermarking ChatGPT and Codex text in the EU
-  summary_nl: OpenAI watermerkt tekst van ChatGPT en Codex in de EU; een uitleg wat dat betekent voor je workflow en waarom alleen goedgekeurde partijen kunnen controleren.
-  url: https://thenextweb.com/news/openai-text-watermarking-chatgpt-codex-eu-ai-act
-  tool: chatgpt
+  score: 17.89
+- title: debpalash/VoiceStudio — VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice desig…
+  summary_nl: 'VoiceStudio als open-source alternatief voor ElevenLabs: voice cloning en design volledig lokaal zonder API-kosten.'
+  url: https://github.com/debpalash/VoiceStudio
+  tool: elevenlabs
   trend_phase: tracked
-  score: 16.21
-- title: Pairing Google Antigravity with Gemini 3.7 Flash solves notable multi-agent math and engineering problems.
-  summary_nl: Google combineert Antigravity met Gemini 3.7 Flash voor teams van agents; de moeite waard om te testen hoe zo'n verdeling van taken in de praktijk uitpakt.
-  url: https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/
-  tool: gemini
+  score: 17.19
+- title: Claude discovers a novel enzyme system with CRISPR-like repeats
+  summary_nl: Claude ontdekt nieuw enzymsysteem met CRISPR-achtige herhalingen, een test van redeneren in wetenschappelijk onderzoek.
+  url: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
+  tool: claude
   trend_phase: tracked
-  score: 16.15
-slotLabel: Ochtend
-heroImage: "/images/digest/ai-tools-radar-13-oktober-2026-granola-modern-low-pocketty.webp"
+  score: 16.65
+slotLabel: Avond
 ---
-De launches van vandaag gaan minder over wat agents kunnen en meer over hoe je ze bijhoudt. Pocketty stuurt een melding naar je iPhone als een agent vastloopt, Pinrail zet wachtende codewijzigingen in één bureaubladinbox en AI SRE Arena meet hoe goed agents een Kubernetes-cluster beheren. Tegelijk groeit de tegenbeweging rond herkenbaarheid: OpenAI watermerkt tekst in de EU vanwege de AI-verordening, en Kalypta wil voorkomen dat AI-notulisten je stem uitschrijven. Wie agents in zijn workflow opneemt, krijgt dus zowel betere bewaking als nieuwe regels over wat herkenbaar moet zijn.
+
+De data laat twee bewegingen zien: MCP-ondersteuning verschijnt in onverwachte hoeken (parametrische CAD, muziekproductie), terwijl de grote modellen zich richten op zakelijke workflows met agenten en dashboards. Claude claimt een enzymontdekking via CRISPR-analyse, wat de verschuiving naar wetenschappelijke toepassingen illustreert. Tegelijk worden bestaande API's ingezet voor alledaagse taken zoals audiobooks, een signaal dat de focus verschuift van modelontwikkeling naar praktische implementatie.
 
 ---
 
