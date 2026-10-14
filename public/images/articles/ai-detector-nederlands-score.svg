@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-labelledby="ad-t ad-d">
+  <title id="ad-t">Zo lees je een AI-detectiescore</title>
+  <desc id="ad-d">Schaal van waarschijnlijk mens (links) naar waarschijnlijk AI (rechts). Het brede grijze midden is onzeker en geldt nooit als bewijs. Ook een uitslag aan de AI-kant is alleen een aanleiding voor een gesprek, geen bewijs. Valkuil: valse positieven komen vaker voor bij formele tekst, korte tekst en tekst van niet-moedertaalsprekers. Gebruik de score als signaal en vraag naar aantekeningen, eerdere versies en bronnen.</desc>
+  <defs>
+    <style>
+      .bg{fill:#111418}
+      .box{fill:#1a1f26;stroke:#3a4352;stroke-width:1.5}
+      .mid{fill:#262c35;stroke:#f1cf2a;stroke-width:2}
+      .t{fill:#f1f5fc;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:16px}
+      .s{fill:#94a6be;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px}
+      .k{fill:#f1cf2a;font-family:'JetBrains Mono',Menlo,monospace;font-size:11.5px;letter-spacing:1px}
+      .a{fill:none;stroke:#94a6be;stroke-width:1.5}
+    </style>
+    <marker id="ad-ar" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0,10 3,0 6" fill="#94a6be"/></marker>
+    <marker id="ad-al" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto"><polygon points="10 0,0 3,10 6" fill="#94a6be"/></marker>
+  </defs>
+  <rect class="bg" width="880" height="470" rx="14"/>
+  <text x="28" y="38" class="k">ZO LEES JE EEN AI-DETECTIESCORE</text>
+
+  <path class="a" d="M40 72 L840 72" marker-start="url(#ad-al)" marker-end="url(#ad-ar)"/>
+  <text x="40" y="94" class="s">meer mens</text>
+  <text x="840" y="94" class="s" text-anchor="end">meer AI</text>
+
+  <g transform="translate(28,110)">
+    <rect class="box" width="210" height="150" rx="10"/>
+    <text class="k" x="16" y="28">WAARSCHIJNLIJK MENS</text>
+    <text class="t" x="16" y="58">Weinig signaal</text>
+    <text class="s" x="16" y="84">Geen garantie: bewerkte</text>
+    <text class="s" x="16" y="102">AI-tekst wordt ook gemist.</text>
+  </g>
+
+  <g transform="translate(252,110)">
+    <rect class="mid" width="376" height="150" rx="10"/>
+    <text class="k" x="20" y="28">BREED GRIJS MIDDEN</text>
+    <text class="t" x="20" y="58">Onzeker, geen bewijs</text>
+    <text class="s" x="20" y="84">Gemengde uitslagen en scores rond het</text>
+    <text class="s" x="20" y="102">midden zeggen weinig. Lees de gemarkeerde</text>
+    <text class="s" x="20" y="120">zinnen, niet alleen het percentage.</text>
+  </g>
+
+  <g transform="translate(642,110)">
+    <rect class="box" width="210" height="150" rx="10"/>
+    <text class="k" x="16" y="28">WAARSCHIJNLIJK AI</text>
+    <text class="t" x="16" y="58">Tweede blik nodig</text>
+    <text class="s" x="16" y="84">Aanleiding voor een gesprek,</text>
+    <text class="s" x="16" y="102">geen bewijs. Nooit genoeg</text>
+    <text class="s" x="16" y="120">voor een straf.</text>
+  </g>
+
+  <g transform="translate(28,282)">
+    <rect class="box" width="824" height="108" rx="10"/>
+    <text class="k" x="20" y="28">VALKUIL: VALS-POSITIEF</text>
+    <text class="t" x="20" y="56">Menselijke tekst krijgt vaker ten onrechte een AI-score bij:</text>
+    <text class="s" x="20" y="84">•  formele, voorspelbare tekst</text>
+    <text class="s" x="290" y="84">•  korte stukken van een paar zinnen</text>
+    <text class="s" x="580" y="84">•  niet-moedertaalsprekers</text>
+  </g>
+
+  <text x="28" y="428" class="t">Gebruik de score als signaal.</text>
+  <text x="28" y="450" class="s">Vraag naar aantekeningen, eerdere versies en bronnen: dat zegt meer dan een percentage.</text>
+</svg>
