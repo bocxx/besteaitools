@@ -2,7 +2,7 @@
 title: "Microsoft Copilot gratis gebruiken: wat kan wel en niet"
 description: "Microsoft Copilot werkt gratis met een Microsoft-account, maar met limieten. Zo begin je, wat je gratis krijgt en wanneer een abonnement wél loont."
 publishedAt: 2026-10-13
-updatedAt: 2026-10-13
+updatedAt: 2026-10-14
 author: "Redactie"
 category: "gids"
 tags:
@@ -67,6 +67,8 @@ Microsoft Copilot kun je gebruiken zonder iets te betalen. Wel loop je tegen lim
 > **💡 Beginner-tip:** Krijg je een melding dat je limiet bereikt is, kom dan later terug of begin een nieuw gesprek met een kortere vraag. Microsoft noemt geen vast aantal berichten voor het gratis account, alleen dat betaalde abonnementen "meer gebruik dan de gratis versie" krijgen ([Bron: Microsoft](https://www.microsoft.com/nl-nl/microsoft-copilot/for-individuals)).
 
 ## Wat krijg je gratis, en wat niet?
+
+![Beslisschema: welke Microsoft Copilot heb je nodig? Alleen chatten en samenvatten kan met gratis Copilot en een Microsoft-account. Copilot ín Word, Excel en PowerPoint vraagt op je werk om Copilot Chat of een Microsoft 365 Copilot-licentie via je organisatie, en privé om Microsoft 365 Personal, Family (AI alleen voor de eigenaar) of Premium (ruimste limieten, Onderzoeker en Analist). Microsoft 365 Basic heeft geen AI.](/images/articles/copilot-gratis-gebruiken-keuze.svg)
 
 **Gratis:** chatten, vragen over het web, teksten schrijven en herschrijven, documenten laten samenvatten, beperkt afbeeldingen maken en hulp via je camera of scherm, telkens binnen limieten ([Bron: Microsoft](https://www.microsoft.com/nl-nl/microsoft-copilot/for-individuals)).
 
