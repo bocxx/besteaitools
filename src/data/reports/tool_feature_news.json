@@ -1,12 +1,48 @@
 {
-  "generated_at": "2026-10-13T19:22:47.525051",
+  "generated_at": "2026-10-14T07:19:42.142927",
   "window_days": 7,
   "week": "2026-w42",
-  "total_candidates_scanned": 1282,
-  "total_after_dedup": 1257,
-  "total_feature_updates": 21,
+  "total_candidates_scanned": 1243,
+  "total_after_dedup": 1216,
+  "total_feature_updates": 23,
   "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "qwen",
+      "tool_name": "Qwen",
+      "tool_category": "tekst",
+      "feature_title": "Qwen-Image-2.1 Turbo checkpoint",
+      "summary_nl": "Qwen brengt een Turbo-versie van Qwen-Image-2.1 uit: een versneld checkpoint op dezelfde 7B-architectuur dat afbeeldingen maakt en bewerkt in 8 denoising-stappen. De open weights zijn nu beschikbaar.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/Alibaba_Qwen/status/2108549075218120949",
+          "title": "🚀 Meet Qwen-Image-2.1-Turbo — create and edit images in just 8 denoising steps! Open weights now available!\n\nBuilt on Qwen-Image-2.1, Turbo ",
+          "platform": "twitter",
+          "source": "@Alibaba_Qwen"
+        }
+      ],
+      "detected_at": "2026-10-14",
+      "week": "2026-w42"
+    },
+    {
+      "tool_slug": "gemini",
+      "tool_name": "Gemini",
+      "tool_category": "tekst",
+      "feature_title": "Gemini 4 Argon in Cursor",
+      "summary_nl": "Gemini 4 Argon is nu beschikbaar in Cursor met een score van 52.8% op CursorBench, vergelijkbaar met Opus 5.5, tegen een prijs van $2 per miljoen input tokens en $10 per miljoen output tokens.",
+      "impact": "high",
+      "sources": [
+        {
+          "url": "https://twitter.com/cursor_ai/status/2110087611763368271",
+          "title": "Gemini 4 Argon is now available in Cursor!\n\nIt scores 52.8% on CursorBench at default effort, on par with Opus 5.5.\n\nPriced at $2/M input an",
+          "platform": "twitter",
+          "source": "@cursor_ai"
+        }
+      ],
+      "detected_at": "2026-10-14",
+      "week": "2026-w42"
+    },
     {
       "tool_slug": "grok",
       "tool_name": "Grok",
