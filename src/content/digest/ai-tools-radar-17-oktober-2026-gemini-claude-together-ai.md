@@ -1,7 +1,7 @@
 ---
 
-title: AI Tools Radar – Gemini · Claude · Together AI (Ochtend 17 oktober)
-description: 'AI Tools Radar 17 oktober: 110 launches, 25 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
+title: AI Tools Radar – Gemini · Claude · Together AI (Avond 17 oktober)
+description: 'AI Tools Radar 17 oktober: 110 launches, 26 feature-updates, 14 deep-dive-kandidaten op debesteaitools.nl.'
 date: '2026-10-17'
 timeSlot: tools-digest
 featured: []
@@ -12,7 +12,6 @@ tags:
 - Claude
 - Together AI
 - Grok
-- ChatGPT
 author: debesteaitools.nl Redactie
 totalAnalyzed: 150
 itemsSelected: 16
@@ -22,15 +21,15 @@ topics:
 - Claude
 - Together AI
 - Grok
-- ChatGPT
 draft: false
+heroImage: /images/digest/ai-tools-radar-17-oktober-2026-gemini-claude-together-ai.webp
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Google presenteert op Gemini at Work één universele Gemini-agent die zakelijke context gebruikt voor werkvragen.
-- 'Anthropic zet Claude Dashboards en Motion in bèta: data wordt een live dashboard, een idee een uitlegvideo.'
-- 'MCP duikt op in drie nieuwe projecten: CAD-software, een muziekstudio en een zelfgehost persoonlijk dashboard.'
+- Google rolt Gemini 4 Argon uit in de Gemini-app en presenteert één Gemini-agent voor werk.
+- Claude levert in bèta live dashboards en geanimeerde uitlegvideo's als eindproduct, naast gewone chatantwoorden.
+- Kleine open-source projecten koppelen CAD en muzieksoftware via MCP aan AI-assistenten.
 launches:
 - name: Use your OpenAI subscription to create audiobooks
   summary_nl: Dienst die met je eigen OpenAI-abonnement teksten omzet in luisterboeken, handig voor wie lange documenten liever beluistert.
@@ -60,21 +59,33 @@ launches:
   source_label: Hacker News (78 punten, 40 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=brickbrag.com&sz=64
-- name: Building an LLM from Scratch in TypeScript
-  summary_nl: Online boek dat stap voor stap uitlegt hoe je zelf een taalmodel bouwt in TypeScript; bedoeld voor webontwikkelaars.
-  url: https://book.humanexperiences.io/
+- name: rStation
+  summary_nl: Gedeelde onderzoeksomgeving waarin meerdere AI-agents samen aan een vraagstuk werken; voor teams die agents laten onderzoeken.
+  url: https://rstation.ai/
   source_type: hn
-  source_label: Hacker News (32 punten, 3 reacties)
-  confidence: medium
-  favicon: https://www.google.com/s2/favicons?domain=book.humanexperiences.io&sz=64
-- name: Edi Life OS
-  summary_nl: Zelf te hosten persoonlijk dashboard met een MCP-server, zodat je AI-assistent veilig bij je eigen gegevens kan.
-  url: https://github.com/edrisranjbar/lifeos
+  source_label: Hacker News (51 punten, 19 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=rstation.ai&sz=64
+- name: Wonderhop
+  summary_nl: Dagelijks raadspel waarin je voorspelt wat de meeste mensen antwoorden, of juist wat niemand zegt.
+  url: https://wonderhop.io/en/
   source_type: hn
-  source_label: Hacker News (40 punten, 16 reacties)
+  source_label: Hacker News (49 punten, 52 reacties)
   confidence: medium
-  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+  favicon: https://www.google.com/s2/favicons?domain=wonderhop.io&sz=64
 updates:
+- tool_name: Gemini
+  tool_slug: gemini
+  feature_title: Gemini 4 Argon
+  summary_nl: Gemini-gebruikers krijgen het nieuwe topmodel Gemini 4 Argon, dat nu stapsgewijs in de app verschijnt.
+  impact: hoog
+  url: https://twitter.com/GeminiApp/status/2110039322229649783
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: gemini::Gemini 4 Argon
 - tool_name: Gemini
   tool_slug: gemini
   feature_title: Gemini agent for work
@@ -114,7 +125,7 @@ updates:
 - tool_name: Grok
   tool_slug: grok
   feature_title: Voice Transcribe 2.0
-  summary_nl: xAI brengt Grok Voice Transcribe 2.0 uit, volgens het bedrijf het nauwkeurigste model voor spraak naar tekst.
+  summary_nl: Grok Voice Transcribe 2.0 zet spraak om in tekst en is volgens de maker het nauwkeurigste model in zijn soort.
   impact: hoog
   url: https://twitter.com/SpaceXAI/status/2101005248311726387
   source_type: x
@@ -135,19 +146,13 @@ updates:
   platforms:
   - twitter
   key: grok::The X Subscription
-- tool_name: ChatGPT
-  tool_slug: chatgpt
-  feature_title: College Planner preview
-  summary_nl: ChatGPT test College Planner en nieuwe studietools, naast ChatGPT for Teens voor gebruikers onder de 18.
-  impact: medium
-  url: https://twitter.com/OpenAI/status/2107909792945832070
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: chatgpt::College Planner preview
 deepDives:
+- title: ChatGPT Images 2.5
+  summary_nl: 'ChatGPT Images 2.5 naast de andere beeldgeneratoren gezet: een praktische vergelijking helpt makers kiezen welke tool bij hun werk past.'
+  url: https://openai.com/index/introducing-chatgpt-images-2-5/
+  tool: chatgpt
+  trend_phase: tracked
+  score: 20.59
 - title: Amazon Cargo Plane Overshoots Runway, Closing Miami Airport
   summary_nl: Bloomberg-video over een vrachtvliegtuig van Amazon dat de landingsbaan in Miami voorbijschoot; dit item heeft geen verband met AI-videotool Runway.
   url: https://www.bloomberg.com/news/videos/2026-09-06/amazon-plane-overshoots-runway-closing-miami-airport-video
@@ -166,16 +171,9 @@ deepDives:
   tool: elevenlabs
   trend_phase: tracked
   score: 17.19
-- title: How I Make Realistic AI Videos with Seedance 2.5 - Full Guide
-  summary_nl: Videogids over realistische AI-video's met Seedance 2.5; goede basis voor een Nederlandse stap-voor-stap-uitleg met eigen testbeelden.
-  url: https://www.youtube.com/watch?v=2hJsvDSPWYM
-  tool: make
-  trend_phase: tracked
-  score: 16.9
-slotLabel: Ochtend
-heroImage: "/images/digest/ai-tools-radar-17-oktober-2026-gemini-claude-together-ai.webp"
+slotLabel: Avond
 ---
-De grote spelers schuiven deze week op van chatvenster naar werkplek: Google bundelt zakelijke context in één Gemini-agent en Claude levert dashboards en video's als eindproduct. Aan de onderkant van de markt koppelen kleine open-source projecten hun software via MCP aan AI-assistenten, van CAD in Rust tot een muziekstudio. X verpakt Grok, Cursor en X Premium in één abonnement, wat laat zien dat toolmakers steeds vaker in bundels verkopen. Voor wie spraak lokaal wil houden, is VoiceStudio een open-source alternatief voor ElevenLabs om te testen.
+Google zet deze week twee stappen tegelijk: een nieuw topmodel in de Gemini-app en één agent die zakelijke context kent. Claude kiest een andere route en maakt van data en ideeën direct een dashboard of uitlegvideo. Onderaan de markt bouwen ontwikkelaars kleine projecten die hun software via MCP openzetten voor AI-assistenten, van CAD in Rust tot een muziekstudio. Veel feature-meldingen komen vandaag alleen van X-accounts, dus wacht met beslissingen tot de makers ze elders bevestigen.
 
 ---
 
