@@ -1,12 +1,30 @@
 {
-  "generated_at": "2026-10-18T19:19:43.998861",
+  "generated_at": "2026-10-19T07:19:32.626603",
   "window_days": 7,
-  "week": "2026-w42",
-  "total_candidates_scanned": 1246,
+  "week": "2026-w43",
+  "total_candidates_scanned": 1249,
   "total_after_dedup": 1228,
-  "total_feature_updates": 26,
-  "llm_curated": false,
+  "total_feature_updates": 22,
+  "llm_curated": true,
   "features": [
+    {
+      "tool_slug": "chatgpt",
+      "tool_name": "ChatGPT",
+      "tool_category": "tekst",
+      "feature_title": "Agent progress tracking",
+      "summary_nl": "In ChatGPT kunnen Pro-gebruikers in de Chat-tab de voortgang van elke agent volgen en afgeronde taken openen om het werk te controleren.",
+      "impact": "medium",
+      "sources": [
+        {
+          "url": "https://twitter.com/OpenAI/status/2111192259073094035",
+          "title": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.\n\nAnd now, multiple agents can tackle ",
+          "platform": "twitter",
+          "source": "@OpenAI"
+        }
+      ],
+      "detected_at": "2026-10-19",
+      "week": "2026-w43"
+    },
     {
       "tool_slug": "gemini",
       "tool_name": "Gemini",
@@ -356,24 +374,6 @@
       "week": "2026-w40"
     },
     {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Claude Opus 5.5 in Cursor",
-      "summary_nl": "Claude Opus 5.5 is nu beschikbaar in Cursor en is het topmodel op CursorBench met 57,8% score, terwijl het 40% goedkoper per taak is dan Opus 5.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/cursor_ai/status/2102448392773435706",
-          "title": "Claude Opus 5.5 is now available in Cursor!\n\nIt's the new top model on CursorBench at 57.8% (Max) and costs 40% less per task than Opus 5. h",
-          "platform": "twitter",
-          "source": "@cursor_ai"
-        }
-      ],
-      "detected_at": "2026-09-23",
-      "week": "2026-w39"
-    },
-    {
       "tool_slug": "cursor",
       "tool_name": "Cursor",
       "tool_category": "coding",
@@ -444,84 +444,12 @@
       ],
       "detected_at": "2026-09-29",
       "week": "2026-w40"
-    },
-    {
-      "tool_slug": "claude",
-      "tool_name": "Claude",
-      "tool_category": "tekst",
-      "feature_title": "Managed Agents",
-      "summary_nl": "DigitalOcean Managed Agents is nu in publieke preview. Hiermee kun je Claude Code, Codex of je eigen LangGraph agent draaien in een runtime omgeving die pauzeert wanneer deze inactief is.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/digitalocean/status/2102414817797550320",
-          "title": "DigitalOcean Managed Agents is now in public preview. \n\nRun Claude Code, Codex, or your own LangGraph agent in a runtime environment that pa",
-          "platform": "twitter",
-          "source": "@digitalocean"
-        }
-      ],
-      "detected_at": "2026-09-25",
-      "week": "2026-w39"
-    },
-    {
-      "tool_slug": "qwen",
-      "tool_name": "Qwen",
-      "tool_category": "tekst",
-      "feature_title": "Ternary Bonsai 2 27B",
-      "summary_nl": "Qwen kondigt Ternary Bonsai 2 27B aan, een model dat 9 keer kleiner is dan zijn full-precision tegenhanger, maar wel dezelfde prestaties levert.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/PrismML/status/2100692248480596348",
-          "title": "Today, we’re announcing Ternary Bonsai 2 27B.\n\nBased on Qwen3.8 27B, Bonsai 2 27B is 9x smaller than its full-precision counterpart while re",
-          "platform": "twitter",
-          "source": "@PrismML"
-        }
-      ],
-      "detected_at": "2026-09-23",
-      "week": "2026-w39"
-    },
-    {
-      "tool_slug": "together ai",
-      "tool_name": "Together AI",
-      "tool_category": "infra",
-      "feature_title": "Satoshi AI Beta",
-      "summary_nl": "Together AI heeft Satoshi AI Beta gelanceerd, een AI-assistent gebouwd op basis van Satoshi Nakamoto's whitepaper, e-mails en forumberichten.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/1096361BTC/status/2100873000652521557",
-          "title": "We asked what you would ask Satoshi.\n\nNow, you can ask.\n\nSatoshi AI Beta is now live.\n\nBuilt from Satoshi Nakamoto’s whitepaper, emails, and",
-          "platform": "twitter",
-          "source": "@1096361BTC"
-        }
-      ],
-      "detected_at": "2026-09-25",
-      "week": "2026-w39"
-    },
-    {
-      "tool_slug": "grok",
-      "tool_name": "Grok",
-      "tool_category": "tekst",
-      "feature_title": "Voice Transcribe 2.0",
-      "summary_nl": "Grok heeft Grok Voice Transcribe 2.0 geïntroduceerd, de meest nauwkeurige spraaktranscriptiemodel ter wereld.",
-      "impact": "high",
-      "sources": [
-        {
-          "url": "https://twitter.com/SpaceXAI/status/2101005248311726387",
-          "title": "Introducing Grok Voice Transcribe 2.0. It’s the world’s most accurate speech transcription model. https://t.co/7iXVmAEFW2",
-          "platform": "twitter",
-          "source": "@SpaceXAI"
-        }
-      ],
-      "detected_at": "2026-09-23",
-      "week": "2026-w39"
     }
   ],
   "weeks_kept": [
+    "2026-w43",
     "2026-w42",
     "2026-w41",
-    "2026-w40",
-    "2026-w39"
+    "2026-w40"
   ]
 }
