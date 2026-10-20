@@ -38,7 +38,7 @@ Wil je met open-source AI aan de slag, dan kom je binnen vijf minuten uit bij Hu
 
 Hugging Face bundelt drie dingen die anders verspreid zouden staan: een enorme bibliotheek met kant-en-klare AI-modellen, een verzameling datasets om die modellen mee te trainen of te testen, en een laag om modellen te draaien. In mei 2026 ging het om ruim 2,4 miljoen modellen, meer dan 730.000 datasets en ongeveer 1 miljoen Spaces. Bijna elk nieuw open model — of het nu van Meta, Mistral of een Chinese maker komt — verschijnt hier als eerste.
 
-De kracht zit in het delen. In plaats van zelf een model van nul te trainen, pak je er een die iemand anders al gemaakt heeft en pas je die aan voor jouw taak: tekst genereren, vertalen, samenvatten, afbeeldingen maken of spraak omzetten naar tekst.
+De kracht zit in het delen. In plaats van zelf een model van nul te trainen, pak je er een die iemand anders al gemaakt heeft en pas je die aan voor jouw taak: tekst genereren, vertalen, samenvatten, afbeeldingen maken of spraak omzetten naar tekst. Ook voor voorspellingen op basis van meetreeksen, zoals omzet of energieverbruik, vind je er kant-en-klare modellen, bijvoorbeeld [Mistrals Timestral](/nieuws/mistral-timestral-tijdreeksen-voorspellen).
 
 ## De drie onderdelen die ertoe doen
 

@@ -100,7 +100,7 @@ Met `prediction_length=96` voorspel je 96 stappen vooruit: bij kwartierdata is d
 
 Een model dat de benchmark wint, kent jouw zaak nog niet. Houd daarom de laatste paar weken van je data achter, laat Timestral die periode voorspellen en vergelijk met wat er echt gebeurde. Kijk vooral of de werkelijke waarden binnen de bandbreedte van de kwantielen vallen. Wil je het model op je eigen data bijtrainen of on-premises draaien, dan verwijst Mistral naar Mistral Forge ([Bron: Mistral AI](https://mistral.ai/news/timestral/)).
 
-Werk je liever met Mistrals taalmodellen via de API, dan helpt [onze gids voor je eerste Mistral Large 4-aanroep](/nieuws/mistral-large-4-api-eerste-aanroep). En waarom Mistral voor Europese bedrijven een eigen positie heeft, lees je bij [Het Laatste AI Nieuws over de Samsung-deal](https://hetlaatsteainieuws.nl/nieuws/mistral-3-miljard-samsung-soeverein).
+Werk je liever met Mistrals taalmodellen via de API, dan helpt [onze gids voor je eerste Mistral Large 4-aanroep](/nieuws/mistral-large-4-api-eerste-aanroep). En waarom Mistral voor Europese bedrijven een eigen positie heeft, lees je bij [Het Laatste AI Nieuws over de Samsung-deal](https://www.hetlaatsteainieuws.nl/nieuws/mistral-3-miljard-samsung-soeverein).
 
 ## Checklist: ben je klaar?
 

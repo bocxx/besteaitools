@@ -90,7 +90,7 @@ De modelpagina toont tijdens de preview 0,68 dollar per miljoen invoertokens en 
 
 > **⚡ Gevorderden:** zet altijd een `max_tokens` op je aanroep en vraag in de prompt expliciet om korte antwoorden. Stuur je steeds dezelfde lange instructie mee, profiteer dan van de cachekorting op herhaalde invoer. En reken je business case door met het volle tarief, niet met de preview-prijs.
 
-De gewichten wil Mistral eind oktober vrijgeven ([Bron: Mistral](https://mistral.ai/news/mistral-large-4/)). Zelf hosten op een laptop zit er bij dit formaat niet in, maar voor organisaties met eigen servers wordt het dan een optie.
+De gewichten wil Mistral eind oktober vrijgeven ([Bron: Mistral](https://mistral.ai/news/mistral-large-4/)). Zelf hosten op een laptop zit er bij dit formaat niet in, maar voor organisaties met eigen servers wordt het dan een optie. Wil je nu al iets van Mistral op een gewone computer draaien, dan kan dat met [de tijdreeksmodellen van Timestral](/nieuws/mistral-timestral-tijdreeksen-voorspellen), die zonder GPU werken.
 
 ## Checklist: ben je klaar?
 
