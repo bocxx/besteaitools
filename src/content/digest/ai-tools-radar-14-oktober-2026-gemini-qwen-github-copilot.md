@@ -159,6 +159,7 @@ deepDives:
   trend_phase: tracked
   score: 16.67
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-14-oktober-2026-gemini-qwen-github-copilot.webp
 ---
 Voor wie met AI programmeert, draait het deze week om prijs per resultaat. Cursor biedt nu zowel Gemini 4 Argon als Sonnet 5.5 aan, twee modellen die volgens Cursor in veel taken in de buurt van Opus komen. Qwen kiest de open route en geeft de gewichten van zijn snellere beeldmodel vrij. Aan de andere kant van het spectrum houdt een app als Pulse Local gevoelige financiële gegevens juist helemaal op het eigen apparaat.
 

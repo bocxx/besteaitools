@@ -167,6 +167,7 @@ deepDives:
   trend_phase: tracked
   score: 16.9
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-16-oktober-2026-chatgpt-claude-qwen.webp
 ---
 
 De focus ligt deze week op productierijpe AI-infrastructuur: OpenAI en Anthropic rollen beide enterprise-functies uit (GPT-6, Managed Agents, Code Projects), terwijl Qwen laat zien dat modelcompressie volwassen wordt. Daarnaast verschijnen er praktische tools zoals Atticus, een voice assistant voor macOS die op Claude draait, en demonstreert Opus 5.5 zijn snelheid door in drie uur een Figma-kloon te bouwen. De deep-dives richten zich op vergelijkingen tussen Claude-varianten en reverse engineering met agents.
