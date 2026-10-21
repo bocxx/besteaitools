@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 17.9
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-4-oktober-2026-gemini-chatgpt-claude.webp
 ---
 
 De modelrace in codeertools is deze week vooral een ronkwestie: Cursor zet Sonnet 5.5 en GLM 5.3 naast elkaar, terwijl OpenAI GPT-6 Sol en Luna uitrolt in ChatGPT Work en Codex. Op de achtergrond verschuift de aandacht naar de runtime eromheen: DigitalOcean opent een publieke preview van Managed Agents en Pi pod laat ontwikkelaars hun coding agent in eigen sandboxes draaien. De deep-dives mengen productnieuws van Google (Gemini 3.8 Live, WeatherNext 3) met kritiek van een voormalig Anthropic-onderzoeker op OpenAI en Anthropic. Het Hacker News-aanbod blijft speels en hardwarematig, van een 3D-geprinte Arduino-robot tot een werkend Enigma-model en TinyAIArena.

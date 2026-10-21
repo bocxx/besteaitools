@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-30-september-2026-claude-qwen-chatgpt.webp
 ---
 
 De focus ligt deze week op productie-gereed maken van bestaande modellen: Claude maakt Cloud Sessions algemeen beschikbaar en Cursor integreert Opus 5.5 tegen lagere kosten, terwijl OpenAI GPT-6 uitrolt naar zakelijke gebruikers. Qwen zet in op agent-architectuur met een Mobile Planner die taken kan ontleden en orkestreren. Tegelijk verschijnen er open-source ontwikkeltools zoals Whiteboard (YC W26) en Reladraw, die beide inzetten op visuele ontwerpworkflows.

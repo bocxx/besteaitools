@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-26-september-2026-claude-qwen-together-ai.webp
 ---
 
 De focus ligt deze week op efficiëntie en toegankelijkheid. Claude en Qwen brengen beide modellen uit die goedkoper of compacter zijn zonder in te leveren op prestaties. Tegelijk zien we een golf aan open-source developer tools op Hacker News, van IDE's tot sandboxes. De deep-dive-kandidaten tonen interesse in praktische vergelijkingen tussen Gemini, Mistral en ChatGPT, wat aansluit bij de behoefte aan heldere keuzes in een druk modellandschap.

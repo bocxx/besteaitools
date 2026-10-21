@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-27-september-2026-claude-qwen-together-ai.webp
 ---
 
 Deze week zien we twee parallelle bewegingen: Claude consolideert zijn positie met een kostenefficiënter topmodel dat direct in ontwikkeltools verschijnt, terwijl de open-source gemeenschap inzet op fundamentele bouwstenen zoals diagramtalen en sandboxes. Qwen's extreme compressie en Together AI's Satoshi-assistent laten zien dat specialisatie en efficiëntie nu zwaarder wegen dan pure schaal. De deep-dive-kandidaten rond Gemini, Mistral en ChatGPT Images signaleren dat gebruikers praktische vergelijkingen willen, geen feature-lijsten.

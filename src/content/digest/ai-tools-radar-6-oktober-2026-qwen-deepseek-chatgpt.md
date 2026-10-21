@@ -171,6 +171,7 @@ deepDives:
   trend_phase: tracked
   score: 17.15
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-6-oktober-2026-qwen-deepseek-chatgpt.webp
 ---
 
 De focus verschuift van losse AI-modellen naar geïntegreerde agents die bedrijfsdata en workflows orkestreren. ChatGPT en Copilot brengen data-agents naar Teams en M365, terwijl Qwen en Cursor inzetten op autonome planning en taakcoördinatie. Tegelijk blijft de race om snelheid en efficiëntie doorgaan: DeepSeek optimaliseert zijn Flash-model, TurboGPT haalt trainingstijden terug naar seconden. De lijn is duidelijk: van chatinterface naar proactieve werkassistent.

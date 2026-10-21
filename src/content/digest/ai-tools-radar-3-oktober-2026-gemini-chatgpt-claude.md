@@ -167,6 +167,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-3-oktober-2026-gemini-chatgpt-claude.webp
 ---
 
 De launches van vandaag komen vooral uit de Hacker News-gemeenschap, met Kolibri, Reladraw, Ledge.sh en een opensource Lego-AI-generator. Bij de modelupdates domineren Google en Anthropic: Gemini 4 Argon richt zich eerst op cyberverdediging, terwijl Claude Cloud Sessions en Opus 5.5 in Cursor de developer-workflow versterken. De deep-dive-kandidaten kiezen stuk voor stuk een vergelijkende invalshoek rond OCR, Meta's Muse, Gemini Flash en ChatGPT Images 2.5. Het beeld is daarmee vooral gericht op uitvoering en integratie in bestaande tools, niet op losse modelaankondigingen.

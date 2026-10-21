@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-29-september-2026-claude-qwen-together-ai.webp
 ---
 
 De focus ligt deze week op persistentie en efficiëntie: Claude maakt workflows duurzamer met Cloud Sessions en managed runtimes, terwijl Cursor zowel Sonnet 5.5 als Opus 5.5 integreert voor ontwikkelaars. OpenAI rolt GPT-6 Sol en Luna uit naar zakelijke gebruikers, en Qwen toont dat compressie zonder prestatieverlies mogelijk is. De deep-dive kandidaten richten zich op praktische vergelijkingen tussen Gemini, Mistral en ChatGPT voor Nederlandse gebruikers.

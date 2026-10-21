@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 18.43
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-8-oktober-2026-chatgpt-claude-qwen.webp
 ---
 
 De focus verschuift naar kostenefficiëntie en controle: zowel OpenAI als Anthropic brengen nieuwe modellen uit, terwijl Qwen met Ternary Bonsai 2 27B laat zien dat vergelijkbare prestaties mogelijk zijn met 9x kleinere modellen. Tegelijk zien we een beweging naar self-hosted oplossingen zoals Pi pod en DigitalOcean Managed Agents, die ontwikkelaars meer grip geven op waar en hoe hun agents draaien. De combinatie van goedkopere modellen en flexibelere hosting maakt AI-integratie toegankelijker voor kleinere teams.

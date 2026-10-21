@@ -171,6 +171,7 @@ deepDives:
   trend_phase: tracked
   score: 17.3
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-5-oktober-2026-together-ai-grok-claude.webp
 ---
 
 De modelrondes volgen elkaar snel op: Claude Opus 5.5 richt zich op vergelijkbare prestaties tegen lagere kosten, terwijl Gemini 3.8 Live en Extended Thinking de gesprekslaag verbreden. Daarnaast verschuift tooling naar bundeling en lokalisering, met Offrun als werkplek voor meerdere coding agents en VoiceStudio als volledig lokaal alternatief voor ElevenLabs. De deep-dives laten de keerzijde zien: naast productinnovaties gaat het over misbruikdetectie bij Claude en over risicoscenario's rond AI. Voor productbouwers is de relevante vraag deze week niet welk model wint, maar welke agent- en spraaktools zich in de eigen workflow laten inpassen.

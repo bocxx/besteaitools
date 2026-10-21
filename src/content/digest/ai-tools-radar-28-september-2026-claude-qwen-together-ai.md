@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-28-september-2026-claude-qwen-together-ai.webp
 ---
 
 De focus ligt deze week op efficiëntie en toegankelijkheid. Claude en Qwen leveren vergelijkbare prestaties tegen lagere kosten of kleinere modellen, terwijl DigitalOcean managed agents aanbiedt die pauzeren bij inactiviteit. Tegelijk zien we op Hacker News een golf aan open-source experimenten, van Reladraw's diagramtaal tot Mini AGI dat op 8GB VRAM draait. De deep-dive-kandidaten tonen dat Gemini, Mistral en ChatGPT Images om praktische vergelijkingen vragen.

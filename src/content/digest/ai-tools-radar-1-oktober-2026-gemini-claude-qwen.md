@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 21.09
 slotLabel: Avond
+heroImage: /images/digest/ai-tools-radar-1-oktober-2026-gemini-claude-qwen.webp
 ---
 
 De focus verschuift van modelverbeteringen naar praktische integratie. Google positioneert Gemini 4 Argon expliciet voor professionals in engineering en security, terwijl OpenAI en Anthropic hun bestaande modellen toegankelijker maken via spraak en cloud-sessies. Tegelijk zien we een golf aan open-source developer-tools die visueel denken en ontwerp centraal stellen. De deep-dive-kandidaten tonen dat gebruikers vooral behoefte hebben aan eerlijke vergelijkingen en praktische implementatiegidsen.
