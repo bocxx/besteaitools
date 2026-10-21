@@ -169,6 +169,7 @@ deepDives:
   trend_phase: tracked
   score: 18.27
 slotLabel: Ochtend
+heroImage: /images/digest/ai-tools-radar-21-oktober-2026-deepseek-mistral-gemini.webp
 ---
 
 De focus ligt vandaag op productie-gereed maken van frontier-modellen. Gemini 4 Argon verschijnt zowel in consumer-apps als developer-tools zoals Cursor, terwijl DeepSeek en Mistral hun infrastructuur openen met respectievelijk DeepInfer en Voxtral 3. Daarnaast verschijnen tools die ontwikkelaars helpen lokale LLM-hardware te benchmarken (Llmspeed) en AI-gegenereerde code te valideren (Sphinx). De deep-dive-kandidaten tonen hoe teams source control herontwerpen voor AI-workflows en time-series modellen inzetten.
