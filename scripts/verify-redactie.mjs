@@ -71,7 +71,7 @@ const artikelen = readdirSync(DIR)
       datum: veld(fm, 'publishedAt') || veld(fm, 'date') || '',
       draft: /^draft:\s*true\s*$/m.test(fm),
       bronnen: (fm.match(/^\s{2,}url:/gm) || []).length,
-      bodyH1: (body.match(/^#\s+(.+)$/m) || [null, null])[1],
+      bodyH1: (body.replace(/^```[\s\S]*?^```/gm, '').match(/^#\s+(.+)$/m) || [null, null])[1], // code-blokken (bash-commentaar) tellen niet
       body,
       set: woorden(body),
     };

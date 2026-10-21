@@ -38,8 +38,6 @@ faq:
     a: "Kijk naar drie dingen voordat je installeert. Wie is de eigenaar van de repo, en kun je die aanwijzen? Zitten er scripts bij, en zo ja, wat doen ze — let vooral op verbindingen naar buiten die niet in de beschrijving staan. En hoe ziet de geschiedenis eruit: een repo met vier commits en veel sterren is iets anders dan een repo met honderden commits. Een skill draait met jouw rechten, dus dat is de moeite van drie minuten kijken waard."
 ---
 
-# Welke Claude-skills installeer je écht? Twee bronnen en een dokter
-
 Zoek op "beste Claude skills" en je vindt lijstjes met tientallen aanbevelingen. Wij legden er vijf naast elkaar en telden op: samen ongeveer 55 skills, waarvan ruim zeventig procent maar in één lijstje voorkomt of van de schrijver zelf komt.
 
 Wat blijft er over? Twee bronnen. Plus een gereedschap om te meten of je skills überhaupt iets doen.
