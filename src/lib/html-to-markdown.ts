@@ -25,6 +25,9 @@ export interface HtmlToMarkdownOptions {
   url?: string;
 }
 
+/** Interne markering voor een scheidingsteken tussen naast elkaar staande labels. */
+const SEP = '\u0001';
+
 /** Tags die we binnen <main> altijd weglaten (inclusief inhoud). */
 const DROP_TAGS = ['nav', 'footer', 'form', 'button', 'dialog', 'select', 'textarea', 'template', 'audio', 'video', 'iframe'];
 
@@ -93,12 +96,15 @@ export function htmlToMarkdown(html: string, options: HtmlToMarkdownOptions = {}
   // Naast elkaar staande labels (rubriek, datum, leestijd, bron-domein) los
   // houden: "fd.nl · Het Financieele Dagblad · 3 jun 2026" i.p.v. aan elkaar.
   const INLINE = 'span|time|small|cite|abbr|a|data';
-  md = md.replace(new RegExp(`</(${INLINE})>\\s*<(${INLINE})\\b`, 'gi'), '</$1> · <$2');
+  // Markering i.p.v. direct " · ": in een kop zijn naast elkaar staande
+  // stukjes vaak één zin ("Algerabrug" + ": het onderhoud"), daar moet het
+  // scheidingsteken weg. Aan het eind wordt de markering overal " · ".
+  md = md.replace(new RegExp(`</(${INLINE})>\\s*<(${INLINE})\\b`, 'gi'), `</$1>${SEP}<$2`);
 
   // ── 4. Koppen ──────────────────────────────────────────────────────────
   for (let level = 1; level <= 6; level++) {
     const re = new RegExp(`<h${level}[^>]*>([\\s\\S]*?)<\\/h${level}>`, 'gi');
-    md = md.replace(re, (_, t) => `\n\n${'#'.repeat(level)} ${oneLine(strip(t))}\n\n`);
+    md = md.replace(re, (_, t) => `\n\n${'#'.repeat(level)} ${oneLine(strip(t).replaceAll(SEP, ''))}\n\n`);
   }
 
   // ── 5. Inline code (codeblokken staan al veilig, zie 2b) ───────────────
@@ -165,6 +171,7 @@ export function htmlToMarkdown(html: string, options: HtmlToMarkdownOptions = {}
 
   // ── 12. Overige tags strippen + entities ───────────────────────────────
   md = md.replace(/<[^>]+>/g, '');
+  md = md.replaceAll(SEP, ' · ');
   md = decodeEntities(md);
 
   // ── 13. Opschonen ──────────────────────────────────────────────────────
