@@ -3,7 +3,7 @@ title: "AI vertalen: wanneer gebruik je DeepL, ChatGPT of Google Translate?"
 heroImageAlt: "Miniatuur diorama-illustratie bij artikel 'AI vertalen: wanneer gebruik je DeepL, ChatGPT of Google Translate?'"
 description: "DeepL, ChatGPT en Google Translate zijn alle drie gratis te gebruiken — maar ze excelleren in verschillende situaties. Dit is wanneer je welke kiest en hoe je de beste vertaalkwaliteit krijgt."
 publishedAt: 2026-06-09
-updatedAt: 2026-06-09
+updatedAt: 2026-10-22
 author: "Redactie"
 category: "gids"
 tags:
@@ -22,23 +22,25 @@ heroScene: "A miniature globe on a wooden desk with tiny flags from different co
 keyTakeaways:
   - "DeepL geeft de meest vloeiende vertaling voor Europese talen — de beste keuze voor directe documenten, e-mails en zakelijke teksten."
   - "ChatGPT is het meest flexibel: je geeft instructies mee ('behoud de marketingtoon', 'vertaal juridisch nauwkeurig') en de AI volgt die op."
-  - "Google Translate is de snelste en ondersteunt de meeste talen (135+) — onverslaanbaar voor zeldzame talen of snelle checks."
+  - "Google Translate is de snelste en ondersteunt de meeste talen (ruim 240) — onverslaanbaar voor zeldzame talen of snelle checks."
   - "DeepL Pro kan Word- en PowerPoint-bestanden vertalen en behoudt de volledige opmaak — dat kan geen van de anderen zo goed."
   - "Voor gevoelige juridische of medische teksten is een menselijke nacontrole altijd nodig, ongeacht welke AI je gebruikt."
 faq:
   - q: "Wat kost DeepL Pro?"
-    a: "DeepL heeft een gratis plan (500.000 tekens/maand, drie documenten/maand). DeepL Pro Starter kost €8,99/maand en geeft onbeperkte tekst-vertalingen, document-upload en een woordenlijst-functie. Voor Teams zijn er hogere plannen."
+    a: "DeepL heeft een gratis plan met 50.000 tekens en één documentvertaling per maand. Het goedkoopste betaalde plan is Individual: €7,49 per maand bij jaarbetaling (incl. btw), met 300.000 tekens en drie documenten per maand. Daarboven zitten Team (€24,99) en Business (€49,99) per gebruiker per maand, ook bij jaarbetaling. Het vroegere Starter-plan wordt niet meer aangeboden."
   - q: "Kan ChatGPT ook documenten vertalen?"
     a: "Ja. In ChatGPT kun je een Word-bestand of PDF uploaden en vragen het te vertalen. Het nadeel ten opzichte van DeepL Pro: ChatGPT behoudt de opmaak niet altijd volledig. Voor eenvoudige tekst is ChatGPT prima; voor complexe opmaak (tabellen, headers, voetnoten) is DeepL Pro sterker."
   - q: "Is DeepL beter dan Google Translate?"
-    a: "Voor Europese talen (Engels, Duits, Frans, Spaans, Nederlands, Pools, etc.) is DeepL consistent beter in vloeiendheid en nuance. Google Translate ondersteunt meer talen (135+ vs. DeepL's ~30) en is beter voor talen buiten Europa."
+    a: "Voor Europese talen (Engels, Duits, Frans, Spaans, Nederlands, Pools, etc.) is DeepL consistent beter in vloeiendheid en nuance. Google Translate ondersteunt wel meer talen (ruim 240 vs. ruim 100 bij DeepL) en is daardoor breder inzetbaar voor zeldzame talen."
   - q: "Kan AI ook gespecialiseerde vaktaal vertalen (juridisch, medisch, technisch)?"
     a: "Met moeite. DeepL heeft een woordenlijst-functie waarbij je zelf vakjargon kunt specificeren. ChatGPT kun je instrueren: 'vertaal dit medisch document en behoud de medische terminologie nauwkeurig'. Beide zijn een goed startpunt, maar laat vakspecifieke teksten altijd nalopen door een expert."
   - q: "Kan ik AI gebruiken voor ondertitels in video's?"
     a: "Ja. Upload de SRT-bestand (ondertitels) naar DeepL of in een ChatGPT-prompt en vraag om vertaling. DeepL behoudt de tijdcodes; ChatGPT ook als je dat expliciet vraagt. Controleer altijd of de tijdcodes en regelafbrekingen correct zijn gebleven."
 sources:
-  - label: "DeepL — Features en ondersteunde talen"
-    url: "https://www.deepl.com/nl/features"
+  - label: "DeepL — Ondersteunde talen"
+    url: "https://support.deepl.com/hc/en-us/articles/360019925219-DeepL-Translator-languages"
+  - label: "DeepL — Plannen en prijzen"
+    url: "https://www.deepl.com/en/pro/change-plan"
   - label: "DeepL — Woordenlijst aanmaken"
     url: "https://support.deepl.com/hc/nl/articles/360021634540"
   - label: "Google Translate — Ondersteunde talen"
@@ -47,18 +49,20 @@ sources:
 
 Vertalen was vroeger duur en langzaam. Nu is het gratis en in seconden klaar — maar niet alle AI-vertalers zijn gelijk. Dit is wanneer je welke kiest.
 
+*Update 22 oktober 2026: prijzen, gratis limieten en taalaantallen bijgewerkt. DeepL's gratis plan geeft nu 50.000 tekens en één document per maand, het instapplan heet Individual (€7,49 per maand bij jaarbetaling) en DeepL vertaalt inmiddels ruim 100 talen.*
+
 ## De drie opties vergeleken
 
 | | **DeepL** | **ChatGPT** | **Google Translate** |
 |---|---|---|---|
 | Beste voor | Zakelijke teksten, documenten | Teksten met instructies | Zeldzame talen, snelle check |
-| Taalondersteuning | ~33 Europese talen | 100+ talen | 135+ talen |
-| Gratis plan | Ja (500K tekens/maand) | Ja (GPT-4o mini) | Ja (onbeperkt) |
-| Document-upload (opmaak behoud) | Ja ✓ (Pro) | Beperkt | Nee |
+| Taalondersteuning | 100+ talen | 100+ talen | 240+ talen |
+| Gratis plan | Ja (50.000 tekens/maand) | Ja (met gebruikslimieten) | Ja (onbeperkt) |
+| Document-upload (opmaak behoud) | Ja ✓ (gratis 1 per maand, meer met Pro) | Beperkt | Ja (tot 10 MB, opmaakbehoud niet gegarandeerd) |
 | Eigen woordenlijst | Ja ✓ | Via prompt-instructie | Nee |
-| Betaald | €8,99/maand (Starter) | $20/maand (Plus) | Enterprise |
+| Betaald | vanaf €7,49/maand (Individual, jaarlijks) | $20/maand (Plus) | Enterprise |
 
-> **💡 Beginner-tip:** Voor een directe snelle vertaling van een zin of alinea: ga naar [deepl.com](https://deepl.com), plak de tekst en selecteer de doeltaal. Klaar in twee seconden, betere output dan Google Translate voor de meeste Europese talen. Het gratis plan is voor dagelijks gebruik ruim voldoende.
+> **💡 Beginner-tip:** Voor een directe snelle vertaling van een zin of alinea: ga naar [deepl.com](https://deepl.com), plak de tekst en selecteer de doeltaal. Klaar in twee seconden, betere output dan Google Translate voor de meeste Europese talen. Voor af en toe een e-mail of alinea is het gratis plan (50.000 tekens per maand) genoeg ([Bron: DeepL](https://www.deepl.com/en/pro/change-plan)).
 
 ## Wanneer gebruik je welke?
 
@@ -73,7 +77,7 @@ Vertalen was vroeger duur en langzaam. Nu is het gratis en in seconden klaar —
 - Je meerdere versies wilt: *"Geef me drie varianten van de vertaling: formeel, informeel en voor sociale media"*
 
 **Gebruik Google Translate als:**
-- Je een taal nodig hebt die DeepL niet ondersteunt (Arabisch, Chinees, Hindi, Japaans, enz.)
+- Je een taal nodig hebt die DeepL niet ondersteunt: DeepL vertaalt ruim 100 talen, waaronder Arabisch, Chinees, Hindi en Japans ([Bron: DeepL](https://support.deepl.com/hc/en-us/articles/360019925219-DeepL-Translator-languages)), maar Google Translate dekt er ruim 240 ([Bron: Google](https://blog.google/products/translate/google-translate-new-languages-2024/))
 - Je snel een stuk onbekende taal wilt begrijpen zonder perfectie
 - Je een app of website in real time wilt vertalen via de Google Translate-extensie
 
@@ -111,6 +115,7 @@ Moet je eerst een gescande buitenlandse factuur of contract vertalen, dan haal j
 
 ## Bronnen
 
-- [DeepL — Features en ondersteunde talen](https://www.deepl.com/nl/features)
+- [DeepL — Ondersteunde talen](https://support.deepl.com/hc/en-us/articles/360019925219-DeepL-Translator-languages)
+- [DeepL — Plannen en prijzen](https://www.deepl.com/en/pro/change-plan)
 - [DeepL — Woordenlijst aanmaken](https://support.deepl.com/hc/nl/articles/360021634540)
 - [Google Translate — Ondersteunde talen](https://cloud.google.com/translate/docs/languages)

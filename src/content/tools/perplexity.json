@@ -7,7 +7,7 @@
   "difficulty": "beginner",
   "tags": [],
   "draft": false,
-  "longDescription": "Perplexity is een AI-zoekmachine die antwoorden levert met klikbare bronvermelding — een hybride tussen Google en ChatGPT. Pro Search doet multi-step research en Spaces bieden gedeelde research-werkruimtes per onderwerp. Op Pro kun je het achterliggende model wisselen tussen Claude Opus 4.8, GPT-5.5, Sonar en Gemini 3.5 voor de complexere queries. De agentic Comet-browser is sinds maart 2026 gratis op Windows, Mac, iOS en Android, met samenvattingen, voice en Deep Research ingebouwd. Sonar API is de productie-API voor grounded search in eigen producten.",
+  "longDescription": "Perplexity is een AI-zoekmachine die antwoorden levert met klikbare bronvermelding — een hybride tussen Google en ChatGPT. Pro Search doet multi-step research, Research levert na een paar minuten een volledig rapport, en Projects (de opvolger van Spaces) bieden gedeelde werkruimtes met instructies, bestanden en gekoppelde tools. Computer is een agent die taken voor je uitvoert en op credits draait. Op Pro en Max kies je zelf het achterliggende model, met modellen van OpenAI (GPT), Anthropic (Claude), Google (Gemini) en NVIDIA (Nemotron); op het gratis plan kiest Perplexity zelf een basismodel. De agentic Comet-browser is sinds maart 2026 gratis op Windows, Mac, iOS en Android, met samenvattingen, voice en Deep Research ingebouwd. Sonar API is de productie-API voor grounded search in eigen producten.",
   "bestFor": "Perplexity is vooral waardevol voor mensen die snel en efficiënt informatie willen vinden op basis van hun vragen in natuurlijke taal.",
   "useCases": [
     "Onderzoek en informatie-opzoeken",
@@ -22,7 +22,7 @@
   "limitations": [
     "Afhankelijk van de kwaliteit van de onderliggende taalmodellen"
   ],
-  "pricing": "Gratis (beperkt aantal Pro Searches per dag); Pro $20/mnd of $200/jr; Max $200/mnd; Enterprise Pro $40/zetel/mnd; Comet-browser gratis, Comet Plus $5/mnd; Sonar API pay-per-use (vanaf $1/$1 per miljoen tokens)",
+  "pricing": "Gratis (3 Pro Searches per dag, 1 Research-vraag per maand); Pro vanaf $17/mnd bij jaarbetaling; Max $200/mnd of $2.000/jr; Education Pro $10/mnd na verificatie; Enterprise Pro vanaf $40/zetel/mnd; Comet-browser gratis, Comet Plus $5/mnd; Sonar API pay-per-use (vanaf $1/$1 per miljoen tokens)",
   "openSource": false,
   "businessFunctions": [
     "marketing",
@@ -69,8 +69,14 @@
       "badge": "pro"
     },
     {
-      "title": "Spaces",
-      "description": "Gedeelde research-werkruimtes met eigen instructies en bronbeperkingen.",
+      "title": "Research",
+      "description": "Diepgaand onderzoek: tientallen zoekopdrachten en honderden bronnen, na een paar minuten gebundeld in een volledig rapport. Gratis 1 keer per maand, ruimer op Pro en Max.",
+      "group": "core",
+      "badge": "pro"
+    },
+    {
+      "title": "Projects",
+      "description": "Gedeelde werkruimtes (opvolger van Spaces) met eigen instructies, bestanden en gekoppelde tools; tot 5 medewerkers bij een persoonlijk account.",
       "group": "core"
     },
     {
@@ -79,8 +85,8 @@
       "group": "core"
     },
     {
-      "title": "Focus modes",
-      "description": "Beperk tot Academic, Writing, YouTube, Reddit of Social per zoekopdracht.",
+      "title": "Bronkeuze",
+      "description": "Kies via 'Choose sources' welke bronnen Perplexity per zoekopdracht gebruikt; de oude focus modes (Academic, Writing, YouTube, Reddit, Social) bestaan in die vorm niet meer.",
       "group": "input"
     },
     {
@@ -100,7 +106,7 @@
     },
     {
       "title": "Modelkeuze (Pro)",
-      "description": "Wissel tussen Claude Opus 4.8, GPT-5.5, Sonar en Gemini 3.5 voor de complexere queries.",
+      "description": "Pro en Max kiezen zelf per vraag een model, met modellen van OpenAI, Anthropic, Google en NVIDIA; anders kiest Perplexity automatisch.",
       "group": "integration"
     },
     {
@@ -111,6 +117,12 @@
     {
       "title": "Comet browser",
       "description": "Agentic AI-browser, sinds maart 2026 gratis op alle platforms — samenvattingen, voice mode en Deep Research direct in je browser.",
+      "group": "core",
+      "badge": "nieuw"
+    },
+    {
+      "title": "Computer",
+      "description": "Agent die zelfstandig taken uitvoert, zoals research, documenten en apps maken, e-mail beheren en geplande taken draaien. Werkt op credits: Max krijgt 10.000 per maand, Pro alleen eenmalige bonuscredits.",
       "group": "core",
       "badge": "nieuw"
     }
@@ -149,14 +161,14 @@
   "primaryJobsToBeDone": [
     "Een onderzoeksvraag beantwoorden met directe bronvermelding",
     "Actueel nieuws of feiten opzoeken zonder klassieke zoekresultaten te scannen",
-    "Een diepere research-loop draaien via Pro Search of Spaces"
+    "Een diepere research-loop draaien via Pro Search, Research of Projects"
   ],
   "antiUseCases": [
     "Werken met je eigen documenten als enige bron — gebruik dan NotebookLM",
     "Creatieve schrijftaken — algemene chatbots zijn daar geschikter",
     "Privacy-gevoelige queries die geen externe provider mogen raken"
   ],
-  "lastUpdated": "2026-06-06",
-  "lastReviewedAt": "2026-07-14",
+  "lastUpdated": "2026-10-22",
+  "lastReviewedAt": "2026-10-22",
   "supportsDutchLanguage": true
 }

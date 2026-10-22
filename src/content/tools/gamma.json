@@ -4,7 +4,7 @@
   "websiteUrl": "https://gamma.app",
   "shortDescription": "Zet een prompt of document om in een presentatie, website of doc — met AI-agent die ontwerpt en herstijlt",
   "headlineValueProp": "Typ wat je wilt vertellen — Gamma maakt er een vormgegeven presentatie, website of document van",
-  "longDescription": "Gamma genereert uit een prompt, outline of geüpload document een complete presentatie, website, document of social post — inclusief layout, beeld en huisstijl. Sinds Gamma 3.0 zit daar de Gamma Agent in: een AI-ontwerppartner waarmee je in gewone taal je deck laat herstijlen, webbronnen met citaties laat toevoegen of feedback op je verhaal vraagt. Gamma werkt met 'cards' in plaats van starre slides, waardoor content automatisch meebeweegt met het formaat. Met Gamma Imagine (maart 2026) genereer je ook losse marketingbeelden, charts en infographics. Voor wie wil automatiseren is er een API (vanaf Pro) die decks programmatisch genereert. Exporteren naar PowerPoint en PDF kan, en websites publiceer je direct op een eigen domein. Het credits-systeem bepaalt hoeveel je per maand kunt genereren.",
+  "longDescription": "Gamma genereert uit een prompt, outline of geüpload document een complete presentatie, website, document of social post — inclusief layout, beeld en huisstijl. Sinds Gamma 3.0 zit daar de Gamma Agent in: een AI-ontwerppartner waarmee je in gewone taal je deck laat herstijlen, webbronnen met citaties laat toevoegen of feedback op je verhaal vraagt. Met Gamma 5 (6 oktober 2026) begint maken bij die agent: hij stelt eerst vragen over doel en publiek, legt een plan voor en bouwt pas na jouw akkoord. Daarna werk je verder via de agent of met de hand op een vrij canvas, en PowerPoint- en pdf-bestanden importeer je met behoud van het oorspronkelijke ontwerp. Gamma werkt met 'cards' in plaats van starre slides, waardoor content automatisch meebeweegt met het formaat. Met Gamma Imagine (maart 2026) genereer je ook losse marketingbeelden, charts en infographics. Voor wie wil automatiseren is er een API (vanaf Pro) die decks programmatisch genereert. Exporteren naar PowerPoint, PDF en PNG kan op elk plan (op het gratis plan met een 'Made by Gamma'-badge), en websites publiceer je direct op een eigen domein. Het credits-systeem bepaalt hoeveel je kunt genereren: het gratis plan krijgt eenmalig 400 credits, betaalde plannen krijgen maandelijks nieuwe.",
   "verdict": "Gamma is de snelste route van ruwe tekst naar een toonbare presentatie — de Agent maakt itereren in gewone taal écht werkbaar, waar concurrenten blijven steken op eenmalige generatie. De keerzijde: je werkt binnen Gamma's card-formaat en credits-model, en wie pixel-perfecte controle of strakke PowerPoint-compatibiliteit nodig heeft, loopt tegen de grenzen van de export aan.",
   "whyListed": "Met 14.700 Nederlandse zoekopdrachten per maand is Gamma veruit de meest gezochte AI-presentatietool in Nederland. Het definieert de categorie tekst-naar-presentatie en is met Agent en API uitgegroeid tot een volwaardig visueel platform.",
   "bestFor": "Iedereen die regelmatig presentaties, voorstellen of simpele websites moet maken en geen tijd heeft voor handmatig ontwerpwerk.",
@@ -15,7 +15,7 @@
     "Decks programmatisch genereren via de API, bijvoorbeeld voor sales-voorstellen"
   ],
   "antiUseCases": [
-    "Pixel-perfecte corporate decks die naadloos in PowerPoint verder bewerkt moeten worden — de export verliest details",
+    "Pixel-perfecte corporate decks die naadloos in PowerPoint verder bewerkt moeten worden — de export bevat geen slide master en kan lettertypen en effecten vereenvoudigen",
     "Teams die alles in Microsoft 365 of Google Workspace willen houden zonder extra tool",
     "Complexe websites met formulieren, e-commerce of CMS-functionaliteit — Gamma-sites blijven one-pagers"
   ],
@@ -32,17 +32,18 @@
     "API beschikbaar vanaf Pro voor geautomatiseerde generatie"
   ],
   "limitations": [
-    "Credits-systeem: intensief gebruik vraagt al snel een Pro-abonnement ($18/mnd)",
-    "PowerPoint-export verliest animaties en fijne layout-details",
+    "Credits-systeem: het gratis plan krijgt eenmalig 400 credits die niet aanvullen; intensief gebruik vraagt al snel om Pro (4.000 credits per maand)",
+    "PowerPoint-export bevat geen slide master en kan details vereenvoudigen: cursief, verlopende koppen en matglas-achtergronden komen niet altijd één-op-één mee",
     "AI-animaties en de ruimste limieten zitten achter de dure Ultra/Business-plannen"
   ],
   "bestAlternative": "canva-ai",
   "mentionAliases": [
     "gamma.app",
     "gamma app",
-    "gamma ai"
+    "gamma ai",
+    "gamma 5"
   ],
-  "pricing": "Gratis plan met beperkte credits; Plus $8 en Pro $18 per gebruiker/mnd (jaarlijks). API-toegang vanaf Pro. Ultra ($100/mnd) en Team/Business-plannen voor zwaar gebruik.",
+  "pricing": "Gratis plan met eenmalig 400 credits (tot 10 slides per prompt, export met 'Made by Gamma'-badge). Betaalde plannen per gebruiker: Plus (1.000 credits/mnd), Pro (4.000 credits/mnd, inclusief API en eigen domeinen) en Ultra (20.000 credits/mnd, alleen maandelijks); Plus en Pro zijn met jaarbetaling goedkoper. Daarnaast Business- en Enterprise-plannen. Actuele bedragen op gamma.app/pricing.",
   "pricingModel": "freemium",
   "difficulty": "beginner",
   "openSource": false,
@@ -67,7 +68,7 @@
     },
     {
       "title": "Gamma Agent",
-      "description": "AI-ontwerppartner die in gewone taal herstijlt, webbronnen met citaties toevoegt en feedback geeft op je deck.",
+      "description": "AI-ontwerppartner en sinds Gamma 5 het startpunt: stelt eerst vragen, legt een plan voor en herstijlt daarna in gewone taal, voegt webbronnen met citaties toe en geeft feedback op je deck.",
       "group": "core"
     },
     {
@@ -77,7 +78,7 @@
     },
     {
       "title": "Document- en bestandsimport",
-      "description": "Upload notities, screenshots of docs — Gamma maakt er gestructureerde content van.",
+      "description": "Upload notities, screenshots of docs — Gamma maakt er gestructureerde content van. PowerPoint en pdf importeer je sinds Gamma 5 met behoud van het oorspronkelijke ontwerp.",
       "group": "input"
     },
     {
@@ -87,7 +88,7 @@
     },
     {
       "title": "Export naar PowerPoint en PDF",
-      "description": "Deel je deck buiten Gamma — met de kanttekening dat animaties en details verloren gaan.",
+      "description": "Deel je deck buiten Gamma als PowerPoint, PDF of PNG, ook op het gratis plan (dan met 'Made by Gamma'-badge). Kanttekening: geen slide master en sommige lettertypen en effecten worden vereenvoudigd.",
       "group": "output"
     },
     {
@@ -108,7 +109,7 @@
   "aiActRiskClass": "minimal",
   "nlSupport": true,
   "outputLanguageQualityNl": "good",
-  "lastUpdated": "2026-06-06",
-  "lastReviewedAt": "2026-06-06",
+  "lastUpdated": "2026-10-22",
+  "lastReviewedAt": "2026-10-22",
   "supportsDutchLanguage": true
 }
