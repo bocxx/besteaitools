@@ -2,6 +2,7 @@
 import { resolveAuthor } from '../../lib/authors';
 import Badge from '../atoms/Badge.astro';
 import { nieuwsCategoryConfig, type NieuwsCategory } from '../../lib/nieuws-schema';
+import { isoMoment } from '../../lib/iso-date';
 import { BookOpen, Clock } from '@lucide/astro';
 
 interface Props {
@@ -72,7 +73,7 @@ const formattedDate = publishedAt.toLocaleDateString('nl-NL', {
   <div class:list={['news-card__inner', { 'news-card__inner--over-image': showImage }]}>
     <header class="news-card__header">
       <Badge variant="category" color={cat.color} size="sm">{cat.label}</Badge>
-      <time class="news-card__date" datetime={publishedAt.toISOString()}>
+      <time class="news-card__date" datetime={isoMoment(publishedAt)}>
         {formattedDate}
       </time>
     </header>

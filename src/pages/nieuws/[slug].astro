@@ -8,6 +8,7 @@ import { getCollection, render } from 'astro:content';
 import { nieuwsCategoryConfig } from '../../lib/nieuws-schema';
 import { siteConfig } from '../../config/site';
 import { resolveAuthor, personJsonLd, authorUrl } from '../../lib/authors';
+import { isoMoment } from '../../lib/iso-date';
 import { ArrowLeft, Clock, Calendar, User, Lightbulb, ChevronRight } from '@lucide/astro';
 
 export async function getStaticPaths() {
@@ -39,8 +40,8 @@ const canonicalUrl = `${siteConfig.url}/nieuws/${article.id}`;
 const heroImageAbs = article.data.heroImage
   ? new URL(article.data.heroImage, siteConfig.url).href
   : null;
-const publishedIso = article.data.publishedAt.toISOString();
-const modifiedIso = (article.data.updatedAt ?? article.data.publishedAt).toISOString();
+const publishedIso = isoMoment(article.data.publishedAt);
+const modifiedIso = isoMoment(article.data.updatedAt ?? article.data.publishedAt);
 
 const articleAuthor = resolveAuthor(article.data.author);
 

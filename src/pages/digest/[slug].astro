@@ -23,6 +23,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
 import { siteConfig } from '../../config/site';
+import { isoMoment } from '../../lib/iso-date';
 import {
   ArrowLeft,
   Calendar,
@@ -127,8 +128,8 @@ const newsArticleJsonLd = {
   headline: entry.data.title,
   description: entry.data.description,
   url: canonicalUrl,
-  datePublished: publishedAt.toISOString(),
-  dateModified: publishedAt.toISOString(),
+  datePublished: isoMoment(publishedAt),
+  dateModified: isoMoment(publishedAt),
   inLanguage: 'nl-NL',
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
   author: {
@@ -206,7 +207,7 @@ export const prerender = true;
       <header class="digest__header">
         <div class="digest__meta">
           <Calendar size={13} stroke-width={1.5} />
-          <time datetime={publishedAt.toISOString()}>{formattedDate}</time>
+          <time datetime={isoMoment(publishedAt)}>{formattedDate}</time>
           {entry.data.slotLabel && (
             <>
               <span class="digest__meta-sep">·</span>
