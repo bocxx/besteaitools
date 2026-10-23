@@ -1,80 +1,119 @@
 ---
-
-title: AI Tools Radar – ChatGPT · Qwen · Grok (Ochtend 23 oktober)
-description: 'AI Tools Radar 23 oktober: 113 launches, 27 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
-date: '2026-10-23'
+title: AI Tools Radar – Canva · ChatGPT · Grok (Avond 23 oktober)
+description: 'AI Tools Radar 23 oktober: 121 launches, 30 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
+date: '2026-10-23T19:28:10+02:00'
 timeSlot: tools-digest
 featured: []
 tags:
 - AI Tools Radar
 - AI Tools
+- Canva
 - ChatGPT
-- Qwen
 - Grok
+- Qwen
+- Claude
 author: debesteaitools.nl Redactie
-totalAnalyzed: 155
+totalAnalyzed: 166
 itemsSelected: 16
 categoriesCount: 3
 topics:
+- Canva
 - ChatGPT
-- Qwen
 - Grok
-draft: false
+- Qwen
+- Claude
+heroImage: "/images/digest/ai-tools-radar-23-oktober-2026-chatgpt-qwen-grok.webp"
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- ChatGPT laat je wereldwijd met je stem taken in de browser uitvoeren, ook met afbeeldingen en spreadsheets.
-- Alibaba lanceert Qwen Intelligence met drie agents, waaronder een Mobile Planner die taken opknipt en uitvoert.
-- Grok Bot krijgt een eigen e-mailadres om zich namens jou bij diensten aan te melden.
+- Claude breidt uit met Cloud Sessions en wordt ingezet voor wetenschappelijk onderzoek naar enzymsystemen.
+- ChatGPT rolt spraakgestuurde browsertaken wereldwijd uit en voegt nieuwe stemmen toe in zes talen.
+- Open-source alternatieven voor managed agents verschijnen, zoals Omnara voor Claude-achtige workflows.
 launches:
+- name: OnKey
+  summary_nl: OnKey is een app die zangers realtime laat zien waar ze vals zingen, gebouwd door een ontwikkelaar voor eigen gebruik.
+  url: https://github.com/dsmurrell/onkey
+  source_type: hn
+  source_label: Hacker News (154 punten, 69 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+- name: Uberblok
+  summary_nl: Uberblok is een interactief museum dat de interne werking van het ZFS-bestandssysteem visueel toegankelijk maakt.
+  url: https://uberblok.storagebits.workers.dev/
+  source_type: hn
+  source_label: Hacker News (116 punten, 29 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=uberblok.storagebits.workers.dev&sz=64
 - name: Omnara
-  summary_nl: Open source alternatief voor Claude Managed Agents, voor teams die agents liever op eigen infrastructuur beheren.
+  summary_nl: Omnara is een open-source alternatief voor Claude Managed Agents, gericht op ontwikkelaars die zelf agentworkflows willen bouwen.
   url: https://github.com/omnara-ai/omnara
   source_type: hn
-  source_label: Hacker News (104 punten, 30 reacties)
+  source_label: Hacker News (111 punten, 34 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+- name: Making a smart TV dumb and then smart
+  summary_nl: Een project dat een smart-tv eerst 'dom' maakt en vervolgens opnieuw slim, met volledige controle over functionaliteit.
+  url: https://github.com/anubhavmalhotra/r2d2-tv
+  source_type: hn
+  source_label: Hacker News (73 punten, 44 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
+- name: UI micro interactions prompts for AI
+  summary_nl: TypeUI biedt prompts voor AI om UI-micro-interacties te genereren, bedoeld voor designers en frontend-ontwikkelaars.
+  url: https://www.typeui.sh/micro-interactions
+  source_type: hn
+  source_label: Hacker News (77 punten, 43 reacties)
+  confidence: hoog
+  favicon: https://www.google.com/s2/favicons?domain=www.typeui.sh&sz=64
 - name: Penmentor
-  summary_nl: Laat Claude je handgeschreven wiskunde nakijken en aantekenen zoals een docent, handig voor scholieren en studenten.
+  summary_nl: Penmentor gebruikt Claude om handgeschreven wiskundeopdrachten te corrigeren en van feedback te voorzien, zoals een docent.
   url: https://github.com/AbdullahAlhariri/penmentor
   source_type: hn
-  source_label: Hacker News (65 punten, 9 reacties)
+  source_label: Hacker News (66 punten, 9 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
-- name: KiviDB, a faster Redis
-  summary_nl: Geheugendatabase die compatibel is met Redis en ook als vectorcache dient, bedoeld voor ontwikkelaars van AI-toepassingen.
-  url: https://github.com/kividbio/kividb
-  source_type: hn
-  source_label: Hacker News (69 punten, 42 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
-- name: Build Terminal UIs in Lua
-  summary_nl: Framework om terminalinterfaces in Lua te bouwen, voor ontwikkelaars die lichte commandlinetools maken.
-  url: https://uji.sh/ito/
-  source_type: hn
-  source_label: Hacker News (74 punten, 15 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=uji.sh&sz=64
-- name: I built a task system to handle the drudgery so I could focus on tasks
-  summary_nl: Takensysteem dat routineklussen voor je afhandelt, zodat je je op het eigenlijke werk kunt richten.
-  url: https://3anddoneapp.com/try
-  source_type: hn
-  source_label: Hacker News (61 punten, 53 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=3anddoneapp.com&sz=64
-- name: rStation
-  summary_nl: Gedeeld onderzoekslab waarin meerdere AI-agents samenwerken, voor teams die onderzoekstaken aan agents uitbesteden.
-  url: https://rstation.ai/
-  source_type: hn
-  source_label: Hacker News (60 punten, 19 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=rstation.ai&sz=64
 updates:
+- tool_name: Canva
+  tool_slug: canva
+  feature_title: Canva Craft Image Generation
+  summary_nl: Canva lanceert Canva Craft, een eigen frontier-model voor geavanceerde afbeeldingsgeneratie dat nu voor iedereen beschikbaar is.
+  impact: hoog
+  url: https://twitter.com/canva/status/2113348707223753165
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: canva::Canva Craft Image Generation
+- tool_name: ChatGPT
+  tool_slug: chatgpt
+  feature_title: New voices
+  summary_nl: ChatGPT krijgt nieuwe stemmen in zes talen waaronder Hindi, de uitrol is gestart en API-toegang volgt binnenkort.
+  impact: medium
+  url: https://twitter.com/OpenAI/status/2110797830361436604
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: chatgpt::New voices
+- tool_name: Grok
+  tool_slug: grok
+  feature_title: Phone app access
+  summary_nl: Grok Bot kan nu Calendar, Reminders en Contacts op iOS en Android aansturen, de uitrol is begonnen.
+  impact: medium
+  url: https://twitter.com/bot/status/2113393684209176718
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: grok::Phone app access
 - tool_name: ChatGPT
   tool_slug: chatgpt
   feature_title: Voice Tasks in Browser
-  summary_nl: Je spreekt een opdracht in en ChatGPT voert die in de browser uit, inclusief werk met afbeeldingen en spreadsheets.
+  summary_nl: ChatGPT laat gebruikers wereldwijd complexe browsertaken uitvoeren via spraak, inclusief werken met afbeeldingen en spreadsheets.
   impact: hoog
   url: https://twitter.com/OpenAI/status/2102808325742322002
   source_type: x
@@ -86,7 +125,7 @@ updates:
 - tool_name: Qwen
   tool_slug: qwen
   feature_title: Qwen Intelligence Agents
-  summary_nl: Qwen Intelligence bundelt drie agents, waaronder een Mobile Planner die complexe taken op je telefoon plant en uitvoert.
+  summary_nl: Qwen Intelligence lanceert drie agents waaronder een Mobile Planner die complexe taken plant, ontleedt en orkestreert.
   impact: hoog
   url: https://twitter.com/Alibaba_Qwen/status/2102727405198876753
   source_type: x
@@ -95,84 +134,48 @@ updates:
   platforms:
   - twitter
   key: qwen::Qwen Intelligence Agents
-- tool_name: ChatGPT
-  tool_slug: chatgpt
-  feature_title: Agent progress tracking
-  summary_nl: Pro-gebruikers zien in de Chat-tab hoe ver elke agent is en openen afgeronde taken om het werk te controleren.
-  impact: medium
-  url: https://twitter.com/OpenAI/status/2111192259073094035
+- tool_name: Claude
+  tool_slug: claude
+  feature_title: Cloud Sessions Feature
+  summary_nl: Claude Cloud Sessions zijn uit onderzoeksfase en houden Claude Code actief, ook wanneer de laptop gesloten is.
+  impact: hoog
+  url: https://twitter.com/ClaudeDevs/status/2102871550974427462
   source_type: x
   source_label: X
   confidence: laag
   platforms:
   - twitter
-  key: chatgpt::Agent progress tracking
-- tool_name: Grok
-  tool_slug: grok
-  feature_title: Grok Bot email address
-  summary_nl: Grok Bot gebruikt een eigen e-mailadres om zich aan te melden bij diensten, bedrijven te mailen en afspraken te plannen.
-  impact: medium
-  url: https://twitter.com/bot/status/2108609764766908772
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: grok::Grok Bot email address
-- tool_name: Qwen
-  tool_slug: qwen
-  feature_title: Qwen-Image-2.1 Turbo checkpoint
-  summary_nl: Snellere versie van Qwen-Image-2.1 die in acht stappen beelden maakt en bewerkt, met open weights voor wie lokaal draait.
-  impact: medium
-  url: https://twitter.com/Alibaba_Qwen/status/2108549075218120949
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: qwen::Qwen-Image-2.1 Turbo checkpoint
-- tool_name: Grok
-  tool_slug: grok
-  feature_title: The X Subscription
-  summary_nl: Eén abonnement voegt Grok, Cursor en X Premium samen, wat scheelt voor wie die diensten nu los betaalt.
-  impact: medium
-  url: https://twitter.com/SpaceXSI/status/2109783335296008414
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: grok::The X Subscription
+  key: claude::Cloud Sessions Feature
 deepDives:
-- title: OpenAI models are coming to Google Cloud
-  summary_nl: OpenAI-modellen komen naar Google Cloud; een praktijkstuk laat zien wat dat betekent voor teams die al op Google draaien.
-  url: https://openai.com/index/openai-models-google-cloud/
-  tool: chatgpt
+- title: Mistral Large 4
+  summary_nl: Vergelijking van Mistral Large 4 met concurrenten om te bepalen welk model het beste past bij specifieke use cases.
+  url: https://docs.mistral.ai/models/mistral-large-4-0
+  tool: mistral
   trend_phase: tracked
-  score: 20.68
+  score: 23.13
+- title: AI system submits false homicide tip to Philadelphia police
+  summary_nl: Analyse van een AI-systeem dat een valse moordtip indiende bij de politie van Philadelphia, relevant voor veiligheid en betrouwbaarheid.
+  url: https://www.washingtonpost.com/technology/2026/10/09/ai-system-submits-false-homicide-tip-philadelphia-police/?utm_source=flipboard&utm_content=WashPost/magazine/Technology
+  tool: claude
+  trend_phase: tracked
+  score: 19.19
+- title: luongnv89/claude-howto — A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with c…
+  summary_nl: Visuele praktijkgids die Claude Code uitlegt van basisbegrippen tot geavanceerde agents, met concrete voorbeelden voor ontwikkelaars.
+  url: https://github.com/luongnv89/claude-howto
+  tool: claude
+  trend_phase: tracked
+  score: 17.6
 - title: Claude discovers a novel enzyme system with CRISPR-like repeats
-  summary_nl: Claude vond een nieuw enzymsysteem met CRISPR-achtige herhalingen, een concreet voorbeeld om te toetsen wat het model in onderzoek kan.
+  summary_nl: Claude ontdekt een nieuw enzymsysteem met CRISPR-achtige herhalingen, toont wetenschappelijke toepasbaarheid van AI-modellen.
   url: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
   tool: claude
   trend_phase: tracked
   score: 17.57
-- title: Anthropic Says It Blocked Possible Efforts to Build Biological Weapons
-  summary_nl: Anthropic zegt pogingen tot het bouwen van biowapens te hebben geblokkeerd, een aanleiding om de veiligheidsgrenzen van Claude naast alternatieven te leggen.
-  url: https://www.nytimes.com/2026/09/10/us/politics/anthropic-ai-biological-weapons.html
-  tool: claude
-  trend_phase: tracked
-  score: 17.39
-- title: MadsLorentzen/ai-job-search — The job search that runs on your machine. AI job application framework built on Claude Co…
-  summary_nl: Open source framework dat sollicitaties lokaal met Claude Code afhandelt, geschikt voor een stapsgewijze praktijkgids.
-  url: https://github.com/MadsLorentzen/ai-job-search
-  tool: claude
-  trend_phase: tracked
-  score: 17.39
-slotLabel: Ochtend
-heroImage: "/images/digest/ai-tools-radar-23-oktober-2026-chatgpt-qwen-grok.webp"
+slotLabel: Avond
 ---
-De updates van vandaag draaien om agents die zelfstandig werk verzetten: ChatGPT voert gesproken opdrachten uit in de browser, Qwen plant taken op je telefoon en Grok Bot regelt afspraken via een eigen mailbox. ChatGPT Pro laat je daarbij per agent de voortgang volgen, zodat je het resultaat kunt nakijken. Bij de launches zie je dezelfde lijn: Omnara biedt een open source alternatief voor beheerde Claude-agents en rStation geeft agents een gedeelde werkplek voor onderzoek. Bij de verdiepingen springt eruit dat OpenAI-modellen naar Google Cloud komen, relevant voor teams die al op dat platform werken.
+
+De focus verschuift van losse modellen naar persistente werkomgevingen en agentische workflows. Claude introduceert Cloud Sessions waarmee code actief blijft, terwijl ChatGPT spraakgestuurde browserinteractie uitrolt. Tegelijk zien we open-source tegenhangers zoals Omnara en praktische tools die AI inzetten voor specifieke problemen, van zangcorrectie tot handgeschreven wiskundecontrole. De markt beweegt van demo naar dagelijks gebruik.
 
 ---
 
-*Transparantie: het maken van deze editie kostte ±€0,02 aan AI-modelgebruik (7-daags gemiddelde per editie; de redactionele AI-samenvatting meegeteld).*
+*Transparantie: het maken van deze editie kostte ±€0,01 aan AI-modelgebruik (7-daags gemiddelde per editie; de redactionele AI-samenvatting meegeteld).*
