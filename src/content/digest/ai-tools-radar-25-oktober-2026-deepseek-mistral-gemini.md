@@ -1,58 +1,54 @@
 ---
 
-title: AI Tools Radar – DeepSeek · Mistral · Gemini (Ochtend 25 oktober)
-description: 'AI Tools Radar 25 oktober: 119 launches, 31 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
-date: '2026-10-25T05:51:18+01:00'
+title: AI Tools Radar – Kimi · DeepSeek · Mistral (Avond 25 oktober)
+description: 'AI Tools Radar 25 oktober: 117 launches, 32 feature-updates, 15 deep-dive-kandidaten op debesteaitools.nl.'
+date: '2026-10-25T17:51:23+01:00'
 timeSlot: tools-digest
 featured: []
 tags:
 - AI Tools Radar
 - AI Tools
+- Kimi
 - DeepSeek
 - Mistral
 - Gemini
 - Grok
 author: debesteaitools.nl Redactie
-totalAnalyzed: 165
+totalAnalyzed: 164
 itemsSelected: 16
 categoriesCount: 3
 topics:
+- Kimi
 - DeepSeek
 - Mistral
 - Gemini
 - Grok
 draft: false
+heroImage: /images/digest/ai-tools-radar-25-oktober-2026-deepseek-mistral-gemini.webp
 launchesCount: 6
 updatesCount: 6
 deepDivesCount: 4
 keySignals:
-- Gemini 4 Argon rolt uit in de Gemini-app en is direct beschikbaar in Cursor.
-- Mistral en Grok brengen allebei nieuwe spraakmodellen uit, gericht op voice agents en klantenservice.
-- DeepSeek maakt zijn eigen inference-framework DeepInfer open source voor DeepSeek-V4.1-Flash.
+- Moonshot brengt Kimi K3.1 Pro uit met een contextvenster van een miljoen tokens; open gewichten zijn aangekondigd.
+- Mistral en Grok zetten allebei in op spraak, met nieuwe modellen voor voice agents en klantenservice.
+- Gemini 4 Argon rolt uit in de Gemini-app en scoort in Cursor ongeveer gelijk met Opus 5.5.
 launches:
 - name: SimCity, but with Permits
-  summary_nl: SimCity, but with Permits is een spelletje dat SimCity nabootst, met vergunningen als extra hindernis; populair op Hacker News.
+  summary_nl: Een spel in de stijl van SimCity waarin je eerst vergunningen moet regelen; populair op Hacker News, geen AI-tool.
   url: https://permit.petercai.com/
   source_type: hn
   source_label: Hacker News (931 punten, 421 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=permit.petercai.com&sz=64
-- name: Llmspeed
-  summary_nl: Llmspeed laat je ervaren hoe snel een lokaal taalmodel draait, handig voordat je hardware voor lokale AI aanschaft.
-  url: https://llmspeed.dev/
-  source_type: hn
-  source_label: Hacker News (328 punten, 86 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=llmspeed.dev&sz=64
 - name: Sphinx
-  summary_nl: Sphinx is een hook die je overhoort over de code die je AI-assistent schreef, voordat je die uitrolt.
+  summary_nl: Sphinx is een hook die je overhoort over code van je AI-assistent voordat je die uitrolt, handig voor developers.
   url: https://sphinx-six-theta.vercel.app/
   source_type: hn
   source_label: Hacker News (252 punten, 89 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=sphinx-six-theta.vercel.app&sz=64
 - name: The Zelda timeline to catch up before the Ocarina of Time remake
-  summary_nl: Een overzicht van de Zelda-tijdlijn om bij te lezen vóór de remake van Ocarina of Time; geen AI-tool.
+  summary_nl: Een overzicht van de Zelda-tijdlijn om bij te lezen voor de remake van Ocarina of Time; geen AI-tool.
   url: https://legendofhyrule.com/
   source_type: hn
   source_label: Hacker News (222 punten, 129 reacties)
@@ -65,14 +61,33 @@ launches:
   source_label: Hacker News (188 punten, 13 reacties)
   confidence: hoog
   favicon: https://www.google.com/s2/favicons?domain=github.com&sz=64
-- name: Things to Do API
-  summary_nl: Things to Do API is een API voor ontwikkelaars die activiteiten en uitjes in hun app willen tonen.
-  url: https://thingstodoapi.com/
+- name: RoadRash ported to Three.js to run in the browser
+  summary_nl: Een versie van het racespel RoadRash, overgezet naar Three.js zodat het in de browser draait; geen AI-tool.
+  url: https://roadrash.pages.dev
   source_type: hn
-  source_label: Hacker News (57 punten, 30 reacties)
-  confidence: hoog
-  favicon: https://www.google.com/s2/favicons?domain=thingstodoapi.com&sz=64
+  source_label: Hacker News (36 punten, 10 reacties)
+  confidence: medium
+  favicon: https://www.google.com/s2/favicons?domain=roadrash.pages.dev&sz=64
+- name: built browser games, collected in one place
+  summary_nl: Een verzameling zelfgebouwde browsergames op één plek, vooral interessant voor wie zelf kleine webgames maakt.
+  url: https://playgroundarcade.com/
+  source_type: hn
+  source_label: Hacker News (36 punten, 5 reacties)
+  confidence: medium
+  favicon: https://www.google.com/s2/favicons?domain=playgroundarcade.com&sz=64
 updates:
+- tool_name: Kimi
+  tool_slug: kimi
+  feature_title: Kimi K3.1 Pro
+  summary_nl: Kimi K3.1 Pro is een groot model met een miljoen tokens context, interessant voor wie lange documenten of complete codebases in één keer verwerkt.
+  impact: hoog
+  url: https://twitter.com/Kimi_Moonshot/status/2113680701770068067
+  source_type: x
+  source_label: X
+  confidence: laag
+  platforms:
+  - twitter
+  key: kimi::Kimi K3.1 Pro
 - tool_name: DeepSeek
   tool_slug: deepseek
   feature_title: DeepInfer Open Source
@@ -133,18 +148,6 @@ updates:
   platforms:
   - twitter
   key: gemini::Gemini 4 Argon in Cursor
-- tool_name: Gemini
-  tool_slug: gemini
-  feature_title: Gemini agent for work
-  summary_nl: Google presenteert één Gemini-agent voor werk die de zakelijke context van een organisatie kent en vragen daarover beantwoordt.
-  impact: hoog
-  url: https://twitter.com/sundarpichai/status/2108257472553386059
-  source_type: x
-  source_label: X
-  confidence: laag
-  platforms:
-  - twitter
-  key: gemini::Gemini agent for work
 deepDives:
 - title: Redesigning Source Control at Anthropic
   summary_nl: Anthropic beschrijft hoe het versiebeheer opnieuw ontwierp, nuttig voor teams die merken dat codeeragents hun bestaande workflow overbelasten.
@@ -170,10 +173,9 @@ deepDives:
   tool: runway
   trend_phase: tracked
   score: 18.27
-slotLabel: Ochtend
-heroImage: "/images/digest/ai-tools-radar-25-oktober-2026-deepseek-mistral-gemini.webp"
+slotLabel: Avond
 ---
-Spraak is de rode lijn van deze ronde: Mistral koppelt Voxtral 3 aan een nieuwe API voor voice agents, terwijl Grok Voice 3.0 zich op klantenservicegesprekken richt. Google zet tegelijk breed in met Gemini 4 Argon, dat in Cursor volgens Cursor ongeveer even goed scoort als Opus 5.5 voor 2 dollar per miljoen inputtokens. Aan de bouwkant valt op dat DeepSeek zijn inference-software vrijgeeft, en Llmspeed laat je voelen hoe snel een lokaal model draait voordat je hardware koopt.
+Open modellen schuiven deze ronde naar voren: Moonshot kondigt open gewichten aan voor Kimi K3.1 Pro en DeepSeek geeft zijn eigen inference-software DeepInfer vrij. Daarmee wordt zelf draaien van grote modellen voor meer teams een reële optie. Spraak blijft de tweede lijn, met Voxtral 3 van Mistral en Grok Voice 3.0 voor klantenservicegesprekken. Wie met codeeragents werkt, vindt bij Sphinx en het verhaal van Anthropic over versiebeheer twee manieren om grip te houden op wat de AI schrijft.
 
 ---
 
