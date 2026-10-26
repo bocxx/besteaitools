@@ -69,7 +69,7 @@ Krijg je "unknown command" op `/plugin`? Dan draai je een te oude versie. Werk b
 
 Draai `/plugin` zonder argumenten. Je krijgt een venster met vier tabbladen waar je met Tab doorheen loopt: **Discover** (bladeren), **Installed** (beheren), **Marketplaces** (catalogi) en **Errors** (laadfouten). De catalogus is ook in je browser te bekijken op [claude.com/plugins](https://claude.com/plugins).
 
-De officiële catalogus bevat onder meer kant-en-klare MCP-koppelingen naar GitHub, GitLab, Linear, Notion, Asana, Figma, Slack, Sentry, Vercel en Supabase. Daarnaast zitten er code-intelligence-plugins in die een language server aanhaken per taal, en workflow-plugins zoals `commit-commands` en `pr-review-toolkit`.
+De officiële catalogus bevat onder meer kant-en-klare MCP-koppelingen naar GitHub, GitLab, Linear, Notion, Asana, Figma, Slack, Sentry, Vercel en Supabase. Daarnaast zitten er code-intelligence-plugins in die een language server aanhaken per taal, en workflow-plugins zoals `commit-commands` en `pr-review-toolkit`. Staat jouw systeem er niet tussen, zoals het CMS Strapi, dan [koppel je de MCP-server met één `claude mcp add`-commando](/nieuws/claude-strapi-content-beheren-mcp).
 
 ## Stap 3: lees het detailscherm voor je installeert
 

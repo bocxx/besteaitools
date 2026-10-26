@@ -62,7 +62,7 @@ Zit je op een zelf-gehoste (WordPress.org) site en wil je toch geen techniek? Da
 
 ## Route 3 — de zelf-gehoste MCP Adapter-plugin
 
-Wil je alles in eigen hand? De MCP Adapter is een officiële WordPress-plugin die op je eigen server draait. Jij beheert dan de infrastructuur, de authenticatie en de updates. Deze route geeft de meeste controle en is gratis in gebruik, maar vraagt technische kennis. Kies 'm als je bewust geen externe partij tussen je AI en je site wilt.
+Wil je alles in eigen hand? De MCP Adapter is een officiële WordPress-plugin die op je eigen server draait. Jij beheert dan de infrastructuur, de authenticatie en de updates. Deze route geeft de meeste controle en is gratis in gebruik, maar vraagt technische kennis. Kies 'm als je bewust geen externe partij tussen je AI en je site wilt. Gebruik je geen WordPress maar het headless CMS Strapi, dan is het eenvoudiger: [daar zit de MCP-server al ingebouwd](/nieuws/claude-strapi-content-beheren-mcp).
 
 ## Veilig inrichten — niet overslaan
 

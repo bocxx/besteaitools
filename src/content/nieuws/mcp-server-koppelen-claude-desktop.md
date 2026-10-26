@@ -38,7 +38,7 @@ faq:
     a: "Ja, voor een deel. Anthropic biedt Desktop Extensions: MCP-servers die je met één klik installeert via Settings, Extensions, Browse extensions. Dat scheelt handmatig configureren en het regelen van afhankelijkheden. Niet elke server zit in die directory, en voor servers die je zelf schrijft of die specifieke mappaden nodig hebben, kom je alsnog bij `claude_desktop_config.json` uit. Voor cloudtools bestaat daarnaast de route via remote MCP en custom connectors."
 ---
 
-MCP is de reden dat je AI-assistent tegenwoordig bij je bestanden, je agenda of je CMS kan. Het is een open standaard, dus wat je één keer koppelt werkt in meerdere tools. Deze gids doet de eenvoudigste variant: de officiële filesystem-server aan Claude Desktop hangen, zodat Claude in aangewezen mappen kan lezen, schrijven en opruimen, met jouw goedkeuring per handeling.
+MCP is de reden dat je AI-assistent tegenwoordig bij je bestanden, je agenda of je CMS kan. Het is een open standaard, dus wat je één keer koppelt werkt in meerdere tools. Deze gids doet de eenvoudigste variant: de officiële filesystem-server aan Claude Desktop hangen, zodat Claude in aangewezen mappen kan lezen, schrijven en opruimen, met jouw goedkeuring per handeling. Draait je website op Strapi, dan lees je in [onze Strapi-gids](/nieuws/claude-strapi-content-beheren-mcp) hoe je dat CMS op dezelfde manier aan Claude koppelt.
 
 ## Wat MCP is, kort
 
