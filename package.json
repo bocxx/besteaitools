@@ -27,7 +27,8 @@
     "seo:guard": "node scripts/seo-guard.mjs",
     "hero:verify": "node scripts/verify-hero-images.mjs",
     "content:verify": "node --experimental-strip-types scripts/verify-content-schema.mjs",
-    "redactie:verify": "node scripts/verify-redactie.mjs"
+    "redactie:verify": "node scripts/verify-redactie.mjs",
+    "verify:redirects-tools": "node scripts/verify-redirects-tools.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
