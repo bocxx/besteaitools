@@ -16,7 +16,10 @@
  * asset-laag over.
  */
 import { handle } from '@astrojs/cloudflare/handler';
-import redirectsRaw from '../public/_redirects?raw';
+import redirectsBasis from '../public/_redirects?raw';
+import redirectsTools from '../data/redirects-tools.txt?raw';
+// Toolpagina-regels staan apart (Cloudflare-limiet op _redirects, zie dat bestand).
+const redirectsRaw = `${redirectsBasis}\n${redirectsTools}`;
 import { htmlToMarkdown } from './lib/html-to-markdown';
 
 // ── Agent-readiness: Markdown-negotiation + Link-headers ──────────────────

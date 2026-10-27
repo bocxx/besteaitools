@@ -23,7 +23,7 @@ const htmlArg = process.argv.indexOf('--aipmkb-html');
 const LOCAL_HTML = htmlArg > -1 ? process.argv[htmlArg + 1] : null;
 
 const map = JSON.parse(readFileSync(new URL('../data/redirects-tools-163.json', import.meta.url), 'utf-8'));
-const raw = readFileSync(new URL('../public/_redirects', import.meta.url), 'utf-8');
+const raw = readFileSync(new URL('../public/_redirects', import.meta.url), 'utf-8') + '\n' + readFileSync(new URL('../data/redirects-tools.txt', import.meta.url), 'utf-8');
 
 const exact = new Map();
 for (const line of raw.split(/\r?\n/)) {
