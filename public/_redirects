@@ -92,8 +92,8 @@
 # Opheffing DBAT, portie 2 (27 okt 2026). Zelfde aanpak als portie 1: bron-
 # bestanden blijven staan, src/worker.ts geeft een echte 301 vóór Astro en
 # astro.config.mjs houdt de paden uit de sitemap. Beide URL-varianten expliciet.
-# /top-10/<categorie> blijft bewust bestaan; alleen de index verhuist.
-# 27 okt 2026: /gratis-ai-tools, /beste-ai-tools en /top-10 gaan nu naar de
+# /top-10/<categorie> bleef hier bewust bestaan (zie het blok Top-10 per
+# categorie onderaan). 27 okt 2026: /gratis-ai-tools, /beste-ai-tools en /top-10 gaan nu naar de
 # nieuwe AIPMKB-toplijsten (zie het blok met de 163 toolpagina's).
 /ai-tools/moneybird                                  https://www.aiplatformmkb.nl/tools/moneybird-review                                      301
 /ai-tools/moneybird/                                 https://www.aiplatformmkb.nl/tools/moneybird-review                                      301
@@ -456,3 +456,40 @@
 /ai-tools/zero-xyz/                      https://www.aiplatformmkb.nl/reviews/#tool-zero-xyz  301
 /ai-tools/fireflies                      https://www.aiplatformmkb.nl/reviews/#tool-fireflies-ai  301
 /ai-tools/fireflies/                     https://www.aiplatformmkb.nl/reviews/#tool-fireflies-ai  301
+
+# Top-10 per categorie (27 okt 2026). De lijsten leven verder op AIPMKB: per
+# categorie naar het gefilterde tooloverzicht (/reviews/?categorie=<key>; de
+# filter leest die parameter). Los van de toolpagina's gecommit, zodat dit
+# blok apart terug te draaien is (portie 2 liet /top-10/<categorie> bewust staan).
+/top-10/agents           https://www.aiplatformmkb.nl/reviews/?categorie=agents  301
+/top-10/agents/          https://www.aiplatformmkb.nl/reviews/?categorie=agents  301
+/top-10/audio            https://www.aiplatformmkb.nl/reviews/?categorie=audio  301
+/top-10/audio/           https://www.aiplatformmkb.nl/reviews/?categorie=audio  301
+/top-10/automation       https://www.aiplatformmkb.nl/reviews/?categorie=automation  301
+/top-10/automation/      https://www.aiplatformmkb.nl/reviews/?categorie=automation  301
+/top-10/chatbots         https://www.aiplatformmkb.nl/reviews/?categorie=chatbots  301
+/top-10/chatbots/        https://www.aiplatformmkb.nl/reviews/?categorie=chatbots  301
+/top-10/coding           https://www.aiplatformmkb.nl/reviews/?categorie=coding  301
+/top-10/coding/          https://www.aiplatformmkb.nl/reviews/?categorie=coding  301
+/top-10/design           https://www.aiplatformmkb.nl/reviews/?categorie=design  301
+/top-10/design/          https://www.aiplatformmkb.nl/reviews/?categorie=design  301
+/top-10/image            https://www.aiplatformmkb.nl/reviews/?categorie=image  301
+/top-10/image/           https://www.aiplatformmkb.nl/reviews/?categorie=image  301
+/top-10/infrastructure   https://www.aiplatformmkb.nl/reviews/?categorie=infrastructure  301
+/top-10/infrastructure/  https://www.aiplatformmkb.nl/reviews/?categorie=infrastructure  301
+/top-10/marketing        https://www.aiplatformmkb.nl/reviews/?categorie=marketing  301
+/top-10/marketing/       https://www.aiplatformmkb.nl/reviews/?categorie=marketing  301
+/top-10/meeting-notes    https://www.aiplatformmkb.nl/reviews/?categorie=meeting-notes  301
+/top-10/meeting-notes/   https://www.aiplatformmkb.nl/reviews/?categorie=meeting-notes  301
+/top-10/productivity     https://www.aiplatformmkb.nl/reviews/?categorie=productivity  301
+/top-10/productivity/    https://www.aiplatformmkb.nl/reviews/?categorie=productivity  301
+/top-10/search           https://www.aiplatformmkb.nl/reviews/?categorie=search  301
+/top-10/search/          https://www.aiplatformmkb.nl/reviews/?categorie=search  301
+/top-10/seo              https://www.aiplatformmkb.nl/reviews/?categorie=seo  301
+/top-10/seo/             https://www.aiplatformmkb.nl/reviews/?categorie=seo  301
+/top-10/support          https://www.aiplatformmkb.nl/reviews/?categorie=support  301
+/top-10/support/         https://www.aiplatformmkb.nl/reviews/?categorie=support  301
+/top-10/video            https://www.aiplatformmkb.nl/reviews/?categorie=video  301
+/top-10/video/           https://www.aiplatformmkb.nl/reviews/?categorie=video  301
+/top-10/writing          https://www.aiplatformmkb.nl/reviews/?categorie=writing  301
+/top-10/writing/         https://www.aiplatformmkb.nl/reviews/?categorie=writing  301
