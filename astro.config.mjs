@@ -109,6 +109,19 @@ function lastmodFor(pathname) {
  *  `noindex, follow`, en dan hoort hij ook niet in de sitemap. */
 const DIGEST_INDEX_MAX_AGE_DAYS = 14;
 
+/** Paden die src/worker.ts als redirect afhandelt (exacte regels uit
+ *  public/_redirects, zonder trailing slash). Bestaat de pagina nog als
+ *  bestand, bijvoorbeeld omdat de bron bij een consolidatie bewust blijft
+ *  staan, dan hoort hij toch niet in de sitemap: bezoekers en Google krijgen
+ *  een 301. De seo-guard keurt een redirect-URL in de sitemap ook af. */
+const REDIRECT_SOURCES = new Set(
+  readFileSync(fileURLToPath(new URL('./public/_redirects', import.meta.url)), 'utf-8')
+    .split(/\r?\n/)
+    .map((line) => line.trim().split(/\s+/)[0])
+    .filter((from) => from && from.startsWith('/') && !from.endsWith('*'))
+    .map((from) => (from !== '/' ? from.replace(/\/+$/, '') || '/' : from)),
+);
+
 /** Routes die alleen `Astro.redirect()` doen (zie src/pages/<route>/index.astro). */
 const REDIRECT_ONLY_PAGES = new Set(['/digest', '/launch-radar', '/weekradar']);
 
@@ -193,6 +206,8 @@ export default defineConfig({
         // Pagina's die zelf alleen een 301 geven (Astro.redirect) horen niet
         // in de sitemap — GSC telt ze als "Pagina met omleiding".
         if (REDIRECT_ONLY_PAGES.has(pathname)) return false;
+        // Paden uit public/_redirects: de worker 301't ze vóór Astro.
+        if (REDIRECT_SOURCES.has(pathname)) return false;
         // Snoeilijst + niet-gewhiteliste vergelijkpagina's (src/lib/seo-index.mjs):
         // die dragen `noindex`, dus ook niet in de sitemap.
         if (isNoindexPath(pathname)) return false;
