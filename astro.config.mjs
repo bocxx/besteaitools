@@ -114,8 +114,13 @@ const DIGEST_INDEX_MAX_AGE_DAYS = 14;
  *  bestand, bijvoorbeeld omdat de bron bij een consolidatie bewust blijft
  *  staan, dan hoort hij toch niet in de sitemap: bezoekers en Google krijgen
  *  een 301. De seo-guard keurt een redirect-URL in de sitemap ook af. */
+// Sinds 27 okt 2026 staan de toolregels in data/redirects-tools.txt (Cloudflare-limiet
+// op _redirects); src/worker.ts leest beide bestanden. Zonder dat tweede bestand
+// hier stonden 104 doorverwezen toolpagina's weer in de sitemap (gevonden 28 okt 2026).
+const REDIRECT_FILES = ['./public/_redirects', './data/redirects-tools.txt'];
 const REDIRECT_SOURCES = new Set(
-  readFileSync(fileURLToPath(new URL('./public/_redirects', import.meta.url)), 'utf-8')
+  REDIRECT_FILES.map((f) => readFileSync(fileURLToPath(new URL(f, import.meta.url)), 'utf-8'))
+    .join('\n')
     .split(/\r?\n/)
     .map((line) => line.trim().split(/\s+/)[0])
     .filter((from) => from && from.startsWith('/') && !from.endsWith('*'))
