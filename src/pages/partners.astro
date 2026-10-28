@@ -15,7 +15,9 @@ const tools = await getAllTools();
 const toolCount = tools.length;
 
 const siteOrigin = (Astro.site?.toString().replace(/\/$/, '')) ?? siteConfig.url;
-const contactMail = 'partners@debesteaitools.nl';
+// Besluit eigenaar 28 okt 2026: debesteaitools.nl wordt opgeheven en heeft geen
+// MX-records; zakelijke mail gaat naar het gedeelde adres van het netwerk.
+const contactMail = 'hallo@hetlaatsteainieuws.nl';
 
 const formats = [
   {
