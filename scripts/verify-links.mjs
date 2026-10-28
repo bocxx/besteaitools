@@ -49,6 +49,22 @@ const hlnExactRedirects = {
   '/nieuws/claude-geld-verdienen-realistisch': '/nieuws/geld-verdienen-claude-ai-realistisch',
   '/nieuws/gpt-nl-nederlands-taalmodel-uitrol': '/nieuws/gpt-nl-klaar-voor-gebruik-eerste-klanten',
   '/achtergrond/ai-terugblik-juni-2026': '/achtergrond/maandterugblik-juni-2026',
+  // Jaartal uit HLN-evergreen-URL's (HLN commit 32bfa1cd, 28 okt 2026).
+  '/achtergrond/ai-statistieken-nederland-cijfers-2026': '/achtergrond/ai-statistieken-nederland',
+  '/achtergrond/ai-in-het-onderwijs-cijfers-2026': '/achtergrond/ai-in-het-onderwijs-cijfers',
+  '/regelgeving/ai-gebruiken-voor-scriptie-regels-2026': '/regelgeving/ai-gebruiken-voor-scriptie-regels',
+  '/achtergrond/wat-is-ollama-lokale-llm-uitleg-2026': '/achtergrond/wat-is-ollama-lokale-llm-uitleg',
+  '/achtergrond/grote-ai-modellen-september-2026': '/achtergrond/grote-ai-modellen-overzicht',
+  '/achtergrond/ai-energiebeheer-thuis-2026': '/achtergrond/ai-energiebeheer-thuis',
+  '/achtergrond/ai-in-de-huisartsenpraktijk-2026': '/achtergrond/ai-in-de-huisartsenpraktijk',
+  '/achtergrond/ai-in-de-zorg-wat-werkt-2026': '/achtergrond/ai-in-de-zorg-wat-werkt',
+  '/achtergrond/ai-agents-2026-wat-zijn-ze': '/achtergrond/ai-agents-wat-zijn-ze',
+  '/achtergrond/staat-van-open-source-ai-2026': '/achtergrond/staat-van-open-source-ai',
+  '/achtergrond/wat-is-rag-uitleg-2026': '/achtergrond/wat-is-rag-uitleg',
+  '/achtergrond/ai-inferentie-in-2026-van-tokens-tot-watts': '/achtergrond/ai-inferentie-van-tokens-tot-watts',
+  '/regelgeving/deepfakes-2026-nep-video-herkennen': '/regelgeving/deepfakes-nep-video-herkennen',
+  '/nieuws/json-ld-ai-zoekmachines-uitleg-2026': '/nieuws/json-ld-ai-zoekmachines-uitleg',
+  '/nieuws/ai-browsers-vergeleken-2026': '/nieuws/ai-browsers-vergeleken',
 };
 
 function resolveHlnRedirect(pathname) {

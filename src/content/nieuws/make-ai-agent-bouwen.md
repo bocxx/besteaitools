@@ -103,7 +103,7 @@ Neemt een agent de verkeerde afslag, kijk dan eerst naar je Instructions en tool
 
 Klopt het gedrag, sla het scenario op en zet het aan; de trigger uit stap 1 bepaalt vanaf dan wanneer de agent draait. Houd de eerste dagen je creditverbruik in de gaten: met Make's AI Provider rekent Make agent-runs af op basis van verbruikte tokens, en meerdere MCP-servers en tools verhogen dat verbruik ([Bron: Make](https://www.make.com/en/credits)).
 
-> **⚡ Gevorderden:** wil je agents die je in code versioniert en test, dan is een code-first framework zoals [CrewAI](/ai-tools/crewai) het logische alternatief. Wil je eerst scherp hebben wat agents wel en niet kunnen, lees dan [AI-agents: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op hetlaatsteainieuws.nl.
+> **⚡ Gevorderden:** wil je agents die je in code versioniert en test, dan is een code-first framework zoals [CrewAI](/ai-tools/crewai) het logische alternatief. Wil je eerst scherp hebben wat agents wel en niet kunnen, lees dan [AI-agents: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-wat-zijn-ze) op hetlaatsteainieuws.nl.
 
 Zoek je een platform waarop het mkb zonder code agents bouwt en wil je Make naast alternatieven zien, dan helpt het overzicht [AI-agent maken zonder programmeren](https://www.aiplatformmkb.nl/tools/ai-agent-maken-zonder-programmeren).
 

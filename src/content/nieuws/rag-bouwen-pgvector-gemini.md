@@ -60,7 +60,7 @@ sources:
 
 Wie een RAG-systeem bouwt, krijgt al snel het advies om er een vectordatabase bij te nemen. Draait je applicatie al op PostgreSQL, dan is dat vaak een extra dienst te veel. Met de extensie pgvector slaat Postgres zelf de embeddings op en zoekt het op betekenis. [Gemini](/ai-tools/gemini) levert in deze gids zowel de embeddings als het uiteindelijke antwoord.
 
-Het idee van RAG (retrieval-augmented generation) is eenvoudig: het taalmodel antwoordt niet uit zijn geheugen, maar krijgt eerst de relevante stukken uit jouw eigen documenten mee. Wil je het concept eerst rustig uitgelegd zien, lees dan [wat RAG is in gewone taal](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg-2026). En wil je helemaal niets bouwen, dan laat onze gids over [RAG zonder te bouwen met ChatGPT](/nieuws/rag-chatgpt-eigen-bedrijfsdata) zien hoe ver je met kant-en-klare functies komt.
+Het idee van RAG (retrieval-augmented generation) is eenvoudig: het taalmodel antwoordt niet uit zijn geheugen, maar krijgt eerst de relevante stukken uit jouw eigen documenten mee. Wil je het concept eerst rustig uitgelegd zien, lees dan [wat RAG is in gewone taal](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg). En wil je helemaal niets bouwen, dan laat onze gids over [RAG zonder te bouwen met ChatGPT](/nieuws/rag-chatgpt-eigen-bedrijfsdata) zien hoe ver je met kant-en-klare functies komt.
 
 ## Wat pgvector toevoegt aan Postgres
 

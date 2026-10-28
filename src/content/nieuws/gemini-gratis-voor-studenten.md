@@ -87,7 +87,7 @@ Op de Nederlandse studentenpagina noemt Google wat AI Plus je oplevert: twee kee
 
 Ben je nieuw met Gemini, begin dan met [Gemini gebruiken in vijf stappen](/nieuws/gemini-gebruiken-5-stappen). Voor tentamens kun je je eigen collegeslides omzetten in oefenvragen. Studeer je een vak met veel gedeeld materiaal, vergelijk dan met [Studocu AI](/nieuws/studocu-ai-gebruiken). Werk je liever met ChatGPT, dan lees je hoe je daar [flashcards maakt](/nieuws/chatgpt-flashcards-maken-zo-werkt-het). Voor een stapel papers met bronvermelding per antwoord kijk je naar [Perplexity en NotebookLM](/nieuws/ai-research-zoeken-perplexity-notebooklm).
 
-Wat je opleiding toestaat, bepaalt de opleiding zelf en niet Google. Lees vóór je eerste verslag [mag je AI gebruiken voor je scriptie?](https://www.hetlaatsteainieuws.nl/regelgeving/ai-gebruiken-voor-scriptie-regels-2026) op hetlaatsteainieuws.nl.
+Wat je opleiding toestaat, bepaalt de opleiding zelf en niet Google. Lees vóór je eerste verslag [mag je AI gebruiken voor je scriptie?](https://www.hetlaatsteainieuws.nl/regelgeving/ai-gebruiken-voor-scriptie-regels) op hetlaatsteainieuws.nl.
 
 ## Checklist: ben je klaar?
 

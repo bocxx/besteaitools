@@ -104,7 +104,7 @@ De AI-videogenerator van CapCut maakt gratis een video van een tekstidee of scri
 
 **Watermerk en gebruik.** Het watermerk verwijderen is bij Dreamina een voordeel van de betaalde plannen, en of je een clip commercieel mag gebruiken hangt af van de voorwaarden en het model ([Bron: Dreamina](https://dreamina.capcut.com/pricing/dreamina-price)). Maak je een video voor je bedrijf, lees die voorwaarden dan eerst.
 
-**Mensen in beeld.** Laat geen echte personen iets doen of zeggen zonder hun toestemming. Een nepvideo is snel gemaakt en lastig terug te draaien; op hetlaatsteainieuws.nl lees je [hoe je een nep-video herkent](https://www.hetlaatsteainieuws.nl/regelgeving/deepfakes-2026-nep-video-herkennen).
+**Mensen in beeld.** Laat geen echte personen iets doen of zeggen zonder hun toestemming. Een nepvideo is snel gemaakt en lastig terug te draaien; op hetlaatsteainieuws.nl lees je [hoe je een nep-video herkent](https://www.hetlaatsteainieuws.nl/regelgeving/deepfakes-nep-video-herkennen).
 
 Meer tools zonder kosten vind je in het overzicht [gratis AI-tools](/gratis-ai-tools).
 

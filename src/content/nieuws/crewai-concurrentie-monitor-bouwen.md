@@ -175,7 +175,7 @@ Een concurrent volgen is legitiem, maar je agent leest wel andermans site. Drie 
 
 **Geen persoonsgegevens.** Volgens de Autoriteit Persoonsgegevens is scraping door bedrijven vrijwel nooit toegestaan zodra er persoonsgegevens in zitten. Gericht nieuws over een organisatie verzamelen kan wel ([Bron: Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/system/files?file=2024-05/Handreiking%20scraping%20door%20particulieren%20en%20private%20organisaties.pdf)). Laat de researcher dus prijzen en persberichten lezen, en geen LinkedIn-profielen van medewerkers.
 
-Wie geen Python wil schrijven, kan een vergelijkbare analyse met de [Notion Agent](/nieuws/notion-agent-concurrentieanalyse-opzetten) laten maken. Wil je eerst scherp hebben wat een AI-agent wel en niet zelfstandig doet, lees dan de achtergrond op onze zustersite: [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze)
+Wie geen Python wil schrijven, kan een vergelijkbare analyse met de [Notion Agent](/nieuws/notion-agent-concurrentieanalyse-opzetten) laten maken. Wil je eerst scherp hebben wat een AI-agent wel en niet zelfstandig doet, lees dan de achtergrond op onze zustersite: [AI-agents in 2026: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-wat-zijn-ze)
 
 ## Checklist
 

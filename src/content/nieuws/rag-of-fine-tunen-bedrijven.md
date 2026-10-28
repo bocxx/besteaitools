@@ -82,7 +82,7 @@ Daarnaast spelen drie praktische punten:
 2. **Controleerbaarheid.** RAG kan laten zien uit welke passage een antwoord komt. Bij fine-tunen zit de kennis verspreid in de gewichten en is niet na te gaan waarom het model iets zegt.
 3. **Toegang.** Met RAG kun je per gebruiker bepalen welke documenten meedoen. Een gefinetuned model "weet" alles wat erin is getraind, voor iedereen.
 
-> **💡 Beginner-tip:** Wil je eerst het principe goed snappen voordat je kiest? De uitleg [Wat is RAG? Retrieval-Augmented Generation in gewone taal](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg-2026) doet dat zonder code.
+> **💡 Beginner-tip:** Wil je eerst het principe goed snappen voordat je kiest? De uitleg [Wat is RAG? Retrieval-Augmented Generation in gewone taal](https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-rag-uitleg) doet dat zonder code.
 
 ## Wanneer fine-tunen wél de juiste keus is
 

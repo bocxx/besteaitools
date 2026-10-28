@@ -153,7 +153,7 @@ Omdat beide aanroepen dezelfde `thread_id` delen, weet de agent bij de tweede vr
 
 Met deze twintig regels heb je het skelet dat elke grotere LangChain-agent ook heeft. Daarna komen de uitbreidingen: een goedkeurknop voordat de agent iets onomkeerbaars doet ([HumanInTheLoopMiddleware](/nieuws/langchain-human-in-the-loop-middleware)), bepalen welke informatie de agent per stap ziet ([context engineering](/nieuws/context-engineering-langchain-agents)), en een testbank die controleert of hij na elke wijziging nog werkt ([agents evalueren met een LLM-judge](/nieuws/ai-agents-evalueren-llm-judge)). Wil je geen data naar een cloudmodel sturen, dan wissel je de modelstring voor een lokaal model via Ollama (met het pakket `langchain-ollama`). Waarom dat voor privacy uitmaakt, lees je in onze gids over [een AI-agent met Ollama](/nieuws/ollama-ai-agent-lokaal-offline-privacy).
 
-Wanneer een agent in de praktijk de moeite waard is en wanneer een gewone chatbot volstaat, lees je in [AI-agents: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-2026-wat-zijn-ze) op Het Laatste AI Nieuws. Het framework zelf vind je in onze toolpagina over [LangChain](/ai-tools/langchain).
+Wanneer een agent in de praktijk de moeite waard is en wanneer een gewone chatbot volstaat, lees je in [AI-agents: wat zijn ze en wat kun je er echt mee?](https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-wat-zijn-ze) op Het Laatste AI Nieuws. Het framework zelf vind je in onze toolpagina over [LangChain](/ai-tools/langchain).
 
 ## Stand van zaken — bijgewerkt 2026-10-07
 
