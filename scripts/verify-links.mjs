@@ -17,6 +17,7 @@
 
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { moetZonderSlash } from './url-vorm.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 
@@ -104,10 +105,9 @@ function checkUrl(rawUrl) {
   const redirect = site.resolveRedirect(u.pathname);
   if (redirect) return `pad ${u.pathname} redirect naar ${redirect} — gebruik de eindvorm`;
 
-  // Fout 3: trailing slash op artikel-URL (twee of meer segmenten).
-  if (site.stripArticleSlash && u.pathname !== '/' && u.pathname.endsWith('/')) {
-    const segments = u.pathname.replace(/\/$/, '').split('/').filter(Boolean);
-    if (segments.length >= 2) return `trailing slash op artikel-URL — moet zonder`;
+  // Fout 3: trailing slash op artikel-URL. Welke paden dat zijn: scripts/url-vorm.mjs.
+  if (site.stripArticleSlash && u.pathname.endsWith('/') && moetZonderSlash(site.name, u.pathname)) {
+    return `trailing slash op artikel-URL — moet zonder (vaste pagina? check met curl en zet hem in SLASH_PAGINAS in scripts/url-vorm.mjs)`;
   }
   return null;
 }

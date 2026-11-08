@@ -12,6 +12,7 @@
 
 import { readdirSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { canoniekeLetters, isUrlSjabloon, moetZonderSlash } from './url-vorm.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const APPLY = process.argv.includes('--apply');
@@ -130,9 +131,9 @@ function canonicalize(originalUrl) {
     path = redirect;
   } else {
     base = target.canonicalBase;
-    path = u.pathname.toLowerCase();
+    path = canoniekeLetters(u.pathname);
   }
-  if (target.stripSlash && path !== '/' && path.endsWith('/')) {
+  if (target.stripSlash && path.endsWith('/') && moetZonderSlash(target.name, path)) {
     path = path.replace(/\/+$/, '') || '/';
   }
   // Root-URL: behoud de originele slash-status. SITE_URL-constants en tekst-refs
@@ -151,6 +152,7 @@ function canonicalize(originalUrl) {
 
 const SKIP_DIRS = new Set([
   'node_modules', '.git', 'dist', '.astro', '.wrangler', '.next', '__pycache__', '.claude',
+  'docs',  // notities beschrijven soms bewust een andere vorm (bv. het naakte domein)
 ]);
 const TEXT_EXT = /\.(md|mdx|astro|ts|tsx|js|mjs|cjs|json|yml|yaml|txt|html)$/i;
 const GENERATED_FILES = new Set([
@@ -184,7 +186,9 @@ for (const file of walk(ROOT)) {
   URL_RE.lastIndex = 0;
 
   const perFile = [];
-  const updated = original.replace(URL_RE, (raw) => {
+  const updated = original.replace(URL_RE, (raw, offset) => {
+    // Sjablonen (`${route}`, `/preview/<token>/<slug>`) zijn geen links: niet aankomen.
+    if (isUrlSjabloon(raw, original.slice(offset + raw.length, offset + raw.length + 40))) return raw;
     let url = raw;
     let tail = '';
     while (/[.,;:!?)]$/.test(url)) { tail = url.slice(-1) + tail; url = url.slice(0, -1); }
