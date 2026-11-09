@@ -111,6 +111,12 @@ try {
 // echt pad eindigt zo, dus 301 naar het pad zonder leestekens (Umami, okt 2026).
 const TRAILING_PUNCT = /(?:[).,;:!]|%29|%22|%27)+$/;
 
+// DBAT is dicht (nov 2026): de vangregel /* stuurt alles door, behalve wat
+// crawlers nodig hebben om de verhuizing te volgen. robots.txt moet bereikbaar
+// blijven, en de (oude) sitemaps laten Google de oude URL's zien tot ze uit de
+// index zijn. Alleen /*-regels slaan deze paden over; exacte regels gelden wel.
+const BEWAAR = /^\/(?:robots\.txt|sitemap-index\.xml|sitemap-\d+\.xml|oude-sitemap-[\w-]+\.xml|favicon[\w.-]*|apple-touch-icon[\w.-]*)$/;
+
 function findRedirect(url: URL): Response | null {
   const { pathname, search } = url;
   if (TRAILING_PUNCT.test(pathname)) {
@@ -124,7 +130,7 @@ function findRedirect(url: URL): Response | null {
   if (hit) {
     target = hit.to;
     status = hit.status;
-  } else {
+  } else if (!BEWAAR.test(pathname)) {
     for (const rule of table.splats) {
       if (pathname.startsWith(rule.from)) {
         target = rule.to.replace(':splat', pathname.slice(rule.from.length));

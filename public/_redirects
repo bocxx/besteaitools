@@ -1,20 +1,20 @@
-/ai-tools / 301
+/ai-tools      https://www.aiplatformmkb.nl/reviews/  301
 /sitemap.xml /sitemap-index.xml 301
 
 # Umami-week 10-17 sep 2026: /contact (3×), /colofon, /about, /samenwerken en
 # /over-ons kwamen als 404 binnen — bezoekers zoeken een over/contact-pagina.
 # /over heeft daadwerkelijk een contact-sectie (line 247-256 in over.astro) met
 # social-links en response-belofte. Redirect deze zoekpaden dáárheen.
-/contact       /over  301
-/contact/      /over  301
-/colofon       /over  301
-/colofon/      /over  301
-/about         /over  301
-/about/        /over  301
-/samenwerken   /over  301
-/samenwerken/  /over  301
-/over-ons      /over  301
-/over-ons/     /over  301
+/contact       https://www.aiplatformmkb.nl/contact/  301
+/contact/      https://www.aiplatformmkb.nl/contact/  301
+/colofon       https://www.aiplatformmkb.nl/over/  301
+/colofon/      https://www.aiplatformmkb.nl/over/  301
+/about         https://www.aiplatformmkb.nl/over/  301
+/about/        https://www.aiplatformmkb.nl/over/  301
+/samenwerken   https://www.aiplatformmkb.nl/voor-partners/  301
+/samenwerken/  https://www.aiplatformmkb.nl/voor-partners/  301
+/over-ons      https://www.aiplatformmkb.nl/over/  301
+/over-ons/     https://www.aiplatformmkb.nl/over/  301
 
 # GSC-reported 404s: slug normalisation dropped dots (copy.ai → copyai, you.com → youcom).
 # Sinds 27 okt 2026 gaan beide spellingen rechtstreeks naar AIPMKB (blok onderaan).
@@ -31,17 +31,17 @@
 # oud verkeer dáárheen (niet naar de homepage).
 # LET OP: alleen exacte paden, GEEN /match/* — /match/tools.json voedt de
 # finder-wizard (src/pages/match/tools.json.ts) en moet blijven bestaan.
-/match /vind-je-beste-ai-tool 301
-/match/ /vind-je-beste-ai-tool 301
-/zakelijk /vind-je-beste-ai-tool 301
-/zakelijk/ /vind-je-beste-ai-tool 301
-/beste-ai-tool /vind-je-beste-ai-tool 301
-/beste-ai-tool/ /vind-je-beste-ai-tool 301
+/match         https://www.aiplatformmkb.nl/reviews/  301
+/match/        https://www.aiplatformmkb.nl/reviews/  301
+/zakelijk      https://www.aiplatformmkb.nl/reviews/  301
+/zakelijk/     https://www.aiplatformmkb.nl/reviews/  301
+/beste-ai-tool https://www.aiplatformmkb.nl/reviews/  301
+/beste-ai-tool/ https://www.aiplatformmkb.nl/reviews/  301
 
 # Oud/fout pad: /vergelijking/* was nooit een echte route (de route is
 # /vergelijk/*). Google heeft er nog een paar onthouden → map ze door.
 # Veilig als splat: er bestaan geen echte /vergelijking/-assets.
-/vergelijking/* /vergelijk/:splat 301
+/vergelijking/* https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
 
 # NB: comparison-page churn (oude /vergelijk/X-vs-Y/ → 404) wordt nu bij de
 # bron opgelost via een stabiele slug-floor (src/data/comparison-slugs.json,
