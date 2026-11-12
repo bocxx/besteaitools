@@ -2,8 +2,8 @@
 """verify-dbat-dicht.py — controleert dat DBAT dicht is (nov 2026).
 
 Elke gebouwde pagina (dist/client), elke URL uit de oude sitemap en een paar
-verzonnen paden moeten een 301 geven naar www.aiplatformmkb.nl of
-www.hetlaatsteainieuws.nl, en elk doel moet direct 200 geven (geen keten).
+verzonnen paden moeten een 301 geven naar www.aiblik.nl
+(sinds de wissel van 12 nov 2026; daarvoor AIPMKB of HLN). Elk doel moet direct 200 geven (geen keten).
 robots.txt, de sitemaps en favicons moeten 200 blijven.
 
 Gebruik (na npm run build):
@@ -38,7 +38,7 @@ res={p:st(BASE+p) for p in []}
 with ThreadPoolExecutor(12) as ex:
     out=list(ex.map(lambda p:(p,)+st(BASE+p),sorted(paths)))
     kout=list(ex.map(lambda p:(p,)+st(BASE+p),keep))
-bad=[o for o in out if not(o[1]==301 and re.match(r'https://www\.(aiplatformmkb|hetlaatsteainieuws)\.nl/',o[2]))]
+bad=[o for o in out if not(o[1]==301 and re.match(r'https://www\.aiblik\.nl/',o[2]))]
 print('paden getest',len(out),'goed (301 extern)',len(out)-len(bad))
 for b in bad[:15]: print('  FOUT',b)
 print('bewaard:',[(p,c) for p,c,_ in kout])

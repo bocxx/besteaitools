@@ -1,20 +1,20 @@
-/ai-tools      https://www.aiplatformmkb.nl/reviews/  301
+/ai-tools      https://www.aiblik.nl/reviews/  301
 /sitemap.xml /sitemap-index.xml 301
 
 # Umami-week 10-17 sep 2026: /contact (3×), /colofon, /about, /samenwerken en
 # /over-ons kwamen als 404 binnen — bezoekers zoeken een over/contact-pagina.
 # /over heeft daadwerkelijk een contact-sectie (line 247-256 in over.astro) met
 # social-links en response-belofte. Redirect deze zoekpaden dáárheen.
-/contact       https://www.aiplatformmkb.nl/contact/  301
-/contact/      https://www.aiplatformmkb.nl/contact/  301
-/colofon       https://www.aiplatformmkb.nl/over/  301
-/colofon/      https://www.aiplatformmkb.nl/over/  301
-/about         https://www.aiplatformmkb.nl/over/  301
-/about/        https://www.aiplatformmkb.nl/over/  301
-/samenwerken   https://www.aiplatformmkb.nl/voor-partners/  301
-/samenwerken/  https://www.aiplatformmkb.nl/voor-partners/  301
-/over-ons      https://www.aiplatformmkb.nl/over/  301
-/over-ons/     https://www.aiplatformmkb.nl/over/  301
+/contact       https://www.aiblik.nl/contact/  301
+/contact/      https://www.aiblik.nl/contact/  301
+/colofon       https://www.aiblik.nl/over/  301
+/colofon/      https://www.aiblik.nl/over/  301
+/about         https://www.aiblik.nl/over/  301
+/about/        https://www.aiblik.nl/over/  301
+/samenwerken   https://www.aiblik.nl/voor-partners/  301
+/samenwerken/  https://www.aiblik.nl/voor-partners/  301
+/over-ons      https://www.aiblik.nl/over/  301
+/over-ons/     https://www.aiblik.nl/over/  301
 
 # GSC-reported 404s: slug normalisation dropped dots (copy.ai → copyai, you.com → youcom).
 # Sinds 27 okt 2026 gaan beide spellingen rechtstreeks naar AIPMKB (blok onderaan).
@@ -31,17 +31,17 @@
 # oud verkeer dáárheen (niet naar de homepage).
 # LET OP: alleen exacte paden, GEEN /match/* — /match/tools.json voedt de
 # finder-wizard (src/pages/match/tools.json.ts) en moet blijven bestaan.
-/match         https://www.aiplatformmkb.nl/keuzehulp/  301
-/match/        https://www.aiplatformmkb.nl/keuzehulp/  301
-/zakelijk      https://www.aiplatformmkb.nl/keuzehulp/  301
-/zakelijk/     https://www.aiplatformmkb.nl/keuzehulp/  301
-/beste-ai-tool https://www.aiplatformmkb.nl/keuzehulp/  301
-/beste-ai-tool/ https://www.aiplatformmkb.nl/keuzehulp/  301
+/match         https://www.aiblik.nl/keuzehulp/  301
+/match/        https://www.aiblik.nl/keuzehulp/  301
+/zakelijk      https://www.aiblik.nl/keuzehulp/  301
+/zakelijk/     https://www.aiblik.nl/keuzehulp/  301
+/beste-ai-tool https://www.aiblik.nl/keuzehulp/  301
+/beste-ai-tool/ https://www.aiblik.nl/keuzehulp/  301
 
 # Oud/fout pad: /vergelijking/* was nooit een echte route (de route is
 # /vergelijk/*). Google heeft er nog een paar onthouden → map ze door.
 # Veilig als splat: er bestaan geen echte /vergelijking/-assets.
-/vergelijking/* https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
+/vergelijking/* https://www.aiblik.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
 
 # NB: comparison-page churn (oude /vergelijk/X-vs-Y/ → 404) wordt nu bij de
 # bron opgelost via een stabiele slug-floor (src/data/comparison-slugs.json,
@@ -54,40 +54,40 @@
 # artikelen waar de AIPMKB-versie 2x dieper is / hetzelfde beter dekt.
 # Beide URL-varianten expliciet — voorkomt 2-staps-redirect (slash→noslash
 # →AIPMKB) die Google als "chained redirect" telt.
-/nieuws/chatgpt-offerte-schrijven-mkb-prompt   https://www.aiplatformmkb.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt   301
-/nieuws/chatgpt-offerte-schrijven-mkb-prompt/  https://www.aiplatformmkb.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt   301
-/nieuws/granola-notuleren-mkb-5-minuten        https://www.aiplatformmkb.nl/gidsen/granola-notuleren-mkb-5-minuten        301
-/nieuws/granola-notuleren-mkb-5-minuten/       https://www.aiplatformmkb.nl/gidsen/granola-notuleren-mkb-5-minuten        301
-/nieuws/claude-vs-chatgpt-vergelijking-2026    https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
-/nieuws/claude-vs-chatgpt-vergelijking-2026/   https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
+/nieuws/chatgpt-offerte-schrijven-mkb-prompt   https://www.aiblik.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt   301
+/nieuws/chatgpt-offerte-schrijven-mkb-prompt/  https://www.aiblik.nl/gidsen/chatgpt-offerte-schrijven-mkb-prompt   301
+/nieuws/granola-notuleren-mkb-5-minuten        https://www.aiblik.nl/gidsen/granola-notuleren-mkb-5-minuten        301
+/nieuws/granola-notuleren-mkb-5-minuten/       https://www.aiblik.nl/gidsen/granola-notuleren-mkb-5-minuten        301
+/nieuws/claude-vs-chatgpt-vergelijking-2026    https://www.aiblik.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
+/nieuws/claude-vs-chatgpt-vergelijking-2026/   https://www.aiblik.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou  301
 # Aanbeveling #2 (18 sep 2026): Claude-caching-tutorial inhoudelijk gemerged
 # in de AIPMKB-kostengids (sectie 5, "Zo zet je prompt caching aan bij Claude").
-/nieuws/claude-prompt-caching-kosten-besparen   https://www.aiplatformmkb.nl/gidsen/ai-kosten-besparen-tokens-chatbots   301
-/nieuws/claude-prompt-caching-kosten-besparen/  https://www.aiplatformmkb.nl/gidsen/ai-kosten-besparen-tokens-chatbots   301
+/nieuws/claude-prompt-caching-kosten-besparen   https://www.aiblik.nl/gidsen/ai-kosten-besparen-tokens-chatbots   301
+/nieuws/claude-prompt-caching-kosten-besparen/  https://www.aiblik.nl/gidsen/ai-kosten-besparen-tokens-chatbots   301
 
 # Opheffing DBAT, portie 1 (27 okt 2026). Zie Project "Platform Perfomance",
 # claude/netwerk-consolidatie-plan-2026-10-26.md. De bronbestanden blijven
 # bewust staan; src/worker.ts geeft deze regels als echte 301 terug vóór Astro
 # en astro.config.mjs houdt elk redirect-pad uit de sitemap. Beide
 # URL-varianten expliciet, zoals hierboven (geen redirect-keten).
-/nieuws/claude-account-aanmaken              https://www.aiplatformmkb.nl/gidsen/claude-voor-beginners-eerste-gesprek  301
-/nieuws/claude-account-aanmaken/             https://www.aiplatformmkb.nl/gidsen/claude-voor-beginners-eerste-gesprek  301
-/nieuws/claude-cowork-excel-bouwen           https://www.aiplatformmkb.nl/tools/claude-cowork-spreadsheets-playbook    301
-/nieuws/claude-cowork-excel-bouwen/          https://www.aiplatformmkb.nl/tools/claude-cowork-spreadsheets-playbook    301
-/nieuws/claude-cowork-lancering              https://www.aiplatformmkb.nl/tools/claude-cowork-wat-is-het               301
-/nieuws/claude-cowork-lancering/             https://www.aiplatformmkb.nl/tools/claude-cowork-wat-is-het               301
-/nieuws/firecrawl-website-naar-ai-databron   https://www.aiplatformmkb.nl/tools/firecrawl-marktonderzoek-mkb           301
-/nieuws/firecrawl-website-naar-ai-databron/  https://www.aiplatformmkb.nl/tools/firecrawl-marktonderzoek-mkb           301
-/nieuws/claude-instellen-1-dag-6-tools       https://www.aiplatformmkb.nl/gidsen/claude-instellen-1-dag-6-tools        301
-/nieuws/claude-instellen-1-dag-6-tools/      https://www.aiplatformmkb.nl/gidsen/claude-instellen-1-dag-6-tools        301
-/gids/notuleren-met-ai                       https://www.aiplatformmkb.nl/gidsen/notuleren-met-ai                      301
-/gids/notuleren-met-ai/                      https://www.aiplatformmkb.nl/gidsen/notuleren-met-ai                      301
-/ai-tools/claude                             https://www.aiplatformmkb.nl/tools/claude-review                          301
-/ai-tools/claude/                            https://www.aiplatformmkb.nl/tools/claude-review                          301
-/ai-tools/microsoft-copilot                  https://www.aiplatformmkb.nl/tools/microsoft-copilot-review               301
-/ai-tools/microsoft-copilot/                 https://www.aiplatformmkb.nl/tools/microsoft-copilot-review               301
-/ai-tools/zendesk-ai                         https://www.aiplatformmkb.nl/tools/zendesk-ai-review                      301
-/ai-tools/zendesk-ai/                        https://www.aiplatformmkb.nl/tools/zendesk-ai-review                      301
+/nieuws/claude-account-aanmaken              https://www.aiblik.nl/gidsen/claude-voor-beginners-eerste-gesprek  301
+/nieuws/claude-account-aanmaken/             https://www.aiblik.nl/gidsen/claude-voor-beginners-eerste-gesprek  301
+/nieuws/claude-cowork-excel-bouwen           https://www.aiblik.nl/tools/claude-cowork-spreadsheets-playbook    301
+/nieuws/claude-cowork-excel-bouwen/          https://www.aiblik.nl/tools/claude-cowork-spreadsheets-playbook    301
+/nieuws/claude-cowork-lancering              https://www.aiblik.nl/tools/claude-cowork-wat-is-het               301
+/nieuws/claude-cowork-lancering/             https://www.aiblik.nl/tools/claude-cowork-wat-is-het               301
+/nieuws/firecrawl-website-naar-ai-databron   https://www.aiblik.nl/tools/firecrawl-marktonderzoek-mkb           301
+/nieuws/firecrawl-website-naar-ai-databron/  https://www.aiblik.nl/tools/firecrawl-marktonderzoek-mkb           301
+/nieuws/claude-instellen-1-dag-6-tools       https://www.aiblik.nl/gidsen/claude-instellen-1-dag-6-tools        301
+/nieuws/claude-instellen-1-dag-6-tools/      https://www.aiblik.nl/gidsen/claude-instellen-1-dag-6-tools        301
+/gids/notuleren-met-ai                       https://www.aiblik.nl/gidsen/notuleren-met-ai                      301
+/gids/notuleren-met-ai/                      https://www.aiblik.nl/gidsen/notuleren-met-ai                      301
+/ai-tools/claude                             https://www.aiblik.nl/tools/claude-review                          301
+/ai-tools/claude/                            https://www.aiblik.nl/tools/claude-review                          301
+/ai-tools/microsoft-copilot                  https://www.aiblik.nl/tools/microsoft-copilot-review               301
+/ai-tools/microsoft-copilot/                 https://www.aiblik.nl/tools/microsoft-copilot-review               301
+/ai-tools/zendesk-ai                         https://www.aiblik.nl/tools/zendesk-ai-review                      301
+/ai-tools/zendesk-ai/                        https://www.aiblik.nl/tools/zendesk-ai-review                      301
 
 # Opheffing DBAT, portie 2 (27 okt 2026). Zelfde aanpak als portie 1: bron-
 # bestanden blijven staan, src/worker.ts geeft een echte 301 vóór Astro en
@@ -95,24 +95,24 @@
 # /top-10/<categorie> blijft bewust bestaan; alleen de index verhuist.
 # 27 okt 2026: /gratis-ai-tools, /beste-ai-tools en /top-10 gaan nu naar de
 # nieuwe AIPMKB-toplijsten (zie het blok met de 163 toolpagina's).
-/ai-tools/moneybird                                  https://www.aiplatformmkb.nl/tools/moneybird-review                                      301
-/ai-tools/moneybird/                                 https://www.aiplatformmkb.nl/tools/moneybird-review                                      301
-/ai-tools/semrush                                    https://www.aiplatformmkb.nl/tools/semrush-review                                        301
-/ai-tools/semrush/                                   https://www.aiplatformmkb.nl/tools/semrush-review                                        301
-/ai-tools/gemini                                     https://www.aiplatformmkb.nl/tools/gemini-review                                         301
-/ai-tools/gemini/                                    https://www.aiplatformmkb.nl/tools/gemini-review                                         301
-/gratis-ai-tools                                     https://www.aiplatformmkb.nl/tools/gratis-ai-tools/      301
-/gratis-ai-tools/                                    https://www.aiplatformmkb.nl/tools/gratis-ai-tools/      301
-/beste-ai-tools                                      https://www.aiplatformmkb.nl/tools/beste-ai-tools/      301
-/beste-ai-tools/                                     https://www.aiplatformmkb.nl/tools/beste-ai-tools/      301
-/top-10                                              https://www.aiplatformmkb.nl/tools/beste-ai-tools/      301
-/top-10/                                             https://www.aiplatformmkb.nl/tools/beste-ai-tools/      301
-/vergelijk/chatgpt-vs-claude                         https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou      301
-/vergelijk/chatgpt-vs-claude/                        https://www.aiplatformmkb.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou      301
-/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts     https://www.aiplatformmkb.nl/gidsen/ai-hallucinaties-herkennen                           301
-/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts/    https://www.aiplatformmkb.nl/gidsen/ai-hallucinaties-herkennen                           301
-/ai-tools/mistral                                    https://www.aiplatformmkb.nl/tools/europese-ai-apps-overzicht                       301
-/ai-tools/mistral/                                   https://www.aiplatformmkb.nl/tools/europese-ai-apps-overzicht                       301
+/ai-tools/moneybird                                  https://www.aiblik.nl/tools/moneybird-review                                      301
+/ai-tools/moneybird/                                 https://www.aiblik.nl/tools/moneybird-review                                      301
+/ai-tools/semrush                                    https://www.aiblik.nl/tools/semrush-review                                        301
+/ai-tools/semrush/                                   https://www.aiblik.nl/tools/semrush-review                                        301
+/ai-tools/gemini                                     https://www.aiblik.nl/tools/gemini-review                                         301
+/ai-tools/gemini/                                    https://www.aiblik.nl/tools/gemini-review                                         301
+/gratis-ai-tools                                     https://www.aiblik.nl/tools/gratis-ai-tools/      301
+/gratis-ai-tools/                                    https://www.aiblik.nl/tools/gratis-ai-tools/      301
+/beste-ai-tools                                      https://www.aiblik.nl/tools/beste-ai-tools/      301
+/beste-ai-tools/                                     https://www.aiblik.nl/tools/beste-ai-tools/      301
+/top-10                                              https://www.aiblik.nl/tools/beste-ai-tools/      301
+/top-10/                                             https://www.aiblik.nl/tools/beste-ai-tools/      301
+/vergelijk/chatgpt-vs-claude                         https://www.aiblik.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou      301
+/vergelijk/chatgpt-vs-claude/                        https://www.aiblik.nl/tools/chatgpt-claude-gemini-copilot-welke-past-bij-jou      301
+/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts     https://www.aiblik.nl/gidsen/ai-hallucinaties-herkennen                           301
+/nieuws/claude-opus-4-8-ik-weet-het-niet-prompts/    https://www.aiblik.nl/gidsen/ai-hallucinaties-herkennen                           301
+/ai-tools/mistral                                    https://www.aiblik.nl/tools/europese-ai-apps-overzicht                       301
+/ai-tools/mistral/                                   https://www.aiblik.nl/tools/europese-ai-apps-overzicht                       301
 
 # Opheffing DBAT, 163 toolpagina's (besluit 27 okt 2026). Elke toolpagina met
 # advies 'Weg' in het verhuisplan gaat naar een eigen anker in het tooloverzicht
@@ -126,41 +126,41 @@
 # Opheffing DBAT, portie 3 (2 nov 2026): acht stukken naar HLN. Vijf als nieuw
 # achtergrondartikel (feiten gecontroleerd op 2 nov), drie samengevoegd in een
 # bestaand HLN-stuk. Zelfde aanpak als portie 1 en 2.
-/nieuws/ai-tool-kerkhof-github-trending              https://www.hetlaatsteainieuws.nl/achtergrond/ai-tool-kerkhof-github-trending           301
-/nieuws/ai-tool-kerkhof-github-trending/             https://www.hetlaatsteainieuws.nl/achtergrond/ai-tool-kerkhof-github-trending           301
-/nieuws/anthropic-alibaba-claude-distillatie-aanval  https://www.hetlaatsteainieuws.nl/achtergrond/anthropic-alibaba-claude-distillatie-aanval 301
-/nieuws/anthropic-alibaba-claude-distillatie-aanval/ https://www.hetlaatsteainieuws.nl/achtergrond/anthropic-alibaba-claude-distillatie-aanval 301
-/nieuws/headroom-token-compressie-llm                https://www.hetlaatsteainieuws.nl/achtergrond/headroom-token-compressie-llm             301
-/nieuws/headroom-token-compressie-llm/               https://www.hetlaatsteainieuws.nl/achtergrond/headroom-token-compressie-llm             301
-/nieuws/ai-agents-evalueren-llm-judge                https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-evalueren-llm-judge             301
-/nieuws/ai-agents-evalueren-llm-judge/               https://www.hetlaatsteainieuws.nl/achtergrond/ai-agents-evalueren-llm-judge             301
-/nieuws/antigravity-teamwork-agentteam-gebruiken     https://www.hetlaatsteainieuws.nl/achtergrond/antigravity-teamwork-agentteam-gebruiken  301
-/nieuws/antigravity-teamwork-agentteam-gebruiken/    https://www.hetlaatsteainieuws.nl/achtergrond/antigravity-teamwork-agentteam-gebruiken  301
-/nieuws/claude-code-dynamic-workflows-gebruiken      https://www.hetlaatsteainieuws.nl/nieuws/claude-opus-4-8-dynamic-workflows              301
-/nieuws/claude-code-dynamic-workflows-gebruiken/     https://www.hetlaatsteainieuws.nl/nieuws/claude-opus-4-8-dynamic-workflows              301
-/nieuws/claude-code-desktop-parallelle-sessies       https://www.hetlaatsteainieuws.nl/nieuws/claude-code-desktop-grote-update               301
-/nieuws/claude-code-desktop-parallelle-sessies/      https://www.hetlaatsteainieuws.nl/nieuws/claude-code-desktop-grote-update               301
-/nieuws/ollama-lokale-ai-modellen-draaien            https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-ollama-lokale-llm-uitleg           301
-/nieuws/ollama-lokale-ai-modellen-draaien/           https://www.hetlaatsteainieuws.nl/achtergrond/wat-is-ollama-lokale-llm-uitleg           301
+/nieuws/ai-tool-kerkhof-github-trending              https://www.aiblik.nl/achtergrond/ai-tool-kerkhof-github-trending           301
+/nieuws/ai-tool-kerkhof-github-trending/             https://www.aiblik.nl/achtergrond/ai-tool-kerkhof-github-trending           301
+/nieuws/anthropic-alibaba-claude-distillatie-aanval  https://www.aiblik.nl/achtergrond/anthropic-alibaba-claude-distillatie-aanval 301
+/nieuws/anthropic-alibaba-claude-distillatie-aanval/ https://www.aiblik.nl/achtergrond/anthropic-alibaba-claude-distillatie-aanval 301
+/nieuws/headroom-token-compressie-llm                https://www.aiblik.nl/achtergrond/headroom-token-compressie-llm             301
+/nieuws/headroom-token-compressie-llm/               https://www.aiblik.nl/achtergrond/headroom-token-compressie-llm             301
+/nieuws/ai-agents-evalueren-llm-judge                https://www.aiblik.nl/achtergrond/ai-agents-evalueren-llm-judge             301
+/nieuws/ai-agents-evalueren-llm-judge/               https://www.aiblik.nl/achtergrond/ai-agents-evalueren-llm-judge             301
+/nieuws/antigravity-teamwork-agentteam-gebruiken     https://www.aiblik.nl/achtergrond/antigravity-teamwork-agentteam-gebruiken  301
+/nieuws/antigravity-teamwork-agentteam-gebruiken/    https://www.aiblik.nl/achtergrond/antigravity-teamwork-agentteam-gebruiken  301
+/nieuws/claude-code-dynamic-workflows-gebruiken      https://www.aiblik.nl/nieuws/claude-opus-4-8-dynamic-workflows              301
+/nieuws/claude-code-dynamic-workflows-gebruiken/     https://www.aiblik.nl/nieuws/claude-opus-4-8-dynamic-workflows              301
+/nieuws/claude-code-desktop-parallelle-sessies       https://www.aiblik.nl/nieuws/claude-code-desktop-grote-update               301
+/nieuws/claude-code-desktop-parallelle-sessies/      https://www.aiblik.nl/nieuws/claude-code-desktop-grote-update               301
+/nieuws/ollama-lokale-ai-modellen-draaien            https://www.aiblik.nl/achtergrond/wat-is-ollama-lokale-llm-uitleg           301
+/nieuws/ollama-lokale-ai-modellen-draaien/           https://www.aiblik.nl/achtergrond/wat-is-ollama-lokale-llm-uitleg           301
 
 # Opheffing DBAT, portie 4 (4 nov 2026): negen tutorials voor developers naar HLN
 # (pijler Developer). Acht als nieuw achtergrondartikel, feiten gecontroleerd op
 # 4 nov; de twee Gemini-gidsen samengevoegd in één stuk.
-/nieuws/strix-open-source-ai-pentester                https://www.hetlaatsteainieuws.nl/achtergrond/strix-open-source-ai-pentester 301
-/nieuws/strix-open-source-ai-pentester/               https://www.hetlaatsteainieuws.nl/achtergrond/strix-open-source-ai-pentester 301
-/nieuws/graphify-codebase-kennisgraaf-claude-code     https://www.hetlaatsteainieuws.nl/achtergrond/graphify-codebase-kennisgraaf-claude-code 301
-/nieuws/graphify-codebase-kennisgraaf-claude-code/    https://www.hetlaatsteainieuws.nl/achtergrond/graphify-codebase-kennisgraaf-claude-code 301
-/nieuws/exa-zoek-api-agent-koppelen                   https://www.hetlaatsteainieuws.nl/achtergrond/exa-zoek-api-agent-koppelen 301
-/nieuws/exa-zoek-api-agent-koppelen/                  https://www.hetlaatsteainieuws.nl/achtergrond/exa-zoek-api-agent-koppelen 301
-/nieuws/claude-code-reserve-mac-instellen             https://www.hetlaatsteainieuws.nl/achtergrond/claude-code-reserve-mac-instellen 301
-/nieuws/claude-code-reserve-mac-instellen/            https://www.hetlaatsteainieuws.nl/achtergrond/claude-code-reserve-mac-instellen 301
-/nieuws/code-review-graph-mcp-tokens-besparen         https://www.hetlaatsteainieuws.nl/achtergrond/code-review-graph-mcp-tokens-besparen 301
-/nieuws/code-review-graph-mcp-tokens-besparen/        https://www.hetlaatsteainieuws.nl/achtergrond/code-review-graph-mcp-tokens-besparen 301
-/nieuws/ollama-ai-agent-lokaal-offline-privacy        https://www.hetlaatsteainieuws.nl/achtergrond/ollama-ai-agent-lokaal-offline-privacy 301
-/nieuws/ollama-ai-agent-lokaal-offline-privacy/       https://www.hetlaatsteainieuws.nl/achtergrond/ollama-ai-agent-lokaal-offline-privacy 301
-/nieuws/huggingface-modellen-veilig-downloaden        https://www.hetlaatsteainieuws.nl/achtergrond/huggingface-modellen-veilig-downloaden 301
-/nieuws/huggingface-modellen-veilig-downloaden/       https://www.hetlaatsteainieuws.nl/achtergrond/huggingface-modellen-veilig-downloaden 301
-/nieuws/gemini-function-calling-agent-loop            https://www.hetlaatsteainieuws.nl/achtergrond/gemini-function-calling-agent-loop 301
-/nieuws/gemini-function-calling-agent-loop/           https://www.hetlaatsteainieuws.nl/achtergrond/gemini-function-calling-agent-loop 301
-/nieuws/gemini-function-calling-uitleg                https://www.hetlaatsteainieuws.nl/achtergrond/gemini-function-calling-agent-loop 301
-/nieuws/gemini-function-calling-uitleg/               https://www.hetlaatsteainieuws.nl/achtergrond/gemini-function-calling-agent-loop 301
+/nieuws/strix-open-source-ai-pentester                https://www.aiblik.nl/achtergrond/strix-open-source-ai-pentester 301
+/nieuws/strix-open-source-ai-pentester/               https://www.aiblik.nl/achtergrond/strix-open-source-ai-pentester 301
+/nieuws/graphify-codebase-kennisgraaf-claude-code     https://www.aiblik.nl/achtergrond/graphify-codebase-kennisgraaf-claude-code 301
+/nieuws/graphify-codebase-kennisgraaf-claude-code/    https://www.aiblik.nl/achtergrond/graphify-codebase-kennisgraaf-claude-code 301
+/nieuws/exa-zoek-api-agent-koppelen                   https://www.aiblik.nl/achtergrond/exa-zoek-api-agent-koppelen 301
+/nieuws/exa-zoek-api-agent-koppelen/                  https://www.aiblik.nl/achtergrond/exa-zoek-api-agent-koppelen 301
+/nieuws/claude-code-reserve-mac-instellen             https://www.aiblik.nl/achtergrond/claude-code-reserve-mac-instellen 301
+/nieuws/claude-code-reserve-mac-instellen/            https://www.aiblik.nl/achtergrond/claude-code-reserve-mac-instellen 301
+/nieuws/code-review-graph-mcp-tokens-besparen         https://www.aiblik.nl/achtergrond/code-review-graph-mcp-tokens-besparen 301
+/nieuws/code-review-graph-mcp-tokens-besparen/        https://www.aiblik.nl/achtergrond/code-review-graph-mcp-tokens-besparen 301
+/nieuws/ollama-ai-agent-lokaal-offline-privacy        https://www.aiblik.nl/achtergrond/ollama-ai-agent-lokaal-offline-privacy 301
+/nieuws/ollama-ai-agent-lokaal-offline-privacy/       https://www.aiblik.nl/achtergrond/ollama-ai-agent-lokaal-offline-privacy 301
+/nieuws/huggingface-modellen-veilig-downloaden        https://www.aiblik.nl/achtergrond/huggingface-modellen-veilig-downloaden 301
+/nieuws/huggingface-modellen-veilig-downloaden/       https://www.aiblik.nl/achtergrond/huggingface-modellen-veilig-downloaden 301
+/nieuws/gemini-function-calling-agent-loop            https://www.aiblik.nl/achtergrond/gemini-function-calling-agent-loop 301
+/nieuws/gemini-function-calling-agent-loop/           https://www.aiblik.nl/achtergrond/gemini-function-calling-agent-loop 301
+/nieuws/gemini-function-calling-uitleg                https://www.aiblik.nl/achtergrond/gemini-function-calling-agent-loop 301
+/nieuws/gemini-function-calling-uitleg/               https://www.aiblik.nl/achtergrond/gemini-function-calling-agent-loop 301
